@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Sequence>
+        <Succeeder>
+            <Opr_CreateHumanWeaponModule/>
+        </Succeeder>
+        <ExternalTree m_UID="HUMAN_WEAPON_PREPARE" m_CustomName="WeaponPrepare" m_Hide="true"/>
+        <Succeeder>
+            <ExternalTree m_UID="ai_request_use_bp_init"/>
+        </Succeeder>
+    </Sequence>
+</BehaviorTree>

@@ -1,0 +1,19 @@
+import "modules_humanai_defaults.def"
+
+sub main()
+{
+    use HumanAI_Common_Modules_Generic_Infected();
+
+    Required()
+    {
+        Module("CollisionModuleHuman");
+        Module("FootprintsModule");
+    }
+
+    Parametrized()
+    {
+        ModuleProfile("CollisionModuleHuman", "infected");
+        ModuleProfile("FootprintsModule", "spitter_footprints");
+        ModuleProfile("ActivityModuleDeath", "infected");
+    }
+}

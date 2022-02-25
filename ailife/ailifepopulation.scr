@@ -1,0 +1,3135 @@
+/*
+Attribute(s)             	- attribute declaration: s - unique name of attribute
+
+------- Use only PRESETS NAMES declared in AILifePopulationDefs.scr file !!! -------
+
+PresetOccurrences(s, s, i)		- preset_name, plan_name, preset_amount - agenda with preset_name will be spawned preset_amount times and use plan_name plan
+PresetPercentage(s, s, i)		- preset_name, plan_name, preset_percentage - agenda with preset_name will be spawned x-times to reach prefab_percentage of whole scenario population in area and use plan_name plan
+PresetToSpawnAmount(i)		    - preset_amount - spawn preset_amount agendas in area (should be used with population based on percents)
+TimeOfDayCondition(f, f)        - begin [0.0 - 24.0], end [0.0 - 24.0] - agenda will be spawned only between those hours
+BopStatCondition(s, s, i, i)    - fraction_name, stat_name, min_faction_power_tier, max_faction_power_tier - agenda will be spawned only if a given fraction has suitable stat tier
+RequiresPlayerInside()			- agendas will be spawned only when player is inside area (and will be ending when player leave area)
+BlockOtherAttributeAreas()		- spawn agendas from other attributes will be blocked when player is inside this area (agendas spawned for other attributes will end)
+SpawnOnlyOnAreaActivation()     - system will try to spawn agendas only for 5 seconds after attribute area activation
+*/
+
+import "AILifePopulationDefs.scr"
+
+sub main()
+{
+    // Attributes
+
+	Attribute("Dummy")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(6.0, 24.0);
+			BopStatCondition(BANDITS, "Power", 0, 0);
+			PresetPercentage(SCAVs_AGENDA_POWER_1, "Plan_Scavengers", 100);
+			PresetToSpawnAmount(1);
+		}
+    }
+
+	Attribute("Test")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(23.0, 6.0);
+			PresetPercentage(TEST_AGENDA, "Default", 100);
+			PresetToSpawnAmount(1);
+		}
+	}
+
+    Attribute("Test_Woody")
+    {
+        OccurrencesBased()
+        {
+            SpawnOnlyOnAreaActivation();
+            //RequiresPlayerInside();
+            TimeOfDayCondition(0.0, 24.0);
+            PresetOccurrences(SURVIVOR_AGENDA_1_WITH_PANIC_FLEE, "Test", 10);
+        }
+    }
+
+	Attribute("Margarita_Bandits_Area")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(6.0, 24.0);
+			BopStatCondition(BANDITS, "Power", 0, 0);
+			PresetPercentage(BANDITS_AGENDA_3, "Plan_Bandits", 100);
+			PresetToSpawnAmount(30);
+		}
+    }
+
+	// ------------ CITY VS POPULATION ----------------
+
+
+	Attribute("Scav_Area")
+    {
+        PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			BopStatCondition(SCAVENGERS, "Power", 0, 0);
+			PresetPercentage(SCAVs_AGENDA_POWER_1, "Plan_Scavengers", 100);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 40);
+			PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 20);
+			PresetPercentage(BANDITS_AGENDA_POWER_1, "Plan_Bandits", 20);
+			PresetToSpawnAmount(8);
+		}
+	}
+
+	Attribute("Scav_HUB")
+    {
+        PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			BopStatCondition(SCAVENGERS, "Power", 0, 0);
+			PresetPercentage(SCAVs_AGENDA_POWER_1, "Plan_Scavengers", 100);
+			PresetToSpawnAmount(8);
+		}
+	}
+
+	Attribute("PKs_Area")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			BopStatCondition(PEACEKEEPERS, "Power", 0, 0);
+			PresetPercentage(PKs_AGENDA_POWER_1, "Plan_PK", 100);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 40);
+			PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 20);
+			PresetPercentage(BANDITS_AGENDA_R1, "Plan_Bandits", 20);
+			PresetToSpawnAmount(8);
+		}
+	}
+
+	Attribute("PKs_HUB")
+    {
+		//PercentageBased()
+		//{
+		//	TimeOfDayCondition(8.1, 19.0);
+		//	BopStatCondition(PEACEKEEPERS, "Power", 0, 0);
+		//	PresetPercentage(PKs_AGENDA_POWER_1, "Plan_PK", 100);
+		//	PresetToSpawnAmount(5);
+		//}
+    }
+	
+
+
+	Attribute("City_All_Area")
+	{
+	}
+
+	Attribute("Bandits_Electric_Area")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			BopStatCondition(BANDITS, "Power", 0, 0);
+			PresetPercentage(BANDIT_ELECTRIC, "Plan_Bandits", 60);
+			PresetToSpawnAmount(1);
+		}
+	}
+
+	Attribute("Starting_Area")
+	{
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(BANDITS_AGENDA_R1, "Plan_Bandits", 100);
+			PresetToSpawnAmount(6);
+		}
+
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 75);
+		//	PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 15);
+			PresetToSpawnAmount(4);
+		}
+	}
+
+	Attribute("Touristic_Area")
+	{
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(BANDITS_AGENDA_POWER_1, "Plan_Bandits", 100);
+			PresetToSpawnAmount(6);
+		}
+
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 75);
+		//	PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 15);
+			PresetToSpawnAmount(4);
+		}
+	}
+
+	Attribute("Exclusive_Area")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(BANDITS_AGENDA_POWER_1, "Plan_Bandits", 100);
+			PresetToSpawnAmount(4);
+		}
+
+	}
+	
+
+	Attribute("R0_Area")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(BANDITS_AGENDA_POWER_1, "Plan_Bandits", 100);
+			PresetToSpawnAmount(1);
+		}
+
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 100);
+		//	PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 30);
+			PresetToSpawnAmount(2);
+		}
+	}
+
+	Attribute("R1_Area")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(BANDITS_AGENDA_R1, "Plan_Bandits", 100);
+			PresetToSpawnAmount(1);
+		}
+
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 100);
+		//	PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 30);
+			PresetToSpawnAmount(10);
+		}
+	}
+
+	Attribute("R1_Starting_Area")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 100);
+		//	PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 30);
+			PresetToSpawnAmount(4);
+		}
+	}
+
+	Attribute("R1_Factions_Area")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(PKs_AGENDA_POWER_1, "Plan_PK", 100);
+			PresetToSpawnAmount(2);
+		}
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(PKs_AGENDA_CONSCRIPT, "Plan_PK", 100);
+			PresetToSpawnAmount(2);
+		}
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 100);
+		//	PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 30);
+			PresetToSpawnAmount(2);
+		}
+		PercentageBased()
+		{
+			TimeOfDayCondition(20.0, 8.0);
+			PresetPercentage(PKs_AGENDA_POWER_1, "Plan_PK", 100);
+			PresetToSpawnAmount(1);
+		}
+		PercentageBased()
+		{
+			TimeOfDayCondition(20.0, 8.0);
+			PresetPercentage(PKs_AGENDA_CONSCRIPT, "Plan_PK", 100);
+			PresetToSpawnAmount(1);
+		}
+	}
+
+	Attribute("R1_Church_Area")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 100);
+			//PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 30);
+			PresetToSpawnAmount(2);
+		}
+	}
+
+	Attribute("Parkour_Challenge")
+    {
+	}
+
+	Attribute("Combat_Challenge")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(BANDITS_AGENDA_BLOODS_GANG, "Plan_Bandits", 100);
+			PresetToSpawnAmount(4);
+		}
+
+	}
+
+	Attribute("Bandit_Camp_Area")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(BANDITS_AGENDA_BLOODS_GANG, "Plan_Bandits", 100);
+			PresetToSpawnAmount(4);
+		}
+	}
+
+	Attribute("R1_Bazaar_Area")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 70);
+		//	PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 20);
+		//	PresetPercentage(SURVIVOR_SHOP, "Plan_Survivor_Shop", 30);
+			PresetToSpawnAmount(6);
+		}
+	}
+
+	Attribute("R2_Area")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(BANDITS_AGENDA_R2, "Plan_Bandits", 100);
+			PresetToSpawnAmount(1);
+		}
+
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 75);
+			//PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 15);
+			PresetToSpawnAmount(4);
+		}
+	}
+
+	Attribute("R2_PK_Area")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(PKs_AGENDA_POWER_1, "Plan_PK", 100);
+			PresetToSpawnAmount(2);
+		}
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(PKs_AGENDA_CONSCRIPT, "Plan_PK", 100);
+			PresetToSpawnAmount(2);
+		}
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 100);
+		//	PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 30);
+			PresetToSpawnAmount(2);
+		}
+		PercentageBased()
+		{
+			TimeOfDayCondition(20.0, 8.0);
+			PresetPercentage(PKs_AGENDA_POWER_1, "Plan_PK", 100);
+			PresetToSpawnAmount(1);
+		}
+		PercentageBased()
+		{
+			TimeOfDayCondition(20.0, 8.0);
+			PresetPercentage(PKs_AGENDA_CONSCRIPT, "Plan_PK", 100);
+			PresetToSpawnAmount(1);
+		}
+	}
+
+	Attribute("R2_SCV_Area")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 75);
+		//	PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 15);
+			PresetToSpawnAmount(2);
+		}
+
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SCAVs_AGENDA_POWER_1, "Plan_Scavengers", 60);
+			PresetToSpawnAmount(4);
+		}
+	}
+
+	Attribute("R2_Neutral_Area")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(BANDITS_AGENDA_R2, "Plan_Bandits", 100);
+			PresetToSpawnAmount(1);
+		}
+
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 75);
+		//	PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 15);
+			PresetToSpawnAmount(3);
+		}
+
+	}
+
+	Attribute("R3_Area")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(BANDITS_AGENDA_R3, "Plan_Bandits", 100);
+			PresetToSpawnAmount(4);
+		}
+
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 75);
+		//	PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 15);
+			PresetToSpawnAmount(4);
+		}
+	}
+
+	Attribute("R4_Area")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(BANDITS_AGENDA_R4, "Plan_Bandits", 100);
+			PresetToSpawnAmount(3);
+		}
+
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 75);
+		//	PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 15);
+			PresetToSpawnAmount(4);
+		}
+	}
+
+	Attribute("R5_Area")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(BANDITS_AGENDA_R5, "Plan_Bandits", 100);
+			PresetToSpawnAmount(5);
+		}
+
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 75);
+		//	PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 15);
+			PresetToSpawnAmount(4);
+		}
+	}
+
+	Attribute("R6_Area")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(BANDITS_AGENDA_R6, "Plan_Bandits", 100);
+			PresetToSpawnAmount(1);
+		}
+
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 75);
+		//	PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 15);
+			PresetToSpawnAmount(4);
+		}
+	}
+
+	Attribute("R7_Area")
+    {
+	}
+
+	Attribute("R8_Area")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(BANDITS_AGENDA_POWER_1, "Plan_Bandits", 100);
+			PresetToSpawnAmount(6);
+		}
+
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 75);
+		//	PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 15);
+			PresetToSpawnAmount(4);
+		}
+	}
+
+	Attribute("R9_Area")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(BANDITS_AGENDA_POWER_1, "Plan_Bandits", 100);
+			PresetToSpawnAmount(6);
+		}
+
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 75);
+		//	PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 15);
+			PresetToSpawnAmount(4);
+		}
+	}
+
+	Attribute("R10_Area")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(BANDITS_AGENDA_POWER_1, "Plan_Bandits", 100);
+			PresetToSpawnAmount(12);
+		}
+
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 75);
+		//	PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 15);
+			PresetToSpawnAmount(4);
+		}
+	}
+
+	Attribute("TM_DARKZONES")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(BANDITS_AGENDA_POWER_1, "Plan_Bandits", 100);
+			PresetToSpawnAmount(12);
+		}
+	}
+
+
+	// QUEST_WORLDS_CONSEQUENCES
+
+	Attribute("REG4_HuntersAppears")
+    {
+	}
+
+	Attribute("REG3A_AfterCathedralWereCleared")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(BANDITS_AGENDA_R3, "Plan_Bandits", 100);
+			PresetToSpawnAmount(3);
+		}
+
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 75);
+			//PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 15);
+			PresetToSpawnAmount(2);
+		}
+	}
+
+	Attribute("Quest_Encounter_Waltz_People_Appears")
+    {
+	}
+
+	Attribute("Quest_Markers_Of_Plague_Church")
+    {
+	}
+
+	// Quests World Changes
+	Attribute("REG6A_AfterGreenhouseFuelMoreSmokersAppears")
+    {
+	}
+
+	Attribute("REG5_AfterOutpostMonksDisappear")
+    {
+	}
+
+	Attribute("REG5_AfterOutpostMonksMove")
+    {
+	}
+
+	Attribute("REG1_TakeoverBySCAVs")
+    {
+	}
+
+	Attribute("REG1_TakeoverByPKs")
+	{
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(PKs_AGENDA_POWER_1, "Plan_PK", 100);
+			PresetToSpawnAmount(5);
+		}
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(PKs_AGENDA_CONSCRIPT, "Plan_PK", 100);
+			PresetToSpawnAmount(5);
+		}
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 100);
+		//	PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 30);
+			PresetToSpawnAmount(2);
+		}
+		PercentageBased()
+		{
+			TimeOfDayCondition(20.0, 8.0);
+			PresetPercentage(PKs_AGENDA_POWER_1, "Plan_PK", 100);
+			PresetToSpawnAmount(3);
+		}
+		PercentageBased()
+		{
+			TimeOfDayCondition(20.0, 8.0);
+			PresetPercentage(PKs_AGENDA_CONSCRIPT, "Plan_PK", 100);
+			PresetToSpawnAmount(3);
+		}
+	}
+
+	Attribute("REG1_FactionFight")
+    {
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(BANDITS_AGENDA_R1, "Plan_Bandits", 100);
+			PresetToSpawnAmount(2);
+		}
+
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 100);
+		//	PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 30);
+			PresetToSpawnAmount(10);
+		}
+	}
+
+	Attribute("REG3B_NewEnemy")
+    {
+	}
+
+	Attribute("ALL_Quarantine_NewEnemyAppears")
+    {
+	}
+
+	Attribute("ALL_AfterGreenhouseStimulantsNewEnemyAppears")
+    {
+	}
+
+	Attribute("ALL_AfterGreenhouseFuelMoreTrucksAppears")
+    {
+	}
+
+	Attribute("ALL_StartOfTheRevolution")
+    {
+	}
+
+	Attribute("ALL_EscalationOfTheRevolution")
+    {
+	}
+
+	Attribute("Add_Screamers")
+    {
+	}
+
+
+	// Facilities Area:
+
+
+	Attribute("FC_Electrical_Substation_R01")
+    {
+	}
+
+	Attribute("FC_Electrical_Substation_R02_North")
+    {
+	}
+
+	Attribute("FC_Electrical_Substation_R02_South")
+    {
+	}
+
+	Attribute("FC_Electrical_Substation_R03_North")
+    {
+	}
+
+	Attribute("FC_Electrical_Substation_R03_South")
+    {
+	}
+
+	Attribute("FC_Electrical_Substation_R04_North")
+    {
+	}
+
+	Attribute("FC_Electrical_Substation_R04_South")
+	{
+	}
+
+	Attribute("FC_Electrical_Substation_R05_North")
+    {
+	}
+
+	Attribute("FC_Electrical_Substation_R05_South")
+	{
+	}
+
+	Attribute("FC_Electrical_Substation_R06")
+    {
+	}
+
+	Attribute("FC_WaterTower_R01")
+    {
+	}
+
+	Attribute("FC_WaterTower_R02_North")
+    {
+	}
+
+	Attribute("FC_WaterTower_R02_South")
+    {
+	}
+
+	Attribute("FC_WaterTower_R03_East")
+    {
+	}
+
+	Attribute("FC_WaterTower_R03_West")
+    {
+	}
+
+	Attribute("FC_WaterTower_R05_North")
+    {
+	}
+
+	Attribute("FC_WaterTower_R05_South")
+    {
+	}
+
+	Attribute("FC_WaterTower_R05_Chemicals")
+    {
+	}
+
+	Attribute("FC_WaterTower_R06")
+    {
+	}
+
+	Attribute("FC_UVStation_R01")
+    {
+	}
+
+	Attribute("FC_UVStation_R02_One")
+    {
+	}
+
+	Attribute("FC_UVStation_R02_Two")
+    {
+	}
+
+	Attribute("FC_UVStation_R02_Three")
+    {
+	}
+
+	Attribute("FC_UVStation_R02_Four")
+    {
+	}
+
+	Attribute("FC_UVStation_R03_One")
+    {
+	}
+
+	Attribute("FC_UVStation_R03_Two")
+    {
+	}
+
+	Attribute("FC_UVStation_R03_Three")
+    {
+	}
+
+	Attribute("FC_UVStation_R03_Four")
+    {
+	}
+
+	Attribute("FC_UVStation_R05_One")
+    {
+	}
+
+	Attribute("FC_UVStation_R05_Two")
+    {
+	}
+
+	Attribute("FC_UVStation_R05_Three")
+    {
+	}
+
+	Attribute("FC_UVStation_R05_Four")
+    {
+	}
+
+	Attribute("FC_RadioTower_Broadcast")
+    {
+	}
+
+	Attribute("FC_RadioTower_R01")
+    {
+	}
+
+	Attribute("FC_RadioTower_R02")
+    {
+	}
+
+	Attribute("FC_RadioTower_R03")
+    {
+	}
+	Attribute("FC_RadioTower_R04")
+    {
+	}
+
+	Attribute("FC_RadioTower_R05")
+    {
+	}
+
+	Attribute("FC_RadioTower_R06")
+    {
+	}
+
+	Attribute("FC_RadioTower_VNC")
+    {
+	}
+	
+
+	// Facilities Area: Based on City Zones
+
+	Attribute("FC_WaterTower_R1_3_Zone_03")
+    {
+	}
+
+	Attribute("FC_WaterTower_R2_1_Zone_05")
+    {
+	}
+
+	Attribute("FC_WaterTower_R2_2_Zone_06")
+    {
+	}
+
+	Attribute("FC_WaterTower_R2_3_Zone_07")
+    {
+	}
+
+	Attribute("FC_WaterTower_R2_4_Zone_08")
+    {
+	}
+
+	Attribute("FC_WaterTower_R3_1_Zone_13")
+    {
+	}
+
+	Attribute("FC_WaterTower_R4_4_Zone_08")
+    {
+	}
+
+	Attribute("FC_WaterTower_R5_1_Zone_21")
+    {
+	}
+
+	Attribute("FC_WaterTower_R5_4_Zone_24")
+    {
+	}
+
+	Attribute("FC_WaterTower_R5_5_Zone_25")
+    {
+	}
+
+	Attribute("FC_WaterTower_R6_1_Zone_17")
+    {
+	}
+	Attribute("FC_WaterTower_R6_4_Zone_20")
+    {
+	}
+
+	Attribute("FC_ElectricalSubstation_R1_4_Zone_04")
+    {
+	}
+
+	Attribute("FC_ElectricalSubstation_R2_1_Zone_05")
+    {
+	}
+
+	Attribute("FC_ElectricalSubstation_R2_2_Zone_06")
+    {
+	}
+
+	Attribute("FC_ElectricalSubstation_R2_3_Zone_07")
+    {
+	}
+
+	Attribute("FC_ElectricalSubstation_R2_4_Zone_08")
+    {
+	}
+
+	Attribute("FC_ElectricalSubstation_R2_5_Zone_09")
+    {
+	}
+
+	Attribute("FC_ElectricalSubstation_R3_2_Zone_15")
+    {
+	}
+
+	Attribute("FC_ElectricalSubstation_R3_3_Zone_16")
+    {
+	}
+
+	Attribute("FC_ElectricalSubstation_R4_1_Zone_09")
+    {
+	}
+
+	Attribute("FC_ElectricalSubstation_R5_2_Zone_22")
+    {
+	}
+
+	Attribute("FC_ElectricalSubstation_R5_3_Zone_23")
+    {
+	}
+
+	Attribute("FC_ElectricalSubstation_R6_2_Zone_18")
+    {
+	}
+
+	Attribute("FC_RadioTower_R1_4_Zone_03")
+    {
+	}
+
+	Attribute("FC_RadioTower_R2_3_Zone_07")
+    {
+	}
+
+	Attribute("FC_RadioTower_R3_1_Zone_14")
+    {
+	}
+
+	Attribute("FC_RadioTower_R4_1_Zone_09")
+    {
+	}
+
+	Attribute("FC_RadioTower_R5_4_Zone_24")
+    {
+	}
+
+	Attribute("FC_RadioTower_R6_4_Zone_20")
+    {
+	}
+
+	Attribute("RadioTower_VNC_Force_Chest_Activation")
+    {
+	}
+	
+	Attribute("RadioTower_VNC_No_Main_Facility_Required")
+    {
+	}
+
+	// E3
+
+
+	Attribute("E3_R2_Area")
+    {
+	}
+	
+	//Highway
+	
+	Attribute("City_R2_Overpass")
+    {	
+	}	
+	
+	//Parks
+	
+	Attribute("City_Park")
+    {	
+	}		
+	
+	Attribute("R4_1")
+    {	
+	}		
+
+	Attribute("R4_2")
+    {	
+	}		
+
+	// Bandit Camp Areas
+
+
+	Attribute("R01_BanditCamp_Razors_Area")
+    {
+	}
+
+	Attribute("Bloods_Gang_Area")
+    {
+	}
+
+	Attribute("Skyscraper_Gang_Area")
+    {
+	}
+
+	Attribute("Flooded_Gang_Area")
+    {
+	}
+
+	Attribute("Military_Gang_Area")
+    {
+	}
+
+	Attribute("Chemicals_Gang_Area")
+    {
+	}
+	
+	Attribute("Vertical_Gang_Area")
+    {
+	}	
+
+
+	// Hive Area
+
+	Attribute("Hive_Area")
+    {
+	}
+
+	// Dust Area
+
+	Attribute("Dust_Area")
+    {
+	}
+
+	// Flooded Area
+	
+	Attribute("R3_Flooded_1")
+    {
+	}
+
+	Attribute("R3_Flooded_2")
+    {
+	}
+
+	Attribute("R3_Flooded_3")
+    {
+	}	
+
+	// Dark Place & GRE Quarantain Area
+
+	Attribute("DP_GRE_Edge_Area")
+    {
+	}
+	
+	Attribute("DP_GRE_Center_Area")
+    {	
+	}
+
+	Attribute("Dark_Place_Area")
+    {	
+	}	
+	
+	// Open World Activity Area
+
+	Attribute("OWA_Edge_Area")
+    {
+	}
+
+	Attribute("OWA_Center_Area")
+    {	
+	}	
+
+	/////////// C&C System ///////////
+
+	Attribute("City_Neutral_Zone")
+	{
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(BANDITS_AGENDA_POWER_3, "Plan_Bandits", 30);
+			PresetPercentage(BANDITS_AGENDA_POWER_2, "Plan_Bandits", 70);			
+			PresetToSpawnAmount(3);
+		}
+	}
+
+	Attribute("City_Neutral_Zone_Diff_02")
+	{
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(BANDITS_AGENDA_POWER_3, "Plan_Bandits", 50);
+			PresetPercentage(BANDITS_AGENDA_POWER_2, "Plan_Bandits", 50);	
+			//PresetPercentage(RENEGADES_AGENDA_1, "Plan_Bandits", 50);
+			PresetToSpawnAmount(3);
+		}
+	}
+	
+	
+	Attribute("City_Peacekeepers_HUB_Zone")
+	{
+		//PercentageBased()
+		//{
+			//TimeOfDayCondition(8.1, 19.0);
+			//PresetPercentage(PKs_AGENDA_POWER_1, "Plan_PK", 100);
+			//PresetToSpawnAmount(3);
+		//}
+	}
+	
+	Attribute("City_Peacekeepers_HUB_Zone_R02")
+	{
+		//PercentageBased()
+		//{
+			//TimeOfDayCondition(8.1, 19.0);
+			//PresetPercentage(PKs_AGENDA_POWER_1, "Plan_PK", 100);
+			//PresetToSpawnAmount(3);
+		//}
+	}	
+
+	Attribute("City_Peacekeepers_Zone")
+	{
+		//PercentageBased()
+		//{
+			//TimeOfDayCondition(8.1, 19.0);
+			//PresetPercentage(PKs_AGENDA_POWER_1, "Plan_PK", 100);
+			//PresetToSpawnAmount(2);
+		//}
+	}
+	
+	Attribute("City_Peacekeepers_Zone_R02")
+	{
+		//PercentageBased()
+		//{
+			//TimeOfDayCondition(8.1, 19.0);
+			//PresetPercentage(PKs_AGENDA_POWER_1, "Plan_PK", 100);
+			//PresetToSpawnAmount(2);
+		//}
+	}	
+
+	Attribute("City_Peacekeepers_HUB_Zone_Empire")
+	{
+		//PercentageBased()
+		//{
+			//TimeOfDayCondition(8.1, 19.0);
+			//PresetPercentage(PKs_AGENDA_EMPIRE, "Plan_PK", 100);
+			//PresetToSpawnAmount(4);
+		//}
+	}
+
+	Attribute("City_Peacekeepers_Zone_Empire")
+	{
+		//PercentageBased()
+		//{
+			//TimeOfDayCondition(8.1, 19.0);
+			//PresetPercentage(PKs_AGENDA_EMPIRE, "Plan_PK", 100);
+			//PresetToSpawnAmount(2);
+		//}
+	}
+
+	Attribute("City_Scavengers_Zone")
+	{
+		//PercentageBased()
+		//{
+		//	TimeOfDayCondition(8.1, 19.0);
+		//	PresetPercentage(SCAVs_AGENDA_POWER_1, "Plan_Scavengers", 100);
+		//	PresetToSpawnAmount(10);
+		//}
+	}
+
+	Attribute("City_Survivors_HUB_Zone")
+	{
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			//PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors_Roof", 50);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 50);
+			//PresetPercentage(SURVIVOR_SHOP, "Plan_Survivor_Shop", 20);
+			PresetToSpawnAmount(20);
+		}
+
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors_Roof", 50);
+			PresetToSpawnAmount(20);
+		}
+
+	}
+
+	Attribute("City_Survivors_Zone")
+	{
+		//PercentageBased()
+		//{
+			//TimeOfDayCondition(8.1, 19.0);
+			//PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 80);
+			//PresetPercentage(SURVIVOR_SHOP, "Plan_Survivor_Shop", 20);
+			//PresetToSpawnAmount(1);
+		//}
+
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors_Roof", 50);
+			PresetToSpawnAmount(20);
+		}
+
+	}
+
+	Attribute("City_Renegades_Zone")
+	{
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(RENEGADES_AGENDA_1, "Plan_Bandits", 100);
+			PresetToSpawnAmount(6);
+		}
+	}
+
+// ZONE LEVELS
+
+	Attribute("City_Zone_Levels")
+    {
+	}
+
+	Attribute("R1_1_Zone_01")
+    {
+	}
+
+	Attribute("R1_2_Zone_02")
+    {
+	}
+
+	Attribute("R1_3_Zone_03")
+    {
+	}
+
+	Attribute("R1_4_Zone_04")
+    {
+	}
+
+	Attribute("R1_1_Zone_01_Waltz")
+    {
+	}
+
+	Attribute("R1_2_Zone_02_Waltz")
+    {
+	}
+
+	Attribute("R1_3_Zone_03_Waltz")
+    {
+	}
+
+	Attribute("R1_4_Zone_04_Waltz")
+    {
+	}	
+
+	Attribute("R2_1_Zone_05")
+    {
+	}
+
+	Attribute("R2_2_Zone_06")
+    {
+	}
+
+	Attribute("R2_3_Zone_07")
+    {
+	}
+
+	Attribute("R2_4_Zone_08")
+    {
+	}
+
+	Attribute("R2_5_Zone_09")
+    {
+	}
+
+	Attribute("R2_6_Zone_10")
+    {
+	}
+
+	Attribute("R2_7_Zone_11")
+    {
+	}
+
+	Attribute("R2_8_Zone_12")
+    {
+	}
+
+	Attribute("R2_9_Zone_13")
+    {
+	}
+
+	Attribute("R1_1_Zone_01")
+    {
+	}
+
+	Attribute("R3_Zone_Renegades")
+    {
+	}
+
+	Attribute("R3_1_Zone_14")
+    {
+	}
+
+	Attribute("R3_2_Zone_15")
+    {
+	}
+
+	Attribute("R3_3_Zone_16")
+    {
+	}
+
+	Attribute("R3_4_Zone_26")
+    {
+	}
+
+	Attribute("R4_1_Zone_09")
+    {
+	}
+
+	Attribute("R4_2_Zone_10")
+    {
+	}
+
+	Attribute("R5_1_Zone_21")
+    {
+	}
+
+	Attribute("R5_2_Zone_22")
+    {
+	}
+
+	Attribute("R5_3_Zone_23")
+    {
+	}
+
+	Attribute("R5_4_Zone_24")
+    {
+	}
+
+	Attribute("R5_5_Zone_25")
+    {
+	}
+
+	Attribute("R5_6_Zone_26")
+    {
+	}
+
+	Attribute("R6_1_Zone_17")
+    {
+	}
+
+	Attribute("R6_2_Zone_18")
+    {
+	}
+
+	Attribute("R6_3_Zone_19")
+    {
+	}
+
+	Attribute("R6_4_Zone_20")
+    {
+	}
+
+	Attribute("Epilogue")
+    {
+	}
+
+//// END GAME /////
+
+	Attribute("R1_1_Zone_01_EndGame")
+    {
+	}
+
+	Attribute("R1_2_Zone_02_EndGame")
+    {
+	}
+
+	Attribute("R1_3_Zone_03_EndGame")
+    {
+	}
+
+	Attribute("R1_4_Zone_04_EndGame")
+    {
+	}
+
+	Attribute("R2_1_Zone_05_EndGame")
+    {
+	}
+
+	Attribute("R2_2_Zone_06_EndGame")
+    {
+	}
+
+	Attribute("R2_3_Zone_07_EndGame")
+    {
+	}
+
+	Attribute("R2_4_Zone_08_EndGame")
+    {
+	}
+
+	Attribute("R2_5_Zone_09_EndGame")
+    {
+	}
+
+	Attribute("R2_6_Zone_10_EndGame")
+    {
+	}
+
+	Attribute("R2_7_Zone_11_EndGame")
+    {
+	}
+
+	Attribute("R2_8_Zone_12_EndGame")
+    {
+	}
+
+	Attribute("R3_Flooded_1_EndGame")
+    {
+	}
+	
+	Attribute("R3_Flooded_2_EndGame")
+    {
+	}
+
+	Attribute("R3_Flooded_3_EndGame")
+    {
+	}
+
+	Attribute("R3_Zone_Renegades_EndGame")
+    {
+	}	
+
+	Attribute("R4_1_EndGame")
+    {
+	}
+
+//// END GAME /////
+//// FLOODED UNLOCKED /////
+
+	Attribute("R1_1_Zone_01_EndGame_Flooded")
+    {
+	}
+
+	Attribute("R1_2_Zone_02_EndGame_Flooded")
+    {
+	}
+
+	Attribute("R1_3_Zone_03_EndGame_Flooded")
+    {
+	}
+
+	Attribute("R1_4_Zone_04_EndGame_Flooded")
+    {
+	}
+
+	Attribute("R2_1_Zone_05_EndGame_Flooded")
+    {
+	}
+
+	Attribute("R2_2_Zone_06_EndGame_Flooded")
+    {
+	}
+
+	Attribute("R2_3_Zone_07_EndGame_Flooded")
+    {
+	}
+
+	Attribute("R2_4_Zone_08_EndGame_Flooded")
+    {
+	}
+
+	Attribute("R2_5_Zone_09_EndGame_Flooded")
+    {
+	}
+
+	Attribute("R2_6_Zone_10_EndGame_Flooded")
+    {
+	}
+
+	Attribute("R2_7_Zone_11_EndGame_Flooded")
+    {
+	}
+
+	Attribute("R2_8_Zone_12_EndGame_Flooded")
+    {
+	}
+
+	Attribute("R3_Zone_Renegades_EndGame_Flooded")
+    {
+	}
+
+	Attribute("R4_1_EndGame_Flooded")
+    {
+	}
+
+// TBD - needed for scripts logic, don't remove
+
+	Attribute("Empty")
+    {
+	}
+	Attribute("Block_1")
+    {
+	}
+	Attribute("Block_2")
+    {
+	}
+	Attribute("Block_3")
+    {
+	}
+	Attribute("Block_4")
+    {
+	}
+	Attribute("Block_5")
+    {
+	}
+
+////////////////////////////////////////////////////
+/////////////////              /////////////////////
+//                  CITY HUBS                     //
+/////////////////              /////////////////////
+////////////////////////////////////////////////////
+
+// (DEFAULT) EXAMPLE HUB-HOW-TO (TUTORIAL PURPOSE)
+
+	Attribute("Hub_Example")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+            RequiresPlayerInside();
+			BlockOtherAttributeAreas();
+            PresetOccurrences(HUB_EXAMPLE_BASE_AGENDA_MAN, "Plan_Hub_Base", 1);
+            PresetOccurrences(HUB_EXAMPLE_BASE_AGENDA_WOMAN, "Plan_Hub_Base", 1);
+			PresetOccurrences(HUB_EXAMPLE_GUARD_AGENDA_MAN, "Plan_Hub_Guard", 1);
+            PresetOccurrences(HUB_EXAMPLE_GUARD_AGENDA_WOMAN, "Plan_Hub_Guard", 1);
+			PresetOccurrences(HUB_EXAMPLE_WORKER_AGENDA_MAN, "Plan_Hub_Worker", 1);
+            PresetOccurrences(HUB_EXAMPLE_WORKER_AGENDA_WOMAN, "Plan_Hub_Worker", 1);
+			PresetOccurrences(HUB_EXAMPLE_WORKER_AGENDA_MAN, "Plan_Hub_Pedestrian", 1);
+            PresetOccurrences(HUB_EXAMPLE_WORKER_AGENDA_WOMAN, "Plan_Hub_Pedestrian", 1);
+        }
+    }
+
+// (SURV/SRV) Default Survivors presets and plans for HUBs
+
+	Attribute("HUB_Default_Survivors")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+            RequiresPlayerInside();
+			BlockOtherAttributeAreas();
+            PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, "Plan_Hub_Base", 2);
+            PresetOccurrences(HUB_SURV_BASE_AGENDA_WOMAN, "Plan_Hub_Base", 1);
+			PresetOccurrences(HUB_SURV_GUARD_AGENDA_MAN, "Plan_Hub_Guard", 1);
+            PresetOccurrences(HUB_SURV_GUARD_AGENDA_WOMAN, "Plan_Hub_Guard", 1);
+			PresetOccurrences(HUB_SURV_WORKER_AGENDA_MAN, "Plan_Hub_Worker", 3);
+            PresetOccurrences(HUB_SURV_WORKER_AGENDA_WOMAN, "Plan_Hub_Worker", 3);
+			PresetOccurrences(HUB_SURV_WORKER_AGENDA_MAN, "Plan_Hub_Pedestrian", 1);
+            PresetOccurrences(HUB_SURV_WORKER_AGENDA_WOMAN, "Plan_Hub_Pedestrian", 1);
+        }
+    }
+
+// (PK) Default Peacekeepers presets and plans for HUBs
+
+	Attribute("HUB_Default_PK")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+            RequiresPlayerInside();
+			BlockOtherAttributeAreas();
+            PresetOccurrences(HUB_PK_BASE_AGENDA_MAN, "Plan_Hub_Base", 2);
+            PresetOccurrences(HUB_PK_BASE_AGENDA_WOMAN, "Plan_Hub_Base", 2);
+			PresetOccurrences(HUB_PK_GUARD_AGENDA_MAN, "Plan_Hub_Guard", 1);
+            PresetOccurrences(HUB_PK_GUARD_AGENDA_WOMAN, "Plan_Hub_Guard", 1);
+			PresetOccurrences(HUB_PK_WORKER_AGENDA_MAN, "Plan_Hub_Worker", 2);
+            PresetOccurrences(HUB_PK_WORKER_AGENDA_WOMAN, "Plan_Hub_Worker", 2);
+			PresetOccurrences(HUB_PK_WORKER_AGENDA_MAN, "Plan_Hub_Pedestrian", 1);
+            PresetOccurrences(HUB_PK_WORKER_AGENDA_WOMAN, "Plan_Hub_Pedestrian", 1);
+        }
+    }
+
+// (SCAV/SCV) Default Scavengers presets and plans for HUBs
+
+	Attribute("HUB_Default_Scavengers")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+            RequiresPlayerInside();
+			BlockOtherAttributeAreas();
+            PresetOccurrences(HUB_SCAV_BASE_AGENDA_MAN, "Plan_Hub_Base", 1);
+            PresetOccurrences(HUB_SCAV_BASE_AGENDA_WOMAN, "Plan_Hub_Base", 1);
+			PresetOccurrences(HUB_SCAV_GUARD_AGENDA_MAN, "Plan_Hub_Guard", 2);
+            PresetOccurrences(HUB_SCAV_GUARD_AGENDA_WOMAN, "Plan_Hub_Guard", 2);
+			PresetOccurrences(HUB_SCAV_WORKER_AGENDA_MAN, "Plan_Hub_Worker", 2);
+            PresetOccurrences(HUB_SCAV_WORKER_AGENDA_WOMAN, "Plan_Hub_Worker", 2);
+			PresetOccurrences(HUB_SCAV_WORKER_AGENDA_MAN, "Plan_Hub_Pedestrian", 1);
+            PresetOccurrences(HUB_SCAV_WORKER_AGENDA_WOMAN, "Plan_Hub_Pedestrian", 1);
+        }
+    }
+
+	Attribute("Settlement_Factions")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+			PresetOccurrences(SETTLEMENT_FACT_BASE_AGENDA_MAN, "Plan_Hub_Base_Man", 5);
+			PresetOccurrences(SETTLEMENT_FACT_BASE_AGENDA_WOMAN, "Plan_Hub_Base_Woman", 5);
+			PresetOccurrences(SETTLEMENT_FACT_GUARD_AGENDA_MAN, "Plan_Hub_Guard_Man", 5);
+			PresetOccurrences(SETTLEMENT_FACT_GUARD_AGENDA_WOMAN, "Plan_Hub_Guard_Woman", 1);
+			PresetOccurrences(SETTLEMENT_FACT_WORKER_AGENDA_MAN, "Plan_Hub_Worker_Man", 3);
+			PresetOccurrences(SETTLEMENT_FACT_WORKER_AGENDA_WOMAN, "Plan_Hub_Worker_Woman", 3);
+			BlockOtherAttributeAreas();
+        }
+    }
+	Attribute("Settlement_Survivors")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+			PresetOccurrences(SETTLEMENT_SURV_BASE_AGENDA_MAN, "Plan_Hub_Base_Man", 7);
+			PresetOccurrences(SETTLEMENT_SURV_BASE_AGENDA_WOMAN, "Plan_Hub_Base_Woman", 7);
+			PresetOccurrences(SETTLEMENT_SURV_GUARD_AGENDA_MAN, "Plan_Hub_Guard_Man", 4);
+			PresetOccurrences(SETTLEMENT_SURV_GUARD_AGENDA_WOMAN, "Plan_Hub_Guard_Woman", 4);
+			PresetOccurrences(SETTLEMENT_SURV_WORKER_AGENDA_MAN, "Plan_Hub_Worker_Man", 3);
+			PresetOccurrences(SETTLEMENT_SURV_WORKER_AGENDA_WOMAN, "Plan_Hub_Worker_Woman", 3);
+			BlockOtherAttributeAreas();
+        }
+    }
+	
+	Attribute("Settlement_Factions_ES_R01")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+			RequiresPlayerInside();
+			PresetOccurrences(SETTLEMENT_FACT_BASE_AGENDA_MAN, "Plan_Hub_Base_Man", 1);
+			PresetOccurrences(SETTLEMENT_FACT_BASE_AGENDA_WOMAN, "Plan_Hub_Base_Woman", 1);
+			PresetOccurrences(SETTLEMENT_FACT_WORKER_AGENDA_MAN, "Plan_Hub_Worker_Man", 1);
+			PresetOccurrences(SETTLEMENT_FACT_BASE_AGENDA_WOMAN, "Plan_Hub_Worker_Woman", 1);
+			BlockOtherAttributeAreas();
+        }
+    }
+	Attribute("Settlement_Survivors_ES_R01")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+			RequiresPlayerInside();
+			PresetOccurrences(SETTLEMENT_SURV_WORKER_AGENDA_MAN, "Plan_Hub_Worker_Man", 3);
+			PresetOccurrences(SETTLEMENT_SURV_WORKER_AGENDA_WOMAN, "Plan_Hub_Worker_Woman", 2);
+			BlockOtherAttributeAreas();
+        }
+    }
+	Attribute("Settlement_Factions_ES_R02_North")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+			PresetOccurrences(SETTLEMENT_FACT_WORKER_AGENDA_MAN, "Plan_Hub_Base_Man", 4);
+			PresetOccurrences(SETTLEMENT_FACT_BASE_AGENDA_WOMAN, "Plan_Hub_Base_Woman", 3);
+			PresetOccurrences(SETTLEMENT_FACT_GUARD_AGENDA_MAN, "Plan_Hub_Guard_Man", 4);
+			BlockOtherAttributeAreas();
+        }
+    }
+	Attribute("Settlement_Survivors_ES_R02_North")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+			PresetOccurrences(SETTLEMENT_SURV_BASE_AGENDA_MAN, "Plan_Hub_Base_Man", 4);
+			PresetOccurrences(SETTLEMENT_SURV_BASE_AGENDA_WOMAN, "Plan_Hub_Base_Woman", 3);
+			BlockOtherAttributeAreas();
+        }
+    }
+	Attribute("Settlement_Factions_ES_R02_South")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+			PresetOccurrences(SETTLEMENT_FACT_BASE_AGENDA_MAN, "Plan_Hub_Base_Man", 4);
+			PresetOccurrences(SETTLEMENT_FACT_BASE_AGENDA_WOMAN, "Plan_Hub_Base_Woman", 3);
+			PresetOccurrences(SETTLEMENT_FACT_GUARD_AGENDA_MAN, "Plan_Hub_Guard_Man", 4);
+			BlockOtherAttributeAreas();
+        }
+    }
+	Attribute("Settlement_Survivors_ES_R02_South")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+			PresetOccurrences(SETTLEMENT_SURV_BASE_AGENDA_MAN, "Plan_Hub_Base_Man", 3);
+			PresetOccurrences(SETTLEMENT_SURV_BASE_AGENDA_WOMAN, "Plan_Hub_Base_Woman", 3);
+			BlockOtherAttributeAreas();
+        }
+    }
+	Attribute("Settlement_Factions_ES_R02_Cathedral")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+			PresetOccurrences(SETTLEMENT_FACT_BASE_AGENDA_MAN, "Plan_Hub_Base_Man", 4);
+			PresetOccurrences(SETTLEMENT_FACT_BASE_AGENDA_WOMAN, "Plan_Hub_Base_Woman", 3);
+			PresetOccurrences(SETTLEMENT_FACT_GUARD_AGENDA_MAN, "Plan_Hub_Guard_Man", 4);
+			BlockOtherAttributeAreas();
+        }
+    }
+	Attribute("Settlement_Survivors_ES_R02_Cathedral")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+			PresetOccurrences(SETTLEMENT_SURV_BASE_AGENDA_MAN, "Plan_Hub_Base_Man", 3);
+			PresetOccurrences(SETTLEMENT_SURV_BASE_AGENDA_WOMAN, "Plan_Hub_Base_Woman", 3);
+			BlockOtherAttributeAreas();
+        }
+    }
+	
+	Attribute("Settlement_Survivors_Windmill")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+			PresetOccurrences(SETTLEMENT_SURV_BASE_AGENDA_MAN, "Plan_Hub_Base_Man", 3);
+			PresetOccurrences(SETTLEMENT_SURV_BASE_AGENDA_WOMAN, "Plan_Hub_Base_Woman", 2);
+			PresetOccurrences(SETTLEMENT_SURV_BASE_AGENDA_MAN, "Plan_Hub_Base_Man_Lower", 1);
+			PresetOccurrences(SETTLEMENT_SURV_BASE_AGENDA_WOMAN, "Plan_Hub_Base_Woman_Lower", 1);
+			PresetOccurrences(SETTLEMENT_SURV_GUARD_AGENDA_MAN, "Plan_Hub_Guard_Man", 2);
+			PresetOccurrences(SETTLEMENT_SURV_WORKER_AGENDA_MAN, "Plan_Hub_Worker_Man", 2);
+			BlockOtherAttributeAreas();
+        }
+    }
+	
+	Attribute("Settlement_Factions_Windmill")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+			PresetOccurrences(SETTLEMENT_FACT_BASE_AGENDA_MAN, "Plan_Hub_Base_Man", 2);
+			PresetOccurrences(SETTLEMENT_FACT_BASE_AGENDA_WOMAN, "Plan_Hub_Base_Woman", 2);
+			PresetOccurrences(SETTLEMENT_FACT_GUARD_AGENDA_MAN, "Plan_Hub_Guard_Man", 3);
+			PresetOccurrences(SETTLEMENT_FACT_WORKER_AGENDA_MAN, "Plan_Hub_Worker_Man", 1);
+			BlockOtherAttributeAreas();
+        }
+    }
+	
+	Attribute("Settlement_Survivors_BC_Razors")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+			PresetOccurrences(SETTLEMENT_SURV_BASE_AGENDA_MAN, "Plan_BC_Razors_Bottom_Man", 3);
+			PresetOccurrences(SETTLEMENT_SURV_BASE_AGENDA_WOMAN, "Plan_BC_Razors_Bottom_Woman", 3);
+			PresetOccurrences(SETTLEMENT_SURV_BASE_AGENDA_MAN, "Plan_BC_Razors_Top_Man", 1);
+			PresetOccurrences(SETTLEMENT_SURV_BASE_AGENDA_WOMAN, "Plan_BC_Razors_Top_Woman", 1);
+			PresetOccurrences(SETTLEMENT_SURV_BASE_AGENDA_MAN, "Plan_BC_Razors_Worker_Man", 3);
+			PresetOccurrences(SETTLEMENT_SURV_BASE_AGENDA_WOMAN, "Plan_BC_Razors_Worker_Woman", 3);
+			BlockOtherAttributeAreas();
+        }
+    }
+	
+	Attribute("Settlement_Factions_BC_Razors")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+			PresetOccurrences(SETTLEMENT_FACT_WORKER_AGENDA_MAN, "Plan_BC_Razors_Bottom_Man", 4);
+			PresetOccurrences(SETTLEMENT_FACT_BASE_AGENDA_WOMAN, "Plan_BC_Razors_Bottom_Woman", 4);
+			PresetOccurrences(SETTLEMENT_FACT_BASE_AGENDA_MAN, "Plan_BC_Razors_Top_Man", 1);
+			PresetOccurrences(SETTLEMENT_FACT_BASE_AGENDA_WOMAN, "Plan_BC_Razors_Top_Woman", 1);
+			PresetOccurrences(SETTLEMENT_FACT_GUARD_AGENDA_MAN, "Plan_BC_Razors_Top_Guard_Man", 2);
+			PresetOccurrences(SETTLEMENT_FACT_GUARD_AGENDA_WOMAN, "Plan_BC_Razors_Top_Guard_Woman", 2);
+			BlockOtherAttributeAreas();
+        }
+    }
+	Attribute("Settlement_Survivors_BC_chemical")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+			PresetOccurrences(SETTLEMENT_SURV_BASE_AGENDA_MAN, "Plan_Hub_Base_Man", 3);
+			PresetOccurrences(SETTLEMENT_SURV_BASE_AGENDA_WOMAN, "Plan_Hub_Base_Woman", 1);
+			BlockOtherAttributeAreas();
+        }
+    }
+	
+		Attribute("Settlement_WT_R01_Factions")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);            
+			PresetOccurrences(HUB_PK_WORKER_AGENDA_MAN, "Plan_hub_walker_male_1", 4);
+			PresetOccurrences(HUB_PK_WORKER_AGENDA_WOMAN, "Plan_hub_walker_female_1", 3);
+        }
+    }
+	
+	Attribute("Hub_exterior_Factions")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+			PresetOccurrences(SETTLEMENT_FACT_WORKER_AGENDA_MAN, "Plan_Hub_Worker", 3);
+			PresetOccurrences(SETTLEMENT_FACT_WORKER_AGENDA_MAN, "Plan_Hub_Worker_Man", 3);
+            PresetOccurrences(SETTLEMENT_FACT_WORKER_AGENDA_WOMAN, "Plan_Hub_Worker", 3);
+			PresetOccurrences(SETTLEMENT_FACT_WORKER_AGENDA_WOMAN, "Plan_Hub_Worker_Woman", 3);
+			BlockOtherAttributeAreas();
+        }
+    }
+	
+
+
+
+
+
+////////////////////////////////////////////////////
+/////////////////              /////////////////////
+//                  REGION 01                     //
+/////////////////              /////////////////////
+////////////////////////////////////////////////////
+
+	  Attribute("HUB_Bazar")
+    {
+        OccurrencesBased()
+        {
+            
+            TimeOfDayCondition(0.0, 24.0);
+			RequiresPlayerInside();
+            PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, "Plan_hub_background_male_1",1);
+            PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN_GROUP_2, "Plan_hub_background_male_2", 1);
+            PresetOccurrences(HUB_SURV_BASE_AGENDA_WOMAN, "Plan_hub_background_female_1", 2);
+            PresetOccurrences(HUB_SURV_BASE_AGENDA_WOMAN_GROUP_2, "Plan_hub_background_female_2", 2);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_KID, "Plan_hub_background_kid_1", 1);
+
+        }
+    }	
+	
+	Attribute("Hub_exterior_Survivors")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+			PresetOccurrences(SETTLEMENT_SURV_WORKER_AGENDA_MAN, "Plan_Hub_Worker_Man1", 3);
+			PresetOccurrences(SETTLEMENT_SURV_WORKER_AGENDA_MAN, "Plan_Hub_Worker_Man2", 3);
+            PresetOccurrences(SETTLEMENT_SURV_WORKER_AGENDA_WOMAN, "Plan_Hub_Worker_Woman1", 3);
+			PresetOccurrences(SETTLEMENT_SURV_WORKER_AGENDA_WOMAN, "Plan_Hub_Worker_Woman2", 3);
+			BlockOtherAttributeAreas();
+        }
+    }
+	
+	Attribute("Hub_Church")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+            PresetOccurrences(HUB_BZR_BASE_AGENDA_MAN, "Plan_Hub_Base_Man", 20);
+            PresetOccurrences(HUB_BZR_BASE_AGENDA_WOMAN, "Plan_Hub_Base_Woman", 1);
+			PresetOccurrences(HUB_BZR_GUARD_AGENDA_MAN, "Plan_Hub_Guard", 4);
+            PresetOccurrences(HUB_BZR_GUARD_AGENDA_WOMAN, "Plan_Hub_Guard", 1);
+			PresetOccurrences(HUB_BZR_WORKER_AGENDA_MAN, "Plan_Hub_Worker", 1);
+            PresetOccurrences(HUB_BZR_WORKER_AGENDA_WOMAN, "Plan_Hub_Worker", 1);
+			PresetOccurrences(HUB_BZR_WORKER_AGENDA_MAN, "Plan_Hub_Pedestrian", 2);
+            PresetOccurrences(HUB_BZR_WORKER_AGENDA_WOMAN, "Plan_Hub_Pedestrian", 1);
+            RequiresPlayerInside();
+			BlockOtherAttributeAreas();
+        }
+    }
+
+	Attribute("HUB_R01_Metro_Station_Outside")
+    {
+		OccurrencesBased()
+        {
+            //SpawnOnlyOnAreaActivation();
+            TimeOfDayCondition(0.0, 24.0);
+            
+			PresetOccurrences(HUB_PK_WORKER_AGENDA_MAN, "Plan_Hub_Worker_Man", 5);
+            PresetOccurrences(HUB_PK_WORKER_AGENDA_WOMAN, "Plan_Hub_Worker_Woman", 2);
+			
+        }
+			
+    }
+	
+	Attribute("HUB_R01_Metro_Station_Inside")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(8.0, 19.30);
+			SpawnOnlyOnAreaActivation();
+			/* Ground */		
+			PresetOccurrences(HUB_PK_GUARD_AGENDA_MAN, "Plan_hub_background_male_guard_ground_1", 1);
+			PresetOccurrences(HUB_PK_WORKER_AGENDA_MAN, "Plan_hub_walker_male_ground_1", 1);
+			
+			/* Underground */
+			PresetOccurrences(HUB_PK_WORKER_AGENDA_MAN, "Plan_hub_walker_male_underground_1", 1);
+            PresetOccurrences(HUB_PK_WORKER_AGENDA_WOMAN, "Plan_hub_walker_female_underground_1", 1);
+        }
+				OccurrencesBased()
+        {
+            TimeOfDayCondition(19.30, 8.0);
+			SpawnOnlyOnAreaActivation();
+			/* Ground */		
+            PresetOccurrences(HUB_PK_GUARD_AGENDA_MAN, "Plan_hub_walker_male_ground_1", 3);
+            PresetOccurrences(HUB_PK_GUARD_AGENDA_WOMAN, "Plan_hub_walker_female_ground_1", 2);
+			PresetOccurrences(HUB_PK_SHIP_GUARD_SPEAR_AGENDA_MAN, "Plan_hub_ship_matts_guard_spear", 3);
+			PresetOccurrences(HUB_PK_SHIP_GUARD_1H_AGENDA_MAN, "Plan_hub_ship_matts_guard_1h", 1);
+			/* Underground */
+			PresetOccurrences(HUB_PK_GUARD_AGENDA_MAN, "Plan_hub_background_male_guard_underground_1", 1);
+            PresetOccurrences(HUB_PK_GUARD_AGENDA_WOMAN, "Plan_hub_background_female_underground_1", 1);			
+			PresetOccurrences(HUB_PK_WORKER_AGENDA_MAN, "Plan_hub_background_male_underground_1", 4);
+            PresetOccurrences(HUB_PK_WORKER_AGENDA_WOMAN, "Plan_hub_walker_female_underground_1", 2);
+        }
+	
+	
+    }
+
+////////////////////////////////////////////////////
+/////////////////              /////////////////////
+//                  REGION 02                     //
+/////////////////              /////////////////////
+////////////////////////////////////////////////////
+
+	Attribute("HUB_R02_Scavengers_Island")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+            RequiresPlayerInside();
+			BlockOtherAttributeAreas();
+            PresetOccurrences(HUB_SCAV_BASE_AGENDA_MAN, "Plan_Hub_Base", 1);
+            PresetOccurrences(HUB_SCAV_BASE_AGENDA_WOMAN, "Plan_Hub_Base", 1);
+			PresetOccurrences(HUB_SCAV_GUARD_AGENDA_MAN, "Plan_Hub_Guard", 1);
+            PresetOccurrences(HUB_SCAV_GUARD_AGENDA_WOMAN, "Plan_Hub_Guard", 1);
+			PresetOccurrences(HUB_SCAV_WORKER_AGENDA_MAN, "Plan_Hub_Worker", 1);
+            PresetOccurrences(HUB_SCAV_WORKER_AGENDA_WOMAN, "Plan_Hub_Worker", 1);
+			PresetOccurrences(HUB_SCAV_WORKER_AGENDA_MAN, "Plan_Hub_Pedestrian", 1);
+            PresetOccurrences(HUB_SCAV_WORKER_AGENDA_WOMAN, "Plan_Hub_Pedestrian", 1);
+        }
+    }
+
+												//	HUB Canteen	 //
+												    // Init //
+
+	Attribute("HUB_R02_Canteen_Outside_init")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(8.0, 19.30);
+
+												  //Universal//
+			
+			PresetOccurrences(CANTEEN_HUB_SINGLE_MAN_AGENDA, 	"Plan_hub_background_male_drunk_day_1", 2);
+			PresetOccurrences(CANTEEN_HUB_GROUP_PK_2M, 	"Plan_hub_background_male_PK_2", 1);
+
+													//Lower//
+			
+            PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_walker_male_lower_1", 1);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN_1H , "Plan_hub_walker_male_lower_1_1h", 2);				
+			PresetOccurrences(CANTEEN_HUB_SINGLE_MAN_AGENDA, 	"Plan_hub_background_male_lower_1", 1);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN_1H , "Plan_hub_background_male_lower_1_1h", 2);
+			PresetOccurrences(CANTEEN_HUB_SINGLE_WMN_AGENDA, 	"Plan_hub_background_female_lower_1", 2);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_KID, 	"Plan_hub_background_kid_lower_1", 1);
+			
+													//Higher//
+			
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN_1H, 	"Plan_hub_walker_male_higher_1", 1);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_background_male_higher_1", 1);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN_1H, 	"Plan_hub_background_male_higher_1_1h", 2);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_pedestrian_male_higher_1", 1);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_KID, 	"Plan_hub_background_kid_higher_1", 1);
+			
+													//Dialogues//
+			PresetOccurrences(CANTEEN_HUB_GROUPWW_AGENDA, "Plan_Hub_Canteen_GroupWW", 1);
+			PresetOccurrences(CANTEEN_HUB_GROUPMM_AGENDA, "Plan_Hub_Canteen_GroupMM", 1);
+													
+        }
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(19.30, 8.0);
+			
+												  //Universal//
+			
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_background_male_drunk_night_1", 4);
+			PresetOccurrences(CANTEEN_HUB_GROUP_PK_2M, 	"Plan_hub_background_male_PK_2", 1);
+			
+													//Lower//
+			
+            PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_walker_male_lower_1", 1);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN_1H , "Plan_hub_walker_male_lower_1_1h", 2);				
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_background_male_lower_1", 1);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN_1H , "Plan_hub_background_male_lower_1_1h", 3);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_pedestrian_male_lower_1", 1);
+			PresetOccurrences(CANTEEN_HUB_SINGLE_WMN_AGENDA, 	"Plan_hub_background_female_lower_1", 1);
+			
+													//Higher//
+			
+			//PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_walker_male_higher_1", 1);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_background_male_higher_1", 2);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN_1H, 	"Plan_hub_background_male_higher_1_1h", 2);
+			//PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_pedestrian_male_higher_1", 1);
+			
+													//Dialogues//
+			PresetOccurrences(CANTEEN_HUB_GROUPWW_AGENDA, "Plan_Hub_Canteen_GroupWW", 1);
+			PresetOccurrences(CANTEEN_HUB_GROUPMM_AGENDA, "Plan_Hub_Canteen_GroupMM", 1);
+													
+        }
+		
+    }
+	
+	
+	Attribute("HUB_R02_Canteen_Bar_init")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+            PresetOccurrences(CANTEEN_HUB_SINGLE_MAN_AGENDA, "Plan_hub_background_male_1", 2);
+            PresetOccurrences(CANTEEN_HUB_SINGLE_WMN_AGENDA, "Plan_hub_background_female_1", 3);
+			PresetOccurrences(CANTEEN_HUB_GROUPMW_AGENDA, "Plan_Hub_Canteen_GroupMW", 1);
+			PresetOccurrences(HUB_PK_TAVERN_AGENDA_MAN_GROUP_3M_1W, "Plan_hub_background_tavern_3m1f", 1);
+			PresetOccurrences(CANTEEN_HUB_GROUPMM_AGENDA, "Plan_hub_background_male_2", 1);
+			PresetOccurrences(CANTEEN_HUB_GROUP_PK_2M, 	"Plan_hub_background_male_PK_2", 1);
+		}
+    }
+	
+		Attribute("HUB_R02_Canteen_Outside_Combat")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+			RequiresPlayerInside();
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"HubBackgroundMale_Lower_1", 2);
+        }
+    }
+	
+	Attribute("HUB_R02_Canteen_Outside_After_Combat")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+            PresetOccurrences(CANTEEN_HUB_SINGLE_WMN_AGENDA, "Plan_hub_background_female_1", 1);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN_BARK_A, "Plan_hub_background_male_1", 1);
+			PresetOccurrences(CANTEEN_HUB_GROUPMW_AGENDA, "Plan_Hub_Canteen_GroupMW", 1);
+			PresetOccurrences(HUB_PK_SHIP_GUARD_1H_AGENDA_MAN, "Plan_hub_ship_matts_guard_1h", 1);
+			PresetOccurrences(HUB_PK_SHIP_GUARD_1H_AGENDA_MAN_BARK_A_B, "Plan_hub_ship_matts_guard_1h", 3);
+        }
+    }
+
+												//	Normal //
+				
+		Attribute("HUB_R02_Canteen_Outside_normal")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(8.0, 19.30);
+ 
+												  //Universal//
+			
+			//PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_background_male_drunk_1", 2);
+			PresetOccurrences(CANTEEN_HUB_GROUP_PK_2M, 	"Plan_hub_background_male_PK_2", 1);
+													//Lower//
+			
+            PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_walker_male_lower_1", 1);
+			PresetOccurrences(CANTEEN_HUB_SINGLE_WMN_AGENDA, 	"Plan_hub_walker_female_lower_1", 2);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_background_male_lower_1", 1);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_background_male_lower_day_1", 2);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN_1H , "Plan_hub_background_male_lower_1_1h", 1);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_pedestrian_male_lower_1", 1);
+			PresetOccurrences(CANTEEN_HUB_SINGLE_WMN_AGENDA, 	"Plan_hub_background_female_lower_1", 1);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_KID, 	"Plan_hub_background_kid_lower_1", 1);
+			
+													//Higher//
+			
+			//PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_walker_male_higher_1", 1);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_background_male_higher_1", 2);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN_1H, 	"Plan_hub_background_male_higher_1_1h", 1);
+			PresetOccurrences(CANTEEN_HUB_GROUPMM_AGENDA, "Plan_hub_background_male_2", 1);
+			//PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_pedestrian_male_higher_1", 1);
+			PresetOccurrences(CANTEEN_HUB_SINGLE_WMN_AGENDA, 	"Plan_hub_background_female_higher_1", 1);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_KID, 	"Plan_hub_background_kid_higher_1", 1);
+			
+													//Custom//	
+													
+			PresetOccurrences(CANTEEN_HUB_GROUP_3M1F, "Plan_hub_background_tavern_3m1f", 1);										
+			PresetOccurrences(CANTEEN_HUB_SINGLE_MAN_AGENDA, 	"HUB_Worker_DN", 1);
+			PresetOccurrences(CANTEEN_HUB_GROUPMW_AGENDA, "Plan_Hub_Canteen_GroupMW", 1);
+        }
+				OccurrencesBased()
+        {
+            TimeOfDayCondition(19.30, 8.0);
+
+												  //Universal//
+			
+			//PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_background_male_drunk_1", 2);
+			PresetOccurrences(CANTEEN_HUB_GROUP_PK_2M, 	"Plan_hub_background_male_PK_2", 2);
+			
+													//Lower//
+			
+            //PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_walker_male_lower_1", 1);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_background_male_lower_1", 3);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_background_male_lower_night_1", 3);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN_1H , "Plan_hub_background_male_lower_1_1h", 1);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_pedestrian_male_lower_1", 1);
+			PresetOccurrences(CANTEEN_HUB_SINGLE_WMN_AGENDA, 	"Plan_hub_background_female_lower_1", 3);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_KID, 	"Plan_hub_background_kid_lower_1", 1);
+			
+													//Higher//
+			
+			//PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_walker_male_higher_1", 1);
+			PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_background_male_higher_1", 2);
+			//PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN_1H, 	"Plan_hub_background_male_higher_1_1h", 2);
+			PresetOccurrences(CANTEEN_HUB_GROUPMM_AGENDA, "Plan_hub_background_male_2", 1);
+			//PresetOccurrences(HUB_SURV_BASE_AGENDA_MAN, 	"Plan_hub_pedestrian_male_higher_1", 1);
+			PresetOccurrences(CANTEEN_HUB_SINGLE_WMN_AGENDA, 	"Plan_hub_background_female_higher_1", 1);
+			//PresetOccurrences(HUB_SURV_BASE_AGENDA_KID, 	"Plan_hub_background_kid_higher_1", 3);
+			
+													//Custom//	
+													
+			PresetOccurrences(CANTEEN_HUB_GROUP_3M1F, "Plan_hub_background_tavern_3m1f", 1);										
+			PresetOccurrences(CANTEEN_HUB_SINGLE_MAN_AGENDA, 	"HUB_Worker_DN", 1);
+			PresetOccurrences(CANTEEN_HUB_GROUPMW_AGENDA, "Plan_Hub_Canteen_GroupMW", 1);
+        }
+    }
+
+	Attribute("HUB_R02_Canteen_Bar_normal")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+
+
+            PresetOccurrences(CANTEEN_HUB_SINGLE_MAN_AGENDA, "Plan_hub_background_male_1", 3);
+			//PresetOccurrences(CANTEEN_HUB_SINGLE_MAN_AGENDA, "Plan_hub_walker_male_1", 1);
+            PresetOccurrences(CANTEEN_HUB_SINGLE_WMN_AGENDA, "Plan_hub_background_female_1", 3);
+			PresetOccurrences(HUB_SCAV_BASE_AGENDA_MAN_GROUP_3, "Plan_hub_background_male_3", 1);
+			PresetOccurrences(CANTEEN_HUB_GROUPMM_AGENDA, "Plan_Hub_Canteen_GroupMM", 1);
+			PresetOccurrences(CANTEEN_HUB_GROUPWW_AGENDA, "Plan_Hub_Canteen_GroupWW", 1);
+			PresetOccurrences(CANTEEN_HUB_GROUPMW_AGENDA, "Plan_Hub_Canteen_GroupMW", 1);
+			 
+        }
+    }	
+	
+												//	Party //
+	
+	Attribute("HUB_R02_Canteen_Outside_party")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+
+			PresetOccurrences(CANTEEN_HUB_SINGLE_MAN_AGENDA, 	"Plan_hub_background_male_lower_1", 10);
+			PresetOccurrences(CANTEEN_HUB_SINGLE_WMN_AGENDA, 	"Plan_hub_background_female_lower_1", 3);
+        }
+    }
+
+	Attribute("HUB_R02_Canteen_Bar_party")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+            PresetOccurrences(CANTEEN_HUB_SINGLE_MAN_AGENDA, "Plan_hub_background_male_1", 3);
+			//PresetOccurrences(CANTEEN_HUB_SINGLE_MAN_AGENDA, "Plan_hub_walker_male_1", 2);
+            PresetOccurrences(CANTEEN_HUB_SINGLE_WMN_AGENDA, "Plan_hub_background_female_1", 2);
+			PresetOccurrences(HUB_SCAV_BASE_AGENDA_MAN_GROUP_3, "Plan_hub_background_male_3", 1);
+			PresetOccurrences(CANTEEN_HUB_GROUPMM_AGENDA, "Plan_Hub_Canteen_GroupMM", 2);
+			PresetOccurrences(CANTEEN_HUB_GROUPWW_AGENDA, "Plan_Hub_Canteen_GroupWW", 1);
+			PresetOccurrences(CANTEEN_HUB_GROUPMW_AGENDA, "Plan_Hub_Canteen_GroupMW", 1);
+
+        }
+    }	
+	
+												//	Hospital //
+	
+	Attribute("HUB_R02_Canteen_Outside_hospital")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+			PresetOccurrences(CANTEEN_HUB_SINGLE_MAN_AGENDA, "Plan_hub_background_male_lower_1", 3);
+            PresetOccurrences(CANTEEN_HUB_SINGLE_MAN_AGENDA, "Plan_Hub_Canteen_Man", 0);
+            PresetOccurrences(CANTEEN_HUB_SINGLE_WMN_AGENDA, "Plan_Hub_Canteen_Woman", 0);
+			PresetOccurrences(CANTEEN_HUB_GROUPMM_AGENDA, "Plan_Hub_Canteen_GroupMM", 0);
+            PresetOccurrences(CANTEEN_HUB_GROUPWW_AGENDA, "Plan_Hub_Canteen_GroupWW", 0);
+			PresetOccurrences(CANTEEN_HUB_GROUPMW_AGENDA, "Plan_Hub_Canteen_GroupMW", 0);
+        }
+    }
+
+	Attribute("HUB_R02_Canteen_Bar_hospital")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+            RequiresPlayerInside();
+            PresetOccurrences(CANTEEN_HUB_SINGLE_WOUNDED_MAN_AGENDA, "Plan_hub_background_male_1", 8);
+			PresetOccurrences(CANTEEN_HUB_SINGLE_MAN_AGENDA, "Plan_hub_walker_male_1", 1);
+        }
+    }
+	
+	Attribute("Postman_HQ")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+			BlockOtherAttributeAreas();
+            PresetOccurrences(POSTMAN_HQ_MAN_AGENDA, "Plan_Hub_Base_Man", 4);
+			PresetOccurrences(POSTMAN_HQ_WOMAN_AGENDA, "Plan_Hub_Base_Woman", 2);
+        }
+    }
+		
+	
+	
+////////////////////////////////////////////////////
+/////////////////              /////////////////////
+//                  REGION 05                     //
+/////////////////              /////////////////////
+////////////////////////////////////////////////////
+
+	
+	///////HUB SHIP//////
+	
+	Attribute("HUB_R02_Ship_Main_Entrance")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+            RequiresPlayerInside();			
+            PresetOccurrences(HUB_PK_GUARD_AGENDA_MAN, "Plan_hub_background_male_guard_1", 1);
+			PresetOccurrences(HUB_PK_GUARD_AGENDA_WOMAN, "Plan_hub_background_female_guard_1", 1);
+        }
+    }
+	
+	Attribute("HUB_R02_Ship_Extra_Entrance")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+            RequiresPlayerInside();			
+            PresetOccurrences(HUB_PK_GUARD_AGENDA_MAN, "Plan_hub_background_male_guard_1", 1);
+			PresetOccurrences(HUB_PK_GUARD_AGENDA_WOMAN, "Plan_hub_background_female_guard_1", 1);
+           
+        }
+    }
+	
+	Attribute("HUB_R02_Ship_PK_main")
+    {
+		OccurrencesBased()
+        {	
+			SpawnOnlyOnAreaActivation();
+            TimeOfDayCondition(8.0, 19.0);
+            RequiresPlayerInside();			
+            PresetOccurrences(HUB_PK_WORKER_AGENDA_MAN, "Plan_hub_background_male_1", 1);
+			PresetOccurrences(HUB_PK_WORKER_AGENDA_WOMAN, "Plan_hub_background_female_1", 1);
+			PresetOccurrences(HUB_PK_WORKER_AGENDA_MAN, "Plan_hub_ship_common_walker_male_A", 1);
+			PresetOccurrences(HUB_PK_WORKER_AGENDA_MAN, "Plan_hub_ship_common_walker_male_B", 1);
+			PresetOccurrences(HUB_PK_WORKER_AGENDA_MAN, "Plan_hub_ship_common_walker_male_B_customer", 1);
+			PresetOccurrences(HUB_PK_WORKER_AGENDA_WOMAN, "Plan_hub_ship_common_walker_female_B_customer", 1);
+			PresetOccurrences(HUB_PK_WORKER_AGENDA_MAN, "Plan_hub_ship_canteen_staff_male", 1);
+			PresetOccurrences(HUB_PK_WORKER_AGENDA_WOMAN, "Plan_hub_ship_canteen_staff_female", 1);
+			PresetOccurrences(HUB_PK_GUARD_AGENDA_MAN_GROUP_2, "Plan_hub_background_guard_2m", 1);
+		}
+    }
+	
+	Attribute("HUB_R02_Ship_PK_main_first_entrance")
+    {
+		OccurrencesBased()
+        {	
+			SpawnOnlyOnAreaActivation();
+            TimeOfDayCondition(8.0, 19.0);
+            RequiresPlayerInside();			
+			PresetOccurrences(HUB_PK_WORKER_AGENDA_MAN, "Plan_hub_ship_common_walker_male_A", 1);
+			PresetOccurrences(HUB_PK_WORKER_AGENDA_MAN, "Plan_hub_ship_common_walker_male_B", 1);
+			PresetOccurrences(HUB_PK_WORKER_AGENDA_MAN, "Plan_hub_ship_canteen_staff_male", 1);
+			PresetOccurrences(HUB_PK_WORKER_AGENDA_WOMAN, "Plan_hub_ship_canteen_staff_female", 1);
+			PresetOccurrences(HUB_PK_GUARD_AGENDA_MAN_GROUP_2, "Plan_hub_background_guard_2m", 1);
+		}
+    }
+	
+	Attribute("HUB_R02_Ship_PK_main_hospital")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+            RequiresPlayedrInside();			
+			PresetOccurrences(HUB_PK_SHIP_BASIC_AGENDA_MAN, "Plan_hub_ship_hospital_patient_male", 2);
+			PresetOccurrences(HUB_PK_SHIP_BASIC_AGENDA_WOMAN, "Plan_hub_ship_hospital_patient_female", 2);
+        }
+    }
+	
+	
+	Attribute("HUB_R02_Ship_PK_main_Matts")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+            RequiresPlayerInside();			
+            PresetOccurrences(HUB_PK_SHIP_GUARD_1H_AGENDA_MAN, "Plan_hub_ship_matts_guard_1h", 1);
+			PresetOccurrences(HUB_PK_SHIP_GUARD_SPEAR_AGENDA_MAN, "Plan_hub_ship_matts_guard_spear", 1);
+
+        }
+    }
+	
+	Attribute("HUB_R02_Ship_PK_main_bedroom_officers")
+    {
+    }
+	
+	Attribute("HUB_R02_Ship_PK_main_bedroom_top")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(19.0, 8.0);
+			SpawnOnlyOnAreaActivation();
+            RequiresPlayerInside();			
+            PresetOccurrences(HUB_PK_SHIP_BASIC_AGENDA_MAN, "Plan_hub_background_male_1", 12);
+			PresetOccurrences(HUB_PK_SHIP_BASIC_AGENDA_WOMAN, "Plan_hub_background_female_1", 0);
+        }
+    }
+	
+	Attribute("HUB_R02_Ship_Workers_bedrooms")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(20.0, 8.0);
+            RequiresPlayerInside();			
+			SpawnOnlyOnAreaActivation();
+            PresetOccurrences(HUB_PK_SHIP_WORKER_AGENDA_MAN, "Plan_hub_ship_workers_background_male_C", 6);
+			PresetOccurrences(HUB_PK_SHIP_WORKER_AGENDA_WOMAN, "Plan_hub_ship_workers_background_female_C", 4);
+						
+        }
+    }
+	Attribute("HUB_R02_Ship_Workers_main")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(8.0, 20.0);
+            RequiresPlayerInside();		
+			SpawnOnlyOnAreaActivation();			
+			PresetOccurrences(HUB_PK_WORKER_AGENDA_WOMAN_GROUP_2, "Plan_hub_background_female_2", 1);
+			PresetOccurrences(HUB_PK_GUARD_AGENDA_WOMAN_GROUP_2, "Plan_hub_background_guard_2f", 1);
+			PresetOccurrences(HUB_PK_WORKER_AGENDA_MAN_GROUP_2, "Plan_hub_background_male_2", 1);
+            PresetOccurrences(HUB_PK_SHIP_WORKER_AGENDA_MAN, "Plan_hub_ship_workers_background_male_B", 1);
+			PresetOccurrences(HUB_PK_SHIP_WORKER_AGENDA_WOMAN, "Plan_hub_ship_workers_background_female_B", 2);			
+			PresetOccurrences(HUB_PK_SHIP_WORKER_AGENDA_MAN, "Plan_hub_ship_workers_walker_male_B", 1);
+			PresetOccurrences(HUB_PK_SHIP_WORKER_AGENDA_MAN, "Plan_hub_ship_workers_walker_male_C", 1);
+        }
+    }
+	
+	Attribute("HUB_R02_Ship_Workers_workshops")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(8.0, 20.0);
+            RequiresPlayerInside();
+			SpawnOnlyOnAreaActivation();
+			PresetOccurrences(HUB_PK_SHIP_WORKER_AGENDA_MAN, "Plan_hub_ship_workers_walker_male_A", 1);
+			PresetOccurrences(HUB_PK_SHIP_WORKER_AGENDA_WOMAN, "Plan_hub_ship_workers_background_female_A", 1);	
+			PresetOccurrences(HUB_PK_SHIP_WORKER_AGENDA_MAN, "Plan_hub_ship_workers_background_male_A", 5);
+			PresetOccurrences(HUB_PK_WORKER_AGENDA_WOMAN_GROUP_2, "Plan_hub_ship_workers_background_female_2A", 1);
+			PresetOccurrences(HUB_PK_WORKER_AGENDA_MAN_GROUP_2, "Plan_hub_ship_workers_background_male_2A", 1);			
+        }
+    }
+	
+	
+	////////////////////////
+	
+	
+	Attribute("Triumphal_Arch_AIlife")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+            RequiresPlayerInside();
+			BlockOtherAttributeAreas();
+            PresetOccurrences(ARCH_HUB_SINGLE_MAN_AGENDA, "Plan_hub_background_male_1", 3);
+            PresetOccurrences(ARCH_HUB_SINGLE_WMN_AGENDA, "Plan_hub_background_female_1", 3);
+			PresetOccurrences(ARCH_HUB_GROUPMM_AGENDA, "Plan_hub_background_male_2", 2);
+            PresetOccurrences(ARCH_HUB_GROUPWW_AGENDA, "Plan_hub_background_female_2", 2);
+			PresetOccurrences(ARCH_HUB_SINGLE_MAN_AGENDA, "Plan_hub_walker_male_1", 3);
+            PresetOccurrences(ARCH_HUB_SINGLE_WMN_AGENDA, "Plan_hub_walker_female_1", 3);
+        }
+    }
+
+//////////////////// PROLOGUE DO NOT DELETE //////////////////
+
+    Attribute("PR_HUB_Harbor")
+    {
+        OccurrencesBased()
+        {
+            RequiresPlayerInside();
+            TimeOfDayCondition(0.0, 24.0);
+            PresetOccurrences(PR_HUB_CIVILIAN_WALKER_AGENDA, "PR_HUB_Walker_A", 5);
+            PresetOccurrences(PR_HUB_CIVILIAN_WALKER_AGENDA, "PR_HUB_Pedestrian", 2);
+			PresetOccurrences(PR_HUB_CIVILIAN_WALKER_GROUP_3_AGENDA, "PR_HUB_Background_Group_3", 1);
+			PresetOccurrences(PR_HUB_CIVILIAN_WALKER_GROUP_2_AGENDA, "PR_HUB_Background_Group_2", 1);
+        }
+    }
+
+	Attribute("PR_HUB_Cantine")
+    {
+        OccurrencesBased()
+        {
+            RequiresPlayerInside();
+            TimeOfDayCondition(0.0, 24.0);
+            PresetOccurrences(PR_HUB_CIVILIAN_WALKER_MAN_GROUP_2_AGENDA, "PR_HUB_Background_Man_Group_2_Canteen", 1);
+			PresetOccurrences(PR_HUB_CIVILIAN_WALKER_WOMAN_GROUP_2_AGENDA, "PR_HUB_Background_Woman_Group_2_Canteen", 1);
+			PresetOccurrences(PR_HUB_CIVILIAN_WALKER_MAN_GROUP_3_AGENDA, "PR_HUB_Background_Man_Group_3_Canteen", 1);
+			PresetOccurrences(PR_HUB_CIVILIAN_WALKER_WOMAN_GROUP_3_AGENDA, "PR_HUB_Background_Woman_Group_3_Canteen", 1);
+        }
+    }
+
+	Attribute("PR_HUB_Whole")
+    {
+        OccurrencesBased()
+        {
+            RequiresPlayerInside();
+            TimeOfDayCondition(0.0, 24.0);
+            PresetOccurrences(PR_HUB_CIVILIAN_WALKER_AGENDA, "PR_HUB_Walker", 8);
+            PresetOccurrences(PR_HUB_CIVILIAN_WALKER_AGENDA, "PR_HUB_Pedestrian", 3);
+			PresetOccurrences(PR_HUB_CIVILIAN_WALKER_GROUP_3_AGENDA, "PR_HUB_Background_Group_3", 3);
+			PresetOccurrences(PR_HUB_CIVILIAN_WALKER_GROUP_2_AGENDA, "PR_HUB_Background_Group_2", 2);
+        }
+    }
+
+	Attribute("PR_HUB_Houses")
+    {
+        OccurrencesBased()
+        {
+            RequiresPlayerInside();
+            TimeOfDayCondition(0.0, 24.0);
+            PresetOccurrences(PR_HUB_CIVILIAN_WALKER_AGENDA, "PR_HUB_Walker_A", 5);
+            PresetOccurrences(PR_HUB_CIVILIAN_WALKER_AGENDA, "PR_HUB_Pedestrian", 2);
+			PresetOccurrences(PR_HUB_CIVILIAN_WALKER_GROUP_3_AGENDA, "PR_HUB_Background_Group_3", 1);
+			PresetOccurrences(PR_HUB_CIVILIAN_WALKER_GROUP_2_AGENDA, "PR_HUB_Background_Group_2", 1);
+        }
+    }
+
+////////////////////////////////////////////////////
+/////////////////              /////////////////////
+//                  STORY C&C                     //
+/////////////////              /////////////////////
+////////////////////////////////////////////////////
+
+	Attribute("City_Revolution")
+	{
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(BANDITS_AGENDA_R1, "Plan_Bandits", 100);
+			PresetToSpawnAmount(10);
+		}
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(PKs_AGENDA_POWER_2, "Plan_PK", 100);
+			PresetToSpawnAmount(10);
+		}
+	}
+	
+	Attribute("R1_4_Zone_04_Starting_Area")
+	{
+	}
+
+	Attribute("Getting_Stronger")
+	{
+	}	
+	
+	Attribute("Quest_Nightrunners_Area")
+	{
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(RENEGADES_AGENDA_1, "Plan_Bandits", 100);
+			PresetToSpawnAmount(8);
+		}
+	}	
+	
+	Attribute("Quest_Connecting_Dots")
+    {
+		OccurrencesBased()
+        {
+            TimeOfDayCondition(0.0, 24.0);
+			PresetOccurrences(SETTLEMENT_SURV_WORKER_AGENDA_MAN, "Plan_Connecting_Dots_Worker_Male", 2);
+			PresetOccurrences(SETTLEMENT_SURV_WORKER_AGENDA_WOMAN, "Plan_Connecting_Dots_Worker_Female", 1);
+			PresetOccurrences(SETTLEMENT_SURV_GUARD_AGENDA_MAN, "Plan_Connecting_Dots_Guard_Male", 1);
+			PresetOccurrences(SETTLEMENT_SURV_GUARD_AGENDA_WOMAN, "Plan_Connecting_Dots_Guard_Female", 1);
+        }
+    }
+
+// ABANDONED STRUCTURES
+/*
+			PresetOccurrences(ABANDONEDSTRUCTURE_BASE_AGENDA_MAN, "Plan_Abandoned_Structure_Common_Male", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_BASE_AGENDA_WOMAN, "Plan_Abandoned_Structure_Common_Female", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_GUARD_AGENDA_MAN, "Plan_Abandoned_Structure_Guard_Male", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_GUARD_AGENDA_WOMAN, "Plan_Abandoned_Structure_Guard_Female", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_WORKER_AGENDA_MAN, "Plan_Abandoned_Structure_Worker_Male", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_WORKER_AGENDA_WOMAN, "Plan_Abandoned_Structure_Worker_Female", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_WORKER_SPECIAL_MAN, "Plan_Abandoned_Structure_Special_Male", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_WORKER_SPECIAL_WOMAN, "Plan_Abandoned_Structure_Special_Female", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_BASE_AGENDA_MAN, "Plan_Abandoned_Structure_Common_Male", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_BASE_AGENDA_WOMAN, "Plan_Abandoned_Structure_Common_Female", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_GUARD_AGENDA_MAN, "Plan_Abandoned_Structure_Guard_Male", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_GUARD_AGENDA_WOMAN, "Plan_Abandoned_Structure_Guard_Female", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_WORKER_AGENDA_MAN, "Plan_Abandoned_Structure_Worker_Male", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_WORKER_AGENDA_WOMAN, "Plan_Abandoned_Structure_Worker_Female", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_SPECIAL_MAN, "Plan_Abandoned_Structure_Special_Male", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_SPECIAL_WOMAN, "Plan_Abandoned_Structure_Special_Female", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_CHILD, "Plan_Abandoned_Structure_Child", 1);
+			Plan_Abandoned_Structure_Child
+*/
+
+	Attribute("Abandoned_Structure_Survivors") // Common
+    {
+		OccurrencesBased()
+        {
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_BASE_AGENDA_MAN, "Plan_Abandoned_Structure_Common_Male", 2);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_WORKER_AGENDA_MAN, "Plan_Abandoned_Structure_Worker_Male", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_SPECIAL_MAN, "Plan_Abandoned_Structure_Special_Male", 1);
+        }
+    }
+	
+	Attribute("Abandoned_Structure_Survivors_School")
+    {
+		OccurrencesBased()
+        {
+			SpawnOnlyOnAreaActivation();
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_BASE_AGENDA_WOMAN, "Plan_Abandoned_Structure_Common_Female", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_WORKER_AGENDA_MAN, "Plan_Abandoned_Structure_Worker_Male", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_SPECIAL_WOMAN, "Plan_Abandoned_Structure_Special_Female", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_CHILD, "Plan_Abandoned_Structure_Child", 4);
+        }
+    }
+	
+	Attribute("Abandoned_Structure_Survivors_Workshop")
+    {
+		OccurrencesBased()
+        {
+			SpawnOnlyOnAreaActivation();
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_BASE_AGENDA_MAN, "Plan_Abandoned_Structure_Common_Male", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_WORKER_AGENDA_MAN, "Plan_Abandoned_Structure_Worker_Male", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_SPECIAL_MAN, "Plan_Abandoned_Structure_Special_Male", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_SPECIAL_WOMAN, "Plan_Abandoned_Structure_Special_Female", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_BASE_AGENDA_WOMAN, "Plan_Abandoned_Structure_Common_Female", 1);
+        }
+    }
+	
+	Attribute("Abandoned_Structure_Survivors_Recycle")
+    {
+		OccurrencesBased()
+        {
+			SpawnOnlyOnAreaActivation();
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_BASE_AGENDA_MAN, "Plan_Abandoned_Structure_Common_Male", 2);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_WORKER_AGENDA_MAN, "Plan_Abandoned_Structure_Worker_Male", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_SPECIAL_MAN, "Plan_Abandoned_Structure_Special_Male", 2);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_SPECIAL_WOMAN, "Plan_Abandoned_Structure_Special_Female", 1);
+        }
+    }
+	
+	Attribute("Abandoned_Structure_Survivors_Pumpkin")
+    {
+		OccurrencesBased()
+        {
+			SpawnOnlyOnAreaActivation();
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_BASE_AGENDA_MAN, "Plan_Abandoned_Structure_Common_Male", 2);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_WORKER_AGENDA_MAN, "Plan_Abandoned_Structure_Worker_Male", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_SPECIAL_MAN, "Plan_Abandoned_Structure_Special_Male", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_BASE_AGENDA_WOMAN, "Plan_Abandoned_Structure_Common_Female", 1);
+        }
+    }
+	
+	Attribute("Abandoned_Structure_Survivors_Bakery")
+    {
+		OccurrencesBased()
+        {
+			SpawnOnlyOnAreaActivation();
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_BASE_AGENDA_MAN, "Plan_Abandoned_Structure_Common_Male", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_WORKER_AGENDA_MAN, "Plan_Abandoned_Structure_Worker_Male", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_SPECIAL_MAN, "Plan_Abandoned_Structure_Special_Male", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_SURV_WORKER_AGENDA_WOMAN, "Plan_Abandoned_Structure_Worker_Female", 2);
+        }
+    }
+	
+	Attribute("Abandoned_Structure_Faction") // Common
+    {
+		OccurrencesBased()
+        {
+			SpawnOnlyOnAreaActivation();
+			PresetOccurrences(ABANDONEDSTRUCTURE_BASE_AGENDA_MAN, "Plan_Abandoned_Structure_Common_Male", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_BASE_AGENDA_WOMAN, "Plan_Abandoned_Structure_Common_Female", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_GUARD_AGENDA_MAN, "Plan_Abandoned_Structure_Guard_Male", 2);
+        }
+    }
+	
+	Attribute("Abandoned_Structure_Faction_Academy") 
+    {
+		OccurrencesBased()
+        {
+			SpawnOnlyOnAreaActivation();
+			PresetOccurrences(ABANDONEDSTRUCTURE_BASE_AGENDA_MAN, "Plan_Abandoned_Structure_Common_Male", 2);
+			PresetOccurrences(ABANDONEDSTRUCTURE_BASE_AGENDA_WOMAN, "Plan_Abandoned_Structure_Common_Female", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_GUARD_AGENDA_MAN, "Plan_Abandoned_Structure_Guard_Male", 2);
+			PresetOccurrences(ABANDONEDSTRUCTURE_WORKER_SPECIAL_MAN, "Plan_Abandoned_Structure_Special_Male", 1);
+        }
+    }
+	
+	Attribute("Abandoned_Structure_Faction_Brewery") 
+    {
+		OccurrencesBased()
+        {
+			SpawnOnlyOnAreaActivation();
+			PresetOccurrences(ABANDONEDSTRUCTURE_BASE_AGENDA_MAN, "Plan_Abandoned_Structure_Common_Male", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_BASE_AGENDA_WOMAN, "Plan_Abandoned_Structure_Common_Female", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_GUARD_AGENDA_MAN, "Plan_Abandoned_Structure_Guard_Male", 2);
+			PresetOccurrences(ABANDONEDSTRUCTURE_WORKER_SPECIAL_MAN, "Plan_Abandoned_Structure_Special_Male", 1);
+        }
+    }
+	
+	Attribute("Abandoned_Structure_Faction_Uniform_Workshop")
+    {
+		OccurrencesBased()
+        {
+			SpawnOnlyOnAreaActivation();
+			PresetOccurrences(ABANDONEDSTRUCTURE_BASE_AGENDA_MAN, "Plan_Abandoned_Structure_Common_Male", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_BASE_AGENDA_WOMAN, "Plan_Abandoned_Structure_Common_Female", 2);
+			PresetOccurrences(ABANDONEDSTRUCTURE_GUARD_AGENDA_MAN, "Plan_Abandoned_Structure_Guard_Male", 2);
+			PresetOccurrences(ABANDONEDSTRUCTURE_WORKER_SPECIAL_MAN, "Plan_Abandoned_Structure_Special_Male", 1);
+        }
+    }
+	
+	Attribute("Abandoned_Structure_Faction_Outpost")
+    {
+		OccurrencesBased()
+        {
+			SpawnOnlyOnAreaActivation();
+			PresetOccurrences(ABANDONEDSTRUCTURE_BASE_AGENDA_MAN, "Plan_Abandoned_Structure_Common_Male", 3);
+			PresetOccurrences(ABANDONEDSTRUCTURE_BASE_AGENDA_WOMAN, "Plan_Abandoned_Structure_Common_Female", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_GUARD_AGENDA_MAN, "Plan_Abandoned_Structure_Guard_Male", 2);
+        }
+    }
+	
+	Attribute("Abandoned_Structure_Faction_Smokehouse")
+    {
+		OccurrencesBased()
+        {
+			SpawnOnlyOnAreaActivation();
+			PresetOccurrences(ABANDONEDSTRUCTURE_BASE_AGENDA_MAN, "Plan_Abandoned_Structure_Common_Male", 1);
+			PresetOccurrences(ABANDONEDSTRUCTURE_BASE_AGENDA_WOMAN, "Plan_Abandoned_Structure_Common_Female", 2);
+			PresetOccurrences(ABANDONEDSTRUCTURE_GUARD_AGENDA_MAN, "Plan_Abandoned_Structure_Guard_Male", 2);
+        }
+    }
+	
+// ANIMALS
+
+	Attribute("Animals_Region_04")
+    {
+	}
+
+// PLAYTESTS
+
+	Attribute("R1_3_Zone_03_Easy_Playtests")
+    {
+	}
+
+	Attribute("R1_3_Zone_03_Medium_Playtests")
+    {
+	}
+
+	Attribute("R1_3_Zone_03_Hard_Playtests")
+    {
+	}
+
+// BARK SPECIFIC CHATTERS - QUEST
+
+
+	Attribute("brk_qst_before_screwed")
+	{
+	}
+	Attribute("brk_area_bazaar")
+	{
+	}
+	Attribute("brk_area_bazaar_entrance")
+	{
+	}
+	Attribute("brk_area_ship_entrance")
+	{
+	}
+
+	Attribute("brk_qst_after_screwed")
+	{
+	}
+	
+	Attribute("brk_qst_water_to_pk")
+	{
+	}
+	
+	Attribute("brk_qst_water_to_bazaar")
+	{
+	}
+	
+	Attribute("brk_qst_windmill_destroyed")
+	{
+	}
+	
+	Attribute("brk_qst_blood_diamonds_fever")
+	{
+	}
+	
+	Attribute("brk_qst_blood_diamonds_production")
+	{
+	}
+	
+	Attribute("brk_qst_windmill_settlement_puls")
+	{
+	}
+	
+	Attribute("brk_qst_banditcamp_settlement_puls")
+	{
+	}
+	
+	Attribute("brk_qst_substation_settlement_puls")
+	{
+	}
+	
+	Attribute("brk_qst_brandon_hand_puls")
+	{
+	}
+	
+	Attribute("brk_qst_lena_puls")
+	{
+	}
+	
+	Attribute("brk_qst_water_to_pk_puls")
+	{
+	}
+	
+	Attribute("brk_qst_exile_pk_puls")
+	{
+	}
+	
+	Attribute("brk_qst_area_blueguys_windmill")
+    {
+    }
+	
+	Attribute("brk_qst_area_screwed")
+    {
+    }
+	
+	Attribute("brk_qst_area_deylayeddelivery_dd1")
+    {
+    }
+	
+	Attribute("brk_qst_area_deylayeddelivery_dd2")
+    {
+    }
+	
+	Attribute("brk_qst_area_veronika")
+    {
+    }
+	
+	Attribute("brk_qst_area_veronika_bottomfloor")
+    {
+    }
+	
+	Attribute("brk_qst_area_pumpingstation")
+    {
+    }
+	Attribute("brk_qst_area_OOYL")
+    {
+    }
+	Attribute("brk_qst_area_broadcast")
+    {
+    }
+	Attribute("brk_qst_area_CYR")
+    {
+    }
+	Attribute("brk_qst_area_DC")
+    {
+    }
+	Attribute("brk_qst_area_CW")
+    {
+    }
+	Attribute("brk_qst_area_sister")
+    {
+    }
+	Attribute("brk_qst_area_sister_afterdlg")
+    {
+    }	
+	Attribute("brk_qst_area_renegades")
+    {
+    }	
+	Attribute("brk_qst_area_renegades2")
+    {
+    }	
+	Attribute("brk_qst_area_renegades3")
+    {
+    }	
+	Attribute("brk_qst_area_renegades4")
+    {
+    }		
+	
+	Attribute("brk_qst_water_to_bazaar_puls")
+	{
+	}
+	
+	Attribute("brk_qst_after_screwed_puls")
+	{
+	}
+	
+	Attribute("brk_qst_area_water_tower_puls")
+	{
+	}
+	
+	Attribute("brk_qst_area_dukes_puls")
+	{
+	}
+	
+	Attribute("brk_qst_area_pk_metro")
+	{
+	}
+	
+	Attribute("brk_qst_area_chemicals")
+	{
+	}
+	
+	Attribute("brk_qst_area_gre")
+	{
+	}
+	
+	Attribute("brk_qst_area_gre_hospital")
+	{
+	}
+	Attribute("brk_qst_area_bazaar")
+	{
+	}
+	Attribute("brk_qst_TOWO_start")
+    {
+    }
+	Attribute("brk_qst_TOWO_end")
+    {
+    }
+	Attribute("brk_qst_TOWO_MetroStation")
+    {
+    }
+	Attribute("brk_qst_TOWO_ReportedAitor")
+    {
+    }
+	Attribute("brk_qst_TOWO_Sophie")
+    {
+    }
+	Attribute("brk_qst_Looter_start")
+    {
+    }
+	Attribute("brk_qst_Looter_end")
+    {
+    }
+	Attribute("brk_qst_Arrival_start")
+    {
+    }
+	Attribute("brk_qst_Arrival_FindSuzie")
+    {
+    }
+	Attribute("brk_qst_Arrival_end")
+    {
+    }
+	Attribute("brk_qst_Screwed_start")
+    {
+    }
+	Attribute("brk_qst_Screwed_Sophie")
+    {
+    }
+	Attribute("brk_qst_Screwed_Aitor")
+    {
+    }
+	Attribute("brk_qst_Screwed_end")
+    {
+    }
+	Attribute("brk_qst_BadBoys_start")
+    {
+    }
+	Attribute("brk_qst_BadBoys_end")
+    {
+    }
+	Attribute("brk_qst_BlueGuys_start")
+    {
+    }
+	Attribute("brk_qst_BlueGuys_end")
+    {
+    }
+	Attribute("brk_qst_Orders_Rowe")
+    {
+    }
+	Attribute("brk_qst_WelcomeOnBoard_start")
+    {
+    }
+	Attribute("brk_qst_WelcomeOnBoard_AitorWounded")
+    {
+    }
+	Attribute("brk_qst_WelcomeOnBoard_end")
+    {
+    }
+	Attribute("brk_qst_Broadcast_AfterMeeting")
+    {
+    }
+	Attribute("brk_qst_Empire_AntennasWorking")
+    {
+    }
+	Attribute("brk_qst_Nightrunners_AfterRadio")
+    {
+    }
+	Attribute("brk_qst_WaterTower_start")
+    {
+    }
+	Attribute("brk_qst_WaterTower_end")
+    {
+    }
+	Attribute("brk_qst_WaterTower_done")
+    {
+    }
+	Attribute("brk_qst_LetsWaltz_start")
+    {
+    }
+	Attribute("brk_qst_LetsWaltz_end")
+    {
+    }
+	Attribute("brk_qst_Orders_start")
+    {
+    }
+	Attribute("brk_qst_Orders_end")
+    {
+    }
+	Attribute("brk_qst_APTCH_start")
+    {
+    }
+	Attribute("brk_qst_APTCH_end")
+    {
+    }
+	Attribute("brk_qst_Hive_start")
+    {
+    }
+	Attribute("brk_qst_Hive_end")
+    {
+    }
+	Attribute("brk_qst_Broadcast_start")
+    {
+    }
+	Attribute("brk_qst_Broadcast_end")
+    {
+    }
+	Attribute("brk_qst_Broadcast_Juan")
+    {
+    }
+	Attribute("brk_qst_DelayedDelivery_start")
+    {
+    }
+	Attribute("brk_qst_DelayedDelivery_end")
+    {
+    }
+	Attribute("brk_qst_Aitor_start")
+    {
+    }
+	Attribute("brk_qst_Aitor_end")
+    {
+    }
+	Attribute("brk_qst_Bazaar_Survivors")
+    {
+    }
+	Attribute("brk_qst_Bazaar_PK")
+    {
+    }
+	Attribute("brk_qst_Broadcast_JackMatt")
+    {
+    }
+	Attribute("brk_qst_Broadcast_Frank")
+    {
+    }
+	Attribute("brk_qst_Elena_start")
+    {
+    }
+	Attribute("brk_qst_Elena_end")
+    {
+    }
+	Attribute("brk_qst_Shoe_start")
+    {
+    }
+	Attribute("brk_qst_Shoe_end")
+    {
+    }
+	Attribute("brk_qst_ConnectingDots_start")
+    {
+    }
+	Attribute("brk_qst_ConnectingDots_end")
+    {
+    }
+	Attribute("brk_qst_Renegades_start")
+    {
+    }
+	Attribute("brk_qst_Renegades_end")
+    {
+    }
+	Attribute("brk_qst_SpyGame_start")
+    {
+    }
+	Attribute("brk_qst_SpyGame_end")
+    {
+    }
+	Attribute("brk_qst_Empire_start")
+    {
+    }
+	Attribute("brk_qst_Empire_end")
+    {
+    }
+	Attribute("brk_qst_Nightrunners_start")
+    {
+    }
+	Attribute("brk_qst_Nightrunners_end")
+    {
+    }
+	Attribute("brk_qst_Veronika_start")
+    {
+    }
+	Attribute("brk_qst_Veronika_end")
+    {
+    }
+	Attribute("brk_qst_PumpingStation_start")
+    {
+    }
+	Attribute("brk_qst_PumpingStation_end")
+    {
+    }
+	Attribute("brk_qst_Assassination_start")
+    {
+    }
+	Attribute("brk_qst_Assassination_end")
+    {
+    }
+	Attribute("brk_qst_Colonel_start")
+    {
+    }
+	Attribute("brk_qst_Colonel_end")
+    {
+    }
+	Attribute("brk_qst_X13_start")
+    {
+    }
+	Attribute("brk_qst_X13_end")
+    {
+    }
+	
+	// BARK SPECIFIC CHATTERS - OWA
+	
+	Attribute("brk_owa_area_water_tower_not_done")
+    {
+    }
+	Attribute("brk_owa_area_water_tower_done")
+    {
+    }
+	Attribute("brk_owa_area_substation_not_done")
+    {
+    }
+	Attribute("brk_owa_area_substation_done")
+    {
+    }
+	Attribute("brk_owa_area_metro_not_done")
+    {
+    }
+	Attribute("brk_owa_area_metro_done")
+    {
+    }
+	Attribute("brk_owa_area_anomaly_not_done")
+    {
+    }
+	Attribute("brk_owa_area_anomaly_done")
+    {
+    }
+	Attribute("brk_owa_area_windmill_not_done")
+    {
+    }
+	Attribute("brk_owa_area_windmill_done")
+    {
+    }	
+	Attribute("brk_owa_area_PK_tower")
+    {
+	}
+	Attribute("HUB_R02_Ship_PK_prison")
+    {
+    }
+	Attribute("HUB_R02_Ship_Main_Entrance_Outside")
+    {
+    }
+	
+///////////////////////TEST
+
+
+	Attribute("persons_test_plan_area")
+    {
+        OccurrencesBased()
+        {
+            RequiresPlayerInside();
+            TimeOfDayCondition(0.0, 24.0);
+            PresetOccurrences(PERSONS_TEST_AGENDA, "persons_test_plan", 1);
+        }
+    }
+
+	Attribute("Testmap_Base_AA")
+    {
+        OccurrencesBased()
+        {
+            RequiresPlayerInside();
+            TimeOfDayCondition(0.0, 24.0);
+			PresetOccurrences(SURVIVOR_AGENDA_1, "Plan_Survivors_Roof_Testmap", 20);
+			PresetOccurrences(SURVIVOR_AGENDA_1, "Plan_Survivors_Ground_Testmap", 20);
+			PresetOccurrences(PKs_AGENDA_1, "Plan_Factions_Ground_Testmap", 5);
+			PresetOccurrences(PKs_AGENDA_1, "Plan_Factions_Roof_Testmap", 5);
+        }
+    }
+
+	Attribute("Testmap_Base_AA2")
+    {
+        OccurrencesBased()
+        {
+            RequiresPlayerInside();
+            TimeOfDayCondition(0.0, 24.0);
+			PresetOccurrences(SURVIVOR_AGENDA_1, "Plan_Survivors_Roof_Testmap", 5);
+			PresetOccurrences(SURVIVOR_AGENDA_1, "Plan_Survivors_Ground_Testmap", 5);
+			PresetOccurrences(PKs_AGENDA_1, "Plan_Factions_Ground_Testmap", 10);
+			PresetOccurrences(PKs_AGENDA_1, "Plan_Factions_Roof_Testmap", 10);
+        }
+    }
+	
+	Attribute("Init_Spawning_Test")
+    {
+	}
+
+	
+}

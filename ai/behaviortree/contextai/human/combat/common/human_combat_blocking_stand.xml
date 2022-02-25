@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <ExposeLogicState m_ExposedState="blocking">
+        <Sequence>
+            <SelectorMem>
+                <Cnd_IsBlockActive m_Invert="true"/>
+                <Cnd_IsCombatTargetInAngle m_Angle="20"/>
+                <Act_TurnToPos m_Position="#target_pos" m_Type="Block" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+            </SelectorMem>
+            <SelectorMem>
+                <SequenceMem>
+                    <Selector>
+                        <Cnd_IsActivityModuleRunning_HitReaction/>
+                        <Cnd_IsBlockActive/>
+                    </Selector>
+                    <Act_Block m_Target="#target" m_BlockState="HOLD" m_SkipPreparation="true" m_TurnToTargetSpeed="10" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                </SequenceMem>
+                <SequenceMem>
+                    <Cnd_IsCombatTargetInRadius m_Radius="3" m_UsePrediction="true"/>
+                    <Cnd_SpaceInSimpleDirection m_Direction="BACKWARD" m_MinRequiredSpace="$enviro_space_required" m_CheckHalfAngle="$enviro_space_half_angle"/>
+                    <Act_Block m_Target="#target" m_BlockState="HOLD" m_EvadeDirection="BACK" m_TurnToTargetSpeed="10" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                </SequenceMem>
+                <Act_Block m_Target="#target" m_BlockState="HOLD" m_TurnToTargetSpeed="10" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+            </SelectorMem>
+        </Sequence>
+    </ExposeLogicState>
+</BehaviorTree>

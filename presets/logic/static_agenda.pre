@@ -1,0 +1,44 @@
+import "activation_presets.def"
+
+sub main()
+{
+    use declare_activation_daytime_presets();
+
+    PresetDef("Agenda_logic")
+    {
+        AddField("m_BTName", "agenda_bt");
+        AddField("m_MinSearchScenarioRadius", "10");
+        AddField("m_MaxSearchScenarioRadius", "100");
+        AddField("IAgendaEntity::m_MinimumDistBtwAgendas", "5.0");
+        AddField("m_PlanName", "StaticScenariosOnly");
+
+        Preset("Margarita_Agenda")
+        {
+            SetField("m_BTName", "agenda_bt");
+        }
+
+        Preset("Bandits_Crowbar_Agenda")
+        {
+            SetField("m_BTName", "agenda_bt");
+        }
+		Preset("NPC_Default_Agenda")
+        {
+            AddField("m_MinSearchScenarioRadius", "0");
+			AddField("m_MaxSearchScenarioRadius", "100");
+        }
+    }
+
+    PresetDef("Setup")
+    {
+        AddField("m_StaticScenarioLoopCount", "0");
+        AddField("m_ShouldValidateStaticScenarios", "0");
+        AddField("m_PrepareTimeLimit", "1");
+
+        Preset("Hub")
+        {
+            SetField("m_StaticScenarioLoopCount", "-1");
+            SetField("m_ShouldValidateStaticScenarios", "1");
+            SetField("m_PrepareTimeLimit", "0");
+        }
+    }
+}

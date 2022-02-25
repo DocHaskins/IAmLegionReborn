@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Cnd_IsActivityModuleRunning_HitReaction m_Invert="true"/>
+        <Cnd_ChaseInProgress/>
+        <Opr_GetChaseTarget m_Target="#chase_target"/>
+        <Sequence>
+            <Selector>
+                <Sequence>
+                    <DelayerTimeDelta m_DelayTime="0.2">
+                        <Cnd_HasBBValue m_Key="#chase_target"/>
+                    </DelayerTimeDelta>
+                    <Opr_GetObjectPosition m_Object="#chase_target" m_Position="#group_target_pos"/>
+                </Sequence>
+                <Cnd_HasBBValue m_Key="#group_target_pos"/>
+            </Selector>
+            <ExposeLogicState m_ExposedState="chasing">
+                <Act_Move m_MoveStyle="Run" m_IsAvoidanceActive="$use_avoidance" m_SkipStart="#skip_start" m_Destination="#group_target_pos" m_AvoidRegionsPreset="$avoid_regions_preset" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+            </ExposeLogicState>
+        </Sequence>
+    </SequenceMem>
+</BehaviorTree>

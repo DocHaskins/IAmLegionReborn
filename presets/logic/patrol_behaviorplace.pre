@@ -1,0 +1,45 @@
+sub main()
+{
+	PresetDef("Ranges")
+	{
+		AddField("m_NearRange_Max", "10.5", true, true);
+		AddField("m_MedRange_Min", "11.0", true, true);
+		AddField("m_MedRange_Max", "44.0", true, true);
+		AddField("m_FarRange_Min", "45.0", true, true);
+		AddField("m_FarRange_Max", "100.0", true, true);
+		
+		Preset("Interior")
+        {
+            SetField("m_NearRange_Max", "3.5");
+			SetField("m_MedRange_Min", "3.0");
+			SetField("m_MedRange_Max", "14.5");
+			SetField("m_FarRange_Min", "15.0");
+        }
+		
+		Preset("Exterior")
+        {
+            SetField("m_NearRange_Max", "10.5");
+			SetField("m_MedRange_Min", "11.0");
+			SetField("m_MedRange_Max", "44.5");
+			SetField("m_FarRange_Min", "45.0");
+			SetField("m_FarRange_Max", "100.0");
+        }
+	}
+	
+	PresetDef("Replication")
+    {
+        Description("");
+
+        AddField("m_EntityVariant", "19;20;");
+		
+		Preset("Turned On")
+        {
+			SetField("m_EntityVariant", "19;20;");
+        }
+		
+		Preset("Turned Off")
+        {
+			SetField("m_EntityVariant", ";");
+        }
+	}
+}

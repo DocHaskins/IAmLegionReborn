@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <CooldownTimeDelta m_CooldownTime="$push_cooldown" m_CooldownOnAbort="true">
+        <SequenceMem>
+            <Cnd_IsCombatTargetInRadius m_Radius="4.5" m_UsePrediction="true"/>
+            <Cnd_TargetInAngle m_Target="#target" m_Angle="60"/>
+            <Opr_SetDirCorrectionSpeed m_MaxSpeed="240"/>
+            <Act_Attack m_Target="#target" m_AttackPresetName="screamer_push" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+        </SequenceMem>
+    </CooldownTimeDelta>
+</BehaviorTree>

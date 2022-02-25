@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <CooldownUntil m_TimePoint="#tackle_cooldown" m_CooldownTime="60" m_CooldownOnAbort="true">
+        <SequenceMem>
+            <Cnd_CanStartTask m_StartPolicy="INTERRUPT"/>
+            <Cnd_IsPlayer m_Target="#target"/>
+            <Cnd_IsCombatTargetMeleeReachable/>
+            <ExternalTree m_UID="HUMAN_ATTACK_TACKLE" m_CustomName="Tackle" m_Hide="true"/>
+        </SequenceMem>
+    </CooldownUntil>
+</BehaviorTree>

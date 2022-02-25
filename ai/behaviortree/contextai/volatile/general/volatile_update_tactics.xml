@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Succeeder>
+        <Sequence>
+            <Selector>
+                <!-- rush -->
+                <Sequence>
+                    <Selector>
+                        <Cnd_ChaseInProgress m_Invert="true"/>
+                        <Cnd_IsChaseHandicapActive m_Invert="false"/>
+                    </Selector>
+                    <Opr_GetDistanceTraveledByTarget m_Time="3.0" m_Distance="#distance_traveled"/>
+                    <Selector>
+                        <Cnd_Const m_Enabled="$force_rush_tactics"/>
+                        <Cnd_InTargetHorzAngle m_Target="#target" m_Angle="110" m_Invert="true"/>
+                    </Selector>
+                    <Selector>
+                        <Cnd_IsCombatTargetInRadius m_Radius="12.0" m_Invert="true"/>
+                        <Cnd_IsBBValueGreater_float m_Key="#distance_traveled" m_Value="10.0"/>
+                        <Cnd_Const m_Enabled="$force_rush_tactics"/>
+                    </Selector>
+                    <Opr_SetBBValue_string m_Key="#tactic" m_Value="rush"/>
+                    <Opr_SetBBValue_float m_Key="#combat_slot_attack_min_delay" m_Value="0"/>
+                    <Opr_SetBBValue_bool m_Key="#combat_slot_attack_release_on_damage" m_Value="true"/>
+                    <Opr_SetBBValue_uint m_Key="#combat_slot_melee_limit" m_Value="2"/>
+                    <Opr_SetBBValue_uint m_Key="#combat_slot_range_limit" m_Value="1"/>
+                </Sequence>
+                <!-- default -->
+                <Sequence>
+                    <Opr_SetBBValue_string m_Key="#tactic" m_Value="default"/>
+                    <Opr_SetBBValue_float m_Key="#combat_slot_attack_min_delay" m_Value="0.5"/>
+                    <Opr_SetBBValue_bool m_Key="#combat_slot_attack_release_on_damage" m_Value="false"/>
+                    <Opr_SetBBValue_uint m_Key="#combat_slot_melee_limit" m_Value="2"/>
+                    <Opr_SetBBValue_uint m_Key="#combat_slot_range_limit" m_Value="1"/>
+                </Sequence>
+            </Selector>
+            <Opr_DebugPrintValue_float m_Label="Distance" m_Value="#distance_traveled" m_Height="-0.2"/>
+            <Opr_DebugPrintValue_string m_Label="Tactic" m_Value="#tactic" m_Height="-0.1"/>
+        </Sequence>
+    </Succeeder>
+</BehaviorTree>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Opr_SetDirCorrectionSpeed m_MaxSpeed="$attack_quick_dir_correction_speed"/>
+        <Act_Attack m_Target="#target" m_AttackPresetName="human_1h_fake" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+    </SequenceMem>
+</BehaviorTree>

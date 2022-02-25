@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Cnd_CanStartTask m_StartPolicy="INTERRUPT"/>
+        <Sequence>
+            <Cnd_HasBBValue m_Key="#forced_chase_position"/>
+            <Act_Move m_MoveStyle="Run" m_Destination="#forced_chase_position" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+        </Sequence>
+    </SequenceMem>
+</BehaviorTree>

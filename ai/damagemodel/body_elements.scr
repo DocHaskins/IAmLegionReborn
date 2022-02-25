@@ -1,0 +1,437 @@
+/// @owner davide.gibertini@techland.pl
+import "body_elements_common.scr"
+import "ial_ai_gore_settings.def"
+
+sub main()
+{
+	use BodyElementsHealth();
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// GENERIC
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    BodyElement("Any_Part")
+    {
+        MaxBodyHealthPercToCut(-1.0);
+        MaxBodyHealthPercToDestroy(-1.0);
+    }
+
+    BodyElement("Immortal")
+    {
+        MaxBodyHealthPercToCut(-1.0);
+        MaxBodyHealthPercToDestroy(-1.0);
+    }
+
+    BodyElement("Hole")
+    {       
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// HUMAN CUT
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // head with deformations, can be cut off
+    BodyElement("Head")
+    {
+		MaxBodyHealthPercToCut(IAL_GORE_Dismember_Human_Head);
+        MaxBodyHealthPercToDestroy(IAL_GORE_Dismember_Human_Head);
+        
+        KillBodyOnDestroy(true);   // kill body after death
+
+        HitTargetPriority(1);    // DON'T TOUCH!!! how high priority have bones when they are chosen for hit calculation in CoMeleeTarget component (which body part should be hit)
+    }
+
+    BodyElement("Chest")
+    {       
+        HitTargetPriority(1);
+    }
+
+    BodyElement("Arm")
+    {		
+        MaxBodyHealthPercToCut(IAL_GORE_Dismember_Human_Arms);
+        //
+        MaxBodyHealthPercToDestroy(IAL_GORE_Dismember_Human_Arms);
+        KillBodyOnDestroy(true);
+        HitTargetPriority(2);
+    }
+
+    BodyElement("Leg")
+    {		
+        MaxBodyHealthPercToCut(IAL_GORE_Dismember_Human_Legs);
+        //
+        MaxBodyHealthPercToDestroy(IAL_GORE_Dismember_Human_Legs);
+        KillBodyOnDestroy(true);
+		HitTargetPriority(2);
+    }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// HUMAN TEST
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // head with no deformations, can't be cut off
+    BodyElement("Simple_Head")
+    {
+        MaxBodyHealthPercToCut(-1.0);
+        MaxBodyHealthPercToDestroy(-1.0);
+        HitTargetPriority(2.5);    // DON'T TOUCH!!! how high priority have bones when they are chosen for hit calculation in CoMeleeTarget component (which body part should be hit)
+    }
+
+    // head with deformations, can't be cut off
+    BodyElement("Head_Damage")
+    {
+        MaxBodyHealthPercToCut(-1.0);
+        MaxBodyHealthPercToDestroy(-1.0);
+        HitTargetPriority(2.5);    // DON'T TOUCH!!! how high priority have bones when they are chosen for hit calculation in CoMeleeTarget component (which body part should be hit)
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // DEFAULT INFECTED
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        BodyElement("Default_Infected_Head")
+        {           
+            MaxBodyHealthPercToCut(IAL_GORE_Dismember_DI_Head); // level of health when cut is possible (if health is lower than the level, cut is possible), so 100 = "always cut", -1 = "no cut possible", 0 = "cut possible after death"
+
+            MaxBodyHealthPercToDestroy(IAL_GORE_Dismember_DI_Head);
+
+            KillBodyOnDestroy(IAL_GORE_Dismember_DI_KillOnComponent_Head);   // kill body after death
+
+            HitTargetPriority(1);    // DON'T TOUCH!!! how high priority have bones when they are chosen for hit calculation in CoMeleeTarget component (which body part should be hit)
+        }
+
+        BodyElement("Default_Infected_Chest")
+        {
+            HitTargetPriority(1);
+        }
+        BodyElement("Default_Infected_Arm")
+        {            
+            MaxBodyHealthPercToCut(IAL_GORE_Dismember_DI_Arms);
+
+            MaxBodyHealthPercToDestroy(IAL_GORE_Dismember_DI_Arms);
+
+            KillBodyOnDestroy(IAL_GORE_Dismember_DI_KillOnComponent_Arms);
+            HitTargetPriority(2);
+        }
+        BodyElement("Default_Infected_Leg")
+        {            
+            MaxBodyHealthPercToCut(IAL_GORE_Dismember_DI_Legs);
+
+            MaxBodyHealthPercToDestroy(IAL_GORE_Dismember_DI_Legs);
+
+            KillBodyOnDestroy(IAL_GORE_Dismember_DI_KillOnComponent_Legs); // just for E3 hands off
+
+    		HitTargetPriority(2);
+        }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// BITER
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    BodyElement("Biter_Head")
+    {       
+        MaxBodyHealthPercToCut(IAL_GORE_Dismember_Biter_Head); // level of health when cut is possible (if health is lower than the level, cut is possible), so 100 = "always cut", -1 = "no cut possible", 0 = "cut possible after death"
+                
+        MaxBodyHealthPercToDestroy(IAL_GORE_Dismember_Biter_Head);
+
+        KillBodyOnDestroy(IAL_GORE_Dismember_Biter_KillOnComponent_Head);   // kill body after death
+
+        HitTargetPriority(1);    // DON'T TOUCH!!! how high priority have bones when they are chosen for hit calculation in CoMeleeTarget component (which body part should be hit)
+    }
+	BodyElement("Biter_Helmet_Head")
+    {        
+        MaxBodyHealthPercToCut(0); // level of health when cut is possible (if health is lower than the level, cut is possible), so 100 = "always cut", -1 = "no cut possible", 0 = "cut possible after death"
+       
+        MaxBodyHealthPercToDestroy(-1);
+
+        KillBodyOnDestroy(true);   // kill body after death
+
+        HitTargetPriority(1);    // DON'T TOUCH!!! how high priority have bones when they are chosen for hit calculation in CoMeleeTarget component (which body part should be hit)
+    }
+
+    BodyElement("Biter_Chest")
+    {       
+        HitTargetPriority(0.5);
+    }
+    BodyElement("Biter_Arm")
+    {
+        MaxBodyHealthPercToCut(IAL_GORE_Dismember_Biter_Arms);
+        
+		MaxBodyHealthPercToDestroy(IAL_GORE_Dismember_Biter_Arms);
+
+        KillBodyOnDestroy(IAL_GORE_Dismember_Biter_KillOnComponent_Arms);
+
+        HitTargetPriority(1);
+    }
+    BodyElement("Biter_Leg")
+    {
+        MaxBodyHealthPercToCut(IAL_GORE_Dismember_Biter_Legs);
+        
+        MaxBodyHealthPercToDestroy(IAL_GORE_Dismember_Biter_Legs);
+		
+		KillBodyOnDestroy(IAL_GORE_Dismember_Biter_KillOnComponent_Legs);
+
+		HitTargetPriority(1);
+    }
+	
+	BodyElement("Biter_Armored_Chest")
+    {        
+        HitTargetPriority(1);
+    }
+	
+    BodyElement("Biter_Armored_Arm")
+    {
+        MaxBodyHealthPercToCut(20);
+                
+        MaxBodyHealthPercToDestroy(20);
+
+        HitTargetPriority(2);
+    }
+    BodyElement("Biter_Armored_Leg")
+    {        
+         MaxBodyHealthPercToCut(IAL_GORE_Dismember_Biter_Legs);
+
+         MaxBodyHealthPercToDestroy(IAL_GORE_Dismember_Biter_Legs);
+
+         KillBodyOnDestroy(IAL_GORE_Dismember_Biter_KillOnComponent_Legs);
+
+		HitTargetPriority(2);
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// SPITTER
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    BodyElement("Spitter_Head")
+    {        
+        MaxBodyHealthPercToCut(50); // level of health when cut is possible (if health is lower than the level, cut is possible), so 100 = "always cut", -1 = "no cut possible", 0 = "cut possible after death"
+                
+        MaxBodyHealthPercToDestroy(45);
+
+        KillBodyOnDestroy(true);   // kill body after death
+
+        HitTargetPriority(1);    // DON'T TOUCH!!! how high priority have bones when they are chosen for hit calculation in CoMeleeTarget component (which body part should be hit)
+    }
+
+    BodyElement("Spitter_Chest")
+    {        
+        HitTargetPriority(0.5);
+    }
+    BodyElement("Spitter_Arm")
+    {        
+        MaxBodyHealthPercToCut(100);
+               
+        MaxBodyHealthPercToDestroy(75);
+
+        HitTargetPriority(2);
+    }
+    BodyElement("Spitter_Leg")
+    {       
+        MaxBodyHealthPercToCut(100);
+               
+        MaxBodyHealthPercToDestroy(100);
+
+		HitTargetPriority(2);
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// VIRAL
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    BodyElement("Viral_Head")
+    {       
+        MaxBodyHealthPercToCut(IAL_GORE_Dismember_Viral_Head); // level of health when cut is possible (if health is lower than the level, cut is possible), so 100 = "always cut", -1 = "no cut possible", 0 = "cut possible after death"
+
+        MaxBodyHealthPercToDestroy(IAL_GORE_Dismember_Viral_Head);
+
+        KillBodyOnDestroy(IAL_GORE_Dismember_Viral_KillOnComponent_Head);   // kill body after death
+
+        HitTargetPriority(1);    // DON'T TOUCH!!! how high priority have bones when they are chosen for hit calculation in CoMeleeTarget component (which body part should be hit)
+    }
+
+    BodyElement("Viral_Chest")
+    {
+        HitTargetPriority(0.5);
+    }
+    BodyElement("Viral_Arm")
+    {        
+        MaxBodyHealthPercToCut(IAL_GORE_Dismember_Viral_Arms);
+
+        MaxBodyHealthPercToDestroy(IAL_GORE_Dismember_Viral_Arms);
+
+        KillBodyOnDestroy(IAL_GORE_Dismember_Viral_KillOnComponent_Arms);
+        HitTargetPriority(2);
+    }
+    BodyElement("Viral_Leg")
+    {       
+        MaxBodyHealthPercToCut(IAL_GORE_Dismember_Viral_Legs);
+
+        MaxBodyHealthPercToDestroy(IAL_GORE_Dismember_Viral_Legs);
+
+        KillBodyOnDestroy(IAL_GORE_Dismember_Viral_KillOnComponent_Legs); // just for E3 hands off
+
+		HitTargetPriority(2);
+    }
+    
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// SCREAMER
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    BodyElement("Screamer_Head")
+    {               
+        MaxBodyHealthPercToCut(50);
+        MaxBodyHealthPercToDestroy(45);
+        KillBodyOnDestroy(true);   // kill body after death
+        HitTargetPriority(1);    // DON'T TOUCH!!! how high priority have bones when they are chosen for hit calculation in CoMeleeTarget component (which body part should be hit)
+    }
+
+    BodyElement("Screamer_Chest")
+    {        
+    }
+    BodyElement("Screamer_Arm")
+    {                
+        MaxBodyHealthPercToCut(100);
+        MaxBodyHealthPercToDestroy(70);
+        KillBodyOnDestroy(false);
+		HitTargetPriority(2);
+    }
+    BodyElement("Screamer_Leg")
+    {                
+        MaxBodyHealthPercToCut(10);
+        MaxBodyHealthPercToDestroy(1);
+        KillBodyOnDestroy(false);
+		HitTargetPriority(2);
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// GOON
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ BodyElement("Goon_Head")
+    {        
+        MaxBodyHealthPercToCut(-1.0); // level of health when cut is possible (if health is lower than the level, cut is possible), so 100 = "always cut", -1 = "no cut possible", 0 = "cut possible after death"
+
+        MaxBodyHealthPercToDestroy(-1.0);
+
+        KillBodyOnDestroy(false);   // kill body after death
+
+        HitTargetPriority(2.5);    // DON'T TOUCH!!! how high priority have bones when they are chosen for hit calculation in CoMeleeTarget component (which body part should be hit)
+    }
+
+    BodyElement("Goon_Chest")
+    {        
+    }
+    BodyElement("Goon_Arm")
+    {        
+        MaxBodyHealthPercToCut(80);
+        MaxBodyHealthPercToDestroy(-1);
+		KillBodyOnDestroy(false);
+    }
+    BodyElement("Goon_Leg")
+    {        
+        MaxBodyHealthPercToCut(80);
+        MaxBodyHealthPercToDestroy(40);
+		KillBodyOnDestroy(false);
+		HitTargetPriority(2);
+    }
+	BodyElement("Goon_AnyPart")
+	{
+		MaxBodyHealthPercToCut(-1.0);
+		MaxBodyHealthPercToDestroy(-1.0);
+	}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// VOLATILE - Needs proper setup
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	BodyElement("Volatile_AnyPart")
+	{
+		MaxBodyHealthPercToCut(-1.0);
+		MaxBodyHealthPercToDestroy(-1.0);
+	}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// DEMOLISHER
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ BodyElement("Demolisher_Head")
+    {        
+        MaxBodyHealthPercToCut(-1.0); // level of health when cut is possible (if health is lower than the level, cut is possible), so 100 = "always cut", -1 = "no cut possible", 0 = "cut possible after death"
+
+        MaxBodyHealthPercToDestroy(-1.0);
+
+        KillBodyOnDestroy(false);   // kill body after death
+
+        HitTargetPriority(1);    // DON'T TOUCH!!! how high priority have bones when they are chosen for hit calculation in CoMeleeTarget component (which body part should be hit)
+    }
+
+    BodyElement("Demolisher_Chest")
+    {        
+    }
+    BodyElement("Demolisher_Arm")
+    {        
+        MaxBodyHealthPercToCut(30);
+
+        MaxBodyHealthPercToDestroy(20);
+		KillBodyOnDestroy(false);
+		HitTargetPriority(1);
+    }
+    BodyElement("Demolisher_Leg")
+    {        
+        MaxBodyHealthPercToCut(-1.0);
+
+        MaxBodyHealthPercToDestroy(-1);
+		KillBodyOnDestroy(false);
+		HitTargetPriority(1);
+    }
+	BodyElement("Demolisher_AnyPart")
+	{
+		MaxBodyHealthPercToCut(-1.0);
+		MaxBodyHealthPercToDestroy(-1.0);
+	}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// TEST
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    BodyElement("Test_Head_Cut")
+    {        
+        MaxBodyHealthPercToCut(100);
+        MaxBodyHealthPercToDestroy(-1);
+
+        KillBodyOnDestroy(true);   // kill body after death
+
+        HitTargetPriority(2.5);    // DON'T TOUCH!!! how high priority have bones when they are chosen for hit calculation in CoMeleeTarget component (which body part should be hit)
+    }
+    BodyElement("Test_Second_Cut")
+    {                
+        MaxBodyHealthPercToCut(50); // level of health when cut is possible (if health is lower than the level, cut is possible), so 100 = "always cut", -1 = "no cut possible", 0 = "cut possible after death"
+
+        
+        MaxBodyHealthPercToDestroy(50);
+
+        KillBodyOnDestroy(true);   // kill body after death
+
+        HitTargetPriority(2.5);    // DON'T TOUCH!!! how high priority have bones when they are chosen for hit calculation in CoMeleeTarget component (which body part should be hit)
+    }
+    BodyElement("Suicider_Head")
+    {
+        MaxBodyHealthPercToCut(100); // level of health when cut is possible (if health is lower than the level, cut is possible), so 100 = "always cut", -1 = "no cut possible", 0 = "cut possible after death"
+        MaxBodyHealthPercToDestroy(100);
+        
+
+        KillBodyOnDestroy(true);   // kill body after death
+
+        HitTargetPriority(2.5);    // DON'T TOUCH!!! how high priority have bones when they are chosen for hit calculation in CoMeleeTarget component (which body part should be hit)
+    }
+
+    BodyElement("Suicider_Leg")
+    {       
+        MaxBodyHealthPercToCut(100); // level of health when cut is possible (if health is lower than the level, cut is possible), so 100 = "always cut", -1 = "no cut possible", 0 = "cut possible after death"
+       
+        MaxBodyHealthPercToDestroy(100);
+        
+        KillBodyOnDestroy(false);   // kill body after death
+
+        HitTargetPriority(2.5);    // DON'T TOUCH!!! how high priority have bones when they are chosen for hit calculation in CoMeleeTarget component (which body part should be hit)
+    }
+
+    BodyElement("Always_Cut_And_Kill")
+    {       
+        MaxBodyHealthPercToCut(100); // level of health when cut is possible (if health is lower than the level, cut is possible), so 100 = "always cut", -1 = "no cut possible", 0 = "cut possible after death"
+
+        KillBodyOnDestroy(true);   // kill body after death
+
+        HitTargetPriority(2.5);    // DON'T TOUCH!!! how high priority have bones when they are chosen for hit calculation in CoMeleeTarget component (which body part should be hit)
+    }
+}

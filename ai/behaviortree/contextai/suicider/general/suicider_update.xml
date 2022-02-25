@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Sequence>
+        <Succeeder>
+            <Sequence>
+                <Opr_GetUVEffectProgress m_Progress="#uv_progress"/>
+                <Cnd_IsInUVLight/>
+              <!--  <Opr_StartBodyState m_State="SUNLIGHT_REACTION" m_Duration="1.0"/> -->
+            </Sequence>
+        </Succeeder>
+        <Succeeder>
+            <Sequence>
+                <Cnd_Const m_Enabled="$explode_after_time"/>
+                <Cnd_HasBBValue m_Key="#target"/>
+                <Cnd_IsPlayer m_Target="#target"/>
+                <Cnd_HasBBValue m_Key="#time_to_explode" m_Invert="true"/>
+                <Opr_GetModifiedTime m_TimeDelta="$time_to_explode" m_TimePoint="#time_to_explode"/>
+            </Sequence>
+        </Succeeder>
+        <Succeeder>
+            <Opr_GetClosestUVLightData m_Position="#uv_light_pos" m_Direction="#uv_light_dir" m_Type="#uv_light_type"/>
+        </Succeeder>
+        <Succeeder>
+            <Sequence>
+                <Cnd_IsBBValueEqual_bool m_Key="#forced_target_set" m_Value="false"/>
+                <Opr_GetForcedChasePosition m_Position="#forced_chase_position"/>
+                <Opr_SetBBValue_bool m_Key="#forced_target_set" m_Value="true"/>
+            </Sequence>
+        </Succeeder>
+        <Succeeder>
+           <Sequence>
+               <Cnd_HasBBValue m_Key="#forced_chase_position"/>
+               <Selector>
+                   <Cnd_HasBBValue m_Key="#target"/>
+                   <Sequence>
+                       <Cnd_HasBBValue m_Key="#group_target"/>
+                       <Cnd_IsPlayer m_Target="#group_target"/>
+                   </Sequence>
+                   <Cnd_PositionInRadius m_Radius="5" m_Position="#forced_chase_position"/>
+               </Selector>
+               <Opr_RemoveBBValue m_Key="#forced_chase_position"/>
+           </Sequence>
+       </Succeeder>
+    </Sequence>
+</BehaviorTree>

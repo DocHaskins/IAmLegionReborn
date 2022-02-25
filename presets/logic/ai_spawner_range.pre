@@ -1,0 +1,181 @@
+import "activation_presets.def"
+import "AISpawnDifficulty.def"
+
+sub main()
+{
+	use declare_activation_daytime_presets();
+    use declare_activation_distance_presets();
+    
+    use declare_ai_spawner_difficulty_presets();
+	
+	PresetDef("Presets")
+	{
+		Description("");
+		AddField("m_LimitSensesToSpawner", "0", false, true, false);
+		AddField("m_DayPresetPoolName", "", false, true, false);
+		AddField("m_NightPresetPoolName", "", false, true, false);
+		AddField("m_DayPreset", "", false, true, false);
+		AddField("m_NightPreset", "", false, true, false);
+		IgnoreField("UserData");
+		IgnoreField("SkinName");
+		Preset("Darkplace")
+		{
+			SetField("m_DayPresetPoolName", "Darkplace_Day");
+			SetField("m_NightPresetPoolName", "Darkplace_Night");
+		}
+		Preset("Darkplace_Chemicals_EasyDifficulty")
+		{
+			SetField("m_DayPresetPoolName", "Darkplace_Day_Chemicals_Easy");
+			SetField("m_NightPresetPoolName", "Darkplace_Night_Chemicals_Easy");
+		}
+		Preset("Darkplace_Chemicals_HardDifficulty")
+		{
+			SetField("m_DayPresetPoolName", "Darkplace_Day_Chemicals_Hard");
+			SetField("m_NightPresetPoolName", "Darkplace_Night_Chemicals_Hard");
+		}
+		Preset("Darkplace_Chemicals_MediumDifficulty")
+		{
+			SetField("m_DayPresetPoolName", "Darkplace_Day_Chemicals_Medium");
+			SetField("m_NightPresetPoolName", "Darkplace_Night_Chemicals_Medium");
+		}
+	}
+	PresetDef("Spawner")
+	{
+		Description("");
+		AddField("m_MaxAIsToSpawnNight", "20", false, true, false);
+		AddField("m_MinAIsToSpawnDay", "6", false, true, false);
+		AddField("m_MaxAIsToSpawnDay", "24", false, true, false);
+		AddField("m_SpawnProbability", "1.000000", false, true, false);
+		AddField("m_ShuffleSpawnPoints", "1", false, true, false);
+		AddField("m_MinAIsToSpawnNight", "6", false, true, false);
+		IgnoreField("UserData");
+		IgnoreField("SkinName");
+		Preset("Darkplace_Chemicals_Large_EasyDifficulty")
+		{
+			SetField("m_MinAIsToSpawnNight", "1");
+			SetField("m_MaxAIsToSpawnNight", "13");
+			SetField("m_MinAIsToSpawnDay", "9");
+			SetField("m_MaxAIsToSpawnDay", "24");
+		}
+		Preset("Darkplace_Chemicals_Large_HardDifficulty")
+		{
+			SetField("m_MinAIsToSpawnNight", "2");
+			SetField("m_MaxAIsToSpawnNight", "14");
+			SetField("m_MinAIsToSpawnDay", "9");
+			SetField("m_MaxAIsToSpawnDay", "24");
+		}
+		Preset("Darkplace_Chemicals_Large_MediumDifficulty")
+		{
+			SetField("m_MinAIsToSpawnNight", "1");
+			SetField("m_MaxAIsToSpawnNight", "14");
+			SetField("m_MinAIsToSpawnDay", "9");
+			SetField("m_MaxAIsToSpawnDay", "24");
+		}
+		Preset("Darkplace_Chemicals_Medium_EasyDifficulty")
+		{
+			SetField("m_MinAIsToSpawnNight", "1");
+			SetField("m_MaxAIsToSpawnNight", "12");
+			SetField("m_MinAIsToSpawnDay", "7");
+			SetField("m_MaxAIsToSpawnDay", "15");
+		}
+		Preset("Darkplace_Chemicals_Medium_HardDifficulty")
+		{
+			SetField("m_MinAIsToSpawnNight", "1");
+			SetField("m_MaxAIsToSpawnNight", "12");
+			SetField("m_MinAIsToSpawnDay", "7");
+			SetField("m_MaxAIsToSpawnDay", "15");
+		}
+		Preset("Darkplace_Chemicals_Medium_MediumDifficulty")
+		{
+			SetField("m_MinAIsToSpawnNight", "0");
+			SetField("m_MaxAIsToSpawnNight", "12");
+			SetField("m_MinAIsToSpawnDay", "7");
+			SetField("m_MaxAIsToSpawnDay", "15");
+		}
+		Preset("Darkplace_Chemicals_Small_EasyDifficulty")
+		{
+			SetField("m_MinAIsToSpawnNight", "1");
+			SetField("m_MaxAIsToSpawnNight", "11");
+			SetField("m_MinAIsToSpawnDay", "6");
+			SetField("m_MaxAIsToSpawnDay", "16");
+		}
+		Preset("Darkplace_Chemicals_Small_HardDifficulty")
+		{
+			SetField("m_MinAIsToSpawnNight", "1");
+			SetField("m_MaxAIsToSpawnNight", "13");
+			SetField("m_MinAIsToSpawnDay", "6");
+			SetField("m_MaxAIsToSpawnDay", "16");
+		}
+		Preset("Darkplace_Chemicals_Small_MediumDifficulty")
+		{
+			SetField("m_MinAIsToSpawnNight", "1");
+			SetField("m_MaxAIsToSpawnNight", "12");
+			SetField("m_MinAIsToSpawnDay", "6");
+			SetField("m_MaxAIsToSpawnDay", "16");
+		}
+		Preset("Darkplace_Large")
+		{
+			SetField("m_MinAIsToSpawnNight", "3");
+			SetField("m_MaxAIsToSpawnNight", "14");
+			SetField("m_MinAIsToSpawnDay", "8");
+			SetField("m_MaxAIsToSpawnDay", "18");
+		}
+		Preset("Darkplace_Medium")
+		{
+			SetField("m_MinAIsToSpawnNight", "2");
+			SetField("m_MaxAIsToSpawnNight", "3");
+			SetField("m_MinAIsToSpawnDay", "6");
+			SetField("m_MaxAIsToSpawnDay", "6");
+		}
+		Preset("Darkplace_Small")
+		{
+			SetField("m_MinAIsToSpawnNight", "1");
+			SetField("m_MaxAIsToSpawnNight", "12");
+			SetField("m_MinAIsToSpawnDay", "4");
+			SetField("m_MaxAIsToSpawnDay", "14");
+		}
+		Preset("Darkplace_Tiny")
+		{
+			SetField("m_MinAIsToSpawnNight", "1");
+			SetField("m_MaxAIsToSpawnNight", "11");
+			SetField("m_MinAIsToSpawnDay", "3");
+			SetField("m_MaxAIsToSpawnDay", "13");
+		}
+		Preset("Darkplace_Mob_None")
+		{
+			SetField("m_MaxAIsToSpawnNight", "0");
+			SetField("m_MinAIsToSpawnDay", "8");
+			SetField("m_MaxAIsToSpawnDay", "8");
+			SetField("m_MinAIsToSpawnNight", "0");
+			SetField("m_SpawnProbability", "0.000000");
+		}
+		Preset("Darkplace_Mob_Small")
+		{
+			SetField("m_MinAIsToSpawnDay", "8");
+			SetField("m_MaxAIsToSpawnDay", "18");
+			SetField("m_MinAIsToSpawnNight", "4");
+			SetField("m_MaxAIsToSpawnNight", "16");
+		}
+		Preset("Darkplace_Mob_Medium")
+		{
+			SetField("m_MinAIsToSpawnDay", "10");
+			SetField("m_MaxAIsToSpawnDay", "20");
+			SetField("m_MinAIsToSpawnNight", "6");
+			SetField("m_MaxAIsToSpawnNight", "34");
+		}
+		Preset("Darkplace_Mob_Large")
+		{
+			SetField("m_MinAIsToSpawnDay", "18");
+			SetField("m_MaxAIsToSpawnDay", "28");
+			SetField("m_MinAIsToSpawnNight", "10");
+			SetField("m_MaxAIsToSpawnNight", "32");
+		}
+		Preset("Darkplace_Mob_Suicider")
+		{
+			SetField("m_MinAIsToSpawnDay", "12");
+			SetField("m_MaxAIsToSpawnDay", "12");
+			SetField("m_MinAIsToSpawnNight", "2");
+			SetField("m_MaxAIsToSpawnNight", "3");
+		}
+	}
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Opr_SetBBValue_int m_Key="#combo_attacks" m_Value="$attack_power_combo_count"/>
+        <Selector>
+            <RepeatOnceOnSuccess>
+                <SequenceMem>
+                    <Cnd_IsBBValueGreater_int m_Key="#combo_attacks" m_Value="0"/>
+                    <Cnd_IsCombatTargetInRange m_Radius="$attack_power_combo_max_range" m_Angle="$attack_power_combo_max_angle"/>
+                    <Cnd_IsCombatTargetMeleeReachable/>
+                    <Cnd_AllyInLineOfFire m_Target="#target" m_CheckMelee="true" m_SpaceNeeded="$attack_min_space" m_Invert="true"/>
+                    <Opr_SetDirCorrectionSpeed m_MaxSpeed="$attack_power_combo_dir_correction_speed"/>
+                    <Opr_SetPosCorrectionSpeed m_MaxSpeed="$attack_pos_correction_speed"/>
+                    <Opr_DecrementBBValue_int m_Key="#combo_attacks" m_Amount="1"/>
+                    <Act_Attack m_Target="#target" m_AttackPresetName="human_1h_power_combo" m_EnablePosCorrection="$enable_attack_pos_correction" m_StartPolicy="DISCARD" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+                </SequenceMem>
+            </RepeatOnceOnSuccess>
+            <Cnd_IsBBValueEqual_int m_Key="#combo_attacks" m_Value="0"/>
+        </Selector>
+    </SequenceMem>
+</BehaviorTree>

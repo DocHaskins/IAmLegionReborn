@@ -1,0 +1,28 @@
+import "common_dynamic_spawn_logic_params.def"
+
+sub main()
+{
+    use CommonParams();
+    
+    Param("DayStartTime", "7.1");
+    Param("DayToNightTransitionStartTime", "19.5");
+    Param("NightStartTime", "19.6");
+    Param("NightToDayTransitionStartTime", "7.0");
+    
+    Param("DayToNightTransitionCurveExponent", "4.1");
+    Param("NightToDayTransitionCurveExponent", "12.0");
+    
+    Param("TransitionMode", "Percentage");
+    Param("PercentageOfInitPointsUsed", "100.0");
+    Param("DayNightTransitionPool", "Day_Night_Transition");
+    
+    Param("TransitionExcludedPointTags", "roof_init_vent_shaft");
+    Param("TransitionExcludedPointTags", "roof_init_flap");
+
+    Param("DecreaseCrowdAIDensityDuringNightDayTransition", "false");
+    Param("CrowdAIPresetsAllowedDuringNightDayTransition", "Biter");
+    
+    Param("AverageDistanceBetweenSpecialPreset", "20.0");
+    Param("MinimalDistanceBetweenSpecialPreset", "10.0");
+    Param("SpecialPresetTag", "Special");
+}

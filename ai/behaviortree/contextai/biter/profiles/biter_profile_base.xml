@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<ConstParams xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_const.xsd">
+    <!-- attack max ranges -->
+    <Param m_Name="$attack_max_range" m_Value="2.5"/>
+    <Param m_Name="$grab_max_range" m_Value="1.5"/>
+    <Param m_Name="$attack_rest_max_range" m_Value="2.5"/>
+    <Param m_Name="$power_attack_max_range" m_Value="3.5"/>
+    <Param m_Name="$power_attack_min_range" m_Value="2.0"/>
+    <!-- charge params-->
+    <Param m_Name="$charge_enabled" m_Value="true"/>
+    <Param m_Name="$charge_max_run_range" m_Value="12.0"/>
+    <Param m_Name="$charge_max_range" m_Value="10.0"/>
+    <Param m_Name="$charge_min_range" m_Value="4.0"/>
+    <Param m_Name="$charge_cooldown" m_Value="15.0"/>
+    <!-- dir correction speed -->
+    <Param m_Name="$attack_move_dir_correction_speed" m_Value="900.0"/>
+    <Param m_Name="$attack_stand_dir_correction_speed" m_Value="900.0"/>
+    <Param m_Name="$attack_crawl_dir_correction_speed" m_Value="240.0"/>
+    <!-- other consts -->
+    <Param m_Name="$target_prediciton_time" m_Value="0.25"/>
+
+    <!-- combat const -->
+    <Param m_Name="$combat_run_distance" m_Value="5.0"/>
+    <Param m_Name="$combat_max_angle" m_Value="75.0"/>
+    <Param m_Name="$charge_max_angle" m_Value="30.0"/>
+    <Param m_Name="$can_turn_on_idle" m_Value="true"/>
+
+    <Param m_Name="$death_snap_angle" m_Value="90"/>
+    <Param m_Name="$ragdoll_death_chance" m_Value="1.0"/>
+
+    <Param m_Name="$hit_snap_angle" m_Value="90"/>
+
+    <Param m_Name="$light_attacks_enabled" m_Value="true"/>
+
+    <Param m_Name="$tar_grabs_enabled" m_Value="true"/>
+    <Param m_Name="$tar_swing_cooldown" m_Value="0.0"/>
+    <Param m_Name="$tar_start_min_range" m_Value="2"/>
+    <Param m_Name="$tar_start_max_range" m_Value="7"/>
+
+    <Param m_Name="$combat_slot_tar_grab_limit" m_Value="4"/>
+    <Param m_Name="$combat_slot_melee_min_delay" m_Value="0"/>
+    <Param m_Name="$combat_slot_keep_time" m_Value="1.0"/>
+
+    <!-- Hit progression -->
+    <Param m_Name="$enable_hit_reactions" m_Value="true"/>
+    <Param m_Name="$enable_hit_phase_incremental" m_Value="true"/>
+    <Param m_Name="$hit_phase_incremental_reset_time" m_Value="1.0"/>
+
+    <Param m_Name="$enable_hit_phase_use_remaining_health_only" m_Value="false"/>
+    <Param m_Name="$hit_phase_min" m_Value="1"/>
+    <Param m_Name="$hit_phase_max" m_Value="2"/>
+
+    <Param m_Name="$should_be_near_spawn_to_sleep" m_Value="true"/>
+    <Param m_Name="$time_to_fall_asleep_when_idle" m_Value="5"/>
+    <!-- weapon -->
+    <Param m_Name="$enable_weapon_change" m_Value="false"/>
+    <Param m_Name="$enable_weapon_set" m_Value="false"/>
+
+    <Param m_Name="$use_grab_for_crawl_attack" m_Value="true"/>
+    <Param m_Name="$use_avoidance" m_Value="false"/>
+    <Param m_Name="$avoid_regions_preset" m_Value="zombie"/>
+
+    <Param m_Name="$force_static_grab" m_Value="false"/>
+    <Param m_Name="$enable_recoil_on_perfect_dodge" m_Value="true"/>
+    <Param m_Name="$enable_recoil_on_perfect_block" m_Value="false"/>
+    <!-- UV light death -->
+    <Param m_Name="$min_time_in_uv_to_die" m_Value="9.0"/>
+    <Param m_Name="$max_time_in_uv_to_die" m_Value="12.0"/>
+    <!-- biter doesn't die in the sun, params are just needed for validation -->
+    <Param m_Name="$min_time_in_sunlight_to_die" m_Value="9.0"/>
+    <Param m_Name="$max_time_in_sunlight_to_die" m_Value="12.0"/>
+</ConstParams>

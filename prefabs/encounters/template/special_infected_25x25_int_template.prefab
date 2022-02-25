@@ -1,0 +1,788 @@
+{
+  "__filename__": {
+    "Version": 4,
+    "RuntimeData": {
+      "Interface": {
+        "VirtualFields": [
+          {
+            "Name": "m_ObjectConfigs",
+            "Init": "e:EDIT;f:EDIT;c:Encounter/Objects;",
+            "DestinationFields": [
+              {
+                "Uuid": "36",
+                "Name": "m_ObjectConfigs"
+              }
+            ]
+          },
+          {
+            "Name": "m_BehaviorPlacesToUse",
+            "Init": "e:EDIT;f:EDIT;",
+            "DestinationFields": [
+              {
+                "Uuid": "36",
+                "Name": "m_BehaviorPlacesToUse"
+              }
+            ]
+          },
+          {
+            "Name": "BP_Special_Infected_01",
+            "Init": "f:EDIT;e:EDIT;i:84;",
+            "DestinationFields": [
+              {
+                "Uuid": "88",
+                "Name": "Transform"
+              }
+            ]
+          },
+          {
+            "Name": "BP_Special_Infected_02",
+            "Init": "f:EDIT;e:EDIT;i:84;",
+            "DestinationFields": [
+              {
+                "Uuid": "87",
+                "Name": "Transform"
+              }
+            ]
+          },
+          {
+            "Name": "BP_Special_Infected_03",
+            "Init": "f:EDIT;e:EDIT;i:84;",
+            "DestinationFields": [
+              {
+                "Uuid": "86",
+                "Name": "Transform"
+              }
+            ]
+          }
+        ]
+      },
+      "Components": [
+        {
+          "Class": "CoReplicator",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 1]
+          }
+        },
+        {
+          "Class": "CoRelevance",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 2]
+          },
+          "Fields": {
+            "m_ActivationRange": "90.000000",
+            "m_DisableRange": "80.000000",
+            "m_EnableRange": "70.000000",
+            "m_HierarchicalRestart": "1",
+            "m_HoldOwner": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Encounter"],
+            "m_PcId": [6, 36],
+            "m_PrefabName": [12, "encounter"],
+            "m_PresetNames": [12, "Logic;Special Infected;Spawn setup;Pool Based;Replication;Turned On"],
+            "m_Translate": [14, [-0.5794981, 0.0563993, -1.6912231]]
+          },
+          "Fields": {
+            "IEncounter::m_Categories": "Special_Infected_25x25;Special_Infected_25x25_EndGame;",
+            "m_AIScenarioRole": "Special_Infected",
+            "m_AIScenarioRole_PostSucceded": "Special_Infected",
+            "m_BehaviorPlacesToUse": "/~38;/~39;/~40;/~41;/~42;/~43;/~53;/~54;/~55;/~63;/~62;/~65;/~77;/~79;/~78;",
+            "m_HideLocationConditions_PostSucceded": "EncounterLocationBodyLootedHideCondition,0,();",
+            "m_LocationConfigs": "EncounterCategoryLocationTypeLocationConfig,0,();EncounterCategoryLocationTypeLocationConfig,1,();",
+            "m_LocationDescription": "&Enc_Kill&",
+            "m_LocationDescription_PostSucceded": "&Enc_Loot&",
+            "m_ObjectConfigs": "EncounterObjectSpawnConfig,0,();EncounterObjectEnableStateConfig,1,();",
+            "m_ShowLocationMode": "AIWithRole",
+            "m_ShowLocationMode_PostSucceded": "AIWithRole",
+            "m_ShuffleSpawnPoints": "1",
+            "m_SuccessResultConditions": "EncounterAllAIsWithRoleDeadResultCondition,0,();",
+            "m_SuccessResults": "EncounterExpResult,0,();"
+          },
+          "EmbeddedObjectVector": {
+            "DestinationField": "m_SuccessResultConditions",
+            "Objects": [
+              {
+                "Class": "EncounterAllAIsWithRoleDeadResultCondition",
+                "DestinationField": "m_SuccessResultConditions",
+                "Fields": {
+                  "m_ScenarioRole": "Special_Infected",
+                  "m_ShouldShowHPGauge": "0"
+                }
+              }
+            ]
+          },
+          "EmbeddedObjectVector": {
+            "DestinationField": "m_FailureResults",
+            "Objects": []
+          },
+          "EmbeddedObjectVector": {
+            "DestinationField": "m_ObjectConfigs",
+            "Objects": [
+              {
+                "Class": "EncounterObjectSpawnConfig",
+                "DestinationField": "m_ObjectConfigs",
+                "Fields": {
+                  "m_ApplyState": "PendingActive",
+                  "m_Entities": ";"
+                }
+              },
+              {
+                "Class": "EncounterObjectEnableStateConfig",
+                "DestinationField": "m_ObjectConfigs",
+                "Fields": {
+                  "m_ApplyState": "PendingActive",
+                  "m_Entities": "/~89;"
+                }
+              }
+            ]
+          },
+          "EmbeddedObjectVector": {
+            "DestinationField": "m_SuccessResults",
+            "Objects": [
+              {
+                "Class": "EncounterExpResult",
+                "DestinationField": "m_SuccessResults",
+                "Fields": {
+                  "m_AwardName": "EncounterSuccess",
+                  "m_Message": "&Encounter_Special_Infected_Success&"
+                }
+              }
+            ]
+          },
+          "EmbeddedObjectVector": {
+            "DestinationField": "m_HideLocationConditions_PostSucceded",
+            "Objects": [
+              {
+                "Class": "EncounterLocationBodyLootedHideCondition",
+                "DestinationField": "m_HideLocationConditions_PostSucceded",
+                "Fields": {
+                  "m_ScenarioRole": "Special_Infected"
+                }
+              }
+            ]
+          },
+          "EmbeddedObjectVector": {
+            "DestinationField": "m_LocationConfigs",
+            "Objects": [
+              {
+                "Class": "EncounterCategoryLocationTypeLocationConfig",
+                "DestinationField": "m_LocationConfigs",
+                "Fields": {
+                  "m_Categories": "Special_Infected_25x25;",
+                  "m_Description": "",
+                  "m_LocationType": "EncounterInfected"
+                }
+              },
+              {
+                "Class": "EncounterCategoryLocationTypeLocationConfig",
+                "DestinationField": "m_LocationConfigs",
+                "Fields": {
+                  "m_Categories": "Special_Infected_25x25_EndGame;",
+                  "m_Description": "",
+                  "m_LocationType": "EncounterInfected_Endgame"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [5.960464477539063e-8, 0.150005, 0.1779812, 0.5000003, 0.150005, 0.6779813]],
+            "m_Name": [12, "BP_01_Special"],
+            "m_ParentComponent": [6, 88],
+            "m_PcId": [6, 38],
+            "m_PrefabName": [12, "behaviorplace"],
+            "m_PresetNames": [12, "Type;Default;Replication;Turned On"],
+            "m_Rotate": [14, [179.9999847, 30.9999961, 179.9999694]],
+            "m_Translate": [14, [-0.3793945, 0.0563993, -10.9903869]]
+          },
+          "Fields": {
+            "IPatrolData::m_PatrolPoints": "/~38;/~39;/~40;",
+            "IPatrolData::m_PatrolType": "Random",
+            "IPatrolPoint::m_UseGenericAnimation": "1",
+            "IPatrolPoint::m_WaitTime": "8.000000",
+            "ISpawnData::m_Role": "Special_Infected",
+            "ISpawnData::m_Tag": "Special",
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_ShouldValidateEntryPoints": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [5.960464477539063e-8, 0.150005, 0.1779812, 0.5000002, 0.150005, 0.6779813]],
+            "m_Name": [12, "BP_02_Special"],
+            "m_ParentComponent": [6, 87],
+            "m_PcId": [6, 39],
+            "m_PrefabName": [12, "behaviorplace"],
+            "m_PresetNames": [12, "Type;Default;Replication;Turned On"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [9.158142, 0.0563993, 4.576828]]
+          },
+          "Fields": {
+            "IPatrolData::m_PatrolPoints": "/~38;/~39;/~40;",
+            "IPatrolData::m_PatrolType": "Random",
+            "IPatrolPoint::m_UseGenericAnimation": "1",
+            "IPatrolPoint::m_WaitTime": "8.000000",
+            "ISpawnData::m_Role": "Special_Infected",
+            "ISpawnData::m_Tag": "Special",
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_ShouldValidateEntryPoints": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [5.960464477539063e-8, 0.150005, 0.1779812, 0.5000003, 0.150005, 0.6779813]],
+            "m_Name": [12, "BP_03_Special"],
+            "m_ParentComponent": [6, 86],
+            "m_PcId": [6, 40],
+            "m_PrefabName": [12, "behaviorplace"],
+            "m_PresetNames": [12, "Type;Default;Replication;Turned On"],
+            "m_Rotate": [14, [179.9999847, -46.5000267, 179.9999847]],
+            "m_Translate": [14, [-10.4252014, 0.0563993, 2.4391784]]
+          },
+          "Fields": {
+            "IPatrolData::m_PatrolPoints": "/~38;/~39;/~40;",
+            "IPatrolData::m_PatrolType": "Random",
+            "IPatrolPoint::m_UseGenericAnimation": "1",
+            "IPatrolPoint::m_WaitTime": "8.000000",
+            "ISpawnData::m_Role": "Special_Infected",
+            "ISpawnData::m_Tag": "Special",
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_ShouldValidateEntryPoints": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [5.960464477539063e-8, 0.150005, 0.1779812, 0.5000001, 0.150005, 0.6779812]],
+            "m_Name": [12, "BP_04_Additional"],
+            "m_PcId": [6, 41],
+            "m_PrefabName": [12, "behaviorplace"],
+            "m_PresetNames": [12, "Type;Default;Replication;Turned On"],
+            "m_Rotate": [14, [0.0000024, -15.0000123, -1.2637258350878256e-7]],
+            "m_Translate": [14, [-1.2585449, 0.0563993, 9.2291717]]
+          },
+          "Fields": {
+            "ISpawnData::m_Tag": "Generic",
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_ShouldValidateEntryPoints": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [5.960464477539063e-8, 0.150005, 0.1779812, 0.5000002, 0.150005, 0.6779813]],
+            "m_Name": [12, "BP_05_Additional"],
+            "m_PcId": [6, 42],
+            "m_PrefabName": [12, "behaviorplace"],
+            "m_PresetNames": [12, "Type;Default;Replication;Turned On"],
+            "m_Rotate": [14, [0.0000026, 20.5000228, -0.0000102]],
+            "m_Translate": [14, [5.592163, 0.0564001, 8.9442443]]
+          },
+          "Fields": {
+            "ISpawnData::m_Tag": "Generic",
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_ShouldValidateEntryPoints": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [5.960464477539063e-8, 0.150005, 0.1779812, 0.5000002, 0.150005, 0.6779813]],
+            "m_Name": [12, "BP_06_Additional"],
+            "m_PcId": [6, 43],
+            "m_PrefabName": [12, "behaviorplace"],
+            "m_PresetNames": [12, "Type;Default;Replication;Turned On"],
+            "m_Rotate": [14, [-0.0, -71.5, -0.0]],
+            "m_Translate": [14, [5.0592041, 0.0564001, 1.97229]]
+          },
+          "Fields": {
+            "ISpawnData::m_Tag": "Generic",
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_ShouldValidateEntryPoints": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [5.960464477539063e-8, 0.150005, 0.1779812, 0.5000002, 0.150005, 0.6779813]],
+            "m_Name": [12, "BP_07_Additional"],
+            "m_PcId": [6, 53],
+            "m_PrefabName": [12, "behaviorplace"],
+            "m_PresetNames": [12, "Type;Default;Replication;Turned On"],
+            "m_Rotate": [14, [-0.0, -71.5, -0.0]],
+            "m_Translate": [14, [-10.1657714, 0.0563993, 9.8475189]]
+          },
+          "Fields": {
+            "ISpawnData::m_Tag": "Generic",
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_ShouldValidateEntryPoints": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [5.960464477539063e-8, 0.150005, 0.1779812, 0.5000002, 0.150005, 0.6779813]],
+            "m_Name": [12, "BP_08_Additional"],
+            "m_PcId": [6, 54],
+            "m_PrefabName": [12, "behaviorplace"],
+            "m_PresetNames": [12, "Type;Default;Replication;Turned On"],
+            "m_Rotate": [14, [0.0000045, 62.4999961, -0.0000135]],
+            "m_Translate": [14, [6.810913, 0.0564001, -7.0103759]]
+          },
+          "Fields": {
+            "ISpawnData::m_Tag": "Generic",
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_ShouldValidateEntryPoints": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [5.960464477539063e-8, 0.150005, 0.1779812, 0.5000004, 0.150005, 0.6779814]],
+            "m_Name": [12, "BP_09_Additional"],
+            "m_PcId": [6, 55],
+            "m_PrefabName": [12, "behaviorplace"],
+            "m_PresetNames": [12, "Type;Default;Replication;Turned On"],
+            "m_Rotate": [14, [179.9999847, -38.9999656, 179.9999847]],
+            "m_Translate": [14, [-9.1466064, 0.0564001, -9.8320159]]
+          },
+          "Fields": {
+            "ISpawnData::m_Tag": "Generic",
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_ShouldValidateEntryPoints": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [5.960464477539063e-8, 0.150005, 0.1779812, 0.5000002, 0.150005, 0.6779813]],
+            "m_Name": [12, "BP_11_Additional"],
+            "m_PcId": [6, 62],
+            "m_PrefabName": [12, "behaviorplace"],
+            "m_PresetNames": [12, "Type;Default;Replication;Turned On"],
+            "m_Rotate": [14, [179.9999847, -64.9999694, 179.9999847]],
+            "m_Translate": [14, [-5.0433349, 0.0564001, 5.6947326]]
+          },
+          "Fields": {
+            "ISpawnData::m_Tag": "Generic",
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_ShouldValidateEntryPoints": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [5.960464477539063e-8, 0.150005, 0.1779812, 0.5000002, 0.150005, 0.6779813]],
+            "m_Name": [12, "BP_10_Additional"],
+            "m_PcId": [6, 63],
+            "m_PrefabName": [12, "behaviorplace"],
+            "m_PresetNames": [12, "Type;Default;Replication;Turned On"],
+            "m_Rotate": [14, [0.000011, 32.4999771, -0.0000079]],
+            "m_Translate": [14, [2.2322998, 0.0564001, -2.8643493]]
+          },
+          "Fields": {
+            "ISpawnData::m_Tag": "Generic",
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_ShouldValidateEntryPoints": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [5.960464477539063e-8, 0.150005, 0.1779812, 0.5000002, 0.150005, 0.6779813]],
+            "m_Name": [12, "BP_12_Additional"],
+            "m_PcId": [6, 65],
+            "m_PrefabName": [12, "behaviorplace"],
+            "m_PresetNames": [12, "Type;Default;Replication;Turned On"],
+            "m_Rotate": [14, [179.9999847, -51.0, 179.9999847]],
+            "m_Translate": [14, [-6.661621, 0.0564001, -5.902481]]
+          },
+          "Fields": {
+            "ISpawnData::m_Tag": "Generic",
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_ShouldValidateEntryPoints": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [5.960464477539063e-8, 0.150005, 0.1779812, 0.5000002, 0.150005, 0.6779813]],
+            "m_Name": [12, "BP_13_Additional"],
+            "m_PcId": [6, 77],
+            "m_PrefabName": [12, "behaviorplace"],
+            "m_PresetNames": [12, "Type;Default;Replication;Turned On"],
+            "m_Rotate": [14, [0.0000321, -64.000061, 0.000034]],
+            "m_Translate": [14, [-3.9628906, 0.0564001, -1.7510068]]
+          },
+          "Fields": {
+            "ISpawnData::m_Tag": "Generic",
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_ShouldValidateEntryPoints": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [5.960464477539063e-8, 0.150005, 0.1779812, 0.5000002, 0.150005, 0.6779813]],
+            "m_Name": [12, "BP_15_Additional"],
+            "m_PcId": [6, 78],
+            "m_PrefabName": [12, "behaviorplace"],
+            "m_PresetNames": [12, "Type;Default;Replication;Turned On"],
+            "m_Rotate": [14, [0.0000259, 57.9999618, -0.0000175]],
+            "m_Translate": [14, [-1.8537596, 0.0564001, 0.8055114]]
+          },
+          "Fields": {
+            "ISpawnData::m_Tag": "Generic",
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_ShouldValidateEntryPoints": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [5.960464477539063e-8, 0.150005, 0.1779812, 0.5000002, 0.150005, 0.6779813]],
+            "m_Name": [12, "BP_14_Additional"],
+            "m_PcId": [6, 79],
+            "m_PrefabName": [12, "behaviorplace"],
+            "m_PresetNames": [12, "Type;Default;Replication;Turned On"],
+            "m_Rotate": [14, [0.0000263, 57.9999618, -0.0000175]],
+            "m_Translate": [14, [6.9933471, 0.0563993, -1.9526062]]
+          },
+          "Fields": {
+            "ISpawnData::m_Tag": "Generic",
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_ShouldValidateEntryPoints": "1"
+          }
+        },
+        {
+          "Class": "CoHierarchyRepl",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 84],
+            "m_RootXform": [11, true]
+          }
+        },
+        {
+          "Class": "CoHierarchy",
+          "PrefabFieldsNative": {
+            "m_ParentComponent": [6, 84],
+            "m_PcId": [6, 86]
+          }
+        },
+        {
+          "Class": "CoHierarchy",
+          "PrefabFieldsNative": {
+            "m_ParentComponent": [6, 84],
+            "m_PcId": [6, 87]
+          },
+          "Fields": {
+            "m_SelfActive": "1"
+          }
+        },
+        {
+          "Class": "CoHierarchy",
+          "PrefabFieldsNative": {
+            "m_ParentComponent": [6, 84],
+            "m_PcId": [6, 88]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Spawner_25x25"],
+            "m_ParentComponent": [6, 84],
+            "m_PcId": [6, 89],
+            "m_PrefabName": [12, "ai_spawner_range"],
+            "m_PresetNames": [12, "Activation - daytime;Whole Day;Activation - distance;Exterior"],
+            "m_Scale": [14, [25.0, 0.5, 25.0]],
+            "m_Translate": [14, [0.0, -0.1497392, 0.0]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_MaxAIsToSpawnDay": "0",
+            "m_MaxAIsToSpawnDay": "20",
+            "m_MinAIsToSpawnDay": "0",
+            "m_MinAIsToSpawnNight": "8",
+            "m_NightPresetPoolName": "SI_B_BW_Spawner",
+            "m_PointDensityMultiplier": "3.000000",
+            "m_PointsSource": "8",
+            "m_ShuffleSpawnPoints": "1"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "AttributeAreaDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2",
+      "Nodes": [
+        {
+          "Uuid": "1",
+          "Type": "0",
+          "X": "-1305.00",
+          "Y": "975.00"
+        },
+        {
+          "Uuid": "2",
+          "Type": "0",
+          "X": "-1320.00",
+          "Y": "1140.00"
+        },
+        {
+          "Uuid": "36",
+          "Type": "1",
+          "X": "450.00",
+          "Y": "-2055.00"
+        },
+        {
+          "Uuid": "38",
+          "Type": "1",
+          "X": "405.00",
+          "Y": "120.00"
+        },
+        {
+          "Uuid": "39",
+          "Type": "1",
+          "X": "-60.00",
+          "Y": "1500.00"
+        },
+        {
+          "Uuid": "40",
+          "Type": "1",
+          "X": "-60.00",
+          "Y": "15.00"
+        },
+        {
+          "Uuid": "41",
+          "Type": "1",
+          "X": "1230.00",
+          "Y": "45.00"
+        },
+        {
+          "Uuid": "42",
+          "Type": "1",
+          "X": "1395.00",
+          "Y": "-15.00"
+        },
+        {
+          "Uuid": "43",
+          "Type": "1",
+          "X": "1350.00",
+          "Y": "0.00"
+        },
+        {
+          "Uuid": "46",
+          "Type": "1",
+          "X": "1335.00",
+          "Y": "0.00"
+        },
+        {
+          "Uuid": "47",
+          "Type": "1",
+          "X": "1320.00",
+          "Y": "-15.00"
+        },
+        {
+          "Uuid": "48",
+          "Type": "1",
+          "X": "1350.00",
+          "Y": "30.00"
+        },
+        {
+          "Uuid": "49",
+          "Type": "1",
+          "X": "1275.00",
+          "Y": "-15.00"
+        },
+        {
+          "Uuid": "50",
+          "Type": "1",
+          "X": "1260.00",
+          "Y": "-15.00"
+        },
+        {
+          "Uuid": "53",
+          "Type": "1",
+          "X": "1305.00",
+          "Y": "-15.00"
+        },
+        {
+          "Uuid": "54",
+          "Type": "1",
+          "X": "1320.00",
+          "Y": "0.00"
+        },
+        {
+          "Uuid": "55",
+          "Type": "1",
+          "X": "1320.00",
+          "Y": "15.00"
+        },
+        {
+          "Uuid": "56",
+          "Type": "1",
+          "X": "1245.00",
+          "Y": "30.00"
+        },
+        {
+          "Uuid": "57",
+          "Type": "1",
+          "X": "1380.00",
+          "Y": "0.00"
+        },
+        {
+          "Uuid": "58",
+          "Type": "1",
+          "X": "1260.00",
+          "Y": "30.00"
+        },
+        {
+          "Uuid": "59",
+          "Type": "1",
+          "X": "1275.00",
+          "Y": "-30.00"
+        },
+        {
+          "Uuid": "60",
+          "Type": "1",
+          "X": "1305.00",
+          "Y": "30.00"
+        },
+        {
+          "Uuid": "61",
+          "Type": "1",
+          "X": "1170.00",
+          "Y": "0.00"
+        },
+        {
+          "Uuid": "62",
+          "Type": "1",
+          "X": "1320.00",
+          "Y": "-15.00"
+        },
+        {
+          "Uuid": "63",
+          "Type": "1",
+          "X": "1290.00",
+          "Y": "-15.00"
+        },
+        {
+          "Uuid": "64",
+          "Type": "1",
+          "X": "1290.00",
+          "Y": "-15.00"
+        },
+        {
+          "Uuid": "65",
+          "Type": "1",
+          "X": "1320.00",
+          "Y": "-15.00"
+        },
+        {
+          "Uuid": "66",
+          "Type": "1",
+          "X": "1245.00",
+          "Y": "-15.00"
+        },
+        {
+          "Uuid": "67",
+          "Type": "1",
+          "X": "1245.00",
+          "Y": "-60.00"
+        },
+        {
+          "Uuid": "77",
+          "Type": "1",
+          "X": "1245.00",
+          "Y": "-15.00"
+        },
+        {
+          "Uuid": "78",
+          "Type": "1",
+          "X": "1230.00",
+          "Y": "-30.00"
+        },
+        {
+          "Uuid": "79",
+          "Type": "1",
+          "X": "1200.00",
+          "Y": "-30.00"
+        },
+        {
+          "Uuid": "80",
+          "Type": "1",
+          "X": "1185.00",
+          "Y": "-105.00"
+        },
+        {
+          "Uuid": "84",
+          "Type": "2",
+          "X": "-1365.00",
+          "Y": "615.00"
+        },
+        {
+          "Uuid": "86",
+          "Type": "2",
+          "X": "-600.00",
+          "Y": "450.00"
+        },
+        {
+          "Uuid": "87",
+          "Type": "2",
+          "X": "-615.00",
+          "Y": "930.00"
+        },
+        {
+          "Uuid": "88",
+          "Type": "2",
+          "X": "-600.00",
+          "Y": "690.00"
+        },
+        {
+          "Uuid": "89",
+          "Type": "1",
+          "X": "0.00",
+          "Y": "0.00"
+        },
+        {
+          "Uuid": "12",
+          "Type": "4",
+          "X": "-655.00",
+          "Y": "-305.00",
+          "Interface_Type": "0"
+        },
+        {
+          "Uuid": "13",
+          "Type": "4",
+          "X": "-630.00",
+          "Y": "-285.00",
+          "Interface_Type": "1"
+        },
+        {
+          "Uuid": "14",
+          "Type": "4",
+          "X": "-1275.00",
+          "Y": "255.00",
+          "Interface_Type": "2"
+        }
+      ]
+    }
+  }
+}

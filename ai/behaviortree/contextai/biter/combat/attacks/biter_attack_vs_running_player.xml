@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <CooldownTimeDelta m_CooldownTime="5.0" m_CooldownOnAbort="true">
+        <SequenceMem>
+            <Cnd_IsCombatTargetInRadius m_Radius="6" m_UsePrediction="true"/>
+            <Cnd_ChaseInProgress/>
+            <Cnd_IsTargetApproaching m_Target="#target" m_MinVel="3" m_MaxAngle="40"/>
+            <Cnd_CanInterruptActivityModule_Movement/>
+            <Opr_SetDirCorrectionSpeed m_MaxSpeed="$attack_stand_dir_correction_speed"/>
+            <Cnd_IsInUVLight m_Invert="true"/>
+            <Act_Attack m_Target="#target" m_AttackPresetName="biter_stand_grab" m_StartPolicy="DISCARD" m_AbandonPolicy="BLENDOUT"/>
+        </SequenceMem>
+    </CooldownTimeDelta>
+</BehaviorTree>

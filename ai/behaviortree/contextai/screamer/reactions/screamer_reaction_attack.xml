@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Sequence>
+        <Succeeder m_Hide="true">
+            <Trigger m_Key="#trigger_attack">
+                <Sequence>
+                    <Cnd_IsBBValueEqual_bool m_Key="#flag_combat_rest" m_Value="true"/>
+                    <Cnd_HasBBValue m_Key="#target"/>
+                    <Cnd_IsCombatTargetInRadius m_Radius="5.0" m_UsePrediction="true"/>
+                </Sequence>
+            </Trigger>
+        </Succeeder>
+        <Starter m_Key="#trigger_attack">
+            <SequenceMem>
+                <Opr_SetDirCorrectionSpeed m_MaxSpeed="1060.00"/>
+                <Opr_SetActivePose m_Pose="Standing"/>
+                <Act_Attack m_Target="#target" m_AttackPresetName="biter_reaction" m_StartPolicy="DISCARD" m_AbandonPolicy="BLENDOUT"/>
+            </SequenceMem>
+        </Starter>
+    </Sequence>
+</BehaviorTree>

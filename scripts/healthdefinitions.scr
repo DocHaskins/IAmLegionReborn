@@ -1,0 +1,1894 @@
+sub main()
+{
+    //////////////////////////////////////////////////////////////
+    // testing only //////////////////////////////////////////////
+
+    Health("Test_100")
+    {
+        Health("100");
+    }
+
+    Health("Test_20")
+    {
+        Health("20");
+    }
+
+    Health("Test_HealingLimit")
+    {
+        Health("80% of MaxHealth");
+    }
+
+    Health("HealthCalculatedInCode")
+    {
+        Health("?");
+    }
+
+    Health("Test_DamageLimit")
+    {
+        Health("72");
+    }
+
+    Health("Test_VeryLongHealthDefinitionNameThatShouldBeWrappedAroundWhichMeansItShouldBeBrokenIntoLines")
+    {
+        Health("72");
+    }
+    
+    HealthTotalMul("Test_TotalMul")
+    {
+        Health("3");
+    }
+    HealthTotalMul("Test_TotalMul2")
+    {
+        Health("4");
+    }
+
+    //////////////////////////////////////////////////////////////
+
+	Health("HealthBoostNightRunner")
+    {
+        Health("100");
+    }
+
+    Health("HealthRegenerationMaxLevel")
+    {
+        Health("33% of MaxHealth");
+    }
+
+    Health("HealthRegenerationMaxLevel_Hard")
+    {
+        Health("25% of MaxHealth");
+    }
+
+	Health("NightRunnerHealthRegenerationMaxLevel")
+    {
+        Health("100% of MaxHealth");
+    }
+
+    Health("DefaultHealth")
+    {
+        Health("100");
+    }
+
+    Health("DefaultMinHealth")
+    {
+        Health("0");
+    }
+
+    HealthMul("DefaultHealthMul")
+    {
+        Health("+0");
+    }
+
+    Health("DefaultPlayerMinHealth")
+    {
+        Health("0");
+    }
+
+    Health("Dev_ImmortalPlayerMinHealth")
+    {
+        Health("1");
+    }
+
+	Health("DefaultPlayerMinHealthHandsOff")
+    {
+        Health("1");
+    }
+
+    Health("DefaultPlayerHealth")
+    {
+        Health("80");
+    }
+
+    Health("BaseHealth")
+    {
+        Health("100");
+    }
+
+    HealthMul("BaseHealthMul")
+    {
+        Health("+1");
+    }
+
+    HealthMul("BiterLegHealthMul")
+    {
+        Health("-0.1");
+    }
+
+    HealthMul("BiterArmHealthMul")
+    {
+        Health("-0.1");
+    }
+	HealthMul("BiterArmoredArmHealthMul")
+    {
+        Health("-0.25");
+    }
+
+    HealthMul("BiterHeadHealthMul")
+    {
+        Health("-1.0");
+    }
+
+    HealthMul("ViralLegHealthMul")
+    {
+        Health("-0.2");
+    }
+
+    HealthMul("ViralArmHealthMul")
+    {
+        Health("-0.2");
+    }
+
+    HealthMul("ViralHeadHealthMul")
+    {
+        Health("-1.0");
+    }
+
+	HealthMul("SpitterLegHealthMul")
+    {
+        Health("-0.5");
+    }
+
+    HealthMul("SpitterArmHealthMul")
+    {
+        Health("-0.5");
+    }
+
+    HealthMul("SpitterHeadHealthMul")
+    {
+        Health("-0.35");
+    }
+
+	HealthMul("GoonLegHealthMul")
+    {
+        Health("1");
+    }
+
+    HealthMul("GoonArmHealthMul")
+    {
+        Health("1");
+    }
+
+    HealthMul("GoonHeadHealthMul")
+    {
+        Health("1");
+    }
+
+    HealthMul("DefaultHeadHealthMul")
+    {
+        Health("-0.35");
+    }
+
+    HealthMul("DefaultLegHealthMul")
+    {
+        Health("-0.5");
+    }
+
+    HealthMul("DefaultArmHealthMul")
+    {
+        Health("-0.5");
+    }
+
+	HealthMul("DemolisherLegHealthMul")
+    {
+        Health("1");
+    }
+
+    HealthMul("DemolisherArmHealthMul")
+    {
+        Health("1");
+    }
+
+    HealthMul("DemolisherHeadHealthMul")
+    {
+        Health("1");
+    }
+
+    HealthMul("HumanLegHealthMul")
+    {
+        Health("-0.75");
+    }
+
+    HealthMul("HumanArmHealthMul")
+    {
+        Health("-0.75");
+    }
+
+    HealthMul("HumanHeadHealthMul")
+    {
+        Health("-0.50");
+    }
+    Health("Body_001")
+    {
+        Health("1");
+    }
+    Health("Body_010")
+    {
+        Health("10");
+    }
+
+    Health("Body_020")
+    {
+        Health("20");
+    }
+
+	Health("Body_030")
+    {
+        Health("30");
+    }
+
+    Health("Body_040")
+    {
+        Health("40");
+    }
+
+	Health("Body_050")
+    {
+        Health("50");
+    }
+
+    Health("Body_070")
+    {
+        Health("75");
+    }
+
+    Health("Body_075")
+    {
+        Health("75");
+    }
+
+    Health("Body_080")
+    {
+        Health("80");
+    }
+
+    Health("Body_085")
+    {
+        Health("85");
+    }
+
+    Health("Body_090")
+    {
+        Health("90");
+    }
+
+    Health("Body_100")
+    {
+        Health("100");
+    }
+
+    Health("Body_115")
+    {
+        Health("115");
+    }
+
+    Health("Body_120")
+    {
+        Health("120");
+    }
+
+	Health("Body_140")
+    {
+        Health("140");
+    }
+
+    Health("Body_125")
+    {
+        Health("125");
+    }
+
+    Health("Body_150")
+    {
+        Health("150");
+    }
+
+	Health("Body_160")
+    {
+        Health("160");
+    }
+
+    Health("Body_170")
+    {
+        Health("170");
+    }
+
+	Health("Body_180")
+    {
+        Health("180");
+    }
+
+    Health("Body_200")
+    {
+        Health("200");
+    }
+
+    Health("Body_220")
+    {
+        Health("220");
+    }
+
+	Health("Body_225")
+    {
+        Health("225");
+    }
+
+    Health("Body_230")
+    {
+        Health("230");
+    }
+
+    Health("Body_240")
+    {
+        Health("240");
+    }
+
+	Health("Body_260")
+    {
+        Health("260");
+    }
+
+	Health("Body_280")
+    {
+        Health("280");
+    }
+
+	Health("Body_290")
+    {
+        Health("290");
+    }
+
+    Health("Body_300")
+    {
+        Health("300");
+    }
+
+    Health("Body_320")
+    {
+        Health("320");
+    }
+
+    Health("Body_325")
+    {
+        Health("325");
+    }
+
+    Health("Body_340")
+    {
+        Health("340");
+    }
+
+    Health("Body_360")
+    {
+        Health("360");
+    }
+
+    Health("Body_380")
+    {
+        Health("380");
+    }
+
+    Health("Body_400")
+    {
+        Health("400");
+    }
+
+    Health("Body_425")
+    {
+        Health("425");
+    }
+
+    Health("Body_450")
+    {
+        Health("450");
+    }
+    
+	Health("Body_460")
+    {
+        Health("460");
+    }
+
+    Health("Body_500")
+    {
+        Health("500");
+    }
+
+    Health("Body_550")
+    {
+        Health("550");
+    }
+
+    Health("Body_575")
+    {
+        Health("575");
+    }
+
+    Health("Body_615")
+    {
+        Health("615");
+    }
+
+    Health("Body_650")
+    {
+        Health("650");
+    }
+
+    Health("Body_750")
+    {
+        Health("750");
+    }
+
+    Health("Body_840")
+    {
+        Health("840");
+    }
+
+    Health("Body_850")
+    {
+        Health("850");
+    }
+
+    Health("Body_900")
+    {
+        Health("900");
+    }
+
+    Health("Body_920")
+    {
+        Health("920");
+    }
+
+    Health("Body_1000")
+    {
+        Health("1000");
+    }
+	
+	Health("Body_1230")
+    {
+        Health("1230");
+    }
+	
+	Health("Body_100000")
+    {
+        Health("100000");
+    }
+
+    Health("SimpleWithHead")
+    {
+        Health("100");
+    }
+
+    Health("Biter_Level_1")
+    {
+        Health("50");
+    }
+
+    Health("Biter_Level_2")
+    {
+        Health("75");
+    }
+
+    Health("Biter_RGD_1")
+    {
+        Health("80");
+    }
+
+    Health("Biter_RGD_2")
+    {
+        Health("128");
+    }
+
+    Health("Biter_RGD_3")
+    {
+        Health("178");
+    }
+
+    Health("Biter_RGD_4")
+    {
+        Health("260");
+    }
+
+    Health("Biter_RGD_5")
+    {
+        Health("332");
+    }
+
+    Health("Biter_RGD_6")
+    {
+        Health("432");
+    }
+
+    Health("Biter_RGD_7")
+    {
+        Health("566");
+    }
+
+    Health("Biter_RGD_8")
+    {
+        Health("706");
+    }
+
+    Health("Biter_RGD_9")
+    {
+        Health("794");
+    }
+	
+    Health("Biter_Weak_RGD_1")
+    {
+        Health("40");
+    }
+
+    Health("Biter_Weak_RGD_2")
+    {
+        Health("64");
+    }
+
+    Health("Biter_Weak_RGD_3")
+    {
+        Health("89");
+    }
+
+    Health("Biter_Weak_RGD_4")
+    {
+        Health("130");
+    }
+
+    Health("Biter_Weak_RGD_5")
+    {
+        Health("166");
+    }
+
+    Health("Biter_Weak_RGD_6")
+    {
+        Health("216");
+    }
+
+    Health("Biter_Weak_RGD_7")
+    {
+        Health("283");
+    }
+
+    Health("Biter_Weak_RGD_8")
+    {
+        Health("353");
+    }
+
+    Health("Biter_Weak_RGD_9")
+    {
+        Health("397");
+    }
+
+    Health("Biter_XL_RGD_1")
+    {
+        Health("96");
+    }
+
+    Health("Biter_XL_RGD_2")
+    {
+        Health("154");
+    }
+
+    Health("Biter_XL_RGD_3")
+    {
+        Health("214");
+    }
+
+    Health("Biter_XL_RGD_4")
+    {
+        Health("312");
+    }
+
+    Health("Biter_XL_RGD_5")
+    {
+        Health("398");
+    }
+
+    Health("Biter_XL_RGD_6")
+    {
+        Health("518");
+    }
+
+    Health("Biter_XL_RGD_7")
+    {
+        Health("680");
+    }
+
+    Health("Biter_XL_RGD_8")
+    {
+        Health("848");
+    }
+
+    Health("Biter_XL_RGD_9")
+    {
+        Health("952");
+    }
+	
+	Health("Biter_Backpack_RGD_1")   // 150% * Biter
+    {
+        Health("120");
+    }
+
+    Health("Biter_Backpack_RGD_2")
+    {
+        Health("192");
+    }
+
+    Health("Biter_Backpack_RGD_3")
+    {
+        Health("268");
+    }
+
+    Health("Biter_Backpack_RGD_4")
+    {
+        Health("390");
+    }
+
+    Health("Biter_Backpack_RGD_5")
+    {
+        Health("498");
+    }
+
+    Health("Biter_Backpack_RGD_6")
+    {
+        Health("648");
+    }
+
+    Health("Biter_Backpack_RGD_7")
+    {
+        Health("850");
+    }
+
+    Health("Biter_Backpack_RGD_8")
+    {
+        Health("1060");
+    }
+
+    Health("Biter_Backpack_RGD_9")
+    {
+        Health("1192");
+    }
+
+    Health("Viral_RGD_1")
+    {
+        Health("68");
+    }
+
+    Health("Viral_RGD_2")
+    {
+        Health("101");
+    }
+
+    Health("Viral_RGD_3")
+    {
+        Health("153");
+    }
+
+    Health("Viral_RGD_4")
+    {
+        Health("239");
+    }
+
+    Health("Viral_RGD_5")
+    {
+        Health("364");
+    }
+
+    Health("Viral_RGD_6")
+    {
+        Health("540");
+    }
+
+    Health("Viral_RGD_7")
+    {
+        Health("836");
+    }
+
+    Health("Viral_RGD_8")
+    {
+        Health("1344");
+    }
+
+    Health("Viral_RGD_9")
+    {
+        Health("2120");
+    }
+    Health("Viral_Chase_RGD_1")
+    {
+        Health("74");
+    }
+
+    Health("Viral_Chase_RGD_2")
+    {
+        Health("112");
+    }
+
+    Health("Viral_Chase_RGD_3")
+    {
+        Health("168");
+    }
+
+    Health("Viral_Chase_RGD_4")
+    {
+        Health("286");
+    }
+
+    Health("Viral_Chase_RGD_5")
+    {
+        Health("436");
+    }
+
+    Health("Viral_Chase_RGD_6")
+    {
+        Health("648");
+    }
+
+    Health("Viral_Chase_RGD_7")
+    {
+        Health("1086");
+    }
+
+    Health("Viral_Chase_RGD_8")
+    {
+        Health("1748");
+    }
+
+    Health("Viral_Chase_RGD_9")
+    {
+        Health("2756");
+    }
+    Health("Viral_Level_1")
+    {
+        Health("25");
+    }
+
+    Health("Viral_Level_2")
+    {
+        Health("70");
+    }
+
+    Health("Viral_Level_3")
+    {
+        Health("70");
+    }
+
+    Health("Viral_Level_3_playtest_behaviour")
+    {
+        Health("70");
+    }
+
+    Health("Viral_Level_3_playtest_dmg")
+    {
+        Health("70");
+    }
+
+    Health("Viral_Level_3_playtest_hp")
+    {
+        Health("110");
+    }
+
+    Health("Viral_Level_3_playtest_speed")
+    {
+        Health("70");
+    }
+
+    Health("Viral_Level_4")
+    {
+        Health("110");
+    }
+
+    Health("Viral_Level_5")
+    {
+        Health("110");
+    }
+
+    Health("Viral_Lunger")
+    {
+        Health("60");
+    }
+
+    Health("Volatile")
+    {
+        Health("340");
+    }
+
+    Health("Volatile_RGD_1")
+    {
+        Health("340");
+    }
+
+    Health("Volatile_RGD_2")
+    {
+        Health("506");
+    }
+
+    Health("Volatile_RGD_3")
+    {
+        Health("768");
+    }
+
+    Health("Volatile_RGD_4")
+    {
+        Health("1196");
+    }
+
+    Health("Volatile_RGD_5")
+    {
+        Health("1820");
+    }
+
+    Health("Volatile_RGD_6")
+    {
+        Health("2700");
+    }
+
+    Health("Volatile_RGD_7")
+    {
+        Health("4182");
+    }
+
+    Health("Volatile_RGD_8")
+    {
+        Health("6720");
+    }
+
+    Health("Volatile_RGD_9")
+    {
+        Health("10600");
+    }
+
+    Health("Bolter_RGD_1")
+    {
+        Health("34");
+    }
+    Health("Bolter_RGD_2")
+    {
+        Health("50");
+    }
+    Health("Bolter_RGD_3")
+    {
+        Health("76");
+    }
+    Health("Bolter_RGD_4")
+    {
+        Health("119");
+    }
+    Health("Bolter_RGD_5")
+    {
+        Health("182");
+    }
+    Health("Bolter_RGD_6")
+    {
+        Health("270");
+    }
+    Health("Bolter_RGD_7")
+    {
+        Health("418");
+    }
+    Health("Bolter_RGD_8")
+    {
+        Health("672");
+    }
+    Health("Bolter_RGD_9")
+    {
+        Health("1060");
+    }
+
+    Health("Banshee_RGD_1")
+    {
+        Health("85");
+    }
+    Health("Banshee_RGD_2")
+    {
+        Health("148");
+    }
+    Health("Banshee_RGD_3")
+    {
+        Health("228");
+    }
+    Health("Banshee_RGD_4")
+    {
+        Health("377");
+    }
+    Health("Banshee_RGD_5")
+    {
+        Health("560");
+    }
+    Health("Banshee_RGD_6")
+    {
+        Health("870");
+    }
+    Health("Banshee_RGD_7")
+    {
+        Health("1419");
+    }
+    Health("Banshee_RGD_8")
+    {
+        Health("2360");
+    }
+    Health("Banshee_RGD_9")
+    {
+        Health("2650");
+    }
+	
+	Health("Charger_RGD_1")
+    {
+        Health("119");
+    }
+    Health("Charger_RGD_2")
+    {
+        Health("177");
+    }
+    Health("Charger_RGD_3")
+    {
+        Health("268");
+    }
+    Health("Charger_RGD_4")
+    {
+        Health("418");
+    }
+    Health("Charger_RGD_5")
+    {
+        Health("637");
+    }
+    Health("Charger_RGD_6")
+    {
+        Health("945");
+    }
+    Health("Charger_RGD_7")
+    {
+        Health("1463");
+    }
+    Health("Charger_RGD_8")
+    {
+        Health("2352");
+    }
+    Health("Charger_RGD_9")
+    {
+        Health("3710");
+    }
+	
+	Health("Obstructor_RGD_1")
+    {
+        Health("51");
+    }
+    Health("Obstructor_RGD_2")
+    {
+        Health("75");
+    }
+    Health("Obstructor_RGD_3")
+    {
+        Health("115");
+    }
+    Health("Obstructor_RGD_4")
+    {
+        Health("179");
+    }
+    Health("Obstructor_RGD_5")
+    {
+        Health("273");
+    }
+    Health("Obstructor_RGD_6")
+    {
+        Health("405");
+    }
+    Health("Obstructor_RGD_7")
+    {
+        Health("627");
+    }
+    Health("Obstructor_RGD_8")
+    {
+        Health("1008");
+    }
+    Health("Obstructor_RGD_9")
+    {
+        Health("1590");
+    }
+	
+	Health("Corruptor_RGD_1")
+    {
+        Health("595");
+    }
+    Health("Corruptor_RGD_2")
+    {
+        Health("885");
+    }
+    Health("Corruptor_RGD_3")
+    {
+        Health("1344");
+    }
+    Health("Corruptor_RGD_4")
+    {
+        Health("2093");
+    }
+    Health("Corruptor_RGD_5")
+    {
+        Health("3185");
+    }
+    Health("Corruptor_RGD_6")
+    {
+        Health("4725");
+    }
+    Health("Corruptor_RGD_7")
+    {
+        Health("7318");
+    }
+    Health("Corruptor_RGD_8")
+    {
+        Health("11760");
+    }
+    Health("Corruptor_RGD_9")
+    {
+        Health("18550");
+    }
+	
+	Health("Corruptor_Phase_2_Health")
+    {
+        Health("66% of MaxHealth");
+    }
+	Health("Corruptor_Phase_3_Health")
+    {
+        Health("33% of MaxHealth");
+    }
+    Health("Body_Spitter")
+    {
+        Health("50");
+    }
+
+    Health("Spitter_RGD_1")
+    {
+        Health("68");
+    }
+
+    Health("Spitter_RGD_2")
+    {
+        Health("101");
+    }
+
+    Health("Spitter_RGD_3")
+    {
+        Health("153");
+    }
+
+    Health("Spitter_RGD_4")
+    {
+        Health("239");
+    }
+
+    Health("Spitter_RGD_5")
+    {
+        Health("364");
+    }
+
+    Health("Spitter_RGD_6")
+    {
+        Health("540");
+    }
+
+    Health("Spitter_RGD_7")
+    {
+        Health("836");
+    }
+
+    Health("Spitter_RGD_8")
+    {
+        Health("1344");
+    }
+
+    Health("Spitter_RGD_9")
+    {
+        Health("2120");
+    }
+
+    Health("Goon")
+    {
+        Health("500");
+    }
+    Health("Goon_RGD_1")
+    {
+        Health("425");
+    }
+    Health("Goon_RGD_2")
+    {
+        Health("632");
+    }
+    Health("Goon_RGD_3")
+    {
+        Health("960");
+    }
+    Health("Goon_RGD_4")
+    {
+        Health("1495");
+    }
+    Health("Goon_RGD_5")
+    {
+        Health("2275");
+    }
+    Health("Goon_RGD_6")
+    {
+        Health("3375");
+    }
+    Health("Goon_RGD_7")
+    {
+        Health("5227");
+    }
+    Health("Goon_RGD_8")
+    {
+        Health("8400");
+    }
+    Health("Goon_RGD_9")
+    {
+        Health("13250");
+    }
+    Health("Demolisher")
+    {
+        Health("500");
+    }
+    Health("Demolisher_RGD_1")
+    {
+        Health("595");
+    }
+    Health("Demolisher_RGD_2")
+    {
+        Health("885");
+    }
+    Health("Demolisher_RGD_3")
+    {
+        Health("1344");
+    }
+    Health("Demolisher_RGD_4")
+    {
+        Health("2093");
+    }
+    Health("Demolisher_RGD_5")
+    {
+        Health("3185");
+    }
+    Health("Demolisher_RGD_6")
+    {
+        Health("4725");
+    }
+    Health("Demolisher_RGD_7")
+    {
+        Health("7318");
+    }
+    Health("Demolisher_RGD_8")
+    {
+        Health("11760");
+    }
+    Health("Demolisher_RGD_9")
+    {
+        Health("18550");
+    }
+	Health("Zombie_Boss_RGD_1")
+    {
+        Health("340");
+    }
+    Health("Zombie_Boss_RGD_2")
+    {
+        Health("506");
+    }
+    Health("Zombie_Boss_RGD_3")
+    {
+        Health("768");
+    }
+    Health("Zombie_Boss_RGD_4")
+    {
+        Health("1196");
+    }
+    Health("Zombie_Boss_RGD_5")
+    {
+        Health("1820");
+    }
+    Health("Zombie_Boss_RGD_6")
+    {
+        Health("2700");
+    }
+    Health("Zombie_Boss_RGD_7")
+    {
+        Health("4182");
+    }
+    Health("Zombie_Boss_RGD_8")
+    {
+        Health("6720");
+    }
+    Health("Zombie_Boss_RGD_9")
+    {
+        Health("10600");
+    }
+    Health("Screamer_RGD_1")
+    {
+        Health("51");
+    }
+    Health("Screamer_RGD_2")
+    {
+        Health("75");
+    }
+    Health("Screamer_RGD_3")
+    {
+        Health("115");
+    }
+    Health("Screamer_RGD_4")
+    {
+        Health("179");
+    }
+    Health("Screamer_RGD_5")
+    {
+        Health("273");
+    }
+    Health("Screamer_RGD_6")
+    {
+        Health("405");
+    }
+    Health("Screamer_RGD_7")
+    {
+        Health("627");
+    }
+    Health("Screamer_RGD_8")
+    {
+        Health("1008");
+    }
+    Health("Screamer_RGD_9")
+    {
+        Health("1590");
+    }
+    Health("Waltz_Heavy_RGD_1")
+    {
+        Health("595");
+    }
+    Health("Waltz_Heavy_RGD_2")
+    {
+        Health("885");
+    }
+    Health("Waltz_Heavy_RGD_3")
+    {
+        Health("1344");
+    }
+    Health("Waltz_Heavy_RGD_4")
+    {
+        Health("2093");
+    }
+    Health("Waltz_Heavy_RGD_5")
+    {
+        Health("3185");
+    }
+    Health("Waltz_Heavy_RGD_6")
+    {
+        Health("4725");
+    }
+    Health("Waltz_Heavy_RGD_7")
+    {
+        Health("7318");
+    }
+    Health("Waltz_Heavy_RGD_8")
+    {
+        Health("11760");
+    }
+    Health("Waltz_Heavy_RGD_9")
+    {
+        Health("18550");
+    }
+	Health("Waltz_Fog_RGD_1")
+    {
+        Health("450");
+    }
+    Health("Waltz_Fog_RGD_2")
+    {
+        Health("700");
+    }
+    Health("Waltz_Fog_RGD_3")
+    {
+        Health("1000");
+    }
+    Health("Waltz_Fog_RGD_4")
+    {
+        Health("1600");
+    }
+    Health("Waltz_Fog_RGD_5")
+    {
+        Health("2400");
+    }
+    Health("Waltz_Fog_RGD_6")
+    {
+        Health("3500");
+    }
+    Health("Waltz_Fog_RGD_7")
+    {
+        Health("5500");
+    }
+    Health("Waltz_Fog_RGD_8")
+    {
+        Health("8500");
+    }
+    Health("Waltz_Fog_RGD_9")
+    {
+        Health("12500");
+    }
+    Health("Waltz_Hostile_Mission_Veronika_RGD_1")
+    {
+        Health("300");
+    }
+    Health("Waltz_Hostile_Mission_Veronika_RGD_2")
+    {
+        Health("450");
+    }
+    Health("Waltz_Hostile_Mission_Veronika_RGD_3")
+    {
+        Health("700");
+    }
+    Health("Waltz_Hostile_Mission_Veronika_RGD_4")
+    {
+        Health("1050");
+    }
+    Health("Waltz_Hostile_Mission_Veronika_RGD_5")
+    {
+        Health("1600");
+    }
+    Health("Waltz_Hostile_Mission_Veronika_RGD_6")
+    {
+        Health("2500");
+    }
+    Health("Waltz_Hostile_Mission_Veronika_RGD_7")
+    {
+        Health("3600");
+    }
+    Health("Waltz_Hostile_Mission_Veronika_RGD_8")
+    {
+        Health("6000");
+    }
+    Health("Waltz_Hostile_Mission_Veronika_RGD_9")
+    {
+        Health("9200");
+    }
+    Health("Waltz_Jumper_RGD_1")
+    {
+        Health("595");
+    }
+    Health("Waltz_Jumper_RGD_2")
+    {
+        Health("885");
+    }
+    Health("Waltz_Jumper_RGD_3")
+    {
+        Health("1344");
+    }
+    Health("Waltz_Jumper_RGD_4")
+    {
+        Health("2093");
+    }
+    Health("Waltz_Jumper_RGD_5")
+    {
+        Health("3185");
+    }
+    Health("Waltz_Jumper_RGD_6")
+    {
+        Health("4725");
+    }
+    Health("Waltz_Jumper_RGD_7")
+    {
+        Health("7318");
+    }
+    Health("Waltz_Jumper_RGD_8")
+    {
+        Health("11760");
+    }
+    Health("Waltz_Jumper_RGD_9")
+    {
+        Health("18550");
+    }
+    Health("Waltz_Fury_RGD_1")
+    {
+        Health("8400");
+    }
+    Health("Waltz_Fury_RGD_2")
+    {
+        Health("12000");
+    }
+    Health("Waltz_Fury_RGD_3")
+    {
+        Health("18000");
+    }
+    Health("Waltz_Fury_RGD_4")
+    {
+        Health("25200");
+    }
+    Health("Waltz_Fury_RGD_5")
+    {
+        Health("36000");
+    }
+    Health("Waltz_Fury_RGD_6")
+    {
+        Health("48000");
+    }
+    Health("Waltz_Fury_RGD_7")
+    {
+        Health("66000");
+    }
+    Health("Waltz_Fury_RGD_8")
+    {
+        Health("90000");
+    }
+    Health("Waltz_Fury_RGD_9")
+    {
+        Health("120000");
+    }
+	
+	Health("test_Human_Lvl_1")
+    {
+        Health("100");
+    }
+
+    Health("test_Human_Lvl_2")
+    {
+        Health("150");
+    }
+
+    Health("test_head_cut")
+    {
+        Health("70");
+    }
+
+    Health("Body_100_Immortal")
+    {
+        Health("100");
+    }
+
+    Health("Suicider_Health")
+    {
+        Health("50");
+    }
+
+    Health("Suicider_RGD_1")
+    {
+        Health("34");
+    }
+
+    Health("Suicider_RGD_2")
+    {
+        Health("50");
+    }
+
+    Health("Suicider_RGD_3")
+    {
+        Health("76");
+    }
+
+    Health("Suicider_RGD_4")
+    {
+        Health("119");
+    }
+
+    Health("Suicider_RGD_5")
+    {
+        Health("182");
+    }
+
+    Health("Suicider_RGD_6")
+    {
+        Health("270");
+    }
+
+    Health("Suicider_RGD_7")
+    {
+        Health("418");
+    }
+
+    Health("Suicider_RGD_8")
+    {
+        Health("672");
+    }
+
+    Health("Suicider_RGD_9")
+    {
+        Health("1060");
+    }
+
+    HealthMul("SuiciderLegHealthMul")
+    {
+        Health("-0.99");
+    }
+
+    HealthMul("SuiciderHeadHealthMul")
+    {
+        Health("-0.99");
+    }
+
+    Health("Body_100_Immortal_MinHealth")
+    {
+        Health("1");
+    }
+
+    HealthMul("AIDefaultCoopMaxHealthMul")
+    {
+        Health("+0");
+    }
+
+    HealthMul("AIHealthPercToRestore")
+    {
+        Health("-0.2");
+    }
+
+    HealthMul("Player_HealthInfection")
+    {
+        Health("?");
+    }
+
+    Health("Player_MaxHealthModifier")
+    {
+        Health("?");
+    }
+
+    Health("CoHealth_Health")
+    {
+        Health("?");
+    }
+
+    Health("CoHealth_MaxHealth")
+    {
+        Health("?");
+    }
+
+    Health("Player_E32018HandsOffDemoMinHealth")
+    {
+        Health("10");
+    }
+
+    Health("Player_AfterDeathHealth")
+    {
+        Health("100% of MaxHealth");
+    }
+
+    Health("Player_LoadHealth")
+    {
+        Health("?");
+    }
+
+    Health("Player_ResolveReplication")
+    {
+        Health("?");
+    }
+
+    Health("AI_ResolveReplication")
+    {
+        Health("?");
+    }
+
+    Health("Player_DebugSetHealth")
+    {
+        Health("?");
+    }
+
+    Health("Player_DelayedRespawnLocalPlayer")
+    {
+        Health("1");
+    }
+
+    Health("Player_OnDropHealth")
+    {
+        Health("1");
+    }
+
+    Health("Player_LevelUp")
+    {
+        Health("?");
+    }
+
+    Health("Player_PlayerPostprocessTest_K")
+    {
+        Health("1");
+    }
+
+    Health("Player_PlayerPostprocessTest_L")
+    {
+        Health("1");
+    }
+
+    Health("Player_QuestsSetHealthPhase")
+    {
+        Health("?");
+    }
+
+    Health("Player_QuestsRollbackSetHealth")
+    {
+        Health("?");
+    }
+
+    Health("Player_StoryHealthNode")
+    {
+        Health("?");
+    }
+
+    Health("Player_StoryHealthPercentageNode")
+    {
+        Health("?");
+    }
+
+    Health("Player_TutorialMedKit")
+    {
+        Health("?");
+    }
+
+    Health("GameDI_Invoke1_Default")
+    {
+        Health("100% of MaxHealth");
+    }
+
+    Health("GameDI_Invoke2_Default")
+    {
+        Health("100% of MaxHealth");
+    }
+
+    HealthMul("PlayerState_StackCount")
+    {
+        Health("?");
+    }
+
+    Health("AntizinCapacityUpgradeHealth")
+    {
+        Health("20");
+    }
+	
+	Health("LevelUpUpgradeHealth")
+    {
+        Health("20");
+    }
+
+    HealthMul("Item_MaxHealthBuff")
+    {
+        Health("+0.5");
+    }
+
+    Health("bp_hanging_body")
+    {
+        Health("0.0001");
+    }
+
+    Health("WeaponBreakTestMonkeyVictimHealth")
+    {
+        Health("10000000");
+    }
+
+	Health("Monkey_LastSpawnedAIHP")
+    {
+        Health("?");
+    }
+
+	// Armour
+    Health("armour_light")
+    {
+        Health("10");
+    }
+
+    Health("armour_medium")
+    {
+        Health("20");
+    }
+
+    Health("armour_heavy")
+    {
+        Health("250");
+    }
+
+	// Animals
+    Health("wolf")
+    {
+        Health("75");
+    }
+
+    Health("gazelle")
+    {
+        Health("20");
+    }
+
+    Health("heron")
+    {
+        Health("20");
+    }
+
+    // Bandits
+    Health("TwoHanded_Bandit_RGD_1")
+    {
+        Health("170");
+    }
+    Health("TwoHanded_Bandit_RGD_2")
+    {
+        Health("253");
+    }
+    Health("TwoHanded_Bandit_RGD_3")
+    {
+        Health("384");
+    }
+    Health("TwoHanded_Bandit_RGD_4")
+    {
+        Health("598");
+    }
+    Health("TwoHanded_Bandit_RGD_5")
+    {
+        Health("910");
+    }
+    Health("TwoHanded_Bandit_RGD_6")
+    {
+        Health("1350");
+    }
+    Health("TwoHanded_Bandit_RGD_7")
+    {
+        Health("2091");
+    }
+    Health("TwoHanded_Bandit_RGD_8")
+    {
+        Health("3360");
+    }
+    Health("TwoHanded_Bandit_RGD_9")
+    {
+        Health("5300");
+    }
+
+    Health("Archer_RGD_1")
+    {
+        Health("51");
+    }
+    Health("Archer_RGD_2")
+    {
+        Health("75");
+    }
+    Health("Archer_RGD_3")
+    {
+        Health("115");
+    }
+    Health("Archer_RGD_4")
+    {
+        Health("179");
+    }
+    Health("Archer_RGD_5")
+    {
+        Health("273");
+    }
+    Health("Archer_RGD_6")
+    {
+        Health("405");
+    }
+    Health("Archer_RGD_7")
+    {
+        Health("627");
+    }
+    Health("Archer_RGD_8")
+    {
+        Health("1008");
+    }
+    Health("Archer_RGD_9")
+    {
+        Health("1590");
+    }
+
+    Health("Spearman_RGD_1")
+    {
+        Health("102");
+    }
+    Health("Spearman_RGD_2")
+    {
+        Health("151");
+    }
+    Health("Spearman_RGD_3")
+    {
+        Health("230");
+    }
+    Health("Spearman_RGD_4")
+    {
+        Health("358");
+    }
+    Health("Spearman_RGD_5")
+    {
+        Health("546");
+    }
+    Health("Spearman_RGD_6")
+    {
+        Health("810");
+    }
+    Health("Spearman_RGD_7")
+    {
+        Health("1254");
+    }
+    Health("Spearman_RGD_8")
+    {
+        Health("2016");
+    }
+    Health("Spearman_RGD_9")
+    {
+        Health("3180");
+    }
+	
+	Health("OneHanded_RGD_1")
+    {
+        Health("102");
+    }
+    Health("OneHanded_RGD_2")
+    {
+        Health("151");
+    }
+    Health("OneHanded_RGD_3")
+    {
+        Health("230");
+    }
+    Health("OneHanded_RGD_4")
+    {
+        Health("358");
+    }
+    Health("OneHanded_RGD_5")
+    {
+        Health("546");
+    }
+    Health("OneHanded_RGD_6")
+    {
+        Health("810");
+    }
+    Health("OneHanded_RGD_7")
+    {
+        Health("1254");
+    }
+    Health("OneHanded_RGD_8")
+    {
+        Health("2016");
+    }
+    Health("OneHanded_RGD_9")
+    {
+        Health("3180");
+    }
+	
+	Health("OneHanded_Fodder_RGD_1") 
+    {
+        Health("68");
+    }
+    Health("OneHanded_Fodder_RGD_2")
+    {
+        Health("101");
+    }
+    Health("OneHanded_Fodder_RGD_3")
+    {
+        Health("153");
+    }
+    Health("OneHanded_Fodder_RGD_4")
+    {
+        Health("239");
+    }
+    Health("OneHanded_Fodder_RGD_5")
+    {
+        Health("364");
+    }
+    Health("OneHanded_Fodder_RGD_6")
+    {
+        Health("540");
+    }
+    Health("OneHanded_Fodder_RGD_7")
+    {
+        Health("836");
+    }
+    Health("OneHanded_Fodder_RGD_8")
+    {
+        Health("1344");
+    }
+    Health("OneHanded_Fodder_RGD_9")
+    {
+        Health("2120");
+    }
+    HealthTotalMul("AIDifficultyHealthTotalMul")
+    {
+        Health("?");
+    }
+}

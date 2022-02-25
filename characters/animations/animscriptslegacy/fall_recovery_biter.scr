@@ -1,0 +1,455 @@
+
+SeqTrack("Biter_A_standup_back", "biter_a_standup_back.anm2", 1, 128, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("incapacitate_recover",1,5,0,0)
+    }
+    Event(2, USER_POSE_LAYING, -1)
+    Event(16, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(31, AUDIO_STEP_LEFT, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(48, USER_POSE_CROUCHING, -1)
+    Event(59, USER_POSE_STANDING, -1)
+    Event(64, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("incapacitate_recover",1,5,0,0)
+    }
+    Event(66, USER_CAN_INTERRUPT, -1)
+    Event(67, VIS_EVENT_RIGHT_FOOT_LAND, -1)
+    Event(68, AUDIO_STEP_RIGHT, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(80, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("Biter_A_standup_back_01", "biter_a_standup_back_01.anm2", 1, 173, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("incapacitate_recover",0,5,0)
+    }
+    Event(1, USER_POSE_LAYING, -1)
+    Event(31, VIS_EVENT_RIGHT_FOOT_LAND, -1)
+    Event(39, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
+    Event(40, AUDIO_STEP_RIGHT, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(40, VIS_EVENT_RIGHT_FOOT_LAND, -1)
+    Event(63, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+    Event(68, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("incapacitate_recover",0,5,0)
+    }
+    Event(70, USER_POSE_CROUCHING, -1)
+    Event(71, AUDIO_STEP_LEFT, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(73, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(79, USER_POSE_STANDING, -1)
+    Event(84, USER_CAN_INTERRUPT, -1)
+    Event(85, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
+    Event(91, AUDIO_STEP_RIGHT, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(92, VIS_EVENT_RIGHT_FOOT_LAND, -1)
+    Event(102, USER_CAN_BLEND_OUT, -1)
+    Event(106, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+    Event(107, AUDIO_STEP_LEFT, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(107, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(111, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
+    Event(118, VIS_EVENT_RIGHT_FOOT_LAND, -1)
+    Event(123, AUDIO_STEP_RIGHT, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(140, AUDIO_STEP_LEFT, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+    }
+}
+
+SeqTrack("Biter_A_standup_back_02", "biter_a_standup_back_02.anm2", 1, 140, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("incapacitate_recover",0,5,0)
+    }
+    Event(1, USER_POSE_LAYING, -1)
+    Event(19, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
+    Event(28, VIS_EVENT_RIGHT_FOOT_LAND, -1)
+    Event(37, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+    Event(44, AUDIO_STEP_RIGHT, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(48, USER_POSE_CROUCHING, -1)
+    Event(51, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("incapacitate_recover",0,5,0)
+    }
+    Event(58, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(62, USER_POSE_STANDING, -1)
+    Event(65, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+    Event(73, USER_CAN_INTERRUPT, -1)
+    Event(74, AUDIO_STEP_LEFT, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(74, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(77, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
+    Event(85, VIS_EVENT_RIGHT_FOOT_LAND, -1)
+    Event(86, AUDIO_STEP_RIGHT, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(86, USER_CAN_BLEND_OUT, -1)
+    Event(92, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+    Event(96, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(98, AUDIO_STEP_LEFT, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+    }
+}
+
+SeqTrack("Biter_A_standup_belly", "biter_a_standup_belly.anm2", 1, 167, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("incapacitate_recover",0,5,0)
+    }
+    Event(1, USER_POSE_LAYING, -1)
+    Event(13, AUDIO_STEP_SHUFFLE_LEFT, -1)
+    {
+        PlayStepSFx("step_shuffle_left", "l_foot")
+        _Attributes(0,0,1)
+    }
+    Event(69, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("incapacitate_recover",0,5,0)
+    }
+/*Event(1, 0, 1)
+    {
+        PlayAudioEvent("biter_male_night_wakes_up_scream", 0)
+    }*/
+    Event(72, USER_POSE_CROUCHING, -1)
+    Event(77, AUDIO_STEP_LEFT, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(77, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(89, USER_POSE_STANDING, -1)
+    Event(95, USER_CAN_INTERRUPT, -1)
+    Event(101, AUDIO_STEP_RIGHT, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(101, VIS_EVENT_RIGHT_FOOT_LAND, -1)
+    Event(105, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("Biter_A_standup_belly_01", "biter_a_standup_belly_01.anm2", 1, 103, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("incapacitate_recover",0,5,0)
+    }
+    Event(1, USER_POSE_LAYING, -1)
+    Event(23, AUDIO_STEP_RIGHT, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(24, VIS_EVENT_RIGHT_FOOT_LAND, -1)
+    Event(35, USER_POSE_CROUCHING, -1)
+    Event(38, AUDIO_STEP_LEFT, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(38, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(39, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("incapacitate_recover",0,5,0)
+    }
+    Event(44, USER_POSE_STANDING, -1)
+    Event(49, USER_CAN_INTERRUPT, -1)
+    Event(54, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+    Event(56, USER_CAN_BLEND_OUT, -1)
+    Event(60, AUDIO_STEP_LEFT, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(64, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(76, AUDIO_STEP_RIGHT, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+    }
+}
+
+SeqTrack("Biter_A_standup_belly_02", "biter_a_standup_belly_02.anm2", 1, 191, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("incapacitate_recover",0,5,0)
+    }
+    Event(2, USER_POSE_LAYING, -1)
+    Event(66, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("incapacitate_recover",0,5,0)
+    }
+    Event(69, AUDIO_STEP_LEFT, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(70, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(78, USER_POSE_CROUCHING, -1)
+    Event(84, AUDIO_STEP_RIGHT, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(86, VIS_EVENT_RIGHT_FOOT_LAND, -1)
+    Event(86, USER_POSE_STANDING, -1)
+    Event(92, USER_CAN_INTERRUPT, -1)
+    Event(104, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+    Event(107, USER_CAN_BLEND_OUT, -1)
+    Event(108, AUDIO_STEP_LEFT, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(108, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(123, AUDIO_STEP_RIGHT, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(133, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+    Event(150, AUDIO_STEP_LEFT, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(151, VIS_EVENT_LEFT_FOOT_LAND, -1)
+}
+
+SeqTrack("Biter_A_standup_right", "biter_a_standup_right.anm2", 1, 125, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("incapacitate_recover",0,5,0)
+    }
+    Event(2, USER_POSE_LAYING, -1)
+    Event(5, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(23, AUDIO_STEP_LEFT, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(45, USER_POSE_CROUCHING, -1)
+    Event(55, USER_POSE_STANDING, -1)
+    Event(62, USER_CAN_INTERRUPT, -1)
+    Event(64, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("incapacitate_recover",0,5,0)
+    }
+    Event(67, AUDIO_STEP_RIGHT, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(68, VIS_EVENT_RIGHT_FOOT_LAND, -1)
+    Event(71, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("Biter_A_standup_right_01", "biter_a_standup_right_01.anm2", 1, 205, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("incapacitate_recover",0,5,0)
+    }
+    Event(3, USER_POSE_LAYING, -1)
+    Event(35, AUDIO_STEP_LEFT, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(67, AUDIO_STEP_LEFT, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(70, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("incapacitate_recover",0,5,0)
+    }
+    Event(89, AUDIO_STEP_RIGHT, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(115, AUDIO_STEP_LEFT, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(117, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(119, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("incapacitate_recover",0,5,0)
+    }
+    Event(122, USER_POSE_CROUCHING, -1)
+    Event(127, AUDIO_STEP_RIGHT, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(128, VIS_EVENT_RIGHT_FOOT_LAND, -1)
+    Event(128, USER_POSE_STANDING, -1)
+    Event(132, USER_CAN_INTERRUPT, -1)
+    Event(140, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+    Event(143, AUDIO_STEP_LEFT, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(144, USER_CAN_BLEND_OUT, -1)
+    Event(146, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(157, AUDIO_STEP_RIGHT, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(170, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+    Event(178, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(179, AUDIO_STEP_LEFT, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+    }
+}
+
+SeqTrack("Biter_A_standup_left", "biter_a_standup_left.anm2", 1, 145, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("incapacitate_recover",0,5,0)
+    }
+    Event(2, USER_POSE_LAYING, -1)
+    Event(25, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+    Event(55, AUDIO_STEP_LEFT, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(56, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(57, USER_POSE_CROUCHING, -1)
+    Event(64, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("incapacitate_recover",0,5,0)
+    }
+    Event(68, USER_POSE_STANDING, -1)
+    Event(73, AUDIO_STEP_RIGHT, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(75, USER_CAN_INTERRUPT, -1)
+    Event(76, VIS_EVENT_RIGHT_FOOT_LAND, -1)
+    Event(82, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+    Event(83, AUDIO_STEP_LEFT, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(83, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(85, USER_CAN_BLEND_OUT, -1)
+    Event(95, AUDIO_STEP_RIGHT, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+    }
+}
+
+SeqTrack("Biter_A_standup_left_01", "biter_a_standup_left_01.anm2", 1, 182, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("incapacitate_recover",0,5,0)
+    }
+    Event(2, USER_POSE_LAYING, -1)
+    Event(49, AUDIO_STEP_RIGHT, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(77, AUDIO_STEP_LEFT, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(98, USER_POSE_CROUCHING, -1)
+    Event(102, AUDIO_STEP_RIGHT, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(103, VIS_EVENT_RIGHT_FOOT_LAND, -1)
+    Event(108, USER_POSE_STANDING, -1)
+    Event(115, USER_CAN_INTERRUPT, -1)
+    Event(118, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("incapacitate_recover",0,5,0)
+    }
+    Event(120, AUDIO_STEP_LEFT, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(123, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(129, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
+    Event(131, USER_CAN_BLEND_OUT, -1)
+    Event(135, VIS_EVENT_RIGHT_FOOT_LAND, -1)
+    Event(136, AUDIO_STEP_RIGHT, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(143, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+    Event(147, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(151, AUDIO_STEP_LEFT, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(163, AUDIO_STEP_RIGHT, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+    }
+}
+
+SeqTrack("Biter_A_Crawl_FlipToBelly", "biter_a_crawl_fliptobelly.anm2", 1, 113, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("incapacitate_recover",0,5,0)
+    }
+    Event(1, USER_POSE_LAYING, -1)
+    Event(6, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
+    Event(65, USER_CAN_INTERRUPT, -1)
+    Event(71, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(75, USER_CAN_BLEND_OUT, -1)
+    Event(78, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+}
+
+SeqTrack("Biter_A_Crawl_FlipToBelly_ohrotate", "biter_a_crawl_fliptobelly_ohrotate.anm2", 1, 113, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("incapacitate_recover",0,5,0)
+    }
+    Event(2, USER_POSE_LAYING, -1)
+    Event(7, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+    Event(12, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
+    Event(76, USER_CAN_INTERRUPT, -1)
+    Event(78, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(83, USER_CAN_BLEND_OUT, -1)
+    Event(85, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+}
+
+SeqTrack("Biter_A_Crawl_BellyToIdle_Fake", "biter_a_crawl_fliptobelly.anm2", 1, 113, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("incapacitate_recover",0,5,0)
+    }
+    Event(1, USER_POSE_LAYING, -1)
+    Event(4, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(10, USER_CAN_INTERRUPT, -1)
+    Event(11, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+    Event(24, USER_CAN_BLEND_OUT, -1)
+}

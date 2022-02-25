@@ -1,0 +1,739 @@
+sub ScenesWithDialogs() // Example pool
+{
+    // PrefabVariant("encounter_scenario_peacekeeper_biomarker_check_gen_01_int");
+    //PrefabVariant("encounter_scenario_peacekeeper_biomarker_notworking_01_int");
+    //  PrefabVariant("encounter_scenario_peacekeeper_biomarker_working_01_int");
+    // PrefabVariant("encounter_scenario_survivor_herald_01_int");
+    PrefabVariant("encounter_scenario_peacekeeper_arrested_gen_01_int");
+    PrefabVariant("encounter_scenario_peacekeeper_wounded_01_int");
+    PrefabVariant("encounter_scenario_peacekeeper_wounded_02_int");
+}
+
+// Example
+// EncounterSpawnBoxType("Road")
+// {
+//     BoxSize(3)
+//     {
+//         PrefabVariant("encounter_day_infected_defend_int");
+//     }
+// 
+//     [other sizes...]
+// }
+
+sub main()
+{
+	
+EncounterSpawnBoxType("Road")
+ {
+     BoxSize(3)
+     {
+		PrefabVariant("encounter_infected_patrol_10x10_int");
+		PrefabVariant("encounter_infected_patrol_int");
+		PrefabVariant("encounter_infected_patrol_volatile_int");
+		PrefabVariant("encounter_infected_patrol_volatile_01_int");
+		PrefabVariant("encounter_infected_patrol_volatile_02_int");
+		PrefabVariant("encounter_infected_patrol_volatile_03_int");
+		PrefabVariant("encounter_infected_danger_01_int");
+		PrefabVariant("encounter_infected_danger_02_int");
+		PrefabVariant("encounter_infected_danger_03_int");
+		PrefabVariant("encounter_infected_danger_04_int");
+		PrefabVariant("encounter_infected_danger_05_int");
+		PrefabVariant("encounter_infected_danger_06_int");
+		PrefabVariant("encounter_infected_in_cage_ground");
+		PrefabVariant("encounter_infected_in_cage_int");
+		PrefabVariant("encounter_day_infected_defend");
+		PrefabVariant("encounter_day_infected_opportunity");
+		PrefabVariant("encounter_afterfight_massacre_01_int");
+		PrefabVariant("encounter_afterfight_massacre_02_int");
+		PrefabVariant("encounter_pks_patrol_street");
+		PrefabVariant("encounter_pks");
+		PrefabVariant("encounter_night_infected_rescue_survivor");
+		PrefabVariant("encounter_infected_patrol_10x10_int");
+        PrefabVariant("encounter_infected_rescue_ai_in_grab_int");
+		PrefabVariant("encounter_survivor_viral_int");
+        PrefabVariant("encounter_retreat_int");
+        PrefabVariant("encounter_retreat_night_int");
+		PrefabVariant("encounter_threat_humans_street_int");
+		PrefabVariant("encounter_dust_beggar_int");
+		PrefabVariant("encounter_eating_corpse_base_int"); 		 
+		PrefabVariant("encounter_eating_corpse_base_pk_int");
+		//PrefabVariant("encounter_scenario_peacekeeper_imprison_bandits_01_int");
+		PrefabVariant("encounter_infected_crawler_base_int");
+		 
+		 //ENCOUNTER SCENES WITH DIALOGS
+         use ScenesWithDialogs();
+     }
+ 
+     BoxSize(5)
+     {
+		PrefabVariant("encounter_infected_patrol_10x10_int");
+		PrefabVariant("encounter_infected_patrol_int");
+		PrefabVariant("encounter_infected_patrol_volatile_int");
+		PrefabVariant("encounter_infected_patrol_volatile_01_int");
+		PrefabVariant("encounter_infected_patrol_volatile_02_int");
+		PrefabVariant("encounter_infected_patrol_volatile_03_int");
+		PrefabVariant("encounter_infected_danger_01_int");
+		PrefabVariant("encounter_infected_danger_02_int");
+		PrefabVariant("encounter_infected_danger_03_int");
+		PrefabVariant("encounter_infected_danger_04_int");
+		PrefabVariant("encounter_infected_danger_05_int");
+		PrefabVariant("encounter_infected_danger_06_int");
+		PrefabVariant("encounter_infected_in_cage_ground");
+		PrefabVariant("encounter_infected_in_cage_int");
+		PrefabVariant("encounter_day_infected_defend");
+		PrefabVariant("encounter_day_infected_opportunity");
+		PrefabVariant("encounter_afterfight_massacre_01_int");
+		PrefabVariant("encounter_afterfight_massacre_02_int");
+		PrefabVariant("encounter_pks_patrol_street");
+		PrefabVariant("encounter_pks");
+		 PrefabVariant("encounter_survivor_viral_int"); 
+         PrefabVariant("encounter_burning_at_stake_int");
+         PrefabVariant("encounter_infected_rescue_ai_in_grab_int");
+         PrefabVariant("encounter_retreat_int");
+         PrefabVariant("encounter_retreat_night_int");
+		 PrefabVariant("encounter_threat_humans_street_int");
+	 	 PrefabVariant("encounter_prisoner_street_int");
+		 PrefabVariant("encounter_pks_vs_biters_int");
+		 PrefabVariant("encounters_pks_vs_infected_night_5x5_int");
+		 PrefabVariant("encounter_eating_corpse_base_int"); 		 
+		 PrefabVariant("encounter_eating_corpse_base_pk_int");
+		 PrefabVariant("encounter_eating_corpse_street_night_01_int");
+		 PrefabVariant("encounter_eating_corpse_street_night_02_int");
+		 PrefabVariant("encounter_eating_corpse_street_night_03_int");
+		 PrefabVariant("encounter_eating_corpse_street_night_04_int");
+		 PrefabVariant("encounter_eating_corpse_street_night_05_int");
+		 PrefabVariant("encounter_eating_corpse_street_day_01_int");
+		 PrefabVariant("encounter_eating_corpse_street_day_02_int");
+		 PrefabVariant("encounter_eating_corpse_street_day_03_int");
+		 PrefabVariant("encounter_eating_corpse_street_day_04_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_01_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_02_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_03_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_04_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_05_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_06_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_07_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_08_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_09_int");
+		 PrefabVariant("encounter_infected_patrol_int");
+		 PrefabVariant("encounter_infected_crawler_base_int");
+		 PrefabVariant("encounter_renegade_burning_in_cage_int");
+		 PrefabVariant("encounter_infected_in_cage_ground_int");
+		 PrefabVariant("encounter_scenario_renegade_hostage_01_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_07_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_08_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_09_int");
+		 PrefabVariant("encounter_infected_danger_04_int");
+		 
+																	 
+		 // AI LIFE ENCOUNTER SCENES
+		 PrefabVariant("encounter_scenario_peacekeeper_rest_campfire_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_leisure_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_leisure_02_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_leisure_03_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_leisure_04_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_heating_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_imprison_bandits_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_eating_aware_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_order_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_oilpuddle_01_init");
+		 PrefabVariant("encounter_renegades_execution_pk_01_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_01_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_03_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_04_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_05_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_06_int");
+		 PrefabVariant("encounter_infected_danger_street_01_int");
+		 
+		 
+		 //ENCOUNTER SCENES WITH DIALOGS
+		 PrefabVariant("encounter_scenario_survivor_gen_funeral_01_int");
+		 //PrefabVariant("encounter_scenario_peacekeeper_after_fight_biters_01_int");
+		 //PrefabVariant("encounter_scenario_peacekeeper_detaching_body_01_int");
+		 //PrefabVariant("encounter_scenario_peacekeeper_biomarker_check_gen_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_biomarker_notworking_01_int");
+		 //PrefabVariant("encounter_scenario_peacekeeper_biomarker_working_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_arrested_gen_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_wounded_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_wounded_02_int");
+     }
+	 
+     BoxSize(10)
+     {
+		PrefabVariant("encounter_infected_patrol_10x10_int");
+		PrefabVariant("encounter_infected_patrol_int");
+		PrefabVariant("encounter_infected_patrol_volatile_int");
+		PrefabVariant("encounter_infected_patrol_volatile_01_int");
+		PrefabVariant("encounter_infected_patrol_volatile_02_int");
+		PrefabVariant("encounter_infected_patrol_volatile_03_int");
+		PrefabVariant("encounter_infected_danger_01_int");
+		PrefabVariant("encounter_infected_danger_02_int");
+		PrefabVariant("encounter_infected_danger_03_int");
+		PrefabVariant("encounter_infected_danger_04_int");
+		PrefabVariant("encounter_infected_danger_05_int");
+		PrefabVariant("encounter_infected_danger_06_int");
+		PrefabVariant("encounter_infected_in_cage_ground");
+		PrefabVariant("encounter_infected_in_cage_int");
+		PrefabVariant("encounter_day_infected_defend");
+		PrefabVariant("encounter_day_infected_opportunity");
+		PrefabVariant("encounter_afterfight_massacre_01_int");
+		PrefabVariant("encounter_afterfight_massacre_02_int");
+		PrefabVariant("encounter_pks_patrol_street");
+		PrefabVariant("encounter_pks");
+         PrefabVariant("encounter_bandits_vs_pks_int");
+         PrefabVariant("encounter_burning_at_stake_int");
+         PrefabVariant("encounter_conscript_vs_biter_int");
+         PrefabVariant("encounter_infected_rescue_ai_in_grab_int");
+         PrefabVariant("encounter_night_pk_vs_infected_01_int");
+         PrefabVariant("encounter_pks_vs_bandits_int");
+         PrefabVariant("encounter_prisoner_street_int");
+         PrefabVariant("encounter_retreat_int");
+         PrefabVariant("encounter_retreat_night_int");
+		 PrefabVariant("encounter_threat_humans_street_int");
+		 PrefabVariant("encounter_pks_vs_biters_int");
+		 PrefabVariant("encounters_pks_vs_infected_night_5x5_int");
+		 PrefabVariant("encounters_pks_vs_infected_night_10x10_int");
+		 PrefabVariant("encounter_bandits_easy_endgame_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_01_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_02_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_03_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_04_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_05_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_06_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_07_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_08_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_09_int");
+		 PrefabVariant("encounter_renegades_execution_pk_01_int");
+		 PrefabVariant("encounter_afterfight_massacre_01_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_01_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_03_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_04_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_05_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_06_int");
+		 PrefabVariant("Encounter_afterfight_prisoner_pk_int");
+		 PrefabVariant("encounter_afterfight_wounded_01_int");
+		 PrefabVariant("encounter_afterfight_hanging_renegades_int");
+		 PrefabVariant("encounter_renegade_burning_in_cage_int");
+		 PrefabVariant("encounter_infected_in_cage_ground_int");
+		 PrefabVariant("encounter_scenario_renegade_hostage_01_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_07_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_08_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_09_int");
+		 //PrefabVariant("encounter_infected_danger_04_int");
+	 	  
+		 // AI LIFE ENCOUNTER SCENES
+		 PrefabVariant("encounter_scenario_peacekeeper_rest_campfire_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_leisure_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_heating_01_int");
+		 //PrefabVariant("encounter_scenario_peacekeeper_imprison_bandits_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_eating_aware_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_order_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_oilpuddle_01_init");
+		 PrefabVariant("encounter_scenario_peacekeeper_water_01_int");
+		 PrefabVariant("encounter_afterfight_massacre_02_int");
+		 PrefabVariant("encounter_afterfight_hanging_renegades_02_int");
+		 
+		 //ENCOUNTER SCENES WITH DIALOGS
+		 PrefabVariant("encounter_scenario_peacekeeper_crime_01_int");
+		 //PrefabVariant("encounter_scenario_peacekeeper_after_fight_bandits_vs_renegades_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_distributing_food_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_distributing_food_02_int");
+		 //PrefabVariant("encounter_scenario_peacekeeper_distributing_food_03_int");
+     }
+ }
+ 
+EncounterSpawnBoxType("Crossroad")
+ {
+     BoxSize(3)
+     {		
+		PrefabVariant("encounter_infected_patrol_10x10_int");
+		PrefabVariant("encounter_infected_patrol_int");
+		PrefabVariant("encounter_infected_patrol_volatile_int");
+		PrefabVariant("encounter_infected_patrol_volatile_01_int");
+		PrefabVariant("encounter_infected_patrol_volatile_02_int");
+		PrefabVariant("encounter_infected_patrol_volatile_03_int");
+		PrefabVariant("encounter_infected_danger_01_int");
+		PrefabVariant("encounter_infected_danger_02_int");
+		PrefabVariant("encounter_infected_danger_03_int");
+		PrefabVariant("encounter_infected_danger_04_int");
+		PrefabVariant("encounter_infected_danger_05_int");
+		PrefabVariant("encounter_infected_danger_06_int");
+		PrefabVariant("encounter_infected_in_cage_ground");
+		PrefabVariant("encounter_infected_in_cage_int");
+		PrefabVariant("encounter_day_infected_defend");
+		PrefabVariant("encounter_day_infected_opportunity");
+		PrefabVariant("encounter_afterfight_massacre_01_int");
+		PrefabVariant("encounter_afterfight_massacre_02_int");
+		PrefabVariant("encounter_pks_patrol_street");
+		PrefabVariant("encounter_pks");
+		 PrefabVariant("encounter_survivor_viral_int");
+         PrefabVariant("encounter_infected_rescue_ai_in_grab_int");
+         PrefabVariant("encounter_retreat_int");
+         PrefabVariant("encounter_retreat_night_int");
+		 PrefabVariant("encounter_threat_humans_street_int");
+		 PrefabVariant("encounter_eating_corpse_base_int"); 		 
+		 PrefabVariant("encounter_eating_corpse_base_pk_int");
+		 //PrefabVariant("encounter_scenario_peacekeeper_imprison_bandits_01_int");
+		 
+		 //ENCOUNTER SCENES WITH DIALOGS
+		 //PrefabVariant("encounter_scenario_peacekeeper_biomarker_check_gen_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_biomarker_notworking_01_int");
+		 //PrefabVariant("encounter_scenario_peacekeeper_biomarker_working_01_int");
+		 // PrefabVariant("encounter_scenario_survivor_herald_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_arrested_gen_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_wounded_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_wounded_02_int");
+		 PrefabVariant("encounter_infected_crawler_base_int");
+     }
+ 
+     BoxSize(5)
+     {
+		PrefabVariant("encounter_infected_patrol_10x10_int");
+		PrefabVariant("encounter_infected_patrol_int");
+		PrefabVariant("encounter_infected_patrol_volatile_int");
+		PrefabVariant("encounter_infected_patrol_volatile_01_int");
+		PrefabVariant("encounter_infected_patrol_volatile_02_int");
+		PrefabVariant("encounter_infected_patrol_volatile_03_int");
+		PrefabVariant("encounter_infected_danger_01_int");
+		PrefabVariant("encounter_infected_danger_02_int");
+		PrefabVariant("encounter_infected_danger_03_int");
+		PrefabVariant("encounter_infected_danger_04_int");
+		PrefabVariant("encounter_infected_danger_05_int");
+		PrefabVariant("encounter_infected_danger_06_int");
+		PrefabVariant("encounter_infected_in_cage_ground");
+		PrefabVariant("encounter_infected_in_cage_int");
+		PrefabVariant("encounter_day_infected_defend");
+		PrefabVariant("encounter_day_infected_opportunity");
+		PrefabVariant("encounter_afterfight_massacre_01_int");
+		PrefabVariant("encounter_afterfight_massacre_02_int");
+		PrefabVariant("encounter_pks_patrol_street");
+		PrefabVariant("encounter_pks");
+         PrefabVariant("encounter_infected_rescue_ai_in_grab_int");
+         PrefabVariant("encounter_retreat_int");
+         PrefabVariant("encounter_retreat_night_int");
+		 PrefabVariant("encounter_threat_humans_street_int");
+	 	 PrefabVariant("encounter_prisoner_street_int");
+		 PrefabVariant("encounter_pks_vs_biters_int");
+		 PrefabVariant("encounters_pks_vs_infected_night_5x5_int");
+		 PrefabVariant("encounter_eating_corpse_base_int"); 		 
+		 PrefabVariant("encounter_eating_corpse_base_pk_int");
+		 PrefabVariant("encounter_eating_corpse_street_night_01_int");
+		 PrefabVariant("encounter_eating_corpse_street_night_02_int");
+		 PrefabVariant("encounter_eating_corpse_street_night_03_int");
+		 PrefabVariant("encounter_eating_corpse_street_night_04_int");
+		 PrefabVariant("encounter_eating_corpse_street_night_05_int");
+		 PrefabVariant("encounter_eating_corpse_street_day_01_int");
+		 PrefabVariant("encounter_eating_corpse_street_day_02_int");
+		 PrefabVariant("encounter_eating_corpse_street_day_03_int");
+		 PrefabVariant("encounter_eating_corpse_street_day_04_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_01_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_02_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_03_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_04_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_05_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_06_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_07_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_08_int");
+		 PrefabVariant("encounter_eating_corpse_pk_street_09_int");
+		 //PrefabVariant("encounter_eating_corpse_pk_roof_01_int");
+		 //PrefabVariant("encounter_eating_corpse_pk_roof_02_int");
+		 //PrefabVariant("encounter_eating_corpse_pk_roof_03_int");
+		 //PrefabVariant("encounter_eating_corpse_pk_roof_04_int");
+		 PrefabVariant("encounter_infected_patrol_int");
+		 //PrefabVariant("encounter_eating_corpse_pk_roof_05_int");
+		 PrefabVariant("encounter_renegades_execution_pk_01_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_01_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_03_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_04_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_05_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_06_int");
+		 PrefabVariant("encounter_renegade_burning_in_cage_int");
+		 PrefabVariant("encounter_infected_crawler_base_int");
+		 PrefabVariant("encounter_infected_danger_street_01_int");
+		 PrefabVariant("encounter_renegade_burning_in_cage_int");
+		 PrefabVariant("encounter_infected_in_cage_ground_int");
+		 PrefabVariant("encounter_scenario_renegade_hostage_01_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_07_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_08_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_09_int");
+		 //PrefabVariant("encounter_infected_danger_04_int");
+
+		 
+		 // AI LIFE ENCOUNTER SCENES
+		 PrefabVariant("encounter_scenario_peacekeeper_rest_campfire_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_leisure_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_leisure_02_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_leisure_03_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_leisure_04_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_heating_01_int");
+		 //PrefabVariant("encounter_scenario_peacekeeper_imprison_bandits_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_eating_aware_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_order_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_oilpuddle_01_init");
+		 PrefabVariant("encounter_scenario_peacekeeper_the_law_01_int");
+		 
+		 //ENCOUNTER SCENES WITH DIALOGS
+		 PrefabVariant("encounter_scenario_survivor_gen_funeral_01_int");
+		 //PrefabVariant("encounter_scenario_peacekeeper_after_fight_biters_01_int");
+		 //PrefabVariant("encounter_scenario_peacekeeper_detaching_body_01_int");
+		 //PrefabVariant("encounter_scenario_peacekeeper_biomarker_check_gen_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_biomarker_notworking_01_int");
+		 //PrefabVariant("encounter_scenario_peacekeeper_biomarker_working_01_int");
+		 // PrefabVariant("encounter_scenario_survivor_herald_01_int");
+     }
+	 
+     BoxSize(10)
+     {
+         PrefabVariant("encounter_bandits_vs_pks_int");
+         PrefabVariant("encounter_burning_at_stake_int");
+         PrefabVariant("encounter_conscript_vs_biter_int");
+         PrefabVariant("encounter_infected_rescue_ai_in_grab_int");
+         PrefabVariant("encounter_night_pk_vs_infected_01_int");
+         PrefabVariant("encounter_pks_vs_bandits_int");
+         PrefabVariant("encounter_prisoner_street_int");
+         PrefabVariant("encounter_retreat_int");
+         PrefabVariant("encounter_retreat_night_int");
+		 PrefabVariant("encounter_threat_humans_street_int");
+		 PrefabVariant("encounter_bandits_easy_int");		 
+		 PrefabVariant("encounter_bandits_easy_endgame_int");
+         PrefabVariant("encounter_renegades_vs_pks_int");
+		 PrefabVariant("encounters_pks_vs_infected_night_5x5_int");
+		 PrefabVariant("encounters_pks_vs_infected_night_10x10_int");
+		 PrefabVariant("encounter_renegades_execution_pk_01_int");
+		 PrefabVariant("encounter_afterfight_massacre_01_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_01_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_03_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_04_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_05_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_06_int");
+		 PrefabVariant("encounter_pks_vs_biters_int");
+		 PrefabVariant("Encounter_afterfight_prisoner_pk_int");
+		 PrefabVariant("encounter_afterfight_wounded_01_int");
+		 PrefabVariant("encounter_afterfight_hanging_renegades_02_int");
+		 PrefabVariant("encounter_renegade_burning_in_cage_int");
+		 PrefabVariant("encounter_infected_in_cage_ground_int");
+		 PrefabVariant("encounter_scenario_renegade_hostage_01_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_07_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_08_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_09_int");
+		 //PrefabVariant("encounter_infected_danger_04_int");
+
+		 // AI LIFE ENCOUNTER SCENES
+		 PrefabVariant("encounter_scenario_peacekeeper_rest_campfire_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_leisure_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_heating_01_int");
+		// PrefabVariant("encounter_scenario_peacekeeper_imprison_bandits_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_eating_aware_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_order_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_oilpuddle_01_init");
+		 PrefabVariant("encounter_scenario_peacekeeper_water_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_arrested_gen_01_int");
+		 PrefabVariant("encounter_infected_danger_street_01_int");
+		 PrefabVariant("encounter_afterfight_massacre_02_int");
+		 PrefabVariant("encounter_afterfight_hanging_renegades_int");
+		 
+		 //ENCOUNTER SCENES WITH DIALOGS
+		 PrefabVariant("encounter_scenario_peacekeeper_crime_01_int");
+		 //PrefabVariant("encounter_scenario_peacekeeper_after_fight_bandits_vs_renegades_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_distributing_food_01_int");
+		 PrefabVariant("encounter_scenario_peacekeeper_distributing_food_02_int");
+		 //PrefabVariant("encounter_scenario_peacekeeper_distributing_food_03_int");
+     }
+ }
+ 
+EncounterSpawnBoxType("Backyard")
+ {
+     BoxSize(3)
+     {
+		 PrefabVariant("encounter_dust_beggar_int");
+         PrefabVariant("encounter_retreat_int");
+         PrefabVariant("encounter_retreat_night_int");
+		 PrefabVariant("encounter_eating_corpse_base_int"); 		 
+		 PrefabVariant("encounter_eating_corpse_base_pk_int");
+		 PrefabVariant("encounter_survivor_viral_int");
+		 PrefabVariant("encounter_infected_crawler_base_int");
+     }
+ 
+     BoxSize(5)
+     {
+         PrefabVariant("encounter_retreat_int");
+         PrefabVariant("encounter_retreat_night_int");
+	 	 PrefabVariant("encounter_prisoner_street_int");
+		 PrefabVariant("encounter_eating_corpse_base_int"); 		 
+		 PrefabVariant("encounter_eating_corpse_base_pk_int");
+		 PrefabVariant("encounter_survivor_viral_int");
+		 PrefabVariant("encounter_renegades_execution_pk_01_int");
+		 PrefabVariant("encounter_afterfight_massacre_01_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_01_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_03_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_04_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_05_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_06_int");
+		 PrefabVariant("encounter_infected_crawler_base_int");
+		 PrefabVariant("encounter_infected_danger_street_01_int");
+		 PrefabVariant("encounter_renegade_burning_in_cage_int");
+		 PrefabVariant("encounter_infected_in_cage_ground_int");
+		 PrefabVariant("encounter_scenario_renegade_hostage_01_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_07_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_08_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_09_int");
+		 PrefabVariant("encounter_infected_patrol_int");
+
+
+		 //ENCOUNTER SCENES WITH DIALOGS
+		 PrefabVariant("encounter_scenario_survivor_gen_funeral_01_int");
+		 //PrefabVariant("encounter_scenario_peacekeeper_after_fight_biters_01_int");
+		 //PrefabVariant("encounter_scenario_peacekeeper_detaching_body_01_int");
+     }
+	 
+     BoxSize(10)
+     {
+		PrefabVariant("encounter_infected_patrol_10x10_int");
+		PrefabVariant("encounter_infected_patrol_int");
+		PrefabVariant("encounter_infected_patrol_volatile_int");
+		PrefabVariant("encounter_infected_patrol_volatile_01_int");
+		PrefabVariant("encounter_infected_patrol_volatile_02_int");
+		PrefabVariant("encounter_infected_patrol_volatile_03_int");
+		PrefabVariant("encounter_infected_danger_01_int");
+		PrefabVariant("encounter_infected_danger_02_int");
+		PrefabVariant("encounter_infected_danger_03_int");
+		PrefabVariant("encounter_infected_danger_04_int");
+		PrefabVariant("encounter_infected_danger_05_int");
+		PrefabVariant("encounter_infected_danger_06_int");
+		PrefabVariant("encounter_infected_in_cage_ground");
+		PrefabVariant("encounter_infected_in_cage_int");
+		PrefabVariant("encounter_day_infected_defend");
+		PrefabVariant("encounter_day_infected_opportunity");
+		PrefabVariant("encounter_afterfight_massacre_01_int");
+		PrefabVariant("encounter_afterfight_massacre_02_int");
+		PrefabVariant("encounter_pks_patrol_street");
+		PrefabVariant("encounter_pks");
+         PrefabVariant("encounter_prisoner_street_int");
+         PrefabVariant("encounter_retreat_int");
+         PrefabVariant("encounter_retreat_night_int");
+         PrefabVariant("encounter_renegades_vs_pks_int");
+		 PrefabVariant("encounter_renegades_execution_pk_01_int");
+		 PrefabVariant("encounter_bandits_easy_endgame_int");
+		 PrefabVariant("encounter_afterfight_massacre_01_int");
+		 PrefabVariant("Encounter_afterfight_prisoner_pk_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_04_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_05_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_06_int");
+		 PrefabVariant("encounter_afterfight_wounded_01_int");
+		 PrefabVariant("encounter_renegade_burning_in_cage_int");
+		 PrefabVariant("encounter_infected_in_cage_ground_int");
+		 PrefabVariant("encounter_scenario_renegade_hostage_01_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_07_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_08_int");
+		 PrefabVariant("encounter_scenario_renegades_disgracing_pk_09_int");
+		 PrefabVariant("encounter_infected_patrol_int");
+		 
+		 //ENCOUNTER SCENES WITH DIALOGS
+		 PrefabVariant("encounter_scenario_survivor_gen_funeral_01_int");
+		 //PrefabVariant("encounter_scenario_peacekeeper_after_fight_biters_01_int");
+		 //PrefabVariant("encounter_scenario_peacekeeper_detaching_body_01_int");
+     }
+ }
+ 
+EncounterSpawnBoxType("Roof")
+ {
+     BoxSize(3)
+     {
+		PrefabVariant("encounter_infected_patrol_10x10_int");
+		PrefabVariant("encounter_infected_patrol_int");
+		PrefabVariant("encounter_infected_patrol_volatile_int");
+		PrefabVariant("encounter_infected_patrol_volatile_01_int");
+		PrefabVariant("encounter_infected_patrol_volatile_02_int");
+		PrefabVariant("encounter_infected_patrol_volatile_03_int");
+		PrefabVariant("encounter_infected_danger_01_int");
+		PrefabVariant("encounter_infected_danger_02_int");
+		PrefabVariant("encounter_infected_danger_03_int");
+		PrefabVariant("encounter_infected_danger_04_int");
+		PrefabVariant("encounter_infected_danger_05_int");
+		PrefabVariant("encounter_infected_danger_06_int");
+		PrefabVariant("encounter_infected_in_cage_ground");
+		PrefabVariant("encounter_infected_in_cage_int");
+		PrefabVariant("encounter_day_infected_defend");
+		PrefabVariant("encounter_day_infected_opportunity");
+		PrefabVariant("encounter_afterfight_massacre_01_int");
+		PrefabVariant("encounter_afterfight_massacre_02_int");
+		PrefabVariant("encounter_pks_patrol_street");
+		PrefabVariant("encounter_pks");
+		 PrefabVariant("encounter_dust_beggar_int");
+		 PrefabVariant("encounter_survivor_viral_int");
+		 PrefabVariant("encounter_beggar_turn_infected_int");
+		 PrefabVariant("encounter_threat_humans_roof_int");
+		 PrefabVariant("encounter_retreat_night_roof_int");
+		 
+		 //ENCOUNTER SCENES WITH DIALOG
+		 //PrefabVariant("encounter_scenario_survivor_fly_kite_01_int");
+		 PrefabVariant("encounter_scenario_survivor_cutting_down_tree_int");
+		 PrefabVariant("encounter_scenario_survivor_flute_01_int");
+		 PrefabVariant("encounter_scenario_survivor_stung_by_bee_01_int");
+		 PrefabVariant("encounter_scenario_survivor_crafting_bow_01_int");
+		 PrefabVariant("encounter_scenario_survivor_roof_preparing_food_01_int");
+		 PrefabVariant("encounter_scenario_survivor_herald_01_int");
+     }
+ 
+     BoxSize(5)
+     {
+		PrefabVariant("encounter_infected_patrol_10x10_int");
+		PrefabVariant("encounter_infected_patrol_int");
+		PrefabVariant("encounter_infected_patrol_volatile_int");
+		PrefabVariant("encounter_infected_patrol_volatile_01_int");
+		PrefabVariant("encounter_infected_patrol_volatile_02_int");
+		PrefabVariant("encounter_infected_patrol_volatile_03_int");
+		PrefabVariant("encounter_infected_danger_01_int");
+		PrefabVariant("encounter_infected_danger_02_int");
+		PrefabVariant("encounter_infected_danger_03_int");
+		PrefabVariant("encounter_infected_danger_04_int");
+		PrefabVariant("encounter_infected_danger_05_int");
+		PrefabVariant("encounter_infected_danger_06_int");
+		PrefabVariant("encounter_infected_in_cage_ground");
+		PrefabVariant("encounter_infected_in_cage_int");
+		PrefabVariant("encounter_day_infected_defend");
+		PrefabVariant("encounter_day_infected_opportunity");
+		PrefabVariant("encounter_afterfight_massacre_01_int");
+		PrefabVariant("encounter_afterfight_massacre_02_int");
+		PrefabVariant("encounter_pks_patrol_street");
+		PrefabVariant("encounter_pks");
+		 PrefabVariant("encounter_dust_beggar_int");
+		 PrefabVariant("encounter_survivor_viral_int");
+         PrefabVariant("encounter_beggar_turn_infected_int");
+         PrefabVariant("encounter_night_infected_defend_int");
+		 PrefabVariant("encounter_threat_humans_roof_int");
+		 PrefabVariant("encounter_retreat_night_roof_int");
+		 PrefabVariant("encounter_eating_corpse_pk_roof_01_int");
+		 PrefabVariant("encounter_eating_corpse_pk_roof_02_int");
+		 PrefabVariant("encounter_eating_corpse_pk_roof_03_int");
+		 PrefabVariant("encounter_eating_corpse_pk_roof_04_int");
+		 PrefabVariant("encounter_eating_corpse_pk_roof_05_int");
+		 PrefabVariant("encounter_eating_corpse_roof_01_int");
+		 PrefabVariant("encounter_eating_corpse_roof_02_int");
+		 PrefabVariant("encounter_eating_corpse_roof_03_int");
+		 PrefabVariant("encounter_eating_corpse_roof_04_int");
+		 PrefabVariant("encounter_eating_corpse_roof_05_int");
+		 PrefabVariant("encounter_infected_patrol_int");
+		 PrefabVariant("encounter_infected_patrol_volatile_01_int");
+		 PrefabVariant("encounter_infected_patrol_volatile_02_int");
+		 PrefabVariant("encounter_infected_patrol_volatile_03_int");
+		 PrefabVariant("encounter_night_infected_rescue_survivor");
+		 
+		// AI LIFE ENCOUNTER SCENES
+		 PrefabVariant("encounter_scenario_peacekeeper_heating_01_int");
+		 PrefabVariant("encounter_scenario_survivor_campfire_01_int");
+		 PrefabVariant("encounter_scenario_survivor_campfire_02_int");
+		 PrefabVariant("encounter_scenario_survivor_collecting_wood_01_int");
+		 PrefabVariant("encounter_scenario_survivor_zipline_production_01_int");
+		 //PrefabVariant("encounter_scenario_survivor_development_01_int");
+		 PrefabVariant("encounter_retreat_night_roof_int");
+		 PrefabVariant("encounter_scenario_survivor_ringing_a_bell_int");
+		 
+		 //ENCOUNTER SCENES WITH DIALOGS
+		 //PrefabVariant("encounter_scenario_survivor_fly_kite_01_int");
+		 PrefabVariant("encounter_scenario_survivor_cutting_down_tree_int");
+		 PrefabVariant("encounter_scenario_survivor_flute_01_int");
+		 PrefabVariant("encounter_scenario_survivor_stung_by_bee_01_int");
+		 PrefabVariant("encounter_scenario_survivor_crafting_bow_01_int");
+		 PrefabVariant("encounter_scenario_survivor_roof_preparing_food_01_int");
+		 PrefabVariant("encounter_scenario_survivor_basket_collecting_01_int");
+		 PrefabVariant("encounter_scenario_survivor_gen_funeral_01_int");
+		 PrefabVariant("encounter_scenario_survivor_flute_01_int");
+		 PrefabVariant("encounter_scenario_survivor_herald_01_int");
+		 PrefabVariant("encounter_scenario_survivor_grinding_potion_mortar_int");
+     }
+	 
+     BoxSize(10)
+     {
+		PrefabVariant("encounter_infected_patrol_10x10_int");
+		PrefabVariant("encounter_infected_patrol_int");
+		PrefabVariant("encounter_infected_patrol_volatile_int");
+		PrefabVariant("encounter_infected_patrol_volatile_01_int");
+		PrefabVariant("encounter_infected_patrol_volatile_02_int");
+		PrefabVariant("encounter_infected_patrol_volatile_03_int");
+		PrefabVariant("encounter_infected_danger_01_int");
+		PrefabVariant("encounter_infected_danger_02_int");
+		PrefabVariant("encounter_infected_danger_03_int");
+		PrefabVariant("encounter_infected_danger_04_int");
+		PrefabVariant("encounter_infected_danger_05_int");
+		PrefabVariant("encounter_infected_danger_06_int");
+		PrefabVariant("encounter_infected_in_cage_ground");
+		PrefabVariant("encounter_infected_in_cage_int");
+		PrefabVariant("encounter_day_infected_defend");
+		PrefabVariant("encounter_day_infected_opportunity");
+		PrefabVariant("encounter_afterfight_massacre_01_int");
+		PrefabVariant("encounter_afterfight_massacre_02_int");
+		PrefabVariant("encounter_pks_patrol_street");
+		PrefabVariant("encounter_pks");
+		PrefabVariant("encounter_beggar_turn_infected_int");
+         PrefabVariant("encounter_night_infected_defend_int");
+         PrefabVariant("encounter_night_infected_defend_01_int");
+         PrefabVariant("encounter_night_infected_defend_02_int");
+         PrefabVariant("encounter_night_infected_defend_03_int");
+		 PrefabVariant("encounter_threat_humans_roof_int");
+		 PrefabVariant("encounter_roof_temp_int");
+		 PrefabVariant("encounter_eating_corpse_roof_01_int");
+		 PrefabVariant("encounter_eating_corpse_roof_02_int");
+		 PrefabVariant("encounter_eating_corpse_roof_03_int");
+		 PrefabVariant("encounter_eating_corpse_roof_04_int");
+		 PrefabVariant("encounter_eating_corpse_roof_05_int");
+		 PrefabVariant("encounter_eating_corpse_pk_roof_01_int");
+		 PrefabVariant("encounter_eating_corpse_pk_roof_02_int");
+		 PrefabVariant("encounter_eating_corpse_pk_roof_03_int");
+		 PrefabVariant("encounter_eating_corpse_pk_roof_04_int");
+		 PrefabVariant("encounter_eating_corpse_pk_roof_05_int");
+		 PrefabVariant("encounter_scenario_survivor_campfire_01_int");
+		 PrefabVariant("encounter_scenario_survivor_campfire_02_int");
+		 PrefabVariant("encounter_scenario_survivor_collecting_wood_01_int");
+		 PrefabVariant("encounter_scenario_survivor_zipline_production_01_int");
+		 PrefabVariant("encounter_scenario_survivor_development_01_int");
+		 PrefabVariant("encounter_retreat_night_roof_int");
+		 PrefabVariant("encounter_infected_patrol_int");
+		 PrefabVariant("encounter_infected_patrol_volatile_int");
+		 PrefabVariant("encounter_night_infected_rescue_survivor");
+		 PrefabVariant("encounter_infected_patrol_10x10_int");
+		 
+		 //ENCOUNTER SCENES WITH DIALOGS
+		 //PrefabVariant("encounter_scenario_survivor_fly_kite_01_int");
+		 
+		 PrefabVariant("encounter_scenario_survivor_stung_by_bee_01_int");
+		 PrefabVariant("encounter_scenario_survivor_crafting_bow_01_int");
+		 PrefabVariant("encounter_scenario_survivor_basket_collecting_01_int");
+		 PrefabVariant("encounter_scenario_survivor_gen_funeral_01_int");
+		 PrefabVariant("encounter_scenario_survivor_flute_01_int");
+     }
+ }
+ 
+EncounterSpawnBoxType("Terrace")
+ {
+     BoxSize(3)
+     {
+		 PrefabVariant("encounter_dust_beggar_int");
+		 // PrefabVariant("encounter_survivor_viral_int");
+		PrefabVariant("encounter_beggar_turn_infected_int");
+		 //PrefabVariant("encounter_threat_humans_roof_int");
+		 PrefabVariant("encounter_retreat_night_roof_int");
+     }
+ 
+     BoxSize(5)
+     {
+         // PrefabVariant("encounter_beggar_turn_infected_int");
+         //PrefabVariant("encounter_night_infected_defend_int");
+		 //PrefabVariant("encounter_threat_humans_roof_int");
+		 PrefabVariant("encounter_retreat_night_roof_int");
+     }
+	 
+     BoxSize(10)
+     {
+		PrefabVariant("encounter_beggar_turn_infected_int");
+         //PrefabVariant("encounter_night_infected_defend_int");
+         PrefabVariant("encounter_night_infected_defend_01_int");
+         PrefabVariant("encounter_night_infected_defend_02_int");
+         PrefabVariant("encounter_night_infected_defend_03_int");
+		 //PrefabVariant("encounter_threat_humans_roof_int");
+		 PrefabVariant("encounter_roof_temp_int");
+		 PrefabVariant("encounter_retreat_night_roof_int");
+     }
+ }
+ 
+}

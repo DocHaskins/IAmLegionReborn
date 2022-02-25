@@ -1,0 +1,257 @@
+/*
+GeneralMinDistBtwEncounters - Min distance between encounters in general; no matter of group
+UnregisterInstancesOnSuccessOrFailure - By default encounter instance will unregister from encounter manager as active encounter (which means making new spot for other encounter) on encounter deactivation; when value is set to true unregistration can be performed earilier: on success, failure or also deactivation  
+
+MaxNumOfActiveEncounters - number of active encounters from group
+MaxNumOfActiveEncountersInCoop - number of active encounters from group in COOP
+EncounterMinSearchRadius - Min search radius (XZ) for finding inactive encounters by encounter manager
+EncounterMaxSearchRadius - Max search radius (XZ) for finding inactive encounters by encounter manager (80 m max)
+EncounterMaxHeightDifference - Max height difference for finding inactive encounters by encounter manager
+DefaultDifficulty - Default difficulty for encounter without specified difficulty level (values definied in EncounterDifficulties.scr)
+MinDistBtwEncounters - Min distance between encounters
+SpawnCooldownTime - Minimal time (in seconds) between encounter spawn; cooldown starts after Success, Failure or deactivation of encounter progressed to Active stage  
+SpawnCooldownTimePendingActive - Minimal time (in seconds) between encounter spawn after; cooldown starts just after Pending Active stage   
+CanBeBlocked - Determines if global, external conditions can block spawn (i.e. chase)
+IgnoreGeneralMinDistBtwEncounters - Determines if GeneralMinDistBtwEncounters should not be respected for this group.
+*/
+sub main() 
+{	
+	GeneralMinDistBtwEncounters(30.0);
+	UnregisterInstancesOnSuccessOrFailure(true);
+	
+	//spawn elipsoid params
+	EstimatedPlayerPosDeltaTime(7.0);
+	AveragePlayerSpeedBlend(0.25);
+	MaxAvgPlayerSpeed(4.0);
+	
+	EncounterGroup("Default")
+	{
+		MaxNumOfActiveEncounters(4);
+        MaxNumOfActiveEncountersInCoop(4);
+		EncounterMinSearchRadius(45.0);
+		EncounterMaxSearchRadius(65.0);
+		EncounterMaxHeightDifference(12.0);
+		DefaultDifficulty("Hard");
+		MinDistBtwEncounters(10.0);
+		SpawnCooldownTime(1.0);
+		CanBeBlocked(true);
+	}
+
+	
+	EncounterGroup("Patrol")
+	{
+		IgnoreGeneralMinDistBtwEncounters(true);
+		MaxNumOfActiveEncounters(5);
+        MaxNumOfActiveEncountersInCoop(1);
+		EncounterMinSearchRadius(45.0);
+		EncounterMaxSearchRadius(60.0);
+		EncounterMaxHeightDifference(25.0);
+		DefaultDifficulty("Hard");
+		MinDistBtwEncounters(15.0);
+		SpawnCooldownTime(1.0);
+		CanBeBlocked(true);
+	}
+	
+	
+	EncounterGroup("Quests")
+	{
+		MaxNumOfActiveEncounters(0);
+		EncounterMinSearchRadius(40.0);
+		EncounterMaxSearchRadius(55.0);
+		EncounterMaxHeightDifference(30.0);
+		DefaultDifficulty("Hard");
+		MinDistBtwEncounters(20.0);
+		SpawnCooldownTime(1.0);
+		CanBeBlocked(false);
+	}
+
+	EncounterGroup("Icon_Day")
+	{
+		MaxNumOfActiveEncounters(1);
+		EncounterMinSearchRadius(60.0);
+		EncounterMaxSearchRadius(75.0);
+		EncounterMaxHeightDifference(30.0);
+		DefaultDifficulty("Hard");
+		MinDistBtwEncounters(20.0);
+		SpawnCooldownTime(300.0);
+		SpawnCooldownTimePendingActive(90.0);
+		CanBeBlocked(true);
+	}
+
+	EncounterGroup("Icon_Night")
+	{
+		MaxNumOfActiveEncounters(1);
+		EncounterMinSearchRadius(45.0);
+		EncounterMaxSearchRadius(60.0);
+		EncounterMaxHeightDifference(30.0);
+		DefaultDifficulty("Hard");
+		MinDistBtwEncounters(60.0);
+		SpawnCooldownTime(300.0);
+		SpawnCooldownTimePendingActive(60.0);
+		CanBeBlocked(true);
+	}
+	
+	EncounterGroup("Barricade")
+	{
+		MaxNumOfActiveEncounters(10);
+        MaxNumOfActiveEncountersInCoop(1);
+		EncounterMinSearchRadius(45.0);
+		EncounterMaxSearchRadius(90.0);
+		EncounterMaxHeightDifference(50.0);
+		DefaultDifficulty("Hard");
+		MinDistBtwEncounters(1.0);
+		SpawnCooldownTime(0.01);
+		CanBeBlocked(false);
+	}
+	
+	
+	EncounterGroup("Master_Modules")
+	{
+		MaxNumOfActiveEncounters(1);
+		EncounterMinSearchRadius(25.0);
+		EncounterMaxSearchRadius(55.0);
+		EncounterMaxHeightDifference(50.0);
+		DefaultDifficulty("Hard");
+		MinDistBtwEncounters(20.0);
+		SpawnCooldownTime(180.0);
+		CanBeBlocked(false);
+	}
+	
+	EncounterGroup("Bandit_Camp_Master")
+	{
+		MaxNumOfActiveEncounters(5);
+		EncounterMinSearchRadius(25.0);
+		EncounterMaxSearchRadius(105.0);
+		EncounterMaxHeightDifference(50.0);
+		DefaultDifficulty("Hard");
+		MinDistBtwEncounters(20.0);
+		SpawnCooldownTime(1.0);
+		CanBeBlocked(false);
+	}
+	
+	EncounterGroup("Special_Night")
+	{
+		IgnoreGeneralMinDistBtwEncounters(true);
+		MaxNumOfActiveEncounters(4); 
+		MaxNumOfActiveEncountersInCoop(3);
+		EncounterMinSearchRadius(55.0);
+		EncounterMaxSearchRadius(125.0);
+		EncounterMaxHeightDifference(30.0);
+		DefaultDifficulty("Hard");
+		MinDistBtwEncounters(10.0);
+		SpawnCooldownTime(30.0);
+		CanBeBlocked(true);
+	}
+
+	EncounterGroup("Defend_Night")
+	{
+		MaxNumOfActiveEncounters(2); 
+		MaxNumOfActiveEncountersInCoop(4);
+		EncounterMinSearchRadius(45.0);
+		EncounterMaxSearchRadius(60.0);
+		EncounterMaxHeightDifference(12.0);
+		DefaultDifficulty("Hard");
+		MinDistBtwEncounters(20.0);
+		SpawnCooldownTime(1.0);
+		CanBeBlocked(true);
+	}		
+	
+	EncounterGroup("PKs_Patrol")
+	{
+		MaxNumOfActiveEncounters(10);
+        MaxNumOfActiveEncountersInCoop(8);
+		EncounterMinSearchRadius(45.0);
+		EncounterMaxSearchRadius(85.0);
+		EncounterMaxHeightDifference(12.0);
+		DefaultDifficulty("Hard");
+		MinDistBtwEncounters(15.0);
+		//IgnoreGeneralMinDistBtwEncounters(true);
+		SpawnCooldownTime(1.0);
+		CanBeBlocked(false);
+	}	
+	
+	EncounterGroup("Abandoned_Structure")
+	{
+		MaxNumOfActiveEncounters(2);
+        MaxNumOfActiveEncountersInCoop(2);
+		EncounterMinSearchRadius(45.0);
+		EncounterMaxSearchRadius(95.0);
+		EncounterMaxHeightDifference(12.0);
+		DefaultDifficulty("Hard");
+		MinDistBtwEncounters(15.0);
+		//IgnoreGeneralMinDistBtwEncounters(true);
+		SpawnCooldownTime(1.0);
+		CanBeBlocked(true);
+	}	
+	
+	EncounterGroup("Looting")
+	{
+		IgnoreGeneralMinDistBtwEncounters(true);
+		MaxNumOfActiveEncounters(10);
+        MaxNumOfActiveEncountersInCoop(3);
+		EncounterMinSearchRadius(0.1);
+		EncounterMaxSearchRadius(80.0);
+		EncounterMaxHeightDifference(80.0);
+		DefaultDifficulty("Hard");
+		MinDistBtwEncounters(10.0);
+		SpawnCooldownTime(1.0);
+		CanBeBlocked(false);
+	}
+	
+	EncounterGroup("Looting_Roof")
+	{
+		IgnoreGeneralMinDistBtwEncounters(false);
+		MaxNumOfActiveEncounters(10);
+        MaxNumOfActiveEncountersInCoop(3);
+		EncounterMinSearchRadius(45.0);
+		EncounterMaxSearchRadius(80.0);
+		EncounterMaxHeightDifference(30.0);
+		DefaultDifficulty("Hard");
+		MinDistBtwEncounters(10.0);
+		SpawnCooldownTime(1.0);
+		CanBeBlocked(false);
+	}	
+	
+	EncounterGroup("Loot_Island")
+	{
+		IgnoreGeneralMinDistBtwEncounters(true);
+		MaxNumOfActiveEncounters(10);
+        MaxNumOfActiveEncountersInCoop(5);
+		EncounterMinSearchRadius(0.1);
+		EncounterMaxSearchRadius(80.0);
+		EncounterMaxHeightDifference(80.0);
+		DefaultDifficulty("Hard");
+		MinDistBtwEncounters(10.0);
+		SpawnCooldownTime(1.0);
+		CanBeBlocked(false);
+	}	
+	
+	EncounterGroup("Eating_Corpses")
+	{
+		IgnoreGeneralMinDistBtwEncounters(false);
+		MaxNumOfActiveEncounters(12);
+        MaxNumOfActiveEncountersInCoop(12);
+		EncounterMinSearchRadius(45.0);
+		EncounterMaxSearchRadius(90.0);
+		EncounterMaxHeightDifference(12.0);
+		DefaultDifficulty("Hard");
+		MinDistBtwEncounters(5.0);
+		SpawnCooldownTime(1.0);
+		CanBeBlocked(true);
+	}	
+	
+	EncounterGroup("Storytellers")
+	{
+		IgnoreGeneralMinDistBtwEncounters(true);
+		MaxNumOfActiveEncounters(3);
+        MaxNumOfActiveEncountersInCoop(1);
+		EncounterMinSearchRadius(45.0);
+		EncounterMaxSearchRadius(65.0);
+		EncounterMaxHeightDifference(20.0);
+		DefaultDifficulty("Hard");
+		MinDistBtwEncounters(10.0);
+		SpawnCooldownTime(1.0);
+		CanBeBlocked(true);
+	}
+	
+}

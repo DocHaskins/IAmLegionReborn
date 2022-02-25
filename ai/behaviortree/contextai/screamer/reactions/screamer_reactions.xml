@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Selector>
+        <ExternalTree m_UID="AI_REACTION_SYNC_ACTION" m_CustomName="SyncAction" m_Hide="true"/>
+        <ExternalTree m_UID="INFECTED_REACTION_HIT_AND_FALL" m_CustomName="HitFall" m_Hide="true"/>
+        <ExternalTree m_UID="AI_REACTION_FROZEN" m_CustomName="Frozen" m_Hide="true"/>
+        <ExternalTree m_UID="AI_REACTION_ELECTROCUTED_INITIAL" m_CustomName="ElectrocutedInitial" m_Hide="true"/>
+        <ExternalTree m_UID="AI_REACTION_BURNING" m_CustomName="Burning" m_Hide="true"/>
+        <ExternalTree m_UID="AI_CHEMICALS_REACTION" m_CustomName="Toxin" m_Hide="true"/>
+        <ExternalTree m_UID="AI_REACTION_STUNNED" m_CustomName="Stunned" m_Hide="true"/>
+        <ExternalTree m_UID="AI_REACTION_UNSTABLE" m_CustomName="Unstable" m_Hide="true"/>
+        <ExternalTree m_UID="SCREAMER_REACTION_UV" m_CustomName="UV" m_Hide="true"/>
+		<ExternalTree m_UID="SCREAMER_REACTION_ATTACK" m_CustomName="Attack" m_Hide="true"/>
+        <Optional m_Enabled="$enable_dodge">
+            <ExternalTree m_UID="SCREAMER_REACTION_DODGE" m_CustomName="Dodge" m_Hide="true"/>
+        </Optional>
+    </Selector>
+</BehaviorTree>

@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Cnd_CanStartTask m_StartPolicy="INTERRUPT"/>
+        <Cnd_HasActiveWeapon m_WeaponType="ShortSpear"/>
+        <Selector>
+            <Cnd_IsHoldRequired m_Invert="true"/>
+            <Cnd_SelfInHoldRadius/>
+        </Selector>
+        <Selector>
+            <Cnd_IsRestrictedAreaRequired m_Invert="true"/>
+            <Cnd_SelfInRestrictedArea/>
+        </Selector>
+        <Cnd_IsCombatTargetMeleeReachable/>
+        <Cnd_HasCombatTargetNoControl m_Invert="true"/>
+        <Sequence>
+            <Cnd_IsBBValueEqual_string m_Key="#role" m_Value="melee"/>
+            <CooldownUntil m_TimePoint="#attack_cooldown" m_CooldownTime="$attack_cooldown" m_CooldownOnAbort="true">
+                <SelectorMem>
+                    <Optional m_Enabled="$enable_attack_spear_swipe">
+                        <SequenceMem>
+                            <Cnd_AllyInLineOfFire m_Target="#target" m_CheckMelee="true" m_SpaceNeeded="1" m_Invert="true"/>
+                            <Cnd_IsCombatTargetInRange m_Radius="$attack_spear_swipe_max_range" m_Angle="$attack_spear_swipe_min_angle" m_InvertAngleCheck="true"/>
+                            <CombatSlot m_Name="$attack_push_token" m_Limit="$attack_push_limit" m_MinDelay="$attack_push_min_delay" m_Cost="#attack_cost" m_CheckIfUsing="true">
+                                <ExternalTree m_UID="HUMAN_ATTACK_SPEAR_SWIPE" m_CustomName="SpearSwipe" m_Hide="true"/>
+                            </CombatSlot>
+                        </SequenceMem>
+                    </Optional>
+                    <Optional m_Enabled="$enable_attack_spear_push">
+                        <CooldownTimeDelta m_CooldownTime="1" m_CooldownOnAbort="true">
+                            <SequenceMem>
+                                <Cnd_IsCombatTargetInRange m_Radius="$attack_spear_push_max_range" m_Angle="$attack_spear_push_max_angle"/>
+                                <CombatSlot m_Name="$attack_push_token" m_Limit="$attack_push_limit" m_MinDelay="$attack_push_min_delay" m_Cost="#attack_cost" m_CheckIfUsing="true">
+                                    <ExternalTree m_UID="HUMAN_ATTACK_SPEAR_PUSH" m_CustomName="Push" m_Hide="true"/>
+                                </CombatSlot>
+                            </SequenceMem>
+                        </CooldownTimeDelta>
+                    </Optional>
+                    <Optional m_Enabled="$enable_attack_spear_power">
+                        <CooldownTimeDelta m_CooldownTime="$attack_spear_power_cooldown" m_CooldownOnAbort="true">
+                            <SequenceMem>
+                                <Selector>
+                                    <Cnd_AreOtherGroupMembersAlive m_Invert="true"/>
+                                    <Cnd_IsOtherGroupMemberCloseToPosition m_Position="#target_pos" m_MaxDistance="$attack_spear_power_min_space_from_others" m_Invert="true"/>
+                                </Selector>
+                                <Cnd_DistanceToTargetBetween m_Target="#target" m_MinDistance="$attack_spear_power_min_range" m_MaxDistance="$attack_spear_power_max_range"/>
+                                <Cnd_IsCombatTargetInAngle m_Angle="$attack_spear_power_max_angle"/>
+                                <Cnd_AllyInLineOfFire m_Target="#target" m_CheckMelee="true" m_SpaceNeeded="1.25" m_Invert="true"/>
+                                <CombatSlot m_Name="$attack_two_handed_token" m_Limit="$attack_two_handed_limit" m_MinDelay="$attack_two_handed_min_delay" m_Cost="#attack_cost" m_ReleaseOnDamage="#attack_token_release_on_damage" m_CheckIfUsing="true">
+                                    <ExternalTree m_UID="HUMAN_ATTACK_SPEAR_POWER" m_CustomName="SpearPower" m_Hide="true"/>
+                                </CombatSlot>
+                            </SequenceMem>
+                        </CooldownTimeDelta>
+                    </Optional>
+                    <Optional m_Enabled="$enable_attack_spear_swipe_low">
+                        <CooldownTimeDelta m_CooldownTime="$attack_spear_swipe_low_cooldown" m_CooldownOnAbort="true">
+                            <SequenceMem>
+                                <Cnd_AllyInLineOfFire m_Target="#target" m_CheckMelee="true" m_SpaceNeeded="1" m_Invert="true"/>
+                                <Cnd_IsCombatTargetInRange m_Radius="$attack_spear_swipe_low_max_range" m_Angle="$attack_spear_swipe_low_max_angle"/>
+                                <CombatSlot m_Name="$attack_push_token" m_Limit="$attack_push_limit" m_MinDelay="$attack_push_min_delay" m_Cost="#attack_cost" m_CheckIfUsing="true">
+                                    <ExternalTree m_UID="HUMAN_ATTACK_SPEAR_SWIPE_LOW" m_CustomName="SpearSwipeLow" m_Hide="true"/>
+                                </CombatSlot>
+                            </SequenceMem>
+                        </CooldownTimeDelta>
+                    </Optional>
+                    <Optional m_Enabled="$enable_attack_spear_quick">
+                        <SequenceMem>
+                            <Cnd_AllyInLineOfFire m_Target="#target" m_CheckMelee="true" m_SpaceNeeded="1" m_Invert="true"/>
+                            <Cnd_IsCombatTargetInRange m_Radius="$attack_spear_quick_combo_max_range" m_Angle="$attack_spear_quick_combo_max_angle"/>
+                            <CombatSlot m_Name="$attack_push_token" m_Limit="$attack_push_limit" m_MinDelay="$attack_push_min_delay" m_Cost="#attack_cost" m_CheckIfUsing="true">
+                                <ExternalTree m_UID="HUMAN_ATTACK_SPEAR_QUICK_COMBO" m_CustomName="SpearQuickCombo" m_Hide="true"/>
+                            </CombatSlot>
+                        </SequenceMem>
+                    </Optional>
+                </SelectorMem>
+            </CooldownUntil>
+        </Sequence>
+    </SequenceMem>
+</BehaviorTree>

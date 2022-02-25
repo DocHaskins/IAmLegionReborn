@@ -1,0 +1,86 @@
+/// @owner davide.gibertini@techland.pl
+/// Supported FactionName :  BANDIT / PK / RENEGADE / INFECTED
+
+sub main()
+{
+    MusicPreset("Human")
+    {    
+        AffectMusicManager("true");
+        AffectStealthFightState("true");
+        AffectStealthFightStateOnlyAtNight("false");
+        FactionName("BANDIT");
+        AffectClosestEnemyDistance("true");
+    }
+    
+    MusicPreset("Bandit")
+    {    
+        AffectMusicManager("true");
+        AffectStealthFightState("true");
+        AffectStealthFightStateOnlyAtNight("false");
+        FactionName("BANDIT");
+        AffectClosestEnemyDistance("true");
+    }
+    
+    MusicPreset("Pk")
+    {    
+        AffectMusicManager("true");
+        AffectStealthFightState("true");
+        AffectStealthFightStateOnlyAtNight("false");
+        FactionName("PK");
+        AffectClosestEnemyDistance("true");
+    }
+    
+    MusicPreset("Renegade")
+    {    
+        AffectMusicManager("true");
+        AffectStealthFightState("true");
+        AffectStealthFightStateOnlyAtNight("false");
+        FactionName("RENEGADE");
+        AffectClosestEnemyDistance("true");
+    }
+    
+    MusicPreset("Biter")
+    {
+        AffectMusicManager("true");
+        AffectStealthFightState("false");
+        AffectStealthFightStateOnlyAtNight("false");
+        FactionName("INFECTED");
+        AffectClosestEnemyDistance("true");
+    }
+
+    MusicPreset("ChaseInfected")
+    {
+        AffectMusicManager("true");
+        AffectStealthFightState("false");
+        AffectStealthFightStateOnlyAtNight("false");
+        FactionName("INFECTED");
+        AffectClosestEnemyDistance("true");
+    }
+
+    MusicPreset("BigInfected")
+    {
+        AffectMusicManager("true");
+        AffectStealthFightState("true");
+        AffectStealthFightStateOnlyAtNight("false");
+        FactionName("INFECTED");
+        AffectClosestEnemyDistance("true");
+    }
+
+    MusicPreset("SpecialInfected")
+    {
+        AffectMusicManager("true");
+        AffectStealthFightState("false");
+        AffectStealthFightStateOnlyAtNight("true");
+        FactionName("INFECTED");
+        AffectClosestEnemyDistance("true");
+    }
+
+    MusicPreset("Viral")
+    {
+        AffectMusicManager("true");
+        AffectStealthFightState("true");
+        AffectStealthFightStateOnlyAtNight("false");
+        FactionName("INFECTED");
+        AffectClosestEnemyDistance("true");
+    }
+}

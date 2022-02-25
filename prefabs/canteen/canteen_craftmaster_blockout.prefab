@@ -1,0 +1,120 @@
+{
+  "__filename__": {
+    "Version": 4,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [2.5583493, 1.25, 3.1756901, 3.8345944, 1.75, 3.6761169]],
+            "m_Name": [12, "Area"],
+            "m_PcId": [6, 13],
+            "m_PrefabName": [12, "area"],
+            "m_Rotate": [14, [0.0000012, -30.50004, 0.0000046]],
+            "m_Translate": [14, [0.4990234, -0.0319629, -3.3080291]]
+          },
+          "Fields": {
+            "m_AreaHeight": "3.500000",
+            "m_AreaPoints": "6.392700 -0.500000 -0.500427;6.392944 -0.500000 6.851501;-1.275940 -0.500000 6.851807;-1.276245 -0.500000 -0.500000;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Sanctuary"],
+            "m_PcId": [6, 14],
+            "m_PrefabName": [12, "sanctuary"],
+            "m_Rotate": [14, [-9.999999974752428e-7, -0.0000355, 0.0000039]],
+            "m_Translate": [14, [-0.3632811, -0.3179855, -1.3190381]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "1",
+            "m_AreaEntity": "/~18",
+            "m_DisableClimbing": "0",
+            "m_DisableJumping": "0",
+            "m_DisplayEnterExitHudMessage": "0",
+            "m_EnableEnterNotifying": "0",
+            "m_HideWeapon": "0",
+            "m_ReduceAutostep": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_PcId": [6, 15],
+            "m_PrefabName": [12, "detectableobject"],
+            "m_Rotate": [14, [0.0000013, -31.5000343, 0.0000046]],
+            "m_Scale": [14, [7.6952433, 3.398333, 7.3478803]],
+            "m_Translate": [14, [1.0620117, -0.3911817, 0.6348189]]
+          },
+          "Fields": {
+            "m_ActivityArea": "/~13",
+            "m_DiscoverableType": "HUB",
+            "m_LogicPreset": "Locations::Logic::DetectableLocationLogic,();",
+            "m_SelfActive": "1"
+          },
+          "EmbeddedObject": {
+            "Class": "Locations::Logic::DetectableLocationLogic",
+            "DestinationField": "m_LogicPreset",
+            "Fields": {
+              "m_ActivityName": "",
+              "m_AreaMode": "Area",
+              "m_LocCategory": "Neutral",
+              "m_LocType": "map-zone-workshop_undiscovered",
+              "m_MapDescription": ""
+            }
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 16],
+            "m_PrefabName": [12, "location"],
+            "m_PresetNames": [12, "do_LootIcon;Loot_Workshop"],
+            "m_Rotate": [14, [-9.999999974752428e-7, -0.0000375, 0.0000039]],
+            "m_Translate": [14, [1.0153808, -0.4994049, -2.8001937]]
+          },
+          "EmbeddedObject": {
+            "Class": "Locations::Logic::DetectableLocationLogic",
+            "PresetNames": "Loot;Loot_Workshop",
+            "DestinationField": "m_LogicPreset"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.1, 0.2799998, 0.0466231, 0.6, 1.2799996, 0.0816233]],
+            "m_PcId": [6, 17],
+            "m_PrefabName": [12, "hud_helper"],
+            "m_PresetNames": [12, "Hud helper;Area Entrance"],
+            "m_Rotate": [14, [0.0000013, -31.0000362, 0.0000046]],
+            "m_Translate": [14, [1.8048094, 0.4727706, -3.3197555]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [2.5583496, 1.25, 1.2022399, 3.8345947, 1.75, 5.6495671]],
+            "m_Name": [12, "Sanctuary_area"],
+            "m_PcId": [6, 18],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Rotate": [14, [9.999996564147296e-7, -30.50004, 0.0000043]],
+            "m_Translate": [14, [0.4990234, -0.9574546, -3.3080291]]
+          },
+          "Fields": {
+            "m_AreaHeight": "3.500000",
+            "m_AreaPoints": "6.392700 -0.500000 -0.500427;6.392944 -0.500000 6.851501;-1.275940 -0.500000 6.851807;-1.276245 -0.500000 -0.500000;-0.780640 -0.500000 -0.596985;-0.427185 -0.500000 -3.580627;0.878296 -0.500000 -4.447327;2.897034 -0.500000 -3.708679;2.661865 -0.500000 -1.307861;2.567871 -0.500000 -0.566650;",
+            "m_MarkerEntity": "/~16",
+            "m_Portals": "/~17;"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

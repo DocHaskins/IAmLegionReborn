@@ -1,0 +1,273 @@
+{
+  "__filename__": {
+    "RuntimeData": {
+      "Extents": {},
+      "SpawnType": {},
+      "DetailSpawnType": {},
+      "CustomExteriorsDistance": {},
+      "PrefabInterfaces": [],
+      "Interface": {},
+      "Bindings": {
+        "Properties": [],
+        "Pipes": [
+          {
+            "src_uuid": "3",
+            "src": "m_PipeOnActivate",
+            "dest_uuid": "7",
+            "dest": "m_PipeActivate"
+          },
+          {
+            "src_uuid": "3",
+            "src": "m_PipeOnActivate",
+            "dest_uuid": "2",
+            "dest": "m_PipeActivate"
+          },
+          {
+            "src_uuid": "3",
+            "src": "m_PipeOnDeactivate",
+            "dest_uuid": "2",
+            "dest": "m_PipeDeactivate"
+          },
+          {
+            "src_uuid": "3",
+            "src": "m_PipeOnDeactivate",
+            "dest_uuid": "7",
+            "dest": "m_PipeDeactivate"
+          }
+        ]
+      },
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_PrefabName": "gameplay_modifier_area",
+            "m_EntityComponentsExtents": "-0.385801 0.500000 -0.373096 0.559870 0.500000 0.611879",
+            "m_Translate": "2.781372 -0.128920 0.000000",
+            "m_Scale": "20.258331 2.907731 20.000000",
+            "m_PcId": "7"
+          },
+          "Fields": {
+            "m_Points": "0.270243 -0.500000 -0.602176;0.270767 -0.500000 0.229053;-0.465755 -0.500000 0.238784;-0.456249 -0.500000 -0.525694;-0.842281 -0.500000 -0.525243;-0.848972 -0.500000 -0.984975;-0.308249 -0.500000 -0.983074;-0.306271 -0.500000 -0.603306;",
+            "m_ModifierFlags": "32"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_PrefabName": "complexcontainer",
+            "m_PresetNames": "Type;chest_loot_big_DeadZone_Lockpick;Lockpicking minigame;Medium",
+            "m_EntityComponentsExtents": "0.000141 0.386095 0.000005 0.663810 0.386095 0.472455",
+            "m_Translate": "-0.736603 0.000000 -2.331421",
+            "m_Rotate": "0.000000 -90.000000 0.000000",
+            "m_PcId": "2"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_PrefabName": "encounter",
+            "m_PresetNames": "Activation - daytime;Not Night",
+            "m_Rotate": "0.000000 -90.000000 0.000000",
+            "m_PcId": "3"
+          },
+          "Fields": {
+            "IEncounter::m_Category": "Exterior_Defend",
+            "m_ScenarioBT": "scenario_defend",
+            "m_FactionName": "BlackMarket",
+            "m_EncounterEntities": "/2;",
+            "m_BehaviorPlacesToUse": "6;4;5;8;",
+            "m_SpawnAllAIsFromPool": "1",
+            "m_NumOfAIsToSpawn": "0",
+            "m_MinNumOfAIsToSpawn": "3",
+            "m_MaxNumOfAIsToSpawn": "4",
+            "m_SpawnOneAIPerPool": "0",
+            "IBTDataEncounter::m_BTPending": "scenario_defend_pending"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_Name": "encounter_bp_2",
+            "m_PrefabName": "behaviorplace",
+            "m_EntityComponentsExtents": "-0.000000 0.150000 0.180769 0.498602 0.150000 0.675184",
+            "m_Translate": "-2.101532 0.000000 -3.677513",
+            "m_Rotate": "179.999985 -3.999974 -179.999985",
+            "m_PcId": "4"
+          },
+          "Fields": {
+            "m_SelfActive": "1",
+            "IPatrolData::m_PatrolPoints": "/9;/10;/12;",
+            "m_ObjectID": "dfadfasdf",
+            "m_BehaviorName": "test_npc_bandit_simple"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_Name": "encounter_bp_3",
+            "m_PrefabName": "behaviorplace",
+            "m_EntityComponentsExtents": "-0.000000 0.150000 0.180769 0.498602 0.150000 0.675184",
+            "m_Translate": "-10.806976 0.000000 -15.018402",
+            "m_Rotate": "179.999756 -84.500000 179.999771",
+            "m_PcId": "5"
+          },
+          "Fields": {
+            "m_SelfActive": "1",
+            "m_ObjectID": "asdasdasdas",
+            "m_BehaviorName": "test_npc_search_shelves"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_Name": "encounter_bp_1",
+            "m_PrefabName": "behaviorplace",
+            "m_EntityComponentsExtents": "-0.000000 0.150000 0.180774 0.498602 0.150000 0.675186",
+            "m_Translate": "-2.039856 0.000000 -5.992416",
+            "m_Rotate": "-0.000044 -8.000018 -0.000015",
+            "m_PcId": "6"
+          },
+          "Fields": {
+            "m_SelfActive": "1",
+            "m_ObjectID": "asdasdasd",
+            "m_BehaviorName": "test_npc_bandit_simple"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_Name": "encounter_bp_4",
+            "m_PrefabName": "behaviorplace",
+            "m_EntityComponentsExtents": "-0.000000 0.150000 0.180769 0.498602 0.150000 0.675184",
+            "m_Translate": "-6.707794 0.000000 3.258835",
+            "m_Rotate": "179.999985 80.499985 -179.999985",
+            "m_PcId": "8"
+          },
+          "Fields": {
+            "m_SelfActive": "1",
+            "m_ObjectID": "hdghhfghdfg",
+            "m_BehaviorName": "test_npc_search_shelves"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_PrefabName": "ai_patrol_node",
+            "m_EntityComponentsExtents": "-0.000000 1.519573 0.230906 0.069079 1.519573 0.270789",
+            "m_Translate": "4.858246 0.000000 -5.883286",
+            "m_Rotate": "179.999985 0.000005 179.999985",
+            "m_PcId": "9"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_PrefabName": "ai_patrol_node",
+            "m_EntityComponentsExtents": "-0.000000 1.519573 0.230906 0.069079 1.519573 0.270789",
+            "m_Translate": "1.431335 0.000000 3.734528",
+            "m_Rotate": "-0.000011 -0.000000 0.000003",
+            "m_PcId": "10"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_PrefabName": "ai_spawner_range",
+            "m_PresetNames": "Activation - daytime;Day",
+            "m_EntityComponentsExtents": "-0.040529 0.500000 0.005414 0.582618 0.500000 0.499998",
+            "m_Translate": "-0.783295 -3.840000 -3.818237",
+            "m_Scale": "12.532227 2.185048 12.628937",
+            "m_PcId": "11"
+          },
+          "Fields": {
+            "m_Points": "0.317167 -0.500000 -0.409290;0.386904 -0.500000 -0.231439;0.542089 -0.500000 -0.230024;0.500000 -0.500000 0.500000;-0.610758 -0.500000 0.505413;-0.623146 -0.500000 0.275540;-0.453423 -0.500000 0.274566;-0.454023 -0.500000 -0.257146;-0.599806 -0.500000 -0.253977;-0.610758 -0.500000 -0.494584;0.114735 -0.500000 -0.451037;",
+            "m_MaxAIsToSpawnDay": "30",
+            "m_GenerateInsteadOfGather": "1",
+            "m_MinAIsToSpawnDay": "10",
+            "m_DayPreset": "",
+            "m_DayPresetPoolName": "Darkzone_Resting_Mixed"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_PrefabName": "ai_patrol_node",
+            "m_EntityComponentsExtents": "-0.000000 1.519573 0.230906 0.069079 1.519573 0.270789",
+            "m_Translate": "-7.310150 0.000000 1.396965",
+            "m_Rotate": "0.000000 -90.000000 0.000000",
+            "m_PcId": "12"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "1",
+      "Hooks": [],
+      "Nodes": [
+        {
+          "Uuid": "7",
+          "Type": "1",
+          "X": "-270.00",
+          "Y": "-360.00"
+        },
+        {
+          "Uuid": "2",
+          "Type": "1",
+          "X": "-285.00",
+          "Y": "495.00"
+        },
+        {
+          "Uuid": "3",
+          "Type": "1",
+          "X": "-930.00",
+          "Y": "75.00"
+        },
+        {
+          "Uuid": "4",
+          "Type": "1",
+          "X": "75.00",
+          "Y": "60.00"
+        },
+        {
+          "Uuid": "5",
+          "Type": "1",
+          "X": "100.00",
+          "Y": "80.00"
+        },
+        {
+          "Uuid": "6",
+          "Type": "1",
+          "X": "125.00",
+          "Y": "100.00"
+        },
+        {
+          "Uuid": "8",
+          "Type": "1",
+          "X": "150.00",
+          "Y": "120.00"
+        },
+        {
+          "Uuid": "9",
+          "Type": "4",
+          "X": "175.00",
+          "Y": "140.00",
+          "Interface_Type": "0"
+        },
+        {
+          "Uuid": "10",
+          "Type": "4",
+          "X": "200.00",
+          "Y": "160.00",
+          "Interface_Type": "1"
+        },
+        {
+          "Uuid": "11",
+          "Type": "4",
+          "X": "225.00",
+          "Y": "180.00",
+          "Interface_Type": "2"
+        }
+      ]
+    }
+  }
+}

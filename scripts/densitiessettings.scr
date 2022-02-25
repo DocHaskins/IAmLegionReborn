@@ -1,0 +1,533 @@
+import "ial_scripts_density_settings.def"
+
+// Densities are defined in such way that min value is exclusive and max value is inclusive
+// e.g. level Easy with number of AIs between 1 and 3 should be defined as Easy(0, 3);
+// You can also specify density in percentage, e.g. Medium("40-60%"); which means AIs will
+// be spawned in 40 to 60% of available points.
+
+export int Day = 0;
+export int Night = 1;
+
+sub ZeroDensity()
+{
+    None(0, 0);
+    RunThrough(0, 0);
+    Easy(0, 0);
+    Medium(0, 0);
+    Hard(0, 0);
+    VeryHard(0, 0);
+    OWA(0, 0);	
+    HUB(0, 0);		
+    Park(0, 0);		
+}
+
+sub TurnOffTagForDynamicSpawner(string tag="")
+{
+    DensitiesTagged(Day, tag)
+    {
+        use ZeroDensity();
+    }
+    
+    DensitiesTagged(Night, tag)
+    {
+        use ZeroDensity();
+    }
+}
+
+sub main()
+{
+    // Non-tagged densities are defined by group size, radius and distance between
+    /*Densities(Day)
+    {
+        None(0, 1);
+		RunThrough(8, 20);
+        Easy(14, 50);
+        Medium(14, 50);
+        VeryHard(85, 120);
+		
+		OWA(4, 6);
+    }
+    
+    Densities(Night)
+    {
+        None(0, 0);
+		RunThrough(10, 22);
+        Easy(35, 80); 
+        Medium(50, 95); 
+        Hard(90, 125); 
+        VeryHard(100, 170);
+		
+		OWA(10, 50);
+    }*/
+    
+    // no zombies on rooftops during the day
+    DensitiesTagged(Day, "rooftop")
+    {
+        None(0, 0);
+		RunThrough(0, 0);
+        Easy(1, 4);
+        Medium(2, 6);
+        Hard(3, 8);
+        VeryHard(4, 10);
+		
+		OWA(1, 2);
+    }
+    
+    DensitiesTagged(Night, "rooftop")
+    {
+        // TODO: change it to work as earlier
+        None(0, 0);
+		RunThrough(0, 0);
+        Easy(1, 2);
+        Medium(2, 3);
+        Hard(3, 4);
+        VeryHard(4, 4);
+		
+		OWA(1, 2);
+    }
+	
+    // animations zombies on city
+    DensitiesTagged(Day, "init_ground") // e.g. Bangin Door.
+    {
+        None("0%");
+		RunThrough("25%");
+        Easy("25%");
+        Medium("25%");
+        Hard("25%");
+        VeryHard("25%");
+		
+		HUB("25%");
+		OWA("25%");
+		Park("25%");		
+    }
+    
+    DensitiesTagged(Night, "init_ground")
+    {
+        None("0%");
+		RunThrough("0%");
+        Easy("0%");
+        Medium("0%");
+        Hard("0%");
+        VeryHard("0%");
+		
+		HUB("0%");
+		OWA("0%");
+		Park("0%");		
+    }
+	
+    DensitiesTagged(Day, "init_ground_flavor") // Biter One Shot spawns in BP and won't leave it.
+    {
+        None("0%");
+		RunThrough("3%");
+        Easy("6%");
+        Medium("9%");
+        Hard("12%");
+        VeryHard("15%");
+		
+		HUB("5%");
+		OWA("5%");
+		Park("5%");		
+    }
+	
+    DensitiesTagged(Night, "init_ground_flavor") // Biter One Shot spawns in BP and won't leave it.
+    {
+        None(0, 0);
+		RunThrough(0, 0);
+        Easy(0, 0);
+        Medium(0, 0);
+        Hard(0, 0);
+        VeryHard(0, 0);
+		
+		HUB(0, 0);
+		OWA(0, 0);
+		Park(0, 0);		
+    }
+	
+    DensitiesTagged(Day, "init_ground_flavor_pinned_down") // Biter Grounded/Pinned down by something.
+    {
+        None("0%");
+		RunThrough("3%");
+        Easy("6%");
+        Medium("9%");
+        Hard("12%");
+        VeryHard("15%");
+		
+		HUB("15%");
+		OWA("15%");
+		Park("15%");		
+    }
+	
+    DensitiesTagged(Night, "init_ground_flavor_pinned_down") // Biter Grounded/Pinned down by something.
+    {
+        None("0%");
+		RunThrough("0%");
+        Easy("0%");
+        Medium("0%");
+        Hard("0%");
+        VeryHard("0%");
+		
+		HUB("0%");
+		OWA("0%");
+		Park("0%");		
+    }
+	
+    DensitiesTagged(Day, "init_ground_flavor_reach_hand") // Biter Reaching his hand mostly used in basements
+    {
+        None("0%");
+		RunThrough("3%");
+        Easy("6%");
+        Medium("9%");
+        Hard("12%");
+        VeryHard("15%");
+		
+		HUB("12%");
+		OWA("12%");
+		Park("12%");
+    }
+	
+    DensitiesTagged(Night, "init_ground_flavor_reach_hand") // Biter Reaching his hand mostly used in basements
+    {
+        None("0%");
+		RunThrough("6%");
+        Easy("9%");
+        Medium("12%");
+        Hard("15%");
+        VeryHard("18%");
+		
+		HUB("15%");
+		OWA("15%");
+		Park("15%");
+    }
+	
+    DensitiesTagged(Day, "init_ground_flavor_spiked") // Biter Barrel
+    {
+        None("0%");
+		RunThrough("6%");
+        Easy("9%");
+        Medium("12%");
+        Hard("15%");
+        VeryHard("18%");
+		
+		HUB("15%");
+		OWA("15%");
+		Park("15%");
+    }
+	
+    DensitiesTagged(Night, "init_ground_flavor_spiked") 
+    {
+        None("0%");
+		RunThrough("9%");
+        Easy("12%");
+        Medium("15%");
+        Hard("18%");
+        VeryHard("21%");
+		
+		HUB("15%");
+		OWA("15%");
+		Park("15%");
+    }
+	
+
+    use TurnOffTagForDynamicSpawner(tag="init_ground_flavor");
+    use TurnOffTagForDynamicSpawner(tag="bandit_camp");
+    use TurnOffTagForDynamicSpawner(tag="corruptor");
+    use TurnOffTagForDynamicSpawner(tag="roof_init_flap");
+    use TurnOffTagForDynamicSpawner(tag="roof_init_vent_shaft");
+    use TurnOffTagForDynamicSpawner(tag="bandit_camp_door");
+    
+    /////////////////////////////////////////////////////////////
+    // Dark Zone default densities
+    // Please, add a "dz_" prefix to densities definitions below
+	//[ Type ] , [ Min ] , [ Max ] , [ M^2 ]
+    /////////////////////////////////////////////////////////////
+
+	//////////////// EMPTY ////////////////
+	////////// Infected Population //////////
+	/////// Difficulty, Min, Max, M^2 //////
+	
+	DensitiesTagged(Day, "dz_empty")
+    {
+        None(0, 0, 100.0);
+		RunThrough(0, 0, 100.0);
+        Easy(0, 0, 100.0);
+		Medium(0, 0, 100.0);
+        Hard(0, 0, 100.0);
+        VeryHard(0, 0, 100.0); // Not used
+    }
+    
+    DensitiesTagged(Night, "dz_empty")
+    {
+        None(0, 0, 100.0);
+		RunThrough(0, 0, 100.0);
+        Easy(0, 0, 100.0);
+        Medium(0, 0, 100.0);
+        Hard(0, 0, 100.0);
+        VeryHard(0, 0, 100.0); // Not used
+    }    
+	
+	//////////////// TESTMAP_DARKZONES TESTING ////////////////
+	////////// Infected Population //////////
+	/////// Difficulty, Min, Max, M^2 //////
+	
+	DensitiesTagged(Day, "dz_testmap_darkzones")
+    {
+        None(0, 0, 100.0);
+		RunThrough(1, 2, 100.0);
+        Easy(2, 3, 100.0);
+		Medium(8, 10, 100.0);
+        Hard(15, 20, 100.0);
+        VeryHard(50, 50, 100.0); // Used for Shops and Dark Places
+    }
+    
+    DensitiesTagged(Night, "dz_testmap_darkzones")
+    {
+        None(0, 0, 100.0);
+		RunThrough(0, 0.5, 100.0);
+        Easy(1, 1.5, 100.0);
+        Medium(1.5, 2, 100.0);
+        Hard(2, 3, 100.0);
+        VeryHard(2, 3, 100.0); // Used for Shops and Dark Places
+    }
+	
+	//////////////// DEFAULT ////////////////
+	////////// Infected Population //////////
+	/////// Difficulty, Min, Max, M^2 //////
+	
+	DensitiesTagged(Day, "dz_default")
+    {
+        None(0, 0, 100.0);
+		RunThrough(1, 2, 100.0);
+        Easy(7, 10, 100.0);
+		Medium(7, 15, 100.0);
+        Hard(22, 25, 100.0);
+        VeryHard(50, 50, 100.0); // Used for Shops and Dark Places
+    }
+    
+    DensitiesTagged(Night, "dz_default")
+    {
+        None(0, 0, 100.0);
+		RunThrough(0, 0.5, 100.0);
+        Easy(0.5, 1.0, 100.0);
+        Medium(8, 9, 100.0);
+        Hard(8, 9, 100.0);
+        VeryHard(8, 9, 100.0); // Used for Shops and Dark Places
+    }
+    
+	//////////////// REGION_01 ////////////////
+	////////// Infected Population //////////
+	/////// Difficulty, Min, Max, M^2 //////
+	
+	DensitiesTagged(Day, "dz_region_01")
+    {
+        None(0, 0, 100.0);
+		RunThrough(2, 3, 100.0);
+		Easy(10, 12, 100.0);
+		Medium(14, 16, 100.0);
+        Hard(18, 20, 100.0);
+        VeryHard(50, 50, 100.0); // Used for Shops and Dark Places
+    }
+    
+    DensitiesTagged(Night, "dz_region_01")
+    {
+        None(0, 0, 100.0);
+		RunThrough(0, 0.5, 100.0);
+        Easy(0.5, 1.0, 100.0);
+        Medium(8, 9, 100.0);
+        Hard(8, 9, 100.0);
+        VeryHard(8, 9, 100.0); // Used for Shops and Dark Places
+    }
+	
+	//////////////// REGION_02 ////////////////
+	////////// Infected Population //////////
+	/////// Difficulty, Min, Max, M^2 //////
+	
+	DensitiesTagged(Day, "dz_region_02")
+    {
+        None(0, 0, 100.0);
+		RunThrough(0, 0.5, 100.0);
+        Easy(0.5, 1.0, 100.0);
+        Medium(8, 9, 100.0);
+        Hard(8, 9, 100.0);
+        VeryHard(8, 9, 100.0); // Used for Shops and Dark Places
+    }
+    
+    DensitiesTagged(Night, "dz_region_02")
+    {
+        None(0, 0, 100.0);
+		RunThrough(0, 0.5, 100.0);
+        Easy(0.5, 1.0, 100.0);
+        Medium(8, 9, 100.0);
+        Hard(8, 9, 100.0);
+        VeryHard(8, 9, 100.0); // Used for Shops and Dark Places
+    }
+	
+    /////////////////////////////////////////////////////////////
+    // GROUPS DEFINITIONS
+    /////////////////////////////////////////////////////////////
+ 
+    Groups(Day)
+    {
+		HUB()
+        {
+            Group(1, 1);
+            Radius(2.0, 2.0);
+            DistanceBetween(IAL_Density_Day_HUBOWA);
+        }
+
+        OWA()
+        {
+            Group(1, 2);
+            Radius(2.0, 2.0);
+            DistanceBetween(IAL_Density_Day_HUBOWA);
+        }
+
+        Park()
+        {
+            Group(1, 2);
+            Radius(2.0, 2.0);
+            DistanceBetween(IAL_Density_Day_Flooded);
+        }		
+
+        Easy()
+        {
+            Group(1, 4);
+            Radius(2.0, 5.0);
+            DistanceBetween(IAL_Density_Day_Easy);
+        }
+
+        Medium()
+        {
+            Group(3,4);
+            Radius(5.5, 6.0);
+            DistanceBetween(IAL_Density_Day_Medium);
+        }
+		
+        Hard()
+        {
+            Group(5,6);
+            Radius(7.0, 8.5);
+            DistanceBetween(IAL_Density_Day_Hard);
+        }
+		
+        VeryHard()
+        {
+            Group(3,4);
+            Radius(5.0, 6.5);
+            DistanceBetween(IAL_Density_Day_Hard);
+        }
+		
+		RunThrough()
+        {
+            Group(4, 5);
+            Radius(2.0, 3.0);
+            DistanceBetween(IAL_Density_Day);
+        }
+
+        Flooded_1()
+        {
+            Group(1, 1);
+            Radius(0.5, 0.5);
+            DistanceBetween(IAL_Density_Day_Flooded);
+        }
+        
+        Flooded_2()
+        {
+            Group(1, 1);
+            Radius(0.5, 0.5);
+            DistanceBetween(IAL_Density_Day_Flooded);
+        }
+        
+        Flooded_3()
+        {
+            Group(1, 1);
+            Radius(1.3, 1.5);
+            DistanceBetween(IAL_Density_Day_Flooded);
+        }
+    }
+ 
+    Groups(Night)
+    {
+        HUB()
+        {
+            Group(1, 1);
+            Radius(1.4, 1.5);
+            DistanceBetween(IAL_Density_Night_HUBOWA);
+        }        
+		
+		OWA()
+        {
+            Group(1, 1);
+            Radius(1.4, 1.5);
+            DistanceBetween(IAL_Density_Night_HUBOWA);
+        }
+
+        Park()
+        {
+            Group(1, 1);
+            Radius(1.4, 1.5);
+            DistanceBetween(IAL_Density_Night_Flooded);
+        }    		
+        
+        Easy()
+        {
+            Group(1, 1);
+            Radius(1.4, 1.5);
+            DistanceBetween(IAL_Density_Night_Easy);
+        }
+        
+        Medium()
+        {
+            Group(1, 1);
+            Radius(1.0, 1.2);
+            DistanceBetween(IAL_Density_Night_Medium);
+        }
+        
+        Hard()
+        {
+            Group(1, 1);
+            Radius(0.7, 1.0);
+            DistanceBetween(IAL_Density_Night_Hard);
+        }
+        
+        VeryHard()
+        {
+            Group(1, 1);
+            Radius(0.5, 1.0);
+            DistanceBetween(IAL_Density_Night_Hard);
+        }
+		
+		RunThrough()
+        {
+            Group(4, 5);
+            Radius(3.0, 4.0);
+            DistanceBetween(IAL_Density_Night);
+        }
+
+        Flooded_1()
+        {
+            Group(1, 1);
+            Radius(0.5, 0.5);
+            DistanceBetween(IAL_Density_Night_Flooded);
+        }
+        
+        Flooded_2()
+        {
+            Group(1, 1);
+            Radius(0.5, 0.5);
+            DistanceBetween(IAL_Density_Night_Flooded);
+        }
+        
+        Flooded_3()
+        {
+            Group(1, 1);
+            Radius(1.3, 1.5);
+            DistanceBetween(IAL_Density_Night_Flooded);
+        }
+		
+    }
+    
+    GroupsTagged(Night, "rooftop")
+    {
+        // override night grouping - virals on rooftops will be spawned as single units
+    }
+}

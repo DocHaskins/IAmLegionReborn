@@ -1,0 +1,117 @@
+import "ial_scripts_ai_logic_settings.def"
+
+//ksz c:02082019 u:29072020
+// Zone Levels Definition Script
+
+export int Low      = 0;
+export int Medium   = 1;
+export int High     = 2;
+export int VeryHigh = 3;
+
+sub ZoneLevels()
+{
+    // Definition([sName])
+    // Min(iMinVal [, iBottomTier])
+    // Tier(iVal)
+    // Max(iMaxVal)
+    
+    Definition()
+    {
+        Min(0, 0);  //0
+        Max(0);   //max
+    }
+    
+    // Area(sAtibuteAreaName [, iStartValue [, sDeftiniton]])
+    // {
+    //     Difficulty(iMin, iMax); //difficulty range shown in menu/hud
+    // }
+
+    // OwnedArea(sAtibuteAreaName [, iStartValue [, sDeftiniton]])
+    // {
+    //     Owner(sDefaultZoneOwner);
+    //     Difficulty(iMin, iMax); //difficulty range shown in menu/hud
+    // }
+    
+    // Global(sName, [, iStartValue [, sDeftiniton]])
+    //
+    
+    // R1 
+    OwnedArea("R1_1_Zone_01") { Owner("Peacekeepers"); Difficulty(1, IAL_AI_Early_Zones_Max_Lvl); }
+    OwnedArea("R1_2_Zone_02") { Owner("Survivors"); Difficulty(1, IAL_AI_Early_Zones_Max_Lvl); }
+    OwnedArea("R1_3_Zone_03") { Difficulty(1, IAL_AI_Early_Zones_Max_Lvl); }
+    OwnedArea("R1_4_Zone_04") { Difficulty(2, IAL_AI_Early_Zones_Max_Lvl); }
+    
+    // R2 
+    OwnedArea("R2_1_Zone_05") { Difficulty(2, IAL_AI_Early_Zones_Max_Lvl); }
+    OwnedArea("R2_2_Zone_06") { Difficulty(5, IAL_AI_Early_Zones_Max_Lvl); }
+    OwnedArea("R2_3_Zone_07") { Difficulty(2, IAL_AI_Early_Zones_Max_Lvl); }
+    OwnedArea("R2_4_Zone_08") { Difficulty(3, IAL_AI_Early_Zones_Max_Lvl); }
+    OwnedArea("R2_5_Zone_09") { Difficulty(3, IAL_AI_Early_Zones_Max_Lvl); }
+    OwnedArea("R2_6_Zone_10") { Owner("Survivors"); Difficulty(2, IAL_AI_Early_Zones_Max_Lvl); }
+    OwnedArea("R2_7_Zone_11") { Difficulty(2, IAL_AI_Early_Zones_Max_Lvl); }
+    OwnedArea("R2_8_Zone_12") { Owner("Peacekeepers"); Difficulty(2, IAL_AI_Early_Zones_Max_Lvl); }
+
+    // R3
+    OwnedArea("R3_1_Zone_14") { Owner("Renegades"); Difficulty(5, IAL_AI_Early_Zones_Max_Lvl); }
+    OwnedArea("R3_Flooded_1") { Difficulty(5, 9); }	
+    OwnedArea("R3_Flooded_2") { Difficulty(5, 9); }	
+    OwnedArea("R3_Flooded_3") { Difficulty(5, 9); }		
+    
+    // R5
+    OwnedArea("R5_1_Zone_21") { Difficulty(3, IAL_AI_Early_Zones_Max_Lvl); }
+    OwnedArea("R5_2_Zone_22") { Difficulty(3, IAL_AI_Early_Zones_Max_Lvl); }
+    OwnedArea("R5_3_Zone_23") { Difficulty(5, IAL_AI_Early_Zones_Max_Lvl); }
+    OwnedArea("R5_4_Zone_24") { Difficulty(4, IAL_AI_Early_Zones_Max_Lvl); }
+    OwnedArea("R5_5_Zone_25") { Difficulty(6, IAL_AI_Early_Zones_Max_Lvl); }
+    OwnedArea("R5_6_Zone_26") { Difficulty(5, IAL_AI_Early_Zones_Max_Lvl); }
+    
+    Definition("CityAlignment")
+    {
+        Min(0,0);       //0
+        Tier(1000);     //1
+        Tier(2000);     //2
+        Tier(3000);     //3
+        Tier(4000);     //4
+        Tier(5000);    //5
+        Tier(6000);    //6
+        Tier(7000);    //7
+        Tier(8000);    //8
+        Tier(9000);    //9
+        Tier(10000);    //10
+        Tier(11000);    //11
+        Tier(12000);    //11
+        Max(45000);     //12
+        
+        Change(Low, 100);
+        Change(Medium, 200);
+        Change(High, 500);
+        Change(VeryHigh, 1000);
+    }
+    
+    Global("Survivors", 0);
+    Global("Peacekeepers", 0);
+    
+    //SurvivorMoraleAiKillInfluence(sConflictSide, iPoints)
+    //SurvivorMoraleAiKillInfluence("bandit", 12);
+    
+    ZoneLevelReward("Peacekeepers", 4)
+    {
+        Item("wpn_2hr_crossbow_b_fpp");
+        Collectable("Craftplan_Bolt");
+        Collectable("Craftplan_Bolts_Freeze");
+        Collectable("Craftplan_Bolts_Toxic");
+		Collectable("Craftplan_Bolts_Stunning");
+        Collectable("Craftplan_Bolts_Impact");
+        Collectable("Craftplan_Bolts_Bleeding");				
+    }
+    
+    //ZoneLevelAudioState(sAudioStateName, [iStartingTier]);
+    ZoneLevelAudioState("set_gp_zone_level_zero", 0);
+    ZoneLevelAudioState("set_gp_zone_level_plus1", 2);
+    ZoneLevelAudioState("set_gp_zone_level_plus2", 5);
+
+    //TierRange(sName, iFrom, iTo);
+    TierRange("Distrust", 0, 1);
+    TierRange("Neutral", 2, 4);
+    TierRange("Friendly", 5, 12);
+}

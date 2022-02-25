@@ -1,0 +1,142 @@
+{
+  "__filename__": {
+    "RuntimeData": {
+      "Interface": {
+        "VirtualFields": [
+          {
+            "Name": "SELECTOR_variant",
+            "Init": "f:EDIT;e:EDIT|CALLBACK;m:-1;x:200;a:_IS_SELECTOR_;",
+            "DestinationFields": [
+              {
+                "Uuid": "2",
+                "Name": "SelectName"
+              }
+            ]
+          },
+          {
+            "Name": "SELECTOR",
+            "Init": "f:EDIT;e:EDIT|CALLBACK;m:-1;x:200;a:_IS_SELECTOR_;",
+            "DestinationFields": [
+              {
+                "Uuid": "20",
+                "Name": "SELECTOR_storey"
+              }
+            ]
+          },
+          {
+            "Name": "SELECTOR_left_door",
+            "Init": "f:EDIT;e:EDIT|CALLBACK;m:-1;x:200;a:_IS_SELECTOR_;",
+            "DestinationFields": [
+              {
+                "Uuid": "20",
+                "Name": "SELECTOR_left_door"
+              }
+            ]
+          },
+          {
+            "Name": "SELECTOR_right_door",
+            "Init": "f:EDIT;e:EDIT|CALLBACK;m:-1;x:200;a:_IS_SELECTOR_;",
+            "DestinationFields": [
+              {
+                "Uuid": "20",
+                "Name": "SELECTOR_right_door"
+              }
+            ]
+          },
+          {
+            "Name": "SELECTOR_nm_climb",
+            "Init": "f:EDIT;e:EDIT|CALLBACK;m:-1;x:200;a:_IS_SELECTOR_;",
+            "DestinationFields": [
+              {
+                "Uuid": "20",
+                "Name": "SELECTOR_nm_climb"
+              }
+            ]
+          },
+          {
+            "Name": "SELECTOR_cabin_left",
+            "Init": "f:EDIT;e:EDIT|CALLBACK;m:-1;x:200;a:_IS_SELECTOR_;",
+            "DestinationFields": [
+              {
+                "Uuid": "20",
+                "Name": "SELECTOR_cabin_left"
+              }
+            ]
+          },
+          {
+            "Name": "SELECTOR_cabin_right",
+            "Init": "f:EDIT;e:EDIT|CALLBACK;m:-1;x:200;a:_IS_SELECTOR_;",
+            "DestinationFields": [
+              {
+                "Uuid": "20",
+                "Name": "SELECTOR_cabin_right"
+              }
+            ]
+          },
+          {
+            "Name": "SELECTOR_height_addon",
+            "Init": "f:EDIT;e:EDIT|CALLBACK;m:-1;x:200;a:_IS_SELECTOR_;",
+            "DestinationFields": [
+              {
+                "Uuid": "20",
+                "Name": "SELECTOR_height_addon"
+              }
+            ]
+          }
+        ]
+      },
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_Name": "A",
+            "m_PcId": "1",
+            "m_PrefabName": "room_darkplace_lift_double_a"
+          }
+        },
+        {
+          "Class": "CoRandomizer",
+          "PrefabFields": {
+            "m_ControlledPrefabIds": "1;",
+            "m_PcId": "2"
+          },
+          "Presets": []
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_EntityComponentsExtents": "0.186294 0.500000 0.301147 3.560958 0.500000 3.545501",
+            "m_PcId": "3",
+            "m_PrefabName": "ai_spawner_range",
+            "m_PresetNames": "Activation - distance;Interior",
+            "m_Translate": "-0.074738 0.000000 2.653290"
+          },
+          "Fields": {
+            "m_DayPresetPoolName": "DarkZone_Day",
+            "m_GenerateInsteadOfGather": "1",
+            "m_MaxAIsToSpawnDay": "12",
+            "m_MaxAIsToSpawnNight": "2",
+            "m_MinAIsToSpawnDay": "1",
+            "m_MinAIsToSpawnNight": "0",
+            "m_NightPreset": "Character;Biter",
+            "m_NightPresetPoolName": "",
+            "m_Points": "3.747253 -0.500000 -3.244354;3.747253 -0.500000 3.846649;-3.374664 -0.500000 3.846649;-3.374664 -0.500000 -3.244354;",
+            "m_ShuffleSpawnPoints": "1",
+            "m_SpawnProbability": "0.530000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_PcId": "20",
+            "m_PrefabName": "room_darkplace_lift_4x3",
+            "m_Translate": "0.000000 0.000000 -3.840027"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "1"
+    }
+  }
+}

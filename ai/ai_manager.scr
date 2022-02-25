@@ -1,0 +1,16 @@
+import "ial_ai_crowd_settings.def"
+
+sub set_common_params()
+{
+    Param("MaxDistanceForCrowdAIToReactOnHit", "100");
+    Param("CrowdAIHitReactionMorphedAnimationPreset", "biter");
+    Param("MinProjectileStrengthToStartCrowdAIHitReactionTest", "0.5");
+    Param("MinDistanceForCrowdAIToReactOnGrenadeExplode", "IAL_AI_DistanceToReact_Explosion_Min");
+    Param("MaxDistanceForCrowdAIToReactOnGrenadeExplode", "IAL_AI_DistanceToReact_Explosion_Max");
+    Param("TimeToWaitWithScreenFadeInAfterLastAISpawnRequestDuringLevelLoad", "4");
+}
+
+sub main()
+{
+    use set_common_params();
+}

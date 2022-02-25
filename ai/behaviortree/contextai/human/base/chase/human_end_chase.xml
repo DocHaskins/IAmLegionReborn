@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <!-- Used to move away and despawn when was spawned by chase -->
+    <Sequence>
+        <Cnd_ChaseInProgress m_Invert="true"/>
+        <Inverter>
+            <Sequence>
+                <Cnd_HasBBValue m_Key="#target"/>
+                <Cnd_IsPlayer m_Target="#target"/>
+            </Sequence>
+        </Inverter>
+        <SequenceMem>
+            <Cnd_IsBBValueEqual_bool m_Key="#is_chasing" m_Value="true"/>
+            <Opr_GetObjectPosition m_Object="#chase_target" m_Position="#chased_pos"/>
+            <Opr_GetSelfPosition m_Position="#self_pos"/>
+            <Opr_GetDirectionFromPosition m_Position="#chased_pos" m_Origin="#self_pos" m_Direction="#escape_dir"/>
+            <Opr_GetPositionInDirection m_Distance="80.0" m_Position="#retreat_pos" m_Origin="#self_pos" m_Direction="#escape_dir"/>
+            <Opr_FindNearestPositionOnNavmesh m_Position="#final_retreat_pos" m_WantedPosition="#retreat_pos"/>
+            <Sequence>
+                <Cnd_HasBBValue m_Key="#target" m_Invert="true"/>
+                <Act_Move m_MoveStyle="#move_style_run" m_Destination="#final_retreat_pos" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+            </Sequence>
+        </SequenceMem>
+    </Sequence>
+</BehaviorTree>

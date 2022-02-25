@@ -1,0 +1,501 @@
+sub main()
+{
+    ChaseData() // General data, applies to all levels
+    {
+       delay_between_scream_and_chase_start(2);
+       delay_between_chase_start_and_first_spawn(3);
+       pause_point_accumulation_time_after_chase_level_increase(3);
+       
+       chase_points_per_second_if_spotted_by_viral_close(3); // 5M
+       chase_points_per_second_if_spotted_by_viral_far(1);   // 20M
+       chase_points_per_second_if_spotted_by_screamer_close(1); //5M    
+       chase_points_per_second_if_spotted_by_screamer_far(0); //20M
+       chase_points_per_second_if_screamer_screaming(3);
+       max_range_for_screamer_scream_to_add_chase_points(12);
+       time_out_of_reach_to_start_spawning_special_volatiles(10);
+       
+       range_to_remove_chasers_in_coop_far(45);
+       range_to_remove_chasers_in_coop_close(20);
+       
+       block_init_spawn_from_poi(true);
+       block_init_spawn_in_dynamic_spawner(true);
+       block_reinforcements(true);
+    }  
+    
+    ChaseLevelData(1) 
+    {   
+        average_active_virals(8);
+        max_active_virals(12);
+
+        average_active_volatiles(2);
+        max_active_volatiles(4);
+        
+        max_active_virals_in_coop_close_range(8);
+        max_active_virals_in_coop_long_range(12);
+        
+        max_active_volatiles_in_coop_close_range(4);
+        max_active_volatiles_in_coop_long_range(5);
+        
+        high_intensity_duration(40);
+        high_intensity_cooldown(10);
+        
+        enable_high_intensity_spawning_at_level_increase(true);
+        initial_high_intensity_duration(30);
+        initial_high_intensity_cooldown(55);
+        
+        enable_high_intensity_when_on_street_level(true);
+        player_time_on_street_level_to_start_high_intensity(10);
+        on_street_high_intensity_duration(40); // extra duration after leaving the streets
+        
+        player_prediction_time_in_high_intensity(3.0);
+        max_distance_from_predicted_position_in_high_intensity_spawn(24.0);
+        high_intensity_spawn_cooldown(1.0);
+        high_intensity_simultaneous_spawns_count(1);
+        
+        player_prediction_time_in_low_intensity(5.0);
+        max_distance_from_predicted_position_in_low_intensity_spawn(12.0);
+        front_spawn_cooldown(10.0);
+        disallow_forward_spawn_when_not_spotted(true);
+        
+        player_prediction_time_in_filler_spawn(5.0);
+        min_distance_from_predicted_position_in_filler_spawn(50);
+        min_distance_from_player_position_in_filler_spawn(35);
+        
+        max_vertical_distance_up_in_all_spawns(15.0);
+        max_vertical_distance_down_in_all_spawns(13.5);
+        
+        min_distance_to_allow_chaser_retreat(12);
+        min_time_after_spawn_to_allow_retreat(7);    
+        time_of_pause_between_spawns_after_chaser_kill(12);
+                           
+        chase_points_required_for_level_increase(50);             
+        time_to_end_chase_after_player_lost(60); 
+
+        time_after_level_increase_when_player_cannot_lose_chase(25); 
+        min_time_to_end_chase_after_level_increase(35); 
+        
+        player_time_in_uv_zone_to_end_chase(7);
+        player_time_in_safe_zone_to_end_chase(7);                  
+    }
+    
+    ChaseLevelData(2) 
+    {
+        average_active_virals(12);
+        max_active_virals(18);
+
+        average_active_volatiles(0);
+        max_active_volatiles(0);
+        
+        max_active_virals_in_coop_close_range(6);
+        max_active_virals_in_coop_long_range(8);
+        
+        max_active_volatiles_in_coop_close_range(0);
+        max_active_volatiles_in_coop_long_range(0);
+              
+        high_intensity_duration(20);
+        high_intensity_cooldown(30);
+        
+        enable_high_intensity_spawning_at_level_increase(true);
+        initial_high_intensity_duration(30);
+        initial_high_intensity_cooldown(20);
+        
+        enable_high_intensity_when_on_street_level(true);
+        player_time_on_street_level_to_start_high_intensity(10);
+        on_street_high_intensity_duration(10);
+        
+        player_prediction_time_in_high_intensity(3.0);
+        max_distance_from_predicted_position_in_high_intensity_spawn(12.0);
+        high_intensity_spawn_cooldown(1.0);
+        high_intensity_simultaneous_spawns_count(1);
+        
+        player_prediction_time_in_low_intensity(5.0);
+        max_distance_from_predicted_position_in_low_intensity_spawn(12.0);
+        front_spawn_cooldown(10.0);
+        disallow_forward_spawn_when_not_spotted(true);
+        
+        player_prediction_time_in_filler_spawn(5.0);
+        min_distance_from_predicted_position_in_filler_spawn(20);
+        min_distance_from_player_position_in_filler_spawn(15);
+        
+        max_vertical_distance_up_in_all_spawns(5.0);
+        max_vertical_distance_down_in_all_spawns(3.5);
+        
+        min_distance_to_allow_chaser_retreat(15);
+        min_time_after_spawn_to_allow_retreat(10);    
+        time_of_pause_between_spawns_after_chaser_kill(5);
+                           
+        chase_points_required_for_level_increase(175);             
+        time_to_end_chase_after_player_lost(15); 
+
+        time_after_level_increase_when_player_cannot_lose_chase(45); 
+        min_time_to_end_chase_after_level_increase(60); 
+        
+        player_time_in_uv_zone_to_end_chase(10);
+        player_time_in_safe_zone_to_end_chase(10); 
+
+    }
+    ChaseLevelData(3) 
+    {
+        average_active_virals(6);
+        max_active_virals(8);
+
+        average_active_volatiles(0);
+        max_active_volatiles(1);
+        
+        max_active_virals_in_coop_close_range(4);
+        max_active_virals_in_coop_long_range(6);
+        
+        max_active_volatiles_in_coop_close_range(4);
+        max_active_volatiles_in_coop_long_range(4);
+        
+        
+        high_intensity_duration(30);
+        high_intensity_cooldown(30);
+        
+        enable_high_intensity_spawning_at_level_increase(true);
+        initial_high_intensity_duration(40);
+        initial_high_intensity_cooldown(15);
+        
+        enable_high_intensity_when_on_street_level(true);
+        player_time_on_street_level_to_start_high_intensity(10);
+        on_street_high_intensity_duration(10);
+        
+        player_prediction_time_in_high_intensity(3.0);
+        max_distance_from_predicted_position_in_high_intensity_spawn(12.0);
+        high_intensity_spawn_cooldown(1.0);
+        high_intensity_simultaneous_spawns_count(2);
+        
+        player_prediction_time_in_low_intensity(5.0);
+        max_distance_from_predicted_position_in_low_intensity_spawn(12.0);
+        front_spawn_cooldown(10.0);
+        disallow_forward_spawn_when_not_spotted(true);
+        
+        player_prediction_time_in_filler_spawn(5.0);
+        min_distance_from_predicted_position_in_filler_spawn(20);
+        min_distance_from_player_position_in_filler_spawn(15);
+        
+        max_vertical_distance_up_in_all_spawns(5.0);
+        max_vertical_distance_down_in_all_spawns(3.5);
+        
+        min_distance_to_allow_chaser_retreat(15);
+        min_time_after_spawn_to_allow_retreat(10);    
+        time_of_pause_between_spawns_after_chaser_kill(0);
+                           
+        chase_points_required_for_level_increase(225);             
+    
+        time_after_level_increase_when_player_cannot_lose_chase(60); 
+        time_to_end_chase_after_player_lost(20); 
+        min_time_to_end_chase_after_level_increase(90); 
+        
+        player_time_in_uv_zone_to_end_chase(12);
+        player_time_in_safe_zone_to_end_chase(12); 
+    }
+    ChaseLevelData(4) 
+    {
+        average_active_virals(2);
+        max_active_virals(4);
+
+        average_active_volatiles(4);
+        max_active_volatiles(7);
+        
+        max_active_virals_in_coop_close_range(0);
+        max_active_virals_in_coop_long_range(0);
+        
+        max_active_volatiles_in_coop_close_range(8);
+        max_active_volatiles_in_coop_long_range(8);
+        
+        
+        high_intensity_duration(120);
+        high_intensity_cooldown(5);
+        
+        enable_high_intensity_spawning_at_level_increase(true);
+        initial_high_intensity_duration(120);
+        initial_high_intensity_cooldown(5);
+        
+        enable_high_intensity_when_on_street_level(true);
+        player_time_on_street_level_to_start_high_intensity(10);
+        on_street_high_intensity_duration(10);
+        
+        player_prediction_time_in_high_intensity(3.0);
+        max_distance_from_predicted_position_in_high_intensity_spawn(12.0);
+        high_intensity_spawn_cooldown(1.0);
+        high_intensity_simultaneous_spawns_count(2);
+        
+        player_prediction_time_in_low_intensity(5.0);
+        max_distance_from_predicted_position_in_low_intensity_spawn(12.0);
+        front_spawn_cooldown(10.0);
+        disallow_forward_spawn_when_not_spotted(true);
+        
+        player_prediction_time_in_filler_spawn(5.0);
+        min_distance_from_predicted_position_in_filler_spawn(20);
+        min_distance_from_player_position_in_filler_spawn(15);
+        
+        max_vertical_distance_up_in_all_spawns(5.0);
+        max_vertical_distance_down_in_all_spawns(3.5);
+        
+        min_distance_to_allow_chaser_retreat(15);
+        min_time_after_spawn_to_allow_retreat(10);    
+        time_of_pause_between_spawns_after_chaser_kill(0);
+                           
+        chase_points_required_for_level_increase(666);             
+        time_to_end_chase_after_player_lost(666); 
+        min_time_to_end_chase_after_level_increase(666); 
+        time_after_level_increase_when_player_cannot_lose_chase(666); 
+        
+        player_time_in_uv_zone_to_end_chase(15);
+        player_time_in_safe_zone_to_end_chase(15); 
+    }
+
+	Difficulty("Easy")
+    {
+        ChaseData() // overwrites the Normal setup
+        {
+        }  
+        
+        ChaseLevelData(1) // overwrites the Normal setup
+        {
+			max_active_virals(3);
+			
+			high_intensity_duration(20);
+			high_intensity_cooldown(50);
+			
+			min_distance_to_allow_chaser_retreat(12);
+			min_time_after_spawn_to_allow_retreat(5);    
+			time_of_pause_between_spawns_after_chaser_kill(15);
+			
+			chase_points_required_for_level_increase(175); 
+        }
+
+        ChaseLevelData(2) // overwrites the Normal setup
+        {
+			average_active_virals(3);
+			max_active_virals(5);
+			
+			high_intensity_duration(20);
+			high_intensity_cooldown(40);
+			
+			chase_points_required_for_level_increase(200);  
+        }	
+		
+		ChaseLevelData(3) // overwrites the Normal setup
+        {
+			average_active_virals(5);
+			max_active_virals(8);
+			
+			high_intensity_duration(30);
+			high_intensity_cooldown(40);
+			
+			chase_points_required_for_level_increase(250); 			
+        }	
+		
+		ChaseLevelData(4) // overwrites the Normal setup
+        {
+			average_active_virals(2);
+			max_active_virals(3);
+			
+			average_active_volatiles(3);
+			max_active_volatiles(6);
+			
+			high_intensity_duration(90);
+			high_intensity_cooldown(10);
+        }
+	}
+	
+	Difficulty("Hard")
+    {
+        ChaseData() // overwrite the Normal setup
+        {
+			delay_between_scream_and_chase_start(1);
+			delay_between_chase_start_and_first_spawn(2);
+			pause_point_accumulation_time_after_chase_level_increase(3);
+			chase_points_per_second_if_spotted_by_viral_close(6); // 5M
+			chase_points_per_second_if_spotted_by_viral_far(8);   // 20M
+			chase_points_per_second_if_spotted_by_screamer_close(6); //5M    
+			chase_points_per_second_if_spotted_by_screamer_far(8); //20M
+			chase_points_per_second_if_screamer_screaming(15);
+			max_range_for_screamer_scream_to_add_chase_points(40);
+			time_out_of_reach_to_start_spawning_special_volatiles(10); 
+			range_to_remove_chasers_in_coop_far(80);
+			range_to_remove_chasers_in_coop_close(60);
+       
+			block_init_spawn_from_poi(false);
+			block_init_spawn_in_dynamic_spawner(false);
+			block_reinforcements(false);
+        }  
+        
+        ChaseLevelData(1) // overwrite the Normal setup
+        {
+			average_active_virals(8);
+			max_active_virals(12);
+
+			average_active_volatiles(1);
+			max_active_volatiles(1);
+        
+			max_active_virals_in_coop_close_range(8);
+			max_active_virals_in_coop_long_range(12);
+        
+			max_active_volatiles_in_coop_close_range(4);
+			max_active_volatiles_in_coop_long_range(5);
+        
+			high_intensity_duration(40);
+			high_intensity_cooldown(10);
+        
+			enable_high_intensity_spawning_at_level_increase(true);
+			initial_high_intensity_duration(30);
+			initial_high_intensity_cooldown(55);
+        
+			enable_high_intensity_when_on_street_level(true);
+			player_time_on_street_level_to_start_high_intensity(10);
+			on_street_high_intensity_duration(40); // extra duration after leaving the streets
+        
+			player_prediction_time_in_high_intensity(3.0);
+			max_distance_from_predicted_position_in_high_intensity_spawn(24.0);
+			high_intensity_spawn_cooldown(1.0);
+			high_intensity_simultaneous_spawns_count(1);
+        
+			player_prediction_time_in_low_intensity(5.0);
+			max_distance_from_predicted_position_in_low_intensity_spawn(12.0);
+			front_spawn_cooldown(10.0);
+			disallow_forward_spawn_when_not_spotted(true);
+        
+			player_prediction_time_in_filler_spawn(5.0);
+			min_distance_from_predicted_position_in_filler_spawn(50);
+			min_distance_from_player_position_in_filler_spawn(35);
+        
+			max_vertical_distance_up_in_all_spawns(15.0);
+			max_vertical_distance_down_in_all_spawns(13.5);
+        
+			min_distance_to_allow_chaser_retreat(12);
+			min_time_after_spawn_to_allow_retreat(7);    
+			time_of_pause_between_spawns_after_chaser_kill(12);
+                           
+			chase_points_required_for_level_increase(50);             
+			time_to_end_chase_after_player_lost(60); 
+
+			time_after_level_increase_when_player_cannot_lose_chase(25); 
+			min_time_to_end_chase_after_level_increase(35); 
+        
+			player_time_in_uv_zone_to_end_chase(7);
+			player_time_in_safe_zone_to_end_chase(7);         
+        }
+
+        ChaseLevelData(2) // overwrite the Normal setup
+        {
+			average_active_virals(12);
+			max_active_virals(18);
+
+			average_active_volatiles(2);
+			max_active_volatiles(2);
+        
+			max_active_virals_in_coop_close_range(12);
+			max_active_virals_in_coop_long_range(18);
+        
+			max_active_volatiles_in_coop_close_range(3);
+			max_active_volatiles_in_coop_long_range(3);
+              
+			high_intensity_duration(80);
+			high_intensity_cooldown(20);
+        
+			enable_high_intensity_spawning_at_level_increase(true);
+			initial_high_intensity_duration(90);
+			initial_high_intensity_cooldown(20);
+        
+			enable_high_intensity_when_on_street_level(true);
+			player_time_on_street_level_to_start_high_intensity(10);
+			on_street_high_intensity_duration(40); // extra duration after leaving the streets
+        
+			player_prediction_time_in_high_intensity(3.0);
+			max_distance_from_predicted_position_in_high_intensity_spawn(24.0);
+			high_intensity_spawn_cooldown(1.0);
+			high_intensity_simultaneous_spawns_count(1);
+        
+			player_prediction_time_in_low_intensity(5.0);
+			max_distance_from_predicted_position_in_low_intensity_spawn(12.0);
+			front_spawn_cooldown(10.0);
+			disallow_forward_spawn_when_not_spotted(true);
+        
+			player_prediction_time_in_filler_spawn(5.0);
+			min_distance_from_predicted_position_in_filler_spawn(50);
+			min_distance_from_player_position_in_filler_spawn(35);
+        
+			max_vertical_distance_up_in_all_spawns(15.0);
+			max_vertical_distance_down_in_all_spawns(13.5);
+        
+			min_distance_to_allow_chaser_retreat(12);
+			min_time_after_spawn_to_allow_retreat(7);    
+			time_of_pause_between_spawns_after_chaser_kill(12);
+                           
+			chase_points_required_for_level_increase(50);             
+			time_to_end_chase_after_player_lost(60); 
+
+			time_after_level_increase_when_player_cannot_lose_chase(25); 
+			min_time_to_end_chase_after_level_increase(35); 
+        
+			player_time_in_uv_zone_to_end_chase(10);
+			player_time_in_safe_zone_to_end_chase(10);    
+        }	
+		
+		ChaseLevelData(3) // overwrite the Normal setup
+        {
+			average_active_virals(18);
+			max_active_virals(24);
+
+			average_active_volatiles(3);
+			max_active_volatiles(3);
+        
+			max_active_virals_in_coop_close_range(20);
+			max_active_virals_in_coop_long_range(24);
+        
+			max_active_volatiles_in_coop_close_range(4);
+			max_active_volatiles_in_coop_long_range(4);
+              
+			high_intensity_duration(120);
+			high_intensity_cooldown(10);
+        
+			enable_high_intensity_spawning_at_level_increase(true);
+			initial_high_intensity_duration(120);
+			initial_high_intensity_cooldown(20);
+        
+			enable_high_intensity_when_on_street_level(true);
+			player_time_on_street_level_to_start_high_intensity(10);
+			on_street_high_intensity_duration(40); // extra duration after leaving the streets
+        
+			player_prediction_time_in_high_intensity(3.0);
+			max_distance_from_predicted_position_in_high_intensity_spawn(24.0);
+			high_intensity_spawn_cooldown(1.0);
+			high_intensity_simultaneous_spawns_count(1);
+        
+			player_prediction_time_in_low_intensity(5.0);
+			max_distance_from_predicted_position_in_low_intensity_spawn(12.0);
+			front_spawn_cooldown(10.0);
+			disallow_forward_spawn_when_not_spotted(true);
+        
+			player_prediction_time_in_filler_spawn(5.0);
+			min_distance_from_predicted_position_in_filler_spawn(50);
+			min_distance_from_player_position_in_filler_spawn(35);
+        
+			max_vertical_distance_up_in_all_spawns(15.0);
+			max_vertical_distance_down_in_all_spawns(13.5);
+        
+			min_distance_to_allow_chaser_retreat(12);
+			min_time_after_spawn_to_allow_retreat(7);    
+			time_of_pause_between_spawns_after_chaser_kill(12);
+                           
+			chase_points_required_for_level_increase(50);             
+			time_to_end_chase_after_player_lost(60); 
+
+			time_after_level_increase_when_player_cannot_lose_chase(25); 
+			min_time_to_end_chase_after_level_increase(35); 
+        
+			player_time_in_uv_zone_to_end_chase(10);
+			player_time_in_safe_zone_to_end_chase(10);    
+        }	
+		
+		ChaseLevelData(4) // overwrite the Normal setup
+        {
+			average_active_virals(24);
+			max_active_virals(30);
+        }	
+	
+    }
+}

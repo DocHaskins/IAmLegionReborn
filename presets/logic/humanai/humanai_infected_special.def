@@ -1,0 +1,770 @@
+import "HumanAI_vis.def"
+sub InfectedSpecialPresets()
+{
+    Preset("Demolisher") //AI
+    { 
+        // Logic
+        SetField("m_ConflictSide", "zombie");
+        SetField("m_CustomDataPreset", "m_demolisher");
+        SetField("m_NavigationPreset", "demolisher");
+        SetField("m_AnimationPreset", "demolisher@ai_animation_presets.scr");
+        SetField("m_ModulesPreset", "modules_demolisher");
+        SetField("m_MainBehaviorTree", "DEMOLISHER_BT");
+        SetField("m_FallRecoveryBank", "");
+        SetField("m_XpForKill", "100");
+        SetField("m_PerceptionProfile", "demolisher_default");
+        SetField("m_AttackUnarmedDamageMul", "AI_Demolisher");
+        SetField("m_PerceptionPreset", "infected");
+        SetField("m_Unmovable", "1");
+        SetField("m_SurvivorSensePreset", "Preset_red_strong");
+        SetField("m_DamageResistance", "DemolisherResistance");
+        SetField("m_BodyDamagePreset", "Demolisher");
+        SetField("m_SyncActionPreset", "Demolisher");
+        SetField("m_TakedownEnabled", "0");
+        SetField("m_EnemyIndicators", "NoHPGauge");
+        SetField("m_MusicPreset", "BigInfected");
+        SetField("m_IsSpecialInfected", "1");
+		SetField("m_DeathHintType", "Demolisher");
+		SetField("m_PlaySlomoOnDeath", "1");
+        // Sound
+        SetField("m_AudioEventsScript", "demolisher_audio_events.scr");
+        SetField("m_ScreamPresetNames", "demolisher_m_a");
+        SetField("m_StepPreset", "demolisher");
+        SetField("m_CombatMusicRelevanceValue", "2");
+        // BodyScale
+        SetField("m_ForcedBodyScaleMin", "1.3");
+        SetField("m_ForcedBodyScaleMax", "1.6");
+    }
+    Preset("Goon") //AI
+    {
+        // Logic    
+        SetField("m_ConflictSide", "zombie");
+        SetField("m_CustomDataPreset", "m_goon");
+        SetField("m_NavigationPreset", "goon");
+        SetField("m_AnimationPreset", "goon@ai_animation_presets.scr");
+        SetField("m_ModulesPreset", "modules_goon");
+        SetField("m_MainBehaviorTree", "GOON_BT");
+        SetField("m_FallRecoveryBank", "");
+        SetField("m_XpForKill", "75");
+        SetField("m_PerceptionProfile", "goon_default");
+        SetField("m_AttackUnarmedDamageMul", "AI_Goon");
+        SetField("m_PerceptionPreset", "infected");
+        SetField("m_Unmovable", "1");
+        SetField("m_SurvivorSensePreset", "Preset_red_strong");
+        SetField("m_DropWeaponsAfterDeath", "false");
+        SetField("m_TakedownEnabled", "0");
+        SetField("m_BodyDamagePreset", "Goon");
+        SetField("m_SyncActionPreset", "Goon");
+        SetField("m_EnemyIndicators", "NoHPGauge");
+        SetField("m_MusicPreset", "BigInfected");
+        SetField("m_IsSpecialInfected", "1");
+		SetField("m_DeathHintType", "Goon");
+		SetField("m_PlaySlomoOnDeath", "1");
+        // Sound
+        SetField("m_AudioEventsScript", "goon_audio_events.scr");
+        SetField("m_ScreamPresetNames", "goon_m_a");
+        SetField("m_StepPreset", "goon");
+        SetField("m_CombatMusicRelevanceValue", "2");
+        // BodyScale
+        SetField("m_ForcedBodyScaleMin", "1.15");
+        SetField("m_ForcedBodyScaleMax", "1.45");
+		SetField("m_DamageResistance", "50_percent_physical_damage");
+    }
+    Preset("Goon_All_Behaviors", "Goon") //AI
+    {
+        // Logic override
+        SetField("m_ConstFilename", "goon_profile_all_behaviors");
+    }
+    Preset("Goon_Key_Card", "Goon") //OPEN WORLD
+    {
+        // Loot and weapon override
+        SetField("m_CustomLootTypeString", "Quarantine_Keycard");
+    }
+    Preset("Goon_Quest_SentimentalValue", "Goon") //OPEN WORLD
+    {
+        // Sound override
+        SetField("m_StepPreset", "goon_sentimentalvalue");
+    }   
+	Preset("Goon_Challenge_Defend", "Goon")     {
+		SetField("m_DamageResistance", "50_percent_damage");
+    }   
+    Preset("Spitter") //AI
+    {
+        // Logic    
+        SetField("m_ConflictSide", "zombie");
+        SetField("m_CustomDataPreset", "m_spitter");
+        SetField("m_NavigationPreset", "spitter");
+        SetField("m_AnimationPreset", "spitter@ai_animation_presets.scr");
+        SetField("m_MainBehaviorTree", "SPITTER_BT");
+        SetField("m_PerceptionProfile", "spitter_default");
+        SetField("m_FallRecoveryBank", "fall_recovery_spitter");
+        SetField("m_PerceptionPreset", "infected");
+        SetField("m_SurvivorSensePreset", "Preset_red_strong");
+        SetField("m_DamageResistance", "PoisonImmunity");
+        SetField("m_BodyDamagePreset", "Spitter");
+		SetField("m_SyncActionPreset", "Spitter");
+        SetField("m_EnemyIndicators", "NoHPGauge");
+        SetField("m_MusicPreset", "SpecialInfected");
+        SetField("m_TakedownEnabled", "1");
+        SetField("m_IsSpecialInfected", "1");
+		SetField("m_DeathHintType", "Spitter");
+		SetField("m_ForcedBodyScaleMin", "1.0");
+        SetField("m_ForcedBodyScaleMax", "1.15");
+        // Sound
+        SetField("m_AudioEventsScript", "spitter_audio_events.scr");
+        SetField("m_ScreamPresetNames", "spitter_m_a");
+        SetField("m_StepPreset", "spitter");
+    }
+    Preset("Suicider") //AI
+    {
+        // Logic
+        SetField("m_ConflictSide", "zombie");
+        SetField("m_CustomDataPreset", "m_suicider");
+        SetField("m_NavigationPreset", "suicider");
+        SetField("m_AnimationPreset", "suicider@ai_animation_presets.scr");
+        SetField("m_ModulesPreset", "modules_suicider");
+        SetField("m_MainBehaviorTree", "SUICIDER_BT");
+        SetField("m_FallRecoveryBank", "");
+        SetField("m_PerceptionProfile", "suicider_default");
+        SetField("m_PerceptionPreset", "infected");
+        SetField("m_AttackOtherAIDamageMul", "Suicider_Mul_Vs_AI");
+        SetField("m_DropWeaponsAfterDeath", "false");
+        SetField("m_BodyDamagePreset", "Suicider");
+		SetField("m_SyncActionPreset", "Suicider");
+        SetField("m_SurvivorSensePreset", "Preset_red_strong");
+        SetField("m_EnemyIndicators", "NoHPGauge");
+        SetField("m_MusicPreset", "SpecialInfected");
+        SetField("m_TakedownEnabled", "0");
+        SetField("m_IsSpecialInfected", "1");
+		SetField("m_DeathHintType", "Suicider");
+		SetField("m_ForcedBodyScaleMin", "0.95");
+        SetField("m_ForcedBodyScaleMax", "1.05");
+        // Sound
+        SetField("m_AudioEventsScript", "suicider_audio_events.scr");
+        SetField("m_ScreamPresetNames", "suicider_m_a");
+        SetField("m_StepPreset", "suicider");
+        SetField("m_SpawnDeadBodyAfterExplosion", "1");
+    }
+    Preset("Suicider_Flooded_Area", "Suicider") //AI
+    {
+        // Logic override
+        SetField("m_CustomDataPreset", "m_suicider_flooded_area");
+        SetField("m_NavigationPreset", "viral");
+        SetField("m_ConstFilename", "suicider_profile_flooded_area");
+        // Model override
+        SetField("m_AIModelName", "zmb_swamp_viral_a.model");
+        SetField("m_SpawnDeadBodyAfterExplosion", "0");
+    }
+    Preset("Screamer") //AI
+    {
+        // Logic
+        SetField("m_ConflictSide", "zombie");
+        SetField("m_CustomDataPreset", "m_screamer");
+        SetField("m_NavigationPreset", "screamer");
+        SetField("m_AnimationPreset", "screamer@ai_animation_presets.scr");
+        SetField("m_ModulesPreset", "modules_screamer");
+        SetField("m_MainBehaviorTree", "SCREAMER_BT");
+        SetField("m_EnemyIndicators", "Summoning");
+        SetField("m_PerceptionProfile", "screamer_default");
+        SetField("m_BodyDamagePreset", "Screamer");
+        SetField("m_FallRecoveryBank", "fall_recovery_screamer");
+        SetField("m_PerceptionPreset", "infected");
+        SetField("m_SurvivorSensePreset", "Preset_red_strong");
+        SetField("m_SyncActionPreset", "Screamer");
+        SetField("m_MusicPreset", "ChaseInfected");
+        SetField("m_IsSpecialInfected", "1");
+        // Model
+        SetField("m_AIModelName", "zmb_screamer.model");
+        // Sound    
+        SetField("m_AudioEventsScript", "screamer_audio_events.scr");
+        SetField("m_ScreamPresetNames", "screamer_m_a");
+        SetField("m_StepPreset", "screamer");
+        // BodyScale
+        SetField("m_ForcedBodyScaleMin", "0.8");
+        SetField("m_ForcedBodyScaleMax", "1.1");
+        // LootAndWeapon
+        SetField("m_WeaponSetName", "Screamer");
+    }
+    Preset("Bolter")
+    {
+        // Logic
+        SetField("m_ConflictSide", "zombie");
+        SetField("m_CustomDataPreset", "m_bolter");
+        SetField("m_NavigationPreset", "bolter");
+        SetField("m_AnimationPreset", "bolter@ai_animation_presets.scr");
+        SetField("m_ModulesPreset", "modules_bolter");
+        SetField("m_MainBehaviorTree", "BOLTER_BT");
+        SetField("m_PerceptionProfile", "bolter_default");
+        SetField("m_FallRecoveryBank", "fall_recovery_bolter");
+        SetField("m_AttackUnarmedDamageMul", "AI_Bolter");
+        SetField("m_PerceptionPreset", "infected");
+        SetField("m_SurvivorSensePreset", "Preset_yellow");
+        SetField("m_BodyDamagePreset", "Default_Infected");
+        SetField("m_DamageResistance", "PoisonImmunity");
+        SetField("m_TakedownEnabled", "0");
+        SetField("m_SyncActionPreset", "Bolter");
+        SetField("m_EnemyIndicators", "NoHPGauge");
+        SetField("m_MusicPreset", "ChaseInfected");
+        SetField("m_IsSpecialInfected", "1");
+		SetField("m_ForcedBodyScaleMin", "0.85");
+        SetField("m_ForcedBodyScaleMax", "1.05");
+        // Sound
+        SetField("m_AudioEventsScript", "bolter_audio_events.scr");
+        SetField("m_ScreamPresetNames", "bolter_m_a");
+        SetField("m_StepPreset", "bolter");
+        // LootAndWeapon
+        SetField("m_WeaponSetName", "Viral_RGD_1");
+    }
+    Preset("Bolter_Flooded_Area", "Bolter")
+    {
+        // Logic override
+        SetField("m_ConstFilename", "bolter_profile_flooded_area");
+		// Model override
+        SetField("m_AIModelName", "zmb_swamp_bolter.model");
+    }
+    Preset("Bolter_Prototype_Behaviors", "Bolter")
+    {
+        // Logic override
+        SetField("m_ConstFilename", "bolter_profile_base");
+    }
+    Preset("Volatile")
+    {    
+        SetField("m_ConflictSide", "zombie");
+        SetField("m_NavigationPreset", "volatile");
+        SetField("m_ModulesPreset", "modules_volatile");
+        SetField("m_MainBehaviorTree", "VOLATILE_BT");
+        SetField("m_InitBehaviorTree", "volatile_init_tree_base");
+        SetField("m_XpForKill", "100");
+        SetField("m_PerceptionPreset", "infected");
+        SetField("m_FallRecoveryBank", "fall_recovery_volatile");
+        SetField("m_EnemyIndicators", "NoHPGauge");
+        SetField("m_MusicPreset", "BigInfected");
+        SetField("m_CustomDataPreset", "m_volatile");
+        SetField("m_AnimationPreset", "volatile@ai_animation_presets.scr");
+        SetField("m_PerceptionProfile", "volatile_default");
+        SetField("m_AttackUnarmedDamageMul", "AI_Volatile");
+        SetField("m_SurvivorSensePreset", "Preset_red_strong");
+        SetField("m_BodyDamagePreset", "Volatile");
+		SetField("m_SyncActionPreset", "Volatile");
+        SetField("m_TakedownEnabled", "0");
+        SetField("m_IsSpecialInfected", "1");
+		SetField("m_DeathHintType", "Volatile");
+        SetField("m_AlwaysEnableHelperGeoms", "1");
+        // Model
+        SetField("m_AIModelName", "zmb_volatile_a.model;zmb_volatile_b.model");
+        // Sound    
+        SetField("m_AudioEventsScript", "volatile_audio_events.scr");
+        SetField("m_ScreamPresetNames", "volatile_m_a");
+        SetField("m_StepPreset", "volatile");
+        SetField("m_CombatMusicRelevanceValue", "2");
+        // BodyScale
+        SetField("m_ForcedBodyScaleMin", "1.20");
+        SetField("m_ForcedBodyScaleMax", "1.50");
+		SetField("m_DamageResistance", "50_percent_physical_damage");
+    }
+    Preset("Volatile_Spitter", "Volatile")
+    {      
+        SetField("m_ModulesPreset", "modules_volatile_spitter");
+        SetField("m_InitBehaviorTree", "volatile_init_tree_spitter");      
+    }
+    Preset("Alpha_Zombie", "Volatile")
+    {
+        // Logic override
+        SetField("m_PerceptionProfile", "alpha_zombie_default");
+        // Model override
+        SetField("m_AIModelName", "zmb_voleteile_alpha_zombie.model");
+    }
+    Preset("Banshee") //AI
+    {
+        // Logic 
+        SetField("m_ConflictSide", "zombie");
+        SetField("m_CustomDataPreset", "m_banshee");
+        SetField("m_NavigationPreset", "banshee");
+        SetField("m_AnimationPreset", "banshee@ai_animation_presets.scr");
+        SetField("m_ModulesPreset", "modules_banshee");
+        SetField("m_MainBehaviorTree", "BANSHEE_BT");
+        SetField("m_PerceptionProfile", "banshee_default");
+        SetField("m_FallRecoveryBank", "fall_recovery_banshee");
+        SetField("m_AttackUnarmedDamageMul", "AI_Banshee");
+        SetField("m_PerceptionPreset", "infected");
+        SetField("m_SurvivorSensePreset", "Preset_red_strong");
+        SetField("m_EnemyIndicators", "NoHPGauge");
+        SetField("m_BodyDamagePreset", "Default_Infected");
+		SetField("m_SyncActionPreset", "Banshee");
+        SetField("m_MusicPreset", "SpecialInfected");
+        SetField("m_TakedownEnabled", "0");
+        SetField("m_IsSpecialInfected", "1");
+		SetField("m_DeathHintType", "Banshee");
+        // Sound
+        SetField("m_AudioEventsScript", "banshee_audio_events.scr");
+        SetField("m_ScreamPresetNames", "banshee_w_a");
+        SetField("m_StepPreset", "viral");
+        // BodyScale
+        SetField("m_ForcedBodyScaleMin", "0.8");
+        SetField("m_ForcedBodyScaleMax", "1.0");
+		SetField("m_DamageResistance", "50_percent_physical_damage");
+    }
+    Preset("Corruptor") //AI
+    {
+        // Logic    
+        SetField("m_ConflictSide", "zombie");
+        SetField("m_CustomDataPreset", "m_corruptor");
+        SetField("m_NavigationPreset", "corruptor");
+        SetField("m_AnimationPreset", "corruptor@ai_animation_presets.scr");
+        SetField("m_MainBehaviorTree", "CORRUPTOR_BT");
+        SetField("m_ScriptedBehaviorTree", "CORRUPTOR_BT_SCRIPTED");    
+        SetField("m_FallRecoveryBank", "");
+        SetField("m_PerceptionProfile", "corruptor_default");
+        SetField("m_EnemyIndicators", "Corruptor");
+        SetField("m_AttackUnarmedDamageMul", "AI_Corruptor");
+        SetField("m_PerceptionPreset", "infected");
+        SetField("m_StaminaPreset", "Corruptor");
+        SetField("m_Unmovable", "1");
+        SetField("m_IsZombieBoss", "1");
+        SetField("m_TakedownEnabled", "0");
+        SetField("m_SurvivorSensePreset", "Preset_red_strong");
+        SetField("m_BodyDamagePreset", "Default_Infected");
+        SetField("m_SyncActionPreset", "Corruptor");
+        SetField("m_CorruptorPresetName", "Default");
+        SetField("m_MusicPreset", "SpecialInfected");
+        SetField("m_CorruptorPresetName", "ZB_r1_01");
+        SetField("m_StaminaPreset", "Corruptor");
+        SetField("m_IsSpecialInfected", "1");
+		SetField("m_DeathHintType", "Corruptor");
+        SetField("m_ConstFilename", "corruptor_profile_r1_01");
+        SetField("m_DamageResistance", "CorruptorResistance");
+        // Model
+        SetField("m_AIModelName", "zmb_corruptor_a.model");
+        // Sound     
+        SetField("m_AudioEventsScript", "corruptor_audio_events.scr");
+        SetField("m_ScreamPresetNames", "corruptor_m_a");
+        SetField("m_StepPreset", "corruptor");
+		SetField("m_CombatMusicRelevanceValue", "2");
+        // BodyScale
+        SetField("m_ForcedBodyScaleMin", "1.1");
+        SetField("m_ForcedBodyScaleMax", "1.4");
+    } 
+    Preset("Corruptor_r1_01", "Corruptor") //AI
+    {
+        // Logic override
+        SetField("m_CorruptorPresetName", "ZB_r1_01");
+        SetField("m_ConstFilename", "corruptor_profile_r1_01");
+    } 
+    Preset("Corruptor_r1_03", "Corruptor") //AI
+    {
+        // Logic override
+        SetField("m_CorruptorPresetName", "ZB_r1_03");
+        SetField("m_ConstFilename", "corruptor_profile_r1_03");
+    } 
+    Preset("Corruptor_r1_04", "Corruptor") //AI
+    {
+        // Logic override
+        SetField("m_CorruptorPresetName", "ZB_r1_04");
+        SetField("m_ConstFilename", "corruptor_profile_r1_04");
+    }   
+    Preset("Corruptor_r02_01", "Corruptor") //AI
+    {
+        // Logic override
+        SetField("m_CorruptorPresetName", "ZB_r02_01");
+		SetField("m_ConstFilename", "corruptor_profile_r02_01");
+    } 
+    Preset("Corruptor_r02_02", "Corruptor") //AI
+    {
+        // Logic override
+        SetField("m_CorruptorPresetName", "ZB_r02_02");
+		SetField("m_ConstFilename", "corruptor_profile_r02_02");
+    } 
+    Preset("Corruptor_r02_04", "Corruptor") //AI
+    {
+        // Logic override
+        SetField("m_CorruptorPresetName", "ZB_r02_04");
+		SetField("m_ConstFilename", "corruptor_profile_r02_04");
+    } 
+    Preset("Corruptor_r02_05", "Corruptor") //AI
+    {
+        // Logic override
+        SetField("m_CorruptorPresetName", "ZB_r02_05");
+		SetField("m_ConstFilename", "corruptor_profile_r02_05");
+    } 
+    Preset("Corruptor_r02_06", "Corruptor") //AI
+    {
+        // Logic override
+        SetField("m_CorruptorPresetName", "ZB_r02_06");
+		SetField("m_ConstFilename", "corruptor_profile_r02_06");
+    } 
+    Preset("Corruptor_r02_07", "Corruptor") //AI
+    {
+        // Logic override
+        SetField("m_CorruptorPresetName", "ZB_r02_07");
+		SetField("m_ConstFilename", "corruptor_profile_r02_07");
+    } 
+    Preset("Corruptor_r02_09", "Corruptor") //AI
+    {
+        // Logic override
+        SetField("m_CorruptorPresetName", "ZB_r02_09");
+		SetField("m_ConstFilename", "corruptor_profile_r02_09");
+    } 
+    Preset("Corruptor_r02_11", "Corruptor") //AI
+    {
+        // Logic override
+        SetField("m_CorruptorPresetName", "ZB_r02_11");
+		SetField("m_ConstFilename", "corruptor_profile_r02_11");
+    } 
+    Preset("Corruptor_r02_17", "Corruptor") //AI
+    {
+        // Logic override
+        SetField("m_CorruptorPresetName", "ZB_r02_17");
+		SetField("m_ConstFilename", "corruptor_profile_r02_17");
+    }     
+    Preset("Charger") //AI
+    {
+        // Logic
+        SetField("m_ConflictSide", "zombie");
+        SetField("m_CustomDataPreset", "m_charger");
+        SetField("m_NavigationPreset", "charger");
+        SetField("m_AnimationPreset", "charger@ai_animation_presets.scr");
+        SetField("m_ModulesPreset", "modules_charger");
+        SetField("m_MainBehaviorTree", "CHARGER_BT");
+        SetField("m_PerceptionProfile", "charger_default");
+        SetField("m_PerceptionPreset", "infected");
+        SetField("m_FallRecoveryBank", "fall_recovery_charger");
+        SetField("m_SurvivorSensePreset", "Preset_red_strong");
+        SetField("m_BodyDamagePreset", "Default_Infected");
+        SetField("m_SyncActionPreset", "Charger");
+        SetField("m_TakedownEnabled", "0");
+        SetField("m_EnemyIndicators", "NoHPGauge");
+        SetField("m_MusicPreset", "SpecialInfected");
+        SetField("m_IsSpecialInfected", "1");
+		SetField("m_DeathHintType", "Charger");
+        // Sound
+        SetField("m_AudioEventsScript", "charger_audio_events.scr");
+        SetField("m_ScreamPresetNames", "charger_m_a");
+        SetField("m_StepPreset", "charger");
+        SetField("m_CombatMusicRelevanceValue", "2");
+        SetField("m_AlwaysEnableHelperGeoms", "1");
+        // BodyScale
+        SetField("m_ForcedBodyScaleMin", "1.0");
+        SetField("m_ForcedBodyScaleMax", "1.3");
+		SetField("m_DamageResistance", "50_percent_physical_damage");
+    }
+    Preset("Goon_Veronika", "Goon") //quest Veronika
+    {
+			SetField("m_DamageResistance", "50_percent_electricity_vulnerability");
+    }
+	Preset("Overcharger", "Charger") //AI
+    {    
+        // Logic override
+        SetField("m_ConstFilename", "charger_overcharger");
+        SetField("m_DamageResistance", "ElectricityImmunity");
+    }
+    Preset("Hunting_Demolisher", "Demolisher") //AI
+    {
+        // Model override
+        SetField("m_ConstFilename", "demolisher_profile_hunting"); // tsmektala: to verify!
+        SetField("m_AIModelName", "zmb_demolisher_c_red.model");
+        SetField("m_CustomLootTypeString", "Quest_Hunting_Demolisher");
+		SetField("m_DamageResistance", "HuntingInfectedResistance");
+    }
+    Preset("Hunting_Bolter", "Bolter")
+    {
+        // Logic override
+        SetField("m_ConstFilename", "bolter_profile_hunting"); // tsmektala: to verify!       
+        // Model override
+        SetField("m_AIModelName", "zmb_bolter_c_dead.model");
+		SetField("m_DamageResistance", "HuntingInfectedResistance");
+        SetField("m_CustomLootTypeString", "Quest_Hunting_Bolter");
+    }
+    Preset("Hunting_Goon", "Goon") //AI
+    {
+        // Logic override
+        SetField("m_ConstFilename", "goon_profile_hunting"); // tsmektala: to verify!
+        // Model override
+        SetField("m_AIModelName", "zmb_goon_c_red.model");
+		SetField("m_DamageResistance", "HuntingInfectedResistance");
+        SetField("m_CustomLootTypeString", "Quest_Hunting_Goon");
+    }
+    Preset("Hunting_Spitter", "Spitter") //AI
+    {
+        // Logic override
+        SetField("m_ConstFilename", "spitter_profile_hunting");
+        // Model override
+        SetField("m_AIModelName", "zmb_spitter_b.model");
+		SetField("m_DamageResistance", "HuntingInfectedResistance");
+        SetField("m_CustomLootTypeString", "Quest_Hunting_Spitter");
+    }
+    Preset("Hunting_Banshee", "Banshee") //AI
+    {
+        // Logic override
+        SetField("m_ConstFilename", "banshee_profile_hunting");
+        // Model override
+        SetField("m_AIModelName", "zmb_banshee_b_red.model");
+		SetField("m_DamageResistance", "HuntingInfectedResistance");
+        SetField("m_CustomLootTypeString", "Quest_Hunting_Banshee");
+    }
+	Preset("Hunting_Volatile", "Volatile") //AI
+    {
+        // Logic override
+        SetField("m_ConstFilename", "volatile_profile_hunting"); // tsmektala: to verify!
+        // Model override
+        SetField("m_AIModelName", "zmb_volatile_a.model");
+		SetField("m_DamageResistance", "HuntingInfectedResistance");
+        SetField("m_CustomLootTypeString", "Quest_Hunting_Volatile");
+    } 
+    Preset("Stationary_Spitter", "Spitter") //AI
+    {       
+        SetField("m_InitBehaviorTree", "spitter_init_stationary");
+        SetField("m_PerceptionProfile", "spitter_long_range");
+        SetField("m_HealthPreset", "Body_001");
+    }
+    /////////////////////////// Playtest patrolling presets ///////////////////////////
+    Preset("Patrol_Goon", "Goon") //AI
+    {   
+        SetField("m_MainBehaviorTree", "GOON_PATROL_ONLY_BT");
+    }
+    Preset("Patrol_Biter", "Biter") //AI
+    {
+        SetField("m_MainBehaviorTree", "BITER_PATROL_ONLY_BT");
+    }
+    Preset("Patrol_Banshee", "Banshee") //AI
+    {
+        SetField("m_MainBehaviorTree", "BANSHEE_PATROL_ONLY_BT");
+    }
+	/////////////////////////// Flooded region ///////////////////////////
+    Preset("Endgame_Spitter_Electric", "Spitter") //AI
+    {
+		SetField("m_DamageResistance", "Endgame_Electric");
+    }
+	Preset("Endgame_Spitter_Fire", "Spitter") //AI
+    {
+		SetField("m_DamageResistance", "Endgame_Fire");
+    }
+	Preset("Endgame_Spitter_Freeze", "Spitter") //AI
+    {
+		SetField("m_DamageResistance", "HuntingInfectedResistance");
+    }
+
+	Preset("Goon_EndGame_Elite", "Goon") //AI
+    {
+        SetField("m_CombatMusicRelevanceValue", "2");
+		SetField("m_PlaySlomoOnDeath", "1");
+        SetField("m_ConstFilename", "goon_profile_RGD_9");
+        SetField("m_AIModelName", "zmb_goon_c.model");
+        SetField("m_DamageResistance", "Infected_Elite");
+		use Goon_Model_Tier_03();
+		SetField("m_CustomLootTypeString", "Endgame_Elite");
+    }
+
+	Preset("Goon_EndGame_Boss", "Goon") //AI
+    {
+        SetField("m_CombatMusicRelevanceValue", "2");
+		SetField("m_PlaySlomoOnDeath", "1");
+        SetField("m_ConstFilename", "goon_profile_RGD_9");
+        SetField("m_AIModelName", "zmb_goon_c.model");
+        SetField("m_DamageResistance", "Infected_Boss");
+		use Goon_Model_Tier_03();
+		SetField("m_CustomLootTypeString", "Endgame_Boss");
+    }
+
+	Preset("Endgame_Goon_Special", "Goon") //AI
+    {
+        SetField("m_CombatMusicRelevanceValue", "2");
+		SetField("m_EnemyIndicators", "SpecialInfectedEndgame");		
+		SetField("m_StaminaPreset", "Boss_RGD9");
+		SetField("m_PlaySlomoOnDeath", "1");
+        SetField("m_ConstFilename", "goon_profile_RGD_9");
+        SetField("m_AIModelName", "zmb_goon_c.model");
+        SetField("m_DamageResistance", "Infected_Boss_Special");
+		use Goon_Model_Tier_03();
+    }
+	Preset("Endgame_Goon_Fire", "Goon") //AI
+    {
+        SetField("m_DamageResistance", "Endgame_Fire");
+    }
+    Preset("Endgame_Demolisher_Electric", "Demolisher") //AI
+    {
+		SetField("m_DamageResistance", "Endgame_Electric");
+    }
+	Preset("Endgame_Demolisher_Special", "Demolisher") //AI
+    {
+		SetField("m_DamageResistance", "Infected_Boss_Special");
+		SetField("m_EnemyIndicators", "SpecialInfectedEndgame");
+		SetField("m_CombatMusicRelevanceValue", "2");
+		SetField("m_StaminaPreset", "Boss_RGD9");
+		SetField("m_PlaySlomoOnDeath", "1");
+		SetField("m_ConstFilename", "demolisher_profile_level_9");
+        use Demolisher_Model_Tier_03();
+    }
+	Preset("Demolisher_EndGame_Elite", "Demolisher") //AI
+    {
+		SetField("m_DamageResistance", "Infected_Elite");
+		SetField("m_EnemyIndicators", "Boss");
+		SetField("m_CombatMusicRelevanceValue", "2");
+		SetField("m_PlaySlomoOnDeath", "1");
+		SetField("m_ConstFilename", "demolisher_profile_level_9");
+        use Demolisher_Model_Tier_03();
+		SetField("m_CustomLootTypeString", "Endgame_Elite");	
+    }
+	Preset("Demolisher_EndGame_Boss", "Demolisher") //AI
+    {
+		SetField("m_DamageResistance", "Infected_Boss");
+		SetField("m_EnemyIndicators", "Boss");
+		SetField("m_CombatMusicRelevanceValue", "2");
+		SetField("m_PlaySlomoOnDeath", "1");
+		SetField("m_ConstFilename", "demolisher_profile_level_9");
+        use Demolisher_Model_Tier_03();
+		SetField("m_CustomLootTypeString", "Endgame_Boss");		
+    }	
+	/////////////////////////// GRE Fog  ///////////////////////////
+	Preset("Demolisher_Fog", "Demolisher")
+    {
+        // Logic override
+		SetField("m_PerceptionProfile", "demolisher_fog");
+    }	
+    Preset("Waltz_Jumper") //AI
+    {
+        SetField("m_AIModelName", "npc_waltz_jumper.model;npc_waltz_jumper_after.model");
+		SetField("m_DialogActorID", "Waltz_Jumper");
+        SetField("m_ConflictSide", "zombie");
+        SetField("m_NavigationPreset", "waltz"); 
+        SetField("m_ModulesPreset", "modules_waltz");
+        SetField("m_MainBehaviorTree", "WALTZ_JUMPER_BT");
+        SetField("m_PerceptionPreset", "human");
+        SetField("m_FallRecoveryBank", "fall_recovery_volatile");
+        SetField("m_EnemyIndicators", "Boss");
+        SetField("m_MusicPreset", "BigInfected");
+        SetField("m_CustomDataPreset", "m_waltz");
+        SetField("m_AnimationPreset", "waltz@ai_animation_presets.scr");
+        SetField("m_PerceptionProfile", "corruptor_default");
+        SetField("m_SurvivorSensePreset", "Preset_red_strong");
+        SetField("m_TakedownEnabled", "0");
+        SetField("m_IsSpecialInfected", "1");
+		SetField("m_DeathHintType", "Volatile");
+        SetField("m_BodyDamagePreset", "Default_Body_No_Cuts");  
+        SetField("m_ConstFilename", "waltz_profile_jumper");
+        SetField("m_MinHealthPreset", "Body_100_Immortal_MinHealth");
+        SetField("m_DamageResistance", "Waltz_Jumper_Resistance");
+        // Sound    
+        SetField("m_AudioEventsScript", "volatile_audio_events.scr");
+        SetField("m_BarkPresetNames", "waltzx13infected");
+        SetField("m_ScreamPresetNames", "waltz");
+        SetField("m_StepPreset", "default_heavy");
+        SetField("m_CombatMusicRelevanceValue", "2");
+        
+        // BodyScale
+        SetField("m_ForcedBodyScaleMin", "1.20");
+        SetField("m_ForcedBodyScaleMax", "1.20");
+		SetField("m_DeathTransformationEnabled", "0");
+		SetField("m_MinHitCountToKill", "35");
+    }
+    Preset("Waltz_Fog")
+    {
+        SetField("m_AIModelName", "npc_waltz_fog_a.model;npc_waltz_fog_normal.model");
+		SetField("m_DialogActorID", "Waltz_Fog");
+        SetField("m_ConflictSide", "zombie");
+        SetField("m_NavigationPreset", "waltz");
+        SetField("m_ModulesPreset", "modules_waltz");
+        SetField("m_BodyDamagePreset", "Volatile");     
+        SetField("m_PerceptionPreset", "human");
+        SetField("m_FallRecoveryBank", "fall_recovery_volatile");
+        SetField("m_EnemyIndicators", "Boss");
+        SetField("m_MusicPreset", "BigInfected");
+        SetField("m_CustomDataPreset", "m_waltz");
+        SetField("m_DamageResistance", "Waltz_Resistance");
+        SetField("m_SurvivorSensePreset", "");
+        SetField("m_PerceptionProfile", "corruptor_default");
+        SetField("m_ConstFilename", "waltz_profile_fog");
+        SetField("m_MinHealthPreset", "Body_100_Immortal_MinHealth");
+        SetField("m_BodyDamagePreset", "Default_Body_No_Cuts"); 
+
+        SetField("m_InitBehaviorTree", "volatile_init_tree_base");
+        SetField("m_MainBehaviorTree", "WALTZ_FOG_BT");
+        SetField("m_AnimationPreset", "waltz@ai_animation_presets.scr");
+              
+        // Sound    
+        SetField("m_AudioEventsScript", "volatile_audio_events.scr");
+        SetField("m_ScreamPresetNames", "waltz");
+        SetField("m_StepPreset", "default_heavy");
+        SetField("m_CombatMusicRelevanceValue", "2");
+		SetField("m_BarkPresetNames", "ren_m_waltzx132");
+        // BodyScale
+        SetField("m_ForcedBodyScaleMin", "1.20");
+        SetField("m_ForcedBodyScaleMax", "1.20");
+		SetField("m_DeathTransformationEnabled", "0");
+		SetField("m_MinHitCountToKill", "20");
+    }
+    Preset("Waltz_Heavy")
+    {    
+        SetField("m_AIModelName", "npc_waltz.model");
+		SetField("m_DialogActorID", "Waltz_Heavy");
+        SetField("m_ConflictSide", "zombie");
+        SetField("m_NavigationPreset", "waltz"); 
+        SetField("m_ModulesPreset", "modules_waltz");
+        SetField("m_MainBehaviorTree", "waltz_heavy_bt");
+        SetField("m_ConstFilename", "waltz_profile_heavy");
+        SetField("m_PerceptionPreset", "human");
+        SetField("m_FallRecoveryBank", "fall_recovery_volatile");
+        SetField("m_EnemyIndicators", "Boss");
+        SetField("m_MusicPreset", "BigInfected");
+        SetField("m_CustomDataPreset", "m_waltz");
+        SetField("m_AnimationPreset", "waltz@ai_animation_presets.scr");
+        SetField("m_PerceptionProfile", "corruptor_default");
+        SetField("m_SurvivorSensePreset", "Preset_red_strong");
+        SetField("m_TakedownEnabled", "0");
+        SetField("m_IsSpecialInfected", "1");
+		SetField("m_DeathHintType", "Volatile");
+        SetField("m_BodyDamagePreset", "Default_Body_No_Cuts");
+        SetField("m_MinHealthPreset", "Body_100_Immortal_MinHealth");
+        SetField("m_DamageResistance", "Waltz_Resistance");
+        
+        // Sound    
+        SetField("m_AudioEventsScript", "volatile_audio_events.scr");
+        //SetField("m_BarkPresetNames", "bdt_m_a;bdt_m_b", false, true, false);
+		SetField("m_BarkPresetNames", "ren_m_waltzx13");
+        SetField("m_ScreamPresetNames", "waltz");
+        SetField("m_StepPreset", "default_heavy");
+        SetField("m_CombatMusicRelevanceValue", "2");
+        
+        // BodyScale
+        SetField("m_ForcedBodyScaleMin", "1.1");                
+        SetField("m_ForcedBodyScaleMax", "1.1");    
+		SetField("m_DeathTransformationEnabled", "0");
+		SetField("m_MinHitCountToKill", "30");
+    }
+	Preset("Waltz_Fury", "Waltz_Jumper")
+    {
+	    SetField("m_AIModelName", "npc_waltz_fury.model;npc_waltz_fury_after.model");
+		SetField("m_DialogActorID", "Waltz_Fury");
+        SetField("m_MainBehaviorTree", "WALTZ_FURY_BT");
+        SetField("m_ConstFilename", "waltz_profile_fury");
+		
+		//Sound
+		SetField("m_BarkPresetNames", "waltzx13infected");
+		// BodyScale
+        SetField("m_ForcedBodyScaleMin", "1.2");
+        SetField("m_ForcedBodyScaleMax", "1.2");   
+		SetField("m_ScreamPresetNames", "waltz_fury");
+        SetField("m_MinHealthPreset", "Body_100_Immortal_MinHealth");
+		SetField("m_DamageResistance", "Waltz_Fury_Resistance");
+		SetField("m_DeathTransformationEnabled", "0");
+		SetField("m_MinHitCountToKill", "-1");
+    }
+	Preset("Waltz_Hostile_Mission_Veronika", "Waltz_Heavy")
+    {
+		SetField("m_DialogActorID", "Waltz_Hostile_Mission_Veronika");
+        SetField("m_MainBehaviorTree", "waltz_heavy_veronika_bt");
+        SetField("m_AttackArmedDamageMul", "Waltz_Veronika_Damage_Mul");
+        SetField("m_BarkPresetNames", "ren_m_waltzV");
+        // BodyScale
+        SetField("m_ForcedBodyScaleMin", "1.1");
+        SetField("m_ForcedBodyScaleMax", "1.1");
+		SetField("m_DeathTransformationEnabled", "0");
+    }
+	Preset("Waltz_Heavy_Only_Cin", "Waltz_Heavy")
+    {
+		SetField("m_DialogActorID", "Waltz_Heavy_Only_Cin");
+        // BodyScale
+        SetField("m_ForcedBodyScaleMin", "1.1");
+        SetField("m_ForcedBodyScaleMax", "1.1");
+		SetField("m_DeathTransformationEnabled", "0");
+    }
+}

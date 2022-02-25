@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Opr_SetDirCorrectionSpeed m_MaxSpeed="$attack_spear_quick_dir_correction_speed"/>
+        <Opr_SetPosCorrectionSpeed m_MaxSpeed="$attack_pos_correction_speed"/>
+        <Act_Attack m_Target="#target" m_AttackPresetName="human_spear_quick_combo" m_EnablePosCorrection="$enable_attack_pos_correction" m_StartPolicy="DISCARD" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+    </SequenceMem>
+</BehaviorTree>

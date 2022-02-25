@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Cnd_CanStartTask m_StartPolicy="INTERRUPT"/>
+        <Cnd_HasActiveWeapon m_WeaponType="OneHandedMelee"/>
+        <Selector>
+            <Cnd_IsHoldRequired m_Invert="true"/>
+            <Cnd_SelfInHoldRadius/>
+        </Selector>
+        <Selector>
+            <Cnd_IsRestrictedAreaRequired m_Invert="true"/>
+            <Cnd_SelfInRestrictedArea/>
+        </Selector>
+        <Cnd_HasPathToCombatTarget/>
+        <Cnd_HasCombatTargetNoControl m_Invert="true"/>
+        <Sequence>
+            <Cnd_IsBBValueEqual_string m_Key="#role" m_Value="melee"/>
+            <SelectorMem>
+                <SequenceMem>
+                    <Cnd_IsPlayer m_Target="#target"/>
+                    <ExternalTree m_UID="HUMAN_COMBAT_ATTACK_ONE_HANDED_PLAYER" m_CustomName="AttackPlayer" m_Hide="true"/>
+                </SequenceMem>
+                <SequenceMem>
+                    <Cnd_IsPlayer m_Target="#target" m_Invert="true"/>
+                    <ExternalTree m_UID="HUMAN_COMBAT_ATTACK_ONE_HANDED_AI" m_CustomName="AttackAI" m_Hide="true"/>
+                </SequenceMem>
+            </SelectorMem>
+        </Sequence>
+    </SequenceMem>
+</BehaviorTree>

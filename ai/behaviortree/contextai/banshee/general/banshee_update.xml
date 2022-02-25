@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Parallel m_PolicySuccess="REQUIRE_ALL_DONE" m_PolicyFailure="REQUIRE_NONE">
+        <Opr_GetUVEffectProgress m_Progress="#uv_progress"/>
+        <Selector>
+            <Sequence>
+                <DelayerTimeDelta m_DelayTime="1.0">
+                    <Cnd_IsInUVLight m_Invert="true"/>
+                </DelayerTimeDelta>
+                <Opr_SetBBValue_bool m_Key="#uv_reaction_initial" m_Value="true"/>
+            </Sequence>
+            <Opr_GetClosestUVLightData m_Position="#uv_light_pos" m_Direction="#uv_light_dir" m_Type="#uv_light_type"/>
+        </Selector>
+        <Selector>
+            <Sequence>
+                <Cnd_IsPoseEqual m_Pose="Standing"/>
+                <Opr_SetBBValue_string m_Key="#combat_movestyle" m_Value="RunFast"/>
+            </Sequence>
+            <Opr_SetBBValue_string m_Key="#combat_movestyle" m_Value="RunFromCrouch"/>
+        </Selector>
+        <Sequence>
+            <DelayerTimeDelta m_DelayTime="0.25">
+                <Sequence>
+                    <Cnd_IsBBValueEqual_string m_Key="#combat_movestyle" m_Value="RunFromCrouch"/>
+                    <Cnd_IsActivityModuleRunning_Movement/>
+                </Sequence>
+            </DelayerTimeDelta>
+            <Opr_SetActivePose m_Pose="Standing"/>
+        </Sequence>
+        <Sequence>
+            <Cnd_DamageTaken/>
+            <Opr_GetCurrentTime m_TimePoint="#last_damage_time"/>
+        </Sequence>
+        <Selector>
+            <Sequence>
+                <Cnd_Const m_Enabled="$running_low_attack_enabled"/>
+                <Cnd_HasTimePassed m_TimePoint="#running_low_attack_cooldown"/>
+                <Opr_SetBBValue_bool m_Key="#low_attack_ready" m_Value="true"/>
+            </Sequence>
+            <Opr_SetBBValue_bool m_Key="#low_attack_ready" m_Value="false"/>
+        </Selector>
+        <Selector>
+            <Sequence>
+                <Cnd_Const m_Enabled="$jump_low_attack_enabled"/>
+                <Cnd_HasTimePassed m_TimePoint="#jump_low_attack_cooldown"/>
+                <Opr_SetBBValue_bool m_Key="#jump_low_attack_ready" m_Value="true"/>
+            </Sequence>
+            <Opr_SetBBValue_bool m_Key="#jump_low_attack_ready" m_Value="false"/>
+        </Selector>
+        <Selector>
+            <Sequence>
+                <Cnd_Const m_Enabled="$jump_attack_enabled"/>
+                <Cnd_HasTimePassed m_TimePoint="#jump_attack_cooldown"/>
+                <Opr_SetBBValue_bool m_Key="#jump_attack_ready" m_Value="true"/>
+            </Sequence>
+            <Opr_SetBBValue_bool m_Key="#jump_attack_ready" m_Value="false"/>
+        </Selector>
+        <Sequence>
+            <DelayerTimeDelta m_DelayTime="0.2">
+                <Cnd_IsActivityModuleRunning_Movement/>
+            </DelayerTimeDelta>
+            <Opr_SetBBValue_bool m_Key="#skip_start" m_Value="false"/>
+        </Sequence>
+        <Selector>
+            <Sequence>
+                <Cnd_IsBBValueEqual_bool m_Key="#during_runby_attack" m_Value="true"/>
+                <Opr_StartBodyState m_State="STUNNED" m_Duration="1"/>
+            </Sequence>
+            <Opr_StopBodyState m_State="STUNNED"/>
+        </Selector>
+    </Parallel>
+</BehaviorTree>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Selector>
+        <!-- Try to hide behind others -->
+        <ExternalTree m_UID="BANSHEE_MOVE_TO_GROUP" m_CustomName="MoveToGroup" m_Hide="true"/>
+        <!-- Try to gain distance to prepare for attack -->
+        <SequenceMem>
+            <Cnd_IsCombatTargetInRadius m_Radius="$preferred_distance_to_target_min" m_HorizontalOnly="true" m_UsePrediction="true"/>
+            <Sequence>
+                <Opr_GetDirectionToPosition m_Position="#target_pos" m_Direction="#to_target"/>
+                <Selector>
+                    <SequenceMem>
+                        <Cnd_IsCombatTargetInRadius m_Radius="$preferred_distance_to_target_max" m_HorizontalOnly="true" m_Invert="true"/>
+                        <Opr_GetSelfDirection m_Direction="#self_dir"/>
+                        <Opr_GetSelfPosition m_Position="#self_pos"/>
+                        <Opr_GetPositionInDirection m_Distance="4" m_Position="#flee_pos" m_Direction="#self_dir" m_Origin="#self_pos"/>
+                        <Act_Move m_EndDir="#to_target" m_MoveStyle="#combat_movestyle" m_SkipStart="#skip_start" m_EndRadius="2" m_StopAtDest="true" m_Destination="#flee_pos" m_TryToFindDestinationOnNavmesh="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                    </SequenceMem>
+                    <Act_Move m_Destination="#target_pos" m_MoveAwayFromEndPosition="true" m_FailIfDestUnreachable="false" m_PreferHigherPlaces="true" m_EndDir="#to_target" m_MoveStyle="#combat_movestyle" m_SkipStart="#skip_start" m_EndRadius="1" m_StopAtDest="true" m_TryToFindDestinationOnNavmesh="true"  m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                </Selector>
+            </Sequence>
+        </SequenceMem>
+        <Optional m_Enabled="$enable_flanking_run">
+            <CooldownTimeDelta m_CooldownTime="0.5" m_CooldownOnAbort="true">
+                <TimeDeltaLimit m_TimeMax="5.0" m_StatusReturned="SUCCESS">
+                    <SequenceMem>
+                        <Cnd_IsBBValueEqual_bool m_Key="#low_attack_ready" m_Value="false"/>
+                        <Opr_FindAllyInRangeInState m_Ally="#ally" m_MaxRange="15" m_AllyPosition="#ally_pos"/>
+                        <Cnd_IsBBValueEqual_bool m_Key="#jump_low_attack_ready" m_Value="false"/>
+                        <Cnd_IsCombatTargetInRadius m_Radius="$preferred_distance_to_target_min" m_HorizontalOnly="true" m_UsePrediction="true" m_Invert="true"/>
+                        <Cnd_IsCombatTargetInRadius m_Radius="$preferred_distance_to_target_max" m_HorizontalOnly="true" m_UsePrediction="true"/>
+                        <Opr_RandomBool m_Result="#circling_dir"/>
+                        <Sequence>
+                            <Cnd_InTargetHorzAngle m_Target="#target" m_Angle="70"/>
+                            <Act_MoveAroundPoint m_Position="#target_pos" m_Radius="15" m_IsRightDir="#circling_dir" m_SkipStart="#skip_start" m_MoveStyle="Run" m_StopAtDest="false" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                        </Sequence>
+                    </SequenceMem>
+                </TimeDeltaLimit>
+            </CooldownTimeDelta>
+        </Optional>
+    </Selector>
+</BehaviorTree>

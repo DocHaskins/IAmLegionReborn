@@ -1,0 +1,14 @@
+!include("ai_data.def")
+// TODO - get rid of this include, find the few parameters that actually matter
+!include("zombie_data_params.scr")
+
+ParamString("locomotion_script_name", "Locomotion_Volatile")
+
+ParamString("ragdoll_script", "ragdoll_human.phx")
+
+ParamFloat("attack_dist_treshold_limit", 0.5)
+
+ParamFloat("push_physics_damage_light", 2.5)
+ParamFloat("push_physics_damage_heavy", 3.0)
+
+ParamBool("enable_static_collision_with_other_ais", 1)

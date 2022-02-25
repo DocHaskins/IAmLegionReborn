@@ -1,0 +1,222 @@
+import "hit_reaction.def"
+
+sub main()
+{
+    SReactionData("light_collision")
+    {
+        type(EReactionType_Push);
+        context(EReactionContext_Collision);
+        hit_severity(EHitSeverity_Light);
+        move_severity(EMoveSeverity_Light);
+        flags(EReactionFlag_Interrupt);
+    }
+
+    SReactionData("heavy_collision")
+    {
+        type(EReactionType_Push);
+        context(EReactionContext_Collision);
+        hit_severity(EHitSeverity_Heavy);
+        move_severity(EHitSeverity_Heavy);
+        flags(EReactionFlag_Ragdoll);
+    }
+
+    SReactionData("wall_collision")
+    {
+        type(EReactionType_Push);
+        context(EReactionContext_Collision);
+        hit_severity(EHitSeverity_Medium);
+        move_severity(EMoveSeverity_Light);
+        flags(EReactionFlag_Interrupt);
+    }
+
+    SReactionData("gentle_push")
+    {
+        type(EReactionType_Push);
+        context(EReactionContext_Melee);
+        hit_severity(EHitSeverity_Medium);
+        move_severity(EMoveSeverity_Medium);
+        flags(EReactionFlag_Interrupt);
+    }
+
+    SReactionData("heavy_push")
+    {
+        type(EReactionType_Push);
+        context(EReactionContext_Melee);
+        hit_severity(EHitSeverity_Medium);
+        move_severity(EMoveSeverity_Heavy);
+		flags(EReactionFlag_Ragdoll);
+        flags(EReactionFlag_Interrupt);
+		
+    }
+
+    SReactionData("melee_light_hit")
+    {
+        type(EReactionType_Blunt);
+        context(EReactionContext_Melee);
+        hit_severity(EHitSeverity_Light);
+        move_severity(EMoveSeverity_Light);
+        flags(EReactionFlag_Interrupt);
+    }
+
+    SReactionData("melee_heavy_hit")
+    {
+        type(EReactionType_Blunt);
+        context(EReactionContext_Melee);
+        hit_severity(EHitSeverity_Heavy);
+        move_severity(EMoveSeverity_Light);
+		flags(EReactionFlag_Ragdoll);
+    }
+
+    SReactionData("parkour_kick")
+    {
+        type(EReactionType_Push);
+        context(EReactionContext_Melee);
+        hit_severity(EHitSeverity_Medium);
+        move_severity(EMoveSeverity_Medium);
+    }
+
+    SReactionData("air_kick")
+    {
+        type(EReactionType_Push);
+        context(EReactionContext_Melee);
+        hit_severity(EHitSeverity_Medium);
+        move_severity(EMoveSeverity_Heavy);
+    }
+
+    SReactionData("melee_ragdoll")
+    {
+        type(EReactionType_Blunt);
+        context(EReactionContext_Melee);
+        hit_severity(EHitSeverity_Light);
+        move_severity(EMoveSeverity_Medium);
+        flags(EReactionFlag_Ragdoll);
+    }
+
+    SReactionData("fall_ragdoll")
+    {
+        type(EReactionType_Push);
+        context(EReactionContext_Melee);
+        hit_severity(EHitSeverity_Light);
+        move_severity(EMoveSeverity_Medium);
+        flags(EReactionFlag_Ragdoll);
+    }
+
+    SReactionData("just_ragdoll")
+    {
+        flags(EReactionFlag_Ragdoll);
+    }
+
+    SReactionData("portable_tank_explosive_default")
+    {
+        type(EReactionType_Blast);
+        context(EReactionContext_Environment);
+        hit_severity(EHitSeverity_Light);
+        move_severity(EMoveSeverity_Heavy);
+        flags(EReactionFlag_Ragdoll);
+    }
+
+    SReactionData("fireplug_explosive")
+    {
+        type(EReactionType_Blast);
+        context(EReactionContext_Environment);
+        hit_severity(EHitSeverity_Light);
+        move_severity(EMoveSeverity_Medium);
+        flags(EReactionFlag_Ragdoll);
+    }
+	
+	SReactionData("falling_trap_AI")
+    {
+        type(EReactionType_Blunt);
+		context(EReactionContext_Collision);
+        hit_severity(EHitSeverity_Heavy);
+        move_severity(EMoveSeverity_Medium);
+        flags(EReactionFlag_Ragdoll);
+    }
+	
+	SReactionData("falling_trap_Player")
+    {
+        type(EReactionType_Blunt);
+		context(EReactionContext_Environment);
+        hit_severity(EHitSeverity_Heavy);
+        move_severity(EMoveSeverity_Heavy);
+        flags(EReactionFlag_Ragdoll);
+    }
+	
+	SReactionData("pendulum_spikes_Player")
+    {
+        type(EReactionType_Blunt);
+		context(EReactionContext_Environment);
+        hit_severity(EHitSeverity_Heavy);
+        move_severity(EMoveSeverity_Heavy);
+        flags(EReactionFlag_Ragdoll);
+    }
+
+	SReactionData("combat_interactable_bottle")
+    {
+        type(EReactionType_Cut);
+        context(EReactionContext_Throwable);
+        hit_severity(EHitSeverity_Light);
+        move_severity(EMoveSeverity_Light);
+        flags(EReactionFlag_Interrupt);
+    }
+	
+	SReactionData("combat_interactable_brick")
+    {
+        type(EReactionType_Blunt);
+        context(EReactionContext_Throwable);
+        hit_severity(EHitSeverity_Light);
+        move_severity(EMoveSeverity_Light);
+        flags(EReactionFlag_Ragdoll);
+    }
+    
+    SReactionData("environmental_small_cut")
+    {
+        type(EReactionType_Cut);
+		context(EReactionContext_Environment);
+        hit_severity(EHitSeverity_Light);
+        move_severity(EMoveSeverity_Light);        
+    }
+    
+    SReactionData("spear_swipe")
+    {
+        type(EReactionType_Cut);
+        context(EReactionContext_Melee);
+        hit_severity(EHitSeverity_Light);
+        move_severity(EMoveSeverity_Light);
+    }
+    
+     SReactionData("spear_swipe_heavy")
+    {
+        type(EReactionType_Cut);
+        context(EReactionContext_Melee);
+        hit_severity(EHitSeverity_Heavy);
+        move_severity(EMoveSeverity_Light);
+		flags(EReactionFlag_Ragdoll);
+    }
+    
+    SReactionData("banshee_jump_off_biter")
+    {
+        type(EReactionType_Blunt);
+        context(EReactionContext_Collision);
+        hit_severity(EHitSeverity_Light);
+        move_severity(EMoveSeverity_Light);
+        flags(EReactionFlag_Interrupt);
+    }
+    SReactionData("waltz_combo")
+    {
+        type(EReactionType_Blunt);
+        context(EReactionContext_Melee);
+        hit_severity(EHitSeverity_Medium);
+        move_severity(EHitSeverity_Medium);
+        flags(EReactionFlag_Interrupt);
+    }
+    SReactionData("waltz_light_combo")
+    {
+        type(EReactionType_Blunt);
+        context(EReactionContext_Melee);
+        hit_severity(EHitSeverity_Light);
+        move_severity(EHitSeverity_Light);
+        flags(EReactionFlag_Interrupt);
+    }
+
+}

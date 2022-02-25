@@ -1,0 +1,117 @@
+sub AISpawnSystemGlobalParams()
+{
+    Param("MaxSpawnedAI", "130");
+    Param("MaxSpawnedAIImpassableLimit", "140");
+    Param("MaxSpawnedAIPerFrame", "1");
+    Param("MaxSpawnedAINotFromCasheWithinMaxSpawnedAIPerFrameLimit", "1");
+    Param("MaxDespawnedAIPerFrameNotToCache", "1");
+    Param("MaxDespawnedAIPerFrameToCache", "3");
+    Param("MaxSizeOfAICache", "300");
+    Param("MaxSpawnerActivatorsUpdatedPerFrame", "3");
+    Param("MaxRelocatedEntitiesUpdatedPerFrame", "3");
+    Param("ClearCasheAfterConditionCount", "3");
+    Param("DisplayMorphedAIForSpawnRequestsAwaitingInQueue", "true");
+    Param("CacheClearConditionCheckIntervalSeconds", "30.0");
+    Param("CacheMissRatioLimit", "0.8");
+    Param("SpawnCooldownAfterRestartWorldState", "10.0");
+}
+
+sub SpawnSourceParamsElements()
+{
+    SpawnSourceParams("Debug")
+    {
+        Limit("100");
+        AllowSpawnOverLocalLimit("true");
+        AllowSpawnOverGlobalLimit("true");
+        AllowSpawnOverCustomLimit("true");
+        MaxSpawnDelaySec("1");
+    }
+    
+    SpawnSourceParams("Dialog")
+    {
+        Limit("50");
+        AllowSpawnOverLocalLimit("true");
+        AllowSpawnOverGlobalLimit("true");
+        AllowSpawnOverCustomLimit("true");
+        MaxSpawnDelaySec("0.5");
+    }
+    
+    SpawnSourceParams("AIProxy")
+    {
+        Limit("120");
+        AllowSpawnOverLocalLimit("true");
+        AllowSpawnOverGlobalLimit("true");
+        AllowSpawnOverCustomLimit("true");
+        MaxSpawnDelaySec("1");
+    }
+    
+    SpawnSourceParams("StorySpawner")
+    {
+        Limit("80");
+        AllowSpawnOverLocalLimit("true");
+        AllowSpawnOverGlobalLimit("true");
+        AllowSpawnOverCustomLimit("true");
+        MaxSpawnDelaySec("1");
+    }
+    
+    SpawnSourceParams("Chase")
+    {
+        Limit("300");
+        AllowSpawnOverLocalLimit("false");
+        AllowSpawnOverGlobalLimit("true");
+        AllowSpawnOverCustomLimit("true");
+        MaxSpawnDelaySec("0.5");
+    }
+    
+    SpawnSourceParams("Agenda")
+    {
+        Limit("200");
+        AllowSpawnOverLocalLimit("true");
+        MaxSpawnDelaySec("2");
+    }
+
+    SpawnSourceParams("Spawner")
+    {
+        Limit("200");
+        AllowSpawnOverLocalLimit("true");
+        MaxSpawnDelaySec("1");
+    }
+
+    SpawnSourceParams("DynamicSpawner")
+    {
+        Limit("220");
+        AllowSpawnOverLocalLimit("true");
+        MaxSpawnDelaySec("2");
+    }
+    SpawnSourceParams("Challenge")
+    {
+        Limit("50");
+        AllowSpawnOverLocalLimit("true");
+        MaxSpawnDelaySec("1");
+    }
+    SpawnSourceParams("GameplayForced")
+    {
+        Limit("200");
+        AllowSpawnOverLocalLimit("true");
+        AllowSpawnOverGlobalLimit("true");
+        AllowSpawnOverCustomLimit("true");
+        MaxSpawnDelaySec("0.5");
+    }
+}
+
+sub SpawnSourceParams()
+{
+    use SpawnSourceParamsElements();
+}
+
+sub CustomPool()
+{
+    CustomPool("DarkzoneNight")
+    {
+        Limit("90"); //79
+    }
+    CustomPool("DarkzoneDay")
+    {
+        Limit("200"); // this may not be decreased to 30 as it breaks the logic currently
+    }
+}

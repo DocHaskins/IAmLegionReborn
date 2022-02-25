@@ -1,0 +1,121 @@
+sub main()
+{
+	//////////// HUMANS ////////////
+
+    SyncActionPreset("Human_1h")
+    {
+        ActorType("Human");
+        DefaultIdleAnimationSequenceName("m_gen_1h_syncaction_default_idle");
+    }
+
+    SyncActionPreset("Human_2h")
+    {
+        ActorType("Human2H");
+        DefaultIdleAnimationSequenceName("m_gen_2h_syncaction_default_idle");
+    }
+
+    SyncActionPreset("Human_Bow")
+    {
+        ActorType("Human");
+        DefaultIdleAnimationSequenceName("m_gen_1h_syncaction_default_idle");
+    }
+	
+	SyncActionPreset("HumanElite")
+    {
+        ActorType("Elite");
+        CustomBodyVisScale("1.1");
+        DefaultIdleAnimationSequenceName("m_gen_1h_syncaction_default_idle");
+    }
+
+    SyncActionPreset("Human_Spear")
+    {
+        ActorType("Human");
+        DefaultIdleAnimationSequenceName("m_gen_spear_syncaction_default_idle");
+    }
+	
+	//////////// INFECTED ////////////
+	
+	SyncActionPreset("Banshee")
+    {
+        ActorType("Banshee");
+        DefaultIdleAnimationSequenceName("bsh_syncaction_default_idle");
+    }
+	
+	SyncActionPreset("BigZombie")
+    {
+        ActorType("BigZombie");
+        CustomBodyVisScale("1.0");
+    }
+
+    SyncActionPreset("Biter")
+    {
+        ActorType("Biter");
+        DefaultIdleAnimationSequenceName("m_vir_syncaction_default_idle");
+    }
+	
+	SyncActionPreset("Bolter")
+    {
+        ActorType("Bolter");
+        DefaultIdleAnimationSequenceName("bol_syncaction_default_idle");
+    }
+	
+	SyncActionPreset("Charger")
+    {
+        ActorType("Charger");
+        DefaultIdleAnimationSequenceName("chr_syncaction_default_idle");
+    }
+	
+	SyncActionPreset("Corruptor")
+    {
+        //ActorType("BigZombie");
+        CustomBodyVisScale("1.3");
+		ActorType("Corruptor");
+		DefaultIdleAnimationSequenceName("crp_syncaction_default_idle");
+    }
+	
+	SyncActionPreset("Demolisher")
+    {
+        //ActorType("BigZombie");
+        CustomBodyVisScale("1.5");
+		ActorType("Demolisher");
+		DefaultIdleAnimationSequenceName("dmr_syncaction_default_idle");
+    }
+
+    SyncActionPreset("Goon")
+    {
+        ActorType("Goon");
+        DefaultIdleAnimationSequenceName("gon_syncaction_default_idle");
+        CustomBodyVisScale("1.45");
+    }
+	
+	SyncActionPreset("Screamer")
+    {
+        ActorType("Screamer");
+        DefaultIdleAnimationSequenceName("scr_syncaction_default_idle");
+    }
+	
+	SyncActionPreset("Spitter")
+    {
+        ActorType("Spitter");
+        DefaultIdleAnimationSequenceName("spt_syncaction_default_idle");
+    }
+	
+	SyncActionPreset("Suicider")
+    {
+        ActorType("Suicider");
+        DefaultIdleAnimationSequenceName("scd_syncaction_default_idle");
+    }
+
+    SyncActionPreset("Viral")
+    {
+        ActorType("Viral");
+        DefaultIdleAnimationSequenceName("m_vir_syncaction_default_idle");
+    }
+	
+	SyncActionPreset("Volatile")
+    {
+        ActorType("Volatile");
+        DefaultIdleAnimationSequenceName("vlt_syncaction_default_idle");
+    }
+    
+}

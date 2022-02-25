@@ -1,0 +1,236 @@
+{
+  "__filename__": {
+    "Version": 3,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "zones"],
+            "m_PcId": [6, 11],
+            "m_PrefabName": [12, "hub_reg01_market_zones"],
+            "m_Translate": [14, [0.0, -0.17393, 0.0]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "quests"],
+            "m_PcId": [6, 13],
+            "m_PrefabName": [12, "hub_reg01_market_quests"],
+            "m_Translate": [14, [0.0, 0.00918, 0.0]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "quartermaster"],
+            "m_PcId": [6, 14],
+            "m_PrefabName": [12, "empty"],
+            "m_Translate": [14, [-0.0001219, 0.059177, 0.0]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "player"],
+            "m_PcId": [6, 15],
+            "m_PrefabName": [12, "hub_reg01_market_player"],
+            "m_Rotate": [14, [-0.00007, 77.4999389, 0.0000299]],
+            "m_Translate": [14, [4.5187997, -0.14188, -2.7216799]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "PinlockShape"],
+            "m_PcId": [6, 16],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Rotate": [14, [0.0, -29.9929885, 0.0]],
+            "m_Scale": [14, [50.4990081, 5.5572919, 38.5397338]],
+            "m_Translate": [14, [13.123413, 0.0142059, 14.2814941]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "shopkeepers"],
+            "m_PcId": [6, 23],
+            "m_PrefabName": [12, "hub_reg01_market_shopkeepers"],
+            "m_Rotate": [14, [0.0, 0.0070199, 0.0]],
+            "m_Translate": [14, [-2.7773439, 0.904011, 7.001831]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.000257, 1.4512829, 0.2189899, 0.0679939, 1.495648, 0.262777]],
+            "m_Name": [12, "Bazar_SP"],
+            "m_PcId": [6, 25],
+            "m_PrefabName": [12, "spawnpoint"],
+            "m_Rotate": [14, [-179.9999847, -46.9999656, -179.9999847]],
+            "m_Translate": [14, [49.4665527, 0.03421, 42.8354492]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_EntityComponentsExtents": [69, [-0.0, 1.5195729, 0.2309059, 0.0690789, 1.5195729, 0.2707889]],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "l"],
+            "m_PcId": [6, 26],
+            "m_PrefabName": [12, "location"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [17.9006347, 0.132179, 20.2291259]]
+          },
+          "Fields": {
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "Locations::Logic::GroupingLogic",
+            "DestinationField": "m_LogicPreset",
+            "Fields": {
+              "m_AreaMode": "None",
+              "m_LocCategory": "Neutral",
+              "m_LocType": "Hub",
+              "m_MapDescription": "&Bazaar_Name&",
+              "m_Radius": "45.000000"
+            }
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_EntityComponentsExtents": [69, [-0.0, 2.5, 0.0, 0.5, 2.5, 0.5]],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "mz"],
+            "m_PcId": [6, 27],
+            "m_PrefabName": [12, "map_zone"],
+            "m_Rotate": [14, [0.0, 60.007019, 0.0]],
+            "m_Scale": [14, [32.7335624, 13.2359504, 71.3945465]],
+            "m_Translate": [14, [17.3791503, -7.0, 16.7371807]]
+          },
+          "Fields": {
+            "m_EnterMusicEventName": "music_location_bazar",
+            "m_MusicZonePriority": "OverrideStoryAndCombat",
+            "m_Name": "&Bazaar_Name&"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "do"],
+            "m_PcId": [6, 28],
+            "m_PrefabName": [12, "detectableobject"],
+            "m_Rotate": [14, [-179.9999847, 29.9929809, -179.9999847]],
+            "m_Scale": [14, [70.0, 30.0, 40.0]],
+            "m_Translate": [14, [8.6449604, 13.6307296, 19.2399902]]
+          },
+          "Fields": {
+            "m_DetectableAreaObject": "/mz",
+            "m_ObjectName": "&Bazaar_Name&",
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "ailife"],
+            "m_PcId": [6, 29],
+            "m_PrefabName": [12, "reg01_market_hub_ailife"],
+            "m_Rotate": [14, [-179.9999847, -75.0071105, -179.9999847]],
+            "m_Translate": [14, [23.4255409, 0.0139399, 17.5971698]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0000049, 0.500005, 0.0000049, 0.500005, 0.500005, 0.500005]],
+            "m_Name": [12, "MarketCenter"],
+            "m_PcId": [6, 30],
+            "m_PrefabName": [12, "mesh"],
+            "m_PresetNames": [12, "Meshes;dummy_box"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [13.3513183, -1.676826, 17.1157226]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0, 1.5195729, 0.2309059, 0.0690789, 1.5195729, 0.2707889]],
+            "m_Name": [12, "safezone_location"],
+            "m_PcId": [6, 32],
+            "m_PrefabName": [12, "location"],
+            "m_Rotate": [14, [179.9999847, -60.0070533, 179.9999847]],
+            "m_Translate": [14, [6.7764887, 0.0141979, 0.2467039]]
+          },
+          "Fields": {
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "Locations::Logic::EntitySelfActiveLogic",
+            "DestinationField": "m_LogicPreset",
+            "Fields": {
+              "m_AreaMode": "None",
+              "m_LocCategory": "Neutral",
+              "m_LocType": "SafeZone_Active",
+              "m_MapDescription": ""
+            }
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.600319, 1.4090319, -0.0005779, 0.6003199, 1.4309779, 0.106255]],
+            "m_Name": [12, "MarketDoor"],
+            "m_PcId": [6, 33],
+            "m_PrefabName": [12, "door"],
+            "m_PresetNames": [12, "Visual;Shop_Door_B;Behaviour;Closed;Side accesibility;AccessBothSides"],
+            "m_Rotate": [14, [-0.0000189, 60.0070419, 0.0000189]],
+            "m_Translate": [14, [44.6906738, 0.02713, 40.8284912]]
+          },
+          "Fields": {
+            "PartiallyOpenAngle": "22.500000",
+            "cbs::IEnable::m_State": "0",
+            "m_QuestOpenDir": "CCW"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0319669, 1.9999949, 2.8397829, 0.8037869, 2.500005, 3.3975219]],
+            "m_Name": [12, "UVZone"],
+            "m_PcId": [6, 34],
+            "m_PrefabName": [12, "gameplay_modifier_area"],
+            "m_Rotate": [14, [-0.0000189, 60.0, 0.0000189]],
+            "m_Scale": [14, [5.458496, 1.0, 1.2063599]],
+            "m_Translate": [14, [45.7314453, 0.2889479, 40.9222412]]
+          },
+          "Fields": {
+            "m_Height": "5.000000",
+            "m_Points": "0.629456 -0.500000 -0.557739;0.835754 -0.500004 1.437683;0.780029 -0.500008 5.215881;0.460052 -0.500011 6.237305;-0.557434 -0.500011 5.982422;-0.771820 -0.500011 3.896423;-0.652893 -0.500008 0.940430;-0.470795 -0.500000 0.214600;-0.323608 -0.500004 -0.531799;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0, 1.5195729, 0.2309059, 0.0690789, 1.5195729, 0.2707889]],
+            "m_Name": [12, "MarketCenter_Additional_donotdelete"],
+            "m_PcId": [6, 36],
+            "m_PrefabName": [12, "point_marker"],
+            "m_Rotate": [14, [-0.0000189, 60.0000038, 0.0000189]],
+            "m_Translate": [14, [9.3175048, 0.0242079, 14.774414]]
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

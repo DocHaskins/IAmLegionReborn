@@ -1,0 +1,3137 @@
+sub Preset_SafeZoneRewards()
+{
+		SafeZoneRewards() { // Used to populate the safe zone unlocked big messages
+			RewardIcon("Safe_Zone");	
+			RewardIcon("UV_Spot");
+		}
+}
+
+
+sub Preset_Reward_Facility_Water()
+{
+    TooltipHeader("&OWA_Facility_Watertower&");
+    TooltipDesc("&Facility_Desc&");
+    TooltipDescLocked("");
+    //BadgeText("&Hud_SafeZoneBadge&");
+    //ExtraInfo("&Hud_SafeZoneExtraInfo&");
+    ExtraInfoCompleted("&Hud_SafeZoneExtraInfoCompleted&");
+    AdditionalInfo("&additionalinfo_watertower&");
+    
+    RewardIcon("CityAlignmentBar");
+	RewardIcon("Water");
+	RewardIcon("ProfType_Traversal");	
+
+    CompletedRewards() {
+        RewardIcon("CityAlignmentBar");
+        RewardIcon("Water");	
+        RewardIcon("ProfType_Traversal");	
+    }
+	
+	SafeZoneRewards() { // Used to populate the safe zone unlocked big messages
+		RewardIcon("Safe_Zone");	
+		RewardIcon("UV_Spot");
+		RewardIcon("Stash");
+    }
+    
+    Feature("map_uv", "&OWAReward_UV_Spot&");
+    Feature("bed_icon", "&MMap_RestingPlace&");
+    Feature("map_stash", "&MMap_LegendStash&");
+    Feature("map_store", "&MMap_LegendStore&");
+    Feature("map_craftmaster", "&MMap_LegendCraftmaster&");
+}
+
+sub Preset_Reward_Facility_Electric()
+{
+    TooltipHeader("&OWA_Facility_Electric&");
+    TooltipDesc("&Facility_Desc&");
+    TooltipDescLocked("");
+    //BadgeText("&Hud_SafeZoneBadge&");
+    //ExtraInfo("&Hud_SafeZoneExtraInfo&");
+    ExtraInfoCompleted("&Hud_SafeZoneExtraInfoCompleted&");
+    AdditionalInfo("&additionalinfo_electricalstation&");
+    
+    RewardIcon("CityAlignmentBar");
+    RewardIcon("Electricity");
+	RewardIcon("Safe_Zone");	
+	RewardIcon("UV_Spot");
+	RewardIcon("ProfType_Traversal");
+
+    CompletedRewards() {
+        RewardIcon("CityAlignmentBar");
+        RewardIcon("Electricity");
+        RewardIcon("ProfType_Traversal");
+    }
+	
+	
+	SafeZoneRewards() { // Used to populate the safe zone unlocked big messages
+		RewardIcon("Safe_Zone");	
+		RewardIcon("UV_Spot");
+		RewardIcon("Stash");
+    }
+
+    Feature("map_uv", "&OWAReward_UV_Spot&");
+    Feature("bed_icon", "&MMap_RestingPlace&");
+    Feature("map_stash", "&MMap_LegendStash&");
+    Feature("map_store", "&MMap_LegendStore&");
+    Feature("map_craftmaster", "&MMap_LegendCraftmaster&");
+}
+
+sub Preset_Reward_Facility_Electric_Locked()
+{
+    TooltipHeader("&OWA_Facility_Electric&");
+    TooltipDesc("&Facility_Desc_Locked&");
+    TooltipDescLocked("");
+    
+    RewardIcon("CityAlignmentBar");
+    RewardIcon("Electricity");
+	RewardIcon("Safe_Zone");	
+	RewardIcon("UV_Spot");
+	RewardIcon("ProfType_Traversal");		
+}
+
+sub Preset_Reward_BanditCamp()
+{
+    TooltipHeader("&OWA_BanditCamp&");
+    TooltipDesc("&BanditCamp_Desc&");
+    TooltipDescLocked("");
+    //BadgeText("&Hud_SafeZoneBadge&");
+    //ExtraInfo("&Hud_SafeZoneExtraInfo&");
+    ExtraInfoCompleted("&Hud_SafeZoneExtraInfoCompleted&");
+    AdditionalInfo("&additionalinfo_banditcamp&");
+    
+    RewardIcon("Safe_Zone");
+	RewardIcon("UV_Spot");	
+	RewardIcon("ProfType_Combat");
+    RewardIcon("ProfType_Traversal");	
+    
+    CompletedRewards() {
+        RewardIcon("ProfType_Combat");
+        RewardIcon("ProfType_Traversal");	
+    }
+	
+	SafeZoneRewards() { // Used to populate the safe zone unlocked big messages
+		RewardIcon("Safe_Zone");	
+		RewardIcon("UV_Spot");
+		RewardIcon("Stash");
+    }
+
+    Feature("map_uv", "&OWAReward_UV_Spot&");
+    Feature("bed_icon", "&MMap_RestingPlace&");
+    Feature("map_stash", "&MMap_LegendStash&");
+
+    CompletedBigmsgDelay(6.0);
+}
+
+sub Preset_Reward_Metro()
+{
+    TooltipHeader("&OWA_MetroStation&");
+    TooltipDesc("&Metro_Desc&");
+    TooltipDescLocked("");
+    ExtraInfo("&Hud_NightOwa&");
+    BadgeText("&Hud_NightActivityBadge&");
+    NightActivity(true);
+    AdditionalInfo("&additionalinfo_metrostation&");
+    
+    RewardIcon("Safe_Zone");
+	RewardIcon("UV_Spot");		
+    RewardIcon("Fast_Travel");
+	RewardIcon("ProfType_Combat");	
+
+    CompletedRewards() {	
+        RewardIcon("Fast_Travel");
+        RewardIcon("ProfType_Combat");	
+    }
+	
+	SafeZoneRewards() { // Used to populate the safe zone unlocked big messages
+		RewardIcon("Safe_Zone");	
+		RewardIcon("UV_Spot");
+		RewardIcon("Stash");
+    }
+
+    Feature("map_uv", "&OWAReward_UV_Spot&");
+    Feature("bed_icon", "&MMap_RestingPlace&");
+    Feature("map_stash", "&MMap_LegendStash&");
+}
+
+sub Preset_Reward_Metro_HMF()
+{
+    TooltipHeader("&OWA_MetroStation&");
+    TooltipDesc("&Metro_Desc&");
+    TooltipDescLocked("");
+    AdditionalInfo("&additionalinfo_metrostation&");
+    
+    RewardIcon("Safe_Zone");
+	RewardIcon("UV_Spot");		
+    RewardIcon("Fast_Travel");
+	RewardIcon("ProfType_Combat");	
+
+    CompletedRewards() {	
+        RewardIcon("Fast_Travel");
+        RewardIcon("ProfType_Combat");	
+    }
+	
+	SafeZoneRewards() { // Used to populate the safe zone unlocked big messages
+		RewardIcon("Safe_Zone");	
+		RewardIcon("UV_Spot");
+		RewardIcon("Stash");
+    }
+
+    Feature("map_uv", "&OWAReward_UV_Spot&");
+    Feature("bed_icon", "&MMap_RestingPlace&");
+    Feature("map_stash", "&MMap_LegendStash&");
+}
+
+
+sub Preset_Reward_Metro_Locked()
+{
+    TooltipHeader("&OWA_MetroStation&");
+    TooltipDesc("&Metro_Desc_Locked&");
+    TooltipDescLocked("");    
+    //ExtraInfo("&Hud_NightOwa&");
+    //BadgeText("&Hud_NightActivityBadge&");
+    //NightActivity(true);
+    
+    RewardIcon("Safe_Zone");
+	RewardIcon("UV_Spot");		
+    RewardIcon("Fast_Travel");
+	RewardIcon("ProfType_Combat");		
+}
+
+sub Preset_Reward_Radio()
+{
+    TooltipHeader("&OWA_RadioTower&");
+    TooltipDesc("&RadioTower_Desc&");
+    TooltipDescLocked("");
+    AdditionalInfo("&additionalinfo_radiotower&");
+    
+    RewardIcon("GRE_Crates_signal");	    
+	//RewardIcon("Radio_Quests");
+	RewardIcon("ProfType_Traversal");		
+}
+
+sub Preset_Reward_Radio_Locked()
+{
+    TooltipHeader("&OWA_RadioTower&");
+    TooltipDesc("&RadioTower_Desc_Locked&");
+    TooltipDescLocked("");
+    
+    RewardIcon("GRE_Crates_signal");	    
+	//RewardIcon("Radio_Quests");
+	RewardIcon("ProfType_Traversal");		
+}
+
+sub Preset_Reward_AirDrop()
+{
+    TooltipHeader("&OWA_AirDrop&");
+    TooltipDesc("&Airdrop_Desc&");
+    TooltipDescLocked("");
+    AdditionalInfo("&additionalinfo_airdrop&");
+     
+	RewardIcon("ProfType_Traversal");		
+	RewardItem("Keycraft_MilitaryTech");
+    RewardIcon("Inhibitor", "map_nondiscovered");
+	//RewardIcon("High Tech Upgrade component");
+}
+
+sub Preset_Reward_AirDropFlooded()
+{
+    TooltipHeader("&OWA_AirDrop&");
+    TooltipDesc("&Airdrop_Desc&");
+    TooltipDescLocked("");
+    AdditionalInfo("&additionalinfo_airdrop&");
+     
+	RewardIconRarity("Violet", "Outfits", "map_nondiscovered");
+	RewardIconRarity("Violet", "Weapons", "map_nondiscovered");
+	RewardIconRarity("Violet", "Use_Items", "map_nondiscovered");
+	//RewardIcon("High Tech Upgrade component");
+}
+
+sub Preset_Reward_ZombieBoss()
+{
+    TooltipHeader("&OWA_ZombieBoss&");
+    TooltipDescLocked("");    
+    ExtraInfo("&Hud_NightOwa_ZombieBoss&");
+	BadgeText("&Hud_NightActivityBadge&");
+    NightActivity(true);
+    AdditionalInfo("&additionalinfo_greanomaly&");
+    
+    RewardIcon("Inhibitor");
+    RewardIcon("Inhibitor");	
+	RewardIcon("ProfType_Combat");			
+}
+
+sub Preset_Reward_Windmill()
+{
+    TooltipHeader("&OWA_Windmill&");
+    TooltipDesc("&Windmill_Desc&");
+    TooltipDescLocked("");
+    //BadgeText("&Hud_SafeZoneBadge&");
+    //ExtraInfo("&Hud_SafeZoneExtraInfo&");
+    ExtraInfoCompleted("&Hud_SafeZoneExtraInfoCompleted&");
+    AdditionalInfo("&additionalinfo_windmill&");
+    
+    RewardIcon("Safe_Zone");
+	RewardIcon("UV_Spot");	
+	RewardIcon("ProfType_Traversal");	
+
+    Feature("map_uv", "&OWAReward_UV_Spot&");
+    Feature("bed_icon", "&MMap_RestingPlace&");
+    Feature("map_stash", "&MMap_LegendStash&");
+    Feature("map_store", "&MMap_LegendStore&");
+
+    CompletedRewards() {
+        RewardIcon("ProfType_Traversal");
+    }
+	
+	SafeZoneRewards() { // Used to populate the safe zone unlocked big messages
+		RewardIcon("Safe_Zone");	
+		RewardIcon("UV_Spot");
+		RewardIcon("Stash");
+    }
+
+    CompletedBigmsgDelay(6.0);
+}
+
+sub Preset_Reward_GRE()
+{
+    TooltipHeader("&OWA_GRE&");
+    TooltipDesc("&GRE_Desc&");
+    TooltipDescLocked("");
+    ExtraInfo("&Hud_NightOwa&");
+    BadgeText("&Hud_NightActivityBadge&");
+    NightActivity(true);
+    Icon("map_gre_facility");
+    AdditionalInfo("&additionalinfo_grequarantine&");
+    
+    RewardIcon("Inhibitor");
+    RewardIcon("Inhibitor");
+    RewardIcon("Inhibitor");
+    RewardIcon("Inhibitor");	
+	RewardIcon("ProfType_Combat");	
+	RewardIcon("ProfType_Traversal");
+}
+
+sub main()
+{
+    //EActivity::TYPE -> 
+    //    Facility_ElectricalSubstation
+    //    Facility_WaterTower
+    //    BanditCamp
+    //    GREQuarantine
+    //    Airdrop
+    //    ZombieBoss
+    //    MetroStation
+    //    RadioTower
+    //    Windmill
+    //    LootableShop
+    //    DarkPlace
+    //    SafeZone
+    
+    // Activity("Name From Story System", "EActivityType::TYPE")
+    // {
+    //      Icon("gui_texture");  
+    //      TooltipHeader("&text&")   //displayed in map tooltip header (and also binoculars and hud objectives)
+    //      TooltipDesc("&text&");    //displayed in the map tooltip
+    //      Difficulty(i);
+    //      Stamina(i);
+    //      Health(i);
+    //      Immunity(i);
+	//		Lockpicks(i);
+    //      Item("item_id", count);
+    //      RewardLootText(true);       //changes text in map tooltips from Rewards to "Possibility of Loot"
+    //      Skill("skill_id");          //may be defined multiple times
+    //      Tool("tool_skill_id");      //may be defined multiple times, dont confuse with skill, see menu_player_tools.scr
+    //      Reward("&text&");           //may be defined multiple times !!!Deprecated consider using one of two keywords below!!!
+	//		RewardItem("item_def_name") //may be defined multiple times ex. 'RewardIcon("icon_token");'
+	//		RewardIcon("icon_name")     //may be defined multiple times ex. 'RewardItem("Throwable_ThrowingKnifeAGen");'
+    //      RewardIconRarity("RARITY", "icon_name", ("addon")) //addon is optional
+    //      RARITY - see EItemColor
+    //          "White"
+    //          "Green"
+    //          "Blue"
+    //          "Violet"
+    //          "Orange"
+    //          "Platinum"
+    //      ShowInBinoculars(bool)      //default true
+    //      //Inhibitor("Collectable_Inhibitor_OW_1")
+    //      CompletedBigmsgDelay(6.0)   //bigms abou OWA completed will be delayed by X and will show on cutscene - use only for owa with ending cutscene! (values between 0.0 and 25.5 only!)
+    //      NightActivity(bool)         //default false
+    //      ExtraInfo("&text&")         //text displayed on map tooltip
+    //      ExtraInfoCompleted("&text&")//text displayed on map tooltip when activity is completed
+    //      BadgeText("&text&")         //text displayed on discovery message and on binocular hover
+    //      ShowHintAfterEnter(bool);   //default true
+
+    //      FacilityName("name from facility_assign_menu.scr")   //for facilities, to know what facility it was
+                                                                //checks ShowFacilityAssignMenuLogic what m_Choice has been madeon that facility
+                                                                //if there is chocie already display CityAlignment icon + Rewars from there
+                                                                //otherwise display the rewards from here
+    //      Feature("icon", "&text&") // Features are shown only on completed activities
+    //      FactionControlled("Story::EFacilityFactionChoice") //Survivors / Factions
+    //      CompletedRewards() {    //shown in 3d map when activity is completed
+    //          Reward("&text&");
+	//		    RewardItem("item_def_name");
+	//		    RewardIcon("icon_name");
+    //      }
+    //      CompletedRewards_Faction() { //shown in 3d map when facility is completed and assigned to Factions
+    //          Reward("&text&");
+	//		    RewardItem("item_def_name");
+	//		    RewardIcon("icon_name");
+    //      }
+    //      CompletedRewards_Survivors() { //shown in 3d map when facility is completed and assigned to Survivors
+    //          Reward("&text&");
+	//		    RewardItem("item_def_name");
+	//		    RewardIcon("icon_name");
+    //      }
+    //      SafeZoneRewards() { // Used to populate the safe zone unlocked big messages
+    //          Reward("&text&");
+	//		    RewardItem("item_def_name");
+	//		    RewardIcon("icon_name");
+    //      }
+    // }
+
+	//// WATER TOWER ////
+    
+	Activity("Water Tower R01 For Quest Area", "Facility_WaterTower")
+    {
+        //TODO: QuestLogicUUid(xxxxx) for faster search
+        Icon("map_facility_watertower");        
+        Difficulty(3);
+        Stamina(100);		
+        use Preset_Reward_Facility_Water();        
+        FacilityName("WaterTower_R01"); //this name must correspond to facility_asing_menu names...
+		TooltipHeader("&WaterTower_R01_name&");
+		TooltipDesc("&WaterTower_desc&");
+    }
+    
+	Activity("Water Tower R03 East", "Facility_WaterTower")
+    {
+        Icon("map_facility_watertower");
+        Difficulty(4);
+        Stamina(300);
+		use Preset_Reward_Facility_Water(); 
+        FacilityName("WaterTower_R5_4_Zone_24");
+		TooltipDesc("&WaterTower_desc&");
+		TooltipHeader("&WaterTower_R03_name&");
+    }
+    
+    Activity("Water Tower R02 South", "Facility_WaterTower")
+    {
+        Icon("map_facility_watertower");
+        Difficulty(3);
+        Stamina(160);
+		use Preset_Reward_Facility_Water();
+        FacilityName("WaterTower_R2_3_Zone_07");
+		TooltipHeader("&WaterTower_R02_name&");
+		TooltipDesc("&WaterTower_desc&");
+    }
+    
+    Activity("Water Tower R05 North", "Facility_WaterTower")
+    {
+        Icon("map_facility_watertower");
+        Difficulty(3);
+        Stamina(200);
+		use Preset_Reward_Facility_Water(); 
+        FacilityName("WaterTower_R5_1_Zone_21");
+		TooltipDesc("&WaterTower_desc&");
+    }
+	
+    Activity("Water Tower R05 South", "Facility_WaterTower")
+    {
+        Icon("map_facility_watertower");
+        Difficulty(5);
+        Stamina(400);
+		use Preset_Reward_Facility_Water(); 
+        FacilityName("WaterTower_R2_2_Zone_06");
+		TooltipDesc("&WaterTower_desc&");
+		TooltipHeader("&WaterTower_R03_name&");
+    }
+    
+    Activity("Water Tower R06", "Facility_WaterTower")
+    {
+        FacilityName("WaterTower_R5_5_Zone_25");
+		Icon("map_facility_watertower");
+        Difficulty(6);
+        Stamina(500);
+		use Preset_Reward_Facility_Water(); 
+		TooltipDesc("&WaterTower_desc&");
+    }
+
+
+	//// ELECTRICAL SUBSTATION ////
+
+    Activity("electrical_substation_r01", "Facility_ElectricalSubstation")
+    {
+		Icon("map_facility_electricalsubstation");
+        Difficulty(4);
+        Stamina(300);
+		use Preset_Reward_Facility_Electric(); 
+        FacilityName("ElectricalSubstation_R1_4_Zone_04");
+		TooltipHeader("&Electrical Substation R01&");
+		TooltipDesc("&Electrical_Substation_desc&");
+    }	
+    
+	Activity("electrical_substation_r02_south", "Facility_ElectricalSubstation")
+    {
+        Icon("map_facility_electricalsubstation");
+        Difficulty(3);
+        //Stamina(160);		
+		use Preset_Reward_Facility_Electric(); 
+        FacilityName("ElectricalSubstation_R2_1_Zone_05");
+		TooltipHeader("&Electrical Substation R02 South&");
+		TooltipDesc("&Electrical_Substation_desc&");
+    }
+
+	Activity("electrical_substation_r02_cathedral", "Facility_ElectricalSubstation")
+    {
+        Icon("map_facility_electricalsubstation");
+        Difficulty(3);
+        Stamina(200);
+		use Preset_Reward_Facility_Electric(); 
+        FacilityName("ElectricalSubstation_R2_4_Zone_08");
+		TooltipHeader("&Electrical Substation R02 Cathedral&");
+		TooltipDesc("&Electrical_Substation_desc&");
+    }	
+    
+    Activity("electrical_substation_r02_north", "Facility_ElectricalSubstation")
+    {
+        Icon("map_facility_electricalsubstation");
+        Difficulty(3);
+        //Stamina(200);
+		use Preset_Reward_Facility_Electric(); 
+        FacilityName("ElectricalSubstation_R2_5_Zone_09");
+		TooltipHeader("&Electrical Substation R02 North&");
+		TooltipDesc("&Electrical_Substation_desc&");
+    }
+    
+    Activity("electrical substation r05 south", "Facility_ElectricalSubstation")
+    {
+        Icon("map_facility_electricalsubstation");
+        Difficulty(5);
+        Stamina(400);
+		use Preset_Reward_Facility_Electric(); 
+        FacilityName("ElectricalSubstation_R5_3_Zone_23");
+		TooltipHeader("&Electrical Substation R05 South&");
+		TooltipDesc("&Electrical_Substation_desc&");
+    }
+    
+    Activity("electrical_substation_r05_north", "Facility_ElectricalSubstation")
+    {
+        Icon("map_facility_electricalsubstation");
+        Difficulty(3);
+        Stamina(200);
+		use Preset_Reward_Facility_Electric(); 
+        FacilityName("ElectricalSubstation_R5_2_Zone_22");
+		TooltipHeader("&Electrical Substation R05 North&");
+		TooltipDesc("&Electrical_Substation_desc&");
+    }
+
+	//// BANDIT CAMP ////
+	
+    Activity("Bandit Camp - Razors", "BanditCamp")
+    {
+        Icon("map_bandit_camp");
+        Difficulty(3);
+		//Health(100);
+		use Preset_Reward_BanditCamp();
+		TooltipHeader("&BanditCampRazors&");
+		TooltipDesc("&BanditCampRazors_desc&");
+		
+		//RewardItem("Outfitset_Tank_Torso_Tier1_Violet");
+		RewardItem("Craftplan_Potion_HealthRegeneration");
+        
+        CompletedRewards() {
+            //RewardItem("Outfitset_Tank_Torso_Tier1_Violet");
+            RewardItem("Craftplan_Potion_HealthRegeneration");
+        }
+    }
+	
+    Activity("Bandit Camp - Skyscraper", "BanditCamp")
+    {
+        Icon("map_bandit_camp");
+        Difficulty(3);
+		//Health(160);
+		use Preset_Reward_BanditCamp();
+		
+		TooltipHeader("&BanditCampVertical&");
+		TooltipDesc("&BanditCampVertical_desc&");		
+		RewardItem("LeaderWeapon_BC_Skyscrapper");
+		//RewardItem("Outfitset_Tank_Torso_Tier2_Violet");
+        
+        CompletedRewards() {
+            RewardItem("LeaderWeapon_BC_Skyscrapper");
+            //RewardItem("Outfitset_Tank_Torso_Tier2_Violet");
+        }
+    }
+	
+    Activity("Bandit Camp - Water", "BanditCamp")
+    {
+        Icon("map_bandit_camp");
+        Difficulty(3);
+		//Health(200);
+		use Preset_Reward_BanditCamp();
+		TooltipHeader("&BanditCampSkyscraper&");
+		TooltipDesc("&BanditCampSkyscraper_desc&");		
+		
+		RewardItem("LeaderWeapon_BC_Water");
+		//RewardItem("Outfitset_Tank_Torso_Tier3_violet");
+        
+        CompletedRewards() {
+            RewardItem("LeaderWeapon_BC_Water");
+            //RewardItem("Outfitset_Tank_Torso_Tier3_violet");
+        }
+    }
+	
+    Activity("Bandit Camp - Military", "BanditCamp")
+    {
+        Icon("map_bandit_camp");
+        Difficulty(5);
+		//Health(400);
+		use Preset_Reward_BanditCamp();
+		TooltipHeader("&BanditCampMilitary&");
+		TooltipDesc("&BanditCampMilitary_desc&");		
+		
+		RewardItem("LeaderWeapon_BC_Military");
+		//RewardItem("Outfitset_Tank_Torso_Tier5_violet");
+        
+        CompletedRewards() {
+            RewardItem("LeaderWeapon_BC_Military");
+            //RewardItem("Outfitset_Tank_Torso_Tier5_violet");
+        }
+    }
+
+    Activity("Bandit Camp - Vertical", "BanditCamp")
+    {
+        Icon("map_bandit_camp");
+        Difficulty(4);
+		//Health(300);
+		use Preset_Reward_BanditCamp();
+		TooltipHeader("&BanditCampSkyscraper&");
+		TooltipDesc("&BanditCampSkyscraper_desc&");
+		
+		RewardItem("LeaderWeapon_BC_Vertical");
+		//RewardItem("Outfitset_Tank_Torso_Tier4_violet");
+        
+        CompletedRewards() {
+            RewardItem("LeaderWeapon_BC_Vertical");
+            //RewardItem("Outfitset_Tank_Torso_Tier4_violet");
+        }
+    }
+
+    Activity("Bandit Camp - Chemicals", "BanditCamp")
+    {
+        Icon("map_bandit_camp");
+        Difficulty(6);
+		//Health(500);
+		use Preset_Reward_BanditCamp();
+		TooltipHeader("&BanditCampChemicals&");
+		TooltipDesc("&BanditCampChemicals_desc&");		
+		
+		RewardItem("LeaderWeapon_BC_Chemicals");
+		//RewardItem("Outfitset_Tank_Torso_Tier6_Orange");
+        
+        CompletedRewards() {
+            RewardItem("LeaderWeapon_BC_Chemicals");
+            //RewardItem("Outfitset_Tank_Torso_Tier6_Orange");
+        }
+    }
+
+	//// METRO STATION ////
+
+    Activity("loc_metrostation_r01_bazaar", "MetroStation")
+    {
+    	Icon("facility_metro_new");
+        Difficulty(0);
+		//use Preset_Reward_Metro();    
+		TooltipHeader("&Metro_Station_Bazaar&");
+		TooltipDesc("&Metro_Station_Bazaar_desc&");
+        LockedText("&Hint_ActivityUnavailableElectricity&");
+        FastTravelPath("city/^loc_metrostation_r01_bazaar_interior/loc_metrostation_r01_bazaar_interior_logic/fast_travel");
+    }
+    
+    Activity("loc_metrostation_R1.Z4", "MetroStation")
+    {
+    	Icon("facility_metro_new");
+        Difficulty(3);
+        //Immunity(103);
+		use Preset_Reward_Metro();    
+		TooltipHeader("&Metro_Station_r01_04&");
+		TooltipDesc("&Metro_Station_r01_04_desc&");
+        LockedText("&Hint_ActivityUnavailableElectricity&");
+        FastTravelPath("city/^loc_metrostation_R1.Z4/active/fast_travel");
+    }
+    
+    Activity("loc_metrostation_R2.Z2.1", "MetroStation")
+    {
+        Icon("facility_metro_new");
+        Difficulty(5);
+		//Health(400);
+		use Preset_Reward_Metro_HMF();
+		ShowHintAfterEnter(false);
+		TooltipHeader("&Metro_Station_r02_02_zone6&");
+		TooltipDesc("&Metro_Station_r02_02_zone6_desc&");
+        FastTravelPath("city/^loc_metrostation_R2.Z2.1/Active/fast_travel");
+    }
+    
+    Activity("loc_metrostation_R2.Z3.1", "MetroStation")
+    {
+        Icon("facility_metro_new");
+        Difficulty(3);
+		//Health(160);
+		use Preset_Reward_Metro_HMF();
+		ShowHintAfterEnter(false);
+		TooltipHeader("&Metro_Station_r02_03_zone7&");
+		TooltipDesc("&Metro_Station_r02_03_zone7_desc&");
+        FastTravelPath("city/^loc_metrostation_R2.Z3.1/Active/fast_travel");
+    }
+	
+    Activity("loc_metrostation_R2.Z4.1", "MetroStation")
+    {
+        Icon("facility_metro_new");
+        Difficulty(3);
+		use Preset_Reward_Metro();
+		TooltipHeader("&Metro_Station_r02_04_zone8&");
+		TooltipDesc("&Metro_Station_r02_04_zone8_desc&");
+        FastTravelPath("city/^loc_metrostation_R2.Z4.1/Active/fast_travel");
+    }
+
+    Activity("loc_metrostation_r02_central", "MetroStation")
+    {
+		Icon("facility_metro_new");
+        Difficulty(4);
+		//Health(300);
+		use Preset_Reward_Metro_HMF();
+		ShowHintAfterEnter(false);
+		TooltipHeader("&Metro_Station_r02_05_zone9&");
+		TooltipDesc("&loc_metrostation_r02_central_desc&");
+        FastTravelPath("city/^loc_metrostation_r02_central/Active/fast_travel");		
+    }
+	
+	Activity("R2_Main_Metro", "MetroStation")
+    {
+		Icon("facility_metro_new");
+        Difficulty(0);
+		TooltipHeader("&Metro_Station_r02_01_zone5&");
+		TooltipDesc("&Metro_Station_r02_01_zone5_desc&");
+        FastTravelPath("city/^R2_Main_Metro/metro/fast_travel");
+    }
+	Activity("Quest_REG01_Metro_ext", "MetroStation")
+    {
+		Icon("facility_metro_new");
+        Difficulty(4);
+        //Immunity(143);
+		use Preset_Reward_Metro();
+		TooltipHeader("&Quest_REG01_Metro_ext_name&");
+		TooltipDesc("&Quest_REG01_Metro_ext_desc&");
+        //FastTravelPath ???
+        
+        //Toudi: thre are few more fast travel paths that I canno associate with any of thoes, someone has to take a look into it
+        // city/^Quest_REG01_Metro/logic/Quests/fast_travel
+        // city/^loc_reg_1_spygame_autoplant/fasttravel
+        // city/^loc_metro_spygame/logic/fast_travel
+    }
+	Activity("loc_metro_spygame", "MetroStation")
+    {
+		Icon("facility_metro_new");
+        Difficulty(4);
+        //Immunity(143);
+		use Preset_Reward_Metro();
+		TooltipHeader("&loc_metro_spygame_name&");
+		TooltipDesc("&loc_metro_spygame_desc&");
+        //FastTravelPath ???
+    }
+	
+	
+	Activity("loc_metrostation_r02_faction", "MetroStation")
+    {
+        Icon("facility_metro_new");
+        Difficulty(3);
+        //Immunity(103);
+		use Preset_Reward_Metro();
+		TooltipHeader("&loc_metrostation_r02_faction_name&");
+		TooltipDesc("&loc_metrostation_r02_faction_name_desc&");
+        FastTravelPath("city/^loc_metrostation_r02_faction/Active/fast_travel");
+    }
+
+    Activity("loc_metrostation_R2.Z6.1", "MetroStation")
+    {
+        Icon("facility_metro_new");
+        Difficulty(3);
+        //Immunity(103);
+		use Preset_Reward_Metro();
+		TooltipHeader("&Metro_Station_r02_06_zone10&");
+		TooltipDesc("&Metro_Station_r02_06_zone10_desc&");
+        FastTravelPath("city/^loc_metrostation_R2.Z6.1/logic/facility/fast_travel");
+    }
+
+    Activity("loc_metrostation_R5.Z2.1", "MetroStation")
+    {
+        TooltipHeader("&Metro_Station_r05_02_zone22&");
+		Icon("facility_metro_new");
+        Difficulty(3);
+        //Immunity(116);
+		use Preset_Reward_Metro();
+		TooltipHeader("&Metro_Station_r05_02_zone22&");
+        FastTravelPath("exclusive/^loc_metrostation_R5.Z2.1/logic/facility/fast_travel");
+    }
+
+    Activity("loc_metrostation_R5.Z3.1", "MetroStation")
+    {
+        Icon("facility_metro_new");
+        Difficulty(5);
+        //Immunity(170);
+		use Preset_Reward_Metro();
+		TooltipHeader("&Metro_Station_r05_03_zone23&");
+        FastTravelPath("exclusive/^loc_metrostation_R5.Z3.1/logic/facility/fast_travel");
+    }
+
+    Activity("loc_metrostation_R5.Z4.1", "MetroStation")
+    {
+        Icon("facility_metro_new");
+        Difficulty(4);
+        //Immunity(143);
+		use Preset_Reward_Metro();
+		TooltipHeader("&Metro_Station_r05_04_zone24&");
+        FastTravelPath("exclusive/^loc_metrostation_R5.Z4.1/logic/facility/fast_travel");
+    }
+
+    Activity("loc_metrostation_R5.Z5.1", "MetroStation")
+    {
+        TooltipHeader("&Metro_Station_r05_05_zone25&");
+		Icon("facility_metro_new");
+        Difficulty(6);
+		use Preset_Reward_Metro();
+		TooltipHeader("&Metro_Station_r05_05_zone25&");
+        FastTravelPath("exclusive/^loc_metrostation_R5.Z5.1/logic/facility/fast_travel");
+    }
+    
+    
+
+	//// RADIO TOWER //// 
+    Activity("radio_antenna_broadcast", "RadioTower")
+    {
+        Icon("map_radiotower");
+        Difficulty(3);
+        Stamina(200);
+		Tool("GrappleHook");
+		use Preset_Reward_Radio();
+        FacilityName("FC_RadioTower_Broadcast");
+		TooltipHeader("&radio_antenna_broadcast&");
+		TooltipDesc("&Radio_Tower_Broadcast_desc&");
+        ExtraInfo("&Hud_radio_antenna_broadcast_ExtraInfo&");
+        ExtraInfoCompleted("&Hud_radio_antenna_broadcast_ExtraInfo&");
+    }
+
+    Activity("radio_antenna_r01", "RadioTower")
+    {
+        Icon("map_radiotower");
+        Difficulty(4);
+        Stamina(300);
+		use Preset_Reward_Radio();
+		TooltipDesc("&Radio_Tower_R01_Z04_desc&");
+		TooltipHeader("&Radio_Tower_R01_Z04&");
+        FacilityName("FC_RadioTower_R01");
+        ExtraInfo("&Hud_radio_antenna_r01_ExtraInfo&");
+        ExtraInfoCompleted("&Hud_radio_antenna_r01_ExtraInfo&");
+    }
+
+    Activity("radio_antenna_R02_Z01", "RadioTower")
+    {
+        Icon("map_radiotower");
+        Difficulty(3);
+        Stamina(200);
+		Tool("GrappleHook");
+		use Preset_Reward_Radio();
+        FacilityName("FC_RadioTower_R03");
+		TooltipHeader("&Radio_Tower_R02_Z01&");
+		TooltipDesc("&Radio_Tower_R02_Z01_desc&");
+        ExtraInfo("&Hud_radio_antenna_R02_Z01_ExtraInfo&");
+        ExtraInfoCompleted("&Hud_radio_antenna_R02_Z01_ExtraInfo&");
+    }  
+  
+    Activity("radio_antenna_R02_Z02", "RadioTower")
+    {
+        Icon("map_radiotower");
+        Difficulty(6);
+        Stamina(500);
+		use Preset_Reward_Radio();
+        FacilityName("FC_RadioTower_R04");
+		TooltipHeader("&Radio_Tower_R02_Z02&");
+		TooltipDesc("&Radio_Tower_R02_Z02_desc&");
+        ExtraInfo("&Hud_radio_antenna_R02_Z02_ExtraInfo&");
+        ExtraInfoCompleted("&Hud_radio_antenna_R02_Z02_ExtraInfo&");
+    }
+    
+	Activity("radio_antenna_R02_Z05", "RadioTower")
+    {
+		Icon("map_radiotower");
+        Difficulty(3);
+        Stamina(200);
+		use Preset_Reward_Radio();
+        FacilityName("FC_RadioTower_R02");
+		TooltipHeader("&radio_tower_R02_Z05&");
+		TooltipDesc("&radio_tower_R02_Z05_desc&");
+        ExtraInfo("&Hud_radio_antenna_R02_Z05_ExtraInfo&");
+        ExtraInfoCompleted("&Hud_radio_antenna_R02_Z05_ExtraInfo&");
+    }   
+    
+	Activity("radio_antenna_r03", "RadioTower")
+    {
+		Icon("map_radiotower");
+        Difficulty(6);
+        Stamina(500);
+		use Preset_Reward_Radio();
+        FacilityName("FC_RadioTower_R06");
+        ExtraInfo("&Hud_radio_antenna_r03_Z05_ExtraInfo&");
+        ExtraInfoCompleted("&Hud_radio_antenna_r03_Z05_ExtraInfo&");
+		TooltipHeader("&Radio_Tower_R03_Z01&");
+		TooltipDesc("&Radio_Tower_R03_Z01_desc&");
+    }
+
+	//// GRE //// 
+        
+    Activity("gre.r1.z1.2", "GREQuarantine")
+    {
+        Difficulty(3);
+        //Immunity(89);
+		//Lockpicks(75); 
+		use Preset_Reward_GRE();
+		TooltipHeader("&gre.r1.z1.2&");
+    	
+        //Inhibitor("Collectable_Inhibitor_OW_4");
+        //Inhibitor("Collectable_Inhibitor_OW_5");
+        //Inhibitor("Collectable_Inhibitor_OW_6");
+        TooltipDesc("&gre_desc&");
+    }
+	
+	Activity("gre.r1.z2.2", "GREQuarantine")
+    {
+        Difficulty(4);
+        //Immunity(143);
+		//Lockpicks(75);
+		use Preset_Reward_GRE();
+		TooltipDesc("&gre_desc&");
+		TooltipHeader("&gre.r1.z2.2&");
+        
+        //Inhibitor("Collectable_Inhibitor_OW_7");
+        //Inhibitor("Collectable_Inhibitor_OW_8");
+        //Inhibitor("Collectable_Inhibitor_OW_9");
+    }
+	
+    Activity("gre.r2.z1.1", "GREQuarantine")
+    {
+        Difficulty(3);
+        //Immunity(103);
+		//Lockpicks(75);
+		use Preset_Reward_GRE();
+		TooltipDesc("&gre_desc&");
+		TooltipHeader("&gre.r2.z1.1&");
+        
+        //Inhibitor("Collectable_Inhibitor_OW_10");
+        //Inhibitor("Collectable_Inhibitor_OW_11");
+        //Inhibitor("Collectable_Inhibitor_OW_12");
+    }
+    
+    Activity("gre.r2.z2.1", "GREQuarantine")
+    {
+        Difficulty(5);
+        //Immunity(170);
+		//Lockpicks(75);
+		use Preset_Reward_GRE();
+		TooltipDesc("&gre_desc&");
+		TooltipHeader("&gre.r2.z2.1&");
+        
+        //Inhibitor("Collectable_Inhibitor_OW_13");
+        //Inhibitor("Collectable_Inhibitor_OW_14");
+        //Inhibitor("Collectable_Inhibitor_OW_15");
+    }
+	
+    Activity("gre.r2.z3.1", "GREQuarantine")
+    {
+        Difficulty(3);
+        //Immunity(116);
+		//Lockpicks(75);	
+		use Preset_Reward_GRE();
+		TooltipDesc("&gre_desc&");
+		TooltipHeader("&gre.r2.z3.1&");
+        
+        //Inhibitor("Collectable_Inhibitor_OW_16");
+        //Inhibitor("Collectable_Inhibitor_OW_17");
+        //Inhibitor("Collectable_Inhibitor_OW_18");
+    }
+	
+    Activity("gre.r2.z4.1", "GREQuarantine")
+    {
+        Difficulty(4);
+        //Immunity(143);
+		//Lockpicks(75);
+		use Preset_Reward_GRE();
+		TooltipDesc("&gre_desc&");
+		TooltipHeader("&gre.r2.z4.1&");
+        
+        //Inhibitor("Collectable_Inhibitor_OW_19");
+        //Inhibitor("Collectable_Inhibitor_OW_20");
+        //Inhibitor("Collectable_Inhibitor_OW_21");
+    }
+	
+    Activity("gre.r5.z4.1", "GREQuarantine")
+    {
+        Difficulty(5);
+        //Immunity(170);
+		//Lockpicks(75);
+		use Preset_Reward_GRE();
+		TooltipDesc("&gre_desc&");
+        
+        //Inhibitor("Collectable_Inhibitor_OW_22");
+        //Inhibitor("Collectable_Inhibitor_OW_23");
+        //Inhibitor("Collectable_Inhibitor_OW_24");
+    }
+	
+    Activity("gre.r5.z5.1", "GREQuarantine")
+    {
+        Difficulty(6);
+        //Immunity(197);
+		//Lockpicks(75);
+		use Preset_Reward_GRE();
+		TooltipDesc("&gre_desc&");
+        
+        //Inhibitor("Collectable_Inhibitor_OW_25");
+        //Inhibitor("Collectable_Inhibitor_OW_26");
+        //Inhibitor("Collectable_Inhibitor_OW_27");
+    }
+	
+	//// WINDMILLS ////
+	
+	Activity("ow_windmill_r01_01", "Windmill")
+    {
+		Icon("map_zone_windmill");
+        Difficulty(3);
+        Stamina(100);
+		use Preset_Reward_Windmill();
+		TooltipHeader("&ow_windmill_r01_01&");
+		AbandonedStructuresCount(5); 
+    }
+
+	Activity("ow_windmill_r01_02", "Windmill")
+    {
+        Icon("map_zone_windmill");
+        Difficulty(3);
+        Stamina(100);
+		use Preset_Reward_Windmill();
+		TooltipHeader("&ow_windmill_r01_02&");
+		AbandonedStructuresCount(2); 
+    }
+
+	Activity("ow_windmill_r01_06", "Windmill")
+    {
+        Icon("map_zone_windmill");
+        Difficulty(3);
+        Stamina(100);
+		use Preset_Reward_Windmill();
+		TooltipHeader("&ow_windmill_r01_06&");
+		AbandonedStructuresCount(2); 
+    }
+
+	Activity("ow_windmill_r01_07", "Windmill")
+    {
+        Icon("map_zone_windmill");
+        Difficulty(3);
+        Stamina(100);
+		use Preset_Reward_Windmill();
+		TooltipHeader("&ow_windmill_r01_07&");
+		AbandonedStructuresCount(3); 
+    }
+
+
+	Activity("ow_windmill_r01_04", "Windmill")
+    {
+        Icon("map_zone_windmill");
+        Difficulty(3);
+        Stamina(100);
+		use Preset_Reward_Windmill();
+		TooltipHeader("&ow_windmill_r01_04&");
+		AbandonedStructuresCount(5); 
+    }
+	
+	Activity("ow_windmill_r01_03", "Windmill")
+    {
+        Icon("map_zone_windmill");
+        Difficulty(4);
+        Stamina(300);
+		use Preset_Reward_Windmill();
+		TooltipHeader("&ow_windmill_r01_03&");
+		AbandonedStructuresCount(4); 
+    }
+	
+	Activity("ow_windmill_r01_05", "Windmill")
+    {
+        Icon("map_zone_windmill");
+        Difficulty(3);
+        Stamina(160);
+		use Preset_Reward_Windmill();
+		TooltipHeader("&ow_windmill_r01_05&");
+		AbandonedStructuresCount(4); 
+    }	
+
+	Activity("ow_windmill_r02_01", "Windmill")
+    {
+        Icon("map_zone_windmill");
+        Difficulty(3);
+        Stamina(160);
+		use Preset_Reward_Windmill();
+		TooltipHeader("&ow_windmill_r02_01&");
+		AbandonedStructuresCount(6); 
+    }
+	
+	Activity("ow_windmill_r02_06", "Windmill")
+    {
+        Icon("map_zone_windmill");
+        Difficulty(3);
+        Stamina(160);
+		use Preset_Reward_Windmill();
+		TooltipHeader("&ow_windmill_r02_06&");
+		AbandonedStructuresCount(5); 
+    }
+	
+	Activity("ow_windmill_r03_02", "Windmill")
+    {
+        Icon("map_zone_windmill");
+        Difficulty(5);
+        Stamina(400);
+		Tool("GrappleHook");
+		use Preset_Reward_Windmill();
+		TooltipHeader("&ow_windmill_r03_02&");
+		AbandonedStructuresCount(3); 
+    }
+
+	Activity("ow_windmill_r02_02", "Windmill")
+    {
+        Icon("map_zone_windmill");
+        Difficulty(3);
+        Stamina(160);
+		use Preset_Reward_Windmill();
+		TooltipHeader("&ow_windmill_r02_02&");
+		AbandonedStructuresCount(4); 
+    }
+	
+	Activity("ow_windmill_r02_03", "Windmill")
+    {
+        Icon("map_zone_windmill");
+        Difficulty(3);
+        Stamina(160);
+		Tool("Paraglider");
+		use Preset_Reward_Windmill();
+		TooltipHeader("&ow_windmill_r02_03&");
+		AbandonedStructuresCount(4); 
+    }
+
+	Activity("ow_windmill_r03_01", "Windmill")
+    {
+        Icon("map_zone_windmill");
+        Difficulty(3);
+        Stamina(200);
+		use Preset_Reward_Windmill();
+		TooltipHeader("&ow_windmill_r03_01&");
+		AbandonedStructuresCount(1); 
+    }
+	
+	Activity("ow_windmill_r03_03", "Windmill")
+    {
+        Icon("map_zone_windmill");
+        Difficulty(3);
+        Stamina(200);
+		use Preset_Reward_Windmill();
+		TooltipHeader("&ow_windmill_r03_03&");
+		AbandonedStructuresCount(2);
+    }
+	
+	Activity("ow_windmill_r02_05", "Windmill")
+    {
+        Icon("map_zone_windmill");
+        Difficulty(3);
+        Stamina(200);
+		use Preset_Reward_Windmill();
+		TooltipHeader("&ow_windmill_r02_05&");
+		AbandonedStructuresCount(2); 
+    }
+	
+	Activity("ow_windmill_r02_04", "Windmill")
+    {
+        Icon("map_zone_windmill");
+        Difficulty(3);
+        Stamina(200);
+		use Preset_Reward_Windmill();
+		TooltipHeader("&ow_windmill_r02_04&");
+		AbandonedStructuresCount(1); 
+    }
+
+	Activity("ow_windmill_r02_07", "Windmill")
+    {
+        Icon("map_zone_windmill");
+        Difficulty(4);
+        Stamina(300);
+		use Preset_Reward_Windmill();
+		TooltipHeader("&ow_windmill_r02_07&");
+		AbandonedStructuresCount(2); 
+    }
+	
+	Activity("ow_windmill_r05_01", "Windmill")
+    {
+        Icon("map_zone_windmill");
+        Difficulty(4);
+        Stamina(300);
+		use Preset_Reward_Windmill();
+		TooltipHeader("&ow_windmill_r05_01&");
+    }
+
+	Activity("ow_windmill_r05_05", "Windmill")
+    {
+        Icon("map_zone_windmill");
+        Difficulty(5);
+        Stamina(400);
+		use Preset_Reward_Windmill();
+		TooltipHeader("&ow_windmill_r05_05&");
+    }
+	
+	Activity("ow_windmill_r05_03", "Windmill")
+    {
+        Icon("map_zone_windmill");
+        Difficulty(4);
+        Stamina(300);
+		use Preset_Reward_Windmill();
+		TooltipHeader("&ow_windmill_r05_03&");
+    }
+	
+	Activity("ow_windmill_r05_02", "Windmill")
+    {
+        Icon("map_zone_windmill");
+        Difficulty(5);
+        Stamina(400);
+		use Preset_Reward_Windmill();
+		TooltipHeader("&ow_windmill_r05_02&");
+    }
+	
+	Activity("ow_windmill_r05_04", "Windmill")
+    {
+        Icon("map_zone_windmill");
+        Difficulty(6);
+        Stamina(500);
+		use Preset_Reward_Windmill();
+		TooltipHeader("&ow_windmill_r05_04&");
+    }	
+    Activity("ow_windmill_r05_06", "Windmill")
+    {
+        Icon("map_zone_windmill");
+        Difficulty(6);
+        Stamina(500);
+		use Preset_Reward_Windmill();
+		TooltipHeader("&ow_windmill_r05_06&");
+    }	
+    
+    ///// LANDMARKS /////
+    
+    /* example:
+    
+    Activity("...", "Landmark")
+    {
+        Icon("...");
+        Difficulty(0);		 //set to 0 to hide the difficulty widget
+        TooltipHeader("...");
+        TooltipDesc("...");
+    }*/
+	Activity("WindTurbine_Landmark", "Landmark")
+    {
+        Icon("map_landmark");
+        Difficulty(0);		 //set to 0 to hide the difficulty widget
+        TooltipHeader("&WindTurbine_Landmark&");
+        TooltipDesc("&WindTurbine_Landmark_Desc&");
+    }
+	Activity("Saint_Joseph_Hospital_Landmark", "Landmark")
+    {
+        Icon("map_landmark");
+        Difficulty(0);		 //set to 0 to hide the difficulty widget
+        TooltipHeader("&Saint_Joseph_Hospital_Landmark&");
+        TooltipDesc("&Saint_Joseph_Hospital_Landmark_Desc&");
+    }	
+	Activity("Quarry_End_Swimming_Pool_Landmark", "Landmark")
+    {
+        Icon("map_landmark");
+        Difficulty(0);		 //set to 0 to hide the difficulty widget
+        TooltipHeader("&Quarry_End_Swimming_Pool_Landmark&");
+        TooltipDesc("&Quarry_End_Swimming_Pool_Landmark_Desc&");
+    }   
+	Activity("Office_Plaza_Landmark", "Landmark")
+    {
+        Icon("map_landmark");
+        Difficulty(0);		 //set to 0 to hide the difficulty widget
+        TooltipHeader("&Office_Plaza_Landmark&");
+        TooltipDesc("&Office_Plaza_Landmark_Desc&");
+    }  
+    Activity("Metro_noHUB", "Landmark")
+    {
+        TooltipHeader("&Metro_HUB&");
+        TooltipDesc("&Metro_HUB_Desc&");
+        Icon("map_landmark");
+        
+        FactionControlled("Factions");
+    }	
+	Activity("Solar_Power_Plant_Landmark", "Landmark")
+    {
+        Icon("map_landmark");
+        Difficulty(0);		 //set to 0 to hide the difficulty widget
+        TooltipHeader("&Solar_Power_Plant_Landmark&");
+        TooltipDesc("&Solar_Power_Plant_Landmark_Desc&");
+    }  
+	Activity("VNC_Tower_Landmark", "Landmark")
+    {
+        Icon("map_landmark");
+        Difficulty(0);		 //set to 0 to hide the difficulty widget
+        TooltipHeader("&VNC_Tower_Landmark&");
+        TooltipDesc("&VNC_Tower_Landmark_Desc&");
+    }  
+	Activity("Church_A_Landmark", "Landmark")
+    {
+        Icon("map_landmark");
+        Difficulty(0);		 //set to 0 to hide the difficulty widget
+        TooltipHeader("&Church_A_Landmark&");
+        TooltipDesc("&Church_A_Landmark_Desc&");
+    }  
+	Activity("Church_B_Landmark", "Landmark")
+    {
+        Icon("map_landmark");
+        Difficulty(0);		 //set to 0 to hide the difficulty widget
+        TooltipHeader("&Church_B_Landmark&");
+        TooltipDesc("&Church_B_Landmark_Desc&");
+    }  
+	Activity("Cathedral_Landmark", "Landmark")
+    {
+        Icon("map_landmark");
+        Difficulty(0);		 //set to 0 to hide the difficulty widget
+        TooltipHeader("&Cathedral_Landmark&");
+        TooltipDesc("&Cathedral_Landmark_Desc&");
+    }  
+	Activity("Library_Landmark", "Landmark")
+    {
+        Icon("map_landmark");
+        Difficulty(0);		 //set to 0 to hide the difficulty widget
+        TooltipHeader("&Library_Landmark&");
+        TooltipDesc("&Library_Landmark_Desc&");
+    }  
+	Activity("Pumping_Station_Landmark", "Landmark")
+    {
+        Icon("map_landmark");
+        Difficulty(0);		 //set to 0 to hide the difficulty widget
+        TooltipHeader("&Pumping_Station_Landmark&");
+        TooltipDesc("&Pumping_Station_Landmark_Desc&");
+    }  
+	Activity("Observatory_Landmark", "Landmark")
+    {
+        Icon("map_landmark");
+        Difficulty(0);		 //set to 0 to hide the difficulty widget
+        TooltipHeader("&Observatory_Landmark&");
+        TooltipDesc("&Observatory_Landmark_Desc&");
+    }  
+	Activity("Dam_Landmark", "Landmark")
+    {
+        Icon("map_landmark");
+        Difficulty(0);		 //set to 0 to hide the difficulty widget
+        TooltipHeader("&Dam_Landmark&");
+        TooltipDesc("&Dam_Landmark_Desc&");
+    }  
+	Activity("Chapel_of_Resurrection_Landmark", "Landmark")
+    {
+        Icon("map_landmark");
+        Difficulty(0);		 //set to 0 to hide the difficulty widget
+        TooltipHeader("&Chapel_of_Resurrection_Landmark&");
+        TooltipDesc("&Chapel_of_Resurrection_Landmark_Desc&");
+    }
+	Activity("Culvert_Island_Landmark", "Landmark")
+    {
+        Icon("map_landmark");
+        Difficulty(0);		 //set to 0 to hide the difficulty widget
+        TooltipHeader("&Culvert_Island_Landmark&");
+        TooltipDesc("&Culvert_Island_Landmark_Desc&");
+    }  	  	
+	
+	//// ZOMBIE BOSS ////
+	
+	Activity("Zombie_Boss_r1_01", "ZombieBoss")
+    {
+		Icon("map_zombie_boss");
+        Difficulty(3);
+		//Health(100);
+		//Immunity(89);
+		use Preset_Reward_ZombieBoss();
+        TooltipHeader("&Special_Infected_Demolisher_R1_Z01&");		
+        TooltipDesc("&GRE_Anomaly_Desc&");	
+		
+        //Inhibitor("Collectable_Inhibitor_ZB_01");
+        //Inhibitor("Collectable_Inhibitor_ZB_02");
+    }	
+	
+	Activity("Zombie_Boss_r1_02", "ZombieBoss")
+    {
+		Icon("map_zombie_boss");
+        Difficulty(3); 
+		//Health(100);
+		//Immunity(89);
+		use Preset_Reward_ZombieBoss();
+        TooltipHeader("&Special_Infected_Demolisher_R1_Z03&");		
+        TooltipDesc("&GRE_Anomaly_Desc&");
+		
+        //Inhibitor("Collectable_Inhibitor_ZB_03");
+        //Inhibitor("Collectable_Inhibitor_ZB_04");		
+    }
+	
+	Activity("zombie_boss_r1_z04", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(4);
+		//Health(300);
+		//Immunity(143);
+		use Preset_Reward_ZombieBoss();
+        TooltipHeader("&Special_Infected_Demolisher_R1_Z04&");		
+        TooltipDesc("&GRE_Anomaly_Desc&");
+		
+        //Inhibitor("Collectable_Inhibitor_ZB_05");
+        //Inhibitor("Collectable_Inhibitor_ZB_06");			
+    }
+	
+	Activity("Zombie_boss_r02_01", "ZombieBoss")
+    {
+		Icon("map_zombie_boss");
+        Difficulty(5);
+		//Health(400);
+		//Immunity(170);	
+		use Preset_Reward_ZombieBoss();
+        TooltipHeader("&Zombie_boss_r02_01&");
+        TooltipDesc("&GRE_Anomaly_Desc&");
+	
+        //Inhibitor("Collectable_Inhibitor_ZB_07");
+        //Inhibitor("Collectable_Inhibitor_ZB_08");		
+    }
+	
+	Activity("zombie_boss_r02_02", "ZombieBoss")
+    {
+		Icon("map_zombie_boss");
+        Difficulty(5);
+		//Health(400);
+		//Immunity(170);	
+		use Preset_Reward_ZombieBoss();
+        TooltipHeader("&zombie_boss_r02_02&");
+        TooltipDesc("&GRE_Anomaly_Desc&");
+		
+        //Inhibitor("Collectable_Inhibitor_ZB_09");
+        //Inhibitor("Collectable_Inhibitor_ZB_10");			
+    }
+	
+	Activity("zombie_boss_r02_04", "ZombieBoss")
+    {
+		Icon("map_zombie_boss");
+        Difficulty(3);
+		//Health(200);
+		//Immunity(116);	
+		use Preset_Reward_ZombieBoss();
+        TooltipHeader("&zombie_boss_r02_04&");		
+        TooltipDesc("&GRE_Anomaly_Desc&");
+		
+        //Inhibitor("Collectable_Inhibitor_ZB_11");
+        //Inhibitor("Collectable_Inhibitor_ZB_12");			
+    }
+	Activity("zombie_boss_r02_05", "ZombieBoss")
+    {
+		Icon("map_zombie_boss");
+        Difficulty(5);
+		//Health(400);
+		//Immunity(170);	
+		use Preset_Reward_ZombieBoss();
+        TooltipHeader("&zombie_boss_r02_05&");		
+        TooltipDesc("&GRE_Anomaly_Desc&");
+		
+        //Inhibitor("Collectable_Inhibitor_ZB_13");
+        //Inhibitor("Collectable_Inhibitor_ZB_14");			
+    }
+    Activity("zombie_boss_r02_06", "ZombieBoss")
+    {
+		Icon("map_zombie_boss");
+        Difficulty(5);
+		//Health(400);
+		//Immunity(170);	
+		use Preset_Reward_ZombieBoss();
+        TooltipHeader("&zombie_boss_r02_06&");		
+        TooltipDesc("&GRE_Anomaly_Desc&");
+		
+        //Inhibitor("Collectable_Inhibitor_ZB_13");
+        //Inhibitor("Collectable_Inhibitor_ZB_14");			
+    }
+	Activity("zombie_boss_r02_07", "ZombieBoss")
+    {
+		Icon("map_zombie_boss");
+        Difficulty(3);
+		//Health(200);
+		//Immunity(116);	
+		use Preset_Reward_ZombieBoss();
+        TooltipHeader("&zombie_boss_r02_07&");	
+        TooltipDesc("&GRE_Anomaly_Desc&");
+		
+        //Inhibitor("Collectable_Inhibitor_ZB_15");
+        //Inhibitor("Collectable_Inhibitor_ZB_16");			
+    }
+	Activity("zombie_boss_r02_09", "ZombieBoss")
+    {
+		Icon("map_zombie_boss");
+        Difficulty(3);
+		//Health(160);
+		//Immunity(103);
+		use Preset_Reward_ZombieBoss();
+        TooltipHeader("&zombie_boss_r02_09&");		
+        TooltipDesc("&GRE_Anomaly_Desc&");
+		
+        //Inhibitor("Collectable_Inhibitor_ZB_17");
+        //Inhibitor("Collectable_Inhibitor_ZB_18");		
+    }
+	Activity("Zombie_boss_r02_11", "ZombieBoss")
+    {
+		Icon("map_zombie_boss");
+        Difficulty(3);
+		//Health(200);
+		//Immunity(116);	
+		use Preset_Reward_ZombieBoss();
+        TooltipHeader("&Zombie_boss_r02_11&");		
+        TooltipDesc("&GRE_Anomaly_Desc&");
+		
+        //Inhibitor("Collectable_Inhibitor_ZB_19");
+        //Inhibitor("Collectable_Inhibitor_ZB_20");			
+    }
+	Activity("Zombie_boss_R02_17", "ZombieBoss")
+    {
+		Icon("map_zombie_boss");
+        Difficulty(4);
+		//Health(300);
+		//Immunity(143);
+		use Preset_Reward_ZombieBoss();
+        TooltipHeader("&Zombie_boss_R02_17&");		
+        TooltipDesc("&GRE_Anomaly_Desc&");
+		
+        //Inhibitor("Collectable_Inhibitor_ZB_21");
+        //Inhibitor("Collectable_Inhibitor_ZB_22");			
+    }
+	
+	
+	
+	//// OLD ZOMBIE BOSS ////
+	
+	
+	Activity("Special_Infected_Demolisher_R2_01", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(5);
+		//Health(400);
+		//Immunity(170);	
+		use Preset_Reward_ZombieBoss();
+        TooltipHeader("&Zombie_boss_r02_01&");
+        TooltipDesc("&GRE_Anomaly_Desc&");
+    }
+	
+	Activity("Special_Infected_Demolisher_R2_02", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(5);
+		//Health(400);
+		//Immunity(170);	
+		use Preset_Reward_ZombieBoss();
+        TooltipHeader("&zombie_boss_r02_02&");
+        TooltipDesc("&GRE_Anomaly_Desc&");
+    }
+	
+	Activity("Special_Infected_Demolisher_R2_03", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(3);
+		//Health(160);
+		//Immunity(103);		
+		use Preset_Reward_ZombieBoss();
+    }
+
+	Activity("Special_Infected_Demolisher_R2_04", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(3);
+		//Health(200);
+		//Immunity(116);	
+		use Preset_Reward_ZombieBoss();
+        TooltipHeader("&zombie_boss_r02_04&");		
+        TooltipDesc("&GRE_Anomaly_Desc&");
+    }
+	
+	Activity("Special_Infected_Demolisher_R2_05", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(5);
+		//Health(400);
+		//Immunity(170);	
+		use Preset_Reward_ZombieBoss();
+        TooltipHeader("&zombie_boss_r02_05&");		
+        TooltipDesc("&GRE_Anomaly_Desc&");
+    }
+	
+	Activity("Special_Infected_Demolisher_R2_06", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(5);
+		//Health(400);
+		//Immunity(170);	
+		use Preset_Reward_ZombieBoss();
+        TooltipHeader("&zombie_boss_r02_06&");		
+        TooltipDesc("&GRE_Anomaly_Desc&");
+    }
+	
+	Activity("Special_Infected_Demolisher_R2_07", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(3);
+		//Health(200);
+		//Immunity(116);	
+		use Preset_Reward_ZombieBoss();
+        TooltipHeader("&zombie_boss_r02_07&");	
+        TooltipDesc("&GRE_Anomaly_Desc&");
+    }
+	
+	Activity("Special_Infected_Demolisher_R2_08", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(3);
+		//Health(160);
+		//Immunity(103);				
+		use Preset_Reward_ZombieBoss();
+    }
+	
+	Activity("Special_Infected_Demolisher_R2_09", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(3);
+		//Health(160);
+		//Immunity(103);
+		use Preset_Reward_ZombieBoss();
+        TooltipHeader("&zombie_boss_r02_09&");		
+        TooltipDesc("&GRE_Anomaly_Desc&");
+    }
+
+	Activity("Special_Infected_Demolisher_R2_10", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(3);
+		//Health(200);
+		//Immunity(116);
+		use Preset_Reward_ZombieBoss();
+    }
+	
+	Activity("Special_Infected_Demolisher_R2_11", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(3);
+		//Health(200);
+		//Immunity(116);	
+		use Preset_Reward_ZombieBoss();
+        TooltipHeader("&Zombie_boss_r02_11&");		
+        TooltipDesc("&GRE_Anomaly_Desc&");
+    }
+
+	Activity("Special_Infected_Demolisher_R2_12", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(4);
+		//Health(300);
+		//Immunity(143);
+		use Preset_Reward_ZombieBoss();
+    }
+	
+	Activity("Special_Infected_Demolisher_R2_13", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(3);
+		//Health(160);
+		//Immunity(103);	
+		use Preset_Reward_ZombieBoss();
+    }
+	
+	Activity("Special_Infected_Demolisher_R2_14", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(3);
+		//Health(160);
+		//Immunity(103);	
+		use Preset_Reward_ZombieBoss();
+    }
+	
+	Activity("Special_Infected_Demolisher_R2_15", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(3);
+		//Health(160);
+		//Immunity(103);	
+		use Preset_Reward_ZombieBoss();
+    }
+	
+	Activity("Special_Infected_Demolisher_R2_17", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(4);
+		//Health(300);
+		//Immunity(143);
+		use Preset_Reward_ZombieBoss();
+        TooltipHeader("&Zombie_boss_R02_17&");		
+        TooltipDesc("&GRE_Anomaly_Desc&");
+    }	
+	
+	Activity("Special_Infected_Demolisher_R5_01", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(3);
+		//Health(200);
+		//Immunity(116);
+		use Preset_Reward_ZombieBoss();
+    }
+	
+	Activity("Special_Infected_Demolisher_R5_02", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(4);
+		//Health(300);
+		//Immunity(143);
+		use Preset_Reward_ZombieBoss();
+    }	
+	
+	Activity("Special_Infected_Demolisher_R5_03", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(3);
+		//Health(200);
+		//Immunity(116);
+		use Preset_Reward_ZombieBoss();
+    }	
+	
+	Activity("Special_Infected_Demolisher_R5_04", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(3);
+		//Health(200);
+		//Immunity(116);
+		use Preset_Reward_ZombieBoss();
+    }	
+
+	Activity("Special_Infected_Demolisher_R5_05", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(4);
+		//Health(300);
+		//Immunity(143);
+		use Preset_Reward_ZombieBoss();
+    }	
+
+	Activity("Special_Infected_Demolisher_R5_06", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(5);
+		//Health(400);
+		//Immunity(170);
+		use Preset_Reward_ZombieBoss();
+    }	
+
+	Activity("Special_Infected_Demolisher_R5_07", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(6);
+		//Health(500);
+		//Immunity(197);
+		use Preset_Reward_ZombieBoss();
+    }	
+
+	Activity("Special_Infected_Demolisher_R5_08", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(4);
+		//Health(300);
+		//Immunity(143);
+		use Preset_Reward_ZombieBoss();
+    }	
+
+	Activity("Special_Infected_Demolisher_R5_09", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(5);
+		//Health(400);
+		//Immunity(170);
+		use Preset_Reward_ZombieBoss();
+    }	
+
+	Activity("Special_Infected_Demolisher_R5_10", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(5);
+		//Health(400);
+		//Immunity(170);
+		use Preset_Reward_ZombieBoss();
+    }	
+
+	Activity("Special_Infected_Demolisher_R5_11", "ZombieBoss")
+    {
+        Icon("map_zombie_boss");
+        Difficulty(6);
+		//Health(500);
+		//Immunity(197);
+		use Preset_Reward_ZombieBoss();
+    }	
+
+
+	//// AIRDROP ////
+	
+	Activity("ow_activity_airdrop_r1_01", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(3);
+        Stamina(100);
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R1_01&");
+		TooltipDesc("&Airdrop_Desc&");
+    }
+	
+	Activity("ow_activity_airdrop_r1_02", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(3);
+        Stamina(100);
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R1_02&");
+		TooltipDesc("&Airdrop_Desc&");
+    }
+	
+	Activity("ow_activity_airdrop_r1_03", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(4);
+        Stamina(300);
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R1_03&");
+		TooltipDesc("&Airdrop_Desc&");
+    }
+
+	Activity("ow_activity_airdrop_r1_04", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(4);
+        Stamina(300);
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R1_04&");
+		TooltipDesc("&Airdrop_Desc&");
+    }
+	
+	Activity("ow_activity_airdrop_r2_01", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(3);
+        //Stamina(160);
+		Tool("Paraglider");
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R2_01&");
+		TooltipDesc("&Airdrop_Desc&");
+    }
+	
+	Activity("ow_activity_airdrop_r2_02", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(3);
+        //Stamina(200);
+		Tool("Paraglider");
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R2_02&");
+		TooltipDesc("&Airdrop_Desc&");
+    }
+
+	Activity("ow_activity_airdrop_r2_11", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(3);
+        //Stamina(200);
+		Tool("Paraglider");
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R2_11&");
+		TooltipDesc("&Airdrop_Desc&");
+    }
+
+	Activity("ow_activity_airdrop_r2_07", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(6);
+        Stamina(500);
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R2_07&");
+		TooltipDesc("&Airdrop_Desc&");
+    }
+
+	Activity("ow_activity_airdrop_r2_08", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(3);
+        //Stamina(200);
+		Tool("Paraglider");
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R2_08&");
+		TooltipDesc("&Airdrop_Desc&");
+    }
+	
+	Activity("ow_activity_airdrop_r2_05", "Airdrop")
+    {
+		Icon("map_airdrop");
+        Difficulty(3);
+        Stamina(200);
+		Tool("GrappleHook");
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R2_05&");
+		TooltipDesc("&Airdrop_Desc&");
+    }
+	
+	Activity("ow_activity_airdrop_r2_06", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(3);
+        Stamina(200);
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R2_06&");
+		TooltipDesc("&Airdrop_Desc&");
+    }
+	
+	Activity("ow_activity_airdrop_r2_03", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(3);
+        Stamina(200);
+		Tool("Paraglider");
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R2_03&");
+		TooltipDesc("&Airdrop_Desc&");
+    }
+	
+	Activity("ow_activity_airdrop_r2_04", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(4);
+        Stamina(300);
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R2_04&");
+		TooltipDesc("&Airdrop_Desc&");
+    }
+	
+	Activity("ow_activity_airdrop_r2_09", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(4);
+        Stamina(300);
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R2_09&");
+		TooltipDesc("&Airdrop_Desc&");
+    }
+	
+	Activity("ow_activity_airdrop_r2_12", "Airdrop")   // flooded airdrops
+    {
+        Icon("map_airdrop");
+        Difficulty(4);
+        Stamina(300);
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R2_12&");
+		TooltipDesc("&Airdrop_Desc&");
+    }
+	
+	Activity("ow_activity_airdrop_r2_10", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(3);
+        Stamina(160);
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R1_10&");
+		TooltipDesc("&Airdrop_Desc&");
+    }
+	
+	Activity("ow_activity_airdrop_r3_01", "Airdrop")   // flooded airdrops
+    {
+        Icon("map_airdrop");
+		use Preset_Reward_AirDropFlooded();
+		TooltipHeader("&Airdrop_Flooded&");
+		TooltipDesc("&Airdrop_Flooded_Desc&");
+		AdditionalInfo("&additionalinfo_militaryconvoy&");
+    }
+	
+	Activity("ow_activity_airdrop_r3_02", "Airdrop")   // flooded airdrops
+    {
+        Icon("map_airdrop");
+		use Preset_Reward_AirDropFlooded();
+		TooltipHeader("&Airdrop_Flooded&");
+		TooltipDesc("&Airdrop_Flooded_Desc&");
+		AdditionalInfo("&additionalinfo_militaryconvoy&");
+    }
+	
+	Activity("ow_activity_airdrop_r3_03", "Airdrop")   // flooded airdrops
+    {
+        Icon("map_airdrop");
+		use Preset_Reward_AirDropFlooded();
+		TooltipHeader("&Airdrop_Flooded&");
+		TooltipDesc("&Airdrop_Flooded_Desc&");
+		AdditionalInfo("&additionalinfo_militaryconvoy&");
+    }
+	
+	Activity("ow_activity_airdrop_r3_04", "Airdrop")   // flooded airdrops
+    {
+        Icon("map_airdrop");
+		use Preset_Reward_AirDropFlooded();
+		TooltipHeader("&Airdrop_Flooded&");
+		TooltipDesc("&Airdrop_Flooded_Desc&");
+		AdditionalInfo("&additionalinfo_militaryconvoy&");
+    }
+	
+	Activity("ow_activity_airdrop_r3_05", "Airdrop")   // flooded airdrops
+    {
+        Icon("map_airdrop");
+		use Preset_Reward_AirDropFlooded();
+		TooltipHeader("&Airdrop_Flooded&");
+		TooltipDesc("&Airdrop_Flooded_Desc&");
+		AdditionalInfo("&additionalinfo_militaryconvoy&");
+    }
+	
+	Activity("ow_activity_airdrop_r3_06", "Airdrop")   // flooded airdrops
+    {
+        Icon("map_airdrop");
+		use Preset_Reward_AirDropFlooded();
+		TooltipHeader("&Airdrop_Flooded&");
+		TooltipDesc("&Airdrop_Flooded_Desc&");
+		AdditionalInfo("&additionalinfo_militaryconvoy&");
+    }
+	
+	Activity("ow_activity_airdrop_r3_07", "Airdrop")   // flooded airdrops
+    {
+        Icon("map_airdrop");
+		use Preset_Reward_AirDropFlooded();
+		TooltipHeader("&Airdrop_Flooded&");
+		TooltipDesc("&Airdrop_Flooded_Desc&");
+		AdditionalInfo("&additionalinfo_militaryconvoy&");
+    }
+	
+	Activity("ow_activity_airdrop_r3_08", "Airdrop")   // flooded airdrops
+    {
+        Icon("map_airdrop");
+		use Preset_Reward_AirDropFlooded();
+		TooltipHeader("&Airdrop_Flooded&");
+		TooltipDesc("&Airdrop_Flooded_Desc&");
+		AdditionalInfo("&additionalinfo_militaryconvoy&");
+    }
+	
+	Activity("ow_activity_airdrop_r3_09", "Airdrop")   // flooded airdrops
+    {
+        Icon("map_airdrop");
+		use Preset_Reward_AirDropFlooded();
+		TooltipHeader("&Airdrop_Flooded&");
+		TooltipDesc("&Airdrop_Flooded_Desc&");
+		AdditionalInfo("&additionalinfo_militaryconvoy&");
+    }
+	
+	Activity("ow_activity_airdrop_r3_10", "Airdrop")   // flooded airdrops
+    {
+        Icon("map_airdrop");
+		use Preset_Reward_AirDropFlooded();
+		TooltipHeader("&Airdrop_Flooded&");
+		TooltipDesc("&Airdrop_Flooded_Desc&");
+		AdditionalInfo("&additionalinfo_militaryconvoy&");
+    }
+	
+	Activity("ow_activity_airdrop_r3_11", "Airdrop")   // flooded airdrops
+    {
+        Icon("map_airdrop");
+		use Preset_Reward_AirDropFlooded();
+		TooltipHeader("&Airdrop_Flooded&");
+		TooltipDesc("&Airdrop_Flooded_Desc&");
+		AdditionalInfo("&additionalinfo_militaryconvoy&");
+    }
+	
+	Activity("ow_activity_airdrop_r3_12", "Airdrop")   // flooded airdrops
+    {
+        Icon("map_airdrop");
+		use Preset_Reward_AirDropFlooded();
+		TooltipHeader("&Airdrop_Flooded&");
+		TooltipDesc("&Airdrop_Flooded_Desc&");
+		AdditionalInfo("&additionalinfo_militaryconvoy&");
+    }
+	
+	
+	Activity("ow_activity_airdrop_r5_10", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(6);
+        Stamina(500);
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R5_10&");
+		TooltipDesc("&Airdrop_Desc&");
+    }
+	
+	Activity("ow_activity_airdrop_r5_09", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(6);
+        Stamina(500);
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R5_09&");
+		TooltipDesc("&Airdrop_Desc&");
+    }
+	
+	Activity("ow_activity_airdrop_r5_08", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(4);
+        Stamina(300);
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R5_08&");
+		TooltipDesc("&Airdrop_Desc&");
+    }
+	
+	Activity("ow_activity_airdrop_r5_02", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(3);
+        Stamina(200);
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R5_02&");
+		TooltipDesc("&Airdrop_Desc&");
+    }
+	
+	Activity("ow_activity_airdrop_r5_03", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(3);
+        Stamina(200);
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R5_03&");
+		TooltipDesc("&Airdrop_Desc&");
+    }
+	
+	Activity("ow_activity_airdrop_r5_05", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(4);
+        Stamina(300);
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R5_05&");
+		TooltipDesc("&Airdrop_Desc&");
+    }
+	
+	Activity("ow_activity_airdrop_r5_07", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(5);
+        Stamina(400);
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R5_07&");
+		TooltipDesc("&Airdrop_Desc&");
+    }	
+	
+	Activity("ow_activity_airdrop_r5_01", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(4);
+        Stamina(300);
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R5_01&");
+		TooltipDesc("&Airdrop_Desc&");
+    }
+	
+	Activity("ow_activity_airdrop_r5_04", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(5);
+        Stamina(400);
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R5_04&");
+		TooltipDesc("&Airdrop_Desc&");
+    }
+	
+	Activity("ow_activity_airdrop_r5_06", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(6);
+        Stamina(500);
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R5_06&");
+        TooltipDesc("&Airdrop_Desc&");
+    }
+
+    Activity("ow_activity_airdrop_r5_11", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(6);
+        Stamina(500);
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R5_11&");
+        TooltipDesc("&Airdrop_Desc&");
+    }
+
+    Activity("ow_activity_airdrop_r5_12", "Airdrop")
+    {
+        Icon("map_airdrop");
+        Difficulty(6);
+        Stamina(500);
+		use Preset_Reward_AirDrop();
+		TooltipHeader("&Airdrop_R5_12&");
+		TooltipDesc("&Airdrop_Desc&");
+    }	
+	
+	
+//// Small Safezones
+
+	Activity("ow_small_safezone_r01_01", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(3);
+        //Stamina(200);
+		
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_small_safezone_r01_02", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(3);
+        //Stamina(200);
+				
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_small_safezone_r01_03", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(3);
+        //Stamina(200);
+				
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_small_safezone_r01_04", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(3);
+        //Stamina(200);
+				
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_small_safezone_r01_05", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(3);
+        //Stamina(200);
+				
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_small_safezone_r01_06", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(3);
+        //Stamina(200);
+				
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_small_safezone_r01_07", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(3);
+        //Stamina(200);
+				
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_small_safezone_r02_01", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		//AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(3);
+        //Stamina(200);
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_small_safezone_r02_02", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(3);
+        //Stamina(200);
+				
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_small_safezone_r02_03", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(4);
+        //Stamina(200);
+				
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_small_safezone_r02_04", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(3);
+        //Stamina(200);
+				
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_small_safezone_r02_05", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(3);
+        //Stamina(200);
+		
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_small_safezone_r02_06", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		//AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(3);
+        //Stamina(200);
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_small_safezone_r02_07", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(3);
+        //Stamina(200);
+		
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_small_safezone_r02_08", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(4);
+        //Stamina(200);
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_small_safezone_r02_09", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(3);
+        //Stamina(200);
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_small_safezone_r02_10", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		//AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(5);
+        //Stamina(200);
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_small_safezone_r02_11", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(5);
+        //Stamina(200);
+		use Preset_SafeZoneRewards();
+    }
+	
+		Activity("ow_small_safezone_r02_12", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		//AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(3);
+        //Stamina(200);
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_small_safezone_r02_13", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(4);
+        //Stamina(200);
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_small_safezone_r02_14", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(5);
+        //Stamina(200);
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_small_safezone_r02_15", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(3);
+        //Stamina(200);
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_small_safezone_r02_16", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(3);
+        //Stamina(200);
+		use Preset_SafeZoneRewards();
+    }		
+	
+	Activity("ow_small_safezone_r02_17", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(3);
+        //Stamina(200);
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_small_safezone_r02_18", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(3);
+        //Stamina(200);
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_small_safezone_r02_19", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(3);
+        //Stamina(200);
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_small_safezone_r03_01", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(6);
+        //Stamina(200);
+		use Preset_SafeZoneRewards();
+    }
+	
+	Activity("ow_safe_zone", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");
+		
+		use Preset_SafeZoneRewards();		
+    }	
+	
+	Activity("VNC_Safezone", "SafeZone")
+    {
+        TooltipHeader("&SmallSafeZone&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&SmallSafeZone_Desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");
+		
+		use Preset_SafeZoneRewards();		
+    }	
+	
+	Activity("SmallSafeZone_Active", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDesc("&safezone_desc&");
+        ShowInBinoculars(false);
+        Icon("map_safe_zone");
+        
+        Feature("bed_icon", "&MMap_RestingPlace&");
+        Feature("map_uv", "&MMap_RestingPlace&");
+        //Feature("map_stash", "&MMap_LegendStash&"); - it's not a part of mini safezones, PH-265221
+		use Preset_SafeZoneRewards();
+    }  
+	
+
+//// Abandoned Structures
+
+	
+	Activity("Abandoned_Structure_Artist_Workshop", "Settlement")
+    {
+        TooltipHeader("&Abandoned_Structure_Artist_Workshop&");
+        TooltipDesc("&Abandoned_Structure_Artist_Workshop_desc&");
+        Icon("map_abandoned_structure_survivors");
+        FactionControlled("Survivors");
+
+        Feature("map_uv", "&OWAReward_UV_Spot&");
+	}
+	Activity("Abandoned_Structure_Bakery", "Settlement")
+    {
+        TooltipHeader("&Abandoned_Structure_Bakery&");
+        TooltipDesc("&Abandoned_Structure_Bakery_desc&");
+        Icon("map_abandoned_structure_survivors");
+        FactionControlled("Survivors");
+
+        Feature("map_uv", "&OWAReward_UV_Spot&");
+	}
+	Activity("Abandoned_Structure_Pumpkin_Farm", "Settlement")
+    {
+        TooltipHeader("&Abandoned_Structure_Pumpkin_Farm&");
+        TooltipDesc("&Abandoned_Structure_Pumpkin_Farm_desc&");
+        Icon("map_abandoned_structure_survivors");
+        FactionControlled("Survivors");
+
+        Feature("map_uv", "&OWAReward_UV_Spot&");
+	}
+	Activity("Abandoned_Structure_Recycle_Workshop", "Settlement")
+    {
+        TooltipHeader("&Abandoned_Structure_Recycle_Workshop&");
+        TooltipDesc("&Abandoned_Structure_Recycle_Workshop_desc&");
+        Icon("map_abandoned_structure_survivors");
+        FactionControlled("Survivors");
+
+        Feature("map_uv", "&OWAReward_UV_Spot&");
+	}
+	Activity("Abandoned_Structure_School", "Settlement")
+    {
+        TooltipHeader("&Abandoned_Structure_School&");
+        TooltipDesc("&Abandoned_Structure_School_desc&");
+        Icon("map_abandoned_structure_survivors");
+        FactionControlled("Survivors");
+
+        Feature("map_uv", "&OWAReward_UV_Spot&");
+	}
+	Activity("Abandoned_Structure_Academy", "Settlement")
+    {
+        TooltipHeader("&Abandoned_Structure_Academy&");
+        TooltipDesc("&Abandoned_Structure_Academy_desc&");
+        Icon("map_abandoned_structure_survivors");
+        FactionControlled("Factions");
+
+        Feature("map_uv", "&OWAReward_UV_Spot&");
+	}
+	Activity("Abandoned_Structure_Brewery", "Settlement")
+    {
+        TooltipHeader("&Abandoned_Structure_Brewery&");
+        TooltipDesc("&Abandoned_Structure_Brewery_desc&");
+        Icon("map_abandoned_structure_survivors");
+        FactionControlled("Factions");
+
+        Feature("map_uv", "&OWAReward_UV_Spot&");
+	}
+	Activity("Abandoned_Structure_Outpost", "Settlement")
+    {
+        TooltipHeader("&Abandoned_Structure_Outpost&");
+        TooltipDesc("&Abandoned_Structure_Outpost_desc&");
+        Icon("map_abandoned_structure_survivors");
+        FactionControlled("Factions");
+
+        Feature("map_uv", "&OWAReward_UV_Spot&");
+	}
+	Activity("Abandoned_Structure_Smokehouse", "Settlement")
+    {
+        TooltipHeader("&Abandoned_Structure_Smokehouse&");
+        TooltipDesc("&Abandoned_Structure_Smokehouse_desc&");
+        Icon("map_abandoned_structure_survivors");
+        FactionControlled("Factions");
+
+        Feature("map_uv", "&OWAReward_UV_Spot&");
+	}
+	Activity("Abandoned_Structure_Workshop", "Settlement")
+    {
+        TooltipHeader("&Abandoned_Structure_Workshop&");
+        TooltipDesc("&Abandoned_Structure_Workshop_desc&");
+        Icon("map_abandoned_structure_survivors");
+        FactionControlled("Factions");
+
+        Feature("map_uv", "&OWAReward_UV_Spot&");
+	}	
+	
+	
+//// Shops & Dark Places & Convoys
+
+	
+	Activity("owa_lootisland_medium", "EvacuationConvoy")
+    {
+        TooltipHeader("&LootIsland_medium&");
+        TooltipDesc("&owa_lootisland_medium_desc&");
+        Icon("map_loot_crate");
+		Reward("&Shop_Desc&");
+        RewardLootText(true);
+        AdditionalInfo("&additionalinfo_evacuationconvoy&");
+
+		RewardIconRarity("Green", "Craft_Parts", "map_nondiscovered");
+		RewardIconRarity("Green", "Valuables", "map_nondiscovered");
+		RewardIconRarity("Blue", "Outfits", "map_nondiscovered");
+    }	
+	
+	
+	Activity("owa_lootisland_big", "EvacuationConvoy")
+    {
+        TooltipHeader("&LootIsland_Big&");
+        TooltipDesc("&owa_lootisland_big_desc&");
+        Icon("map_loot_crate");
+		Reward("&Shop_Desc&");
+        RewardLootText(true);
+        AdditionalInfo("&additionalinfo_militaryconvoy&");
+
+		RewardIconRarity("Violet", "Outfits", "map_nondiscovered");
+		RewardIconRarity("Violet", "Weapons", "map_nondiscovered");
+		RewardIconRarity("Violet", "Use_Items", "map_nondiscovered");
+    }	
+	
+	Activity("ow_shop", "LootableShop")
+    {
+        TooltipHeader("&OWA_LootableShop&");
+        TooltipDescLocked("");
+		TooltipDesc("&owa_lootableshop_desc&");
+        Icon("map_lootable_shop");
+		Reward("&Shop_Desc&");
+        ExtraInfo("&Hud_LootCaveExtraInfo&");
+        BadgeText("&Hud_NightActivityBadge&");
+        RewardLootText(true);
+        NightActivity(true);
+        AdditionalInfo("&additionalinfo_forsakenstore&");
+
+		RewardIconRarity("Green", "Craft_Parts", "map_nondiscovered");
+		RewardIconRarity("Blue", "Craft_Parts", "map_nondiscovered");
+    }	
+
+	Activity("ow_pharmacy", "LootableShop")
+    {
+        TooltipHeader("&ow_shop_pharmacy&");
+        TooltipDescLocked("");
+		TooltipDesc("&ow_shop_pharmacy_desc&");
+        Icon("map_lootable_shop");
+		Reward("&Shop_Desc&");
+        AdditionalInfo("&additionalinfo_forsakenstore&");
+		
+		RewardItem("Craft_Electrical_Parts", "map_nondiscovered");
+		RewardItem("Craft_Wiring", "map_nondiscovered");
+    }	
+
+	Activity("ow_fashion_store", "LootableShop")
+    {
+        TooltipHeader("&ow_shop_fashion_store&");
+        TooltipDescLocked("");
+		TooltipDesc("&ow_shop_fashion_store_desc&");
+        Icon("map_lootable_shop");
+		Reward("&Shop_Desc&");
+        AdditionalInfo("&additionalinfo_forsakenstore&");
+		
+		RewardItem("Craft_Electrical_Parts", "map_nondiscovered");
+		RewardItem("Craft_Wiring", "map_nondiscovered");
+    }	
+	
+	Activity("ow_eico", "LootableShop")
+    {
+        TooltipHeader("&ow_shop_electronics&");
+        TooltipDescLocked("");
+		TooltipDesc("&ow_shop_electronics_desc&");
+        Icon("map_lootable_shop");
+		Reward("&Shop_Desc&");
+        AdditionalInfo("&additionalinfo_forsakenstore&");
+		
+		RewardItem("Craft_Electrical_Parts", "map_nondiscovered");
+		RewardItem("Craft_Wiring", "map_nondiscovered");
+    }	
+
+	Activity("ow_tools", "LootableShop")
+    {
+        TooltipHeader("&ow_shop_hardware_store&");
+        TooltipDescLocked("");
+		TooltipDesc("&ow_shop_hardware_store_desc&");
+        Icon("map_lootable_shop");
+		Reward("&Shop_Desc&");
+        AdditionalInfo("&additionalinfo_forsakenstore&");
+		
+		RewardItem("Craft_Electrical_Parts", "map_nondiscovered");
+		RewardItem("Craft_Wiring", "map_nondiscovered");
+    }		
+	
+	Activity("ow_dark_place", "DarkPlace")
+    {
+        TooltipHeader("&ow_darkplace&");
+        TooltipDesc("&ow_darkplace_desc&");
+		TooltipDescLocked("");
+        Icon("map_zone_darkzone_discovered");
+		Reward("&DarkPlace_Desc&");
+        ExtraInfo("&Hud_LootCaveExtraInfo&");
+        RewardLootText(true);
+        NightActivity(true);
+        BadgeText("&Hud_NightActivityBadge&");
+        AdditionalInfo("&additionalinfo_darkhollow&");
+        
+		
+        RewardIconRarity("Blue", "Valuables", "map_nondiscovered");
+		RewardIconRarity("Violet", "Valuables", "map_nondiscovered");
+	}	
+
+	Activity("ow_dark_place_bandits", "DarkPlace")
+    {
+        TooltipHeader("&ow_darkplace&");
+        TooltipDesc("&ow_darkplace_desc&");
+		TooltipDescLocked("");
+        Icon("map_zone_darkzone_discovered");
+		Reward("&DarkPlace_Desc&");
+        //ExtraInfo("&Hud_LootCaveExtraInfo&");
+        RewardLootText(true);
+        //NightActivity(true);
+        //BadgeText("&Hud_NightActivityBadge&");
+        AdditionalInfo("&additionalinfo_darkhollow&");
+		ShowHintAfterEnter(false);
+        
+		
+        RewardIconRarity("Blue", "Valuables", "map_nondiscovered");
+		RewardIconRarity("Violet", "Valuables", "map_nondiscovered");
+	}		
+	
+    ////////////// infos for menu map for things that are not actually an activity ////////
+    /// id must match location type from Locations.scr to make this tooltip appear in the map when user hovers over the icon
+    
+    Activity("NonDiscovered", "Undiscovered")
+    {
+        TooltipHeader("&MMap_NonDiscovered&");
+        TooltipDesc("&MMap_NonDiscovered_Desc&");
+        TooltipDescLocked("");
+        ShowInBinoculars(false);   
+    }
+    
+    Activity("Bazaar_HUB", "Settlement")
+    {
+        TooltipHeader("&Bazaar_HUB&");
+        TooltipDesc("&Bazaar_HUB_Desc&");
+        Icon("map_hub");
+        AdditionalInfo("&additionalinfo_Hub&");
+        
+        FactionControlled("Survivors");
+        
+        Feature("map_uv", "&OWAReward_UV_Spot&");
+        Feature("bed_icon", "&MMap_RestingPlace&");
+        Feature("map_stash", "&MMap_LegendStash&");
+        Feature("map_store", "&MMap_LegendStore&");
+        Feature("map_craftmaster", "&MMap_LegendCraftmaster&");
+		use Preset_SafeZoneRewards();
+    }  
+	
+	Activity("Bazaar_HUB_Destroyed", "Settlement")
+    {
+        TooltipHeader("&Bazaar_HUB&");
+        TooltipDesc("&Bazaar_HUB_Desc&");
+        Icon("map_hub");
+        AdditionalInfo("&additionalinfo_Hub&");
+        
+        FactionControlled("Survivors");
+    }  
+	
+    Activity("Canteen_HUB", "Settlement")
+    {
+        TooltipHeader("&Canteen_HUB&");
+        TooltipDesc("&Canteen_HUB_Desc&");
+        Icon("map_hub");
+        AdditionalInfo("&additionalinfo_Hub&");
+        
+        FactionControlled("Survivors");
+        
+        Feature("map_uv", "&OWAReward_UV_Spot&");
+        Feature("bed_icon", "&MMap_RestingPlace&");
+        Feature("map_stash", "&MMap_LegendStash&");
+        Feature("map_store", "&MMap_LegendStore&");
+        Feature("map_craftmaster", "&MMap_LegendCraftmaster&");
+		use Preset_SafeZoneRewards();
+
+    } 	
+	
+    Activity("Metro_HUB", "Settlement")
+    {
+        TooltipHeader("&Metro_HUB&");
+        TooltipDesc("&Metro_HUB_Desc&");
+        Icon("map_hub");
+        AdditionalInfo("&additionalinfo_Hub&");
+        
+        FactionControlled("Factions");
+        
+        Feature("map_uv", "&OWAReward_UV_Spot&");
+        Feature("bed_icon", "&MMap_RestingPlace&");
+        Feature("map_stash", "&MMap_LegendStash&");
+        Feature("map_store", "&MMap_LegendStore&");
+        Feature("map_craftmaster", "&MMap_LegendCraftmaster&");
+		use Preset_SafeZoneRewards();
+		
+		FastTravelPath("city/^Quest_REG01_Metro/logic/Quests/fast_travel");	
+
+    }   
+	
+    Activity("Metro_noHUB", "Settlement")
+    {
+        TooltipHeader("&Metro_HUB&");
+        TooltipDesc("&Metro_HUB_Desc&");
+        Icon("map_landmark");
+        
+        FactionControlled("Factions");
+    }   	
+	
+    Activity("Ship_HUB", "Settlement")
+    {
+        TooltipHeader("&Ship_HUB&");
+        TooltipDesc("&Ship_HUB_Desc&");
+        Icon("map_hub");
+        AdditionalInfo("&additionalinfo_Hub&");
+        
+        FactionControlled("Factions");
+        
+        Feature("map_uv", "&OWAReward_UV_Spot&");
+        Feature("bed_icon", "&MMap_RestingPlace&");
+        Feature("map_stash", "&MMap_LegendStash&");
+        Feature("map_store", "&MMap_LegendStore&");
+        Feature("map_craftmaster", "&MMap_LegendCraftmaster&");
+		use Preset_SafeZoneRewards();
+
+		FastTravelPath("city/^loc_metro_spygame/logic/fast_travel");	
+    }  	
+   
+   Activity("Hideout_Cillian", "Settlement")
+   {
+        TooltipHeader("&Hideout_Cillian&");
+        //TooltipDesc("&Bazaar_HUB_Desc&");
+        Icon("map_hub");
+        //AdditionalInfo("&additionalinfo_Hub&");
+        
+        FactionControlled("Survivors");
+        
+        Feature("map_uv", "&OWAReward_UV_Spot&");
+        Feature("bed_icon", "&MMap_RestingPlace&");
+        //Feature("map_stash", "&MMap_LegendStash&");
+        //Feature("map_store", "&MMap_LegendStore&");
+        //Feature("map_craftmaster", "&MMap_LegendCraftmaster&");
+		//use Preset_SafeZoneRewards();
+    }  
+	
+	Activity("Hideout_Quasimodo", "Settlement")
+   {
+        TooltipHeader("&CathedraTop_Name&");
+        Icon("map_hub");
+        
+        FactionControlled("Survivors");
+        
+        Feature("map_uv", "&OWAReward_UV_Spot&");
+        Feature("bed_icon", "&MMap_RestingPlace&");
+    }  
+	
+	Activity("VNC_Tower_Lobby", "Settlement")
+   {
+        TooltipHeader("&vnc_lobby&");
+        Icon("map_hub");
+        
+        FactionControlled("Factions");
+        
+        Feature("map_uv", "&OWAReward_UV_Spot&");
+        Feature("bed_icon", "&MMap_RestingPlace&");
+    }  
+	
+	Activity("VNC_Tower_Terrace", "Settlement")
+   {
+        TooltipHeader("&vnc_terrace&");
+        Icon("map_hub");
+        
+        FactionControlled("Factions");
+        
+        Feature("map_uv", "&OWAReward_UV_Spot&");
+        Feature("bed_icon", "&MMap_RestingPlace&");
+    }  
+	
+	Activity("Lawan_Rooftop", "Settlement")
+   {
+        TooltipHeader("&lawan_rooftop&");
+        Icon("map_hub");
+        
+        FactionControlled("Survivors");
+        
+        Feature("map_uv", "&OWAReward_UV_Spot&");
+        Feature("bed_icon", "&MMap_RestingPlace&");
+		Feature("map_stash", "&MMap_LegendStash&");
+    }  
+	
+	Activity("Plaguewitch_Shop", "Settlement")
+   {
+        TooltipHeader("&Witch_Shop_zone_Name&");
+        Icon("map_hub");
+        
+        FactionControlled("Survivors");
+        
+        Feature("map_uv", "&OWAReward_UV_Spot&");
+        Feature("bed_icon", "&MMap_RestingPlace&");
+		Feature("map_stash", "&MMap_LegendStash&");
+    }  
+	
+	Activity("Alberto_Hideout", "Settlement")
+   {
+        TooltipHeader("&alberto_hideout&");
+        Icon("map_hub");
+        
+        FactionControlled("Survivors");
+        
+        Feature("map_uv", "&OWAReward_UV_Spot&");
+        Feature("bed_icon", "&MMap_RestingPlace&");
+		Feature("map_stash", "&MMap_LegendStash&");
+		
+    }  
+	
+	Activity("Colonel_Fortress", "Settlement")
+   {
+        TooltipHeader("&colonel_fortress&");
+        Icon("map_hub");
+        
+        FactionControlled("Survivors");
+        
+        Feature("map_uv", "&OWAReward_UV_Spot&");
+        Feature("bed_icon", "&MMap_RestingPlace&");
+    }  
+}

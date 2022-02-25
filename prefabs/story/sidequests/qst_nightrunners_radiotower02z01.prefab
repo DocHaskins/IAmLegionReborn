@@ -1,0 +1,76 @@
+{
+  "__filename__": {
+    "Version": 3,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.4999999, 0.4999999, 0.5]],
+            "m_Name": [12, "Spawner_Zombies_Goon"],
+            "m_PcId": [6, 1],
+            "m_PrefabName": [12, "ai_spawner_range"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Activation - daytime;Whole Day"],
+            "m_Rotate": [14, [-0.000006, 60.000019, 0.000022]],
+            "m_Scale": [14, [3.6090259, 1.0849648, 2.192048]],
+            "m_Translate": [14, [-0.7049558, 0.1199949, 0.020638]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_CustomConflictMatrixSource": "AttributeAreaConflictMatrix,();",
+            "m_DayPreset": "Character;Goon",
+            "m_DifficultyRangeSource": "AttributeAreaDifficultyRange,();",
+            "m_MaxAIsToSpawnDay": "6",
+            "m_MaxAIsToSpawnNight": "1",
+            "m_MinAIsToSpawnDay": "1",
+            "m_MinAIsToSpawnNight": "1",
+            "m_NightPreset": "Demolisher"
+          },
+          "EmbeddedObject": {
+            "Class": "AttributeAreaDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource"
+          },
+          "EmbeddedObject": {
+            "Class": "AttributeAreaConflictMatrix",
+            "DestinationField": "m_CustomConflictMatrixSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.4999998, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Spawner_Zombies_Bitters_Horde"],
+            "m_PcId": [6, 2],
+            "m_PrefabName": [12, "ai_spawner_range"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Activation - daytime;Whole Day"],
+            "m_Rotate": [14, [-0.0000059, 60.0000267, 0.0000219]],
+            "m_Scale": [14, [22.2315959, 2.7124121, 20.8682937]],
+            "m_Translate": [14, [-1.2106933, -0.1199958, 2.3374328]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_CustomConflictMatrixSource": "AttributeAreaConflictMatrix,();",
+            "m_DayPreset": "Character;Biter",
+            "m_DifficultyRangeSource": "AttributeAreaDifficultyRange,();",
+            "m_MaxAIsToSpawnDay": "30",
+            "m_MaxAIsToSpawnNight": "30",
+            "m_MinAIsToSpawnDay": "30",
+            "m_MinAIsToSpawnNight": "30",
+            "m_NightPreset": "Character;Biter"
+          },
+          "EmbeddedObject": {
+            "Class": "AttributeAreaDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource"
+          },
+          "EmbeddedObject": {
+            "Class": "AttributeAreaConflictMatrix",
+            "DestinationField": "m_CustomConflictMatrixSource"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

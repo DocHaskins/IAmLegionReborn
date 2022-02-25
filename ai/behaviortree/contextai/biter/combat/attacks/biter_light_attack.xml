@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <CooldownTimeDelta m_CooldownTime="0.3" m_CooldownOnAbort="true">
+        <SequenceMem>
+            <Cnd_CanInterruptActivityModule_Movement/>
+            <Cnd_IsCombatTargetInRange m_Radius="$attack_max_range" m_Angle="$combat_max_angle"/>
+            <Opr_SetDirCorrectionSpeed m_MaxSpeed="$attack_stand_dir_correction_speed"/>
+            <Selector>
+                <Sequence>
+                    <Cnd_IsRightArmDestroyed/>
+                    <Opr_SetBBValue_int m_Key="#phase" m_Value="1"/>
+                </Sequence>
+                <Opr_SetBBValue_int m_Key="#phase" m_Value="0"/>
+            </Selector>
+            <Opr_EvaluateDistanceCost m_Cost="#slot_cost" m_Position="#target_pos"/>
+            <CombatSlot m_Name="attack" m_Limit="2" m_MinDelay="0" m_Cost="#slot_cost">
+                <Act_Attack m_Target="#target" m_AttackPresetName="biter_light_attack" m_Phase="#phase" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT"/>
+            </CombatSlot>
+        </SequenceMem>
+    </CooldownTimeDelta>
+</BehaviorTree>

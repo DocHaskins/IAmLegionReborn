@@ -1,0 +1,168 @@
+// RagdollBehaviorPreset(name)      - definition of ragdoll preset with specified name
+// - Behaviors(string)              - required, one or more name identifiers of ragdoll behaviors (defined in physics scripts)
+//                                        , behavior will be randomly selected upon starting ragdoll
+// - PhysicsForceMul(string)        - optional, 1.0 by default
+// - Looped(bool)                   - optional, false by default
+// - MaxDuration(float)             - optional, -1.0 by default
+// - CustomImpactDirection(string)  - optional, None by default, possible values: None, AwayFromDamager
+
+///////////////
+//DEFAULTS
+///////////////
+
+sub Defaults_MeleeWeaponCut()
+{
+    PhysicsForceMul("1.0");
+}
+
+sub Defaults_MeleeWeaponBlunt()
+{
+    PhysicsForceMul("1.6");
+}
+
+sub main()
+{
+
+
+///////////////
+//CUT BEHAVIORS
+///////////////
+
+    RagdollBehaviorPreset("cut_melee_weapon_UB_right")
+    {
+        use Defaults_MeleeWeaponCut();
+
+        Behaviors("StickSharp_TorsoHorizontal1_Left");
+        Behaviors("StickSharp_TorsoHorizontal2_Left");
+        Behaviors("StickSharp_TorsoHorizontal3_Left");
+		PhysicsForceMul("0.75");
+    }
+
+    RagdollBehaviorPreset("cut_melee_weapon_UB_left")
+    {
+        use Defaults_MeleeWeaponCut();
+
+        Behaviors("StickSharp_TorsoHorizontal1_Right");
+        Behaviors("StickSharp_TorsoHorizontal2_Right");
+        Behaviors("StickSharp_TorsoHorizontal3_Right");
+		PhysicsForceMul("0.75");
+    }
+    
+    RagdollBehaviorPreset("cut_melee_weapon_legs_right")
+    {
+        use Defaults_MeleeWeaponCut();
+
+        Behaviors("StickSharp_TorsoHorizontal1_Left");
+        Behaviors("StickSharp_TorsoHorizontal2_Left");
+        Behaviors("StickSharp_TorsoHorizontal3_Left");
+		PhysicsForceMul("2.0");
+    }
+
+    RagdollBehaviorPreset("cut_melee_weapon_legs_left")
+    {
+        use Defaults_MeleeWeaponCut();
+
+        Behaviors("StickSharp_TorsoHorizontal1_Right");
+        Behaviors("StickSharp_TorsoHorizontal2_Right");
+        Behaviors("StickSharp_TorsoHorizontal3_Right");
+		PhysicsForceMul("2.0");
+    }
+
+
+
+
+
+
+///////////////
+//BLUNT BEHAVIORS
+///////////////
+
+    RagdollBehaviorPreset("blunt_melee_weapon_left")
+    {
+        use Defaults_MeleeWeaponBlunt();
+
+        Behaviors("TorsoVertical1_Right");
+        CustomImpactDirection("AwayFromDamager");
+		PhysicsForceMul("0.5");
+    }
+
+    RagdollBehaviorPreset("blunt_melee_weapon_right")
+    {
+        use Defaults_MeleeWeaponBlunt();
+
+        Behaviors("TorsoVertical1_Left");
+        CustomImpactDirection("AwayFromDamager");
+		PhysicsForceMul("0.5");
+    }
+
+    RagdollBehaviorPreset("blunt_melee_weapon_heavy")
+    {
+        use Defaults_MeleeWeaponBlunt();
+
+        Behaviors("StickBlunt_TorsoVerticalCharge");
+        CustomImpactDirection("AwayFromDamager");
+		PhysicsForceMul("1.2");
+    }
+    
+
+
+
+
+
+///////////////
+//OTHERS
+///////////////
+    
+    RagdollBehaviorPreset("default")
+    {
+        Behaviors("Just_Ragdoll");
+    }
+
+
+    RagdollBehaviorPreset("light_stab")
+    {
+        Behaviors("Medium_Stab");
+        PhysicsForceMul("0.1");
+    }
+
+    RagdollBehaviorPreset("medium_stab")
+    {
+        Behaviors("Medium_Stab");
+		PhysicsForceMul("0.75");
+    }
+
+    RagdollBehaviorPreset("heavy_stab")
+    {
+        Behaviors("Heavy_Stab");
+		PhysicsForceMul("1.0");
+    }
+
+    RagdollBehaviorPreset("parkour_kick_medium")
+    {
+        Behaviors("Parkour_Kick");
+    }
+
+    RagdollBehaviorPreset("parkour_kick_heavy")
+    {
+        Behaviors("Parkour_Kick");
+        PhysicsForceMul("1.2");
+    }
+
+    RagdollBehaviorPreset("explosion")
+    {
+        Behaviors("Explosion");
+		PhysicsForceMul("2.0");
+    }
+
+    RagdollBehaviorPreset("fall")
+    {
+        Behaviors("Fall");
+    }
+
+    RagdollBehaviorPreset("just_ragdoll")
+    {
+        Behaviors("Just_Ragdoll");
+    }
+
+
+}

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Sequence>
+        <Cnd_IsHoldRequired/>
+        <SequenceMem>
+            <SelectorMem>
+                <Cnd_SelfInHoldRadius/>
+                <Selector>
+                    <Cnd_SelfInHoldRadius/>
+                    <Sequence>
+                        <Opr_GetDirectionToPosition m_Position="#target_pos" m_Direction="#end_dir"/>
+                        <SelectorMem>
+                            <SequenceMem>
+                                <SelectorMem>
+                                    <Cnd_IsCombatTargetInRadius m_Radius="8"/>
+                                    <Cnd_PositionInRadius m_Radius="8" m_Position="#hold_position"/>
+                                </SelectorMem>
+                                <!-- TODO: This strafing should fail if there is no path without connections to hold position -->
+                                <Act_StrafeToDestination m_Destination="#hold_position" m_Style="Aggressive" m_Speed="1" m_SpringUpdateSpeed="$strafe_spring_update_speed" m_EndRadius="$strafe_end_radius" m_WantedForwardDir="#end_dir" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                            </SequenceMem>
+                            <Act_Move m_Destination="#hold_position" m_EndDir="#end_dir" m_MoveStyle="#move_style_trot" m_StopAtDest="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                        </SelectorMem>
+                    </Sequence>
+                </Selector>
+            </SelectorMem>
+            <Sequence>
+                <!-- strafe around hold area -->
+                <Succeeder>
+                    <CooldownTimeDelta m_CooldownTime="1">
+                        <SequenceMem>
+                            <Opr_GetSelfPosition m_Position="#best_pos"/>
+                            <Sequence>
+                                <Opr_GetPredictedTargetPosition m_Target="#target" m_PredictionTime="1" m_Position="#target_predicted_pos"/>
+                                <Opr_GetDirectionOriginToPosition m_Position="#target_predicted_pos" m_Origin="#hold_position" m_Direction="#dir_from_hold"/>
+                                <Opr_GetPositionInDirection m_Distance="#hold_radius" m_Origin="#hold_position" m_Direction="#dir_from_hold" m_Position="#wanted_pos"/>
+                                <Opr_FindNearestPositionOnNavmesh m_Position="#found_pos" m_WantedPosition="#wanted_pos" m_XZRadius="4" m_YRadius="3"/>
+                                <Selector>
+                                    <Cnd_PositionInRadius m_Radius="2" m_Position="#found_pos"/>
+                                    <Sequence>
+                                        <Opr_SetBBValue_vec3 m_Key="#best_pos" m_Value="#found_pos"/>
+                                        <Opr_GetDirectionToPosition m_Position="#target_pos" m_Origin="#best_pos" m_Direction="#stop_dir"/>
+                                    </Sequence>
+                                </Selector>
+                                <SequenceMem>
+                                    <Cnd_PositionInRadius m_Position="#best_pos" m_Radius="1" m_Invert="true"/>
+                                    <Sequence>
+                                        <Opr_GetDirToCombatTarget m_DirToTarget="#dir"/>
+                                        <Act_StrafeToDestination m_Destination="#best_pos" m_Style="Aggressive" m_Speed="2" m_SpringUpdateSpeed="$strafe_spring_update_speed" m_EndRadius="$strafe_end_radius" m_WantedForwardDir="#dir" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                    </Sequence>
+                                </SequenceMem>
+                            </Sequence>
+                        </SequenceMem>
+                    </CooldownTimeDelta>
+                </Succeeder>
+                <SelectorMem>
+                    <Cnd_IsCombatTargetInAngle m_Angle="45"/>
+                    <Act_TurnToPos m_Position="#target_pos" m_Type="Combat" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                </SelectorMem>
+                <Act_Idle m_Type="Stand" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT"/>
+            </Sequence>
+        </SequenceMem>
+    </Sequence>
+</BehaviorTree>

@@ -1,0 +1,57 @@
+import "ai_lod_policy.scr"
+
+sub set_platform_params()
+{
+    use set_common_params();
+
+	// lzamyslowski
+	Param("BarkLod0UpTo", "50"); //50
+	
+	// msupronowicz TOD0
+	Param("AnimBonesLod0UpTo", "9");
+    Param("AnimBonesLod1UpTo", "14"); //14
+    Param("AnimBonesLod2UpTo", "36"); //36
+	
+	// jmeissner
+	Param("MaxActiveAIRagdolls", "16"); //10
+	
+	// fx krokow
+	Param("StepsProcessingUpTo", "20"); //20
+	
+	// jszymonek
+	Param("AnimIKLod0UpTo", "2.0"); //2
+    Param("AnimIKLod1UpTo", "9.0"); //9
+	
+	// tkosek fallback
+	Param("ForceAnimatorFreezeForNotActiveAIWhichIsFurtherThan", "150"); //170
+	
+	// tkosek
+	Param("MaxAIsInLoiterMode", "35"); //25
+	Param("TurnOfLoiterModeWhenAIWasNotVisibleForSeconds", "1.0"); //2
+	Param("LoiterModeNotFurtherThan", "80"); //50
+	
+	// tkosek
+	Param("CheckIfPlayerIsInBanditCampEverySeconds", "2"); //1
+	
+	// msielicki
+    Param("FacialExpressionHighUpTo", "1.25");
+    Param("FacialExpressionMediumUpTo", "3.5");
+    Param("FacialExpressionLowUpTo", "6.5");
+    Param("FacialExpressionMinimalUpTo", "8.0");
+    Param("FacialExpressionEnabledUpTo", "11.0");
+
+    Param("FacialExpressionHighUpToCombat", "1.25");
+    Param("FacialExpressionMediumUpToCombat", "2.5");
+    Param("FacialExpressionLowUpToCombat", "5.5");
+    Param("FacialExpressionMinimalUpToCombat", "7.0");
+    Param("FacialExpressionEnabledUpToCombat", "10.0");
+    
+    Param("FacialExpressionHighMaxAICount", "3");
+    Param("FacialExpressionMediumMaxAICount", "7");
+    Param("FacialExpressionLowMaxAICount", "12");
+}
+
+sub main()
+{
+    use set_platform_params();
+}

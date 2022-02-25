@@ -1,0 +1,143 @@
+// IndicatorsRequirementPreset(preset_name)
+//     Summoning(bool) - default false - Flag indicating that this enemy will need the separate visualization for the summonning/chase mechanics
+//     BossHP(bool) - default false - whether or nor this enemy should have the boss HP visualization (at the top of the screen). Additionally this turns off Hp bars on widget floating above the AIs head both on SS and in combat
+//     SurvivorSenseHP(bool) - default true - whether or not the HP/Stamina values should display when using SurvivorSense
+//     SurvivorSenseTier(bool) - default true - whether or not enemy rank creast should display when using survivor sense
+//     SurvivorSenseName(bool) - default true - whether or not enemy name should be dispalyed on the enemy indocator - usually disabled for bosses if the icon should be present in 3d
+//     BossWidgetName(string) - default "" - Enemy name override if none provided the actor name will be used if defined for that enemy
+//     EnemyIconName(string) - defualt "" - GUI name of the icon the HP widget will display if none provided, no icon will be displayed
+//     AlwaysShowGauge(bool) - default false - Flag indicatong that the HP widget should be shown always when enemy is engaged with player regardless of survivor sense or combat related conditions
+//     ProximityGaugeTriggerRange(float) - default -1 - Value in meters that when taht close to the player will automatically trigger the enemy bar showing
+
+sub main()
+{
+    IndicatorsRequirementPreset("Summoning")
+    {
+        Summoning("true");
+		SurvivorSenseHP("false");
+    }
+
+    IndicatorsRequirementPreset("Archer")
+    {
+        AlwaysShowGauge("true");
+    }
+
+    IndicatorsRequirementPreset("Chase")
+    {
+        Summoning("true");
+		SurvivorSenseHP("false");
+    }
+    
+    IndicatorsRequirementPreset("Corruptor")
+    {
+        BossHP("true");
+        AlwaysShowGauge("false");
+        SurvivorSenseHP("false");
+        EnemyIconName("zombie_placeholder_icon");
+		ProximityGaugeTriggerRange("30.0");
+		BossWidgetName("&Corruptor_Boss_Name&");
+    }
+    
+    IndicatorsRequirementPreset("Boss")
+    {
+        BossHP("true");
+		SurvivorSenseTier("false");
+        SurvivorSenseHP("false");
+    }
+
+    IndicatorsRequirementPreset("BossCamp")
+    {
+        BossHP("true");
+        SurvivorSenseTier("false");
+        SurvivorSenseHP("false");
+    }
+
+    IndicatorsRequirementPreset("LieutenantCamp")
+    {
+        AlwaysShowGauge("true");
+        ProximityGaugeTriggerRange("25.0");
+        BossWidgetName("&Lieutenant_Name&");
+        EnemyIconName("enemy_bandit_leader");
+    }
+
+    IndicatorsRequirementPreset("LieutenantRenegade")
+    {
+        AlwaysShowGauge("true");
+        ProximityGaugeTriggerRange("25.0");
+        BossWidgetName("&LieutenantRenegade_Name&");
+        EnemyIconName("enemy_bandit_leader");
+    }
+
+    IndicatorsRequirementPreset("LieutenantRenegadeEndgame")
+    {
+        AlwaysShowGauge("true");
+        ProximityGaugeTriggerRange("25.0");
+        BossWidgetName("&LieutenantRenegade_Name&");
+        EnemyIconName("enemy_bandit_leader");
+    }	
+
+    IndicatorsRequirementPreset("GangLeader")
+    {
+        SurvivorSenseTier("false");
+        SurvivorSenseHP("false");
+        SurvivorSenseName("false");
+        BossHP("true");
+        AlwaysShowGauge("false");
+        ProximityGaugeTriggerRange("25.0");
+        BossWidgetName("&GangLeader_Name&");
+        EnemyIconName("enemy_bandit_leader");
+    }
+	IndicatorsRequirementPreset("GangLeaderScrewed")
+    {
+        SurvivorSenseTier("false");
+        SurvivorSenseHP("false");
+        SurvivorSenseName("false");
+        BossHP("true");
+        AlwaysShowGauge("true");
+        ProximityGaugeTriggerRange("25.0");
+        BossWidgetName("&BinocularAI_Bandit_Lieutenant&");
+        EnemyIconName("enemy_bandit_leader");
+    }
+
+    IndicatorsRequirementPreset("BossRenegade")
+    {
+        SurvivorSenseTier("false");
+        SurvivorSenseHP("false");
+        SurvivorSenseName("false");
+        BossHP("true");
+        AlwaysShowGauge("true");
+        ProximityGaugeTriggerRange("25.0");
+        BossWidgetName("&BossRenegade_Name&");
+        EnemyIconName("enemy_bandit_leader");
+    } 
+
+    IndicatorsRequirementPreset("SpecialInfectedEndgame")
+    {
+        AlwaysShowGauge("true");
+        ProximityGaugeTriggerRange("25.0");
+        EnemyIconName("map_encounter_special_endgame_colored");
+    }	
+ 
+    IndicatorsRequirementPreset("BossNameTest")
+    {
+        BossHP("true");
+        BossWidgetName("TestBossName");
+    }
+    
+    IndicatorsRequirementPreset("NoHPGauge")
+    {
+        //SurvivorSenseHP("false"); // COmmented out as large numbers of infected presets uses this setting and be design needs HP bars nevertheless, so to not break anything the setting is commented out
+		AlwaysShowGauge("false");
+	}
+    
+    IndicatorsRequirementPreset("NoTier")
+    {
+        SurvivorSenseTier("false");
+    }
+    
+    IndicatorsRequirementPreset("NoSurvivorSenseWidget")
+    {
+        SurvivorSenseTier("false");
+        SurvivorSenseHP("false");
+    }
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Cnd_HasWeaponInInventory m_WeaponType="TwoHandedMelee"/>
+        <Selector>
+            <!-- offensive reactions -->
+            <!-- attack counter from hit reaction -->
+            <BlackboardSwitch m_Enabled="#enable_attack_counter" m_CustomName="AttackCounter" m_Hide="true">
+                <ExternalTree m_UID="HUMAN_ATTACK_POWER_COUNTER"/>
+            </BlackboardSwitch>
+            <Optional m_Enabled="$enable_attack_finisher" m_CustomName="Finisher" m_Hide="true">
+                <ExternalTree m_UID="HUMAN_COMBAT_REACTION_FINISHER"/>
+            </Optional>
+            <Optional m_Enabled="$enable_attack_tackle" m_CustomName="Tackle" m_Hide="true">
+                <ExternalTree m_UID="HUMAN_COMBAT_REACTION_TACKLE"/>
+            </Optional>
+            <!-- melee -->
+            <ExternalTree m_UID="HUMAN_COMBAT_ATTACK_TWO_HANDED" m_CustomName="MeleeAttack" m_Hide="true"/>
+            <!-- throw -->
+            <Optional m_Enabled="$enable_stone_throw" m_CustomName="Stone" m_Hide="true">
+                <ExternalTree m_UID="HUMAN_COMBAT_THROW_STONE"/>
+            </Optional>
+            <!-- position -->
+            <ExternalTree m_UID="HUMAN_COMBAT_POSITION_TWO_HANDED" m_CustomName="Position" m_Hide="true"/>
+        </Selector>
+    </SequenceMem>
+</BehaviorTree>

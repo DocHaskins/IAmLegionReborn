@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Selector m_Hide="true">
+            <Sequence>
+                <Opr_GetSelfPosition m_Position="#self_pos"/>
+                <Opr_GetLocalPlayer m_Player="#player"/>
+                <Opr_GetObjectPosition m_Object="#player" m_Position="#player_pos"/>
+                <Opr_GetDirectionToPosition m_Position="#player_pos" m_Direction="#dir"/>
+                <Opr_RandomFloat m_Result="#angle" m_RangeMin="20" m_RangeMax="-10"/>
+                <Opr_RotateVectorHorizontally m_Angle="#angle" m_Vector="#dir" m_Result="#dir"/>
+                <Opr_GetDistanceToPosition m_Distance="#dist" m_Position="#player_pos"/>
+                <Selector>
+                    <Cnd_IsBBValueGreaterOrEqual_float m_Key="#dist" m_Value="50"/>
+                    <Opr_SetBBValue_float m_Key="#dist" m_Value="50"/>
+                </Selector>
+                <Opr_RandomFloat m_Result="#dist_mul" m_RangeMin="1.8" m_RangeMax="4.5"/>
+                <Opr_MultiplyBBValue_float m_Key="#dist" m_Amount="#dist_mul"/>
+            </Sequence>
+            <Sequence>
+                <Opr_GetSelfPosition m_Position="#self_pos"/>
+                <Opr_RandomFloat m_Result="#angle" m_RangeMin="-100" m_RangeMax="200"/>
+                <Opr_GetDirectionFromAngle m_Angle="#angle" m_Direction="#dir"/>
+                <Opr_RandomFloat m_Result="#dist" m_RangeMin="30" m_RangeMax="90"/>
+            </Sequence>
+        </Selector>
+        <Opr_GetPositionInDirection m_Distance="#dist" m_Position="#pos" m_Direction="#dir" m_Origin="#self_pos"/>
+        <Opr_FindNearestPositionOnNavmesh m_Position="#pos" m_WantedPosition="#pos"/>
+        <Opr_SetBBValue_vec3 m_Key="#request_move_dest_pos" m_Value="#pos"/>
+        <Opr_SetBBValue_vec3 m_Key="#request_move_dest_dir" m_Value="#dir"/>
+        <Opr_SetBBValue_string m_Key="#request_move_style" m_Value="Walk"/>
+        <Opr_SetBBValue_float m_Key="#request_move_dest_radius" m_Value="0.5"/>
+        <Opr_SetBBValue_vec3_vector m_Key="#request_move_intermediate_points" m_Value=""/>
+        <Opr_SetBBValue_bool m_Key="#request_move_skip_start" m_Value="false"/>
+        <Opr_SetBBValue_bool m_Key="#request_move_stop_at_dest" m_Value="true"/>
+        <Opr_SetBBValue_bool m_Key="#request_move_fail_if_unreachable" m_Value="$request_move_fail_if_unreachable"/>
+        <Opr_SetBBValue_float m_Key="#request_move_dest_nav_tolerance_xz" m_Value="$request_move_dest_nav_tolerance_xz"/>
+        <Opr_SetBBValue_float m_Key="#request_move_dest_nav_tolerance_y" m_Value="$request_move_dest_nav_tolerance_y"/>
+        <SelectorMem>
+            <Cnd_PositionInRadius m_Position="#request_move_dest_pos" m_Radius="3"/>
+            <ExternalTree m_UID="HUMAN_MOVE" m_Hide="true"/>
+        </SelectorMem>
+    </SequenceMem>
+</BehaviorTree>

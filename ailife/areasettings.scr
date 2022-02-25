@@ -1,0 +1,3457 @@
+import "ial_ailife_difficulty_settings.def"
+/*
+Area settings example:
+
+AreaSettings("<attribute name>")
+{
+    EncounterDifficulty("Not_set");                     // Encounter difficulty (obviously) in this area. Can have one of 4 values: "Not set", "Easy", "Medium", "Hard".
+    EncounterCategoryWeight("EncounterCategory,10");    // Sets a weight for a given encounter category. This can be set multiple times for multiple categories.
+    DynamicSpawnerDayPresetPool("Day_Exterior");        // Name of a preset pool used to spawn AIs from the dynamic spawner during the day
+    DynamicSpawnerNightPresetPool("Night_Exterior");    // As above but at night
+    DynamicSpawnerDayDensity("Easy");                   // Density of AIs spawned from the dynamic spawner during the day. Can have one of 5 values: "None", "Easy", "Medium", "Hard", "VeryHard".
+    DynamicSpawnerNightDensity("Hard");                 // As above but at night
+    HumanReinforcementDataId("PK_Area_01");             // Composition of AI group spawned by human summoner on the streets
+    InfectedReinforcementDataId("DZ_01");               // Composition of infected group spawned by loud noises / screamer in dark zones (when chase cannot be started)
+}
+*/
+
+sub main()
+{
+    AreaSettings("Dummy")
+    {
+        // Left blank intentionally
+    }
+
+    AreaSettings("Test")
+    {
+        // Left blank intentionally
+    }
+
+    AreaSettings("Margarita_Bandits_Area")
+    {
+        // Left blank intentionally
+    }
+
+    AreaSettings("Scav_Area")
+    {
+        // Left blank intentionally
+    }
+
+    AreaSettings("Scav_HUB")
+    {
+        // Left blank intentionally
+    }
+
+    AreaSettings("PKs_Area")
+    {
+        // Left blank intentionally
+    }
+
+    AreaSettings("PKs_HUB")
+    {
+        // Left blank intentionally
+    }
+	
+	AreaSettings("Quest_Connecting_Dots")
+    {
+        // Left blank intentionally
+    }
+	
+	AreaSettings("Abandoned_Structure_Survivors")
+    {
+        // Left blank intentionally
+    }
+	
+	AreaSettings("Abandoned_Structure_Survivors_School")
+    {
+		EncounterCategoryWeight("scene_surv_herald_01,100");
+    }
+
+	AreaSettings("Abandoned_Structure_Survivors_Workshop")
+    {
+		EncounterCategoryWeight("scene_surv_herald_01,100");
+    }
+
+	AreaSettings("Abandoned_Structure_Survivors_Recycle")
+    {
+		EncounterCategoryWeight("scene_surv_herald_01,100");
+    }
+
+	AreaSettings("Abandoned_Structure_Survivors_Pumpkin")
+    {
+		EncounterCategoryWeight("scene_surv_herald_01,100");
+    }
+
+	AreaSettings("Abandoned_Structure_Survivors_Bakery")
+    {
+		EncounterCategoryWeight("scene_surv_herald_01,100");
+    }
+
+	
+	AreaSettings("Abandoned_Structure_Faction")
+    {
+		EncounterCategoryWeight("scene_pk_biomarker_check_01,1");
+		EncounterCategoryWeight("scene_pk_biomarker_notworking_01,100");
+		EncounterCategoryWeight("scene_pk_biomarker_working_01,100");
+		EncounterCategoryWeight("scene_pk_wounded_01,100");
+		EncounterCategoryWeight("scene_pk_wounded_02,100");
+    }
+	
+	AreaSettings("Abandoned_Structure_Faction_Academy")
+    {
+		EncounterCategoryWeight("scene_pk_biomarker_check_01,1");
+		EncounterCategoryWeight("scene_pk_biomarker_notworking_01,100");
+		EncounterCategoryWeight("scene_pk_biomarker_working_01,100");
+		EncounterCategoryWeight("scene_pk_wounded_01,100");
+		EncounterCategoryWeight("scene_pk_wounded_02,100");
+    }
+	
+	AreaSettings("Abandoned_Structure_Faction_Brewery")
+    {
+		EncounterCategoryWeight("scene_pk_biomarker_check_01,1");
+		EncounterCategoryWeight("scene_pk_biomarker_notworking_01,100");
+		EncounterCategoryWeight("scene_pk_biomarker_working_01,100");
+		EncounterCategoryWeight("scene_pk_wounded_01,100");
+		EncounterCategoryWeight("scene_pk_wounded_02,100");
+    }
+	
+	AreaSettings("Abandoned_Structure_Faction_Uniform_Workshop")
+    {
+		EncounterCategoryWeight("scene_pk_biomarker_check_01,1");
+		EncounterCategoryWeight("scene_pk_biomarker_notworking_01,100");
+		EncounterCategoryWeight("scene_pk_biomarker_working_01,100");
+		EncounterCategoryWeight("scene_pk_wounded_01,100");
+		EncounterCategoryWeight("scene_pk_wounded_02,100");
+    }
+	
+	AreaSettings("Abandoned_Structure_Faction_Outpost")
+    {
+		EncounterCategoryWeight("scene_pk_biomarker_check_01,1");
+		EncounterCategoryWeight("scene_pk_biomarker_notworking_01,100");
+		EncounterCategoryWeight("scene_pk_biomarker_working_01,100");
+		EncounterCategoryWeight("scene_pk_wounded_01,100");
+		EncounterCategoryWeight("scene_pk_wounded_02,100");
+    }
+	
+	AreaSettings("Abandoned_Structure_Faction_Smokehouse")
+    {
+		EncounterCategoryWeight("scene_pk_biomarker_check_01,1");
+		EncounterCategoryWeight("scene_pk_biomarker_notworking_01,100");
+		EncounterCategoryWeight("scene_pk_biomarker_working_01,100");
+		EncounterCategoryWeight("scene_pk_wounded_01,100");
+		EncounterCategoryWeight("scene_pk_wounded_02,100");
+    }
+
+    AreaSettings("City_All_Area")
+    { 
+	    DynamicSpawnerDayPresetPool("Day_Exterior");
+        DynamicSpawnerNightPresetPool("Night_Exterior");
+        DynamicSpawnerDayDensity("High");
+        DynamicSpawnerNightDensity("High");
+        DarkZoneDayPresetPool("Infected_Population_Day_R01");
+        DarkZoneNightPresetPool("Infected_Population_Night_R01");
+        DarkZoneDensityTag("dz_region_01");
+    }
+
+    AreaSettings("Bandit_Camp_Area")
+    {
+		//EncounterDifficulty(IAL_AI_Encounter_Difficulty_Lvl);
+		EncounterCategoryWeight("Bandits,1");
+		DynamicSpawnerDayDensity("High");
+        DynamicSpawnerNightDensity("High");
+		DarkZoneDayPresetPool("Infected_Population_Day_R01");
+        DarkZoneNightPresetPool("Infected_Population_Night_R01");
+        DarkZoneDensityTag("dz_region_01");
+    }
+	
+	AreaSettings("TM_DARKZONES")
+    {
+		//EncounterDifficulty(IAL_AI_Encounter_Difficulty_Lvl);
+		
+	    DynamicSpawnerDayPresetPool("Day_Exterior");
+        DynamicSpawnerNightPresetPool("Night_Exterior");
+        DynamicSpawnerDayDensity("High");
+        DynamicSpawnerNightDensity("High");
+        DarkZoneDayPresetPool("Infected_Population_Day_Testmap_Darkzones");
+        DarkZoneNightPresetPool("Infected_Population_Night_Testmap_Darkzones");
+        DarkZoneDensityTag("dz_testmap_darkzones");
+    }
+    
+    // SPECIAL AREA SETTINGS FOR DARK ZONES
+    // It provides settings for dark zones which are outside of any area attribute
+    AreaSettings("dz_default")
+    {
+        DarkZoneDayPresetPool("Day_Interior");
+        DarkZoneNightPresetPool("Night_Interior");
+        DarkZoneDensityTag("dz_default");
+    }
+	
+////////////////QUEST_WORLDS_CONSEQUENCES////////////////
+
+    AreaSettings("REG4_HuntersAppears")
+    {
+        // Left blank intentionally
+    }
+	
+	AreaSettings("REG3A_AfterCathedralWereCleared")
+    {
+        // Left blank intentionally
+    }
+
+	AreaSettings("REG6A_AfterGreenhouseFuelMoreSmokersAppears")
+    {
+        // Left blank intentionally
+    }
+	
+	AreaSettings("REG5_AfterOutpostMonksDisappwear")
+    {
+        // Left blank intentionally
+    }
+	
+	AreaSettings("REG5_AfterOutpostMonksMove")
+    {
+        // Left blank intentionally
+    }
+	
+	AreaSettings("REG3B_NewEnemy")
+    {
+        // Left blank intentionally
+    }
+	
+	AreaSettings("ALL_Quarantine_NewEnemyAppears")
+    {
+        // Left blank intentionally
+    }
+	
+	AreaSettings("ALL_AfterGreenhouseStimulantsNewEnemyAppears")
+    {
+        // Left blank intentionally
+	}
+	
+	AreaSettings("ALL_AfterGreenhouseFuelMoreTrucksAppears")
+    {	
+        // Left blank intentionally
+	}
+	
+	AreaSettings("ALL_StartOfTheRevolution")
+    {	
+        // Left blank intentionally
+	}
+	
+	AreaSettings("ALL_EscalationOfTheRevolution")
+    {	
+        // Left blank intentionally
+	}
+	
+	AreaSettings("Quest_Encounter_Waltz_People_Appears")
+    {	
+		EncounterCategoryWeight("Q_Waltz_People,1");	
+	}
+	
+	AreaSettings("Quest_Markers_Of_Plague_Church")
+    {
+	    DynamicSpawnerDayPresetPool("Day_Exterior_R01_Starting_Area");
+        DynamicSpawnerNightPresetPool("Night_Exterior_R01_Starting_Area");
+        DynamicSpawnerDayDensity("High");
+        DynamicSpawnerNightDensity("RunThrough");
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+	}
+	
+	AreaSettings("R1_4_Zone_04_Starting_Area")
+    {
+	    EncounterDifficulty("Difficulty_R01");
+		//EncounterCategoryWeight("Infected_Patrol_Volatile,15"); 
+		DynamicSpawnerDayPresetPool("Day_Exterior_D01");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D01");
+        DarkZoneDayPresetPool("Infected_Population_Day_D01");
+        DarkZoneNightPresetPool("Infected_Population_Night_D01");
+        DarkZoneDensityTag("dz_region_01");
+		
+		HumanReinforcementDataId("R1_Human");  
+		
+		MinDifficultyTier("Tier_2");
+		MaxDifficultyTier("Tier_9");
+	}
+	
+	AreaSettings("Quest_Nightrunners_Area")
+    {
+        DynamicSpawnerDayDensity("OWA");
+        DynamicSpawnerNightDensity("Medium");
+		
+    }		
+	
+	// E3
+	
+    AreaSettings("E3_R2_Area")
+    {
+    }
+	
+	AreaSettings("Add_Screamers")
+	{
+		DynamicSpawnerNightPresetPool("Screamers");
+	}
+	
+	AreaSettings("Getting_Stronger")
+	{
+	    DynamicSpawnerDayPresetPool("Day_Exterior_R01_Starting_Area");
+        DynamicSpawnerNightPresetPool("Night_Exterior_R01_Getting_Stronger");		        
+		
+		DynamicSpawnerDayDensity("High");
+        DynamicSpawnerNightDensity("High");	
+	}	
+	
+	// BANDIT CAMP AREAS
+	
+	AreaSettings("Bloods_Gang_Area")
+    {
+		//EncounterDifficulty(IAL_AI_Encounter_Difficulty_Lvl);
+		//EncounterCategoryWeight("Bandits_Barricade,1");
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");	
+
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+		EncounterCategoryWeight("Base_Looting_Easy_HMF,1");
+		EncounterCategoryWeight("Base_Looting_Medium_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Hard_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Impossible_HMF,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+        EncounterCategoryWeight("AS_HMF_01,1");	
+		//		
+
+		//DynamicSpawnerDayPresetPool("Day_Exterior_R01_Starting_Area");
+        //DynamicSpawnerNightPresetPool("Night_Exterior_R01_Starting_Area");
+        DynamicSpawnerDayDensity("OWA");
+        DynamicSpawnerNightDensity("OWA");
+		DarkZoneDayPresetPool("Infected_Population_Day_R01");
+        DarkZoneNightPresetPool("Infected_Population_Night_R01");
+        DarkZoneDensityTag("dz_region_01");
+        HumanReinforcementDataId("R1_Human");
+		
+		MinDifficultyTier(IAL_AI_Encounter_Difficulty_Bloodgang_Lvl_Min);
+		MaxDifficultyTier(IAL_AI_Encounter_Difficulty_Bloodgang_Lvl_Max);
+    }
+	
+	AreaSettings("Skyscraper_Gang_Area")
+    {
+		//EncounterDifficulty(IAL_AI_Encounter_Difficulty_Lvl);
+		//EncounterCategoryWeight("Bandits_Barricade,1");
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");		
+		
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+		EncounterCategoryWeight("Base_Looting_Easy_HMF,1");
+		EncounterCategoryWeight("Base_Looting_Medium_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Hard_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Impossible_HMF,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+        EncounterCategoryWeight("AS_HMF_01,1");	
+		//		
+
+		//DynamicSpawnerDayPresetPool("Day_Exterior_R01");
+        //DynamicSpawnerNightPresetPool("Night_Exterior_R01");
+        DynamicSpawnerDayDensity("OWA");
+        DynamicSpawnerNightDensity("OWA");
+		DarkZoneDayPresetPool("Infected_Population_Day_R01");
+        DarkZoneNightPresetPool("Infected_Population_Night_R01");
+        DarkZoneDensityTag("dz_region_01");
+        HumanReinforcementDataId("Skyscraper_Human");
+		
+		MinDifficultyTier(IAL_AI_Encounter_Difficulty_Skyscraper_Lvl_Min);
+		MaxDifficultyTier(IAL_AI_Encounter_Difficulty_Skyscraper_Lvl_Max);
+    }
+	
+	AreaSettings("Flooded_Gang_Area")
+    {
+		//EncounterDifficulty(IAL_AI_Encounter_Difficulty_Lvl);
+		//EncounterCategoryWeight("Bandits_Barricade,1");
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");
+
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+		EncounterCategoryWeight("Base_Looting_Easy_HMF,1");
+		EncounterCategoryWeight("Base_Looting_Medium_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Hard_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Impossible_HMF,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+        EncounterCategoryWeight("AS_HMF_01,1");	
+		//		
+
+		//DynamicSpawnerDayPresetPool("Day_Exterior_R01");
+        //DynamicSpawnerNightPresetPool("Night_Exterior_R01");
+        DynamicSpawnerDayDensity("OWA");
+        DynamicSpawnerNightDensity("OWA");
+		DarkZoneDayPresetPool("Infected_Population_Day_R01");
+        DarkZoneNightPresetPool("Infected_Population_Night_R01");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier(IAL_AI_Encounter_Difficulty_Flooded_Lvl_Min);
+		MaxDifficultyTier(IAL_AI_Encounter_Difficulty_Flooded_Lvl_Max);
+    }
+	
+	AreaSettings("Vertical_Gang_Area")
+    {
+		//EncounterDifficulty(IAL_AI_Encounter_Difficulty_Lvl);
+		//EncounterCategoryWeight("Bandits_Barricade,1");
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");	
+
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+		EncounterCategoryWeight("Base_Looting_Easy_HMF,1");
+		EncounterCategoryWeight("Base_Looting_Medium_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Hard_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Impossible_HMF,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+        EncounterCategoryWeight("AS_HMF_01,1");	
+		//		
+
+		//DynamicSpawnerDayPresetPool("Day_Exterior_R01");
+        //DynamicSpawnerNightPresetPool("Night_Exterior_R01");
+        DynamicSpawnerDayDensity("OWA");
+        DynamicSpawnerNightDensity("OWA");
+		DarkZoneDayPresetPool("Infected_Population_Day_R01");
+        DarkZoneNightPresetPool("Infected_Population_Night_R01");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier(IAL_AI_Encounter_Difficulty_Vertical_Lvl_Min);
+		MaxDifficultyTier(IAL_AI_Encounter_Difficulty_Vertical_Lvl_Max);
+    }
+	
+	AreaSettings("Military_Gang_Area")
+    {
+		//EncounterDifficulty(IAL_AI_Encounter_Difficulty_Lvl);
+		//EncounterCategoryWeight("Bandits_Barricade,1");
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");	
+
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+		EncounterCategoryWeight("Base_Looting_Easy_HMF,1");
+		EncounterCategoryWeight("Base_Looting_Medium_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Hard_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Impossible_HMF,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+        EncounterCategoryWeight("AS_HMF_01,1");	
+		//		
+
+		//DynamicSpawnerDayPresetPool("Day_Exterior_R01");
+        //DynamicSpawnerNightPresetPool("Night_Exterior_R01");
+        DynamicSpawnerDayDensity("OWA");
+        DynamicSpawnerNightDensity("OWA");
+		DarkZoneDayPresetPool("Infected_Population_Day_R01");
+        DarkZoneNightPresetPool("Infected_Population_Night_R01");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier(IAL_AI_Encounter_Difficulty_Military_Lvl_Min);
+		MaxDifficultyTier(IAL_AI_Encounter_Difficulty_Military_Lvl_Max);
+    }
+	
+	AreaSettings("Chemicals_Gang_Area")
+    {
+		//EncounterDifficulty(IAL_AI_Encounter_Difficulty_Lvl);	
+
+		//DynamicSpawnerDayPresetPool("Day_Exterior_R01");
+        //DynamicSpawnerNightPresetPool("Night_Exterior_R01");
+        DynamicSpawnerDayDensity("None");
+        DynamicSpawnerNightDensity("None");
+		DarkZoneDayPresetPool("Infected_Population_Day_R01");
+        DarkZoneNightPresetPool("Infected_Population_Night_R01");
+        DarkZoneDensityTag("None");
+		
+		MinDifficultyTier("IAL_AI_Encounter_Difficulty_Chemicals_Lvl_Min");
+		MaxDifficultyTier("IAL_AI_Encounter_Difficulty_Chemicals_Lvl_Max");
+    }
+
+	// Hive
+	AreaSettings("Hive_Area")
+    {
+		//EncounterDifficulty("Difficulty_03");
+		//EncounterCategoryWeight("Infected_Corpse_Eating_Day,1");
+        ////EncounterCategoryWeight("Infected_Corpse_Eating_Night,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Street,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Flavor,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Roof,1");
+		EncounterCategoryWeight("Infected_Corpse_Eating_Base,1");
+		EncounterCategoryWeight("Infected_Crawling,1");
+		EncounterCategoryWeight("Infected_Day_Opportunity,1");
+		//EncounterCategoryWeight("Infected_Peacekeeper,1");	
+		
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+		EncounterCategoryWeight("Base_Looting_Easy_HMF,1");
+		EncounterCategoryWeight("Base_Looting_Medium_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Hard_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Impossible_HMF,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+        EncounterCategoryWeight("AS_HMF_01,1");	
+		//		
+		
+		DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("OWA");
+		
+    }
+	
+	// Dust_Area
+	AreaSettings("Dust_Area")
+    {
+        EncounterCategoryWeight("Survivor_Viral,1");
+		EncounterCategoryWeight("Beggar_Infected_Dust,1");
+        EncounterCategoryWeight("Retreat_Night_Dust,1");
+
+		/*
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+		EncounterCategoryWeight("Base_Looting_Easy_HMF,1");
+		EncounterCategoryWeight("Base_Looting_Medium_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Hard_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Impossible_HMF,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+		//
+		*/
+
+		DynamicSpawnerDayPresetPool("Night_Exterior_Dust_Area");
+        DynamicSpawnerNightPresetPool("Night_Exterior_Dust_Area");
+        DynamicSpawnerDayDensity("Flooded_3");
+        DynamicSpawnerNightDensity("Flooded_3");
+		DarkZoneDayPresetPool("Infected_Population_Day_R01");
+        DarkZoneNightPresetPool("Infected_Population_Night_R01");
+        DarkZoneDensityTag("dz_region_01");
+		
+    }
+
+	// GRE Quarantain Area
+	AreaSettings("DP_GRE_Edge_Area")
+    {
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+		EncounterCategoryWeight("Base_Looting_Easy_HMF,1");
+		EncounterCategoryWeight("Base_Looting_Medium_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Hard_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Impossible_HMF,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+        EncounterCategoryWeight("AS_HMF_01,1");	
+		//
+		
+        DynamicSpawnerDayPresetPool("GRE_Day_Exterior");
+        DynamicSpawnerNightPresetPool("GRE_Night_Exterior");
+		
+		DynamicSpawnerDayDensity("VeryHard");
+        DynamicSpawnerNightDensity("Medium");
+    }
+
+	AreaSettings("DP_GRE_Center_Area")
+    {
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+		EncounterCategoryWeight("Base_Looting_Easy_HMF,1");
+		EncounterCategoryWeight("Base_Looting_Medium_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Hard_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Impossible_HMF,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+        EncounterCategoryWeight("AS_HMF_01,1");	
+		//
+		
+        DynamicSpawnerDayPresetPool("GRE_Day_Exterior");
+        DynamicSpawnerNightPresetPool("GRE_Night_Exterior");
+		
+		DynamicSpawnerDayDensity("VeryHard");
+        DynamicSpawnerNightDensity("Easy");
+    }		
+	
+	AreaSettings("Dark_Place_Area")
+    {	
+		DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Medium");
+		
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+		EncounterCategoryWeight("Base_Looting_Easy_HMF,1");
+		EncounterCategoryWeight("Base_Looting_Medium_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Hard_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Impossible_HMF,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+        EncounterCategoryWeight("AS_HMF_01,1");	
+		//
+    }	
+
+	// Open World Activity Area
+	AreaSettings("OWA_Edge_Area")
+    {
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+        EncounterCategoryWeight("AS_HMF_01,1");	 
+		//
+		
+		//EncounterCategoryWeight("Infected_Corpse_Eating_Day,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Night,1");
+		EncounterCategoryWeight("Infected_Corpse_Eating_Base,1");
+		EncounterCategoryWeight("Infected_Crawling,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Base_PK,100");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Night_Street,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Night_Roof,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Street,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Flavor,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK_Street,100");
+		
+	    //DynamicSpawnerDayPresetPool("Day_Exterior_R01_Starting_Area");
+        //DynamicSpawnerNightPresetPool("Night_Exterior_R01_Starting_Area");		        
+		
+		DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("OWA");	
+    }
+	
+	AreaSettings("OWA_Center_Area")
+    {
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+        EncounterCategoryWeight("AS_HMF_01,1");	
+		//
+		
+		//EncounterCategoryWeight("Infected_Corpse_Eating_Day,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Night,1");
+		EncounterCategoryWeight("Infected_Corpse_Eating_Base,1");
+		EncounterCategoryWeight("Infected_Crawling,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Base_PK,100");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Night_Street,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Night_Roof,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Street,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Flavor,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK_Street,100");
+		
+	    DynamicSpawnerDayPresetPool("Day_Exterior_R01_Starting_Area");
+        DynamicSpawnerNightPresetPool("Night_Exterior_R01_Starting_Area");		        
+		
+		DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("OWA");	
+    }	
+	
+	AreaSettings("City_R2_Overpass")
+    {
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+        EncounterCategoryWeight("AS_HMF_01,1");	
+		EncounterCategoryWeight("Exterior_Defend,1");
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");			
+		//
+		
+		//EncounterCategoryWeight("Infected_Corpse_Eating_Day,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Night,1");
+		EncounterCategoryWeight("Infected_Corpse_Eating_Base,1");
+		EncounterCategoryWeight("Infected_Crawling,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Base_PK,100");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Night_Street,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Night_Roof,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Street,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Flavor,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK_Street,100");    
+		
+		DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("OWA");	
+    }	
+
+	AreaSettings("City_Park")
+    {
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+        EncounterCategoryWeight("AS_HMF_01,1");	
+		EncounterCategoryWeight("Exterior_Defend,1");
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");			
+		//
+		
+		//EncounterCategoryWeight("Infected_Corpse_Eating_Day,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Night,1");
+		EncounterCategoryWeight("Infected_Corpse_Eating_Base,1");
+		EncounterCategoryWeight("Infected_Crawling,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Base_PK,100");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Night_Street,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Night_Roof,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Street,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Flavor,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK_Street,100");    
+		
+		DynamicSpawnerDayDensity("Park");
+        DynamicSpawnerNightDensity("Park");	
+    }		
+	
+	AreaSettings("Barks_Windmill_")
+    {
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+		EncounterCategoryWeight("Base_Looting_Easy_HMF,1");
+		EncounterCategoryWeight("Base_Looting_Medium_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Hard_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Impossible_HMF,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+		//
+		
+	    //DynamicSpawnerDayPresetPool("Day_Exterior_R01_Starting_Area");
+        //DynamicSpawnerNightPresetPool("Night_Exterior_R01_Starting_Area");		        
+		
+		DynamicSpawnerDayDensity("OWA");
+        DynamicSpawnerNightDensity("OWA");	
+    }	
+	
+	/////////// C&C System ///////////	
+	
+	AreaSettings("REG1_TakeoverBySCAVs")
+    {
+        // Left blank intentionally
+    }
+
+	AreaSettings("City_Peacekeepers_HUB_Zone")
+    {
+	//ENCOUNTER STORYTELLERS
+        EncounterCategoryWeight("Storytellers_CPF_01,100");
+		
+	/////Scene Encounters///// 		
+		EncounterCategoryWeight("Scene_Peacekeepers_Roof,100");
+		EncounterCategoryWeight("Scene_Peacekeepers_Ground,100");
+		
+	// ENCOUNTER SCENE / DIALOGS
+		//EncounterCategoryWeight("scene_pk_after_fight_bandits_vs_renegades,100");
+		//EncounterCategoryWeight("scene_pk_after_fight_biters_01,100");1
+		EncounterCategoryWeight("scene_pk_arrested_gen_01,100");
+		EncounterCategoryWeight("scene_pk_arrested_wall_gen,100");
+		EncounterCategoryWeight("scene_pk_biomarker_check_01,100");
+		EncounterCategoryWeight("scene_pk_biomarker_notworking_01,100");
+		EncounterCategoryWeight("scene_pk_biomarker_working_01,100");
+		EncounterCategoryWeight("scene_pk_cleanning_graffiti_01,100");
+		EncounterCategoryWeight("scene_pk_crime_01,200");
+		//EncounterCategoryWeight("scene_pk_detaching_body_01,100");
+		EncounterCategoryWeight("scene_pk_distributing_food_01,200");
+		EncounterCategoryWeight("scene_pk_distributing_food_02,200");
+		EncounterCategoryWeight("scene_pk_distributing_food_03,200");
+		EncounterCategoryWeight("scene_pk_fixing_uv_01,200");
+		EncounterCategoryWeight("scene_pk_heating_01,100");
+		EncounterCategoryWeight("scene_pk_imprison_bandits_01,100");
+		EncounterCategoryWeight("scene_pk_the_law_01,100");
+		EncounterCategoryWeight("scene_pk_wounded_01,100");
+		EncounterCategoryWeight("scene_pk_wounded_02,100");
+		EncounterCategoryWeight("scene_pk_enc_scene_pk_fixing_car_01,200"); 
+		
+		
+	// ENCOUNTER SCENE - NOW UNDER WATCH TOWER ONLY.
+		/*
+		EncounterCategoryWeight("scene_pk_water_01,100");
+		EncounterCategoryWeight("scene_pk_leisure_01,100");
+		EncounterCategoryWeight("scene_pk_order_01,100");
+		EncounterCategoryWeight("scene_pk_eating_aware_01,100");
+		EncounterCategoryWeight("scene_pk_rest_campfire_01,100");
+		EncounterCategoryWeight("scene_pk_the_law_01,100");
+		*/
+		
+		//EncounterCategoryWeight("Conscript_Solo_vs_biter,1");
+
+
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+		EncounterCategoryWeight("Base_Looting_Easy_HMF,1");
+		EncounterCategoryWeight("Base_Looting_Medium_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Hard_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Impossible_HMF,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+		EncounterCategoryWeight("AS_Infecteds_01,1");
+        EncounterCategoryWeight("AS_HMF_01,1");	
+		//	
+		EncounterCategoryWeight("PKs_vs_Biters,1000");	
+
+	/////Infected densities/////	
+        DynamicSpawnerDayDensity("None");
+        DynamicSpawnerNightDensity("HUB");	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_Factions_Area");
+        DynamicSpawnerNightPresetPool("Night_Exterior_Factions_Area");			
+    }
+
+	AreaSettings("City_Peacekeepers_HUB_Zone_R02")
+    {
+	//ENCOUNTER STORYTELLERS
+        EncounterCategoryWeight("Storytellers_CPF_01,100");
+		
+	/////Scene Encounters///// 		
+		EncounterCategoryWeight("Scene_Peacekeepers_Roof,100");
+		EncounterCategoryWeight("Scene_Peacekeepers_Ground,100");
+		
+	// ENCOUNTER SCENE / DIALOGS
+		//EncounterCategoryWeight("scene_pk_after_fight_bandits_vs_renegades,100");
+		//EncounterCategoryWeight("scene_pk_after_fight_biters_01,100");1
+		EncounterCategoryWeight("scene_pk_arrested_gen_01,100");
+		EncounterCategoryWeight("scene_pk_arrested_wall_gen,100");
+		EncounterCategoryWeight("scene_pk_biomarker_check_01,100");
+		EncounterCategoryWeight("scene_pk_biomarker_notworking_01,100");
+		EncounterCategoryWeight("scene_pk_biomarker_working_01,100");
+		EncounterCategoryWeight("scene_pk_cleanning_graffiti_01,100");
+		EncounterCategoryWeight("scene_pk_crime_01,200");
+		//EncounterCategoryWeight("scene_pk_detaching_body_01,100");
+		EncounterCategoryWeight("scene_pk_distributing_food_01,200");
+		EncounterCategoryWeight("scene_pk_distributing_food_02,200");
+		EncounterCategoryWeight("scene_pk_distributing_food_03,200");
+		EncounterCategoryWeight("scene_pk_fixing_uv_01,200");
+		EncounterCategoryWeight("scene_pk_heating_01,100");
+		EncounterCategoryWeight("scene_pk_imprison_bandits_01,100");
+		EncounterCategoryWeight("scene_pk_the_law_01,100");
+		EncounterCategoryWeight("scene_pk_wounded_01,100");
+		EncounterCategoryWeight("scene_pk_wounded_02,100");
+		EncounterCategoryWeight("scene_pk_enc_scene_pk_fixing_car_01,100");
+		
+	// ENCOUNTER SCENE - NOW UNDER WATCH TOWER ONLY.
+		/*
+		EncounterCategoryWeight("scene_pk_water_01,100");
+		EncounterCategoryWeight("scene_pk_leisure_01,100");
+		EncounterCategoryWeight("scene_pk_order_01,100");
+		EncounterCategoryWeight("scene_pk_eating_aware_01,100");
+		EncounterCategoryWeight("scene_pk_rest_campfire_01,100");
+		EncounterCategoryWeight("scene_pk_the_law_01,100");
+		*/
+		
+		//EncounterCategoryWeight("Conscript_Solo_vs_biter,1");
+
+
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+		EncounterCategoryWeight("Base_Looting_Easy_HMF,1");
+		EncounterCategoryWeight("Base_Looting_Medium_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Hard_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Impossible_HMF,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+        EncounterCategoryWeight("AS_HMF_01,1");			
+		//		
+		
+	/////PKs vs Renegades/////		
+		EncounterCategoryWeight("PKs_vs_Biters,1000");	
+		EncounterCategoryWeight("PKs_vs_Renegade,10000");
+		EncounterCategoryWeight("Hanging_Cage_Renegade,1");		
+		EncounterCategoryWeight("AfterFight_PK_Alive,100");
+		//EncounterCategoryWeight("AfterFight_Massacre_Infecteds,100");
+		EncounterCategoryWeight("Hostage_Renegade_PK,100");	
+		EncounterCategoryWeight("Prisoners_PK_Renegade_Flavor,100");
+
+	/////Infected densities/////	
+        DynamicSpawnerDayDensity("None");
+        DynamicSpawnerNightDensity("HUB");	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_Factions_Area");
+        DynamicSpawnerNightPresetPool("Night_Exterior_Factions_Area");			
+    }
+	
+	AreaSettings("City_Peacekeepers_Zone")
+    {
+//ENCOUNTER STORYTELLERS
+        EncounterCategoryWeight("Storytellers_CPF_01,100");
+		
+	// ENCOUNTER SCENE / DIALOGS
+		//EncounterCategoryWeight("scene_pk_after_fight_bandits_vs_renegades,100");
+		//EncounterCategoryWeight("scene_pk_after_fight_biters_01,100");1
+		EncounterCategoryWeight("scene_pk_arrested_gen_01,100");
+		EncounterCategoryWeight("scene_pk_arrested_wall_gen,100");
+		EncounterCategoryWeight("scene_pk_biomarker_check_01,100");
+		EncounterCategoryWeight("scene_pk_biomarker_notworking_01,100");
+		EncounterCategoryWeight("scene_pk_biomarker_working_01,100");
+		EncounterCategoryWeight("scene_pk_cleanning_graffiti_01,100");
+		EncounterCategoryWeight("scene_pk_crime_01,200");
+		//EncounterCategoryWeight("scene_pk_detaching_body_01,100");
+		EncounterCategoryWeight("scene_pk_distributing_food_01,200");
+		EncounterCategoryWeight("scene_pk_distributing_food_02,200");
+		EncounterCategoryWeight("scene_pk_distributing_food_03,200");
+		EncounterCategoryWeight("scene_pk_fixing_uv_01,200");
+		EncounterCategoryWeight("scene_pk_heating_01,100");
+		EncounterCategoryWeight("scene_pk_imprison_bandits_01,100");
+		EncounterCategoryWeight("scene_pk_the_law_01,100");
+		EncounterCategoryWeight("scene_pk_wounded_01,100");
+		EncounterCategoryWeight("scene_pk_wounded_02,100");
+		
+	// ENCOUNTER SCENE - NOW UNDER WATCH TOWER ONLY.
+		/*
+		EncounterCategoryWeight("scene_pk_water_01,100");
+		EncounterCategoryWeight("scene_pk_leisure_01,100");
+		EncounterCategoryWeight("scene_pk_order_01,100");
+		EncounterCategoryWeight("scene_pk_eating_aware_01,100");
+		EncounterCategoryWeight("scene_pk_rest_campfire_01,100");
+		EncounterCategoryWeight("scene_pk_the_law_01,100");
+		*/
+		
+	/////Factions in need///// 
+        //EncounterCategoryWeight("Hangman_PK,1");
+        //EncounterCategoryWeight("Conscript_vs_biter,1");
+		EncounterCategoryWeight("PKs_vs_Biters,1000");	
+		EncounterCategoryWeight("PKs_vs_Bandits,100");
+        //EncounterCategoryWeight("Prisoners_PK,1");
+		//EncounterCategoryWeight("Infected_Peacekeeper,1");
+		//EncounterCategoryWeight("PKs_vs_Infected,100");
+		EncounterCategoryWeight("PKs_Patrol_Street,1");
+		EncounterCategoryWeight("PKs_Patrol_Roof,1");		
+		EncounterCategoryWeight("Prisoners_Bandit,1");
+		////EncounterCategoryWeight("Conscript_Solo_vs_biter,1");
+		//EncounterCategoryWeight("Hanging_Cage,1");		
+	////Bandits only/////
+		EncounterCategoryWeight("Exterior_Defend,1");
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");		
+        //EncounterCategoryWeight("Truck,1");
+        EncounterCategoryWeight("Roof,1");
+        //EncounterCategoryWeight("Interior_Apartments,1");
+        //EncounterCategoryWeight("Shops,1");
+        //EncounterCategoryWeight("Shops_Small,1");
+        EncounterCategoryWeight("Retreat_Day,1");
+        EncounterCategoryWeight("Ambush_FakeHostage,1");   
+        EncounterCategoryWeight("Ambush_Chest,1"); 		
+        EncounterCategoryWeight("Beggar_Infected_PK,1");			
+	/////Infected only/////
+		EncounterCategoryWeight("Hanging_Cage_Infected,1");	
+        EncounterCategoryWeight("Biter_Corpse,1");
+        EncounterCategoryWeight("Retreat_Night,100");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Base,1");
+		EncounterCategoryWeight("Infected_Crawling,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Base_PK,100");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Night_Street,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Night_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Day_Street,100");
+		//EncounterCategoryWeight("Infected_Corpse_Eating_Day_Flavor,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Day_Roof,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_PK_Roof,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_PK_Street,100");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Day,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Night,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK,1");
+		EncounterCategoryWeight("Infected_Day_Opportunity,1");
+		EncounterCategoryWeight("Infected_Opportunity,1");
+        EncounterCategoryWeight("Infected_Corpse_Defend_01,1"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_02,1"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_03,1"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_04,1");
+        EncounterCategoryWeight("Special_Infected,1"); 
+        EncounterCategoryWeight("Special_Infected_10x10,1"); 
+        EncounterCategoryWeight("Special_Infected_15x15,1"); 	
+        EncounterCategoryWeight("Special_Infected_20x20,1"); 	
+        EncounterCategoryWeight("Special_Infected_25x25,1"); 	
+        EncounterCategoryWeight("Special_Infected_20x7,1"); 		
+        EncounterCategoryWeight("Infected_Patrol_Volatile,15"); 
+        EncounterCategoryWeight("Infected_Patrol_Spitter,10");
+        EncounterCategoryWeight("Infected_Nest_Big_Screamer,10"); 
+        EncounterCategoryWeight("Infected_Nest_Screamer,10"); 
+
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+		EncounterCategoryWeight("Base_Looting_Easy_HMF,1");
+		EncounterCategoryWeight("Base_Looting_Medium_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Hard_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Impossible_HMF,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+        EncounterCategoryWeight("AS_HMF_01,1");			
+		//
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_Factions_Area");
+        DynamicSpawnerNightPresetPool("Night_Exterior_Factions_Area");		
+		
+    }
+	
+	AreaSettings("City_Peacekeepers_Zone_R02")
+    {
+//ENCOUNTER STORYTELLERS
+        EncounterCategoryWeight("Storytellers_CPF_01,100");
+		
+	// ENCOUNTER SCENE / DIALOGS
+		//EncounterCategoryWeight("scene_pk_after_fight_bandits_vs_renegades,100");
+		//EncounterCategoryWeight("scene_pk_after_fight_biters_01,100");1
+		EncounterCategoryWeight("scene_pk_arrested_gen_01,100");
+		EncounterCategoryWeight("scene_pk_arrested_wall_gen,100");
+		EncounterCategoryWeight("scene_pk_biomarker_check_01,100");
+		EncounterCategoryWeight("scene_pk_biomarker_notworking_01,100");
+		EncounterCategoryWeight("scene_pk_biomarker_working_01,100");
+		EncounterCategoryWeight("scene_pk_cleanning_graffiti_01,100");
+		EncounterCategoryWeight("scene_pk_crime_01,200");
+		//EncounterCategoryWeight("scene_pk_detaching_body_01,100");
+		EncounterCategoryWeight("scene_pk_distributing_food_01,200");
+		EncounterCategoryWeight("scene_pk_distributing_food_02,200");
+		EncounterCategoryWeight("scene_pk_distributing_food_03,200");
+		EncounterCategoryWeight("scene_pk_fixing_uv_01,200");
+		EncounterCategoryWeight("scene_pk_heating_01,100");
+		EncounterCategoryWeight("scene_pk_imprison_bandits_01,100");
+		EncounterCategoryWeight("scene_pk_the_law_01,100");
+		EncounterCategoryWeight("scene_pk_wounded_01,100");
+		EncounterCategoryWeight("scene_pk_wounded_02,100");
+
+		
+	// ENCOUNTER SCENE - NOW UNDER WATCH TOWER ONLY.
+		/*
+		EncounterCategoryWeight("scene_pk_water_01,100");
+		EncounterCategoryWeight("scene_pk_leisure_01,100");
+		EncounterCategoryWeight("scene_pk_order_01,100");
+		EncounterCategoryWeight("scene_pk_eating_aware_01,100");
+		EncounterCategoryWeight("scene_pk_rest_campfire_01,100");
+		EncounterCategoryWeight("scene_pk_the_law_01,100");
+		*/
+		
+	/////Factions in need///// 
+        //EncounterCategoryWeight("Hangman_PK,1");
+        //EncounterCategoryWeight("Conscript_vs_biter,1");
+		EncounterCategoryWeight("PKs_vs_Biters,1000");		
+        //EncounterCategoryWeight("Prisoners_PK,1");
+		//EncounterCategoryWeight("Infected_Peacekeeper,1");
+		//EncounterCategoryWeight("PKs_vs_Infected,100");
+		EncounterCategoryWeight("PKs_Patrol_Street,1");
+		EncounterCategoryWeight("PKs_Patrol_Roof,1");		
+		EncounterCategoryWeight("Prisoners_Bandit,1");
+		////EncounterCategoryWeight("Conscript_Solo_vs_biter,1");
+		//EncounterCategoryWeight("Hanging_Cage,1");		
+	////Bandits only/////
+		EncounterCategoryWeight("Exterior_Defend,1");
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");		
+        //EncounterCategoryWeight("Truck,1");
+        EncounterCategoryWeight("Roof,1");
+        //EncounterCategoryWeight("Interior_Apartments,1");
+        //EncounterCategoryWeight("Shops,1");
+        //EncounterCategoryWeight("Shops_Small,1");
+        EncounterCategoryWeight("Retreat_Day,1");
+        EncounterCategoryWeight("Ambush_FakeHostage,1");   
+        EncounterCategoryWeight("Ambush_Chest,1"); 		
+        EncounterCategoryWeight("Beggar_Infected_PK,1");			
+	/////Infected only/////
+		EncounterCategoryWeight("Hanging_Cage_Infected,1");	
+        EncounterCategoryWeight("Biter_Corpse,1");
+        EncounterCategoryWeight("Retreat_Night,100");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Base,1");
+		EncounterCategoryWeight("Infected_Crawling,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Base_PK,100");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Night_Street,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Night_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Day_Street,100");
+		//EncounterCategoryWeight("Infected_Corpse_Eating_Day_Flavor,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Day_Roof,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_PK_Roof,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_PK_Street,100");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Day,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Night,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK,1");
+		EncounterCategoryWeight("Infected_Day_Opportunity,1");
+		EncounterCategoryWeight("Infected_Opportunity,1");
+        EncounterCategoryWeight("Infected_Corpse_Defend_01,1"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_02,1"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_03,1"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_04,1");
+        EncounterCategoryWeight("Special_Infected,1"); 
+        EncounterCategoryWeight("Special_Infected_10x10,1"); 
+        EncounterCategoryWeight("Special_Infected_15x15,1"); 	
+        EncounterCategoryWeight("Special_Infected_20x20,1"); 	
+        EncounterCategoryWeight("Special_Infected_25x25,1"); 	
+        EncounterCategoryWeight("Special_Infected_20x7,1"); 
+        EncounterCategoryWeight("Infected_Nest_Big_Screamer,10"); 
+        EncounterCategoryWeight("Infected_Nest_Screamer,10"); 
+        //EncounterCategoryWeight("Infected_Patrol_Volatile,15"); 
+        //EncounterCategoryWeight("Infected_Patrol_Spitter,10"); 	
+
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+		EncounterCategoryWeight("Base_Looting_Easy_HMF,1");
+		EncounterCategoryWeight("Base_Looting_Medium_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Hard_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Impossible_HMF,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+        EncounterCategoryWeight("AS_HMF_01,1");			
+		//		
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_Factions_Area");
+        DynamicSpawnerNightPresetPool("Night_Exterior_Factions_Area");		
+	/////PK vs Renegades/////		
+		EncounterCategoryWeight("Hangman,1"); // only for PKs
+        EncounterCategoryWeight("Burning at stake,1"); // only for PKs
+		EncounterCategoryWeight("PKs_vs_Renegade,10000");
+		EncounterCategoryWeight("Hanging_Cage_Renegade,1");		
+		EncounterCategoryWeight("AfterFight_PK_Alive,100");
+		EncounterCategoryWeight("AfterFight_Massacre_Infecteds,100");
+		EncounterCategoryWeight("Hostage_Renegade_PK,100");		
+		EncounterCategoryWeight("Prisoners_PK_Renegade_Flavor,100");
+    }	
+
+	AreaSettings("City_Peacekeepers_HUB_Zone_Empire")
+    {
+	/////Scene Encounters///// 		
+		EncounterCategoryWeight("Scene_Peacekeepers_Roof_Empire,100");
+		EncounterCategoryWeight("Scene_Peacekeepers_Ground_Empire,100");
+		
+	// ENCOUNTER SCENE / DIALOGS
+		EncounterCategoryWeight("scene_pk_after_fight_bandits_vs_renegades,100");
+		EncounterCategoryWeight("scene_pk_after_fight_biters_01,100");
+		EncounterCategoryWeight("scene_pk_arrested_gen_01,100");
+		EncounterCategoryWeight("scene_pk_arrested_wall_gen,100");
+		EncounterCategoryWeight("scene_pk_biomarker_check_01,100");
+		EncounterCategoryWeight("scene_pk_biomarker_notworking_01,100");
+		EncounterCategoryWeight("scene_pk_biomarker_working_01,100");
+		EncounterCategoryWeight("scene_pk_cleanning_graffiti_01,100");
+		EncounterCategoryWeight("scene_pk_crime_01,100");
+		EncounterCategoryWeight("scene_pk_distributing_food_01,100");
+		EncounterCategoryWeight("scene_pk_distributing_food_02,100");
+		EncounterCategoryWeight("scene_pk_fixing_uv_01,100");
+		EncounterCategoryWeight("scene_pk_heating_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_the_law_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_wounded_01,100");
+		EncounterCategoryWeight("scene_pk_wounded_02,100");
+		EncounterCategoryWeight("AfterFight_PK_Alive,100");
+		EncounterCategoryWeight("Hostage_Renegade_PK,100");		
+		EncounterCategoryWeight("Prisoners_PK_Renegade_Flavor,100");
+		EncounterCategoryWeight("scene_pk_enc_scene_pk_fixing_car_01,100");
+		
+	// ENCOUNTER SCENE - NOW UNDER WATCH TOWER ONLY.
+		/*
+		EncounterCategoryWeight("scene_pk_water_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_leisure_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_order_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_eating_aware_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_rest_campfire_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_the_law_01_Empire,100");
+		*/
+		
+		//EncounterCategoryWeight("Conscript_Solo_vs_biter,1");
+		
+		//ENCOUNTER STORYTELLERS
+        EncounterCategoryWeight("Storytellers_CPF_01,100");
+
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+		EncounterCategoryWeight("Base_Looting_Easy_HMF,1");
+		EncounterCategoryWeight("Base_Looting_Medium_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Hard_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Impossible_HMF,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+        EncounterCategoryWeight("AS_HMF_01,1");			
+		//			
+		EncounterCategoryWeight("PKs_vs_Biters_Empire,1000");	
+
+	/////Infected densities/////	
+        DynamicSpawnerDayDensity("None");
+        DynamicSpawnerNightDensity("HUB");	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_Factions_Area");
+        DynamicSpawnerNightPresetPool("Night_Exterior_Factions_Area");			
+    }
+	
+
+	
+	AreaSettings("City_Peacekeepers_Zone_Empire")
+    {
+	//ENCOUNTER STORYTELLERS
+        EncounterCategoryWeight("Storytellers_CPF_01,100");
+		
+	// ENCOUNTER SCENE / DIALOGS
+		EncounterCategoryWeight("scene_pk_after_fight_bandits_vs_renegades_Empire,100");
+		EncounterCategoryWeight("scene_pk_after_fight_biters_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_arrested_gen_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_arrested_wall_gen_Empire,100");
+		EncounterCategoryWeight("scene_pk_biomarker_check_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_biomarker_notworking_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_biomarker_working_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_cleanning_graffiti_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_crime_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_detaching_body_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_distributing_food_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_distributing_food_02_Empire,100");
+		EncounterCategoryWeight("scene_pk_distributing_food_03_Empire,100");
+		EncounterCategoryWeight("scene_pk_fixing_uv_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_heating_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_imprison_bandits_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_the_law_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_wounded_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_wounded_02_Empire,100");
+		EncounterCategoryWeight("AfterFight_PK_Alive,100");
+		EncounterCategoryWeight("Hostage_Renegade_PK,100");
+		EncounterCategoryWeight("Prisoners_PK_Renegade_Flavor,100");
+		
+	// ENCOUNTER SCENE - NOW UNDER WATCH TOWER ONLY.
+		/*
+		EncounterCategoryWeight("scene_pk_water_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_leisure_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_order_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_eating_aware_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_rest_campfire_01_Empire,100");
+		EncounterCategoryWeight("scene_pk_the_law_01_Empire,100");
+		*/
+		
+	/////Factions in need///// 
+		EncounterCategoryWeight("PKs_vs_Renegade_Empire,10000");
+		//EncounterCategoryWeight("PKs_vs_Bandits,1");
+        //EncounterCategoryWeight("Hangman_PK,1");
+        //EncounterCategoryWeight("Conscript_vs_biter,1");
+		EncounterCategoryWeight("Hangman,1"); // only for PKs
+        EncounterCategoryWeight("Burning at stake,1"); // only for PKs
+		EncounterCategoryWeight("PKs_vs_Biters_Empire,1000");		
+        //EncounterCategoryWeight("Prisoners_PK,1");
+		//EncounterCategoryWeight("Infected_Peacekeeper,1");
+		EncounterCategoryWeight("PKs_vs_Infected,1");
+		EncounterCategoryWeight("PKs_Patrol_Street,1");
+		EncounterCategoryWeight("PKs_Patrol_Roof,1");		
+		EncounterCategoryWeight("Prisoners_Bandit,1");
+		////EncounterCategoryWeight("Conscript_Solo_vs_biter,1");
+	////Bandits only/////
+		EncounterCategoryWeight("Exterior_Defend,1");
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");		
+        //EncounterCategoryWeight("Truck,1");
+        EncounterCategoryWeight("Roof,1");
+        //EncounterCategoryWeight("Interior_Apartments,1");
+        //EncounterCategoryWeight("Shops,1");
+        //EncounterCategoryWeight("Shops_Small,1");
+        EncounterCategoryWeight("Retreat_Day,1");
+        EncounterCategoryWeight("Ambush_FakeHostage,1");   
+        EncounterCategoryWeight("Ambush_Chest,1"); 		
+        EncounterCategoryWeight("Beggar_Infected_PK,1");	
+		//EncounterCategoryWeight("Hanging_Cage,1");	
+		EncounterCategoryWeight("Hanging_Cage_Renegade,1");		
+		EncounterCategoryWeight("Hanging_Cage_Infected,1");			
+	/////Infected only/////
+        EncounterCategoryWeight("Biter_Corpse,1");
+        EncounterCategoryWeight("Retreat_Night,100");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Base,1");
+		EncounterCategoryWeight("Infected_Crawling,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Base_PK,100");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Night_Street,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Night_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Day_Street,100");
+		//EncounterCategoryWeight("Infected_Corpse_Eating_Day_Flavor,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Day_Roof,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_PK_Roof,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_PK_Street,100");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Day,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Night,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK,1");
+		EncounterCategoryWeight("Infected_Day_Opportunity,1");
+		EncounterCategoryWeight("Infected_Opportunity,1");
+        EncounterCategoryWeight("Infected_Corpse_Defend_01,1"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_02,1"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_03,1"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_04,1");
+        EncounterCategoryWeight("Special_Infected,1"); 
+        EncounterCategoryWeight("Special_Infected_10x10,1"); 
+        EncounterCategoryWeight("Special_Infected_15x15,1"); 	
+        EncounterCategoryWeight("Special_Infected_20x20,1"); 	
+        EncounterCategoryWeight("Special_Infected_25x25,1"); 	
+        EncounterCategoryWeight("Special_Infected_20x7,1"); 
+        EncounterCategoryWeight("Infected_Nest_Big_Screamer,10"); 
+        EncounterCategoryWeight("Infected_Nest_Screamer,10"); 
+        //EncounterCategoryWeight("Infected_Patrol_Volatile,15"); 
+        //EncounterCategoryWeight("Infected_Patrol_Spitter,10"); 	
+
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+		EncounterCategoryWeight("Base_Looting_Easy_HMF,1");
+		EncounterCategoryWeight("Base_Looting_Medium_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Hard_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Impossible_HMF,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+        EncounterCategoryWeight("AS_HMF_01,1");			
+		//		
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_Factions_Area");
+        DynamicSpawnerNightPresetPool("Night_Exterior_Factions_Area");			
+    }
+	
+	AreaSettings("City_Scavengers_Zone")
+    {
+		
+		//ENCOUNTER STORYTELLERS
+        EncounterCategoryWeight("Storytellers_CPF_01,100");
+		
+		// Left blank intentionally
+		/////Scene Encounters///// 
+		EncounterCategoryWeight("Scene_Scavengers_Roof,1");
+		EncounterCategoryWeight("Scene_Scavengers_Ground,1");
+		
+    }
+	
+	AreaSettings("City_Survivors_HUB_Zone")
+    {
+		
+/////Scene Encounters///// 
+		EncounterCategoryWeight("Scene_Survivors_Roof,100");
+		EncounterCategoryWeight("Scene_Survivors_Ground,100");
+		
+	// ENCOUNTER SCENE / DIALOGS
+		EncounterCategoryWeight("scene_surv_campfire_01,100");
+		EncounterCategoryWeight("scene_surv_campfire_02,100");
+		EncounterCategoryWeight("scene_surv_collecting_wood_01,100");
+		EncounterCategoryWeight("scene_surv_cutting_down_tree,100");
+		EncounterCategoryWeight("scene_surv_flute_01,100");
+		EncounterCategoryWeight("scene_surv_fly_kite_01,100");
+		EncounterCategoryWeight("scene_surv_gen_funeral_01,100");
+		EncounterCategoryWeight("scene_surv_herald_01,100");
+		EncounterCategoryWeight("scene_surv_zipline_production_01,100");
+		EncounterCategoryWeight("scene_surv_basket_collecting_01,100");
+		EncounterCategoryWeight("scene_surv_grinding_potion_mortar,100");
+        EncounterCategoryWeight("scene_surv_ringing_a_bell,100");
+		EncounterCategoryWeight("scene_surv_roof_preparing_food_01,100");
+		EncounterCategoryWeight("scene_surv_stung_by_bee_01,100");
+		EncounterCategoryWeight("scene_surv_crafting_bow_01,100");
+		
+		//ENCOUNTER STORYTELLERS
+        EncounterCategoryWeight("Storytellers_CPF_01,100");
+	
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+		// EncounterCategoryWeight("Base_Looting_Easy_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Medium_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Hard_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Impossible_HMF,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+        EncounterCategoryWeight("AS_HMF_01,1");			
+		//
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("None");
+        DynamicSpawnerNightDensity("HUB");	
+	
+		DynamicSpawnerDayPresetPool("Day_Exterior_Survivors_Area");
+        DynamicSpawnerNightPresetPool("Night_Exterior_Survivors_Area");
+    }	
+	
+	AreaSettings("City_Survivors_Zone")
+    {
+		
+/////Scene Encounters///// 
+		EncounterCategoryWeight("Scene_Survivors_Roof,100");
+		EncounterCategoryWeight("Scene_Survivors_Ground,100");
+		
+	// ENCOUNTER SCENE / DIALOGS
+		EncounterCategoryWeight("scene_surv_campfire_01,100");
+		EncounterCategoryWeight("scene_surv_campfire_02,100");
+		EncounterCategoryWeight("scene_surv_collecting_wood_01,100");
+		EncounterCategoryWeight("scene_surv_cutting_down_tree,100");
+		EncounterCategoryWeight("scene_surv_flute_01,100");
+		EncounterCategoryWeight("scene_surv_fly_kite_01,100");
+		EncounterCategoryWeight("scene_surv_gen_funeral_01,100");
+		EncounterCategoryWeight("scene_surv_herald_01,100");
+		EncounterCategoryWeight("scene_surv_zipline_production_01,100");
+		EncounterCategoryWeight("scene_surv_basket_collecting_01,100");
+		EncounterCategoryWeight("scene_surv_grinding_potion_mortar,100");
+        EncounterCategoryWeight("scene_surv_ringing_a_bell,100");
+		EncounterCategoryWeight("scene_surv_roof_preparing_food_01,100");
+		EncounterCategoryWeight("scene_surv_stung_by_bee_01,100");
+		EncounterCategoryWeight("scene_surv_crafting_bow_01,100");
+		
+		//ENCOUNTER STORYTELLERS
+        EncounterCategoryWeight("Storytellers_CPF_01,100");
+		
+////Survivors in need/////
+        EncounterCategoryWeight("Prisoners,1");
+        EncounterCategoryWeight("Double_Prisoners,1");
+		//EncounterCategoryWeight("Prisoner_Infected,1");	
+        //EncounterCategoryWeight("Infected_Prisoner_Rescue_Day,1"); 
+        EncounterCategoryWeight("Infected_Prisoner_Rescue_Night,1000"); 		
+        //EncounterCategoryWeight("Hangman,1"); // only for PKs
+        //EncounterCategoryWeight("Burning at stake,1"); // only for PKs
+		//EncounterCategoryWeight("Night_Infected_Rescue_Survivor_Roof,1");
+		EncounterCategoryWeight("Hanging_Cage,1");
+        EncounterCategoryWeight("Infected_Grabbed_AI,1"); 
+        //EncounterCategoryWeight("Hanging_Cage_Night,1");	
+		EncounterCategoryWeight("Beggar_Infected,1");
+////Bandits only/////
+		EncounterCategoryWeight("Exterior_Defend,1");
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");			
+        //EncounterCategoryWeight("Truck,1");
+        EncounterCategoryWeight("Roof,1");
+        //EncounterCategoryWeight("Interior_Apartments,1");
+        //EncounterCategoryWeight("Shops,1");
+        //EncounterCategoryWeight("Shops_Small,1");
+        EncounterCategoryWeight("Retreat_Day,1");
+        EncounterCategoryWeight("Ambush_FakeHostage,1");   
+        EncounterCategoryWeight("Ambush_Chest,1"); 		
+        //EncounterCategoryWeight("Beggar_Bandit_Infected,1");			
+/////Infected only/////
+        EncounterCategoryWeight("Biter_Corpse,1");
+        EncounterCategoryWeight("Retreat_Night,100");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Day,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Night,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Base,1");
+		EncounterCategoryWeight("Infected_Crawling,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Base_PK,100");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Night_Street,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Night_Roof,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Street,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Flavor,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK_Street,100");
+		EncounterCategoryWeight("Infected_Day_Opportunity,1");
+		EncounterCategoryWeight("Infected_Opportunity,1");
+        EncounterCategoryWeight("Infected_Corpse_Defend_01,500"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_02,500"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_03,500"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_04,500");
+        EncounterCategoryWeight("Special_Infected,1"); 
+        EncounterCategoryWeight("Special_Infected_10x10,1"); 
+        EncounterCategoryWeight("Special_Infected_15x15,1"); 	
+        EncounterCategoryWeight("Special_Infected_20x20,1"); 	
+        EncounterCategoryWeight("Special_Infected_25x25,1"); 	
+        EncounterCategoryWeight("Special_Infected_20x7,1"); 	
+        EncounterCategoryWeight("Infected_Nest_Big_Screamer,10"); 
+        EncounterCategoryWeight("Infected_Nest_Screamer,10"); 
+        //EncounterCategoryWeight("Infected_Patrol_Volatile,15"); 
+        //EncounterCategoryWeight("Infected_Patrol_Spitter,10"); 	
+
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+		EncounterCategoryWeight("Base_Looting_Easy_HMF,1");
+		EncounterCategoryWeight("Base_Looting_Medium_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Hard_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Impossible_HMF,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+        EncounterCategoryWeight("AS_HMF_01,1");			
+		//
+	
+		DynamicSpawnerDayPresetPool("Day_Exterior_Survivors_Area");
+        DynamicSpawnerNightPresetPool("Night_Exterior_Survivors_Area");		
+    }
+	
+	AreaSettings("City_Neutral_Zone")
+    {
+		
+	//ENCOUNTER STORYTELLERS
+        EncounterCategoryWeight("Storytellers_CPF_01,100");
+		
+/////Scene Encounters///// 
+		EncounterCategoryWeight("Scene_Bandits_Roof,1");
+		EncounterCategoryWeight("Scene_Bandits_Ground,1");
+
+////Bandits only/////
+		EncounterCategoryWeight("Exterior_Defend,1");
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");			
+        //EncounterCategoryWeight("Truck,1");
+        EncounterCategoryWeight("Roof,1");
+        //EncounterCategoryWeight("Interior_Apartments,1");
+        //EncounterCategoryWeight("Shops,1");
+        //EncounterCategoryWeight("Shops_Small,1");
+		//EncounterCategoryWeight("Threat_On_Street,1");
+        //EncounterCategoryWeight("Threat_On_Roof,50");
+        EncounterCategoryWeight("Retreat_Day,1");
+        EncounterCategoryWeight("Ambush_FakeHostage,1");   
+        EncounterCategoryWeight("Ambush_Chest,1"); 		
+        //EncounterCategoryWeight("Beggar_Bandit_Infected,1");				
+////Survivors in need/////
+        EncounterCategoryWeight("Prisoners,1");
+        EncounterCategoryWeight("Double_Prisoners,1");
+		//EncounterCategoryWeight("Prisoner_Infected,1");	
+        //EncounterCategoryWeight("Infected_Prisoner_Rescue_Day,1"); 
+        EncounterCategoryWeight("Infected_Prisoner_Rescue_Night,1000"); 		
+        //EncounterCategoryWeight("Hangman,1"); // only for PKs
+        //EncounterCategoryWeight("Burning at stake,1"); // only for PKs
+		//EncounterCategoryWeight("Night_Infected_Rescue_Survivor_Roof,1");
+        //EncounterCategoryWeight("Infected_Grabbed_AI,1"); 
+        EncounterCategoryWeight("Hanging_Cage,1");			
+        //EncounterCategoryWeight("Hanging_Cage_Night,1");		
+		EncounterCategoryWeight("Beggar_Infected,1");	
+/////Factions in need/////
+		EncounterCategoryWeight("Prisoners_Bandit,1");
+		////EncounterCategoryWeight("Conscript_Solo_vs_biter,1");       
+/////Infected only/////
+		EncounterCategoryWeight("Biter_Corpse,1");
+        EncounterCategoryWeight("Retreat_Night,100");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Day,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Night,1");
+		EncounterCategoryWeight("Infected_Corpse_Eating_Base,1");
+		EncounterCategoryWeight("Infected_Crawling,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Base_PK,100");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Night_Street,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Night_Roof,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Street,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Flavor,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK_Street,100");
+		EncounterCategoryWeight("Infected_Day_Opportunity,1");
+		EncounterCategoryWeight("Infected_Opportunity,1");
+        EncounterCategoryWeight("Infected_Corpse_Defend_01,500"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_02,500"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_03,500"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_04,500");
+        EncounterCategoryWeight("Special_Infected,1"); 
+        EncounterCategoryWeight("Special_Infected_10x10,1"); 
+        EncounterCategoryWeight("Special_Infected_15x15,1"); 	
+        EncounterCategoryWeight("Special_Infected_20x20,1"); 	
+        EncounterCategoryWeight("Special_Infected_25x25,1"); 	
+        EncounterCategoryWeight("Special_Infected_20x7,1"); 
+        EncounterCategoryWeight("Infected_Nest_Big_Screamer,10"); 
+        EncounterCategoryWeight("Infected_Nest_Screamer,10"); 
+        //EncounterCategoryWeight("Infected_Patrol_Volatile,15"); 
+        //EncounterCategoryWeight("Infected_Patrol_Spitter,10"); 
+
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+		EncounterCategoryWeight("Base_Looting_Easy_HMF,1");
+		EncounterCategoryWeight("Base_Looting_Medium_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Hard_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Impossible_HMF,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+        EncounterCategoryWeight("AS_HMF_01,1");	
+		//		
+
+    }
+	
+	AreaSettings("City_Neutral_Zone_Diff_02")
+    {
+	//ENCOUNTER STORYTELLERS
+        EncounterCategoryWeight("Storytellers_CPF_01,100");
+/////Scene Encounters///// 
+		EncounterCategoryWeight("Scene_Bandits_Roof,1");
+		EncounterCategoryWeight("Scene_Bandits_Ground,1");
+		EncounterCategoryWeight("Execution_by_Renegades,100");
+		EncounterCategoryWeight("AfterFight_Massacre_Infecteds,100");
+		EncounterCategoryWeight("Renegade_Disgrace_Pissing,100");	
+		EncounterCategoryWeight("Renegade_Disgrace,100");	
+		EncounterCategoryWeight("Renegade_Fireplace,100");
+		EncounterCategoryWeight("Burning_PK_by_Renegade,100");
+		EncounterCategoryWeight("Renegade_vs_PKs,10000");	
+		EncounterCategoryWeight("Prisoners_Renegade,1000");
+////Bandits only/////
+		EncounterCategoryWeight("Exterior_Defend,1");
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");			
+        //EncounterCategoryWeight("Truck,1");
+        EncounterCategoryWeight("Roof,1");
+        //EncounterCategoryWeight("Interior_Apartments,1");
+        //EncounterCategoryWeight("Shops,1");
+        //EncounterCategoryWeight("Shops_Small,1");
+		//EncounterCategoryWeight("Threat_On_Street,1");
+        //EncounterCategoryWeight("Threat_On_Roof,50");
+        EncounterCategoryWeight("Retreat_Day,1");
+        EncounterCategoryWeight("Ambush_FakeHostage,1");   
+        EncounterCategoryWeight("Ambush_Chest,1"); 		
+        //EncounterCategoryWeight("Beggar_Bandit_Infected,1");				
+////Survivors in need/////
+        EncounterCategoryWeight("Prisoners,1");
+        EncounterCategoryWeight("Double_Prisoners,1");
+		//EncounterCategoryWeight("Prisoner_Infected,1");	
+        //EncounterCategoryWeight("Infected_Prisoner_Rescue_Day,1"); 
+        EncounterCategoryWeight("Infected_Prisoner_Rescue_Night,1000"); 		
+        EncounterCategoryWeight("Hangman,1"); // only for PKs
+        EncounterCategoryWeight("Burning at stake,1"); // only for PKs
+		//EncounterCategoryWeight("Night_Infected_Rescue_Survivor_Roof,1");
+		EncounterCategoryWeight("Hanging_Cage,1");
+        //EncounterCategoryWeight("Infected_Grabbed_AI,1"); 
+        //EncounterCategoryWeight("Hanging_Cage_Night,1");		
+		EncounterCategoryWeight("Beggar_Infected,1");	
+/////Factions in need/////
+		EncounterCategoryWeight("Prisoners_Bandit,1");
+		////EncounterCategoryWeight("Conscript_Solo_vs_biter,1");       
+/////Infected only/////
+		EncounterCategoryWeight("Biter_Corpse,1");
+        EncounterCategoryWeight("Retreat_Night,100");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Day,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Night,1");
+		EncounterCategoryWeight("Infected_Corpse_Eating_Base,1");
+		EncounterCategoryWeight("Infected_Crawling,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Base_PK,100");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Night_Street,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Night_Roof,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Street,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Flavor,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK_Street,100");
+		EncounterCategoryWeight("Infected_Day_Opportunity,1");
+		EncounterCategoryWeight("Infected_Opportunity,1");
+        EncounterCategoryWeight("Infected_Corpse_Defend_01,500"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_02,500"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_03,500"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_04,500");
+        EncounterCategoryWeight("Special_Infected,1"); 
+        EncounterCategoryWeight("Special_Infected_10x10,1"); 
+        EncounterCategoryWeight("Special_Infected_15x15,1"); 	
+        EncounterCategoryWeight("Special_Infected_20x20,1"); 	
+        EncounterCategoryWeight("Special_Infected_25x25,1"); 	
+        EncounterCategoryWeight("Special_Infected_20x7,1"); 
+
+        EncounterCategoryWeight("Infected_Nest_Big_Screamer,10"); 
+        EncounterCategoryWeight("Infected_Nest_Screamer,10"); 
+        //EncounterCategoryWeight("Infected_Patrol_Volatile,15"); 
+        //EncounterCategoryWeight("Infected_Patrol_Spitter,10"); 
+
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+		EncounterCategoryWeight("Base_Looting_Easy_HMF,1");
+		EncounterCategoryWeight("Base_Looting_Medium_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Hard_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Impossible_HMF,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+        EncounterCategoryWeight("AS_HMF_01,1");	
+		//	
+	
+    }
+	
+	AreaSettings("City_Renegades_Zone")
+    {
+/////Scene Encounters///// 
+		EncounterCategoryWeight("Scene_Bandits_Roof,1");
+		EncounterCategoryWeight("Scene_Bandits_Ground,1");
+		EncounterCategoryWeight("Execution_by_Renegades,100");
+		EncounterCategoryWeight("AfterFight_Massacre_Infecteds,100");
+		EncounterCategoryWeight("Renegade_Disgrace_Pissing,100");	
+		EncounterCategoryWeight("Renegade_Disgrace,100");
+		EncounterCategoryWeight("Renegade_Fireplace,100");
+		EncounterCategoryWeight("Burning_PK_by_Renegade,100");
+////Renegades only/////       
+        EncounterCategoryWeight("Renegade_vs_PKs,10000");
+        //EncounterCategoryWeight("PKs_vs_Renegade,10000");
+
+////Bandits only/////
+		EncounterCategoryWeight("Exterior_Defend,1");
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");			
+        //EncounterCategoryWeight("Truck,1");
+        EncounterCategoryWeight("Roof,1");
+        //EncounterCategoryWeight("Interior_Apartments,1");
+        //EncounterCategoryWeight("Shops,1");
+        //EncounterCategoryWeight("Shops_Small,1");
+		EncounterCategoryWeight("Threat_On_Street,1");
+        EncounterCategoryWeight("Threat_On_Roof,50");
+        EncounterCategoryWeight("Retreat_Day,1");
+        EncounterCategoryWeight("Ambush_FakeHostage,1");   
+        EncounterCategoryWeight("Ambush_Chest,1"); 		
+        //EncounterCategoryWeight("Beggar_Bandit_Infected,1");				
+////Survivors in need/////
+        EncounterCategoryWeight("Prisoners,1"); 
+		//EncounterCategoryWeight("Prisoner_Infected,1");	
+        //EncounterCategoryWeight("Infected_Prisoner_Rescue_Day,1"); 
+        EncounterCategoryWeight("Infected_Prisoner_Rescue_Night,1000"); 		
+        //EncounterCategoryWeight("Hangman,1"); // only for PKs
+        //EncounterCategoryWeight("Burning at stake,1"); // only for PKs
+		EncounterCategoryWeight("Survivor_Solo_vs_biter,1");	
+        EncounterCategoryWeight("Infected_Grabbed_AI,1"); 
+        //EncounterCategoryWeight("Hanging_Cage_Night,1");	
+		EncounterCategoryWeight("Beggar_Infected,1");		
+/////Factions in need/////
+		EncounterCategoryWeight("Prisoners_Renegade,1000");
+		EncounterCategoryWeight("Prisoners_Bandit,1");
+		//EncounterCategoryWeight("Conscript_Solo_vs_biter,1");       
+/////Infected only/////
+		EncounterCategoryWeight("Biter_Corpse,1");
+        EncounterCategoryWeight("Retreat_Night,100");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Day,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Night,1");
+		EncounterCategoryWeight("Infected_Corpse_Eating_Base,1");
+		EncounterCategoryWeight("Infected_Crawling,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Base_PK,100");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Night_Street,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Night_Roof,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Street,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Flavor,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK_Street,100");
+		
+		EncounterCategoryWeight("Infected_Day_Opportunity,1");
+		EncounterCategoryWeight("Infected_Opportunity,1");
+        EncounterCategoryWeight("Infected_Corpse_Defend_01,500"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_02,500"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_03,500"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_04,500");
+        EncounterCategoryWeight("Special_Infected,1"); 
+        EncounterCategoryWeight("Special_Infected_10x10,1"); 
+        EncounterCategoryWeight("Special_Infected_15x15,1"); 	
+        EncounterCategoryWeight("Special_Infected_20x20,1"); 	
+        EncounterCategoryWeight("Special_Infected_25x25,1"); 	
+        EncounterCategoryWeight("Special_Infected_20x7,1"); 
+        EncounterCategoryWeight("Infected_Nest_Big_Screamer,10"); 
+        EncounterCategoryWeight("Infected_Nest_Screamer,10"); 
+ 		
+        //EncounterCategoryWeight("Infected_Patrol_Volatile,15"); 
+        //EncounterCategoryWeight("Infected_Patrol_Spitter,10"); 			
+
+		//HACK
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+		EncounterCategoryWeight("Base_Looting_Easy_HMF,1");
+		EncounterCategoryWeight("Base_Looting_Medium_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Hard_HMF,1");
+		// EncounterCategoryWeight("Base_Looting_Impossible_HMF,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Day,1");
+        EncounterCategoryWeight("Loot_Island_Roof_Easy_Night,1");
+        EncounterCategoryWeight("AS_Infecteds_01,1");
+        EncounterCategoryWeight("AS_HMF_01,1");	
+		//		
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_Renegades_Area");
+        DynamicSpawnerNightPresetPool("Night_Exterior_Renegades_Area");
+    }	
+	
+// ZONE LEVELS
+	
+	AreaSettings("City_Zone_Levels")
+    {	
+	}
+	
+	AreaSettings("R1_1_Zone_01")
+    {	
+		EncounterDifficulty("Difficulty_R01");
+	    DynamicSpawnerDayPresetPool("Day_Exterior_R01_Starting_Area");
+        DynamicSpawnerNightPresetPool("Night_Exterior_R01_Starting_Area");
+        DarkZoneDayPresetPool("Infected_Population_Day_D01");
+        DarkZoneNightPresetPool("Infected_Population_Night_D01");
+        DarkZoneDensityTag("dz_region_01");
+		
+		HumanReinforcementDataId("R1_Human");  
+		
+		MinDifficultyTier("Tier_1");
+		MaxDifficultyTier("Tier_9");
+
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("Medium");				
+	}
+
+	AreaSettings("R1_1_Zone_01_Waltz")
+    {	
+		EncounterDifficulty("Difficulty_02");
+		DynamicSpawnerDayPresetPool("Day_Exterior_D01");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D01");
+        DarkZoneDayPresetPool("Infected_Population_Day_D01");
+        DarkZoneNightPresetPool("Infected_Population_Night_D01");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_1");
+		MaxDifficultyTier("Tier_9");
+
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("Medium");				
+	}	
+	
+	AreaSettings("R1_2_Zone_02")
+    {
+	    EncounterDifficulty("Difficulty_R01");
+		DynamicSpawnerDayPresetPool("Day_Exterior_R01_Starting_Area");
+        DynamicSpawnerNightPresetPool("Night_Exterior_R01_Starting_Area");
+        DarkZoneDayPresetPool("Infected_Population_Day_D01");
+        DarkZoneNightPresetPool("Infected_Population_Night_D01");
+        DarkZoneDensityTag("dz_region_01");
+		
+		HumanReinforcementDataId("R1_Human");  
+		
+		MinDifficultyTier("Tier_3");
+		MaxDifficultyTier("Tier_9");
+
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("Medium");			
+	}
+	
+	AreaSettings("R1_2_Zone_02_Waltz")
+    {
+	    EncounterDifficulty("Difficulty_02");
+		DynamicSpawnerDayPresetPool("Day_Exterior_D01");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D01");
+        DarkZoneDayPresetPool("Infected_Population_Day_D01");
+        DarkZoneNightPresetPool("Infected_Population_Night_D01");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_3");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("Medium");			
+	}	
+	
+	AreaSettings("R1_3_Zone_03")
+    {
+	    EncounterDifficulty("Difficulty_R01");
+		DynamicSpawnerDayPresetPool("Day_Exterior_R01_Starting_Area");
+        DynamicSpawnerNightPresetPool("Night_Exterior_R01_Starting_Area");
+        DarkZoneDayPresetPool("Infected_Population_Day_D01");
+        DarkZoneNightPresetPool("Infected_Population_Night_D01");
+        DarkZoneDensityTag("dz_region_01");
+		
+		HumanReinforcementDataId("R1_Human");  
+		
+		MinDifficultyTier("Tier_3");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("Medium");			
+	}
+	
+	AreaSettings("R1_3_Zone_03_Waltz")
+    {
+	    EncounterDifficulty("Difficulty_02");
+		DynamicSpawnerDayPresetPool("Day_Exterior_D01");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D01");
+        DarkZoneDayPresetPool("Infected_Population_Day_D01");
+        DarkZoneNightPresetPool("Infected_Population_Night_D01");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_3");
+		MaxDifficultyTier("Tier_9");
+
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("Medium");			
+	}	
+	
+	AreaSettings("R1_4_Zone_04")
+    {
+	    EncounterDifficulty("Difficulty_R01");
+		////EncounterCategoryWeight("Infected_Patrol_Volatile,15"); 
+		DynamicSpawnerDayPresetPool("Day_Exterior_R01_Starting_Area");
+        DynamicSpawnerNightPresetPool("Night_Exterior_R01_Starting_Area");
+        DarkZoneDayPresetPool("Infected_Population_Day_D04");
+        DarkZoneNightPresetPool("Infected_Population_Night_D04");
+        DarkZoneDensityTag("dz_region_01");
+		
+		HumanReinforcementDataId("R1_Human");  
+		
+		MinDifficultyTier("Tier_3");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("Medium");			
+	}
+	
+	AreaSettings("R1_4_Zone_04_Waltz")
+    {
+	    EncounterDifficulty("Difficulty_04");
+		////EncounterCategoryWeight("Infected_Patrol_Volatile,15"); 
+		DynamicSpawnerDayPresetPool("Day_Exterior_D04");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D04");
+        DarkZoneDayPresetPool("Infected_Population_Day_D04");
+        DarkZoneNightPresetPool("Infected_Population_Night_D04");
+        DarkZoneDensityTag("dz_region_01");
+		
+		
+		MinDifficultyTier("Tier_3");
+		MaxDifficultyTier("Tier_9");
+
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("Medium");			
+	}	
+	
+	AreaSettings("R2_1_Zone_05")
+    {
+	    EncounterDifficulty("Difficulty_02");
+		EncounterCategoryWeight("Demolisher_Weak_PK,1"); 		
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D02");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D02");
+        DarkZoneDayPresetPool("Infected_Population_Day_D02");
+        DarkZoneNightPresetPool("Infected_Population_Night_D02");
+        DarkZoneDensityTag("dz_region_01");
+
+		MinDifficultyTier("Tier_3");
+		MaxDifficultyTier("Tier_9");	
+
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");			
+	}
+	
+	AreaSettings("R2_2_Zone_06")
+    {		
+	    EncounterDifficulty("Difficulty_05");
+		EncounterCategoryWeight("Demolisher_Weak_PK,1"); 	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D05");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D05");
+        DarkZoneDayPresetPool("Infected_Population_Day_D05");
+        DarkZoneNightPresetPool("Infected_Population_Night_D05");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R2_3_Zone_07")
+    {
+	    EncounterDifficulty("Difficulty_02");
+		EncounterCategoryWeight("Demolisher_Weak_PK,1"); 	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D02");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D02");
+        DarkZoneDayPresetPool("Infected_Population_Day_D02");
+        DarkZoneNightPresetPool("Infected_Population_Night_D02");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_3");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R2_4_Zone_08")
+    {
+	    EncounterDifficulty("Difficulty_03");
+		EncounterCategoryWeight("Demolisher_Weak_PK,1"); 	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D03");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D03");
+        DarkZoneDayPresetPool("Infected_Population_Day_D03");
+        DarkZoneNightPresetPool("Infected_Population_Night_D03");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_3");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R2_5_Zone_09")
+    {
+	    EncounterDifficulty("Difficulty_03");
+		EncounterCategoryWeight("Demolisher_Weak_PK,1"); 	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D03");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D03");
+        DarkZoneDayPresetPool("Infected_Population_Day_D03");
+        DarkZoneNightPresetPool("Infected_Population_Night_D03");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_3");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R2_6_Zone_10")
+    {
+	    EncounterDifficulty("Difficulty_02");
+		EncounterCategoryWeight("Demolisher_Weak_PK,1"); 	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D02");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D02");
+        DarkZoneDayPresetPool("Infected_Population_Day_D02");
+        DarkZoneNightPresetPool("Infected_Population_Night_D02");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_3");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R2_7_Zone_11")
+    {
+	    EncounterDifficulty("Difficulty_02");
+		EncounterCategoryWeight("Demolisher_Weak_PK,1"); 	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D02");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D02");
+        DarkZoneDayPresetPool("Infected_Population_Day_D02");
+        DarkZoneNightPresetPool("Infected_Population_Night_D02");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_3");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R2_8_Zone_12")
+    {
+	    EncounterDifficulty("Difficulty_02");
+		EncounterCategoryWeight("Demolisher_Weak_PK,1"); 	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D02");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D02");
+        DarkZoneDayPresetPool("Infected_Population_Day_D02");
+        DarkZoneNightPresetPool("Infected_Population_Night_D02");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_3");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R4_1")
+    {		
+		EncounterDifficulty("Difficulty_04");
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D04");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D04");
+        DarkZoneDayPresetPool("Infected_Population_Day_D04");
+        DarkZoneNightPresetPool("Infected_Population_Night_D04");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_3");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("OWA");
+        DynamicSpawnerNightDensity("HUB");				
+	}	
+
+	AreaSettings("R4_2")
+    {
+	    EncounterDifficulty("Difficulty_05");
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D05");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D05");
+        DarkZoneDayPresetPool("Infected_Population_Day_D05");
+        DarkZoneNightPresetPool("Infected_Population_Night_D05");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("OWA");
+        DynamicSpawnerNightDensity("HUB");				
+	}		
+
+//// PUMPING STATION & FLOODED AREA ////
+
+	AreaSettings("R3_Flooded_1")
+    {
+	    EncounterDifficulty("Difficulty_07");
+		DynamicSpawnerDayPresetPool("Day_Exterior_D07_Flooded");
+        DynamicSpawnerNightPresetPool("Day_Exterior_D07_Flooded");
+        //DarkZoneDayPresetPool("Infected_Population_Day_D07");
+        //DarkZoneNightPresetPool("Infected_Population_Night_D07");
+        DarkZoneDensityTag("None");
+		DynamicSpawnerDayDensity("Flooded_1");
+        DynamicSpawnerNightDensity("Flooded_1");
+		
+		EncounterCategoryWeight("Special_Infected_Flooded,1");
+		EncounterCategoryWeight("Base_Looting_Flooded,1");
+		
+		InfectedReinforcementDataId("Flooded_Infected"); 
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+	}
+
+	AreaSettings("R3_Flooded_2")
+    {
+	    EncounterDifficulty("Difficulty_07");
+		DynamicSpawnerDayPresetPool("Day_Exterior_D08_Flooded");
+        DynamicSpawnerNightPresetPool("Day_Exterior_D08_Flooded");
+        //DarkZoneDayPresetPool("Infected_Population_Day_D08");
+        //DarkZoneNightPresetPool("Infected_Population_Night_D08");
+        DarkZoneDensityTag("None");
+		DynamicSpawnerDayDensity("Flooded_1");
+        DynamicSpawnerNightDensity("Flooded_1");	
+
+		EncounterCategoryWeight("Special_Infected_Flooded,1");
+		EncounterCategoryWeight("Base_Looting_Flooded,1");		
+		
+		InfectedReinforcementDataId("Flooded_Infected"); 
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+	}	
+	
+	AreaSettings("R3_Flooded_3")
+    {
+	    EncounterDifficulty("Difficulty_07");
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09_Flooded");
+        DynamicSpawnerNightPresetPool("Day_Exterior_D09_Flooded");
+        //DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        //DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("None");
+		DynamicSpawnerDayDensity("Flooded_1");
+        DynamicSpawnerNightDensity("Flooded_1");		
+		
+		InfectedReinforcementDataId("Flooded_Infected"); 
+		
+		EncounterCategoryWeight("Special_Infected_Flooded,1");
+		EncounterCategoryWeight("Base_Looting_Flooded,1");
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+	}	
+	
+	AreaSettings("R3_Zone_Renegades")
+    {
+	    EncounterDifficulty("Difficulty_05");
+		DynamicSpawnerDayPresetPool("Day_Exterior_D05");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D05");
+        //DarkZoneDayPresetPool("Infected_Population_Day_D07");
+        //DarkZoneNightPresetPool("Infected_Population_Night_D07");
+        DarkZoneDensityTag("None");
+		DynamicSpawnerDayDensity("OWA");
+        DynamicSpawnerNightDensity("HUB");	
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+	}
+
+///////////// END GAME AREAS ///////////////
+
+	AreaSettings("R1_1_Zone_01_EndGame")
+    {	
+		EncounterDifficulty("Difficulty_09");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 			
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("Medium");				
+	}
+	
+	AreaSettings("R1_2_Zone_02_EndGame")
+    {
+	    EncounterDifficulty("Difficulty_09");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("Medium");			
+	}
+	
+	AreaSettings("R1_3_Zone_03_EndGame")
+    {
+	    EncounterDifficulty("Difficulty_09");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 				
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("Medium");			
+	}
+		
+	
+	AreaSettings("R1_4_Zone_04_EndGame")
+    {
+	    EncounterDifficulty("Difficulty_09");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 			
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("Medium");			
+	}	
+	
+	AreaSettings("R2_1_Zone_05_EndGame")
+    {
+	    EncounterDifficulty("Difficulty_09");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 			
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");	
+
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");			
+	}
+	
+	AreaSettings("R2_2_Zone_06_EndGame")
+    {		
+	    EncounterDifficulty("Difficulty_09");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R2_3_Zone_07_EndGame")
+    {
+	    EncounterDifficulty("Difficulty_09");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R2_4_Zone_08_EndGame")
+    {
+	    EncounterDifficulty("Difficulty_09");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R2_5_Zone_09_EndGame")
+    {
+	    EncounterDifficulty("Difficulty_09");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R2_6_Zone_10_EndGame")
+    {
+	    EncounterDifficulty("Difficulty_09");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R2_7_Zone_11_EndGame")
+    {
+	    EncounterDifficulty("Difficulty_09");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R2_8_Zone_12_EndGame")
+    {
+	    EncounterDifficulty("Difficulty_09");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+
+	AreaSettings("R3_Zone_Renegades_EndGame")
+    {
+	    EncounterDifficulty("Difficulty_09");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        //DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        //DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("None");
+		DynamicSpawnerDayDensity("OWA");
+        DynamicSpawnerNightDensity("HUB");	
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+	}
+	
+//// PUMPING STATION & FLOODED AREA ////
+
+	AreaSettings("R3_Flooded_1_EndGame")
+    {
+	    EncounterDifficulty("Difficulty_09");
+		DynamicSpawnerDayPresetPool("Day_Exterior_Flooded_Endgame");
+        DynamicSpawnerNightPresetPool("Night_Exterior_Flooded_Endgame");
+        //DarkZoneDayPresetPool("Infected_Population_Day_D07");
+        //DarkZoneNightPresetPool("Infected_Population_Night_D07");
+        DarkZoneDensityTag("None");
+		DynamicSpawnerDayDensity("Flooded_1");
+        DynamicSpawnerNightDensity("Flooded_1");
+		
+		EncounterCategoryWeight("Special_Infected_Flooded,1");
+		EncounterCategoryWeight("Base_Looting_Flooded,1");
+		
+		InfectedReinforcementDataId("Flooded_Infected_EndGame"); 
+		
+		MinDifficultyTier("Tier_7");
+		MaxDifficultyTier("Tier_9");
+	}
+
+	AreaSettings("R3_Flooded_2_EndGame")
+    {
+	    EncounterDifficulty("Difficulty_09");
+		DynamicSpawnerDayPresetPool("Day_Exterior_Flooded_Endgame");
+        DynamicSpawnerNightPresetPool("Night_Exterior_Flooded_Endgame");
+        //DarkZoneDayPresetPool("Infected_Population_Day_D08");
+        //DarkZoneNightPresetPool("Infected_Population_Night_D08");
+        DarkZoneDensityTag("None");
+		DynamicSpawnerDayDensity("Flooded_1");
+        DynamicSpawnerNightDensity("Flooded_1");	
+
+		EncounterCategoryWeight("Special_Infected_Flooded,1");
+		EncounterCategoryWeight("Base_Looting_Flooded,1");		
+		
+		InfectedReinforcementDataId("Flooded_Infected_EndGame"); 
+		
+		MinDifficultyTier("Tier_7");
+		MaxDifficultyTier("Tier_9");
+	}	
+	
+	AreaSettings("R3_Flooded_3_EndGame")
+    {
+	    EncounterDifficulty("Difficulty_09");
+		DynamicSpawnerDayPresetPool("Day_Exterior_Flooded_Endgame");
+        DynamicSpawnerNightPresetPool("Night_Exterior_Flooded_Endgame");
+        //DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        //DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("None");
+		DynamicSpawnerDayDensity("Flooded_1");
+        DynamicSpawnerNightDensity("Flooded_1");		
+		
+		InfectedReinforcementDataId("Flooded_Infected_EndGame"); 
+		
+		EncounterCategoryWeight("Special_Infected_Flooded,1");
+		EncounterCategoryWeight("Base_Looting_Flooded,1");
+		
+		MinDifficultyTier("Tier_7");
+		MaxDifficultyTier("Tier_9");
+	}	
+	
+	AreaSettings("R4_1_EndGame")
+    {		
+		EncounterDifficulty("Difficulty_09");
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_7");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("OWA");
+        DynamicSpawnerNightDensity("HUB");				
+	}	
+
+
+///////////// END GAME AREAS ///////////////
+///////////// FLOODED UNLOCKED ///////////////
+
+	AreaSettings("R1_1_Zone_01_EndGame_Flooded")
+    {	
+		EncounterDifficulty("Difficulty_08");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_End");
+        DynamicSpawnerNightPresetPool("Night_Exterior_End");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		HumanReinforcementDataId("Default_Infected_EndGame_Flooded");  
+		
+		MinDifficultyTier("Tier_7");
+		MaxDifficultyTier("Tier_9");
+
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("Medium");				
+	}
+	
+	AreaSettings("R1_2_Zone_02_EndGame_Flooded")
+    {
+	    EncounterDifficulty("Difficulty_08");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 		
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_End");
+        DynamicSpawnerNightPresetPool("Night_Exterior_End");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		HumanReinforcementDataId("Default_Infected_EndGame_Flooded");  
+		
+		MinDifficultyTier("Tier_7");
+		MaxDifficultyTier("Tier_9");
+
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("Medium");			
+	}
+	
+	AreaSettings("R1_3_Zone_03_EndGame_Flooded")
+    {
+	    EncounterDifficulty("Difficulty_08");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 			
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_End");
+        DynamicSpawnerNightPresetPool("Night_Exterior_End");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		HumanReinforcementDataId("Default_Infected_EndGame_Flooded");  
+		
+		MinDifficultyTier("Tier_7");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("Medium");			
+	}
+		
+	
+	AreaSettings("R1_4_Zone_04_EndGame_Flooded")
+    {
+	    EncounterDifficulty("Difficulty_08");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 		
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_End");
+        DynamicSpawnerNightPresetPool("Night_Exterior_End");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		HumanReinforcementDataId("Default_Infected_EndGame_Flooded");  
+		
+		MinDifficultyTier("Tier_7");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("Medium");			
+	}	
+	
+	AreaSettings("R2_1_Zone_05_EndGame_Flooded")
+    {
+	    EncounterDifficulty("Difficulty_08");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 		
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_End");
+        DynamicSpawnerNightPresetPool("Night_Exterior_End");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		HumanReinforcementDataId("Default_Infected_EndGame_Flooded");  		
+
+		MinDifficultyTier("Tier_7");
+		MaxDifficultyTier("Tier_9");	
+
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");			
+	}
+	
+	AreaSettings("R2_2_Zone_06_EndGame_Flooded")
+    {		
+	    EncounterDifficulty("Difficulty_08");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_End");
+        DynamicSpawnerNightPresetPool("Night_Exterior_End");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+	
+		HumanReinforcementDataId("Default_Infected_EndGame_Flooded");  	
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R2_3_Zone_07_EndGame_Flooded")
+    {
+	    EncounterDifficulty("Difficulty_08");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_End");
+        DynamicSpawnerNightPresetPool("Night_Exterior_End");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+
+		HumanReinforcementDataId("Default_Infected_EndGame_Flooded");  		
+		
+		MinDifficultyTier("Tier_7");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R2_4_Zone_08_EndGame_Flooded")
+    {
+	    EncounterDifficulty("Difficulty_08");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_End");
+        DynamicSpawnerNightPresetPool("Night_Exterior_End");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		HumanReinforcementDataId("Default_Infected_EndGame_Flooded");  		
+		
+		MinDifficultyTier("Tier_7");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R2_5_Zone_09_EndGame_Flooded")
+    {
+	    EncounterDifficulty("Difficulty_08");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 		
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_End");
+        DynamicSpawnerNightPresetPool("Night_Exterior_End");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		HumanReinforcementDataId("Default_Infected_EndGame_Flooded");  		
+		
+		MinDifficultyTier("Tier_7");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R2_6_Zone_10_EndGame_Flooded")
+    {
+	    EncounterDifficulty("Difficulty_08");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_End");
+        DynamicSpawnerNightPresetPool("Night_Exterior_End");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+
+		HumanReinforcementDataId("Default_Infected_EndGame_Flooded");  
+		
+		MinDifficultyTier("Tier_7");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R2_7_Zone_11_EndGame_Flooded")
+    {
+	    EncounterDifficulty("Difficulty_08");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_End");
+        DynamicSpawnerNightPresetPool("Night_Exterior_End");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+
+		HumanReinforcementDataId("Default_Infected_EndGame_Flooded");  
+		
+		MinDifficultyTier("Tier_7");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R2_8_Zone_12_EndGame_Flooded")
+    {
+	    EncounterDifficulty("Difficulty_08");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_End");
+        DynamicSpawnerNightPresetPool("Night_Exterior_End");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+
+		HumanReinforcementDataId("Default_Infected_EndGame_Flooded");  
+		
+		MinDifficultyTier("Tier_7");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+
+	AreaSettings("R3_Zone_Renegades_EndGame_Flooded")
+    {
+	    EncounterDifficulty("Difficulty_08");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 	
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_End");
+        DynamicSpawnerNightPresetPool("Night_Exterior_End");
+        //DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        //DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("None");
+		DynamicSpawnerDayDensity("OWA");
+        DynamicSpawnerNightDensity("HUB");	
+
+		HumanReinforcementDataId("Default_Infected_EndGame_Flooded");  
+		
+		MinDifficultyTier("Tier_7");
+		MaxDifficultyTier("Tier_9");
+	}
+	
+	AreaSettings("R4_1_EndGame_Flooded")
+    {		
+		EncounterDifficulty("Difficulty_08");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,1000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,1000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,1000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,1000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 			
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_End");
+        DynamicSpawnerNightPresetPool("Night_Exterior_End");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+
+		HumanReinforcementDataId("Default_Infected_EndGame_Flooded");  
+		
+		MinDifficultyTier("Tier_7");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("OWA");
+        DynamicSpawnerNightDensity("HUB");				
+	}	
+
+
+///////////// REGION 05 ////////////////////
+
+	AreaSettings("R5_1_Zone_21")
+    {
+		EncounterDifficulty("Difficulty_03");
+        EncounterCategoryWeight("Flooded_Defend,1");
+		
+	    DynamicSpawnerDayPresetPool("Day_Exterior_D03");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D03");
+        DarkZoneDayPresetPool("Infected_Population_Day_D03");
+        DarkZoneNightPresetPool("Infected_Population_Night_D03");
+        DarkZoneDensityTag("dz_region_01");
+
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+	}
+	
+	AreaSettings("R5_2_Zone_22")
+    {
+	    EncounterDifficulty("Difficulty_03");
+		DynamicSpawnerDayPresetPool("Day_Exterior_D03");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D03");
+        DarkZoneDayPresetPool("Infected_Population_Day_D03");
+        DarkZoneNightPresetPool("Infected_Population_Night_D03");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+	}
+	
+	AreaSettings("R5_3_Zone_23")
+    {
+	    EncounterDifficulty("Difficulty_05");
+		DynamicSpawnerDayPresetPool("Day_Exterior_D05");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D05");
+        DarkZoneDayPresetPool("Infected_Population_Day_D05");
+        DarkZoneNightPresetPool("Infected_Population_Night_D05");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+	}
+	
+	AreaSettings("R5_4_Zone_24")
+    {
+	    EncounterDifficulty("Difficulty_04");
+		DynamicSpawnerDayPresetPool("Day_Exterior_D04");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D04");
+        DarkZoneDayPresetPool("Infected_Population_Day_D04");
+        DarkZoneNightPresetPool("Infected_Population_Night_D04");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+	}
+	
+	AreaSettings("R5_5_Zone_25")
+    {
+	    EncounterDifficulty("Difficulty_06");
+		DynamicSpawnerDayPresetPool("Day_Exterior_D06");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D06");
+        DarkZoneDayPresetPool("Infected_Population_Day_D06");
+        DarkZoneNightPresetPool("Infected_Population_Night_D06");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_6");
+		MaxDifficultyTier("Tier_9");
+	}
+	
+	AreaSettings("R5_6_Zone_26")
+    {
+	    EncounterDifficulty("Difficulty_03");
+		DynamicSpawnerDayPresetPool("Day_Exterior_D03");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D03");
+        DarkZoneDayPresetPool("Infected_Population_Day_D03");
+        DarkZoneNightPresetPool("Infected_Population_Night_D03");
+        DarkZoneDensityTag("dz_region_01");
+
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+	}
+	
+	AreaSettings("R6_1_Zone_17")
+    {
+		EncounterDifficulty("Difficulty_06");
+		MinDifficultyTier("Tier_6");
+		MaxDifficultyTier("Tier_9");
+	}
+	
+	AreaSettings("R6_2_Zone_18")
+    {
+		EncounterDifficulty("Difficulty_06");
+		MinDifficultyTier("Tier_6");
+		MaxDifficultyTier("Tier_9");
+	}
+	
+	AreaSettings("R6_3_Zone_19")
+    {
+		EncounterDifficulty("Difficulty_06");
+		MinDifficultyTier("Tier_6");
+		MaxDifficultyTier("Tier_9");
+	}
+	
+	AreaSettings("R6_4_Zone_20")
+    {
+		EncounterDifficulty("Difficulty_06");
+		MinDifficultyTier("Tier_6");
+		MaxDifficultyTier("Tier_9");
+	}
+	
+	// Epilogue
+	AreaSettings("Epilogue")
+    {
+		EncounterDifficulty(IAL_AI_Encounter_Difficulty_Lvl);
+        //EncounterCategoryWeight("Survivor_Viral,1");
+
+		DynamicSpawnerDayPresetPool("Epilogue");
+        DynamicSpawnerNightPresetPool("Epilogue");
+        DynamicSpawnerDayDensity("VeryHard");
+        DynamicSpawnerNightDensity("Medium");
+		DarkZoneDayPresetPool("Infected_Population_Day_D06");
+        DarkZoneNightPresetPool("Infected_Population_Night_D06");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_6");
+		MaxDifficultyTier("Tier_9");
+    }
+
+// PLAYTESTS
+
+	AreaSettings("R1_3_Zone_03_Easy_Playtests")
+    {
+		EncounterDifficulty(IAL_AI_Encounter_Difficulty_Lvl);
+        EncounterCategoryWeight("Biter_Corpse,1");
+        EncounterCategoryWeight("Exterior_Defend,1");
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");			
+        //EncounterCategoryWeight("Truck,1");
+        EncounterCategoryWeight("Roof,1");
+        EncounterCategoryWeight("Interior_Apartments,1");
+        EncounterCategoryWeight("Shops,1");
+        EncounterCategoryWeight("Shops_Small,1");
+        EncounterCategoryWeight("Prisoners,1");
+        //EncounterCategoryWeight("Hangman,1"); // only for PKs
+        //EncounterCategoryWeight("Burning at stake,1"); // only for PKs
+        EncounterCategoryWeight("Retreat_Day,1");
+        EncounterCategoryWeight("Retreat_Night,100");
+        ////EncounterCategoryWeight("Infected_Corpse_Eating_Day,1");
+        ////EncounterCategoryWeight("Infected_Corpse_Eating_Night,1");
+		EncounterCategoryWeight("Infected_Corpse_Eating_Base,1");
+		EncounterCategoryWeight("Infected_Crawling,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Base_PK,100");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Night_Street,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Night_Roof,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Street,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Flavor,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK_Street,100");
+		
+		EncounterCategoryWeight("Infected_Day_Opportunity,1");
+		EncounterCategoryWeight("Infected_Opportunity,1");
+		//EncounterCategoryWeight("Prisoner_Infected,1");
+        EncounterCategoryWeight("Ambush_FakeHostage,1");   
+        EncounterCategoryWeight("Ambush_Chest,1"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_01,1"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_02,1"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_03,1"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_04,1");
+        //EncounterCategoryWeight("Infected_Grabbed_AI,1"); 
+        //EncounterCategoryWeight("Infected_Prisoner_Rescue_Day,1"); 
+        EncounterCategoryWeight("Infected_Prisoner_Rescue_Night,1000"); 
+        //EncounterCategoryWeight("Beggar_Infected,1");
+        EncounterCategoryWeight("Threat_On_Street,1");
+        EncounterCategoryWeight("Threat_On_Roof,50");
+        //EncounterCategoryWeight("Beggar_Bandit_Infected,1");
+		
+	    DynamicSpawnerDayPresetPool("Day_Exterior_R01");
+        DynamicSpawnerNightPresetPool("Night_Exterior_R01_playtest_no_virals");
+        DynamicSpawnerDayDensity("Easy");
+        DynamicSpawnerNightDensity("Easy");
+        DarkZoneDayPresetPool("Infected_Population_Day_R01");
+        DarkZoneNightPresetPool("Infected_Population_Night_R01");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+	}
+	
+	AreaSettings("R1_3_Zone_03_Medium_Playtests")
+    {
+		EncounterDifficulty(IAL_AI_Encounter_Difficulty_Lvl);
+        EncounterCategoryWeight("Biter_Corpse,1");
+        EncounterCategoryWeight("Exterior_Defend,1");
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");			
+        //EncounterCategoryWeight("Truck,1");
+        EncounterCategoryWeight("Roof,1");
+        EncounterCategoryWeight("Interior_Apartments,1");
+        EncounterCategoryWeight("Shops,1");
+        EncounterCategoryWeight("Shops_Small,1");
+        EncounterCategoryWeight("Prisoners,1");
+        //EncounterCategoryWeight("Hangman,1"); // only for PKs
+        //EncounterCategoryWeight("Burning at stake,1"); // only for PKs
+        EncounterCategoryWeight("Retreat_Day,1");
+        EncounterCategoryWeight("Retreat_Night,100");
+        ////EncounterCategoryWeight("Infected_Corpse_Eating_Day,1");
+        ////EncounterCategoryWeight("Infected_Corpse_Eating_Night,1");
+		//EncounterCategoryWeight("Infected_Corpse_Eating_Base,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Base_PK,100");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Night_Street,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Night_Roof,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Street,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Flavor,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK_Street,100");
+		
+		EncounterCategoryWeight("Infected_Day_Opportunity,1");
+		EncounterCategoryWeight("Infected_Opportunity,1");
+		//EncounterCategoryWeight("Prisoner_Infected,1");
+        EncounterCategoryWeight("Ambush_FakeHostage,1");   
+        EncounterCategoryWeight("Ambush_Chest,1"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_01,1"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_02,1"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_03,1"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_04,1");
+        //EncounterCategoryWeight("Infected_Grabbed_AI,1"); 
+        //EncounterCategoryWeight("Infected_Prisoner_Rescue_Day,1"); 
+        EncounterCategoryWeight("Infected_Prisoner_Rescue_Night,1000"); 
+        //EncounterCategoryWeight("Beggar_Infected,1");
+        EncounterCategoryWeight("Threat_On_Street,1");
+        EncounterCategoryWeight("Threat_On_Roof,50");
+        //EncounterCategoryWeight("Beggar_Bandit_Infected,1");
+		
+	    DynamicSpawnerDayPresetPool("Day_Exterior_R01");
+        DynamicSpawnerNightPresetPool("Night_Exterior_R01_playtest_medium");
+        DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("Medium");
+        DarkZoneDayPresetPool("Infected_Population_Day_R01");
+        DarkZoneNightPresetPool("Infected_Population_Night_R01");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+	}
+	
+	AreaSettings("R1_3_Zone_03_Hard_Playtests")
+    {
+		EncounterDifficulty(IAL_AI_Encounter_Difficulty_Lvl);
+        EncounterCategoryWeight("Biter_Corpse,1");
+        EncounterCategoryWeight("Exterior_Defend,1");
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");			
+        //EncounterCategoryWeight("Truck,1");
+        EncounterCategoryWeight("Roof,1");
+        EncounterCategoryWeight("Interior_Apartments,1");
+        EncounterCategoryWeight("Shops,1");
+        EncounterCategoryWeight("Shops_Small,1");
+        EncounterCategoryWeight("Prisoners,1");
+        //EncounterCategoryWeight("Hangman,1"); // only for PKs
+        //EncounterCategoryWeight("Burning at stake,1"); // only for PKs
+        EncounterCategoryWeight("Retreat_Day,1");
+        EncounterCategoryWeight("Retreat_Night,100");
+        ////EncounterCategoryWeight("Infected_Corpse_Eating_Day,1");
+        ////EncounterCategoryWeight("Infected_Corpse_Eating_Night,1");
+		EncounterCategoryWeight("Infected_Corpse_Eating_Base,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Base_PK,100");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Night_Street,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_Night_Roof,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Street,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Flavor,1");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK_Roof,1");
+        //EncounterCategoryWeight("Infected_Corpse_Eating_PK_Street,100");
+		
+		EncounterCategoryWeight("Infected_Day_Opportunity,1");
+		EncounterCategoryWeight("Infected_Opportunity,1");
+		//EncounterCategoryWeight("Prisoner_Infected,1");
+        EncounterCategoryWeight("Ambush_FakeHostage,1");   
+        EncounterCategoryWeight("Ambush_Chest,1"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_01,1"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_02,1"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_03,1"); 
+        EncounterCategoryWeight("Infected_Corpse_Defend_04,1"); 
+        //EncounterCategoryWeight("Infected_Grabbed_AI,1"); 
+        //EncounterCategoryWeight("Infected_Prisoner_Rescue_Day,1"); 
+        EncounterCategoryWeight("Infected_Prisoner_Rescue_Night,1000"); 
+        //EncounterCategoryWeight("Beggar_Infected,1");
+        EncounterCategoryWeight("Threat_On_Street,1");
+        EncounterCategoryWeight("Threat_On_Roof,50");
+        //EncounterCategoryWeight("Beggar_Bandit_Infected,1");
+		
+	    DynamicSpawnerDayPresetPool("Day_Exterior_R01");
+        DynamicSpawnerNightPresetPool("Night_Exterior_R01_playtest_hard");
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Hard");
+        DarkZoneDayPresetPool("Infected_Population_Day_R01");
+        DarkZoneNightPresetPool("Infected_Population_Night_R01");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_5");
+		MaxDifficultyTier("Tier_9");
+	}
+	
+	
+// TBD  - needed for scripts logic, don't remove
+	
+	AreaSettings("Empty")
+    {
+	}
+	AreaSettings("Empty_1")
+    {
+	}
+	AreaSettings("Empty_2")
+    {
+	}
+	AreaSettings("Empty_3")
+    {
+	}
+	AreaSettings("Empty_4")
+    {
+	}
+	AreaSettings("Empty_5")
+    {
+	}
+			
+	/////////// HUBS /////////////	
+	
+	AreaSettings("Hub_Church")
+    {
+        // Left blank intentionally
+    }
+	
+	AreaSettings("HUB_Bazar")
+    {
+        // Left blank intentionally
+    }
+	
+	AreaSettings("Hub_Example")
+    {
+        // Left blank intentionally
+    }
+	
+	AreaSettings("Hub_SolarPowerPlant")
+    {
+        // Left blank intentionally
+    }
+
+	AreaSettings("Triumphal_Arch_AIlife")
+    {
+        // Left blank intentionally
+    }
+	
+	AreaSettings("Franks_Canteen")
+    {
+        // Left blank intentionally
+    }
+	
+	
+
+// STORY
+	AreaSettings("City_Revolution")
+    {
+		EncounterDifficulty(IAL_AI_Encounter_Difficulty_Lvl);
+        //EncounterCategoryWeight("PKs_vs_Bandits,1");
+        EncounterCategoryWeight("Bandits_vs_PKs,1");
+		
+	    DynamicSpawnerDayPresetPool("Day_Exterior_R01");
+        DynamicSpawnerNightPresetPool("Night_Exterior_R01");
+        DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("Hard");
+        DarkZoneDayPresetPool("Infected_Population_Day_R01");
+        DarkZoneNightPresetPool("Infected_Population_Night_R01");
+        DarkZoneDensityTag("dz_region_01");
+	}
+
+/* STORY - BARKS - TO REMOVE
+	AreaSettings("brk_qst_Orders_start")
+    {
+    }
+	AreaSettings("brk_qst_Orders_end")
+    {
+    }
+	AreaSettings("brk_qst_APTCH_start")
+    {
+    }
+	AreaSettings("brk_qst_APTCH_end")
+    {
+    }
+	AreaSettings("brk_qst_Hive_start")
+    {
+    }
+	AreaSettings("brk_qst_Hive_end")
+    {
+    }
+	AreaSettings("brk_qst_Broadcast_start")
+    {
+    }
+	AreaSettings("brk_qst_Broadcast_end")
+    {
+    }
+	AreaSettings("brk_qst_DelayedDelivery_start")
+    {
+    }
+	AreaSettings("brk_qst_DelayedDelivery_end")
+    {
+    }
+	AreaSettings("brk_qst_Aitor_start")
+    {
+    }
+	AreaSettings("brk_qst_Aitor_end")
+    {
+    }
+	AreaSettings("brk_qst_Bazaar_Survivors")
+    {
+    }
+	AreaSettings("brk_qst_Bazaar_PK")
+    {
+    }
+	AreaSettings("brk_qst_Broadcast_JackMatt")
+    {
+    }
+	AreaSettings("brk_qst_Broadcast_Frank")
+    {
+    }
+	AreaSettings("brk_qst_Broadcast_Juan")
+    {
+    }	
+*/
+
+// Test Area
+
+	AreaSettings("Init_Spawning_Test")
+    {	
+		EncounterDifficulty("Difficulty_R01");
+	    DynamicSpawnerDayPresetPool("Init_Area_Test");
+        DynamicSpawnerNightPresetPool("Init_Area_Test");
+        EncounterCategoryWeight("Infected_Corpse_Eating_Day_Flavor,1");
+	}
+
+// ANIMALS
+
+	AreaSettings("Animals_Region_04")
+    {	
+	}
+	
+}

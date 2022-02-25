@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Selector>
+        <!-- Taunt while waiting for attack to come off cooldown -->
+        <CooldownTimeDelta m_CooldownTime="1.50" m_CooldownOnAbort="true">
+            <SequenceMem>
+                <Cnd_IsPoseEqual m_Pose="Standing"/>
+                <Cnd_IsCombatTargetInAngle m_Angle="30"/>
+                <Cnd_IsCombatTargetInRadius m_Radius="$preferred_distance_to_target_min" m_Invert="true" m_UsePrediction="true"/>
+                <Opr_SetDirCorrectionSpeed m_MaxSpeed="360"/>
+                <Act_Taunt m_Type="Normal" m_Target="#target" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+            </SequenceMem>
+        </CooldownTimeDelta>
+        <Sequence>
+            <Cnd_IsCombatTargetInRadius m_Radius="$max_keep_distance_range" m_Invert="true"/>
+            <Act_Move m_Destination="#target_pos" m_SkipStart="#skip_start" m_IsAvoidanceActive="$use_avoidance" m_EndRadius="17" m_MoveStyle="#run_move_style" m_AvoidRegionsPreset="$avoid_regions_preset" m_StopAtDest="true" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+        </Sequence>
+        <!-- Strafing -->
+        <Optional m_Enabled="$strafe_enabled">
+            <SequenceMem>
+                <Cnd_IsPoseEqual m_Pose="Standing"/>
+                <Cnd_IsCombatTargetInAngle m_Angle="40"/>
+                <Selector>
+                    <Sequence>
+                        <Cnd_Random m_Value="0.50"/>
+                        <Opr_SetBBValue_EStepDirection m_Key="#combat_strafe_dir" m_Value="RIGHT"/>
+                    </Sequence>
+                    <Opr_SetBBValue_EStepDirection m_Key="#combat_strafe_dir" m_Value="LEFT"/>
+                </Selector>
+                <Opr_SetDirCorrectionSpeed m_MaxSpeed="600"/>
+                <Act_Step m_Type="COMBAT" m_Style="CAUTIOUS" m_Direction="#combat_strafe_dir" m_Target="#target" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+            </SequenceMem>
+        </Optional>
+
+        <SequenceMem>
+            <Cnd_IsPoseEqual m_Pose="Standing"/>
+            <Cnd_IsActivityModuleRunning_Movement m_Invert="true"/>
+            <Cnd_IsCombatTargetInRadius m_Radius="$preferred_distance_to_target_min" m_Invert="true"/>
+            <Cnd_IsCombatTargetInAngle m_Angle="45" m_Invert="true"/>
+            <Cnd_IsOnGround/>
+            <Opr_SetDirCorrectionSpeed m_MaxSpeed="1080"/>
+            <Act_TurnToPos m_Position="#target_pos" m_Type="Combat" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+        </SequenceMem>
+    </Selector>
+</BehaviorTree>

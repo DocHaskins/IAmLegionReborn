@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Succeeder>
+        <!-- #TODO this starter is problemtic for keeping roles -->
+        <!-- <Starter m_Key="#trigger_combat_update" m_Hide="true"> -->
+            <Sequence>
+                <Succeeder>
+                    <ExternalTree m_UID="$tactic_tree" m_CustomName="Tactic" m_Hide="true"/>
+                </Succeeder>
+                <ExternalTree m_UID="HUMAN_COMBAT_UPDATE_GROUP" m_CustomName="Group" m_Hide="true"/>
+                <ExternalTree m_UID="HUMAN_COMBAT_UPDATE_COMMON" m_CustomName="Common" m_Hide="true"/>
+            </Sequence>
+        <!-- </Starter> -->
+    </Succeeder>
+</BehaviorTree>

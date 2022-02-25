@@ -1,0 +1,131 @@
+sub set_common_params()
+{
+    Param("MaxAIsCountInHighLod", "50");
+    Param("MaxAIsCountInHumanAgendaWithinMaxAIsCountInHighLod", "12");
+    Param("MaxAIsCountInZombieAgendaWithinMaxAIsCountInHighLod", "3");
+    Param("MaxDistanceToScanForPossibleThreatOrAllyAIsToSimulate", "15");
+    Param("MaxPossibleThreatOrAllyAIsToSimulate", "5");
+    Param("PriviligedAngleInFrontOfPlayerForPossibleThreatOrAllyAIs", "40");
+    Param("MaxDistanceToScanForSpecialAIsToSimulateFromDynamicSpawner", "40");
+    Param("MaxDistanceToScanForZombieAgendaAIsToSimulate", "50");
+    Param("CountOfAIsInAgendaBelowWhichOrEqualToAgendaWillBeTreatedAsAtomic", "6");
+    Param("BossBehaviorTrees", "DEMOLISHER_BT");
+    Param("MaxBossesCountToSimulateWithPriority", "2");
+    Param("MaxDistanceToScanForBossesToSimulateWithPriorityWithPrecisionTo10meters", "40");
+    Param("MaxBTTicksPerFrameForGenericAIs", "2");
+	Param("VisualUpdateIndexModuloDenominator", "6");
+
+    Param("DynamicSpawnerAIActivationUpTo", "100");
+    Param("StaticSpawnerAIActivationUpTo", "100");
+    Param("MorphedAIMeshDayStartTime", "0.270833343");
+    Param("MorphedAIMeshDayEndTime", "0.812500000");
+    Param("MorphedAIMeshDayFrom", "60");
+    Param("MorphedAIMeshNightFrom", "28");
+    Param("MorphedAIMeshConsiderVisibilityDayFrom", "25");
+    Param("MorphedAIMeshConsiderVisibilityNightFrom", "25");
+
+    Param("AIIndexingPreferredMax2dDistancePerFloorIfPayerInDarkzone", "35");
+    Param("AIIndexingPreferredFloorHeightIfPayerInDarkzone", "2");
+
+    Param("AIIndexingPreferredMax2dDistancePerFloorIfPayerNotInDarkzone", "40");
+    Param("AIIndexingPreferredFloorHeightIfPayerNotInDarkzone", "4");
+
+    Param("FacialExpressionHighUpTo", "2.0");
+    Param("FacialExpressionMediumUpTo", "4.5");
+    Param("FacialExpressionLowUpTo", "7.0");
+    Param("FacialExpressionMinimalUpTo", "10.0");
+    Param("FacialExpressionEnabledUpTo", "12.0");
+
+    Param("FacialExpressionHighUpToCombat", "2.0");
+    Param("FacialExpressionMediumUpToCombat", "4.5");
+    Param("FacialExpressionLowUpToCombat", "7.0");
+    Param("FacialExpressionMinimalUpToCombat", "10.0");
+    Param("FacialExpressionEnabledUpToCombat", "12.0");
+    
+    Param("FacialExpressionHighMaxAICount", "5");
+    Param("FacialExpressionMediumMaxAICount", "15");
+    Param("FacialExpressionLowMaxAICount", "25");
+
+    Param("BarkLod0UpTo", "50");
+    Param("AnimBonesLod0UpTo", "9");
+    Param("AnimBonesLod1UpTo", "14");
+    Param("AnimBonesLod2UpTo", "36");
+    Param("UpdateLookUpToDistance", "12");
+    Param("RiskOfClippingLocalPlayerPhysicsDistance", "5.0");
+    Param("BlockPhysicsActivationDistance", "42.0");
+    Param("BlockPhysicsActivationDistanceForLocomotion", "25.0");
+    Param("ClearInactiveRagdollsDistance", "6.0");
+    Param("MaxActiveAIDynamicPhysics", "25");
+    Param("MaxActiveAIRagdolls", "10");
+    Param("StartClearingSleepingRagdollsThreshold", "3");
+    Param("BTUpdateRateInLod0", "0.2");
+    Param("BTUpdateRateInAgenda", "0.2");
+    Param("BTUpdateRateInChase", "0.2");
+    Param("StepsProcessingUpTo", "20");
+    Param("AnimIKLod0UpTo", "2.0");
+    Param("AnimIKLod1UpTo", "9.0");
+    Param("DissolveDuration", "0.5");
+    Param("DividerOfDistanceToCameraForAIInBinocularsMode", "3.5");
+    Param("DividerOfDistanceToCameraForAIWhenFlashlightIsOnAtNight", "2.0");
+    Param("FreezeAnimatorOfAIInBPIfItIsNotVisibleFrom", "8");
+    Param("ForceAnimatorFreezeForNotActiveAIWhichIsFurtherThan", "170");
+    Param("MaxActivationsOfHighPolyVisualisationPerFrame", "1");
+    Param("MaxAIReactivationsPerFrameAtWhichHighPolyCanBeActivated", "0");
+    Param("MaxAIReactivationsPerFrameAtWhichClothCanBeLoaded", "0");
+    Param("MaxAIReactivationsPerFrame", "1");
+    Param("MaxAIReactivationsPerFrameAtWhichAICanBeActivated", "0");
+    Param("MaxAIsCountToDeactivatePerFrame", "1");
+    Param("MaxAIsInLoiterMode", "25");
+    Param("MaxAIsInLoiterModeInCoop", "7");
+    Param("TurnOfLoiterModeWhenAIWasNotVisibleForSeconds", "2.0");
+    Param("LoiterModeNotFurtherThan", "50");
+    Param("LoiterRandomizationSelectEveryNAIForLoiter", "1");
+    Param("TurnOnLoiterIfThereWasNoLastFullOnFrameForSeconds", "1");
+    Param("DecreaseBTTickFrequencyOfGenericVisibleAIPerEachMeterBySeconds", "0.04");
+    Param("DecreaseBTTickFrequencyOfGenericInvisibleAIPerEachMeterBySeconds", "0.07");
+    Param("DecreaseBTTickFrequencyOfAgendaVisibleAIPerEachMeterBySeconds", "0.01");
+    Param("DecreaseBTTickFrequencyOfAgendaInvisibleAIPerEachMeterBySeconds", "0.07");
+    Param("DecreaseBTTickFrequencyOfAgendaAINotMoreThanSeconds", "2.5");
+    Param("DecreaseBTTickFrequencyOfAIOwnedByDialogButNotYetInBPPerEachMeterBySeconds", "0.1");
+    Param("DecreaseBTTickFrequencyOfAIOwnedByDialogButNotYetInBPNotMoreThanSeconds", "3.5");
+    Param("DecreaseBTTickFrequencyOfAIToProcessUseBPRequestsPerEachMeterBySeconds", "0.1");
+    Param("DecreaseBTTickFrequencyOfAIToProcessUseBPRequestsNotMoreThanSeconds", "3.5");
+    Param("BanditCampAreas", "Bloods_Gang_Area");
+    Param("BanditCampAreas", "Skyscraper_Gang_Area");
+    Param("BanditCampAreas", "Flooded_Gang_Area");
+    Param("BanditCampAreas", "Vertical_Gang_Area");
+    Param("BanditCampAreas", "Military_Gang_Area");
+    Param("BanditCampAreas", "Chemicals_Gang_Area");
+    Param("CheckIfPlayerIsInBanditCampEverySeconds", "1");
+    Param("CheckIfAIIsInTheSameBanditCampAsPlayerEverySeconds", "0.75");
+    Param("CheckIfPlayerIsInsideTheMetroEverySeconds", "0.77");
+    Param("CheckIfPlayerIsOnFloorWhileInBuildingEverySeconds", "0.51");
+    Param("ScanForAIsToActivateWhenPlayerUsesThrowWeaponEverySeconds", "0.25");
+    Param("MaxClosestAIsToTriggerWhenNoisePOIIsCreated", "15");
+    Param("MaxClosestAIsToTriggerWhenNoisePOIIsCreatedWhenChaseIsActive", "2");
+    Param("AngleInFrontOfPlayerToTickAIsWhenNoisePOIIsCreatedWhenChaseIsActive", "60");
+    Param("ForceHighPolyIfAIMayBeTargetOfPlayerRangedWeaponForSeconds", "15");
+    Param("InvalidateInitialCrowdAIAfterSpawnAfterSeconds", "2.0");
+    Param("BpDelayDuration", "0.25");
+    Param("WaitForAIShowTimeoutDuration", "7.0");
+    Param("MaxLoiterDistance", "80.0");
+    Param("TickBTOfAgendaAIAfterReceivingBTForSeconds", "2");
+    Param("TickAnimCallbacksOfAIAfterFallWasDetectedForSeconds", "1.5");
+    Param("FallVelocityThresholdToConsiderAIAsFallingInMetersPerSecond", "15");
+    Param("NonOwnerWeightedDistanceMultiplierForNonVisibleAIs", "2");
+    Param("MinDistanceForNonOwnedAIToUseWeightedDistanceMultiplierForNonVisibleAIInMeters", "5");
+    Param("MinDistanceForNonOwnedInvisibleAIToSwitchSimulationOffWhenNoBudgetForLastTaskInMeters", "5");
+    Param("MaxLastTaskNonOwnedAIs", "10");
+    Param("BlockAnimatorUpdateTillFirstAIActivationDelayInSeconds", "0.3");
+
+    Param("EffectsLod0UpTo", "10.0");
+    Param("EffectsLod1UpTo", "20.0");
+    Param("EffectsLod2UpTo", "30.0");
+    Param("EffectsLod3UpTo", "40.0");
+    Param("EffectsLod4UpTo", "50.0");
+}
+
+sub main()
+{
+    use set_common_params();
+}

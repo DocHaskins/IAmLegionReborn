@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <CooldownTimeDelta m_CooldownTime="$attack_shiv_cooldown" m_CooldownOnAbort="true">
+        <SequenceMem>
+            <Cnd_CanStartTask m_StartPolicy="INTERRUPT"/>
+            <!-- conditions -->
+            <Cnd_HasActiveWeapon m_WeaponType="Bow"/>
+            <!-- target conditions -->
+            <Cnd_IsCombatTargetMeleeReachable/>
+            <Cnd_IsCombatTargetInRange m_Radius="$attack_shiv_max_range" m_Angle="$attack_shiv_max_angle"/>
+            <!-- shiv attack -->
+            <ExternalTree m_UID="HUMAN_ATTACK_SHIV" m_CustomName="Shiv" m_Hide="true"/>
+        </SequenceMem>
+    </CooldownTimeDelta>
+</BehaviorTree>

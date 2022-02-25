@@ -1,0 +1,265 @@
+{
+  "__filename__": {
+    "Version": 4,
+    "RuntimeData": {
+      "Interface": {
+        "VirtualFields": [
+          {
+            "Name": "Spawner cbs::IEnable::m_State",
+            "Init": "e:EDIT;f:EDIT|QUEST;l:Spawner cbs::IEnable::m_State;c:Virtual fields;",
+            "DestinationFields": [
+              {
+                "Uuid": "3",
+                "Name": "cbs::IEnable::m_State"
+              }
+            ]
+          }
+        ]
+      },
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 1.0, 1.0, 1.0]],
+            "m_PcId": [6, 1],
+            "m_PrefabName": [12, "envprobe"],
+            "m_Rotate": [14, [0.0000013, 0.0000098, -0.0000016]],
+            "m_Scale": [14, [8.3029737, 1.9170751, 1.600002]],
+            "m_Translate": [14, [-8.4077148, 2.695549, 0.0043334]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.3311614, -0.000001, 0.0080375, 1.0072364, 0.500004, 1.0007705]],
+            "m_PcId": [6, 2],
+            "m_PrefabName": [12, "gameplay_modifier_area"],
+            "m_Rotate": [14, [-0.0, -0.0000197, -0.0000013]],
+            "m_Scale": [14, [8.3029727, 1.8370751, 1.545361]],
+            "m_Translate": [14, [-5.6651, 1.671936, 0.0189206]]
+          },
+          "Fields": {
+            "m_ModifierFlags": "4",
+            "m_Points": "0.676075 -0.499999 -0.992729;0.676073 -0.500005 1.008808;-1.338387 -0.499997 1.008751;-1.338398 -0.500000 -0.992733;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.2981644, 0.5000163, -0.0228269, 0.9496194, 0.5000103, 0.8259279]],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_PcId": [6, 3],
+            "m_PrefabName": [12, "ai_spawner_range"],
+            "m_PresetNames": [12, "Activation - daytime;Whole Day;Activation - distance;Exterior"],
+            "m_Rotate": [14, [-0.0, -0.0000147, -0.0000013]],
+            "m_Scale": [14, [8.3029718, 1.041645, 1.5453609]],
+            "m_Translate": [14, [-5.6651611, 0.6631659, 0.0189513]]
+          },
+          "Fields": {
+            "m_DayPreset": "Character;Biter",
+            "m_DayPresetPoolName": "",
+            "m_MaxAIsToSpawnDay": "6",
+            "m_MaxAIsToSpawnNight": "2",
+            "m_MinAIsToSpawnDay": "1",
+            "m_MinAIsToSpawnNight": "1",
+            "m_NightPreset": "Character;Biter",
+            "m_NightPresetPoolName": "",
+            "m_Points": "0.651455 -0.499998 -0.848267;0.651440 -0.499977 0.803040;-1.247768 -0.499994 0.803101;-1.247784 -0.499993 -0.848755;",
+            "m_PointsSource": "8",
+            "m_ShuffleSpawnPoints": "1"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5000001, 0.0, 0.4999999, 0.5000001, 0.5]],
+            "m_Name": [12, "AAZ_metro_wagon"],
+            "m_PcId": [6, 4],
+            "m_PrefabName": [12, "audioambientzone"],
+            "m_Rotate": [14, [8.969920486379124e-7, -0.999988, -0.0000013]],
+            "m_Scale": [14, [16.4423885, 3.7075891, 2.9805121]],
+            "m_Translate": [14, [-8.5164184, 0.8780363, -0.0358273]]
+          },
+          "Fields": {
+            "m_AcousticInsulation": "30",
+            "m_AuxBusName": "Wagon_Metal_Container",
+            "m_EventName": "ambience_metro_wagon"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 1.0, 1.0, 1.0281633]],
+            "m_PcId": [6, 5],
+            "m_PrefabName": [12, "envprobe"],
+            "m_Rotate": [14, [2.5000004, 0.0000045, -0.0000013]],
+            "m_Scale": [14, [2.9929139, 0.9335318, 0.0972608]],
+            "m_Translate": [14, [-8.420288, 3.0483779, -1.6945799]]
+          },
+          "Fields": {
+            "+X": "0",
+            "+Y": "0",
+            "-X": "0",
+            "-Y": "0",
+            "BlendingEnabled": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 1.0, 1.0, 1.0281634]],
+            "m_PcId": [6, 6],
+            "m_PrefabName": [12, "envprobe"],
+            "m_Rotate": [14, [177.4999847, -0.0000024, -179.9999847]],
+            "m_Scale": [14, [2.9929139, 0.9335318, 0.0972608]],
+            "m_Translate": [14, [-8.3718872, 3.0483703, 1.6566772]]
+          },
+          "Fields": {
+            "+X": "0",
+            "+Y": "0",
+            "-X": "0",
+            "-Y": "0",
+            "BlendingEnabled": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 1.0000002, 1.0, 0.9999999]],
+            "m_PcId": [6, 7],
+            "m_PrefabName": [12, "envprobe"],
+            "m_Rotate": [14, [-8.000866387192218e-7, 0.0000163, -0.0]],
+            "m_Scale": [14, [1.04698, 1.6006517, 0.115607]],
+            "m_Translate": [14, [-3.3530883, 2.4961471, -1.5559082]]
+          },
+          "Fields": {
+            "+X": "0",
+            "+Y": "0",
+            "-X": "0",
+            "-Y": "0",
+            "BlendingEnabled": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 1.0000002, 1.0, 0.9999999]],
+            "m_PcId": [6, 8],
+            "m_PrefabName": [12, "envprobe"],
+            "m_Rotate": [14, [-8.000866387192218e-7, 0.0000163, -0.0]],
+            "m_Scale": [14, [1.04698, 1.6006517, 0.115607]],
+            "m_Translate": [14, [-3.3533325, 2.4961471, 1.6243896]]
+          },
+          "Fields": {
+            "+X": "0",
+            "+Y": "0",
+            "-X": "0",
+            "-Y": "0",
+            "BlendingEnabled": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 1.0000002, 1.0, 0.9999999]],
+            "m_PcId": [6, 9],
+            "m_PrefabName": [12, "envprobe"],
+            "m_Rotate": [14, [-8.000866387192218e-7, 0.0000163, -0.0]],
+            "m_Scale": [14, [1.04698, 1.6006517, 0.115607]],
+            "m_Translate": [14, [-13.4765014, 2.4961471, 1.6243896]]
+          },
+          "Fields": {
+            "+X": "0",
+            "+Y": "0",
+            "-X": "0",
+            "-Y": "0",
+            "BlendingEnabled": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 1.0000002, 1.0, 0.9999999]],
+            "m_PcId": [6, 10],
+            "m_PrefabName": [12, "envprobe"],
+            "m_Rotate": [14, [-8.000866387192218e-7, 0.0000163, -0.0]],
+            "m_Scale": [14, [1.04698, 1.6006517, 0.115607]],
+            "m_Translate": [14, [-13.4766235, 2.4961471, -1.5794676]]
+          },
+          "Fields": {
+            "+X": "0",
+            "+Y": "0",
+            "-X": "0",
+            "-Y": "0",
+            "BlendingEnabled": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 1.0, 1.0, 1.0]],
+            "m_PcId": [6, 11],
+            "m_PrefabName": [12, "envprobe"],
+            "m_Rotate": [14, [0.0039912, 89.972023, -0.0039901]],
+            "m_Scale": [14, [0.7992209, 1.5488251, 0.115607]],
+            "m_Translate": [14, [-16.6853637, 2.4443206, 0.0037841]]
+          },
+          "Fields": {
+            "+X": "0",
+            "+Y": "0",
+            "-X": "0",
+            "-Y": "0",
+            "BlendingEnabled": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 1.0, 1.0, 1.0]],
+            "m_PcId": [6, 12],
+            "m_PrefabName": [12, "envprobe"],
+            "m_Rotate": [14, [0.0, 90.0, -0.0000402]],
+            "m_Scale": [14, [0.7992209, 1.53392, 0.108309]],
+            "m_Translate": [14, [-0.1365354, 2.4736557, -0.0018916]]
+          },
+          "Fields": {
+            "+X": "0",
+            "+Y": "0",
+            "-X": "0",
+            "-Y": "0",
+            "BlendingEnabled": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 0.9999998, 1.0, 0.9999999]],
+            "m_PcId": [6, 13],
+            "m_PrefabName": [12, "envprobe"],
+            "m_Rotate": [14, [-90.0000076, -0.0000024, 89.9802246]],
+            "m_Scale": [14, [0.7400199, 0.7975339, 0.115607]],
+            "m_Translate": [14, [-13.4244384, 4.7017898, 0.0112303]]
+          },
+          "Fields": {
+            "+X": "0",
+            "+Y": "1",
+            "-X": "0",
+            "-Y": "1",
+            "BlendingEnabled": "1"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

@@ -1,0 +1,126 @@
+sub main()
+{
+    ReinforcementData("Default_Human")
+    {
+        force_player_target(false); // if true, go straight for the player, otherwise go to event position
+        Spawn("Renegade_One_Handed",3,3); // "preset", min amount, max amount
+        initial_spawn_delay(3.0); // time between event and first spawned ai
+        delay_between_spawns(0.5); // time between every spawn after the first 
+        chance_to_spawn(1.0); // chance for this reinforcement to spawn
+        is_infected_reinforcement(false); // type of reinforcement
+        cooldown(10.0); // cooldown for reinforcements of same type after this event (human / infected)
+    }
+    ReinforcementData("Default_Infected")
+    {
+        force_player_target(false);
+        Spawn("Viral_Chase", 3,4);
+        initial_spawn_delay(10.0);
+        delay_between_spawns(0.5);
+        chance_to_spawn(0.75);
+        is_infected_reinforcement(true);
+        cooldown(10.0);
+    }
+	ReinforcementData("CarTrap_Infected")
+    {
+        force_player_target(false);
+        Spawn("Viral_Chase", 1,2);
+        initial_spawn_delay(30.0);
+        delay_between_spawns(0.5);
+        chance_to_spawn(0.25);
+        is_infected_reinforcement(true);
+        cooldown(10.0);
+    }
+	ReinforcementData("DarkZone_Infected")
+    {
+        force_player_target(false);
+        Spawn("Viral_Chase", 2,4);
+        initial_spawn_delay(5.0);
+        delay_between_spawns(0.5);
+        chance_to_spawn(1.0);
+        is_infected_reinforcement(true);
+        cooldown(10.0);
+    }	
+	
+    ReinforcementData("Bait_Infected")
+    {
+        force_player_target(false);
+        Spawn("Viral_Chase", 3,3);
+        initial_spawn_delay(10.0);
+        delay_between_spawns(0.5);
+        chance_to_spawn(1.0);
+        is_infected_reinforcement(true);
+        cooldown(10.0);
+    }	
+	ReinforcementData("Default_MeatBait")
+    {
+        force_player_target(false);
+        Spawn("Biter", 3,3);
+        initial_spawn_delay(10.0);
+        delay_between_spawns(0.5);
+        chance_to_spawn(1.0);
+        is_infected_reinforcement(true);
+        cooldown(10.0);
+    }	
+    ReinforcementData("Flooded_Infected")
+    {
+        force_player_target(true);
+        Spawn("Suicider_Flooded_Area", 3,3);
+        initial_spawn_delay(5.0);
+        delay_between_spawns(0.5);
+        chance_to_spawn(1.0);
+        is_infected_reinforcement(true);
+        cooldown(10.0);
+    }	 	
+    ReinforcementData("Flooded_Infected_EndGame")
+    {
+        force_player_target(true);
+        Spawn("Suicider_Flooded_Area", 1,1);
+        initial_spawn_delay(5.0);
+        delay_between_spawns(0.5);
+        chance_to_spawn(0.5);
+        is_infected_reinforcement(true);
+        cooldown(30.0);
+    }	 	
+    ReinforcementData("Default_Infected_EndGame_Flooded")
+    {
+        force_player_target(false);
+        Spawn("Viral_Chase", 2,2);
+		Spawn("Suicider_Flooded_Area", 1,1);
+        initial_spawn_delay(10.0);
+        delay_between_spawns(0.5);
+        chance_to_spawn(0.75);
+        is_infected_reinforcement(true);
+        cooldown(10.0);
+    }		
+    ReinforcementData("R1_Human")
+    {
+        force_player_target(false);
+        Spawn("Duke_One_Handed", 3,3);
+        initial_spawn_delay(3.0);
+        delay_between_spawns(0.5);
+        chance_to_spawn(1.0);
+        is_infected_reinforcement(false);
+        cooldown(10.0);
+    }
+	ReinforcementData("Bandit_Human")
+    {
+        force_player_target(false);
+        Spawn("Generic_Two_Handed", 3,3);
+		Spawn("Generic_Bow", 3,3);
+		Spawn("Generic_Grenadier", 3,3);
+        initial_spawn_delay(3.0);
+        delay_between_spawns(0.5);
+        chance_to_spawn(0.7);
+        is_infected_reinforcement(false);
+        cooldown(10.0);
+    }
+	
+    ReinforcementData("Skyscraper_Human")
+    {
+        force_player_target(false);
+        Spawn("Skyscraper_One_Handed", 3,3);
+        chance_to_spawn(1.0);
+        is_infected_reinforcement(false);
+        cooldown(10.0);
+    }	
+}

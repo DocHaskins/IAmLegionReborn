@@ -1,0 +1,1185 @@
+{
+  "__filename__": {
+    "Version": 4,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195728, 0.2309059, 0.0690793, 1.5195728, 0.2707889]],
+            "m_Name": [12, "PM_TheRoof"],
+            "m_PcId": [6, 1],
+            "m_PrefabName": [12, "point_marker"],
+            "m_Rotate": [14, [179.9999694, -60.000019, 179.9999847]],
+            "m_Translate": [14, [7.5524902, 6.7566642, -10.5003051]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5000001, 0.0, 0.5, 0.5000001, 0.5]],
+            "m_Name": [12, "Spawner_Zombies_RoofElevator"],
+            "m_PcId": [6, 2],
+            "m_PrefabName": [12, "ai_spawner_range"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Activation - daytime;Whole Day;Spawner_Difficulty;Tier_3"],
+            "m_Rotate": [14, [-0.0, -29.9999961, -0.0]],
+            "m_Scale": [14, [11.3645524, 1.606034, 15.1273117]],
+            "m_Translate": [14, [-5.7242431, 6.2766609, 15.0379028]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_DayPreset": "Character;Biter",
+            "m_MaxAIsToSpawnDay": "6",
+            "m_MaxAIsToSpawnDay": "10",
+            "m_MinAIsToSpawnDay": "2",
+            "m_MinAIsToSpawnNight": "2",
+            "m_NightPreset": "Character;Biter",
+            "m_PointsSource": "1"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_3",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0173448, 0.7712048, 0.3279598, 0.1536685, 0.8153048, 0.372056]],
+            "m_Name": [12, "Switch_Elevator"],
+            "m_PcId": [6, 3],
+            "m_PrefabName": [12, "switch"],
+            "m_PresetNames": [12, "Style;HiddenMesh"],
+            "m_Rotate": [14, [-94.6224441, -7.9463019, -120.321228]],
+            "m_Translate": [14, [6.9276123, 10.2629394, 20.4490661]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_HoldTime": "5.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5000001, 0.5, 0.5000001]],
+            "m_Name": [12, "Spawner_Zombies_Roof_Resting"],
+            "m_PcId": [6, 4],
+            "m_PrefabName": [12, "ai_spawner_range"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Activation - daytime;Whole Day;Spawner_Difficulty;Tier_3"],
+            "m_Rotate": [14, [179.9999847, -59.9999847, 179.9999847]],
+            "m_Scale": [14, [1.6116858, 0.5948271, 1.5736]],
+            "m_Translate": [14, [1.0577392, 6.2766647, -12.9934082]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_DayPreset": "Character;Biter",
+            "m_MaxAIsToSpawnDay": "4",
+            "m_MaxAIsToSpawnDay": "8",
+            "m_MinAIsToSpawnDay": "1",
+            "m_MinAIsToSpawnNight": "1",
+            "m_NightPreset": "Character;Biter_Resting",
+            "m_PointsSource": "1",
+            "m_RefreshNoZombiesOnActivate": "1"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_3",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-5.960464477539063e-8, 1.5195728, 0.2308602, 0.0690793, 1.5195728, 0.2708041]],
+            "m_Name": [12, "PM_Elevator"],
+            "m_PcId": [6, 5],
+            "m_PrefabName": [12, "point_marker"],
+            "m_Rotate": [14, [-0.0000317, 60.000019, 0.0000039]],
+            "m_Translate": [14, [1.5531618, 6.396667, 17.4529418]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.6005951, 1.2804999, 0.0005, 0.6051124, 1.2804995, 0.1287464]],
+            "m_Name": [12, "Door_ElevatorLeft"],
+            "m_PcId": [6, 7],
+            "m_PrefabName": [12, "door"],
+            "m_PresetNames": [12, "Door_Style;Interior_Regular_Simple_Door_E;Side accesibility;AccessBothSides;Behaviour;Closed;Lockpicking minigame;Easy"],
+            "m_Rotate": [14, [-0.0000079, 60.0002784, 0.0000127]],
+            "m_Scale": [14, [0.9999989, 1.0, 0.9999989]],
+            "m_Translate": [14, [7.6881713, 6.7163009, -9.1403808]]
+          },
+          "Fields": {
+            "DoorOpenType": "BothSides",
+            "cbs::IEnable::m_State": "0",
+            "m_Connected": "/~8"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.6005951, 1.2804999, 0.0005, 0.6051124, 1.2804995, 0.1287464]],
+            "m_Name": [12, "Door_ElevatorRight"],
+            "m_PcId": [6, 8],
+            "m_PrefabName": [12, "door"],
+            "m_PresetNames": [12, "Door_Style;Interior_Regular_Simple_Door_E;Side accesibility;AccessBothSides;Behaviour;Closed;Lockpicking minigame;Easy"],
+            "m_Rotate": [14, [179.9999847, -60.0002441, 179.9999847]],
+            "m_Scale": [14, [0.9999294, 0.9999386, 0.9999986]],
+            "m_Translate": [14, [8.889038, 6.7163009, -11.2190551]]
+          },
+          "Fields": {
+            "DoorOpenType": "BothSides",
+            "cbs::IEnable::m_State": "0",
+            "m_Connected": "/~8"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5000076, 0.0, 0.4999999, 0.5, 0.4999999]],
+            "m_Name": [12, "Spawner_Zombies_Inside_Rope"],
+            "m_PcId": [6, 9],
+            "m_PrefabName": [12, "ai_spawner_range"],
+            "m_PresetNames": [12, "Activation - distance;OpenedInterior;Activation - daytime;Not Night;Spawner_Difficulty;Tier_3"],
+            "m_Rotate": [14, [-0.0, -29.9999847, -0.0]],
+            "m_Scale": [14, [6.1291213, 0.3575015, 10.9848117]],
+            "m_Translate": [14, [-7.5467529, -16.9633312, 25.3798217]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_DayPreset": "Character;Biter",
+            "m_MaxAIsToSpawnDay": "16",
+            "m_MaxAIsToSpawnNight": "0",
+            "m_MinAIsToSpawnDay": "5",
+            "m_MinAIsToSpawnNight": "0",
+            "m_NightPreset": ""
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkplace",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_3",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "AM_FindMissingEquipment"],
+            "m_PcId": [6, 22],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Rotate": [14, [-0.0, -30.0000152, -0.0]],
+            "m_Scale": [14, [37.5511741, 11.8950881, 64.5773162]],
+            "m_Translate": [14, [-5.3297119, 5.6020278, 1.4539488]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.6005951, 1.2804999, 0.0005, 0.6051126, 1.2804995, 0.1287464]],
+            "m_Name": [12, "Door_Elevator_HiddenGoon_Left"],
+            "m_PcId": [6, 28],
+            "m_PrefabName": [12, "door"],
+            "m_PresetNames": [12, "Door_Style;Interior_Regular_Simple_Door_E;Side accesibility;AccessBothSides;Behaviour;Closed;Lockpicking minigame;Easy"],
+            "m_Rotate": [14, [0.0000128, -29.9997596, 0.0000019]],
+            "m_Scale": [14, [0.9999904, 0.9999908, 0.9999988]],
+            "m_Translate": [14, [-14.4573974, 6.7108116, 23.5840454]]
+          },
+          "Fields": {
+            "DoorOpenType": "BothSides",
+            "cbs::IEnable::m_State": "1",
+            "m_Connected": "/~28"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.6005951, 1.2804998, 0.0005, 0.6051124, 1.2804994, 0.1287464]],
+            "m_Name": [12, "Door_Elevator_HiddenGoon_Right"],
+            "m_PcId": [6, 29],
+            "m_PrefabName": [12, "door"],
+            "m_PresetNames": [12, "Door_Style;Interior_Regular_Simple_Door_E;Side accesibility;AccessBothSides;Behaviour;Closed;Lockpicking minigame;Easy"],
+            "m_Rotate": [14, [-179.9999847, 29.9997291, -179.9999847]],
+            "m_Scale": [14, [0.9999501, 0.9999476, 0.9999548]],
+            "m_Translate": [14, [-12.3787841, 6.7108116, 24.7849121]]
+          },
+          "Fields": {
+            "DoorOpenType": "BothSides",
+            "cbs::IEnable::m_State": "1",
+            "m_Connected": "/~28"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5000001, 0.0, 0.5000001, 0.5000001, 0.5000001]],
+            "m_Name": [12, "Spawner_Goon_RoofElevator"],
+            "m_PcId": [6, 31],
+            "m_PrefabName": [12, "ai_spawner_range"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Activation - daytime;Night;Spawner_Difficulty;Tier_3"],
+            "m_Rotate": [14, [-180.0, 29.9999942, -180.0]],
+            "m_Scale": [14, [1.7987575, 0.9913792, 2.0750777]],
+            "m_Translate": [14, [-1.6625976, 6.2766609, 17.5151367]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_DayPreset": "",
+            "m_MaxAIsToSpawnDay": "0",
+            "m_MaxAIsToSpawnDay": "8",
+            "m_MinAIsToSpawnDay": "0",
+            "m_MinAIsToSpawnNight": "1",
+            "m_NightPreset": "Character;Goon"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_3",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.4999999, 0.5]],
+            "m_Name": [12, "Spawner_Demolisher"],
+            "m_PcId": [6, 32],
+            "m_PrefabName": [12, "ai_spawner_range"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Activation - daytime;Whole Day;Spawner_Difficulty;Tier_3"],
+            "m_Rotate": [14, [-0.000022, 60.000019, 0.0000384]],
+            "m_Scale": [14, [3.4751975, 0.6344822, 3.4124641]],
+            "m_Translate": [14, [2.4603271, 6.316658, -10.5061645]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_DayPreset": "Character;Demolisher",
+            "m_ForcedTargetMode": "None",
+            "m_MaxAIsToSpawnDay": "4",
+            "m_MaxAIsToSpawnDay": "8",
+            "m_MinAIsToSpawnDay": "1",
+            "m_MinAIsToSpawnNight": "1",
+            "m_NightPreset": "Character;Demolisher",
+            "m_PointsSource": "2",
+            "m_RequestObjects": "ai::RequestDataRestrictedAreaEmbeddedObject,0,();"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_3",
+            "DestinationField": "m_DifficultyRangeSource"
+          },
+          "EmbeddedObjectVector": {
+            "DestinationField": "m_RequestObjects",
+            "Objects": [
+              {
+                "Class": "ai::RequestDataRestrictedAreaEmbeddedObject",
+                "DestinationField": "m_RequestObjects",
+                "Fields": {
+                  "m_RestrictedArea": "/~130"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5000076, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Spawner_Zombies_RoofElevator_KillOne"],
+            "m_PcId": [6, 33],
+            "m_PrefabName": [12, "ai_spawner_range"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Activation - daytime;Not Night;Spawner_Difficulty;Tier_3"],
+            "m_Rotate": [14, [-0.0, -29.9999961, -0.0]],
+            "m_Scale": [14, [0.9593374, 0.3965516, 1.1205414]],
+            "m_Translate": [14, [1.6757812, 6.2766609, 16.3719787]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_DayPreset": "Character;Biter",
+            "m_MaxAIsToSpawnDay": "4",
+            "m_MaxAIsToSpawnDay": "8",
+            "m_MinAIsToSpawnDay": "1",
+            "m_MinAIsToSpawnNight": "1",
+            "m_NightPreset": ""
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_3",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5000076, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Spawner_Zombies_RoofElevator_KillTwo"],
+            "m_PcId": [6, 34],
+            "m_PrefabName": [12, "ai_spawner_range"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Activation - daytime;Not Night;Spawner_Difficulty;Tier_3"],
+            "m_Rotate": [14, [-0.0, -29.9999961, -0.0]],
+            "m_Scale": [14, [0.9593374, 0.3965516, 1.1205414]],
+            "m_Translate": [14, [-0.6234741, 6.2766609, 17.9543457]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_DayPreset": "Character;Biter",
+            "m_MaxAIsToSpawnDay": "4",
+            "m_MaxAIsToSpawnDay": "8",
+            "m_MinAIsToSpawnDay": "1",
+            "m_MinAIsToSpawnNight": "1",
+            "m_NightPreset": ""
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_3",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Spawner_Zombies_Roof_Standing"],
+            "m_PcId": [6, 38],
+            "m_PrefabName": [12, "ai_spawner_range"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Activation - daytime;Not Night;Spawner_Difficulty;Tier_3"],
+            "m_Rotate": [14, [-0.0, -30.0, -0.0]],
+            "m_Scale": [14, [1.1512043, 0.7137928, 1.3446494]],
+            "m_Translate": [14, [5.1676025, 6.2766647, -12.5335693]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_DayPreset": "Character;Biter",
+            "m_MaxAIsToSpawnDay": "4",
+            "m_MaxAIsToSpawnDay": "8",
+            "m_MinAIsToSpawnDay": "1",
+            "m_MinAIsToSpawnNight": "1",
+            "m_NightPreset": "Character;Biter",
+            "m_PointsSource": "1"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_3",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Audio_Dellayed_delivery_dark_zone"],
+            "m_PcId": [6, 48],
+            "m_PrefabName": [12, "audio_delayed_delivery_dark_zone"],
+            "m_Translate": [14, [-5.0144653, -3.3695526, 11.4273986]]
+          },
+          "Fields": {
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0072237, 0.3166789, -0.0515863, 0.3523893, 0.3085486, 0.0288945]],
+            "m_Name": [12, "APE_delayed_delivery_lift_switch"],
+            "m_PcId": [6, 49],
+            "m_PrefabName": [12, "audiopointemitter"],
+            "m_Translate": [14, [7.9082641, 10.5207557, 21.0231323]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195728, 0.2309059, 0.0690793, 1.5195728, 0.2707889]],
+            "m_Name": [12, "PM_EnterScyscrapper"],
+            "m_PcId": [6, 67],
+            "m_PrefabName": [12, "point_marker"],
+            "m_Rotate": [14, [179.9999694, -60.000019, 179.9999847]],
+            "m_Translate": [14, [20.0707397, -15.6633491, 32.4142761]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "CityBuilder_ObjectType": [6, 8],
+            "m_Name": [12, "military_container_underwater"],
+            "m_PcId": [6, 69],
+            "m_PrefabName": [12, "delayed_delivery_military_container_hanging"],
+            "m_RandomizationWeight": [6, 0],
+            "m_Rotate": [14, [0.0000035, 60.0000038, 179.9999847]],
+            "m_Translate": [14, [-28.944458, -43.8260269, -32.9117431]]
+          },
+          "Fields": {
+            "STAIRS_01": "STAIRS",
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.571006, 1.2268464, 0.0005002, 0.6362646, 1.2282536, 0.0994265]],
+            "m_IsolateConfigurations": [11, true],
+            "m_Name": [12, "Door_DroppedContainer"],
+            "m_PcId": [6, 70],
+            "m_PrefabName": [12, "door"],
+            "m_PresetNames": [12, "Behaviour;Closed;Side accesibility;AccessBothSides;Door_Style;mt_container_door_a"],
+            "m_Rotate": [14, [179.9999847, -60.0000038, 179.9999847]],
+            "m_Scale": [14, [0.9999837, 0.9999768, 0.9999973]],
+            "m_Translate": [14, [-2.7712402, 7.5167388, -14.5255126]]
+          },
+          "Fields": {
+            "IGatherPlace::m_GatherPlaceActive": "0",
+            "ITriggerable::m_BlockInCombat": "1",
+            "cbs::IEnable::m_State": "0",
+            "m_LockpickDifficulty": "None",
+            "m_LockpickEnabled": "0",
+            "m_QuarantineKey": "Quest_Cube",
+            "m_Sealed": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.571006, 1.2268464, 0.0005002, 0.6362646, 1.2282536, 0.0994265]],
+            "m_IsolateConfigurations": [11, true],
+            "m_Name": [12, "Door_Back"],
+            "m_PcId": [6, 71],
+            "m_PrefabName": [12, "door"],
+            "m_PresetNames": [12, "Behaviour;Closed;Side accesibility;AccessBothSides;Door_Style;mt_container_door_a"],
+            "m_Rotate": [14, [179.9999847, -60.0, 179.9999847]],
+            "m_Scale": [14, [0.9999669, 0.9999551, 0.999997]],
+            "m_Translate": [14, [-12.6373901, 7.5213661, -20.2110595]]
+          },
+          "Fields": {
+            "IGatherPlace::m_GatherPlaceActive": "0",
+            "cbs::IEnable::m_State": "1",
+            "m_LockpickDifficulty": "None",
+            "m_LockpickEnabled": "0",
+            "m_Sealed": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 1.1007504, -1.5986517, 3.0298559, 2.7392497, 11.257307]],
+            "m_Name": [12, "delayeddelivery_droppedcontainer_dlg"],
+            "m_PcId": [6, 72],
+            "m_PrefabName": [12, "delayeddelivery_droppedcontainer_dlg"],
+            "m_Rotate": [14, [179.9999847, -60.0, 179.9999847]],
+            "m_Translate": [14, [-4.7599487, 7.3364028, -14.97052]]
+          },
+          "Fields": {
+            "m_Bindings": "Dialog::PropBind,0,();"
+          },
+          "EmbeddedObjectVector": {
+            "DestinationField": "m_Bindings",
+            "Objects": [
+              {
+                "Class": "Dialog::PropBind",
+                "DestinationField": "m_Bindings",
+                "Fields": {
+                  "m_Action": "7",
+                  "m_PropCPath": "",
+                  "m_PropId": "Door",
+                  "m_PropStringPath": "city/^Qst_DelayedDelivery_Roof/~70"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Class": "CoSwitcher",
+          "PrefabFieldsNative": {
+            "m_ControlledPrefabIds": [44, 69, 105, 109],
+            "m_PcId": [6, 75]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_EntityComponentsExtents": [69, [-0.0002574, 1.4512833, 0.2189901, 0.0679944, 1.495648, 0.262777]],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "SP_RespawnPointRightElevator"],
+            "m_PcId": [6, 77],
+            "m_PrefabName": [12, "spawnpoint"],
+            "m_Rotate": [14, [-180.0, -62.3624229, -180.0]],
+            "m_Translate": [14, [11.2551879, 6.8721733, -8.5362548]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_Respawn": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_EntityComponentsExtents": [69, [-0.0002574, 1.4512832, 0.2189901, 0.0679944, 1.4956479, 0.262777]],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "SP_RespawnPointLeftElevator"],
+            "m_PcId": [6, 78],
+            "m_PrefabName": [12, "spawnpoint"],
+            "m_Rotate": [14, [179.9999847, 27.6375827, 179.9999847]],
+            "m_Translate": [14, [-14.9337768, 6.8752822, 26.4869995]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_Respawn": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_EntityComponentsExtents": [69, [-0.0002574, 1.4512832, 0.219051, 0.0679944, 1.4956479, 0.262777]],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "SP_RespawnPointEntrance"],
+            "m_PcId": [6, 79],
+            "m_PrefabName": [12, "spawnpoint"],
+            "m_Rotate": [14, [179.9999542, -62.3624229, 179.9999694]],
+            "m_Translate": [14, [0.3276365, -16.9633369, 21.1715698]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_Respawn": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Configurations": [12, "generic_nature_color;city_roof;visual_building;R2_office_A;"],
+            "m_Name": [12, "geometry"],
+            "m_PcId": [6, 80],
+            "m_PrefabName": [12, "qst_needleinahaystack_geometry"],
+            "m_Translate": [14, [-11.1326293, 7.6489601, 5.314331]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Configurations": [12, "generic_nature_color;city_roof;"],
+            "m_Name": [12, "MilitaryContainer"],
+            "m_PcId": [6, 81],
+            "m_PrefabName": [12, "qst_delayeddelivery_militarycontainer"],
+            "m_Rotate": [14, [0.0000223, -30.0000038, -0.0000223]],
+            "m_Translate": [14, [-3.1329956, 7.3566551, -24.2368774]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-1.445847, 5.0, 3.2187194, 3.9292449, 5.0, 4.7467956]],
+            "m_PcId": [6, 82],
+            "m_PrefabName": [12, "tiny_object_helper"],
+            "m_Rotate": [14, [-0.0, -30.0000038, -0.0]],
+            "m_Translate": [14, [-1.97052, 6.3002777, 10.3531494]]
+          },
+          "Fields": {
+            "m_AreaPoints": "2.483398 0.000000 -1.528076;2.470856 0.000000 7.960815;-5.375092 0.000000 7.965515;-5.362579 0.000000 -1.523499;",
+            "m_ClearOtherLayers": "1",
+            "m_Density": "41",
+            "m_TinyObjectLayerName": "trash_a"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_EntityComponentsExtents": [69, [-0.0002574, 1.4512832, 0.2189595, 0.0679944, 1.4956479, 0.262777]],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "SP_RespawnPointContainer"],
+            "m_PcId": [6, 85],
+            "m_PrefabName": [12, "spawnpoint"],
+            "m_Rotate": [14, [-179.9999542, -60.2228813, -179.9999694]],
+            "m_Translate": [14, [-3.100769, 7.5401039, -24.4148559]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_Respawn": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 86],
+            "m_PrefabName": [12, "op_tank_explosive"],
+            "m_PresetNames": [12, "Gas_Tank_Type;Static_Gas_Tank_Big"],
+            "m_Translate": [14, [-2.8263549, 6.396656, -17.8991699]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 87],
+            "m_PrefabName": [12, "op_tank_explosive"],
+            "m_PresetNames": [12, "Gas_Tank_Type;Static_Gas_Tank_Big"],
+            "m_Translate": [14, [9.5535888, 6.4033737, -13.6023559]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 88],
+            "m_PrefabName": [12, "op_tank_explosive"],
+            "m_PresetNames": [12, "Gas_Tank_Type;Static_Gas_Tank_Big"],
+            "m_Translate": [14, [-14.8241577, 10.7750816, 29.3401489]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 89],
+            "m_PrefabName": [12, "op_tank_explosive"],
+            "m_PresetNames": [12, "Gas_Tank_Type;Static_Gas_Tank_Big"],
+            "m_Translate": [14, [-14.8745727, 6.7741775, 29.369873]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 90],
+            "m_PrefabName": [12, "op_tank_explosive"],
+            "m_PresetNames": [12, "Gas_Tank_Type;Static_Gas_Tank_Big"],
+            "m_Translate": [14, [-5.7279663, 6.3966751, 3.9317626]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 2.5, 0.5, 2.4620194]],
+            "m_PcId": [6, 91],
+            "m_PrefabName": [12, "oil_puddle"],
+            "m_Translate": [14, [1.8800046, 6.3970909, 14.2435607]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 2.5, 0.5, 2.4620194]],
+            "m_PcId": [6, 92],
+            "m_PrefabName": [12, "oil_puddle"],
+            "m_Translate": [14, [-3.5839843, 6.4133644, 20.5338134]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 2.5, 0.5, 2.4620194]],
+            "m_PcId": [6, 93],
+            "m_PrefabName": [12, "oil_puddle"],
+            "m_Translate": [14, [-11.4069824, 6.3995285, 17.7609252]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.040102, 1.3110667, 0.2845211, 0.8358458, 1.3610665, 0.4154908]],
+            "m_Name": [12, "Switch_TriggerDroppedContainer"],
+            "m_PcId": [6, 94],
+            "m_PrefabName": [12, "switch"],
+            "m_PresetNames": [12, "Style;SA_wooden_board"],
+            "m_Rotate": [14, [-0.0000232, -30.9544963, 0.0000216]],
+            "m_Translate": [14, [-7.1240234, 3.6150474, -18.9575805]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "cbs::IStoreState::m_SaveEnable": "0",
+            "m_BlockInCombat": "1",
+            "m_HoldTime": "1.000000",
+            "m_ShowGatherOnUse": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.571006, 1.2268464, 0.0005003, 0.6362646, 1.2282536, 0.0994265]],
+            "m_IsolateConfigurations": [11, true],
+            "m_Name": [12, "Door_Container_Exit"],
+            "m_PcId": [6, 95],
+            "m_PrefabName": [12, "door"],
+            "m_PresetNames": [12, "Behaviour;ClosedInactive;Side accesibility;AccessBothSides;Door_Style;mt_container_door_a"],
+            "m_Rotate": [14, [-179.9999847, 29.999998, 179.9999847]],
+            "m_Scale": [14, [0.9999647, 0.999956, 0.9999858]],
+            "m_Translate": [14, [0.2340697, 7.5416183, -28.8693847]]
+          },
+          "Fields": {
+            "IGatherPlace::m_GatherPlaceActive": "0",
+            "cbs::IEnable::m_State": "0",
+            "m_LockpickDifficulty": "None",
+            "m_LockpickEnabled": "0",
+            "m_QuarantineKey": "Quest_Cube",
+            "m_Sealed": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.571006, 1.2268464, 0.0005003, 0.6362646, 1.2282536, 0.0994265]],
+            "m_IsolateConfigurations": [11, true],
+            "m_Name": [12, "Door_Container_Entrance"],
+            "m_PcId": [6, 96],
+            "m_PrefabName": [12, "door"],
+            "m_PresetNames": [12, "Behaviour;Closed;Side accesibility;AccessBothSides;Door_Style;mt_container_door_a"],
+            "m_Rotate": [14, [0.0000128, -30.0, 9.999996564147296e-7]],
+            "m_Scale": [14, [0.9999781, 0.9999703, 0.9999966]],
+            "m_Translate": [14, [-6.500061, 7.5416183, -19.6045532]]
+          },
+          "Fields": {
+            "IGatherPlace::m_GatherPlaceActive": "0",
+            "cbs::IEnable::m_State": "0",
+            "m_LockpickDifficulty": "None",
+            "m_LockpickEnabled": "0",
+            "m_QuarantineKey": "Quest_Cube",
+            "m_Sealed": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 97],
+            "m_PrefabName": [12, "op_tank_explosive"],
+            "m_PresetNames": [12, "Gas_Tank_Type;Static_Gas_Tank_Big"],
+            "m_Translate": [14, [-12.073059, 6.3966674, 15.9600524]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 2.5, 0.5, 2.4620194]],
+            "m_PcId": [6, 98],
+            "m_PrefabName": [12, "oil_puddle"],
+            "m_Translate": [14, [-5.5128173, 6.4610519, 5.4791259]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 2.5, 0.5, 2.4620194]],
+            "m_PcId": [6, 100],
+            "m_PrefabName": [12, "oil_puddle"],
+            "m_Rotate": [14, [0.0, -90.0, 0.0]],
+            "m_Translate": [14, [-7.4377441, 6.4077224, 20.254364]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 2.5, 0.5, 2.4620194]],
+            "m_PcId": [6, 101],
+            "m_PrefabName": [12, "oil_puddle"],
+            "m_Translate": [14, [0.0791625, 6.4064636, 17.9277648]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "CityBuilder_ObjectType": [6, 8],
+            "m_Name": [12, "military_container_roof"],
+            "m_PcId": [6, 105],
+            "m_PrefabName": [12, "delayed_delivery_military_container_roof"],
+            "m_Rotate": [14, [-0.0, -30.0000076, 0.000027]],
+            "m_Translate": [14, [-14.5714721, 6.0766563, -16.7212524]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 106],
+            "m_PrefabName": [12, "op_tank_explosive"],
+            "m_PresetNames": [12, "Gas_Tank_Type;Static_Gas_Tank_Big"],
+            "m_Translate": [14, [2.206604, 6.4185066, -26.9965209]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 107],
+            "m_PrefabName": [12, "op_tank_explosive"],
+            "m_PresetNames": [12, "Gas_Tank_Type;Static_Gas_Tank_Big"],
+            "m_Translate": [14, [8.9542846, 18.2415504, -19.807373]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "AM_SecondContainer"],
+            "m_PcId": [6, 108],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Rotate": [14, [-180.0, -59.9999694, -180.0]],
+            "m_Scale": [14, [6.0081863, 4.7580347, 12.0888681]],
+            "m_Translate": [14, [-5.2533569, 6.3365745, -22.1570434]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "CityBuilder_ObjectType": [6, 8],
+            "m_Name": [12, "military_container_hanging"],
+            "m_PcId": [6, 109],
+            "m_PrefabName": [12, "delayed_delivery_military_container_hanging_b"],
+            "m_RandomizationWeight": [6, 0],
+            "m_Rotate": [14, [-0.0, -30.0000076, 0.000027]],
+            "m_Translate": [14, [-14.5714721, 6.0766563, -16.7212524]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195728, 0.2309059, 0.0690793, 1.5195728, 0.2707889]],
+            "m_Name": [12, "Spawner_Demolisher_SpawnPoint"],
+            "m_PcId": [6, 111],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999847, -60.0000038, 179.9999847]],
+            "m_Translate": [14, [0.6118773, 6.3966636, -12.1503906]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Spawner_Spitter_01"],
+            "m_PcId": [6, 112],
+            "m_PrefabName": [12, "ai_spawner_range"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Activation - daytime;Whole Day;Spawner_Difficulty;Tier_3"],
+            "m_Rotate": [14, [-179.9999847, 29.9999923, 179.9999847]],
+            "m_Scale": [14, [3.4751973, 0.6344822, 2.0474777]],
+            "m_Translate": [14, [10.0153808, 10.6550827, -8.5]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_DayPreset": "Character;Spitter",
+            "m_MaxAIsToSpawnDay": "4",
+            "m_MaxAIsToSpawnDay": "8",
+            "m_MinAIsToSpawnDay": "1",
+            "m_MinAIsToSpawnNight": "1",
+            "m_NightPreset": "Character;Spitter",
+            "m_PointsSource": "1"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_3",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.4999999, 0.4999999]],
+            "m_Name": [12, "Spawner_Spitter_02"],
+            "m_PcId": [6, 113],
+            "m_PrefabName": [12, "ai_spawner_range"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Activation - daytime;Whole Day;Spawner_Difficulty;Tier_3"],
+            "m_Rotate": [14, [-179.9999847, -0.0000098, 179.9999847]],
+            "m_Scale": [14, [1.3900783, 0.6344819, 0.8189907]],
+            "m_Translate": [14, [-0.7304685, 6.3966674, 20.4032592]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_DayPreset": "Character;Spitter",
+            "m_MaxAIsToSpawnDay": "4",
+            "m_MaxAIsToSpawnDay": "8",
+            "m_MinAIsToSpawnDay": "1",
+            "m_MinAIsToSpawnNight": "1",
+            "m_NightPreset": "Character;Spitter",
+            "m_PointsSource": "1"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_3",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "UV_Mushrooms"],
+            "m_PcId": [6, 114],
+            "m_PrefabName": [12, "player_tools"],
+            "m_PresetNames": [12, "Type;RestorationPoint_Close"],
+            "m_Rotate": [14, [-3.523413170114509e-7, -35.0, -12.9999971]],
+            "m_Translate": [14, [-13.3948364, 7.8182373, 17.126007]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "UV_Mushrooms"],
+            "m_PcId": [6, 115],
+            "m_PrefabName": [12, "player_tools"],
+            "m_PresetNames": [12, "Type;RestorationPoint_Close"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [-0.1973876, 7.5775642, 20.7646789]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "UV_Mushrooms"],
+            "m_PcId": [6, 116],
+            "m_PrefabName": [12, "player_tools"],
+            "m_PresetNames": [12, "Type;RestorationPoint_Close"],
+            "m_Rotate": [14, [3.6065807, -6.6567702, -5.0087156]],
+            "m_Translate": [14, [-0.7130736, 7.8300933, -8.2263488]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "UV_Mushrooms"],
+            "m_PcId": [6, 117],
+            "m_PrefabName": [12, "player_tools"],
+            "m_PresetNames": [12, "Type;RestorationPoint_Close"],
+            "m_Rotate": [14, [-0.0, -30.0, -0.0]],
+            "m_Translate": [14, [13.0686035, 11.645626, -16.0792236]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Spawner_Zombies_Inside"],
+            "m_PcId": [6, 121],
+            "m_PrefabName": [12, "qst_delayeddelivery_roof_spawnerzombiesinside"],
+            "m_Translate": [14, [-4.210205, -4.2025604, 2.5539245]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "UV_Mushrooms"],
+            "m_PcId": [6, 122],
+            "m_PrefabName": [12, "player_tools"],
+            "m_PresetNames": [12, "Type;RestorationPoint_Close"],
+            "m_Rotate": [14, [-177.3152008, -36.5277366, 168.9780578]],
+            "m_Translate": [14, [0.1390991, 7.8058357, 5.8831176]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-1.1988525, 12.5, 0.2233885, 14.761383, 12.5, 29.8394775]],
+            "m_Name": [12, "AM_ShowHint"],
+            "m_PcId": [6, 129],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Rotate": [14, [-0.0, -30.0, -0.0]],
+            "m_Translate": [14, [-5.3297119, -20.1979713, 1.4539488]]
+          },
+          "Fields": {
+            "m_AreaHeight": "25.000000",
+            "m_AreaPoints": "13.394470 0.000000 -26.404297;13.562531 0.000000 30.062866;-1.550171 0.000000 29.619019;-1.849915 0.000000 -11.594727;-15.960236 0.000000 -11.771118;-15.486511 0.000000 -26.935486;-1.936401 0.000000 -29.616089;-1.323517 0.000000 -25.992554;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-3.044403, 1.5, -8.3383789, 11.4369812, 2.0, 30.0502319]],
+            "m_Name": [12, "restricted_area_demolisher"],
+            "m_PcId": [6, 130],
+            "m_PrefabName": [12, "restricted_area"],
+            "m_Rotate": [14, [-0.0, -30.0, -0.0]],
+            "m_Translate": [14, [-4.35083, 6.4303894, 11.8789367]]
+          },
+          "Fields": {
+            "m_AreaHeight": "4.000000",
+            "m_AreaPoints": "7.588715 -0.500000 -7.263184;8.392578 -0.500000 12.964172;7.339417 -0.500000 21.711853;1.018768 -0.500000 20.747131;1.563416 -0.500000 15.081970;-5.123169 -0.500000 15.042114;-5.503448 -0.500000 18.912292;-7.117157 -0.500000 18.831604;-9.320129 -0.500000 16.413086;-8.897064 -0.500000 12.044006;-6.129730 -0.500000 10.700867;-5.378540 -0.500000 -7.263245;-7.845367 -0.500000 -7.394470;-7.699188 -0.500000 -20.955383;-14.481384 -0.500000 -20.899475;-13.728821 -0.500000 -38.174744;-8.430542 -0.500000 -38.388611;-8.812317 -0.500000 -34.500427;-0.654694 -0.500000 -33.936951;-0.868988 -0.500000 -21.588074;1.641083 -0.500000 -20.969910;2.082886 -0.500000 -17.262451;0.114319 -0.500000 -16.301208;0.316772 -0.500000 -7.242615;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.4999999]],
+            "m_Name": [12, "Spawner_Bitter_Gastank_01"],
+            "m_PcId": [6, 131],
+            "m_PrefabName": [12, "ai_spawner_range"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Activation - daytime;Whole Day;Spawner_Difficulty;Tier_3"],
+            "m_Rotate": [14, [-179.9999847, 29.9999885, 179.9999847]],
+            "m_Scale": [14, [1.5109554, 0.6344822, 1.4836794]],
+            "m_Translate": [14, [7.1921997, 6.1566543, -11.0942993]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_DayPreset": "Character;Biter_Gas_Tank",
+            "m_ForcedTargetMode": "None",
+            "m_MaxAIsToSpawnDay": "4",
+            "m_MaxAIsToSpawnDay": "8",
+            "m_MinAIsToSpawnDay": "1",
+            "m_MinAIsToSpawnNight": "1",
+            "m_NightPreset": "Character;Biter_Gas_Tank"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_3",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Spawner_Bitter_Gastank_02"],
+            "m_PcId": [6, 132],
+            "m_PrefabName": [12, "ai_spawner_range"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Activation - daytime;Whole Day;Spawner_Difficulty;Tier_3"],
+            "m_Rotate": [14, [-179.9999847, 29.9999885, 179.9999847]],
+            "m_Scale": [14, [1.5109553, 0.634482, 1.483679]],
+            "m_Translate": [14, [-11.8634643, 6.2800102, 22.3132934]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_DayPreset": "Character;Biter_Gas_Tank",
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_MaxAIsToSpawnDay": "4",
+            "m_MaxAIsToSpawnDay": "8",
+            "m_MinAIsToSpawnDay": "1",
+            "m_MinAIsToSpawnNight": "1",
+            "m_NightPreset": "Character;Biter_Gas_Tank"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_3",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [6.0863647, 16.698616, 19.0568542, 20.0067443, 16.698616, 35.296051]],
+            "m_Name": [12, "Audio_temp_darkzone"],
+            "m_PcId": [6, 133],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Rotate": [14, [-0.0, -29.6714992, -0.0]],
+            "m_Translate": [14, [-1.4555664, 6.3966674, -15.1515502]]
+          },
+          "Fields": {
+            "m_AreaHeight": "33.397232",
+            "m_AreaPoints": "26.093109 0.000000 -16.239014;26.092865 0.000000 54.352905;-13.920380 0.000000 54.352783;-13.920227 0.000000 -16.239197;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0000049, 0.0624483, 0.0000049, 0.5003358, 0.5627791, 0.5003358]],
+            "m_Name": [12, "AAZL_dd_temp_darkozne"],
+            "m_PcId": [6, 134],
+            "m_PrefabName": [12, "audioambientzonelogic"],
+            "m_PresetNames": [12, "Variant;WithState"],
+            "m_Translate": [14, [-0.4344482, 6.5707664, -12.8623657]]
+          },
+          "Fields": {
+            "m_AcousticInsulation": "0",
+            "m_AreaEntities": "/~133;",
+            "m_AudioStateName": "set_global_situations_darkzone",
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0000049, 0.0624483, 0.0000049, 0.5003358, 0.5627791, 0.5003358]],
+            "m_Name": [12, "AAZL_dd_temp_darkozne_type"],
+            "m_PcId": [6, 135],
+            "m_PrefabName": [12, "audioambientzonelogic"],
+            "m_PresetNames": [12, "Variant;WithState"],
+            "m_Translate": [14, [-0.4344482, 6.5707664, -12.6390991]]
+          },
+          "Fields": {
+            "m_AcousticInsulation": "0",
+            "m_AreaEntities": "/~133;",
+            "m_AudioStateName": "set_gp_darkzone_type_darkzone",
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0000049, 0.0624483, 0.0000049, 0.5003358, 0.5627791, 0.5003358]],
+            "m_Name": [12, "AAZL_dd_temp_darkozne_lvl"],
+            "m_PcId": [6, 136],
+            "m_PrefabName": [12, "audioambientzonelogic"],
+            "m_PresetNames": [12, "Variant;WithState"],
+            "m_Translate": [14, [-0.4344482, 6.5707664, -12.4466552]]
+          },
+          "Fields": {
+            "m_AcousticInsulation": "0",
+            "m_AreaEntities": "/~133;",
+            "m_AudioStateName": "set_gp_darkzone_level_1",
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Bundle_Inhibitors_Q_DelayedDelivery"],
+            "m_PcId": [6, 137],
+            "m_PrefabName": [12, "gre_blueprint_inhibitor_chest"],
+            "m_Rotate": [14, [-0.0, -40.0000038, -0.0]],
+            "m_Translate": [14, [11.1848754, 6.3966636, -18.5498657]]
+          },
+          "Fields": {
+            "m_CollectableName": "Bundle_Inhibitors_Q_DelayedDelivery"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0005, 0.0005, 0.0005305, 0.0355, 0.0089999, 0.0584999]],
+            "m_Name": [12, "Collectable_Tape_Army_04"],
+            "m_PcId": [6, 138],
+            "m_PrefabName": [12, "collectableobject"],
+            "m_Rotate": [14, [179.9999694, -49.9999618, 179.9999694]],
+            "m_Translate": [14, [6.0239868, 6.8049278, 12.4354858]]
+          },
+          "Fields": {
+            "CollectableId": "Collectable_Tape_Army_04",
+            "m_EditorItemName": "Collectable_Tape_Army_04"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0004607, 0.56, -0.0203745, 0.680539, 0.9386003, 0.4296253]],
+            "m_PcId": [6, 139],
+            "m_PrefabName": [12, "complexcontainer"],
+            "m_PresetNames": [12, "Type;Military_Chest;Lockpicking minigame;Medium;Loot_Tier;Lv1;Loot_Type;Military"],
+            "m_Rotate": [14, [0.0000654, -82.5087814, 0.0000632]],
+            "m_Translate": [14, [5.9246826, 6.3966636, 12.9256591]]
+          },
+          "Fields": {
+            "m_ContainerDataFromScript": "65528"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Configurations": [12, "gameplay_type;Activator;"],
+            "m_Name": [12, "Spawner_Init"],
+            "m_PcId": [6, 140],
+            "m_PrefabName": [12, "qst_delayeddelivery_roof_spawner_init"],
+            "m_Translate": [14, [0.321289, 6.5658187, 9.7782287]]
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

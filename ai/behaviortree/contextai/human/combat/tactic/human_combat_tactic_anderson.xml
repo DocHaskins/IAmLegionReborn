@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Selector>
+        <Sequence>
+            <Cnd_HasHealthLowerThan m_HealthLevel="0.5" m_Invert="true"/>
+            <Opr_SetBBValue_bool m_Key="#enable_block" m_Value="true"/>
+            <Opr_SetBBValue_bool m_Key="#enable_dodge" m_Value="false"/>
+            <Opr_SetBBValue_bool m_Key="#enable_attack_quick" m_Value="true"/>
+            <Opr_SetBBValue_bool m_Key="#enable_attack_power" m_Value="true"/>
+            <Opr_SetBBValue_bool m_Key="#enable_attack_combo" m_Value="false"/>
+        </Sequence>
+        <Sequence>
+            <Opr_SetBBValue_bool m_Key="#enable_block" m_Value="false"/>
+            <Opr_SetBBValue_bool m_Key="#enable_dodge" m_Value="true"/>
+            <Opr_SetBBValue_bool m_Key="#enable_attack_quick" m_Value="true"/>
+            <Opr_SetBBValue_bool m_Key="#enable_attack_power" m_Value="false"/>
+            <Opr_SetBBValue_bool m_Key="#enable_attack_combo" m_Value="true"/>
+        </Sequence>
+    </Selector>
+</BehaviorTree>

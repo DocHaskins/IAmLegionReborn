@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConstParams xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_const.xsd">
+<!-- Attack params -->
+    <Param m_Name="$quick_attack_enabled" m_Value="true"/>
+    <Param m_Name="$power_attack_enabled" m_Value="true"/>
+    <Param m_Name="$attack_quick_max_range" m_Value="1.8"/>
+    <Param m_Name="$attack_quick_high_max_range" m_Value="1.6"/>
+    <Param m_Name="$attack_from_move_max_range" m_Value="3.0"/>
+    <Param m_Name="$attacks_in_combo_min" m_Value="4"/>
+    <Param m_Name="$attacks_in_combo_max" m_Value="7"/>
+    <Param m_Name="$attack_power_in_place_max_range" m_Value="3.0"/>
+    <Param m_Name="$attack_power_min_range" m_Value="4.0"/>
+    <Param m_Name="$attack_power_max_range" m_Value="8.0"/>
+    <Param m_Name="$needs_cautious_for_power_attack" m_Value="true"/>
+    <Param m_Name="$combo_step_range" m_Value="4.0"/>
+    <Param m_Name="$trail_min_range" m_Value="7.0"/>
+    <Param m_Name="$melee_distance" m_Value="3.0"/>
+    <Param m_Name="$melee_distance_max" m_Value="8.0"/>
+    <Param m_Name="$range_distance" m_Value="5.0"/>
+    <Param m_Name="$attack_quick_attempt_range" m_Value="8.0"/>
+    <Param m_Name="$attack_quick_cancel_range" m_Value="10.0"/>
+    <Param m_Name="$attack_power_attempt_range_max" m_Value="9.0"/>
+    <Param m_Name="$attack_power_attempt_range_min" m_Value="5.5"/>
+    <Param m_Name="$attack_power_cancel_range" m_Value="14.0"/>
+    <!-- max attack angles -->
+    <Param m_Name="$attack_quick_max_angle" m_Value="45.0"/>
+    <Param m_Name="$attack_power_max_angle" m_Value="45.0"/>
+    <Param m_Name="$attack_combo_rest_time" m_Value="1.0"/>
+    <Param m_Name="$attack_power_rest_time" m_Value="3.0"/>
+    <!-- combat slots -->
+    <Param m_Name="$combat_slot_melee_limit" m_Value="2"/>
+    <Param m_Name="$combat_slot_melee_min_delay" m_Value="0"/>
+    <Param m_Name="$combat_slot_range_limit" m_Value="1"/>
+    <Param m_Name="$combat_slot_range_min_delay" m_Value="8.0"/>
+    <Param m_Name="$combat_slot_keep_time" m_Value="4.0"/>
+    <!-- dir correction speed -->
+    <Param m_Name="$attack_quick_dir_correction_speed" m_Value="160.0"/>
+    <Param m_Name="$attack_power_dir_correction_speed" m_Value="120.0"/>
+    <Param m_Name="$dodge_dir_correction_speed" m_Value="0.0"/>
+    <Param m_Name="$flashlight_dodge_dir_correction_speed" m_Value="440.0"/>
+    <Param m_Name="$hit_reaction_dir_correction_speed" m_Value="240.0"/>
+    <Param m_Name="$counter_dir_correction_speed" m_Value="120.0"/>
+    <!-- other consts -->
+    <Param m_Name="$use_avoidance" m_Value="false"/>
+    <Param m_Name="$target_prediciton_time" m_Value="0.05"/>
+    <Param m_Name="$should_delay_target_spotting" m_Value="true"/>
+    <Param m_Name="$enable_dodge_after_combo" m_Value="false"/>
+    <Param m_Name="$enable_dodge_after_hit" m_Value="false"/>
+    <Param m_Name="$enable_dodge_when_cautious" m_Value="false"/>
+    <Param m_Name="$dodge_after_combo_cooldown" m_Value="4.25"/>
+    <Param m_Name="$after_hit_dodge_cooldown" m_Value="4.25"/>
+    <Param m_Name="$strafe_enabled" m_Value="true"/>
+    <Param m_Name="$try_to_flank_when_strafing" m_Value="true"/>
+
+    <!-- Death Reactions -->
+    <Param m_Name="$ragdoll_death_chance" m_Value="1.0"/>
+    <Param m_Name="$death_snap_angle" m_Value="90"/>
+
+    <!-- Hit Reactions -->
+    <Param m_Name="$enable_hit_phase_incremental" m_Value="false"/>
+    <Param m_Name="$hit_phase_incremental_reset_time" m_Value="3.0"/>
+    <Param m_Name="$enable_hit_phase_use_remaining_health_only" m_Value="false"/>
+    <Param m_Name="$hit_phase_min" m_Value="1"/>
+    <Param m_Name="$hit_phase_max" m_Value="2"/>
+
+    <Param m_Name="$hit_snap_angle" m_Value="90"/>
+    <Param m_Name="$cautious_state_health_threshold" m_Value="20"/>
+    <!-- weapon -->
+    <Param m_Name="$enable_weapon_change" m_Value="false"/>
+    <Param m_Name="$enable_weapon_set" m_Value="false"/>
+
+    <Param m_Name="$avoid_regions_preset" m_Value="zombie"/>
+
+    <Param m_Name="$power_attack_anim_speed" m_Value="1.0"/>
+    <Param m_Name="$quick_attack_approach_anim_speed" m_Value="1.0"/>
+    <Param m_Name="$quick_attack_anim_speed" m_Value="1.0"/>
+    <Param m_Name="$dodge_after_hit_anim_speed" m_Value="1.0"/>
+    <Param m_Name="$dodge_after_combo_anim_speed" m_Value="1.0"/>
+    <Param m_Name="$strafe_anim_speed" m_Value="1.0"/>
+
+    <!-- UV light death -->
+    <Param m_Name="$min_time_in_uv_to_die" m_Value="9.0"/>
+    <Param m_Name="$max_time_in_uv_to_die" m_Value="12.0"/>
+    <Param m_Name="$min_time_in_sunlight_to_die" m_Value="4.0"/>
+    <Param m_Name="$max_time_in_sunlight_to_die" m_Value="6.0"/>
+
+    <Param m_Name="$enable_recoil_on_perfect_dodge" m_Value="true"/>
+    <Param m_Name="$enable_recoil_on_perfect_block" m_Value="true"/>
+</ConstParams>

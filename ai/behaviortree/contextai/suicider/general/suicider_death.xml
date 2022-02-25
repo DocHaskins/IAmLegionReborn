@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Cnd_CanStartTask m_StartPolicy="DISCARD"/>
+        <Cnd_ShouldDie/>
+        <Opr_DisableAllSenses/>
+        <SelectorMem>
+            <Cnd_IsDead/>
+            <SequenceMem>
+                <SelectorMem>
+                    <!-- only ragdoll (if available) -->
+                    <SequenceMem>
+                        <Cnd_IsActivityModuleRunning_SyncAction/>
+                        <Act_Death m_Mode="ONLY_RAGDOLL" m_StartPolicy="DISCARD" m_AbandonPolicy="BLENDOUT"/>
+                    </SequenceMem>
+                    <!-- prefer ragdoll  -->
+                    <SequenceMem>
+                        <Selector>
+                            <Cnd_ShouldReactOnDamage m_Invert="true"/>
+                            <Cnd_IsExploded/>
+                        </Selector>
+                        <Act_Death m_Mode="PREFER_RAGDOLL" m_StartPolicy="DISCARD" m_AbandonPolicy="BLENDOUT"/>
+                    </SequenceMem>
+                    <!-- animation -->
+                    <Act_Death m_Mode="ANIMATION" m_StartPolicy="DISCARD" m_AbandonPolicy="BLENDOUT"/>
+                </SelectorMem>
+            </SequenceMem>
+        </SelectorMem>
+        <Act_Status m_StatusRequired="RUNNING"/>
+    </SequenceMem>
+</BehaviorTree>

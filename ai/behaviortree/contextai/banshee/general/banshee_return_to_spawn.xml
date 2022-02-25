@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Cnd_HasBBValue m_Key="#target" m_Invert="true"/>
+        <Cnd_PositionInRadius m_Position="#ai_starting_pos" m_Radius="35.0" m_Invert="true"/>
+        <Act_Move m_Destination="#ai_starting_pos" m_MoveStyle="Run" m_StopAtDest="true" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT"/>
+    </SequenceMem>
+</BehaviorTree>

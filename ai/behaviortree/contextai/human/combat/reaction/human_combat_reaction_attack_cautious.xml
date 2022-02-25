@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <CooldownUntil m_TimePoint="#fake_attack_cooldown" m_CooldownTime="1" m_CooldownOnAbort="true">
+        <SequenceMem>
+            <Cnd_CanStartTask m_StartPolicy="INTERRUPT"/>
+            <!-- common conditions -->
+            <Cnd_IsBBValueEqual_string m_Key="#morale_state" m_Value="cautious"/>
+            <Cnd_IsActivityModuleRunning_Attack m_Invert="true"/>
+            <Cnd_HasActiveWeapon m_WeaponType="OneHandedMelee"/>
+            <!-- target conditions -->
+            <Cnd_IsCombatTargetMeleeReachable/>
+            <Cnd_InTargetHorzAngle m_Target="#target" m_Angle="45"/>
+            <Cnd_IsTargetInAir m_Target="#target" m_Invert="true"/>
+            <Cnd_IsCombatTargetInAngle m_Angle="$attack_quick_max_angle"/>
+            <!-- cautious quick attacks -->
+            <SelectorMem>
+                <CooldownTimeDelta m_CooldownTime="3.5" m_CustomName="QuickScareAway">
+                    <SequenceMem>
+                        <Cnd_IsCombatTargetInRadius m_Radius="3" m_UsePrediction="true"/>
+                        <Cnd_IsTargetApproaching m_Target="#target" m_MinVel="1" m_MaxAngle="45"/>
+                        <ExternalTree m_UID="HUMAN_ATTACK_QUICK_SCARE_AWAY" m_CustomName="QuickScareAway" m_Hide="true"/>
+                    </SequenceMem>
+                </CooldownTimeDelta>
+                <Optional m_Enabled="false">
+                    <CooldownTimeDelta m_CooldownTime="2" m_CustomName="QuickEscape">
+                        <SequenceMem>
+                            <Cnd_IsCombatTargetInRadius m_Radius="2.0" m_UsePrediction="true"/>
+                            <ExternalTree m_UID="HUMAN_ATTACK_QUICK_ESCAPE" m_CustomName="QuickEscape" m_Hide="true"/>
+                        </SequenceMem>
+                    </CooldownTimeDelta>
+                </Optional>
+            </SelectorMem>
+        </SequenceMem>
+    </CooldownUntil>
+</BehaviorTree>

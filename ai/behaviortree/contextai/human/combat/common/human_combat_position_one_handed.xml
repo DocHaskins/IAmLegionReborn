@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Parallel m_PolicySuccess="REQUIRE_ONE" m_PolicyFailure="REQUIRE_ONE">
+        <Selector>
+            <ExternalTree m_UID="HUMAN_COMBAT_HOLD_POSITION_ONE_HANDED" m_CustomName="HoldPosition" m_Hide="true"/>
+            <Sequence>
+                <Cnd_IsBBValueEqual_string m_Key="#role" m_Value="melee"/>
+                <Opr_RequestBarkTarget m_Player="Combat_Attack_Taunt_Player" m_Human="combat_attack_taunt_human" m_Infected="combat_attack_taunt_infected" m_Priority="Low"/>
+                <Selector>
+                    <ExternalTree m_UID="HUMAN_COMBAT_USE_MELEE_SLOT_ONE_HANDED" m_CustomName="MeleeSlot" m_Hide="true"/>
+                    <ExternalTree m_UID="HUMAN_COMBAT_USE_IDLE_SLOT_ONE_HANDED" m_CustomName="IdleSlot" m_Hide="true"/>
+                    <ExternalTree m_UID="HUMAN_COMBAT_ENGAGE_ONE_HANDED" m_CustomName="Engage" m_Hide="true"/>
+                </Selector>
+            </Sequence>
+            <Sequence>
+                <Opr_RequestBarkTarget m_Player="Combat_Idle_Taunt_Player" m_Human="combat_idle_taunt_human" m_Infected="combat_idle_taunt_infected" m_Priority="Low"/>
+                <Selector>
+                    <ExternalTree m_UID="HUMAN_COMBAT_USE_VANTAGE_SLOT" m_CustomName="VantageSlot" m_Hide="true"/>
+                    <ExternalTree m_UID="HUMAN_COMBAT_USE_MELEE_SLOT_ONE_HANDED" m_CustomName="MeleeSlot" m_Hide="true"/>
+                    <ExternalTree m_UID="HUMAN_COMBAT_USE_IDLE_SLOT_ONE_HANDED" m_CustomName="IdleSlot" m_Hide="true"/>
+                </Selector>
+            </Sequence>
+            <ExternalTree m_UID="HUMAN_COMBAT_KEEP_IDLE_DISTANCE_ONE_HANDED" m_CustomName="IdleDistance" m_Hide="true"/>
+            <ExternalTree m_UID="HUMAN_COMBAT_KEEP_RESTRICTED_AREA" m_CustomName="RestrictedArea" m_Hide="true"/>
+            <ExternalTree m_UID="HUMAN_COMBAT_IDLE_TAUNT" m_CustomName="IdleTaunt" m_Hide="true"/>
+        </Selector>
+        <Runner>
+            <ExternalTree m_UID="HUMAN_WEAPON_PULL_OUT_ONE_HANDED" m_CustomName="PullOutOneHanded" m_Hide="true"/>
+        </Runner>
+    </Parallel>
+</BehaviorTree>

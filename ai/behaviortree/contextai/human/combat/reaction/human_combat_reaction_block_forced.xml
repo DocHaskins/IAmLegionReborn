@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Cnd_IsCombatTargetInLOS/>
+        <Cnd_HasActiveWeapon m_WeaponType="OneHandedMelee"/>
+        <Cnd_InTargetHorzAngle m_Target="#target" m_Angle="30"/>
+        <Cnd_IsCombatTargetInRadius m_Radius="$block_distance_start"/>
+        <Sequence>
+            <Cnd_IsCombatTargetInRadius m_Radius="$block_distance_end"/>
+            <ExternalTree m_UID="HUMAN_COMBAT_BLOCKING_STAND" m_CustomName="BlockingStand" m_Hide="true"/>
+        </Sequence>
+    </SequenceMem>
+</BehaviorTree>

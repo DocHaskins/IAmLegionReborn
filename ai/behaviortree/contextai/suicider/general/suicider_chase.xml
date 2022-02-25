@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Sequence>
+        <Cnd_HasBBValue m_Key="#last_target"/>
+        <SequenceMem>
+            <Opr_EnableSense m_Sense="trail"/>
+            <Opr_EnableTrailForTarget m_Target="#last_target"/>
+            <RepeatOnceOnSuccess>
+                <Sequence>
+                    <Opr_GetPositionFromTrail m_Position="#trail_pos" m_RadiusMax="50.0" m_RadiusMin="20.0"/>
+                    <Act_Move m_Destination="#trail_pos" m_MoveStyle="$movestyle" m_LocomotionSpeed="$movement_speed_multiplier" m_StopAtDest="true" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                </Sequence>
+            </RepeatOnceOnSuccess>
+        </SequenceMem>
+     </Sequence>
+</BehaviorTree>

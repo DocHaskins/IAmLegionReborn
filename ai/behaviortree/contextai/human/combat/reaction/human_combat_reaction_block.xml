@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Selector>
+            <!-- block as response from hit reaction -->
+            <Sequence>
+                <Cnd_IsActivityModuleRunning_HitReaction/>
+                <Cnd_IsBBValueEqual_EHitType m_Key="#hit_type" m_Value="BLOCK"/>
+            </Sequence>
+            <!-- blocking state from block hit -->
+            <Cnd_IsActivityModuleRunning_Block/>
+            <Cnd_IsBlockActive/>
+            <!-- block as response to incoming attack or approaching enemy -->
+            <Optional m_Enabled="$enable_block_reaction">
+                <CooldownTimeDelta m_CooldownTime="10">
+                    <Sequence>
+                        <Cnd_CanBlock/>
+                        <Cnd_IsCombatTargetInLOS/>
+                        <Cnd_IsPlayer m_Target="#target"/>
+                        <Cnd_InTargetAttackRange m_Target="#target"/>
+                        <Selector>
+                            <Cnd_IsTargetApproaching m_Target="#target" m_MinVel="1" m_MaxAngle="45"/>
+                            <Sequence>
+                                <Cnd_IsTargetAttacking m_Target="#target"/>
+                                <Cnd_IsTargetAttackWindingUp m_Target="#target"/>
+                            </Sequence>
+                        </Selector>
+                    </Sequence>
+                </CooldownTimeDelta>
+            </Optional>
+        </Selector>
+        <SelectorMem>
+            <!-- blocking state exit on hit -->
+            <SequenceMem>
+                <Cnd_IsActivityModuleRunning_Block/>
+                <Cnd_Random m_Value="$block_exit_on_hit_prob"/>
+                <SelectorMem>
+                    <!-- exit blocking state with quick attack -->
+                    <Optional m_Enabled="$enable_block_attack">
+                        <SequenceMem>
+                            <Cnd_Random m_Value="0.2"/>
+                            <Cnd_IsCombatTargetInRange m_Radius="$block_attack_max_range" m_Angle="$block_attack_max_angle"/>
+                            <Opr_SetDirCorrectionSpeed m_MaxSpeed="$attack_quick_dir_correction_speed"/>
+                            <Opr_SetPosCorrectionSpeed m_MaxSpeed="$attack_pos_correction_speed"/>
+                            <Act_Attack m_Target="#target" m_AttackPresetName="human_1h_block_attack" m_EnablePosCorrection="$enable_attack_pos_correction" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+                        </SequenceMem>
+                    </Optional>
+                    <SequenceMem>
+                        <Cnd_Random m_Value="$block_dodge_prob"/>
+                        <Cnd_IsCombatTargetInRange m_Radius="$block_dodge_max_range" m_Angle="$block_dodge_max_angle"/>
+                        <Cnd_SpaceInSimpleDirection m_Direction="BACKWARD" m_MinRequiredSpace="$enviro_space_required" m_CheckHalfAngle="$enviro_space_half_angle"/>
+                        <Act_Dodge m_Target="#target" m_Type="ON_SPOT" m_Direction="BACKWARD" m_StartPolicy="DISCARD" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+                    </SequenceMem>
+                    <!-- exit blocking state with push -->
+                    <SequenceMem>
+                        <Cnd_IsCombatTargetInRange m_Radius="$block_push_max_range" m_Angle="$block_push_max_angle"/>
+                        <Opr_SetDirCorrectionSpeed m_MaxSpeed="$attack_push_dir_correction_speed"/>
+                        <Opr_SetPosCorrectionSpeed m_MaxSpeed="$attack_pos_correction_speed"/>
+                        <Act_Attack m_Target="#target" m_AttackPresetName="human_1h_block_push" m_EnablePosCorrection="$enable_attack_pos_correction" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+                        <Opr_GetModifiedTime m_TimePoint="#push_cooldown" m_TimeDelta="$attack_push_cooldown"/>
+                    </SequenceMem>
+                </SelectorMem>
+            </SequenceMem>
+            <!-- blocking state - standing -->
+            <SequenceMem>
+                <Cnd_IsCombatTargetInRadius m_Radius="$block_distance_start"/>
+                <Cnd_InTargetHorzAngle m_Target="#target" m_Angle="30"/>
+                <Cnd_AllyInLineOfFire m_Target="#target" m_CheckMelee="true" m_SpaceNeeded="2" m_Invert="true"/>
+                <Opr_GetModifiedTime m_TimePoint="#block_end_time" m_TimeDelta="$block_start_hold_time"/>
+                <Selector>
+                    <Cnd_IsActivityModuleRunning_Block/>
+                    <Opr_RequestBark m_BarkID="combat_block_enter" m_Priority="Medium"/>
+                </Selector>
+                <Failer>
+                    <Selector>
+                        <!-- stop blocking when enemy focuses on different target -->
+                        <Sequence>
+                            <Cnd_InTargetHorzAngle m_Target="#target" m_Angle="45" m_Invert="true"/>
+                            <Cnd_IsOtherGroupMemberCloserToPosition m_Position="#target_pos"/>
+                        </Sequence>
+                        <!-- stop blocking when enemy is blocking -->
+                        <Cnd_TargetIsBlocking m_Target="#target" m_MinTime="0.3"/>
+                        <!-- stop blocking when other ai is covering us -->
+                        <DelayerTimeDelta m_DelayTime="1.5">
+                            <Cnd_AllyInLineOfFire m_Target="#target" m_CheckMelee="true" m_SpaceNeeded="1"/>
+                        </DelayerTimeDelta>
+                        <!-- stop blocking when enemy is out of reach -->
+                        <Cnd_IsCombatTargetInRadius m_Radius="$block_distance_end" m_Invert="true"/>
+                        <!-- exit blocking state if enemy is not attacking us or block time passed  -->
+                        <Sequence>
+                            <Selector>
+                                <Cnd_IsTargetAttacking m_Target="#target" m_Invert="true"/>
+                                <Cnd_InTargetAttackRange m_Target="#target" m_Invert="true"/>
+                                <Cnd_IsTargetAttackWindingUp m_Target="#target"/>
+                                <Opr_GetModifiedTime m_TimePoint="#block_end_time" m_TimeDelta="$block_attack_hold_time"/>
+                            </Selector>
+                            <Cnd_HasTimePassed m_TimePoint="#block_end_time"/>
+                        </Sequence>
+                        <!-- keep blocking -->
+                        <ExternalTree m_UID="HUMAN_COMBAT_BLOCKING_STAND" m_CustomName="BlockingStand" m_Hide="true"/>
+                    </Selector>
+                </Failer>
+            </SequenceMem>
+        </SelectorMem>
+    </SequenceMem>
+</BehaviorTree>

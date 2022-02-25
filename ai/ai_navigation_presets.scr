@@ -1,0 +1,1166 @@
+export float INFINITE_COST = -1.0;
+export float MAXIMUM_PASSABLE_COST = 99.0;
+
+sub Documentation()
+{
+    // Navigation presets documentation //
+    // In case of any questions, mail jacek.szymonek@techland.pl //
+
+    // Navmesh surface types //
+
+    // Navmesh static surface types are fixed and assigned to navmesh polys during navmesh generation (offline).
+    // Navmesh dynamic surface types are defined by users can be assigned to navmesh polys at runtime.
+
+    // Designers can define up to 16 dynamic surface tags.
+    // Example: a molotov lands on the ground and marks the navmesh under it as "fire".
+    // AIs can modify pathfinding costs of areas marked as "fire" and find a path around the fire.
+    DynamicSurfaceTypes()
+    {
+        Surface("fire");
+        Surface("zombie");
+        Surface("bandit");
+        Surface("sleeping_biter");
+        Surface("dialog_guard_0");
+        Surface("dialog_guard_1");
+        Surface("dialog_guard_2");
+        Surface("dialog_guard_3");
+        Surface("dialog_guard_4");
+        Surface("dialog_guard_5");
+        Surface("dialog_guard_6");
+        Surface("dialog_guard_7");
+        Surface("uv_light");
+    }
+
+    NavigationPreset("default")
+    {
+        // Max length of path [m] - this may be used to simulate limited visibility/knowing of map topology.
+        // if negative or not set, no visibility limits will be applied
+        MaxPathLength(60.0);
+
+        // Min path width [m] (including agent radius) - found path should not have corridors narrower than this value.
+        // connections/jumps are not supported yet!
+        // if negative or not set, width verification is disabled
+        MinPathWidth(0.55);
+
+        // Modify pathfinding costs for navmesh static surface types.
+        // If there is no cost defined for a surface, it defaults to 1 (pathfinding cost unchanged).
+        // To disable pathfinding through a surface completely, set the cost to INFINITE_COST.
+        StaticSurfaceTypeCosts()
+        {
+            // These are all existing static surfaces types.
+            Regular(1.0);
+            Water(1.0);
+            Chemicals(1.0);
+            HardToPass(1.0);
+            Road(1.0);
+            Connection(1.0);
+            Patch(1.0);
+        }
+
+        // Modify pathfinding costs for navmesh dynamic surface types.
+        // If there is no cost defined for a surface, it defaults to 1 (pathfinding cost unchanged).
+        // To disable pathfinding through a surface completely, set the cost to INFINITE_COST.
+        DynamicSurfaceTypeCosts()
+        {
+            // The list of available dynamic surface types is defined at the top of the file.
+            Surface("fire", 1.0);
+            Surface("zombie", 1.0);
+            Surface("bandit", 1.0);
+        }
+
+        // Assign a dynamic surface type to a cut out navmesh patch around the agent.
+        // Surfaces of the same type merge into bigger surfaces when close to each other.
+        // Example: 3 agents can each mark navmesh around them a "zombie" surface type,
+        // creating a big navmesh patch around the whole group.
+        // Other agents can modify their pathfinding costs to stay away from the zombie-infested area.
+        GenerateDynamicSurface("zombie");
+
+        // Navmesh connections //
+
+        // Navmesh connections join separate navmesh patches. Paths are found using these connections,
+        // but they can only be passed by using special animation sequences (like jumps).
+
+        // Modify costs of connection types.
+        // If there is no cost defined for a connection type, it defaults to INFINITE_COST (pathfinding disabled).
+        ConnectionTypeCosts()
+        {
+            // Connection types handled by locomotion:
+            climb_low(1.0);
+            climb_medium(1.0);
+            climb_high(1.0);
+
+            jump_short(1.0);
+            jump_medium(1.0);
+            jump_long(1.0);
+
+            // Other, special connection types (traversal might not be implemented):
+            destroyable_wall(1.0);
+            breakable_door(1.0);
+            ladder(1.0);
+            door(1.0);
+        }
+
+        // Max vertical distance [m] of connection, an agent can pass through up (distance is always defined as positive value).
+        // in other words: this is max value of agent jump altitude
+        // if negative or not set, all connection heights (when end of connection is higher than a begin) will be allowed
+        MaxUpwardConnectionHeight(INFINITE_COST);
+
+        // Max vertical distance [m] of connection, an agent can pass through down (distance is always defined as positive value).
+        // in other words: this is max value of altitude agent can jump down
+        // if negative or not set, all connection heights (when end of connection is lower than a begin) will be allowed
+        MaxDownwardConnectionHeight(INFINITE_COST);
+
+        // Max horizontal distance [m] of connection, an agent can pass through (distance is always defined as positive value).
+        // in other words: this is max value of xz distance agent can jump
+        // if negative or not set, all connection horizontal distances will be allowed
+        MaxHorizontalConnectionLength(INFINITE_COST);
+
+        // Path randomization //
+
+        // Max random path deviation [m] added to shortest pass-through.
+        // Randomized pass will be lead by the same set of polygons, but random deviation will be added on every poly's edge passing.
+        // May be used to diversify pass through the same path.
+        // if negative or not set, it will be disabled
+        PathMaxRandomDeviation(0.0);
+
+        // Random cost added to trespassing cost as factor of the whole cost (value in range [0 - 1]).
+        // i.e. for random_path_factor == 0.2 and path len == 10 agent can choose another path with length from 8 to 12
+        // Such randomized path may lead by different set of polygons (other passage) than original path.
+        // May be used to diversify paths of group of agents which are heading the same target.
+        // if negative not set, it will be disabled
+        PathRandomAddedCostFactor(0.0);
+    }
+}
+
+sub DisallowAllDynamicSurfaces()
+{
+    // TODO: Fire surface cost should be infinite (so AI will never step on it by itself),
+    // But it introduces problems when AI lands inside by accident - infinite cost will make it impossible to escape
+    // (this issue is related with all ruas/special areas marked with infinite cost).
+    // Waiting for potential fix in nav query calculation: conditionally allow to escape from infinite cost areas.
+    Surface("fire", MAXIMUM_PASSABLE_COST);
+    Surface("zombie", INFINITE_COST);
+    Surface("bandit", INFINITE_COST);
+    
+    Surface("dialog_guard_0", INFINITE_COST);
+    Surface("dialog_guard_1", INFINITE_COST);
+    Surface("dialog_guard_2", INFINITE_COST);
+    Surface("dialog_guard_3", INFINITE_COST);
+    Surface("dialog_guard_4", INFINITE_COST);
+    Surface("dialog_guard_5", INFINITE_COST);
+    Surface("dialog_guard_6", INFINITE_COST);
+    Surface("dialog_guard_7", INFINITE_COST);
+}
+
+
+
+
+sub HumanAI_Base_Defaults()
+{
+    MaxPathLength(120.0);
+    MinPathWidth(0.55);
+}
+
+sub HumanAI_Base_InfectedSurfaces()
+{
+    GenerateDynamicSurface("zombie");
+}
+
+sub HumanAI_Base_InfectedRandomness()
+{
+    PathMaxRandomDeviation(5.0);
+    PathRandomAddedCostFactor(0.3);
+}
+
+sub HumanAI_Base_RoadCost()
+{
+	StaticSurfaceTypeCosts()
+	{
+		Road(0.5);
+		HardToPass(1.5);
+	}
+}
+
+sub HumanAI_Base()
+{
+
+    NavigationPreset("npc")
+    {
+        use HumanAI_Base_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(1.0);
+            climb_medium(1.0);
+            climb_high(1.0);
+
+            jump_short(1.0);
+            jump_medium(1.0);
+            jump_long(1.0);
+            
+            ladder(1.0);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        DynamicSurfaceTypeCosts()
+        {
+            use DisallowAllDynamicSurfaces();
+        }
+    }
+
+    NavigationPreset("npc_combat")
+    {
+        use HumanAI_Base_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(3.0);
+            climb_medium(3.0);
+
+            jump_short(1.0);
+
+            breakable_door(1.3);
+            ladder(1.0);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+        MaxHorizontalConnectionLength(INFINITE_COST);
+
+        DynamicSurfaceTypeCosts()
+        {
+            use DisallowAllDynamicSurfaces();
+        }
+    }
+
+    NavigationPreset("biter")
+    {
+        use HumanAI_Base_Defaults();
+		MaxPathLength(250.0);
+        ConnectionTypeCosts()
+        {
+            climb_low(3.0);
+            climb_medium(5.0);
+            climb_high(7.0);
+			
+            jump_short(1.0);
+
+            breakable_door(2.0);
+        }
+
+        use HumanAI_Base_InfectedSurfaces();
+        use HumanAI_Base_InfectedRandomness();
+    }
+
+    NavigationPreset("viral")
+    {
+        use HumanAI_Base_Defaults();
+		MaxPathLength(250.0);
+        ConnectionTypeCosts()
+        {
+            climb_low(3.0);
+            climb_medium(5.0);
+            climb_high(7.0);
+            
+            jump_short(1.0);
+            jump_medium(1.0);
+            jump_long(1.0);
+        }
+        DynamicSurfaceTypeCosts()
+        {
+            Surface("sleeping_biter", 10.0);
+        }
+        use HumanAI_Base_InfectedSurfaces();
+        use HumanAI_Base_InfectedRandomness();
+    }
+
+    NavigationPreset("demolisher")
+    {
+        use HumanAI_Base_Defaults();
+
+        MaxPathLength(60.0);
+        MinPathWidth(0.55);
+
+        use HumanAI_Base_InfectedSurfaces();
+        use HumanAI_Base_InfectedRandomness();
+    }
+
+    NavigationPreset("goon")
+    {
+        use HumanAI_Base_Defaults();
+
+        MaxPathLength(60.0);
+        MinPathWidth(0.55);
+
+        use HumanAI_Base_InfectedSurfaces();
+        use HumanAI_Base_InfectedRandomness();
+    }
+
+    NavigationPreset("juggernaut")
+    {
+        use HumanAI_Base_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            destroyable_wall(1.0);
+            breakable_door(1.0);
+        }
+
+        MaxUpwardConnectionHeight(1.4);
+        MaxDownwardConnectionHeight(4.5);
+
+        use HumanAI_Base_InfectedSurfaces();
+        use HumanAI_Base_InfectedRandomness();
+    }
+
+    NavigationPreset("spitter")
+    {
+        use HumanAI_Base_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(0.3);
+            
+            destroyable_wall(1.0);
+            breakable_door(1.0);
+        }
+
+        MaxUpwardConnectionHeight(1.4);
+        MaxDownwardConnectionHeight(4.5);
+
+        use HumanAI_Base_InfectedSurfaces();
+        use HumanAI_Base_InfectedRandomness();
+    }
+
+    NavigationPreset("suicider")
+    {
+        use HumanAI_Base_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            destroyable_wall(1.0);
+            breakable_door(1.0);
+        }
+
+        MaxUpwardConnectionHeight(1.4);
+        MaxDownwardConnectionHeight(4.5);
+
+        use HumanAI_Base_InfectedSurfaces();
+        use HumanAI_Base_InfectedRandomness();
+    }
+
+    NavigationPreset("suicider_flooded")
+    {
+        use HumanAI_Base_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(2.0);
+            climb_medium(2.5);
+            climb_high(3.0);
+            
+            jump_short(1.0);
+            jump_medium(1.0);
+            jump_long(1.0);
+
+            destroyable_wall(1.0);
+            breakable_door(1.0);
+        }
+
+        MaxUpwardConnectionHeight(1.4);
+        MaxDownwardConnectionHeight(4.5);
+
+        use HumanAI_Base_InfectedSurfaces();
+        use HumanAI_Base_InfectedRandomness();
+    }
+
+    NavigationPreset("screamer")
+    {
+        use HumanAI_Base_Defaults();
+
+		ConnectionTypeCosts()
+        {
+            climb_low(1.3);
+            climb_medium(1.7);
+            climb_high(2.0);
+            
+            jump_short(1.0);
+            jump_medium(1.0);
+            jump_long(1.0);
+        }
+
+        MaxUpwardConnectionHeight(9.0);
+        MaxDownwardConnectionHeight(10.0);
+        MaxHorizontalConnectionLength(8.0);
+
+        use HumanAI_Base_InfectedSurfaces();
+        use HumanAI_Base_InfectedRandomness();
+    }
+
+    NavigationPreset("bolter")
+    {
+        use HumanAI_Base_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(1.3);
+            climb_medium(1.7);
+            climb_high(2.0);
+            
+            jump_short(1.0);
+            jump_medium(1.0);
+            jump_long(1.0);
+        }
+
+        MaxUpwardConnectionHeight(9.0);
+        MaxDownwardConnectionHeight(10.0);
+        MaxHorizontalConnectionLength(8.0);
+
+        use HumanAI_Base_InfectedSurfaces();
+        use HumanAI_Base_InfectedRandomness();
+    }
+
+    NavigationPreset("volatile")
+    {
+        use HumanAI_Base_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(2.0);
+            climb_medium(2.5);
+            climb_high(3.0);
+            
+            jump_short(1.0);
+            jump_medium(1.0);
+            jump_long(1.0);
+        }
+
+        use HumanAI_Base_InfectedSurfaces();
+        use HumanAI_Base_InfectedRandomness();
+    }
+
+    NavigationPreset("banshee")
+    {
+        use HumanAI_Base_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(2.0);
+            climb_medium(2.5);
+            climb_high(3.0);
+
+            jump_short(1.0);
+            jump_medium(1.0);
+            jump_long(1.0);
+        }
+
+        MaxUpwardConnectionHeight(9.5);
+        MaxDownwardConnectionHeight(10.5);
+
+        use HumanAI_Base_InfectedSurfaces();
+        use HumanAI_Base_InfectedRandomness();
+    }
+
+    NavigationPreset("corruptor")
+    {
+        use HumanAI_Base_Defaults();
+
+        use HumanAI_Base_InfectedSurfaces();
+        use HumanAI_Base_InfectedRandomness();
+    }
+
+    NavigationPreset("charger")
+    {
+        use HumanAI_Base_Defaults();
+
+        use HumanAI_Base_InfectedSurfaces();
+        use HumanAI_Base_InfectedRandomness();
+    }
+
+    NavigationPreset("obstructor")
+    {
+        use HumanAI_Base_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(1.0);
+
+            jump_short(1.0);
+        }
+
+        use HumanAI_Base_InfectedSurfaces();
+        use HumanAI_Base_InfectedRandomness();
+    }
+    NavigationPreset("waltz")
+    {
+        use HumanAI_Base_Defaults();
+
+        use HumanAI_Base_InfectedSurfaces();
+        use HumanAI_Base_InfectedRandomness();
+    }
+}
+
+sub HumanAI_HUB()
+{
+    NavigationPreset("npc_hub")
+    {
+        MaxPathLength(60.0);
+        MinPathWidth(0.55);
+
+        ConnectionTypeCosts()
+        {
+            ladder(1.0);
+        }
+		
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        DynamicSurfaceTypeCosts()
+        {
+            use DisallowAllDynamicSurfaces();
+        }
+		
+		use HumanAI_Base_RoadCost();
+		
+    }
+}
+
+sub HumanAI_Quest_Defaults()
+{
+    MaxPathLength(60.0);
+    MinPathWidth(0.55);
+}
+
+
+sub HumanAI_Quest()
+{
+    NavigationPreset("npc_combat_quest_defaults")
+    {
+        use HumanAI_Quest_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(3.0);
+            climb_medium(3.0);
+
+            jump_short(5.0);
+
+            breakable_door(1.3);
+            ladder(1.0);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        DynamicSurfaceTypeCosts()
+        {
+            use DisallowAllDynamicSurfaces();
+        }
+    }
+
+    NavigationPreset("npc_combat_quest_abdul")
+    {
+        use HumanAI_Quest_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(1.0);
+            climb_medium(1.0);
+            climb_high(1.0);
+
+            jump_short(1.0);
+            jump_medium(1.0);
+            jump_long(1.0);
+            
+            ladder(1.0);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        DynamicSurfaceTypeCosts()
+        {
+            use DisallowAllDynamicSurfaces();
+        }
+    }
+
+    NavigationPreset("npc_combat_quest_pk")
+    {
+        use HumanAI_Quest_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(10.0);
+            climb_medium(10.0);
+
+            jump_short(10.0);
+
+            breakable_door(1.3);
+            ladder(1.0);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        DynamicSurfaceTypeCosts()
+        {
+            use DisallowAllDynamicSurfaces();
+        }
+    }
+
+    NavigationPreset("quest_waltz_1")
+    {
+        use HumanAI_Quest_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(3.0);
+            climb_medium(3.0);
+
+            jump_short(1.0);
+
+            breakable_door(1.3);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        DynamicSurfaceTypeCosts()
+        {
+            use DisallowAllDynamicSurfaces();
+        }
+    }
+
+    NavigationPreset("quest_waltz_3")
+    {
+        use HumanAI_Quest_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(10.0);
+
+            breakable_door(1.3);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        DynamicSurfaceTypeCosts()
+        {
+            use DisallowAllDynamicSurfaces();
+        }
+    }
+
+    NavigationPreset("quest_kris")
+    {
+        use HumanAI_Quest_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(3.0);
+            climb_medium(3.0);
+
+            jump_short(1.0);
+
+            breakable_door(1.3);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        DynamicSurfaceTypeCosts()
+        {
+            use DisallowAllDynamicSurfaces();
+        }
+    }
+
+    NavigationPreset("quest_she_wolf_body_guard")
+    {
+        use HumanAI_Quest_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            breakable_door(1.3);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        DynamicSurfaceTypeCosts()
+        {
+            use DisallowAllDynamicSurfaces();
+        }
+    }
+
+}
+
+
+sub HumanAI_OpenWorld_Defaults()
+{
+    MaxPathLength(60.0);
+    MinPathWidth(0.55);
+
+    PathMaxRandomDeviation(3.0);
+    PathRandomAddedCostFactor(0.3);
+}
+
+sub HumanAI_OpenWorld_BanditSurfaces()
+{
+    GenerateDynamicSurface("bandit");
+    DynamicSurfaceTypeCosts()
+    {
+        use DisallowAllDynamicSurfaces();
+    }
+}
+
+sub HumanAI_OpenWorld()
+{
+    NavigationPreset("ow_bandit_1h")
+    {
+        use HumanAI_OpenWorld_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(10.0);
+            climb_medium(10.0);
+
+            jump_short(10.0);
+
+            breakable_door(1.3);
+            ladder(1.0);
+            door(1.5);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        use HumanAI_OpenWorld_BanditSurfaces();
+    }
+
+    NavigationPreset("ow_bandit_bow")
+    {
+        use HumanAI_OpenWorld_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(10.0);
+            climb_medium(10.0);
+
+            jump_short(10.0);
+
+            breakable_door(1.3);
+            ladder(1.0);
+            door(1.5);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        use HumanAI_OpenWorld_BanditSurfaces();
+    }
+
+    NavigationPreset("ow_bandit_2h")
+    {
+        use HumanAI_OpenWorld_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(10.0);
+
+            breakable_door(1.3);
+            door(1.5);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        use HumanAI_OpenWorld_BanditSurfaces();
+    }
+
+    NavigationPreset("ow_bandit_spear")
+    {
+        use HumanAI_OpenWorld_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(10.0);
+
+            breakable_door(1.3);
+            door(1.5);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        use HumanAI_OpenWorld_BanditSurfaces();
+    }
+
+    NavigationPreset("ow_bandit_runner")
+    {
+        use HumanAI_OpenWorld_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(3.0);
+            climb_medium(5.0);
+
+            jump_short(3.0);
+
+            breakable_door(1.3);
+            ladder(1.0);
+            door(1.5);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        use HumanAI_OpenWorld_BanditSurfaces();
+    }
+
+    NavigationPreset("ow_bandit_proto")
+    {
+        use HumanAI_OpenWorld_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(3.0);
+            climb_medium(3.0);
+
+            jump_short(1.0);
+
+            breakable_door(1.3);
+            door(1.5);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        use HumanAI_OpenWorld_BanditSurfaces();
+    }
+
+    NavigationPreset("ow_pk_1h")
+    {
+        use HumanAI_OpenWorld_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(3.0);
+            climb_medium(5.0);
+
+            jump_short(5.0);
+
+            breakable_door(1.3);
+            ladder(1.0);
+            door(1.5);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        DynamicSurfaceTypeCosts()
+        {
+            use DisallowAllDynamicSurfaces();
+        }
+    }
+
+    NavigationPreset("ow_pk_2h")
+    {
+        use HumanAI_OpenWorld_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(3.0);
+            climb_medium(5.0);
+
+            jump_short(5.0);
+
+            breakable_door(1.3);
+            ladder(INFINITE_COST);
+            door(1.5);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        DynamicSurfaceTypeCosts()
+        {
+            use DisallowAllDynamicSurfaces();
+        }
+    }
+
+    NavigationPreset("ow_conscript_1h")
+    {
+        use HumanAI_OpenWorld_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(3.0);
+            climb_medium(5.0);
+
+            jump_short(5.0);
+
+            breakable_door(1.3);
+            ladder(1.0);
+            door(1.5);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        DynamicSurfaceTypeCosts()
+        {
+            use DisallowAllDynamicSurfaces();
+        }
+    }
+
+    NavigationPreset("ow_scavenger_1h")
+    {
+        use HumanAI_OpenWorld_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(3.0);
+            climb_medium(5.0);
+
+            jump_short(5.0);
+
+            breakable_door(1.3);
+            ladder(1.0);
+            door(1.5);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        DynamicSurfaceTypeCosts()
+        {
+            use DisallowAllDynamicSurfaces();
+        }
+    }
+
+    NavigationPreset("ow_survivor_1h")
+    {
+        use HumanAI_OpenWorld_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(3.0);
+            climb_medium(5.0);
+
+            jump_short(5.0);
+
+            breakable_door(1.3);
+            ladder(INFINITE_COST);
+            door(1.5);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        DynamicSurfaceTypeCosts()
+        {
+            use DisallowAllDynamicSurfaces();
+        }
+    }
+
+    NavigationPreset("ow_survivor_shop")
+    {
+        use HumanAI_OpenWorld_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(3.0);
+
+            breakable_door(1.3);
+            door(1.5);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        DynamicSurfaceTypeCosts()
+        {
+            use DisallowAllDynamicSurfaces();
+        }
+    }
+}
+
+sub HumanAI_E3()
+{
+    NavigationPreset("e3_bandit_1h")
+    {
+        MaxPathLength(60.0);
+        MinPathWidth(0.55);
+
+        ConnectionTypeCosts()
+        {
+            climb_low(3.0);
+            climb_medium(3.0);
+
+            jump_short(1.0);
+
+            breakable_door(1.3);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        GenerateDynamicSurface("bandit");
+        DynamicSurfaceTypeCosts()
+        {
+            use DisallowAllDynamicSurfaces();
+        }
+    }
+
+    NavigationPreset("e3_bandit_2h")
+    {
+        MaxPathLength(60.0);
+        MinPathWidth(0.55);
+
+        ConnectionTypeCosts()
+        {
+            breakable_door(1.3);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        GenerateDynamicSurface("bandit");
+        DynamicSurfaceTypeCosts()
+        {
+            use DisallowAllDynamicSurfaces();
+        }
+    }
+
+    NavigationPreset("e3_renegade_fisherman")
+    {
+        MaxPathLength(60.0);
+        MinPathWidth(0.55);
+
+        ConnectionTypeCosts()
+        {
+            climb_low(10.0);
+            climb_medium(10.0);
+
+            jump_short(10.0);
+
+            breakable_door(1.3);
+            ladder(1.0);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        GenerateDynamicSurface("bandit");
+        DynamicSurfaceTypeCosts()
+        {
+            use DisallowAllDynamicSurfaces();
+        }
+    }
+}
+
+sub HumanAI_Developer()
+{
+    NavigationPreset("dev_bandit")
+    {
+        MaxPathLength(60.0);
+        MinPathWidth(0.55);
+
+        ConnectionTypeCosts()
+        {
+            climb_low(2.0);
+            climb_medium(2.0);
+            climb_high(2.0);
+
+            jump_short(1.0);
+            jump_medium(1.0);
+            jump_long(1.0);
+
+            breakable_door(1.3);
+            ladder(1.0);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+
+        GenerateDynamicSurface("bandit");
+        DynamicSurfaceTypeCosts()
+        {
+            use DisallowAllDynamicSurfaces();
+        }
+    }
+
+    NavigationPreset("dev_waltz_fire_resistant") // the same as ow_bandit_1h but without dynamic surface generation and avoidance
+    {
+        use HumanAI_OpenWorld_Defaults();
+
+        ConnectionTypeCosts()
+        {
+            climb_low(10.0);
+            climb_medium(10.0);
+
+            jump_short(10.0);
+
+            breakable_door(1.3);
+            ladder(1.0);
+            door(1.5);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+    }
+
+    NavigationPreset("dev_repl_minimal")
+    {
+        MaxPathLength(60.0);
+        MinPathWidth(0.55);
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+    }
+
+    NavigationPreset("dev_strafe_tests")
+    {
+        MaxPathLength(60.0);
+        MinPathWidth(0.55);
+
+        ConnectionTypeCosts()
+        {
+            climb_low(10.0);
+            climb_medium(10.0);
+
+            jump_short(10.0);
+
+            breakable_door(1.3);
+            ladder(1.0);
+        }
+
+        MaxUpwardConnectionHeight(16.0);
+        MaxDownwardConnectionHeight(16.0);
+    }
+
+    NavigationPreset("dev_defaults")
+    {
+        MaxPathLength(60.0);
+        MinPathWidth(0.55);
+        
+        DynamicSurfaceTypeCosts()
+        {
+            use DisallowAllDynamicSurfaces();
+        }
+    }
+}
+
+sub main()
+{
+    use Documentation(); // please do
+
+    use HumanAI_Base();
+    use HumanAI_HUB();
+    use HumanAI_Quest();
+    use HumanAI_OpenWorld();
+    use HumanAI_E3();
+    use HumanAI_Developer();
+}

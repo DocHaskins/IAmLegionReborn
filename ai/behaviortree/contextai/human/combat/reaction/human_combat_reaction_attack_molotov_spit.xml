@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <CooldownTimeDelta m_CooldownTime="$attack_molotov_spit_cooldown" m_CooldownOnAbort="true">
+        <SequenceMem>
+            <Cnd_CanStartTask m_StartPolicy="INTERRUPT"/>
+            <Cnd_HasActiveWeaponSpecific m_Type="Molotov"/>
+            <ExternalTree m_UID="HUMAN_ATTACK_MOLOTOV_SPIT" m_CustomName="MolotovSpit" m_Hide="true"/>
+        </SequenceMem>
+    </CooldownTimeDelta>
+</BehaviorTree>

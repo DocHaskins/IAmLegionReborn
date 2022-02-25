@@ -1,0 +1,112 @@
+sub EasyDifficultyMultipliers()
+{
+    Players(1)
+    {
+        MaxHealthMultiplier(0.7500);
+        MeleeDamageMultiplier(1.0);
+        RangeDamageMultiplier(1.0);
+        StaminaDecreaseMultiplier(1.00);
+    }
+
+    Players(2)
+    {
+        MaxHealthMultiplier(1.1250);
+        MeleeDamageMultiplier(1.33);
+        RangeDamageMultiplier(1.2);
+        StaminaDecreaseMultiplier(0.75);
+    }
+    
+    Players(3)
+    {
+        MaxHealthMultiplier(1.3125);
+        MeleeDamageMultiplier(1.50);
+        RangeDamageMultiplier(1.35);
+        StaminaDecreaseMultiplier(0.60);
+    }
+
+    Players(4)
+    {
+        MaxHealthMultiplier(1.5000);
+        MeleeDamageMultiplier(1.75);
+        RangeDamageMultiplier(1.50);
+        StaminaDecreaseMultiplier(0.50);
+    }
+}
+
+sub NormalDifficultyMultipliers()
+{
+    Players(1)
+    {
+        MaxHealthMultiplier(1.0);
+        MeleeDamageMultiplier(1.0);
+        RangeDamageMultiplier(1.0);
+        StaminaDecreaseMultiplier(1.0);
+    }
+
+    Players(2)
+    {
+        MaxHealthMultiplier(1.500);
+        MeleeDamageMultiplier(1.33);
+        RangeDamageMultiplier(1.2);
+        StaminaDecreaseMultiplier(0.60);
+    }
+    
+    Players(3)
+    {
+        MaxHealthMultiplier(1.7500);
+        MeleeDamageMultiplier(1.50);
+        RangeDamageMultiplier(1.35);
+        StaminaDecreaseMultiplier(0.45);
+    }
+
+    Players(4)
+    {
+        MaxHealthMultiplier(2.0000);
+        MeleeDamageMultiplier(1.75);
+        RangeDamageMultiplier(1.50);
+        StaminaDecreaseMultiplier(0.35);
+    }
+}
+
+sub HardAndNightmareDifficultyMultipliers()
+{
+    Players(1)
+    {
+        MaxHealthMultiplier(1.5000);
+        MeleeDamageMultiplier(1.0);
+        RangeDamageMultiplier(1.0);
+        StaminaDecreaseMultiplier(0.75);
+    }
+
+    Players(2)
+    {
+        MaxHealthMultiplier(1.4500);
+        MeleeDamageMultiplier(0.95);
+        RangeDamageMultiplier(1.0);
+        StaminaDecreaseMultiplier(0.75);
+    }
+    
+    Players(3)
+    {
+        MaxHealthMultiplier(1.4000);
+        MeleeDamageMultiplier(0.90);
+        RangeDamageMultiplier(1.0);
+        StaminaDecreaseMultiplier(0.75);
+    }
+
+    Players(4)
+    {
+        MaxHealthMultiplier(1.3500);
+        MeleeDamageMultiplier(0.85);
+        RangeDamageMultiplier(1.0);
+        StaminaDecreaseMultiplier(0.75);
+    }
+}
+
+sub main()
+{
+    Difficulty("Easy") { use EasyDifficultyMultipliers(); }
+    Difficulty("Normal") { use NormalDifficultyMultipliers(); }
+    Difficulty("Hard") { use HardAndNightmareDifficultyMultipliers(); }
+    Difficulty("Nightmare") { use HardAndNightmareDifficultyMultipliers(); }
+}

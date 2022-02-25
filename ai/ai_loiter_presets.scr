@@ -1,0 +1,26 @@
+sub main()
+{
+    // Documentation
+    // Three points are picked around the AI in the "loiter_radius_m" radius.
+    // Loiter behavior is divided into two, looped phases (WALK <-> WAIT).
+    // In the WALK phase, AI will walk to one of the picked point around it.
+    
+    // At the beginning of the WAIT phase, there is "short_wait_probability" probability that AI
+    // will wait for a random duration in the range:
+    // [short_wait_duration_min, short_wait_duration_max].
+    // Otherwise it will wait for a random duration in the range:
+    // [long_wait_duration_min, long_wait_duration_max].
+    
+    LoiterPreset("default")
+    {
+        loiter_radius_m("75.0");
+        
+        short_wait_probability("0.1");
+
+        short_wait_duration_min("0.1");
+        short_wait_duration_max("0.1");
+
+        long_wait_duration_min("0.1");
+        long_wait_duration_max("0.1");
+    }
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Cnd_IsCombatTargetInRange m_Radius="$attack_molotov_spit_max_range" m_Angle="$attack_molotov_spit_max_angle"/>
+        <Cnd_AllyInLineOfFire m_Target="#target" m_CheckMelee="true" m_SpaceNeeded="2" m_Invert="true"/>
+        <Opr_SetDirCorrectionSpeed m_MaxSpeed="$attack_molotov_spit_dir_correction_speed"/>
+        <Opr_SetPosCorrectionSpeed m_MaxSpeed="$attack_pos_correction_speed"/>
+        <SelectorMem>
+            <SequenceMem>
+                <Opr_GetSelfPosition m_Position="#self_pos"/>
+                <Cnd_IsOtherGroupMemberCloseToPosition m_Position="#self_pos" m_MaxDistance="$attack_molotov_spit_forward_max_dist_to_others"/>
+                <Act_Attack m_Target="#target" m_AttackPresetName="human_molotov_spit_forward" m_Phase="1" m_EnablePosCorrection="$enable_attack_pos_correction" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+            </SequenceMem>
+            <Act_Attack m_Target="#target" m_AttackPresetName="human_molotov_spit_horizontal" m_Phase="1" m_EnablePosCorrection="$enable_attack_pos_correction" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+        </SelectorMem>
+    </SequenceMem>
+</BehaviorTree>

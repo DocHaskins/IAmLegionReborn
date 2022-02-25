@@ -1,0 +1,480 @@
+<?xml version="1.0"?>
+<ConstParams xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_const.xsd">
+    <!-- COMBAT - GENERAL -->
+    <Param m_Name="$enable_combat_bow" m_Value="false"/>
+    <Param m_Name="$enable_combat_grenadier" m_Value="false"/>
+    <Param m_Name="$enable_combat_harpoon" m_Value="false"/>
+    <Param m_Name="$enable_combat_one_handed" m_Value="false"/>
+    <Param m_Name="$enable_combat_spear" m_Value="false"/>
+    <Param m_Name="$enable_combat_two_handed" m_Value="false"/>
+    <!-- COMBAT - OFFENSIVE - MELEE -->
+    <!-- one handed - quick attack -->
+    <Param m_Name="$enable_attack_quick" m_Value="true"/>
+    <Param m_Name="$enable_attack_quick_reaction" m_Value="false"/>
+    <Param m_Name="$attack_quick_reaction_cooldown" m_Value="2.0"/>
+    <Param m_Name="$attack_quick_reaction_max_range" m_Value="2.0"/>
+    <Param m_Name="$attack_quick_max_range" m_Value="4.5"/>
+    <Param m_Name="$attack_quick_max_angle" m_Value="45.0"/>
+    <Param m_Name="$attack_quick_dir_correction_speed" m_Value="180.0"/>
+    <Param m_Name="$attack_quick_step_enabled" m_Value="true"/>
+    <Param m_Name="$attack_quick_step_min_range" m_Value="2.5"/>
+    <Param m_Name="$attack_quick_step_min_occluded_space" m_Value="1"/>
+    <Param m_Name="$attack_quick_step_forward_min_range" m_Value="5"/>
+    <Param m_Name="$attack_quick_step_escape_max_range" m_Value="3"/>
+    <!-- one handed - power attack -->
+    <Param m_Name="$enable_attack_power" m_Value="false"/>
+    <Param m_Name="$attack_power_cooldown" m_Value="6"/>
+    <Param m_Name="$attack_power_max_range" m_Value="4.0"/>
+    <Param m_Name="$attack_power_max_angle" m_Value="45.0"/>
+    <Param m_Name="$attack_power_dir_correction_speed" m_Value="240.0"/>
+    <!-- one handed - combo attack -->
+    <Param m_Name="$enable_attack_combo" m_Value="false"/>
+    <Param m_Name="$attack_combo_max_range" m_Value="4.0"/>
+    <Param m_Name="$attack_combo_max_angle" m_Value="45.0"/>
+    <Param m_Name="$attack_combo_dir_correction_speed" m_Value="240.0"/>
+    <!-- one handed - grab attack -->
+    <Param m_Name="$enable_attack_grab" m_Value="false"/>
+    <Param m_Name="$attack_grab_cooldown" m_Value="3"/>
+    <Param m_Name="$attack_grab_max_range" m_Value="5.0"/>
+    <Param m_Name="$attack_grab_max_angle" m_Value="120.0"/>
+    <Param m_Name="$attack_grab_dir_correction_speed"	m_Value="720.0"/>
+    <!-- one handed - cautious and fake attacks -->
+    <Param m_Name="$enable_attack_cautious" m_Value="true"/>
+    <!-- two handed - overhead recovery -->
+    <Param m_Name="$enable_attack_power_overhead" m_Value="true"/>
+    <Param m_Name="$enable_attack_power_overhead_recovery" m_Value="true"/>
+    <Param m_Name="$attack_power_overhead_max_range" m_Value="3.5"/>
+    <Param m_Name="$attack_power_overhead_max_angle" m_Value="90.0"/>
+    <Param m_Name="$attack_power_recovery_max_range" m_Value="5"/>
+    <Param m_Name="$attack_power_recovery_max_angle" m_Value="120.0"/>
+    <Param m_Name="$attack_power_overhead_recovery_dir_correction_speed" m_Value="360.0"/>
+    <!-- two handed - horizontal swing combo -->
+    <Param m_Name="$enable_attack_power_swing_combo" m_Value="true"/>
+    <Param m_Name="$attack_power_swing_combo_min_phase" m_Value="0"/>
+    <Param m_Name="$attack_power_swing_combo_cooldown" m_Value="5.0"/>
+    <Param m_Name="$attack_power_swing_max_range" m_Value="3.5"/>
+    <Param m_Name="$attack_power_swing_max_angle" m_Value="30.0"/>
+    <Param m_Name="$attack_power_swing_combo_max_range" m_Value="10"/>
+    <Param m_Name="$attack_power_swing_combo_max_angle" m_Value="120"/>
+    <Param m_Name="$attack_power_swing_dir_correction_speed" m_Value="360.0"/>
+    <!-- two handed - power charge -->
+    <Param m_Name="$enable_attack_power_charge" m_Value="false"/>
+    <Param m_Name="$attack_power_charge_cooldown" m_Value="5.0"/>
+    <Param m_Name="$attack_power_charge_max_range" m_Value="10"/>
+    <Param m_Name="$attack_power_charge_min_range" m_Value="5"/>
+    <Param m_Name="$attack_power_charge_max_angle" m_Value="15.0"/>
+    <Param m_Name="$attack_power_charge_followup_max_range" m_Value="3"/>
+    <Param m_Name="$attack_power_charge_followup_max_angle" m_Value="90"/>
+    <Param m_Name="$attack_power_charge_dir_correction_speed" m_Value="100.0"/>
+    <!-- two handed - power 360 -->
+    <Param m_Name="$enable_attack_power_360" m_Value="false"/>
+    <Param m_Name="$attack_power_360_cooldown" m_Value="5.0"/>
+    <Param m_Name="$attack_power_360_max_range" m_Value="4.0"/>
+    <Param m_Name="$attack_power_360_min_angle" m_Value="60.0"/>
+    <Param m_Name="$attack_power_360_dir_correction_speed" m_Value="100.0"/>
+    <Param m_Name="$enable_attack_power_360_coop" m_Value="true"/>
+    <Param m_Name="$attack_power_360_coop_cooldown" m_Value="10.0"/>
+    <!-- spear - quick attack -->
+    <Param m_Name="$enable_attack_spear_quick" m_Value="true"/>
+    <Param m_Name="$attack_spear_quick_combo_max_range" m_Value="3.5"/>
+    <Param m_Name="$attack_spear_quick_combo_max_angle" m_Value="45.0"/>
+    <Param m_Name="$attack_spear_quick_dir_correction_speed" m_Value="180.0"/>
+    <!-- spear - power charge attack -->
+    <Param m_Name="$enable_attack_spear_power" m_Value="true"/>
+    <Param m_Name="$attack_spear_power_cooldown" m_Value="1.0"/>
+    <Param m_Name="$attack_spear_power_max_range" m_Value="10.0"/>
+    <Param m_Name="$attack_spear_power_min_range" m_Value="2.5"/>
+    <Param m_Name="$attack_spear_power_min_space_from_others" m_Value="3.0"/>
+    <Param m_Name="$attack_spear_power_followup_max_range" m_Value="4.5"/>
+    <Param m_Name="$attack_spear_power_max_angle" m_Value="10.0"/>
+    <Param m_Name="$attack_spear_power_dir_correction_speed" m_Value="360.0"/>
+    <!-- spear - quick swipe attack -->
+    <Param m_Name="$enable_attack_spear_swipe" m_Value="true"/>
+    <Param m_Name="$attack_spear_swipe_max_range" m_Value="4.0"/>
+    <Param m_Name="$attack_spear_swipe_min_angle" m_Value="60.0"/>
+    <Param m_Name="$attack_spear_swipe_dir_correction_speed" m_Value="100.0"/>
+    <!-- spear - low swipe attack -->
+    <Param m_Name="$enable_attack_spear_swipe_low" m_Value="false"/>
+    <Param m_Name="$attack_spear_swipe_low_cooldown" m_Value="5.0"/>
+    <Param m_Name="$attack_spear_swipe_low_max_range" m_Value="4.0"/>
+    <Param m_Name="$attack_spear_swipe_low_max_angle" m_Value="60.0"/>
+    <Param m_Name="$attack_spear_swipe_low_dir_correction_speed" m_Value="100.0"/>
+    <!-- spear - push -->
+    <Param m_Name="$enable_attack_spear_push" m_Value="true"/>
+    <Param m_Name="$attack_spear_push_max_range" m_Value="2.5"/>
+    <Param m_Name="$attack_spear_push_max_angle" m_Value="45.0"/>
+    <!-- common - push attack -->
+    <Param m_Name="$enable_attack_push" m_Value="false"/>
+    <Param m_Name="$enable_attack_push_followup" m_Value="false"/>
+    <Param m_Name="$attack_push_cooldown" m_Value="6"/>
+    <Param m_Name="$attack_push_retreat_cooldown" m_Value="6.0"/>
+    <Param m_Name="$attack_push_max_range" m_Value="4.0"/>
+    <Param m_Name="$attack_push_retreat_max_range" m_Value="2.5"/>
+    <Param m_Name="$attack_push_max_angle" m_Value="120.0"/>
+    <Param m_Name="$attack_push_dir_correction_speed" m_Value="320.0"/>
+    <!-- common - counter attack -->
+    <Param m_Name="$enable_attack_counter" m_Value="false"/>
+    <Param m_Name="$attack_counter_max_range" m_Value="4.5"/>
+    <Param m_Name="$attack_counter_max_angle" m_Value="90.0"/>
+    <Param m_Name="$attack_counter_cooldown" m_Value="8.0"/>
+    <Param m_Name="$attack_counter_from_hit_count" m_Value="3"/>
+    <Param m_Name="$attack_counter_dir_correction_speed" m_Value="320.0"/>
+    <!-- common - shiv attack -->
+    <Param m_Name="$attack_shiv_cooldown" m_Value="4"/>
+    <Param m_Name="$attack_shiv_max_range" m_Value="2.5"/>
+    <Param m_Name="$attack_shiv_max_angle" m_Value="120.0"/>
+    <Param m_Name="$attack_shiv_dir_correction_speed" m_Value="320.0"/>
+    <!-- common - finisher attempt to sync action -->
+    <Param m_Name="$enable_attack_finisher" m_Value="false"/>
+    <Param m_Name="$attack_finisher_cooldown" m_Value="8"/>
+    <Param m_Name="$attack_finisher_max_range" m_Value="4"/>
+    <Param m_Name="$attack_finisher_max_angle" m_Value="120.0"/>
+    <Param m_Name="$attack_finisher_dir_correction_speed" m_Value="320.0"/>
+    <!-- common - tackle attempt to sync action -->
+    <Param m_Name="$enable_attack_tackle" m_Value="false"/>
+    <!-- common - fury -->
+    <Param m_Name="$enable_fury" m_Value="false"/>
+    <!-- common - fury attack -->
+    <Param m_Name="$enable_attack_fury" m_Value="false"/>
+    <Param m_Name="$attack_fury_cooldown" m_Value="5.0"/>
+    <Param m_Name="$attack_fury_attempt_max_range" m_Value="12.0"/>
+    <Param m_Name="$attack_fury_attempt_min_range" m_Value="4.0"/>
+    <Param m_Name="$attack_fury_max_range" m_Value="4.0"/>
+    <Param m_Name="$attack_fury_max_angle" m_Value="120.0"/>
+    <Param m_Name="$attack_fury_dir_correction_speed" m_Value="120.0"/>
+    <!-- common - fury charge attack -->
+    <Param m_Name="$enable_attack_fury_charge" m_Value="false"/>
+    <Param m_Name="$attack_fury_charge_cooldown" m_Value="5.0"/>
+    <Param m_Name="$attack_fury_charge_max_range" m_Value="10"/>
+    <Param m_Name="$attack_fury_charge_min_range" m_Value="4"/>
+    <Param m_Name="$attack_fury_charge_max_angle" m_Value="15.0"/>
+    <Param m_Name="$attack_fury_charge_followup_max_range" m_Value="2.5"/>
+    <Param m_Name="$attack_fury_charge_followup_max_angle" m_Value="90"/>
+    <Param m_Name="$attack_fury_charge_dir_correction_speed" m_Value="180.0"/>
+    <!-- common - melee attack other ai -->
+    <Param m_Name="$attack_ai_max_range" m_Value="3"/>
+    <Param m_Name="$attack_ai_max_angle" m_Value="45.0"/>
+    <Param m_Name="$attack_ai_dir_correction_speed" m_Value="320.0"/>
+    <!-- COMBAT - OFFENSIVE - RANGE -->
+    <!-- bow - single shot close -->
+    <Param m_Name="$bow_shot_single_close_max_range" m_Value="5"/>
+    <Param m_Name="$bow_shot_single_close_aim_delay" m_Value="1.5"/>
+    <!-- bow - single shot -->
+    <Param m_Name="$enable_bow_shot_single" m_Value="true"/>
+    <Param m_Name="$bow_shot_single_cooldown" m_Value="2"/>
+    <!-- bow - combo shot -->
+    <Param m_Name="$enable_bow_shot_combo" m_Value="false"/>
+    <Param m_Name="$bow_shot_combo_cooldown" m_Value="4"/>
+    <Param m_Name="$bow_shot_combo_delay" m_Value="0.5"/>
+    <Param m_Name="$bow_shot_combo_count" m_Value="1"/>
+    <!-- bow - multi shot -->
+    <Param m_Name="$enable_bow_shot_multi" m_Value="false"/>
+    <Param m_Name="$bow_shot_multi_horizontal_cooldown" m_Value="4"/>
+    <Param m_Name="$bow_shot_multi_horizontal_count" m_Value="3"/>
+    <Param m_Name="$bow_shot_multi_horizontal_spread" m_Value="1"/>
+    <!-- bow - common -->
+    <Param m_Name="$bow_aim_attempt_angle" m_Value="30.0"/>
+    <Param m_Name="$bow_aim_cancel_angle" m_Value="70"/>
+    <Param m_Name="$bow_aim_delay" m_Value="1.5"/>
+    <Param m_Name="$bow_arrow_speed" m_Value="16"/>
+    <!-- bow - aim prediction - keep it as low value as this affects aiming animation (shouldnt be changed across diff tiers) -->
+    <Param m_Name="$bow_aim_prediction_factor" m_Value="0"/>
+    <!-- bow - hit prediction - actual shot hit prediction for spawned arrow -->
+    <Param m_Name="$bow_hit_prediction_factor" m_Value="0.5"/>
+    <!-- bow - common - used only for single and combo shots -->
+    <Param m_Name="$bow_arrow_correction_angle" m_Value="0"/>
+    <!-- harpoon -->
+    <Param m_Name="$harpoon_aim_attempt_angle" m_Value="45"/>
+    <Param m_Name="$harpoon_aim_attempt_distance" m_Value="3"/>
+    <Param m_Name="$harpoon_aim_cancel_angle" m_Value="90"/>
+    <Param m_Name="$harpoon_aim_cancel_distance" m_Value="1"/>
+    <!-- molotov spit -->
+    <Param m_Name="$attack_molotov_spit_cooldown" m_Value="3"/>
+    <Param m_Name="$attack_molotov_spit_prepare_max_range" m_Value="10"/>
+    <Param m_Name="$attack_molotov_spit_prepare_max_angle" m_Value="90"/>
+    <Param m_Name="$attack_molotov_spit_flush_min_time" m_Value="5"/>
+    <Param m_Name="$attack_molotov_spit_max_range" m_Value="6"/>
+    <Param m_Name="$attack_molotov_spit_max_angle" m_Value="90"/>
+    <Param m_Name="$attack_molotov_spit_dir_correction_speed" m_Value="180"/>
+    <Param m_Name="$attack_molotov_spit_forward_max_dist_to_others" m_Value="10"/>
+    <Param m_Name="$attack_molotov_taunt_cooldown" m_Value="15"/>
+    <!-- throw common -->
+    <Param m_Name="$throw_max_range" m_Value="25.0"/>
+    <!-- knife throw -->
+    <Param m_Name="$enable_knife_throw" m_Value="false"/>
+    <Param m_Name="$knife_throw_min_range" m_Value="8.0"/>
+    <Param m_Name="$knife_throw_max_angle" m_Value="30.0"/>
+    <Param m_Name="$knife_throw_min_enemy_dist_from_group" m_Value="3"/>
+    <Param m_Name="$knife_throw_max_height_diff" m_Value="2.5"/>
+    <Param m_Name="$knife_throw_cooldown" m_Value="12.0"/>
+    <Param m_Name="$knife_throw_max_horz_target_angle" m_Value="15"/>
+    <!-- molotov throw -->
+    <Param m_Name="$enable_molotov_throw" m_Value="false"/>
+    <Param m_Name="$molotov_throw_min_range" m_Value="12"/>
+    <Param m_Name="$molotov_throw_max_range" m_Value="25"/>
+    <Param m_Name="$molotov_throw_max_angle" m_Value="90.0"/>
+    <Param m_Name="$molotov_throw_cooldown" m_Value="3.0"/>
+    <!-- stone throw -->
+    <Param m_Name="$enable_stone_throw" m_Value="true"/>
+    <Param m_Name="$stone_throw_min_range" m_Value="6.0"/>
+    <Param m_Name="$stone_throw_max_angle" m_Value="30.0"/>
+    <Param m_Name="$stone_throw_min_enemy_dist_from_group" m_Value="1.5"/>
+    <Param m_Name="$stone_throw_min_height_diff" m_Value="2.5"/>
+    <Param m_Name="$stone_throw_cooldown" m_Value="6.0"/>
+    <!-- COMBAT - OFENSIVE - COOLDOWNS -->
+    <!-- attack cooldowns -->
+    <Param m_Name="$attack_cooldown" m_Value="0.2"/>
+    <Param m_Name="$attack_cooldown_initial" m_Value="0.0"/>
+    <!-- sync slots - common -->
+    <Param m_Name="$sync_slots_melee_min_delay" m_Value="1"/>
+    <Param m_Name="$sync_slots_range_min_delay" m_Value="1"/>
+    <Param m_Name="$sync_slots_reserver_type" m_Value="human_default"/>
+    <!-- combat slots - roles -->
+    <Param m_Name="$combat_slot_melee_limit" m_Value="2"/>
+    <Param m_Name="$combat_slot_melee_min_delay" m_Value="0"/>
+    <Param m_Name="$combat_slot_melee_max_keep_time" m_Value="3"/>
+    <Param m_Name="$combat_slot_range_limit" m_Value="2"/>
+    <Param m_Name="$combat_slot_range_min_delay" m_Value="0"/>
+    <Param m_Name="$combat_slot_range_max_keep_time" m_Value="3"/>
+    <Param m_Name="$combat_slot_idle_limit" m_Value="1"/>
+    <Param m_Name="$combat_slot_idle_min_delay" m_Value="0"/>
+    <Param m_Name="$combat_slot_idle_max_keep_time" m_Value="3"/>
+    <Param m_Name="$combat_slot_idle_enabled" m_Value="false"/>
+    <!-- combat slots - tokens -->
+    <Param m_Name="$attack_push_token" m_Value="attack"/>
+    <Param m_Name="$attack_push_limit" m_Value="1"/>
+    <Param m_Name="$attack_push_min_delay" m_Value="1"/>
+    <Param m_Name="$attack_quick_token" m_Value="attack_quick"/>
+    <Param m_Name="$attack_quick_limit" m_Value="1"/>
+    <Param m_Name="$attack_quick_min_delay" m_Value="1"/>
+    <Param m_Name="$attack_quick_relase_after_rime" m_Value="-1"/>
+    <Param m_Name="$attack_power_token" m_Value="attack_power"/>
+    <Param m_Name="$attack_power_limit" m_Value="1"/>
+    <Param m_Name="$attack_power_min_delay" m_Value="1"/>
+    <Param m_Name="$attack_power_release_after_time" m_Value="-1"/>
+    <Param m_Name="$attack_combo_token" m_Value="attack_combo"/>
+    <Param m_Name="$attack_combo_limit" m_Value="1"/>
+    <Param m_Name="$attack_combo_min_delay" m_Value="1"/>
+    <Param m_Name="$attack_two_handed_token" m_Value="attack_two_handed"/>
+    <Param m_Name="$attack_two_handed_limit" m_Value="1"/>
+    <Param m_Name="$attack_two_handed_min_delay" m_Value="0.5"/>
+    <Param m_Name="$attack_range_token" m_Value="attack_range"/>
+    <Param m_Name="$attack_range_limit" m_Value="1"/>
+    <Param m_Name="$attack_range_min_delay" m_Value="1"/>
+    <Param m_Name="$attack_range_special_token" m_Value="attack_range_special"/>
+    <Param m_Name="$attack_range_special_limit" m_Value="1"/>
+    <Param m_Name="$attack_range_special_min_delay" m_Value="8"/>
+    <Param m_Name="$attack_grab_token" m_Value="attack_special"/>
+    <Param m_Name="$attack_grab_limit" m_Value="1"/>
+    <Param m_Name="$attack_grab_min_delay" m_Value="5"/>
+    <Param m_Name="$attack_fury_token" m_Value="attack_fury"/>
+    <Param m_Name="$attack_fury_limit" m_Value="1"/>
+    <Param m_Name="$attack_fury_min_delay" m_Value="10"/>
+    <!-- COMBAT - OFENSIVE - TACTICS -->
+    <!-- general -->
+    <Param m_Name="$tactic_tree" m_Value="HUMAN_COMBAT_TACTIC_DEFAULT"/>
+    <Param m_Name="$enable_combat_with_low_threat" m_Value="true"/>
+    <!-- tactic cautious -->
+    <Param m_Name="$enable_tactic_cautious" m_Value="true"/>
+    <Param m_Name="$enable_tactic_cautious_at_start" m_Value="false"/>
+    <!-- tactic rush -->
+    <Param m_Name="$enable_tactic_rush" m_Value="false"/>
+    <Param m_Name="$tactic_rush_target_max_health_level" m_Value="0"/>
+    <Param m_Name="$tactic_rush_target_escaping" m_Value="true"/>
+    <!-- tactic stay back -->
+    <Param m_Name="$enable_tactic_stay_back" m_Value="false"/>
+    <Param m_Name="$enable_tactic_stay_back_calm_min_range" m_Value="6"/>
+    <Param m_Name="$enable_tactic_stay_back_aggression_max_range" m_Value="4"/>
+    <Param m_Name="$enable_tactic_stay_back_aggression_time" m_Value="5"/>
+    <!-- COMBAT - DEFENSIVE -->
+    <!-- dodge -->
+    <Param m_Name="$enable_dodge" m_Value="false"/>
+    <Param m_Name="$enable_dodge_on_spot" m_Value="false"/>
+    <Param m_Name="$dodge_cooldown" m_Value="0.5"/>
+    <Param m_Name="$enable_dodge_throwable" m_Value="false"/>
+    <Param m_Name="$dodge_throwable_cooldown" m_Value="2.0"/>
+    <Param m_Name="$dodge_abused_cooldown" m_Value="1.0"/>
+    <Param m_Name="$enable_dodge_melee" m_Value="false"/>
+    <Param m_Name="$dodge_melee_cooldown" m_Value="1.5"/>
+    <Param m_Name="$dodge_melee_from_hit_count" m_Value="3"/>
+    <Param m_Name="$dodge_melee_from_hit_prob" m_Value="0.8"/>
+    <Param m_Name="$dodge_melee_default_prob" m_Value="0.1"/>
+    <!-- block -->
+    <Param m_Name="$enable_block" m_Value="false"/>
+    <Param m_Name="$enable_block_reaction" m_Value="false"/>
+    <Param m_Name="$enable_forced_block" m_Value="false"/>
+    <Param m_Name="$enable_block_phase_incremental" m_Value="true"/>
+    <Param m_Name="$block_phase_min" m_Value="2"/>
+    <Param m_Name="$block_phase_max" m_Value="3"/>
+    <Param m_Name="$block_phase_reset_time" m_Value="3.0"/>
+    <Param m_Name="$block_start_hold_time" m_Value="0.9"/>
+    <Param m_Name="$block_attack_hold_time" m_Value="1"/>
+    <Param m_Name="$block_distance_start" m_Value="4"/>
+    <Param m_Name="$block_distance_end" m_Value="6"/>
+    <Param m_Name="$block_from_hit_count" m_Value="2"/>
+    <Param m_Name="$block_from_hit_prob" m_Value="0.5"/>
+    <Param m_Name="$block_from_hit_max_range" m_Value="6"/>
+    <Param m_Name="$block_from_hit_max_angle" m_Value="180"/>
+    <!-- block breaker -->
+    <Param m_Name="$block_exit_on_hit_prob" m_Value="0.4"/>
+    <Param m_Name="$enable_block_attack" m_Value="true"/>
+    <Param m_Name="$block_attack_max_range" m_Value="2.5"/>
+    <Param m_Name="$block_attack_max_angle" m_Value="60"/>
+    <Param m_Name="$block_push_max_range" m_Value="3.5"/>
+    <Param m_Name="$block_push_max_angle" m_Value="60"/>
+    <Param m_Name="$block_dodge_prob" m_Value="0.3"/>
+    <Param m_Name="$block_dodge_max_range" m_Value="3.5"/>
+    <Param m_Name="$block_dodge_max_angle" m_Value="60"/>
+    <!-- escape steps -->
+    <Param m_Name="$enable_escape_step_back" m_Value="false"/>
+    <Param m_Name="$escape_step_back_cooldown" m_Value="3"/>
+    <Param m_Name="$escape_step_back_max_range" m_Value="2"/>
+    <Param m_Name="$escape_step_back_max_angle" m_Value="90"/>
+    <Param m_Name="$escape_step_back_followup_max_range" m_Value="5"/>
+    <Param m_Name="$escape_step_back_followup_max_angle" m_Value="90"/>
+    <!-- COMBAT - POSITIONING -->
+    <!-- attack attempt and cancel ranges -->
+    <Param m_Name="$attack_attempt_range" m_Value="10"/>
+    <Param m_Name="$attack_cancel_range" m_Value="14"/>
+    <Param m_Name="$attack_attempt_time" m_Value="8"/>
+    <!-- attack behavior -->
+    <Param m_Name="$enable_attack_step_back" m_Value="false"/>
+    <Param m_Name="$attack_vs_other_ai_approach_min_space" m_Value="0.5"/>
+    <Param m_Name="$attack_min_space" m_Value="0.5"/>
+    <!-- attack approach -->
+    <Param m_Name="$attack_approach_trot_distance" m_Value="12"/>
+    <Param m_Name="$attack_approach_run_distance" m_Value="14"/>
+    <!-- locomotion -->
+    <Param m_Name="$combat_loco_end" m_Value="12"/>
+    <Param m_Name="$combat_loco_start" m_Value="15"/>
+    <Param m_Name="$combat_loco_trot_distance" m_Value="17"/>
+    <Param m_Name="$combat_loco_run_distance" m_Value="20"/>
+    <Param m_Name="$combat_loco_rush_start" m_Value="10"/>
+    <Param m_Name="$combat_loco_rush_end" m_Value="5"/>
+    <!-- strafing common -->
+    <Param m_Name="$strafe_end_radius" m_Value="1.0"/>
+    <Param m_Name="$strafe_spring_update_speed" m_Value="1.0"/>
+    <!-- strafing melee role -->
+    <Param m_Name="$combat_melee_strafe_min" m_Value="2"/>
+    <Param m_Name="$combat_melee_strafe_max" m_Value="6"/>
+    <!-- strafing no role -->
+    <Param m_Name="$combat_idle_strafe_min" m_Value="2"/>
+    <Param m_Name="$combat_idle_strafe_max" m_Value="12"/>
+    <!-- strafing spear -->
+    <Param m_Name="$spear_strafe_min" m_Value="5"/>
+    <Param m_Name="$spear_strafe_max" m_Value="8"/>
+    <!-- avoidance -->
+    <Param m_Name="$use_avoidance" m_Value="false"/>
+    <!-- COMBAT - ENVIRO -->
+    <!-- common -->
+    <Param m_Name="$enviro_space_required" m_Value="1.8"/>
+    <Param m_Name="$enviro_space_half_angle" m_Value="13"/>
+    <!-- REACTIONS -->
+    <!-- death reactions -->
+    <Param m_Name="$death_ragdoll_chance_default" m_Value="1"/>
+    <Param m_Name="$death_ragdoll_chance_cut" m_Value="0.2"/>
+    <Param m_Name="$death_ragdoll_chance_blunt" m_Value="0.8"/>
+    <Param m_Name="$death_prefer_ragdoll" m_Value="true"/>
+    <Param m_Name="$death_snap_angle" m_Value="90"/>
+    <Param m_Name="$death_style" m_Value="None"/>
+    <Param m_Name="$enable_death_critical" m_Value="true"/>
+    <Param m_Name="$disable_parkour_ragdoll" m_Value="false"/>
+    <!-- melee hit reactions -->
+    <Param m_Name="$hit_snap_angle" m_Value="90"/>
+    <Param m_Name="$hit_phase_min" m_Value="0"/>
+    <Param m_Name="$hit_phase_max" m_Value="4"/>
+    <Param m_Name="$hit_phase_incremental_reset_time" m_Value="6"/>
+    <Param m_Name="$enable_hit_phase_use_remaining_health_only" m_Value="false"/>
+    <Param m_Name="$enable_hit_phase_incremental" m_Value="false"/>
+    <Param m_Name="$enable_hit_critical" m_Value="true"/>
+    <Param m_Name="$enable_hit_breaker" m_Value="false"/>
+    <Param m_Name="$breaker_hit_reset_time" m_Value="5"/>
+    <Param m_Name="$breaker_hit_reset_on_trigger" m_Value="false"/>
+    <!-- additive hit reactions -->
+    <Param m_Name="$enable_additive_hit_reaction" m_Value="false"/>
+    <Param m_Name="$additive_hit_cooldown" m_Value="0.5"/>
+    <!-- melee hit trade -->
+    <Param m_Name="$enable_hit_trade" m_Value="true"/>
+    <Param m_Name="$hit_trade_max_range" m_Value="5.0"/>
+    <Param m_Name="$hit_trade_max_angle" m_Value="90.0"/>
+    <!-- attack recoil reaction -->
+    <Param m_Name="$enable_attack_recoil" m_Value="false"/>
+    <!-- startle reaction -->
+    <Param m_Name="$enable_startle" m_Value="true"/>
+    <Param m_Name="$startle_distance" m_Value="6"/>
+    <!-- COMBAT - PANIC AND RETREAT -->
+    <Param m_Name="$enable_retreat" m_Value="false"/>
+    <Param m_Name="$forced_retreat_from_player" m_Value="false"/>
+    <Param m_Name="$disable_forced_retreat_if_cornered" m_Value="false"/>
+    <!-- panic -->
+    <Param m_Name="$enable_panic" m_Value="false"/>
+    <Param m_Name="$panic_last_man_prob" m_Value="0.5"/>
+    <!-- retreat -->
+    <Param m_Name="$enable_retreat_from_high_threat" m_Value="false"/>
+    <Param m_Name="$retreat_avoid_connections" m_Value="JumpClimbLowMediumHigh"/>
+    <Param m_Name="$retreat_avoid_connections_min_cost_mul" m_Value="15"/>
+    <!-- COMBAT - CHASE -->
+    <!-- summoning -->
+    <Param m_Name="$summoning_reinforcements_enabled" m_Value="false"/>
+    <Param m_Name="$allow_only_one_summon_completion" m_Value="true"/>
+    <Param m_Name="$min_distance_from_target_to_summon" m_Value="7.0"/>
+    <Param m_Name="$min_time_in_combat_to_summon" m_Value="0.0"/>
+    <Param m_Name="$max_time_in_combat_to_summon" m_Value="0.0"/>
+    <Param m_Name="$summon_cooldown_min" m_Value="10.0"/>
+    <Param m_Name="$summon_cooldown_max" m_Value="12.0"/>
+    <Param m_Name="$summon_global_cooldown" m_Value="10.0"/>
+    <!-- SEARCH -->
+    <Param m_Name="$enable_search" m_Value="true"/>
+    <Param m_Name="$search_avoid_connections" m_Value="DoorLadderJumpClimbLowMediumHigh"/>
+    <!-- INVESTIGATION -->
+    <Param m_Name="$enable_poi_inspection" m_Value="true"/>
+    <!-- SCRIPTED -->
+    <!-- scripted and movement debug weapon change when entering BP -->
+    <Param m_Name="$enable_weapon_change" m_Value="true"/>
+    <Param m_Name="$enable_weapon_set" m_Value="true"/>
+    <!-- move with gather -->
+    <Param m_Name="$request_move_gather_enabled" m_Value="true"/>
+    <Param m_Name="$request_move_fail_if_unreachable" m_Value="true"/>
+    <Param m_Name="$request_move_dest_nav_tolerance_xz" m_Value="0.3"/>
+    <Param m_Name="$request_move_dest_nav_tolerance_y" m_Value="0.3"/>
+    <Param m_Name="$move_end_radius_default" m_Value="0.5"/>
+    <!-- generic ai life -->
+    <Param m_Name="$enable_generic_idle_interact" m_Value="false"/>
+    <Param m_Name="$enable_generic_look_around" m_Value="false"/>
+    <Param m_Name="$enable_generic_move_away_from_player" m_Value="false"/>
+    <Param m_Name="$enable_generic_track_player" m_Value="false"/>
+    <Param m_Name="$enable_generic_gesture_player" m_Value="false"/>
+    <!-- PERCEPTION -->
+    <Param m_Name="$enable_sense_dangerzone" m_Value="true"/>
+    <!-- resting state -->
+    <Param m_Name="$start_resting_state" m_Value="false"/>
+    <!-- GENERIC - WEAPON  -->
+    <Param m_Name="$weapon_force_equip_one_handed_enabled" m_Value="false"/>
+    <Param m_Name="$weapon_force_equip_two_handed_enabled" m_Value="true"/>
+    <Param m_Name="$weapon_force_equip_spear_enabled" m_Value="true"/>
+    <Param m_Name="$weapon_force_equip_bow_enabled" m_Value="false"/>
+    <Param m_Name="$weapon_generic_auto_equip_enabled" m_Value="true"/>
+    <Param m_Name="$weapon_investigation_auto_equip_enabled" m_Value="true"/>
+    <Param m_Name="$weapon_anim_switch_enabled" m_Value="true"/>
+    <Param m_Name="$weapon_no_anim_switch_enabled" m_Value="false"/>
+    <Param m_Name="$weapon_holster_enabled" m_Value="true"/>
+    <Param m_Name="$weapon_holster_min_delay" m_Value="8"/>
+    <Param m_Name="$weapon_holster_max_delay" m_Value="12"/>
+    <!-- COMMON - OTHERS -->
+    <Param m_Name="$attack_pos_correction_speed" m_Value="0"/>
+    <Param m_Name="$enable_attack_pos_correction" m_Value="false"/>
+    <Param m_Name="$step_dir_correction_speed" m_Value="360.0"/>
+    <Param m_Name="$avoid_regions_preset" m_Value="all"/>
+    <!-- EMOTIONAL STATE -->
+    <Param m_Name="$emotional_state_default" m_Value="Neutral"/>
+    <Param m_Name="$emotional_state_zone_faction" m_Value="Survivors"/>
+    <!-- developer debug -->
+    <Param m_Name="$enable_debug" m_Value="false"/>
+    <Param m_Name="$enable_forced_combat_idle" m_Value="false"/>
+    <Param m_Name="$enable_forced_combat_idle_start_position" m_Value="false"/>
+    <Param m_Name="$enable_debug_hold" m_Value="false"/>
+    <Param m_Name="$enable_debug_emotional_state" m_Value="false"/>
+    <Param m_Name="$enable_debug_forced_emotional_state" m_Value="Suspicious"/>
+    <Param m_Name="$enable_debug_idle_random_walk" m_Value="false"/>
+    <Param m_Name="$enable_debug_invincible" m_Value="false"/>
+</ConstParams>

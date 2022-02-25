@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <!-- Init -->
+        <ExternalTree m_UID="AI_COMMON_INIT" m_CustomName="Params" m_Hide="true"/>
+        <ExternalTree m_UID="SCREAMER_INIT" m_CustomName="Params" m_Hide="true"/>
+        <Selector>
+            <ExternalTree m_UID="INFECTED_DEATH_UV" m_CustomName="Death_UV" m_Hide="true"/>
+            <ExternalTree m_UID="INFECTED_DEATH" m_CustomName="Death" m_Hide="true"/>
+            <ParallelRepeat m_PolicySuccess="REQUIRE_NONE" m_PolicyFailure="REQUIRE_NONE">
+                <Sequence>
+                    <!-- Gather data from senses -->
+                    <ExternalTree m_UID="AI_UPDATE_ENEMY_PROTO" m_CustomName="Find_Enemy" m_Hide="true"/>
+                    <!-- Update state -->
+                    <ExternalTree m_UID="SCREAMER_COMMON_UPDATE" m_CustomName="Update" m_Hide="true"/>
+                    <RepeatOnceOnSuccess>
+                        <Selector>
+                            <ExternalTree m_UID="SCREAMER_REACTIONS" m_CustomName="Reactions" m_Hide="true"/>
+                            <ExternalTree m_UID="INFECTED_ESCAPE_FROM_SUNLIGHT" m_CustomName="Sunlight_Escape" m_Hide="true"/>
+                            <ExternalTree m_UID="SCREAMER_SCREAM_ON_SPOT" m_CustomName="First scream" m_Hide="true"/>
+                            <ExternalTree m_UID="SCREAMER_COMBAT" m_CustomName="Combat" m_Hide="true"/>
+                            <ExternalTree m_UID="SCREAMER_INVESTIGATE_POI" m_CustomName="Investigate" m_Hide="true"/>
+							<ExternalTree m_UID="SCREAMER_SEARCH" m_CustomName="Search" m_Hide="true"/>
+                            <ExternalTree m_UID="AI_REQUESTS" m_CustomName="Scripted" m_Hide="true"/>
+                            <Act_Status m_StatusRequired="RUNNING"/>
+                        </Selector>
+                    </RepeatOnceOnSuccess>
+                </Sequence>
+                <ExposeTarget m_Target="#target">
+                    <Act_Status m_StatusRequired="RUNNING"/>
+                </ExposeTarget>
+                <ExternalTree m_UID="AI_TRACK" m_CustomName="TrackEnemy" m_Hide="true"/>
+				<Sequence>
+                        <Cnd_IsInUVLight/>
+                        <Act_Status m_StatusRequired="RUNNING"/>
+                    </Sequence>
+            </ParallelRepeat>
+        </Selector>
+    </SequenceMem>
+</BehaviorTree>

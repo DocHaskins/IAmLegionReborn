@@ -1,0 +1,25 @@
+sub main()
+{
+    InvestigationModulePreset("infected")
+    {
+        FlashlightReactionDelay("0.5");
+        FlashlightOnlyEnemies("true");
+        SightMinRecognition("0.1");
+        SightIgnoreLowThreat("false");
+        SightOnlyPlayer("false");
+        SupportCallForHelp("true");
+    }
+    
+    InvestigationModulePreset("human")
+    {
+        MaxTimeSinceLastHitToInvestigate("10.0");
+        FlashlightReactionDelay("0.0");
+        FlashlightOnlyEnemies("true");
+        SightMinRecognition("0.15");
+        SightIgnoreLowThreat("true");
+        SightOnlyPlayer("true");
+        SupportCallForHelp("true");
+        NavmeshMaxPathLengthNoiseRangeMuliplier("2.0");
+        MaxDeltaTimeToInvestigateNoise("1.0");
+    }
+}

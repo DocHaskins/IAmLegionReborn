@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <RepeatOnceOnSuccess>
+        <Sequence>
+            <Cnd_HasBBValue m_Key="#target"/>
+            <Selector>
+                <!-- Strafe to keep distance from target -->
+                <Sequence>
+                    <Cnd_TargetInRadius m_Target="#target" m_Radius="13.0"/>
+                    <Selector>
+                        <Sequence>
+                            <Opr_GetSelfPosition m_Position="#self_pos"/>
+                            <Opr_GetDirectionFromPosition m_Origin="#self_pos" m_Position="#target_pos" m_Direction="#dir_from_target"/>
+                            <Cnd_SpaceInDirection m_Direction="#dir_from_target" m_MinRequiredSpace="2.5"/>
+                            <Act_Strafe m_Target="#target" m_Logic="KEEP_DISTANCE" m_MinDistance="13" m_MaxDistance="$spit_max_range" m_StrafingAngle="90" m_FacingAngle="10" m_Speed="1" m_AttackSpace="1" m_Style="Aggressive" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                        </Sequence>
+                        <Sequence>
+                            <Selector>
+                                <Sequence>
+                                    <Opr_GetDirectionFromAngle m_Angle="-90" m_Direction="#dir_to_strafe"/>
+                                    <Cnd_SpaceInDirection m_Direction="#dir_to_strafe" m_MinRequiredSpace="2.5" />
+                                </Sequence>
+                                <Sequence>
+                                    <Opr_GetDirectionFromAngle m_Angle="90" m_Direction="#dir_to_strafe"/>
+                                    <Cnd_SpaceInDirection m_Direction="#dir_to_strafe" m_MinRequiredSpace="2.5" />
+                                </Sequence>
+                                <Sequence>
+                                    <Opr_RandomFloat m_Result="#angle_to_strafe" m_RangeMax="30" m_RangeMin="-30"/>
+                                    <Opr_GetDirectionFromAngle m_Angle="#angle_to_strafe" m_Direction="#dir_to_strafe"/>
+                                    <Cnd_SpaceInDirection m_Direction="#dir_to_strafe" m_MinRequiredSpace="2.5"/>
+                                </Sequence>
+                            </Selector>
+                            <Act_StrafeInDirection m_Direction="#dir_to_strafe" m_Speed="2" m_Style="Aggressive" m_DecisionPolicy="ON_END" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                        </Sequence>
+                    </Selector>
+                </Sequence>
+                <Sequence>
+                    <!-- Move towards allies if there are any -->
+                    <Cnd_AreOtherGroupMembersAlive/>
+                    <Opr_GetClosestGroupMemberPosition m_Position="#strafe_pos"/>
+                    <Selector>
+                        <Cnd_TargetInRadius m_Target="#target" m_Radius="5.0"/>
+                        <Cnd_DistanceBetweenPositionsLower m_Distance="8.0" m_FirstPosition="#target_pos" m_SecondPosition="#strafe_pos" m_Invert="true"/>
+                    </Selector>
+                    <Cnd_PositionInRadius m_Position="#strafe_pos" m_Radius="2" m_Invert="true"/>
+                    <Opr_GetDirectionToPosition m_Position="#target_pos" m_Direction="#dir_to_target"/>
+                    <Opr_GetDirectionToPosition m_Position="#strafe_pos" m_Direction="#strafe_dir"/>
+                    <Cnd_SpaceInDirection m_Direction="#strafe_dir" m_MinRequiredSpace="2.5"/>
+                    <Act_StrafeToDestination m_Destination="#strafe_pos" m_FailIfDestUnreachable="true"  m_WantedForwardDir="#dir_to_target" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                </Sequence>
+                <!-- Strafe to find position to attack -->
+                <Sequence>
+                    <Selector>
+                        <Cnd_IsTargetInLOS m_Target="#target" m_Invert="true"/>
+                        <Cnd_AllyInLineOfFire m_Target="#target"/>
+                    </Selector>
+                    <Cnd_TargetInRadius m_Target="#target" m_Radius="$spit_max_range"/>
+                    <Opr_GetDirectionToPosition m_Position="#target_pos" m_Direction="#dir_to_target"/>
+                    <Opr_GetStrafeDirection m_Target="#target" m_WantedDistance="50.0" m_EnviroCorrectionAngle="45" m_Direction="#strafe_dir"/>
+                    <Cnd_SpaceInDirection m_Direction="#strafe_dir" m_MinRequiredSpace="2.5"/>
+                    <Act_StrafeInDirection m_Direction="#strafe_dir" m_FailIfDestUnreachable="true"  m_WantedForwardDir="#dir_to_target" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                </Sequence>
+                <!-- Move in range -->
+                <Sequence>
+                    <Selector>
+                        <Sequence>
+                            <Cnd_Const m_Enabled="$mortar_spit_enabled"/>
+                            <Cnd_TargetInRadius m_Target="#target" m_Radius="$mortar_spit_max_range" m_Invert="true"/>
+                        </Sequence>
+                        <Sequence>
+                            <Cnd_Const m_Enabled="$mortar_spit_enabled" m_Invert="true"/>
+                            <Cnd_TargetInRadius m_Target="#target" m_Radius="$spit_max_range" m_Invert="true"/>
+                        </Sequence>
+                    </Selector>
+                    <Act_Move m_Destination="#target_pos" m_MoveStyle="Run" m_FailIfDestUnreachable="true" m_StopAtDest="false" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                </Sequence>
+                <!-- Try to find position to attack a target from above -->
+            </Selector>
+        </Sequence>
+    </RepeatOnceOnSuccess>
+</BehaviorTree>

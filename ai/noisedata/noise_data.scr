@@ -1,0 +1,1025 @@
+// metadata - definition of all supported tags and flags
+// - Tag("tag_name") - definition of supported tag
+//           - tags are used to define noise priority and effect that is used for specific AI preset (it corresponds to the settings in interest/awakening sense)
+// - Flag("flag_name") - definition of supported flag
+//           - flags are used to define spawner activation responses
+// presets - definition of all supported noise presets
+// - NoisePreset(noise_name) - definition of noise preset (noise_name must be unique), each noise preset can define:
+//   - range - (meters) maximum range (meters) in which noise can be perceived
+//   - range_effective - (meters) maximum effective range (used only for awakening calcualtion)
+//   - duration - (seconds) how long noise will be active after creation
+//   - interest_default(priority, effect)- default interest settings (if not defined - by default -> no interest response)
+//        - priority should be in range [0, 1] and it has two properties:
+//              - AI will always choose the highest priority sound, and will ignore sounds with 0 priority.
+//              - it also can modify alert level. < 0.5 is low alert, > 0.5 and < 0.9 is medium alert, and priority >=0.9 puts AI in high alert
+//        - effect defines AI response; supported values:
+//              "NOTICE" - only notice reaction
+//              "ATTRACT" - notice reaction + inspect behavior (if applicable)
+//              "REPEL" - notice reaction + retreat behavior (if applicable)
+//              "FORCE_ATTRACT" - notice reaction + forced inspect behavior (if applicable)
+//              "HELP" - notice reaction + help behavior (if applicable, call for help reaction for humans)
+//   - interest(tag, priority, effect) - tagged interest settings, default will be used as a fallback (tag corresponds to the settings in interest sense of each AI)
+//   - awakening_default(intensity) - default awakening settings (if not defined - by default -> no awakening resposne)
+//        - intensity adds to the awakening progress. If awakening progress reaches 1 the AI will awaken
+//        - intensity scales with range. Listed value is used when distance from sound source is =< range effective. Between range and range effective it scales linearly to 0
+//   - awakening(tag, intensity) - tagged awakening settings, default will be used as a fallback (tag corresponds to the setting in awakening sense of each AI)
+//   - can_be_merged(bool) - specifies if noise can be merged, by default is set to false; can be used for e.g. player step noises
+//        - only noises with the same names and created by the same entity can be merged
+//   - spawner_activation_flag(flag) - defines possible spawner response to this noise (using supported flag), if not specified - by default -> no spawner activation responses
+//        - used flags should correspond with spawner prefab settings
+
+sub metadata()
+{
+    Tag("human");
+    Tag("biter");
+    Tag("viral");
+    Tag("screamer");
+
+    Flag("biter_hole");
+    Flag("biter_hole_roof");
+    Flag("dz_hole");
+    Flag("bandit_init");
+    Flag("screamer_dz_activation");
+    Flag("explosion_spawner_activation");
+    Flag("summon_infected_reinforcements");
+}
+
+sub presets()
+{
+    NoisePreset("projectile_hit")
+    {
+        range(20.0);
+        range_effective(8.5);
+        duration(2.0);
+
+        interest_default(0.5, "attract");
+        interest("human", 0.75, "attract");
+		interest("biter", 0.9, "attract");
+
+        awakening_default(0.75);
+    }
+    NoisePreset("break_through")
+    {
+        range(10.0);
+        range_effective(5.0);
+        duration(5.0);
+
+        interest_default(0.75, "attract");
+        interest("human", 0.75, "notice");
+		interest("biter", 0.75, "attract");
+
+        awakening_default(0.25);
+    }
+    NoisePreset("decoy")
+    {
+        range(40.0);
+        range_effective(30.0);
+        duration(20.0);
+
+        interest_default(0.9, "attract");
+        interest("human", 0.9, "notice");
+        interest("biter", 1.0, "force_attract");
+        //reinforcement_id("Default_Infected");
+        
+        awakening_default(1.00);
+    }
+    NoisePreset("decoy_upgrade1")
+    {
+        range(50.0);
+        range_effective(40.0);
+        duration(25.0);
+
+        interest_default(0.9, "attract");
+        interest("human", 0.9, "notice");
+        interest("biter", 1.0, "force_attract");
+        //reinforcement_id("Default_Infected");
+        
+        awakening_default(1.00);
+    }
+    NoisePreset("decoy_upgrade2")
+    {
+        range(55.0);
+        range_effective(45.0);
+        duration(30.0);
+
+        interest_default(0.9, "attract");
+        interest("human", 0.9, "notice");
+        interest("biter", 1.0, "force_attract");
+        //reinforcement_id("Default_Infected");
+
+        awakening_default(1.00);
+    }
+    NoisePreset("decoy_upgrade4")
+    {
+        range(60.0);
+        range_effective(50.0);
+        duration(35.0);
+
+        interest_default(0.9, "attract");
+        interest("human", 0.9, "notice");
+        interest("biter", 1.0, "force_attract");
+        //reinforcement_id("Default_Infected");
+
+        awakening_default(1.00);
+    }
+    NoisePreset("decoy_upgrade5")
+    {
+        range(60.0);
+        range_effective(60.0);
+        duration(35.0);
+
+        interest_default(0.9, "attract");
+        interest("human", 0.9, "notice");
+        interest("biter", 1.0, "force_attract");
+        //reinforcement_id("Default_Infected");
+        awakening_default(1.00);
+    }
+    NoisePreset("decoy_upgrade6")
+    {
+        range(70.0);
+        range_effective(65.0);
+        duration(35.0);
+
+        interest_default(0.9, "attract");
+        interest("human", 0.9, "notice");
+        interest("biter", 1.0, "force_attract");
+        //reinforcement_id("Default_Infected");
+
+        awakening_default(1.00);
+    }
+    NoisePreset("decoy_upgrade7")
+    {
+        range(80.0);
+        range_effective(75.0);
+        duration(40.0);
+
+        interest_default(0.9, "attract");
+        interest("human", 0.9, "notice");
+        interest("biter", 1.0, "force_attract");
+        //reinforcement_id("Default_Infected");
+
+        awakening_default(1.00);
+    }
+    NoisePreset("biter_attractor")
+    {
+        range(30.0);
+        range_effective(30.0);
+        duration(20.0);
+
+        interest_default(0.5, "attract");
+        interest("human", 0.5, "notice"); // change to repel when it's implemented
+        interest("biter", 1.0, "force_attract");
+
+        awakening_default(1.00);
+    }
+    NoisePreset("hanging_body_decoy")
+    {
+        range(40.0);
+        range_effective(25.0);
+        duration(20.0);
+
+        interest_default(0.9, "attract");
+        interest("human", 0.9, "repel"); // change to repel when it's implemented
+
+        awakening_default(1.00);
+		reinforcement_id("Default_MeatBait");
+    }
+    NoisePreset("takedown")
+    {
+        range(5.0);
+        range_effective(3.0);
+        duration(2.0);
+
+        interest_default(1.0, "force_attract");
+        awakening_default(1.0);
+    }
+    NoisePreset("takedown_with_knife")
+    {
+    }
+    NoisePreset("takedown_vs_zombie")
+    {
+        range(4.0);
+        range_effective(2.0);
+        duration(1.0);
+
+        interest_default(1.0, "attract");
+
+        awakening_default(1.0);
+    }
+    NoisePreset("death_human")
+    {
+        range(50.0);
+        range_effective(20.0);
+        duration(2.0);
+
+        interest_default(0.75, "attract");
+        interest("human", 1.0, "attract");
+		interest("biter", 0.8, "attract");
+
+        awakening_default(0.0);
+    }
+    NoisePreset("death_infected")
+    {
+        range(20.0);
+        range_effective(12.0);
+        duration(2.0);
+
+        interest_default(0.75, "attract");
+        interest("human", 0.0, "attract");
+		interest("biter", 0.8, "attract");
+
+        awakening_default(0.8);
+    }
+    NoisePreset("switch_toggle")
+    {
+        range(12.0);
+        range_effective(12.0);
+        duration(1.0);
+
+        interest("human", 0.3, "attract");
+        interest_default(0.3, "notice");
+
+        awakening_default(0.25);
+    }
+    NoisePreset("rock")
+    {
+        range(12.0);
+        range_effective(12.0);
+        duration(1.0);
+
+        interest("human", 0.3, "attract");
+		interest("biter", 0.5, "attract");
+        interest_default(0.3, "notice");
+
+        awakening_default(0.25);
+    }
+    NoisePreset("rock_attract")
+    {
+        range(12.0);
+        range_effective(12.0);
+        duration(1.0);
+
+        interest("human", 0.5, "attract");
+		interest("biter", 0.5, "attract");
+        interest_default(0.5, "attract");
+
+        awakening_default(0.25);
+    }
+    NoisePreset("attractor_special")
+    {
+        range(30.0);
+        range_effective(30.0);
+        duration(5.0);
+
+        interest_default(1.0, "attract");
+
+        awakening_default(1.0);
+    }
+    NoisePreset("flare")
+    {
+        range(200.0);
+        range_effective(200.0);
+        duration(30.0);
+
+        interest("human", 1.0, "attract");
+        interest_default(1.0, "attract");
+
+        awakening_default(1.0);
+    }
+    NoisePreset("bait")
+    {
+        range(30.0);
+        range_effective(15.0);
+        duration(30.0);
+
+        interest_default(0.1, "attract");
+        interest("human", 0.0, "attract");      
+		awakening_default(0.25);
+        awakening("human", 0.0);
+        
+        reinforcement_id("Default_MeatBait");
+    }
+    NoisePreset("bait_strong")
+    {
+        range(100.0);
+        range_effective(100.0);
+        duration(30.0);
+
+        interest_default(1.0, "attract");
+
+        awakening_default(0.25);
+        reinforcement_id("Bait_Infected");
+    }
+    NoisePreset("powered_tv")
+    {
+        range(15.0);
+        range_effective(10.0);
+        duration(1.0);
+
+        interest_default(0.2, "notice");
+		interest("biter", 0.6, "attract");
+
+        awakening_default(0.55);
+    }
+    NoisePreset("prototype_noise_trap")
+    {
+        range(35.0);
+        range_effective(25.0);
+        duration(5.0);
+
+        interest_default(0.3, "attract");
+
+        awakening_default(0.30);
+    }
+    NoisePreset("burning_puddle")
+    {
+        range(5.0);
+        range_effective(5.0);
+        duration(3.0);
+
+        interest_default(0.1, "attract");
+
+        awakening_default(0.1);
+    }
+    NoisePreset("hydrant_explosion")
+    {
+        range(70.0);
+        range_effective(60.0);
+        duration(7.0);
+
+        interest_default(0.5, "attract");
+        interest("biter", 1.0, "attract");
+		interest("human", 0.5, "repel");
+
+        awakening_default(1.00);
+    }
+    NoisePreset("screamer_alarm_scream")
+    {
+        range(100.0);
+        range_effective(100.0);
+        duration(0.5);
+
+        interest_default(1.0, "attract");
+        interest("human", 1.0, "repel");
+        spawner_activation_flag("screamer_dz_activation");
+		interest("biter", 0.9, "attract");
+		interest("viral", 0.9, "attract");
+        awakening_default(1.0);
+    }
+    NoisePreset("throwable_impact_geom")
+    {
+       range(15.0);
+       range_effective(9.0);
+       duration(0.5);
+
+	   interest_default(0.5, "notice");
+       interest("human", 0.7, "notice");
+	   interest("biter", 0.7, "attract");
+
+       awakening_default(0.8);
+    }
+    NoisePreset("throwable_impact_body")
+    {
+        range(7.50);
+        range_effective(5.0);
+        duration(0.5);
+
+        interest_default(0.5, "notice");
+        interest("human", 0.9, "attract");
+
+        awakening_default(0.3);
+    }
+    NoisePreset("projectile_impact_geom")
+    {
+       range(10.0);
+       range_effective(5.0);
+       duration(0.5);
+
+	   interest_default(0.5, "notice");
+       interest("human", 0.9, "attract");
+
+       awakening_default(0.4);
+    }
+    NoisePreset("projectile_impact_body")
+    {
+        range(7.50);
+        range_effective(5.0);
+        duration(0.5);
+
+        interest_default(0.5, "notice");
+        interest("human", 0.9, "attract");
+
+        awakening_default(0.3);
+    }
+	NoisePreset("coin")
+    {
+        range(15.00);
+        range_effective(10.0);
+        duration(1.0);
+
+        interest_default(0.5, "notice");
+        interest("human", 0.8, "attract");
+		interest("biter", 0.8, "attract");
+
+        awakening_default(0.2);
+    }
+    NoisePreset("destroyables")
+    {
+        range(20.0);
+        range_effective(8.0);
+        duration(0.5);
+
+        interest_default(0.9, "attract");
+
+        awakening_default(0.70);
+    }
+    NoisePreset("weapon_impact_geom")
+    {
+        range(15.0);
+        range_effective(7.0);
+        duration(1.5);
+
+        interest_default(0.2, "attract");
+
+        awakening_default(0.20);
+    }
+    NoisePreset("weapon_impact_body")
+    {
+        range(20.0);
+        range_effective(7.0);
+        duration(1.5);
+
+        interest_default(0.9, "attract");
+        interest("human", 0.9, "attract");
+		interest("biter", 0.9, "attract");
+
+        awakening_default(0.9);
+    }
+    NoisePreset("generator_running")
+    {
+        range(30.0);
+        range_effective(20.0);
+        duration(2.0);
+
+        interest_default(0.4, "notice");
+		interest("biter", 0.6, "attract");
+
+        awakening_default(1.0);
+    }
+    NoisePreset("Cough")
+    {
+        range(10.0);
+        range_effective(10.0);
+        duration(0.5);
+
+        interest_default(0.4, "notice");
+
+        awakening_default(0.25);
+    }
+    NoisePreset("prying_small_noise")
+    {
+        range(10.0);
+        range_effective(10.0);
+        duration(0.5);
+
+        interest_default(0.4, "notice");
+
+        awakening_default(0.25);
+    }
+    NoisePreset("prying_medium_noise")
+    {
+        range(12.0);
+        range_effective(12.0);
+        duration(0.8);
+
+        interest_default(0.6, "notice");
+
+        awakening_default(0.25);
+    }
+    NoisePreset("prying_big_noise")
+    {
+        range(20.0);
+        range_effective(20.0);
+        duration(0.8);
+
+        interest_default(0.95, "notice");
+
+        awakening_default(0.25);
+    }
+    NoisePreset("player_whistle")
+    {
+        range(35.0);
+        range_effective(35.0);
+        duration(1.0);
+
+        interest_default(0.9, "notice");
+        interest("human", 0.3, "notice");
+
+        awakening_default(0.0);
+    }
+    NoisePreset("player_warcry")
+    {
+        range(55.0);
+        range_effective(45.0);
+        duration(6.0);
+
+        interest_default(0.99, "notice");
+
+        awakening_default(1.0);
+    }
+    NoisePreset("player_roar")
+    {
+        range(70.0);
+        range_effective(60.0);
+        duration(1.0);
+
+        interest_default(0.0, "attract");
+        interest("biter", 1.0, "attract");
+        interest("viral", 1.0, "attract");
+
+        awakening_default(1.0);
+    }
+    NoisePreset("gas_leak")
+    {
+        range(5.0);
+        range_effective(5.0);
+        duration(1.0);
+
+        interest_default(0.1, "notice");
+
+        awakening_default(0.4);
+    }
+    NoisePreset("explosion")
+    {
+        range(125.0);
+        range_effective(120.0);
+        duration(25.0);
+
+        interest_default(0.2, "attract");
+		interest("biter", 0.99, "attract");
+		interest("human", 0.99, "repel");
+        awakening_default(1.0);
+        
+        spawner_activation_flag("explosion_spawner_activation");
+        spawner_activation_flag("summon_infected_reinforcements");
+    }
+	NoisePreset("explosion_cartrap")
+    {
+        range(150.0);
+        range_effective(125.0);
+        duration(25.0);
+
+        interest_default(0.99, "attract");
+		interest("biter", 0.99, "attract");
+		interest("human", 0.99, "repel");
+		
+        awakening_default(1.0);
+        spawner_activation_flag("explosion_spawner_activation");
+        reinforcement_id("CarTrap_Infected");
+    }
+    NoisePreset("DIYShotgun")
+    {
+        range(65.0);
+        range_effective(55.0);
+        duration(3.0);
+
+        interest_default(1.0, "attract");
+
+        awakening_default(1.0);
+    }
+    NoisePreset("DIYShotgun_Upgrade2")
+    {
+        range(60.0);
+        range_effective(50.0);
+        duration(3.0);
+
+        interest_default(1.0, "attract");
+
+        awakening_default(1.0);
+    }
+    NoisePreset("DIYShotgun_Upgrade5")
+    {
+        range(60.0);
+        range_effective(50.0);
+        duration(3.0);
+
+        interest_default(0.6, "attract");
+
+        awakening_default(1.0);
+    }
+    NoisePreset("DIYShotgun_Upgrade7")
+    {
+        range(60.0);
+        range_effective(50.0);
+        duration(2.0);
+
+        interest_default(0.6, "attract");
+
+        awakening_default(1.0);
+    }
+    NoisePreset("suicider_explosion")
+    {
+        range(40.0);
+        range_effective(30.0);
+        duration(5.0);
+
+        interest_default(0.99, "attract");
+
+        awakening_default(1.0);
+		spawner_activation_flag("summon_infected_reinforcements");
+		
+    }
+    NoisePreset("suicider_flooded_area_explosion")
+    {
+        range(50.0);
+        range_effective(40.0);
+        duration(5.0);
+
+        interest_default(0.99, "attract");
+
+        awakening_default(1.0);
+		spawner_activation_flag("summon_infected_reinforcements");
+    }
+    NoisePreset("molotov_impact")
+    {
+        range(15.0);
+        range_effective(15.0);
+        duration(5.0);
+
+        interest_default(0.99, "attract");
+
+        awakening_default(1.0);
+    }
+	NoisePreset("darkplace_noise_trap")
+    {
+        range(15.0);
+        range_effective(15.0);
+        duration(2.5);
+        interest_default(1.0, "attract");
+        interest("human", 1.0, "repel");
+        spawner_activation_flag("dz_hole");
+        spawner_activation_flag("biter_hole");
+        awakening_default(1.0);
+    }
+    NoisePreset("grenade_explosion")
+    {
+        range(70.0);
+        range_effective(60.0);
+        duration(5.0);
+
+        interest_default(0.99, "attract");
+		interest("biter", 0.99, "attract");
+
+        awakening_default(1.0);
+		spawner_activation_flag("explosion_spawner_activation");
+        spawner_activation_flag("summon_infected_reinforcements");
+    }
+    NoisePreset("player_step_run_awakening")
+    {
+        range(7.0);
+        range_effective(7.0);
+        duration(5.0);
+
+        interest_default(0.0, "attract");
+
+        awakening_default(0.4);
+        awakening("biter", 0.6);
+
+        can_be_merged(true);
+    }
+    NoisePreset("player_step_run_day")
+    {
+        range(16.0);
+        range_effective(14.0);
+        duration(5.0);
+
+        interest_default(0.3, "attract");
+        interest("biter", 0.7, "attract");
+		interest("human", 0.9, "notice");
+
+        awakening_default(0.5);
+		awakening("biter", 0.5);
+		awakening("human", 0.5);
+
+        can_be_merged(true);
+    }
+    NoisePreset("player_step_run_night")
+    {
+        range(17.0);
+        range_effective(17.0);
+        duration(1.0);
+
+        interest_default(0.3, "attract");
+        interest("biter", 0.2, "attract");
+		interest("human", 0.6, "notice");
+
+        awakening_default(0.6);
+		awakening("biter", 0.6);
+		awakening("human", 0.6);
+
+        can_be_merged(true);
+    }
+    NoisePreset("player_step_walk")
+    {
+        range(7.0);
+        range_effective(7.0);
+        duration(0.5);
+
+        interest_default(0.3, "attract");
+        interest("biter", 0.1, "attract");
+
+        awakening_default(0.1);
+        awakening("biter", 0.0);
+
+        can_be_merged(true);
+    }
+    NoisePreset("player_step_crouch")
+    {
+        range(0.0);
+        range_effective(0.0);
+        duration(0.0);
+
+        interest_default(0.0, "notice");
+		interest("biter", 0.0, "notice");
+		interest("human", 0.0, "notice");
+        awakening_default(0.0);
+
+        can_be_merged(true);
+    }
+    NoisePreset("player_landing_low")
+    {
+        range(12.0);
+        range_effective(8.0);
+        duration(1.0);
+
+        awakening_default(0.8);
+
+        interest_default(0.7, "notice");
+		interest("biter", 0.6, "attract");
+		interest("human", 0.6, "notice");
+    }
+    NoisePreset("player_landing_high")
+    {
+        range(10.0);
+        range_effective(8.0);
+        duration(2.0);
+
+        interest_default(0.7, "notice");
+		interest("biter", 0.2, "attract");
+		interest("human", 0.3, "notice");
+
+        awakening_default(1.0);
+
+        spawner_activation_flag("biter_hole_roof");
+    }
+    NoisePreset("player_landing_amortizer")
+    {
+        range(10.0);
+        range_effective(2.0);
+        duration(1.0);
+
+        interest_default(1.0, "notice");
+		interest("biter", 0.6, "force_attract");
+		interest("human", 0.7, "notice");
+
+        awakening_default(1.0);
+    }
+    NoisePreset("muted_player_landing_low")
+    {
+        range(0.0);
+        range_effective(0.0);
+        duration(0.0);
+
+        interest_default(0.5, "notice");
+
+        awakening_default(0.0);
+    }
+    NoisePreset("muted_player_landing_high")
+    {
+        range(5.0);
+        range_effective(5.0);
+        duration(1.0);
+
+        interest_default(0.5, "notice");
+
+        awakening_default(0.2);
+    }
+    NoisePreset("muted_player_landing_amortizer")
+    {
+        range(5.0);
+        range_effective(1.5);
+        duration(1.0);
+
+        interest_default(0.8, "notice");
+
+        awakening_default(0.8);
+    }
+
+    // Levels 0-4 are available
+    // If more needed, increase LandingController::PASSIVE_NOISE_COUNT
+    // and update LandingController:m_PassiveLandingNoises in code
+    NoisePreset("player_passive_landing_0")
+    {
+        range(4.0);
+        range_effective(4.0);
+        duration(1.0);
+
+        interest_default(0.2, "notice");
+
+        awakening_default(0.2);
+    }
+    NoisePreset("player_passive_landing_1")
+    {
+        range(7.0);
+        range_effective(7.0);
+        duration(1.0);
+
+        interest_default(0.4, "notice");
+
+        awakening_default(0.4);
+    }
+    NoisePreset("player_passive_landing_2")
+    {
+        range(10.0);
+        range_effective(10.0);
+        duration(1.0);
+
+        interest_default(1.0, "notice");
+
+        awakening_default(1.0);
+    }
+
+    NoisePreset("biter_groan")
+    {
+        range(12.0);
+        range_effective(8.0);
+        duration(0.99);
+
+        interest_default(0.0, "notice");
+        interest("human", 0.2, "notice"); // #TODO continuous noises support
+		interest("biter", 0.9, "attract");
+
+        awakening_default(0.8);
+    }
+    NoisePreset("viral_groan")
+    {
+        range(15.0);
+        range_effective(10.0);
+        duration(0.99);
+
+        interest_default(0.0, "notice"); // #TODO continuous noises support
+        interest("human", 0.9, "repel");
+		interest("biter", 1.0, "attract");
+
+        awakening_default(0.5);
+    }
+    NoisePreset("demolisher_groan")
+    {
+        range(15.0);
+        range_effective(15.0);
+        duration(0.99);
+
+        interest_default(0.0, "notice");
+
+        awakening_default(0.5);
+    }
+    NoisePreset("biter_grab")
+    {
+        range(10.0);
+        range_effective(10.0);
+        duration(0.99);
+
+        interest_default(0.0, "notice");
+        interest("human", 0.45, "notice");
+
+        awakening_default(0.8);
+    }
+    NoisePreset("prototype_hanging_body")
+    {
+        range(50.0);
+        range_effective(50.0);
+        duration(15.0);
+
+        interest_default(1.0, "attract");
+
+        awakening_default(1.0);
+    }
+    NoisePreset("chase_viral_attractor")
+    {
+        range(30.0);
+        range_effective(30.0);
+        duration(1.0);
+
+        interest_default(0.0, "attract");
+        interest("viral", 1.0, "attract");
+
+        awakening_default(0.0);
+    }
+    NoisePreset("summoning_horn")
+    {
+        range(50.0);
+        range_effective(22.0);
+        duration(1.0);
+
+        interest_default(1.0, "attract");
+		interest("human", 1.0, "help");
+		interest("biter", 0.7, "attract");
+        awakening_default(1.0);
+		
+		reinforcement_id("Bandit_Human");
+    }
+    NoisePreset("call_for_help")
+    {
+        range(70.0);
+        range_effective(50.0);
+        duration(15.0);
+
+        interest("human", 1.0, "help");
+		interest("biter", 0.6, "attract");
+		interest("viral", 0.2, "attract");
+
+        awakening_default(1.0);
+    }
+    NoisePreset("car_alarm_decoy")
+    {
+        range(80.0);
+        range_effective(70.0);
+        duration(15.0);
+
+        interest_default(0.9, "attract");
+        interest("human", 0.9, "repel"); // change to repel when it's implemented
+        interest("biter", 1.0, "force_attract");
+        interest("viral", 1.0, "force_attract");
+        
+        awakening_default(1.00);
+    }
+	NoisePreset("pendulum_attractor")
+    {
+        range(15.0);
+        range_effective(5.0);
+        duration(4.0);
+
+        interest_default(0.9, "attract");
+        interest("human", 0.9, "repel"); // change to repel when it's implemented
+        interest("biter", 1.0, "force_attract");
+        interest("viral", 1.0, "force_attract");
+    }
+	NoisePreset("uv_wall_attractor")
+    {
+        range(15.0);
+        range_effective(5.0);
+        duration(2.0);
+
+        interest_default(0.9, "attract");
+        interest("human", 0.9, "repel"); // change to repel when it's implemented
+        interest("biter", 1.0, "force_attract");
+        interest("viral", 1.0, "force_attract");
+    }
+	NoisePreset("electric_trap")
+    {
+        range(10.0);
+        range_effective(5.0);
+        duration(4.0);
+
+        interest_default(0.9, "attract");
+        interest("human", 0.9, "repel"); // change to repel when it's implemented
+        interest("biter", 1.0, "force_attract");
+        interest("viral", 1.0, "force_attract");
+    }
+	
+	
+    NoisePreset("bandit_camp_alarm")
+    {
+        range(75.0);
+        range_effective(60.0);
+        duration(25.0);
+
+        interest_default(1.0, "attract");
+        interest("human", 1.0, "notice"); // change to repel when it's implemented
+        interest("biter", 1.0, "attract");
+        interest("viral", 1.0, "attract");
+		
+        awakening_default(1.00);
+    }
+    NoisePreset("zombie_attractor")
+    {
+        range(50.0);
+        range_effective(50.0);
+        duration(1.0);
+
+        interest("biter", 1.0, "attract");
+        interest("viral", 1.0, "attract");
+
+        awakening_default(1.00);
+    }
+    NoisePreset("demolisher_rock")
+    {
+        range(20.0);
+        range_effective(20.0);
+        duration(1.0);
+
+        interest_default(1.0, "attract");
+
+        awakening_default(1.00);
+    }
+}

@@ -1,0 +1,615 @@
+{
+  "__filename__": {
+    "Version": 4,
+    "RuntimeData": {
+      "PrefabInterfaces": [
+        "cbs::IEnable"
+      ],
+      "Interface": {
+        "Properties": [
+          {
+            "Type": "PropertyOut",
+            "RTTIType": "RTTI_TYPE_BOOL",
+            "Name": "cbs::IEnable::m_CanBeBatched",
+            "Value": "0",
+            "Init": "e:EDIT;f:EDIT;"
+          }
+        ],
+        "Pipes": [
+          {
+            "Type": "PipeIn",
+            "Name": "cbs::IEnable::m_Enable"
+          },
+          {
+            "Type": "PipeIn",
+            "Name": "cbs::IEnable::m_Disable"
+          },
+          {
+            "Type": "PipeIn",
+            "Name": "m_PipeOnSleep"
+          }
+        ],
+        "VirtualFields": [
+          {
+            "Name": "m_MinimalDamagingSpeed",
+            "Init": "f:EDIT;e:EDIT;c:CONDITION;",
+            "DestinationFields": [
+              {
+                "Uuid": "94",
+                "Name": "m_MinimalDamagingSpeed"
+              }
+            ]
+          },
+          {
+            "Name": "m_FullDamageAngle",
+            "Init": "f:EDIT;e:EDIT;c:CONDITION;d:Min angle for full damage collisions;",
+            "DestinationFields": [
+              {
+                "Uuid": "94",
+                "Name": "m_FullDamageAngle"
+              }
+            ]
+          },
+          {
+            "Name": "m_MinimalDamageAngle",
+            "Init": "f:EDIT;e:EDIT;c:CONDITION;d:No damage if collision angle is lower than this,;",
+            "DestinationFields": [
+              {
+                "Uuid": "94",
+                "Name": "m_MinimalDamageAngle"
+              }
+            ]
+          },
+          {
+            "Name": "m_UsagesLeft",
+            "Init": "f:EDIT;e:EDIT;c:CONDITION;d:Maximum times damage can be dealt;",
+            "DestinationFields": [
+              {
+                "Uuid": "94",
+                "Name": "m_UsagesLeft"
+              }
+            ]
+          },
+          {
+            "Name": "m_MeshDestroyed",
+            "Init": "f:EDIT;e:EDIT;d:Optional mesh for destroyed trap;",
+            "DestinationFields": [
+              {
+                "Uuid": "94",
+                "Name": "m_MeshDestroyed"
+              }
+            ]
+          },
+          {
+            "Name": "m_SkinDestroyed",
+            "Init": "f:EDIT;e:EDIT;d:Optional skin for destroyed trap;",
+            "DestinationFields": [
+              {
+                "Uuid": "94",
+                "Name": "m_SkinDestroyed"
+              }
+            ]
+          },
+          {
+            "Name": "cbs::IEnable::m_State",
+            "Init": "e:EDIT;f:EDIT|QUEST;l:Enabled;",
+            "DestinationFields": [
+              {
+                "Uuid": "337",
+                "Name": "m_Enabled"
+              }
+            ]
+          },
+          {
+            "Name": "m_MeshName",
+            "Init": "f:EDIT|SIMPLE;e:BROWSE_MESH|BROWSE_RESOURCE;c:MESH;l:Mesh file;",
+            "DestinationFields": [
+              {
+                "Uuid": "6",
+                "Name": "m_MeshName"
+              },
+              {
+                "Uuid": "4",
+                "Name": "m_MeshName"
+              }
+            ]
+          },
+          {
+            "Name": "m_SkinName",
+            "Init": "f:EDIT;e:EDIT|ADVANCED|OVERRIDE|BROWSE_SKIN|CALLBACK;c:MESH;l:Mesh skin;",
+            "DestinationFields": [
+              {
+                "Uuid": "6",
+                "Name": "m_SkinName"
+              },
+              {
+                "Uuid": "4",
+                "Name": "m_SkinName"
+              }
+            ]
+          },
+          {
+            "Name": "MeshTransform",
+            "Init": "f:EDIT;e:EDIT;c:CONDITION;",
+            "DestinationFields": [
+              {
+                "Uuid": "13",
+                "Name": "Transform"
+              }
+            ]
+          },
+          {
+            "Name": "MeshCollisionFlags",
+            "Init": "f:EDIT|SIMPLE;e:EDIT;c:Collision;",
+            "DestinationFields": [
+              {
+                "Uuid": "4",
+                "Name": "m_CollisionFlags"
+              }
+            ]
+          },
+          {
+            "Name": "m_Damage",
+            "Init": "f:EDIT;e:EDIT;c:DAMAGE;",
+            "DestinationFields": [
+              {
+                "Uuid": "94",
+                "Name": "m_Damage"
+              }
+            ]
+          },
+          {
+            "Name": "m_DifficultyLevelMultiplier",
+            "Init": "f:EDIT;e:EDIT;c:DAMAGE;",
+            "DestinationFields": [
+              {
+                "Uuid": "94",
+                "Name": "m_DifficultyLevelMultiplier"
+              }
+            ]
+          },
+          {
+            "Name": "SensorTransform",
+            "Init": "f:EDIT;e:EDIT;",
+            "DestinationFields": [
+              {
+                "Uuid": "422",
+                "Name": "Transform"
+              }
+            ]
+          },
+          {
+            "Name": "m_DynamicSpikes",
+            "Init": "f:EDIT;e:EDIT;c:DAMAGE;",
+            "DestinationFields": [
+              {
+                "Uuid": "94",
+                "Name": "m_DynamicSpikes"
+              }
+            ]
+          },
+          {
+            "Name": "SensorMeshName",
+            "Init": "f:EDIT;e:BROWSE_MESH|BROWSE_RESOURCE;c:MESH;",
+            "DestinationFields": [
+              {
+                "Uuid": "433",
+                "Name": "m_MeshName"
+              },
+              {
+                "Uuid": "428",
+                "Name": "m_MeshName"
+              }
+            ]
+          },
+          {
+            "Name": "m_DamagePresetNamePlayer",
+            "Init": "f:EDIT;e:EDIT;",
+            "DestinationFields": [
+              {
+                "Uuid": "94",
+                "Name": "m_DamagePresetNamePlayer"
+              }
+            ]
+          },
+          {
+            "Name": "m_CylinderCollider",
+            "Init": "f:EDIT;e:EDIT;c:DAMAGE;",
+            "DestinationFields": [
+              {
+                "Uuid": "94",
+                "Name": "m_CylinderCollider"
+              }
+            ]
+          }
+        ]
+      },
+      "Bindings": {
+        "Properties": [
+          {
+            "src_uuid": "422",
+            "src": "this",
+            "dest_uuid": "94",
+            "dest": "m_SensorXForm"
+          },
+          {
+            "src_uuid": "428",
+            "src": "this",
+            "dest_uuid": "47",
+            "dest": "m_CollidableShape"
+          },
+          {
+            "src_uuid": "6",
+            "src": "this",
+            "dest_uuid": "417",
+            "dest": "m_RenderMesh"
+          },
+          {
+            "src_uuid": "428",
+            "src": "this",
+            "dest_uuid": "454",
+            "dest": "m_Collidable"
+          },
+          {
+            "src_uuid": "459",
+            "src": "this",
+            "dest_uuid": "417",
+            "dest": "m_VisibilityComponent"
+          },
+          {
+            "src_uuid": "13",
+            "src": "this",
+            "dest_uuid": "417",
+            "dest": "m_XForm"
+          }
+        ],
+        "Pipes": [
+          {
+            "src_uuid": "47",
+            "src": "m_PipeOnSensorEnter",
+            "dest_uuid": "94",
+            "dest": "m_PipeCollison"
+          },
+          {
+            "src_uuid": "94",
+            "src": "m_PipeOutChangeMeshAndSkin",
+            "dest_uuid": "6",
+            "dest": "m_PipeChangeMeshAndSkin"
+          },
+          {
+            "src_uuid": "337",
+            "src": "m_PipeOnEnabled",
+            "dest_uuid": "94",
+            "dest": "m_PipeActivate"
+          },
+          {
+            "src_uuid": "337",
+            "src": "m_PipeOnDisabled",
+            "dest_uuid": "94",
+            "dest": "m_PipeDeactivate"
+          },
+          {
+            "src_uuid": "94",
+            "src": "m_PipeOnSwitchedOff",
+            "dest_uuid": "47",
+            "dest": "m_PipeDeactivate"
+          },
+          {
+            "src_uuid": "337",
+            "src": "m_PipeOnEnabled",
+            "dest_uuid": "417",
+            "dest": "m_PipeActivate"
+          },
+          {
+            "src_uuid": "337",
+            "src": "m_PipeOnDisabled",
+            "dest_uuid": "417",
+            "dest": "m_PipeDeactivate"
+          },
+          {
+            "src_uuid": "428",
+            "src": "m_PipeCollision",
+            "dest_uuid": "47",
+            "dest": "m_PipeCollision"
+          },
+          {
+            "src_uuid": "0",
+            "src": "m_PipeOnSleep",
+            "dest_uuid": "94",
+            "dest": "m_PipeOnSleep"
+          }
+        ]
+      },
+      "Components": [
+        {
+          "Class": "CoMeshLogic",
+          "PrefabFieldsNative": {
+            "m_IsOptional": [11, true],
+            "m_PcId": [6, 4],
+            "m_XformComponent": [6, 13]
+          },
+          "Fields": {
+            "m_CollisionCallbackMask": "253440",
+            "m_CollisionGroup": "1073741825",
+            "m_CollisionMask": "253440",
+            "m_MeshName": "trap_spikes_a.msh",
+            "m_NavmeshFlags": "4",
+            "m_SkinName": "Default"
+          }
+        },
+        {
+          "Class": "CoHierarchy",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 5],
+            "m_RootXform": [11, true]
+          },
+          "Fields": {
+            "Transform": "1.000000 -0.000000 0.000000 0.000000 0.000000 1.000000 -0.000000 0.000000 0.000000 0.000000 1.000000 0.000000"
+          }
+        },
+        {
+          "Class": "CoMeshRender",
+          "PrefabFieldsNative": {
+            "m_IsOptional": [11, true],
+            "m_PcId": [6, 6],
+            "m_XformComponent": [6, 13]
+          },
+          "Fields": {
+            "m_MeshName": "trap_spikes_a.msh",
+            "m_SkinName": "Default"
+          }
+        },
+        {
+          "Class": "CoHierarchy",
+          "PrefabFieldsNative": {
+            "m_ParentComponent": [6, 5],
+            "m_PcId": [6, 13]
+          },
+          "Fields": {
+            "Transform": "1.000000 -0.000000 0.000000 0.000000 0.000000 1.000000 -0.000000 0.000000 0.000000 0.000000 1.000000 0.000000"
+          }
+        },
+        {
+          "Class": "CoHierarchy",
+          "PrefabFieldsNative": {
+            "m_IsEditorOnly": [11, true],
+            "m_ParentComponent": [6, 5],
+            "m_PcId": [6, 33]
+          },
+          "Fields": {
+            "Transform": "-0.000000 0.000000 -0.250000 0.000000 0.000000 0.250000 0.000000 1.000000 0.250000 0.000000 -0.000000 0.000000"
+          }
+        },
+        {
+          "Class": "CoSensor",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 47]
+          },
+          "Fields": {
+            "m_CollisionGroup": "1107296256",
+            "m_CollisionMask": "253440",
+            "m_EventsFrequency": "1",
+            "m_SendOnEnterEvents": "1",
+            "m_SendOnExitAnyEvents": "0",
+            "m_SendOnExitEvents": "0",
+            "m_SendOnStayEvents": "0"
+          }
+        },
+        {
+          "Class": "CoSpikeTrap",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 94]
+          },
+          "Fields": {
+            "m_Damage": "100.000000",
+            "m_FullDamageAngle": "50.000000",
+            "m_MinimalDamageAngle": "5.000000",
+            "m_MinimalDamagingSpeed": "0.500000",
+            "m_PhysicsDamage": "1.000000",
+            "m_UsagesLeft": "1"
+          }
+        },
+        {
+          "Class": "CoEnable",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 337]
+          }
+        },
+        {
+          "Class": "CoSensable",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 417]
+          },
+          "Fields": {
+            "m_SelfActive": "1"
+          }
+        },
+        {
+          "Class": "CoHierarchy",
+          "PrefabFieldsNative": {
+            "m_ParentComponent": [6, 5],
+            "m_PcId": [6, 422]
+          },
+          "Fields": {
+            "Transform": "1.000000 -0.000000 0.000000 0.100000 0.000000 1.000000 -0.000000 0.000000 0.000000 0.000000 1.000000 0.000000"
+          }
+        },
+        {
+          "Class": "CoSimpleMeshLogic",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 428],
+            "m_XformComponent": [6, 422]
+          },
+          "Fields": {
+            "m_CollisionFlags": "69",
+            "m_CollisionGroup": "1107296256",
+            "m_CollisionMask": "253440",
+            "m_MeshName": "sensor_box.msh",
+            "m_NavmeshFlags": "4"
+          }
+        },
+        {
+          "Class": "CoMeshEditorHelper",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 433],
+            "m_XformComponent": [6, 422]
+          },
+          "Fields": {
+            "m_AllowScaleVisualization": "1",
+            "m_MeshName": "sensor_box.msh"
+          }
+        },
+        {
+          "Class": "CoPullEnemy",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 454]
+          }
+        },
+        {
+          "Class": "CoVisibility",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 459]
+          }
+        },
+        {
+          "Class": "CoMeshEditorHelper",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 464],
+            "m_XformComponent": [6, 33]
+          },
+          "Fields": {
+            "m_AllowScaleVisualization": "1",
+            "m_MeshName": "pointer.msh"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2",
+      "CreatedInEditor": "1",
+      "AllowsNonUniformScaling": "1",
+      "Nodes": [
+        {
+          "Uuid": "4",
+          "Type": "2",
+          "X": "1200.00",
+          "Y": "-375.00"
+        },
+        {
+          "Uuid": "5",
+          "Type": "2",
+          "X": "-465.00",
+          "Y": "630.00"
+        },
+        {
+          "Uuid": "6",
+          "Type": "2",
+          "X": "585.00",
+          "Y": "-375.00"
+        },
+        {
+          "Uuid": "13",
+          "Type": "2",
+          "X": "-420.00",
+          "Y": "90.00"
+        },
+        {
+          "Uuid": "33",
+          "Type": "2",
+          "X": "-285.00",
+          "Y": "1485.00"
+        },
+        {
+          "Uuid": "47",
+          "Type": "0",
+          "X": "2100.00",
+          "Y": "90.00"
+        },
+        {
+          "Uuid": "94",
+          "Type": "0",
+          "X": "2670.00",
+          "Y": "480.00"
+        },
+        {
+          "Uuid": "337",
+          "Type": "0",
+          "X": "150.00",
+          "Y": "945.00"
+        },
+        {
+          "Uuid": "417",
+          "Type": "0",
+          "X": "960.00",
+          "Y": "1035.00"
+        },
+        {
+          "Uuid": "422",
+          "Type": "2",
+          "X": "810.00",
+          "Y": "585.00"
+        },
+        {
+          "Uuid": "428",
+          "Type": "2",
+          "X": "1500.00",
+          "Y": "120.00"
+        },
+        {
+          "Uuid": "433",
+          "Type": "2",
+          "X": "1755.00",
+          "Y": "-360.00"
+        },
+        {
+          "Uuid": "454",
+          "Type": "0",
+          "X": "2220.00",
+          "Y": "-150.00"
+        },
+        {
+          "Uuid": "459",
+          "Type": "0",
+          "X": "982.07",
+          "Y": "1385.80"
+        },
+        {
+          "Uuid": "464",
+          "Type": "2",
+          "X": "360.00",
+          "Y": "1410.00"
+        },
+        {
+          "Uuid": "1",
+          "Type": "4",
+          "X": "-135.00",
+          "Y": "-210.00",
+          "Interface_Type": "0"
+        },
+        {
+          "Uuid": "2",
+          "Type": "4",
+          "X": "30.00",
+          "Y": "-210.00",
+          "Interface_Type": "1"
+        },
+        {
+          "Uuid": "443",
+          "Type": "4",
+          "X": "90.00",
+          "Y": "195.00",
+          "Interface_Type": "2"
+        },
+        {
+          "Uuid": "468",
+          "Type": "5",
+          "X": "-375.00",
+          "Y": "1305.00",
+          "Name": "Editor only dir marker",
+          "Size_W": "1190",
+          "Size_H": "525"
+        }
+      ]
+    }
+  }
+}

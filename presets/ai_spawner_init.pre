@@ -1,0 +1,480 @@
+import "activation_presets.def"
+import "AISpawnDifficulty.def"
+
+sub main()
+{
+    use declare_activation_daytime_presets();
+    use declare_activation_distance_presets();
+    use declare_ai_spawner_difficulty_presets();
+	
+	PresetDef("Activation_Type")
+	{
+		Description("Spawner Activation");
+		AddField("m_NoiseTag", "biter_hole", false, true, false);
+		AddField("cbs::IEnable::m_State", "1", false, true, false);
+		AddField("m_NoisePriority", "0.800000", false, true, false);
+		AddField("Spawner_Wave_Enable", "", false, true, false);
+		AddField("Spawner_Wave_SelfActive", "", false, true, false);
+		AddField("Spawner_Number_SelfActive", "", false, true, false);
+		AddField("m_DeactivateRadius", "40.000000", false, true, false);
+		AddField("m_ActivateRadius", "90.000000", false, true, false);
+		AddField("m_SpawnPredicate", "SpawnPredicateInitSpawner", false, true, false);
+		IgnoreField("UserData");
+		IgnoreField("SkinName");
+		Preset("Deactivated")
+		{
+			SetField("cbs::IEnable::m_State", "0");
+			SetField("m_NoiseTag", "");
+			SetField("m_NoisePriority", "");
+            SetField("Spawner_Wave_Enable", "0");
+            SetField("Spawner_Wave_SelfActive", "0");
+            SetField("Spawner_Number_SelfActive", "0");
+		}
+		Preset("Init - Distance - 10m")
+		{
+			SetField("m_NoiseTag", "");
+			SetField("m_NoisePriority", "");
+			SetField("m_ActivateRadius", "10.000000");
+			SetField("Spawner_Number_SelfActive", "1");
+		}
+		Preset("Init - Distance - 2m")
+		{
+			SetField("m_NoiseTag", "");
+			SetField("m_NoisePriority", "");
+			SetField("m_ActivateRadius", "2.000000");
+			SetField("Spawner_Number_SelfActive", "1");
+		}
+		Preset("Init - Distance - 5m")
+		{
+			SetField("m_NoiseTag", "");
+			SetField("m_NoisePriority", "");
+			SetField("m_ActivateRadius", "5.000000");
+			SetField("Spawner_Number_SelfActive", "1");
+		}
+		Preset("Init - Noise - Decoy and louder")
+		{
+			SetField("Spawner_Number_SelfActive", "1");
+		}
+		Preset("Init - Noise - Activate on Fight")
+		{
+			SetField("Spawner_Number_SelfActive", "1");
+			SetField("m_NoisePriority", "0.3");
+		}
+		Preset("Quest - On Enable")
+		{
+			SetField("cbs::IEnable::m_State", "0");
+			SetField("m_NoiseTag", "");
+			SetField("m_NoisePriority", "");
+			SetField("Spawner_Number_SelfActive", "1");
+			SetField("m_SpawnPredicate", "SpawnPredicateAI");
+		}
+		Preset("Spawner Wave - On Enable")
+		{
+			SetField("cbs::IEnable::m_State", "");
+			SetField("Spawner_Wave_Enable", "");
+			SetField("Spawner_Wave_SelfActive", "1");
+			SetField("m_NoisePriority", "");
+			SetField("m_NoiseTag", "");
+		}
+		Preset("Spawner Wave on Noise - Decoy and louder")
+		{
+			SetField("Spawner_Wave_Enable", "1");
+			SetField("Spawner_Wave_SelfActive", "1");
+			SetField("cbs::IEnable::m_State", "");
+		}
+		Preset("Spawner Wave on Noise - Activate on Fight")
+		{
+			SetField("Spawner_Wave_Enable", "1");
+			SetField("Spawner_Wave_SelfActive", "1");
+			SetField("cbs::IEnable::m_State", "");
+			SetField("m_NoisePriority", "0.3");
+		}
+	}
+	PresetDef("Animation")
+	{
+		Description("Animation will be played on spawn AI.");
+		AddField("m_BehaviorName", "no_state_inf_go_out_doors_flat_close", false, true, false);
+		IgnoreField("UserData");
+		IgnoreField("SkinName");
+		Preset("AI_opens_doors_with_force")
+		{
+			SetField("m_BehaviorName", "no_state_go_out_doors_flat");
+		}
+		Preset("Infected_crawl_out")
+		{
+			SetField("m_BehaviorName", "no_state_inf_crawl_out");
+		}
+		Preset("Infected_opens_doors_with_force_close")
+		{
+			SetField("m_BehaviorName", "no_state_inf_go_out_doors_flat_close");
+		}
+		Preset("infected_climb_out_pit")
+		{
+			SetField("m_BehaviorName", "no_state_m_vir_climb_out_pit");
+		}
+		Preset("infected_jump_out_of_doors_with_stairs")
+		{
+			SetField("m_BehaviorName", "no_state_inf_jump_doors_low");
+		}
+		Preset("infected_jump_out_of_doors_with_stairs_force_close")
+		{
+			SetField("m_BehaviorName", "no_state_inf_jump_doors_low_close");
+		}
+		Preset("Infected_jump_out_of_high_window")
+		{
+			SetField("m_BehaviorName", "no_state_jump_out_high_window");
+		}
+		Preset("Infected_crawl_from_manhole")
+		{
+			SetField("m_BehaviorName", "no_state_floor_flap_small");
+		}
+		
+	}
+	PresetDef("Point_Type")
+	{
+		Description("Type of spawning, dynamic will spawn from chase, stationary is for selected preset.");
+		AddField("m_PointType", "2", false, true, false);
+		IgnoreField("UserData");
+		IgnoreField("SkinName");
+		Preset("Point for dynamic spawner - Chase")
+		{
+			SetField("m_PointType", "Point for dynamic spawner");
+		}
+		Preset("Point for stationary and dynamic spawners - Chase and Situational")
+		{
+			SetField("m_PointType", "Point for stationary and dynamic spawners");
+		}
+		Preset("Point for stationary spawners - Situational")
+		{
+			SetField("m_PointType", "Point for stationary spawners");
+		}
+	}
+	PresetDef("Preset")
+	{
+		Description("Selected AI will be spawned, if dynamic leave empty.");
+		AddField("m_Preset", "", false, true, false);
+		AddField("m_PresetPoolName", "", false, true, false);
+		IgnoreField("UserData");
+		IgnoreField("SkinName");
+		Preset("Bandit_Bow")
+		{
+			SetField("m_Preset", "Character;Bandit_Bow");
+		}
+		Preset("Bandit_Molotov_Backpack")
+		{
+			SetField("m_Preset", "Character;Bandit_Molotov_Backpack");
+		}
+		Preset("Bandit_One_Handed")
+		{
+			SetField("m_Preset", "Character;Bandit_One_Handed");
+		}
+		Preset("Bandit_One_Handed_Bloods_Gang_Lieutenant")
+		{
+			SetField("m_Preset", "Character;Bandit_One_Handed_Bloods_Gang_Lieutenant");
+		}
+		Preset("Bandit_One_Handed_Skyscraper_Gang_Lieutenant")
+		{
+			SetField("m_Preset", "Character;Bandit_One_Handed_Skyscraper_Gang_Lieutenant");
+		}
+		Preset("Bandit_Spear")
+		{
+			SetField("m_Preset", "Character;Bandit_Spear");
+		}
+		Preset("Bandit_Summoner")
+		{
+			SetField("m_Preset", "Character;Bandit_Summoner");
+		}
+		Preset("Bandit_Two_Handed")
+		{
+			SetField("m_Preset", "Character;Bandit_Two_Handed");
+		}
+		Preset("Bandit_Two_Handed_Bloods_Gang_Boss")
+		{
+			SetField("m_Preset", "Character;Bandit_Two_Handed_Bloods_Gang_Boss");
+		}
+		Preset("Bandit_Two_Handed_Skyscraper_Gang_Boss")
+		{
+			SetField("m_Preset", "Character;Bandit_Two_Handed_Skyscraper_Gang_Boss");
+		}
+		Preset("Infected_Banshee")
+		{
+			SetField("m_Preset", "Character;Banshee");
+		}
+		Preset("Infected_Biter")
+		{
+			SetField("m_PresetPoolName", "Init_Biter");
+		}
+		Preset("Infected_Bolter")
+		{
+			SetField("m_Preset", "Character;Bolter");
+		}
+		Preset("Infected_Charger")
+		{
+			SetField("m_Preset", "Character;Charger");
+		}
+		Preset("Infected_Corruptor")
+		{
+			SetField("m_Preset", "Character;Corruptor");
+		}
+		Preset("Infected_Demolisher")
+		{
+			SetField("m_Preset", "Character;Demolisher");
+		}
+		Preset("Infected_Goon")
+		{
+			SetField("m_Preset", "Character;Goon");
+		}
+		Preset("Infected_Obstructor")
+		{
+			SetField("m_Preset", "Character;Obstructor");
+		}
+		Preset("Infected_Screamer")
+		{
+			SetField("m_Preset", "Character;Screamer");
+		}
+		Preset("Infected_Spitter")
+		{
+			SetField("m_Preset", "Character;Spitter");
+		}
+		Preset("Infected_Suicider")
+		{
+			SetField("m_Preset", "Character;Suicider");
+		}
+		Preset("Infected_Viral")
+		{
+			SetField("m_PresetPoolName", "Init_Viral");
+		}
+		Preset("Infected_Volatile")
+		{
+			SetField("m_Preset", "Character;Volatile");
+		}
+		Preset("Pool_Random_Bandit")
+		{
+			SetField("m_PresetPoolName", "Init_Bandit_Random");
+		}
+		Preset("Pool_Random_Biter_or_Viral")
+		{
+			SetField("m_PresetPoolName", "Init_Biter_And_Viral");
+		}
+		Preset("Renegade_Hostile_Bow")
+		{
+			SetField("m_Preset", "Character;Renegade_Hostile_Bow");
+		}
+		Preset("Renegade_Hostile_One_Handed")
+		{
+			SetField("m_Preset", "Character;Renegade_Hostile_One_Handed");
+		}
+		Preset("Renegade_Hostile_Spear")
+		{
+			SetField("m_Preset", "Character;Renegade_Hostile_Spear");
+		}
+	}
+	PresetDef("Spawner Wave Presets")
+	{
+		Description("[Mode], [Percentage of AI Health], [Amount of AI]");
+		AddField("m_NumOfAIsPerWave", "6", false, true, false);
+		AddField("m_AlivePercentageToNextWave", "50", false, true, false);
+		AddField("m_NumberOfWaves", "1", false, true, false);
+		AddField("m_WaveDelay", "0.000000", false, true, false);
+		IgnoreField("UserData");
+		IgnoreField("SkinName");
+		Preset("Constant - 15 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "15");
+			SetField("m_NumberOfWaves", "15");
+			SetField("m_AlivePercentageToNextWave", "100");
+			SetField("m_WaveDelay", "6.000000");
+		}
+		Preset("Constant - 10 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "10");
+			SetField("m_NumberOfWaves", "10");
+			SetField("m_AlivePercentageToNextWave", "100");
+			SetField("m_WaveDelay", "6.000000");
+		}
+		Preset("Constant - 5 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "5");
+			SetField("m_NumberOfWaves", "5");
+			SetField("m_AlivePercentageToNextWave", "100");
+			SetField("m_WaveDelay", "6.000000");
+		}
+		Preset("Constant - 3 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "4");
+			SetField("m_NumberOfWaves", "3");
+			SetField("m_AlivePercentageToNextWave", "100");
+			SetField("m_WaveDelay", "6.000000");
+		}
+		Preset("Constant - 2 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "4");
+			SetField("m_NumberOfWaves", "2");
+			SetField("m_AlivePercentageToNextWave", "100");
+			SetField("m_WaveDelay", "6.000000");
+		}
+		Preset("Swarm - 95 percent 15 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "12");
+			SetField("m_NumberOfWaves", "15");
+			SetField("m_AlivePercentageToNextWave", "95");
+			SetField("m_WaveDelay", "0.500000");
+		}
+		Preset("High - 75 percent 15 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "7");
+			SetField("m_NumberOfWaves", "15");
+			SetField("m_AlivePercentageToNextWave", "75");
+			SetField("m_WaveDelay", "2.000000");
+		}
+		Preset("Medium - 50 percent 15 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "15");
+			SetField("m_NumberOfWaves", "15");
+			SetField("m_AlivePercentageToNextWave", "50");
+			SetField("m_WaveDelay", "3.000000");
+		}
+		Preset("Easy - 25 percent 15 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "2");
+			SetField("m_NumberOfWaves", "15");
+			SetField("m_AlivePercentageToNextWave", "25");
+			SetField("m_WaveDelay", "3.000000");
+		}
+		Preset("Very Easy - 5 percent 15 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "1");
+			SetField("m_NumberOfWaves", "15");
+			SetField("m_AlivePercentageToNextWave", "5");
+			SetField("m_WaveDelay", "4.000000");
+		}
+		Preset("Swarm - 95 percent 5 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "12");
+			SetField("m_NumberOfWaves", "5");
+			SetField("m_AlivePercentageToNextWave", "95");
+			SetField("m_WaveDelay", "0.500000");
+		}
+		Preset("High - 75 percent 5 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "10");
+			SetField("m_NumberOfWaves", "5");
+			SetField("m_AlivePercentageToNextWave", "75");
+			SetField("m_WaveDelay", "2.000000");
+		}
+		Preset("Medium - 50 percent 5 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "7");
+			SetField("m_NumberOfWaves", "5");
+			SetField("m_AlivePercentageToNextWave", "50");
+			SetField("m_WaveDelay", "3.000000");
+		}
+		Preset("Easy - 25 percent 5 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "5");
+			SetField("m_NumberOfWaves", "5");
+			SetField("m_AlivePercentageToNextWave", "25");
+			SetField("m_WaveDelay", "3.000000");
+		}
+		Preset("Very Easy - 5 percent 5 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "3");
+			SetField("m_NumberOfWaves", "5");
+			SetField("m_AlivePercentageToNextWave", "5");
+			SetField("m_WaveDelay", "4.000000");
+		}
+		Preset("Swarm - 95 percent 3 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "13");
+			SetField("m_NumberOfWaves", "3");
+			SetField("m_AlivePercentageToNextWave", "95");
+			SetField("m_WaveDelay", "0.500000");
+		}
+		Preset("High - 75 percent 3 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "10");
+			SetField("m_NumberOfWaves", "3");
+			SetField("m_AlivePercentageToNextWave", "75");
+			SetField("m_WaveDelay", "2.000000");
+		}
+		Preset("Medium - 50 percent 3 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "7");
+			SetField("m_NumberOfWaves", "3");
+			SetField("m_AlivePercentageToNextWave", "50");
+			SetField("m_WaveDelay", "4.000000");
+		}
+		Preset("Easy - 25 percent 3 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "5");
+			SetField("m_NumberOfWaves", "3");
+			SetField("m_AlivePercentageToNextWave", "25");
+			SetField("m_WaveDelay", "3.000000");
+		}
+		Preset("Very Easy - 5 percent 3 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "3");
+			SetField("m_NumberOfWaves", "3");
+			SetField("m_AlivePercentageToNextWave", "5");
+			SetField("m_WaveDelay", "4.000000");
+		}
+		Preset("Swarm - 95 percent 2 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "15");
+			SetField("m_NumberOfWaves", "2");
+			SetField("m_AlivePercentageToNextWave", "95");
+			SetField("m_WaveDelay", "0.500000");
+		}
+		Preset("High - 75 percent 2 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "12");
+			SetField("m_NumberOfWaves", "2");
+			SetField("m_AlivePercentageToNextWave", "75");
+			SetField("m_WaveDelay", "2.000000");
+		}
+		Preset("Medium - 50 percent 2 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "10");
+			SetField("m_NumberOfWaves", "2");
+			SetField("m_AlivePercentageToNextWave", "50");
+			SetField("m_WaveDelay", "3.000000");
+		}
+		Preset("Easy - 25 percent 2 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "5");
+			SetField("m_NumberOfWaves", "2");
+			SetField("m_AlivePercentageToNextWave", "25");
+			SetField("m_WaveDelay", "3.000000");
+		}
+		Preset("Very Easy - 5 percent 2 AI")
+		{
+			SetField("m_NumOfAIsPerWave", "3");
+			SetField("m_NumberOfWaves", "2");
+			SetField("m_AlivePercentageToNextWave", "5");
+			SetField("m_WaveDelay", "4.000000");
+		}
+	}
+	PresetDef("Force Target")
+	{
+		Description("AI after spawn will have focus on player.");
+		AddField("m_ForcedTargetMode", "", false, true, false);
+		IgnoreField("UserData");
+		IgnoreField("SkinName");
+		Preset("Local Player") //This is fake-preset, shoudn't be used anymore, but we let it live due to re-clicking all prefabs within it.
+		{
+			SetField("m_ForcedTargetMode", "NearestPlayerCanLose");
+		}
+		Preset("Nearest Player") //This is fake-preset, shoudn't be used anymore, but we let it live due to re-clicking all prefabs within it.
+		{
+			SetField("m_ForcedTargetMode", "NearestPlayerCanLose");
+		}
+		Preset("NearestPlayerCanLose")
+		{
+			SetField("m_ForcedTargetMode", "NearestPlayerCanLose");
+		}
+		Preset("NearestPlayerCannotLose")
+		{
+			SetField("m_ForcedTargetMode", "NearestPlayerCannotLose");
+		}
+	}
+}

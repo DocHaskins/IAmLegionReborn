@@ -1,0 +1,208 @@
+sub main()
+{
+    PositionalSlotsParams("default")
+    {
+        MeleeAttackSlotsCount("5");
+        MeleeAttackSlotsDistance("3.0");
+        MeleeAttackSlotsCheckIfBlockedByOthers("false");
+        MeleeAttackSlotsReservableName("melee");
+        MeleeAttackSlotsScoring("ByDistance");
+        MeleeAttackSlotsKeepFactor("0.5");
+        MeleeAttackSlotsMinDot("-0.25");
+
+        MeleeIdleSlotsCount("10");
+        MeleeIdleSlotsDistance("8.0");
+        MeleeIdleSlotsScoring("ByDistance");
+        MeleeIdleSlotsKeepFactor("0.5");
+        MeleeIdleSlotsMinDot("-0.25");
+
+        // Off / IdleInLineOfAlreadyTaken (enum)
+        MeleeSlotsPrioritization("IdleInLineOfAlreadyTaken");
+        MeleeSlotsPrioritizationFactor("0.5");
+        MeleeSlotsGeneratorParams("melee_points");
+
+        IdleSlotsCount("8");
+        IdleSlotsGeneratorParams("idle_points");
+        IdleSlotsDistancePriorityFactor("1");
+        IdleSlotsScoring("ByDistance");
+        IdleSlotsKeepFactor("0.5");
+        IdleSlotsMinDot("-0.5");
+
+        VantageSlotsCount("6");
+        VantageSlotsReserverType("human_ranged");
+        VantageSlotsGeneratorParams("vantage_points");
+        VantageSlotsDistancePriorityFactor("-0.5");
+        VantageSlotsScoring("ByDistance");
+        VantageSlotsKeepFactor("0.5");
+        VantageSlotsMinDot("0");
+
+        // Unordered / Ordered (enum)
+        AssignmetMethod("Unordered");
+        KeepMinDistance("4");
+
+        GatherEnemiesDistanceXZ("100");
+        GatherEnemiesDistanceY("10");
+        GatherOthersDistanceY("4");
+
+        EnemyRadius("2.0");
+
+        // Off / Simple / Detailed (flags)
+        DebugMeleeAttackSlots("Detailed");
+        DebugMeleeIdleSlots("Detailed");
+        DebugIdleSlots("Detailed");
+        DebugVantageSlots("Detailed");
+
+        // Off / RestrictedFlags (flags)
+        DebugGather("RestrictedFlags");
+
+        DebugForceEvaluation("false");
+    }
+
+    RingsGeneratorParams("melee_points")
+    {
+        ValidationMinOriginOffset("1");
+        ValidationMinUpdateTimeDelta("0.5");
+        ValidationMaxUpdateTimeDelta("2");
+
+        ValidationTimeDeltaThreshold("2");
+        ValidationOriginOffsetThreshold("4");
+
+        NavMeshOriginToleranceXZ("1.0");
+        NavMeshOriginToleranceY("1.0");
+        NavMeshPointToleranceXZ("1.5");
+        NavMeshPointToleranceY("1.5");
+
+        NavRayEndOffset("0");
+        NavRayMaxTrimmedToleranceXZ("1.5");
+        NavRayMaxConnectionHeightUp("0.0");
+        NavRayMaxConnectionHeightDown("2.0");
+
+        // RegularGround / HardToPass / Chemicals / Water / Road / Connection / Interior (enum)
+        NavPathDisallowedSpecialAreas("HardToPass");
+        NavPathDisallowedSpecialAreas("Chemicals");
+        NavPathDisallowedSpecialAreas("Water");
+        
+        // Refer to defined dynamic surfaces in  ai_navigation_presets.scr
+        NavPathDisallowedRuntimeUserAreas("fire");
+    }
+
+    DynamicGeneratorParams("idle_points")
+    {
+        UpdateTimeDelta("0.05");
+        UpdateTimeDeltaThreshold("2.0");
+
+        AcceptMinRelativeHeight("-6.0");
+        AcceptMaxRelativeHeight("1.0");
+        KeepMinRelativeHeight("-8.0");
+        KeepMaxRelativeHeight("6.0");
+
+        AcceptMinDistance2d("12.0");
+        AcceptMaxDistance2d("20.0");
+        KeepMinDistance2d("10.0");
+        KeepMaxDistance2d("25.0");
+
+        SeparationDistance2d("5.0");
+
+        NavMeshToleranceXZ("1.0");
+        NavMeshToleranceY("1.0");
+
+        NavAreaMinDistanceToEdges("0.0");
+        NavAreaMaxHeightDifference("0.5");
+
+        NavPathCheckAngle("180");
+        NavPathRandomMaxDeviation("2.0");
+        NavPathRandomCost("0.95");
+        NavPathMaxDownwardConnectionHeight("6.0");
+        NavPathMaxUpwardConnectionHeight("0.25");
+        NavPathMaxHorizontalConnectionLength("3.0");
+        NavPathPreferHigherPlaces("false");
+        NavPathCheckOnlyNavConnectedPoints("false");
+        NavPathProcessingMaxNearestPolyCheckPerUpdate("2");
+        NavPathProcessingMaxRayTracesPerUpdate("2");
+
+        // ClimbLow / ClimbMedium / ClimbHigh / JumpShort / JumpMedium / JumpLong / Ladder (enum)
+        NavPathAllowedUserConnections("ClimbLow");
+        NavPathAllowedUserConnections("ClimbMedium");
+        NavPathAllowedUserConnections("JumpShort");
+        NavPathAllowedUserConnections("Ladder");
+
+        // RegularGround / HardToPass / Chemicals / Water / Road / Connection / Interior (enum)
+        NavPathDisallowedSpecialAreas("Chemicals");
+        NavPathDisallowedSpecialAreas("HardToPass");
+        NavPathDisallowedSpecialAreas("Water");
+        
+        // Refer to defined dynamic surfaces in  ai_navigation_presets.scr
+        NavPathDisallowedRuntimeUserAreas("fire");
+
+        // None / Visibility / Occlusion (enum)
+        Raytest("Visibility");
+        // Once / EveryUpdate
+        RaytestMode("EveryUpdate");
+        RaytestOffset("0 1.5 0");
+        RaytestUpdateTime("1.66");
+        RaytestMaxInvalidTime("10.0");
+
+        DebugEnabled("false");
+    }
+
+    DynamicGeneratorParams("vantage_points")
+    {
+        UpdateTimeDelta("0.1");
+        UpdateTimeDeltaThreshold("2.0");
+
+        AcceptMinRelativeHeight("1.0");
+        AcceptMaxRelativeHeight("10.0");
+        KeepMinRelativeHeight("-1.5");
+        KeepMaxRelativeHeight("15.0");
+
+        AcceptMinDistance2d("6.0");
+        AcceptMaxDistance2d("25.0");
+        KeepMinDistance2d("3.0");
+        KeepMaxDistance2d("30.0");
+
+        SeparationDistance2d("5.0");
+        SeparationHeight("2.0");
+
+        NavMeshToleranceXZ("0.5");
+        NavMeshToleranceY("1.0");
+
+        NavAreaMinDistanceToEdges("0.3");
+        NavAreaMaxHeightDifference("0.4");
+
+        NavPathCheckAngle("90");
+        NavPathRandomMaxDeviation("2.0");
+        NavPathRandomCost("0.5");
+        NavPathMaxDownwardConnectionHeight("0.25");
+        NavPathMaxUpwardConnectionHeight("10.0");
+        NavPathMaxHorizontalConnectionLength("3.0");
+        NavPathPreferHigherPlaces("true");
+        NavPathCheckOnlyNavConnectedPoints("true");
+        NavPathProcessingMaxNearestPolyChecksPerUpdate("2");
+        NavPathProcessingMaxRayTracesPerUpdate("2");
+
+        // ClimbLow / ClimbMedium / ClimbHigh / JumpShort / JumpMedium / JumpLong / Ladder (enum)
+        NavPathAllowedUserConnections("ClimbLow");
+        NavPathAllowedUserConnections("ClimbMedium");
+        NavPathAllowedUserConnections("JumpShort");
+        NavPathAllowedUserConnections("Ladder");
+
+        // RegularGround / HardToPass / Chemicals / Water / Road / Connection / Interior (enum)
+        NavPathDisallowedSpecialAreas("Chemicals");
+        NavPathDisallowedSpecialAreas("HardToPass");
+        NavPathDisallowedSpecialAreas("Water");
+        NavPathDisallowedSpecialAreas("Interior");
+        
+        // Refer to defined dynamic surfaces in  ai_navigation_presets.scr
+        NavPathDisallowedRuntimeUserAreas("fire");
+
+        // None / Visibility / Occlusion (enum)
+        Raytest("Visibility");
+        // Once / EveryUpdate
+        RaytestMode("Once");
+        RaytestOffset("0 1.5 0");
+        RaytestUpdateTime("0.0");
+        RaytestMaxInvalidTime("0.0");
+
+        DebugEnabled("false");
+    }
+}

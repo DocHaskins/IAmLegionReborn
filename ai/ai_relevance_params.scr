@@ -1,0 +1,27 @@
+sub main()
+{
+    // currently not used as it is a subset of damaged AIs
+    // Param("MinDistanceAtWhichDynSpawnerSpecialAIsWithCutBonesMayBeDespawned", "30");
+    // currently not used as it is a subset of damaged AIs
+    // Param("MinDistanceAtWhichDynSpawnerNonSpecialAIsWithCutBonesMayBeDespawned", "30");
+
+    Param("MinDistanceAtWhichDynSpawnerSpecialAIsWithDamageMayBeDespawned", "80");
+    Param("MinDistanceAtWhichDynSpawnerNonSpecialAIsWithDamageMayBeDespawned", "80");
+
+    Param("MinDistanceAtWhichDynSpawnerSpecialAIsUnderEffectOfPlayerOwnerPOIMayBeDespawned", "50");
+    Param("MinDistanceAtWhichDynSpawnerNonSpecialAIsUnderEffectOfPlayerOwnerPOIMayBeDespawned", "16");
+    Param("MinDistanceAtWhichDynSpawnerSpecialAIsUnderEffectOfNonPlayerOwnerPOIMayBeDespawned", "80"); // crowd control with decoys
+    Param("MinDistanceAtWhichDynSpawnerNonSpecialAIsUnderEffectOfNonPlayerOwnerPOIMayBeDespawned", "80"); // crowd control with decoys
+
+    Param("MinDistanceAtWhichDynSpawnerSpecialDeathAIsMayBeDespawned", "50");
+    Param("MinDistanceAtWhichDynSpawnerNonSpecialDeathAIsMayBeDespawned", "50");
+
+    // for instance mines, car-traps, etc.
+    Param("MaxDistanceNotToDespawnDynSpawnerAIsWithinTheAIInteractiveObjectsRange", "80");
+
+    Param("MinDistanceToDespawnDynSpawnerSpecialAIWithNonDefaultTaskAndIsNotInCombat", "50");
+
+    Param("MinDistanceToDespawnDynSpawnerNonSpecialAIWithNonDefaultTaskAndIsInCombat", "16");
+
+    Param("MinDistanceToDespawnAIsReleasedFromChase", "40");
+}

@@ -791,6 +791,25 @@ sub OpenWorldPresets()
         SetField("m_TakedownEnabled", "0");
     }
 	
+	Preset("Survivor_Summoner", "Generic_Grenadier")
+    {
+        SetField("m_AIModelName", "srv_man_02_a.model;srv_man_02_b.model;srv_man_02_c.model;srv_man_03_a.model;srv_man_04_a.model;srv_man_04_b.model;srv_man_04_c.model;srv_man_05_a.model;srv_man_06_a.model;srv_man_07_a.model;srv_man_07_b.model;srv_man_08_a.model;srv_man_08_b.model;srv_man_08_c.model;srv_man_08_d.model;srv_man_08_e.model;srv_man_08_f.model;srv_man_08_g.model;srv_man_08_h.model;srv_man_08_i.model;srv_man_09_a.model;srv_man_09_b.model;srv_man_10_a.model;srv_man_11_a.model;srv_man_11_b.model;srv_man_11_c.model;srv_man_12_a.model;srv_man_12_c.model;srv_man_12_d.model;srv_man_12_f.model;srv_man_13_a.model");
+        SetField("m_ConflictSide", "survivor");
+        SetField("m_CustomDataPreset", "m_survivor");
+        SetField("m_AnimationPreset", "survivor@ai_animation_presets.scr");
+        SetField("m_ConstFilename", "human_profile_survivor_one_handed");
+		SetField("m_MainBehaviorTree", "HUMAN_SURVIVOR_BT");
+        SetField("m_HealthPreset", "Body_050");
+        SetField("m_WeaponSetName", "Shoddy_Weapon_pool_RGD_1");
+        SetField("m_BarkPresetNames", "sur_m_a;sur_m_b;sur_m_c");
+		SetField("m_BarkPresetNamesAfAm", "sur_m_d;sur_m_e;surv_m_d;surv_m_e");
+        SetField("m_ScreamPresetNames", "sur_m_a");
+        SetField("m_NavigationPreset", "ow_survivor_1h");
+        SetField("m_CustomLootTypeString", "DefaultSurvivorLoot");
+        SetField("m_CombatMusicRelevanceValue", "0");
+        SetField("m_TakedownEnabled", "0");
+    }
+	
 	Preset("Survivor_Man_Bow", "Generic_Bow")
     {
         SetField("m_AIModelName", "srv_man_02_a.model;srv_man_02_b.model;srv_man_02_c.model;srv_man_03_a.model;srv_man_04_a.model;srv_man_04_b.model;srv_man_04_c.model;srv_man_05_a.model;srv_man_06_a.model;srv_man_07_a.model;srv_man_07_b.model;srv_man_08_a.model;srv_man_08_b.model;srv_man_08_c.model;srv_man_08_d.model;srv_man_08_e.model;srv_man_08_f.model;srv_man_08_g.model;srv_man_08_h.model;srv_man_08_i.model;srv_man_09_a.model;srv_man_09_b.model;srv_man_10_a.model;srv_man_11_a.model;srv_man_11_b.model;srv_man_11_c.model;srv_man_12_a.model;srv_man_12_c.model;srv_man_12_d.model;srv_man_12_f.model;srv_man_13_a.model");

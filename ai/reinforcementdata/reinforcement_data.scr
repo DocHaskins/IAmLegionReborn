@@ -105,14 +105,14 @@ sub main()
 	ReinforcementData("Bandit_Human")
     {
         force_player_target(false);
-        Spawn("Generic_Two_Handed", 3,3);
-		Spawn("Generic_Bow", 3,3);
-		Spawn("Generic_Grenadier", 3,3);
-        initial_spawn_delay(3.0);
-        delay_between_spawns(0.5);
+		Spawn("Bandit_One_Handed", 0,4);
+        Spawn("Bandit_Two_Handed", 0,2);
+		Spawn("Bandit_Bow", 0,3);
+        initial_spawn_delay(6.0);
+        delay_between_spawns(20.5);
         chance_to_spawn(0.7);
         is_infected_reinforcement(false);
-        cooldown(10.0);
+        cooldown(40.0);
     }
 	
     ReinforcementData("Skyscraper_Human")

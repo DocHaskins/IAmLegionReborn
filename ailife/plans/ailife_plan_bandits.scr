@@ -1,0 +1,26 @@
+sub main()
+{
+    Plan("Plan_Bandits")
+    {
+        SkipBeginScenarioProb(0.0);
+        SpawnMinDistFromActiveAgendas(20.0);
+    
+        BeginStage("begin")
+        {
+            ScenarioTags("doors_breakdown;car_looting;car_trunk_looting;fixing;test_scenario;pissing;generic_looting");
+            ScenarioSearchRange(10, 20);
+        }
+        
+        MiddleStage("middle")
+        {
+            ScenarioTags("body_looting;doors_breakdown;car_looting;car_trunk_looting;test_scenario;pissing;generic_looting");
+            ScenarioSearchRange(5, 20);
+        }
+        
+        EndStage("end")
+        {
+            ScenarioTags("body_looting;doors_breakdown;car_looting;car_trunk_looting;test_scenario;pissing;generic_looting");
+            ScenarioSearchRange(10, 20);
+        }
+    }
+}

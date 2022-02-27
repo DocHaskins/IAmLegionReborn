@@ -1,0 +1,31 @@
+sub main()
+{
+	Plan("Plan_Watchtowers_Mini_PK")
+	{
+        TimeOfDayCondition(0.0, 23.9);
+		SkipBeginScenarioProb(1);
+		SpawnMinDistFromActiveAgendas(0.1);
+		
+		BeginStage("begin")
+		{
+			ScenarioTags("mini_pk_start;mini_pk_middle;");
+			ScenarioSearchRange(1, 5);
+			MaxHeightDifference(2);
+		}
+		
+		MiddleStage("middle")
+		{
+			ScenarioTags("mini_pk_middle;");
+			MaxHeightDifference(2);
+			ScenarioSearchRange(1, 5);
+		}
+		
+		EndStage("end")
+		{
+			ScenarioTags("mini_pk_end;mini_pk_middle;");
+            ScenarioSearchRange(1, 5);
+			MaxHeightDifference(1);
+		}
+	}
+	
+}

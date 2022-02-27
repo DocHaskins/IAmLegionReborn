@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Cnd_HasBBValue m_Key="#target"/>
+        <Cnd_CanStartTask m_StartPolicy="DISCARD"/>
+        <Cnd_CanInterruptActivityModule_Movement/>
+        <UseCombatSlots m_Target="#target">
+            <ExposeLogicState m_ExposedState="combat">
+                <Sequence>
+                    <Cnd_HasBBValue m_Key="#target"/>
+                    <Selector>
+                        <Cnd_IsBBValueEqual_EThreatLevel m_Key="#group_threat_level" m_Value="HIGH"/>
+                        <Optional m_Enabled="$enable_combat_with_low_threat">
+                            <Cnd_IsCombatTargetHighThreat m_Invert="true"/>
+                        </Optional>
+                    </Selector>
+                    <Selector>
+                        <Cnd_IsBBValueEqual_bool m_Key="#flag_threatening" m_Value="true" m_Invert="true"/>
+                        <Opr_RequestBark m_BarkID="threatening_engage" m_Priority="Low"/>
+                    </Selector>
+                    <ExternalTree m_UID="HUMAN_COMBAT_UPDATE" m_CustomName="CombatUpdate" m_Hide="true"/>
+                    <Selector>
+                        <Optional m_Enabled="$summoning_reinforcements_enabled" m_Hide="true">
+                            <ExternalTree m_UID="HUMAN_CALL_SURVIVOR_REINFORCEMENTS" m_CustomName="CallReinforcements"/>
+                        </Optional>
+                        <SelectorMem>
+                            <Optional m_Enabled="$enable_combat_bow">
+                                <ExternalTree m_UID="HUMAN_COMBAT_BOW" m_CustomName="Bow" m_Hide="true"/>
+                            </Optional>
+                            <Optional m_Enabled="$enable_combat_grenadier">
+                                <ExternalTree m_UID="HUMAN_COMBAT_GRENADIER" m_CustomName="Grenadier" m_Hide="true"/>
+                            </Optional>
+                            <Optional m_Enabled="$enable_combat_harpoon">
+                                <ExternalTree m_UID="HUMAN_COMBAT_HARPOON" m_CustomName="Harpoon" m_Hide="true"/>
+                            </Optional>
+                            <Optional m_Enabled="$enable_combat_one_handed">
+                                <ExternalTree m_UID="HUMAN_COMBAT_ONE_HANDED" m_CustomName="OneHanded" m_Hide="true"/>
+                            </Optional>
+                            <Optional m_Enabled="$enable_combat_spear">
+                                <ExternalTree m_UID="HUMAN_COMBAT_SPEAR" m_CustomName="Spear" m_Hide="true"/>
+                            </Optional>
+                            <Optional m_Enabled="$enable_combat_two_handed">
+                                <ExternalTree m_UID="HUMAN_COMBAT_TWO_HANDED" m_CustomName="TwoHanded" m_Hide="true"/>
+                            </Optional>
+                        </SelectorMem>
+                    </Selector>
+                </Sequence>
+            </ExposeLogicState>
+        </UseCombatSlots>
+    </SequenceMem>
+</BehaviorTree>

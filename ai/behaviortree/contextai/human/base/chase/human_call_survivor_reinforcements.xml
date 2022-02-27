@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <CooldownTimeDeltaRandom m_MaxCooldownTime="$summon_cooldown_max" m_MinCooldownTime="$summon_cooldown_min" m_CooldownOnAbort="true">
+        <SequenceMem>
+            <Optional m_Enabled="$allow_only_one_summon_completion">
+                <Cnd_HasBBValue m_Key="#reinforcements_summoned" m_Invert="true"/>
+            </Optional>
+            <Cnd_HasBBValue m_Key="#target"/>
+            <Cnd_TargetInRadius m_Target="#target" m_Radius="20.0" m_HorizontalOnly="true"/>
+            <Cnd_IsHeightDiffToTargetGreater m_Target="#target" m_HeightDiff="5.0" m_Invert="true"/>
+            <Cnd_HasTimePassed m_TimePoint="#summoning_taunt_time"/>
+            <Cnd_CanSummonReinforcements/>
+            <Cnd_HasWeaponInInventory m_WeaponType="ReinforcementFlare"/>
+            <Opr_EvaluateDistanceCost m_Cost="#summon_cost" m_Position="#target_pos" m_Inverse="true"/>
+            <Opr_MultiplyBBValue_float m_Key="#summon_cost" m_Amount="-1"/>
+            <CombatSlot m_Name="summon" m_Limit="1" m_MinDelay="$summon_global_cooldown" m_Cost="#summon_cost">
+                <ExposeLogicState m_ExposedState="Summoning">
+                    <SequenceMem>
+                        <TimeDeltaLimit m_TimeMax="5" m_StatusReturned="SUCCESS">
+                            <Selector>
+                                <Cnd_TargetInRadius m_Target="#target" m_Radius="$min_distance_from_target_to_summon" m_Invert="true"/>
+                                <Sequence>
+                                    <Opr_GetSelfPosition m_Position="#self_pos"/>
+                                    <Opr_GetDirectionFromPosition m_Position="#target_pos" m_Origin="#self_pos" m_Direction="#flee_dir" m_CalcInXZ="true"/>
+                                    <Opr_GetPositionInDirection m_Direction="#flee_dir" m_Distance="8" m_Origin="#self_pos" m_Position="#retreat_pos"/>
+                                    <Opr_GetDirectionToPosition m_Position="#target_pos" m_Direction="#dir_to_target"/>
+                                    <Act_StrafeToDestination m_Destination="#retreat_pos" m_Speed="1.5" m_SpringUpdateSpeed="$strafe_spring_update_speed" m_EndRadius="$strafe_end_radius" m_Style="Aggressive" m_WantedForwardDir="#dir_to_target" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                </Sequence>
+                            </Selector>
+                        </TimeDeltaLimit>
+                        <Parallel m_PolicySuccess="REQUIRE_ONE" m_PolicyFailure="REQUIRE_ONE">
+                            <RunUntilSuccess>
+                                <ExternalTree m_UID="HUMAN_WEAPON_PULL_OUT_SUMMONING_TOOL" m_CustomName="PullOutSummoningTool" m_Hide="true"/>
+                            </RunUntilSuccess>
+                            <Act_Idle m_Type="Stand" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT"/>
+                        </Parallel>
+                        <Opr_GetSelfPosition m_Position="#self_pos"/>
+                        <Opr_MakeNoise m_NoiseUid="summoning_survivors" m_Position="#self_pos"/>
+                        <Act_SummonAllies m_CustomDuration="8.0" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                        <Opr_MakeNoise m_NoiseUid="summoning_survivors" m_Position="#self_pos"/>
+                        <Opr_SetBBValue_bool m_Key="#reinforcements_summoned" m_Value="true"/>
+                    </SequenceMem>
+                </ExposeLogicState>
+            </CombatSlot>
+        </SequenceMem>
+    </CooldownTimeDeltaRandom>
+</BehaviorTree>

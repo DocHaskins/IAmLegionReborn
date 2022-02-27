@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <ExternalTree m_UID="HUMAN_INIT" m_CustomName="Init" m_Hide="true"/>
+        <Selector>
+            <ExternalTree m_UID="HUMAN_DEATH" m_CustomName="Death" m_Hide="true"/>
+            <ParallelRepeat m_PolicyFailure="REQUIRE_NONE" m_PolicySuccess="REQUIRE_NONE">
+                <ExternalTree m_UID="HUMAN_UPDATE" m_CustomName="Update" m_Hide="true"/>
+                <RepeatOnceOnSuccess>
+                    <Selector>
+                        <!-- reactions -->
+                        <ExternalTree m_UID="HUMAN_BASE_REACTION" m_CustomName="Reactions" m_Hide="true"/>
+                        <!-- avoid danger -->
+                        <ExternalTree m_UID="HUMAN_AVOID_DANGER" m_CustomName="AvoidDanger" m_Hide="true"/>
+                        <!-- snapped -->
+                        <Optional m_Enabled="false">
+                            <ExternalTree m_UID="HUMAN_SNAPPED" m_CustomName="Snapped" m_Hide="true"/>
+                        </Optional>
+                        <!-- retreat -->
+                        <Optional m_Enabled="$enable_panic" m_CustomName="Panic" m_Hide="true">
+                            <ExternalTree m_UID="HUMAN_PANIC"/>
+                        </Optional>
+                        <Optional m_Enabled="$enable_retreat" m_CustomName="Retreat" m_Hide="true">
+                            <ExternalTree m_UID="HUMAN_RETREAT"/>
+                        </Optional>
+                        <!-- scripted -->
+                        <ExternalTree m_UID="HUMAN_GO_TO_FORCED" m_CustomName="GoToForced" m_Hide="true"/>
+                        <!-- combat -->
+                        <!-- TODO: Temporarily disabled - fix startle reaction during combat - VisibilityRecentlyChanged with alert state recently changed -->
+                        <Optional m_Enabled="false" m_CustomName="Startle" m_Hide="true">
+                            <ExternalTree m_UID="HUMAN_STARTLE"/>
+                        </Optional>
+                        <ExternalTree m_UID="HUMAN_END_CHASE" m_CustomName="End_Chase" m_Hide="true"/>
+                        <ExternalTree m_UID="HUMAN_COMBAT_SURVIVOR" m_CustomName="Combat" m_Hide="true"/>
+                        <ExternalTree m_UID="HUMAN_THREATENING" m_CustomName="Threatening" m_Hide="true"/>
+                        <ExternalTree m_UID="HUMAN_GO_TO_GROUP_TARGET" m_CustomName="Group" m_Hide="true"/>
+                        <!-- post combat -->
+                        <ExternalTree m_UID="HUMAN_GO_TO_LAST_POS" m_CustomName="GoLastPos" m_Hide="true"/>
+                        <ExternalTree m_UID="HUMAN_CHASE" m_CustomName="Chase" m_Hide="true"/>
+                        <ExternalTree m_UID="HUMAN_INVESTIGATE_POI" m_CustomName="Investigate" m_Hide="true"/>
+                        <Optional m_Enabled="$enable_search" m_CustomName="Search" m_Hide="true">
+                            <ExternalTree m_UID="HUMAN_SEARCH"/>
+                        </Optional>
+                        <!-- scripted -->
+                        <ExternalTree m_UID="HUMAN_SCRIPTED" m_CustomName="Scripted" m_Hide="true"/>
+                        <!-- idle behavior -->
+                        <ExternalTree m_UID="HUMAN_IDLE" m_CustomName="Idle" m_Hide="true"/>
+                    </Selector>
+                </RepeatOnceOnSuccess>
+                <Optional m_Enabled="$enable_additive_hit_reaction" m_CustomName="HitAdditive" m_Hide="true">
+                    <ExternalTree m_UID="HUMAN_REACTION_HIT_ADDITIVE"/>
+                </Optional>
+                <ExternalTree m_UID="HUMAN_UPDATE_POST" m_CustomName="PostUpdate" m_Hide="true"/>
+            </ParallelRepeat>
+        </Selector>
+    </SequenceMem>
+</BehaviorTree>

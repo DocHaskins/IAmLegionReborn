@@ -15622,6 +15622,8 @@ Pool("Bandits_vs_Survivors")
 		Preset("Character;Survivor_Encounter;Scenario;Hostage")
 		Preset("Character;Survivor_Encounter;Scenario;Guard")
 		Preset("Character;Survivor_Encounter;Scenario;Hostage")		
+		Preset("Character;Survivor_Man_Bow;Scenario;Guard")	
+		Preset("Character;Survivor_Woman_Bow;Scenario;Guard")	
 	}
 }
 
@@ -15697,6 +15699,9 @@ Pool("Survivors_2")
 	Preset("Character;Survivor;Scenario;General")
 	Preset("Character;Survivor_Woman;Scenario;General")
 	Preset("Character;Survivor_Woman;Scenario;General")
+	Preset("Character;Survivor_Man_Bow;Scenario;Guard")	
+	Preset("Character;Survivor_Woman_Bow;Scenario;Guard")
+	Preset("Character;Survivor_Woman_Bow;Scenario;Guard")
 }
 
 Pool("Survivors_3")
@@ -15708,8 +15713,10 @@ Pool("Survivors_3")
 	Preset("Character;Survivor;Scenario;General")
 	Preset("Character;Survivor_Woman;Scenario;General")
 	Preset("Character;Survivor_Woman;Scenario;General")
-	Preset("Character;Survivor;Scenario;General")
-	Preset("Character;Survivor;Scenario;General")
+	Preset("Character;Survivor_Man_Bow;Scenario;Guard")	
+	Preset("Character;Survivor_Man_Bow;Scenario;Guard")	
+	Preset("Character;Survivor_Woman_Bow;Scenario;Guard")
+	Preset("Character;Survivor_Woman_Bow;Scenario;Guard")
 }
 
 Pool("Survivors_4")
@@ -15721,9 +15728,10 @@ Pool("Survivors_4")
 	Preset("Character;Survivor;Scenario;General")
 	Preset("Character;Survivor_Woman;Scenario;General")
 	Preset("Character;Survivor_Woman;Scenario;General")
-	Preset("Character;Survivor;Scenario;General")
-	Preset("Character;Survivor;Scenario;General")
-	Preset("Character;Survivor;Scenario;General")
+	Preset("Character;Survivor_Man_Bow;Scenario;Guard")	
+	Preset("Character;Survivor_Man_Bow;Scenario;Guard")	
+	Preset("Character;Survivor_Man_Bow;Scenario;Guard")
+	Preset("Character;Survivor_Woman_Bow;Scenario;Guard")
 }
 
 Pool("Scavengers_2")
@@ -15775,6 +15783,8 @@ Pool("Storytellers")
 	Tag("Scene_Survivor")
 		{
 		Preset("Character;Survivor;Scenario;General")
+		Preset("Character;Survivor_Man_Bow;Scenario;Guard")	
+		Preset("Character;Survivor_Woman_Bow;Scenario;Guard")
 		}
 	Tag("Scene_Survivor_ActingDead")
 		{
@@ -15783,6 +15793,8 @@ Pool("Storytellers")
 	Tag("Scene_Survivor_Woman")
 		{
 		Preset("Character;Survivor_Woman;Scenario;General")
+		Preset("Character;Survivor_Man_Bow;Scenario;Guard")	
+		Preset("Character;Survivor_Woman_Bow;Scenario;Guard")
 		}
 	Tag("Scene_Survivor_Woman_ActingDead")
 		{
@@ -15952,12 +15964,15 @@ Pool("Storytellers")
 	Tag("Scene_Pool_Survivors")
 		{
 		PresetWeighted("Character;Survivor;Scenario;General", 1)
-		PresetWeighted("Character;Survivor_Woman;Scenario;General", 1)			
+		PresetWeighted("Character;Survivor_Woman;Scenario;General", 1)
+		PresetWeighted("Character;Survivor_Man_Bow;Scenario;General", 1))
+		PresetWeighted("Character;Survivor_Woman_Bow;Scenario;General", 1))
 		}
 		
 	Tag("Scene_Pool_Storyteller")
 		{
-		Preset("Character;campfire_teller;Scenario;General")		
+		Preset("Character;campfire_teller;Scenario;General")	
+		Preset("Character;Survivor_Man_Bow;Scenario;General")	
 		}
 }
 

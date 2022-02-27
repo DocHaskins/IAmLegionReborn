@@ -625,6 +625,8 @@ sub OpenWorldPresets()
         SetField("m_StepPreset", "peacekeeper");
 		SetField("m_BarkPresetNames", "pk_m_a;pk_m_b;pk_m_c");
 		SetField("m_BarkPresetNamesAfAm", "pk_m_d");
+        SetField("m_NavigationPreset", "ow_pk_1h");
+		SetField("m_CustomLootTypeString", "DefaultPeacekeeperLoot");
 		SetField("m_MusicPreset", "Pk");
 		SetField("m_SurvivorSensePreset", "");
     }
@@ -637,6 +639,8 @@ sub OpenWorldPresets()
         SetField("m_StepPreset", "peacekeeper");
 		SetField("m_BarkPresetNames", "pk_m_a;pk_m_b;pk_m_c");
 		SetField("m_BarkPresetNamesAfAm", "pk_m_d");
+        SetField("m_NavigationPreset", "ow_pk_1h");
+		SetField("m_CustomLootTypeString", "DefaultPeacekeeperLoot");
 		SetField("m_MusicPreset", "Pk");
 		SetField("m_SurvivorSensePreset", "");
     }
@@ -767,6 +771,44 @@ sub OpenWorldPresets()
         SetField("m_CombatMusicRelevanceValue", "0");
         SetField("m_TakedownEnabled", "0");
     }
+	
+	Preset("Survivor_Man_Bow", "Generic_Bow")
+    {
+        SetField("m_AIModelName", "srv_man_02_a.model;srv_man_02_b.model;srv_man_02_c.model;srv_man_03_a.model;srv_man_04_a.model;srv_man_04_b.model;srv_man_04_c.model;srv_man_05_a.model;srv_man_06_a.model;srv_man_07_a.model;srv_man_07_b.model;srv_man_08_a.model;srv_man_08_b.model;srv_man_08_c.model;srv_man_08_d.model;srv_man_08_e.model;srv_man_08_f.model;srv_man_08_g.model;srv_man_08_h.model;srv_man_08_i.model;srv_man_09_a.model;srv_man_09_b.model;srv_man_10_a.model;srv_man_11_a.model;srv_man_11_b.model;srv_man_11_c.model;srv_man_12_a.model;srv_man_12_c.model;srv_man_12_d.model;srv_man_12_f.model;srv_man_13_a.model");
+        SetField("m_ConflictSide", "survivor");
+        SetField("m_CustomDataPreset", "m_survivor");
+        SetField("m_AnimationPreset", "survivor@ai_animation_presets.scr");
+        SetField("m_ConstFilename", "human_profile_generic_bow");
+        SetField("m_HealthPreset", "Body_050");
+        SetField("m_WeaponSetName", "Bow_RGD_1");
+        SetField("m_BarkPresetNames", "sur_m_a;sur_m_b;sur_m_c");
+		SetField("m_BarkPresetNamesAfAm", "sur_m_d;sur_m_e;surv_m_d;surv_m_e");
+        SetField("m_ScreamPresetNames", "sur_m_a");
+        SetField("m_NavigationPreset", "ow_survivor_1h");
+        SetField("m_CustomLootTypeString", "DefaultSurvivorLoot");
+        SetField("m_CombatMusicRelevanceValue", "0");
+        SetField("m_TakedownEnabled", "0");
+    }
+	
+	Preset("Survivor_Woman_Bow", "Generic_Bow")
+    {
+        SetField("m_FallRecoveryBank", "fall_recovery_hmf_woman");
+		SetField("m_AIModelName", "srv_wmn_01_a.model;srv_wmn_02_a.model;srv_wmn_02_b.model;srv_wmn_02_c.model;srv_wmn_03_a.model;srv_wmn_04_a.model;srv_wmn_04_b.model;srv_wmn_05_a.model;srv_wmn_05_b.model;srv_wmn_06_a.model;srv_wmn_07_a.model;srv_wmn_07_b.model;srv_wmn_07_c.model;srv_wmn_08_a.model;srv_wmn_09_a.model;srv_wmn_10_a.model;srv_wmn_10_b.model;srv_wmn_10_c.model;srv_wmn_10_d.model;srv_wmn_10_e.model;srv_wmn_10_f.model;srv_wmn_11_a.model;srv_wmn_12_a.model;srv_wmn_13_a.model;srv_wmn_13_b.model;srv_wmn_13_c.model;srv_wmn_14_a.model;srv_wmn_15_a.model;srv_wmn_16_a.model;srv_wmn_17_a.model;srv_wmn_18_a.model;srv_wmn_24_a.model;srv_wmn_25_a.model;srv_wmn_25_b.model;srv_wmn_27_a.model;srv_wmn_27_b.model;srv_wmn_27_c.model;srv_wmn_28_a.model;srv_wmn_28_b.model;srv_wmn_28_c.model");
+        SetField("m_ConflictSide", "survivor");
+        SetField("m_CustomDataPreset", "m_survivor");
+        SetField("m_AnimationPreset", "survivor@ai_animation_presets.scr");
+        SetField("m_ConstFilename", "human_profile_generic_bow");
+        SetField("m_HealthPreset", "Body_050");
+        SetField("m_WeaponSetName", "Bow_RGD_1");
+        SetField("m_BarkPresetNames", "sur_w_a");
+		SetField("m_BarkPresetNamesAfAm", "sur_w_b"); 
+        SetField("m_ScreamPresetNames", "bdt_w_a");
+        SetField("m_NavigationPreset", "ow_survivor_1h");
+        SetField("m_CustomLootTypeString", "DefaultSurvivorLoot");
+        SetField("m_CombatMusicRelevanceValue", "0");
+        SetField("m_TakedownEnabled", "0");
+    }
+	
     Preset("Survivor_decoy_body")
     {
         SetField("m_AIModelName", "bzr_man_01_a.model;bzr_wmn_03_a.model;bzr_man_04_a.model;bzr_wmn_01_a.model");

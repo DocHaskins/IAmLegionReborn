@@ -2952,45 +2952,6 @@ sub main()
 		GameVersion(1);
     }
 
-    Item("UV_Flare", CategoryType_Throwable)
-    {
-        ItemType(ItemType_UVFlare);
-        Visibility(true);
-        HandToUse("LEFT",false);
-        MaxStackCount(99);
-        Price(80);
-        HudIcon("equipment_flare");
-        Mesh("wpn_flare_a_tpp.msh");
-        InventoryMesh("wpn_flare_a_fpp.msh");
-        InventoryMeshTPP("wpn_flare_a_tpp.msh");
-        Skin("flare_off");
-        PhysicsScript("dropped_inventory.phx");
-        PhysicsSimsetName("explosivegrenade");
-        AnimPrefix("Grenade");
-        DamageName("Damage_0");
-        HitReactionHitSeverity(EHitSeverity_Light);
-        HitReactionType(EReactionType_Push);
-        HitReactionMoveSeverity(EMoveSeverity_Light);
-        ThrowImpulseLook(16.0);
-        ThrowImpulseUp(2.0);
-        use PickupSounds_Bottle_Glass_With_Liquid();
-        EquipmentSlot();
-        Color(Color_Violet);
-        SpawnPrefabPresetName("Upgrade;Base;");
-        ExplodeDelay(0.0);
-        SpawnPrefabName("flare_uv.prefab");
-        ItemLevel(1, 9);
-         UIStats(){
-         UIStat("&StatsUI_EffectRadious&", 4, "Meters");
-         UIStat("&StatsUI_EffectDuration&", 8, "Seconds");
-         }
-        ExplodeOnCollision(false);
-        TransmitPhysicsImpulse(true);
-        ThrowAggroValue(20.0);
-        GameVersion(1);
-        UID("6880164663525694900");
-    }
-
    Item("RopeHookUpgrade", CategoryType_Other)
     {
         Visibility(true);

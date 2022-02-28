@@ -1,0 +1,1163 @@
+sub main()
+{
+	Jump("Normal")
+	{
+		Height("NormalJumpHeight");
+		JumpHoldTime("NormalHoldJumpTime");
+		Prepare(0.1);
+		BeginAnimation("Jump_Begin");
+		LoopAnimation("Jump_Loop");
+		AnimationVariants(2, 2.3);
+		MaxSpeed(5.1);		
+		LookAngles(180,90,-180,-70);
+		LookState("Jump");
+		AllowDoubleAndFarJump(false);
+		BlockWhenExhausted(false);
+		MoveDirChangeTime(0.6);
+		AutoStepHeight("JumpAutoStepHeight");
+		ClearPhysics(true);
+		BeforeHangTime(0.2);
+		EnableCameraAnimations(true);
+		ProgressionAction("JumpOnLow", 0.8);
+		ExtraGravity(-2.8);
+		ExtraGravityDelay(0.4);
+		ExtraGravityOnlyWhenFalling(true);
+		SpeedPostProcess(0.2, 1.0);
+	}
+	
+	Jump("NormalNitro" , "Normal")
+	{
+		Height(0.34);
+		BeginAnimation("Jump_Nitro");
+		LoopAnimation("Jump_Loop_Nitro");
+		AnimationVariants(1);
+		MaxSpeed(9.8);
+		MaxSpeedInputInfluence(6.8);
+	}
+	
+	Jump("JumpInPlace", "Normal")
+	{
+		BeginAnimation("JumpInPlace");
+		LoopAnimation("Jump_Loop");
+		SpeedPostProcess(0.0, 1.0);
+	}
+	
+	Jump("OnLowStand")
+	{
+		Height(0.48);
+		JumpHoldTime("NormalHoldJumpTime");
+		EnableCameraAnimations(true);
+		BeginAnimation("BeginJumpOnLowStand");
+		LoopAnimation("JumpOnLowStand");
+		FallAnimation("JumpOnLowStand_Fall");
+		NoInputAnimation("JumpOnLowStandNoInput");
+		AnimationVariants(3);		
+		MinSpeed(2.0);
+		MaxSpeed(5.2);
+		HasFallLoop(true);
+		BeginRequiresInput(true);
+		DisableBeforeHangAnim(true);
+		AirMove(false);
+		//LookAngles(180,90,-180,-45);
+		EnableLowObstacleGrip(true);
+		AllowDoubleAndFarJump(true);
+		BowFirearmBlockShootTime(0.4);
+		BeforeHangTime(1);
+		AllowJumpAttack(0.4);
+		AutoStepHeight("JumpAutoStepHeight");
+		HandInertia(true);
+		IsJumpOn(true);
+		ProgressionAction("JumpOnLow");
+		ClearPhysics(true);
+		AllowWrestleAttack(false);
+		AllowGroundPound(20.0);
+		JumpLastTimeOnGroundTollerance(0.5);
+		WallRunBlockTime(0.5);
+		BlockWhenExhausted(false);
+		DisableMagnetWhenAscending(true);	
+		ExtraGravity(-3.2);
+		ExtraGravityDelay(0.4);
+		ExtraGravityOnlyWhenFalling(true);
+		InventoryItemVisible(false);
+	}
+	
+	Jump("OnEnemy", "OnLowStand")
+	{
+		Height(0.48);
+		BeginAnimation("BeginJumpOnEnemy");	
+		LoopAnimation("JumpOnEnemy");		
+	//	FallAnimation("JumpOnEnemy_Fall");
+		AllowWrestleAttack(false);
+		AllowGroundPound(20.0);
+	//	AirMove(false);
+		EnableCameraAnimations(true);
+		MaxSpeed(5.5);
+		Velocity(0.0, 0.0, 5.5, 0.5);
+		//SpeedPostProcess(0.8, 1.6, 0.8);
+		//AdditionalFov(10.0, 0.2);
+	}
+
+	Jump("FarJump")
+	{
+		AllowWrestleAttack(false);
+		DisableBeforeHangAnim(false);
+		BeginAnimation("FarJumpBegin");
+		LoopAnimation("FarJumpLoop");
+		Height("FarJumpHeight");
+		//Height(0.8);
+		AutoAimMaxDistance(0.01); // this is for consitstency to perform the same jump that will be done with auto aim
+		MaxSpeed(7.0, 9.0);		
+		ExtraGravity(3.75);
+		ExtraGravityDelay(0.0);
+		ExtraGravityOnlyWhenFalling(false);
+		LookDownCorrectionDelay(1.5);		
+		Acceleration(120.0);
+		Deceleration(120.0);				
+		SpeedMultiplier(2.0);
+		BeforeHangTime(0.7);
+		AutoStepHeight("JumpAutoStepHeight");
+		ProgressionAction("FarJump");
+		EnableCameraAnimations(true);
+		AllowLeapTackle(true);
+		AllowGroundPound(2.0);
+		Velocity(0.0, 0.0, 9.5, 0.2);
+		//PerformGrabOnCollision(true);		
+		IsDoubleJumpOrFarJump(true);
+		ResetVisJumpingState(true);
+		WallRunBlockTime(0.5);
+		InventoryItemVisible(false);
+		HideWeapon(true);
+		SpeedPostProcess(0.9, 1.4, 1.4);
+		AdditionalFov(10.0, 0.2);
+		JumpAttackFallHeightEnable(2.0);
+		AllowGroundPound(3.5);
+	}
+	
+	Jump("FarJump_Enemy", "FarJump")
+	{
+		MaxSpeed(5.5);
+		Velocity(0.0, 0.0, 5.5, 0.2);		
+	}
+	
+	Jump("EnemyVaultKick")
+	{
+		AllowWrestleAttack(false);
+		DisableBeforeHangAnim(false);		
+		MaxSpeed(7.0, 9.0);		
+		ExtraGravity(3.75);
+		ExtraGravityDelay(0.0);
+		ExtraGravityOnlyWhenFalling(false);
+		LookDownCorrectionDelay(1.5);		
+		Acceleration(120.0);
+		Deceleration(120.0);				
+		SpeedMultiplier(2.0);
+		BeforeHangTime(0.7);
+		AutoStepHeight("JumpAutoStepHeight");
+		ProgressionAction("FarJump");
+		EnableCameraAnimations(true);
+		AllowLeapTackle(true);		
+		Velocity(0.0, 0.0, 9.5, 0.2);
+		//PerformGrabOnCollision(true);		
+		IsDoubleJumpOrFarJump(true);
+		ResetVisJumpingState(true);
+		WallRunBlockTime(0.5);
+		InventoryItemVisible(false);
+		HideWeapon(true);
+		SpeedPostProcess(0.75, 1.4, 1.4);
+		AdditionalFov(10.0, 0.2);
+		JumpAttackFallHeightEnable(2.0);
+		AllowGroundPound(3.5);		
+		Height(0.01);
+		BeginAnimation("EnemyVaultKickShortBegin");
+		LoopAnimation("EnemyVaultKickShort");
+		BowFirearmBlockShootTime(100.0); // block for whole duration
+		AutoAimMaxDistance(7);
+		AutoAimTargetOffset(0, 0.0, 0);		
+		JumpAfterVolumetricHit("EnemyVaultHit");
+		JumpAfterVolumetricHit("EnemyVaultHitLong", 0.6);
+        JumpAfterVolumetricHitWithSpecialInput("EnemyVaultHitHold");
+		JumpAfterVolumetricHitWithSpecialInput("EnemyVaultHitHoldLong", 0.6);
+        SpecialInput("_ACTION_ATTACK", 0.5);
+        SpecialInputRequiredVariable("VaultKickHoldEnabled");		
+		OverwriteWallRunFrontYRequirement(-5.0);
+		LookAngles(180,90,-180,-30);
+	}	
+	
+	Jump("EnemyVaultKickEnemy", "EnemyVaultKick")
+	{
+		//Height(0.01);
+		//MaxSpeed(5.0, 7.5);
+		//Velocity(0.0, 0.0, 5.0, 0.5);
+		//ExtraGravity(0.0);
+	}
+	
+	Jump("EnemyVaultKickShort", "EnemyVaultKick")
+	{
+		BowFirearmBlockShootTime(100.0); // block for whole duration
+		BeginAnimation("EnemyVaultKickShortBegin");
+		LoopAnimation("EnemyVaultKickShort");
+		Height(0.01);
+		MaxSpeed(5.0, 7.5);
+		Velocity(0.0, 0.0, 6.0, 0.25);
+		ExtraGravity(-1.5);	
+		JumpAfterVolumetricHit("EnemyVaultHit");
+        JumpAfterVolumetricHitWithSpecialInput("EnemyVaultHitHold");
+        SpecialInput("_ACTION_ATTACK", 0.35);
+        SpecialInputRequiredVariable("VaultKickHoldEnabled");
+		SpeedPostProcess(0.0, 0.0);
+		AdditionalFov(0.0, 0.0);
+	}
+	Jump("SlideJump", "FarJump")
+	{
+		BeginAnimation("SlideJumpBegin");
+		//BeginAnimation("EnemyVaultKickBegin");
+		LoopAnimation("SlideJumpLoop");
+		Height(0.8);
+		ExtraGravity(2.5);
+		ExtraGravityDelay(0.0);
+		StaminaCost(0.25);
+		//MaxSpeed(5.5, 6.5);
+		//Velocity(0.0, 0.0, 5.5, 0.5);
+		//SpeedPostProcess(0.5, 1.6, 0.8);
+		//AdditionalFov(8.0, 0.2);
+	}
+	
+	Jump("EnemyVaultKickEnemyShort", "EnemyVaultKickShort")
+	{		
+		SpeedPostProcess(0.0, 0.0);
+		AdditionalFov(0.0, 0.0);
+	}
+	
+	Jump("EnemyVaultHit")
+	{			
+		DisableBeforeHangAnim(true);
+		EnableCameraAnimations(true);
+		Height(0.0);		
+		Acceleration(1000.0);
+		Deceleration(1000.0);		
+		AutoAimMaxDistance(2.8);
+		MinSpeed(4.5);
+		MaxSpeed(4.5);
+		Velocity(0.0, 0.0, 4.5, 0.5);
+		LookState("Jump");
+		DisableHeadCorrection(true);
+		AllowVelocityMod(false);		
+		BlockGrabingLedgeTime(0.3);
+		BeforeHangTime(1.0);
+		BeginAnimation("EnemyVaultKickHit");
+		AllowGroundPound(20.0);
+		BowFirearmBlockShootTime(100.0); // block for whole duration
+		AllowWrestleAttack(false);
+		AntiWallForLegs(true);
+		BodyHorizonalRotDisabled(true);
+		BodySynchroAnim(true);
+		IsSpecialMove();
+		StaminaCost(0.5, true, false);		
+		//AnimationVariants(2);//randomizing parkour kick (left/right)
+	}
+	
+	Jump("EnemyVaultHitLong", "EnemyVaultHit")
+	{
+		BeginAnimation("EnemyVaultKickHitLong");
+	}
+
+    Jump("EnemyVaultHitHold", "EnemyVaultHit")
+    {
+        BeginAnimation("EnemyVaultKickHitHold");
+    }
+	
+	Jump("EnemyVaultHitHoldLong", "EnemyVaultHit")
+    {
+        BeginAnimation("EnemyVaultKickHitHoldLong");
+    }
+
+	Jump("KickWrestling", "EnemyVaultKick")
+	{
+		BeginAnimation("KickWrestlingBegin");
+		OverrideActiveLanding(true, 20.0, "KickWrestlingStandUp");
+		BodyHorizonalRotDisabled(true);
+		BodySynchroAnim(true);
+		AllowGroundPound(20.0);		
+		AntiWallForLegs(true);
+		Height(0.05);
+		MaxSpeed(5.0, 5.0);
+		Velocity(0.0, 0.0, 5.0, 0.2);
+		JumpAfterVolumetricHit("KickWrestlingHit");		
+		ExtraGravity(2.0);
+		LookAngles(30,30,-30,-20);
+	}
+	Jump("KickWrestlingHit", "EnemyVaultHit")
+	{
+		BeginAnimation("KickWrestling");
+		OverrideActiveLanding(true, 20.0, "KickWrestlingStandUp");
+		LookAngles(45,20,-45,-10);
+	}
+	
+	Jump("WallRunLeftKick", "EnemyVaultKick")
+	{
+		ClearJumpAfterVolumetricHit();
+		AutoAimTargetOffset(0, 0.0, -0.5);
+		AutoAimMaxDistance(8);
+		MaxSpeed(5.5, 4.5);
+		ExtraGravity(0.0);
+		Velocity(0.0, 0.0, 5.0, 0.5);
+		LookDownCorrectionDelay(1.5);		
+		BeginAnimation("WallRun_Left_Kick_Begin");
+		LoopAnimation("WallRun_Left_Kick");
+		JumpAfterVolumetricHit("WallRunLeftHit");
+	}
+	Jump("WallRunRightKick", "WallRunLeftKick")
+	{
+		ClearJumpAfterVolumetricHit();
+		AutoAimMaxDistance(8);
+		BeginAnimation("WallRun_Right_Kick_Begin");
+		LoopAnimation("WallRun_Right_Kick");
+		JumpAfterVolumetricHit("WallRunRightHit");
+	}
+	Jump("WallRunLeftHit", "EnemyVaultHit")
+	{
+		BeginAnimation("WallRun_Left_Kick_Hit");
+	}
+	Jump("WallRunRightHit", "WallRunLeftHit")
+	{
+		BeginAnimation("WallRun_Right_Kick_Hit");
+	}
+	
+	Jump("Rotate_180_enemy")
+	{		
+		DisableBeforeHangAnim(true);
+		EnableCameraAnimations(true);
+		Height(0.0);		
+		Acceleration(1000.0);
+		Deceleration(1000.0);		
+		AutoAimMaxDistance(0.1);
+		MinSpeed(4.25);
+		MaxSpeed(4.25);
+		Velocity(0.0, 0.0, 4.25, 0.6);
+		LookState("Jump");
+		DisableHeadCorrection(true);
+		AllowVelocityMod(false);		
+		BlockGrabingLedgeTime(0.3);
+		BeforeHangTime(1.0);
+		BeginAnimation("JumpOnEnemy_180");
+		AllowGroundPound(20.0);
+		AllowWrestleAttack(false);
+		AntiWallForLegs(true);
+		BodyHorizonalRotDisabled(true);
+		BodySynchroAnim(true);
+		IsSpecialMove();
+		LookDownCorrectionDelay(1.5);
+	}
+	
+	Jump("Rotate_180_geometry", "Rotate_180_enemy")
+	{	
+		//Deceleration(500.0);
+		MinSpeed(4.0);
+		MaxSpeed(4.0);
+		Velocity(0.0, 0.0, 4.0, 0.2);		
+		AllowVelocityMod(true);		
+		BlockGrabingLedgeTime(0.5);
+		BeginAnimation("JumpOnGeometry_180");		
+		BlockClimbUntilNewInput(true);
+	}
+	
+	Jump("DoubleJump")
+	{
+		Height("DoubleJumpHeight");
+		//Height(2.2);
+		BeginAnimation("BeginDoubleJump");
+		LoopAnimation("DoubleJump");
+		MaxSpeed(4.5);
+		BeforeHangTime(1);
+		ExtraGravity(10.0, -4.0);
+		ExtraGravityDelay(0.5, 1.3);
+		ExtraGravityOnlyWhenFalling(true);
+		RisingSpeedConstraintTime(0.5);
+		RisingSpeedConstraintUsesSquareEquation(true);
+		AutoStepHeight("JumpAutoStepHeight");
+		OverrideActiveLanding(true);
+		ProgressionAction("DoubleJump");
+		EnableCameraAnimations(true);
+		Velocity(0.0, 0.0, 4.5, 0.2);
+		IsDoubleJumpOrFarJump(true);
+		ResetVisJumpingState(true);
+		AllowGroundPound(0.5);
+		WallRunBlockTime(0.7);
+		InventoryItemVisible(false);
+		HideWeapon(true);
+		LookAngles(180,90,-180,-70);
+		SpeedPostProcess(0.5, 1.0);
+		AdditionalFov(8.0, 0.8);
+	}
+	Jump("DoubleJump_Enemy", "DoubleJump")
+	{
+		Height(1.7);
+		Velocity(0.0, 0.0, 4.5, 0.1);
+	}
+	
+	Jump("ActiveLandingJump", "DoubleJump")
+	{	
+		Height(4.0);	
+		RisingSpeedConstraintTime(0.0);
+		ProgressionAction("ActiveLandingJump");
+	}
+	
+    Jump("OnEnemyDash", "DoubleJump")
+    {
+        BeginAnimation("EnemyJumpBegin");
+		LoopAnimation("Jump_AirbagLoop");
+		Velocity(0.0, 0.0, 5.5, 0.7);
+		MaxSpeed(5.5);		
+		SpeedPostProcess(1.0, 1.0);
+    }
+	Jump("DFA_SynchActionJump", "DoubleJump")
+	{
+		Height(3.4);
+		RisingSpeedConstraintTime(0.0);
+	}
+	/*Jump("DoubleJumpHit", "FarJumpHit")
+	{
+		BeginAnimation("Ram_Door");
+	}*/
+	
+	Jump("BounceOffHead")
+	{
+		Height(1.5);
+		BeginAnimation("BeginBounceOffHead");
+		LoopAnimation("BounceOffHead");
+		MaxSpeed(4.5);
+		BeforeHangTime(1);
+		ExtraGravity(-8.0);
+		ExtraGravityDelay(0.5);
+		ExtraGravityOnlyWhenFalling(true);
+		RisingSpeedConstraintTime(0.5);
+		RisingSpeedConstraintUsesSquareEquation(true);
+		AutoStepHeight("JumpAutoStepHeight");
+		OverrideActiveLanding(true);
+		ProgressionAction("DoubleJump");
+		EnableCameraAnimations(true);
+		DisableMagnetWhenAscending(true);
+		InventoryItemVisible(false);
+	}
+	
+	Jump("Balance_Jump", "Normal")
+	{
+		BeginAnimation("Balance_Jump");
+		LoopAnimation("Balance_JumpEnd");
+		AnimationVariants(2, 2.3);		
+		UseNoInputAsForwardInput(true);
+		CanModifyHeight(false);
+	}
+	//////////////////////////////
+	// Dodges
+	//////////////////////////////
+	
+	Jump("DodgeBack")
+	{
+		EnableCameraAnimations(true);
+		Height(0);
+		BeginAnimation("BeginDodgeBack", true, 1.5);
+		MaxSpeed(1.5);
+		IsDodge(true);
+		DisableSpeedModifications(true);
+		ForceStop(true);
+		LookAngles(180,90,-180,-20);
+        //StaminaCost(0.05);
+        BlockWhenExhausted(false);
+		RestrictLookOnlyInBegin(true);
+		LookState("Jump");
+        SlowMoAfterDmgIgnoredWhenLookingAtDamager(true);
+		EnableDiveAttack(true);
+		WallRunBlockTime(1.7);
+	}
+	
+	Jump("DodgeRight", "DodgeBack")
+	{
+		BeginAnimation("BeginDodgeRight", true, 1.2);
+		EnableDiveAttack(false);
+	}
+	
+	Jump("DodgeLeft", "DodgeBack")
+	{
+		BeginAnimation("BeginDodgeLeft", true, 1.2);
+		EnableDiveAttack(false);
+	}
+    
+    Jump("DodgeBackExhausted", "DodgeBack")
+	{
+		BeginAnimation("BeginDodgeBackExhausted", true, 1);
+		EnableDiveAttack(false);
+		CanBePerformedInHitReaction(true);
+        SlowMoAfterDmgIgnoredWhenLookingAtDamager(false);
+	}
+	
+	Jump("DodgeRightExhausted", "DodgeBack")
+	{
+		BeginAnimation("BeginDodgeRightExhausted", true, 1);
+		EnableDiveAttack(false);
+		CanBePerformedInHitReaction(true);
+        SlowMoAfterDmgIgnoredWhenLookingAtDamager(false);
+	}
+	
+	Jump("DodgeLeftExhausted", "DodgeBack")
+	{
+		BeginAnimation("BeginDodgeLeftExhausted", true, 1);
+		EnableDiveAttack(false);
+		CanBePerformedInHitReaction(true);
+        SlowMoAfterDmgIgnoredWhenLookingAtDamager(false);
+	}
+    
+	Jump("DodgeBackFromGrab", "DodgeBack")
+	{
+		EnableDiveAttack(false);
+        StaminaCost(0.30);
+		BeginAnimation("BeginDodgeBackFromGrab", true);
+        SlowMoAfterDmgIgnoredWhenLookingAtDamager(false);
+	}
+	//////////////////////////////
+	// Wall Jumps
+	//////////////////////////////
+	
+	Jump("WallRun_Left_Jump")
+	{
+		LookState("Jump");
+		Height(1.2);		
+		BeginAnimation("WallRun_Left_Jump");
+		BeforeHangTime(1);
+		ProgressionAction("WallRunJump");
+		EnableCameraAnimations(true);
+		InventoryItemVisible(false);		
+		MoveDirChangeTime(0.6);
+		//AllowVelocityMod(false);
+		VelocityDuration(0.3);// blocks modifing jump in first X secnonds	
+		SpeedPostProcess(0.7, 1.0);
+		JumpHoldTime("WallrunHoldJumpTime");
+	}
+		
+	Jump("WallRun_Right_Jump", "WallRun_Left_Jump")
+	{
+		BeginAnimation("WallRun_Right_Jump");
+	}
+	
+	Jump("WallRun_Front_JumpLookForward")
+	{
+		LookState("Jump");
+		Height(0.8);
+		BeginAnimation("WallRun_Front_JumpLookForward_Begin");
+		LoopAnimation("WallRun_Front_JumpLookForward_Loop");
+		BeforeHangTime(0.5);
+		ProgressionAction("WallRunJump");
+		EnableCameraAnimations(true);
+		InventoryItemVisible(false);
+		ResetVisJumpingState(true);
+		SpeedPostProcess(0.7, 1.0);
+	}		
+	
+	Jump("WallRun_Front_JumpRotateBack", "WallRun_Front_JumpLookForward")
+	{
+		BeginAnimation("WallRun_Front_JumpRotateBack");
+		LoopAnimation("Jump_Loop");
+		AllowVelocityMod(false);
+	}
+	
+	Jump("WallRun_Front_JumpRotateLeft", "WallRun_Front_JumpLookForward")
+	{
+		BeginAnimation("WallRun_Front_JumpRotateLeft");
+		LoopAnimation("Jump_Loop");
+		AllowVelocityMod(false);
+	}
+	
+	Jump("WallRun_Front_JumpRotateRight", "WallRun_Front_JumpLookForward")
+	{
+		BeginAnimation("WallRun_Front_JumpRotateRight");
+		LoopAnimation("Jump_Loop");
+		AllowVelocityMod(false);
+	}
+	
+	Jump("WallRun_Front_JumpLookLeft", "WallRun_Front_JumpLookForward")
+	{
+		BeginAnimation("WallRun_Front_JumpLookLeft");
+		LoopAnimation("Jump_Loop");
+	}
+	
+	Jump("WallRun_Front_JumpLookRight", "WallRun_Front_JumpLookForward")
+	{
+		BeginAnimation("WallRun_Front_JumpLookRight");
+		LoopAnimation("Jump_Loop");
+	}
+	
+	Jump("Edge_Failed")
+	{
+		Height(0.0);
+		Prepare(0.0);
+		BeginAnimation("Edge_Fail_Fall");
+		LoopAnimation("Jump_Loop");
+		JumpHoldTime(0.0);
+		LookState("Jump");
+		AllowDoubleAndFarJump(false);
+		BlockWhenExhausted(false);
+		MoveDirChangeTime(0.6);
+		AutoStepHeight(0.0);
+		ClearPhysics(false);
+		BeforeHangTime(0.5);
+		EnableCameraAnimations(true);
+		Velocity(0.0, 0.0, -0.15, 0.2);
+	}
+	
+	//////////////////////////////
+	// Look Jumps
+	//////////////////////////////
+	Jump("GrapplePullEndFlight")
+	{
+		Height(0.25);
+		JumpHoldTime(0.0);		
+		BeginAnimation("GrapplePullBegin");
+		LoopAnimation("Jump_Loop");
+		Acceleration(10.0);
+		Deceleration(20.0);
+		MaxSpeed(8.2);		
+		LookAngles(180,90,-180,-70);
+		LookState("Jump");
+		MoveDirChangeTime(0.6);
+		EnableCameraAnimations(true);
+		UseNoInputAsForwardInput(true);
+		BlockGrabingLedgeTime(-0.1);
+		OverwriteWallRunFrontYRequirement(-5.0);
+		BeforeHangTime(-0.1);
+		ExtraGravity(-5.0);
+		SpeedPostProcess(0.7, 1.0);
+	}
+	
+	Jump("Look_Jump_Far")
+	{
+		Height(0.8);		
+		BeginAnimation("Jump_Begin");
+		MinSpeed(0.0);
+		MaxSpeed(4.5);
+		Acceleration(1000.0);
+		Deceleration(1000.0);
+		StaminaCost(0.2);
+		StaminaCostPerSecond(0.0001); // small value so player won't start regaining stamina mid air (we don't know the lenght of jump)
+		JumpHoldTime(0.2);
+		LookState("Jump");
+		DisableHeadCorrection(true);
+		AllowVelocityMod(true);
+		UseNoInputAsForwardInput(true);
+		BlockGrabingLedgeTime(0.3);
+		BeforeHangTime(1.0);
+	}
+	
+	Jump("Look_Jump")
+	{
+		Height(0.4);
+		MaxSpeed(3.5);
+		JumpHoldTime(0.05);
+		BeginAnimation("Jump_Begin");
+		MinSpeed(0.0);		
+		Acceleration(1000.0);
+		Deceleration(1000.0);
+		StaminaCost(0.50);
+		StaminaCostPerSecond(0.0001); // small value so player won't start regaining stamina mid air (we don't know the lenght of jump)		
+		LookState("Jump");
+		DisableHeadCorrection(true);
+		AllowVelocityMod(true);
+		UseNoInputAsForwardInput(true);
+		BlockGrabingLedgeTime(0.3);
+		BeforeHangTime(1.0);
+		ExtraGravity(3.0);
+	}	
+	
+	Jump("FreeClimb_Jump", "Look_Jump_Far")
+	{
+		BeginAnimation("FreeClimb_Jump_Begin");
+		BlockFreeClimbTime(1.5);
+	}
+	
+	Jump("Hang_Jump_Front", "Look_Jump_Far")
+	{
+		Height(-0.07); // this sets velocity downward and findbestanim idx removes then upward movement from velocity checks so the range is cut to resonable numbers
+		JumpHoldTime(0.0);
+		UseNoInputAsForwardInput(true); // Without this jumping while looking in the direction of the hook makes the player climb the ledge
+		BeginAnimation("Hang_Jump_Front");
+		WallRunBlockTime(1.5);		
+		BlockGrabingLedgeTime(0.0);
+		ExtraGravity(5.0);
+	}
+	
+	Jump("DeathFromAboveJump", "Look_Jump")
+	{
+		StaminaCost(0.0);
+		StaminaCostPerSecond(0.0);
+		MaxSpeed(5.5);
+		Height(3.5);
+		WallRunBlockTime(0.5);
+		BeginAnimation("Jump_Begin");
+		ExtraGravity(0.0);
+		AllowVelocityMod(false);
+		JumpHoldTime(0.0);
+		ApplyImpulseToEntity(false);
+	}
+	Jump("Edge_Hang_Jump_Left", "Look_Jump")
+	{
+		WallRunBlockTime(0.5);
+		BeginAnimation("Edge_Hang_Jump_Left");
+		ExtraWallRunSpeed(3.0);
+	}
+	
+	Jump("Edge_Hang_Jump_Right", "Look_Jump")
+	{
+		ExtraWallRunSpeed(3.0);
+		WallRunBlockTime(0.5);
+		BeginAnimation("Edge_Hang_Jump_Right");
+	}
+	
+	Jump("Edge_Hang_Jump_Below")
+	{
+		WallRunBlockTime(0.5);
+		Height(0.0);
+		BeginAnimation("Edge_Hang_Jump_Below");
+		Acceleration(1000.0);
+		Deceleration(1000.0);
+		StaminaCost(0.50);
+		StaminaCostPerSecond(0.0001);
+		JumpHoldTime(0.0);
+		LookState("Jump");
+		DisableHeadCorrection(true);
+		AllowVelocityMod(true);
+		BlockGrabingLedgeTime(0.3);
+		BeforeHangTime(1.0);
+		UseNoInputAsForwardInput(true);
+		ProgressionAction("JumpBelow");
+		JumpAfterVolumetricHit("MonkeyBar_JumpAttackHit");
+		BowFirearmBlockShootTime(100.0); // block for whole duration
+		AllowGroundPound(2.0);
+	}
+	
+	Jump("Edge_Hang_Jump_Below_Fast", "Edge_Hang_Jump_Below")
+	{
+		BeginAnimation("Edge_Hang_Jump_Below_Fast");
+	}
+	
+	Jump("Rotate_180")
+	{
+		Height(1.0);
+		BeginAnimation("Rotate_180_Begin", true);
+		Acceleration(1000.0);
+		Deceleration(1000.0);		
+		StaminaCostPerSecond(0.0001);
+		JumpHoldTime(0.1);
+		LookState("Jump");
+		DisableHeadCorrection(true);
+		AllowVelocityMod(true);
+		BlockGrabingLedgeTime(0.35);
+		WallRunBlockTime(3.35);
+		ExtraGravity(-3.0);
+		BeforeHangTime(1.0);
+		BodySynchroAnim(true);
+		BlockClimbUntilNewInput(true);		
+	}	
+	
+	Jump("MonkeyBar_Jump", "Look_Jump_Far")
+	{
+		BeginAnimation("MonkeyBar_JumpOff");
+		LookAngles(180,70,-180,-30);
+		WallRunBlockTime(0.5);
+		AllowWrestleAttack(false);
+		SuppressAudioEvent(true);
+		JumpHoldTime("MonkeyBarHoldJumpTime");
+		SpeedPostProcess(0.7, 1.0);
+		VelocityDuration(0.3);// blocks modifing jump in first X secnonds		
+		AllowVelocityMod(false);
+	}
+	
+	Jump("MonkeyBar_Drop")
+	{
+		Height(0.0);
+		BeginAnimation("MonkeyBar_Drop");
+		JumpHoldTime(0.0);
+		SuppressAudioEvent(true);
+	}
+	
+	Jump("MonkeyBar_Drop_Exhausted", "MonkeyBar_Drop")
+	{
+		BeginAnimation("MonkeyBar_Drop_Exhausted");
+		SuppressAudioEvent(true);
+	}
+	
+	Jump("Rope_Jump", "Look_Jump_Far")
+	{
+		BeginAnimation("RopeHook_JumpOffBegin");
+		LoopAnimation("RopeHook_JumpOff");
+		BeforeHangTime(3.0);		
+		EnableCameraAnimations(true);
+		LookAngles(180,90,-180,-70);
+        RestrictLookOnlyInBegin(true);
+		MaxMinBodyPitch(55,0);
+		JumpHoldTime("RopeHoldJumpTime");
+		MoveDirChangeTime(0.6);
+		SpeedPostProcess(0.7, 1.0);		
+		VelocityDuration(0.5);// blocks modifing jump in first X secnonds		
+		AllowVelocityMod(false);
+	}
+	
+	Jump("Rope_Jump_Delayed", "Rope_Jump")
+	{
+		BeginAnimation("RopeHook_JumpOff");
+		LoopAnimation("");
+	}
+	
+	Jump("MonkeyBar_JumpAttack", "Look_Jump_Far")
+	{
+		Height(0.2);
+		EnableCameraAnimations(true);
+		BeginAnimation("MonkeyBar_JumpAttack");
+		LoopAnimation("MonkeyBar_JumpAttackLoop");
+		MinSpeed(5.0);
+		MaxSpeed(6.0);
+		BlockGrabingLedgeTime(0.3);
+		AllowWrestleAttack(false);		
+		HideWeapon(true);
+		InventoryItemVisible(false);
+		SuppressAudioEvent(true);
+		SpeedPostProcess(0.7, 1.0);
+		AutoAimMaxDistance(8);
+		LookAngles(180,90,-180, -15);
+		AllowGroundPound(2.0);
+		JumpAfterVolumetricHit("MonkeyBar_JumpAttackHit");
+		BowFirearmBlockShootTime(100.0); // block for whole duration
+	}
+	
+	Jump("MonkeyBar_JumpAttackHit", "EnemyVaultHit")
+	{
+		BeginAnimation("MonkeyBar_JumpAttackHit");
+		StaminaCost(0.0, true, false);		
+	}
+	
+	Jump("RopeHookJumpAttack", "Look_Jump_Far")
+	{
+		Height(0.2);
+		EnableCameraAnimations(true);
+		BeginAnimation("RopeHook_JumpAttackBegin");
+		MinSpeed(12.0);
+		MaxSpeed(12.0);
+		Acceleration(1000.0);
+		Deceleration(1000.0);
+		BlockGrabingLedgeTime(0.3);
+		AllowWrestleAttack(false);
+		JumpAfterVolumetricHit("RopeHookJumpAttackHit");
+		LookAngles(180,90,-180, -10);
+        RestrictLookOnlyInBegin(true);
+		AntiWallForLegs(true);
+		BodyHorizonalRotDisabled(true);
+		AllowVelocityMod(false);
+		VelocityDuration(0.3);// blocks modifing jump in first X secnonds	
+		SpeedPostProcess(0.7, 1.0);
+		BowFirearmBlockShootTime(100.0); // block for whole duration
+	}    
+	
+	Jump("RopeHookJumpAttack_Delayed", "RopeHookJumpAttack")
+	{
+		Height(0.2);
+		BeginAnimation("RopeHook_JumpAttack");
+		LoopAnimation("");
+        AutoAimMaxDistance(8);
+	}
+
+    Jump("parachute_kick", "RopeHookJumpAttack_Delayed")
+    {
+        BeginAnimation("Parachute_JumpAttack");
+    }
+	
+	Jump("RopeHookJumpAttackHit")
+	{
+		EnableCameraAnimations(true);
+		Height(0.0);		
+		Acceleration(1000.0);
+		Deceleration(1000.0);		
+		MinSpeed(0.0);
+		MaxSpeed(0.0);
+		LookState("Jump");
+		DisableHeadCorrection(true);
+		AllowVelocityMod(false);		
+		BlockGrabingLedgeTime(0.3);
+		BeforeHangTime(1.0);
+		BeginAnimation("RopeHook_JumpAttackHit");	
+		AllowWrestleAttack(false);
+		AntiWallForLegs(true);
+		BodyHorizonalRotDisabled(true);
+		IsSpecialMove();
+		BowFirearmBlockShootTime(100.0); // block for whole duration
+	}	
+	
+	Jump("Ladder_Left", "Look_Jump")
+	{
+		BeginAnimation("Ladder_JumpLeft");
+	}
+	Jump("Ladder_Right", "Look_Jump")
+	{
+		BeginAnimation("Ladder_JumpRight");
+	}
+	
+	Jump("Pipe_Left", "Look_Jump")
+	{
+		BeginAnimation("Pipe_JumpLeft");
+	}
+	Jump("Pipe_Right", "Look_Jump")
+	{
+		BeginAnimation("Pipe_JumpRight");
+	}
+	
+	////////////////////////////////////
+	// Pole Jump
+	////////////////////////////////////
+	Jump("Pole_Jump", "Look_Jump_Far")
+	{
+		EnableCameraAnimations(true);
+		BeginAnimation("Polejump");
+		RestrictLookOnlyInBegin(true);
+		LookAngles(180,90,-180, -15);
+	}
+	
+	////////////////////////////////////
+	// Logic Jumps
+	////////////////////////////////////
+	
+	Jump("BicycleJump")
+	{
+		Height(1.5);
+		AllowVelocityMod(false);
+		BeginAnimation("Jump_Slope");
+		ClearPhysics(true);
+	}
+	
+	Jump("TrampolinJump")
+	{
+		AllowVelocityMod(true);
+		BeginAnimation("Jump_Trampolin");
+		JumpHoldTime(0.5);
+		ClearPhysics(true);
+		StaminaRegainEnabled(true);
+		SuppressAudioEvent(true);
+		SpeedMultiplier(1.3);
+		EnableCameraAnimations(true);	
+		SpeedPostProcess(0.1, 1.0);
+	}
+	Jump("AirBagJump")
+	{
+		AllowVelocityMod(true);
+		BeginAnimation("Jump_Airbag");
+		LoopAnimation("Jump_AirbagLoop");
+		JumpHoldTime(0.25);
+		ClearPhysics(true);
+		SuppressAudioEvent(true);
+		//HasFallLoop(true);
+		HandInertia(true);
+		//FallAnimation("JumpDown_Level1_Loop");
+		//ExtraGravity(-4.0);
+		//ExtraGravityDelay(0.75);
+		//ExtraGravityOnlyWhenFalling(true);
+		EnableCameraAnimations(true);		
+		SpeedPostProcess(0.1, 1.0);
+	}
+	
+	Jump("AirBagBigJump", "AirBagJump")
+	{
+		BeginAnimation("Jump_AirbagBig");
+		LoopAnimation("Jump_AirbagBigLoop");
+		SpeedPostProcess(0.4, 1.0);
+	}
+	
+	Jump("LogicJump")
+	{
+		Height(1.0);
+		AllowVelocityMod(true);
+		InventoryItemVisible(false);
+	}
+	
+	Jump("RopeAttachJump")
+	{
+		Height(4.0);
+		//MinSpeed(22.0);
+		MaxSpeed(6.0);
+		//Velocity(0.0, 0.0, 22.0, 2.5);
+		//AllowVelocityMod(true);
+		InventoryItemVisible(false);
+		//ExtraGravity(3.0);		
+		SpeedPostProcess(0.7, 1.0);
+	}
+	Jump("RopeAutoRelease")
+	{
+		Height(0.6);
+		BeginAnimation("Jump_Begin");
+		AllowVelocityMod(true);
+		InventoryItemVisible(false);		
+		MaxSpeed(8.0);
+	}
+		
+	Jump("SlidingJump" , "Normal")
+	{
+		JumpHoldTime(0.2);
+		Height(1.0);
+		MaxSpeed(9.0);
+		Prepare(0);
+		//ForceDefaultController(true);
+		//Deceleration(2.0);
+		//ForceGrabFailed(true);
+		SpeedPostProcess(0.7, 1.0);
+	}
+
+	
+	Jump("SlopeJump", "Normal")
+	{
+		Prepare(0.1);
+		//ForceDefaultController(true);
+		//Deceleration(2.0);
+	}
+	
+	Jump("SlopeJumpAgainst", "Normal")
+	{
+		Prepare(0);
+		MaxSpeed(4.5);
+		StaminaCost(0.2);
+		BlockWhenExhausted(true);
+		//ForceDefaultController(true);
+		//Deceleration(2.0);
+	}
+	Jump("SlopeEnd")
+	{
+		Prepare(0);
+		MaxSpeed(4.5);
+		Height(-0.01);
+		BeginAnimation("SlopeEnd");		
+		LookAngles(180,90,-180,-70);
+		LookState("Jump");
+		AllowDoubleAndFarJump(false);
+		BlockWhenExhausted(false);			
+		BeforeHangTime(0.2);
+		EnableCameraAnimations(true);
+		EnableLowObstacleGrip(true);
+		JumpLastTimeOnGroundTollerance(0.0);
+	}
+
+    Jump("ZipLineJump", "Look_Jump")
+	{
+        SuppressAudioEvent(true);
+		VelocityDuration(0.5);// blocks modifing jump in first X secnonds		
+		AllowVelocityMod(false);
+		SpeedPostProcess(0.5, 1.0);
+    }
+
+	Jump("ZipLineDrop")
+	{
+		Prepare(0);
+		MaxSpeed(7.5);
+		Height(-0.01);
+		BeginAnimation("ZipDrop");				
+		LookAngles(180,90,-180,-70);
+		LookState("Jump");
+		AllowDoubleAndFarJump(false);
+		BlockWhenExhausted(false);			
+		BeforeHangTime(0.2);
+		JumpLastTimeOnGroundTollerance(0.0);		
+		UseNoInputAsForwardInput(true);
+		//Velocity(0.0, 0.0, 4.5, 0.25);
+		//AllowVelocityMod(true);
+		EnableCameraAnimations(true);
+		SuppressAudioEvent(true);
+		VelocityDuration(0.3);// blocks modifing jump in first X secnonds		
+		AllowVelocityMod(false);
+		VelocityDuration(0.3);
+	}
+	
+	/*Jump("SlopeJumpAgainst")
+	{
+		Height(1.5);
+		MaxSpeed(5.2);
+		Deceleration(2.0);
+		BeginAnimation("Jump_Slope");
+		AllowVelocityMod(true);
+		ClearPhysics(true);
+		MaxSpeedInputInfluence(9);
+		//ForceDefaultController(true);
+		Acceleration(1.0);
+	}*/
+	
+	Jump ("SwimJump")
+	{
+		BeginAnimation("BeforeHang");
+		LoopAnimation("SwimJump_Loop");
+		Height(0.3);
+		AutoStepHeight(0.05);
+		JumpHoldTime(0.0);
+		InventoryItemVisible(false);
+		LookState("Jump");
+	}
+	
+	Jump ("parachute_jump", "ZipLineJump")
+	{
+		BeginAnimation("Parachute_Jump_Loop");
+		//LoopAnimation("Parachute_Jump_Loop");
+		///Height(0.51);
+		//JumpHoldTime(0.0);		
+		//LookState("Jump");
+		//Velocity(0.0, 0.0, 4.5, 0.35);
+		//AllowVelocityMod(false);
+		VelocityDuration(0.5);// blocks modifing jump in first X secnonds		
+		AllowVelocityMod(false);
+		SpeedPostProcess(0.6, 1.0);
+	}
+	
+	
+	////////////////////////////////////
+	//  Far jump attack
+	////////////////////////////////////
+	Jump("FarJumpAttack")
+	{
+		BeginAnimation("JumpOnAttack");
+		Height(0.0);
+		JumpHoldTime(0.0);
+		MaxSpeed(7.5);
+		Acceleration(120.0);
+		Deceleration(120.0);
+		JumpAfterVolumetricHit("FarJumpAttackHit");
+		AllowVelocityMod(false);
+		AllowWrestleAttack(false);
+		UseWantedPosition(true);
+	}
+	
+	Jump("FarJumpAttackHit")
+	{
+		Height(0.0);
+		BeginAnimation("FarJumpAttackHit");
+		JumpHoldTime(0.0);
+		MinSpeed(0.0);
+		MaxSpeed(0.0);
+		AllowWrestleAttack(false);
+		IsSpecialMove();
+	}
+	
+	Jump("TrippleJump")
+	{
+		Height(1.0);
+		JumpHoldTime(0.0);
+		Prepare(0.1);
+		BeginAnimation("Tripple_Begin");
+		LoopAnimation("Tripple_Loop");
+		AnimationVariants(3, 2.0);
+		MaxSpeed(5.1);		
+		LookAngles(180,90,-180,-70);
+		LookState("Jump");
+		AllowDoubleAndFarJump(false);
+		BlockWhenExhausted(false);
+		MoveDirChangeTime(0.6);
+		AutoStepHeight("JumpAutoStepHeight");
+		ClearPhysics(true);
+		BeforeHangTime(0.2);
+		EnableCameraAnimations(true);
+		ProgressionAction("JumpOnLow", 0.8);
+		ExtraGravity(-2.8);
+		ExtraGravityDelay(0.4);
+		ExtraGravityOnlyWhenFalling(true);
+		DisableHeadCorrection(true);
+	}
+}

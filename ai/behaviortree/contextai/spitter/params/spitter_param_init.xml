@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Sequence>
+        <Opr_EnableSense m_Sense="target"/>
+        <Selector>
+            <Cnd_Const m_Enabled="$hunting_mod"/>
+            <Opr_EnableSense m_Sense="uv"/>
+        </Selector>
+        <Opr_SetBBValue_string m_Key="#sunlight_escape_movestyle" m_Value="Run"/>
+        <Opr_SetBBValue_bool m_Key="#during_spit" m_Value="false"/>
+        <Opr_SetBBValue_bool m_Key="#during_mortar_spit" m_Value="false"/>
+        <Opr_SetBBValue_bool m_Key="#can_switch_attack" m_Value="true"/>
+        <Opr_EnableSense m_Sense="defend"/>
+    </Sequence>
+</BehaviorTree>

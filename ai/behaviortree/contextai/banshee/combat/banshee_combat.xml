@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Sequence>
+        <Cnd_HasBBValue m_Key="#target"/>
+        <Selector>
+            <SelectorMem>
+                <Optional m_Enabled="$jump_attack_enabled">
+                    <CooldownUntil m_CooldownTime="$jump_attack_cooldown" m_TimePoint="#jump_attack_cooldown" m_CooldownOnAbort="true">
+                        <SequenceMem>
+                            <Cnd_IsCombatTargetInSyncAction m_SyncAction="BiterGrab" m_Invert="true"/>
+                            <Opr_GetDistanceToPosition m_Position="#target_pos" m_Distance="#slot_cost"/>
+                            <Cnd_IsActivityModuleRunning_Attack m_Invert="true"/>
+                            <Selector>
+                                <ExternalTree m_UID="BANSHEE_ATTACK_JUMP_FROM_BITER" m_CustomName="Power" m_Hide="true"/>
+                                <ExternalTree m_UID="BANSHEE_ATTACK_APPROACH" m_CustomName="Move" m_Hide="true"/>
+                            </Selector>
+                        </SequenceMem>
+                    </CooldownUntil>
+                </Optional>
+                <Optional m_Enabled="$jump_attack_from_above_enabled">
+                    <SequenceMem>
+                        <Cnd_IsCombatTargetInSyncAction m_SyncAction="BiterGrab" m_Invert="true"/>
+                        <Cnd_IsActivityModuleRunning_Attack m_Invert="true"/>
+                        <Selector>
+                            <ExternalTree m_UID="BANSHEE_ATTACK_JUMP_FROM_ABOVE" m_CustomName="Jump from above" m_Hide="true"/>
+                            <Optional m_Enabled="$try_to_find_nearest_high_ground_position">
+                                <CooldownUntil m_CooldownTime="$jump_attack_from_above_cooldown" m_TimePoint="#jump_attack_from_above_cooldown" m_CooldownOnAbort="true">
+                                    <ExternalTree m_UID="BANSHEE_GO_TO_HIGH_GROUND" m_CustomName="Go to high ground" m_Hide="true"/>
+                                </CooldownUntil>
+                            </Optional>
+                        </Selector>
+                    </SequenceMem>
+                </Optional>
+                <Optional m_Enabled="$jump_low_attack_enabled">
+                    <ExternalTree m_UID="BANSHEE_ATTACK_JUMP_LOW" m_CustomName="Attack_jump_low" m_Hide="true"/>
+                </Optional>
+                <Optional m_Enabled="$running_low_attack_enabled">
+                    <ExternalTree m_UID="BANSHEE_ATTACK_RUNNING_LOW" m_CustomName="Attack_low" m_Hide="true"/>
+                </Optional>
+            </SelectorMem>
+            <ExternalTree m_UID="BANSHEE_COMBAT_MOVEMENT" m_CustomName="Movement" m_Hide="true"/>
+            <ExternalTree m_UID="BANSHEE_KEEP_DISTANCE" m_CustomName="Keep Distance" m_Hide="true"/>
+        </Selector>
+    </Sequence>
+</BehaviorTree>

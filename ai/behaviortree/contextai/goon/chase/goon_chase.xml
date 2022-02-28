@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Starter m_Key="#should_check_last_target_pos">
+        <Sequence>
+            <Cnd_HasBBValue m_Key="#last_target"/>
+            <Cnd_IsAlertLevelEqual m_AlertLevel="Low" m_Invert="true"/>
+            <Selector>
+                <Cnd_HasBBValue m_Key="#poi_position" m_Invert="true"/>
+                <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="HighPrioNoise" m_Invert="true"/>
+            </Selector>
+            <SequenceMem>
+                <Act_Move m_Destination="#last_target_pos" m_MoveStyle="$movestyle" m_StopAtDest="true" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_EndDir="#last_target_move_dir"/>
+                <ParallelRepeat m_PolicyFailure="REQUIRE_ONE" m_PolicySuccess="REQUIRE_ALL">
+                    <Cnd_HasBBValue m_Key="#poi_position" m_Invert="true"/>
+                    <Act_Idle m_Type="Stand" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT"/>
+                </ParallelRepeat>
+            </SequenceMem>
+        </Sequence>
+    </Starter>
+</BehaviorTree>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Cnd_HasBBValue m_Key="#target"/>
+        <Cnd_IsCombatTargetInRadius m_Radius="$preferred_distance_to_target_min"/>
+        <Opr_FindAllyInRangeInState m_Ally="#ally" m_AllyPosition="#ally_pos" m_MaxRange="7.0" m_FindFurthest="true" m_State="TARGET_FOR_BANSHEE_JUMP"/>
+        <Cnd_DistanceBetweenPositionsLower m_Distance="6.0" m_FirstPosition="#ally_pos" m_SecondPosition="#target_pos" m_Invert="true"/>
+        <Sequence>
+            <Opr_GetDirectionOriginToPosition m_Position="#ally_pos" m_Origin="#target_pos" m_Direction="#flee_dir"/>
+            <Opr_GetPositionInDirection m_Distance="2.5" m_Position="#flee_pos" m_Direction="#flee_dir" m_Origin="#ally_pos"/>
+            <Opr_GetDirectionToPosition m_Position="#target_pos" m_Direction="#end_dir"/>
+            <Act_Move m_Destination="#flee_pos" m_EndRadius="1.5" m_IsAvoidanceActive="$use_avoidance" m_MoveStyle="#combat_movestyle" m_EndDir="#end_dir" m_StopAtDest="true" m_SkipStart="#skip_start" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+        </Sequence>
+    </SequenceMem>
+</BehaviorTree>

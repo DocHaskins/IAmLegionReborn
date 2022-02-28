@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <RepeatOnceOnSuccess>
+        <Sequence>
+            <Cnd_HasBBValue m_Key="#target"/>
+            <Selector>
+                <Selector>
+                    <!-- Defensive moves:  -->
+                    <Optional m_Enabled="$defensive_vomit_enabled">
+                        <ExternalTree m_UID="SPITTER_DEFENSIVE_VOMIT" m_CustomName="Defensive_Vomit" m_Hide="true"/>
+                    </Optional>
+                    <Optional m_Enabled="$push_enabled">
+                        <ExternalTree m_UID="SPITTER_PUSH" m_CustomName="Push" m_Hide="true"/>
+                    </Optional>
+                    <!-- Check for Range attacks -->
+                    <SequenceMem>
+                        <Cnd_IsPoseEqual m_Pose="Laying" m_Invert="true"/>
+                        <Cnd_IsTargetVisible m_Target="#target"/>
+                        <Cnd_TargetInAngle m_Target="#target" m_Angle="$spit_max_angle"/>
+                        <SelectorMem>
+                            <Optional m_Enabled="$quick_spit_enabled">
+                                <ExternalTree m_UID="SPITTER_QUICK_ATTACK_SPIT" m_CustomName="Quick_Spit" m_Hide="true"/>
+                            </Optional>
+                            <Optional m_Enabled="$mortar_spit_enabled">
+                                <ExternalTree m_UID="SPITTER_ATTACK_MORTAR_SPIT" m_CustomName="Mortar_Spit" m_Hide="true"/>
+                            </Optional>
+                            <Optional m_Enabled="$spit_enabled">
+                                <ExternalTree m_UID="SPITTER_ATTACK_SPIT" m_CustomName="Spit" m_Hide="true"/>
+                            </Optional>
+                        </SelectorMem>
+                    </SequenceMem>
+                </Selector>
+                <ExternalTree m_UID="SPITTER_COMBAT_MOVEMENT" m_CustomName="Movement" m_Hide="true"/>
+                <!-- Idle / strafe / taunt when waiting for attacks to come off cooldown and there is no need to reposition -->
+                <SequenceMem>
+                    <Cnd_IsTargetVisible m_Target="#target"/>
+                    <Cnd_TargetInAngle m_Target="#target" m_Angle="45"/>
+                    <RunUntilFailure>
+                        <Sequence>
+                            <Cnd_IsPoseEqual m_Pose="Standing"/>
+                            <Opr_SetDirCorrectionSpeed m_MaxSpeed="150"/>
+                            <SelectorMem>
+                                <CooldownTimeDeltaRandom m_MinCooldownTime="1.0" m_MaxCooldownTime="3.0" m_CooldownOnAbort="true">
+                                    <Act_Taunt m_Type="Normal" m_Target="#target" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                                </CooldownTimeDeltaRandom>
+                                <SequenceMem>
+                                    <Cnd_HasBBValue m_Key="#stationary_mod" m_Invert="false"/>
+                                    <Act_Step m_Type="COMBAT" m_Style="AGGRESSIVE" m_Direction="LEFT" m_Target="#target" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                                </SequenceMem>
+                            </SelectorMem>
+                        </Sequence>
+                    </RunUntilFailure>
+                </SequenceMem>
+                <SequenceMem>
+                    <Cnd_IsCombatTargetInAngle m_Angle="45" m_Invert="true"/>
+                    <Act_TurnToPos m_Type="COMBAT" m_Position="#target_pos" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT"/>
+                </SequenceMem>
+                <Act_Idle m_Type="Stand" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT"/>
+            </Selector>
+        </Sequence>
+    </RepeatOnceOnSuccess>
+</BehaviorTree>

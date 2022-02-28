@@ -26,8 +26,8 @@ sub main()
 	
 	EncounterGroup("Default")
 	{
-		MaxNumOfActiveEncounters(4);
-        MaxNumOfActiveEncountersInCoop(4);
+		MaxNumOfActiveEncounters(8);
+        MaxNumOfActiveEncountersInCoop(9);
 		EncounterMinSearchRadius(45.0);
 		EncounterMaxSearchRadius(65.0);
 		EncounterMaxHeightDifference(12.0);
@@ -41,13 +41,13 @@ sub main()
 	EncounterGroup("Patrol")
 	{
 		IgnoreGeneralMinDistBtwEncounters(true);
-		MaxNumOfActiveEncounters(5);
-        MaxNumOfActiveEncountersInCoop(1);
+		MaxNumOfActiveEncounters(12);
+        MaxNumOfActiveEncountersInCoop(8);
 		EncounterMinSearchRadius(45.0);
-		EncounterMaxSearchRadius(60.0);
+		EncounterMaxSearchRadius(120.0);
 		EncounterMaxHeightDifference(25.0);
 		DefaultDifficulty("Hard");
-		MinDistBtwEncounters(15.0);
+		MinDistBtwEncounters(10.0);
 		SpawnCooldownTime(1.0);
 		CanBeBlocked(true);
 	}
@@ -93,10 +93,10 @@ sub main()
 	
 	EncounterGroup("Barricade")
 	{
-		MaxNumOfActiveEncounters(10);
-        MaxNumOfActiveEncountersInCoop(1);
+		MaxNumOfActiveEncounters(20);
+        MaxNumOfActiveEncountersInCoop(10);
 		EncounterMinSearchRadius(45.0);
-		EncounterMaxSearchRadius(90.0);
+		EncounterMaxSearchRadius(120.0);
 		EncounterMaxHeightDifference(50.0);
 		DefaultDifficulty("Hard");
 		MinDistBtwEncounters(1.0);
@@ -107,7 +107,7 @@ sub main()
 	
 	EncounterGroup("Master_Modules")
 	{
-		MaxNumOfActiveEncounters(1);
+		MaxNumOfActiveEncounters(4);
 		EncounterMinSearchRadius(25.0);
 		EncounterMaxSearchRadius(55.0);
 		EncounterMaxHeightDifference(50.0);
@@ -119,7 +119,7 @@ sub main()
 	
 	EncounterGroup("Bandit_Camp_Master")
 	{
-		MaxNumOfActiveEncounters(5);
+		MaxNumOfActiveEncounters(12);
 		EncounterMinSearchRadius(25.0);
 		EncounterMaxSearchRadius(105.0);
 		EncounterMaxHeightDifference(50.0);
@@ -132,21 +132,21 @@ sub main()
 	EncounterGroup("Special_Night")
 	{
 		IgnoreGeneralMinDistBtwEncounters(true);
-		MaxNumOfActiveEncounters(4); 
-		MaxNumOfActiveEncountersInCoop(3);
+		MaxNumOfActiveEncounters(8); 
+		MaxNumOfActiveEncountersInCoop(8);
 		EncounterMinSearchRadius(55.0);
 		EncounterMaxSearchRadius(125.0);
 		EncounterMaxHeightDifference(30.0);
 		DefaultDifficulty("Hard");
-		MinDistBtwEncounters(10.0);
+		MinDistBtwEncounters(20.0);
 		SpawnCooldownTime(30.0);
 		CanBeBlocked(true);
 	}
 
 	EncounterGroup("Defend_Night")
 	{
-		MaxNumOfActiveEncounters(2); 
-		MaxNumOfActiveEncountersInCoop(4);
+		MaxNumOfActiveEncounters(8); 
+		MaxNumOfActiveEncountersInCoop(8);
 		EncounterMinSearchRadius(45.0);
 		EncounterMaxSearchRadius(60.0);
 		EncounterMaxHeightDifference(12.0);
@@ -158,10 +158,10 @@ sub main()
 	
 	EncounterGroup("PKs_Patrol")
 	{
-		MaxNumOfActiveEncounters(10);
-        MaxNumOfActiveEncountersInCoop(8);
+		MaxNumOfActiveEncounters(30);
+        MaxNumOfActiveEncountersInCoop(22);
 		EncounterMinSearchRadius(45.0);
-		EncounterMaxSearchRadius(85.0);
+		EncounterMaxSearchRadius(145.0);
 		EncounterMaxHeightDifference(12.0);
 		DefaultDifficulty("Hard");
 		MinDistBtwEncounters(15.0);
@@ -172,8 +172,8 @@ sub main()
 	
 	EncounterGroup("Abandoned_Structure")
 	{
-		MaxNumOfActiveEncounters(2);
-        MaxNumOfActiveEncountersInCoop(2);
+		MaxNumOfActiveEncounters(5);
+        MaxNumOfActiveEncountersInCoop(5);
 		EncounterMinSearchRadius(45.0);
 		EncounterMaxSearchRadius(95.0);
 		EncounterMaxHeightDifference(12.0);
@@ -229,8 +229,8 @@ sub main()
 	EncounterGroup("Eating_Corpses")
 	{
 		IgnoreGeneralMinDistBtwEncounters(false);
-		MaxNumOfActiveEncounters(12);
-        MaxNumOfActiveEncountersInCoop(12);
+		MaxNumOfActiveEncounters(45);
+        MaxNumOfActiveEncountersInCoop(40);
 		EncounterMinSearchRadius(45.0);
 		EncounterMaxSearchRadius(90.0);
 		EncounterMaxHeightDifference(12.0);

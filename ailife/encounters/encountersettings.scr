@@ -159,7 +159,7 @@ sub main()
         
         CooldownTime(180.0);
         TimeOfDay(8.1, 19.0);
-        MaxActiveInstances(5);
+        MaxActiveInstances(16);
         //ZoneLevelEncounterCondition(-3,2);
     }
     
@@ -294,7 +294,7 @@ sub main()
         
         CooldownTime(540.0);
         TimeOfDay(19.5, 7.5);
-        MaxActiveInstances(5);
+        MaxActiveInstances(12);
         //ZoneLevelEncounterCondition(-3,3);
     }
     
@@ -417,7 +417,7 @@ sub main()
         
         CooldownTime(540.0);
         TimeOfDay(19.5, 7.5);
-        MaxActiveInstances(5);
+        MaxActiveInstances(12);
         //ZoneLevelEncounterCondition(-3,3);
     }
     
@@ -541,7 +541,7 @@ sub main()
         
         CooldownTime(540.0);
         TimeOfDay(19.5, 7.5);
-        MaxActiveInstances(5);
+        MaxActiveInstances(14);
         //ZoneLevelEncounterCondition(-3,3);
     }
     
@@ -555,7 +555,7 @@ sub main()
         
         CooldownTime(540.0);
         TimeOfDay(19.5, 7.5);
-        MaxActiveInstances(5);
+        MaxActiveInstances(15);
         //ZoneLevelEncounterCondition(-3,3);
     }
 
@@ -569,7 +569,7 @@ sub main()
         
         CooldownTime(1.0);
         TimeOfDay(8.0, 19.5);
-        MaxActiveInstances(5);
+        MaxActiveInstances(18);
         //ZoneLevelEncounterCondition(-3,1);
     } 
  
@@ -589,7 +589,7 @@ sub main()
         
         CooldownTime(0.0);
 		TimeOfDay(8.0, 19.5);
-        MaxActiveInstances(20);
+        MaxActiveInstances(30);
         //ZoneLevelEncounterCondition(-3,1);
     }
     
@@ -609,7 +609,7 @@ sub main()
 		
         CooldownTime(0.0);
 		TimeOfDay(8.0, 19.5);
-        MaxActiveInstances(10);
+        MaxActiveInstances(30);
         //ZoneLevelEncounterCondition(-3,1);
     }
     
@@ -631,7 +631,7 @@ sub main()
 
         CooldownTime(0.0);
         TimeOfDay(19.5, 8.0);
-        MaxActiveInstances(10);
+        MaxActiveInstances(22);
         //ZoneLevelEncounterCondition(-3,3);
     }
     Encounter("Infected_Corpse_Eating_Night_Roof")
@@ -639,16 +639,16 @@ sub main()
         EncounterGroup("Defend_Night");
         GeneralDifficulty()
         {
-            //Pool("V");
+            Pool("V");
 			Pool("V_V");
-			//Pool("SC_V");
-			//Pool("V_V_SC");  
-			//Pool("B_B_SC");  
+			Pool("SC_V");
+			Pool("V_V_SC");  
+			Pool("B_B_SC");  
         }
 
         CooldownTime(30.0);
         TimeOfDay(19.5, 8.0);
-        MaxActiveInstances(3);
+        MaxActiveInstances(2);
         //ZoneLevelEncounterCondition(-3,3);
     }
     
@@ -669,7 +669,7 @@ sub main()
     
         CooldownTime(0.0);
         TimeOfDay(8.0, 19.5);
-        MaxActiveInstances(20);
+        MaxActiveInstances(40);
         //ZoneLevelEncounterCondition(-3,1);
     }
     Encounter("Infected_Corpse_Eating_Day_Flavor")
@@ -688,7 +688,7 @@ sub main()
     
         CooldownTime(0.0);
 		TimeOfDay(8.0, 19.5);
-        MaxActiveInstances(20);
+        MaxActiveInstances(30);
         //ZoneLevelEncounterCondition(-3,1);
     }
     Encounter("Infected_Corpse_Eating_Day_Roof")
@@ -708,7 +708,7 @@ sub main()
 
         CooldownTime(0.0);
         TimeOfDay(8.0, 19.5);
-        MaxActiveInstances(1);
+        MaxActiveInstances(2);
         //ZoneLevelEncounterCondition(-3,1);
     }
     
@@ -730,7 +730,7 @@ sub main()
         EncounterGroup("Eating_Corpses");
         CooldownTime(180.0);
         TimeOfDay(19.5, 8.0);
-        MaxActiveInstances(1);
+        MaxActiveInstances(2);
         //ZoneLevelEncounterCondition(-3,1);
     }
     
@@ -790,7 +790,7 @@ sub main()
 
         CooldownTime(1800.0);
         TimeOfDay(8.1, 19.0);
-        MaxActiveInstances(10);
+        MaxActiveInstances(20);
 		SaveCooldownTime(true);
         //ZoneLevelEncounterCondition(-3,3);
     }
@@ -805,7 +805,7 @@ sub main()
 
         CooldownTime(1800.0);
         TimeOfDay(8.1, 19.0);
-        MaxActiveInstances(1);
+        MaxActiveInstances(8);
 		SaveCooldownTime(true);
     }	
 
@@ -819,7 +819,7 @@ sub main()
 
         CooldownTime(1800.0);
         TimeOfDay(8.1, 19.0);
-        MaxActiveInstances(1);
+        MaxActiveInstances(5);
 		SaveCooldownTime(true);
     }		
     
@@ -833,7 +833,7 @@ sub main()
 
         CooldownTime(720.0);
         TimeOfDay(19.5, 5.0);
-        MaxActiveInstances(1);
+        MaxActiveInstances(6);
 		SaveCooldownTime(true);
         //ZoneLevelEncounterCondition(-3,3);
     }
@@ -848,7 +848,7 @@ sub main()
 
         CooldownTime(720.0);
         TimeOfDay(19.5, 5.0);
-        MaxActiveInstances(1);
+        MaxActiveInstances(4);
 		SaveCooldownTime(true);
         //ZoneLevelEncounterCondition(-3,3);
     }	
@@ -861,7 +861,7 @@ sub main()
         }
 
         CooldownTime(720.0);
-        MaxActiveInstances(1);
+        MaxActiveInstances(4);
         //ZoneLevelEncounterCondition(-3,3);
     }
     
@@ -876,7 +876,7 @@ sub main()
 
         CooldownTime(1800.0);
         TimeOfDay(19.5, 5.0);
-        MaxActiveInstances(1);
+        MaxActiveInstances(4);
 		SaveCooldownTime(true);
         //ZoneLevelEncounterCondition(-3,3);
     }
@@ -928,7 +928,7 @@ sub main()
         
         CooldownTime(30.0);
         TimeOfDay(-1.0, -1.0);
-        MaxActiveInstances(5);
+        MaxActiveInstances(6);
         //ZoneLevelEncounterCondition(-3,3);
     }
     
@@ -954,6 +954,7 @@ sub main()
         }
 
         CooldownTime(30.0);
+	`	MaxActiveInstances(10);
         TimeOfDay(8.1, 19.0);
     }
     
@@ -965,6 +966,7 @@ sub main()
         }
 
         CooldownTime(30.0);
+		MaxActiveInstances(10);
         TimeOfDay(8.1, 19.0);
     }
     
@@ -979,7 +981,7 @@ sub main()
         CooldownTime(180.0);
         TimeOfDay(8.1, 19.0);
 		SaveCooldownTime(false);
-		MaxActiveInstances(1);
+		MaxActiveInstances(12);
     }   
 
     Encounter("PKs_vs_Renegade_Empire")
@@ -1004,6 +1006,7 @@ sub main()
         }
 
         CooldownTime(1800.0);
+		MaxActiveInstances(10);
         TimeOfDay(8.1, 19.0);
     }
     
@@ -1018,7 +1021,7 @@ sub main()
         CooldownTime(60.0);
         TimeOfDay(19.0, 8.0);
 		SaveCooldownTime(false);
-		MaxActiveInstances(2);
+		MaxActiveInstances(16);
     }
 
     Encounter("PKs_Patrol_Street")
@@ -1029,9 +1032,9 @@ sub main()
         }
 
         EncounterGroup("PKs_Patrol");
-        MaxActiveInstances(5);      
+        MaxActiveInstances(24);      
         CooldownTime(1.0);
-        TimeOfDay(8.1, 19.0);
+        TimeOfDay(0, 24.0);
     }
 
     Encounter("PKs_Patrol_Roof")
@@ -1042,9 +1045,9 @@ sub main()
         }
     
         EncounterGroup("PKs_Patrol");
-        MaxActiveInstances(3);          
+        MaxActiveInstances(20);          
         CooldownTime(1.0);
-        TimeOfDay(8.1, 19.0);
+        TimeOfDay(0, 24.0);
     }   
 
     Encounter("PKs_vs_Biters")
@@ -1056,9 +1059,9 @@ sub main()
         }
 
         EncounterGroup("PKs_Patrol");       
-        MaxActiveInstances(2);          
+        MaxActiveInstances(12);          
         CooldownTime(60.0);
-        TimeOfDay(8.1, 19.0);
+        TimeOfDay(0, 24.0);
     }   
     Encounter("PKs_vs_Biters_Empire")
     {
@@ -1178,7 +1181,7 @@ sub main()
 
         CooldownTime(360.0);
         TimeOfDay(19.5, 7.5);
-        MaxActiveInstances(1);
+        MaxActiveInstances(7);
 		SaveCooldownTime(true);
     }
     
@@ -1446,6 +1449,7 @@ sub main()
         
         CooldownTime(1.0);
         TimeOfDay(8.1, 19.0);
+		MaxActiveInstances(12);
         //ZoneLevelEncounterCondition(-3,3);
 		SaveCooldownTime(false);
     }
@@ -1702,6 +1706,7 @@ sub main()
         
         CooldownTime(1800.0);
         TimeOfDay(8.1, 19.0);
+		MaxActiveInstances(10);
         //ZoneLevelEncounterCondition(-3,3);
 		SaveCooldownTime(true);
     }
@@ -1727,6 +1732,7 @@ sub main()
         
         CooldownTime(900.0);
         TimeOfDay(8.1, 19.0);
+		MaxActiveInstances(20);
         //ZoneLevelEncounterCondition(-3,3);
 		SaveCooldownTime(true);
     }
@@ -1986,6 +1992,7 @@ sub main()
         CooldownTime(1800.0);
         TimeOfDay(8.1, 19.0);
 		SaveCooldownTime(true);
+		MaxActiveInstances(10);
         //ZoneLevelEncounterCondition(-3,3);
     }
 
@@ -2010,6 +2017,7 @@ sub main()
         
         CooldownTime(900.0);
         TimeOfDay(8.1, 19.0);
+		MaxActiveInstances(20);
         //ZoneLevelEncounterCondition(-3,3);
 		SaveCooldownTime(true);
     }
@@ -2027,6 +2035,7 @@ sub main()
         CooldownTime(1800.0);
         TimeOfDay(8.1, 19.0);
 		SaveCooldownTime(true);
+		MaxActiveInstances(10);
         //ZoneLevelEncounterCondition(-3,3);
     }   
     
@@ -2055,7 +2064,7 @@ sub main()
         CooldownTime(60.0);
         TimeOfDay(8.1, 19.0);
 		SaveCooldownTime(false);
-		MaxActiveInstances(1);
+		MaxActiveInstances(2);
         //ZoneLevelEncounterCondition(-3,3);
     }   
     
@@ -2069,7 +2078,7 @@ sub main()
         
         CooldownTime(1.0);
         TimeOfDay(8.1, 19.0);
-		MaxActiveInstances(1);
+		MaxActiveInstances(7);
     }   
     
     Encounter("PKs_vs_Renegade")
@@ -2082,7 +2091,7 @@ sub main()
 
         CooldownTime(1.0);
         TimeOfDay(8.1, 19.0);
-		MaxActiveInstances(1);
+		MaxActiveInstances(7);
     }   
 	
     Encounter("Hostage_Renegade_PK")
@@ -2107,7 +2116,7 @@ sub main()
         }
 		CooldownTime(60.0);
         TimeOfDay(8.1, 19.0);
-		MaxActiveInstances(1);
+		MaxActiveInstances(3);
         //ZoneLevelEncounterCondition(-3,-3);
     }
 	
@@ -2125,12 +2134,12 @@ sub main()
             //Pool("Tier_1");
             //Pool("Tier_2");
             //Pool("Tier_3");   
-            //Pool("Bow");  
-            //Pool("3BT0");
-            //Pool("1BT0_1BB");
-            //Pool("2BT1");
-            //Pool("2BB");
-            //Pool("2BT0_1BT1");            
+            Pool("Bow");  
+            Pool("3BT0");
+            Pool("1BT0_1BB");
+            Pool("2BT1");
+            Pool("2BB");
+            Pool("2BT0_1BT1");            
         }
         
         Difficulty("Medium")
@@ -2149,10 +2158,12 @@ sub main()
             Pool("1S_1BT2_1BT3");
             Pool("1S_1TH_1BT0");
             Pool("2BB_1BT2_1BT3");
+			Pool("Bow"); 
         }
         CooldownTime(1800.0);
         TimeOfDay(8.1, 19.0);
 		SaveCooldownTime(true);
+		MaxActiveInstances(3);
         //ZoneLevelEncounterCondition(-3,3);
     }
 
@@ -2181,8 +2192,13 @@ sub main()
         {
             Pool("1BT1_1BT2_1A");       
             Pool("2BT1_2A");
+			Pool("Tier_3");   
+            Pool("Bow");
+            Pool("1BT1_1BT2_1A");     
+            Pool("2BT1_2A");    
         }
         CooldownTime(1800.0);
+		MaxActiveInstances(12);
     }
     
     Encounter("Roof")
@@ -2406,6 +2422,7 @@ sub main()
         CooldownTime(1800.0);
         TimeOfDay(8.1, 19.0);
 		SaveCooldownTime(true);
+		MaxActiveInstances(12);
         //ZoneLevelEncounterCondition(-3,1);
     }
     
@@ -2434,6 +2451,7 @@ sub main()
         CooldownTime(1800.0);
         TimeOfDay(8.1, 19.0);
 		SaveCooldownTime(true);
+		MaxActiveInstances(22);
         //ZoneLevelEncounterCondition(-3,3);
     }   
     
@@ -2462,6 +2480,7 @@ sub main()
         CooldownTime(1800.0);
         TimeOfDay(8.1, 19.0);
 		SaveCooldownTime(true);
+		MaxActiveInstances(12);
         //ZoneLevelEncounterCondition(-3,3);
     }
     
@@ -2490,6 +2509,7 @@ sub main()
         CooldownTime(1800.0);
         TimeOfDay(8.1, 19.0);
 		SaveCooldownTime(true);
+		MaxActiveInstances(12);
         //ZoneLevelEncounterCondition(-3,3);
     }
                     
@@ -2688,6 +2708,7 @@ sub main()
         CooldownTime(2700.0);
         TimeOfDay(8.1, 19.0);
 		SaveCooldownTime(true);
+		MaxActiveInstances(12);
         //ZoneLevelEncounterCondition(-3,-3);
     }
         
@@ -3433,7 +3454,7 @@ sub main()
 
         TimeOfDay(20.0, 8.0);
         CooldownTime(30.0);
-        MaxActiveInstances(5);
+        MaxActiveInstances(11);
         //ZoneLevelEncounterCondition(-3,3);
     }   
     
@@ -3447,7 +3468,7 @@ sub main()
 
         TimeOfDay(20.0, 8.0);
         CooldownTime(300.0);
-        MaxActiveInstances(5);
+        MaxActiveInstances(15);
         //ZoneLevelEncounterCondition(-3,3);
     }
 
@@ -7647,9 +7668,9 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(10);
+        MaxActiveInstances(30);
         CooldownTime(1.0);
-        TimeOfDay(8.1, 19.0);
+        TimeOfDay(0.0, 24.0);
     }
         Encounter("Scene_Peacekeepers_Ground_Empire")
     {
@@ -7661,7 +7682,7 @@ sub main()
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
         MaxActiveInstances(10);
         CooldownTime(1.0);
-        TimeOfDay(8.1, 19.0);
+        TimeOfDay(0.0, 24.0);
     }	
     
         Encounter("Scene_Survivors_Ground")
@@ -7672,7 +7693,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(10);
+        MaxActiveInstances(40);
         CooldownTime(1.0);
         TimeOfDay(8.1, 19.0);
     }
@@ -7686,7 +7707,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
         WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(2);
+        MaxActiveInstances(20);
         CooldownTime(1.0);
         TimeOfDay(8.1, 19.0);
     }
@@ -7700,7 +7721,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
         WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(2);
+        MaxActiveInstances(20);
         CooldownTime(1.0);
         TimeOfDay(8.1, 19.0);
     }
@@ -7715,7 +7736,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(2);
+        MaxActiveInstances(20);
         CooldownTime(1.0);
         TimeOfDay(8.1, 19.0);
     }
@@ -7731,7 +7752,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
 
-        MaxActiveInstances(10);
+        MaxActiveInstances(40);
         CooldownTime(1.0);
         TimeOfDay(8.1, 19.0);  
     }
@@ -7773,7 +7794,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
         
-        MaxActiveInstances(2);
+        MaxActiveInstances(20);
         CooldownTime(1.0);
         TimeOfDay(8.1, 19.0);
     }
@@ -7787,7 +7808,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
         
-        MaxActiveInstances(2);
+        MaxActiveInstances(20);
         CooldownTime(1.0);
         TimeOfDay(8.1, 19.0);
     }
@@ -7802,7 +7823,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
     
-        MaxActiveInstances(2);
+        MaxActiveInstances(20);
         CooldownTime(1.0);
         TimeOfDay(8.1, 19.0);
     }
@@ -7816,7 +7837,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
         
-        MaxActiveInstances(2);
+        MaxActiveInstances(20);
         CooldownTime(1.0);
         TimeOfDay(8.1, 19.0);
     }
@@ -7831,7 +7852,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(1);
+        MaxActiveInstances(4);
         CooldownTime(10.0);
         TimeOfDay(8.1, 19.0);
     }
@@ -7843,7 +7864,7 @@ sub main()
         {
             Pool("Scene_Scenario_Box");
         }
-        MaxActiveInstances(1);
+        MaxActiveInstances(12);
         CooldownTime(10.0);
         TimeOfDay(8.1, 19.0);
     }
@@ -7947,7 +7968,7 @@ sub main()
             Pool("Scene_Scenario_Crime_01");
         }
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(1);
+        MaxActiveInstances(3);
         CooldownTime(10.0);
         TimeOfDay(8.1, 19.0);
     }
@@ -7973,7 +7994,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(1);
+        MaxActiveInstances(3);
         CooldownTime(10.0);
         TimeOfDay(8.1, 19.0);
     }
@@ -7986,7 +8007,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(1);
+        MaxActiveInstances(3);
         CooldownTime(10.0);
         TimeOfDay(8.1, 19.0);
     }
@@ -7999,7 +8020,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(1);
+        MaxActiveInstances(3);
         CooldownTime(10.0);
         TimeOfDay(8.1, 19.0);
     }
@@ -8025,7 +8046,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(1);
+        MaxActiveInstances(2);
         CooldownTime(10.0);
         TimeOfDay(8.1, 19.0);
     }
@@ -8510,7 +8531,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(1);
+        MaxActiveInstances(6);
         CooldownTime(10.0);
         TimeOfDay(8.1, 19.0);
     }
@@ -8523,7 +8544,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(1);
+        MaxActiveInstances(6);
         CooldownTime(10.0);
         TimeOfDay(8.1, 19.0);
     }
@@ -8537,7 +8558,7 @@ sub main()
         }
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
         MaxActiveInstances(1);
-        CooldownTime(10.0);
+        CooldownTime(130.0);
         TimeOfDay(8.1, 19.0);
     }
     
@@ -8550,7 +8571,7 @@ sub main()
         }
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
         MaxActiveInstances(1);
-        CooldownTime(10.0);
+        CooldownTime(60.0);
         TimeOfDay(8.1, 19.0);
     }
     
@@ -8563,7 +8584,7 @@ sub main()
         }
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
         MaxActiveInstances(1);
-        CooldownTime(10.0);
+        CooldownTime(60.0);
         TimeOfDay(8.1, 19.0);
     }
     
@@ -8641,7 +8662,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(1);
+        MaxActiveInstances(4);
         CooldownTime(10.0);
         TimeOfDay(8.1, 19.0);
     }
@@ -8812,7 +8833,7 @@ sub main()
         
         CooldownTime(1.0);
         TimeOfDay(19.5, 7.5);
-        MaxActiveInstances(5);
+        MaxActiveInstances(8);
         //ZoneLevelEncounterCondition(-3,3);
     }
 	
@@ -8836,7 +8857,7 @@ sub main()
 
         CooldownTime(1.0);
         TimeOfDay(19, 7.5);
-        MaxActiveInstances(3);
+        MaxActiveInstances(8);
         //ZoneLevelEncounterCondition(-3,3);
     }
 	
@@ -8866,7 +8887,7 @@ sub main()
         
         CooldownTime(1.0);
         TimeOfDay(8.0, 19.5);
-        MaxActiveInstances(1);
+        MaxActiveInstances(2);
         //ZoneLevelEncounterCondition(-3,1);
     } 
 	
@@ -8880,7 +8901,7 @@ sub main()
         
         CooldownTime(1.0);
         TimeOfDay(8.1, 19.0);
-        MaxActiveInstances(1);
+        MaxActiveInstances(4);
         //ZoneLevelEncounterCondition(-3,1);
     } 
 

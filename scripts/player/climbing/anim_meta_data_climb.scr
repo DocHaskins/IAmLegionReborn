@@ -1,0 +1,92 @@
+// Anim(climb_anim_id, base_climb_anim_id) - on start all parameters from base_anim_id are copied
+// FromHang(is_avaliable_from_hang) - decides if animation can be added to pool of animations that can be played after hang state
+// DuckDuration(time) - set time in which player will apply crouch mode, when there is no place to stand after climb is done
+// LookRestriction(not_used) - contains parameters for look restrictions
+
+export int REFVEC_MODE_BODY = 0;
+export int REFVEC_MODE_HOOK = 1;
+
+sub main()
+{
+	Anim(6)
+	{
+		FromHang(true);
+		DuckDuration(0.8);
+		FastClimbSpeeds(1.0, 1.0,2.0);
+		LookRestriction(0)
+		{
+			MinAngle(-190.0, -40.0);
+			MaxAngle(190.0, 5.0);
+			SoftenThreshold(2.0, 5.0);
+			RefVec(REFVEC_MODE_HOOK);
+			SpringTime(0.5);
+		}
+	}
+	
+	Anim(7, 6)
+	{
+		//FastClimbSpeeds(0.7,1.7,2.0);
+		FromHang(false);
+		DuckDuration(0.6);		
+	}
+	
+	Anim(8, 7)
+	{
+		//FastClimbSpeeds(0.9,1.7,2.0);
+	}
+	
+	Anim(9, 7)
+	{
+		//FastClimbSpeeds(1.0,2.0,2.8);
+	}
+	
+	Anim(10, 7)
+	{
+		//FastClimbSpeeds(0.7,1.5,1.7);
+	}
+	
+	Anim(11, 7)
+	{
+		//FastClimbSpeeds(0.9,1.5,1.7);
+	}
+	
+	Anim(12, 7)
+	{
+		//FastClimbSpeeds(0.8,1.3,1.5);
+	}
+	
+	Anim(13, 7)
+	{
+		//FastClimbSpeeds(0.6,1.5,1.7);
+	}
+	
+	Anim(14, 7)
+	{
+		//FastClimbSpeeds(0.7,1.5,1.7);
+	}
+	
+	Anim(15, 7)
+	{
+		//FastClimbSpeeds(0.6,1.5,1.7);
+	}
+	
+	Anim(16, 7)
+	{
+		//FastClimbSpeeds(0.7,1.5,1.7);
+	}
+	
+	Anim(17, 7)
+	{
+		//FastClimbSpeeds(0.8,1.7,2.0);
+	}
+	
+	Anim(18, 7)
+	{
+		//FastClimbSpeeds(0.6,1.5,1.7);
+	}
+	Anim(-1, 6)// this is climb to crawl anim!!
+	{
+		FromHang(false);
+		//FastClimbSpeeds(0.6,1.5,1.7);
+	}
+}

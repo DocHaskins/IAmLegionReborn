@@ -216,7 +216,7 @@ sub presets()
         interest("human", 0.6, "notice");
 		interest("biter", 0.8, "attract");
 
-        awakening_default(0.0);
+        awakening_default(0.4);
     }
     NoisePreset("death_infected")
     {
@@ -441,7 +441,8 @@ sub presets()
 
         interest_default(0.2, "attract");
 
-        awakening_default(0.20);
+        awakening_default(0.60);
+		awakening("biter", 1.0);
     }
     NoisePreset("weapon_impact_body")
     {
@@ -453,7 +454,8 @@ sub presets()
         interest("human", 0.9, "attract");
 		interest("biter", 0.9, "attract");
 
-        awakening_default(0.9);
+        awakening_default(0.8);
+		awakening("biter", 0.8);
     }
     NoisePreset("generator_running")
     {
@@ -515,7 +517,7 @@ sub presets()
         interest_default(0.9, "notice");
         interest("human", 0.3, "notice");
 
-        awakening_default(0.0);
+        awakening_default(0.5);
     }
     NoisePreset("player_warcry")
     {
@@ -559,6 +561,7 @@ sub presets()
 		interest("biter", 0.99, "attract");
 		interest("human", 0.99, "repel");
         awakening_default(1.0);
+		awakening("biter", 1.0);
         
         spawner_activation_flag("explosion_spawner_activation");
         spawner_activation_flag("summon_infected_reinforcements");
@@ -574,6 +577,7 @@ sub presets()
 		interest("human", 0.99, "repel");
 		
         awakening_default(1.0);
+		awakening("biter", 1.0);
         spawner_activation_flag("explosion_spawner_activation");
         reinforcement_id("CarTrap_Infected");
     }
@@ -671,6 +675,7 @@ sub presets()
 		interest("biter", 0.99, "attract");
 
         awakening_default(1.0);
+		awakening("biter", 1.0);
 		spawner_activation_flag("explosion_spawner_activation");
         spawner_activation_flag("summon_infected_reinforcements");
     }
@@ -719,11 +724,11 @@ sub presets()
     }
     NoisePreset("player_step_walk")
     {
-        range(7.0);
-        range_effective(7.0);
+        range(1.0);
+        range_effective(1.0);
         duration(0.5);
 
-        interest_default(0.3, "attract");
+        interest_default(0.1, "attract");
         interest("biter", 0.1, "attract");
 
         awakening_default(0.1);
@@ -755,6 +760,7 @@ sub presets()
         interest_default(0.7, "notice");
 		interest("biter", 0.6, "attract");
 		interest("human", 0.6, "notice");
+		awakening("biter", 0.7);
     }
     NoisePreset("player_landing_high")
     {
@@ -767,6 +773,7 @@ sub presets()
 		interest("human", 0.3, "notice");
 
         awakening_default(1.0);
+		awakening("biter", 1.0);
 
         spawner_activation_flag("biter_hole_roof");
     }
@@ -825,6 +832,7 @@ sub presets()
         interest_default(0.2, "notice");
 
         awakening_default(0.2);
+		awakening("biter", 0.2);
     }
     NoisePreset("player_passive_landing_1")
     {
@@ -835,6 +843,7 @@ sub presets()
         interest_default(0.4, "notice");
 
         awakening_default(0.4);
+		awakening("biter", 0.4);
     }
     NoisePreset("player_passive_landing_2")
     {
@@ -845,6 +854,7 @@ sub presets()
         interest_default(1.0, "notice");
 
         awakening_default(1.0);
+		awakening("biter", 1.0);
     }
 
     NoisePreset("biter_groan")
@@ -858,6 +868,7 @@ sub presets()
 		interest("biter", 0.9, "attract");
 
         awakening_default(0.8);
+		awakening("biter", 0.8);
     }
     NoisePreset("viral_groan")
     {
@@ -870,6 +881,7 @@ sub presets()
 		interest("biter", 1.0, "attract");
 
         awakening_default(0.5);
+		awakening("biter", 0.6);
     }
     NoisePreset("demolisher_groan")
     {
@@ -911,7 +923,8 @@ sub presets()
         interest_default(0.0, "attract");
         interest("viral", 1.0, "attract");
 
-        awakening_default(0.0);
+        awakening_default(1.0);
+		awakening("biter", 1.0);
     }
 	
     NoisePreset("summoning_horn")
@@ -924,6 +937,7 @@ sub presets()
 		interest("human", 0.7, "attract");
 		interest("biter", 0.7, "attract");
         awakening_default(1.0);
+		awakening("biter", 1.0);
 		
 		reinforcement_id("Bandit_Human");
     }

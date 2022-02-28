@@ -72,21 +72,8 @@ sub presets()
     }
     NoisePreset("decoy")
     {
-        range(40.0);
-        range_effective(30.0);
-        duration(20.0);
-
-        interest_default(0.9, "attract");
-        interest("human", 0.9, "notice");
-        interest("biter", 1.0, "force_attract");
-        //reinforcement_id("Default_Infected");
-        
-        awakening_default(1.00);
-    }
-    NoisePreset("decoy_upgrade1")
-    {
-        range(50.0);
-        range_effective(40.0);
+        range(60.0);
+        range_effective(50.0);
         duration(25.0);
 
         interest_default(0.9, "attract");
@@ -95,11 +82,26 @@ sub presets()
         //reinforcement_id("Default_Infected");
         
         awakening_default(1.00);
+		awakening("biter", 1.0);
+    }
+    NoisePreset("decoy_upgrade1")
+    {
+        range(65.0);
+        range_effective(55.0);
+        duration(26.0);
+
+        interest_default(0.9, "attract");
+        interest("human", 0.9, "notice");
+        interest("biter", 1.0, "force_attract");
+        //reinforcement_id("Default_Infected");
+        
+        awakening_default(1.00);
+		awakening("biter", 1.0);
     }
     NoisePreset("decoy_upgrade2")
     {
-        range(55.0);
-        range_effective(45.0);
+        range(70.0);
+        range_effective(60.0);
         duration(30.0);
 
         interest_default(0.9, "attract");
@@ -108,35 +110,11 @@ sub presets()
         //reinforcement_id("Default_Infected");
 
         awakening_default(1.00);
+		awakening("biter", 1.0);
     }
     NoisePreset("decoy_upgrade4")
     {
-        range(60.0);
-        range_effective(50.0);
-        duration(35.0);
-
-        interest_default(0.9, "attract");
-        interest("human", 0.9, "notice");
-        interest("biter", 1.0, "force_attract");
-        //reinforcement_id("Default_Infected");
-
-        awakening_default(1.00);
-    }
-    NoisePreset("decoy_upgrade5")
-    {
-        range(60.0);
-        range_effective(60.0);
-        duration(35.0);
-
-        interest_default(0.9, "attract");
-        interest("human", 0.9, "notice");
-        interest("biter", 1.0, "force_attract");
-        //reinforcement_id("Default_Infected");
-        awakening_default(1.00);
-    }
-    NoisePreset("decoy_upgrade6")
-    {
-        range(70.0);
+        range(75.0);
         range_effective(65.0);
         duration(35.0);
 
@@ -146,11 +124,39 @@ sub presets()
         //reinforcement_id("Default_Infected");
 
         awakening_default(1.00);
+		awakening("biter", 1.0);
+    }
+    NoisePreset("decoy_upgrade5")
+    {
+        range(80.0);
+        range_effective(70.0);
+        duration(35.0);
+
+        interest_default(0.9, "attract");
+        interest("human", 0.9, "notice");
+        interest("biter", 1.0, "force_attract");
+        //reinforcement_id("Default_Infected");
+        awakening_default(1.00);
+		awakening("biter", 1.0);
+    }
+    NoisePreset("decoy_upgrade6")
+    {
+        range(85.0);
+        range_effective(75.0);
+        duration(35.0);
+
+        interest_default(0.9, "attract");
+        interest("human", 0.9, "notice");
+        interest("biter", 1.0, "force_attract");
+        //reinforcement_id("Default_Infected");
+
+        awakening_default(1.00);
+		awakening("biter", 1.0);
     }
     NoisePreset("decoy_upgrade7")
     {
-        range(80.0);
-        range_effective(75.0);
+        range(90.0);
+        range_effective(85.0);
         duration(40.0);
 
         interest_default(0.9, "attract");
@@ -159,10 +165,11 @@ sub presets()
         //reinforcement_id("Default_Infected");
 
         awakening_default(1.00);
+		awakening("biter", 1.0);
     }
     NoisePreset("biter_attractor")
     {
-        range(30.0);
+        range(40.0);
         range_effective(30.0);
         duration(20.0);
 
@@ -171,6 +178,7 @@ sub presets()
         interest("biter", 1.0, "force_attract");
 
         awakening_default(1.00);
+		awakening("biter", 1.0);
     }
     NoisePreset("hanging_body_decoy")
     {

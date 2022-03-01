@@ -2,7 +2,7 @@
 <BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
     <Selector>
         <!-- Try to hide behind others -->
-        <ExternalTree m_UID="BANSHEE_MOVE_TO_GROUP" m_CustomName="MoveToGroup" m_Hide="true"/>
+        <ExternalTree m_UID="BANSHEE_ATTACK_JUMP_FROM_ABOVE" m_CustomName="Go to high ground" m_Hide="true"/>
         <!-- Try to gain distance to prepare for attack -->
         <SequenceMem>
             <Cnd_IsCombatTargetInRadius m_Radius="$preferred_distance_to_target_min" m_HorizontalOnly="true" m_UsePrediction="true"/>
@@ -21,7 +21,7 @@
             </Sequence>
         </SequenceMem>
         <Optional m_Enabled="$enable_flanking_run">
-            <CooldownTimeDelta m_CooldownTime="0.5" m_CooldownOnAbort="true">
+            <CooldownTimeDelta m_CooldownTime="1.0" m_CooldownOnAbort="true">
                 <TimeDeltaLimit m_TimeMax="5.0" m_StatusReturned="SUCCESS">
                     <SequenceMem>
                         <Cnd_IsBBValueEqual_bool m_Key="#low_attack_ready" m_Value="false"/>

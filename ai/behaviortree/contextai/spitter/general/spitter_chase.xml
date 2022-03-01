@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+	<ExposeLogicState m_ExposedState="chasing">
+        <SequenceMem>
+            <Cnd_IsActivityModuleRunning_HitReaction m_Invert="true"/>
+            <Sequence>
+                <Cnd_HasTimePassed m_TimePoint="#sunlight_escape_time" m_TimeDelta="15.0"/>
+                <Selector>
+                    <Sequence>
+                        <Cnd_HasBBValue m_Key="#group_target"/>
+                        <Opr_GetObjectPosition m_Object="#group_target" m_Position="#group_target_pos"/>
+                        <Selector>
+                            <Act_Move m_MoveStyle="#run_move_style" m_IsAvoidanceActive="$use_avoidance" m_FailIfDestUnreachable="true" m_MaxDistOutsideNavmeshXZ="5" m_MaxDistOutsideNavmeshY="5" m_Destination="#group_target_pos" m_AvoidRegionsPreset="$avoid_regions_preset" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                            <Act_Taunt m_Type="Normal" m_Target="#target" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+                        </Selector>
+                    </Sequence>
+                    <Sequence>
+                        <Cnd_ChaseInProgress/>
+                        <Cnd_IsOwnedByChase/>
+                        <Opr_GetChaseTarget m_Target="#chase_target"/>
+                        <Cnd_IsBBValueEqual_bool m_Key="#searching" m_Value="false"/>
+                        <Opr_SetBBValue_bool m_Key="#should_check_last_target_pos" m_Value="false"/>
+                        <Opr_GetTargetPosition m_Target="#chase_target" m_Position="#chase_position"/>
+                        <Selector>
+                            <Cnd_IsSpottedInChase/>
+                            <Cnd_PositionInRadius m_Radius="12" m_Position="#chase_position" m_Invert="true"/>
+                        </Selector>
+                        <Act_Move m_Destination="#chase_position" m_EndRadius="10" m_MoveStyle="#run_move_style" m_IsAvoidanceActive="false" m_FailIfDestUnreachable="true" m_MaxDistOutsideNavmeshXZ="10" m_MaxDistOutsideNavmeshY="10" m_AvoidRegionsPreset="$avoid_regions_preset"  m_StopAtDest="true" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                    </Sequence>
+                </Selector>
+            </Sequence>
+        </SequenceMem>
+    </ExposeLogicState>
+</BehaviorTree>

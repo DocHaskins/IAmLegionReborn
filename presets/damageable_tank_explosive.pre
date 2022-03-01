@@ -1,0 +1,17 @@
+sub main()
+{
+	Version(0);
+	PresetDef("Type")
+	{
+		Description("");
+		AddField("CountdownTimeToExplode", "", false, true, false);
+		Preset("Encounter_InstantExplode")
+		{
+			SetField("CountdownTimeToExplode", "2.000000");
+		}
+		Preset("Default")
+		{
+			SetField("CountdownTimeToExplode", "7.000000");
+		}
+	}
+}

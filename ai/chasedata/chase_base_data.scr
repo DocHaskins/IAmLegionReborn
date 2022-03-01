@@ -1,3 +1,5 @@
+import "ial_settings.mth"
+
 sub main()
 {
     ChaseData() // General data, applies to all levels
@@ -248,75 +250,24 @@ sub main()
 
 	Difficulty("Easy")
     {
-        ChaseData() // overwrites the Normal setup
-        {
-        }  
-        
-        ChaseLevelData(1) // overwrites the Normal setup
-        {
-			max_active_virals(3);
-			
-			high_intensity_duration(20);
-			high_intensity_cooldown(50);
-			
-			min_distance_to_allow_chaser_retreat(12);
-			min_time_after_spawn_to_allow_retreat(5);    
-			time_of_pause_between_spawns_after_chaser_kill(15);
-			
-			chase_points_required_for_level_increase(175); 
-        }
-
-        ChaseLevelData(2) // overwrites the Normal setup
-        {
-			average_active_virals(3);
-			max_active_virals(5);
-			
-			high_intensity_duration(20);
-			high_intensity_cooldown(40);
-			
-			chase_points_required_for_level_increase(200);  
-        }	
-		
-		ChaseLevelData(3) // overwrites the Normal setup
-        {
-			average_active_virals(5);
-			max_active_virals(8);
-			
-			high_intensity_duration(30);
-			high_intensity_cooldown(40);
-			
-			chase_points_required_for_level_increase(250); 			
-        }	
-		
-		ChaseLevelData(4) // overwrites the Normal setup
-        {
-			average_active_virals(2);
-			max_active_virals(3);
-			
-			average_active_volatiles(3);
-			max_active_volatiles(6);
-			
-			high_intensity_duration(90);
-			high_intensity_cooldown(10);
-        }
 	}
 	
 	Difficulty("Hard")
     {
         ChaseData() // overwrite the Normal setup
         {
-			delay_between_scream_and_chase_start(1);
+			delay_between_scream_and_chase_start(IAL_Chase_InitialDelay);
 			delay_between_chase_start_and_first_spawn(2);
 			pause_point_accumulation_time_after_chase_level_increase(3);
-			chase_points_per_second_if_spotted_by_viral_close(6); // 5M
-			chase_points_per_second_if_spotted_by_viral_far(8);   // 20M
-			chase_points_per_second_if_spotted_by_screamer_close(6); //5M    
-			chase_points_per_second_if_spotted_by_screamer_far(8); //20M
-			chase_points_per_second_if_screamer_screaming(15);
-			max_range_for_screamer_scream_to_add_chase_points(40);
+			chase_points_per_second_if_spotted_by_viral_close(IAL_Chase_PointsPerSecondIfSeen_Viral_Close); // 5M
+			chase_points_per_second_if_spotted_by_viral_far(IAL_Chase_PointsPerSecondIfSeen_Viral_Far);   // 20M
+			chase_points_per_second_if_spotted_by_screamer_close(IAL_Chase_PointsPerSecondIfSeen_Screamer_Close); //5M    
+			chase_points_per_second_if_spotted_by_screamer_far(IAL_Chase_PointsPerSecondIfSeen_Screamer_Far); //20M
+			chase_points_per_second_if_screamer_screaming(IAL_Chase_PointsPerSecondIfSeen_Screamer_Screaming);
+			max_range_for_screamer_scream_to_add_chase_points(IAL_Chase_MaxRangeForScreamer);
 			time_out_of_reach_to_start_spawning_special_volatiles(10); 
-			range_to_remove_chasers_in_coop_far(80);
-			range_to_remove_chasers_in_coop_close(60);
+			range_to_remove_chasers_in_coop_far(IAL_Chase_Coop_Range_Far);
+			range_to_remove_chasers_in_coop_close(IAL_Chase_Coop_Range_Close);
        
 			block_init_spawn_from_poi(false);
 			block_init_spawn_in_dynamic_spawner(false);
@@ -325,17 +276,17 @@ sub main()
         
         ChaseLevelData(1) // overwrite the Normal setup
         {
-			average_active_virals(8);
-			max_active_virals(12);
+			average_active_virals(IAL_Chase_LVL1_Avg_Virals);
+			max_active_virals(IAL_Chase_LVL1_Max_Virals);
 
-			average_active_volatiles(1);
-			max_active_volatiles(1);
+			average_active_volatiles(IAL_Chase_LVL1_Avg_Volatiles);
+			max_active_volatiles(IAL_Chase_LVL1_Max_Volatiles);
         
-			max_active_virals_in_coop_close_range(8);
-			max_active_virals_in_coop_long_range(12);
+			max_active_virals_in_coop_close_range(IAL_Chase_Coop_LVL1_Virals_Close);
+			max_active_virals_in_coop_long_range(IAL_Chase_Coop_LVL1_Virals_Far);
         
-			max_active_volatiles_in_coop_close_range(4);
-			max_active_volatiles_in_coop_long_range(5);
+			max_active_volatiles_in_coop_close_range(IAL_Chase_Coop_LVL1_Volatiles_Close);
+			max_active_volatiles_in_coop_long_range(IAL_Chase_Coop_LVL1_Volatiles_Far);
         
 			high_intensity_duration(40);
 			high_intensity_cooldown(10);
@@ -381,17 +332,17 @@ sub main()
 
         ChaseLevelData(2) // overwrite the Normal setup
         {
-			average_active_virals(12);
-			max_active_virals(18);
+			average_active_virals(IAL_Chase_LVL2_Avg_Virals);
+			max_active_virals(IAL_Chase_LVL2_Max_Virals);
 
-			average_active_volatiles(2);
-			max_active_volatiles(2);
+			average_active_volatiles(IAL_Chase_LVL2_Avg_Volatiles);
+			max_active_volatiles(IAL_Chase_LVL2_Max_Volatiles);
         
-			max_active_virals_in_coop_close_range(12);
-			max_active_virals_in_coop_long_range(18);
+			max_active_virals_in_coop_close_range(IAL_Chase_Coop_LVL2_Virals_Close);
+			max_active_virals_in_coop_long_range(IAL_Chase_Coop_LVL2_Virals_Far);
         
-			max_active_volatiles_in_coop_close_range(3);
-			max_active_volatiles_in_coop_long_range(3);
+			max_active_volatiles_in_coop_close_range(IAL_Chase_Coop_LVL2_Volatiles_Close);
+			max_active_volatiles_in_coop_long_range(IAL_Chase_Coop_LVL2_Volatiles_Far);
               
 			high_intensity_duration(80);
 			high_intensity_cooldown(20);
@@ -437,17 +388,17 @@ sub main()
 		
 		ChaseLevelData(3) // overwrite the Normal setup
         {
-			average_active_virals(18);
-			max_active_virals(24);
+			average_active_virals(IAL_Chase_LVL3_Avg_Virals);
+			max_active_virals(IAL_Chase_LVL3_Max_Virals);
 
-			average_active_volatiles(3);
-			max_active_volatiles(3);
+			average_active_volatiles(IAL_Chase_LVL3_Avg_Volatiles);
+			max_active_volatiles(IAL_Chase_LVL3_Max_Volatiles);
         
-			max_active_virals_in_coop_close_range(20);
-			max_active_virals_in_coop_long_range(24);
+			max_active_virals_in_coop_close_range(IAL_Chase_Coop_LVL3_Virals_Close);
+			max_active_virals_in_coop_long_range(IAL_Chase_Coop_LVL3_Virals_Far);
         
-			max_active_volatiles_in_coop_close_range(4);
-			max_active_volatiles_in_coop_long_range(4);
+			max_active_volatiles_in_coop_close_range(IAL_Chase_Coop_LVL3_Volatiles_Close);
+			max_active_volatiles_in_coop_long_range(IAL_Chase_Coop_LVL3_Volatiles_Far);
               
 			high_intensity_duration(120);
 			high_intensity_cooldown(10);
@@ -493,8 +444,17 @@ sub main()
 		
 		ChaseLevelData(4) // overwrite the Normal setup
         {
-			average_active_virals(24);
-			max_active_virals(30);
+			average_active_virals(IAL_Chase_LVL4_Avg_Virals);
+			max_active_virals(IAL_Chase_LVL4_Max_Virals);
+			
+			average_active_volatiles(IAL_Chase_LVL4_Avg_Volatiles);
+			max_active_volatiles(IAL_Chase_LVL4_Max_Volatiles);
+        
+			max_active_virals_in_coop_close_range(IAL_Chase_Coop_LVL4_Virals_Close);
+			max_active_virals_in_coop_long_range(IAL_Chase_Coop_LVL4_Virals_Far);
+        
+			max_active_volatiles_in_coop_close_range(IAL_Chase_Coop_LVL4_Volatiles_Close);
+			max_active_volatiles_in_coop_long_range(IAL_Chase_Coop_LVL4_Volatiles_Far);
         }	
 	
     }

@@ -82,9 +82,9 @@ export string IAL_AI_Encounter_Difficulty_Chemicals_Lvl_Min = "Tier_5";
 export string IAL_AI_Encounter_Difficulty_Chemicals_Lvl_Max = "Tier_9";
 
 //AI FALL HEIGHTS(ai/modulesparams/collisionmodulehumanpresets.scr)
-export float IAL_AI_FallHeight_ImmediateKill = 14.0;
+export float IAL_AI_FallHeight_ImmediateKill = 15.0;
 
-export float IAL_AI_FallHeight_Human_ImmediateKill = 12.0;
+export float IAL_AI_FallHeight_Human_ImmediateKill = 15.0;
 export float IAL_AI_FallHeight_Human_MinDmg = 10.0;
 export float IAL_AI_FallHeight_Human_MaxDmg = 50.0;
 
@@ -103,3 +103,92 @@ export float IAL_AI_FallHeight_Volatile_MaxDmg = 75.0;
 export float IAL_AI_FallHeight_AlphaZombie_ImmediateKill = 30.0;
 export float IAL_AI_FallHeight_AlphaZombie_MinDmg = 100.0;
 export float IAL_AI_FallHeight_AlphaZombie_MaxDmg = 150.0;
+
+
+//CHASE SYSTEM ((ai/chasedata/chase_base_data.scr)
+//Chase Data for the night intensity after Chase begins
+//Delay before Zombies start Chasing you
+export int IAL_Chase_InitialDelay = 2;
+
+//Point increase on chase based on infected class - GENERAL Settings
+export int IAL_Chase_PointsPerSecondIfSeen_Viral_Close = 6;
+export int IAL_Chase_PointsPerSecondIfSeen_Viral_Far = 8;
+export int IAL_Chase_PointsPerSecondIfSeen_Screamer_Close = 8;
+export int IAL_Chase_PointsPerSecondIfSeen_Screamer_Far = 6;
+export int IAL_Chase_PointsPerSecondIfSeen_Screamer_Screaming = 15;
+
+//Range for the screamers screen to cause chase points to increase
+export int IAL_Chase_MaxRangeForScreamer = 40;
+
+//Time before chase ends
+export int IAL_Chase_LVL1_ChaseEndDelay = 15;
+export int IAL_Chase_LVL1_ChaseEndUnderUVDelay = 20;
+export int IAL_Chase_LVL2_ChaseEndDelay = 25;
+export int IAL_Chase_LVL2_ChaseEndUnderUVDelay = 25;
+export int IAL_Chase_LVL3_ChaseEndDelay = 30;
+export int IAL_Chase_LVL3_ChaseEndUnderUVDelay = 30;
+export int IAL_Chase_LVL4_ChaseEndDelay = 50;
+export int IAL_Chase_LVL4_ChaseEndUnderUVDelay = 50;
+
+//These are the amount of points required to move to next levels in chase
+export int IAL_Chase_UpgradePoints_ToLVL2 = 50;
+export int IAL_Chase_UpgradePoints_ToLVL3 = 175;
+export int IAL_Chase_UpgradePoints_ToLVL4 = 225;
+
+//Number of Infected based on Chase Points - SINGLE PLAYER
+export int IAL_Chase_LVL1_Avg_Virals = 8;
+export int IAL_Chase_LVL1_Max_Virals = 12;
+export int IAL_Chase_LVL2_Avg_Virals = 12;
+export int IAL_Chase_LVL2_Max_Virals = 18;
+export int IAL_Chase_LVL3_Avg_Virals = 18;
+export int IAL_Chase_LVL3_Max_Virals = 24;
+export int IAL_Chase_LVL4_Avg_Virals = 24;
+export int IAL_Chase_LVL4_Max_Virals = 30;
+
+export int IAL_Chase_LVL1_Avg_Volatiles = 2;
+export int IAL_Chase_LVL1_Max_Volatiles = 4;
+export int IAL_Chase_LVL2_Avg_Volatiles = 3;
+export int IAL_Chase_LVL2_Max_Volatiles = 4;
+export int IAL_Chase_LVL3_Avg_Volatiles = 4;
+export int IAL_Chase_LVL3_Max_Volatiles = 6;
+export int IAL_Chase_LVL4_Avg_Volatiles = 8;
+export int IAL_Chase_LVL4_Max_Volatiles = 10;
+	
+//Number of Infected based on Chase Points - COOP
+export int IAL_Chase_Coop_LVL1_Virals_Close = 12;
+export int IAL_Chase_Coop_LVL1_Virals_Far = 15;
+export int IAL_Chase_Coop_LVL2_Virals_Close = 18;
+export int IAL_Chase_Coop_LVL2_Virals_Far = 18;
+export int IAL_Chase_Coop_LVL3_Virals_Close = 24;
+export int IAL_Chase_Coop_LVL3_Virals_Far = 24;
+export int IAL_Chase_Coop_LVL4_Virals_Close = 30;
+export int IAL_Chase_Coop_LVL4_Virals_Far = 30;
+
+export int IAL_Chase_Coop_LVL1_Volatiles_Close = 4;
+export int IAL_Chase_Coop_LVL1_Volatiles_Far = 5;
+export int IAL_Chase_Coop_LVL2_Volatiles_Close = 5;
+export int IAL_Chase_Coop_LVL2_Volatiles_Far = 6;
+export int IAL_Chase_Coop_LVL3_Volatiles_Close = 6;
+export int IAL_Chase_Coop_LVL3_Volatiles_Far = 7;
+export int IAL_Chase_Coop_LVL4_Volatiles_Close = 10;
+export int IAL_Chase_Coop_LVL4_Volatiles_Far = 12;
+
+//CHASE GENERAL SETTINGS - COOP
+export int IAL_Chase_Coop_Range_Far = 80;
+export int IAL_Chase_Coop_Range_Close = 40;
+
+//Intensity times and cooldowns
+export int IAL_Chase_LVL1_High_Intensity_Time = 40;
+export int IAL_Chase_LVL1_High_Intensity_Cooldown = 10;
+export int IAL_Chase_LVL2_High_Intensity_Time = 50;
+export int IAL_Chase_LVL2_High_Intensity_Cooldown = 8;
+export int IAL_Chase_LVL3_High_Intensity_Time = 60;
+export int IAL_Chase_LVL3_High_Intensity_Cooldown = 6;
+export int IAL_Chase_LVL4_High_Intensity_Time = 80;
+export int IAL_Chase_LVL4_High_Intensity_Cooldown = 5;
+	
+//Time before the chase ends after the player is lost by AI
+export int IAL_Chase_LVL1_LostPlayer_TimeBeforeEndChase = 30;
+export int IAL_Chase_LVL2_LostPlayer_TimeBeforeEndChase = 30;
+export int IAL_Chase_LVL3_LostPlayer_TimeBeforeEndChase = 30;
+export int IAL_Chase_LVL4_LostPlayer_TimeBeforeEndChase = 30;

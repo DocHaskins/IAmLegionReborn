@@ -46,12 +46,12 @@ sub main()
         SkeletonName("woman_basic_skeleton.msh");
     }
     PhysicsTorqueMin([10.0, 6.0, 10.0]);
-    PhysicsTorqueMax([20.0, 10.0, 20.0]);
+    PhysicsTorqueMax([35.0, 25.0, 35.0]);
     PhysicsVelMulMin(2.0);
-    PhysicsVelMulMax(4.0);
-    BodyBloodMaskMin(0.03);
-    BodyBloodMaskMax(0.20);
-    BodyBloodLevelsNum(15);
+    PhysicsVelMulMax(10.0);
+    BodyBloodMaskMin(0.13);
+    BodyBloodMaskMax(1.80);
+    BodyBloodLevelsNum(50);
 
     // default patch mesh is loaded from human_patch.prefab (m_MeshName)
 
@@ -74,7 +74,7 @@ sub main()
         PhysicsAddTorqueMax([40.0, 100.0, 40.0]);
         
         PhysicsAddLinVelMin([0.0, 3.5, 0.0]); // 0.0, 1.0, 0.0 was at start
-        PhysicsAddLinVelMax([0.0, 3.5, 0.0]); // 0.0, 2.5, 0.0 was at start
+        PhysicsAddLinVelMax([1.0, 3.5, 1.0]); // 0.0, 2.5, 0.0 was at start
     }
     Damage("patch_elem_leg_left_b", "patch_elem_leg_left_b")
     {
@@ -84,10 +84,10 @@ sub main()
         AddGibCutBloodFX("limb_off_bleeding.gpufx");
 
         PhysicsAddTorqueMin([10.0, 10.0, 10.0]);
-        PhysicsAddTorqueMax([15.0, 15.0, 15.0]);
+        PhysicsAddTorqueMax([25.0, 25.0, 25.0]);
 
         PhysicsAddLinVelMin([4.0, 4.0, 4.0]);
-        PhysicsAddLinVelMax([8.0, 8.0, 8.0]);
+        PhysicsAddLinVelMax([15.0, 15.0, 15.0]);
     }
     Damage("patch_elem_leg_left_a", "patch_elem_leg_left_a")
     {
@@ -97,10 +97,10 @@ sub main()
         AddGibCutBloodFX("limb_off_bleeding.gpufx"); 
         
         PhysicsAddTorqueMin([10.0, 10.0, 10.0]);
-        PhysicsAddTorqueMax([15.0, 15.0, 15.0]);
+        PhysicsAddTorqueMax([25.0, 25.0, 25.0]);
 
         PhysicsAddLinVelMin([4.0, 4.0, 4.0]);
-        PhysicsAddLinVelMax([8.0, 8.0, 8.0]);
+        PhysicsAddLinVelMax([15.0, 15.0, 15.0]);
     }
     Damage("patch_elem_leg_left_a_show", "patch_elem_leg_left_a_show")
     {
@@ -115,10 +115,10 @@ sub main()
         AddGibCutBloodFX("limb_off_bleeding.gpufx");
         
         PhysicsAddTorqueMin([10.0, 10.0, 10.0]);
-        PhysicsAddTorqueMax([15.0, 15.0, 15.0]);
+        PhysicsAddTorqueMax([25.0, 25.0, 25.0]);
 
         PhysicsAddLinVelMin([4.0, 4.0, 4.0]);
-        PhysicsAddLinVelMax([8.0, 8.0, 8.0]);
+        PhysicsAddLinVelMax([15.0, 15.0, 15.0]);
     }
     Damage("patch_elem_leg_right_a", "patch_elem_leg_right_a")
     {
@@ -128,10 +128,10 @@ sub main()
         AddGibCutBloodFX("limb_off_bleeding.gpufx");
         
         PhysicsAddTorqueMin([10.0, 10.0, 10.0]);
-        PhysicsAddTorqueMax([15.0, 15.0, 15.0]);
+        PhysicsAddTorqueMax([25.0, 25.0, 25.0]);
 
         PhysicsAddLinVelMin([4.0, 4.0, 4.0]);
-        PhysicsAddLinVelMax([8.0, 8.0, 8.0]);
+        PhysicsAddLinVelMax([15.0, 15.0, 15.0]);
     }
     Damage("patch_elem_leg_right_a_show", "patch_elem_leg_right_a_show")
     {
@@ -149,10 +149,10 @@ sub main()
         PhysicsCutDirForceMulMin(-2.0);
         
         PhysicsAddTorqueMin([10.0, 10.0, 10.0]);
-        PhysicsAddTorqueMax([15.0, 15.0, 15.0]);
+        PhysicsAddTorqueMax([25.0, 25.0, 25.0]);
 
         PhysicsAddLinVelMin([0.0, 0.0, 0.0]);
-        PhysicsAddLinVelMax([0.0, 0.0, 0.0]);
+        PhysicsAddLinVelMax([1.0, 1.0, 1.0]);
     }
     Damage("patch_elem_arm_left_a", "patch_elem_arm_left_a")
     {
@@ -165,10 +165,10 @@ sub main()
         PhysicsCutDirForceMulMin(-2.0);
         
         PhysicsAddTorqueMin([10.0, 10.0, 10.0]);
-        PhysicsAddTorqueMax([15.0, 15.0, 15.0]);
+        PhysicsAddTorqueMax([25.0, 25.0, 25.0]);
 
         PhysicsAddLinVelMin([0.0, 0.0, 0.0]);
-        PhysicsAddLinVelMax([0.0, 0.0, 0.0]);
+        PhysicsAddLinVelMax([1.0, 1.0, 1.0]);
     }
     Damage("patch_elem_arm_left_a_show", "patch_elem_arm_left_a_show")
     {
@@ -192,10 +192,10 @@ sub main()
         PhysicsCutDirForceMulMin(-2.0);
         
         PhysicsAddTorqueMin([10.0, 10.0, 10.0]);
-        PhysicsAddTorqueMax([15.0, 15.0, 15.0]);
+        PhysicsAddTorqueMax([25.0, 25.0, 25.0]);
 
         PhysicsAddLinVelMin([0.0, 0.0, 0.0]);
-        PhysicsAddLinVelMax([0.0, 0.0, 0.0]);
+        PhysicsAddLinVelMax([1.0, 1.0, 1.0]);
     }
     Damage("patch_elem_arm_right_a", "patch_elem_arm_right_a")
     {
@@ -208,10 +208,10 @@ sub main()
         PhysicsCutDirForceMulMin(-2.0);
         
         PhysicsAddTorqueMin([10.0, 10.0, 10.0]);
-        PhysicsAddTorqueMax([15.0, 15.0, 15.0]);
+        PhysicsAddTorqueMax([25.0, 25.0, 25.0]);
 
         PhysicsAddLinVelMin([0.0, 0.0, 0.0]);
-        PhysicsAddLinVelMax([0.0, 0.0, 0.0]);
+        PhysicsAddLinVelMax([1.0, 1.0, 1.0]);
     }
     Damage("patch_elem_arm_right_a_show", "patch_elem_arm_right_a_show")
     {

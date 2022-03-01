@@ -206,7 +206,6 @@ sub main()
         max_active_volatiles_in_coop_close_range(8);
         max_active_volatiles_in_coop_long_range(8);
         
-        
         high_intensity_duration(120);
         high_intensity_cooldown(5);
         
@@ -288,8 +287,8 @@ sub main()
 			max_active_volatiles_in_coop_close_range(IAL_Chase_Coop_LVL1_Volatiles_Close);
 			max_active_volatiles_in_coop_long_range(IAL_Chase_Coop_LVL1_Volatiles_Far);
         
-			high_intensity_duration(40);
-			high_intensity_cooldown(10);
+			high_intensity_duration(IAL_Chase_LVL1_High_Intensity_Time);
+			high_intensity_cooldown(IAL_Chase_LVL1_High_Intensity_Cooldown);
         
 			enable_high_intensity_spawning_at_level_increase(true);
 			initial_high_intensity_duration(30);
@@ -320,14 +319,14 @@ sub main()
 			min_time_after_spawn_to_allow_retreat(7);    
 			time_of_pause_between_spawns_after_chaser_kill(12);
                            
-			chase_points_required_for_level_increase(50);             
-			time_to_end_chase_after_player_lost(60); 
+			chase_points_required_for_level_increase(IAL_Chase_UpgradePoints_ToLVL2);             
+			time_to_end_chase_after_player_lost(IAL_Chase_LVL1_LostPlayer_TimeBeforeEndChase); 
 
 			time_after_level_increase_when_player_cannot_lose_chase(25); 
 			min_time_to_end_chase_after_level_increase(35); 
         
-			player_time_in_uv_zone_to_end_chase(7);
-			player_time_in_safe_zone_to_end_chase(7);         
+			player_time_in_uv_zone_to_end_chase(IAL_Chase_LVL1_ChaseEndUnderUVDelay);
+			player_time_in_safe_zone_to_end_chase(IAL_Chase_LVL1_ChaseEndDelay);         
         }
 
         ChaseLevelData(2) // overwrite the Normal setup
@@ -344,8 +343,8 @@ sub main()
 			max_active_volatiles_in_coop_close_range(IAL_Chase_Coop_LVL2_Volatiles_Close);
 			max_active_volatiles_in_coop_long_range(IAL_Chase_Coop_LVL2_Volatiles_Far);
               
-			high_intensity_duration(80);
-			high_intensity_cooldown(20);
+			high_intensity_duration(IAL_Chase_LVL2_High_Intensity_Time);
+			high_intensity_cooldown(IAL_Chase_LVL2_High_Intensity_Cooldown);
         
 			enable_high_intensity_spawning_at_level_increase(true);
 			initial_high_intensity_duration(90);
@@ -376,14 +375,14 @@ sub main()
 			min_time_after_spawn_to_allow_retreat(7);    
 			time_of_pause_between_spawns_after_chaser_kill(12);
                            
-			chase_points_required_for_level_increase(50);             
-			time_to_end_chase_after_player_lost(60); 
+			chase_points_required_for_level_increase(IAL_Chase_UpgradePoints_ToLVL3);             
+			time_to_end_chase_after_player_lost(IAL_Chase_LVL2_LostPlayer_TimeBeforeEndChase); 
 
 			time_after_level_increase_when_player_cannot_lose_chase(25); 
 			min_time_to_end_chase_after_level_increase(35); 
         
-			player_time_in_uv_zone_to_end_chase(10);
-			player_time_in_safe_zone_to_end_chase(10);    
+			player_time_in_uv_zone_to_end_chase(IAL_Chase_LVL2_ChaseEndUnderUVDelay);
+			player_time_in_safe_zone_to_end_chase(IAL_Chase_LVL2_ChaseEndDelay);    
         }	
 		
 		ChaseLevelData(3) // overwrite the Normal setup
@@ -400,8 +399,8 @@ sub main()
 			max_active_volatiles_in_coop_close_range(IAL_Chase_Coop_LVL3_Volatiles_Close);
 			max_active_volatiles_in_coop_long_range(IAL_Chase_Coop_LVL3_Volatiles_Far);
               
-			high_intensity_duration(120);
-			high_intensity_cooldown(10);
+			high_intensity_duration(IAL_Chase_LVL3_High_Intensity_Time);
+			high_intensity_cooldown(IAL_Chase_LVL3_High_Intensity_Cooldown);
         
 			enable_high_intensity_spawning_at_level_increase(true);
 			initial_high_intensity_duration(120);
@@ -432,14 +431,14 @@ sub main()
 			min_time_after_spawn_to_allow_retreat(7);    
 			time_of_pause_between_spawns_after_chaser_kill(12);
                            
-			chase_points_required_for_level_increase(50);             
-			time_to_end_chase_after_player_lost(60); 
+			chase_points_required_for_level_increase(IAL_Chase_UpgradePoints_ToLVL4);             
+			time_to_end_chase_after_player_lost(IAL_Chase_LVL3_LostPlayer_TimeBeforeEndChase); 
 
 			time_after_level_increase_when_player_cannot_lose_chase(25); 
 			min_time_to_end_chase_after_level_increase(35); 
         
-			player_time_in_uv_zone_to_end_chase(10);
-			player_time_in_safe_zone_to_end_chase(10);    
+			player_time_in_uv_zone_to_end_chase(IAL_Chase_LVL3_ChaseEndUnderUVDelay);
+			player_time_in_safe_zone_to_end_chase(IAL_Chase_LVL3_ChaseEndDelay);    
         }	
 		
 		ChaseLevelData(4) // overwrite the Normal setup
@@ -455,6 +454,11 @@ sub main()
         
 			max_active_volatiles_in_coop_close_range(IAL_Chase_Coop_LVL4_Volatiles_Close);
 			max_active_volatiles_in_coop_long_range(IAL_Chase_Coop_LVL4_Volatiles_Far);
+			
+			player_time_in_uv_zone_to_end_chase(IAL_Chase_LVL4_ChaseEndUnderUVDelay);
+			player_time_in_safe_zone_to_end_chase(IAL_Chase_LVL4_ChaseEndDelay);   
+			
+			time_to_end_chase_after_player_lost(IAL_Chase_LVL4_LostPlayer_TimeBeforeEndChase); 
         }	
 	
     }

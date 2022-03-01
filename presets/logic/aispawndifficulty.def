@@ -1,0 +1,166 @@
+sub declare_ai_spawn_difficulty_presets()
+{
+    PresetDef("Difficulty")
+    {
+		AddField("m_DifficultyRangeSource", "", false, true, false);
+		AddField("m_MinDifficultyTier", "", false, true, false);
+		AddField("m_MaxDifficultyTier", "", false, true, false);
+		AddField("m_DifficultyModifier", "", false, true, false);
+        
+		
+		//EMBEDDED OBJECTS PRESETS
+        Preset("Tier_1")
+        {
+			SetField("m_MinDifficultyTier", "Tier_1");
+			SetField("m_MaxDifficultyTier", "Tier_1");
+        }
+        Preset("Tier_2")
+        {
+			SetField("m_MinDifficultyTier", "Tier_2");
+			SetField("m_MaxDifficultyTier", "Tier_2");
+        }
+        Preset("Tier_3")
+        {
+			SetField("m_MinDifficultyTier", "Tier_3");
+			SetField("m_MaxDifficultyTier", "Tier_3");
+        }
+        Preset("Tier_4")
+        {
+			SetField("m_MinDifficultyTier", "Tier_4");
+			SetField("m_MaxDifficultyTier", "Tier_4");
+        }
+        Preset("Tier_5")
+        {
+			SetField("m_MinDifficultyTier", "Tier_5");
+			SetField("m_MaxDifficultyTier", "Tier_5");
+        }
+        Preset("Tier_6")
+        {
+			SetField("m_MinDifficultyTier", "Tier_6");
+			SetField("m_MaxDifficultyTier", "Tier_6");
+        }
+        Preset("Tier_7")
+        {
+			SetField("m_MinDifficultyTier", "Tier_7");
+			SetField("m_MaxDifficultyTier", "Tier_7");
+        }
+        Preset("Tier_8")
+        {
+			SetField("m_MinDifficultyTier", "Tier_8");
+			SetField("m_MaxDifficultyTier", "Tier_8");
+        }
+        Preset("Tier_9")
+        {
+			SetField("m_MinDifficultyTier", "Tier_9");
+			SetField("m_MaxDifficultyTier", "Tier_9");
+        }
+        Preset("Tier_2_4")
+        {
+			SetField("m_MinDifficultyTier", "Tier_2");
+			SetField("m_MaxDifficultyTier", "Tier_4");
+        }
+        Preset("Tier_4_6")
+        {
+			SetField("m_MinDifficultyTier", "Tier_4");
+			SetField("m_MaxDifficultyTier", "Tier_6");
+        }
+        Preset("Tier_1_2")
+        {
+			SetField("m_MinDifficultyTier", "Tier_1");
+			SetField("m_MaxDifficultyTier", "Tier_2");
+        }
+        Preset("Tier_2_3")
+        {
+			SetField("m_MinDifficultyTier", "Tier_2");
+			SetField("m_MaxDifficultyTier", "Tier_3");
+        }
+        Preset("Tier_3_4")
+        {
+			SetField("m_MinDifficultyTier", "Tier_3");
+			SetField("m_MaxDifficultyTier", "Tier_4");
+        }
+        Preset("Tier_4_5")
+        {
+			SetField("m_MinDifficultyTier", "Tier_4");
+			SetField("m_MaxDifficultyTier", "Tier_5");
+        }
+        Preset("Tier_5_6")
+        {
+			SetField("m_MinDifficultyTier", "Tier_5");
+			SetField("m_MaxDifficultyTier", "Tier_6");
+        }
+    }
+}
+
+		//SPAWNER PRESETS
+sub declare_ai_spawner_difficulty_presets()
+{
+    PresetDef("Spawner_Difficulty")
+    {
+		AddField("m_DifficultyRangeSource", "", false, true, false);
+        Preset("Tier_1")
+        {
+			SetField("m_DifficultyRangeSource", "UserDefinedDifficultyRange,(Difficulty;Tier_1);");
+        }
+        Preset("Tier_2")
+        {
+			SetField("m_DifficultyRangeSource", "UserDefinedDifficultyRange,(Difficulty;Tier_2);");
+        }
+        Preset("Tier_2_4")
+        {
+			SetField("m_DifficultyRangeSource", "UserDefinedDifficultyRange,(Difficulty;Tier_2_4);");
+        }
+        Preset("Tier_4_6")
+        {
+			SetField("m_DifficultyRangeSource", "UserDefinedDifficultyRange,(Difficulty;Tier_4_6);");
+        }
+        Preset("Tier_3")
+        {
+			SetField("m_DifficultyRangeSource", "UserDefinedDifficultyRange,(Difficulty;Tier_3);");
+        }
+        Preset("Tier_4")
+        {
+			SetField("m_DifficultyRangeSource", "UserDefinedDifficultyRange,(Difficulty;Tier_4);");
+        }
+        Preset("Tier_5")
+        {
+			SetField("m_DifficultyRangeSource", "UserDefinedDifficultyRange,(Difficulty;Tier_5);");
+        }
+        Preset("Tier_6")
+        {
+			SetField("m_DifficultyRangeSource", "UserDefinedDifficultyRange,(Difficulty;Tier_6);");
+        }
+        Preset("Tier_7")
+        {
+			SetField("m_DifficultyRangeSource", "UserDefinedDifficultyRange,(Difficulty;Tier_7);");
+        }
+        Preset("Tier_8")
+        {
+			SetField("m_DifficultyRangeSource", "UserDefinedDifficultyRange,(Difficulty;Tier_8);");
+        }
+        Preset("Tier_9")
+        {
+			SetField("m_DifficultyRangeSource", "UserDefinedDifficultyRange,(Difficulty;Tier_9);");
+        }
+		Preset("Tier_1_2")
+        {
+			SetField("m_DifficultyRangeSource", "UserDefinedDifficultyRange,(Difficulty;Tier_1_2);");
+        }
+		Preset("Tier_2_3")
+        {
+			SetField("m_DifficultyRangeSource", "UserDefinedDifficultyRange,(Difficulty;Tier_2_3);");
+        }
+		Preset("Tier_3_4")
+        {
+			SetField("m_DifficultyRangeSource", "UserDefinedDifficultyRange,(Difficulty;Tier_3_4);");
+        }
+		Preset("Tier_4_5")
+        {
+			SetField("m_DifficultyRangeSource", "UserDefinedDifficultyRange,(Difficulty;Tier_4_5);");
+        }
+		Preset("Tier_5_6")
+        {
+			SetField("m_DifficultyRangeSource", "UserDefinedDifficultyRange,(Difficulty;Tier_5_6);");
+        }
+    }
+}

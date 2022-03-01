@@ -68,25 +68,31 @@ sub declare_human_ai_presets_to_spawn()
             SetField("m_Preset", "Character;Bandit_Tier_0;Scenario;General;");
             SetField("m_NumOfAIsToSpawn", "0");
             SetField("m_MinNumOfAIsToSpawn", "1");
-            SetField("m_MaxNumOfAIsToSpawn", "3");
+            SetField("m_MaxNumOfAIsToSpawn", "6");
             SetField("m_FactionName", "bandits");
         }
         Preset("Bandits_2")
         {
             SetField("m_Preset", "Character;Bandit_Tier_0;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "2");
+            SetField("m_NumOfAIsToSpawn", "0");
+			SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "8");
             SetField("m_FactionName", "bandits");
         }
         Preset("Bandits_3")
         {
             SetField("m_Preset", "Character;Bandit_Tier_0;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "3");
+            SetField("m_NumOfAIsToSpawn", "0");
+			SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "8");
             SetField("m_FactionName", "bandits");
         }
         Preset("Bandits_Bow_3")
         {
             SetField("m_Preset", "Character;Bandit_Bow;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "2");
+            SetField("m_NumOfAIsToSpawn", "0");
+			SetField("m_MinNumOfAIsToSpawn", "2");
+            SetField("m_MaxNumOfAIsToSpawn", "4");
             SetField("m_FactionName", "bandits");
         }
         Preset("E3_bandits")
@@ -178,62 +184,62 @@ sub declare_human_ai_presets_to_spawn()
         Preset("Peace_Keeper_Guard_1")
         {
             SetField("m_Preset", "Character;PK_man_Hub_guard;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "3");
             SetField("m_FactionName", "peacekeepers");
         }
 		Preset("Peace_Keeper_Guard_1_spear")
         {
             SetField("m_Preset", "Character;PK_man_Hub_base_spear;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "2");
             SetField("m_FactionName", "peacekeepers");
         }
 		Preset("Peace_Keeper_Guard_1_1h")
         {
             SetField("m_Preset", "Character;PK_man_Hub_base_1h;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "3");
             SetField("m_FactionName", "peacekeepers");
         }
 		Preset("Peace_Keeper_Guard_2_1h")
         {
             SetField("m_Preset", "Character;PK_man_Hub_base_1h;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "2");
+            SetField("m_NumOfAIsToSpawn", "5");
             SetField("m_FactionName", "peacekeepers");
         }
         Preset("Peace_Keeper_Guard_2")
         {
             SetField("m_Preset", "Character;PK_man_Hub_guard;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "2");
+            SetField("m_NumOfAIsToSpawn", "5");
             SetField("m_FactionName", "peacekeepers");
         }
         Preset("Peace_Keeper_Guard_5")
         {
             SetField("m_Preset", "Character;PK_man_Hub_guard;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "5");
+            SetField("m_NumOfAIsToSpawn", "8");
             SetField("m_FactionName", "peacekeepers");
         }
 		Preset("PK_man_Hub_Empire_recruit_group1")
         {
             SetField("m_Preset", "Character;PK_man_Hub_Empire_recruit_group1;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "3");
+            SetField("m_NumOfAIsToSpawn", "5");
             SetField("m_FactionName", "peacekeepers");
         }
 		Preset("PK_man_Hub_Empire_recruit_group2")
         {
             SetField("m_Preset", "Character;PK_man_Hub_Empire_recruit_group2;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "3");
+            SetField("m_NumOfAIsToSpawn", "6");
             SetField("m_FactionName", "peacekeepers");
         }
 		
         Preset("Bazaarian_Walker_1")
         {
             SetField("m_Preset", "Character;Bazarian_man_Hub;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "5");
             SetField("m_FactionName", "survivors");
         }
         Preset("Bazaarian_man_1")
         {
             SetField("m_Preset", "Character;Bazarian_man_Hub;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "5");
             SetField("m_FactionName", "survivors");
         }
 		Preset("Bazaarian_man_sad_1")
@@ -245,13 +251,13 @@ sub declare_human_ai_presets_to_spawn()
 		Preset("Bazaarian_obese_man_1")
         {
             SetField("m_Preset", "Character;Bazarian_man_Hub_obese;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "2");
             SetField("m_FactionName", "survivors");
         }
 		Preset("Bazaarian_man_guard_1h_1")
         {
             SetField("m_Preset", "Character;Bazarian_man_Hub_Guard_1h;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "5");
             SetField("m_FactionName", "survivors");
         }
         Preset("Bazaarian_man_2")
@@ -275,19 +281,25 @@ sub declare_human_ai_presets_to_spawn()
         Preset("Bazaarian_child_1")
         {
             SetField("m_Preset", "Character;Bazarian_child;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
             SetField("m_FactionName", "survivors");
         }
         Preset("Peace_Keeper_light_man_1")
         {
             SetField("m_Preset", "Character;PK_man_Hub_worker;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
             SetField("m_FactionName", "peacekeepers");
         }
         Preset("Peace_Keeper_woman_1")
         {
             SetField("m_Preset", "Character;PK_wmn_Hub_guard;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
             SetField("m_FactionName", "peacekeepers");
         }
         Preset("Peace_Keeper_1_3")
@@ -314,7 +326,9 @@ sub declare_human_ai_presets_to_spawn()
         Preset("Survivors_1")
         {
             SetField("m_Preset", "Character;Survivor;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "6");
             SetField("m_FactionName", "survivors");
         }
 		Preset("Survivor_custom_1")
@@ -333,20 +347,24 @@ sub declare_human_ai_presets_to_spawn()
         {
             SetField("m_Preset", "Character;Survivor;Scenario;General;");
             SetField("m_NumOfAIsToSpawn", "0");
-            SetField("m_MinNumOfAIsToSpawn", "1");
-            SetField("m_MaxNumOfAIsToSpawn", "3");
+            SetField("m_MinNumOfAIsToSpawn", "3");
+            SetField("m_MaxNumOfAIsToSpawn", "7");
             SetField("m_FactionName", "survivors");
         }
         Preset("Survivors_2")
         {
             SetField("m_Preset", "Character;Survivor;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "2");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "2");
+            SetField("m_MaxNumOfAIsToSpawn", "6");
             SetField("m_FactionName", "survivors");
         }
         Preset("Survivors_3")
         {
             SetField("m_Preset", "Character;Survivor;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "3");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "3");
+            SetField("m_MaxNumOfAIsToSpawn", "8");
             SetField("m_FactionName", "survivors");
         }
 		Preset("Survivor_worker_1")
@@ -418,14 +436,16 @@ sub declare_human_ai_presets_to_spawn()
         Preset("Viral_1")
         {
             SetField("m_Preset", "Character;Viral;Scenario;General;");
-            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
         }
         Preset("Canteen_Survivors_0_1")
         {
             SetField("m_Preset", "Character;Hub_Canteen_Man_SURV;Scenario;General;");
             SetField("m_NumOfAIsToSpawn", "0");
-            SetField("m_MinNumOfAIsToSpawn", "0");
-            SetField("m_MaxNumOfAIsToSpawn", "1");
+            SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "2");
             SetField("m_FactionName", "survivors");
         }
 		Preset("Renegate_1")
@@ -518,60 +538,80 @@ sub declare_human_ai_presets_to_spawn()
 		Preset("PK_man_Hub_guard_1")
         {
             SetField("m_Preset", "Character;PK_man_Hub_guard;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
             SetField("m_FactionName", "peacekeepers");
         }
 		Preset("PK_woman_Hub_guard_1")
         {
             SetField("m_Preset", "Character;PK_wmn_Hub_guard;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
             SetField("m_FactionName", "peacekeepers");
         }
 		Preset("PK_man_Hub_base_1h")
         {
 			SetField("m_Preset", "Character;PK_man_Hub_base_1h;Scenario;General;"); 
-			SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
         }
 		Preset("PK_Hub_guard_group_1m_spear_1w")
         {
 			SetField("m_Preset", "");
             SetField("m_PresetPoolName", "PK_Hub_guard_group_1m_spear_1w_pool");
-            SetField("m_NumOfAIsToSpawn", "2");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "2");
+            SetField("m_MaxNumOfAIsToSpawn", "5");
         }
 		
 		Preset("PK_man_Hub_base_spear_3+1guard")
         {
 			SetField("m_Preset", "");
 			SetField("m_PresetPoolName", "PK_man_Hub_base_spear_3+1guard_pool");
-			SetField("m_NumOfAIsToSpawn", "4");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "4");
+            SetField("m_MaxNumOfAIsToSpawn", "7");
         }
 		Preset("PK_man_Hub_base_spear_2+1base")
         {
 			SetField("m_Preset", "");
 			SetField("m_PresetPoolName", "PK_man_Hub_base_spear_2+1base_pool");
-			SetField("m_NumOfAIsToSpawn", "3");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "4");
+            SetField("m_MaxNumOfAIsToSpawn", "8");
         }
 		
 		Preset("PK_man_Hub_base_bow")
         {
 			SetField("m_Preset", "Character;PK_man_Hub_base_bow;Scenario;General;"); 
-			SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
         }
 		Preset("PK_man_Hub_base_2h")
         {
 			SetField("m_Preset", "Character;PK_man_Hub_base_2h;Scenario;General;"); 
-			SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
         }
 		Preset("PK_man_Hub_base_spear")
         {
 			SetField("m_Preset", "Character;PK_man_Hub_base_spear;Scenario;General;"); 
-			SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
         }
 		Preset("PK_Hub_guard_group_2m_2w")
         {
 			SetField("m_Preset", "");
             SetField("m_PresetPoolName", "PK_Hub_guard_group_2m_2w_pool");
-            SetField("m_NumOfAIsToSpawn", "4");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "4");
+            SetField("m_MaxNumOfAIsToSpawn", "7");
         }
 		Preset("PK_kid_Hub_Ship_group_2")
         {
@@ -704,13 +744,17 @@ sub declare_human_ai_presets_to_spawn()
         Preset("OW_Peacekeeper_One_Handed")
         {
             SetField("m_Preset", "Character;Peacekeeper_Soldier;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "5");
             SetField("m_FactionName", "peacekeepers");
         }
         Preset("OW_Peacekeeper_Two_Handed")
         {
             SetField("m_Preset", "Character;Peacekeeper_2h;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "5");
             SetField("m_FactionName", "peacekeepers");
         }
         Preset("OW_Peacekeeper_Commander")
@@ -722,31 +766,41 @@ sub declare_human_ai_presets_to_spawn()
         Preset("OW_Peacekeeper_Spear")
         {
             SetField("m_Preset", "Character;Peacekeeper_Spear;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "5");
             SetField("m_FactionName", "peacekeepers");
         }
         Preset("OW_Peacekeeper_Conscript_Man")
         {
             SetField("m_Preset", "Character;Conscript_Man;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "5");
             SetField("m_FactionName", "peacekeepers");
         }
         Preset("OW_Peacekeeper_Conscript_Woman")
         {
             SetField("m_Preset", "Character;Conscript_Woman;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "5");
             SetField("m_FactionName", "peacekeepers");
         }   
 		Preset("OW_Survivor_Woman")
         {
             SetField("m_Preset", "Character;Survivor_Woman;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "2");
+            SetField("m_MaxNumOfAIsToSpawn", "6");
             SetField("m_FactionName", "survivors");
         }  
 		Preset("OW_Survivor_Man")
         {
             SetField("m_Preset", "Character;Survivor;Scenario;General");
-            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "2");
+            SetField("m_MaxNumOfAIsToSpawn", "6");
             SetField("m_FactionName", "survivors");
         }  
 		

@@ -1,8 +1,8 @@
-import "ial_ai_difficulty_settings.def"
+import "ial_settings.mth"
 
 sub DefaultParams()
 {
-    FallHeightImmediateKill(IAL_AI_FallHeight_ImmediateKill);
+    FallHeightImmediateKill("IAL_AI_FallHeight_ImmediateKill");
 
     WallHitMinRelativeHeight("0.9");
     WallHitMinCollisionDepth("0.2");
@@ -21,9 +21,9 @@ sub main()
         WallHitDamagePreset("wall_hit_no_damage@ai_damage_presets.scr");
         AIRagdollHitDamagePreset("domino_hit_heavy@ai_damage_presets.scr");
         AIDominoHitDamagePreset("human_domino_hit@ai_damage_presets.scr");
-		FallHeightMinDamage(IAL_AI_FallHeight_Human_MinDmg);
-        FallHeightMaxDamage(IAL_AI_FallHeight_Human_MaxDmg);
-        FallHeightImmediateKill(IAL_AI_FallHeight_Human_ImmediateKill);
+		FallHeightMinDamage("IAL_AI_FallHeight_Human_MinDmg");
+        FallHeightMaxDamage("IAL_AI_FallHeight_Human_MaxDmg");
+        FallHeightImmediateKill("IAL_AI_FallHeight_Human_ImmediateKill");
     }
 
     CollisionModuleHumanPreset("infected")
@@ -39,9 +39,9 @@ sub main()
         AIMovePushReactionPreset("gentle_push@damage_reaction_presets.scr");
         AIMovePushStrength("1.0");
         AIMovePushMinSelfSpeedToPushOthers("2.0");
-		FallHeightMinDamage(IAL_AI_FallHeight_Infected_MinDmg);
-        FallHeightMaxDamage(IAL_AI_FallHeight_Infected_MaxDmg);
-        FallHeightImmediateKill(IAL_AI_FallHeight_Infected_ImmediateKill);
+		FallHeightMinDamage("IAL_AI_FallHeight_Infected_MinDmg");
+        FallHeightMaxDamage("IAL_AI_FallHeight_Infected_MaxDmg");
+        FallHeightImmediateKill("IAL_AI_FallHeight_Infected_ImmediateKill");
     }
 
     CollisionModuleHumanPreset("infected_average")
@@ -56,9 +56,9 @@ sub main()
         AIMovePushReactionPreset("gentle_push@damage_reaction_presets.scr");
         AIMovePushStrength("1.0");
         AIMovePushMinSelfSpeedToPushOthers("3.0");
-		FallHeightMinDamage(IAL_AI_FallHeight_Infected_MinDmg);
-        FallHeightMaxDamage(IAL_AI_FallHeight_Infected_MaxDmg);
-        FallHeightImmediateKill(IAL_AI_FallHeight_Infected_ImmediateKill);
+		FallHeightMinDamage("IAL_AI_FallHeight_Infected_MinDmg");
+        FallHeightMaxDamage("IAL_AI_FallHeight_Infected_MaxDmg");
+        FallHeightImmediateKill("IAL_AI_FallHeight_Infected_ImmediateKill");
     }
 
     CollisionModuleHumanPreset("infected_medium")
@@ -72,9 +72,9 @@ sub main()
         AIMovePushReactionPreset("gentle_push@damage_reaction_presets.scr");
         AIMovePushStrength("2.0");
         AIMovePushMinSelfSpeedToPushOthers("3.0");
-		FallHeightMinDamage(IAL_AI_FallHeight_Infected_MinDmg);
-        FallHeightMaxDamage(IAL_AI_FallHeight_Infected_MaxDmg);
-        FallHeightImmediateKill(IAL_AI_FallHeight_Infected_ImmediateKill);
+		FallHeightMinDamage("IAL_AI_FallHeight_Infected_MinDmg");
+        FallHeightMaxDamage("IAL_AI_FallHeight_Infected_MaxDmg");
+        FallHeightImmediateKill("IAL_AI_FallHeight_Infected_ImmediateKill");
     }
 
     CollisionModuleHumanPreset("infected_large")
@@ -88,9 +88,9 @@ sub main()
         AIMovePushStrength("3.0");
         AIMovePushMinSelfSpeedToPushOthers("1.0");
         WallHitMinRelativeHeight("0.4");
-		FallHeightMinDamage(IAL_AI_FallHeight_InfectedLarge_MinDmg);
-        FallHeightMaxDamage(IAL_AI_FallHeight_InfectedLarge_MaxDmg);
-        FallHeightImmediateKill(IAL_AI_FallHeight_InfectedLarge_ImmediateKill);
+		FallHeightMinDamage("IAL_AI_FallHeight_InfectedLarge_MinDmg");
+        FallHeightMaxDamage("IAL_AI_FallHeight_InfectedLarge_MaxDmg");
+        FallHeightImmediateKill("IAL_AI_FallHeight_InfectedLarge_ImmediateKill");
     }
 
     CollisionModuleHumanPreset("volatile")
@@ -105,9 +105,9 @@ sub main()
         AIMovePushStrength("2.0");
         AIMovePushMinSelfSpeedToPushOthers("3.0");
 
-        FallHeightMinDamage(IAL_AI_FallHeight_Volatile_MinDmg);
-        FallHeightMaxDamage(IAL_AI_FallHeight_Volatile_MaxDmg);
-        FallHeightImmediateKill(IAL_AI_FallHeight_Volatile_ImmediateKill);
+        FallHeightMinDamage("IAL_AI_FallHeight_Volatile_MinDmg");
+        FallHeightMaxDamage("IAL_AI_FallHeight_Volatile_MaxDmg");
+        FallHeightImmediateKill("IAL_AI_FallHeight_Volatile_ImmediateKill");
     }
     CollisionModuleHumanPreset("waltz")
     {
@@ -121,8 +121,8 @@ sub main()
         AIMovePushStrength("2.0");
         AIMovePushMinSelfSpeedToPushOthers("3.0");
 
-        FallHeightMinDamage(IAL_AI_FallHeight_AlphaZombie_MinDmg);
-        FallHeightMaxDamage(IAL_AI_FallHeight_AlphaZombie_MaxDmg);
+        FallHeightMinDamage("IAL_AI_FallHeight_AlphaZombie_MinDmg");
+        FallHeightMaxDamage("IAL_AI_FallHeight_AlphaZombie_MaxDmg");
         FallHeightImmediateKill("IAL_AI_FallHeight_AlphaZombie_ImmediateKill");
     }
 }

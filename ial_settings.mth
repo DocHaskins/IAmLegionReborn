@@ -26,8 +26,60 @@ export float IAL_TimeTransition_Night = 19.0;
 export float IAL_Special_SpawnDistance_min = 10.0;
 export float IAL_Special_SpawnDistance_max = 40.0;
 
-//AI INTENSITY SETTINGS
-//Biters become runners and move faster
+//AI DIFFICULTY SETTINGS(scripts/factions/zonelevels.scr)
+//This setting changes the max level of the zones leading up to the ending
+export int IAL_AI_Early_Zones_min_Lvl = 2;
+export int IAL_AI_Early_Zones_max_Lvl = 9;
+export int IAL_AI_City_Zones_min_Lvl = 3;
+export int IAL_AI_City_Zones_max_Lvl = 9;
+export int IAL_AI_Flooded_Zones_min_Lvl = 5;
+export int IAL_AI_Flooded_Zones_max_Lvl = 9;
+export int IAL_AI_Endgame_Zones_min_Lvl = 5;
+export int IAL_AI_Endgame_Zones_max_Lvl = 9;
+
+//AI DIFFICULTY SETTINGS(ailife/areasettings.scr)
+export string IAL_AI_Encounter_Difficulty_Lvl = "Easy";
+
+//INFECTED Difficulty Tiers
+export string IAL_AI_Infected_Early_Zones_Lvl_Min = "Tier_1";
+export string IAL_AI_Infected_Early_Zones_Lvl_Max = "Tier_9";
+export string IAL_AI_Infected_City_Zones_Lvl_Min = "Tier_3";
+export string IAL_AI_Infected_City_Zones_Lvl_Max = "Tier_9";
+export string IAL_AI_Infected_Industrial_Zones_Lvl_Min = "Tier_5";
+export string IAL_AI_Infected_Industrial_Zones_Lvl_Max = "Tier_9";
+export string IAL_AI_Infected_Flooded_Zones_Lvl_Min = "Tier_5";
+export string IAL_AI_Infected_Flooded_Zones_Lvl_Max = "Tier_9";
+export string IAL_AI_Infected_Darkzone_Zones_Lvl_Min = "Tier_6";
+export string IAL_AI_Infected_Darkzone_Zones_Lvl_Max = "Tier_9";
+
+//INFECTED ENDGAME Difficulty Tiers
+export string IAL_AI_Infected_Early_Zones_Endgame_Lvl_Min = "Tier_6";
+export string IAL_AI_Infected_Early_Zones_Endgame_Lvl_Max = "Tier_9";
+export string IAL_AI_Infected_City_Zones_Endgame_Lvl_Min = "Tier_7";
+export string IAL_AI_Infected_City_Zones_Endgame_Lvl_Max = "Tier_9";
+export string IAL_AI_Infected_Renegade_Zones_Endgame_Lvl_Min = "Tier_8";
+export string IAL_AI_Infected_Renegade_Zones_Endgame_Lvl_Max = "Tier_9";
+export string IAL_AI_Infected_Industrial_Zones_Endgame_Lvl_Min = "Tier_8";
+export string IAL_AI_Infected_Industrial_Zones_Endgame_Lvl_Max = "Tier_9";
+export string IAL_AI_Infected_Flooded_Zones_Endgame_Lvl_Min = "Tier_8";
+export string IAL_AI_Infected_Flooded_Zones_Endgame_Lvl_Max = "Tier_9";
+export string IAL_AI_Infected_Epilogue_Lvl_Min = "Tier_8";
+export string IAL_AI_Infected_Epilogue_Lvl_Max = "Tier_9";
+
+
+//HUMAN GANG Difficulty Tiers
+export string IAL_AI_Encounter_Difficulty_Bloodgang_Lvl_Min = "Tier_5";
+export string IAL_AI_Encounter_Difficulty_Bloodgang_Lvl_Max = "Tier_9";
+export string IAL_AI_Encounter_Difficulty_Skyscraper_Lvl_Min = "Tier_5";
+export string IAL_AI_Encounter_Difficulty_Skyscraper_Lvl_Max = "Tier_9";
+export string IAL_AI_Encounter_Difficulty_Flooded_Lvl_Min = "Tier_5";
+export string IAL_AI_Encounter_Difficulty_Flooded_Lvl_Max = "Tier_9";
+export string IAL_AI_Encounter_Difficulty_Vertical_Lvl_Min = "Tier_5";
+export string IAL_AI_Encounter_Difficulty_Vertical_Lvl_Max = "Tier_9";
+export string IAL_AI_Encounter_Difficulty_Military_Lvl_Min = "Tier_5";
+export string IAL_AI_Encounter_Difficulty_Military_Lvl_Max = "Tier_9";
+export string IAL_AI_Encounter_Difficulty_Chemicals_Lvl_Min = "Tier_5";
+export string IAL_AI_Encounter_Difficulty_Chemicals_Lvl_Max = "Tier_9";
 
 //AI FALL HEIGHTS(ai/modulesparams/collisionmodulehumanpresets.scr)
 export float IAL_AI_FallHeight_ImmediateKill = 14.0;

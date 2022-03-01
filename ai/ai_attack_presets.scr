@@ -1209,7 +1209,7 @@ sub main()
     AttackPreset("screamer_push")
     {
         Type("PUSH");
-        Severity("LIGHT");
+        Severity("HEAVY");
         MoveLimit("false");
         ImpactDirCalculation("TOWARDS_TARGET");
 		ForceForwardDir("true");
@@ -1223,6 +1223,7 @@ sub main()
         UseWeapon("true");
         ConeAngle("45");
         AdditionalRange("8");
+		DamageReactionFlagInterrupt("true");
     }
 	AttackPreset("summon_without_damage")
     {

@@ -798,9 +798,9 @@ sub main()
     }
     DamageMul("Biter_Head_Health_Mul")
     {
-        Ram("+0.0");
-		Cut("+0.15");
-		Blunt("+0.15");
+        Ram("+0.1");
+		Cut("+0.65");
+		Blunt("+0.85");
     }
 	DamageMul("Biter_Helmet_Head_Health_Mul")
     {
@@ -818,16 +818,16 @@ sub main()
     DamageMul("Biter_Arm_Health_Mul")
     {
         Ram("+0.0");
-		Cut("+0.0");
-		Blunt("+0.0");
-		Ranged("-0.8");
+		Cut("+0.8");
+		Blunt("+0.5");
+		Ranged("+0.1");
     }
     DamageMul("Biter_Leg_Health_Mul")
     {
         Ram("+0.0");
-		Cut("+0.0");
-		Blunt("+0.0");
-		Ranged("-0.8");
+		Cut("+0.8");
+		Blunt("+0.6");
+		Ranged("+0.1");
     }
 	
 	DamageMul("Biter_Armored_Chest_Health_Mul")
@@ -855,8 +855,8 @@ sub main()
     DamageMul("Viral_Head_Health_Mul")
     {
         Ram("+0.0");
-		Cut("+0.0");
-		Blunt("+0.0");
+		Cut("+0.6");
+		Blunt("+0.8");
     }
     DamageMul("Viral_Chest_Health_Mul")
     {
@@ -867,16 +867,16 @@ sub main()
     DamageMul("Viral_Arm_Health_Mul")
     {
         Ram("+0.0");
-		Cut("+0.0");
-		Blunt("+0.0");
-		Ranged("-0.8");
+		Cut("+0.3");
+		Blunt("+0.3");
+		Ranged("+0.2");
     }
     DamageMul("Viral_Leg_Health_Mul")
     {
         Ram("+0.0");
-		Cut("+0.0");
-		Blunt("+0.0");
-		Ranged("-0.8");
+		Cut("+0.3");
+		Blunt("+0.3");
+		Ranged("+0.2");
     }
     DamageMul("Default_Head_Health_Mul")
     {
@@ -2805,7 +2805,7 @@ sub main()
 	
 	Damage("Biter_Tar_Hit")
     {
-        Physical("4%-8% of MaxHealth");
+        Physical("4%-35% of MaxHealth");
     }
 	
     DamageMul("grab_damage_mul_biter_lv1")
@@ -2831,7 +2831,7 @@ sub main()
 	
     Damage("BiterGrab")
     {
-        Physical("10% of MaxHealth");
+        Physical("70% of MaxHealth");
     }
 	
 	Damage("Zombie_Fists")
@@ -3015,28 +3015,28 @@ sub main()
 	
     Damage("Banshee_Fists")
 	{
-		Physical("10");
+		Physical("45");
 	}
 	
 	Damage("Banshee_Fists_RGD_1")
 	{
-		Physical("6");
+		Physical("45");
 	}
 	Damage("Banshee_Fists_RGD_2")
 	{
-		Physical("8");
+		Physical("50");
 	}
 	Damage("Banshee_Fists_RGD_3")
 	{
-		Physical("10");
+		Physical("55");
 	}
 	Damage("Banshee_Fists_RGD_4")
 	{
-		Physical("12");
+		Physical("60");
 	}
 	Damage("Banshee_Fists_RGD_5")
 	{
-		Physical("14");
+		Physical("65");
 	}
 	Damage("Banshee_Fists_RGD_6")
 	{
@@ -4049,12 +4049,12 @@ sub main()
 
     DamageMul("AI_BiterArmored")
     {
-        Physical("+3.0");
+        Physical("20% of MaxHealth");
     }
 
     DamageMul("AI_BiterHeadshot")
     {
-        Physical("+0.5");
+        Physical("+4");
     }
 
     DamageMul("AI_BiterLevel1")
@@ -4116,7 +4116,7 @@ sub main()
     }
     DamageMul("Viral_Chase_Mul_VS_AI")
     {
-        Physical("+4.0");
+        Physical("+15.0");
     }
     DamageMul("AI_GraphParams")
     {

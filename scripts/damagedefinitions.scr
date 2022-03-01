@@ -1,35 +1,40 @@
+import "ial_settings.mth"
+
 sub main()
 {
 	DamageMul("WeaponDamageMod_Seed_0")
 	{ 
+		Blunt("+IAL_Weapons_Blunt_Dmg_Tier_0"); 
+		Cut("+IAL_Weapons_Cut_Dmg_Tier_0"); 
+		Physical("+IAL_Weapons_Physical_Dmg_Tier_0"); 
 	}
 
 	DamageMul("WeaponDamageMod_Seed_1")
 	{ 
-		Blunt("+0.0125"); 
-		Cut("+0.0125"); 
-		Physical("+0.0125"); 
+		Blunt("+IAL_Weapons_Blunt_Dmg_Tier_1"); 
+		Cut("+IAL_Weapons_Cut_Dmg_Tier_1"); 
+		Physical("+IAL_Weapons_Physical_Dmg_Tier_1"); 
 	}
 
 	DamageMul("WeaponDamageMod_Seed_2")
 	{ 
-		Blunt("+0.025"); 
-		Cut("+0.025"); 
-		Physical("+0.025"); 
+		Blunt("+IAL_Weapons_Blunt_Dmg_Tier_2"); 
+		Cut("+IAL_Weapons_Cut_Dmg_Tier_2"); 
+		Physical("+IAL_Weapons_Physical_Dmg_Tier_2"); 
 	}
 
 	DamageMul("WeaponDamageMod_Seed_3")
 	{ 
-		Blunt("+0.0375"); 
-		Cut("+0.0375"); 
-		Physical("+0.0375"); 
+		Blunt("+IAL_Weapons_Blunt_Dmg_Tier_3"); 
+		Cut("+AL_Weapons_Cut_Dmg_Tier_3"); 
+		Physical("+IAL_Weapons_Physical_Dmg_Tier_3"); 
 	}
 
 	DamageMul("WeaponDamageMod_Seed_4")
 	{ 
-		Blunt("+0.05"); 
-		Cut("+0.05"); 
-		Physical("+0.05"); 
+		Blunt("+IAL_Weapons_Blunt_Dmg_Tier_4"); 
+		Cut("+IAL_Weapons_Cut_Dmg_Tier_4"); 
+		Physical("+IAL_Weapons_Physical_Dmg_Tier_4"); 
 	}
 
     Damage("TorchDamage.BaseDamage")
@@ -1069,27 +1074,27 @@ sub main()
     
     DamageMul("Night_Aggression_Mul_Level_0")
     {
-        Physical("+0.0");
+        Physical("+IAL_Night_Aggression_Dmg_Multi_LVL1");
     }
 
     DamageMul("Night_Aggression_Mul_Level_1")
     {
-        Physical("+0.0");
+        Physical("+IAL_Night_Aggression_Dmg_Multi_LVL1");
     }
 
     DamageMul("Night_Aggression_Mul_Level_2")
     {
-        Physical("+0.5");
+        Physical("+IAL_Night_Aggression_Dmg_Multi_LVL2");
     }
 
     DamageMul("Night_Aggression_Mul_Level_3")
     {
-        Physical("+0.7");
+        Physical("+IAL_Night_Aggression_Dmg_Multi_LVL3");
     }
 
     DamageMul("Night_Aggression_Mul_Level_4")
     {
-        Physical("+1.0");
+        Physical("+IAL_Night_Aggression_Dmg_Multi_LVL4");
     }
 
 	Damage("BrassKnuckles_Playtest")
@@ -1112,43 +1117,43 @@ sub main()
 
 	Damage("crossbow_tier_damages_0")  //25% One Handed Human (only used for UI)
     {
-        Ranged("26");
+        Ranged("26 - IAL_Weapons_Crossbow_DMG_Tier_0");
     }
     Damage("crossbow_tier_damages_1")
     {
-        Ranged("26");
+        Ranged("26 - IAL_Weapons_Crossbow_DMG_Tier_1");
     }
 	Damage("crossbow_tier_damages_2")
     {
-        Ranged("38");
+        Ranged("38 - IAL_Weapons_Crossbow_DMG_Tier_2");
     }
 	Damage("crossbow_tier_damages_3")
     {
-        Ranged("58");
+        Ranged("58 - IAL_Weapons_Crossbow_DMG_Tier_3");
     }
     Damage("crossbow_tier_damages_4")
     {
-        Ranged("90");
+        Ranged("90 - IAL_Weapons_Crossbow_DMG_Tier_4");
     }
     Damage("crossbow_tier_damages_5")
     {
-        Ranged("137");
+        Ranged("137 - IAL_Weapons_Crossbow_DMG_Tier_5");
     }
     Damage("crossbow_tier_damages_6")
     {
-        Ranged("203");
+        Ranged("203 - IAL_Weapons_Crossbow_DMG_Tier_6");
     }
     Damage("crossbow_tier_damages_7")
     {
-        Ranged("314");
+        Ranged("314 - IAL_Weapons_Crossbow_DMG_Tier_7");
     }
     Damage("crossbow_tier_damages_8")
     {
-        Ranged("504");
+        Ranged("504 - IAL_Weapons_Crossbow_DMG_Tier_8");
     }
     Damage("crossbow_tier_damages_9")
     {
-        Ranged("795");
+        Ranged("795 - IAL_Weapons_Crossbow_DMG_Tier_9");
     }
 	
 	Damage("crossbow_firepoint0_tier_damages_0")    //25%-33% One Handed Human
@@ -1235,43 +1240,43 @@ sub main()
 	
 	Damage("bow_firepoint0_tier_damages_0")   
     {
-        Ranged("15");
+        Ranged("15 - IAL_Weapons_Bow_DMG_Tier_0");
     }
 	Damage("bow_firepoint0_tier_damages_1")
     {
-        Ranged("20");
+        Ranged("20 - IAL_Weapons_Bow_DMG_Tier_1");
     }
     Damage("bow_firepoint0_tier_damages_2")
     {
-        Ranged("27");
+        Ranged("27 - IAL_Weapons_Bow_DMG_Tier_2");
     }
     Damage("bow_firepoint0_tier_damages_3")
     {
-        Ranged("38");
+        Ranged("38 - IAL_Weapons_Bow_DMG_Tier_3");
     }
     Damage("bow_firepoint0_tier_damages_4")
     {
-        Ranged("58");
+        Ranged("58 - IAL_Weapons_Bow_DMG_Tier_4");
     }
     Damage("bow_firepoint0_tier_damages_5")
     {
-        Ranged("80");
+        Ranged("80 - IAL_Weapons_Bow_DMG_Tier_5");
     }
     Damage("bow_firepoint0_tier_damages_6")
     {
-        Ranged("100");
+        Ranged("100 - IAL_Weapons_Bow_DMG_Tier_6");
     }
     Damage("bow_firepoint0_tier_damages_7")
     {
-        Ranged("143");
+        Ranged("143 - IAL_Weapons_Bow_DMG_Tier_7");
     }
     Damage("bow_firepoint0_tier_damages_8")
     {
-        Ranged("202");
+        Ranged("202 - IAL_Weapons_Bow_DMG_Tier_8");
     }
     Damage("bow_firepoint0_tier_damages_9")
     {
-        Ranged("252");
+        Ranged("252 - IAL_Weapons_Bow_DMG_Tier_9");
     }
 	
 	Damage("bow_firepoint1_tier_damages_0")   
@@ -1358,252 +1363,252 @@ sub main()
 
     Damage("2h_blunt_tier_damages_0")
     {
-        Blunt("15");
+        Blunt("15 - IAL_Weapons_2h_Blunt_DMG_Tier_0");
     }
 
 	Damage("2h_blunt_tier_damages_1")
     {
-        Blunt("20");
+        Blunt("20 - IAL_Weapons_2h_Blunt_DMG_Tier_1");
     }
 
     Damage("2h_blunt_tier_damages_2")
     {
-        Blunt("22");
+        Blunt("22 - IAL_Weapons_2h_Blunt_DMG_Tier_2");
     }
 
     Damage("2h_blunt_tier_damages_3")
     {
-        Blunt("23");
+        Blunt("23 - IAL_Weapons_2h_Blunt_DMG_Tier_3");
     }
 
     Damage("2h_blunt_tier_damages_4")
     {
-        Blunt("33");
+        Blunt("33 - IAL_Weapons_2h_Blunt_DMG_Tier_4");
     }
 
     Damage("2h_blunt_tier_damages_5")
     {
-        Blunt("35");
+        Blunt("35 - IAL_Weapons_2h_Blunt_DMG_Tier_5");
     }
 
     Damage("2h_blunt_tier_damages_6")
     {
-        Blunt("37");
+        Blunt("37 - IAL_Weapons_2h_Blunt_DMG_Tier_6");
     }
 
     Damage("2h_blunt_tier_damages_7")
     {
-        Blunt("46");
+        Blunt("46 - IAL_Weapons_2h_Blunt_DMG_Tier_7");
     }
 
     Damage("2h_blunt_tier_damages_8")
     {
-        Blunt("49");
+        Blunt("49 - IAL_Weapons_2h_Blunt_DMG_Tier_8");
     }
 
     Damage("2h_blunt_tier_damages_9")
     {
-        Blunt("53");
+        Blunt("53 - IAL_Weapons_2h_Blunt_DMG_Tier_9");
     }
 
     Damage("2h_blunt_tier_damages_10")
     {
-        Blunt("71");
+        Blunt("71 - IAL_Weapons_2h_Blunt_DMG_Tier_10");
     }
 
     Damage("2h_blunt_tier_damages_11")
     {
-        Blunt("75");
+        Blunt("75 - IAL_Weapons_2h_Blunt_DMG_Tier_11");
     }
 
     Damage("2h_blunt_tier_damages_12")
     {
-        Blunt("81");
+        Blunt("81 - IAL_Weapons_2h_Blunt_DMG_Tier_12");
     }
 
     Damage("2h_blunt_tier_damages_13")
     {
-        Blunt("99");
+        Blunt("99 - IAL_Weapons_2h_Blunt_DMG_Tier_13");
     }
 
     Damage("2h_blunt_tier_damages_14")
     {
-        Blunt("104");
+        Blunt("104 - IAL_Weapons_2h_Blunt_DMG_Tier_14");
     }
 
     Damage("2h_blunt_tier_damages_15")
     {
-        Blunt("111");
+        Blunt("111 - IAL_Weapons_2h_Blunt_DMG_Tier_15");
     }
 
     Damage("2h_blunt_tier_damages_16")
     {
-        Blunt("143");
+        Blunt("143 - IAL_Weapons_2h_Blunt_DMG_Tier_16");
     }
 
     Damage("2h_blunt_tier_damages_17")
     {
-        Blunt("149");
+        Blunt("149 - IAL_Weapons_2h_Blunt_DMG_Tier_17");
     }
 
     Damage("2h_blunt_tier_damages_18")
     {
-        Blunt("158");
+        Blunt("158 - IAL_Weapons_2h_Blunt_DMG_Tier_18");
     }
 
     Damage("2h_blunt_tier_damages_19")
     {
-        Blunt("206");
+        Blunt("206 - IAL_Weapons_2h_Blunt_DMG_Tier_19");
     }
 
     Damage("2h_blunt_tier_damages_20")
     {
-        Blunt("214");
+        Blunt("214 - IAL_Weapons_2h_Blunt_DMG_Tier_20");
     }
 
     Damage("2h_blunt_tier_damages_21")
     {
-        Blunt("222");
+        Blunt("222 - IAL_Weapons_2h_Blunt_DMG_Tier_21");
     }
 
     Damage("2h_blunt_tier_damages_22")
     {
-        Blunt("291");
+        Blunt("291 - IAL_Weapons_2h_Blunt_DMG_Tier_22");
     }
 
     Damage("2h_blunt_tier_damages_23")
     {
-        Blunt("301");
+        Blunt("301 - IAL_Weapons_2h_Blunt_DMG_Tier_23");
     }
 
     Damage("2h_blunt_tier_damages_24")
     {
-        Blunt("310");
+        Blunt("310 - IAL_Weapons_2h_Blunt_DMG_Tier_24");
     }
 
     Damage("blunt_tier_damages_0")
     {
-        Blunt("11");
+        Blunt("11 - IAL_Weapons_Blunt_DMG_Tier_0");
     }
 
 	Damage("blunt_tier_damages_1")
     {
-        Blunt("15");
+        Blunt("15 - IAL_Weapons_Blunt_DMG_Tier_1");
     }
 
     Damage("blunt_tier_damages_2")
     {
-        Blunt("16");
+        Blunt("16 - IAL_Weapons_Blunt_DMG_Tier_2");
     }
 
     Damage("blunt_tier_damages_3")
     {
-        Blunt("17");
+        Blunt("17 - IAL_Weapons_Blunt_DMG_Tier_3");
     }
 
     Damage("blunt_tier_damages_4")
     {
-        Blunt("24");
+        Blunt("24 - IAL_Weapons_Blunt_DMG_Tier_4");
     }
 
     Damage("blunt_tier_damages_5")
     {
-        Blunt("26");
+        Blunt("26 - IAL_Weapons_Blunt_DMG_Tier_5");
     }
 
     Damage("blunt_tier_damages_6")
     {
-        Blunt("27");
+        Blunt("27 - IAL_Weapons_Blunt_DMG_Tier_6");
     }
 
     Damage("blunt_tier_damages_7")
     {
-        Blunt("34");
+        Blunt("34 - IAL_Weapons_Blunt_DMG_Tier_7");
     }
 
     Damage("blunt_tier_damages_8")
     {
-        Blunt("36");
+        Blunt("36 - IAL_Weapons_Blunt_DMG_Tier_8");
     }
 
     Damage("blunt_tier_damages_9")
     {
-        Blunt("39");
+        Blunt("39 - IAL_Weapons_Blunt_DMG_Tier_9");
     }
 
     Damage("blunt_tier_damages_10")
     {
-        Blunt("52");
+        Blunt("52 - IAL_Weapons_Blunt_DMG_Tier_10");
     }
 
     Damage("blunt_tier_damages_11")
     {
-        Blunt("55");
+        Blunt("55 - IAL_Weapons_Blunt_DMG_Tier_11");
     }
 
     Damage("blunt_tier_damages_12")
     {
-        Blunt("59");
+        Blunt("59 - IAL_Weapons_Blunt_DMG_Tier_12");
     }
 
     Damage("blunt_tier_damages_13")
     {
-        Blunt("72");
+        Blunt("72 - IAL_Weapons_Blunt_DMG_Tier_13);
     }
 
     Damage("blunt_tier_damages_14")
     {
-        Blunt("76");
+        Blunt("76 - IAL_Weapons_Blunt_DMG_Tier_14");
     }
 
     Damage("blunt_tier_damages_15")
     {
-        Blunt("81");
+        Blunt("81 - IAL_Weapons_Blunt_DMG_Tier_15);
     }
 
     Damage("blunt_tier_damages_16")
     {
-        Blunt("104");
+        Blunt("104 - IAL_Weapons_Blunt_DMG_Tier_16");
     }
 
     Damage("blunt_tier_damages_17")
     {
-        Blunt("109");
+        Blunt("109 - IAL_Weapons_Blunt_DMG_Tier_17");
     }
 
     Damage("blunt_tier_damages_18")
     {
-        Blunt("115");
+        Blunt("115 - IAL_Weapons_Blunt_DMG_Tier_18");
     }
 
     Damage("blunt_tier_damages_19")
     {
-        Blunt("150");
+        Blunt("150 - IAL_Weapons_Blunt_DMG_Tier_19");
     }
 
     Damage("blunt_tier_damages_20")
     {
-        Blunt("156");
+        Blunt("156 - IAL_Weapons_Blunt_DMG_Tier_20");
     }
 
     Damage("blunt_tier_damages_21")
     {
-        Blunt("162");
+        Blunt("162 - IAL_Weapons_Blunt_DMG_Tier_21");
     }
 
     Damage("blunt_tier_damages_22")
     {
-        Blunt("212");
+        Blunt("212 - IAL_Weapons_Blunt_DMG_Tier_22");
     }
 
     Damage("blunt_tier_damages_23")
     {
-        Blunt("219");
+        Blunt("219 - IAL_Weapons_Blunt_DMG_Tier_23");
     }
 
     Damage("blunt_tier_damages_24")
     {
-        Blunt("226");
+        Blunt("226 - IAL_Weapons_Blunt_DMG_Tier_24");
     }
 
 
@@ -2077,251 +2082,251 @@ sub main()
 
 	Damage("scaling_slashing_knuckles_tier_damages_0")
     {
-        Cut("9");
+        Cut("9 - IAL_Weapons_Slash_knuckles_DMG_Tier_0");
     }
 	Damage("scaling_slashing_knuckles_tier_damages_1")
     {
-        Cut("12");
+        Cut("12 - IAL_Weapons_Slash_knuckles_DMG_Tier_1");
     }
     Damage("scaling_slashing_knuckles_tier_damages_2")
     {
-        Cut("20");
+        Cut("20 - IAL_Weapons_Slash_knuckles_DMG_Tier_2");
     }
     Damage("scaling_slashing_knuckles_tier_damages_3")
     {
-        Cut("28");
+        Cut("28 - IAL_Weapons_Slash_knuckles_DMG_Tier_3");
     }
     Damage("scaling_slashing_knuckles_tier_damages_4")
     {
-        Cut("43");
+        Cut("43 - IAL_Weapons_Slash_knuckles_DMG_Tier_4");
     }
     Damage("scaling_slashing_knuckles_tier_damages_5")
     {
-        Cut("60");
+        Cut("60 - IAL_Weapons_Slash_knuckles_DMG_Tier_5");
     }
     Damage("scaling_slashing_knuckles_tier_damages_6")
     {
-        Cut("87");
+        Cut("87 - IAL_Weapons_Slash_knuckles_DMG_Tier_6");
     }
     Damage("scaling_slashing_knuckles_tier_damages_7")
     {
-        Cut("125");
+        Cut("125 - IAL_Weapons_Slash_knuckles_DMG_Tier_7");
     }
     Damage("scaling_slashing_knuckles_tier_damages_8")
     {
-        Cut("177");
+        Cut("177 - IAL_Weapons_Slash_knuckles_DMG_Tier_8");
     }
     Damage("scaling_slashing_knuckles_tier_damages_9")
     {
-        Cut("189");
+        Cut("189 - IAL_Weapons_Slash_knuckles_DMG_Tier_9");
     }
 
 	Damage("scaling_slashing_tier_damages_0")
     {
-        Cut("13");
+        Cut("13 - IAL_Weapons_Slash_DMG_Tier_1");
     }
 
 	Damage("scaling_slashing_tier_damages_1")
     {
-        Cut("17");
+        Cut("17 - IAL_Weapons_Slash_DMG_Tier_2");
     }
     Damage("scaling_slashing_tier_damages_2")
     {
-        Cut("27");
+        Cut("27 - IAL_Weapons_Slash_DMG_Tier_4");
     }
     Damage("scaling_slashing_tier_damages_3")
     {
-        Cut("38");
+        Cut("38 - IAL_Weapons_Slash_DMG_Tier_6");
     }
     Damage("scaling_slashing_tier_damages_4")
     {
-        Cut("58");
+        Cut("58 - IAL_Weapons_Slash_DMG_Tier_9");
     }
     Damage("scaling_slashing_tier_damages_5")
     {
-        Cut("80");
+        Cut("80 - IAL_Weapons_Slash_DMG_Tier_13");
     }
     Damage("scaling_slashing_tier_damages_6")
     {
-        Cut("116");
+        Cut("116 - IAL_Weapons_Slash_DMG_Tier_17");
     }
     Damage("scaling_slashing_tier_damages_7")
     {
-        Cut("167");
+        Cut("167 - IAL_Weapons_Slash_DMG_Tier_19");
     }
     Damage("scaling_slashing_tier_damages_8")
     {
-        Cut("236");
+        Cut("236 - IAL_Weapons_Slash_DMG_Tier_22");
     }
     Damage("scaling_slashing_tier_damages_9")
     {
-        Cut("252");
+        Cut("252 - IAL_Weapons_Slash_DMG_Tier_24");
     }
 	Damage("scaling_blunt_tier_damages_0")
     {
-        Blunt("11");
+        Blunt("11 - IAL_Weapons_Blunt_DMG_Tier_1");
     }
 
 	Damage("scaling_blunt_tier_damages_1")
     {
-        Blunt("15");
+        Blunt("15 - IAL_Weapons_Blunt_DMG_Tier_2");
     }
     Damage("scaling_blunt_tier_damages_2")
     {
-        Blunt("24");
+        Blunt("24 - IAL_Weapons_Blunt_DMG_Tier_4");
     }
     Damage("scaling_blunt_tier_damages_3")
     {
-        Blunt("34");
+        Blunt("34 - IAL_Weapons_Blunt_DMG_Tier_7");
     }
     Damage("scaling_blunt_tier_damages_4")
     {
-        Blunt("52");
+        Blunt("52 - IAL_Weapons_Blunt_DMG_Tier_11");
     }
     Damage("scaling_blunt_tier_damages_5")
     {
-        Blunt("72");
+        Blunt("72 - IAL_Weapons_Blunt_DMG_Tier_14");
     }
     Damage("scaling_blunt_tier_damages_6")
     {
-        Blunt("104");
+        Blunt("104 - IAL_Weapons_Blunt_DMG_Tier_16");
     }
     Damage("scaling_blunt_tier_damages_7")
     {
-        Blunt("150");
+        Blunt("150 - IAL_Weapons_Blunt_DMG_Tier_19");
     }
     Damage("scaling_blunt_tier_damages_8")
     {
-        Blunt("212");
+        Blunt("212 - IAL_Weapons_Blunt_DMG_Tier_22");
     }
     Damage("scaling_blunt_tier_damages_9")
     {
-        Blunt("226");
+        Blunt("226 - IAL_Weapons_Blunt_DMG_Tier_24);
     }
 
 	Damage("slashing_tier_damages_0")
     {
-        Cut("13");
+        Cut("13 - IAL_Weapons_Slash_DMG_Tier_0");
     }
 
 	Damage("slashing_tier_damages_1")
     {
-        Cut("17");
+        Cut("17 - IAL_Weapons_Slash_DMG_Tier_1");
     }
 
     Damage("slashing_tier_damages_2")
     {
-        Cut("18");
+        Cut("18 - IAL_Weapons_Slash_DMG_Tier_2");
     }
 
     Damage("slashing_tier_damages_3")
     {
-        Cut("19");
+        Cut("19 - IAL_Weapons_Slash_DMG_Tier_3");
     }
 
     Damage("slashing_tier_damages_4")
     {
-        Cut("27");
+        Cut("27 - IAL_Weapons_Slash_DMG_Tier_4");
     }
 
     Damage("slashing_tier_damages_5")
     {
-        Cut("29");
+        Cut("29" - IAL_Weapons_Slash_DMG_Tier_5");
     }
 
     Damage("slashing_tier_damages_6")
     {
-        Cut("31");
+        Cut("31 - IAL_Weapons_Slash_DMG_Tier_6");
     }
 
     Damage("slashing_tier_damages_7")
     {
-        Cut("38");
+        Cut("38 - IAL_Weapons_Slash_DMG_Tier_7");
     }
 
     Damage("slashing_tier_damages_8")
     {
-        Cut("41");
+        Cut("41 - IAL_Weapons_Slash_DMG_Tier_8");
     }
 
     Damage("slashing_tier_damages_9")
     {
-        Cut("44");
+        Cut("44 - IAL_Weapons_Slash_DMG_Tier_9");
     }
 
     Damage("slashing_tier_damages_10")
     {
-        Cut("58");
+        Cut("58 - IAL_Weapons_Slash_DMG_Tier_10");
     }
 
     Damage("slashing_tier_damages_11")
     {
-        Cut("62");
+        Cut("62 - IAL_Weapons_Slash_DMG_Tier_11");
     }
 
     Damage("slashing_tier_damages_12")
     {
-        Cut("66");
+        Cut("66 - IAL_Weapons_Slash_DMG_Tier_12");
     }
 
     Damage("slashing_tier_damages_13")
     {
-        Cut("80");
+        Cut("80 - IAL_Weapons_Slash_DMG_Tier_13");
     }
 
     Damage("slashing_tier_damages_14")
     {
-        Cut("85");
+        Cut("85 - IAL_Weapons_Slash_DMG_Tier_14");
     }
 
     Damage("slashing_tier_damages_15")
     {
-        Cut("90");
+        Cut("90 - IAL_Weapons_Slash_DMG_Tier_15");
     }
 
     Damage("slashing_tier_damages_16")
     {
-        Cut("116");
+        Cut("116 - IAL_Weapons_Slash_DMG_Tier_16");
     }
 
     Damage("slashing_tier_damages_17")
     {
-        Cut("122");
+        Cut("122 - IAL_Weapons_Slash_DMG_Tier_17");
     }
 
     Damage("slashing_tier_damages_18")
     {
-        Cut("128");
+        Cut("128 - IAL_Weapons_Slash_DMG_Tier_18");
     }
 
     Damage("slashing_tier_damages_19")
     {
-        Cut("167");
+        Cut("167 - IAL_Weapons_Slash_DMG_Tier_19");
     }
 
     Damage("slashing_tier_damages_20")
     {
-        Cut("174");
+        Cut("174 - IAL_Weapons_Slash_DMG_Tier_20");
     }
 
     Damage("slashing_tier_damages_21")
     {
-        Cut("181");
+        Cut("181 - IAL_Weapons_Slash_DMG_Tier_21");
     }
 
     Damage("slashing_tier_damages_22")
     {
-        Cut("236");
+        Cut("236 - IAL_Weapons_Slash_DMG_Tier_22");
     }
 
     Damage("slashing_tier_damages_23")
     {
-        Cut("244");
+        Cut("244 - IAL_Weapons_Slash_DMG_Tier_23");
     }
 
     Damage("slashing_tier_damages_24")
     {
-        Cut("252");
+        Cut("252 - IAL_Weapons_Slash_DMG_Tier_24");
     }
 
 	Damage("blunt_knuckles_tier_damages_0")
@@ -2465,73 +2470,72 @@ sub main()
 
 	DamageResistance("PlayerArmor1")
 	{
-		Physical("5%");
-		Cut("5%");
-		Blunt("5%");
+		Physical("IAL_Armor_Physical_Dmg_Tier_1%");
+		Cut("IAL_Armor_Cut_Dmg_Tier_1%");
+		Blunt("IAL_Armor_Blunt_Dmg_Tier_1%");
+		Ranged("IAL_Armor_Ranged_Dmg_Tier_1%");
+		Fire("IAL_Armor_Fire_Dmg_Tier_1%");
+		Electricity("IAL_Armor_Electricity_Dmg_Tier_1%");
 	}
 
 	DamageResistance("PlayerArmor2")
 	{
-		Physical("10%");
-		Cut("10%");
-		Blunt("10%");
-
-		Ranged("5%");
+		Physical("IAL_Armor_Physical_Dmg_Tier_2%");
+		Cut("IAL_Armor_Cut_Dmg_Tier_2%");
+		Blunt("IAL_Armor_Blunt_Dmg_Tier_2%");
+		Ranged("IAL_Armor_Ranged_Dmg_Tier_2%");
+		Fire("IAL_Armor_Fire_Dmg_Tier_2%");
+		Electricity("IAL_Armor_Electricity_Dmg_Tier_2%");
 	}
 
 	DamageResistance("PlayerArmor3")
 	{
-		Physical("15%");
-		Cut("15%");
-		Blunt("15%");
-
-		Ranged("10%");
-
-		Fire("5%");
+		Physical("IAL_Armor_Physical_Dmg_Tier_3%");
+		Cut("IAL_Armor_Cut_Dmg_Tier_3%");
+		Blunt("IAL_Armor_Blunt_Dmg_Tier_3%");
+		Ranged("IAL_Armor_Ranged_Dmg_Tier_3%");
+		Fire("IAL_Armor_Fire_Dmg_Tier_3%");
+		Electricity("IAL_Armor_Electricity_Dmg_Tier_3%");
 	}
 
 	DamageResistance("PlayerArmor4")
 	{
-		Physical("20%");
-		Cut("20%");
-		Blunt("20%");
-
-		Ranged("15%");
-
-		Fire("10%");
-		Electricity("5%");
+		Physical("IAL_Armor_Physical_Dmg_Tier_4%");
+		Cut("IAL_Armor_Cut_Dmg_Tier_4%");
+		Blunt("IAL_Armor_Blunt_Dmg_Tier_4%");
+		Ranged("IAL_Armor_Ranged_Dmg_Tier_4%");
+		Fire("IAL_Armor_Fire_Dmg_Tier_4%");
+		Electricity("IAL_Armor_Electricity_Dmg_Tier_4%");
 	}
 
 	DamageResistance("PlayerArmor5")
 	{
-		Physical("25%");
-		Cut("25%");
-		Blunt("25%");
-
-		Ranged("20%");
-
-		Fire("15%");
-		Electricity("10%");
+		Physical("IAL_Armor_Physical_Dmg_Tier_5%");
+		Cut("IAL_Armor_Cut_Dmg_Tier_5%");
+		Blunt("IAL_Armor_Blunt_Dmg_Tier_5%");
+		Ranged("IAL_Armor_Ranged_Dmg_Tier_5%");
+		Fire("IAL_Armor_Fire_Dmg_Tier_5%");
+		Electricity("IAL_Armor_Electricity_Dmg_Tier_5%");
 	}
 
     ////////// PLAYER ARMOR END //////////////////////////////////
 
     DamageTotalMul("Player_DamageVulnerability_Hard")
     {
-        All("1.50");
+        All("IAL_Overall_Dmg_To_Player");
     }
 	DamageTotalMul("Player_DamageVulnerability_Easy")
     {
-        All("0.75");
+        All("IAL_Overall_Dmg_To_Player");
     }
 
     DamageTotalMul("Player_FallDamageVulnerability_Hard")
     {
-        All("1.25");
+        All("IAL_Overall_Fall_Dmg_To_Player");
     }
 	DamageTotalMul("Player_FallDamageVulnerability_Easy")
     {
-        All("0.5");
+        All("IAL_Overall_Fall_Dmg_To_Player");
     }
 
     DamageMul("Player_AIDamageMultiplier")
@@ -2668,84 +2672,84 @@ sub main()
 	
 	Damage("bow_r0")
     {
-        Ranged("15");
+        Ranged("15 - IAL_Weapons_Bow_DMG_Tier_0");
     }
 	
 	Damage("bow_t1")
     {
-        Ranged("20");
+        Ranged("20 - IAL_Weapons_Bow_DMG_Tier_1");
     }
 	Damage("bow_t2")
     {
-		Ranged("27");
+		Ranged("27 - IAL_Weapons_Bow_DMG_Tier_2");
     }
 	Damage("bow_t3")
     {
-        Ranged("38");
+        Ranged("38 - IAL_Weapons_Bow_DMG_Tier_3");
     }
 	Damage("bow_t4")
     {
-        Ranged("58");
+        Ranged("58 - IAL_Weapons_Bow_DMG_Tier_4");
     }
 	Damage("bow_t5")
     {
-        Ranged("80");
+        Ranged("80 - IAL_Weapons_Bow_DMG_Tier_5");
     }
 	Damage("bow_t6")
     {
-        Ranged("100");
+        Ranged("100 - IAL_Weapons_Bow_DMG_Tier_6");
     }
 	Damage("bow_t7")
     {
-        Ranged("143");
+        Ranged("143 - IAL_Weapons_Bow_DMG_Tier_7");
     }
 	Damage("bow_t8")
     {
-        Ranged("202");
+        Ranged("202 - IAL_Weapons_Bow_DMG_Tier_8");
     }
 	Damage("bow_t9")
     {
-        Ranged("252");
+        Ranged("252 - IAL_Weapons_Bow_DMG_Tier_8");
     }
 	Damage("bow_t1_low")
     {
-        Ranged("10");
+        Ranged("10 - IAL_Weapons_Bow_DMG_Tier_0");
     }
 	Damage("bow_t2_low")
     {
-		Ranged("14");
+		Ranged("14 - IAL_Weapons_Bow_DMG_Tier_1");
     }
 	Damage("bow_t3_low")
     {
-        Ranged("19");
+        Ranged("19 - IAL_Weapons_Bow_DMG_Tier_2");
     }
 	Damage("bow_t4_low")
     {
-        Ranged("29");
+        Ranged("29 - IAL_Weapons_Bow_DMG_Tier_3");
     }
 	Damage("bow_t5_low")
     {
-        Ranged("40");
+        Ranged("40 - IAL_Weapons_Bow_DMG_Tier_4");
     }
 	Damage("bow_t6_low")
     {
-        Ranged("50");
+        Ranged("50 - IAL_Weapons_Bow_DMG_Tier_5");
     }
 	Damage("bow_t7_low")
     {
-        Ranged("72");
+        Ranged("72 - IAL_Weapons_Bow_DMG_Tier_6");
     }
 	Damage("bow_t8_low")
     {
-        Ranged("101");
+        Ranged("101 - IAL_Weapons_Bow_DMG_Tier_7");
     }
 	Damage("bow_t9_low")
     {
-        Ranged("126");
+        Ranged("126 - IAL_Weapons_Bow_DMG_Tier_8");
     }
 	Damage("bow_plaguewitch")
     {
-        Ranged("50");
+        Ranged("50 - IAL_Weapons_Bow_DMG_Tier_4");
     }
 
 
@@ -2753,7 +2757,7 @@ sub main()
 
 	Damage("crossbow_r0")
     {
-        Ranged("40");
+        Ranged("40 - IAL_Weapons_Crossbow_DMG_Tier_2");
     }
 
 
@@ -2800,12 +2804,12 @@ sub main()
 
 	Damage("Player_KickBaseDamage")
     {
-        All("0");
+        Physical("10");
     }
 	
 	Damage("Biter_Tar_Hit")
     {
-        Physical("4%-35% of MaxHealth");
+        Physical("4%-IAL_Biter_Swip_DMG_Percent% of MaxHealth");
     }
 	
     DamageMul("grab_damage_mul_biter_lv1")
@@ -2831,7 +2835,7 @@ sub main()
 	
     Damage("BiterGrab")
     {
-        Physical("70% of MaxHealth");
+        Physical("IAL_Biter_GrabBite_DMG_Percent% of MaxHealth");
     }
 	
 	Damage("Zombie_Fists")

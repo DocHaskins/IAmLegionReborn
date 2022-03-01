@@ -278,8 +278,16 @@ sub HumanAI_Base()
     {
         use HumanAI_Base_Defaults();
 
-        MaxPathLength(60.0);
+        MaxPathLength(250.0);
         MinPathWidth(0.55);
+		
+        ConnectionTypeCosts()
+        {
+            climb_low(3.0);
+            climb_medium(5.0);
+            
+            jump_short(1.0);
+        }
 
         use HumanAI_Base_InfectedSurfaces();
         use HumanAI_Base_InfectedRandomness();
@@ -289,8 +297,16 @@ sub HumanAI_Base()
     {
         use HumanAI_Base_Defaults();
 
-        MaxPathLength(60.0);
+        MaxPathLength(250.0);
         MinPathWidth(0.55);
+		
+        ConnectionTypeCosts()
+        {
+            climb_low(3.0);
+            climb_medium(5.0);
+            
+            jump_short(1.0);
+        }
 
         use HumanAI_Base_InfectedSurfaces();
         use HumanAI_Base_InfectedRandomness();
@@ -299,6 +315,9 @@ sub HumanAI_Base()
     NavigationPreset("juggernaut")
     {
         use HumanAI_Base_Defaults();
+
+		MaxPathLength(250.0);
+        MinPathWidth(0.55);
 
         ConnectionTypeCosts()
         {
@@ -317,9 +336,13 @@ sub HumanAI_Base()
     {
         use HumanAI_Base_Defaults();
 
+		MaxPathLength(250.0);
+        MinPathWidth(0.55);
+
         ConnectionTypeCosts()
         {
-            climb_low(0.3);
+            climb_low(3.0);
+            climb_medium(5.0);
             
             destroyable_wall(1.0);
             breakable_door(1.0);
@@ -336,8 +359,14 @@ sub HumanAI_Base()
     {
         use HumanAI_Base_Defaults();
 
-        ConnectionTypeCosts()
+		MaxPathLength(250.0);
+        MinPathWidth(0.55);
+ 
+       ConnectionTypeCosts()
         {
+		    climb_low(3.0);
+            climb_medium(5.0);
+		
             destroyable_wall(1.0);
             breakable_door(1.0);
         }
@@ -352,6 +381,9 @@ sub HumanAI_Base()
     NavigationPreset("suicider_flooded")
     {
         use HumanAI_Base_Defaults();
+
+		MaxPathLength(250.0);
+        MinPathWidth(0.55);
 
         ConnectionTypeCosts()
         {
@@ -377,6 +409,8 @@ sub HumanAI_Base()
     NavigationPreset("screamer")
     {
         use HumanAI_Base_Defaults();
+		MaxPathLength(250.0);
+        MinPathWidth(0.55);
 
 		ConnectionTypeCosts()
         {
@@ -401,6 +435,10 @@ sub HumanAI_Base()
     {
         use HumanAI_Base_Defaults();
 
+		MaxPathLength(250.0);
+        MinPathWidth(0.55);
+
+
         ConnectionTypeCosts()
         {
             climb_low(1.3);
@@ -423,6 +461,9 @@ sub HumanAI_Base()
     NavigationPreset("volatile")
     {
         use HumanAI_Base_Defaults();
+		
+		MaxPathLength(250.0);
+        MinPathWidth(0.55);
 
         ConnectionTypeCosts()
         {
@@ -442,6 +483,9 @@ sub HumanAI_Base()
     NavigationPreset("banshee")
     {
         use HumanAI_Base_Defaults();
+
+		MaxPathLength(250.0);
+        MinPathWidth(0.55);
 
         ConnectionTypeCosts()
         {
@@ -465,6 +509,17 @@ sub HumanAI_Base()
     {
         use HumanAI_Base_Defaults();
 
+        ConnectionTypeCosts()
+        {
+            climb_low(3.0);
+            climb_medium(5.5);
+            climb_high(8.0);
+
+            jump_short(1.0);
+            jump_medium(1.0);
+            jump_long(1.0);
+        }
+
         use HumanAI_Base_InfectedSurfaces();
         use HumanAI_Base_InfectedRandomness();
     }
@@ -472,6 +527,18 @@ sub HumanAI_Base()
     NavigationPreset("charger")
     {
         use HumanAI_Base_Defaults();
+        
+		MaxPathLength(250.0);
+        MinPathWidth(0.55);
+
+        ConnectionTypeCosts()
+        {
+            climb_low(3.0);
+            climb_medium(5.5);
+
+            jump_short(1.0);
+            jump_medium(1.0);
+        }
 
         use HumanAI_Base_InfectedSurfaces();
         use HumanAI_Base_InfectedRandomness();

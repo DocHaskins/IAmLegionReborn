@@ -1,0 +1,1529 @@
+
+SeqTrack("m_spi_attack_push", "m_spi_attack_push.anm2", 0, 75, 45, 1, 0.0)
+{
+    Event(0, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("attack_push",0,5,0)
+    }
+    Event(18, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(23, EVENT_APPLY_DAMAGE_LIGHT_PUSH, -1)
+    Event(25, AUDIO_STEP_SPRINT_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_sprint_left", "l_foot")
+    }
+    Event(33, AUDIO_STEP_SPRINT_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_sprint_right", "r_foot")
+    }
+    Event(40, USER_CAN_INTERRUPT, -1)
+    Event(44, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(57, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_spi_attack_3combo_puke", "m_spi_attack_3combo_puke.anm2", 0, 96, 30, 1, 0.0)
+{
+    Event(0, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(20, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(27, USER_APPLY_DAMAGE_FORWARD, -1)
+    Event(33, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(45, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(52, USER_APPLY_DAMAGE_FORWARD, -1)
+    Event(57, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(68, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(73, USER_APPLY_DAMAGE_FORWARD, -1)
+    Event(83, USER_CAN_INTERRUPT, -1)
+    Event(90, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_spi_attack_puke_power", "m_spi_attack_puke_power.anm2", 0, 73, 30, 1, 0.0)
+{
+    Event(0, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(11, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("attack_grenade", 0, 5, 0)
+    }
+    Event(42, USER_PLAY_SOUND, -1)
+    {
+        PlayAudioEvent("spitter_blob_grenade_throw", 0, 0)
+    }
+    Event(43, USER_APPLY_DAMAGE_FORWARD, -1)
+    Event(56, USER_CAN_INTERRUPT, -1)
+    Event(56, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(70, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_spi_idle_to_stf_s", "m_spi_idle_to_stf_s.anm2", 0, 44, 30, 1, 0.0)
+{
+    Event(12, VIS_EVENT_STEP_RIGHT, -1)
+    Event(31, VIS_EVENT_STEP_LEFT, -1)
+    Event(34, USER_CAN_INTERRUPT, -1)
+    Event(39, VIS_EVENT_STEP_RIGHT, -1)
+    Event(42, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_spi_stf_s", "m_spi_stf_s.anm2", 1, 40, 30, 1, 0.0)
+{
+    Event(2, VIS_EVENT_STEP_RIGHT, -1)
+    Event(11, VIS_EVENT_STEP_LEFT, -1)
+    Event(20, VIS_EVENT_STEP_RIGHT, -1)
+    Event(32, VIS_EVENT_STEP_LEFT, -1)
+}
+
+SeqTrack("m_spi_stf_s_to_idle", "m_spi_stf_s_to_idle.anm2", 22, 61, 30, 1, 0.0)
+{
+    Event(6, VIS_EVENT_STEP_LEFT, -1)
+    Event(16, USER_CAN_INTERRUPT, -1)
+    Event(18, VIS_EVENT_STEP_RIGHT, -1)
+    Event(32, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_spi_idle_to_stf_n", "m_spi_idle_to_stf_n.anm2", 0, 47, 30, 1, 0.0)
+{
+    Event(10, VIS_EVENT_STEP_LEFT, -1)
+    Event(16, USER_CAN_INTERRUPT, -1)
+    Event(23, VIS_EVENT_STEP_RIGHT, -1)
+    Event(26, USER_CAN_BLEND_OUT, -1)
+    Event(34, VIS_EVENT_STEP_LEFT, -1)
+    Event(44, VIS_EVENT_STEP_RIGHT, -1)
+}
+
+SeqTrack("m_spi_stf_n_to_idle", "m_spi_stf_n_to_idle.anm2", 21, 83, 30, 1, 0.0)
+{
+    Event(8, VIS_EVENT_STEP_RIGHT, -1)
+    Event(17, USER_CAN_INTERRUPT, -1)
+    Event(19, VIS_EVENT_STEP_LEFT, -1)
+    Event(36, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_spi_idle_to_stf_e", "m_spi_idle_to_stf_e.anm2", 0, 45, 30, 1, 0.0)
+{
+    Event(28, VIS_EVENT_STEP_LEFT, -1)
+    Event(30, USER_CAN_INTERRUPT, -1)
+    Event(37, VIS_EVENT_STEP_RIGHT, -1)
+    Event(45, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_spi_stf_e", "m_spi_stf_e.anm2", 0, 42, 30, 1, 0.0)
+{
+    Event(0, VIS_EVENT_STEP_RIGHT, -1)
+    Event(12, VIS_EVENT_STEP_LEFT, -1)
+    Event(21, VIS_EVENT_STEP_RIGHT, -1)
+    Event(32, VIS_EVENT_STEP_LEFT, -1)
+}
+
+SeqTrack("m_spi_stf_e_to_idle", "m_spi_stf_e_to_idle.anm2", 27, 97, 30, 1, 0.0)
+{
+    Event(5, VIS_EVENT_STEP_LEFT, -1)
+    Event(14, USER_CAN_INTERRUPT, -1)
+    Event(16, VIS_EVENT_STEP_RIGHT, -1)
+    Event(53, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_spi_idle_to_stf_w", "m_spi_idle_to_stf_w.anm2", 0, 79, 30, 1, 0.0)
+{
+    Event(23, VIS_EVENT_STEP_LEFT, -1)
+    Event(38, USER_CAN_INTERRUPT, -1)
+    Event(42, VIS_EVENT_STEP_RIGHT, -1)
+    Event(53, VIS_EVENT_STEP_LEFT, -1)
+    Event(61, USER_CAN_BLEND_OUT, -1)
+    Event(64, VIS_EVENT_STEP_RIGHT, -1)
+    Event(73, VIS_EVENT_STEP_LEFT, -1)
+}
+
+SeqTrack("m_spi_stf_w", "m_spi_stf_w.anm2", 0, 46, 30, 1, 0.0)
+{
+    Event(2, VIS_EVENT_STEP_LEFT, -1)
+    Event(15, VIS_EVENT_STEP_RIGHT, -1)
+    Event(26, VIS_EVENT_STEP_LEFT, -1)
+    Event(38, VIS_EVENT_STEP_RIGHT, -1)
+}
+
+SeqTrack("m_spi_stf_w_to_idle", "m_spi_stf_w_to_idle.anm2", 33, 95, 30, 1, 0.0)
+{
+    Event(9, VIS_EVENT_STEP_RIGHT, -1)
+    Event(17, USER_CAN_INTERRUPT, -1)
+    Event(18, VIS_EVENT_STEP_LEFT, -1)
+    Event(33, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_spi_stf_n", "m_spi_stf_n.anm2", 0, 23, 30, 1, 0.0)
+{
+    Event(10, VIS_EVENT_STEP_LEFT, -1)
+    Event(20, VIS_EVENT_STEP_RIGHT, -1)
+}
+
+SeqTrack("m_spi_stf_ne", "m_spi_stf_ne.anm2", 0, 26, 30, 1, 0.0)
+{
+    Event(11, VIS_EVENT_STEP_LEFT, -1)
+    Event(22, VIS_EVENT_STEP_RIGHT, -1)
+}
+
+SeqTrack("m_spi_stf_nw", "m_spi_stf_nw.anm2", 0, 23, 30, 1, 0.0)
+{
+    Event(10, VIS_EVENT_STEP_LEFT, -1)
+    Event(21, VIS_EVENT_STEP_RIGHT, -1)
+}
+
+SeqTrack("m_spi_stf_sw", "m_spi_stf_sw.anm2", 0, 24, 30, 1, 0.0)
+{
+    Event(8, VIS_EVENT_STEP_LEFT, -1)
+    Event(19, VIS_EVENT_STEP_RIGHT, -1)
+}
+
+SeqTrack("m_spi_stf_se", "m_spi_stf_se.anm2", 0, 42, 30, 1, 0.0)
+{
+    Event(11, VIS_EVENT_STEP_LEFT, -1)
+    Event(20, VIS_EVENT_STEP_RIGHT, -1)
+    Event(34, VIS_EVENT_STEP_LEFT, -1)
+    Event(42, VIS_EVENT_STEP_RIGHT, -1)
+}
+
+SeqTrack("m_spi_attack_puke_arch_lr", "m_spi_attack_puke_arch_lr.anm2", 10, 69, 30, 1, 0.0)
+{
+    Event(0, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(6, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("attack_spit_defence", 0, 5, 0)
+    }
+    Event(7, USER_PLAY_SOUND, -1)
+    {
+        PlayAudioEvent("spitter_blob_spit_defence", 0, 0)
+    }
+    Event(11, USER_APPLY_DAMAGE_FORWARD, -1)
+    Event(23, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(23, USER_CAN_INTERRUPT, -1)
+    Event(44, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_spi_attack_puke_down", "m_spi_attack_puke_down.anm2", 0, 120, 30, 1, 0.0)
+{
+    Event(0, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(81, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(91, USER_APPLY_DAMAGE_FORWARD, -1)
+    Event(100, USER_CAN_INTERRUPT, -1)
+    Event(119, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_spi_attack_puke_first", "m_spi_attack_puke_first.anm2", 0, 33, 30, 1, 0.0)
+{
+    Event(0, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(1, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("attack_spit", 0, 5, 0)
+    }
+    Event(21, USER_PLAY_SOUND, -1)
+    {
+        PlayAudioEvent("spitter_blob_small_spits", 0, 0)
+    }
+    Event(25, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(28, USER_APPLY_DAMAGE_FORWARD, -1)
+    Event(30, USER_CAN_INTERRUPT, -1)
+    Event(32, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_spi_attack_puke_combo", "m_spi_attack_puke_combo.anm2", 0, 25, 30, 1, 0.0)
+{
+    Event(0, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(1, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("attack_spit", 0, 5, 0)
+    }
+    Event(16, USER_PLAY_SOUND, -1)
+    {
+        PlayAudioEvent("spitter_blob_small_spits", 0, 0)
+    }
+    Event(19, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(21, USER_APPLY_DAMAGE_FORWARD, -1)
+    Event(23, USER_CAN_INTERRUPT, -1)
+    Event(24, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_spi_attack_puke_last", "m_spi_attack_puke_last.anm2", 0, 49, 30, 1, 0.0)
+{
+    Event(0, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(1, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("attack_spit", 0, 5, 0)
+    }
+    Event(17, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(17, USER_PLAY_SOUND, -1)
+    {
+        PlayAudioEvent("spitter_blob_small_spits", 0, 0)
+    }
+    Event(21, USER_APPLY_DAMAGE_FORWARD, -1)
+    Event(28, USER_CAN_INTERRUPT, -1)
+    Event(46, USER_CAN_BLEND_OUT, -1)
+}
+
+
+
+
+/***********************************************************************************************************/
+/************************************SPIITER DYING LIGHT 2**************************************************/
+/***********************************************************************************************************/
+SeqTrack("m_spt_fmv_idle_01", "m_spt_fmv_idle_01.anm2", 0, 464, 30, 1, 0.0)
+{
+    Event(1, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("spitter_mouth_smudge.gpufx",[1.000000,0.000000,0.000000],"head",1,[0.000000,0.000000,0.000000],0)
+    }
+}
+
+SeqTrack("m_spt_attack_spit_combo_start_01", "m_spt_attack_spit_combo_full_01.anm2", 60, 129, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("recharge",1,5,0)
+    }
+    Event(2, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("spitter_vomit_soft_01_a.gpufx",[1.0,0.0,0.0],"head",1,[0.0,0.0,0.0],0)
+    }
+    Event(10, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(33, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("attack_spit_long",0,5,0)
+    }
+    Event(43, USER_SHOOT, -1)
+    Event(43, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(43, PLAY_NM_FX, -1)
+    {
+        PlayFx("spitter_spit_01_a.gpufx",[1.0,0.0,0.0],"neck",1,[0.0,0.0,0.0],0)
+    }
+    Event(38, USER_PLAY_SOUND, -1)
+    {
+        PlayAudioEvent("spitter_blob_spits",0,0)
+    }
+    Event(61, USER_CAN_INTERRUPT, -1)
+    Event(63, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_spt_attack_spit_combo_end_01", "m_spt_attack_spit_combo_end_01.anm2", 0, 152, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("attack_spit_long",0,5,0)
+    }
+    Event(3, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(9, USER_PLAY_SOUND, -1)
+    {
+        PlayAudioEvent("spitter_blob_spits_final",0,0)
+    }
+    Event(13, USER_SHOOT, -1)
+    Event(13, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(13, PLAY_NM_FX, -1)
+    {
+        PlayFx("spitter_spit_01_a.gpufx",[1.0,0.0,0.0],"neck",1,[0.0,0.0,0.0],0)
+    }
+    Event(37, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("heavy_breath",1,5,0)
+    }
+    Event(58, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("heavy_breath",1,5,0)
+    }
+    Event(65, USER_CAN_INTERRUPT, -1)
+    Event(67, USER_CAN_BLEND_OUT, -1)
+    Event(93, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(104, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(105, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("heavy_breath",1,5,0)
+    }
+    Event(129, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+}
+
+SeqTrack("m_spt_attack_spit_combo_hit_01", "m_spt_attack_spit_combo_full_01.anm2", 126, 168, 30, 1, 0.0)
+{
+    Event(0, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(12, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("attack_spit_short",0,5,0)
+    }
+    Event(17, USER_PLAY_SOUND, -1)
+    {
+        PlayAudioEvent("spitter_blob_spits",0,0)
+    }
+    Event(19, USER_SHOOT, -1)
+    Event(19, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(19, PLAY_NM_FX, -1)
+    {
+        PlayFx("spitter_spit_01_a.gpufx",[1.0,0.0,0.0],"neck",1,[0.0,0.0,0.0],0)
+    }
+    Event(35, USER_CAN_INTERRUPT, -1)
+    Event(37, USER_CAN_BLEND_OUT, -1)
+}
+SeqTrack("m_spt_attack_mortar_01", "m_spt_attack_mortar_01.anm2", 0, 399, 30, 1, 0.0)
+{
+    Event(7, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("spitter_vomit_soft_01_a.gpufx",[1.0,0.0,0.0],"head",1,[0.0,0.0,0.0],0)
+    }
+    Event(88, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("attack_grenade", 0, 5, 0)
+    }
+    Event(98, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(109, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("spitter_spit_01_a.gpufx",[1.0,0.0,0.0],"head",1,[0.0,0.0,0.0],0)
+    }
+    Event(110, USER_PLAY_SOUND, -1)
+    {
+        PlayAudioEvent("spitter_blob_grenade_throw", 0, 0)
+    }
+    Event(124, USER_SHOOT, -1)
+    Event(170, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(176, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(189, USER_CAN_INTERRUPT, -1)
+    Event(203, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(223, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(237, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(255, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(291, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(335, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_spt_attack_mortar_02", "m_spt_attack_mortar_02.anm2", 0, 459, 30, 1, 0.0)
+{
+    Event(7, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("spitter_vomit_soft_01_a.gpufx",[1.0,0.0,0.0],"head",1,[0.0,0.0,0.0],0)
+    }
+    Event(57, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(83, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(121, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("attack_grenade", 0, 5, 0)
+    }
+    Event(131, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(142, PLAY_NM_FX, -1)
+    {
+        PlayFx("spitter_mortar_spit_01_a.gpufx",[1.0,0.0,0.0],"head",1,[0.0,0.0,0.0],0)
+    }
+    Event(143, USER_PLAY_SOUND, -1)
+    {
+        PlayAudioEvent("spitter_blob_grenade_throw", 0, 0)
+    }
+    Event(165, USER_SHOOT, -1)
+    Event(170, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(176, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(209, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(218, USER_CAN_INTERRUPT, -1)
+    Event(240, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(256, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(267, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(289, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(368, USER_CAN_BLEND_OUT, -1)
+    Event(376, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(427, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+}
+SeqTrack("m_spt_fmv_idle_02", "m_spt_fmv_idle_02.anm2", 1, 821, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("idle_start",1,5,0,1)
+    }
+    Event(2, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("spitter_chem_busrt_01a.gpufx",[1.0,0.0,0.0],"neck",1,[0.0,0.0,-0.20000000298023224],0)
+    }
+    Event(30, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("spitter_hand_goo_01a.gpufx",[1.0,0.0,0.0],"r_hand",1,[0.10000000149011612,0.0,0.019999999552965164],0)
+    }
+    Event(129, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("idle_start",1,5,0,1)
+    }
+    Event(139, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("spitter_chem_busrt_01a.gpufx",[1.0,0.0,0.0],"neck",1,[0.0,0.0,-0.20000000298023224],0)
+    }
+    Event(190, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("idle_start",1,5,0,1)
+    }
+    Event(202, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("spitter_chem_busrt_01a.gpufx",[1.0,0.0,0.0],"neck",1,[0.0,0.0,-0.20000000298023224],0)
+    }
+    Event(296, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("idle_start",1,5,0,1)
+    }
+    Event(305, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("spitter_chem_busrt_01a.gpufx",[1.0,0.0,0.0],"neck",1,[0.0,0.0,-0.20000000298023224],0)
+    }
+    Event(337, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(369, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("idle_start",1,5,0,1)
+    }
+    Event(374, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(448, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("idle_start",1,5,0,1)
+    }
+    Event(480, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("idle_start",1,5,0,1)
+    }
+    Event(611, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("spitter_chem_busrt_01a.gpufx",[1.0,0.0,0.0],"neck",1,[0.0,0.0,-0.20000000298023224],0)
+    }
+    Event(618, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("idle_start",1,5,0,1)
+    }
+    Event(632, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("spitter_hand_goo_01a.gpufx",[1.0,0.0,0.0],"r_hand",1,[0.0,0.0,0.0],0)
+    }
+}
+
+SeqTrack("m_spt_attack_aoe_rl_01", "m_spt_attack_aoe_rl_01.anm2", 38, 138, 30, 1, 0.0)
+{
+    Event(0, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("spitter_vomit_01_a.gpufx",[1.0,0.0,0.0],"head",1,[0.0,0.0,0.0],0)
+    }
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("attack_defence",0,5,0)
+    }
+    Event(4, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(7, USER_APPLY_DAMAGE_FORWARD, -1)
+    Event(8, USER_PLAY_SOUND, -1)
+    {
+        PlayAudioEvent("spitter_blob_spit_defence", 0, 0)
+    }
+    Event(17, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(57, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("heavy_breath",1,5,0)
+    }
+    Event(69, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(69, USER_CAN_INTERRUPT, -1)
+    Event(74, USER_CAN_BLEND_OUT, -1)
+}
+SeqTrack("m_spt_attack_push_01", "m_spt_attack_push_01.anm2", 35, 145, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("attack_push",0,5,0)
+    }
+    Event(0, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(13, START_GIVE_DAMAGE, -1)
+    Event(14, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(17, AUDIO_STEP_SPRINT_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_sprint_left", "l_foot")
+    }
+    Event(17, END_GIVE_DAMAGE, -1)
+    Event(24, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("heavy_breath",1,5,0)
+    }
+    Event(27, AUDIO_STEP_SPRINT_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_sprint_right", "r_foot")
+    }
+    Event(39, USER_CAN_INTERRUPT, -1)
+    Event(44, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(54, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("heavy_breath",1,5,0)
+    }
+    Event(54, USER_CAN_BLEND_OUT, -1)
+    Event(72, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+}
+SeqTrack("m_spt_stf_s_01", "m_spt_stf_s_01.anm2", 0, 40, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("strafe",1,5,1)
+    }
+    Event(4, VIS_EVENT_STEP_LEFT, -1)
+    Event(10, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(12, VIS_EVENT_STEP_RIGHT, -1)
+    Event(20, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(24, VIS_EVENT_STEP_LEFT, -1)
+    Event(29, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(32, VIS_EVENT_STEP_RIGHT, -1)
+    Event(40, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+}
+
+SeqTrack("m_spt_stf_e_01", "m_spt_stf_e_01.anm2", 0, 49, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("strafe",1,5,1)
+    }
+    Event(3, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(6, VIS_EVENT_STEP_LEFT, -1)
+    Event(15, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(17, VIS_EVENT_STEP_RIGHT, -1)
+    Event(28, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(30, VIS_EVENT_STEP_LEFT, -1)
+    Event(39, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(41, VIS_EVENT_STEP_RIGHT, -1)
+}
+
+SeqTrack("m_spt_stf_w_01", "m_spt_stf_w_01.anm2", 0, 47, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("strafe",1,5,1)
+    }
+    Event(2, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(3, VIS_EVENT_STEP_RIGHT, -1)
+    Event(10, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(13, VIS_EVENT_STEP_LEFT, -1)
+    Event(24, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(26, VIS_EVENT_STEP_RIGHT, -1)
+    Event(35, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(37, VIS_EVENT_STEP_LEFT, -1)
+}
+
+SeqTrack("m_spt_stf_se_01", "m_spt_stf_se_01.anm2", 0, 45, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("strafe",1,5,1)
+    }
+    Event(1, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(5, VIS_EVENT_STEP_LEFT, -1)
+    Event(10, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(13, VIS_EVENT_STEP_RIGHT, -1)
+    Event(25, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(29, VIS_EVENT_STEP_LEFT, -1)
+    Event(34, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(37, VIS_EVENT_STEP_RIGHT, -1)
+}
+
+SeqTrack("m_spt_stf_sw_01", "m_spt_stf_sw_01.anm2", 0, 22, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("strafe",1,5,1)
+    }
+    Event(11, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(14, VIS_EVENT_STEP_RIGHT, -1)
+    Event(19, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(22, VIS_EVENT_STEP_LEFT, -1)
+}
+
+
+SeqTrack("m_spt_idle_to_stf_s", "m_spt_strafe_s_start_stop.anm2", 20, 65, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("strafe",1,5,1)
+    }
+    Event(12, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(14, VIS_EVENT_STEP_RIGHT, -1)
+    Event(20, USER_CAN_INTERRUPT, -1)
+    Event(24, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(27, VIS_EVENT_STEP_LEFT, -1)
+    Event(31, USER_CAN_BLEND_OUT, -1)
+    Event(33, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(36, VIS_EVENT_STEP_RIGHT, -1)
+    Event(43, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+}
+
+SeqTrack("m_spt_idle_to_stf_e", "m_spt_strafe_e_start_stop.anm2", 30, 76, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("strafe",1,5,1)
+    }
+    Event(24, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(26, VIS_EVENT_STEP_LEFT, -1)
+    Event(30, USER_CAN_INTERRUPT, -1)
+    Event(33, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(35, VIS_EVENT_STEP_RIGHT, -1)
+    Event(40, USER_CAN_BLEND_OUT, -1)
+    Event(43, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(46, VIS_EVENT_STEP_LEFT, -1)
+}
+
+SeqTrack("m_spt_idle_to_stf_se", "m_spt_strafe_se_start_stop.anm2", 11, 50, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("strafe",1,5,1)
+    }
+    Event(13, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(16, VIS_EVENT_STEP_LEFT, -1)
+    Event(18, USER_CAN_INTERRUPT, -1)
+    Event(22, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(25, VIS_EVENT_STEP_RIGHT, -1)
+    Event(33, USER_CAN_BLEND_OUT, -1)
+    Event(33, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(37, VIS_EVENT_STEP_LEFT, -1)
+}
+
+SeqTrack("m_spt_idle_to_stf_sw", "m_spt_strafe_sw_start_stop.anm2", 15, 53, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("strafe",1,5,1)
+    }
+    Event(15, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(17, VIS_EVENT_STEP_RIGHT, -1)
+    Event(20, USER_CAN_INTERRUPT, -1)
+    Event(24, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(27, VIS_EVENT_STEP_LEFT, -1)
+    Event(32, USER_CAN_BLEND_OUT, -1)
+    Event(34, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(36, VIS_EVENT_STEP_RIGHT, -1)
+}
+
+SeqTrack("m_spt_idle_to_stf_w", "m_spt_strafe_w_start_stop.anm2", 23, 62, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("strafe",1,5,1)
+    }
+    Event(14, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(17, VIS_EVENT_STEP_RIGHT, -1)
+    Event(21, USER_CAN_INTERRUPT, -1)
+    Event(26, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(27, VIS_EVENT_STEP_LEFT, -1)
+    Event(33, USER_CAN_BLEND_OUT, -1)
+    Event(37, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(38, VIS_EVENT_STEP_RIGHT, -1)
+}
+
+SeqTrack("m_spt_stf_w_to_idle", "m_spt_strafe_w_start_stop.anm2", 60, 107, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("idle_start",1,5,0,1)
+    }
+    Event(9, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(21, USER_CAN_INTERRUPT, -1)
+    Event(34, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_spi_stf_sw_to_idle", "m_spt_strafe_sw_start_stop.anm2", 66, 105, 30, 1, 0.0)
+{
+    Event(24, USER_CAN_INTERRUPT, -1)
+    Event(33, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_spt_stf_s_to_idle", "m_spt_strafe_s_start_stop.anm2", 79, 126, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("idle_start",1,5,0,1)
+    }
+    Event(6, AUDIO_STEP_SPRINT_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_sprint_left", "l_foot")
+    }
+    Event(16, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(23, USER_CAN_INTERRUPT, -1)
+    Event(33, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_spt_stf_sw_to_idle", "m_spt_strafe_sw_start_stop.anm2", 66, 105, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("idle_start",1,5,0,1)
+    }
+    Event(1, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(8, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(24, USER_CAN_INTERRUPT, -1)
+    Event(33, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_spt_stf_se_to_idle", "m_spt_strafe_se_start_stop.anm2", 51, 116, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("idle_start",1,5,0,1)
+    }
+    Event(4, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(13, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(23, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(35, USER_CAN_INTERRUPT, -1)
+    Event(49, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_spt_stf_e_to_idle", "m_spt_strafe_e_start_stop.anm2", 73, 132, 30, 1, 0.0)
+{
+    Event(0, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("idle_start",1,5,0,1)
+    }
+    Event(9, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(21, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(29, USER_CAN_INTERRUPT, -1)
+    Event(49, USER_CAN_BLEND_OUT, -1)
+}
+SeqTrack("m_spt_hitreaction_blunt_light_sw_torso_01", "m_spt_hitreaction_blunt_light_sw_torso_01.anm2", 0, 80, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain",0,5,0)
+    }
+    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
+    Event(1, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("spitter_blood_burst_01_a.gpufx",[1.0,0.0,0.0],"head",1,[0.0,0.0,0.0],0)
+    }
+    Event(14, AUDIO_STEP_SPRINT_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_sprint_right", "r_foot")
+    }
+    Event(19, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(23, AUDIO_STEP_SPRINT_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_sprint_left", "l_foot")
+    }
+    Event(36, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(47, USER_CAN_INTERRUPT, -1)
+    Event(61, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_spt_hitreaction_blunt_light_se_torso_01", "m_spt_hitreaction_blunt_light_se_torso_01.anm2", 0, 81, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain",0,5,0)
+    }
+    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
+    Event(1, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("spitter_blood_burst_01_a.gpufx",[1.0,0.0,0.0],"head",1,[0.0,0.0,0.0],0)
+    }
+    Event(15, AUDIO_STEP_SPRINT_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_sprint_left", "l_foot")
+    }
+    Event(20, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(26, AUDIO_STEP_SPRINT_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_sprint_right", "r_foot")
+    }
+    Event(36, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left","l_foot")
+    }
+    Event(44, USER_CAN_INTERRUPT, -1)
+    Event(60, USER_CAN_BLEND_OUT, -1)
+}
+SeqTrack("m_spt_attack_mortar_01_start", "m_spt_attack_mortar_01.anm2", 32, 111, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("recharge",1,5,0)
+    }
+    Event(3, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("spitter_vomit_soft_01_a.gpufx",[1.0,0.0,0.0],"head",1,[0.0,0.0,0.0],0)
+    }
+    Event(49, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(56, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("attack_mortar_long",0,5,0)
+    }
+    Event(68, USER_CAN_INTERRUPT, -1)
+    Event(69, USER_PLAY_SOUND, -1)
+    {
+        PlayAudioEvent("spitter_blob_grenade_throw",0,0)
+    }
+    Event(73, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(74, USER_CAN_BLEND_OUT, -1)
+    Event(74, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(83, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(95, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+}
+SeqTrack("m_spt_attack_mortar_01_loop", "m_spt_attack_mortar_01.anm2", 129, 162, 30, 1, 0.0)
+{
+    Event(2, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(3, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("spitter_vomit_soft_01_a.gpufx",[1.000000,0.000000,0.000000],"head",1,[0.000000,0.000000,0.000000],0)
+    }
+    Event(4, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("spitter_mortar_spit_01_a.gpufx",[1.0,0.0,0.0],"head",1,[0.0,0.0,0.0],0)
+    }
+    Event(14, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("attack_mortar_short",0,5,0)
+    }
+    Event(19, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("spitter_mortar_spit_01_a.gpufx",[1.0,0.0,0.0],"head",1,[0.0,0.0,0.0],0)
+    }
+    Event(25, USER_PLAY_SOUND, -1)
+    {
+        PlayAudioEvent("spitter_blob_grenade_throw", 0, 0)
+    }
+    Event(27, USER_SHOOT, -1)
+    Event(30, USER_CAN_INTERRUPT, -1)
+    Event(31, USER_CAN_BLEND_OUT, -1)
+    Event(31, VIS_EVENT_ROTATION_MOD_END, -1)
+}
+SeqTrack("m_spt_attack_mortar_01_end", "m_spt_attack_mortar_01.anm2", 165, 399, 30, 1, 0.0)
+{
+    Event(-25, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("attack_mortar_long",0,5,0)
+    }
+    Event(-15, USER_PLAY_SOUND, -1)
+    {
+        PlayAudioEvent("spitter_blob_grenade_throw_final",0,0)
+    }
+    Event(-15, USER_SHOOT, -1)
+    Event(0, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(4, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(11, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(38, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(42, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("heavy_breath",1,5,0)
+    }
+    Event(58, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(72, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(87, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("heavy_breath",1,5,0)
+    }
+    Event(90, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(120, USER_CAN_INTERRUPT, -1)
+    Event(126, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(158, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("heavy_breath",1,5,0)
+    }
+    Event(170, USER_CAN_BLEND_OUT, -1)
+    Event(184, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("heavy_breath",1,5,0)
+    }
+}
+SeqTrack("spt_fmv_idle_n_to_idle_ne", "spt_fmv_idle_n_to_idle_ne.anm2", 10, 89, 35, 1, 0.0)
+{
+    Event(8, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(25, MID_ROTATION_MARKER, -1)
+    Event(42, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(59, VIS_EVENT_STOPANIM, -1)
+}
+
+SeqTrack("spt_fmv_idle_n_to_idle_nw", "spt_fmv_idle_n_to_idle_nw.anm2", 9, 76, 35, 1, 0.0)
+{
+    Event(8, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(19, MID_ROTATION_MARKER, -1)
+    Event(30, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(50, VIS_EVENT_STOPANIM, -1)
+}
+
+SeqTrack("spt_fmv_idle_n_to_idle_e", "spt_fmv_idle_n_to_idle_e.anm2", 9, 93, 35, 1, 0.0)
+{
+    Event(10, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(25, MID_ROTATION_MARKER, -1)
+    Event(42, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(61, VIS_EVENT_STOPANIM, -1)
+}
+
+SeqTrack("spt_fmv_idle_n_to_idle_w", "spt_fmv_idle_n_to_idle_w.anm2", 15, 95, 35, 1, 0.0)
+{
+    Event(16, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(31, MID_ROTATION_MARKER, -1)
+    Event(45, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(67, VIS_EVENT_STOPANIM, -1)
+}
+
+SeqTrack("spt_fmv_idle_n_to_idle_sr", "spt_fmv_idle_n_to_idle_sr.anm2", 13, 157, 35, 1, 0.0)
+{
+    Event(12, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(45, MID_ROTATION_MARKER, -1)
+    Event(78, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(106, VIS_EVENT_STOPANIM, -1)
+}
+
+SeqTrack("spt_fmv_idle_n_to_idle_sl", "spt_fmv_idle_n_to_idle_sl.anm2", 10, 133, 35, 1, 0.0)
+{
+    Event(21, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(49, MID_ROTATION_MARKER, -1)
+    Event(76, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(102, VIS_EVENT_STOPANIM, -1)
+}
+SeqTrack("spt_dodge_w_01", "m_hmf_dodge_e_01.anm2", 13, 108, 65, 1, 0.0)
+{
+    Event(0, USER_DAMAGE_DISABLED, -1)
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("dodge",0,5,0)
+    }
+    Event(1, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(17, AUDIO_STEP_LIGHT_RIGHT, -1)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        {
+            TimeShift(0.000000)
+        }
+    }
+    Event(37, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(46, USER_CAN_INTERRUPT, -1)
+    Event(46, USER_DAMAGE_ENABLED, -1)
+    Event(48, AUDIO_STEP_RIGHT, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(61, USER_CAN_BLEND_OUT, -1)
+    Event(78, AUDIO_STEP_SHUFFLE_LEFT, -1)
+    {
+        PlayStepSFx("step_shuffle_left", "l_foot")
+        {
+            TimeShift(0.000000)
+        }
+    }
+}
+
+SeqTrack("spt_dodge_e_01", "m_hmf_dodge_w_01.anm2", 18, 108, 65, 1, 0.0)
+{
+    Event(0, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(0, USER_DAMAGE_DISABLED, -1)
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("dodge",0,5,0)
+    }
+    Event(3, AUDIO_STEP_SLIDE_RIGHT, -1)
+    {
+        PlayStepSFx("step_slide_right", "r_foot")
+    }
+    Event(25, AUDIO_STEP_HEAVY_RIGHT, -1)
+    {
+        PlayStepSFx("step_heavy_right", "r_foot")
+    }
+    Event(32, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(42, USER_CAN_INTERRUPT, -1)
+    Event(42, USER_DAMAGE_ENABLED, -1)
+    Event(46, AUDIO_STEP_LEFT, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        {
+            TimeShift(0.000000)
+        }
+    }
+    Event(56, USER_CAN_BLEND_OUT, -1)
+    Event(84, AUDIO_STEP_SHUFFLE_RIGHT, -1)
+    {
+        PlayStepSFx("step_shuffle_right", "r_foot")
+        {
+            TimeShift(0.000000)
+        }
+    }
+}
+
+SeqTrack("m_spt_attack_spit_fast_01", "m_spt_attack_spit_fast_01.anm2", 25, 81, 30, 1, 0.0)
+{
+    Event(-20, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("attack_spit_short",0,5,0)
+    }
+    Event(-11, USER_PLAY_SOUND, -1)
+    {
+        PlayAudioEvent("spitter_blob_spits_final",0,0)
+    }
+    Event(0, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(5, USER_SHOOT, -1)
+    Event(5, PLAY_NM_FX, -1)
+    {
+        PlayFx("spitter_spit_01_a.gpufx",[1.0,0.0,0.0],"neck",0,[0.0,0.0,0.0],0)
+    }
+    Event(5, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(24, USER_CAN_INTERRUPT, -1)
+    Event(26, USER_CAN_BLEND_OUT, -1)
+}
+SeqTrack("m_spt_attack_mortar_01_first_shot", "m_spt_attack_mortar_01.anm2", 99, 127, 30, 1, 0.0)
+{
+    Event(-67, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("recharge",1,5,0)
+    }
+    Event(-11, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("attack_mortar_long",0,5,0)
+    }
+    Event(0, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(1, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("spitter_vomit_soft_01_a.gpufx",[1.0,0.0,0.0],"head",1,[0.0,0.0,0.0],0)
+    }
+    Event(2, USER_PLAY_SOUND, -1)
+    {
+        PlayAudioEvent("spitter_blob_grenade_throw",0,0)
+    }
+    Event(6, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(10, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("spitter_mortar_spit_01_a.gpufx",[1.0,0.0,0.0],"head",1,[0.0,0.0,0.0],0)
+    }
+    Event(11, USER_SHOOT, -1)
+    Event(14, USER_CAN_INTERRUPT, -1)
+    Event(16, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(22, USER_CAN_BLEND_OUT, -1)
+    Event(22, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(28, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+}
+SeqTrack("m_spt_attack_mortar_01_end_fast", "m_spt_attack_mortar_01.anm2", 165, 399, 30, 1, 0.0)
+{
+    Event(-25, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("attack_mortar_long",0,5,0)
+    }
+    Event(-15, USER_PLAY_SOUND, -1)
+    {
+        PlayAudioEvent("spitter_blob_grenade_throw_final",0,0)
+    }
+    Event(-15, USER_SHOOT, -1)
+    Event(0, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(4, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(11, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(38, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(42, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("heavy_breath",1,5,0)
+    }
+    Event(44, USER_CAN_INTERRUPT, -1)
+    Event(49, USER_CAN_BLEND_OUT, -1)
+    Event(58, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(72, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(87, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("heavy_breath",1,5,0)
+    }
+    Event(90, AUDIO_STEP_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_right", "r_foot")
+    }
+    Event(126, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1)
+        PlayStepSFx("step_left", "l_foot")
+    }
+    Event(158, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("heavy_breath",1,5,0)
+    }
+    Event(184, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("heavy_breath",1,5,0)
+    }
+}
+SeqTrack("m_spt_reaction_startle_sl_01", "m_spt_reaction_startle_sl_01.anm2", 0, 75, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("dodge",0,5,0,0)
+    }
+    Event(10, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("heavy_breath",1,5,1,1)
+    }
+    Event(33, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(50, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(67, USER_CAN_INTERRUPT, -1)
+    Event(69, USER_CAN_BLEND_OUT, -1)
+}
+SeqTrack("spt_dodge_s_01", "m_spt_dodge_s_01.anm2", 10, 64, 30, 1, 0.0)
+{
+    Event(2, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("dodge",0,5,0)
+    }
+    Event(3, USER_DAMAGE_DISABLED, -1)
+    Event(9, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(29, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(34, USER_DAMAGE_ENABLED, -1)
+    Event(43, USER_CAN_INTERRUPT, -1)
+    Event(47, USER_CAN_BLEND_OUT, -1)
+}
+SeqTrack("spt_dodge_vomit_s_01", "m_spt_dodge_s_01.anm2", 10, 64, 30, 1, 0.0)
+{
+    Event(2, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("dodge",0,5,0)
+    }
+    Event(3, USER_DAMAGE_DISABLED, -1)
+    Event(9, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(29, VIS_EVENT_ROTATION_MOD_END, -1)
+    Event(29, USER_CAN_INTERRUPT, -1)
+    Event(33, USER_CAN_BLEND_OUT, -1)
+}
+SeqTrack("spt_idle_deactivate", "m_spt_fmv_idle_02.anm2", 0, 48, 30, 1, 0.0)
+{
+    Event(23, USER_CAN_BLEND_OUT, -1)
+}
+SeqTrack("spt_spawn_crawl_out_01", "spt_spawn_crawl_out_01.anm2", 0, 243, 30, 1, 0.0)
+{
+    Event(207, USER_CAN_BLEND_OUT, 0)
+}

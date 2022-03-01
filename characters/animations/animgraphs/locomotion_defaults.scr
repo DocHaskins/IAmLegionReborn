@@ -1,0 +1,200 @@
+
+sub SetLocomotionScriptDefaults()
+{
+    LeftFootBoneName("L_Foot");
+    RightFootBoneName("R_Foot");
+}
+
+sub SetLocomotionMoveStyleDefaults_Walk()
+{
+    // Blend Times
+    BlendChangeMovestyle(0.3);
+    BlendIdleToStart(0.25);
+    BlendIdleToTurnInPlace(0.25);
+    BlendTurnInPlaceToIdle(0.25);
+    BlendJumpToMove(0.2);
+    BlendJumpToStart(0.25);
+    BlendMoveToJump(0.2);
+    BlendMoveToStop(0.3);
+    BlendMoveToTurn(0.25);
+    BlendStartToMove(0.25);
+    BlendStartToStop(0.3);
+    BlendStepNormalToShort(0.15);
+    BlendStepShortToNormal(0.15);
+    BlendStopToIdle(0.3);
+    BlendSuddenToIdle(0.4);
+    BlendTurnToMove(0.25);
+    // BlendMoveToMove(0.25);
+
+    EnableNonSynchronizedStops(false); // Looks bad for slow motion.
+     
+    // Physics
+    
+    //Starts
+    GoalDistToUseSlideInsteadOfStart(0.1);
+    MaxDistanceToTargetForTurnInPlaceInsteadOfStart(0.5);
+    
+    // Sudden stops
+    MaxDistanceToGoalForSuddenStop(0.25);
+    SuddenStopDeacceleration(3.0);
+    
+    // Corrections
+    // Assumed that a correct turn set is present. Otherwise it should be 180.
+    MaxMovementRotCorrectionPerSecond(90.0);
+    
+    // Turns
+    MaxTurnDockCorrectionPercentage(0.25);
+    MaxTurnSideCorrectionPercentage(0.5);
+    MaxPathSegmentLengthToForceTurnOnGoal(0.5);
+
+    // Leans
+    LeanTurnSpeed(1.75);
+    LeanEnabled(false);
+}
+
+
+sub SetLocomotionMoveStyleDefaults_Trot()
+{
+    // Blend Times
+    BlendChangeMovestyle(0.3);
+    BlendIdleToStart(0.25);
+    BlendIdleToTurnInPlace(0.25);
+    BlendTurnInPlaceToIdle(0.25);
+    BlendJumpToMove(0.2);
+    BlendJumpToStart(0.25);
+    BlendMoveToJump(0.2);
+    BlendMoveToStop(0.3);
+    BlendMoveToTurn(0.25);
+    BlendStartToMove(0.3);
+    BlendStartToStop(0.3);
+    BlendStepNormalToShort(0.15);
+    BlendStepShortToNormal(0.15);
+    BlendStopToIdle(0.3);
+    BlendSuddenToIdle(0.35);
+    BlendTurnToMove(0.25);
+    // BlendMoveToMove(0.25);
+    
+    // Physics
+    
+    //Starts
+    GoalDistToUseSlideInsteadOfStart(0.1);
+    MaxDistanceToTargetForTurnInPlaceInsteadOfStart(1.5);
+
+    // Stops
+    FallbackSlowMovestyle("Walk", 1.3); // Has to be manually redefined if "Walk" doesn't exit.
+    
+    // Sudden stops
+    MaxDistanceToGoalForSuddenStop(0.5);
+    SuddenStopDeacceleration(10.0);
+    
+    // Corrections
+    // Assumed that a correct turn set is present. Otherwise it should be 360.
+    MaxMovementRotCorrectionPerSecond(180.0);
+    
+    // Turns
+    MaxTurnDockCorrectionPercentage(0.5);
+    MaxTurnSideCorrectionPercentage(0.5);
+    MaxPathSegmentLengthToForceTurnOnGoal(1.5);
+   
+
+    // Leans
+    LeanEnabled(false);
+}
+
+
+sub SetLocomotionMoveStyleDefaults_Run()
+{
+    // Blend Times
+    BlendChangeMovestyle(0.3);
+    BlendIdleToStart(0.25);
+    BlendIdleToTurnInPlace(0.25);
+    BlendTurnInPlaceToIdle(0.25);
+    BlendJumpToMove(0.2);
+    BlendJumpToStart(0.25);
+    BlendMoveToJump(0.2);
+    BlendMoveToStop(0.3);
+    BlendMoveToTurn(0.25);
+    BlendStartToMove(0.15);
+    BlendStartToStop(0.15);
+    BlendStepNormalToShort(0.15);
+    BlendStepShortToNormal(0.15);
+    BlendStopToIdle(0.3);
+    BlendSuddenToIdle(0.35);
+    BlendTurnToMove(0.25);
+    // BlendMoveToMove(0.25);
+    
+    // Physics
+    
+    //Starts
+    GoalDistToUseSlideInsteadOfStart(0.1);
+    MaxDistanceToTargetForTurnInPlaceInsteadOfStart(1.5);
+    
+    // Stops
+    FallbackSlowMovestyle("Walk", 1.3); // Has to be manually redefined if "Walk" doesn't exit.
+    
+    // Sudden stops
+    MaxDistanceToGoalForSuddenStop(0.5);
+    SuddenStopDeacceleration(10.0);
+    
+    // Corrections
+    // Assumed that a correct turn set is present. Otherwise it should be 360.
+    MaxMovementRotCorrectionPerSecond(360.0);
+    
+    // Turns
+    MaxTurnDockCorrectionPercentage(0.5);
+    MaxTurnSideCorrectionPercentage(0.5);
+    MaxPathSegmentLengthToForceTurnOnGoal(2.0);
+   
+
+    // Leans
+    LeanEnabled(false);
+}
+
+
+sub SetLocomotionMoveStyleDefaults_RunFast()
+{
+    // Blend Times
+    BlendChangeMovestyle(0.3);
+    BlendIdleToStart(0.25);
+    BlendIdleToTurnInPlace(0.25);
+    BlendTurnInPlaceToIdle(0.25);
+    BlendJumpToMove(0.2);
+    BlendJumpToStart(0.25);
+    BlendMoveToJump(0.2);
+    BlendMoveToStop(0.3);
+    BlendMoveToTurn(0.25);
+    BlendStartToMove(0.15);
+    BlendStartToStop(0.15);
+    BlendStepNormalToShort(0.15);
+    BlendStepShortToNormal(0.15);
+    BlendStopToIdle(0.3);
+    BlendSuddenToIdle(0.35);
+    BlendTurnToMove(0.25);
+    // BlendMoveToMove(0.25);
+    
+    // Physics
+    
+    //Starts
+    GoalDistToUseSlideInsteadOfStart(0.1);
+    MaxDistanceToTargetForTurnInPlaceInsteadOfStart(1.5);
+    
+    // Stops
+    FallbackSlowMovestyle("Walk", 1.3); // Has to be manually redefined if "Walk" doesn't exit.
+    
+    // Sudden stops
+    MaxDistanceToGoalForSuddenStop(0.5);
+    SuddenStopDeacceleration(10.0);
+    
+    // Corrections
+    // Assumed that a correct turn set is present. Otherwise it should be 360.
+    MaxMovementRotCorrectionPerSecond(360.0);
+    
+    // Turns
+    MaxTurnDockCorrectionPercentage(0.5);
+    MaxTurnSideCorrectionPercentage(0.5);
+    MaxPathSegmentLengthToForceTurnOnGoal(2.0);
+
+
+    // Leans
+    LeanEnabled(false);
+}

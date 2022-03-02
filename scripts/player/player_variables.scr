@@ -1,0 +1,1871 @@
+sub main()
+{
+	
+	Param("ManualSloMoEnabled", "false");
+	Param("ManualSloMoCooldown", "5.0");  
+	
+	// WallRun Front
+    Param("WallRunFrontEnabled", "false");
+	Param("WallRunFrontPeakDelay", "0.5");    
+    Param("WallRunFrontHeightNitro", "3.0");
+	Param("WallRunFrontHeight", "1.5");
+    Param("WallRunFrontMinAngleToStartAscend", "90");
+    Param("WallRunFrontMinYVelToAscend", "1.0");    
+    
+    // WallRun Side
+    // WallRun Side
+    Param("WallRunSideEnabled", "false");
+	Param("WallRunSideMinAngleToStart", "-90.0");
+    Param("WallRunSideMaxAngleToStart", "-14.5");
+    Param("WallRunSideNitroSprintSpeedMod", "1.05");
+	Param("WallRunSideMinDuration", "0.75");
+    Param("WallRunSideMaxDuration", "1.25");
+    Param("WallRunSideWithoutNitroTimePenalty", "-0.25");
+	Param("WallRunSideMinSideInput", "0.0");
+	Param("WallrunHoldJumpTime", "0.0");
+	
+	
+	Param("WallRunSideMaxSpeed", "7.0");
+    Param("WallRunSideMinSpeed", "4.5");
+	Param("WallRunSideAcc", "100.0");
+    Param("WallRunSideDecc", "200.0");
+	
+	
+    // WallRun Common
+	Param("WallRunSloMoDuration", "0.0");    
+    Param("WallRunMaxSequence", "1");    
+    Param("WallRunTimeTolleranceFromSprint", "99999.0");
+	Param("WallRunExtraGravityWhenAscending", "-9.8");	
+	Param("WallRunMinTimeBetweenWallrun", "0.3");
+    Param("WallRunAutoEnter", "false");
+	Param("WallRunKickEnabled", "true");
+	
+    // WallJump Front
+    Param("WallJumpFrontEnabled", "false");    
+	Param("WallJumpFrontLookForwardEnabled", "false");
+    Param("WallJumpFrontSpeed", "5.5");
+	Param("WallJumpFrontRotateEnabled", "false"); 	
+	Param("WallRunFrontExtraGravityWhenFalling", "8.5");
+    
+    // WallJump Side
+	Param("WallRunSideJumpForwardMinForwardInput", "0.9");
+    Param("WallJumpSideEnabled", "true");
+    Param("WallJumpSideSpeed", "7.0"); 
+	Param("WallRunSideExtraGravityWhenFalling", "9.9");
+	Param("WallRunSideExtraGravityInEnding", "3.5");
+	
+
+	// Wall Run Look Restrictions	
+	Param("WallRunSideLookRestrHorz", "65.0");  
+	Param("WallRunSideThrowLookRestrHorz", "170.0");  
+	Param("WallJumpSideMoveInputMaxAngle", "30.0");
+	Param("WallRunFrontLookRestrMinVert", "-75.0");  
+	Param("WallRunFrontLookRestrHorz", "175.0");  
+	
+	// Downed
+	Param("DownedLookRestrHorz", "75.0");  
+	Param("DownedLookRestrMaxVert", "45.0");
+	Param("DownedLookRestrMinVert", "-15.0");  
+	
+	// how much the weapon is swaying when aiming lower value - lower sway
+	Param("FirearmsCrossbowAccuracyFactor", "0.1");
+	// how much the bow is swaying when shotinglower value - lower sway
+    Param("BowAccuracyFactor", "0.1");
+	
+    Param("MinTimeToGiveCollisionDamage", "0.27");
+    Param("CanMeleeInAir", "1");
+	Param("BowBeginDurationFactor", "2.0");		
+    Param("BowMaxSpeedFactor", "1.0");
+    Param("BowPenetrationAddMaxSpeed", "1");
+    Param("BowStaminaShoot", "0.1");
+    Param("BowStaminaChargingPerSecond", "0.125");
+	Param("BowChargeDamageMul", "Player_BowChargeDamageMul");
+    Param("BowZoomValue", "2.5");
+    Param("BowZoomUpTime", "1.0");
+    Param("BowZoomDownTime", "0.5");
+	Param("BowEnableShootWhileParkouring", "true");
+    Param("BowEnableSlowMoShootWhileParkouring", "false");
+	Param("BowSwayAmplitudeFactor", "1.0");
+	Param("BowSwayPosTime" , "2.0");
+	Param("BowPutArrowDuration" , "0.5");
+	Param("BowAllowShootZoomFactor" , "0.0"); //#CS required
+	Param("BowPenetrationEnabled", "false");
+	Param("BowDestroyArrowWhenHit", "false"); //#CS required
+    Param("BowMinReadyTimeToShoot", "0.0");
+	Param("BowAutoZoomTime", "-1.0");
+    Param("BowZoomEnabled", "0");
+	Param("BowSlowMoTimeMul", "5.0");	
+	Param("BowSlowMoAccuracyMul", "0.25");	
+	Param("SlowMoDurationToCancel", "0.35");
+	Param("BowMaxThrowFactor", "0.65");	
+	Param("BowAutoReleaseTime", "-1.0");	
+	Param("BowMultiShotMinTimeToActivate", "-1.0");
+	
+    Param("BowEnableDamageScalingByForce", "false");
+
+
+	Param("ChemicalPostProcesFadeOut", "5.5");
+	Param("ChemicalPostProcesFadeIn", "8");
+    Param("ChemicalDamageDuration", "1");
+    Param("ChemicalDamagePerSecond", "Player_ChemicalDamage");
+    Param("WQ_Invert_CamoDelay", "3.0");
+    Param("WQ_Invert_CamoDuration", "15.0");
+    Param("WQ_Invert_Delay", "10.0");
+    Param("WQ_Invert_Duration", "15.0");
+    Param("FallHeightToActivateChemicals", "5.0");
+    Param("ChokeCoughDuration", "5.0");
+    Param("ChokeCoughTimeBetweenNoise", "0.5");
+
+    Param("WQ_SlowMo_CamoDelay", "3.0");
+    Param("WQ_SlowMo_CamoDuration", "20.0");
+    Param("WQ_SlowMo_Delay", "15.0");
+    Param("WQ_SlowMo_Duration", "20.0");
+
+    Param("WQ_Rot_CamoDelay", "3.0");
+    Param("WQ_Rot_CamoDuration", "27.0");
+    Param("WQ_Rot_Delay", "20.0");
+    Param("WQ_Rot_Duration", "25.0");
+    Param("HitReactionSpeechProb", "0.5");
+    Param("PursuitBreakerBlastDamage", "PursuitBreakerBlast");
+    Param("NightXPBonus", "1.0"); //bonus xp to all xp actions when performed during night (eg 0.2 -> +20%)
+    // Status Night Expieriance awards and requirements
+    Param("NightExpRequiredDistance", "2.0");
+    Param("NightExpRequiredActions", "0.0");
+    Param("NightExpRequiredTime", "4");
+    Param("NightExpSurvivalConstantAward", "0");
+    Param("NightExpActionsReward", "1.0");
+    Param("NightExpLootedReward", "5.0");
+    Param("NightExpUnspotedReward", "1.7");
+    Param("NightExpKillReward", "20");
+    Param("NightExpPbActivatedReward", "50.0");
+
+    Param("PickupTriggerCooldown", "-1.0");
+	Param("LeftHandDisabled", "false");
+	Param("LeftHandDisabledClimbAnimSpeed", "0.5");
+
+    // DROP ATTACK
+    Param("DropAttackEnable", "0");
+    Param("DropAttackMinFallHeight", "1.5");
+    Param("DropAttackSearchRadius", "10.0");
+	Param("DropAttackTargetDistance2dMax", "3.0");	
+    Param("DropAttackTargetDistanceMin", "2.0");
+    Param("DropAttackTargetDistanceMax", "6");
+	Param("DropAttackMaxAngleToTarget", "45");
+	Param("DropAttackShockwaveEnabled", "false");
+	Param("DropAttackMaxFallHeight", "0.0");
+	
+	// Death From Above	
+    Param("DeathFromAboveYDistMax", "10.0");
+    Param("DeathFromAboveYDistMin", "4.4");
+    Param("DeathFromAbove2Dist", "-1.0");
+    Param("DeathFromAbove2DistMin", "2.5");
+    Param("DeathFromAboveExecuteDist", "4.0");
+    Param("DeathFromAboveExecuteTime", "1.0");
+    Param("DeathFromAboveJumpMinTime", "0.4");
+    Param("DeathFromAboveShockwave", "false");
+    Param("DeathFromAboveWithItemEnabled", "false");
+	Param("DeathFromAboveJumpAvailable", "false");
+	
+	
+    //Survivor sense	
+	Param("SurvivalSenseEnabled", "true");
+	Param("CanUseSenseWhenMoving", "true");
+	Param("SurvivorSenseCooldown", "0.5"); // sensor rest time in seconds   
+    Param("SurvivorSensePreparationTime", "0.05"); // hold time required to 'load' survivor sense
+	
+		// Visual
+    Param("SurvivorSenseRange",        "20.0"); // Range of visualization of sonar 
+    Param("SurvivorSenseOpacity",      "1.0"); // Strength of visual effect set in range 0.0 - 1.0. It is a global variable that affects all visualizations. If you want to control the intensity of the effect per object/AI type use AlphaMax and AlhpaMin in survivor_sense_presets.scr
+    Param("SurvivorSenseWaveDuration", "3.0"); //[s] how long we will see the "wave" (player cant activate another wave until this one is finished)
+    Param("SurvivorSenseIconDuration", "10.0"); //how long the objects icons will stay on screen
+    Param("SurvivorSenseAIDuration",   "10.0"); // how long AIs will be highlited
+
+		// Height
+    Param("SurvivorSenseAIHeight",          "10.0"); //detection height for AIs
+    Param("SurvivorSenseAIHeightInterior",  "4.0"); //detection height for AIs when they are in interior (buildings etc.)
+	Param("SurvivorSenseObjectHeight",      "10.0"); //detection height for other objects
+    Param("SurvivorSenseObjectHeightInterior", "4.0"); //detection height for other objects when they are in interior (buildings etc.)
+
+		//detection ranges per icon type:
+    Param("SurvivorSenseRange_IconType_Default",     "20.0");
+    Param("SurvivorSenseRange_IconType_None",        "20.0");
+    Param("SurvivorSenseRange_IconType_Fire",        "20.0");
+    Param("SurvivorSenseRange_IconType_Damage",      "20.0");
+    Param("SurvivorSenseRange_IconType_Water",       "20.0");
+    Param("SurvivorSenseRange_IconType_Loot",        "20.0");
+    Param("SurvivorSenseRange_IconType_Electricity", "20.0");
+    Param("SurvivorSenseRange_IconType_Decoy",       "20.0");
+    Param("SurvivorSenseRange_IconType_Spawner",     "20.0");
+    Param("SurvivorSenseRange_IconType_Inhibitor",   "20.0");
+    Param("SurvivorSenseRange_IconType_AreaEntrance","20.0");
+	Param("SurvivorSenseRange_IconType_Investigation","20.0");
+    Param("SurvivorSenseRange_IconType_HideArea",    "20.0");
+
+		// detection ranges for AIs:
+	Param("SurvivorSenseAIRange", "20.0"); // range of detecting active AI
+    Param("SurvivorSenseRestingAIRange", "10.0"); // range of detecting sleeping AI
+	
+		// Gui related
+	Param("SurvivorSenseAIIndicatorRange", "5.0"); //range of showing AI Indicators (shield icon)
+	Param("SurvivorSenseEnemyBehindPlayerMaxDistance", "15.0"); //maximum distance where enemies behind player are detected while using survivor sense
+	
+	    // survivor sense heavy attacks
+    Param("SurvivorSenseHeavyAttacks", "false");
+    Param("SurvivorSenseHeavyAttacksMaxRange", "10.0");
+    Param("SurvivorSenseHeavyAttacksDuration", "2");
+    Param("SurvivorSenseHeavyAttacksPreset", "heavy_attack");
+	
+    Param("GhostTriggerSearchRadius", "0.0"); //range of automatic presentation of interactive objects (containers/loot)    
+	Param("EnemyBehindPlayerMaxDistance", "10.0"); //maximum distance where enemies behind player are detected
+    
+	// binoculars icons ranges
+    Param("BinocularsLevel", "0");
+	Param("BinocularMaxTempMarkedLocations", "5");
+	Param("BinocularTempMarkDuration", "30");
+	//Param("BinocularsIcons3dIconMaxScaleRange", "500.0"); // range from wich loot icons will be fully visible (it fades with opacity from this to SurvivorSenseRange_IconType_XXXX range)
+	
+
+    // GRE Keyfinder
+	Param("GREDetectorWithoutFacility", "false");
+    Param("GREDetectorRange", "0.0");
+    Param("GREDetectionLevel", "0");
+	Param("GREDetectorRangeNearby", "15.0");
+    Param("GREDetectorRange3DIndication", "10.0");
+    Param("GREDetectorRangeFoundTollerance", "2.0");
+
+	// UV Flashlight
+	Param("UVFlashlightLevel", "0");
+
+    // Flashlight
+    Param("FlashlightRangeFactorChangeSpeed", "5.0"); // When player speed >= FlashlightRangeFactorChangeSpeed, range factor is used
+    Param("FlashlightRangeFactorChangeTime", "0.5");  // Time for which FlashlightRangeFactorChangeSpeed has to be reached to enable range factor
+
+    // Simulation sickness test
+    Param("FovSprintModif", "6.0");
+    Param("SplatsEnabled", "1");
+    Param("ExhastedPPEnabled", "1");
+    Param("HeadBobFactor", "1" );    
+	Param("AmortizerJumpHelpTimer", "0.2");
+    Param("CableMaxLength", "50.0");
+    Param("SpeedFxEnabled", "1");
+    Param("SpeedPPEnabled", "1");
+    Param("ElementalTimeDuration", "0.25");
+    
+	Param("WrestlingKick", "0");
+    Param("WrestlingKickDoubleInputRequired", "true");
+	Param("WrestlingKickExtraGravity", "8");
+	Param("WrestlingKickExtraGravityDuration", "0.35");
+	Param("WrestlingKickHittedExtraGravity", "10");
+	Param("WrestlingKickHittedExtraGravityDuration", "0.3");	
+	Param("WrestlingKickByJumping", "0");
+	
+    Param("CanUseHook", "1");
+    Param("CanUseStick2Heavy", "1");                         //  with new character development player is able to use any weapon
+    
+	Param("CanUseFirearms", "1");                            //  with new character development player is able to use any weapon	
+	Param("BowDisableAimingOnReloadAndCancel", "0");
+	
+    Param("HarvestingLevel", "0");                           //  enables harvesting
+    Param("HarvestingLevelForMultipleItems", "2");            // since this level player will get multipple items
+    Param("HarvestingMultipleItemsCount", "2");
+    Param("CrouchDampingWindowTime", "1.0");                    //  player can amorize fall 
+    Param("EnableFallHelperModule", "1");    
+    Param("MinTimeBetweenJumps", "0.4");
+    Param("Aiming", "1");
+    Param("DoubleJumpInOverAndOn", "0");    
+    Param("CoolodownFailDisplayTime", "1.5");
+    Param("SquirrelSuitExtraGravity", "7.0");
+    Param("SquirrelSuitMoveSpeed", "12.0");
+    Param("EmptySwingStaminaUsageMul", "0.0");    
+	Param("BaseAttackStaminaUsage", "1");
+    Param("LogicJumpAirControllFactor", "0.22");    
+    Param("ThrowRopeLength", "0.0");    
+    Param("GrabExpert", "0");
+    Param("GroundPoundRangeMul", "1");
+    Param("GroundPound", "0");
+    Param("FastGrabBreakLevel", "0");    
+	Param("InVisibleToEnemies", "0");
+	Param("CamouflageEnabled", "0");
+    Param("CamouflageCanRun", "1");
+    Param("CamouflageCanAttack", "1");
+    Param("CamouflageCooldown", "0");
+    Param("CamouflageDepletionAddRun", "1");
+    Param("CamouflageDepletionAddFlashlightDay", "0.0");
+    Param("CamouflageDepletionAddFlashlightNight", "0.0");
+    Param("CamouflageDepletionAddClimbing", "0.0");
+    Param("CamouflageDepletionAddInWater", "30");
+    Param("CamouflageDepletionAddInAir", "0.0");
+    Param("CamouflageLooseOnShoot", "0.2");
+    Param("CamouflageLooseOnGiveDamage", "1.0");    
+    Param("ChargeLightCooldown", "-1");    
+	
+	Param("DeathEffectFadeInTime", "2.25");
+	Param("DeathEffectFadeOutTime", "9.0");	
+	
+    // STAMINA & FITNESS
+	
+		/// Parkour Stamina Balance	
+	Param("BalanceLineHelperYDist", "1.0");	
+	Param("BalanceLineHelper2DDist", "0.3");	
+    Param("ParkourStaminaHangCostPerSecond", "0.125");	
+	Param("ParkourStaminaHangNotMovingFactor", "0.5");		
+	Param("ParkourStaminaZipLineCostPerSecond", "0.001");	
+    Param("ParkourStaminaHangDelayTime", "1.0");        
+	Param("ParkourStaminaSlopeStruggleAdditional", "0.0"); // when tappping to fight against the slope it will decrease this value every second of struggle	    
+	Param("SwimSecondsUnderWater", "30");
+	Param("SwimStaminaUsage", "0.05");	
+	Param("SwimNitroAvailable", "false");
+	Param("CustomMoveSlowVersionIfExist", "true");		
+	
+	
+	Param("GlideStaminaCost", "0.1");
+	
+	Param("StaminaHeavyBreathLevelStartBow", "0.25");
+	Param("StaminaHeavyBreathLevelMaxBow", "0.0");
+	Param("StaminaHeavyBreathLevelStart", "0.75");
+	Param("StaminaHeavyBreathLevelMax", "0.3");
+    Param("MaxStamina", "0.80");
+	Param("MaxStaminaMultiplier", "1.0");
+    Param("MaxStaminaMinRegenerationTime", "2.0");    
+	Param("MaxStaminaMaxRegenerationTime", "2.0");
+    Param("MaxStaminaTimeToRegenerate", "1.0");
+    Param("MaxStaminaDrainFactor", "1.0");
+    Param("MaxStaminaDrainEnabled", "true");
+    Param("MinStaminaLevelFromHit", "0.0");
+    Param("StaminaTimeToRegenerateOnEmpty", "1.5");
+    Param("StaminaTimeToRegenerateOnEmptyAfterParokur", "1.0");          // NOT WORKING IN COMBAT  -time needed to fully restore stamina when completely depleted
+    Param("StaminaTimeToRegenerate", "0.6");                 // time after which stamina starts to regenerate if player still has some stamina left
+    Param("StaminaTimeToRegenerateAfterParkour", "0.6");     // time after which stamina starts to regenerate if player still has some stamina left
+    Param("StaminaRegeneration", "1.5");                    // WARNING CHANGED SO EVERY THING IS IN SECONDS rate at which stamina regenerates in seconds to full bar!!
+	Param("StaminaRegenerationOutsideDanger", "1.5");
+    Param("StaminaRegenerationFactorSlow", "0.33");               // factor when running or being on ladder
+	Param("StaminaRegenerationFactorStand", "0.25");               // factor when standing still
+	Param("StaminaRegenerationFactorStandDalay", "1.0");               // factor when standing still
+	
+    Param("StaminaCanFullyDrain", "1");                      // Does the player stamina perform the fully drained logic
+    Param("StaminaWarningLevel", "0.51");                       // Hud will warn user they are low stamina at this level
+    Param("ParryDamageMult", "Player_ParryDamageMult");
+    Param("VulnerableHumanGrabStaminaRecover", "0.25");      // Player recovers some stamina if hit by a human grab attack        
+
+	Param("DashAndAfterboostPostprocessMax", "0.33");
+	Param("SprintNitroStopAngleMoveInput", "20.0");
+    Param("SprintNitroStaminaConsuption", "0.40");
+    Param("SprintNitroStartStaminaConsuption", "0.80");
+    Param("SprintNitroMinDuration", "0.6");
+    Param("SprintNitroDuration", "1.5");
+    Param("SprintNitroBodyDirLagTime", "0.65");
+	Param("MoveSlopeSpeed", "1.65");
+	Param("AutoSlopeAddSpeed", "0.35");
+	Param("SlopeMaxVelStruggle", "6.0");
+	Param("AllowSlopeStruggle", "false");
+    Param("PoleWantedPositionTime", "0.01");
+    Param("PoleWantedPositionTimeBegin", "0.2");
+    Param("PoleMinStartSpeed", "3.5");
+    Param("PoleOffset", "0.1");
+    Param("PoleAddOffset", "0.1");
+    Param("PoleInertia", "2.0");
+    Param("PoleAngleMultiplier", "5.0");
+    Param("PoleAngleUpdateTime", "0.15");
+    Param("PoleHandInfluenceBegin", "0.5");
+    Param("PoleMoveTime", "0.7");
+    Param("PoleMoveWait", "0.2");
+    Param("CanStandOnMonkeyBar", "0");    
+	Param("MonkeyBarChangeRangeY", "1.0");
+	Param("MonkeyBarChangeRange2D", "1.5");	
+	
+	Param("CanRecieveXPProficiency", "0");
+    Param("SprintExhausted", "1");
+	Param("ExhaustedMoveMaxSpeedFactor", "0.66");
+    Param("TackleTimeToRegenOnEmpty", "3.0");
+    Param("MoveSprintStaminaConsumption", "0.0");
+    Param("MoveSpeedFitnessFactor", "0.6");
+    Param("MoveSpeedFitnessFactorTime", "5.0");
+    Param("XrayEffectProbability", "0.5");
+    Param("SlowMoProbability", "1.0");
+	Param("SlowMoLastGroupTime", "30.0");
+	Param("GroupOfEnemiesCount", "3.0");	
+    Param("SkipObstacleMechanimsOnEnemyProb", "0.0");
+    Param("CanThrowInLookback", "0");
+    Param("ChallengeStaminaDropMul", "0.2");
+    Param("ZipLineMinSpeed", "6.0");
+    Param("ZipLineMaxSpeed", "11.0");
+	Param("ZipLineAboveSlideEnabled", "1");
+    Param("StrengthDamageMul", "Player_StrengthDamageMul");
+    Param("MeleeDamageMul", "Player_MeleeDamageMul");
+    Param("MeleeDamageFullStaminaMul", "Player_MeleeDamageFullStaminaMul");
+    Param("MeleeDamageLowStaminaMul", "Player_MeleeDamageLowStaminaMul");
+    Param("MeleeDamageFastHitMul", "Player_MeleeDamageFastHitMul");
+    Param("MeleeDamageFullHealthMul", "Player_MeleeDamageFullHealthMul");
+    Param("MeleeDamageLowHealthMul", "Player_MeleeDamageLowHealthMul");
+    Param("MeleeLowStaminaForceAndPhxMul", "1.0");
+	
+	Param("ObstaclePassMinTimeBetween", "0.5");	
+	//Param("MeleeDamageShockMul", "Player_MeleeDamageShockMul");
+	Param("MeleeFastHitMaxDist", "1.8");	
+	Param("MeleeFastHitMinDist", "1.2");
+    Param("KickBaseDamageMul", "Player_KickBaseDamageMul");
+    Param("MeleeVerticalPhysicalDamageMul", "1.5");
+	Param("MeleeBluntRagdollEveryXHit", "0");
+    // KICK STAMINA USAGE
+    Param("KickStaminaUsage", "0.0");
+    // WRESTLING KICK
+    Param("WrestlingKickRangeMul", "1.3");
+    Param("WrestlingKickStaminaUsage", "0.2");
+    Param("WrestlingKickCooldown", "-1.0");
+    Param("AirKickBaseDamageMul", "Player_AirKickBaseDamageMul");
+    Param("AirKickPhysicsDamage", "2.0");
+    Param("AirKickRangeMul", "1.2");
+    Param("AirKickStaminaUsage", "0.3");
+    Param("HarmfulHeight", "6.8");
+	Param("LargeFallHeight", "4.8");	
+    Param("LethalHeight", "14.0");
+    Param("FallHeightFilter", "0.3");
+    Param("AmortizedHarmfulHeight", "14.0");
+    Param("AmortizedLethalHeight", "14.0");
+    Param("FallingHeightToRespawn", "150");
+    Param("ActiveLandingSpeedRegainFactor", "0.5");
+    Param("ActiveLandingMaxSlowdown", "0.9");
+    Param("ActiveLandingMaxInputTime", "0.3");
+    Param("ActiveLandingMinInputTime", "1.0");
+    Param("ActiveLandingSlideBlockTime", "0.5");
+    Param("ActiveLandingUseAnim", "1");
+    Param("PassiveLandingUseAnim", "1");
+    Param("AfterLandAutoStepIncreaseTime", "0.3");
+    Param("AfterLandAutoStepValue", "1.4");
+    Param("AfterLandAutoStepActivationHeight", "1.0");
+    Param("AutoStepOnGroundAnimationMinHeight", "0.5");
+    Param("JumpLookDirAdd", "1.0");
+    Param("JumpVelocityControlTime", "0.1");
+    Param("MinJumpModifiedSpeed", "3.0");
+    Param("FallingRescueEnabled", "1");
+    Param("FallingRescueInputTimeWindow", "0.4");    
+    Param("KnockDownDmgResistance", "KnockdownResistance");                         // Damage received while player is knocked down is reduced by this multiplier
+    Param("KnockDownMinVertAngle", "-15");
+    Param("KnockDownMaxVertAngle", "20");
+    Param("KnockDownMinHorzAngle", "-30");
+    Param("KnockDownMaxHorzAngle", "30");
+    Param("SwimLookTimetMul", "0.4");
+    
+		// Drunk
+	Param("DrunkEffect", "0");
+    Param("DrunkEffectInputLagTime", "0.5");
+    Param("DrunkEffectMoveRollAngle", "10.0");
+    Param("DrunkEffectMoveRollAngleTime", "1.0");
+    Param("DrunkEffectPPFXPower", "0.1");
+    Param("DrunkEffectAddVelDuration", "0.4");
+    Param("DrunkEffectAddVelValue", "0.0");
+    Param("DrunkEffectAddVelAcc" , "0.0");
+    Param("DrunkEffectAddVelOccurTimeMin", "0.5");
+    Param("DrunkEffectAddVelOccurTimeMax", "3.0");
+	Param("DrunkEffectAddRollAngle", "10.0");
+    Param("HeadbuttDrunkEffectTime", "3.0");
+    Param("HeadbuttDrunkEffectPPFXPower", "0.25");
+	
+	Param("LookVertSpeed_Pad", "90.0");
+    Param("LookHorzSpeed_Pad", "180.0");     // DL: 260.0, PREPROD: 260.0
+    Param("LookVertAcc_Pad", "2000.0");
+    Param("LookHorzAcc_Pad", "2000.0");
+    Param("LookVertDec_Pad", "40000.0");
+    Param("LookHorzDec_Pad", "40000.0");
+    
+	Param("LookAimVertSpeed_Pad", "55.0");
+    Param("LookAimHorzSpeed_Pad", "105.0");
+    Param("LookAimVertAcc_Pad", "5000.0");
+    Param("LookAimHorzAcc_Pad", "5000.0");
+    Param("LookAimVertDec_Pad", "50000.0");
+    Param("LookAimHorzDec_Pad", "50000.0");
+    
+	Param("LookVertSpeed_Mouse", "0.25");
+    Param("LookHorzSpeed_Mouse", "0.25");
+    Param("LookVertAcc_Mouse", "-1.0");
+    Param("LookHorzAcc_Mouse", "-1.0");
+    Param("LookVertDec_Mouse", "-1.0");
+    Param("LookHorzDec_Mouse", "-1.0");
+
+    Param("LookAimVertSpeed_Mouse", "0.125");
+    Param("LookAimHorzSpeed_Mouse", "0.125");
+    Param("LookAimVertAcc_Mouse", "-1.0");
+    Param("LookAimHorzAcc_Mouse", "-1.0");
+    Param("LookAimVertDec_Mouse", "-1.0");
+    Param("LookAimHorzDec_Mouse", "-1.0");
+
+    Param("BinocularsLookMultiplier_Pad", "0.2");
+    Param("MoveWhenCarryMaxSpeedFactor", "1.0");
+    Param("MoveWhenCarryMinSpeedFactor", "1.0");
+    Param("DetectorEnabled", "1");
+
+    Param("ThrowMaxDist", "30.0");
+    Param("ThrowingStarFowardThrow", "20.0");	
+	Param("ThrowablesSpeedFactor", "0.70");	
+
+	Param("FOVCorrection", "0.2");
+    Param("CameraDefaultFOV", "57.0");
+    Param("BulletHitMissEffects", "1.0");
+    Param("HideWeaponsDuringSprintDelay", "6.0");
+    Param("HideWeaponsDuringCrouchDelay", "-1.0");
+    Param("HealingMovementSpeedMul", "0.5");
+	Param("NightVisionEnabled", "0");
+	
+	Param("ActiveBuffBarLength2p", "30");
+	Param("ActiveBuffBarLength3p", "60");
+	Param("ActiveBuffBarLength4p", "90");
+
+    // HEALTH AND REGENERATION	
+	Param("HealthCriticalPPMaxLevel", "1.0");
+	Param("HealthCriticalPPMinLevel", "2.0");
+	Param("HealthCriticalPPInTime", "0.1");
+	Param("HealthCriticalPPOutTime", "1.0");
+	Param("HealthCriticalAnimationSpeed", "3.0");
+	Param("HealthCriticalLevel", "0.333");
+	Param("MaxAutoRegenHealthPercent", "33");
+	
+	Param("HealthCriticalMaxLevel", "1");
+
+    Param("MaxHealth", "DefaultPlayerHealth");                  // Amount of player health
+    
+    Param("HealthRegenerationEnabled", "true");
+    Param("HealthRegenerationMaxLevel", "HealthRegenerationMaxLevel");               // Regenerates health up to this value. Post process depends on LowHealthEffectThreshold 
+    Param("LowHealthEffectThreshold", "0.95");                // Defines the value of health when critical health post process is working, based on HealthCriticalLevel
+    Param("HealthRegenerationDelay", "5.0");                 // Time after which player starts to regenerate, measured from last hit
+    Param("HealthPerSecond", "");                           // Amount of health being regenerated each second, to be used as auto heal skill
+    Param("AfterDeathHealthRegenTime", "240");               // Time it takes to regenerate full health after respawn
+    Param("AfterDeathHealthFactor", "Player_AfterDeathHealth");   // Part of MaxHealth restored after respawn
+    Param("BulletAccuracyFactor", "1.0");
+	Param("UnlockedLoadoutsCount", "1.0");
+    Param("EquipmentSlotsCount", "16");          //total inventory slots for equipment
+    Param("VisibleEquipmentSlotsCount", "4");   //how many "quick slots" player has in hud wheels (must be < EquipmentSlotsCount)
+    Param("ConsumableSlotsCount", "16");         //total inventory slots for consumables
+    Param("VisibleConsumableSlotsCount", "4");  //how many "quick slots" player has in hud wheels (must be < ConsumableSlotsCount)
+    Param("RestrictedEquipmentSlotsCount", "0"); // UV Flashlight, Binoculars, RopeHook. Value is increased from skills that grants thoes equipments
+	Param("QuickSlotsCount", "24");              //total inventory slots for weapons
+    Param("VisibleQuickSlotsCount", "4");       //how many "quick slots" player have on hud wheels (must be < QuickSlotsCount)
+    Param("InventorySize", "0");
+    Param("ItemsInventorySize", "99"); //limited max is 100
+    Param("MaxInventorySize", "8");
+    Param("AmmoSlotsCount", "12"); // limited max is 100
+    Param("SwimMoveSpeed", "2.5");
+    Param("SwimSprintSpeed", "4.0");
+    Param("SwimImpulsSpeed", "2.0");
+    Param("SwimStrafeSpeed", "0.7");
+    Param("SwimAcceleration", "0.7");
+	Param("SwimUpAcceleration", "2.1");
+    Param("SprintEffects", "0.9");
+	Param("SprintEffectsInPGandRG", "1.25");	
+    Param("SprintWithoutInput", "1");
+    Param("SprintNitroAcceleration", "10");
+    Param("SprintNitroFovMul", "2.0");
+    Param("SprintNitroMaxSpeedAdd", "0.6");
+    Param("SprintAutoStartTime", "0.1");
+    Param("SprintNitroAccelerationSlowdownMod", "0.5");
+    Param("MoveForwardMinSpeed", "0.5");
+    Param("MoveForwardMaxSpeed", "3.0");                // DL: 3.5, PREPROD: 3.0
+    Param("MoveBackwardMinSpeed", "0.5");
+    Param("MoveBackwardMaxSpeed", "3.0");             // DL: 2.5, PREPROD: 2.0
+	Param("StorageEquipmentSlotsCount", "25");
+    Param("StorageConsumamblesSlotsCount", "25");
+    Param("StorageOtherSlotsCount", "50");
+	
+	Param("AttackMoveForwardMaxSpeed", "2.0");
+	Param("AttackMoveBackwardMaxSpeed", "1.0");
+	Param("AttackMoveStrafeMaxSpeed", "1.0");
+	
+    Param("ChargeMoveBackwardMinSpeed", "0.5");
+    Param("ChargeMoveBackwardMaxSpeed", "2.0");
+
+    Param("ChargeMoveSpeedMult", "0");
+    Param("ChargeMoveSpeedActivationTime", "0");
+    Param("ChargeMoveSpeedDeactivationTime", "0");
+
+    Param("MoveStrafeMinSpeed", "0.5");
+    Param("MoveStrafeMaxSpeed", "3.0");                // DL: 2.5, PREPROD: 2.5
+    Param("MoveSprintMinSpeed", "4.5");
+    Param("MoveSprintSpeed", "5.0");
+    Param("MoveAcceleration", "20.0");                // DL: 40.0, PREPROD: 20.0
+    Param("MoveAccelerationInAttackRest", "20.0");
+    Param("MoveSprintMinAcceleration", "4.5");
+    Param("MoveSprintAcceleration", "80.0");
+    Param("MoveDeceleration", "120.0");
+    Param("MoveGlideDownMaxSpeed", "0.5");
+    Param("MoveGlideDownDeceleration", "-1.0");
+	
+	////////////Sway//////////////////////////////	
+	Param("MoveSwayMinVelocity", "3.0");
+	Param("SwayRange", "5.0");
+	Param("SwayMaxForwardRange", "5.0");
+	Param("SwayAssistTime", "0.5");
+	Param("SwayGravity", "-9.5");
+	
+	Param("VeryLargeJumpDistance", "6.2");    
+    Param("RopeHookThrowPowerMax", "200.0");
+    Param("RopeHookThrowPowerMin", "200.0");
+    Param("RopeHookGravityScale", "5.0");
+    Param("RopeHoookSpinMaxTime", "2.5");
+    Param("RopeHoookThrowAdditionalAngle", "12.0");
+    Param("RopeHookSwingMoveMaxVelocity", "4.5");
+    Param("RopeHoookSwingInputScale", "3.75");
+	
+	Param("RopeHoookStrafeInputScale", "3.0");	
+	Param("RopeHoookStrafeMaxDist", "5.0");
+	Param("RopeHoookStrafeMinDist", "1.0");
+	Param("RopeHoookStrafeRopeLengthToMaxDist", "12.0");
+	
+	
+	Param("RopeHookClearFallHeightYVelocityMin", "-3.0");
+    Param("RopeHookSwingAccelerationMult", "25.0");
+    Param("RopeHookSwingDampingMult", "0.3");
+    Param("RopeHookAttachHelper", "2.0");
+	Param("RopeHookMaxAngleToPoint", "20.0");
+	Param("RopeHookRooftopAutoSearchAngle", "30.0");
+	Param("RopeHookRooftopAutoSearchBestPointDist", "10.0");	
+    Param("RopeHookGrabEditorSetPoints", "true"); // Will make RopeHook shoot editor set "RopeHook" prefabs on level
+	Param("RopeHookGrabAllGeometry", "true"); // Will make RopeHook shoot to all geometry elements
+    Param("RopeHookOnStopSetCustomAirControllFactor", "false"); // When enabled, will set custom air controll factor
+    Param("RopeHookOnStopAirControllFactor", "0.22");
+    Param("RopeHookOnStopAirControllTimer", "1.2");
+    Param("RopeHookOnStopSetPhysicsForcedVelocity", "false"); // Will pass on current velocity to keep the momentum on ropehook stop
+    Param("RopeHookOnStopPhysicsForcedVelocityMult", "1.0"); // Multiplier to the current velocity that get's passed to keep the momentum on ropehook stop
+    Param("RopeHookOnJumpSetPhysicsForcedVelocity", "false"); // When jump happens apply forced velocity
+    Param("RopeHookOnJumpPhysicsForcedVelocityMult", "1.3"); 
+    Param("RopeHookOnJumpPhysicsForcedVelocityUpRotateAngle", "15.0"); // Rotation up of the forced velocity vector when jumping
+    Param("RopeHookPhysicsForcedVelocityHorizontalSlowdown", "4.0"); // Horizontal slowdown speed applied to Forced Velocity after dropping/jumping from ropehook
+    Param("RopeHookUseTargetedJump", "true"); // Using targeted jump "Rope_Jump" instead of not targeted one "Rope_Jump_No_Target"
+    Param("RopeHookStopControllerOnJump", "false"); // Can be used to make a fake jump, that only the ForcedPhysics will be applied instead of jump
+    Param("RopeHookAutoReleaseWhenMovingBackwards", "false"); // AutoDrop player if he starts swinging backward
+    Param("RopeHookAllowThrowOnNothing", "false"); // when no ropehook target, allow for throwing anyway.
+    Param("RopeHookUpdateHookPointToAttachedObjectPos", "false"); // If the object we are attached moves, our attach point will be updated accordingly.
+    Param("RopeHookChangeRopeLengthWhenHookPointMoves", "true"); // On point movement, stretch the line instead of draging the player
+    Param("RopeHookBlockedWhenNitroSprinting", "false"); // When NitroSprinting, don't allow to throw hook or attach.
+    Param("RopeHookThrowOnlyMidAirEnabled", "false");       // Ropehook can be thrown only when player is in air.
+    Param("RopeHookDropOnInputReleased", "false");          // Drop player from ropehook when he releases the input (so only hold to swing)
+    Param("RopeHookResetInputReleasedOnStop", "false");     // Set input as released when dropping from ropehook so we can automatically attach to the next one without releasing and pressing the input again.
+    Param("RopeHookFixedRopeLength", "-1.0");               // If above 0.0, it will try to reach this desired fixed rope length when swinging.
+    Param("RopeHookFixedRopeLengthChangeSpeed", "4.0");     // How fast the rope will grow/shrik to get to the fixed length in m/s.
+	Param("RopeHoookMinimalSegmentLength", "3.5");	
+	Param("RopeHoookAutoReleaseVel", "2.0");	
+	Param("RopeHoookAutoReleaseTimeTollerance", "1.5");	
+	Param("RopeGrabAngle", "30.0");	
+	Param("RopeGrab2DDistRun", "2.5");	
+	Param("RopeGrab2DDistInPlace", "1.2");
+    Param("GrapplePullToEnemyEnabled", "false"); // Enable pulling of the player to the enemy	
+	
+	Param("RopeHookBreakSwingMinY", "1.2");
+	Param("RopeHookBreakSwingMinVel2d", "1.0");
+	Param("RopeHookBreakSwingMin2d", "2.0");
+	
+	Param("GraplePullRange", "20.0");
+	Param("GraplePullStaminaCost", "0.6");
+	
+	Param("GraplePullVelMin", "11.0");
+	Param("GraplePullVelMid", "20.0");
+	Param("GraplePullVelMax", "7.0");
+	
+	Param("GraplePullJumpHeightMin", "-0.1");
+	Param("GraplePullJumpHeightMid", "2.0");
+	Param("GraplePullJumpHeightMax", "4.0");
+	
+	Param("GraplePullMinAngle", "-40.0");
+	Param("GraplePullMidAngle", "-10.0");
+	Param("GraplePullMaxAngle", "60.0");
+	
+	Param("ForceKillYPosition", "-200.0");
+	
+	
+	Param("GraplePullExtraGravityOnPull", "0.0");	
+	
+    Param("MaxTurnBackHoldTime", "0.2");
+    Param("TurnBackDevHorzSpeed", "780.0");
+    Param("TurnBackDevVertSpeed", "780.0");
+	Param("TurnBackDevSpeedFactorInClimb", "0.5");
+    Param("RopeHookSlideDownBaseSpeed", "0.0");
+    Param("RopeHookSlideDownMaxSpeed", "10.0");
+    Param("RopeHookSlideDownAcceleration", "4.0");
+    Param("BalanceSlowdownMinDev", "-1.0");
+    Param("BalanceSlowdownMaxDev", "40.0");
+    Param("BalanceSlowdownMaxSpeedFactor", "0.5");
+    Param("BalanceSlowdownTimeUntilStart", "0.05");
+    Param("BalanceSlowdownTimeUntilMax", "0.5");
+    Param("BalanceSlowdownSpeedToStopSprint", "0.5");
+    Param("AfterJumpAccelerationOverrideTime", "0.3");
+    Param("AfterJumpAccelerationOverrideValue", "20.0");
+    Param("CrouchForwardMinSpeed", "0.3");
+    Param("CrouchForwardMaxSpeed", "2.0");
+    Param("CrouchBackwardMinSpeed", "1.0");
+    Param("CrouchBackwardMaxSpeed", "0.8");
+    Param("CrouchStrafeMinSpeed", "0.3");
+    Param("CrouchStrafeMaxSpeed", "1.0");
+    Param("CrouchAcceleration", "4.0");
+    Param("CrouchDeceleration", "10.0");
+	Param("CrouchMoveForwardDeceleration", "5.0");
+	
+	Param("CrawlMoveSpeedFactorFromCrouch", "0.5");
+	Param("PeekDistance", "0.2");
+	
+	// MUSIC SETUP
+    Param("MusicRuningActivationTime", "11.0");
+    Param("MusicRuningFadeOutStartTime", "5.0");
+	
+    // INERTIA IN CROUCH SETUP
+    Param("UnarmedHandInertiaInCrouchPos", "1.0");
+    Param("UnarmedHandInertiaInCrouchRot", "2.0");
+
+    // CHARGE ATTACK COMMON
+    Param("ChargeAttack", "0");
+    Param("ChargeStaminaDecreaseFactor", "0");
+	Param("ChargeDamageStaminaMul", "1.5");
+    Param("ChargeAutoReleaseTime", "-1.0"); // to restore auto release for power attack, set 1.2 here
+    Param("ChargeHoldDuration", "0.35");
+    Param("ChargeWeaponDurabilityMul", "1.0");
+	Param("MeleeWpnDurabilityMulReduce", "1.0");
+	Param("ChargeSpinCrouchOffset", "0");
+	Param("ChargeSpinAdditionalRange", "1.0");
+		
+    // Stick    
+    Param("ChargeStaminaStickCostMul", "2.0");
+    Param("ChargeStickBaseDamageMul", "Player_ChargeStickBaseDamageMul");
+    Param("ChargeVerticalStickBaseDamageMul", "Player_ChargeVerticalStickBaseDamageMul");
+    Param("ChargeStickPhysicsDamageMul", "1.5");
+
+	// Fists
+	Param("ChargeFistsBaseDamageMul", "Player_ChargeFistsBaseDamageMul");
+	Param("ChargeStaminaFistsCostMul", "2.0");
+	
+	// Brass Knuckles
+	Param("ChargeStaminaKnucklesCostMul", "2.0");
+
+    // Stick2Close
+    Param("ChargeStaminaStick2CloseCostMul", "2.0");
+    Param("ChargeStick2CloseBaseDamageMul", "Player_ChargeStick2CloseBaseDamageMul");
+    Param("ChargeStick2ClosePhysicsDamageMul", "2.0");
+
+    // Stick2Heavy
+    Param("ChargeStaminaStick2HeavyCostMul", "2.0");
+    Param("ChargeStick2HeavyBaseDamageMul", "Player_ChargeStick2HeavyBaseDamageMul");
+    Param("ChargeStick2HeavyPhysicsDamageMul", "2.0");
+    Param("AimBackwardMaxSpeed", "2.5");
+    Param("AimBackwardMinSpeed", "0.5");
+    Param("AimForwardMaxSpeed", "3.5");
+    Param("AimForwardMinSpeed", "0.5");
+    Param("AimStrafeMaxSpeed", "2.5");
+    Param("AimStrafeMinSpeed", "0.5");
+    Param("AimAcceleration", "7.0");
+    Param("AimDeceleration", "10.0");
+
+    Param("AimCrouchBackwardMaxSpeed", "1.5");
+    Param("AimCrouchBackwardMinSpeed", "0.5");
+    Param("AimCrouchForwardMaxSpeed", "1.5");
+    Param("AimCrouchForwardMinSpeed", "0.5");
+    Param("AimCrouchStrafeMaxSpeed", "1.5");
+    Param("AimCrouchStrafeMinSpeed", "0.5");
+    Param("AimCrouchAcceleration", "4.0");
+    Param("AimCrouchDeceleration", "10.0");
+
+    // Dialog
+    Param("DialogCameraDefaultFOV", "52.0");
+    Param("DialogDefaultDofFarMin", "40.0");
+    Param("DialogDefaultDofFarMax", "100.0");
+    Param("DialogCrouchCentimeters", "0.02");
+    Param("DialogInputLookSpeed_Pad", "0.35");          // (> 0)
+    Param("DialogInputLookSpeed_Mouse", "0.4");         // (> 0)
+    Param("DialogInputLookNullifyDelay_Pad", "0.13");   // (>=0)
+    Param("DialogInputLookNullifyDelay_Mouse", "0.2"); // (> 0)
+    Param("DialogInputLookNullifyStartTime", "0.0");    // (>=0)
+    Param("DialogInputLookNullifyEndTime", "3.0");      // (> StartTime)
+    Param("DialogInputZoomSpeed", "2.3");               // (> 0)
+    Param("DialogInputZoomNullifyStartTime", "0.0");    // (>=0)
+    Param("DialogInputZoomNullifyEndTime", "2.0");      // (> StartTime)
+    Param("DialogInputZoomFov", "-6.0");
+    Param("DialogInputZoomDof", "0.6");                 // [0,1]
+
+	Param("JumpRetryTime", "0.3");
+	Param("JumpTapTime", "0.05");
+	Param("HoldJumpHeight", "4.85");
+	Param("NormalHoldJumpTime", "0.1");
+	Param("MonkeyBarHoldJumpTime", "0.2");
+	Param("RopeHoldJumpTime", "0.2");
+    Param("NormalJumpHeight", "0.52");
+	Param("DoubleJumpHeight", "3.2");
+	Param("FarJumpHeight", "0.8");
+	
+	Param("FarJumpAvailable", "0");
+	Param("FarJumpTackleMaxHeightDiff", "2.0");
+	Param("FarJumpTackleMinDistanceToActivate", "2.0");
+	
+	Param("LandOnAiMinFallHeight", "2.0");
+	
+	Param("JumpRotateAvailable", "0");	
+	Param("BlockClimbAfterRotateDuration", "0.5");	
+	
+    Param("JumpHeightFromLookMaxAdd", "0.0");
+    Param("JumpHeightFromLookMinAngle", "5.0");
+    Param("JumpHeightFromLookMaxAngle", "30.0");
+    Param("JumpOnHeight", "0.35");
+    Param("FarAndDoubleJumpMaxDist", "3.5");
+	Param("FarAndDoubleJumpMinDist", "0.5");
+    // HANG
+    Param("AngleToReleaseHand", "45.0");
+    Param("AngleToPutBackHand", "45.0");
+    Param("AngleToChangeHands", "160.0");
+	Param("AllowToJumpSoonerFromEdge", "false");
+    // SHIMMY
+    Param("ShimmyUpRange", "1.75");
+    Param("ShimmyDownRange", "1.85");
+    Param("ShimmyBackwardRange", "1.15");
+    Param("ShimmyForwardRange", "1.0");
+	Param("ShimmyFakeJumpFrwdRange", "3.0");
+    Param("ShimmySideRange", "1.01");
+	Param("LadderToShimmySideRange", "0.51");
+	
+    Param("ShimmyVertSideRange", "1.51");
+    Param("ShimmyAngleTollerance", "72.0");
+    Param("ShimmyBestRange", "0.7");
+    Param("ShimmyTurnSideRange", "1.0");
+    Param("ShimmyTurnUpAndDownRange", "0.6");
+    Param("ShimmyTurnBackwardForwardRange", "1");
+    Param("ShimmyLookMoveDeadZoneVertUp", "90.0");
+    Param("ShimmyLookMoveDeadZoneVertDown", "-90.0");
+    Param("ShimmyLookMoveDeadZoneHorz", "180.0");
+	Param("ShimmyJumpAssistDuration", "0.5");
+	Param("ShimmyFakeJumpStaminaCostMinDist", "1.2");
+	Param("ShimmyFakeJumpStaminaCostDrain", "0.5");
+	Param("ShimmyLookAngleToBreakShimmy", "55.0");
+	
+	Param("JumpOnAttackMaxSpeed", "4.5");
+
+    Param("EnemyGrabChance", "1");
+
+    // FIREARMS
+    Param("RangeMeleeMul", "1.1");
+    Param("MaxVerticalAngleForRangeMeleeCorrection", "25.0");
+    Param("FirearmsPistolReloadTimeMul", "1.0");
+    Param("FirearmsRevolverReloadTimeMul", "1.0");
+    Param("FirearmsRifleReloadTimeMul", "1.0");
+    Param("FirearmsShotgunReloadTimeMul", "1.0");
+    Param("FirearmsPistolAccuracyFactor", "1.0");
+    Param("FirearmsRevolverAccuracyFactor", "1.0");
+    Param("FirearmsRifleAccuracyFactor", "1.0");
+    Param("FirearmsShotgunAccuracyFactor", "1.0");
+    Param("FirearmsPistolRecoilFactor", "1.0");
+    Param("FirearmsRevolverRecoilFactor", "1.0");
+    Param("FirearmsRifleRecoilFactor", "1.0");
+    Param("FirearmsShotgunRecoilFactor", "1.0");
+	Param("FirearmsAutoZoomTime", "-1.0");
+    Param("FirearmsZoomEnabled", "0");
+	Param("FirearmsPowerShotTime", "0.0");
+	Param("FirearmsMultiShotMinTimeToActivate", "-1.0");
+	Param("FirearmEnableSlowMoShootWhileParkouring", "0");
+	
+
+    // OTHER
+    Param("StompLevel", "-1.0");                            // enables stomper
+	Param("Stomp2DRange", "3.0");
+	Param("StompYRange", "1.0");
+	Param("StompAIHeadToSimPosYDist", "0.4");
+    Param("MinimalPlayerBlastDamageOnExplosion", "ExplosionDamager_MinPlayerBlastDmg");    // it's minimal damage, that player receive when is knockdown after explosion
+    Param("ThrownWeaponStickChance", "1.0");
+    Param("StunDuration", "3.0");
+    Param("CraftItemsEnabled", "1");
+    Param("CraftWeaponsEnabled", "1");
+
+    // TACKLE
+    Param("AddTackleSpeed", "9.0");
+	Param("TackleSideSpeed", "3.0");
+	Param("AddTackleAcc", "500.0");
+    Param("TackleStaminaUse", "0.1");
+    Param("TackleCoolDown", "1.0");
+    Param("TackleSprintMinDuration", "0.125");
+    Param("TackleLookMaxSpeed", "45");
+    Param("MaxTackleInRow", "0");
+	// BLOCK RUN
+	Param("BlockRunMinTimeInSprint", "-1.0");
+	Param("BlockRunStaminaUsage", "0.25");
+	
+    // tackle prototype in PH
+    Param("TackleHit", "0");
+	Param("TackleGrabEnabled", "0");
+    Param("TackleControlEnabled", "1");
+    Param("AddTackleTime", "0.0");
+
+    Param("CanBeKnockedDownByTackle", "1");
+
+    // GROUND POUND
+    Param("GroundPoundCooldown", "-1.0");	
+    Param("GroundPoundAirMaxSpeed", "-1.0"); // #CS
+
+    // JUMP ATTACK
+    Param("JumpAttackCoolDown", "2.0");
+
+	
+	// Vault Kick
+	Param("VaultKickEnabled", "0");
+    // HOOK
+    Param("GrapplingHookCooldown", "-1.0");
+    Param("EnemyPullTimeWarpFactor", "0.8");
+    Param("EnemyPullSlowmoDuration", "0.7");
+
+    // SHIELD/BLOCKING
+	Param("CanBlockPowerAttackWith2HandedHeavy", "0");
+    Param("ShieldEnabled", "1");
+    Param("StaminaCooldownAfterBlock", "2.0");
+    Param("BrokenBlockDamageMul", "Player_BrokenBlock");
+    Param("BrokenBlockPhysicsDamageMul", "0.5");
+    Param("BlockLightAttackStaminaCost", "0.125");
+    Param("BlockHeavyAttackStaminaCost", "0.125");
+
+    Param("BlockWithHeavyWeaponStaminaMul", "0.80");
+    Param("BlockWithLightWeaponStaminaMul", "1.0");
+    Param("BlockStaminaRegenEnabled", "1");
+    Param("BlockStaminaRegenFactor", "-0.75");
+    Param("BlockLightAttackPushBack", "0.0");
+    Param("BlockHeavyAttackPushBack", "10.0");
+    Param("BlockPushRange", "1.75");
+	Param("BlockSidePushRange", "0.0");
+    Param("BlockPushHalfAngle", "30.0");
+    Param("BlockPushHeightAllowace", "1.5");
+    Param("BlockPushStaminaRecoverAmount", "-0.15");
+    Param("StaminaRegenBoostMult", "2.0");
+    Param("StaminaRegenBoostTime", "2.0");
+    Param("StaminaRegenBoostInitialDelay", "0.25");
+    Param("BlockBreakOnlyOnStaminaDepleted", "1");
+    Param("BlockBreakPushBack", "0.5");
+    Param("RecoilOnHitBlock", "-0.4");
+
+    // Blast Attack
+	Param("BlastAttackEnabled", "true");
+    Param("BlastAttackRange", "10.0");
+    Param("BlastAttackHalfAngle", "45.0");
+    Param("BlastAttackHeightAllowace", "1.5");
+    
+    // NAGE WAZA
+    Param("NageWazaFront", "false");
+    Param("NageWazaCooldown", "-1.0");
+    Param("NagewazaThrowEnabled", "false");
+
+    // WHIRLWIND
+    Param("WhirlwindChargeCooldown", "-1.0");
+    Param("WhirlwindCharge", "false");
+    // SLIDE && SLOPE
+    Param("SlideCooldown", "0.0");
+    Param("SlideAfterAirCooldown", "0.0");
+	Param("SlideAssistWindow", "0.5");
+	Param("SlideBodyRotateTime", "0.0");	
+	Param("SlideAvailable", "0");
+	Param("SlideAttackLoop", "0");	
+	Param("SlideNitroAcceceleration", "200.0");
+	Param("SlideAcceceleration", "100.0");
+	Param("SlideDeceleration", "400.0");
+	Param("SlideLoopMinDuration", "0.1");
+	Param("SlideLoopMaxDuration", "0.1");
+	Param("SlideLoopNitroDuration", "1.25");
+	Param("MinTimeToBreakSlide" , "0.5");
+	Param("SlideDoubleTapWindow", "-0.0"); //Korek: changed after glova submitted without checking - permission granted via phone
+	
+	Param("SlopeAcceleration", "4.0");
+	Param("SlopeDecceleration", "8.0");
+	Param("SlideBlockStaminaRecovery", "false");
+	Param("SlideKickAvailable", "false");
+    Param("SlideAvoidProjectile", "true");
+	Param("SlideKickStaminaUsage", "0.0");
+	Param("SlideStaminaBoostLevel", "0.0");
+    Param("SlideDamageBoostLevel", "0.0");
+    Param("SlideCritChanceBoostLevel", "0.0");        
+    Param("SlideStaminaUsage", "0.25");
+	Param("AutomaticSlideFallHeight", "999.9"); /// gloVA: turned of so not slippery geometry won't force the player to slide (it was annoying)	
+	Param("SlideSideInputAccel","40.0");
+	Param("MinSlideVelocity","2.5");
+	Param("SlideMinSpeedTimeToBreak","0.5");
+	Param("AutomaticSlideBlockInputsTime","0.5");
+	
+
+
+    // FAST BREAK
+    Param("FastGrabBreakCooldown", "0.0");
+
+    // ELEMENTALS
+    Param("ChokeReactionMaxMoveSpeed", "1.5");
+    //SONAR SKILLS
+    Param("SonarInvisibilityCooldown", "20.0");
+
+    // FINISHERS
+	Param("FinisherEnabled", "1");                       //  enables finishers 
+    
+    // FINISHER KNOCKDOWN
+    Param("FinisherKnockdownEnemyMaxHealth", "0.0"); // if value <= 0 then it is always available
+    
+    // SILENT KILL (Finisher back)
+    Param("FinisherBackEnabled", "1");                       //  enables backstab
+    Param("FinisherBackWithItemEnabled", "0");
+	Param("FinisherItemThrowEnabled", "0");
+	
+    Param("FinisherBackLedgeEnabled", "0");
+    Param("FinisherBackCooldown", "-1.0");
+    
+    // THROWING SKILL - multi
+    Param("ThrowingMultiSkillEnabled", "1");
+    Param("ThrowingMultiSkillCooldown", "-1.0");
+    Param("ThrowingMultiSkillMarkingDelay", "0.2");
+    Param("ThrowingMultiSkillMaxEnemies", "1.0");
+    Param("ThrowingMultiSkillRange", "40.0");
+    Param("ThrowingMultiSkillAutoAimAngle", "2.0");
+	Param("ThrowingMultiAutoAimAngle", "15.0");	
+    Param("ThrowingMultiSkillTargetRetainTime", "-1.0");
+    Param("ThrowingMultiSkillTargetRetainWarningTime", "-1.0");
+    Param("ThrowingMultiSkillDmgMul", "1.0");
+    Param("ThrowingMultiSkillTargetVisConeAngle", "10.0");
+	Param("ThrowTimeToDisplayParabol", "1.0");	
+    Param("ThrowParabolaEnabled", "0");
+
+    Param("RunnerXPMinDistBetweenClimb", "1.30");
+    Param("RunnerXPMinTimeBetweenClimb", "5.00");
+    Param("RunnerXPPursuitLvl1PerSec", "1.00");
+    Param("RunnerXPPursuitLvl2PerSec", "2.00");
+    Param("RunnerXPPursuitLvl3PerSec", "3.00");
+    Param("RunnerXPPursuitLvl4PerSec", "4.00");
+    Param("RunnerXPRunningPerSec", "0.0");
+    Param("RunnerXPClimbShimmyUp", "5.0");
+    Param("RunnerXPJumpOn", "10.0");    
+    Param("RunnerXPSkillWallJump", "20.0");
+    Param("RunnerXPSkillWrestleKick", "20.0");
+    Param("FighterXPSkillFootballKick", "20.0");
+	Param("AmortizerNoiseChancePercantege", "0.0");
+	
+	Param("OportunityWeaponMaxSpeedMul", "1.0");
+	Param("CanBlockProjectiles", "false");
+	Param("CanDeflectProjectiles", "false");
+    Param("CanBlockThrowables", "false");
+    Param("CanDeflectThrowables", "false");
+	
+	Param("StraightShockwaveDeflectionItemName", "Melee_Shockwave");
+	Param("StraightShockwaveDeflectionRadius", "10.0");
+	Param("StraightShockwaveDeflectionMinDistance", "0.1");
+	Param("StraightShockwaveDeflectionDelay", "-1.0");
+	
+	///// Dodge
+	Param("DodgeCrouchTimeWindow", "0.7");
+	Param("DodgeMinLookAngle", "20.0");
+    Param("DodgeJumpBack", "1");
+    Param("DodgeJumpSide", "1");
+    Param("ExhaustedDodgeEnabled", "1"); 
+	Param("ExhaustedDodgeForced", "0"); 	
+	Param("PerfectDodgeStaggersDuration", "0.0");
+	Param("PerfectDodgeSlowmo","false");
+	Param("ExhaustedDodgeMinTimeBetweenTwoDodges", "1.0"); 	
+	Param("ExhaustedDodgeFromHitReactions", "0"); 		
+	
+	
+    Param("LookBackEnabled", "1");
+    Param("CraftDismantleEnabled", "1");
+    Param("CanDismantleWeapons", "1");
+    Param("DefaultCapsuleHeight", "1.78");
+    Param("DefaultCapsuleRadius", "0.35");
+    Param("DefaultAutostepHeight", "0.78");    
+	Param("CrouchAutostepHeight", "0.48");    
+	
+     //PVP auto targeting
+    Param("PVPAssistActivationTime", "0.1");
+    Param("PVPAssistDeactivationTime", "1.0");
+    Param("PVPAssistInputToleranceScalerLowInputMin", "0.3");
+    Param("PVPAssistInputToleranceScalerLowInputMax", "1.5");
+    Param("PVPAssistInputToleranceScalerHighInputMin", "0.5");
+    Param("PVPAssistInputToleranceScalerHighInputMax", "1.5");
+    Param("PVPAssistInputToleranceHighInputThreshold", "0.4");
+
+    Param("PVPAssistLowTargetSpeedCorrectionPercentage", "0.8");
+    Param("PVPAssistHighTargetSpeedCorrectionPercentage", "0.95");
+    Param("PVPAssistHighTargetSpeedInputPercentageThreshold", "0.4");
+
+    // moved from removed parts of definitions
+    Param("ExpToNextLevel", "-1");  // This value must be different than in default_levels.xml. Refactoring required!
+    // moved from Traversal
+    Param("JumpOnAvailable", "1");    
+	
+	Param("BounceOffHeadAvailable", "0");    
+	Param("BounceOffHeadOnStaggeredOnly", "1");
+    Param("BounceOffHeadInDashAvailable", "0");
+
+    Param("DashAttackAvailable", "0");
+	
+	Param("JumpAutoStepHeight", "1.1");
+    // moved from Combat
+    Param("MinTimeInRestToPerformAttack", "0.0");
+
+// First stage
+	// Glide WingSuit / Paraglider
+
+	Param("GlidePadLookSensitivityFactor", "0.25");	
+	Param("GlideVisBodyPitchMin", "-35.0");	
+	Param("GlideVisBodyPitchMax", "40.0");	
+	
+	Param("GlideVertAngleMaxDiff", "45.0");	
+	Param("GlideVertAngleMinDiff", "-35.0");	
+	Param("GlideLookVertMinAngle", "-70.0");	
+	Param("GlideLookVertMaxAngle", "45.0");	
+	Param("GlideLookHorzAngle", "50.0");
+	Param("GlideOnGroundDurationToBreak", "1.0");
+		
+	Param("GlideLaterLoopForwardDeadZone", "0.2");	
+	Param("GlideNoInputForwardValue", "-0.5");	
+	
+	Param("GlideAcceleration", "2.0");	
+	Param("GlideDecceleration", "5.5");	
+	Param("GlideBackwardsDeceleration", "1.0");	// deceleration when pressing move input backwards
+		
+	//Param("GlideSpeeMagMax", "8.0");	// lvl2			// Max velocity mag that the player can have, it is tied to bodypitch
+	Param("GlideSpeeMagMax", "4.5");
+	Param("GlideSpeedMagMin", "1");				// Min velocity mag that the player can have, it is tied to bodypitch
+	Param("BroomGlideSpeedMagMin", "8.0");
+	Param("GlideSpeedMagMinNoControl", "3");
+	
+	//Param("GlideMinVelMagToRise", "6.5");	//lvl2	// min velocity magnitude to apply GlideMinGravityAccel, when not below GlideStablePitch
+	Param("BroomGlideMinVelMagToRise", "1.0");
+	Param("GlideMinVelMagToRise", "3.0");
+	Param("GlideMinTimeInVelToRise", "0.85");
+	
+	//Param("GlideStartVelocity", "-3.0");	// lvl 4
+	Param("GlideStartVelocity", "-1.5");
+	Param("GlideBreakTimeAcc", "1.0");
+	Param("GlideBreakTimeDecc", "1.5");
+	Param("GlideSteeringSpeed", "10");	
+	//Param("GlideSteeringSpeed", "40");	// lvl 3
+	Param("GlideMaxGravityAccel", "10");		// max gravity that can be applied to correct the velocity, it is tied with the velocity magnitude	
+	Param("GlideMinGravityAccel", "2.0");			// min gravity that can be applied to correct the velocity, it is tied with the velocity magnitude
+	Param("HoverGlideMinGravityAccel", "15.0");	
+			
+    Param("GlideVelocityAddAfterRopeHook", "2.5");
+	Param("GlideVelocityYAdd", "1.0");
+    Param("GlideAfterRopeHookMaxTime", "1.0");
+
+    Param("ParachuteLevel", "0");
+	Param("GlideActivateBackwardsDeceleration", "20.0");	// deceleration when opening parachute	
+	Param("GlideDiveRotationSpeed", "35");	
+	Param("GlideRiseRotationSpeed", "125");	
+	Param("ParachuteWindUpRegainsStamina", "1");	
+    Param("ParachuteWindSideRegainsStamina", "true");
+
+	Param("GlidePitchMax", "40");				// max vert angle that velocity can have
+	Param("GlideStablePitch", "-15");			// Pitch value that does not need to be corrected by the gravity
+	Param("GlidePitchMin", "-80");				// min look and vert velocity angle
+	
+	Param("GlideLookMaxVert", "5");				// max look angle 
+	Param("GlideTimeLookVertChange", "1");		// for look vert angle to reach body pitch if they differ
+	Param("GlideTimeSpeedToLookChange", "1");	// Time for velocity to change towards the look dir
+	
+	Param("GlideBackwardsMaxDeccel", "20");		// Max deceleration value when pressing backwards
+	Param("GlideBackwardsSpeedMagMin", "1");	// Min velocity that can be reached when pressing backwards
+	
+	Param("GlideHeadMaxRoll", "10.0");
+	//Param("GlideHeadMaxRoll", "45.0"); //lvl 3
+	Param("GlideHeadChangeTime", "2");	
+	Param("GlideMaxGravityWhenStopping" , "-3");// max gravity that can be reached when pitch is not stable and it is being corrected by gravity
+	Param("GlideFovOffset" , "10");
+	Param("GlideStartStaminaCost", "0.34");
+	Param("GlideNitroStaminaCost", "0.25");
+	Param("GlideNitroCooldown", "5.0");
+	
+
+	
+	Param("GlideBuildUpTime", "0");
+	Param("GlideMaxyVel","5");	
+	Param("GlideActivateWantedPitch", "75"); // Wanted pitch to correct velocity when opening the parachute, creates the effect of push. The value is not exact bodypitch in which the player will end, but used as a reference.
+	
+    Param("GlideCollisionAudioTimeThreshold", "0.1");
+
+    Param("GlideStartingWindAreaMaxTime", "0.33");
+    Param("GlideStartingWindAreaMaxTimeReferenceForce", "1.2");
+    Param("GlideStartingWindAreaScaleMaxTime", "true");
+
+	// Free Climbing
+	Param("TimeToForceGrabAfterGlideEnd", "1.0");	
+	// ActiveAutoSlope
+	Param("AutoSlope", "true");
+	Param("UseSlopeAnalyzer", "1");	
+	
+    
+	Param("PreInfectionPostprocessMaxValue", "0.6");
+	Param("PreInfectionStaminLvl2StartPostproces", "-0.1");
+	Param("PreInfectionStaminaOnAttackMul", "8.0");
+	Param("PreInfectionStaminaOnBlockMul", "4.0");
+	Param("PreInfectionAttackFrequency", "1.0");
+	Param("PreInfectionAttackAnimFrequency", "2.0");
+	
+	Param("InfectionPhase1Inhibitors", "1.0");
+	Param("InfectionPhase2Inhibitors", "30.0");
+	Param("InfectionPhase3Inhibitors", "60.0");
+	Param("InfectionAttackNoAnimationDuration", "1.0");
+    Param("InfectionAttackLevel1MaxMoveSpeed", "0.85");
+    Param("InfectionPostProcessStrength", "0.5");
+    Param("InfectionPostProcessStrengthNight", "0.4");
+	Param("MinTimeBetweenUVLightInfectionAttacks", "0.0");
+	Param("UVLightInfectionAttackChance", "1.0");
+	Param("RestrictionsInfectionLevel1AttackChance", "0.15");
+	Param("RestrictionsInfectionLevel2AttackChance", "0.15");
+	
+    Param("HeavyObjectAnimNoiseStartSpeedThresold", "1.0");
+    Param("HeavyObjectAnimNoiseAmplitude", "0.1");
+    Param("HeavyObjectAnimNoiseRotationAmplitudePitch", "8.0");
+    Param("HeavyObjectAnimNoiseRotationAmplitudeYaw", "8.0");
+    Param("HeavyObjectAnimNoiseOscilationProgressInterpVal", "0.03");
+    Param("HeavyObjectAnimNoiseInertia", "1.0");
+    Param("ValidAutoCatchAngle", "90.0");
+    Param("SkillPoints", "0.0");
+    Param("SkillPointsFighter", "0.0");
+    Param("SkillPointsRunner", "0.0");
+    Param("SkillPointsReputation", "0.0");
+    Param("SkillPointsLegend", "0.0");
+    Param("SkillPointsDriver", "0.0");
+    Param("LegendTier", "0.0");
+    Param("MedkitUseTimeInVehicle", "3.1");
+    Param("MaxCarUpgradeQuality", "-1.0");
+    Param("CarLuckyRepairChance", "0.0");
+    Param("PoisonedEffectDuration", "1.0");
+    Param("ScreamEffectDuration", "1.5");
+    Param("JumpSoundProb", "0.5");
+    Param("AntizinChangePerSecond", "0.0");
+    Param("AntizinPercentageChangePerSecond", "0.0");	
+	Param("InfectionPostprocessMaxValue", "0.7");
+    Param("InfectionChangePerSecond", "0.0");
+    Param("InfectionPercentageChangePerSecond", "0.0");
+    Param("PlayersAntizinCapacity", "0.8");
+    Param("PlayersAntizinCapacityCombatBoost", "0.0");
+    Param("PlayersAntizinCapacityParkourBoost", "0.0");
+    Param("AntizineValueToShoUVLightsLocations", "0.4"); //when antizin lvl is <= this value uv light locations show up on radar (value is the same units as PlayersAntizinCapacity)
+	
+	Param("NightRunnerSegment1StartVal", "12");	
+	Param("NightRunnerSegment2StartVal", "30");		
+	Param("NightRunnerSegment3StartVal", "48");		
+	Param("NightRunnerSegment4StartVal", "66");	
+	Param("NightRunnerSegment5StartVal", "84");
+    Param("NightRunnerSegment6StartVal", "102");
+	Param("NightRunnerSegment1BaseDuration", "10.0");
+	Param("NightRunnerSegment2BaseDuration", "15.0");
+	Param("NightRunnerSegment3BaseDuration", "15.0");
+	Param("NightRunnerSegment4BaseDuration", "20.0");
+	Param("NightRunnerSegment5BaseDuration", "20.0");
+    Param("NightRunnerSegment6BaseDuration", "30.0");
+	Param("NightRunnerTimeInNightToActivate", "3.0");
+	Param("NightRunnerActivationCostImmunity", "0.0");
+	Param("NightRunnerBaseDuration", "5.0");
+	Param("NightRunnerIncPerInhibitor", "1.0");
+	Param("NightRunnerDamageMulPerInhibitor", "0.0");
+	Param("NightRunnerRoar", "true");
+	Param("NightRunnerRoarRadius", "15.0");
+	Param("NightRunnerItemForced", "false");
+	Param("NightRunnerSlomo", "0.0");
+	Param("NightRunnerNumHitsToActivate", "100.0");
+	Param("NightRunnerDisableEquipmentUse", "false");
+    Param("NightRunnerFurySmashEnabled", "false");
+    Param("NightRunnerFuryGroundPoundEnabled", "false");
+    Param("NightRunnerAdditionalFOV", "20.0");
+    Param("NightRunnerBloodHitPowerMultiplier", "0.1");
+	Param("NightRunnerClimbAndShimmyAnimScale", "1.4");
+	Param("NightRunnerFuryEffectValue", "0.35");
+	Param("NightRunnerFuryAIHighlightRange", "30.0");
+	
+	Param("HiglightNearEnemies", "false");	
+	
+    Param("MovingStaminaRegenFactor", "0.8");
+    Param("SinusStaminaRegenFactor", "300.0");
+    Param("SinusStaminaRegenFactorAmplitude", "0.9");
+    Param("PerfectRepairChance", "0.0");
+    Param("ThrowingStarRange", "50.0");
+    Param("ThrowStartInputThreshold", "0.25");
+    Param("ThrowReadyAnimNoiseClaviclePositionOffset", "-0.18");
+    Param("ThrowReadyAnimNoiseClaviclePositionAmplitude", "0.15");
+    Param("ThrowReadyAnimNoiseClavicleSpeedModulator", "5.0");
+    Param("ThrowReadyAnimNoiseHandRotationOffset", "7.5");
+    Param("ItemSellFactor", "1.0");
+    Param("ItemBuyFactor", "1.0");
+    Param("CamouflageFactor", "0.0");
+    Param("ParkourActionAutoExecuteOffsetFromCamera", "0.0");
+    Param("StaminaGainOnKill", "0.0");
+    Param("WantedLevelDropSpeedMul", "1.0");
+    Param("DamageReduction", "");
+    Param("DoubleJumpMinTimeToPerform", "0.25");
+    Param("StaminaUsageReduction", "0.0");
+    Param("MeleeStaminaCooldownReduction", "0.0");
+    Param("NightExpTimeReward", "0.0");
+    Param("NightExpPursuitReward", "0.0");
+    Param("BulletReloadSpeed", "0.0");
+    Param("BulletRecoilFactor", "1.0");
+    Param("BlastDamageMul", "ExplosionDamagerBlast_PlayerBlastMul");
+    Param("ChargeAdditionalRange", "0.3");
+    Param("EnemyGrabFightTapVal", "0.2");
+    Param("DefaultGrabFightTapMul", "1.0");
+    Param("BarricadeGrabFightTapMul", "1.5");
+    Param("ExpToNextLevelFighter", "-1");  // This value must be different than in default_levels.xml. Refactoring required!
+    Param("ExpToNextLevelRunner", "-1");  // This value must be different than in default_levels.xml. Refactoring required!
+    Param("ExpToNextLevelStatus", "-1");  // This value must be different than in default_levels.xml. Refactoring required!
+    Param("ExpToNextLevelReputation", "-1");  // This value must be different than in default_levels.xml. Refactoring required!
+    Param("ExpToNextLevelLegend", "-1");  // This value must be different than in default_levels.xml. Refactoring required!
+    Param("ExpToNextLevelDriver", "-1");  // This value must be different than in default_levels.xml. Refactoring required!
+    Param("DriverXPPursuitLvl1PerSec", "0.0");
+    Param("DriverXPPursuitLvl2PerSec", "0.0");
+    Param("DriverXPPursuitLvl3PerSec", "0.0");
+    Param("DriverXPPursuitLvl4PerSec", "0.0");
+    Param("RunnerXPZipLinePerMeter", "1.0");
+    Param("FirearmsMoveAccuracyReduce", "1.0");
+    Param("KickDamageMul", "Player_KickDamageMul");
+	Param("KickDisabled", "0");
+    Param("KnockdownAfterKnockdownMinTime", "1.25");
+	
+	Param("CanBlockWithFistsOtherWeapons", "1");
+    Param("BlockPushHeavyChance", "0.0");
+    Param("BlockPushStaminaRecoverChance", "0.0");
+    Param("PerfectBlockTimingStart", "0.0");
+    Param("PerfectBlockTimingEnd", "0.25");
+    Param("RegenBoostOnKillChance", "0.0");
+    Param("ShieldMaxSpeedFactor", "0.5");
+    Param("ShieldMinSpeedFactor", "0.5");
+    Param("JumpAttackStaminaBoostLevel", "0.0");
+    Param("JumpAttackCritChanceBoostLevel", "0.0");
+    Param("DodgeDamageBoostLevel", "0.0");
+    Param("DodgeCritChanceBoostLevel", "0.0");
+    Param("GrapplingHookStaminaBoostLevel", "0.0");
+    Param("GroundPoundFallingDamageReductionLevel", "0.0");
+	Param("GroundPoundActivationTime", "0.3");
+    Param("GroundPoundMinHeight", "2.0");
+    Param("NaturalMovementActionLevel", "0.0");    
+    Param("MeeleBluntStaminaUsageMul", "0.0");
+    Param("MeeleCutStaminaUsageMul", "0.0");
+    Param("MeeleOneHandedStaminaUsageMul", "0.0");
+    Param("MeeleTwoHandedStaminaUsageMul", "0.0");
+	Param("MeeleTwoHandedMinLookAngle", "-65.0");
+    Param("MeeleFistStaminaUsageMul", "0.0");
+    Param("StaminaRegenerationOnHalfHealth", "0.0");
+    Param("StaminaUsageFactorOnMaxHealth", "1.0");
+    Param("LookRollFactor", "0.7");
+    Param("LookSpeedSprintMod", "1.0");
+    Param("CarryLookTimeMul", "0.5");
+    Param("MovementSpeedMul", "1.0");
+    Param("StepSoundRangeMul", "1.0");
+    Param("DefaultLookJumpSpeed", "4.5");    
+	Param("SlopeJumpSpeed", "0.5");
+    
+	Param("LadderSlideDownTime", "0.5");    
+	Param("LadderClimbSlow", "true");    
+	
+    Param("AccuracyLoseSpeed", "1.5");
+	
+	Param("AccuracyAngleInSprint", "3.0");
+	Param("AccuracyBlendTimInSprint", "1.0");
+	
+	Param("AccuracyAngleInAir", "2.0");
+	Param("AccuracyBlendTimInAir", "1.0");
+	
+	Param("AccuracyAngleInWalk", "1.0");
+	Param("AccuracyBlendTimInWalk", "1.0");
+	
+    Param("CrouchAccuracyGainFactor", "1.0");
+    Param("BestTargetMeleeRange", "4.0"); 
+    Param("StaminaRegenerationFromDuck", "0.0");
+    Param("CameraCarFOV", "65.0");
+    Param("TackleHitFromStandWindow", "0.0");
+    Param("HarvestingItemStackSizeMul", "1.0");
+    Param("ThoroughSearch", "0.0");
+    Param("SearchDurationMul", "0.5");
+    Param("FallDamageReduction", "Player_FallDamageReduction");
+    Param("CustomSkinSeed", "0.0");
+    Param("TriggerUsingIntervalMul", "1.0");
+    Param("RemoteTriggerMarkDuration", "5.0");
+	Param("RemoteExplosiveMarkDuration", "15.0");
+	
+    Param("ZombieBarricadeGrabStaminaUsage", "0.3");
+    Param("ZombieLegGrabStaminaUsage", "0.0");
+    
+    Param("GroundPoundStaminaUsage", "0.01");
+    Param("WhirlwindAddedRange", "0.5");
+    Param("AutoTackleEnabled", "0.0");	
+	
+    Param("PlatinumWeaponFindMul", "1.0");
+	Param("AwakeFactorInCrouch", "1.0");
+    
+	Param("SpecialMoveAbusePenaltyCount", "2.0"); // max time the AI will avoid the move
+	Param("SpecialMoveAbusePenaltyMaxTime", "9.0"); // max time the AI will avoid the move
+	Param("SpecialMoveAbusePenaltyTime", "7.0"); //  time added to counter on move performed  - ie. in next 6 seconds all AI will avoid ALL dropkicks
+	Param("SpecialMoveAbuseDecreasePenaltyOnDifferentMove", "3.0"); // time that will be substracted when player performs different skill ie. after dropkick if the player performs GH the counter will be decreased from 6 to 3 
+	
+	Param("EnableActiveLanding", "true");
+    Param("EnableControlledActiveLanding", "false");
+	Param("EnableMutedLanding", "false");
+	Param("ActiveLandingJumpEnabled", "false");	
+	Param("ActiveLandingMinFallHeightToApplySlowdown", "5.5");
+    Param("ActiveLandingLevel1Height", "4.5");
+    Param("ActiveLandingLevel2Height", "8.5");
+	Param("ActiveLandingLevel1VertMinLookAngle", "-45.0");
+    Param("ActiveLandingLevel2VertMinLookAngle", "-35.0");
+    Param("ActiveLandingLevel3VertMinLookAngle", "-35.0");
+    Param("ActiveLandingLevel1HorzMinLookAngle", "90.0");
+    Param("ActiveLandingLevel2HorzMinLookAngle", "90.0");
+    Param("ActiveLandingLevel3HorzMinLookAngle", "90.0");
+    
+	Param("NoiseLandingLowHeight", "1.5");
+    Param("PassiveLandingNoiseLevelChange", "3.0"); // every N passive landings, noise level is increased
+    Param("PassiveLandingNoiseResetTime", "3.0");   // after N seconds reset counter of passive landings
+	
+	Param("PassiveLandingLevel1Height", "4.0");
+    Param("PassiveLandingLevel2Height", "6.0");
+    Param("PassiveLandingLevel3Height", "8.0");
+	
+	Param("PassiveLandingLevel1VertMinLookAngle", "-45.0");
+    Param("PassiveLandingLevel2VertMinLookAngle", "-45.0");
+    Param("PassiveLandingLevel3VertMinLookAngle", "-20.0");
+    Param("PassiveLandingLevel4VertMinLookAngle", "0.0");
+    Param("PassiveLandingLevel1HorzMinLookAngle", "90.0");
+    Param("PassiveLandingLevel2HorzMinLookAngle", "90.0");
+    Param("PassiveLandingLevel3HorzMinLookAngle", "90.0");
+    Param("PassiveLandingLevel4HorzMinLookAngle", "35.0");
+	
+    Param("FallingRescueMinFallingVel", "-5.0");
+    Param("BuggyUpgradeNitroLevel", "0.0");
+    Param("BuggyUpgradeSuspensionLevel", "0.0");
+    Param("BuggyUpgradeFuelLevel", "0.0");
+    Param("BuggyUpgradeRamLevel", "0.0");
+    Param("BuggyUpgradeArmorLevel", "0.0");
+    Param("BuggyUpgradeCarAlarm", "0.0");
+    Param("BuggyUpgradeRemoteDevice", "0.0");
+    Param("BuggyUpgradeUVLights", "0.0");
+    Param("BuggyUpgradeElectircCage", "0.0");
+    Param("BuggyUpgradeFlameThrower", "0.0");
+    Param("BuggyUpgradeMineDispener", "0.0");
+    
+	Param("FreeClimbAttachDuration", "1.25");    
+	Param("FreeClimbGlideEndingSoundDurationSec", "0.4");	
+	Param("FreeClimbGlideSoundHeightFactor", "1.0");
+	
+    Param("HangDamagePerSecond", "50.0");
+    Param("InAirHighVelocityDeceleration", "200.0");
+    Param("InAirHighVelocityThresholdFactor", "1.7");
+    
+    Param("EdgeHeavyGrabFallHeight", "3.5");
+    Param("EdgeFailedGrabFallHeight", "7.0");
+    Param("SprintNitro", "false");
+    Param("CanKillsAwardXP", "true");
+    Param("KnockdownImmunity", "false");
+    Param("EnableToxicPP", "true");
+    Param("AimZoomSkilled", "false");
+    Param("CantBeGrabbed", "false");
+    Param("CraftingExpert", "false");
+    Param("MuffledSteps", "false");
+    Param("MuffledMeleeAttack", "false");
+    Param("InfiniteStamina", "false");
+    Param("AntizinDrainBlocked", "false");
+    Param("SprintBlocked", "false");
+    Param("JudoMasterEnabled", "false");
+    Param("LowStaminaAttackEnabled", "false");
+	Param("ExhaustedAttackIsPush", "true");	
+	Param("PushAttackStaminaCost", "0.1");
+	Param("PushLookTimeMul", "0.5");
+    Param("TackleUnlocksDoors", "false");
+    Param("KickBlockStaminaRecovery", "true");
+    Param("AirKickBlockStaminaRecovery", "false");
+    Param("TackleBlockStaminaRecovery", "false");    
+    Param("GrabsBlocksStaminaRecovery", "false");
+    Param("GrabsRequireStamina", "false");
+	Param("PlayerGrabsStaminaCost", "0.0");
+    Param("CraftAdditionalRepairSlotEnabled", "false");
+    Param("CanUseSenseWhenMoving", "true");
+    Param("CanBeRevived", "true");
+	Param("ReviveLimit", "3.0");	
+	Param("ReviveLimitResetTime", "300.0");
+	Param("TotalReviveTime", "20.0");	
+    Param("BuggyRemoteEnabled", "false");
+    Param("PushActionEnabled", "false");
+    Param("BlockActionEnabled", "true");
+    Param("PerfectBlockActionEnabled", "true");
+	Param("PerfectBlockActionWith2HandedWpn", "true");	
+	Param("PerfectBlockWithSlowMo", "false");
+	Param("PerfectBlockStaminaMul", "1.0");	
+	Param("PerfectBlockStaggerDuration", "1.0");	
+	Param("BlockAutomaticlyWith2HandedWpn", "false");	
+    Param("GlideDownRequireSurfaceFlag", "false");
+    Param("CustomSkin", "");
+    Param("CustomMesh", "");
+    Param("MinTimeToConsiderPlayerVisIdle", "15.0");
+	Param("JumpDownFallHeightLevel0", "2.0");
+    Param("JumpDownFallHeightLevel1", "3.0");
+    Param("LandingSurfaceCollisionSmallRadiusLength", "0.25");
+    Param("LandingSurfaceCollisionMidRadiusLength", "0.5");
+    Param("LandingSurfaceCollisionBigRadiusLength", "0.75");
+    Param("LandingSurfaceCollisionDebugRenderOn", "false");
+    Param("TimeToPassBetweenPlayerStepSounds", "0.2");
+    Param("LandingSoundTypeMinTimeBetweenLandings", "0.4");
+    Param("HangBreathSoundStaminaLevelToStartGrab", "30");
+    Param("HangBreathSoundStaminaLevelToStartFade", "60");
+    Param("HangBreathSoundDelaySec", "0.5");
+    Param("HangBreathSoundHowLongAfterGrabToPerformFade", "2");
+	Param("BicycleForwardSpeed","10");
+	Param("BicycleTurningSpeed","4");
+	Param("BicycleMaxTurningSpeed","2");
+	Param("BicycleAccelerationForward","4");
+	Param("BicycleAccelerationBackwards","2");
+	Param("BicycleDecelerationBrake","20");
+	Param("BicycleDecelerationSpeedLoss","2");
+	Param("BicycleMaxForwardSpeed","20");
+	Param("BicycleMaxBackSpeed","1");
+	Param("MaxVelSlopeSliding" , "7" );
+	Param("MaxVelSlopeForcedSliding" , "9");
+	Param("MaxVelMovingDownSlope" , "5");	
+	Param("HumanTakeDownInitialStaminaCost" , "0.2");
+	Param("HumanTakeDownLoopTime" , "3.0");
+    Param("FinisherStaggeredEnemyHealthFacor" , "0.35");
+	Param("MinGlideHeightToAwardExperience", "6.0");
+	Param("StandInWaterDepth", "1.0");
+	
+	Param("ExploitTimeTollerance", "15.0");
+	Param("ExploitPosTollerance", "2.0");
+	Param("ExploitMulDecrease", "0.5");
+	
+	Param("LookDownMinAngle", "-60.0");
+	Param("LookDownAccel", "240.0");
+	Param("TimeToCorrectLandingLook", "1.0");
+	Param("LookUpCorrectionMinAngle", "-15");
+	
+	Param("TreeAmortizerEnabled", "false");
+	Param("DoorSkylightEnabled", "true");	
+	
+	
+	Param("StaminaDamageWhenHitted", "0.1");		
+	
+	Param("HitTimeToSlowAnim" , "0.0");
+	Param("HitFramesToProject" , "3");
+	Param("HitFramesInAdvanceToTest" , "5");
+	Param("HitTimeWindowToPlayDifAnim" , "1.0");
+	Param("HitAnimVariationNumber", "3");
+	Param("MonkeyBarJumpAttackSearchRadius", "8");
+	Param("JumpAttackHorzMaxDeviation", "70");
+	Param("NagewazaEnable", "false");
+		
+    Param("SkillPointsInhibitors", "0");
+    
+    Param("SoundParamRuntimeScaledValueGrowTimeSec", "10");
+    Param("SoundStatePlayerMovementLandingStateDurationSec", "0.2");
+	
+	Param("MaxPossibleAntizin", "2.5");
+	Param("AntizinLowWarningLevel", "0.4");
+	Param("AntizinCriticalWarningLevel", "0.2");
+	Param("ImmunityTimerShowInterval", "180.0");
+	
+	Param("AfterBoostEnabled", "false");
+	Param("CombatAfterBoostEnabled", "false");
+	Param("AfterBoostDefaultInputWindow", "0.5");
+	Param("AfterBoostDefaultSpeed", "3.0");
+	Param("AfterBoostMaxSpeed", "3.0");
+	Param("AfterBoostSpeedDeceleration", "1.8");
+	Param("AfterBoostRelative", "false");
+	Param("AfterBoostInstantAcceleration", "true");
+	
+	Param("LandingDuckBlockTime", "0.3");
+	Param("DuckBlockTimeAfterDialog", "0.9");	
+	
+	Param("FlyRamMinTime", "1");
+	Param("FlyRamAfterBoostEnabled", "false");
+	
+	
+	Param("LastClimbOnExhaustedEnabled", "true");
+	Param("FastClimbEnabled", "false");
+	Param("FastClimbGoodBeforeWindow", "0.2");
+	Param("FastClimbGoodAfterWindow", "0.2");
+	Param("FastClimbPerfectBeforeWindow", "0.05");
+	Param("FastClimbPerfectAfterWindow", "0.05");
+	Param("FastClimbCooldown", "1.0");
+	
+	Param("PerfectShimmyEnabled", "false");
+	Param("PerfectShimmyTimingTollerance", "0.75");
+	
+	Param("BlockHeldTime" , "0.001");
+	
+	Param("LowHealthDropMinLifeTime", "8.0");
+	Param("LowHealthDropMaxLifeTime", "16.0");
+	
+	Param("HitReactionDefaultPushDuration", "0.25");
+	Param("HitReactionDefaultPushSpeed", "5.5");
+	Param("HitReactionPushAcceleration", "100.0");
+	
+    Param("DPCrftPrtAndVlbPrcntAligmentZero", "0.0");
+	Param("DPCrftPrtAndVlbPrcntZoneMinus1", "0.0");
+	Param("DPCrftPrtAndVlbPrcntZoneMinus2", "0.0");
+	Param("DPCrftPrtAndVlbPrcntZoneMinus3", "0.0");
+	
+	Param("CanBeRevivedByNPC", "false");	
+	
+	Param("MinVertLook", "-89.9");
+	Param("MaxVertLook", "89.0");
+	
+	Param("BodyContainerMeshName", "drugs.msh");
+	
+	Param("DoubleDodgeAvailable", "true");
+	Param("EnableThrowingWhileParkouring", "true");
+    Param("EnableSlowMoThrowingWhileParkouring", "false");
+	Param("ThrowSlowMoLookMul", "3.0");
+	Param("SlowMoLookMul", "2.0");
+	
+	
+	Param("StealthWidgetRange", "20.0");
+	
+	Param("DodgeBackDiveEnabled", "false");
+	Param("EnableThrowRicochet", "false");
+	
+	Param("CameraDefaultFOVReduction", "-10.0");
+	Param("CameraDefaultFOVReducedSpringTime", "8.0");
+	Param("CameraDefaultFOVRemoveReductionSpringTime", "4.0");
+    
+    Param("AIvsPlayerTargetingExtraRange", "6.0");
+
+    Param("TarGrabAudioCooldown", "2.0");
+	
+	Param("AutoActiveLandings", "false");
+	Param("BlockHeavyEdgeGrabs", "false");
+	Param("BlockFailedEdgeGrabs", "false");
+	
+	Param("NightRunnerHealthRegenDelay", "2.0");
+	Param("NightRunnerDamageResistance", "");
+	Param("NightRunnerRagdollProbability", "0.0");
+	Param("NightRunnerRestoresStamina", "true");
+	Param("NightRunnerDurationIncreasePerKill", "0.0");
+	Param("NightRunnerDisableSurvivalSense", "false");
+	
+	Param("HealthBarTimeToShowAfterHit", "10.0");
+	Param("HealthBarTimeToShowAfterMainTarget", "1.5");	
+	Param("HealthBarsMaxRange", "12.0");
+	Param("AwakeningBarMaxRange", "12.0");
+	
+	Param("DodgeSynchroAnimScaleStick2Heavy", "0.75");
+	Param("DodgeSynchroAnimScaleFist", "1.25");	
+		
+	Param("AdditionalVelocityOnAttack2HWpn", "0.0");
+	Param("AdditionalMeleeAimTargetFinderRange2HWpn", "-10.0");
+	Param("AdditionalMeleeAimTargetFinderRange15HWpn", "-10.0");	
+	Param("AdditionalMeleeAimTargetFinderRange", "1.0");
+	Param("AdditionalMeleeAimTargetFinderRangeFist", "2.0");
+	
+	Param("EnemySnapMaxSpeed", "10.0");
+	Param("ForceGivingHeavyDamage", "false");
+	Param("EnableTackleOnBlock", "false");
+	Param("ReduceReactionsSeverity", "false");
+	
+	Param("MoveSeverityLightScale", "1.0");
+	Param("MoveSeverityMediumScale", "3.0");
+	Param("MoveSeverityHeavyScale", "3.0");
+    
+	Param("SlidingMovementDeceleration", "3.0");
+	Param("SlidingMovementBodyRotationLag", "4.0");
+	Param("MaxSlidingMovementBodyRotationLagVelocity", "2.0");
+	
+	Param("BlockHitReactionKnockdown", "false");
+	
+	Param("CubeKeyLevel", "0.0");
+	
+	Param("WindGravityFactor", "3.75");
+	Param("WindHorizontalSmoothFactor", "0.2");
+	Param("WindVerticalSmoothFactor", "0.5");
+
+	Param("GlideWindHorizontalSmoothFactor", "0.2");
+    Param("GlideWindBlowsAttenuation", "2.0");
+
+    Param("PlayerHideAreaActivationChance", "0.25");
+
+	Param("CharacterLevel", "1.0");
+	Param("StatsConfig", "default");
+	
+	Param("OutfitStaminaMeleeUsageMul", "1.0");
+	Param("OutfitStaminaRangedUsageMul", "1.0");
+	Param("OutfitStaminaRegenMul", "1.0");
+	Param("OutfitCombatProgressionMul", "1.0");
+	Param("OutfitAgilityProgressionMul", "1.0");
+	Param("OutfitParkourStaminaUsageMul", "1.0");
+	Param("OutfitAIRecognitionTimeMul", "1.0");
+	Param("CrouchAIRecognitionTimeMul", "1.0");	
+	Param("OutfitSurvivorSenseRangeMul", "1.0");
+	Param("OutfitSurvivorSenseDurationMul", "1.0");
+	Param("OutfitFireDamageResistanceFactor", "0.0");
+	Param("OutfitPoisonDamageResistanceFactor", "0.0");
+	Param("OutfitElectricityDamageResistanceFactor", "0.0");
+	Param("OutfitDaytimeDamageResistanceFactor", "0.0");
+	Param("OutfitNighttimeDamageResistanceFactor", "0.0");
+	Param("OutfitHumanDamageResistanceFactor", "0.0");
+	Param("OutfitInfectedDamageResistanceFactor", "0.0");
+	Param("OutfitArcherDamageResistanceFactor", "0.0");
+	Param("OutfitDamageResistanceFactor", "0.0");
+    Param("OutfitArmorResistanceFactor", "0.0");
+    Param("OutfitAntizineDrainMul", "1.0");
+	Param("OutfitHealingBoostFactor", "0.0");
+	Param("OutfitHealingFactor", "0.0");
+	Param("OutfitMeleeDamageBoostFactor", "0.0");
+	Param("OutfitRangedDamageBoostFactor", "0.0");
+    Param("OutfitOneHandedDamageBoostFactor", "0.0");
+    Param("OutfitTwoHandedDamageBoostFactor", "0.0");
+    Param("OutfitKnuckleDusterDamageBoostFactor", "0.0");
+    Param("OutfitParkourDamageBoostFactor", "0.0");
+
+	Param("OutfitArmorResistanceFactorMul", "1.0");
+	Param("ArmorResistanceMulPhysical", "1.0");
+    Param("ArmorResistanceMulBlunt", "1.0");
+    Param("ArmorResistanceMulCut", "1.0");
+    Param("ArmorResistanceMulRanged", "1.0");
+    Param("ArmorResistanceMulBlast", "1.0");
+    Param("ArmorResistanceMulBleeding", "0.5");
+    Param("ArmorResistanceMulFire", "0.0");
+    Param("ArmorResistanceMulElectricity", "0.0");
+    Param("ArmorResistanceMulPoison", "0.0");
+    Param("ArmorResistanceMulChemical", "0.0");
+    Param("ArmorResistanceMulDrowning", "0.0");
+    Param("ArmorResistanceMulArmour", "0.0");
+    Param("ArmorResistanceMulFreeze", "0.0");
+    Param("ArmorResistanceMulRam", "1.0");
+    Param("ArmorResistanceMulElemental", "0.0");
+
+    Param("FallDamageResistance", "0.0");
+    Param("AIDamageResistance", "0.0");
+    Param("AIDamageVulnerability", "0.0");
+    Param("StaminaDamageMul", "1.0");
+
+    Param("ParkourKickEnabled", "true");
+    Param("VaultKickHoldEnabled", "false");
+
+    Param("FirstStrikeEnabled", "false");
+    Param("FirstStrikeChargeTime", "1.0");
+    Param("FirstStrikeAdditionalMeleeFinderRange", "4.0");
+    Param("FirstStrikeStaminaDamageMul", "2.0");
+    Param("FirstStrikeSlowMoDelayTime", "0.0");
+
+    Param("DialogTurnsOffFlashlightInSafeZone", "true");
+
+	Param("HitEffectMinStrengthDamageFactor", "0.05");
+    Param("HitEffectMaxStrengthDamageFactor", "0.50");
+
+    Param("HitEffectMinStrength", "0.85");
+    Param("HitEffectMaxStrength", "1.0");
+	Param("HitEffectMinScale", "0.25");
+    Param("HitEffectMaxScale", "1.5");
+	
+    
+    Param("HangDownwardInputTimeToDrop", "-1.0");
+    Param("NonLethalTakedownDamage", "0.2");
+
+    Param("LockpickLevel", "1");
+    Param("LockpickBreakLevel", "0");
+
+    Param("StaminaRegenerationFactorOnHit", "0.0");
+    Param("StaminaRegenerationFactorOnPowerAttack", "0.0");
+
+    Param("FuryChargeMultiplier", "1.0");
+
+    Param("HumanDamageMulFactor", "0.0");
+    Param("ZombieDamageMulFactor", "0.0");
+
+    Param("DayDamageMulFactor", "0.0");
+    Param("NightDamageMulFactor", "0.0");
+
+    Param("ItemStaminaDamageMul", "1.0");
+
+    Param("ChargeAttackAdditionalMul", "0.0");
+
+    Param("PerfectBlockHealingFactor", "0.0");
+	
+	Param("RadarAdditionalFOV", "20.0");
+
+    Param("EnablePlayerRoles", "true");
+    Param("EnablePlayerRolesInSinglePlayer", "true");
+
+    Param("HealerRoleSkillDuration", "10.0");
+    Param("HealerRoleSkillCooldown", "10.0");
+    Param("HealerRoleSkillRange", "5.0");
+    Param("TankRoleSkillDuration", "20.0");
+    Param("TankRoleSkillCooldown", "40.0");
+    Param("TankRoleSkillRange", "0.0");
+    Param("DpsRangedRoleSkillDuration", "20.0");
+    Param("DpsRangedRoleSkillCooldown", "40.0");
+    Param("DpsRangedRoleSkillRange", "2.5");
+    Param("DpsMeleeRoleSkillDuration", "20.0");
+    Param("DpsMeleeRoleSkillCooldown", "40.0");
+    Param("DpsMeleeRoleSkillRange", "2.5");
+
+
+    Param("AggresionPerHit", "0.25");
+    Param("AggresionCooldownOnMax", "3.0");
+    Param("AggresionDecreseTime", "7.0");
+
+
+    Param("HealerRoleSkillAggroDecrease", "9500.0");
+    Param("HealerRoleSkillAggroDecreaseTime", "30.0");
+    Param("TankRoleSkillAggroDecrease", "9500.0");
+    Param("TankRoleSkillAggroDecreaseTime", "20.0");
+    Param("DpsRangedRoleSkillAggroDecrease", "0.0");
+    Param("DpsRangedRoleSkillAggroDecreaseTime", "0.0");
+    Param("DpsMeleeRoleSkillAggroDecrease", "0.0");
+    Param("DpsMeleeRoleSkillAggroDecreaseTime", "0.0");
+
+    Param("HealerRoleSkillHealingPerSecond", "4.0");
+	Param("HealerRoleSkillAggroPerSecond", "1000.0");
+	
+	Param("TankRoleSkillAggroIncrease", "10000.0");
+	
+    Param("DpsRangedRoleSkillDamageBoostFactor", "1.5");
+    Param("DpsMeleeRoleSkillDamageBoostFactor", "0.75");
+	
+    Param("AggroMinValueToIgnoreDistanceFactor", "1000");
+	Param("AggroDecreasePerSecond", "2");
+    Param("AggroResetDelay", "30.0");
+    Param("HealerAggroGenerationDamageFactor", "0.5");
+    Param("TankAggroGenerationDamageFactor", "0.5");
+    Param("DpsRangedAggroGenerationDamageFactor", "1.25");
+    Param("DpsMeleeAggroGenerationDamageFactor", "1.0");
+
+    Param("HeartbeatSmoothTime", "0.2");
+    Param("HeartbeatSpeed", "300.0"); // 360 is one beat per second at full speed scale
+    Param("HeartbeatHealthMinScale", "0.4"); // Speed scale on max health factor (Factor > HeartbeatHealthFactorMin)
+    Param("HeartbeatHealthMaxScale", "1.0"); // Speed scale on min health factor (Factor < HeartbeatHealthFactorMax)
+    Param("HeartbeatHealthFactorMin", "0.5f");
+    Param("HeartbeatHealthFactorMax", "0.25f");
+
+    Param("PlayerDamageVulnerability", "");
+    Param("PlayerFallDamageVulnerability", "");
+
+    Param("WeaponStaminaUsageMul", "1.0");
+    Param("StaminaRegenerationMul", "1.0");
+
+    Param("InjectorDescSuffix", "");
+
+    Param("InfiniteArrows", "false");
+
+    Param("CrouchRollEnabled", "false");
+	
+    Param("WetGetingDryDuration", "30.0");
+    Param("WetGetingWetInStormDuration", "10.0"); 
+    Param("WetGetingWetInRainDuration", "15.0");
+    
+	Param("SweatGetingDryDuration", "20.0"); 
+    Param("SweatGetingSweatDuration", "10.0");
+	
+	Param("MeleeProgressiveHitCooldownTimer", "4.0");
+	Param("EpicMomentProbability", "0.1");	
+
+    Param("SoftPlayableAreaFailTime", "5.0");
+
+    Param("GrabTackleSearchRadius", "6.0");
+
+    Param("ToxinsImmunity", "false");
+
+    Param("LowerLevelRandomModProcProbMul", "0.5");
+
+    Param("OpenWorldNightXPModifier", "1.0");
+
+    Param("PostReviveInvisibility", "false");
+
+    Param("NightVisionPower", "0.5");
+	
+    Param("TppIkBlendOutMinDistance", "20.0");
+    Param("TppIkBlendOutMaxDistance", "25.0");
+    Param("TppAnimMixerBlendOutMinDistance", "5.0");
+    Param("TppAnimMixerBlendOutMaxDistance", "10.0");
+
+    Param("AntizinNightDuration", "350.0");
+    Param("AntizinDayDuration", "-5.0");
+    Param("AntizinDarkZoneDuration", "350.0");
+    Param("AntizinSafeZoneDuration", "-5.0");
+    Param("AntizinUVFlashlightDuration", "0.0");
+
+	// easter eggs
+	Param("TrippleJump", "0");
+
+    Param("BoomerangRange", "30.0");
+}

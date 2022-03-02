@@ -266,10 +266,10 @@ sub main()
 	Param("BowDisableAimingOnReloadAndCancel", "IAL_Bow_Zoom_DisableOnReload");
 	
     Param("HarvestingLevel", "0");                           //  enables harvesting
-    Param("HarvestingLevelForMultipleItems", "2");            // since this level player will get multipple items
-    Param("HarvestingMultipleItemsCount", "2");
+    Param("HarvestingLevelForMultipleItems", "IAL_Loot_MultipleItems_LVL");            // since this level player will get multipple items
+    Param("HarvestingMultipleItemsCount", "IAL_Loot_MultipleItems_Amount");
     Param("CrouchDampingWindowTime", "1.0");                    //  player can amorize fall 
-    Param("EnableFallHelperModule", "1");    
+    Param("EnableFallHelperModule", "0");    
     Param("MinTimeBetweenJumps", "0.4");
     Param("Aiming", "1");
     Param("DoubleJumpInOverAndOn", "0");    
@@ -284,7 +284,7 @@ sub main()
     Param("GroundPoundRangeMul", "1");
     Param("GroundPound", "0");
     Param("FastGrabBreakLevel", "0");    
-	Param("InVisibleToEnemies", "0");
+	Param("InVisibleToEnemies", "IAL_GhostMode");
 	Param("CamouflageEnabled", "0");
     Param("CamouflageCanRun", "IAL_Camo_Actions_CanRun");
     Param("CamouflageCanAttack", "IAL_Camo_Actions_CanAttack");
@@ -312,9 +312,9 @@ sub main()
 	Param("ParkourStaminaZipLineCostPerSecond", "0.001");	
     Param("ParkourStaminaHangDelayTime", "1.0");        
 	Param("ParkourStaminaSlopeStruggleAdditional", "0.0"); // when tappping to fight against the slope it will decrease this value every second of struggle	    
-	Param("SwimSecondsUnderWater", "30");
-	Param("SwimStaminaUsage", "0.05");	
-	Param("SwimNitroAvailable", "false");
+	Param("SwimSecondsUnderWater", "IAL_Swimming_HoldBreath_Secs");
+	Param("SwimStaminaUsage", "IAL_Swimming_StaminaDrain");	
+	Param("SwimNitroAvailable", "IAL_Swimming_Sprint");
 	Param("CustomMoveSlowVersionIfExist", "true");		
 	
 	
@@ -329,16 +329,16 @@ sub main()
     Param("MaxStaminaMinRegenerationTime", "IAL_Player_Stamina_Regen_Min");    
 	Param("MaxStaminaMaxRegenerationTime", "IAL_Player_Stamina_Regen_Max");
     Param("MaxStaminaTimeToRegenerate", "IAL_Player_Stamina_Regen_TimeTo");
-    Param("MaxStaminaDrainFactor", "IAL_Player_Stamina_Drain");
-    Param("MaxStaminaDrainEnabled", "true");
+    Param("MaxStaminaDrainFactor", "IAL_Player_Stamina_Drain_Rate");
+    Param("MaxStaminaDrainEnabled", "IAL_InfiniteStamina");
     Param("MinStaminaLevelFromHit", "IAL_Player_Stamina_Drain_FromHit");
     Param("StaminaTimeToRegenerateOnEmpty", "IAL_Player_Stamina_Regen_TimeTo");
     Param("StaminaTimeToRegenerateOnEmptyAfterParokur", "IAL_Player_Stamina_Regen_TimeTo");          // NOT WORKING IN COMBAT  -time needed to fully restore stamina when completely depleted
-    Param("StaminaTimeToRegenerate", IAL_Player_Stamina_Regen_TimeTo");                 // time after which stamina starts to regenerate if player still has some stamina left
+    Param("StaminaTimeToRegenerate", "IAL_Player_Stamina_Regen_TimeTo");                 // time after which stamina starts to regenerate if player still has some stamina left
     Param("StaminaTimeToRegenerateAfterParkour", "IAL_Player_Stamina_Regen_TimeTo");     // time after which stamina starts to regenerate if player still has some stamina left
     Param("StaminaRegeneration", "IAL_Player_Stamina_Regen_Max");                    // WARNING CHANGED SO EVERY THING IS IN SECONDS rate at which stamina regenerates in seconds to full bar!!
 	Param("StaminaRegenerationOutsideDanger", "IAL_Player_Stamina_Regen_Max");
-    Param("StaminaRegenerationFactorSlow", "0.0");               // factor when running or being on ladder
+    Param("StaminaRegenerationFactorSlow", "0.1");               // factor when running or being on ladder
 	Param("StaminaRegenerationFactorStand", "0.25");               // factor when standing still
 	Param("StaminaRegenerationFactorStandDalay", "1.0");               // factor when standing still
 	

@@ -1,29 +1,43 @@
-//I Am Legion Global Config
+////////////////\\\\\\\\\\\\\\\\\
+//- I Am Legion Global Config -\\
+////////////////\\\\\\\\\\\\\\\\\
 
-//PLAYER SETTINGS
-//Health
+////////////GAMEPLAY\\\\\\\\\\\\\\\\\\\
 
-//Stamina
+//LOOTING\\
+export int IAL_Loot_MultipleItems_LVL = 3; //Level that the player starts getting multiple items from loot
+export int IAL_Loot_MultipleItems_Amount = 2; //Number of items you recieve from MultipleItems_LVL
+
+//- PLAYER Settings -\\
+//- Health -\\
+
+//Stamina\\
 export float IAL_Player_Stamina = 0.80;
 export float IAL_Player_Stamina_Regen_Min = 1.20;
-export float IAL_Player_Stamina_Regen_Max = 1.20;
+export float IAL_Player_Stamina_Regen_Max = 2.00;
 export float IAL_Player_Stamina_Regen_TimeTo = 1.20;
-export float IAL_Player_Stamina_Drain = 1.0;
+export float IAL_Player_Stamina_Drain_Rate = 1.0;
 export float IAL_Player_Stamina_Drain_FromHit = 0.1;
 
-//Running Settings
+//Running Settings\\
 export float IAL_Run_FOV_Focus = 4.0;
 export int IAL_Run_VisualEffects = 0;
 export int IAL_Run_Headbob = 1;
 
-//Survivor Sense Settings
+//Swimming Settings\\
+export int IAL_Swimming_HoldBreath_Secs = 30;
+export float IAL_Swimming_StaminaDrain = 0.15;
+export bool IAL_Swimming_Sprint = TRUE;
+
+//Survivor Sense Settings\\
+export bool IAL_SurvivorSense_WhileMoving = FALSE;
 export float IAL_SurvivorSense_Cooldown = 0.5;
 export float IAL_SurvivorSense_Range = 20.0;
 export float IAL_SurvivorSense_Opacity = 0.7;
 export float IAL_SurvivorSense_DetectionTime_AI = 6.0;
 export float IAL_SurvivorSense_DetectionTime_BehindPlayer = 3.0;
 
-//Camoflage Settings
+//Camoflage Settings\\
 export int IAL_Camo_Actions_CanRun = 1;
 export int IAL_Camo_Actions_CanAttack = 1;
 export float IAL_Camo_RemoveRate_Flashlight = 0.5;
@@ -32,12 +46,12 @@ export float IAL_Camo_RemoveRate_AirTime = 0.1;
 export float IAL_Camo_RemoveRate_Shoot = 0.5;
 export int IAL_Camo_RemoveRate_Water = 40;
 
-
-//WEAPON SETTINGS
+//- WEAPON Settings -\\
+//GENERAL SETTINGS\\
 export bool IAL_AutoAim = FALSE;
 export float IAL_Crossbow_Sway = 0.2;
 
-//Bow
+//Bow\\
 export float IAL_Bow_Sway = 0.2;
 export int IAL_Bow_Zoom_DisableOnReload = 1;
 export int IAL_Bow_Zoom_Enabled = 0;
@@ -46,16 +60,18 @@ export float IAL_Bow_Stamina_OnFire = 0.3;
 export float IAL_Bow_Stamina_Charging = 0.125;
 export float IAL_Bow_TimeBeforeShoot = 0.125;
 export float IAL_Bow_TimeBeforeAutoRelease = 2.125;
+export bool IAL_Bow_Arrow_Penetration = FALSE;
 
-//NIGHT Experience
+//NIGHT Experience Settings\\
 export float IAL_Night_XP_Actions_Reward = 1.0;
 export float IAL_Night_XP_Looted_Reward = 5.0;
 export float IAL_Night_XP_Unspotted_Reward = 1.7;
 export int IAL_Night_XP_Combat_Reward = 20;
 
-//SPAWN AND DENSITY (scripts/densitiessettings.scr)
+////////////SPAWN AND DENSITY\\\\\\\\\\\\\\\\\\\
+//- LOCATION - (scripts/densitiesSettings.scr) -----\\
 //This is the Day Time density average for all groups
-//Daytime - Ultimate Survivor = 3.0, Survivor = 3.5, Casual Survivor = 2.5, FPS Optimized = 5.0
+//- Daytime - Ultimate Survivor = 3.0, Survivor = 3.5, Casual Survivor = 2.5, FPS Optimized = 5.0
 export float IAL_Density_Day = 1.0;
 export float IAL_Density_Day_Easy = 1.0;
 export float IAL_Density_Day_Medium = 1.0;
@@ -63,8 +79,8 @@ export float IAL_Density_Day_Hard = 1.0;
 export float IAL_Density_Day_Flooded = 1.0;
 export float IAL_Density_Day_HUBOWA = 1.0; 
 
-//This is the Night Time density average for all groups
-//NightTime - Ultimate Survivor = 2.0, Survivor = 2.5, Casual Survivor = 1.5, FPS Optimized = 4.0
+//This is the Night Time density average for all groups\\
+//- NightTime - Ultimate Survivor = 2.0, Survivor = 2.5, Casual Survivor = 1.5, FPS Optimized = 4.0
 export float IAL_Density_Night = 1.0;
 export float IAL_Density_Night_Easy = 1.0;
 export float IAL_Density_Night_Medium = 1.0;
@@ -72,27 +88,25 @@ export float IAL_Density_Night_Hard = 0.5;
 export float IAL_Density_Night_Flooded = 1.0;
 export float IAL_Density_Night_HUBOWA = 1.0;
 
-//SPAWN LOGIC
+//- SPAWN LOGIC -\\
 export float IAL_Special_SpawnDistance_min = 10.0;
 export float IAL_Special_SpawnDistance_max = 40.0;
+////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
-//AI DIFFICULTY SETTINGS(scripts/factions/zonelevels.scr)
-//This setting changes the max level of the zones leading up to the ending
-export int IAL_AI_Early_Zones_min_Lvl = 2;
-export int IAL_AI_Early_Zones_max_Lvl = 9;
-export int IAL_AI_City_Zones_min_Lvl = 3;
-export int IAL_AI_City_Zones_max_Lvl = 9;
-export int IAL_AI_Flooded_Zones_min_Lvl = 5;
-export int IAL_AI_Flooded_Zones_max_Lvl = 9;
-export int IAL_AI_Endgame_Zones_min_Lvl = 5;
-export int IAL_AI_Endgame_Zones_max_Lvl = 9;
+////////////AI DIFFICULTY\\\\\\\\\\\\\\\\\\\
+//- Infected Damage -\\
+//BITER\\
+export string IAL_Biter_Swip_DMG_Percent = "4%-40% of MaxHealth"; //Total percent of health
+export string IAL_Biter_GrabBite_DMG_Percent = "70% of MaxHealth";
+export int IAL_Biter_Fist_DMG_Boost = 70;
 
-
-//AI DIFFICULTY SETTINGS(ailife/areasettings.scr)
+//- AI ENCOUNTER Settings -\\
+//- LOCATION - (ailife/areaSettings.scr) -----\\
 export string IAL_AI_Encounter_Difficulty_Lvl = "Easy";
 
-//SPAWNED LEVELS FOR AI
+//- GENERAL SPAWN LEVELS FOR AI -\\
+//Change the min and max values here to add additional variation to the levels spawned ingame\\
 export string IAL_AI_TIER_1_Min = "Tier_1";
 export string IAL_AI_TIER_1_Max = "Tier_2";
 export string IAL_AI_TIER_2_Min = "Tier_2";
@@ -112,8 +126,20 @@ export string IAL_AI_TIER_8_Max = "Tier_9";
 export string IAL_AI_TIER_9_Min = "Tier_9";
 export string IAL_AI_TIER_9_Max = "Tier_9";
 
+//- AI SPAWN SETTINGS BY ZONE -\\
+//- LOCATION - (scripts/factions/zonelevels.scr) -----\\
+//These settings change the max level of the AI in zones leading up to the ending\\
+export int IAL_AI_Early_Zones_min_Lvl = 2;
+export int IAL_AI_Early_Zones_max_Lvl = 9;
+export int IAL_AI_City_Zones_min_Lvl = 3;
+export int IAL_AI_City_Zones_max_Lvl = 9;
+export int IAL_AI_Flooded_Zones_min_Lvl = 5;
+export int IAL_AI_Flooded_Zones_max_Lvl = 9;
+export int IAL_AI_Endgame_Zones_min_Lvl = 5;
+export int IAL_AI_Endgame_Zones_max_Lvl = 9;
 
-//INFECTED Difficulty Tiers
+//These settings change the max level of the AI's gear in zones leading up to the ending\\
+//- INFECTED Difficulty Tiers Settings -\\
 export string IAL_AI_Infected_Early_Zones_Lvl_Min = "Tier_1";
 export string IAL_AI_Infected_Early_Zones_Lvl_Max = "Tier_9";
 export string IAL_AI_Infected_City_Zones_Lvl_Min = "Tier_3";
@@ -125,7 +151,7 @@ export string IAL_AI_Infected_Flooded_Zones_Lvl_Max = "Tier_9";
 export string IAL_AI_Infected_Darkzone_Zones_Lvl_Min = "Tier_6";
 export string IAL_AI_Infected_Darkzone_Zones_Lvl_Max = "Tier_9";
 
-//INFECTED ENDGAME Difficulty Tiers
+//- INFECTED ENDGAME Difficulty Tiers Settings -\\
 export string IAL_AI_Infected_Early_Zones_Endgame_Lvl_Min = "Tier_6";
 export string IAL_AI_Infected_Early_Zones_Endgame_Lvl_Max = "Tier_9";
 export string IAL_AI_Infected_City_Zones_Endgame_Lvl_Min = "Tier_7";
@@ -139,7 +165,7 @@ export string IAL_AI_Infected_Flooded_Zones_Endgame_Lvl_Max = "Tier_9";
 export string IAL_AI_Infected_Epilogue_Lvl_Min = "Tier_8";
 export string IAL_AI_Infected_Epilogue_Lvl_Max = "Tier_9";
 
-//HUMAN GANG Difficulty Tiers
+//- HUMAN GANG Difficulty Tiers Settings -\\
 export string IAL_AI_Encounter_Difficulty_Bloodgang_Lvl_Min = "Tier_5";
 export string IAL_AI_Encounter_Difficulty_Bloodgang_Lvl_Max = "Tier_9";
 export string IAL_AI_Encounter_Difficulty_Skyscraper_Lvl_Min = "Tier_5";
@@ -153,51 +179,26 @@ export string IAL_AI_Encounter_Difficulty_Military_Lvl_Max = "Tier_9";
 export string IAL_AI_Encounter_Difficulty_Chemicals_Lvl_Min = "Tier_5";
 export string IAL_AI_Encounter_Difficulty_Chemicals_Lvl_Max = "Tier_9";
 
+////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-//AI FALL HEIGHTS(ai/modulesparams/collisionmodulehumanpresets.scr)
-export float IAL_AI_FallHeight_ImmediateKill = 15.0;
 
-export float IAL_AI_FallHeight_Human_ImmediateKill = 15.0;
-export float IAL_AI_FallHeight_Human_MinDmg = 10.0;
-export float IAL_AI_FallHeight_Human_MaxDmg = 50.0;
-
-export float IAL_AI_FallHeight_Infected_ImmediateKill = 14.0;
-export float IAL_AI_FallHeight_Infected_MinDmg = 5.0;
-export float IAL_AI_FallHeight_Infected_MaxDmg = 50.0;
-
-export float IAL_AI_FallHeight_InfectedLarge_ImmediateKill = 13.0;
-export float IAL_AI_FallHeight_InfectedLarge_MinDmg = 10.0;
-export float IAL_AI_FallHeight_InfectedLarge_MaxDmg = 75.0;
-
-export float IAL_AI_FallHeight_Volatile_ImmediateKill = 20.0;
-export float IAL_AI_FallHeight_Volatile_MinDmg = 10.0;
-export float IAL_AI_FallHeight_Volatile_MaxDmg = 75.0;
-
-export float IAL_AI_FallHeight_AlphaZombie_ImmediateKill = 30.0;
-export float IAL_AI_FallHeight_AlphaZombie_MinDmg = 100.0;
-export float IAL_AI_FallHeight_AlphaZombie_MaxDmg = 150.0;
-
-//INFECTED LOGIC
-//AI CROWD SETTINGS(ai/ai_manager.scr)
-export int IAL_AI_DistanceToReact_Explosion_Min = 30;
-export int IAL_AI_DistanceToReact_Explosion_Max = 120;
-
-//CHASE SYSTEM ((ai/chasedata/chase_base_data.scr)
+////////////CHASE SYSTEM\\\\\\\\\\\\\\\\\\\ 
+//- LOCATION - (ai/chasedata/chase_base_data.scr) -----\\
 //Chase Data for the night intensity after Chase begins
 //Delay before Zombies start Chasing you
 export int IAL_Chase_InitialDelay = 2;
 
-//Point increase on chase based on infected class - GENERAL Settings
+//Point increase on chase based on infected class - GENERAL Settings\\
 export int IAL_Chase_PointsPerSecondIfSeen_Viral_Close = 3;
 export int IAL_Chase_PointsPerSecondIfSeen_Viral_Far = 2;
 export int IAL_Chase_PointsPerSecondIfSeen_Screamer_Close = 8;
 export int IAL_Chase_PointsPerSecondIfSeen_Screamer_Far = 6;
 export int IAL_Chase_PointsPerSecondIfSeen_Screamer_Screaming = 15;
 
-//Range for the screamers screen to cause chase points to increase
+//Range for the screamers screen to cause chase points to increase\\
 export int IAL_Chase_MaxRangeForScreamer = 20;
 
-//Time before chase ends
+//Time before chase ends\\
 export int IAL_Chase_LVL1_ChaseEndDelay = 15;
 export int IAL_Chase_LVL2_ChaseEndDelay = 25;
 export int IAL_Chase_LVL3_ChaseEndDelay = 30;
@@ -208,18 +209,18 @@ export int IAL_Chase_LVL2_ChaseEndUnderUVDelay = 25;
 export int IAL_Chase_LVL3_ChaseEndUnderUVDelay = 30;
 export int IAL_Chase_LVL4_ChaseEndUnderUVDelay = 50;
 
-//These are the amount of points required to move to next levels in chase
+//These are the amount of points required to move to next levels in chase\\
 export int IAL_Chase_UpgradePoints_ToLVL2 = 50;
 export int IAL_Chase_UpgradePoints_ToLVL3 = 175;
 export int IAL_Chase_UpgradePoints_ToLVL4 = 225;
 
-//Time before the chase ends after the player is lost by AI
+//Time before the chase ends after the player is lost by AI\\
 export int IAL_Chase_LVL1_LostPlayer_TimeBeforeEndChase = 30;
 export int IAL_Chase_LVL2_LostPlayer_TimeBeforeEndChase = 30;
 export int IAL_Chase_LVL3_LostPlayer_TimeBeforeEndChase = 30;
 export int IAL_Chase_LVL4_LostPlayer_TimeBeforeEndChase = 30;
 
-//Number of Infected based on Chase Points - SINGLE PLAYER
+//Number of Infected based on Chase Points - SINGLE PLAYER\\
 export int IAL_Chase_LVL1_Avg_Virals = 8;
 export int IAL_Chase_LVL1_Max_Virals = 12;
 export int IAL_Chase_LVL2_Avg_Virals = 12;
@@ -238,7 +239,7 @@ export int IAL_Chase_LVL3_Max_Volatiles = 6;
 export int IAL_Chase_LVL4_Avg_Volatiles = 8;
 export int IAL_Chase_LVL4_Max_Volatiles = 10;
 	
-//Number of Infected based on Chase Points - COOP
+//Number of Infected based on Chase Points - COOP\\
 export int IAL_Chase_Coop_LVL1_Virals_Close = 12;
 export int IAL_Chase_Coop_LVL1_Virals_Far = 15;
 export int IAL_Chase_Coop_LVL2_Virals_Close = 18;
@@ -257,11 +258,11 @@ export int IAL_Chase_Coop_LVL3_Volatiles_Far = 7;
 export int IAL_Chase_Coop_LVL4_Volatiles_Close = 10;
 export int IAL_Chase_Coop_LVL4_Volatiles_Far = 12;
 
-//CHASE GENERAL SETTINGS - COOP
+//CHASE GENERAL COOP Settings\\
 export int IAL_Chase_Coop_Range_Far = 80;
 export int IAL_Chase_Coop_Range_Close = 40;
 
-//Intensity times and cooldowns
+//Intensity times and cooldowns\\
 export int IAL_Chase_LVL1_High_Intensity_Time = 40;
 export int IAL_Chase_LVL2_High_Intensity_Time = 80;
 export int IAL_Chase_LVL3_High_Intensity_Time = 120;
@@ -269,14 +270,21 @@ export int IAL_Chase_LVL3_High_Intensity_Time = 120;
 export int IAL_Chase_LVL1_High_Intensity_Cooldown = 10;
 export int IAL_Chase_LVL2_High_Intensity_Cooldown = 8;
 export int IAL_Chase_LVL3_High_Intensity_Cooldown = 6;
-	
 
-//IAL DAMAGE MODIFIER
-//GENERAL MODIFIER
+//CHASE DAMAGE MODIFIER\\
+export float IAL_Night_Aggression_Dmg_Multi_LVL1 = 0.1;
+export float IAL_Night_Aggression_Dmg_Multi_LVL2 = 0.2;
+export float IAL_Night_Aggression_Dmg_Multi_LVL3 = 0.75;
+export float IAL_Night_Aggression_Dmg_Multi_LVL4 = 1.5;	
+////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+////////////DAMAGE MODIFIERS\\\\\\\\\\\\\\\\\\\
+//GENERAL MODIFIER\\
 export float IAL_Overall_Dmg_To_Player = 1.0;
 export float IAL_Overall_Fall_Dmg_To_Player = 1.5;
 
-//ARMOR
+//ARMOR\\
 export int IAL_Armor_Blunt_Dmg_Tier_1 = 6;
 export int IAL_Armor_Blunt_Dmg_Tier_2 = 12;
 export int IAL_Armor_Blunt_Dmg_Tier_3 = 16;
@@ -313,7 +321,7 @@ export int IAL_Armor_Electricity_Dmg_Tier_3 = 3;
 export int IAL_Armor_Electricity_Dmg_Tier_4 = 5;
 export int IAL_Armor_Electricity_Dmg_Tier_5 = 10;
 
-//WEAPONS
+//WEAPONS\\
 export float IAL_Weapons_Blunt_Dmg_Tier_0 = 0.025;
 export float IAL_Weapons_Blunt_Dmg_Tier_1 = 0.0375;
 export float IAL_Weapons_Blunt_Dmg_Tier_2 = 0.05;
@@ -331,21 +339,37 @@ export float IAL_Weapons_Physical_Dmg_Tier_1 = 0.0375;
 export float IAL_Weapons_Physical_Dmg_Tier_2 = 0.05;
 export float IAL_Weapons_Physical_Dmg_Tier_3 = 0.06;
 export float IAL_Weapons_Physical_Dmg_Tier_4 = 0.07;
+////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-//Infected
 
-//BITER
-export string IAL_Biter_Swip_DMG_Percent = "4%-40% of MaxHealth"; //Total percent of health
-export string IAL_Biter_GrabBite_DMG_Percent = "70% of MaxHealth";
-export int IAL_Biter_Fist_DMG_Boost = 70;
+////////////AI BEHAVIOR Settings\\\\\\\\\\\\\\\\\\\
+//- LOCATION - (ai/modulesparams/collisionmodulehumanpresets.scr) -----\\
+export float IAL_AI_FallHeight_ImmediateKill = 15.0;
 
-//CHASE DAMAGE MODIFIER
-export float IAL_Night_Aggression_Dmg_Multi_LVL1 = 0.1;
-export float IAL_Night_Aggression_Dmg_Multi_LVL2 = 0.2;
-export float IAL_Night_Aggression_Dmg_Multi_LVL3 = 0.75;
-export float IAL_Night_Aggression_Dmg_Multi_LVL4 = 1.5;
+export float IAL_AI_FallHeight_Human_ImmediateKill = 15.0;
+export float IAL_AI_FallHeight_Human_MinDmg = 10.0;
+export float IAL_AI_FallHeight_Human_MaxDmg = 50.0;
 
-//EXPLOSIVES MODIFIERS
+export float IAL_AI_FallHeight_Infected_ImmediateKill = 14.0;
+export float IAL_AI_FallHeight_Infected_MinDmg = 5.0;
+export float IAL_AI_FallHeight_Infected_MaxDmg = 50.0;
+
+export float IAL_AI_FallHeight_InfectedLarge_ImmediateKill = 13.0;
+export float IAL_AI_FallHeight_InfectedLarge_MinDmg = 10.0;
+export float IAL_AI_FallHeight_InfectedLarge_MaxDmg = 75.0;
+
+export float IAL_AI_FallHeight_Volatile_ImmediateKill = 20.0;
+export float IAL_AI_FallHeight_Volatile_MinDmg = 10.0;
+export float IAL_AI_FallHeight_Volatile_MaxDmg = 75.0;
+
+export float IAL_AI_FallHeight_AlphaZombie_ImmediateKill = 30.0;
+export float IAL_AI_FallHeight_AlphaZombie_MinDmg = 100.0;
+export float IAL_AI_FallHeight_AlphaZombie_MaxDmg = 150.0;
+////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+////////////EXPLOSIVES\\\\\\\\\\\\\\\\\\\
+//These settings effect the different explosive types in the game and their reactions\\
 export float IAL_Explosive_Tank_ExplosionDelay = 5.000000;
 export float IAL_Explosive_Tank_Range = 6.0;
 
@@ -363,3 +387,19 @@ export int IAL_Explosive_ExplosiveBarrel_ExplosionDelay = 0;
 export int IAL_Explosive_ExplosiveBarrel_Damage = 350;
 export int IAL_Explosive_ExplosiveBarrel_Range = 10;
 export float IAL_Explosive_ExplosiveBarrel_Physics = 2.05;
+
+//AI EXPLOSIVE REACTION Settings -\\
+//- LOCATION - (ai/ai_manager.scr) -----\\
+export int IAL_AI_DistanceToReact_Explosion_Min = 70;
+export int IAL_AI_DistanceToReact_Explosion_Max = 120;
+
+////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+
+
+
+////////////CHEATS\\\\\\\\\\\\\\\\\\\
+export int IAL_GhostMode = 0; //Great for screenshots
+export bool IAL_InfiniteStamina = FALSE; //Never get tired
+////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

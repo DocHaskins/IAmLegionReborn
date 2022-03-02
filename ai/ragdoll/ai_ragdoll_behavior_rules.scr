@@ -1,0 +1,81 @@
+import "hit_reaction.def"
+
+export string ERagdollHitPart_Head = "Head";
+export string ERagdollHitPart_Torso = "Torso";
+export string ERagdollHitPart_Legs = "Legs";
+
+export string EImpactDirection_Left = "Left";
+export string EImpactDirection_Right = "Right";
+export string EImpactDirection_Forward = "Forward";
+export string EImpactDirection_Backward = "Backward";
+export string EImpactDirection_ForwardLeft = "Forward_Left";
+export string EImpactDirection_BackwardLeft = "Backward_Left";
+export string EImpactDirection_ForwardRight = "Forward_Right";
+export string EImpactDirection_BackwardRight = "Backward_Right";
+
+export string Any = "";
+
+export string EReactionType_Any = Any;
+export string EReactionContext_Any = Any;
+export string EHitSeverity_Any = Any;
+export string EMoveSeverity_Any = Any;
+export string ERagdollHitPart_Any = Any;
+export string EImpactDirection_Any = Any;
+
+sub Datas()
+{
+    //Sharp weapons
+    Data(EReactionType_Cut, EReactionContext_MeleeWeapon, EHitSeverity_Any, EMoveSeverity_Any, ERagdollHitPart_Head, EImpactDirection_Left,     "cut_melee_weapon_UB_left@ai_ragdoll_behavior_presets.scr");
+    Data(EReactionType_Cut, EReactionContext_MeleeWeapon, EHitSeverity_Any, EMoveSeverity_Any, ERagdollHitPart_Head, EImpactDirection_Right,    "cut_melee_weapon_UB_right@ai_ragdoll_behavior_presets.scr");
+    Data(EReactionType_Cut, EReactionContext_MeleeWeapon, EHitSeverity_Any, EMoveSeverity_Any, ERagdollHitPart_Torso, EImpactDirection_Left,    "cut_melee_weapon_UB_left@ai_ragdoll_behavior_presets.scr");
+    Data(EReactionType_Cut, EReactionContext_MeleeWeapon, EHitSeverity_Any, EMoveSeverity_Any, ERagdollHitPart_Torso, EImpactDirection_Right,   "cut_melee_weapon_UB_right@ai_ragdoll_behavior_presets.scr"); 
+    Data(EReactionType_Cut, EReactionContext_MeleeWeapon, EHitSeverity_Any, EMoveSeverity_Any, ERagdollHitPart_Legs, EImpactDirection_Left,     "cut_melee_weapon_legs_left@ai_ragdoll_behavior_presets.scr");
+    Data(EReactionType_Cut, EReactionContext_MeleeWeapon, EHitSeverity_Any, EMoveSeverity_Any, ERagdollHitPart_Legs, EImpactDirection_Right,    "cut_melee_weapon_legs_right@ai_ragdoll_behavior_presets.scr");
+
+    Data(EReactionType_Cut, EReactionContext_MeleeWeapon, EHitSeverity_Any, EMoveSeverity_Any, ERagdollHitPart_Any, EImpactDirection_ForwardLeft,       "cut_melee_weapon_UB_left@ai_ragdoll_behavior_presets.scr");
+    Data(EReactionType_Cut, EReactionContext_MeleeWeapon, EHitSeverity_Any, EMoveSeverity_Any, ERagdollHitPart_Any, EImpactDirection_BackwardLeft,      "cut_melee_weapon_UB_left@ai_ragdoll_behavior_presets.scr");
+    Data(EReactionType_Cut, EReactionContext_MeleeWeapon, EHitSeverity_Any, EMoveSeverity_Any, ERagdollHitPart_Any, EImpactDirection_ForwardRight,      "cut_melee_weapon_UB_right@ai_ragdoll_behavior_presets.scr");
+    Data(EReactionType_Cut, EReactionContext_MeleeWeapon, EHitSeverity_Any, EMoveSeverity_Any, ERagdollHitPart_Any, EImpactDirection_BackwardRight,     "cut_melee_weapon_UB_right@ai_ragdoll_behavior_presets.scr");
+    Data(EReactionType_Cut, EReactionContext_MeleeWeapon, EHitSeverity_Any, EMoveSeverity_Any, ERagdollHitPart_Any, EImpactDirection_Forward,           "cut_melee_weapon_UB_left@ai_ragdoll_behavior_presets.scr");
+    Data(EReactionType_Cut, EReactionContext_MeleeWeapon, EHitSeverity_Any, EMoveSeverity_Any, ERagdollHitPart_Any, EImpactDirection_Backward,          "cut_melee_weapon_UB_right@ai_ragdoll_behavior_presets.scr");
+
+    //Blunt weapons
+    Data(EReactionType_Blunt, EReactionContext_MeleeWeapon, EHitSeverity_Any, EMoveSeverity_Any, ERagdollHitPart_Any, EImpactDirection_Left,          "blunt_melee_weapon_left@ai_ragdoll_behavior_presets.scr");
+    Data(EReactionType_Blunt, EReactionContext_MeleeWeapon, EHitSeverity_Any, EMoveSeverity_Any, ERagdollHitPart_Any, EImpactDirection_ForwardLeft,   "blunt_melee_weapon_left@ai_ragdoll_behavior_presets.scr");
+    Data(EReactionType_Blunt, EReactionContext_MeleeWeapon, EHitSeverity_Any, EMoveSeverity_Any, ERagdollHitPart_Any, EImpactDirection_BackwardLeft,  "blunt_melee_weapon_left@ai_ragdoll_behavior_presets.scr");
+    Data(EReactionType_Blunt, EReactionContext_MeleeWeapon, EHitSeverity_Any, EMoveSeverity_Any, ERagdollHitPart_Any, EImpactDirection_Right,         "blunt_melee_weapon_right@ai_ragdoll_behavior_presets.scr");
+    Data(EReactionType_Blunt, EReactionContext_MeleeWeapon, EHitSeverity_Any, EMoveSeverity_Any, ERagdollHitPart_Any, EImpactDirection_ForwardRight,  "blunt_melee_weapon_right@ai_ragdoll_behavior_presets.scr");
+    Data(EReactionType_Blunt, EReactionContext_MeleeWeapon, EHitSeverity_Any, EMoveSeverity_Any, ERagdollHitPart_Any, EImpactDirection_BackwardRight, "blunt_melee_weapon_right@ai_ragdoll_behavior_presets.scr");
+    Data(EReactionType_Blunt, EReactionContext_MeleeWeapon, EHitSeverity_Any, EMoveSeverity_Any, ERagdollHitPart_Any, EImpactDirection_Backward,      "blunt_melee_weapon_right@ai_ragdoll_behavior_presets.scr");
+    Data(EReactionType_Blunt, EReactionContext_MeleeWeapon, EHitSeverity_Any, EMoveSeverity_Any, ERagdollHitPart_Any, EImpactDirection_Forward,       "blunt_melee_weapon_left@ai_ragdoll_behavior_presets.scr");
+
+    //Explosions
+    Data(EReactionType_Blast, EReactionContext_Any, EHitSeverity_Any, EMoveSeverity_Any, ERagdollHitPart_Any, EImpactDirection_Any,             "explosion@ai_ragdoll_behavior_presets.scr");
+
+    //Arrow
+    Data(EReactionType_Stab, EReactionContext_RangedWeapon, EHitSeverity_Light, EMoveSeverity_Any, ERagdollHitPart_Any, EImpactDirection_Any,   "light_stab@ai_ragdoll_behavior_presets.scr");
+
+     //Thrown Spear - bow charged shot
+    Data(EReactionType_Stab, EReactionContext_RangedWeapon, EHitSeverity_Medium, EMoveSeverity_Any, ERagdollHitPart_Any, EImpactDirection_Any,  "medium_stab@ai_ragdoll_behavior_presets.scr");
+
+    //BoltCannon
+    Data(EReactionType_Stab, EReactionContext_RangedWeapon, EHitSeverity_Heavy, EMoveSeverity_Any, ERagdollHitPart_Any, EImpactDirection_Any,   "heavy_stab@ai_ragdoll_behavior_presets.scr");
+
+    //Kick from Parkour : currently using the same behaviors, but the volumetric damages set different physics mul (from inventory)
+    //Kick - Medium
+    Data(EReactionType_Push, EReactionContext_Melee, EHitSeverity_Medium, EMoveSeverity_Medium, ERagdollHitPart_Any, EImpactDirection_Any,      "parkour_kick_medium@ai_ragdoll_behavior_presets.scr");
+    //Parkour Kick Ragdoll - Medium
+    Data(EReactionType_Blunt, EReactionContext_Melee, EHitSeverity_Light, EMoveSeverity_Medium, ERagdollHitPart_Any, EImpactDirection_Any,      "parkour_kick_medium@ai_ragdoll_behavior_presets.scr");
+    //Kick - Heavy
+    Data(EReactionType_Push, EReactionContext_Melee, EHitSeverity_Medium, EMoveSeverity_Heavy, ERagdollHitPart_Any, EImpactDirection_Any,       "parkour_kick_heavy@ai_ragdoll_behavior_presets.scr");
+    //Kick - Wrestle
+    Data(EReactionType_Push, EReactionContext_Melee, EHitSeverity_Heavy, EMoveSeverity_Heavy, ERagdollHitPart_Any, EImpactDirection_Any,        "parkour_kick_heavy@ai_ragdoll_behavior_presets.scr");
+    //Fury - Fists
+    Data(EReactionType_Blunt, EReactionContext_Melee, EHitSeverity_Heavy, EHitSeverity_Heavy, ERagdollHitPart_Any, EImpactDirection_Any,        "parkour_kick_heavy@ai_ragdoll_behavior_presets.scr");
+
+    //Fall ragdoll (for instance after grapple throw)
+    Data(EReactionType_Push, EReactionContext_Melee, EHitSeverity_Any, EMoveSeverity_Any, ERagdollHitPart_Any, EImpactDirection_Any,            "fall@ai_ragdoll_behavior_presets.scr");
+
+    //Failsafe
+    Data(EReactionType_Any, EReactionContext_Any, EHitSeverity_Any, EMoveSeverity_Any, ERagdollHitPart_Any, EImpactDirection_Any,               "default@ai_ragdoll_behavior_presets.scr");
+}

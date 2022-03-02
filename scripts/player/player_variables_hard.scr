@@ -1,0 +1,32 @@
+import "player_variables.scr"
+
+sub PlayerVariables()
+{
+    use main();
+
+    Param("PlayerDamageVulnerability", "Player_DamageVulnerability_Hard");
+    Param("PlayerFallDamageVulnerability", "Player_FallDamageVulnerability_Hard");
+
+    Param("WeaponStaminaUsageMul", "1.5");
+    Param("StaminaRegenerationMul", "0.75");
+
+    Param("PerfectBlockTimingEnd", "0.15");
+
+    Param("HealthRegenerationMaxLevel", "HealthRegenerationMaxLevel_Hard");
+    //Param("HealthRegenerationMul", "DefaultRegenHardMul");
+	Param("HealthCriticalLevel", "0.25");
+	Param("MaxAutoRegenHealthPercent", "25");
+	Param("LowHealthEffectThreshold", "0.95");                // Defines the value of health when critical health post process is working, based on HealthCriticalLevel
+    Param("HealthRegenerationDelay", "10.0");
+	
+	Param("ActiveLandingMaxInputTime", "0.2");
+    Param("ActiveLandingMinInputTime", "0.5");
+	
+	Param("BlockHeavyAttackStaminaCost", "0.25");
+	
+	Param("DifficultySyncActionDamageMul", "1.5");
+    Param("DifficultyItemDamageMul", "1.5");	
+	Param("DifficultyRangedHeadDamageMul", "1.5");
+	Param("SpecialMoveAbusePenaltyCount", "1.0"); // max time the AI will avoid the move
+	Param("DropAttackMaxFallHeight", "15.0"); // block using jump attack after faling from 15 meters
+}

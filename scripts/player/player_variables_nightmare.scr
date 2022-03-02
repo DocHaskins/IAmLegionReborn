@@ -1,0 +1,31 @@
+import "player_variables.scr"
+
+sub PlayerVariables()
+{
+    use main();
+
+    Param("PlayerDamageVulnerability", "Player_DamageVulnerability_Hard");
+    Param("PlayerFallDamageVulnerability", "Player_FallDamageVulnerability_Hard");
+
+    Param("WeaponStaminaUsageMul", "1.25");
+    Param("StaminaRegenerationMul", "0.75");
+
+    Param("PerfectBlockTimingEnd", "0.15");
+
+    Param("MeleeWpnDurabilityMulReduce", "1.25");
+
+    Param("HealthRegenerationMaxLevel", "HealthRegenerationMaxLevel_Hard");
+    Param("HealthRegenerationMul", "DefaultRegenHardMul");
+
+    Param("HealthRegenerationEnabled", "false");
+
+    Param("InjectorDescSuffix", "_Nightrunner");
+	Param("ActiveLandingMaxInputTime", "0.2");
+    Param("ActiveLandingMinInputTime", "0.5");
+	
+	Param("BlockHeavyAttackStaminaCost", "0.25");
+	
+	Param("DifficultySyncActionDamageMul", "1.5");
+    Param("DifficultyItemDamageMul", "1.5");	
+	Param("DifficultyRangedHeadDamageMul", "1.5");
+}

@@ -4,7 +4,7 @@ import "Inventory_Infected.scr"
 import "Inventory_EasterEggs.scr"
 import "faction_exports.scr"
 import "inventory_weapondefintions.scr"
-
+import "ial_settings.mth"
 
 sub main()
 {
@@ -127,8 +127,8 @@ sub main()
 		DamagePresetName("Combat_Interactable_Bottle");
         Force(10.0);
         DamageToPhysicsObjects(100.0);
-		EnabledAutoAim(false);
-		EnabledAutoAimTarget(false);
+		EnabledAutoAim(IAL_AutoAim);
+		EnabledAutoAimTarget(IAL_AutoAim);
 		RotationVel(400.0, 0.0, 0.0);
 
         ExplodeDelay(0.01);
@@ -184,8 +184,8 @@ sub main()
 		AiHitSound("brick");
         Force(0.0);
         DamageToPhysicsObjects(100.0);
-		EnabledAutoAim(false);
-		EnabledAutoAimTarget(false);
+		EnabledAutoAim(IAL_AutoAim);
+		EnabledAutoAimTarget(IAL_AutoAim);
 		
         ExplodeDelay(0.01);
         ExplodeOnCollision(true);
@@ -642,8 +642,8 @@ sub main()
         TierSpread(1, 3);
         InWorldScale(1.0);
 		SynchroMovementOnAttack(true);
-		EnabledAutoAim(false);
-		EnabledAutoAimTarget(false);
+		EnabledAutoAim(IAL_AutoAim);
+		EnabledAutoAimTarget(IAL_AutoAim);
 		TwoHanded(true);
 		HandInertiaRotFactor([0.25,1.0,1.0]);
 		HandInertiaFactor(0.8);
@@ -735,8 +735,8 @@ sub main()
         TierSpread(1, 3);
         InWorldScale(1.0);
         SynchroMovementOnAttack(true);
-        EnabledAutoAim(false);
-        EnabledAutoAimTarget(false);
+        EnabledAutoAim(IAL_AutoAim);
+        EnabledAutoAimTarget(IAL_AutoAim);
         TwoHanded(true);
         HandInertiaRotFactor([0.25,1.0,1.0]);
         HandInertiaFactor(0.8);        
@@ -827,8 +827,8 @@ sub main()
         TierSpread(1, 3);
         InWorldScale(1.0);
         SynchroMovementOnAttack(true);
-        EnabledAutoAim(false);
-        EnabledAutoAimTarget(false);
+        EnabledAutoAim(IAL_AutoAim);
+        EnabledAutoAimTarget(IAL_AutoAim);
         TwoHanded(true);
         HandInertiaRotFactor([0.25,1.0,1.0]);
         HandInertiaFactor(0.8);
@@ -920,7 +920,7 @@ sub main()
         TierSpread(1, 3);
         InWorldScale(1.0);
         SynchroMovementOnAttack(true);
-        EnabledAutoAim(false);
+        EnabledAutoAim(IAL_AutoAim);
         TwoHanded(true);
         HandInertiaRotFactor([0.25,1.0,1.0]);
         HandInertiaFactor(0.8);
@@ -1012,7 +1012,7 @@ sub main()
         TierSpread(1, 3);
         InWorldScale(1.0);
         SynchroMovementOnAttack(true);
-        EnabledAutoAim(false);
+        EnabledAutoAim(IAL_AutoAim);
         TwoHanded(true);
         HandInertiaRotFactor([0.25,1.0,1.0]);
         HandInertiaFactor(0.8);
@@ -1104,7 +1104,7 @@ sub main()
         TierSpread(1, 3);
         InWorldScale(1.0);
         SynchroMovementOnAttack(true);
-        EnabledAutoAim(false);
+        EnabledAutoAim(IAL_AutoAim);
         TwoHanded(true);
         HandInertiaRotFactor([0.25,1.0,1.0]);
         HandInertiaFactor(0.8);
@@ -1196,7 +1196,7 @@ sub main()
         TierSpread(1, 3);
         InWorldScale(1.0);
         SynchroMovementOnAttack(true);
-        EnabledAutoAim(false);
+        EnabledAutoAim(IAL_AutoAim);
         TwoHanded(true);
         HandInertiaRotFactor([0.25,1.0,1.0]);
         HandInertiaFactor(0.8);
@@ -1287,7 +1287,7 @@ sub main()
         TierSpread(1, 3);
         InWorldScale(1.0);
         SynchroMovementOnAttack(true);
-        EnabledAutoAim(false);
+        EnabledAutoAim(IAL_AutoAim);
         TwoHanded(true);
         HandInertiaRotFactor([0.25,1.0,1.0]);
         HandInertiaFactor(0.8);
@@ -1378,7 +1378,7 @@ sub main()
         TierSpread(1, 3);
         InWorldScale(1.0);
         SynchroMovementOnAttack(true);
-        EnabledAutoAim(false);
+        EnabledAutoAim(IAL_AutoAim);
         TwoHanded(true);
         HandInertiaRotFactor([0.25,1.0,1.0]);
         HandInertiaFactor(0.8);

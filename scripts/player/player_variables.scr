@@ -1,3 +1,4 @@
+import "ial_settings.mth"
 sub main()
 {
 	
@@ -11,8 +12,7 @@ sub main()
 	Param("WallRunFrontHeight", "1.5");
     Param("WallRunFrontMinAngleToStartAscend", "90");
     Param("WallRunFrontMinYVelToAscend", "1.0");    
-    
-    // WallRun Side
+
     // WallRun Side
     Param("WallRunSideEnabled", "false");
 	Param("WallRunSideMinAngleToStart", "-90.0");
@@ -68,19 +68,19 @@ sub main()
 	Param("DownedLookRestrMinVert", "-15.0");  
 	
 	// how much the weapon is swaying when aiming lower value - lower sway
-	Param("FirearmsCrossbowAccuracyFactor", "0.1");
+	Param("FirearmsCrossbowAccuracyFactor", "IAL_Crossbow_Sway");
 	// how much the bow is swaying when shotinglower value - lower sway
-    Param("BowAccuracyFactor", "0.1");
+    Param("BowAccuracyFactor", "IAL_Bow_Sway");
 	
     Param("MinTimeToGiveCollisionDamage", "0.27");
     Param("CanMeleeInAir", "1");
 	Param("BowBeginDurationFactor", "2.0");		
     Param("BowMaxSpeedFactor", "1.0");
     Param("BowPenetrationAddMaxSpeed", "1");
-    Param("BowStaminaShoot", "0.1");
-    Param("BowStaminaChargingPerSecond", "0.125");
+    Param("BowStaminaShoot", "IAL_Bow_Stamina_OnFire");
+    Param("BowStaminaChargingPerSecond", "IAL_Bow_Stamina_Charging");
 	Param("BowChargeDamageMul", "Player_BowChargeDamageMul");
-    Param("BowZoomValue", "2.5");
+    Param("BowZoomValue", "IAL_Bow_Zoom_Amount");
     Param("BowZoomUpTime", "1.0");
     Param("BowZoomDownTime", "0.5");
 	Param("BowEnableShootWhileParkouring", "true");
@@ -89,16 +89,16 @@ sub main()
 	Param("BowSwayPosTime" , "2.0");
 	Param("BowPutArrowDuration" , "0.5");
 	Param("BowAllowShootZoomFactor" , "0.0"); //#CS required
-	Param("BowPenetrationEnabled", "false");
+	Param("BowPenetrationEnabled", IAL_Bow_Arrow_Penetration);
 	Param("BowDestroyArrowWhenHit", "false"); //#CS required
-    Param("BowMinReadyTimeToShoot", "0.0");
+    Param("BowMinReadyTimeToShoot", "IAL_Bow_TimeBeforeShoot");
 	Param("BowAutoZoomTime", "-1.0");
     Param("BowZoomEnabled", "0");
 	Param("BowSlowMoTimeMul", "5.0");	
 	Param("BowSlowMoAccuracyMul", "0.25");	
 	Param("SlowMoDurationToCancel", "0.35");
 	Param("BowMaxThrowFactor", "0.65");	
-	Param("BowAutoReleaseTime", "-1.0");	
+	Param("BowAutoReleaseTime", "IAL_Bow_TimeBeforeAutoRelease");	
 	Param("BowMultiShotMinTimeToActivate", "-1.0");
 	
     Param("BowEnableDamageScalingByForce", "false");
@@ -133,10 +133,10 @@ sub main()
     Param("NightExpRequiredActions", "0.0");
     Param("NightExpRequiredTime", "4");
     Param("NightExpSurvivalConstantAward", "0");
-    Param("NightExpActionsReward", "1.0");
-    Param("NightExpLootedReward", "5.0");
-    Param("NightExpUnspotedReward", "1.7");
-    Param("NightExpKillReward", "20");
+    Param("NightExpActionsReward", "IAL_Night_XP_Actions_Reward");
+    Param("NightExpLootedReward", "IAL_Night_XP_Looted_Reward");
+    Param("NightExpUnspotedReward", "IAL_Night_XP_Unspotted_Reward");
+    Param("NightExpKillReward", "IAL_Night_XP_Combat_Reward");
     Param("NightExpPbActivatedReward", "50.0");
 
     Param("PickupTriggerCooldown", "-1.0");
@@ -169,16 +169,16 @@ sub main()
 	
     //Survivor sense	
 	Param("SurvivalSenseEnabled", "true");
-	Param("CanUseSenseWhenMoving", "true");
-	Param("SurvivorSenseCooldown", "0.5"); // sensor rest time in seconds   
+	Param("CanUseSenseWhenMoving", IAL_SurvivorSense_WhileMoving);
+	Param("SurvivorSenseCooldown", "IAL_SurvivorSense_Cooldown"); // sensor rest time in seconds   
     Param("SurvivorSensePreparationTime", "0.05"); // hold time required to 'load' survivor sense
 	
 		// Visual
-    Param("SurvivorSenseRange",        "20.0"); // Range of visualization of sonar 
-    Param("SurvivorSenseOpacity",      "1.0"); // Strength of visual effect set in range 0.0 - 1.0. It is a global variable that affects all visualizations. If you want to control the intensity of the effect per object/AI type use AlphaMax and AlhpaMin in survivor_sense_presets.scr
+    Param("SurvivorSenseRange",        "IAL_SurvivorSense_Range"); // Range of visualization of sonar 
+    Param("SurvivorSenseOpacity",      "IAL_SurvivorSense_Opacity"); // Strength of visual effect set in range 0.0 - 1.0. It is a global variable that affects all visualizations. If you want to control the intensity of the effect per object/AI type use AlphaMax and AlhpaMin in survivor_sense_presets.scr
     Param("SurvivorSenseWaveDuration", "3.0"); //[s] how long we will see the "wave" (player cant activate another wave until this one is finished)
     Param("SurvivorSenseIconDuration", "10.0"); //how long the objects icons will stay on screen
-    Param("SurvivorSenseAIDuration",   "10.0"); // how long AIs will be highlited
+    Param("SurvivorSenseAIDuration",   "IAL_SurvivorSense_DetectionTime_AI"); // how long AIs will be highlited
 
 		// Height
     Param("SurvivorSenseAIHeight",          "10.0"); //detection height for AIs
@@ -202,12 +202,12 @@ sub main()
     Param("SurvivorSenseRange_IconType_HideArea",    "20.0");
 
 		// detection ranges for AIs:
-	Param("SurvivorSenseAIRange", "20.0"); // range of detecting active AI
-    Param("SurvivorSenseRestingAIRange", "10.0"); // range of detecting sleeping AI
+	Param("SurvivorSenseAIRange", "IAL_SurvivorSense_Range"); // range of detecting active AI
+    Param("SurvivorSenseRestingAIRange", "6.0"); // range of detecting sleeping AI
 	
 		// Gui related
 	Param("SurvivorSenseAIIndicatorRange", "5.0"); //range of showing AI Indicators (shield icon)
-	Param("SurvivorSenseEnemyBehindPlayerMaxDistance", "15.0"); //maximum distance where enemies behind player are detected while using survivor sense
+	Param("SurvivorSenseEnemyBehindPlayerMaxDistance", "IAL_SurvivorSense_DetectionTime_BehindPlayer"); //maximum distance where enemies behind player are detected while using survivor sense
 	
 	    // survivor sense heavy attacks
     Param("SurvivorSenseHeavyAttacks", "false");
@@ -216,7 +216,7 @@ sub main()
     Param("SurvivorSenseHeavyAttacksPreset", "heavy_attack");
 	
     Param("GhostTriggerSearchRadius", "0.0"); //range of automatic presentation of interactive objects (containers/loot)    
-	Param("EnemyBehindPlayerMaxDistance", "10.0"); //maximum distance where enemies behind player are detected
+	Param("EnemyBehindPlayerMaxDistance", "IAL_SurvivorSense_DetectionTime_BehindPlayer"); //maximum distance where enemies behind player are detected
     
 	// binoculars icons ranges
     Param("BinocularsLevel", "0");
@@ -241,13 +241,13 @@ sub main()
     Param("FlashlightRangeFactorChangeTime", "0.5");  // Time for which FlashlightRangeFactorChangeSpeed has to be reached to enable range factor
 
     // Simulation sickness test
-    Param("FovSprintModif", "6.0");
-    Param("SplatsEnabled", "1");
+    Param("FovSprintModif", "IAL_Run_FOV_Focus");
+    Param("SplatsEnabled", "IAL_Run_VisualEffects");
     Param("ExhastedPPEnabled", "1");
-    Param("HeadBobFactor", "1" );    
+    Param("HeadBobFactor", "IAL_Run_Headbob" );    
 	Param("AmortizerJumpHelpTimer", "0.2");
     Param("CableMaxLength", "50.0");
-    Param("SpeedFxEnabled", "1");
+    Param("SpeedFxEnabled", "IAL_Run_VisualEffects");
     Param("SpeedPPEnabled", "1");
     Param("ElementalTimeDuration", "0.25");
     
@@ -263,7 +263,7 @@ sub main()
     Param("CanUseStick2Heavy", "1");                         //  with new character development player is able to use any weapon
     
 	Param("CanUseFirearms", "1");                            //  with new character development player is able to use any weapon	
-	Param("BowDisableAimingOnReloadAndCancel", "0");
+	Param("BowDisableAimingOnReloadAndCancel", "IAL_Bow_Zoom_DisableOnReload");
 	
     Param("HarvestingLevel", "0");                           //  enables harvesting
     Param("HarvestingLevelForMultipleItems", "2");            // since this level player will get multipple items
@@ -286,16 +286,16 @@ sub main()
     Param("FastGrabBreakLevel", "0");    
 	Param("InVisibleToEnemies", "0");
 	Param("CamouflageEnabled", "0");
-    Param("CamouflageCanRun", "1");
-    Param("CamouflageCanAttack", "1");
+    Param("CamouflageCanRun", "IAL_Camo_Actions_CanRun");
+    Param("CamouflageCanAttack", "IAL_Camo_Actions_CanAttack");
     Param("CamouflageCooldown", "0");
     Param("CamouflageDepletionAddRun", "1");
-    Param("CamouflageDepletionAddFlashlightDay", "0.0");
-    Param("CamouflageDepletionAddFlashlightNight", "0.0");
-    Param("CamouflageDepletionAddClimbing", "0.0");
-    Param("CamouflageDepletionAddInWater", "30");
-    Param("CamouflageDepletionAddInAir", "0.0");
-    Param("CamouflageLooseOnShoot", "0.2");
+    Param("CamouflageDepletionAddFlashlightDay", "IAL_Camo_RemoveRate_Flashlight");
+    Param("CamouflageDepletionAddFlashlightNight", "IAL_Camo_RemoveRate_Flashlight");
+    Param("CamouflageDepletionAddClimbing", "IAL_Camo_RemoveRate_Climbing");
+    Param("CamouflageDepletionAddInWater", "IAL_Camo_RemoveRate_Water");
+    Param("CamouflageDepletionAddInAir", "IAL_Camo_RemoveRate_AirTime");
+    Param("CamouflageLooseOnShoot", "IAL_Camo_RemoveRate_Shoot");
     Param("CamouflageLooseOnGiveDamage", "1.0");    
     Param("ChargeLightCooldown", "-1");    
 	
@@ -324,21 +324,21 @@ sub main()
 	Param("StaminaHeavyBreathLevelMaxBow", "0.0");
 	Param("StaminaHeavyBreathLevelStart", "0.75");
 	Param("StaminaHeavyBreathLevelMax", "0.3");
-    Param("MaxStamina", "0.80");
+    Param("MaxStamina", "IAL_Player_Stamina");
 	Param("MaxStaminaMultiplier", "1.0");
-    Param("MaxStaminaMinRegenerationTime", "2.0");    
-	Param("MaxStaminaMaxRegenerationTime", "2.0");
-    Param("MaxStaminaTimeToRegenerate", "1.0");
-    Param("MaxStaminaDrainFactor", "1.0");
+    Param("MaxStaminaMinRegenerationTime", "IAL_Player_Stamina_Regen_Min");    
+	Param("MaxStaminaMaxRegenerationTime", "IAL_Player_Stamina_Regen_Max");
+    Param("MaxStaminaTimeToRegenerate", "IAL_Player_Stamina_Regen_TimeTo");
+    Param("MaxStaminaDrainFactor", "IAL_Player_Stamina_Drain");
     Param("MaxStaminaDrainEnabled", "true");
-    Param("MinStaminaLevelFromHit", "0.0");
-    Param("StaminaTimeToRegenerateOnEmpty", "1.5");
-    Param("StaminaTimeToRegenerateOnEmptyAfterParokur", "1.0");          // NOT WORKING IN COMBAT  -time needed to fully restore stamina when completely depleted
-    Param("StaminaTimeToRegenerate", "0.6");                 // time after which stamina starts to regenerate if player still has some stamina left
-    Param("StaminaTimeToRegenerateAfterParkour", "0.6");     // time after which stamina starts to regenerate if player still has some stamina left
-    Param("StaminaRegeneration", "1.5");                    // WARNING CHANGED SO EVERY THING IS IN SECONDS rate at which stamina regenerates in seconds to full bar!!
-	Param("StaminaRegenerationOutsideDanger", "1.5");
-    Param("StaminaRegenerationFactorSlow", "0.33");               // factor when running or being on ladder
+    Param("MinStaminaLevelFromHit", "IAL_Player_Stamina_Drain_FromHit");
+    Param("StaminaTimeToRegenerateOnEmpty", "IAL_Player_Stamina_Regen_TimeTo");
+    Param("StaminaTimeToRegenerateOnEmptyAfterParokur", "IAL_Player_Stamina_Regen_TimeTo");          // NOT WORKING IN COMBAT  -time needed to fully restore stamina when completely depleted
+    Param("StaminaTimeToRegenerate", IAL_Player_Stamina_Regen_TimeTo");                 // time after which stamina starts to regenerate if player still has some stamina left
+    Param("StaminaTimeToRegenerateAfterParkour", "IAL_Player_Stamina_Regen_TimeTo");     // time after which stamina starts to regenerate if player still has some stamina left
+    Param("StaminaRegeneration", "IAL_Player_Stamina_Regen_Max");                    // WARNING CHANGED SO EVERY THING IS IN SECONDS rate at which stamina regenerates in seconds to full bar!!
+	Param("StaminaRegenerationOutsideDanger", "IAL_Player_Stamina_Regen_Max");
+    Param("StaminaRegenerationFactorSlow", "0.0");               // factor when running or being on ladder
 	Param("StaminaRegenerationFactorStand", "0.25");               // factor when standing still
 	Param("StaminaRegenerationFactorStandDalay", "1.0");               // factor when standing still
 	

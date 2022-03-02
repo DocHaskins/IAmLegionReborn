@@ -1,7 +1,7 @@
 // Contains definitions of PROTOTYPE items defined for testing and debug purposes only.
 // Don't be surprised if these items will get removed at a later stage of the the production
 
-
+import "ial_settings.mth"
 import "inventorystuff.scr"
 import "faction_exports.scr"
 import "inventory_weapondefintions.scr"
@@ -187,8 +187,8 @@ sub main()
         Color(Color_Green);
         GenType(GenType_None);
 		InWorldScale(5);
-        EnabledAutoAim(false);
-        EnabledAutoAimTarget(false);
+        EnabledAutoAim(IAL_AutoAim);
+        EnabledAutoAimTarget(IAL_AutoAim);
         RicochetEnable(true);
         ShootMaxReboundCount(4);
         ShootMaxRange(50);
@@ -243,8 +243,8 @@ sub main()
         Color(Color_Green);
         GenType(GenType_None);
 		InWorldScale(5);
-        EnabledAutoAim(false);
-        EnabledAutoAimTarget(false);
+        EnabledAutoAim(IAL_AutoAim);
+        EnabledAutoAimTarget(IAL_AutoAim);
         RicochetEnable(true);
         ShootMaxReboundCount(4);
         ShootMaxRange(50);
@@ -6256,8 +6256,8 @@ sub main()
         EquipmentSlot();
         Color(Color_Green);
         GenType(GenType_None);
-        EnabledAutoAim(false);
-        EnabledAutoAimTarget(false);
+        EnabledAutoAim(IAL_AutoAim);
+        EnabledAutoAimTarget(IAL_AutoAim);
         RicochetEnable(true);
         UID("6809220711662878832");
 		GameVersion(1);
@@ -7354,8 +7354,8 @@ sub main()
         EquipmentSlot();
         Color(Color_Green);
         GenType(GenType_None);
-        EnabledAutoAim(false);
-        EnabledAutoAimTarget(false);
+        EnabledAutoAim(IAL_AutoAim);
+        EnabledAutoAimTarget(IAL_AutoAim);
         RicochetEnable(true);
         ItemLevel(1, 9);
         InventoryMesh("wpn_throwing_knife_a_fpp.msh");
@@ -7847,8 +7847,8 @@ sub main()
         NoiseType("NONE");        
         Color(Color_Green);
         GenType(GenType_None);
-        EnabledAutoAim(false);
-        EnabledAutoAimTarget(false);
+        EnabledAutoAim(IAL_AutoAim);
+        EnabledAutoAimTarget(IAL_AutoAim);
         RicochetEnable(false);        
         InventoryMesh("wpn_crossbow_bolt_a_tpp.msh");
         StaminaDamage(6);

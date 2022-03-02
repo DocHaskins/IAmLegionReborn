@@ -1,0 +1,1664 @@
+import "inventorystuff.scr"
+import "Inventory_Special_DL.scr"
+import "Inventory_Infected.scr"
+import "Inventory_EasterEggs.scr"
+import "faction_exports.scr"
+import "inventory_weapondefintions.scr"
+
+
+sub main()
+{
+	use Inventory_Special_DL();
+	use Inventory_Infected();
+	
+	Item("Melee_Fists", CategoryType_Melee)
+    {
+        Visibility(false);
+        ItemType(ItemType_Fists);
+        WeaponBuildType(WeaponBuildType_Metal);
+        Condition(-1);
+		DamageTiers("Player_Fists_Tier");
+		IsAutomaticTierScaling(true);
+		ArmourDamageName("Player_Armour_Damage");
+        DamageRange(115.0 *0.01);
+        Force(10.0);
+        PhysicsDamage(10.0);
+        DamageToPhysicsObjects(5.0);
+        StaminaUsage(0.1);
+        DamageType(DamageType_Punch1);
+        Flags(35);
+        Price(-1);
+        Mesh("weapon_fists.msh");
+        AnimPrefix("fist");
+        HudIcon("weapon_fist");
+        MinDamageMult(1.0);        
+        HorizontalAttackDamageMul(1.0);
+        RagdollBehavior(RagdollBehavior_Fists);
+        TwoHanded(true);
+        AiHitSound("fists");
+        SoundInjuryDamageType("unarmed");
+		Material("fists");
+        use HitEffects_Fists();
+        use PickupSounds_Default();
+        DamageSize(5.0);
+        StatsType(StatsType_Fists);
+        LootType(LootType_None);
+        FF_Left(0.6);
+        FF_Right(0.6);
+        FF_Duration(0.2);
+        FF_FadeOut(0.0);
+        Color(Color_White);
+        PlayerTool();
+		HitReactionType(EReactionType_Blunt);		
+		HitReactionHitSeverity(EHitSeverity_Light);
+		HitReactionMoveSeverity(EMoveSeverity_Light);
+		GameVersion(1);
+    }
+
+    // Same as Melee_Fists but without the field PlayerTool
+    Item("Melee_Fists_Challenge", CategoryType_Melee)
+    {
+        Visibility(false);
+        ItemType(ItemType_Fists);
+        WeaponBuildType(WeaponBuildType_Metal);
+        Condition(-1);
+		DamageTiers("Player_Fists_Tier");
+		IsAutomaticTierScaling(true);
+		ArmourDamageName("Player_Armour_Damage");
+        DamageRange(115.0 *0.01);
+        Force(10.0);
+        PhysicsDamage(10.0);
+        DamageToPhysicsObjects(5.0);
+        StaminaUsage(0.1);
+        DamageType(DamageType_Punch1);
+        Flags(35);
+        Price(-1);
+        Mesh("weapon_fists.msh");
+        AnimPrefix("fist");
+        HudIcon("weapon_fist");
+        MinDamageMult(1.0);        
+        HorizontalAttackDamageMul(1.0);
+        RagdollBehavior(RagdollBehavior_Fists);
+        TwoHanded(true);
+        AiHitSound("fists");
+        SoundInjuryDamageType("unarmed");
+		Material("fists");
+        use HitEffects_Fists();
+        use PickupSounds_Default();
+        DamageSize(5.0);
+        StatsType(StatsType_Fists);
+        LootType(LootType_None);
+        FF_Left(0.6);
+        FF_Right(0.6);
+        FF_Duration(0.2);
+        FF_FadeOut(0.0);
+        Color(Color_White);
+		HitReactionType(EReactionType_Blunt);		
+		HitReactionHitSeverity(EHitSeverity_Light);
+		HitReactionMoveSeverity(EMoveSeverity_Light);
+		GameVersion(1);
+		ChallengeItem(true);
+    }
+	
+	Item("CombatInteractableBottle", CategoryType_Throwable)
+    {
+		HandToUse("LEFT", false);
+		HudIcon("bottle_b");
+		Color(Color_White);
+		DamageType(DamageType_Blunt);
+        ItemType(ItemType_ThrowingStar);
+        Visibility(true);
+		InventoryMeshHQ("bottle_b_fpp.msh");
+		InventoryMesh("bottle_b.msh");
+        Mesh("bottle_b.msh");
+        AnimPrefix("Bottle");
+
+		ThrowSpeed(20.0);
+        ThrowImpulseUp(1.0);
+		GravityFactor(0.5);
+        //ThrowImpulseLook(15.0);
+		
+		OpportunityWeapon(true);
+        MotionTrailFx("arrow_trail.gpufx");
+        TwoHanded(false);
+		
+		PhysicsScript("simple.phx");
+		Condition(-1);
+		DamagePresetName("Combat_Interactable_Bottle");
+        Force(10.0);
+        DamageToPhysicsObjects(100.0);
+		EnabledAutoAim(true);
+		EnabledAutoAimTarget(true);
+		RotationVel(400.0, 0.0, 0.0);
+
+        ExplodeDelay(0.01);
+        ExplodeOnCollision(true);
+        ScheduleExplodeAfterContact(true);
+        ExplosionFx("glass_bottle_break.gpufx");
+
+        DamageRange(0.01);
+        PhysicsDamageMul(0.1);
+        StaminaUsage(0.0);
+        HeadCutProb(0.0);
+        ArmsCutProb(0.0);
+        LegsCutProb(0.0);
+        MinDamageAngle(1.0);
+        MaxDamageAngle(1.0);
+        MinDamageMult(1.0);
+        MinHitSeverity(HitSeverity_Medium);		// ??
+        MaxHitSeverity(HitSeverity_Medium);		// ??
+        HorizontalAttackDamageMul(1.0);
+		
+		use PickupSounds_Bottle();
+		AiHitSound("bottle");
+		GameVersion(1);
+    }
+
+	Item("CombatInteractableBrick", CategoryType_Throwable)
+    {
+		HandToUse("LEFT", false);
+		HudIcon("brick_a_throwable");
+		Color(Color_White);
+		DamageType(DamageType_Punch_Ko);
+        ItemType(ItemType_ThrowingStar);
+		RicochetEnable(true);
+		RicochetSoundFXEnable(true);
+        Visibility(true);
+		InventoryMeshHQ("brick_a_throwable_fpp.msh");
+		InventoryMesh("brick_a_throwable.msh");
+        Mesh("brick_a_throwable.msh");
+        AnimPrefix("Brick");
+		
+		ThrowSpeed(20.0);
+        ThrowImpulseUp(1.0);
+		GravityFactor(0.5);
+        RotationVel(400.0, 0.0, 400.0);
+		
+        MotionTrailFx("arrow_trail.gpufx");
+        TwoHanded(false);
+		
+		PhysicsScript("simple.phx");
+		Condition(-1);
+		DamagePresetName("Combat_Interactable_Brick");
+		use PickupSounds_Brick();
+		AiHitSound("brick");
+        Force(0.0);
+        DamageToPhysicsObjects(100.0);
+		EnabledAutoAim(true);
+		EnabledAutoAimTarget(true);
+		
+        ExplodeDelay(0.01);
+        ExplodeOnCollision(true);
+		use HitEffects_Brick();
+        StunnedEffectDuration(5.0);
+        //ScheduleExplodeAfterContact(true);
+        ExplosionFx("brick_head_hit.gpufx");
+
+        DamageRange(0.01);
+        PhysicsDamageMul(0.1);
+        StaminaUsage(0.2);
+        HeadCutProb(0.0);
+        ArmsCutProb(0.0);
+        LegsCutProb(0.0);
+        MinDamageAngle(1.0);
+        MaxDamageAngle(1.0);
+        MinDamageMult(1.0);
+        MinHitSeverity(HitSeverity_Medium);		// ??
+        MaxHitSeverity(HitSeverity_Medium);		// ??
+        HorizontalAttackDamageMul(1.0);
+		OpportunityWeapon(true);
+		GameVersion(1);
+    }
+
+    Item("Binoculars", CategoryType_Other)
+    {
+        Description("&Binoculars_D&");
+		Visibility(true);
+        ItemType(ItemType_Binoculars);
+        PhysicsScript("simple.phx");
+        Condition(-1);
+        Mesh("binoculars.msh");
+        HudIcon("weapon_binoculars");
+        TwoHanded(false);
+        HolderElement("r_thigh");
+        HolderOffset([0.0,10.0,10.0]);
+        HolderAngle([0.0,0.0,-90.0]);
+        AiHitSound("weapon_rope_hit_body");
+        use PickupSounds_Default();
+        Reparable(false);
+        Color(Color_White);
+        CraftingSlots(0);
+        EquipmentSlot(2);
+        PlayerTool();
+		GameVersion(1);
+    }
+
+    Item("GRE_Keyfinder_1", CategoryType_Other)
+    {
+        Description("&GRE_Keyfinder_D&");
+        Visibility(true);
+        ItemType(ItemType_Keyfinder);
+        PhysicsScript("simple.phx");
+        Condition(75.0);
+        InventoryMeshHq("wpn_rope_hook_a_tpp.msh");
+        InventoryMesh("wpn_rope_hook_a_tpp.msh");
+        Mesh("wpn_rope_hook_a_tpp.msh");
+        HudIcon("weapon_scanner");
+        HolderElement("r_thigh");
+        HolderOffset([0.0,10.0,10.0]);
+        HolderAngle([0.0,0.0,-90.0]);
+        AiHitSound("weapon_rope_hit_body");
+        use PickupSounds_Default();
+        Reparable(false);
+        Color(Color_White);
+        CraftingSlots(0);        
+        PlayerTool();
+		GameVersion(1);
+    }
+
+
+    Item("GRE_Keyfinder_2", CategoryType_Other)
+    {
+        Description("&GRE_Keyfinder_D&");
+        Visibility(true);
+        ItemType(ItemType_Keyfinder);
+        PhysicsScript("simple.phx");
+        Condition(75.0);
+        InventoryMeshHq("wpn_rope_hook_a_tpp.msh");
+        InventoryMesh("wpn_rope_hook_a_tpp.msh");
+        Mesh("wpn_rope_hook_a_tpp.msh");
+        HudIcon("weapon_scanner");
+        HolderElement("r_thigh");
+        HolderOffset([0.0,10.0,10.0]);
+        HolderAngle([0.0,0.0,-90.0]);
+        AiHitSound("weapon_rope_hit_body");
+        use PickupSounds_Default();
+        Reparable(false);
+        Color(Color_White);
+        CraftingSlots(0);        
+        PlayerTool();
+		GameVersion(1);
+    }
+
+    Item("GRE_Keyfinder_3", CategoryType_Other)
+    {
+        Description("&GRE_Keyfinder_D&");
+        Visibility(true);
+        ItemType(ItemType_Keyfinder);
+        PhysicsScript("simple.phx");
+        Condition(75.0);
+        InventoryMeshHq("wpn_rope_hook_a_tpp.msh");
+        InventoryMesh("wpn_rope_hook_a_tpp.msh");
+        Mesh("wpn_rope_hook_a_tpp.msh");
+        HudIcon("weapon_scanner");
+        HolderElement("r_thigh");
+        HolderOffset([0.0,10.0,10.0]);
+        HolderAngle([0.0,0.0,-90.0]);
+        AiHitSound("weapon_rope_hit_body");
+        use PickupSounds_Default();
+        Reparable(false);
+        Color(Color_White);
+        CraftingSlots(0);        
+        PlayerTool();
+		GameVersion(1);
+    }
+
+    Item("GRE_Keyfinder_4", CategoryType_Other)
+    {
+        Description("&GRE_Keyfinder_D&");
+        Visibility(true);
+        ItemType(ItemType_Keyfinder);
+        PhysicsScript("simple.phx");
+        Condition(75.0);
+        InventoryMeshHq("wpn_rope_hook_a_tpp.msh");
+        InventoryMesh("wpn_rope_hook_a_tpp.msh");
+        Mesh("wpn_rope_hook_a_tpp.msh");
+        HudIcon("weapon_scanner");
+        HolderElement("r_thigh");
+        HolderOffset([0.0,10.0,10.0]);
+        HolderAngle([0.0,0.0,-90.0]);
+        AiHitSound("weapon_rope_hit_body");
+        use PickupSounds_Default();
+        Reparable(false);
+        Color(Color_White);
+        CraftingSlots(0);        
+        PlayerTool();
+		GameVersion(1);
+    }
+
+    Item("GRE_Keyfinder_5", CategoryType_Other)
+    {
+        Description("&GRE_Keyfinder_D&");
+        Visibility(true);
+        ItemType(ItemType_Keyfinder);
+        PhysicsScript("simple.phx");
+        Condition(75.0);
+        InventoryMeshHq("wpn_rope_hook_a_tpp.msh");
+        InventoryMesh("wpn_rope_hook_a_tpp.msh");
+        Mesh("wpn_rope_hook_a_tpp.msh");
+        HudIcon("weapon_scanner");
+        HolderElement("r_thigh");
+        HolderOffset([0.0,10.0,10.0]);
+        HolderAngle([0.0,0.0,-90.0]);
+        AiHitSound("weapon_rope_hit_body");
+        use PickupSounds_Default();
+        Reparable(false);
+        Color(Color_White);
+        CraftingSlots(0);        
+        PlayerTool();
+		GameVersion(1);
+    }
+
+
+    Item("UV_Flashlight_1", CategoryType_Flashlight)
+    {
+		Name("&Flashlight_Superlight_N&");
+		Description("&UV_Flashlight_1_D&");
+		AnimPrefix("Flashlight");
+        Visibility(true);
+        ItemType(ItemType_Flashlight);
+        HudIcon("uv_flashlight");
+        PhysicsScript("simple.phx");
+        Mesh("flashlight_a.msh");
+        HudIcon("equipment_uv_flashlight");
+        Skin("UVLight");
+        EquipmentSlot(0);
+        Price(0);
+        UVLight(true);
+        PlayerTool();
+		UIStats(){
+		 UIStat("&StatsUI_MaxEnergy&", 7, "Seconds");
+         UIStat("&StatsUI_Rechargetime&", 21, "Seconds");
+		 UIStat("&StatsUI_ConeSize&", "&Small&");
+		 UIStat("&StatsUI_FlashEffect&", "&MenuNo&");
+        }
+
+        FlashlightPreset("Player Flashlight UV LVL 1");
+
+        EnergyDrainPerSecond(1);                /// Amount of energy used up every second when flashlight is turned on
+        MaxEnergy(7.0);                         /// Amount of energy the flashlight has
+        //BatteryRechargeEnabled();     		/// Uncomment to enable reloading flashlight with batteries
+        GeneratorRechargeEnabled();           	/// Uncomment to enable recharging battery using a generator
+        GeneratorRechargePerSecond(0.33);     	/// Amount of energy generated every second when using generator
+        EnergyConsumeOnStart(0.2);              /// Initial cost of turning on the light
+        RequiredEnergyLevel(0.2);               /// Recharged ratio (0.0-1.0) needed to switch flashlight on
+        RegenerationDelay(0.5);                 /// Turn off - recharge span
+        CanWorkWhenFullyDrained(false);         /// not parsed, may be usefull
+        LowBatteryLevel(0.25);                  /// not parsed, may be usefull
+		ItemLevel(1, 3);
+		GameVersion(1);
+    }
+    
+    Item("UV_Flashlight_2", CategoryType_Flashlight)
+    {
+		Name("&Flashlight_Superlight_N&");
+		Description("&UV_Flashlight_2_D&");
+		AnimPrefix("Flashlight");
+        Visibility(true);
+        ItemType(ItemType_Flashlight);
+        HudIcon("uv_flashlight");
+        PhysicsScript("simple.phx");
+        Mesh("flashlight_a.msh");
+        HudIcon("equipment_uv_flashlight");
+        Skin("UVLight");
+        EquipmentSlot(0);
+        Price(0);
+        UVLight(true);
+        PlayerTool();
+		
+		UIStats(){
+		 UIStat("&StatsUI_MaxEnergy&", 14, "Seconds");
+         UIStat("&StatsUI_Rechargetime&", 14, "Seconds");
+		 UIStat("&StatsUI_ConeSize&", "&Medium&");
+		 UIStat("&StatsUI_FlashEffect&", "&MenuNo&");
+        }
+
+        FlashlightPreset("Player Flashlight UV LVL 2");
+
+        EnergyDrainPerSecond(1.0);             	/// Amount of energy used up every second when flashlight is turned on
+        MaxEnergy(7.0);                        /// Amount of energy the flashlight has
+		//BatteryRechargeEnabled();     		/// Uncomment to enable reloading flashlight with batteries
+        GeneratorRechargeEnabled();           	/// Uncomment to enable recharging battery using a generator
+        GeneratorRechargePerSecond(1.0);      	/// Amount of energy generated every second when using generator
+        EnergyConsumeOnStart(0.2);              /// Initial cost of turning on the light
+        RequiredEnergyLevel(0.2);               /// Recharged ratio (0.0-1.0) needed to switch flashlight on
+        RegenerationDelay(1.0);                 /// Turn off - recharge span
+        CanWorkWhenFullyDrained(false);         /// not parsed, may be usefull
+        LowBatteryLevel(0.25);                  /// not parsed, may be usefull
+		ItemLevel(2, 3);
+		GameVersion(1);
+    }
+    
+    Item("UV_Flashlight_3", CategoryType_Flashlight)
+    {
+		Name("&Flashlight_Superlight_N&");
+		Description("&UV_Flashlight_3_D&");
+		AnimPrefix("Flashlight");
+        Visibility(true);
+        ItemType(ItemType_Flashlight);
+        HudIcon("uv_flashlight");
+        PhysicsScript("simple.phx");
+        Mesh("flashlight_a.msh");
+        HudIcon("equipment_uv_flashlight");
+        Skin("UVLight");
+        EquipmentSlot(0);
+        Price(0);
+        UVLight(true);
+        PlayerTool();
+		
+		UIStats(){
+		 UIStat("&StatsUI_MaxEnergy&", 14, "Seconds");
+         UIStat("&StatsUI_Rechargetime&", 14, "Seconds");
+		 UIStat("&StatsUI_ConeSize&", "&Big&");
+		 UIStat("&StatsUI_FlashEffect&", "&MenuYes&");
+        }
+
+        FlashlightPreset("Player Flashlight UV LVL 3");
+
+        EnergyDrainPerSecond(1.0);              /// Amount of energy used up every second when flashlight is turned on
+        MaxEnergy(14.0);                        /// Amount of energy the flashlight has
+		//BatteryRechargeEnabled();     		/// Uncomment to enable reloading flashlight with batteries
+        GeneratorRechargeEnabled();           	/// Uncomment to enable recharging battery using a generator
+        GeneratorRechargePerSecond(1.0);      	/// Amount of energy generated every second when using generator
+        EnergyConsumeOnStart(0.2);              /// Initial cost of turning on the light
+        RequiredEnergyLevel(0.2);               /// Recharged ratio (0.0-1.0) needed to switch flashlight on
+        RegenerationDelay(1.0);                 /// Turn off - recharge span
+        CanWorkWhenFullyDrained(false);         /// not parsed, may be usefull
+        LowBatteryLevel(0.25);                  /// not parsed, may be usefull
+		ItemLevel(3, 3);
+		GameVersion(1);
+    }
+    
+    Item("UV_Flashlight_4", CategoryType_Flashlight)
+    {
+		Name("&Flashlight_Superlight_N&");
+        Description("&UV_Flashlight_4_D&");
+		AnimPrefix("Flashlight");
+        Visibility(true);
+        ItemType(ItemType_Flashlight);
+        HudIcon("uv_flashlight");
+        PhysicsScript("simple.phx");
+        Mesh("flashlight_a.msh");
+        HudIcon("equipment_uv_flashlight");
+        Skin("UVLight");
+        EquipmentSlot(0);
+        Price(0);
+        UVLight(true);
+        PlayerTool();
+
+        FlashlightPreset("Player Flashlight UV LVL 4");
+
+        EnergyDrainPerSecond(1.0);              /// Amount of energy used up every second when flashlight is turned on
+        MaxEnergy(15.0);                        /// Amount of energy the flashlight has
+		//BatteryRechargeEnabled();     		/// Uncomment to enable reloading flashlight with batteries
+        GeneratorRechargeEnabled();           	/// Uncomment to enable recharging battery using a generator
+        GeneratorRechargePerSecond(1.0);      	/// Amount of energy generated every second when using generator
+        EnergyConsumeOnStart(0.2);              /// Initial cost of turning on the light
+        RequiredEnergyLevel(0.2);               /// Recharged ratio (0.0-1.0) needed to switch flashlight on
+        RegenerationDelay(1.0);                 /// Turn off - recharge span
+        CanWorkWhenFullyDrained(false);         /// not parsed, may be usefull
+        LowBatteryLevel(0.25);                  /// not parsed, may be usefull
+		ItemLevel(4, 5);
+		GameVersion(1);
+    }
+    
+    Item("UV_Flashlight_5", CategoryType_Flashlight)
+    {
+		Name("&Flashlight_Superlight_N&");
+        Description("&UV_Flashlight_5_D&");
+		AnimPrefix("Flashlight");
+        Visibility(true);
+        ItemType(ItemType_Flashlight);
+        HudIcon("uv_flashlight");
+        PhysicsScript("simple.phx");
+        Mesh("flashlight_a.msh");
+        HudIcon("equipment_uv_flashlight");
+        Skin("UVLight");
+        EquipmentSlot(0);
+        Price(0);
+        UVLight(true);
+        PlayerTool();
+
+        FlashlightPreset("Player Flashlight UV LVL 5");
+
+        EnergyDrainPerSecond(1.0);              /// Amount of energy used up every second when flashlight is turned on
+        MaxEnergy(18.0);                        /// Amount of energy the flashlight has
+		//BatteryRechargeEnabled();     		/// Uncomment to enable reloading flashlight with batteries
+        GeneratorRechargeEnabled();           	/// Uncomment to enable recharging battery using a generator
+        GeneratorRechargePerSecond(1.0);      	/// Amount of energy generated every second when using generator
+        EnergyConsumeOnStart(0.2);              /// Initial cost of turning on the light
+        RequiredEnergyLevel(0.2);               /// Recharged ratio (0.0-1.0) needed to switch flashlight on
+        RegenerationDelay(1.0);                 /// Turn off - recharge span
+        CanWorkWhenFullyDrained(false);         /// not parsed, may be usefull
+        LowBatteryLevel(0.25);                  /// not parsed, may be usefull
+		ItemLevel(5, 5);
+		GameVersion(1);
+    }
+
+
+	Item("Token_Exploration", CategoryType_Token)
+    {
+        ItemType(ItemType_Token);
+        MaxStackCount(10000);
+        TokenType(EFaction_Exploration);
+		HudIcon("icon_token");
+		GameVersion(1);
+    }
+
+
+    Item("Token_Scavengers", CategoryType_Token)
+    {
+        ItemType(ItemType_Token);
+        MaxStackCount(10000);
+        TokenType(EFaction_Scavengers);
+		HudIcon("icon_token");
+		GameVersion(1);
+    }
+
+    Item("Token_Peacekeepers", CategoryType_Token)
+    {
+        ItemType(ItemType_Token);
+        MaxStackCount(10000);
+        TokenType(EFaction_Peacekeepers);
+		HudIcon("icon_token");
+		GameVersion(1);
+    }
+
+    Item("Thrown_Spear", CategoryType_Throwable)
+    {
+        Visibility(true);
+		HandToUse("RIGHT");
+        ItemType(ItemType_ThrowableSpear);
+        PhysicsScript("simple.phx");
+        Condition(-1);
+        CriticalCondition(11);
+        ThrowDamage("SpearThrow_RGD1");
+        DamageName("SpearThrow_RGD1");
+        Force(25.0);
+		ThrowImpulseLook(45.0);
+        ThrowImpulseUp(2.0);
+		InitialRotation(90,0,0);
+		RotationVel(0,180,0);
+        CriticalProb(1.0);
+        ThrowSpeed(45.0);
+		MotionTrailFx("spear_trail.gpufx");
+		TrailOffset(0,0,1);
+		TrailEulerAngleOffset(90,0,0);
+        GravityFactor(1.0);
+        ExplodeDelay(-1);
+        ExplodeOnCollision(false);
+        ScheduleExplodeAfterContact(false);
+        ExplosionFx("spear_hit.gpufx");
+		PenetrationEnable(true);
+		RicochetEnable(false);
+        CriticalDamage(2.0);
+        DamageRange(1.35);
+        DamageToPhysicsObjects(70.0);
+        PhysicsDamageMul(1.0);
+        StaminaUsage(0.2);
+        ConfusionProb(0.0);
+        WeaponBuildType(WeaponBuildType_Universal);
+        DamageType(DamageType_Pierce);
+        Flags(1);
+        InventoryMeshHQ("wpn_2hp_spear_a_fpp.msh");
+        InventoryMesh("wpn_2hp_spear_a_tpp.msh");
+        Mesh("wpn_2hp_spear_a_tpp.msh");
+        SkinTag("Weapon_Craft0");
+        AnimPrefix("Spear");
+        HudIcon("weapon_spear");
+		HitReactionType(EReactionType_Stab);
+		HitReactionContext(EReactionContext_RangedWeapon);
+		HitReactionHitSeverity(EHitSeverity_Medium);
+		HitReactionMoveSeverity(EMoveSeverity_Medium);	
+		HitReactionFlags(EReactionFlag_Interrupt);	
+        HorizontalAttackDamageMul(3.0);
+        TwoHanded(true);
+        DestroySound("damaged_heavy_weapon_XX.wav");
+        AiHitSound("spear");
+        use HitEffects_ThrownSpear();
+        use PickupSounds_Stick_Metal();
+        DamageSize(5.0);
+        StatsType(StatsType_Blunt);
+        FF_EffectName("Hit_Stick2HeavyBlunt");
+        FF_Left(0.6);
+        FF_Right(0.6);
+        FF_Duration(0.2);
+        FF_FadeOut(0.0);
+        Reparable(true);
+        RepairTags("Weapon_Craft4");
+        RepairPart("Craft_MetalScrap", 1);
+        AllowedRepairs(3);
+        SoundDamagedHit("damaged_sharp_weapon_XX.wav");
+        ThrowBeginSound("weapon_heavy_throw.wav");
+        Color(Color_White);
+        AchType(AchType_BigHammer);
+        DismantleResultItem("Craft_WeaponParts");
+        DismantleResultItemCnt(2);
+        CraftingSlots(1,0);
+        UniqueFxNameBase("machete");
+        RagdollBehaviorPrefix("Stick2HeavyBlunt");
+        Price(8118);
+        GenType(GenType_MeleeWeapon);
+        TierSpread(1, 3);
+        InWorldScale(1.0);
+		SynchroMovementOnAttack(true);
+		EnabledAutoAim(true);
+		EnabledAutoAimTarget(true);
+		TwoHanded(true);
+		HandInertiaRotFactor([0.25,1.0,1.0]);
+		HandInertiaFactor(0.8);
+        DuckInertiaFactor(0.0);
+		OpportunityWeapon(true);
+		HideFlightParaboll(true);
+		Name("&Thrown_Spear_N&");
+		Description("&Thrown_Spear_D&");	
+		MaxStackCount(1);
+		GameVersion(1);
+    }
+
+
+    Item("Thrown_Spear_Upgrade1", CategoryType_Throwable)
+    {
+        Visibility(true);
+        HandToUse("RIGHT");
+        ItemType(ItemType_ThrowableSpear);
+        PhysicsScript("simple.phx");
+		Condition(-1);
+        CriticalCondition(11);
+        ThrowDamage("SpearThrow_RGD2");
+        DamageName("SpearThrow_RGD2");
+        Force(25.0);
+        ThrowImpulseLook(45.0);
+        ThrowImpulseUp(2.0);
+		InitialRotation(90,0,0);
+		RotationVel(0,180,0);
+        CriticalProb(1.0);
+        ThrowSpeed(45.0);
+		MotionTrailFx("spear_trail.gpufx");
+		TrailOffset(0,0,1);
+		TrailEulerAngleOffset(90,0,0);
+        GravityFactor(1.0);
+        ExplodeDelay(-1);
+        ExplodeOnCollision(false);
+        ScheduleExplodeAfterContact(false);
+        ExplosionFx("spear_hit.gpufx");
+		PenetrationEnable(true);
+        RicochetEnable(false);
+        CriticalDamage(2.0);
+        DamageRange(1.35);
+        DamageToPhysicsObjects(70.0);
+        PhysicsDamageMul(1.0);
+        StaminaUsage(0.2);
+        ConfusionProb(0.0);
+        WeaponBuildType(WeaponBuildType_Universal);
+        DamageType(DamageType_Pierce);
+        Flags(1);
+        InventoryMeshHQ("wpn_2hp_spear_a_fpp.msh");
+        InventoryMesh("wpn_2hp_spear_a_tpp.msh");
+        Mesh("wpn_2hp_spear_a_tpp.msh");
+        SkinTag("Weapon_Craft0");
+        AnimPrefix("Spear");
+        HudIcon("weapon_spear");
+		HitReactionType(EReactionType_Stab);
+		HitReactionContext(EReactionContext_RangedWeapon);
+		HitReactionHitSeverity(EHitSeverity_Medium);
+		HitReactionMoveSeverity(EMoveSeverity_Medium);	
+		HitReactionFlags(EReactionFlag_Interrupt);	
+        HorizontalAttackDamageMul(3.0);
+        TwoHanded(true);
+        DestroySound("damaged_heavy_weapon_XX.wav");
+        AiHitSound("spear");
+        use HitEffects_ThrownSpear();
+        use PickupSounds_Default();
+        DamageSize(5.0);
+        StatsType(StatsType_Blunt);
+        FF_EffectName("Hit_Stick2HeavyBlunt");
+        FF_Left(0.6);
+        FF_Right(0.6);
+        FF_Duration(0.2);
+        FF_FadeOut(0.0);
+        Reparable(true);
+        RepairTags("Weapon_Craft4");
+        RepairPart("Craft_MetalScrap", 1);
+        AllowedRepairs(3);
+        SoundDamagedHit("damaged_sharp_weapon_XX.wav");
+        ThrowBeginSound("weapon_heavy_throw.wav");
+        Color(Color_White);
+        AchType(AchType_BigHammer);
+        DismantleResultItem("Craft_WeaponParts");
+        DismantleResultItemCnt(2);
+        CraftingSlots(1,0);
+        UniqueFxNameBase("machete");
+        RagdollBehaviorPrefix("Stick2HeavyBlunt");
+        Price(8118);
+        GenType(GenType_MeleeWeapon);
+        TierSpread(1, 3);
+        InWorldScale(1.0);
+        SynchroMovementOnAttack(true);
+        EnabledAutoAim(true);
+        EnabledAutoAimTarget(true);
+        TwoHanded(true);
+        HandInertiaRotFactor([0.25,1.0,1.0]);
+        HandInertiaFactor(0.8);        
+        DuckInertiaFactor(0.0);
+        OpportunityWeapon(true);
+		HideFlightParaboll(true);
+		Name("&Thrown_Spear_N&");
+		Description("&Thrown_Spear_D&");	
+		MaxStackCount(1);
+		GameVersion(1);
+    }
+
+    Item("Thrown_Spear_Upgrade2", CategoryType_Throwable)
+    {
+        Visibility(true);
+        HandToUse("RIGHT");
+        ItemType(ItemType_ThrowableSpear);
+        PhysicsScript("simple.phx");
+        Condition(-1);
+        CriticalCondition(11);
+        ThrowDamage("SpearThrow_RGD3");
+        DamageName("SpearThrow_RGD3");
+        Force(25.0);
+        ThrowImpulseLook(45.0);
+        ThrowImpulseUp(2.0);
+		InitialRotation(90,0,0);
+		RotationVel(0,180,0);
+        CriticalProb(1.0);
+        ThrowSpeed(45.0);
+		MotionTrailFx("spear_trail.gpufx");
+		TrailOffset(0,0,1);
+		TrailEulerAngleOffset(90,0,0);
+        GravityFactor(1.0);
+        ExplodeDelay(-1);
+        ExplodeOnCollision(false);
+        ScheduleExplodeAfterContact(false);
+        ExplosionFx("spear_hit.gpufx");
+		PenetrationEnable(true);
+        RicochetEnable(false);
+        CriticalDamage(2.0);
+        DamageRange(1.35);
+        DamageToPhysicsObjects(70.0);
+        PhysicsDamageMul(1.0);
+        StaminaUsage(0.2);
+        ConfusionProb(0.0);
+        WeaponBuildType(WeaponBuildType_Universal);
+        DamageType(DamageType_Pierce);
+        Flags(1);
+        InventoryMeshHQ("wpn_2hp_spear_a_fpp.msh");
+        InventoryMesh("wpn_2hp_spear_a_tpp.msh");
+        Mesh("wpn_2hp_spear_a_tpp.msh");
+        SkinTag("Weapon_Craft0");
+        AnimPrefix("Spear");
+        HudIcon("weapon_spear");
+		HitReactionType(EReactionType_Stab);
+		HitReactionContext(EReactionContext_RangedWeapon);
+		HitReactionHitSeverity(EHitSeverity_Medium);
+		HitReactionMoveSeverity(EMoveSeverity_Medium);	
+		HitReactionFlags(EReactionFlag_Interrupt);	
+        HorizontalAttackDamageMul(3.0);
+        TwoHanded(true);
+        DestroySound("damaged_heavy_weapon_XX.wav");
+        AiHitSound("spear");
+        use HitEffects_ThrownSpear();
+        use PickupSounds_Default();
+        DamageSize(5.0);
+        StatsType(StatsType_Blunt);
+        FF_EffectName("Hit_Stick2HeavyBlunt");
+        FF_Left(0.6);
+        FF_Right(0.6);
+        FF_Duration(0.2);
+        FF_FadeOut(0.0);
+        Reparable(true);
+        RepairTags("Weapon_Craft4");
+        RepairPart("Craft_MetalScrap", 1);
+        AllowedRepairs(3);
+        SoundDamagedHit("damaged_sharp_weapon_XX.wav");
+        ThrowBeginSound("weapon_heavy_throw.wav");
+        Color(Color_White);
+        AchType(AchType_BigHammer);
+        DismantleResultItem("Craft_WeaponParts");
+        DismantleResultItemCnt(2);
+        CraftingSlots(1,0);
+        UniqueFxNameBase("machete");
+        RagdollBehaviorPrefix("Stick2HeavyBlunt");
+        Price(8118);
+        GenType(GenType_MeleeWeapon);
+        TierSpread(1, 3);
+        InWorldScale(1.0);
+        SynchroMovementOnAttack(true);
+        EnabledAutoAim(true);
+        EnabledAutoAimTarget(true);
+        TwoHanded(true);
+        HandInertiaRotFactor([0.25,1.0,1.0]);
+        HandInertiaFactor(0.8);
+        DuckInertiaFactor(0.0);
+        OpportunityWeapon(true);
+		HideFlightParaboll(true);
+		Name("&Thrown_Spear_N&");
+		Description("&Thrown_Spear_D&");	
+		MaxStackCount(1);
+		GameVersion(1);
+    }
+
+
+    Item("Thrown_Spear_Upgrade3", CategoryType_Throwable)
+    {
+        Visibility(true);
+        HandToUse("RIGHT");
+        ItemType(ItemType_ThrowableSpear);
+        PhysicsScript("simple.phx");
+        Condition(-1);
+        CriticalCondition(11);
+        ThrowDamage("SpearThrow_RGD4");
+        DamageName("SpearThrow_RGD4");
+        Force(25.0);
+        ThrowImpulseLook(45.0);
+        ThrowImpulseUp(2.0);
+		InitialRotation(90,0,0);
+		RotationVel(0,180,0);
+        CriticalProb(1.0);
+        ThrowSpeed(45.0);
+		MotionTrailFx("spear_trail.gpufx");
+		TrailOffset(0,0,1);
+		TrailEulerAngleOffset(90,0,0);
+        GravityFactor(1.0);
+        ExplodeDelay(-1);
+        ExplodeOnCollision(false);
+        ScheduleExplodeAfterContact(false);
+        ExplosionFx("spear_hit.gpufx");
+		PenetrationEnable(true);
+        RicochetEnable(false);
+        CriticalDamage(2.0);
+        DamageRange(1.35);
+        DamageToPhysicsObjects(70.0);
+        PhysicsDamageMul(1.0);
+        StaminaUsage(0.2);
+        ConfusionProb(0.0);
+        WeaponBuildType(WeaponBuildType_Universal);
+        DamageType(DamageType_Pierce);
+        Flags(1);
+        InventoryMeshHQ("wpn_2hp_spear_a_fpp.msh");
+        InventoryMesh("wpn_2hp_spear_a_tpp.msh");
+        Mesh("wpn_2hp_spear_a_tpp.msh");
+        SkinTag("Weapon_Craft0");
+        AnimPrefix("Spear");
+        HudIcon("weapon_spear");
+		HitReactionType(EReactionType_Stab);
+		HitReactionContext(EReactionContext_RangedWeapon);
+		HitReactionHitSeverity(EHitSeverity_Medium);
+		HitReactionMoveSeverity(EMoveSeverity_Medium);	
+		HitReactionFlags(EReactionFlag_Interrupt);	
+        HorizontalAttackDamageMul(3.0);
+        TwoHanded(true);
+        DestroySound("damaged_heavy_weapon_XX.wav");
+        AiHitSound("spear");
+        use HitEffects_ThrownSpear();
+        use PickupSounds_Default();
+        DamageSize(5.0);
+        StatsType(StatsType_Blunt);
+        FF_EffectName("Hit_Stick2HeavyBlunt");
+        FF_Left(0.6);
+        FF_Right(0.6);
+        FF_Duration(0.2);
+        FF_FadeOut(0.0);
+        Reparable(true);
+        RepairTags("Weapon_Craft4");
+        RepairPart("Craft_MetalScrap", 1);
+        AllowedRepairs(3);
+        SoundDamagedHit("damaged_sharp_weapon_XX.wav");
+        ThrowBeginSound("weapon_heavy_throw.wav");
+        Color(Color_White);
+        AchType(AchType_BigHammer);
+        DismantleResultItem("Craft_WeaponParts");
+        DismantleResultItemCnt(2);
+        CraftingSlots(1,0);
+        UniqueFxNameBase("machete");
+        RagdollBehaviorPrefix("Stick2HeavyBlunt");
+        Price(8118);
+        GenType(GenType_MeleeWeapon);
+        TierSpread(1, 3);
+        InWorldScale(1.0);
+        SynchroMovementOnAttack(true);
+        EnabledAutoAim(true);
+        TwoHanded(true);
+        HandInertiaRotFactor([0.25,1.0,1.0]);
+        HandInertiaFactor(0.8);
+        DuckInertiaFactor(0.0);
+        OpportunityWeapon(true);
+		HideFlightParaboll(true);
+		Name("&Thrown_Spear_N&");
+		Description("&Thrown_Spear_D&");	
+		MaxStackCount(1);
+		GameVersion(1);
+    }
+
+
+    Item("Thrown_Spear_Upgrade4", CategoryType_Throwable)
+    {
+        Visibility(true);
+        HandToUse("RIGHT");
+        ItemType(ItemType_ThrowableSpear);
+        PhysicsScript("simple.phx");
+        Condition(-1);
+        CriticalCondition(11);
+        ThrowDamage("SpearThrow_RGD5");
+        DamageName("SpearThrow_RGD5");
+        Force(25.0);
+        ThrowImpulseLook(45.0);
+        ThrowImpulseUp(2.0);
+		InitialRotation(90,0,0);
+		RotationVel(0,180,0);
+        CriticalProb(1.0);
+        ThrowSpeed(45.0);
+		MotionTrailFx("spear_trail.gpufx");
+		TrailOffset(0,0,1);
+		TrailEulerAngleOffset(90,0,0);
+        GravityFactor(1.0);
+        ExplodeDelay(-1);
+        ExplodeOnCollision(false);
+        ScheduleExplodeAfterContact(false);
+        ExplosionFx("spear_hit.gpufx");
+        PenetrationEnable(true);
+        RicochetEnable(false);
+        CriticalDamage(2.0);
+        DamageRange(1.35);
+        DamageToPhysicsObjects(70.0);
+        PhysicsDamageMul(1.0);
+        StaminaUsage(0.2);
+        ConfusionProb(0.0);
+        WeaponBuildType(WeaponBuildType_Universal);
+        DamageType(DamageType_Pierce);
+        Flags(1);
+        InventoryMeshHQ("wpn_2hp_spear_a_fpp.msh");
+        InventoryMesh("wpn_2hp_spear_a_tpp.msh");
+        Mesh("wpn_2hp_spear_a_tpp.msh");
+        SkinTag("Weapon_Craft0");
+        AnimPrefix("Spear");
+        HudIcon("weapon_spear");
+		HitReactionType(EReactionType_Stab);
+		HitReactionContext(EReactionContext_RangedWeapon);
+		HitReactionHitSeverity(EHitSeverity_Medium);
+		HitReactionMoveSeverity(EMoveSeverity_Medium);	
+		HitReactionFlags(EReactionFlag_Interrupt);	
+        HorizontalAttackDamageMul(3.0);
+        TwoHanded(true);
+        DestroySound("damaged_heavy_weapon_XX.wav");
+        AiHitSound("spear");
+        use HitEffects_ThrownSpear();
+        use PickupSounds_Default();
+        DamageSize(5.0);
+        StatsType(StatsType_Blunt);
+        FF_EffectName("Hit_Stick2HeavyBlunt");
+        FF_Left(0.6);
+        FF_Right(0.6);
+        FF_Duration(0.2);
+        FF_FadeOut(0.0);
+        Reparable(true);
+        RepairTags("Weapon_Craft4");
+        RepairPart("Craft_MetalScrap", 1);
+        AllowedRepairs(3);
+        SoundDamagedHit("damaged_sharp_weapon_XX.wav");
+        ThrowBeginSound("weapon_heavy_throw.wav");
+        Color(Color_White);
+        AchType(AchType_BigHammer);
+        DismantleResultItem("Craft_WeaponParts");
+        DismantleResultItemCnt(2);
+        CraftingSlots(1,0);
+        UniqueFxNameBase("machete");
+        RagdollBehaviorPrefix("Stick2HeavyBlunt");
+        Price(8118);
+        GenType(GenType_MeleeWeapon);
+        TierSpread(1, 3);
+        InWorldScale(1.0);
+        SynchroMovementOnAttack(true);
+        EnabledAutoAim(true);
+        TwoHanded(true);
+        HandInertiaRotFactor([0.25,1.0,1.0]);
+        HandInertiaFactor(0.8);
+        DuckInertiaFactor(0.0);
+        OpportunityWeapon(true);
+		HideFlightParaboll(true);
+		Name("&Thrown_Spear_N&");
+		Description("&Thrown_Spear_D&");	
+		MaxStackCount(1);
+		GameVersion(1);
+    }
+
+
+    Item("Thrown_Spear_Upgrade5", CategoryType_Throwable)
+    {
+        Visibility(true);
+        HandToUse("RIGHT");
+        ItemType(ItemType_ThrowableSpear);
+        PhysicsScript("simple.phx");
+        Condition(-1);
+        CriticalCondition(11);
+        ThrowDamage("SpearThrow_RGD6");
+        DamageName("SpearThrow_RGD6");
+        Force(25.0);
+        ThrowImpulseLook(45.0);
+        ThrowImpulseUp(2.0);
+		InitialRotation(90,0,0);
+		RotationVel(0,180,0);
+        CriticalProb(1.0);
+        ThrowSpeed(45.0);
+		MotionTrailFx("spear_trail.gpufx");
+		TrailOffset(0,0,1);
+		TrailEulerAngleOffset(90,0,0);
+        GravityFactor(1.0);
+        ExplodeDelay(-1);
+        ExplodeOnCollision(false);
+        ScheduleExplodeAfterContact(false);
+        ExplosionFx("spear_hit.gpufx");
+        PenetrationEnable(true);
+        RicochetEnable(false);
+        CriticalDamage(2.0);
+        DamageRange(1.35);
+        DamageToPhysicsObjects(70.0);
+        PhysicsDamageMul(1.0);
+        StaminaUsage(0.2);
+        ConfusionProb(0.0);
+        WeaponBuildType(WeaponBuildType_Universal);
+        DamageType(DamageType_Pierce);
+        Flags(1);
+        InventoryMeshHQ("wpn_2hp_spear_a_fpp.msh");
+        InventoryMesh("wpn_2hp_spear_a_tpp.msh");
+        Mesh("wpn_2hp_spear_a_tpp.msh");
+        SkinTag("Weapon_Craft0");
+        AnimPrefix("Spear");
+        HudIcon("weapon_spear");
+		HitReactionType(EReactionType_Stab);
+		HitReactionContext(EReactionContext_RangedWeapon);
+		HitReactionHitSeverity(EHitSeverity_Medium);
+		HitReactionMoveSeverity(EMoveSeverity_Medium);	
+		HitReactionFlags(EReactionFlag_Interrupt);	
+        HorizontalAttackDamageMul(3.0);
+        TwoHanded(true);
+        DestroySound("damaged_heavy_weapon_XX.wav");
+        AiHitSound("spear");
+        use HitEffects_ThrownSpear();
+        use PickupSounds_Default();
+        DamageSize(5.0);
+        StatsType(StatsType_Blunt);
+        FF_EffectName("Hit_Stick2HeavyBlunt");
+        FF_Left(0.6);
+        FF_Right(0.6);
+        FF_Duration(0.2);
+        FF_FadeOut(0.0);
+        Reparable(true);
+        RepairTags("Weapon_Craft4");
+        RepairPart("Craft_MetalScrap", 1);
+        AllowedRepairs(3);
+        SoundDamagedHit("damaged_sharp_weapon_XX.wav");
+        ThrowBeginSound("weapon_heavy_throw.wav");
+        Color(Color_White);
+        AchType(AchType_BigHammer);
+        DismantleResultItem("Craft_WeaponParts");
+        DismantleResultItemCnt(2);
+        CraftingSlots(1,0);
+        UniqueFxNameBase("machete");
+        RagdollBehaviorPrefix("Stick2HeavyBlunt");
+        Price(8118);
+        GenType(GenType_MeleeWeapon);
+        TierSpread(1, 3);
+        InWorldScale(1.0);
+        SynchroMovementOnAttack(true);
+        EnabledAutoAim(true);
+        TwoHanded(true);
+        HandInertiaRotFactor([0.25,1.0,1.0]);
+        HandInertiaFactor(0.8);
+        DuckInertiaFactor(0.0);
+        OpportunityWeapon(true);
+		HideFlightParaboll(true);
+		Name("&Thrown_Spear_N&");
+		Description("&Thrown_Spear_D&");	
+		MaxStackCount(1);
+		GameVersion(1);
+    }
+
+
+    Item("Thrown_Spear_Upgrade6", CategoryType_Throwable)
+    {
+        Visibility(true);
+        HandToUse("RIGHT");
+        ItemType(ItemType_ThrowableSpear);
+        PhysicsScript("simple.phx");
+        Condition(-1);
+        CriticalCondition(11);
+        ThrowDamage("SpearThrow_RGD7");
+        DamageName("SpearThrow_RGD7");
+        Force(25.0);
+        ThrowImpulseLook(45.0);
+        ThrowImpulseUp(2.0);
+		InitialRotation(90,0,0);
+		RotationVel(0,180,0);
+        CriticalProb(1.0);
+        ThrowSpeed(45.0);
+		MotionTrailFx("spear_trail.gpufx");
+		TrailOffset(0,0,1);
+		TrailEulerAngleOffset(90,0,0);
+        GravityFactor(1.0);
+        ExplodeDelay(-1);
+        ExplodeOnCollision(false);
+        ScheduleExplodeAfterContact(false);
+        ExplosionFx("spear_hit.gpufx");
+        PenetrationEnable(true);
+        RicochetEnable(false);
+        CriticalDamage(2.0);
+        DamageRange(1.35);
+        DamageToPhysicsObjects(70.0);
+        PhysicsDamageMul(1.0);
+        StaminaUsage(0.2);
+        ConfusionProb(0.0);
+        WeaponBuildType(WeaponBuildType_Universal);
+        DamageType(DamageType_Pierce);
+        Flags(1);
+        InventoryMeshHQ("wpn_2hp_spear_a_fpp.msh");
+        InventoryMesh("wpn_2hp_spear_a_tpp.msh");
+        Mesh("wpn_2hp_spear_a_tpp.msh");
+        SkinTag("Weapon_Craft0");
+        AnimPrefix("Spear");
+        HudIcon("weapon_spear");
+		HitReactionType(EReactionType_Stab);
+		HitReactionContext(EReactionContext_RangedWeapon);
+		HitReactionHitSeverity(EHitSeverity_Medium);
+		HitReactionMoveSeverity(EMoveSeverity_Medium);	
+		HitReactionFlags(EReactionFlag_Interrupt);	
+        HorizontalAttackDamageMul(3.0);
+        TwoHanded(true);
+        DestroySound("damaged_heavy_weapon_XX.wav");
+        AiHitSound("spear");
+        use HitEffects_ThrownSpear();
+        use PickupSounds_Default();
+        DamageSize(5.0);
+        StatsType(StatsType_Blunt);
+        FF_EffectName("Hit_Stick2HeavyBlunt");
+        FF_Left(0.6);
+        FF_Right(0.6);
+        FF_Duration(0.2);
+        FF_FadeOut(0.0);
+        Reparable(true);
+        RepairTags("Weapon_Craft4");
+        RepairPart("Craft_MetalScrap", 1);
+        AllowedRepairs(3);
+        SoundDamagedHit("damaged_sharp_weapon_XX.wav");
+        ThrowBeginSound("weapon_heavy_throw.wav");
+        Color(Color_White);
+        AchType(AchType_BigHammer);
+        DismantleResultItem("Craft_WeaponParts");
+        DismantleResultItemCnt(2);
+        CraftingSlots(1,0);
+        UniqueFxNameBase("machete");
+        RagdollBehaviorPrefix("Stick2HeavyBlunt");
+        Price(8118);
+        GenType(GenType_MeleeWeapon);
+        TierSpread(1, 3);
+        InWorldScale(1.0);
+        SynchroMovementOnAttack(true);
+        EnabledAutoAim(true);
+        TwoHanded(true);
+        HandInertiaRotFactor([0.25,1.0,1.0]);
+        HandInertiaFactor(0.8);
+        DuckInertiaFactor(0.0);
+        OpportunityWeapon(true);
+		HideFlightParaboll(true);
+		Name("&Thrown_Spear_N&");
+		Description("&Thrown_Spear_D&");
+		MaxStackCount(1);
+		GameVersion(1);
+    }
+
+    Item("Thrown_Spear_Upgrade7", CategoryType_Throwable)
+    {
+        Visibility(true);
+        HandToUse("RIGHT");
+        ItemType(ItemType_ThrowableSpear);
+        PhysicsScript("simple.phx");
+        Condition(-1);
+        CriticalCondition(11);
+        ThrowDamage("SpearThrow_RGD8");
+        DamageName("SpearThrow_RGD8");
+        Force(25.0);
+        ThrowImpulseLook(45.0);
+        ThrowImpulseUp(2.0);
+		InitialRotation(90,0,0);
+		RotationVel(0,180,0);
+        CriticalProb(1.0);
+        ThrowSpeed(45.0);
+		MotionTrailFx("spear_trail.gpufx");
+		TrailOffset(0,0,1);
+		TrailEulerAngleOffset(90,0,0);
+        GravityFactor(1.0);
+        ExplodeDelay(-1);
+        ExplodeOnCollision(false);
+        ScheduleExplodeAfterContact(false);
+        ExplosionFx("spear_hit.gpufx");
+        PenetrationEnable(true);
+        RicochetEnable(false);
+        CriticalDamage(2.0);
+        DamageRange(1.35);
+        DamageToPhysicsObjects(70.0);
+        PhysicsDamageMul(1.0);
+        StaminaUsage(0.2);
+        ConfusionProb(0.0);
+        WeaponBuildType(WeaponBuildType_Universal);
+        DamageType(DamageType_Pierce);
+        Flags(1);
+        InventoryMeshHQ("wpn_2hp_spear_a_fpp.msh");
+        InventoryMesh("wpn_2hp_spear_a_tpp.msh");
+        Mesh("wpn_2hp_spear_a_tpp.msh");
+        SkinTag("Weapon_Craft0");
+        AnimPrefix("Spear");
+        HudIcon("weapon_spear");
+		HitReactionType(EReactionType_Stab);
+		HitReactionContext(EReactionContext_RangedWeapon);
+		HitReactionHitSeverity(EHitSeverity_Medium);
+		HitReactionMoveSeverity(EMoveSeverity_Medium);	
+		HitReactionFlags(EReactionFlag_Interrupt);	
+        HorizontalAttackDamageMul(3.0);
+        TwoHanded(true);
+        DestroySound("damaged_heavy_weapon_XX.wav");
+        AiHitSound("spear");
+        use HitEffects_ThrownSpear();
+        use PickupSounds_Default();
+        DamageSize(5.0);
+        StatsType(StatsType_Blunt);
+        FF_EffectName("Hit_Stick2HeavyBlunt");
+        FF_Left(0.6);
+        FF_Right(0.6);
+        FF_Duration(0.2);
+        FF_FadeOut(0.0);
+        Reparable(true);
+        RepairTags("Weapon_Craft4");
+        RepairPart("Craft_MetalScrap", 1);
+        AllowedRepairs(3);
+        SoundDamagedHit("damaged_sharp_weapon_XX.wav");
+        ThrowBeginSound("weapon_heavy_throw.wav");
+        Color(Color_White);
+        AchType(AchType_BigHammer);
+        DismantleResultItem("Craft_WeaponParts");
+        DismantleResultItemCnt(2);
+        CraftingSlots(1,0);
+        UniqueFxNameBase("machete");
+        RagdollBehaviorPrefix("Stick2HeavyBlunt");
+        Price(8118);
+        GenType(GenType_MeleeWeapon);
+        TierSpread(1, 3);
+        InWorldScale(1.0);
+        SynchroMovementOnAttack(true);
+        EnabledAutoAim(true);
+        TwoHanded(true);
+        HandInertiaRotFactor([0.25,1.0,1.0]);
+        HandInertiaFactor(0.8);
+        DuckInertiaFactor(0.0);
+        OpportunityWeapon(true);
+		HideFlightParaboll(true);
+		Name("&Thrown_Spear_N&");
+		Description("&Thrown_Spear_D&");	
+		MaxStackCount(1);
+		GameVersion(1);
+    }
+
+    Item("Thrown_Spear_Upgrade8", CategoryType_Throwable)
+    {
+        Visibility(true);
+        HandToUse("RIGHT");
+        ItemType(ItemType_ThrowableSpear);
+        PhysicsScript("simple.phx");
+        Condition(-1);
+        CriticalCondition(11);
+        ThrowDamage("SpearThrow_RGD9");
+        DamageName("SpearThrow_RGD9");
+        Force(25.0);
+        ThrowImpulseLook(45.0);
+        ThrowImpulseUp(2.0);
+		InitialRotation(90,0,0);
+		RotationVel(0,180,0);
+        CriticalProb(1.0);
+        ThrowSpeed(45.0);
+		MotionTrailFx("spear_trail.gpufx");
+		TrailOffset(0,0,1);
+		TrailEulerAngleOffset(90,0,0);
+        GravityFactor(1.0);
+        ExplodeDelay(-1);
+        ExplodeOnCollision(false);
+        ScheduleExplodeAfterContact(false);
+        ExplosionFx("spear_hit.gpufx");
+        PenetrationEnable(true);
+        RicochetEnable(false);
+        CriticalDamage(2.0);
+        DamageRange(1.35);
+        DamageToPhysicsObjects(70.0);
+        PhysicsDamageMul(1.0);
+        StaminaUsage(0.2);
+        ConfusionProb(0.0);
+        WeaponBuildType(WeaponBuildType_Universal);
+        DamageType(DamageType_Pierce);
+        Flags(1);
+        InventoryMeshHQ("wpn_2hp_spear_a_fpp.msh");
+        InventoryMesh("wpn_2hp_spear_a_tpp.msh");
+        Mesh("wpn_2hp_spear_a_tpp.msh");
+        SkinTag("Weapon_Craft0");
+        AnimPrefix("Spear");
+        HudIcon("weapon_spear");
+		HitReactionType(EReactionType_Stab);
+		HitReactionContext(EReactionContext_RangedWeapon);
+		HitReactionHitSeverity(EHitSeverity_Medium);
+		HitReactionMoveSeverity(EMoveSeverity_Medium);	
+		HitReactionFlags(EReactionFlag_Interrupt);	
+        HorizontalAttackDamageMul(3.0);
+        TwoHanded(true);
+        DestroySound("damaged_heavy_weapon_XX.wav");
+        AiHitSound("spear");
+        use HitEffects_ThrownSpear();
+        use PickupSounds_Default();
+        DamageSize(5.0);
+        StatsType(StatsType_Blunt);
+        FF_EffectName("Hit_Stick2HeavyBlunt");
+        FF_Left(0.6);
+        FF_Right(0.6);
+        FF_Duration(0.2);
+        FF_FadeOut(0.0);
+        Reparable(true);
+        RepairTags("Weapon_Craft4");
+        RepairPart("Craft_MetalScrap", 1);
+        AllowedRepairs(3);
+        SoundDamagedHit("damaged_sharp_weapon_XX.wav");
+        ThrowBeginSound("weapon_heavy_throw.wav");
+        Color(Color_White);
+        AchType(AchType_BigHammer);
+        DismantleResultItem("Craft_WeaponParts");
+        DismantleResultItemCnt(2);
+        CraftingSlots(1,0);
+        UniqueFxNameBase("machete");
+        RagdollBehaviorPrefix("Stick2HeavyBlunt");
+        Price(8118);
+        GenType(GenType_MeleeWeapon);
+        TierSpread(1, 3);
+        InWorldScale(1.0);
+        SynchroMovementOnAttack(true);
+        EnabledAutoAim(true);
+        TwoHanded(true);
+        HandInertiaRotFactor([0.25,1.0,1.0]);
+        HandInertiaFactor(0.8);
+        DuckInertiaFactor(0.0);
+        OpportunityWeapon(true);
+		HideFlightParaboll(true);
+		Name("&Thrown_Spear_N&");
+		Description("&Thrown_Spear_D&");	
+		MaxStackCount(1);
+		GameVersion(1);
+    }
+
+
+   Item("wpn_1hb_mace_h_fpp_vs_t2-4-fire", CategoryType_Melee)
+    {
+        Visibility(true);
+        ItemType(ItemType_Stick);
+        PhysicsScript("simple.phx");
+        Condition(26);
+        CriticalCondition(9);
+        DamageName("wpn_1hb_mace_h_fpp_vs_t2-4-fire");
+        Force(25.0);
+        CriticalProb(0.0);
+        CriticalDamage(2.0);
+        DamageRange(1.35);
+        DamageToPhysicsObjects(35.0);
+        PhysicsDamageMul(1.0);
+        StaminaUsage(0.2);
+        ConfusionProb(0.0);
+        WeaponBuildType(WeaponBuildType_Universal);
+        DamageType(DamageType_Blunt);
+        Flags(3);
+        InventoryMeshHQ("WPN_1HB_MACE_H_FPP.msh");
+        InventoryMesh("WPN_1HB_MACE_H_FPP.msh");
+        Mesh("WPN_1HB_MACE_H_FPP.msh");
+        SkinTag("Weapon_Craft0");
+        AnimPrefix("Stick");
+        HudIcon("wpn_1hb_mace_h");
+        MinHitSeverity(HitSeverity_Light);
+        MaxHitSeverity(HitSeverity_Medium);
+        HorizontalAttackDamageMul(1.0);
+        TwoHanded(false);
+        HolderElement("r_thigh");
+        HolderOffset([0.0,0.1,0.1] *[0.01, 0.01, 0.01]);
+        HolderAngle([0.0,0.0,-90.0]);
+        DestroySound("damaged_sharp_weapon_XX.wav");
+        AiHitSound("mace_h");
+		Material("metal");
+        use HitEffects_Sharp();
+        use PickupSounds_Default();
+        DamageSize(2.0);
+        StatsType(StatsType_Cut);
+        FF_EffectName("Hit_Blunt");
+        FF_Left(0.6);
+        FF_Right(0.6);
+        FF_Duration(0.2);
+        FF_FadeOut(0.0);
+        Reparable(true);
+        RepairTags("Weapon_Craft4");
+        RepairPart("Craft_MetalScrap", 1);
+        AllowedRepairs(3);
+        SoundDamagedHit("damaged_sharp_weapon_XX.wav");
+        ThrowBeginSound("weapon_light_throw.wav");
+        Color(Color_White);
+        AchType(AchType_Machete);
+        DismantleResultItem("Craft_WeaponParts");
+        DismantleResultItemCnt(1);
+        CraftingSlots(3,0);
+        UniqueFxNameBase("machete");
+        RagdollBehaviorPrefix("StickBlunt");
+        HandInertiaFactor(1.8);
+        Price(200);
+        GenType(GenType_MeleeWeapon);
+        TierSpread(2, 4);
+        InWorldScale(0.9);
+        OpportunityWeapon(false);
+        AddFXName("fire_small.gpufx");
+        AddFXHelperName("DTrailStart1");
+		GameVersion(1);
+    }
+
+    Item("PlayerBackpack", CategoryType_Other)
+    {
+        Visibility(true);
+        ItemType(ItemType_Special);
+        AnimPrefix("Unarmed");
+        PhysicsScript("simple.phx");
+        MaxStackCount(1);
+        InventoryMeshHq("player_backpack.msh");
+        InventoryMesh("player_backpack.msh");
+        Mesh("player_backpack.msh");
+        Skin("Default");
+        use PickupSounds_Default();
+		GameVersion(1);
+    }
+
+	Item("PlayerBinoculars", CategoryType_Other)
+    {
+        Visibility(true);
+        ItemType(ItemType_Special);
+        AnimPrefix("Unarmed");
+        PhysicsScript("simple.phx");
+        MaxStackCount(1);
+        InventoryMeshHq("eqp_binoculars_a.msh");
+        InventoryMesh("eqp_binoculars_a.msh");
+        Mesh("eqp_binoculars_a.msh");
+        Skin("Default");
+        use PickupSounds_Default();
+		GameVersion(1);
+    }
+
+	Item("Molotov_Lantern_Small", CategoryType_ThrowableLiquid)
+    {
+        Visibility(false);
+		DamagePresetName("molotov_lantern");
+		DamageRange(3.0);
+		ExplosionFx("lamp_explosion.gpufx");
+		
+        SplashRadiusMin(0.7);
+        SplashRadiusMax(1.5);
+        SplashNumPositions(3);
+        SplashSpacingType("EvenAngles");
+        SplashEmitterLifeTimeMin(5.0);
+        SplashEmitterLifeTimeMax(10.0);
+        SplashEmitterFadeInTime(0.0);
+		SplashEmitterDamagePreset("molotov_lantern_splash");
+        SplashEmitterScale([3.0,1.0,3.0]);
+		SplashEmitterCenterGroundFx("lantern_burn_surf_center_ground.gpufx");
+        SplashEmitterGroundFx("lantern_burning_surface_ground.gpufx");
+        SplashEmitterCenterWallFx("lantern_burn_surf_center_wall.gpufx");
+		SplashEmitterWallFx("lantern_burning_surface_wall.gpufx");
+		GameVersion(1);
+    }
+
+	// item used to hold it when zip - sliding
+	Item("ZipLine_Pulley", CategoryType_Other)
+    {
+		Name("ZipLine Pulley");
+        Visibility(true);
+        ItemType(ItemType_Special);
+
+        InventoryMeshTpp("eqp_zipline_pulley_rope.msh");
+        InventoryMeshHq("eqp_zipline_pulley_rope.msh");
+        InventoryMesh("eqp_zipline_pulley_rope.msh");
+        Mesh("eqp_zipline_pulley_rope.msh");
+        Skin("Default");
+        AnimPrefix("Unarmed");
+        HudIcon("weapon_pickaxe");
+        HolderElement("r_thigh");
+        use PickupSounds_Default();
+        PlayerTool();
+		GameVersion(1);
+    }
+	
+	Item("wpn_2hr_crossbow_challenge", CategoryType_Firearm)
+    {
+		use wpn_2hr_crossbow_b();
+        AmmoCount(5);
+        BulletSpeed(150.0);
+        BulletGravityFactor(0.1);
+        Condition(-1.0);
+        FirePointRange(0, 15);
+        FirePointDamage(0, "wpn_2hr_crossbow_challenge");
+        FirePointForce(0, 100);
+        FirePointFlags(0, "LIGHT_ATTACK");
+        FirePointHitSeverity(0, EHitSeverity_Medium);
+        FirePointMoveSeverity(0, EMoveSeverity_Light);
+        FirePointReactionType(0, EReactionType_Stab);
+        FirePointRange(1, 40);
+        FirePointDamage(1, "wpn_2hr_crossbow_challenge-low");
+        FirePointForce(1, 100);
+        FirePointFlags(1, "LIGHT_ATTACK");
+        FirePointHitSeverity(1, EHitSeverity_Medium);
+        FirePointMoveSeverity(1, EMoveSeverity_Light);
+        FirePointReactionType(1, EReactionType_Stab);
+        StaminaUsage(0.1);
+        UsageType(UsageType_Normal);
+        LimbsCutProb(0.25);
+		DamageName("crossbow_r0");
+        EnablePenetration(false);
+        StaminaDamage(0);
+        GameVersion(1);
+        DamageHeadMult(6.0);
+		DamageName("wpn_2hr_crossbow_challenge");
+        Name("&wpn_2hr_crossbow_a_fpp_challenge_n&");
+		Condition(-1.0);
+		ChallengeItem(true);
+    }
+
+    Item("Antizine_Mushroom", CategoryType_Powerup)
+    {
+        ItemType(ItemType_Injector);
+        Visibility(true);
+        MaxStackCount(99);
+        Price(30);
+        HudIcon("equipment_medkit_b");
+        Mesh("loot_plant_mushrooms_a.msh");
+        InventoryMesh("loot_plant_mushrooms_a.msh");
+        Skin("Default");
+        PhysicsScript("simple.phx");
+        AnimPrefix("Shroom");
+        use PickupSounds_Default();
+        UseTime(4.0);
+        Color(Color_Green);
+        Buff("Potion_Antizine");
+        ConsumableSlot();
+        Condition(0);
+        GenType(GenType_None);
+        ItemLevel(1, 9);
+        UseOnPickUp(true);
+        UID("6860448216528387925");
+		GameVersion(1);
+    }
+
+    Item("Corruptor_Key", CategoryType_Other)
+    {
+        Description("&Corruptor_Key_D&");
+        Visibility(true);
+        ItemType(ItemType_Key);
+        PhysicsScript("simple.phx");
+        Condition(75.0);
+        InventoryMeshHq("wpn_rope_hook_a_tpp.msh");
+        InventoryMesh("wpn_rope_hook_a_tpp.msh");
+        Mesh("wpn_rope_hook_a_tpp.msh");
+        HudIcon("weapon_scanner");
+        HolderElement("r_thigh");
+        HolderOffset([0.0,10.0,10.0]);
+        HolderAngle([0.0,0.0,-90.0]);
+        AiHitSound("weapon_rope_hit_body");
+        use PickupSounds_Default();
+        Reparable(false);
+        Color(Color_White);
+        CraftingSlots(0);
+		GameVersion(1);
+    }
+
+    //this keyword is no longer being used in game code!
+    //DamageAndForceSpreadCurve(Color_White, "wpn_melee_damage_spread_white");
+    //DamageAndForceSpreadCurve(Color_Green, "wpn_melee_damage_spread_green");
+    //DamageAndForceSpreadCurve(Color_Blue, "wpn_melee_damage_spread_blue");
+    //DamageAndForceSpreadCurve(Color_Violet, "wpn_melee_damage_spread_violet");
+    //DamageAndForceSpreadCurve(Color_Orange, "wpn_melee_damage_spread_orange");
+    //DamageAndForceSpreadCurve(Color_Platinum, "wpn_melee_damage_spread_platinum");
+
+    CraftSlotsBonus(Color_Green,  0, 0);
+    CraftSlotsBonus(Color_Blue,   1, 0);
+    CraftSlotsBonus(Color_Violet, 2, 0);
+    CraftSlotsBonus(Color_Orange, 2, 0);
+    CraftSlotsBonus(Color_Platinum, 2, 0);
+
+    RepairSlotsBonus(Color_Green,  0);
+    RepairSlotsBonus(Color_Blue,   0);
+    RepairSlotsBonus(Color_Violet, 1);
+    RepairSlotsBonus(Color_Orange, 2);
+    RepairSlotsBonus(Color_Platinum, 3);
+
+    DurabilityBonus(Color_White,  14);
+	DurabilityBonus(Color_Green,  72);
+    DurabilityBonus(Color_Blue,   98);
+    DurabilityBonus(Color_Violet, 134);
+    DurabilityBonus(Color_Orange, 170);
+    DurabilityBonus(Color_Platinum, 206);
+
+    AffixBonus(Color_Green, 0);
+	AffixBonus(Color_Blue, 1);
+    AffixBonus(Color_Violet, 2);
+    AffixBonus(Color_Orange, 3);
+    AffixBonus(Color_Platinum, 3);
+
+    //DismantleResult is currently not supported
+    DismantleResult(Color_White, "Craft_MetalScrap", 1);
+    DismantleResult(Color_Green, "Craft_MetalScrap", 1);
+    DismantleResult(Color_Blue, "Craft_MetalScrap", 1);
+    DismantleResult(Color_Violet, "Craft_MetalScrap", 2);
+    DismantleResult(Color_Orange, "Craft_MetalScrap", 3);
+    DismantleResult(Color_Platinum, "Craft_MetalScrap", 3);
+
+    CraftingSlotsValueCurve("crafting_slots_value_mul");
+    ConditionValueCurve("condition_value_mul");
+    RepairsLeftValueCurve("repairs_left_value_mul");
+	
+	use Inventory_EasterEggs();
+}

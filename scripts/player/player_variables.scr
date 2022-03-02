@@ -322,8 +322,8 @@ sub main()
 	
 	Param("StaminaHeavyBreathLevelStartBow", "0.25");
 	Param("StaminaHeavyBreathLevelMaxBow", "0.0");
-	Param("StaminaHeavyBreathLevelStart", "0.75");
-	Param("StaminaHeavyBreathLevelMax", "0.3");
+	Param("StaminaHeavyBreathLevelStart", "0.4");
+	Param("StaminaHeavyBreathLevelMax", "0.1");
     Param("MaxStamina", "IAL_Player_Stamina");
 	Param("MaxStaminaMultiplier", "1.0");
     Param("MaxStaminaMinRegenerationTime", "IAL_Player_Stamina_Regen_Min");    
@@ -377,18 +377,18 @@ sub main()
     Param("SprintExhausted", "1");
 	Param("ExhaustedMoveMaxSpeedFactor", "0.66");
     Param("TackleTimeToRegenOnEmpty", "3.0");
-    Param("MoveSprintStaminaConsumption", "0.0");
-    Param("MoveSpeedFitnessFactor", "0.6");
+    Param("MoveSprintStaminaConsumption", "IAL_Run_Stamina_Drain");
+    Param("MoveSpeedFitnessFactor", "IAL_Run_Speed");
     Param("MoveSpeedFitnessFactorTime", "5.0");
-    Param("XrayEffectProbability", "0.5");
-    Param("SlowMoProbability", "1.0");
-	Param("SlowMoLastGroupTime", "30.0");
-	Param("GroupOfEnemiesCount", "3.0");	
+    Param("XrayEffectProbability", "IAL_XRAY_Chance");
+    Param("SlowMoProbability", "IAL_Slowmo_Chance");
+	Param("SlowMoLastGroupTime", "IAL_Slowmo_Cooldown");
+	Param("GroupOfEnemiesCount", "IAL_Group_Enemies_Max");	
     Param("SkipObstacleMechanimsOnEnemyProb", "0.0");
     Param("CanThrowInLookback", "0");
     Param("ChallengeStaminaDropMul", "0.2");
-    Param("ZipLineMinSpeed", "6.0");
-    Param("ZipLineMaxSpeed", "11.0");
+    Param("ZipLineMinSpeed", "IAL_ZiplineSpeed_Min");
+    Param("ZipLineMaxSpeed", "IAL_ZiplineSpeed_Max");
 	Param("ZipLineAboveSlideEnabled", "1");
     Param("StrengthDamageMul", "Player_StrengthDamageMul");
     Param("MeleeDamageMul", "Player_MeleeDamageMul");
@@ -404,21 +404,21 @@ sub main()
 	Param("MeleeFastHitMaxDist", "1.8");	
 	Param("MeleeFastHitMinDist", "1.2");
     Param("KickBaseDamageMul", "Player_KickBaseDamageMul");
-    Param("MeleeVerticalPhysicalDamageMul", "1.5");
-	Param("MeleeBluntRagdollEveryXHit", "0");
+    Param("MeleeVerticalPhysicalDamageMul", "IAL_Combat_StandingOver_DmgMulti");
+	Param("MeleeBluntRagdollEveryXHit", "IAL_Combat_Blunt_ForceRagdoll_NumberOfHits");
     // KICK STAMINA USAGE
-    Param("KickStaminaUsage", "0.0");
+    Param("KickStaminaUsage", "IAL_Combat_Kick_StaminaCost");
     // WRESTLING KICK
     Param("WrestlingKickRangeMul", "1.3");
     Param("WrestlingKickStaminaUsage", "0.2");
     Param("WrestlingKickCooldown", "-1.0");
     Param("AirKickBaseDamageMul", "Player_AirKickBaseDamageMul");
-    Param("AirKickPhysicsDamage", "2.0");
+    Param("AirKickPhysicsDamage", "IAL_Combat_AirKick_PhysicsDmg");
     Param("AirKickRangeMul", "1.2");
     Param("AirKickStaminaUsage", "0.3");
-    Param("HarmfulHeight", "6.8");
-	Param("LargeFallHeight", "4.8");	
-    Param("LethalHeight", "14.0");
+    Param("HarmfulHeight", "IAL_Player_FallHeight_Hurt");
+	Param("LargeFallHeight", "IAL_Player_FallHeight_Stagger");	
+    Param("LethalHeight", "IAL_Player_FallHeight_Lethal");
     Param("FallHeightFilter", "0.3");
     Param("AmortizedHarmfulHeight", "14.0");
     Param("AmortizedLethalHeight", "14.0");

@@ -2,12 +2,15 @@ sub main()
 {
     InvestigationModulePreset("infected")
     {
-        FlashlightReactionDelay("0.5");
+        MaxTimeSinceLastHitToInvestigate("20.0");
+		FlashlightReactionDelay("0.5");
         FlashlightOnlyEnemies("true");
         SightMinRecognition("0.1");
         SightIgnoreLowThreat("false");
         SightOnlyPlayer("false");
         SupportCallForHelp("true");
+		NavmeshMaxPathLengthNoiseRangeMuliplier("2.0");
+        MaxDeltaTimeToInvestigateNoise("1.0");
     }
     
     InvestigationModulePreset("human")
@@ -17,7 +20,7 @@ sub main()
         FlashlightOnlyEnemies("true");
         SightMinRecognition("0.15");
         SightIgnoreLowThreat("true");
-        SightOnlyPlayer("true");
+        SightOnlyPlayer("false");
         SupportCallForHelp("true");
         NavmeshMaxPathLengthNoiseRangeMuliplier("2.0");
         MaxDeltaTimeToInvestigateNoise("1.0");

@@ -3,6 +3,16 @@
 ////////////////\\\\\\\\\\\\\\\\\
 
 ////////////GAMEPLAY\\\\\\\\\\\\\\\\\\\
+//SLOWMO\\
+export float IAL_Slowmo_Chance = 0.80;
+export float IAL_Slowmo_Cooldown = 30.0;
+
+//XRAY\\
+export float IAL_XRAY_Chance = 0.80;
+
+//ZIPLINE\\
+export float IAL_ZiplineSpeed_Min = 8.0; //Default is 6.0
+export float IAL_ZiplineSpeed_Max = 15.0; //Default is 11.0
 
 //LOOTING\\
 export int IAL_Loot_MultipleItems_LVL = 3; //Level that the player starts getting multiple items from loot
@@ -20,14 +30,22 @@ export float IAL_Player_Stamina_Drain_Rate = 1.0;
 export float IAL_Player_Stamina_Drain_FromHit = 0.1;
 
 //Running Settings\\
+export float IAL_Run_Speed = 1.0; //Default is 0.6
 export float IAL_Run_FOV_Focus = 4.0;
 export int IAL_Run_VisualEffects = 0;
 export int IAL_Run_Headbob = 1;
+export float IAL_Run_Stamina_Drain = 0.001; //!!DRAINS STAMINA WHEN RUNNING!! Set to = 0.0 to remove
 
 //Swimming Settings\\
 export int IAL_Swimming_HoldBreath_Secs = 30;
 export float IAL_Swimming_StaminaDrain = 0.15;
 export bool IAL_Swimming_Sprint = TRUE;
+
+//COMBAT\\
+export int IAL_Combat_Blunt_ForceRagdoll_NumberOfHits = 2;
+export float IAL_Combat_StandingOver_DmgMulti = 2.0; //Default is 1.5
+export float IAL_Combat_Kick_StaminaCost = 0.05; //Default is 0.0
+export float IAL_Combat_AirKick_PhysicsDmg = 5.0; //Default is 2.0
 
 //Survivor Sense Settings\\
 export bool IAL_SurvivorSense_WhileMoving = FALSE;
@@ -100,6 +118,11 @@ export float IAL_Special_SpawnDistance_max = 40.0;
 export string IAL_Biter_Swip_DMG_Percent = "4%-40% of MaxHealth"; //Total percent of health
 export string IAL_Biter_GrabBite_DMG_Percent = "70% of MaxHealth";
 export int IAL_Biter_Fist_DMG_Boost = 70;
+
+//BITER LOCOMOTION\\
+
+//Grouping System\\
+export float IAL_Group_Enemies_Max = 12.0;
 
 //- AI ENCOUNTER Settings -\\
 //- LOCATION - (ailife/areaSettings.scr) -----\\
@@ -178,7 +201,6 @@ export string IAL_AI_Encounter_Difficulty_Military_Lvl_Min = "Tier_5";
 export string IAL_AI_Encounter_Difficulty_Military_Lvl_Max = "Tier_9";
 export string IAL_AI_Encounter_Difficulty_Chemicals_Lvl_Min = "Tier_5";
 export string IAL_AI_Encounter_Difficulty_Chemicals_Lvl_Max = "Tier_9";
-
 ////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
@@ -204,6 +226,7 @@ export int IAL_Chase_LVL2_ChaseEndDelay = 25;
 export int IAL_Chase_LVL3_ChaseEndDelay = 30;
 export int IAL_Chase_LVL4_ChaseEndDelay = 50;
 
+//Time before chase ends under UV Light\\
 export int IAL_Chase_LVL1_ChaseEndUnderUVDelay = 20;
 export int IAL_Chase_LVL2_ChaseEndUnderUVDelay = 25;
 export int IAL_Chase_LVL3_ChaseEndUnderUVDelay = 30;
@@ -342,7 +365,7 @@ export float IAL_Weapons_Physical_Dmg_Tier_4 = 0.07;
 ////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
-////////////AI BEHAVIOR Settings\\\\\\\\\\\\\\\\\\\
+////////////HEIGHT Settings\\\\\\\\\\\\\\\\\\\
 //- LOCATION - (ai/modulesparams/collisionmodulehumanpresets.scr) -----\\
 export float IAL_AI_FallHeight_ImmediateKill = 15.0;
 
@@ -365,6 +388,11 @@ export float IAL_AI_FallHeight_Volatile_MaxDmg = 75.0;
 export float IAL_AI_FallHeight_AlphaZombie_ImmediateKill = 30.0;
 export float IAL_AI_FallHeight_AlphaZombie_MinDmg = 100.0;
 export float IAL_AI_FallHeight_AlphaZombie_MaxDmg = 150.0;
+
+export float IAL_Player_FallHeight_Stagger = 4.5; //Default is 4.8
+export float IAL_Player_FallHeight_Hurt = 6.5; //Default is 6.8
+export float IAL_Player_FallHeight_Lethal = 13.0; //Default is 14.0
+
 ////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
@@ -392,7 +420,6 @@ export float IAL_Explosive_ExplosiveBarrel_Physics = 2.05;
 //- LOCATION - (ai/ai_manager.scr) -----\\
 export int IAL_AI_DistanceToReact_Explosion_Min = 70;
 export int IAL_AI_DistanceToReact_Explosion_Max = 120;
-
 ////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 

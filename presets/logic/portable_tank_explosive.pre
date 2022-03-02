@@ -1,0 +1,163 @@
+sub main()
+{
+	Version(0);
+	PresetDef("tank_behaviour")
+	{
+		Description("");
+		AddField("m_EntityVariant", "24;189;229;230;250;", false, true, false);
+		AddField("m_LerpWithLastDirection", "1", false, true, false);
+		AddField("m_InnerZone", "0.15", false, true, false);
+		AddField("m_Distance", "2.0", false, true, false);
+		AddField("m_LerpToLastDirFactor", "0.8", false, true, false);
+		AddField("m_ThrowTorque", "15.0", false, true, false);
+		AddField("m_GenerateAxisZ", "1", false, true, false);
+		AddField("m_AddedImpuseForce", "0.0", false, true, false);
+		AddField("m_PrefabToSpawnOnExplode", "", false, true, false);
+		AddField("m_ChargedThrowTorque", "15.0", false, true, false);
+		AddField("m_GenerateAxisY", "1", false, true, false);
+		AddField("m_DamageRange", "3.0", false, true, false);
+		AddField("m_SecondaryDamageRange", "5.0", false, true, false);
+		AddField("m_DamagePreset", "tank_explosive", false, true, false);
+		AddField("m_SecondaryDamageDefinition", "Portable_Tank_Blast_tier_1", false, true, false);
+		AddField("m_CountdownTimeToExplode", "6.0", false, true, false);
+		AddField("m_BaseImpulsForce", "0.0", false, true, false);
+		AddField("m_RotationFrequency", "4.0", false, true, false);
+		AddField("m_MeshName", "gas_cylinder_b.msh", false, true, false);
+		AddField("m_ShouldAddForceOnFrame", "1", false, true, false);
+		AddField("m_GenerateAxisX", "1", false, true, false);
+		AddField("m_LerpToTheStartPosition", "1", false, true, false);
+		AddField("m_SkinName", "Color1_Red", false, true, false);
+		AddField("m_DisableWholeObjectAfterExplode", "1", false, true, false);
+		AddField("m_ExplodeFxSequence", "portable_tank_explosion.gpufx", false, true, false);
+		AddField("m_ThrowAutoHitAssist", "1", false, true, false);
+		AddField("m_ThrowMultiAssist", "1", false, true, false);
+		AddField("m_OuterZone", "2.0", false, true, false);
+		AddField("m_CalculatePointsFromCollidable", "1", false, true, false);
+		AddField("m_ThrowVelocity", "250.0", false, true, false);
+		AddField("m_ChargedThrowVelocity", "250.0", false, true, false);
+		AddField("m_PhxForce", "75.0", false, true, false);
+		AddField("m_EntityOriginOffset", "0.0 0.0 0.0", false, true, false);
+		AddField("m_ExplosionNoiseUid", "explosion", false, true, false);
+		AddField("m_GasLeakNoiseUid", "gas_leak", false, true, false);
+		
+		IgnoreField("UserData");
+		IgnoreField("SkinName");
+		
+		
+		Preset("flying_tank")
+		{
+			SetField("m_EntityVariant", "24;189;229;230;250;");
+			SetField("m_MeshName", "gas_cylinder_b.msh");
+			SetField("m_SkinName", "Color1_Red");
+			SetField("m_CountdownTimeToExplode", "5.0");
+			SetField("m_DisableWholeObjectAfterExplode", "1");
+			SetField("m_ExplodeFxSequence", "portable_tank_explosion.gpufx");
+			SetField("m_PrefabToSpawnOnExplode", "");
+			SetField("m_DamageRange", "3.0");
+			SetField("m_SecondaryDamageRange", "5.0");
+			SetField("m_BaseImpulsForce", "0.0");
+			SetField("m_AddedImpuseForce", "0.0");
+			SetField("m_RotationFrequency", "4.0");
+			SetField("m_ShouldAddForceOnFrame", "1");
+			SetField("m_GenerateAxisX", "1");
+			SetField("m_GenerateAxisY", "1");
+			SetField("m_GenerateAxisZ", "1");
+			SetField("m_Distance", "2.0");
+			SetField("m_LerpWithLastDirection", "1");
+			SetField("m_LerpToLastDirFactor", "0.8");
+			SetField("m_LerpToTheStartPosition", "1");
+			SetField("m_ThrowVelocity", "250.0");
+			SetField("m_ThrowTorque", "15.0");
+			SetField("m_ChargedThrowVelocity", "250.0");
+			SetField("m_ChargedThrowTorque", "15.0");
+			SetField("m_ThrowAutoHitAssist", "1");
+			SetField("m_ThrowMultiAssist", "1");
+			SetField("m_CalculatePointsFromCollidable", "1");
+			SetField("m_InnerZone", "0.15");
+			SetField("m_OuterZone", "2.0");
+		}
+		Preset("flying_tank_wall")
+		{
+			SetField("m_EntityVariant", "24;");
+			SetField("m_MeshName", "fire_extinguisher.msh");
+			SetField("m_SkinName", "Color1_Red");
+			SetField("m_CountdownTimeToExplode", "3.0");
+			SetField("m_DisableWholeObjectAfterExplode", "1");
+			SetField("m_ExplodeFxSequence", "fire_extinguisher_explosion.gpufx");
+			SetField("m_PrefabToSpawnOnExplode", "");
+			SetField("m_DamageRange", "3.0");
+			SetField("m_SecondaryDamageRange", "5.0");
+			SetField("m_BaseImpulsForce", "5000.0");
+			SetField("m_AddedImpuseForce", "3500.0");
+			SetField("m_RotationFrequency", "5.0");
+			SetField("m_ShouldAddForceOnFrame", "1");
+			SetField("m_GenerateAxisX", "1");
+			SetField("m_GenerateAxisY", "0");
+			SetField("m_GenerateAxisZ", "1");
+			SetField("m_Distance", "2.0");
+			SetField("m_LerpWithLastDirection", "1");
+			SetField("m_LerpToLastDirFactor", "0.8");
+			SetField("m_LerpToTheStartPosition", "1");
+			SetField("m_ThrowVelocity", "250.0");
+			SetField("m_ThrowTorque", "0.0");
+			SetField("m_ChargedThrowVelocity", "250.0");
+			SetField("m_ChargedThrowTorque", "5.0");
+			SetField("m_ThrowAutoHitAssist", "1");
+			SetField("m_ThrowMultiAssist", "1");
+			SetField("m_CalculatePointsFromCollidable", "1");
+			SetField("m_InnerZone", "0.15");
+			SetField("m_OuterZone", "2.0");
+		}
+		Preset("static_gas_tank")
+		{
+			SetField("m_EntityVariant", "24;");
+			SetField("m_MeshName", "gas_cylinder_c.msh");
+			SetField("m_SkinName", "Color1_Red");
+			SetField("m_CountdownTimeToExplode", "5.0");
+			SetField("m_DisableWholeObjectAfterExplode", "1");
+			SetField("m_ExplodeFxSequence", "gas_tank_explosion.gpufx");
+			SetField("m_PrefabToSpawnOnExplode", "");
+			SetField("m_DamageRange", "3.0");
+			SetField("m_SecondaryDamageRange", "5.0");
+			SetField("m_ThrowAutoHitAssist", "1");
+			SetField("m_ThrowMultiAssist", "1");
+			SetField("m_CalculatePointsFromCollidable", "1");
+			SetField("m_InnerZone", "0.15");
+			SetField("m_OuterZone", "2.0");
+		}
+		Preset("static_gas_tank_big")
+		{
+			SetField("m_EntityVariant", "24;");
+			SetField("m_MeshName", "gas_cylinder_a.msh");
+			SetField("m_SkinName", "Color1_Red");
+			SetField("m_CountdownTimeToExplode", "5.0");
+			SetField("m_DisableWholeObjectAfterExplode", "1");
+			SetField("m_ExplodeFxSequence", "gas_tank_explosion_big.gpufx");
+			SetField("m_PrefabToSpawnOnExplode", "");
+			SetField("m_DamageRange", "3.0");
+			SetField("m_SecondaryDamageRange", "6.0");
+			SetField("m_ThrowAutoHitAssist", "1");
+			SetField("m_ThrowMultiAssist", "1");
+			SetField("m_CalculatePointsFromCollidable", "1");
+			SetField("m_InnerZone", "0.15");
+			SetField("m_OuterZone", "2.0");
+		}
+		Preset("static_toxic_tank")
+		{
+			SetField("m_EntityVariant", "");
+			SetField("m_MeshName", "gas_cylinder_c.msh");
+			SetField("m_SkinName", "Color_Green");
+			SetField("m_CountdownTimeToExplode", "0.0");
+			SetField("m_DisableWholeObjectAfterExplode", "0");
+			SetField("m_PrefabToSpawnOnExplode", "damageable_toxic_gas_area");
+			SetField("m_DamageRange", "0.0");
+			SetField("m_SecondaryDamageRange", "0.0");
+			SetField("m_ThrowAutoHitAssist", "1");
+			SetField("m_ThrowMultiAssist", "1");
+			SetField("m_CalculatePointsFromCollidable", "1");
+			SetField("m_InnerZone", "0.15");
+			SetField("m_OuterZone", "2.0");
+			SetField("m_ExplodeFxSequence", "");
+		}
+	}
+}

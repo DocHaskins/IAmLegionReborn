@@ -1,0 +1,43 @@
+import "activation_presets.def"
+import "ailife_agenda_ai_presets.def"
+import "AISpawnDifficulty.def"
+import "_embeded_object_requests.def"
+
+sub main()
+{
+    PresetDef("Agenda_logic")
+    {
+        AddField("m_PlanName", "StaticScenariosOnly", false, true, false);
+        AddField("m_BackgroundNonInteractibleAIs", "0", false, true, false);
+        AddField("m_EntityVariant", "40;69;"); // replication - turned on
+        AddField("m_EnforceLogicalConditionBeforeDistance","1");
+        AddField("m_DeactivateIfTimeConditionsAreNotFulfilled","0");
+        
+        Preset("BackgroundNonInteractibleLogic")
+        {
+            SetField("m_BackgroundNonInteractibleAIs", "1");
+            SetField("m_EntityVariant", ";");
+        }
+        
+        Preset("PartOfEncounterAgendaLogic")
+        {
+            SetField("m_EntityVariant", ";");
+        }
+        
+        Preset("AllowToSpawnOnPlayersSight")
+        {
+            SetField("m_EnforceLogicalConditionBeforeDistance","0");
+            SetField("m_DeactivateIfTimeConditionsAreNotFulfilled","1");
+        }
+    }
+    
+    use declare_human_ai_presets_to_spawn();
+    
+    use declare_activation_daytime_presets();
+    
+    use declare_activation_distance_presets();
+    
+    use declare_ai_spawner_difficulty_presets();
+    
+    use declare_embeded_object_requests();
+}

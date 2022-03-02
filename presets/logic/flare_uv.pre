@@ -1,0 +1,80 @@
+sub main()
+{
+    PresetDef("uv_flare")
+    {
+        Description("");
+
+        AddField("m_LightUVRadius", "3.0");
+        AddField("m_FlickerSmooth", "1");
+        AddField("m_FlickerEnabled", "1");
+        AddField("m_LightOnInterval", "0.05 0.2");
+		AddField("m_LightOffInterval", "0.01 0.02");
+		AddField("m_FlickerIntensityRange", "0.5 1.0");
+		AddField("Color", "0.333333 0.0 1.0");
+		AddField("m_RandomIntensity", "1");
+        AddField("Intensity", "2.0");
+        AddField("Attenuation", "1.0");
+        AddField("VisibilityRange", "70.0");
+        AddField("Projector", "default_prj.dds");
+        AddField("m_MeshName", "wpn_flare_a_tpp.msh");
+        AddField("SoundEvent", "flare_loop");
+
+        Preset("behaviour")
+        {
+        }
+    }
+	
+	PresetDef("Upgrade")
+    {
+        Description("");
+
+        AddField("m_LightTransform", "2.000000 -0.000000 0.000000 0.000000 0.000000 2.000000 -0.000000 0.000000 0.000000 0.000000 2.000000 0.000000");
+        AddField("m_ActiveTime", "8.0");
+  
+        Preset("Base")
+        {
+			SetField("m_LightTransform", "4.000000 -0.000000 0.000000 0.000000 0.000000 4.000000 -0.000000 0.000000 0.000000 0.000000 4.000000 0.000000");
+			SetField("m_ActiveTime", "8.0");
+        }  
+		Preset("LVL1")
+        {
+			SetField("m_LightTransform", "4.000000 -0.000000 0.000000 0.000000 0.000000 4.000000 -0.000000 0.000000 0.000000 0.000000 4.000000 0.000000");
+			SetField("m_ActiveTime", "10.0");
+        }
+		Preset("LVL2")
+        {
+			SetField("m_LightTransform", "6.000000 -0.000000 0.000000 0.000000 0.000000 6.000000 -0.000000 0.000000 0.000000 0.000000 6.000000 0.000000");
+			SetField("m_ActiveTime", "10.0");
+        }
+		Preset("LVL3")
+        {
+			SetField("m_LightTransform", "6.000000 -0.000000 0.000000 0.000000 0.000000 6.000000 -0.000000 0.000000 0.000000 0.000000 6.000000 0.000000");
+			SetField("m_ActiveTime", "10.0");
+        }
+		Preset("LVL4")
+        {
+			SetField("m_LightTransform", "6.000000 -0.000000 0.000000 0.000000 0.000000 6.000000 -0.000000 0.000000 0.000000 0.000000 6.000000 0.000000");
+			SetField("m_ActiveTime", "12.0");
+        }
+		Preset("LVL5")
+        {
+			SetField("m_LightTransform", "8.000000 -0.000000 0.000000 0.000000 0.000000 8.000000 -0.000000 0.000000 0.000000 0.000000 8.000000 0.000000");
+			SetField("m_ActiveTime", "12.0");
+        }
+		Preset("LVL6")
+        {
+			SetField("m_LightTransform", "8.000000 -0.000000 0.000000 0.000000 0.000000 8.000000 -0.000000 0.000000 0.000000 0.000000 8.000000 0.000000");
+			SetField("m_ActiveTime", "14.0");
+        }
+		Preset("LVL7")
+        {
+			SetField("m_LightTransform", "8.000000 -0.000000 0.000000 0.000000 0.000000 8.000000 -0.000000 0.000000 0.000000 0.000000 8.000000 0.000000");
+			SetField("m_ActiveTime", "14.0");
+        }
+		Preset("LVL8")
+        {
+			SetField("m_LightTransform", "8.000000 -0.000000 0.000000 0.000000 0.000000 8.000000 -0.000000 0.000000 0.000000 0.000000 8.000000 0.000000");
+			SetField("m_ActiveTime", "18.0");
+        }
+    }
+}

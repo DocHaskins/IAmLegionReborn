@@ -1,0 +1,82 @@
+sub main()
+{
+   PresetDef("MortarTier")
+   {
+       Description("");
+   
+       AddField("m_DamageDefinition", "Spitter_Puddle_RGD_1");
+       AddField("m_GpuPuddleFxSequenceName", "ph/source/data/gpufx/effects/dynamic/spitter_vomit_area_01_a.gpufx");
+       AddField("m_Duration", "8.0");
+       AddField("m_ExplosionDamageRange", "5.0");
+       AddField("m_ExplosionPhxForce", "50.0");
+       AddField("m_ExplosionDamageDefinition", "Spitter_Mortar_Spit_RGD_1");
+       AddField("m_GpuExplosionFxSequenceName", "ph/source/data/gpufx/effects/dynamic/spitter_mortar_explosion_01_b.gpufx");
+
+       Preset("spitter_mortar_tier_1")
+       {
+            SetField("m_DamageDefinition", "Spitter_Puddle_RGD_1");
+            SetField("m_ExplosionDamageDefinition", "Spitter_Mortar_Spit_RGD_1");
+            SetField("m_Duration", "8.0");
+            SetField("m_ExplosionDamageRange", "5.0");
+       }      
+
+       Preset("spitter_mortar_tier_2")
+       {
+	        SetField("m_DamageDefinition", "Spitter_Puddle_RGD_2");
+            SetField("m_ExplosionDamageDefinition", "Spitter_Mortar_Spit_RGD_2");
+            SetField("m_Duration", "8.0");
+            SetField("m_ExplosionDamageRange", "5.0");
+       }      
+
+        Preset("spitter_mortar_tier_3")
+        {
+			SetField("m_DamageDefinition", "Spitter_Puddle_RGD_3");
+            SetField("m_ExplosionDamageDefinition", "Spitter_Mortar_Spit_RGD_3");
+            SetField("m_Duration", "8.0");
+            SetField("m_ExplosionDamageRange", "5.0");
+        }      
+        Preset("spitter_mortar_tier_4")
+        {
+			SetField("m_DamageDefinition", "Spitter_Puddle_RGD_4");
+            SetField("m_ExplosionDamageDefinition", "Spitter_Mortar_Spit_RGD_4");
+            SetField("m_Duration", "8.0");
+            SetField("m_ExplosionDamageRange", "5.0");
+        }      
+        Preset("spitter_mortar_tier_5")
+        {
+			SetField("m_DamageDefinition", "Spitter_Puddle_RGD_5");
+            SetField("m_ExplosionDamageDefinition", "Spitter_Mortar_Spit_RGD_5");
+            SetField("m_Duration", "8.0");
+            SetField("m_ExplosionDamageRange", "5.0");
+        }      
+        Preset("spitter_mortar_tier_6")
+        {
+			SetField("m_DamageDefinition", "Spitter_Puddle_RGD_6");
+            SetField("m_ExplosionDamageDefinition", "Spitter_Mortar_Spit_RGD_6");
+            SetField("m_Duration", "8.0");
+            SetField("m_ExplosionDamageRange", "5.0");
+        }      
+        Preset("spitter_mortar_tier_7")
+        {
+			SetField("m_DamageDefinition", "Spitter_Puddle_RGD_7");
+            SetField("m_ExplosionDamageDefinition", "Spitter_Mortar_Spit_RGD_7");
+            SetField("m_Duration", "8.0");
+            SetField("m_ExplosionDamageRange", "5.0");
+        }      
+        Preset("spitter_mortar_tier_8")
+        {
+			SetField("m_DamageDefinition", "Spitter_Puddle_RGD_8");
+            SetField("m_ExplosionDamageDefinition", "Spitter_Mortar_Spit_RGD_8");
+            SetField("m_Duration", "8.0");
+            SetField("m_ExplosionDamageRange", "5.0");
+        }      
+        Preset("spitter_mortar_tier_9")
+        {
+			SetField("m_DamageDefinition", "Spitter_Puddle_RGD_9");
+            SetField("m_ExplosionDamageDefinition", "Spitter_Mortar_Spit_RGD_9");
+            SetField("m_Duration", "8.0");
+            SetField("m_ExplosionDamageRange", "5.0");
+        }      
+
+   }
+}

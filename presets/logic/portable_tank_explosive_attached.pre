@@ -1,0 +1,58 @@
+sub main()
+{
+	PresetDef("Tank_Tier")
+	{
+		Description("");
+   
+		AddField("m_DamageDefinition", "Damageable_Explosive_Barrel");
+		AddField("m_DamageRange", "Damageable_Explosive_Barrel");
+		AddField("m_ExplosionNoiseUid", "explosion", false, true, false);
+		AddField("m_GasLeakNoiseUid", "gas_leak", false, true, false);
+		
+		Preset("portable_tank_explosive_attached_tier_1")
+		{
+			SetField("m_DamageDefinition", "portable_tank_explosive_tier_1");
+			SetField("m_DamageRange", "4.0");
+		}
+		Preset("portable_tank_explosive_attached_tier_2")
+		{
+            SetField("m_DamageDefinition", "portable_tank_explosive_tier_2");
+            SetField("m_DamageRange", "4.0");
+		}
+        Preset("portable_tank_explosive_attached_tier_3")
+        {
+            SetField("m_DamageDefinition", "portable_tank_explosive_tier_3");
+            SetField("m_DamageRange", "4.0");
+        }
+        Preset("portable_tank_explosive_attached_tier_4")
+        {
+            SetField("m_DamageDefinition", "portable_tank_explosive_tier_4");
+            SetField("m_DamageRange", "4.0");
+        }
+        Preset("portable_tank_explosive_attached_tier_5")
+        {
+            SetField("m_DamageDefinition", "portable_tank_explosive_tier_5");
+            SetField("m_DamageRange", "4.0");
+        }
+        Preset("portable_tank_explosive_attached_tier_6")
+        {
+            SetField("m_DamageDefinition", "portable_tank_explosive_tier_6");
+            SetField("m_DamageRange", "4.0");
+        }
+        Preset("portable_tank_explosive_attached_tier_7")
+        {
+            SetField("m_DamageDefinition", "portable_tank_explosive_tier_7");
+            SetField("m_DamageRange", "4.0");
+        }
+        Preset("portable_tank_explosive_attached_tier_8")
+        {
+            SetField("m_DamageDefinition", "portable_tank_explosive_tier_8");
+            SetField("m_DamageRange", "4.0");
+        }
+        Preset("portable_tank_explosive_attached_tier_9")
+        {
+            SetField("m_DamageDefinition", "portable_tank_explosive_tier_9");
+            SetField("m_DamageRange", "4.0");
+        }
+	}
+}

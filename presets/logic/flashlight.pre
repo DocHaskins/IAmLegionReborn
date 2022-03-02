@@ -1,0 +1,286 @@
+sub main()
+{
+	Version(0);
+	
+	PresetDef("Big Omni Type")
+	{
+		AddField("m_BigOmniColor", "1.0 1.0 1.0");
+		AddField("m_BigOmniIntensity", "0.0");
+		AddField("m_BigOmniAttenuation", "1.0");
+		AddField("m_BigOmniTransform", "1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0");
+		
+		Preset("BigOmni_1")
+		{
+			SetField("m_BigOmniColor", "1.0 1.0 1.0");
+			SetField("m_BigOmniIntensity", "0.5");
+			SetField("m_BigOmniAttenuation", "1.0");
+			SetField("m_BigOmniTransform", "10.0 0.0 0.0 0.0 0.0 10.0 0.0 0.0 0.0 0.0 10.0 0.0");
+		}
+		
+		Preset("BigOmni_2")
+		{
+			SetField("m_BigOmniColor", "1.0 1.0 1.0");
+			SetField("m_BigOmniIntensity", "0.5");
+			SetField("m_BigOmniAttenuation", "1.5");
+			SetField("m_BigOmniTransform", "20.0 0.0 0.0 0.0 0.0 20.0 0.0 0.0 0.0 0.0 20.0 0.0");
+		}
+		
+		Preset("BigOmni_3")
+		{
+			SetField("m_BigOmniColor", "1.0 1.0 1.0");
+			SetField("m_BigOmniIntensity", "0.5");
+			SetField("m_BigOmniAttenuation", "2.0");
+			SetField("m_BigOmniTransform", "50.0 0.0 0.0 0.0 0.0 50.0 0.0 0.0 0.0 0.0 50.0 0.0");
+		}
+		
+		// no omni - debug purpouse
+		Preset("BigOmni_0")
+		{
+			AddField("m_BigOmniColor", "1.0 1.0 1.0");
+			AddField("m_BigOmniIntensity", "0.5");
+			AddField("m_BigOmniAttenuation", "1.0");
+			AddField("m_BigOmniTransform", "1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0");
+		}
+	}
+	
+	PresetDef("Flashlight Type")
+	{
+		Description("");
+		AddField("m_UseUVLight", "0");
+		AddField("m_UVLevel", "1");
+		AddField("m_UseOmniLight", "0");
+		AddField("m_Color", "1.0 0.0 0.0");
+		AddField("m_ShaftColor", "1.0 1.0 1.0");
+		AddField("m_Intensity", "1.0");
+		AddField("m_Angle", "30.0");
+		AddField("m_Range", "50.0");
+		AddField("m_ShaftRange", "20.0");
+		AddField("Attenuation", "3.0");
+		AddField("m_FlashColor", "1.0 1.0 1.0");
+		AddField("m_FlashIntensity", "2.0");
+		AddField("m_FlashScale", "0.0");
+		AddField("m_FlashDuration", "0.0");
+		AddField("m_WarmUpTime", "0.0");
+		AddField("m_ShutOffTime", "0.0");
+		AddField("m_SpotlightOffset", "0.0 0.0 0.0");
+		AddField("m_ProjectionTexture", "flashlight_new_prj.png");
+		AddField("ProjectorMipRange", "0.0 0.0");
+		
+		AddField("SpotlightType", "Spot");
+		AddField("SmallOmniType", "Omni");
+		AddField("BigOmniType", "Omni");
+		
+		Preset("Player Flashlight")
+		{
+			SetField("m_UseUVLight", "0");
+			SetField("m_UseOmniLight", "1");
+			SetField("m_Color", "1.0 1.0 1.0");
+			SetField("m_ShaftColor", "1.0 1.0 1.0");
+			SetField("m_Intensity", "1.0");
+			SetField("m_Angle", "20");
+			SetField("m_Range", "128.0");
+			SetField("m_ShaftRange", "20.0");
+			SetField("Attenuation", "2.0");
+			SetField("m_WarmUpTime", "0.5");
+			SetField("m_ShutOffTime", "0.0");
+			SetField("m_SpotlightOffset", "0.0 0.0 -8.0");
+			SetField("m_ProjectionTexture", "flashlight_new_prj.png");
+			
+			SetField("SpotlightType", "Spot");
+			SetField("SmallOmniType", "Omni");
+			SetField("BigOmniType", "Omni");
+		}
+		
+		Preset("Player Flashlight UV LVL 1")
+		{
+			SetField("m_UseUVLight", "1");
+			SetField("m_UVLevel", "1");
+			SetField("m_UseOmniLight", "0");
+			SetField("m_Color", "2.5 1.0 5.0");
+			SetField("m_ShaftColor", "0.5 0.2 1.0");
+			SetField("m_Intensity", "0.55");
+			SetField("m_Angle", "10.0");
+			SetField("m_Range", "10.0");
+			SetField("m_ShaftRange", "10.0");
+			SetField("Attenuation", "1.0");
+			SetField("m_WarmUpTime", "0.25");
+			SetField("m_ShutOffTime", "1.0");
+			SetField("m_SpotlightOffset", "0.0 0.0 0.0");
+			SetField("m_ProjectionTexture", "proj_flashlight_d_prj.png");
+			
+			SetField("SpotlightType", "Spot UV");
+			SetField("SmallOmniType", "Omni UV");
+			SetField("BigOmniType", "Omni UV");
+		}
+		
+		Preset("Player Flashlight UV LVL 2")
+		{
+			SetField("m_UseUVLight", "1");
+			SetField("m_UVLevel", "2");
+			SetField("m_UseOmniLight", "1");
+			SetField("m_Color", "2.5 1.0 5.0");
+			SetField("m_ShaftColor", "0.5 0.2 1.0");
+			SetField("m_Intensity", "0.575");
+			SetField("m_Angle", "15");
+			SetField("m_Range", "15");
+			SetField("m_ShaftRange", "10.0");
+			SetField("m_FlashColor", "2.5 1.0 5.0");
+			SetField("m_FlashIntensity", "2.0");
+			SetField("m_FlashScale", "10.0");
+			SetField("m_FlashDuration", "0.5");
+			SetField("Attenuation", "1.0");
+			SetField("m_WarmUpTime", "0.25");
+			SetField("m_ShutOffTime", "1.0");
+			SetField("m_SpotlightOffset", "0.0 0.0 0.0");
+			SetField("m_ProjectionTexture", "proj_flashlight_d_prj.png");
+			
+			SetField("SpotlightType", "Spot UV");
+			SetField("SmallOmniType", "Omni UV");
+			SetField("BigOmniType", "Omni UV");
+		}
+		
+		Preset("Player Flashlight UV LVL 3")
+		{
+			SetField("m_UseUVLight", "1");
+			SetField("m_UVLevel", "3");
+			SetField("m_UseOmniLight", "1");
+			SetField("m_Color", "2.5 1.0 5.0");
+			SetField("m_ShaftColor", "0.5 0.2 1.0");
+			SetField("m_Intensity", "0.6");
+			SetField("m_Angle", "15");
+			SetField("m_Range", "15");
+			SetField("m_ShaftRange", "10.0");
+			SetField("Attenuation", "1.0");
+			SetField("m_FlashColor", "2.5 1.0 5.0");
+			SetField("m_FlashIntensity", "2.0");
+			SetField("m_FlashScale", "10.0");
+			SetField("m_FlashDuration", "0.5");
+			SetField("m_WarmUpTime", "0.25");
+			SetField("m_ShutOffTime", "1.0");
+			SetField("m_SpotlightOffset", "0.0 0.0 0.0");
+			SetField("m_ProjectionTexture", "proj_flashlight_d_prj.png");
+			
+			SetField("SpotlightType", "Spot UV");
+			SetField("SmallOmniType", "Omni UV");
+			SetField("BigOmniType", "Omni UV");
+		}
+		
+		Preset("Player Flashlight UV LVL 4")
+		{
+			SetField("m_UseUVLight", "1");
+			SetField("m_UVLevel", "4");
+			SetField("m_UseOmniLight", "0");
+			SetField("m_Color", "2.5 1.0 5.0");
+			SetField("m_ShaftColor", "0.5 0.2 1.0");
+			SetField("m_Intensity", "0.625");
+			SetField("m_Angle", "20.0");
+			SetField("m_Range", "20.0");
+			SetField("m_ShaftRange", "10.0");
+			SetField("Attenuation", "1.0");
+			SetField("m_FlashColor", "2.5 1.0 5.0");
+			SetField("m_FlashIntensity", "2.0");
+			SetField("m_FlashScale", "10.0");
+			SetField("m_FlashDuration", "0.5");
+			SetField("m_WarmUpTime", "0.25");
+			SetField("m_ShutOffTime", "1.0");
+			SetField("m_SpotlightOffset", "0.0 0.0 0.0");
+			SetField("m_ProjectionTexture", "proj_flashlight_d_prj.png");
+			
+			SetField("SpotlightType", "Spot UV");
+			SetField("SmallOmniType", "Omni UV");
+			SetField("BigOmniType", "Omni UV");
+		}
+		
+		Preset("Player Flashlight UV LVL 5")
+		{
+			SetField("m_UseUVLight", "1");
+			SetField("m_UVLevel", "5");
+			SetField("m_UseOmniLight", "0");
+			SetField("m_Color", "2.5 1.0 5.0");
+			SetField("m_ShaftColor", "0.5 0.2 1.0");
+			SetField("m_Intensity", "0.65");
+			SetField("m_Angle", "20.0");
+			SetField("m_Range", "20.0");
+			SetField("m_ShaftRange", "10.0");
+			SetField("Attenuation", "1.0");
+			SetField("m_FlashColor", "2.5 1.0 5.0");
+			SetField("m_FlashIntensity", "2.0");
+			SetField("m_FlashScale", "10.0");
+			SetField("m_FlashDuration", "0.5");
+			SetField("m_WarmUpTime", "0.0");
+			SetField("m_ShutOffTime", "1.0");
+			SetField("m_SpotlightOffset", "0.0 0.0 0.0");
+			SetField("m_ProjectionTexture", "proj_flashlight_d_prj.png");
+			
+			SetField("SpotlightType", "Spot UV");
+			SetField("SmallOmniType", "Omni UV");
+			SetField("BigOmniType", "Omni UV");
+		}
+
+		Preset("Player Cannon UV")
+		{
+			SetField("m_UseUVLight", "1");
+			SetField("m_UVLevel", "5");
+			SetField("m_UseOmniLight", "0");
+			SetField("m_Color", "2.5 1.0 5.0");
+			SetField("m_ShaftColor", "0.5 0.2 1.0");
+			SetField("m_Intensity", "0.65");
+			SetField("m_Angle", "10.0");
+			SetField("m_Range", "20.0");
+			SetField("m_ShaftRange", "20.0");
+			SetField("Attenuation", "1.0");
+			SetField("m_FlashColor", "2.5 1.0 5.0");
+			SetField("m_FlashIntensity", "2.0");
+			SetField("m_FlashScale", "10.0");
+			SetField("m_FlashDuration", "0.5");
+			SetField("m_WarmUpTime", "1.0");
+			SetField("m_ShutOffTime", "1.0");
+			SetField("m_SpotlightOffset", "0.0 0.0 0.0");
+			SetField("m_ProjectionTexture", "proj_flashlight_d_prj.png");
+			
+			SetField("SpotlightType", "Spot UV");
+			SetField("SmallOmniType", "Omni UV");
+			SetField("BigOmniType", "Omni UV");
+		}
+		
+		Preset("Player Flashlight No Light")
+		{
+			SetField("m_UseUVLight", "0");
+			SetField("m_UseOmniLight", "0");
+			SetField("m_Color", "1.0 0.0 0.0");
+			SetField("m_ShaftColor", "0.0 0.0 0.0");
+			SetField("m_Intensity", "0.0");
+			SetField("m_Angle", "30.0");
+			SetField("m_Range", "20.0");
+			SetField("Attenuation", "5.0");
+			SetField("m_WarmUpTime", "0.0");
+			SetField("m_ShutOffTime", "0.0");
+			SetField("m_SpotlightOffset", "0.0 0.0 0.0");
+			SetField("m_ProjectionTexture", "proj_flashlight_d_prj.png");
+			
+			SetField("SpotlightType", "Spot");
+			SetField("SmallOmniType", "Omni");
+			SetField("BigOmniType", "Omni");
+		}
+		
+		Preset("Freecam Flashlight")
+		{
+			SetField("m_UseUVLight", "0");
+			SetField("m_UseOmniLight", "0");
+			SetField("m_Color", "1.0 0.0 0.0");
+			SetField("m_ShaftColor", "0.0 0.0 0.0");
+			SetField("m_Intensity", "1.25");
+			SetField("m_Angle", "30.0");
+			SetField("m_Range", "40.0");
+			SetField("Attenuation", "5.0");
+			SetField("m_WarmUpTime", "0.1");
+			SetField("m_ShutOffTime", "0.0");
+			SetField("m_SpotlightOffset", "0.0 0.0 0.0");
+			SetField("m_ProjectionTexture", "proj_flashlight_d_prj.png");
+			
+			SetField("SpotlightType", "Spot");
+			SetField("SmallOmniType", "Omni");
+			SetField("BigOmniType", "Omni");
+		}
+	}
+}

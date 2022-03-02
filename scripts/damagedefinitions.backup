@@ -1,0 +1,7957 @@
+import "ial_settings.mth"
+
+sub main()
+{
+	DamageMul("WeaponDamageMod_Seed_0")
+	{ 
+		Blunt("+IAL_Weapons_Blunt_Dmg_Tier_0"); 
+		Cut("+IAL_Weapons_Cut_Dmg_Tier_0"); 
+		Physical("+IAL_Weapons_Physical_Dmg_Tier_0"); 
+	}
+
+	DamageMul("WeaponDamageMod_Seed_1")
+	{ 
+		Blunt("+IAL_Weapons_Blunt_Dmg_Tier_1"); 
+		Cut("+IAL_Weapons_Cut_Dmg_Tier_1"); 
+		Physical("+IAL_Weapons_Physical_Dmg_Tier_1"); 
+	}
+
+	DamageMul("WeaponDamageMod_Seed_2")
+	{ 
+		Blunt("+IAL_Weapons_Blunt_Dmg_Tier_2"); 
+		Cut("+IAL_Weapons_Cut_Dmg_Tier_2"); 
+		Physical("+IAL_Weapons_Physical_Dmg_Tier_2"); 
+	}
+
+	DamageMul("WeaponDamageMod_Seed_3")
+	{ 
+		Blunt("+IAL_Weapons_Blunt_Dmg_Tier_3"); 
+		Cut("+AL_Weapons_Cut_Dmg_Tier_3"); 
+		Physical("+IAL_Weapons_Physical_Dmg_Tier_3"); 
+	}
+
+	DamageMul("WeaponDamageMod_Seed_4")
+	{ 
+		Blunt("+IAL_Weapons_Blunt_Dmg_Tier_4"); 
+		Cut("+IAL_Weapons_Cut_Dmg_Tier_4"); 
+		Physical("+IAL_Weapons_Physical_Dmg_Tier_4"); 
+	}
+
+    Damage("TorchDamage.BaseDamage")
+    {
+        Physical("15-30");
+        Fire("3");
+    }
+
+    Damage("TEST_CalculatedBaseDamage")
+    {
+        Physical("10");
+        Fire("10");
+    }
+    Damage("TEST_EMPTY")
+    {
+    }
+    
+    Damage("TEST_StandardRange")
+    {
+        Physical("1-10");
+    }
+    Damage("TEST_RandomiseOnceRange")
+    {
+        Physical("1^10");
+    }
+    
+    DamageTotalMul("TEST_SimpleTotalMultiplier")
+    {
+        Physical("3");
+    }
+    DamageTotalMul("TEST_SimpleTotalMultiplier2")
+    {
+        Physical("7");
+    }
+    DamageMul("TEST_SimpleMultiplier")
+    {
+        Physical("+2");
+    }
+    DamageMul("TEST_SimpleMultiplier2")
+    {
+        Physical("+1");
+    }
+    
+    Damage("TEST_Damage_SmallRelativeMaxHealth")
+    {
+        Physical("1% of MaxHealth");
+    }
+	
+	Damage("KorekMacheteDamage")
+    {
+        Physical("1% of MaxHealth");
+    }
+    
+    Damage("TEST_SimpleDamage")
+    {
+        Physical("10");
+    }
+    Damage("TEST_Damage_RelativeMaxHealth")
+    {
+        Physical("10% of MaxHealth");
+    }
+    Damage("TEST_DamageAll_RelativeHealth")
+    {
+        All("100%");
+    }
+    DamageResistance("TEST_Damage_Resistance")
+    {
+        Physical("3");
+    }
+    DamageResistance("Waltz_Resistance")
+    {
+        Poison("100%");
+		Chemical("100%");
+        Ram("96%");
+        Physical("75%");
+    }
+    DamageResistance("Waltz_Jumper_Resistance")
+    {
+        Poison("100%");
+		Chemical("100%");
+        Physical("75%");
+    }
+    DamageResistance("Waltz_Fury_Resistance")
+    {
+        Poison("100%");
+		Chemical("100%");
+        Physical("75%");
+        Ram("90%");
+    }
+    DamageResistanceTotalMul("TEST_Damage_Resistance_TotalMul")
+    {
+        Physical("2.3");
+    }
+    DamageResistanceTotalMul("TEST_Damage_Resistance_TotalMul2")
+    {
+        Physical("2");
+    }
+    
+    DamageVulnerability("TEST_DamageVul_RelativeMaxHealth")
+    {
+        Physical("50% of MaxHealth");
+    }
+
+    DamageVulnerability("TEST_DamageVul_RelativeHealth")
+    {
+        Physical("10%");
+    }
+
+    DamageVulnerabilityTotalMul("TEST_DamageVul_TotalMul")
+    {
+        Physical("0.5");
+    }
+
+    DamageVulnerabilityMul("TEST_DamageVul_Mul")
+    {
+        Physical("+0.20");
+    }
+	    
+    Damage("TEST_Damage_RelativeMaxHealth_Code")
+    {
+        Physical("?% of MaxHealth");
+    }
+
+    Damage("TEST_Damage_RelativeHealth_Code")
+    {
+        Physical("?%");
+    }
+    
+    DamageMul("TEST_CalculatedMul")
+    {
+        Physical("?");
+        Fire("?");
+    }
+
+    Damage("TEST_RelativeRange")
+    {
+        Physical("75%-125% of MaxHealth");
+    }
+	
+	Damage("limb_cut")
+    {
+        Cut("85% of MaxHealth");
+    }
+
+    Damage("TEST_FilteredDamage")
+    {
+        Physical("10");
+        Fire("15");
+    }
+    DamageMul("TEST_FilteredDamageMul")
+    {
+        Physical("+1");
+        Fire("+2");
+    }
+    DamageVulnerability("TEST_FilteredDamageVul")
+    {
+        Physical("+5");
+        Fire("+7");
+    }
+    DamageResistance("TEST_FilteredDamageResistance")
+    {
+        Physical("+3");
+        Fire("+4");
+    }
+    DamageFilter("TEST_filter")
+    {
+        All("off");
+        Physical("on");
+    }
+	
+    Damage("TEST_Chemical")
+    {
+        Chemical("15");
+    }
+	
+    DamageMul("TorchDamage.StunnedEffectMul")
+    {
+        Physical("+0.33");
+    }
+
+    DamageMul("TorchDamage.StunnedEffectMul2")
+    {
+        Physical("+0.13");
+    }
+    DamageMul("TorchDamage.StunnedEffectMul3")
+    {
+        Physical("-0.33");
+    }
+    DamageMul("TorchDamage.StunnedEffectMul4")
+    {
+        Physical("-0.1");
+    }
+
+    DamageMul("RainingEffectMul")
+    {
+        Electricity("+0.33");
+        Fire("-0.66");
+    }
+
+	DamageMul("DPSCoop")
+    {
+        All("+1.0");
+    }
+
+    DamageTotalMul("Potion_DamageDealtBuff")
+    {
+        Physical("1.2");
+        Blunt("1.2");
+        Cut("1.2");
+    }
+
+    DamageTotalMul("Potion_DamageDealtBuff_Upgrade1")
+    {
+        Physical("1.3");
+        Blunt("1.3");
+        Cut("1.3");
+    }
+
+    DamageTotalMul("Potion_DamageDealtBuff_Upgrade5")
+    {
+        Physical("1.4");
+        Blunt("1.4");
+        Cut("1.4");
+    }
+
+    DamageTotalMul("Potion_DamageDealtBuff_Upgrade8")
+    {
+        Physical("1.5");
+        Blunt("1.5");
+        Cut("1.5");
+    }
+
+    DamageTotalMul("Potion_Rage_DamageBuff")
+    {
+        All("2.0");
+    }
+
+    DamageResistance("Potion_Rage_DamageReduction")
+    {
+        All("50%");
+    }
+
+    DamageTotalMul("Potion_Rage_DamageBuff_Upgrade1")
+    {
+        Physical("1.25");
+        Blunt("1.25");
+        Cut("1.25");
+    }
+
+    DamageResistance("Potion_Rage_DamageReduction_Upgrade1")
+    {
+        All("25%");
+    }
+
+    DamageTotalMul("Potion_Rage_DamageBuff_Upgrade5")
+    {
+        Physical("1.35");
+        Blunt("1.35");
+        Cut("1.35");
+    }
+
+    DamageResistance("Potion_Rage_DamageReduction_Upgrade5")
+    {
+        All("35%");
+    }
+
+    DamageTotalMul("Potion_Rage_DamageBuff_Upgrade8")
+    {
+        Physical("1.45");
+        Blunt("1.45");
+        Cut("1.45");
+    }
+
+    DamageResistance("Potion_Rage_DamageReduction_Upgrade8")
+    {
+        All("45%");
+    }
+
+    DamageResistance("Potion_DamageReduction_Fire")
+    {
+        Fire("25%");
+    }
+
+    DamageResistance("Potion_DamageReduction_Fire_Upgrade1")
+    {
+        Fire("25%");
+    }
+	DamageResistance("Potion_DamageReduction_Fire_Upgrade2")
+    {
+        Fire("35%");
+    }
+	DamageResistance("Potion_DamageReduction_Fire_Upgrade3")
+    {
+        Fire("35%");
+    }
+    DamageResistance("Potion_DamageReduction_Fire_Upgrade4")
+    {
+        Fire("45%");
+    }
+	DamageResistance("Potion_DamageReduction_Fire_Upgrade5")
+    {
+        Fire("45%");
+    }
+	DamageResistance("Potion_DamageReduction_Fire_Upgrade6")
+    {
+        Fire("60%");
+    }
+
+    DamageResistance("Potion_DamageReduction_Fire_Upgrade7")
+    {
+        Fire("60%");
+    }
+
+    DamageResistance("Potion_DamageReduction_Fire_Upgrade8")
+    {
+        Fire("75%");
+    }
+
+     DamageResistance("Potion_DamageReduction_Poison")
+    {
+        Poison("25%");
+    }
+
+    DamageResistance("Potion_DamageReduction_Poison_Upgrade1")
+    {
+        Poison("25%");
+    }
+    DamageResistance("Potion_DamageReduction_Poison_Upgrade2")
+    {
+        Poison("35%");
+    }
+	DamageResistance("Potion_DamageReduction_Poison_Upgrade3")
+    {
+        Poison("35%");
+    }
+    DamageResistance("Potion_DamageReduction_Poison_Upgrade4")
+    {
+        Poison("45%");
+    }
+    DamageResistance("Potion_DamageReduction_Poison_Upgrade5")
+    {
+        Poison("45%");
+    }
+	DamageResistance("Potion_DamageReduction_Poison_Upgrade6")
+    {
+        Poison("60%");
+    }
+    DamageResistance("Potion_DamageReduction_Poison_Upgrade7")
+    {
+        Poison("60%");
+    }
+    DamageResistance("Potion_DamageReduction_Poison_Upgrade8")
+    {
+        Poison("75%");
+    }
+
+    DamageResistance("Potion_DamageReduction_Electricity")
+    {
+        Electricity("25%");
+    }
+
+    DamageResistance("Potion_DamageReduction_Electricity_Upgrade1")
+    {
+        Electricity("25%");
+    }
+	DamageResistance("Potion_DamageReduction_Electricity_Upgrade2")
+    {
+        Electricity("35%");
+    }
+	DamageResistance("Potion_DamageReduction_Electricity_Upgrade3")
+    {
+        Electricity("35%");
+    }
+    DamageResistance("Potion_DamageReduction_Electricity_Upgrade4")
+    {
+        Electricity("45%");
+    }
+    DamageResistance("Potion_DamageReduction_Electricity_Upgrade5")
+    {
+        Electricity("45%");
+    }
+	DamageResistance("Potion_DamageReduction_Electricity_Upgrade6")
+    {
+        Electricity("60%");
+    }
+    DamageResistance("Potion_DamageReduction_Electricity_Upgrade7")
+    {
+        Electricity("60%");
+    }
+    DamageResistance("Potion_DamageReduction_Electricity_Upgrade8")
+    {
+        Electricity("75%");
+    }
+
+
+    Damage("Tier1")
+    {
+        Physical("13-17");
+    }
+
+    Damage("GentlePush")
+    {
+        Physical("2% of MaxHealth");
+    }
+	Damage("GentlePushNoDamage")
+    {
+        Physical("0");
+    }
+
+    Damage("KnifeDamage")
+    {
+        Physical("23");
+    }
+
+	Damage("playtest_distance_0")
+    {
+        Ranged("2000");
+    }
+
+	Damage("playtest_distance_1")
+    {
+        Ranged("2000");
+    }
+	
+	Damage("Throwable_ThrowingKnifeDamage")
+    {
+        Ranged("10");
+    }
+
+    Damage("Throwable_ThrowingKnifeDamage_Upgrade1")
+    {
+        Ranged("15");
+    }
+	Damage("Throwable_ThrowingKnifeDamage_Upgrade2")
+    {
+        Ranged("20");
+    }
+	Damage("Throwable_ThrowingKnifeDamage_Upgrade3")
+    {
+        Ranged("25");
+    }
+    Damage("Throwable_ThrowingKnifeDamage_Upgrade4")
+    {
+        Ranged("30");
+    }
+	Damage("Throwable_ThrowingKnifeDamage_Upgrade5")
+    {
+        Ranged("40");
+    }
+    Damage("Throwable_ThrowingKnifeDamage_Upgrade6")
+    {
+        Ranged("50");
+    }
+    Damage("Throwable_ThrowingKnifeDamage_Upgrade7")
+    {
+        Ranged("75");
+    }
+	Damage("Throwable_ThrowingKnifeDamage_Upgrade8")
+    {
+        Ranged("150");
+    }
+
+
+	Damage("Damage_0")
+    {
+        Physical("0");
+    }
+
+    DamageResistance("Armor")
+    {
+        Physical("30%");
+    }
+
+    DamageResistance("Demo_Test")
+    {
+        Physical("100%");
+		Cut("100%");
+		Blunt("100%");
+		Ranged("100%");
+		Blast("100%");
+		Bleeding("100%");
+		Fire("100%");
+		Poison("100%");
+		Electricity("100%");
+		Chemical("100%");
+		Drowning("100%");
+
+    }
+
+	DamageResistance("DmgResCoop")
+    {
+        All("25%");
+    }
+	
+    DamageTotalMul("AIDifficultyDamageTotalMul")
+    {
+        All("?");
+    }
+    
+	DamageMul("DamageMulAIDamageResistance")
+    {
+        All("0.15");
+    }
+	
+     DamageResistance("PotionDamageReduction")
+    {
+        All("15%");
+    }
+
+    DamageResistance("PotionDamageReduction_Upgrade1")
+    {
+        All("25%");
+    }
+
+    DamageResistance("PotionDamageReduction_Upgrade5")
+    {
+        All("35%");
+    }
+
+    DamageResistance("PotionDamageReduction_Upgrade8")
+    {
+        All("45%");
+    }
+
+    DamageResistance("KnockdownResistance")
+    {
+        Physical("80%");
+    }
+
+    DamageResistance("VeryHighResistance")
+    {
+        Physical("95%");
+    }
+
+    DamageResistance("PoisonImmunity")
+    {
+        Poison("100%");
+    }
+    DamageResistance("FireImmunity")
+    {
+        Fire("100%");
+    }
+	DamageResistance("PoisonAndFireImmunity")
+    {
+        Poison("100%");
+		Fire("100%");
+    }
+    DamageResistance("CorruptorResistance")
+    {
+        Poison("100%");
+        Physical("75%");
+    }
+    DamageResistance("DemolisherResistance")
+    {
+        Poison("100%");
+		Fire("90%");
+        Physical("66%");
+    }
+	DamageResistance("Infected_Elite")
+    {
+        All("50%");
+    }
+	DamageResistance("Infected_Boss")
+    {
+        All("75%");
+    }
+	DamageResistance("Infected_Elite_Special")
+    {
+        Poison("100%");
+		Fire("66%");
+		Physical("66%");
+		Cut("50%");
+		Blunt("50%");
+		Ram("33%");
+    }
+	DamageResistance("Infected_Boss_Special")
+    {
+        Poison("100%");
+		Fire("75%");
+		Physical("75%");
+		Cut("75%");
+		Blunt("75%");
+		Ram("50%");
+    }
+	DamageResistance("HuntingInfectedResistance")
+    {
+        Poison("100%");
+		Fire("66%");
+		Physical("66%");
+		Cut("50%");
+		Blunt("50%");
+		Ram("33%");
+    }
+	DamageResistance("ElectricityImmunity")
+    {
+        Electricity("100%");
+    }
+	
+	DamageResistance("Endgame_Electric")
+    {
+        Electricity("75%");
+    }
+	DamageResistance("Endgame_Fire")
+    {
+        Fire("75%");
+    }
+	DamageResistance("Endgame_Freeze")
+    {
+        Electricity("100%");
+    }
+	DamageResistance("Endgame_Toxic")
+    {
+        Poison("75%");
+    }
+	
+	
+    DamageResistanceMul("DefensiveSkill")
+    {
+        Physical("+0.2");
+    }
+
+    DamageVulnerability("FireVulnerability")
+    {
+        Fire("10");
+    }
+
+    DamageVulnerabilityMul("FireVulnerabilityEffect")
+    {
+        Physical("+0.13");
+    }
+
+    Damage("OneThird")
+    {
+        Physical("33%");
+    }
+
+    Damage("OneThirdOfMaxHealth")
+    {
+        Physical("33% of MaxHealth");
+    }
+
+    Damage("DamageCalculatedInCode")
+    {
+        Physical("?");
+    }
+
+    DamageDps("TestDamageDps")
+    {
+        Physical("10");
+    }
+
+    Damage("BaseDamage")
+    {
+        Physical("28-32");
+    }
+
+    DamageDps("InfectionDps")
+    {
+        Physical("1.0");
+    }
+
+    Damage("TestOfFullyCustomDamage")
+    {
+        All("?");
+    }
+
+    /*
+    Damage("TestInvalidDefinition")
+    {
+        Chemical("-2");
+    }
+    */
+
+    DamageResistance("TestNegativeDmage")
+    {
+        Physical("1000");
+    }
+    
+    DamageMul("DefaultDamageMulOne")
+    {
+        All("+0");
+    }
+
+    DamageMul("DefaultDamageMulZero")
+    {
+        All("+0");
+    }
+
+    DamageResistance("DefaultDamageResistance")
+	{
+		All("0%");
+	}
+
+    DamageMul("DefaultAIDamageBuffMul")
+    {
+        All("+1");
+    }
+
+    Damage("TotalHealthDamage")
+    {
+		// All("100%"); doesn't work on PS4/PS5
+        Physical("1000000");
+    }
+	Damage("HalfHealthDamage")
+    {
+        Physical("50% of MaxHealth"); 
+    }
+    DamageMul("Any_Part_Health_Mul")
+    {
+        Physical("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+		Ranged("-0.9");
+    }
+
+    DamageMul("Immortal_Health_Mul")
+    {
+        All("-10.0");
+    }
+
+    DamageMul("Hole_Health_Mul")
+    {
+        Physical("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+    }
+
+    DamageMul("Simple_Head_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+    }
+
+    DamageMul("Head_Damage_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+    }
+
+    DamageMul("Head_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+    }
+
+    DamageMul("Chest_Health_Mul")
+    {
+        All("+0.0");
+    }
+    DamageMul("Arm_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+		Ranged("-0.8");
+    }
+    DamageMul("Leg_Health_Mul")
+    {
+        Ram("+0");
+		Cut("+0");
+		Blunt("+0");
+		Ranged("-0.8");
+    }
+    DamageMul("Biter_Head_Health_Mul")
+    {
+        Ram("+0.1");
+		Cut("+0.65");
+		Blunt("+0.85");
+    }
+	DamageMul("Biter_Helmet_Head_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("-0.5");
+		Blunt("-0.5");
+		Ranged("-0.8");
+    }
+    DamageMul("Biter_Chest_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+    }
+    DamageMul("Biter_Arm_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.8");
+		Blunt("+0.5");
+		Ranged("+0.1");
+    }
+    DamageMul("Biter_Leg_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.8");
+		Blunt("+0.6");
+		Ranged("+0.1");
+    }
+	
+	DamageMul("Biter_Armored_Chest_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("-0.5");
+		Blunt("-0.5");
+		Ranged("-0.8");
+    }
+    DamageMul("Biter_Armored_Arm_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("-0.5");
+		Blunt("-0.5");
+		Ranged("-0.8");
+    }
+    DamageMul("Biter_Armored_Leg_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("-0.5");
+		Blunt("-0.5");
+		Ranged("-0.8");
+    }
+
+    DamageMul("Viral_Head_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.6");
+		Blunt("+0.8");
+    }
+    DamageMul("Viral_Chest_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+    }
+    DamageMul("Viral_Arm_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.3");
+		Blunt("+0.3");
+		Ranged("+0.2");
+    }
+    DamageMul("Viral_Leg_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.3");
+		Blunt("+0.3");
+		Ranged("+0.2");
+    }
+    DamageMul("Default_Head_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+    }
+    DamageMul("Default_Chest_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+    }
+    DamageMul("Default_Arm_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+		Ranged("-0.8");
+    }
+    DamageMul("Default_Leg_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+		Ranged("-0.8");
+    }
+
+	DamageMul("Spitter_Head_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+		Poison("-1.0");
+    }
+    DamageMul("Spitter_Chest_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+		Poison("-1.0");
+    }
+    DamageMul("Spitter_Arm_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+		Ranged("-0.8");
+		Poison("-1.0");
+    }
+    DamageMul("Spitter_Leg_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+		Ranged("-0.8");
+		Poison("-1.0");
+    }
+	DamageMul("Goon_Head_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+    }
+    DamageMul("Goon_Chest_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+    }
+    DamageMul("Goon_Arm_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+    }
+    DamageMul("Goon_Leg_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+    }
+	DamageMul("Demolisher_Head_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+    }
+    DamageMul("Demolisher_Chest_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+    }
+    DamageMul("Demolisher_Arm_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+    }
+    DamageMul("Demolisher_Leg_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+    }
+    DamageMul("Test_Head_Cut_Health_Mul")
+    {
+        Ram("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+    }
+    DamageMul("Suicider_Head_Health_Mul")
+    {
+        Ram("+9.0");
+		Cut("+9.0");
+		Blunt("+9.0");
+    }
+
+    DamageMul("hmf_graph_params.damage_mul")
+    {
+        Physical("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+    }
+
+    DamageMul("Damage_Mul_vs_Other_AI")
+    {
+        Physical("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+    }
+
+    DamageMul("Heavy_Damage_Mul")
+    {
+        Physical("+0.2");
+		Cut("+0.2");
+		Blunt("+0.2");
+    }
+
+    DamageMul("Group_Damage_Mul_2")
+    {
+        Physical("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+    }
+    DamageMul("Group_Damage_Mul_3")
+    {
+        Physical("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+    }
+    DamageMul("Group_Damage_Mul_4")
+    {
+        Physical("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+    }
+    DamageMul("Group_Damage_Mul_5")
+    {
+        Physical("+0.0");
+		Cut("+0.0");
+		Blunt("+0.0");
+    }
+
+    DamageMul("Group_Infected_Damage_Mul_2")
+    {
+        Physical("+0.5");
+		Cut("+0.5");
+		Blunt("+0.5");
+    }
+    DamageMul("Group_Infected_Damage_Mul_3")
+    {
+        Physical("+1.0");
+		Cut("+1.0");
+		Blunt("+1.0");
+    }
+    DamageMul("Group_Infected_Damage_Mul_4")
+    {
+        Physical("+1.5");
+		Cut("+1.5");
+		Blunt("+1.5");
+    }
+    DamageMul("Group_Infected_Damage_Mul_5")
+    {
+        Physical("+2.0");
+		Cut("+2.0");
+		Blunt("+2.0");
+    }
+    
+    DamageMul("Night_Aggression_Mul_Level_0")
+    {
+        Physical("+IAL_Night_Aggression_Dmg_Multi_LVL1");
+    }
+
+    DamageMul("Night_Aggression_Mul_Level_1")
+    {
+        Physical("+IAL_Night_Aggression_Dmg_Multi_LVL1");
+    }
+
+    DamageMul("Night_Aggression_Mul_Level_2")
+    {
+        Physical("+IAL_Night_Aggression_Dmg_Multi_LVL2");
+    }
+
+    DamageMul("Night_Aggression_Mul_Level_3")
+    {
+        Physical("+IAL_Night_Aggression_Dmg_Multi_LVL3");
+    }
+
+    DamageMul("Night_Aggression_Mul_Level_4")
+    {
+        Physical("+IAL_Night_Aggression_Dmg_Multi_LVL4");
+    }
+
+	Damage("BrassKnuckles_Playtest")
+    {
+        Blunt("25");
+    }
+	Damage("Instigate_HO_Damage")
+    {
+        Blunt("5");
+    }
+	Damage("challenge_ringout")
+    {
+        Blunt("0");
+    }
+
+
+
+    //////////////////////////////////////////////////////////////
+    // TIERS BEGIN ///////////////////////////////////////////////
+
+	Damage("crossbow_tier_damages_0")  //25% One Handed Human (only used for UI)
+    {
+        Ranged("IAL_Weapons_Crossbow_DMG_Tier_0");
+    }
+    Damage("crossbow_tier_damages_1")
+    {
+        Ranged("IAL_Weapons_Crossbow_DMG_Tier_1");
+    }
+	Damage("crossbow_tier_damages_2")
+    {
+        Ranged("IAL_Weapons_Crossbow_DMG_Tier_2");
+    }
+	Damage("crossbow_tier_damages_3")
+    {
+        Ranged("IAL_Weapons_Crossbow_DMG_Tier_3");
+    }
+    Damage("crossbow_tier_damages_4")
+    {
+        Ranged("IAL_Weapons_Crossbow_DMG_Tier_4");
+    }
+    Damage("crossbow_tier_damages_5")
+    {
+        Ranged("IAL_Weapons_Crossbow_DMG_Tier_5");
+    }
+    Damage("crossbow_tier_damages_6")
+    {
+        Ranged("IAL_Weapons_Crossbow_DMG_Tier_6");
+    }
+    Damage("crossbow_tier_damages_7")
+    {
+        Ranged("IAL_Weapons_Crossbow_DMG_Tier_7");
+    }
+    Damage("crossbow_tier_damages_8")
+    {
+        Ranged("IAL_Weapons_Crossbow_DMG_Tier_8");
+    }
+    Damage("crossbow_tier_damages_9")
+    {
+        Ranged("IAL_Weapons_Crossbow_DMG_Tier_9");
+    }
+	
+	Damage("crossbow_firepoint0_tier_damages_0")    //25%-33% One Handed Human
+    {
+        Ranged("26-34");
+    }
+	Damage("crossbow_firepoint0_tier_damages_1")
+    {
+        Ranged("26-34");
+    }
+    Damage("crossbow_firepoint0_tier_damages_2")
+    {
+        Ranged("38-50");
+    }
+    Damage("crossbow_firepoint0_tier_damages_3")
+    {
+        Ranged("58-76");
+    }
+    Damage("crossbow_firepoint0_tier_damages_4")
+    {
+        Ranged("90-118");
+    }
+    Damage("crossbow_firepoint0_tier_damages_5")
+    {
+        Ranged("137-180");
+    }
+    Damage("crossbow_firepoint0_tier_damages_6")
+    {
+        Ranged("203-267");
+    }
+    Damage("crossbow_firepoint0_tier_damages_7")
+    {
+        Ranged("314-414");
+    }
+    Damage("crossbow_firepoint0_tier_damages_8")
+    {
+        Ranged("504-665");
+    }
+    Damage("crossbow_firepoint0_tier_damages_9")
+    {
+        Ranged("795-1049");
+    }
+	
+	Damage("crossbow_firepoint1_tier_damages_0")   //10%-25% One Handed Human
+    {
+        Ranged("10-26");
+    }
+	Damage("crossbow_firepoint1_tier_damages_1")
+    {
+        Ranged("10-26");
+    }
+    Damage("crossbow_firepoint1_tier_damages_2")
+    {
+        Ranged("15-38");
+    }
+    Damage("crossbow_firepoint1_tier_damages_3")
+    {
+        Ranged("23-58");
+    }
+    Damage("crossbow_firepoint1_tier_damages_4")
+    {
+        Ranged("36-90");
+    }
+    Damage("crossbow_firepoint1_tier_damages_5")
+    {
+        Ranged("55-137");
+    }
+    Damage("crossbow_firepoint1_tier_damages_6")
+    {
+        Ranged("81-203");
+    }
+    Damage("crossbow_firepoint1_tier_damages_7")
+    {
+        Ranged("125-314");
+    }
+    Damage("crossbow_firepoint1_tier_damages_8")
+    {
+        Ranged("202-504");
+    }
+    Damage("crossbow_firepoint1_tier_damages_9")
+    {
+        Ranged("318-795");
+    }
+	
+	Damage("bow_firepoint0_tier_damages_0")   
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_0");
+    }
+	Damage("bow_firepoint0_tier_damages_1")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_1");
+    }
+    Damage("bow_firepoint0_tier_damages_2")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_2");
+    }
+    Damage("bow_firepoint0_tier_damages_3")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_3");
+    }
+    Damage("bow_firepoint0_tier_damages_4")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_4");
+    }
+    Damage("bow_firepoint0_tier_damages_5")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_5");
+    }
+    Damage("bow_firepoint0_tier_damages_6")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_6");
+    }
+    Damage("bow_firepoint0_tier_damages_7")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_7");
+    }
+    Damage("bow_firepoint0_tier_damages_8")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_8");
+    }
+    Damage("bow_firepoint0_tier_damages_9")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_9");
+    }
+	
+	Damage("bow_firepoint1_tier_damages_0")   
+    {
+        Ranged("15");
+    }
+	Damage("bow_firepoint1_tier_damages_1")
+    {
+        Ranged("20");
+    }
+    Damage("bow_firepoint1_tier_damages_2")
+    {
+        Ranged("27");
+    }
+    Damage("bow_firepoint1_tier_damages_3")
+    {
+        Ranged("38");
+    }
+    Damage("bow_firepoint1_tier_damages_4")
+    {
+        Ranged("58");
+    }
+    Damage("bow_firepoint1_tier_damages_5")
+    {
+        Ranged("80");
+    }
+    Damage("bow_firepoint1_tier_damages_6")
+    {
+        Ranged("100");
+    }
+    Damage("bow_firepoint1_tier_damages_7")
+    {
+        Ranged("143");
+    }
+    Damage("bow_firepoint1_tier_damages_8")
+    {
+        Ranged("202");
+    }
+    Damage("bow_firepoint1_tier_damages_9")
+    {
+        Ranged("252");
+    }
+	
+	Damage("bow_firepoint2_tier_damages_0")   
+    {
+        Ranged("10");
+    }
+	Damage("bow_firepoint2_tier_damages_1")
+    {
+        Ranged("10");
+    }
+    Damage("bow_firepoint2_tier_damages_2")
+    {
+        Ranged("14");
+    }
+    Damage("bow_firepoint2_tier_damages_3")
+    {
+        Ranged("19");
+    }
+    Damage("bow_firepoint2_tier_damages_4")
+    {
+        Ranged("29");
+    }
+    Damage("bow_firepoint2_tier_damages_5")
+    {
+        Ranged("40");
+    }
+    Damage("bow_firepoint2_tier_damages_6")
+    {
+        Ranged("50");
+    }
+    Damage("bow_firepoint2_tier_damages_7")
+    {
+        Ranged("72");
+    }
+    Damage("bow_firepoint2_tier_damages_8")
+    {
+        Ranged("101");
+    }
+    Damage("bow_firepoint2_tier_damages_9")
+    {
+        Ranged("126");
+    }
+
+    Damage("2h_blunt_tier_damages_0")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_0");
+    }
+
+	Damage("2h_blunt_tier_damages_1")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_1");
+    }
+
+    Damage("2h_blunt_tier_damages_2")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_2");
+    }
+
+    Damage("2h_blunt_tier_damages_3")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_3");
+    }
+
+    Damage("2h_blunt_tier_damages_4")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_4");
+    }
+
+    Damage("2h_blunt_tier_damages_5")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_5");
+    }
+
+    Damage("2h_blunt_tier_damages_6")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_6");
+    }
+
+    Damage("2h_blunt_tier_damages_7")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_7");
+    }
+
+    Damage("2h_blunt_tier_damages_8")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_8");
+    }
+
+    Damage("2h_blunt_tier_damages_9")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_9");
+    }
+
+    Damage("2h_blunt_tier_damages_10")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_10");
+    }
+
+    Damage("2h_blunt_tier_damages_11")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_11");
+    }
+
+    Damage("2h_blunt_tier_damages_12")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_12");
+    }
+
+    Damage("2h_blunt_tier_damages_13")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_13");
+    }
+
+    Damage("2h_blunt_tier_damages_14")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_14");
+    }
+
+    Damage("2h_blunt_tier_damages_15")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_15");
+    }
+
+    Damage("2h_blunt_tier_damages_16")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_16");
+    }
+
+    Damage("2h_blunt_tier_damages_17")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_17");
+    }
+
+    Damage("2h_blunt_tier_damages_18")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_18");
+    }
+
+    Damage("2h_blunt_tier_damages_19")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_19");
+    }
+
+    Damage("2h_blunt_tier_damages_20")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_20");
+    }
+
+    Damage("2h_blunt_tier_damages_21")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_21");
+    }
+
+    Damage("2h_blunt_tier_damages_22")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_22");
+    }
+
+    Damage("2h_blunt_tier_damages_23")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_23");
+    }
+
+    Damage("2h_blunt_tier_damages_24")
+    {
+        Blunt("IAL_Weapons_2h_Blunt_DMG_Tier_24");
+    }
+
+    Damage("blunt_tier_damages_0")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_0");
+    }
+
+	Damage("blunt_tier_damages_1")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_1");
+    }
+
+    Damage("blunt_tier_damages_2")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_2");
+    }
+
+    Damage("blunt_tier_damages_3")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_3");
+    }
+
+    Damage("blunt_tier_damages_4")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_4");
+    }
+
+    Damage("blunt_tier_damages_5")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_5");
+    }
+
+    Damage("blunt_tier_damages_6")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_6");
+    }
+
+    Damage("blunt_tier_damages_7")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_7");
+    }
+
+    Damage("blunt_tier_damages_8")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_8");
+    }
+
+    Damage("blunt_tier_damages_9")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_9");
+    }
+
+    Damage("blunt_tier_damages_10")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_10");
+    }
+
+    Damage("blunt_tier_damages_11")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_11");
+    }
+
+    Damage("blunt_tier_damages_12")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_12");
+    }
+
+    Damage("blunt_tier_damages_13")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_13");
+    }
+
+    Damage("blunt_tier_damages_14")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_14");
+    }
+
+    Damage("blunt_tier_damages_15")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_15");
+    }
+
+    Damage("blunt_tier_damages_16")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_16");
+    }
+
+    Damage("blunt_tier_damages_17")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_17");
+    }
+
+    Damage("blunt_tier_damages_18")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_18");
+    }
+
+    Damage("blunt_tier_damages_19")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_19");
+    }
+
+    Damage("blunt_tier_damages_20")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_20");
+    }
+
+    Damage("blunt_tier_damages_21")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_21");
+    }
+
+    Damage("blunt_tier_damages_22")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_22");
+    }
+
+    Damage("blunt_tier_damages_23")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_23");
+    }
+
+    Damage("blunt_tier_damages_24")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_24");
+    }
+
+
+    Damage("default_tier_damages_0")
+    {
+        Blunt("13");
+    }
+
+    Damage("default_tier_damages_1")
+    {
+        Blunt("17");
+    }
+
+    Damage("default_tier_damages_2")
+    {
+        Blunt("18");
+    }
+
+    Damage("default_tier_damages_3")
+    {
+        Blunt("19");
+    }
+
+    Damage("default_tier_damages_4")
+    {
+        Blunt("23");
+    }
+
+    Damage("default_tier_damages_5")
+    {
+        Blunt("25");
+    }
+
+    Damage("default_tier_damages_6")
+    {
+        Blunt("27");
+    }
+
+    Damage("default_tier_damages_7")
+    {
+        Blunt("32");
+    }
+
+    Damage("default_tier_damages_8")
+    {
+        Blunt("35");
+    }
+
+    Damage("default_tier_damages_9")
+    {
+        Blunt("38");
+    }
+
+    Damage("default_tier_damages_10")
+    {
+        Blunt("46");
+    }
+    Damage("default_tier_damages_11")
+    {
+        Blunt("50");
+    }
+    Damage("default_tier_damages_12")
+    {
+        Blunt("54");
+    }
+    Damage("default_tier_damages_13")
+    {
+        Blunt("65");
+    }
+    Damage("default_tier_damages_14")
+    {
+        Blunt("70");
+    }
+    Damage("default_tier_damages_15")
+    {
+        Blunt("75");
+    }
+    Damage("default_tier_damages_16")
+    {
+        Blunt("90");
+    }
+    Damage("default_tier_damages_17")
+    {
+        Blunt("96");
+    }
+    Damage("default_tier_damages_18")
+    {
+        Blunt("102");
+    }
+    Damage("default_tier_damages_19")
+    {
+        Blunt("123");
+    }
+    Damage("default_tier_damages_20")
+    {
+        Blunt("130");
+    }
+    Damage("default_tier_damages_21")
+    {
+        Blunt("137");
+    }
+    Damage("default_tier_damages_22")
+    {
+        Blunt("168");
+    }
+    Damage("default_tier_damages_23")
+    {
+        Blunt("176");
+    }
+    Damage("default_tier_damages_24")
+    {
+        Blunt("184");
+    }
+    Damage("default_tier_damages_25")
+    {
+        Blunt("203");
+    }
+	Damage("default_tier_damages_26")
+    {
+        Blunt("203");
+    }
+	Damage("default_tier_damages_27")
+    {
+        Blunt("203");
+    }
+	Damage("default_tier_damages_28")
+    {
+        Blunt("203");
+    }
+	Damage("default_tier_damages_29")
+    {
+        Blunt("203");
+    }
+	Damage("default_tier_damages_30")
+    {
+        Blunt("203");
+    }
+	
+	
+	Damage("2h_slashing_tier_damages_0")
+    {
+        Cut("17");
+    }
+
+	Damage("2h_slashing_tier_damages_1")
+    {
+        Cut("23");
+    }
+
+    Damage("2h_slashing_tier_damages_2")
+    {
+        Cut("24");
+    }
+
+    Damage("2h_slashing_tier_damages_3")
+    {
+        Cut("26");
+    }
+
+    Damage("2h_slashing_tier_damages_4")
+    {
+        Cut("37");
+    }
+
+    Damage("2h_slashing_tier_damages_5")
+    {
+        Cut("39");
+    }
+
+    Damage("2h_slashing_tier_damages_6")
+    {
+        Cut("42");
+    }
+
+    Damage("2h_slashing_tier_damages_7")
+    {
+        Cut("52");
+    }
+
+    Damage("2h_slashing_tier_damages_8")
+    {
+        Cut("56");
+    }
+
+    Damage("2h_slashing_tier_damages_9")
+    {
+        Cut("60");
+    }
+
+    Damage("2h_slashing_tier_damages_10")
+    {
+        Cut("79");
+    }
+
+    Damage("2h_slashing_tier_damages_11")
+    {
+        Cut("85");
+    }
+
+    Damage("2h_slashing_tier_damages_12")
+    {
+        Cut("90");
+    }
+
+    Damage("2h_slashing_tier_damages_13")
+    {
+        Cut("110");
+    }
+
+    Damage("2h_slashing_tier_damages_14")
+    {
+        Cut("116");
+    }
+
+    Damage("2h_slashing_tier_damages_15")
+    {
+        Cut("123");
+    }
+
+    Damage("2h_slashing_tier_damages_16")
+    {
+        Cut("159");
+    }
+
+    Damage("2h_slashing_tier_damages_17")
+    {
+        Cut("167");
+    }
+
+    Damage("2h_slashing_tier_damages_18")
+    {
+        Cut("176");
+    }
+
+    Damage("2h_slashing_tier_damages_19")
+    {
+        Cut("229");
+    }
+
+    Damage("2h_slashing_tier_damages_20")
+    {
+        Cut("239");
+    }
+
+    Damage("2h_slashing_tier_damages_21")
+    {
+        Cut("248");
+    }
+
+    Damage("2h_slashing_tier_damages_22")
+    {
+        Cut("324");
+    }
+
+    Damage("2h_slashing_tier_damages_23")
+    {
+        Cut("335");
+    }
+
+    Damage("2h_slashing_tier_damages_24")
+    {
+        Cut("346");
+    }
+	
+	Damage("scaling_2h_slashing_tier_damages_0")
+    {
+        Cut("17");
+    }
+	Damage("scaling_2h_slashing_tier_damages_1")
+    {
+        Cut("23");
+    }
+    Damage("scaling_2h_slashing_tier_damages_2")
+    {
+        Cut("37");
+    }
+    Damage("scaling_2h_slashing_tier_damages_3")
+    {
+        Cut("52");
+    }
+    Damage("scaling_2h_slashing_tier_damages_4")
+    {
+        Cut("79");
+    }
+    Damage("scaling_2h_slashing_tier_damages_5")
+    {
+        Cut("110");
+    }
+    Damage("scaling_2h_slashing_tier_damages_6")
+    {
+        Cut("159");
+    }
+    Damage("scaling_2h_slashing_tier_damages_7")
+    {
+        Cut("229");
+    }
+    Damage("scaling_2h_slashing_tier_damages_8")
+    {
+        Cut("324");
+    }
+    Damage("scaling_2h_slashing_tier_damages_9")
+    {
+        Cut("346");
+    }
+	
+	Damage("scaling_2h_blunt_tier_damages_0")
+    {
+        Cut("15");
+    }
+	Damage("scaling_2h_blunt_tier_damages_1")
+    {
+        Cut("20");
+    }
+    Damage("scaling_2h_blunt_tier_damages_2")
+    {
+        Cut("33");
+    }
+    Damage("scaling_2h_blunt_tier_damages_3")
+    {
+        Cut("46");
+    }
+    Damage("scaling_2h_blunt_tier_damages_4")
+    {
+        Cut("71");
+    }
+    Damage("scaling_2h_blunt_tier_damages_5")
+    {
+        Cut("99");
+    }
+    Damage("scaling_2h_blunt_tier_damages_6")
+    {
+        Cut("143");
+    }
+    Damage("scaling_2h_blunt_tier_damages_7")
+    {
+        Cut("206");
+    }
+    Damage("scaling_2h_blunt_tier_damages_8")
+    {
+        Cut("291");
+    }
+    Damage("scaling_2h_blunt_tier_damages_9")
+    {
+        Cut("301");
+    }
+	
+	Damage("slashing_knuckles_tier_damages_0")
+    {
+        Cut("9");
+    }
+
+	Damage("slashing_knuckles_tier_damages_1")
+    {
+        Cut("12");
+    }
+
+    Damage("slashing_knuckles_tier_damages_2")
+    {
+        Cut("13");
+    }
+
+    Damage("slashing_knuckles_tier_damages_3")
+    {
+        Cut("14");
+    }
+
+    Damage("slashing_knuckles_tier_damages_4")
+    {
+        Cut("20");
+    }
+
+    Damage("slashing_knuckles_tier_damages_5")
+    {
+        Cut("21");
+    }
+
+    Damage("slashing_knuckles_tier_damages_6")
+    {
+        Cut("23");
+    }
+
+    Damage("slashing_knuckles_tier_damages_7")
+    {
+        Cut("28");
+    }
+
+    Damage("slashing_knuckles_tier_damages_8")
+    {
+        Cut("30");
+    }
+
+    Damage("slashing_knuckles_tier_damages_9")
+    {
+        Cut("33");
+    }
+
+    Damage("slashing_knuckles_tier_damages_10")
+    {
+        Cut("43");
+    }
+
+    Damage("slashing_knuckles_tier_damages_11")
+    {
+        Cut("46");
+    }
+
+    Damage("slashing_knuckles_tier_damages_12")
+    {
+        Cut("49");
+    }
+
+    Damage("slashing_knuckles_tier_damages_13")
+    {
+        Cut("60");
+    }
+
+    Damage("slashing_knuckles_tier_damages_14")
+    {
+        Cut("63");
+    }
+
+    Damage("slashing_knuckles_tier_damages_15")
+    {
+        Cut("67");
+    }
+
+    Damage("slashing_knuckles_tier_damages_16")
+    {
+        Cut("87");
+    }
+
+    Damage("slashing_knuckles_tier_damages_17")
+    {
+        Cut("91");
+    }
+
+    Damage("slashing_knuckles_tier_damages_18")
+    {
+        Cut("96");
+    }
+
+    Damage("slashing_knuckles_tier_damages_19")
+    {
+        Cut("125");
+    }
+
+    Damage("slashing_knuckles_tier_damages_20")
+    {
+        Cut("130");
+    }
+
+    Damage("slashing_knuckles_tier_damages_21")
+    {
+        Cut("135");
+    }
+
+    Damage("slashing_knuckles_tier_damages_22")
+    {
+        Cut("177");
+    }
+
+    Damage("slashing_knuckles_tier_damages_23")
+    {
+        Cut("183");
+    }
+
+    Damage("slashing_knuckles_tier_damages_24")
+    {
+        Cut("189");
+    }
+
+	Damage("scaling_slashing_knuckles_tier_damages_0")
+    {
+        Cut("IAL_Weapons_Slash_knuckles_DMG_Tier_0");
+    }
+	Damage("scaling_slashing_knuckles_tier_damages_1")
+    {
+        Cut("IAL_Weapons_Slash_knuckles_DMG_Tier_1");
+    }
+    Damage("scaling_slashing_knuckles_tier_damages_2")
+    {
+        Cut("IAL_Weapons_Slash_knuckles_DMG_Tier_2");
+    }
+    Damage("scaling_slashing_knuckles_tier_damages_3")
+    {
+        Cut("IAL_Weapons_Slash_knuckles_DMG_Tier_3");
+    }
+    Damage("scaling_slashing_knuckles_tier_damages_4")
+    {
+        Cut("IAL_Weapons_Slash_knuckles_DMG_Tier_4");
+    }
+    Damage("scaling_slashing_knuckles_tier_damages_5")
+    {
+        Cut("IAL_Weapons_Slash_knuckles_DMG_Tier_5");
+    }
+    Damage("scaling_slashing_knuckles_tier_damages_6")
+    {
+        Cut("IAL_Weapons_Slash_knuckles_DMG_Tier_6");
+    }
+    Damage("scaling_slashing_knuckles_tier_damages_7")
+    {
+        Cut("IAL_Weapons_Slash_knuckles_DMG_Tier_7");
+    }
+    Damage("scaling_slashing_knuckles_tier_damages_8")
+    {
+        Cut("IAL_Weapons_Slash_knuckles_DMG_Tier_8");
+    }
+    Damage("scaling_slashing_knuckles_tier_damages_9")
+    {
+        Cut("IAL_Weapons_Slash_knuckles_DMG_Tier_9");
+    }
+
+	Damage("scaling_slashing_tier_damages_0")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_1");
+    }
+
+	Damage("scaling_slashing_tier_damages_1")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_2");
+    }
+    Damage("scaling_slashing_tier_damages_2")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_4");
+    }
+    Damage("scaling_slashing_tier_damages_3")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_6");
+    }
+    Damage("scaling_slashing_tier_damages_4")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_9");
+    }
+    Damage("scaling_slashing_tier_damages_5")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_13");
+    }
+    Damage("scaling_slashing_tier_damages_6")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_17");
+    }
+    Damage("scaling_slashing_tier_damages_7")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_19");
+    }
+    Damage("scaling_slashing_tier_damages_8")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_22");
+    }
+    Damage("scaling_slashing_tier_damages_9")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_24");
+    }
+	Damage("scaling_blunt_tier_damages_0")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_1");
+    }
+
+	Damage("scaling_blunt_tier_damages_1")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_2");
+    }
+    Damage("scaling_blunt_tier_damages_2")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_4");
+    }
+    Damage("scaling_blunt_tier_damages_3")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_7");
+    }
+    Damage("scaling_blunt_tier_damages_4")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_11");
+    }
+    Damage("scaling_blunt_tier_damages_5")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_14");
+    }
+    Damage("scaling_blunt_tier_damages_6")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_16");
+    }
+    Damage("scaling_blunt_tier_damages_7")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_19");
+    }
+    Damage("scaling_blunt_tier_damages_8")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_22");
+    }
+    Damage("scaling_blunt_tier_damages_9")
+    {
+        Blunt("IAL_Weapons_Blunt_DMG_Tier_24");
+    }
+
+	Damage("slashing_tier_damages_0")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_0");
+    }
+
+	Damage("slashing_tier_damages_1")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_1");
+    }
+
+    Damage("slashing_tier_damages_2")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_2");
+    }
+
+    Damage("slashing_tier_damages_3")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_3");
+    }
+
+    Damage("slashing_tier_damages_4")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_4");
+    }
+
+    Damage("slashing_tier_damages_5")
+    {
+        Cut("29" - IAL_Weapons_Slash_DMG_Tier_5");
+    }
+
+    Damage("slashing_tier_damages_6")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_6");
+    }
+
+    Damage("slashing_tier_damages_7")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_7");
+    }
+
+    Damage("slashing_tier_damages_8")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_8");
+    }
+
+    Damage("slashing_tier_damages_9")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_9");
+    }
+
+    Damage("slashing_tier_damages_10")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_10");
+    }
+
+    Damage("slashing_tier_damages_11")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_11");
+    }
+
+    Damage("slashing_tier_damages_12")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_12");
+    }
+
+    Damage("slashing_tier_damages_13")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_13");
+    }
+
+    Damage("slashing_tier_damages_14")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_14");
+    }
+
+    Damage("slashing_tier_damages_15")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_15");
+    }
+
+    Damage("slashing_tier_damages_16")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_16");
+    }
+
+    Damage("slashing_tier_damages_17")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_17");
+    }
+
+    Damage("slashing_tier_damages_18")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_18");
+    }
+
+    Damage("slashing_tier_damages_19")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_19");
+    }
+
+    Damage("slashing_tier_damages_20")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_20");
+    }
+
+    Damage("slashing_tier_damages_21")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_21");
+    }
+
+    Damage("slashing_tier_damages_22")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_22");
+    }
+
+    Damage("slashing_tier_damages_23")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_23");
+    }
+
+    Damage("slashing_tier_damages_24")
+    {
+        Cut("IAL_Weapons_Slash_DMG_Tier_24");
+    }
+
+	Damage("blunt_knuckles_tier_damages_0")
+    {
+        Blunt("8");
+    }
+
+	Damage("blunt_knuckles_tier_damages_1")
+    {
+        Blunt("10");
+    }
+
+    Damage("blunt_knuckles_tier_damages_2")
+    {
+        Blunt("11");
+    }
+
+    Damage("blunt_knuckles_tier_damages_3")
+    {
+        Blunt("12");
+    }
+
+    Damage("blunt_knuckles_tier_damages_4")
+    {
+        Blunt("18");
+    }
+
+    Damage("blunt_knuckles_tier_damages_5")
+    {
+        Blunt("19");
+    }
+
+    Damage("blunt_knuckles_tier_damages_6")
+    {
+        Blunt("20");
+    }
+
+    Damage("blunt_knuckles_tier_damages_7")
+    {
+        Blunt("25");
+    }
+
+    Damage("blunt_knuckles_tier_damages_8")
+    {
+        Blunt("27");
+    }
+
+    Damage("blunt_knuckles_tier_damages_9")
+    {
+        Blunt("29");
+    }
+
+    Damage("blunt_knuckles_tier_damages_10")
+    {
+        Blunt("38");
+    }
+
+    Damage("blunt_knuckles_tier_damages_11")
+    {
+        Blunt("41");
+    }
+
+    Damage("blunt_knuckles_tier_damages_12")
+    {
+        Blunt("44");
+    }
+
+    Damage("blunt_knuckles_tier_damages_13")
+    {
+        Blunt("54");
+    }
+
+    Damage("blunt_knuckles_tier_damages_14")
+    {
+        Blunt("56");
+    }
+
+    Damage("blunt_knuckles_tier_damages_15")
+    {
+        Blunt("60");
+    }
+
+    Damage("blunt_knuckles_tier_damages_16")
+    {
+        Blunt("78");
+    }
+
+    Damage("blunt_knuckles_tier_damages_17")
+    {
+        Blunt("81");
+    }
+
+    Damage("blunt_knuckles_tier_damages_18")
+    {
+        Blunt("86");
+    }
+
+    Damage("blunt_knuckles_tier_damages_19")
+    {
+        Blunt("112");
+    }
+
+    Damage("blunt_knuckles_tier_damages_20")
+    {
+        Blunt("117");
+    }
+
+    Damage("blunt_knuckles_tier_damages_21")
+    {
+        Blunt("121");
+    }
+
+    Damage("blunt_knuckles_tier_damages_22")
+    {
+        Blunt("159");
+    }
+
+    Damage("blunt_knuckles_tier_damages_23")
+    {
+        Blunt("164");
+    }
+
+    Damage("blunt_knuckles_tier_damages_24")
+    {
+        Blunt("170");
+    }
+	
+	
+
+	Damage("debug")
+    {
+        Physical("1000");
+    }
+
+
+
+    // TIERS END /////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////
+
+    ////////// PLAYER ARMOR //////////////////////////////////////
+
+	DamageResistance("PlayerArmor1")
+	{
+		Physical("IAL_Armor_Physical_Dmg_Tier_1%");
+		Cut("IAL_Armor_Cut_Dmg_Tier_1%");
+		Blunt("IAL_Armor_Blunt_Dmg_Tier_1%");
+		Ranged("IAL_Armor_Ranged_Dmg_Tier_1%");
+		Fire("IAL_Armor_Fire_Dmg_Tier_1%");
+		Electricity("IAL_Armor_Electricity_Dmg_Tier_1%");
+	}
+
+	DamageResistance("PlayerArmor2")
+	{
+		Physical("IAL_Armor_Physical_Dmg_Tier_2%");
+		Cut("IAL_Armor_Cut_Dmg_Tier_2%");
+		Blunt("IAL_Armor_Blunt_Dmg_Tier_2%");
+		Ranged("IAL_Armor_Ranged_Dmg_Tier_2%");
+		Fire("IAL_Armor_Fire_Dmg_Tier_2%");
+		Electricity("IAL_Armor_Electricity_Dmg_Tier_2%");
+	}
+
+	DamageResistance("PlayerArmor3")
+	{
+		Physical("IAL_Armor_Physical_Dmg_Tier_3%");
+		Cut("IAL_Armor_Cut_Dmg_Tier_3%");
+		Blunt("IAL_Armor_Blunt_Dmg_Tier_3%");
+		Ranged("IAL_Armor_Ranged_Dmg_Tier_3%");
+		Fire("IAL_Armor_Fire_Dmg_Tier_3%");
+		Electricity("IAL_Armor_Electricity_Dmg_Tier_3%");
+	}
+
+	DamageResistance("PlayerArmor4")
+	{
+		Physical("IAL_Armor_Physical_Dmg_Tier_4%");
+		Cut("IAL_Armor_Cut_Dmg_Tier_4%");
+		Blunt("IAL_Armor_Blunt_Dmg_Tier_4%");
+		Ranged("IAL_Armor_Ranged_Dmg_Tier_4%");
+		Fire("IAL_Armor_Fire_Dmg_Tier_4%");
+		Electricity("IAL_Armor_Electricity_Dmg_Tier_4%");
+	}
+
+	DamageResistance("PlayerArmor5")
+	{
+		Physical("IAL_Armor_Physical_Dmg_Tier_5%");
+		Cut("IAL_Armor_Cut_Dmg_Tier_5%");
+		Blunt("IAL_Armor_Blunt_Dmg_Tier_5%");
+		Ranged("IAL_Armor_Ranged_Dmg_Tier_5%");
+		Fire("IAL_Armor_Fire_Dmg_Tier_5%");
+		Electricity("IAL_Armor_Electricity_Dmg_Tier_5%");
+	}
+
+    ////////// PLAYER ARMOR END //////////////////////////////////
+
+    DamageTotalMul("Player_DamageVulnerability_Hard")
+    {
+        All("IAL_Overall_Dmg_To_Player");
+    }
+	DamageTotalMul("Player_DamageVulnerability_Easy")
+    {
+        All("IAL_Overall_Dmg_To_Player");
+    }
+
+    DamageTotalMul("Player_FallDamageVulnerability_Hard")
+    {
+        All("IAL_Overall_Fall_Dmg_To_Player");
+    }
+	DamageTotalMul("Player_FallDamageVulnerability_Easy")
+    {
+        All("IAL_Overall_Fall_Dmg_To_Player");
+    }
+
+    DamageMul("Player_AIDamageMultiplier")
+    {
+        All("?");
+    }
+
+    DamageMul("Player_DaytimeDamageMultiplier")
+    {
+        All("?");
+    }
+
+    DamageMul("Player_ChargeAttackAdditionalMul")
+    {
+        All("?");
+    }
+
+    DamageMul("Player_Role_MeleeDamageBoost")
+    {
+		Physical("?");
+        Cut("?");
+		Blunt("?");
+    }
+	
+	DamageMul("Player_Role_RangedDamageBoost")
+    {
+        Ranged("?");
+    }
+
+	DamageMul("DifficultySyncActionDamageMul")
+    {
+		Physical("?");
+        Cut("?");
+		Blunt("?");
+    }
+	
+	DamageMul("BulletHeadDamageMul")
+    {		
+		Ranged("?");
+    }
+	Damage("MinHitCountToKill")
+    {		
+		Cut("?");
+    }
+	
+	DamageMul("DiffucultyBulletHeadDamageMul")
+    {
+		Physical("?");
+        Cut("?");
+		Blunt("?");
+		Ranged("?");
+    }
+	
+	DamageMul("DiffucultyItemDamageMul")
+    {
+		Physical("?");
+        Cut("?");
+		Blunt("?");
+		Ranged("?");
+    }
+	
+	DamageMul("OutfitMeleeDamageBoost")
+    {
+		Physical("?");
+        Cut("?");
+		Blunt("?");
+    }
+	
+	DamageMul("OutfitRangedDamageBoost")
+    {
+        Ranged("?");
+    }
+
+    DamageMul("OutfitParkourDamageBoost")
+    {
+		Ram("?");
+    }
+
+    DamageMul("OutfitKnuckleDusterDamageBoost")
+    {
+		Blunt("?");
+        Cut("?");
+    }
+
+    DamageMul("OutfitOneHandedDamageBoost")
+    {
+		Blunt("?");
+        Cut("?");
+    }
+
+    DamageMul("OutfitTwoHandedDamageBoost")
+    {
+		Blunt("?");
+        Cut("?");
+    }
+	
+	DamageResistance("OutfitGeneralResistance")
+	{
+		All("?%");
+	}
+
+    DamageResistance("OutfitArmorResistance")
+	{
+		All("?%");
+	}
+	
+	DamageResistance("OutfitResistance")
+	{
+		Fire("?%");
+		Poison("?%");
+		Electricity("?%");
+	}
+	
+	DamageResistance("OutfitTimeResistance")
+	{
+		All("?%");
+	}
+	
+	DamageResistance("OutfitHumanResistance")
+	{
+		Cut("?%");
+		Blunt("?%");
+	}
+	
+	DamageResistance("OutfitInfectedResistance")
+	{
+		Physical("?%");
+	}
+	
+	DamageResistance("OutfitArcherResistance")
+	{
+		Ranged("?%");
+	}
+	
+	Damage("bow_r0")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_0");
+    }
+	
+	Damage("bow_t1")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_1");
+    }
+	Damage("bow_t2")
+    {
+		Ranged("IAL_Weapons_Bow_DMG_Tier_2");
+    }
+	Damage("bow_t3")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_3");
+    }
+	Damage("bow_t4")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_4");
+    }
+	Damage("bow_t5")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_5");
+    }
+	Damage("bow_t6")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_6");
+    }
+	Damage("bow_t7")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_7");
+    }
+	Damage("bow_t8")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_8");
+    }
+	Damage("bow_t9")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_8");
+    }
+	Damage("bow_t1_low")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_0");
+    }
+	Damage("bow_t2_low")
+    {
+		Ranged("IAL_Weapons_Bow_DMG_Tier_1");
+    }
+	Damage("bow_t3_low")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_2");
+    }
+	Damage("bow_t4_low")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_3");
+    }
+	Damage("bow_t5_low")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_4");
+    }
+	Damage("bow_t6_low")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_5");
+    }
+	Damage("bow_t7_low")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_6");
+    }
+	Damage("bow_t8_low")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_7");
+    }
+	Damage("bow_t9_low")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_8");
+    }
+	Damage("bow_plaguewitch")
+    {
+        Ranged("IAL_Weapons_Bow_DMG_Tier_4");
+    }
+
+
+
+
+	Damage("crossbow_r0")
+    {
+        Ranged("IAL_Weapons_Crossbow_DMG_Tier_2");
+    }
+
+
+	//////////////////////////////////////////////////////////////
+
+    DamageMul("Player_FirstStrike")
+    {
+        All("+0.5");
+    }
+
+	Damage("Player_Volumetric_Default")
+    {
+        Ram("1");
+    }
+	Damage("Player_Volumetric_VaultKick")
+    {
+		Ram("51% of MaxHealth");        
+    }
+	Damage("Player_Volumetric_MonkeyBarKick")
+    {
+        Ram("34% of MaxHealth");        
+    }
+	Damage("Player_Volumetric_LeapTackle")
+    {
+        Ram("34% of MaxHealth"); 
+    }
+    Damage("Melee_Damage_Default")
+    {
+        Ram("9");
+    }
+	Damage("Damage_Stomp")
+    {
+		Ram("66% of MaxHealth");        
+    }
+	
+	Damage("Player_ScareCrow_LandingShockwaveKill")
+    {
+        Physical("110% of MaxHealth"); 
+    }
+	Damage("Player_ScareCrow_LandingShockwave")
+    {
+        Physical("25-80"); 
+    }
+
+	Damage("Player_KickBaseDamage")
+    {
+        Physical("10");
+    }
+	
+	Damage("Biter_Tar_Hit")
+    {
+        Physical("4%-IAL_Biter_Swip_DMG_Percent% of MaxHealth");
+    }
+	
+    DamageMul("grab_damage_mul_biter_lv1")
+    {
+        Physical("+1.0");
+    }
+
+    DamageMul("Grab_Damage_Mul_Biter_LV2")
+    {
+        Physical("+2.0");
+    }
+
+    DamageMul("Grab_Damage_Mul_Zombie")
+    {
+        Physical("+0.0");
+    }
+
+    DamageMul("grab_damage_mul_hmf")
+    {
+        Physical("+19.0");
+    }
+
+	
+    Damage("BiterGrab")
+    {
+        Physical("IAL_Biter_GrabBite_DMG_Percent% of MaxHealth");
+    }
+	
+	Damage("Zombie_Fists")
+    {
+        Physical("9");
+    }
+
+    Damage("Zombie_Fists_1")
+    {
+        Physical("10");
+    }
+
+    Damage("Zombie_Fists_2")
+    {
+        Physical("15");
+    }
+
+    Damage("Zombie_Fists_3")
+    {
+        Physical("20");
+    }
+
+    Damage("Zombie_Fists_4")
+    {
+        Physical("30");
+    }
+
+    Damage("Zombie_Fists_5")
+    {
+        Physical("40");
+    }
+
+    Damage("Zombie_Fists_6")
+    {
+        Physical("50");
+    }
+
+    Damage("Zombie_Fists_7")
+    {
+        Physical("65");
+    }
+
+    Damage("Zombie_Fists_8")
+    {
+        Physical("80");
+    }
+
+    Damage("Zombie_Fists_9")
+    {
+        Physical("95");
+    }
+
+	Damage("Volatile_Fists_RGD_1")
+	{
+		Physical("50");
+	}
+	
+	Damage("Volatile_Fists_RGD_2")
+	{
+		Physical("65");
+	}
+	
+	Damage("Volatile_Fists_RGD_3")
+	{
+		Physical("80");
+	}
+	
+	Damage("Volatile_Fists_RGD_4")
+	{
+		Physical("95");
+	}
+	
+	Damage("Volatile_Fists_RGD_5")
+	{
+		Physical("110");
+	}
+	
+	Damage("Volatile_Fists_RGD_6")
+	{
+		Physical("125");
+	}
+	
+	Damage("Volatile_Fists_RGD_7")
+	{
+		Physical("140");
+	}
+	
+	Damage("Volatile_Fists_RGD_8")
+	{
+		Physical("155");
+	}
+	
+	Damage("Volatile_Fists_RGD_9")
+	{
+		Physical("170");
+	}
+    Damage("Volatile_Spit_RGD_1")
+	{
+		Physical("10");
+	}
+    Damage("Volatile_Spit_RGD_2")
+	{
+		Physical("10");
+	}
+    Damage("Volatile_Spit_RGD_3")
+	{
+		Physical("10");
+	}
+    Damage("Volatile_Spit_RGD_4")
+	{
+		Physical("10");
+	}
+    Damage("Volatile_Spit_RGD_5")
+	{
+		Physical("10");
+	}
+    Damage("Volatile_Spit_RGD_6")
+	{
+		Physical("10");
+	}
+    Damage("Volatile_Spit_RGD_7")
+	{
+		Physical("10");
+	}
+    Damage("Volatile_Spit_RGD_8")
+	{
+		Physical("10");
+	}
+    Damage("Volatile_Spit_RGD_9")
+	{
+		Physical("10");
+	}   
+    Damage("Volatile_Spitter_Spit")
+	{
+		Physical("20");
+	}
+	Damage("Alpha_Zombie_Fists_RGD_1")
+	{
+		Physical("20");
+	}
+	
+	Damage("Alpha_Zombie_Fists_RGD_2")
+	{
+		Physical("26");
+	}
+	
+	Damage("Alpha_Zombie_Fists_RGD_3")
+	{
+		Physical("32");
+	}
+	
+	Damage("Alpha_Zombie_Fists_RGD_4")
+	{
+		Physical("38");
+	}
+	
+	Damage("Alpha_Zombie_Fists_RGD_5")
+	{
+		Physical("44");
+	}
+	
+	Damage("Alpha_Zombie_Fists_RGD_6")
+	{
+		Physical("50");
+	}
+	
+	Damage("Alpha_Zombie_Fists_RGD_7")
+	{
+		Physical("56");
+	}
+	
+	Damage("Alpha_Zombie_Fists_RGD_8")
+	{
+		Physical("62");
+	}
+	
+	Damage("Alpha_Zombie_Fists_RGD_9")
+	{
+		Physical("68");
+	}
+	
+    Damage("Banshee_Fists")
+	{
+		Physical("45");
+	}
+	
+	Damage("Banshee_Fists_RGD_1")
+	{
+		Physical("45");
+	}
+	Damage("Banshee_Fists_RGD_2")
+	{
+		Physical("50");
+	}
+	Damage("Banshee_Fists_RGD_3")
+	{
+		Physical("55");
+	}
+	Damage("Banshee_Fists_RGD_4")
+	{
+		Physical("60");
+	}
+	Damage("Banshee_Fists_RGD_5")
+	{
+		Physical("65");
+	}
+	Damage("Banshee_Fists_RGD_6")
+	{
+		Physical("16");
+	}
+	Damage("Banshee_Fists_RGD_7")
+	{
+		Physical("25");
+	}
+	Damage("Banshee_Fists_RGD_8")
+	{
+		Physical("35");
+	}
+	Damage("Banshee_Fists_RGD_9")
+	{
+		Physical("45");
+	}
+	
+    Damage("Banshee_Jump_On_Biter")
+	{
+		Physical("0");
+	}
+    Damage("Volatile_PowerAttack")
+	{
+		Physical("24% of MaxHealth");
+	}
+    Damage("Volatile_Spit")
+    {
+        Poison("20");
+    }
+    Damage("Viral_Fists")
+    {
+        Physical("4");
+    }
+
+    Damage("Viral_Fists_RGD_0")
+    {
+        Physical("4");
+    }
+	Damage("Viral_Fists_RGD_1")
+    {
+        Physical("5");
+    }
+
+    Damage("Viral_Fists_RGD_2")
+    {
+        Physical("9");
+    }
+
+    Damage("Viral_Fists_RGD_3")
+    {
+        Physical("12");
+    }
+
+    Damage("Viral_Fists_RGD_4") 
+    {
+        Physical("15");
+    }
+
+    Damage("Viral_Fists_RGD_5")
+    {
+        Physical("18");
+    }
+
+    Damage("Viral_Fists_RGD_6")
+    {
+        Physical("22");
+    }
+
+    Damage("Viral_Fists_RGD_7")
+    {
+        Physical("35");
+    }
+
+    Damage("Viral_Fists_RGD_8")
+    {
+        Physical("45");
+    }
+
+    Damage("Viral_Fists_RGD_9")
+    {
+        Physical("60");
+    }
+	 Damage("Viral_Chase_Fists_RGD_0")
+    {
+        Physical("5");
+    }
+	Damage("Viral_Chase_Fists_RGD_1")
+    {
+        Physical("5");
+    }
+
+    Damage("Viral_Chase_Fists_RGD_2")
+    {
+        Physical("7");
+    }
+
+    Damage("Viral_Chase_Fists_RGD_3")
+    {
+        Physical("9");
+    }
+
+    Damage("Viral_Chase_Fists_RGD_4") 
+    {
+        Physical("12");
+    }
+
+    Damage("Viral_Chase_Fists_RGD_5")
+    {
+        Physical("15");
+    }
+
+    Damage("Viral_Chase_Fists_RGD_6")
+    {
+        Physical("19");
+    }
+
+    Damage("Viral_Chase_Fists_RGD_7")
+    {
+        Physical("27");
+    }
+
+    Damage("Viral_Chase_Fists_RGD_8")
+    {
+        Physical("34");
+    }
+
+    Damage("Viral_Chase_Fists_RGD_9")
+    {
+        Physical("45");
+    }
+	Damage("Obstructor_Fists_RGD_1")
+    {
+        Physical("10");
+    }
+
+    Damage("Obstructor_Fists_RGD_2")
+    {
+        Physical("20");
+    }
+
+    Damage("Obstructor_Fists_RGD_3")
+    {
+        Physical("30");
+    }
+
+    Damage("Obstructor_Fists_RGD_4") 
+    {
+        Physical("40");
+    }
+
+    Damage("Obstructor_Fists_RGD_5")
+    {
+        Physical("60");
+    }
+
+    Damage("Obstructor_Fists_RGD_6")
+    {
+        Physical("80");
+    }
+
+    Damage("Obstructor_Fists_RGD_7")
+    {
+        Physical("100");
+    }
+
+    Damage("Obstructor_Fists_RGD_8")
+    {
+        Physical("120");
+    }
+
+    Damage("Obstructor_Fists_RGD_9")
+    {
+        Physical("140");
+    }
+
+    Damage("Viral_Fists_Level_2")
+    {
+        Physical("8");
+    }
+    Damage("Viral_Power_Attack")
+    {
+        Physical("12% of MaxHealth");
+    }
+    Damage("Goon_Weapon")
+    {
+        Blast("50");
+    }
+	Damage("Goon_Weapon_RGD_1")
+    {
+        Blast("25");
+    }
+	Damage("Goon_Weapon_RGD_2")
+    {
+        Blast("35");
+    }
+	Damage("Goon_Weapon_RGD_3")
+    {
+        Blast("45");
+    }
+	Damage("Goon_Weapon_RGD_4")
+    {
+        Blast("55");
+    }
+	Damage("Goon_Weapon_RGD_5")
+    {
+        Blast("65");
+    }
+	Damage("Goon_Weapon_RGD_6")
+    {
+        Blast("75");
+    }
+	Damage("Goon_Weapon_RGD_7")
+    {
+        Blast("100");
+    }
+	Damage("Goon_Weapon_RGD_8")
+    {
+        Blast("125");
+    }
+	Damage("Goon_Weapon_RGD_9")
+    {
+        Blast("150");
+    }
+	Damage("Goon_Fists_RGD_1")
+    {
+        Physical("20");
+    }
+	Damage("Goon_Fists_RGD_2")
+    {
+        Physical("25");
+    }
+	Damage("Goon_Fists_RGD_3")
+    {
+        Physical("30");
+    }
+	Damage("Goon_Fists_RGD_4")
+    {
+        Physical("35");
+    }
+	Damage("Goon_Fists_RGD_5")
+    {
+        Physical("40");
+    }
+	Damage("Goon_Fists_RGD_6")
+    {
+        Physical("45");
+    }
+	Damage("Goon_Fists_RGD_7")
+    {
+        Physical("70");
+    }
+	Damage("Goon_Fists_RGD_8")
+    {
+        Physical("95");
+    }
+	Damage("Goon_Fists_RGD_9")
+    {
+        Physical("120");
+    }
+	
+    DamageMul("Goon_Stomp")
+    {
+        Physical("-0.25");
+    }
+	Damage("Corruptor_Finisher")
+    {
+        Physical("7% of MaxHealth");        
+    }
+    Damage("Goon_Finisher_Damage")
+    {
+        Physical("100");
+    }
+    Damage("Goon_Impact_Shockwave")
+    {
+        Physical("5% of MaxHealth");
+    }
+    Damage("Charger_Fists")
+    {
+        Blast("10");
+    }
+	Damage("Charger_Fists_RGD_1")
+    {
+        Blast("25");
+    }
+	Damage("Charger_Fists_RGD_2")
+    {
+        Blast("30");
+    }
+	Damage("Charger_Fists_RGD_3")
+    {
+        Blast("35");
+    }
+	Damage("Charger_Fists_RGD_4")
+    {
+        Blast("50");
+    }
+	Damage("Charger_Fists_RGD_5")
+    {
+        Blast("65");
+    }
+	Damage("Charger_Fists_RGD_6")
+    {
+        Blast("80");
+    }
+	Damage("Charger_Fists_RGD_7")
+    {
+        Blast("105");
+    }
+	Damage("Charger_Fists_RGD_8")
+    {
+        Blast("130");
+    }
+	Damage("Charger_Fists_RGD_9")
+    {
+        Blast("155");
+    }	   
+	
+	Damage("Charger_Charge_RGD_1")
+    {
+        Blast("25");
+    }
+	Damage("Charger_Charge_RGD_2")
+    {
+        Blast("30");
+    }
+	Damage("Charger_Charge_RGD_3")
+    {
+        Blast("35");
+    }
+	Damage("Charger_Charge_RGD_4")
+    {
+        Blast("40");
+    }
+	Damage("Charger_Charge_RGD_5")
+    {
+        Blast("45");
+    }
+	Damage("Charger_Charge_RGD_6")
+    {
+        Blast("50");
+    }
+	Damage("Charger_Charge_RGD_7")
+    {
+        Blast("55");
+    }
+	Damage("Charger_Charge_RGD_8")
+    {
+        Blast("60");
+    }
+	Damage("Charger_Charge_RGD_9")
+    {
+        Blast("65");
+    }				
+			
+	Damage("Corruptor_Fists_RGD_1")
+    {
+        Blunt("5");
+    }
+	Damage("Corruptor_Fists_RGD_2")
+    {
+        Blunt("10");
+    }
+	Damage("Corruptor_Fists_RGD_3")
+    {
+        Blunt("15");
+    }
+	Damage("Corruptor_Fists_RGD_4")
+    {
+        Blunt("20");
+    }
+	Damage("Corruptor_Fists_RGD_5")
+    {
+        Blunt("30");
+    }
+	Damage("Corruptor_Fists_RGD_6")
+    {
+        Blunt("40");
+    }
+	Damage("Corruptor_Fists_RGD_7")
+    {
+        Blunt("50");
+    }
+	Damage("Corruptor_Fists_RGD_8")
+    {
+        Blunt("60");
+    }
+	Damage("Corruptor_Fists_RGD_9")
+    {
+        Blunt("70");
+    }
+	Damage("Corruptor_Spit_RGD_1")
+    {
+        Poison("5");
+    }
+    Damage("Corruptor_Spit_RGD_2")
+    {
+        Poison("10");
+    }
+    Damage("Corruptor_Spit_RGD_3")
+    {
+        Poison("15");
+    }
+    Damage("Corruptor_Spit_RGD_4")
+    {
+        Poison("20");
+    }
+    Damage("Corruptor_Spit_RGD_5")
+    {
+        Poison("30");
+    }
+    Damage("Corruptor_Spit_RGD_6")
+    {
+        Poison("40");
+    }
+    Damage("Corruptor_Spit_RGD_7")
+    {
+        Poison("50");
+    }
+    Damage("Corruptor_Spit_RGD_8")
+    {
+        Poison("60");
+    }
+    Damage("Corruptor_Spit_RGD_9")
+    {
+        Poison("70");
+    }
+    Damage("Corruptor_Mortar_Spit_RGD_1")
+    {
+        Poison("5");
+    }
+    Damage("Corruptor_Mortar_Spit_RGD_2")
+    {
+        Poison("10");
+    }
+    Damage("Corruptor_Mortar_Spit_RGD_3")
+    {
+        Poison("15");
+    }
+    Damage("Corruptor_Mortar_Spit_RGD_4")
+    {
+        Poison("20");
+    }
+    Damage("Corruptor_Mortar_Spit_RGD_5")
+    {
+        Poison("30");
+    }
+    Damage("Corruptor_Mortar_Spit_RGD_6")
+    {
+        Poison("40");
+    }
+    Damage("Corruptor_Mortar_Spit_RGD_7")
+    {
+        Poison("50");
+    }
+    Damage("Corruptor_Mortar_Spit_RGD_8")
+    {
+        Poison("60");
+    }
+    Damage("Corruptor_Mortar_Spit_RGD_9")
+    {
+        Poison("70");
+    }
+    Damage("Corruptor_Puddle_RGD_1")
+    {
+        Poison("1");
+    }
+    Damage("Corruptor_Puddle_RGD_2")
+    {
+        Poison("2");
+    }
+    Damage("Corruptor_Puddle_RGD_3")
+    {
+        Poison("3");
+    }
+    Damage("Corruptor_Puddle_RGD_4")
+    {
+        Poison("4");
+    }
+    Damage("Corruptor_Puddle_RGD_5")
+    {
+        Poison("6");
+    }
+    Damage("Corruptor_Puddle_RGD_6")
+    {
+        Poison("8");
+    }
+    Damage("Corruptor_Puddle_RGD_7")
+    {
+        Poison("10");
+    }
+    Damage("Corruptor_Puddle_RGD_8")
+    {
+        Poison("12");
+    }
+    Damage("Corruptor_Puddle_RGD_9")
+    {
+        Poison("14");
+    }
+	Damage("Corruptor_Gas_RGD_1")
+    {
+        Poison("5");
+    }
+    Damage("Corruptor_Gas_RGD_2")
+    {
+        Poison("10");
+    }
+    Damage("Corruptor_Gas_RGD_3")
+    {
+        Poison("15");
+    }
+    Damage("Corruptor_Gas_RGD_4")
+    {
+        Poison("20");
+    }
+    Damage("Corruptor_Gas_RGD_5")
+    {
+        Poison("30");
+    }
+    Damage("Corruptor_Gas_RGD_6")
+    {
+        Poison("40");
+    }
+    Damage("Corruptor_Gas_RGD_7")
+    {
+        Poison("50");
+    }
+    Damage("Corruptor_Gas_RGD_8")
+    {
+        Poison("60");
+    }
+    Damage("Corruptor_Gas_RGD_9")
+    {
+        Poison("70");
+    }
+    Damage("Corruptor_Grenade_RGD_1")
+    {
+        Poison("10");
+    }
+    Damage("Corruptor_Grenade_RGD_2")
+    {
+        Poison("5");
+    }
+    Damage("Corruptor_Grenade_RGD_3")
+    {
+        Poison("10");
+    }
+    Damage("Corruptor_Grenade_RGD_4")
+    {
+        Poison("15");
+    }
+    Damage("Corruptor_Grenade_RGD_5")
+    {
+        Poison("20");
+    }
+    Damage("Corruptor_Grenade_RGD_6")
+    {
+        Poison("30");
+    }
+    Damage("Corruptor_Grenade_RGD_7")
+    {
+        Poison("40");
+    }
+    Damage("Corruptor_Grenade_RGD_8")
+    {
+        Poison("50");
+    }
+    Damage("Corruptor_Grenade_RGD_9")
+    {
+        Poison("60");
+    }
+	Damage("Demolisher_Fists_RGD_1")
+    {
+        Blast("30");
+    }	
+	Damage("Demolisher_Fists_RGD_2")
+    {
+        Blast("35");
+    }
+	Damage("Demolisher_Fists_RGD_3")
+    {
+        Blast("40");
+    }	
+	Damage("Demolisher_Fists_RGD_4")
+    {
+        Blast("45");
+    }
+	Damage("Demolisher_Fists_RGD_5")
+    {
+        Blast("50");
+    }
+	Damage("Demolisher_Fists_RGD_6")
+    {
+        Blast("55");
+    }
+	Damage("Demolisher_Fists_RGD_7")
+    {
+        Blast("80");
+    }
+	Damage("Demolisher_Fists_RGD_8")
+    {
+        Blast("110");
+    }
+	Damage("Demolisher_Fists_RGD_9")
+    {
+        Blast("150");
+    }
+    Damage("Demolisher_Charge_RGD_1")
+    {
+        Blast("15");
+    }	
+	Damage("Demolisher_Charge_RGD_2")
+    {
+        Blast("18");
+    }
+	Damage("Demolisher_Charge_RGD_3")
+    {
+        Blast("22");
+    }	
+	Damage("Demolisher_Charge_RGD_4")
+    {
+        Blast("25");
+    }
+	Damage("Demolisher_Charge_RGD_5")
+    {
+        Blast("28");
+    }
+	Damage("Demolisher_Charge_RGD_6")
+    {
+        Blast("32");
+    }
+	Damage("Demolisher_Charge_RGD_7")
+    {
+        Blast("35");
+    }
+	Damage("Demolisher_Charge_RGD_8")
+    {
+        Blast("40");
+    }
+	Damage("Demolisher_Charge_RGD_9")
+    {
+        Blast("45");
+    }
+    Damage("Demolisher_Rubble_RGD_1")
+    {
+        Blast("17");
+    }
+	Damage("Demolisher_Rubble_RGD_2")
+    {
+        Blast("22");
+    }
+	Damage("Demolisher_Rubble_RGD_3")
+    {
+        Blast("27");
+    }
+	Damage("Demolisher_Rubble_RGD_4")
+    {
+        Blast("32");
+    }
+	Damage("Demolisher_Rubble_RGD_5")
+    {
+        Blast("37");
+    }
+	Damage("Demolisher_Rubble_RGD_6")
+    {
+        Blast("42");
+    }
+	Damage("Demolisher_Rubble_RGD_7")
+    {
+        Blast("47");
+    }    
+	Damage("Demolisher_Rubble_RGD_8")
+    {
+        Blast("55");
+    }  
+	Damage("Demolisher_Rubble_RGD_9")
+    {
+        Blast("65");
+    }
+    Damage("Waltz_Rubble_RGD_1")
+    {
+        Blast("17");
+    }
+	Damage("Waltz_Rubble_RGD_2")
+    {
+        Blast("22");
+    }
+	Damage("Waltz_Rubble_RGD_3")
+    {
+        Blast("27");
+    }
+	Damage("Waltz_Rubble_RGD_4")
+    {
+        Blast("32");
+    }
+	Damage("Waltz_Rubble_RGD_5")
+    {
+        Blast("37");
+    }
+	Damage("Waltz_Rubble_RGD_6")
+    {
+        Blast("42");
+    }
+	Damage("Waltz_Rubble_RGD_7")
+    {
+        Blast("47");
+    }    
+	Damage("Waltz_Rubble_RGD_8")
+    {
+        Blast("55");
+    }  
+	Damage("Waltz_Rubble_RGD_9")
+    {
+        Blast("65");
+    }
+	Damage("Waltz_Combo_Hit")
+    {
+        Blunt("20");
+    }
+    Damage("Waltz_Heavy_Ground_Pound")
+    {
+        Blast("50");
+    }
+    Damage("Waltz_Heavy_Combo")
+    {
+        Blast("45");
+    }
+	Damage("Waltz_Heavy_Weapon_Level_1")
+    {
+        Blast("55");
+    }
+	Damage("Waltz_Heavy_Weapon_Level_2")
+    {
+        Blast("65");
+    }	
+	Damage("Waltz_Heavy_Weapon_Level_3")
+    {
+        Blast("75");
+    }
+	Damage("Waltz_Heavy_Weapon_Level_4")
+    {
+        Blast("85");
+    }
+	Damage("Waltz_Heavy_Weapon_Level_5")
+    {
+        Blast("95");
+    }
+	Damage("Waltz_Heavy_Weapon_Level_6")
+    {
+        Blast("105");
+    }
+	Damage("Waltz_Heavy_Weapon_Level_7")
+    {
+        Blast("115");
+    }
+	Damage("Waltz_Heavy_Weapon_Level_8")
+    {
+        Blast("125");
+    }
+    Damage("Waltz_Heavy_Weapon_Level_9")
+    {
+        Blast("135");
+    }
+     DamageMul("Waltz_Veronika_Damage_Mul")
+    {
+        All("-0.5");
+    }	
+    Damage("AI_RagdollPlayer")
+    {
+        Physical("5% of MaxHealth");
+    }
+    Damage("CombatInteractable")
+    {
+        Physical("30");
+    }
+
+    Damage("CombatInteractableBottle")
+    {
+        Cut("10");
+    }
+
+    Damage("CombatInteractableBrick")
+    {
+        Blunt("1%");
+    }
+	
+	Damage("Melee_Shockwave")
+    {
+        Physical("1% of MaxHealth");
+    }
+
+    Damage("RopeHook")
+    {
+        Physical("0");
+    }
+	
+	Damage("RopeHookEnemyPull")
+	{
+		Physical("0");
+	}
+
+    Damage("Wpn_1Hs_Electric_Mach_D_Fpp_VS")
+    {
+        Physical("44");
+    }
+
+    Damage("Special_Hook")
+    {
+        Physical("17");
+    }
+
+    Damage("Thrown_Spear")
+    {
+        Physical("120");
+    }
+	
+	Damage("Bullet_LavanCrossbowSnipersAlley")
+    {
+        Physical("10");
+    }
+	
+	Damage("Tackle_Spear")
+    {
+        Physical("50");
+    }
+
+    Damage("Spear")
+    {
+        Physical("100");
+    }
+
+    Damage("machete_debug")
+    {
+        Physical("250");
+    }
+
+    Damage("ai_shiv")
+    {
+        Physical("10");
+    }
+
+    Damage("wpn_1hb_mace_h_fpp_vs_t2-4-fire")
+    {
+        Physical("26");
+    }
+
+	Damage("AI_Throwable_Knife_Damage")
+    {
+        Physical("5% of MaxHealth");
+    }
+	Damage("AI_Throwable_KnifeBoss_Damage")
+    {
+        Physical("5%-12% of MaxHealth");
+    }
+
+    Damage("AI_Throwable_Stone_Damage")
+    {
+        Physical("2% of MaxHealth");
+    }
+
+	Damage("JumpOnHeadDamage")
+    {
+        Physical("1");
+    }
+
+	Damage("Player_Melee_WeaponPush")
+    {
+       All("0% of MaxHealth");
+	}
+
+    DamageMul("Coop_Melee_Damage_Mul_2")
+    {
+        Physical("+0.1");
+    }
+
+    DamageMul("Coop_Melee_Damage_Mul_3")
+    {
+        Physical("+0.2");
+    }
+
+    DamageMul("Coop_Melee_Damage_Mul_4")
+    {
+        Physical("+0.3");
+    }
+
+    DamageResistance("AIArmoredDamageResistance")
+    {
+        Blunt("90%");
+        Cut("90%");
+        Ram("90%");
+        Physical("90%");
+    }
+
+    DamageMul("ai_juggernaut_update_mult")
+    {
+        Physical("+0");
+    }
+
+    DamageMul("ai_juggernaut_update_mult_zero")
+    {
+        Physical("+0");
+    }
+
+    DamageMul("DamageModuleHuman_DisablePhysical")
+    {
+        Physical("+0");
+    }
+
+    DamageMul("DamageModuleHuman_Armor")
+    {
+        All("-0.5");
+    }
+
+    DamageMul("DamageModuleHuman_IsWetPenalty")
+    {
+        Electricity("+1");
+    }
+
+    DamageMul("DamageModuleHuman_NotHeld")
+    {
+        Physical("-0.2");
+    }
+
+    DamageResistance("DamageModuleHuman_HeavyDamageMitigation")
+    {
+        Blunt("90%");
+        Cut("90%");
+        Ram("90%");
+    }
+
+    Damage("HumanLogicModule_Push")
+    {
+        Physical("2.0");
+    }
+
+    DamageMul("HumanLogicModule_HeavyAttack")
+    {
+        Physical("+1");
+    }
+
+    Damage("HumanLogicModule_GrabRelease")
+    {
+        Physical("5");
+    }
+
+    Damage("AI_ObjectHit")
+    {
+        Physical("1% of MaxHealth");
+    }
+
+    Damage("AI_WallHit")
+    {
+        Physical("1%-5% of MaxHealth");
+    }
+	
+	Damage("AI_WallHit_NoDamage")
+    {
+        Physical("0");
+    }
+	
+    Damage("HumanLogicModule_Object")
+    {
+        Physical("1");
+    }
+
+    Damage("HumanLogicModule_UpdateChemicals")
+    {
+        Chemical("5% of MaxHealth");
+    }
+
+    Damage("HumanLogicModule_GrabFailed")
+    {
+        Physical("5");
+    }
+
+    Damage("HumanLogicModule_DeathExplode")
+    {
+        Physical("?");
+    }
+
+    Damage("CollisionModuleHuman_FallCollision")
+    {
+        Physical("?% of MaxHealth");
+    }
+
+    Damage("HumanAI_NonActorHit")
+    {
+        Physical("30");
+    }
+
+    Damage("AI_DominoHitHeavy")
+    {
+        Physical("30% of MaxHealth");
+    }
+
+    Damage("AI_DominoHitLight")
+    {
+        Physical("5% of MaxHealth");
+    }
+
+    Damage("HumanAI_ImpactToDynamicObject")
+    {
+        Physical("1000");
+    }
+
+    Damage("HumanAI_DestroyPhysicsTargets")
+    {
+        Physical("100");
+    }
+
+    DamageMul("AI_BiterArmored")
+    {
+        Physical("20% of MaxHealth");
+    }
+
+    DamageMul("AI_BiterHeadshot")
+    {
+        Physical("+4");
+    }
+
+    DamageMul("AI_BiterLevel1")
+    {
+        Physical("+0.5");
+    }
+
+    DamageMul("AI_BiterLevel2")
+    {
+        Physical("+1");
+    }
+
+    DamageMul("AI_BiterNightGrabAttacks")
+    {
+        Physical("+1");
+    }
+
+    DamageMul("AI_Juggernaut")
+    {
+        Physical("+3");
+    }
+
+    DamageMul("AI_Goon")
+    {
+        Physical("+1");
+    }
+    DamageMul("AI_Demolisher")
+    {
+        Physical("+0");
+    }
+    DamageMul("AI_JuggernautStagger")
+    {
+        Physical("-0.25");
+    }
+
+    DamageMul("AI_Volatile")
+    {
+        Physical("+0");
+    }
+    DamageMul("AI_Banshee")
+    {
+        Physical("+1.0");
+    }
+    DamageMul("AI_Bolter")
+    {
+        Physical("+0.5");
+    }
+    DamageMul("AI_Corruptor")
+    {
+        Physical("+1.0");
+    }
+    DamageMul("AI_Viral")
+    {
+        Physical("+0.5");
+    }
+	DamageMul("Viral_Mul_VS_AI")
+    {
+        Physical("+2.0");
+    }
+    DamageMul("Viral_Chase_Mul_VS_AI")
+    {
+        Physical("+15.0");
+    }
+    DamageMul("AI_GraphParams")
+    {
+        Physical("+0.0");
+    }
+
+    DamageMul("AI_BaseDamageMul")
+    {
+        Physical("+0.0");
+    }
+    DamageTotalMul("AI_Human_ComboAttackDamageMul")
+    {
+        Physical("0.8");
+        Cut("0.8");
+        Blunt("0.8");
+    }
+    DamageTotalMul("AI_Human_FuryComboAttackDamageMul")
+    {
+        Physical("0.5");
+        Cut("0.5");
+        Blunt("0.5");
+    }
+    DamageTotalMul("AI_Human_ScareAwayAttackDamageMul")
+    {
+        Physical("0.5");
+        Cut("0.5");
+        Blunt("0.5");
+    }
+	DamageMul("AI_LowDamageMul")
+    {
+        Physical("-0.5");
+    }
+	DamageTotalMul("AI_LowDamageMul_Prologue")
+    {
+        Physical("0.25");
+		Cut("0.25");
+		Blunt("0.25");
+    }
+	DamageMul("AI_LowDamageMul_Ranged")
+    {
+        Ranged("-0.5");
+    }
+	DamageMul("AI_LowDamageMul_Armed")
+    {
+        Physical("-0.5");
+		Cut("-0.5");
+		Blunt("-0.5");
+    }
+	DamageTotalMul("AI_LowDamageMul_Tier1")
+    {
+        Physical("1.0");
+		Cut("1.0");
+		Blunt("1.0");
+    }
+	DamageTotalMul("AI_LowDamageMul_Tier2")
+    {
+        Physical("0.85");
+		Cut("0.85");
+		Blunt("0.85");
+    }
+	DamageTotalMul("AI_LowDamageMul_Tier3")
+    {
+        Physical("0.75");
+		Cut("0.75");
+		Blunt("0.75");
+    }
+	DamageTotalMul("AI_LowDamageMul_Tier4")
+    {
+        Physical("0.6");
+		Cut("0.6");
+		Blunt("0.6");
+    }
+	DamageTotalMul("AI_LowDamageMul_Tier5")
+    {
+        Physical("0.5");
+		Cut("0.5");
+		Blunt("0.5");
+    }
+	DamageTotalMul("AI_LowDamageMul_Tier6")
+    {
+        Physical("0.4");
+		Cut("0.4");
+		Blunt("0.4");
+    }
+	DamageTotalMul("AI_LowDamageMul_Tier7")
+    {
+        Physical("0.4");
+		Cut("0.4");
+		Blunt("0.4");
+    }
+	DamageTotalMul("AI_LowDamageMul_Tier8")
+    {
+        Physical("0.4");
+		Cut("0.4");
+		Blunt("0.4");
+    }
+	DamageTotalMul("AI_LowDamageMul_Tier9")
+    {
+        Physical("0.5");
+		Cut("0.5");
+		Blunt("0.5");
+    }
+	DamageTotalMul("AI_LowDamageMul_Ranged_Tier1")
+    {
+        Ranged("0.7");
+    }
+	DamageTotalMul("AI_LowDamageMul_Ranged_Tier2")
+    {
+        Ranged("0.65");
+    }
+	DamageTotalMul("AI_LowDamageMul_Ranged_Tier3")
+    {
+        Ranged("0.6");
+    }
+	DamageTotalMul("AI_LowDamageMul_Ranged_Tier4")
+    {
+        Ranged("0.55");
+    }
+	DamageTotalMul("AI_LowDamageMul_Ranged_Tier5")
+    {
+        Ranged("0.5");
+    }
+	DamageTotalMul("AI_LowDamageMul_Ranged_Tier6")
+    {
+        Ranged("0.45");
+    }
+	DamageTotalMul("AI_LowDamageMul_Ranged_Tier7")
+    {
+        Ranged("0.4");
+    }
+	DamageTotalMul("AI_LowDamageMul_Ranged_Tier8")
+    {
+        Ranged("0.4");
+    }
+	DamageTotalMul("AI_LowDamageMul_Ranged_Tier9")
+    {
+        Ranged("0.4");
+    }	
+	
+	
+	DamageMul("AI_LowDamageMul_Armed_Waltz")
+    {
+        Physical("-0.75");
+		Cut("-0.75");
+		Blunt("-0.75");
+    }
+	DamageMul("AI_LowDamageMul_Armed_MinimumDamage")
+    {
+        Physical("-0.90");
+		Cut("-0.90");
+		Blunt("-0.90");
+    }
+	
+	
+
+    Damage("AI_HmfGraph_Drowning")
+    {
+        Drowning("20% of MaxHealth");
+    }
+
+    DamageDps("AI_InfectedData_Drowning")
+    {
+        Drowning("");
+    }
+
+    DamageDps("AI_ZombieData_Drowning")
+    {
+        Drowning("");
+    }
+
+    Damage("HumanAI_ImmediateDrowning")
+    {
+        Drowning("100% of MaxHealth");
+    }
+
+    Damage("AI_BiterParallelGrab")
+    {
+        Physical("12");
+    }
+
+    Damage("AI_BiterParallelGrabCooldown")
+    {
+        Physical("3");
+    }
+
+    Damage("AI_BiterProfileBase_BurningDamagePerSec")
+    {
+        All("0");
+    }
+
+    Damage("AI_BiterProfileBurning_BurningDamagePerSec")
+    {
+        All("3");
+    }
+
+    Damage("AI_DamageTarget_BaseDamage")
+    {
+        Physical("1");
+    }
+	
+	Damage("Suicider_Explosion_Level_1")
+    {
+        Blast("50");
+    }
+	Damage("Suicider_Explosion_Level_2")
+    {
+        Blast("55");
+    }
+	Damage("Suicider_Explosion_Level_3")
+    {
+        Blast("60");
+    }
+	Damage("Suicider_Explosion_Level_4")
+    {
+        Blast("65");
+    }
+	Damage("Suicider_Explosion_Level_5")
+    {
+        Blast("70");
+    }
+	Damage("Suicider_Explosion_Level_6")
+    {
+        Blast("75");
+    }
+	Damage("Suicider_Explosion_Level_7")
+    {
+        Blast("100");
+    }
+	Damage("Suicider_Explosion_Level_8")
+    {
+        Blast("120");
+    }
+	Damage("Suicider_Explosion_Level_9")
+    {
+        Blast("140");
+    }
+    DamageMul("Suicider_Mul_Vs_AI")
+    {
+        Blast("+2.0"); 
+    }
+    Damage("AI_Explode_Infected")
+    {
+        Physical("1");
+    }
+
+    Damage("AI_Explode_Zombie")
+    {
+        Physical("1.3");
+    }
+
+    DamageDps("AI_ActivityModuleTarGrab")
+    {
+        Physical("?");
+    }
+
+    Damage("ThrowableStoneDefault")
+    {
+        Physical("10");
+    }
+
+	DamageMul("NightRunner_DamageMod_Level1")
+    {
+        All("+0.0");
+    }
+	
+	DamageMul("NightRunner_DamageMod_Level2")
+    {
+        All("+0.0");
+    }
+	
+	DamageMul("NightRunner_DamageMod_Level3")
+    {
+        All("+0.0");
+    }
+	
+	DamageMul("NightRunner_DamageMod_Level4")
+    {
+        All("+0.0");
+    }
+	
+	DamageMul("NightRunner_DamageMod_Level5")
+    {
+        All("+0.0");
+    }
+
+    DamageMul("NightRunner_DamageMod_Level6")
+    {
+        All("+0.0");
+    }
+	
+    DamageMul("ExplosionDamager_DistanceDmgModifier")
+    {
+        All("?");
+    }
+
+    DamageMul("ExplosionDamager_DmgModifierSquared")
+    {
+        All("?");
+    }
+
+    DamageMul("ExplosionDamager_BlastDamage")
+    {
+        All("?");
+    }
+
+    DamageMul("ExplosionDamager_MinDamageMul")
+    {
+        All("0");
+    }
+
+    Damage("ExplosionDamager_OutOfBlastRange")
+    {
+        All("0");
+    }
+
+    Damage("ExplosionDamager_MinPlayerBlastDmg")
+    {
+        All("5");
+    }
+
+    Damage("ExplosionDamager_Zero")
+    {
+        All("0");
+    }
+
+    DamageMul("ExplosionDamagerBlast_SuiciderBlast")
+    {
+        Physical("+3");
+    }
+
+    DamageMul("ExplosionDamagerBlast_PlayerBlastMul")
+    {
+        Physical("+0");
+    }
+
+    // Crafting Elemental_Stunning
+    Damage("ElementalStunning_Level1")
+    {
+        Blast("40");
+    }
+
+    Damage("ElementalStunning_Critical_Level1")
+    {
+        Blast("40");
+    }
+
+    Damage("ElementalStunning_Blast_Level1")
+    {
+        Blast("40");
+    }
+
+    Damage("ElementalStunning_Level2")
+    {
+        Blast("80");
+    }
+
+    Damage("ElementalStunning_Critical_Level2")
+    {
+        Blast("80");
+    }
+
+    Damage("ElementalStunning_Blast_Level2")
+    {
+        Blast("80");
+    }
+
+    Damage("ElementalStunning_Level3")
+    {
+		Blast("160");
+    }
+
+    Damage("ElementalStunning_Critical_Level3")
+    {
+		Blast("160");
+    }
+
+    Damage("ElementalStunning_Blast_Level3")
+    {
+		Blast("160");
+    }
+
+    Damage("ElementalStunning_Level4")
+    {
+        Blast("240");
+    }
+
+    Damage("ElementalStunning_Critical_Level4")
+    {
+        Blast("240");
+    }
+
+    Damage("ElementalStunning_Blast_Level4")
+    {
+        Blast("240");
+    }
+	
+	Damage("ElementalStunning_Level5")
+    {
+        Blast("320");
+    }
+
+    Damage("ElementalStunning_Critical_Level5")
+    {
+        Blast("320");
+    }
+
+    Damage("ElementalStunning_Blast_Level5")
+    {
+        Blast("320");
+    }
+
+    // Crafting Elemental_ShockElectricity
+    DamageMul("ElementalShockElectricity_Level1")
+    {
+        Electricity("+0.1");
+    }
+
+    DamageMul("ElementalShockElectricity_Critical_Level1")
+    {
+        Electricity("+0.05");
+    }
+
+    Damage("ElementalShockElectricity_Blast_Level1")
+    {
+        Electricity("10");
+    }
+
+    DamageMul("ElementalShockElectricity_Level2")
+    {
+        Electricity("+0.15");
+    }
+
+    DamageMul("ElementalShockElectricity_Critical_Level2")
+    {
+        Electricity("+0.05");
+    }
+
+    Damage("ElementalShockElectricity_Blast_Level2")
+    {
+        Electricity("10");
+    }
+
+    DamageMul("ElementalShockElectricity_Level3")
+    {
+        Electricity("+0.2");
+    }
+
+    DamageMul("ElementalShockElectricity_Critical_Level3")
+    {
+        Electricity("+0.2");
+    }
+
+    Damage("ElementalShockElectricity_Blast_Level3")
+    {
+        Electricity("10");
+    }
+
+    // Crafting Elemental_ImpactElectricity
+    Damage("ElementalImpactElectricity_Level1")
+    {
+        Electricity("15");
+    }
+
+    DamageDps("ElementalImpactElectricity_Critical_Level1")
+    {
+        Electricity("15");
+    }
+
+    Damage("ElementalImpactElectricity_Blast_Level1")
+    {
+        Electricity("15");
+    }
+
+    Damage("ElementalImpactElectricity_Level2")
+    {
+        Electricity("25");
+    }
+
+    DamageDps("ElementalImpactElectricity_Critical_Level2")
+    {
+        Electricity("25");
+    }
+
+    Damage("ElementalImpactElectricity_Blast_Level2")
+    {
+        Electricity("25");
+    }
+
+    Damage("ElementalImpactElectricity_Level3")
+    {
+		Electricity("25");
+    }
+
+    DamageDps("ElementalImpactElectricity_Critical_Level3")
+    {
+		Electricity("25");
+    }
+
+    Damage("ElementalImpactElectricity_Blast_Level3")
+    {
+		Electricity("25");
+    }
+
+    Damage("ElementalImpactElectricity_Level4")
+    {
+        Electricity("40");
+    }
+
+    DamageDps("ElementalImpactElectricity_Critical_Level4")
+    {
+        Electricity("40");
+    }
+
+    Damage("ElementalImpactElectricity_Blast_Level4")
+    {
+        Electricity("40");
+    }
+	
+	Damage("ElementalImpactElectricity_Level5")
+    {
+        Electricity("50");
+    }
+
+    DamageDps("ElementalImpactElectricity_Critical_Level5")
+    {
+        Electricity("50");
+    }
+
+    Damage("ElementalImpactElectricity_Blast_Level5")
+    {
+        Electricity("50");
+    }
+
+    // Crafting Elemental_Poison
+    Damage("ElementalPoison_Level1")
+    {
+        Poison("5");
+    }
+
+    DamageDps("ElementalPoison_Critical_Level1")
+    {
+        Poison("6");
+    }
+
+    Damage("ElementalPoison_Blast_Level1")
+    {
+        Poison("6");
+    }
+
+    Damage("ElementalPoison_Level2")
+    {
+        Poison("8");
+    }
+
+    DamageDps("ElementalPoison_Critical_Level2")
+    {
+        Poison("8");
+    }
+
+    Damage("ElementalPoison_Blast_Level2")
+    {
+        Poison("8");
+    }
+
+    Damage("ElementalPoison_Level3")
+    {
+		Poison("8");
+    }
+
+    DamageDps("ElementalPoison_Critical_Level3")
+    {
+		Poison("8");
+    }
+
+    Damage("ElementalPoison_Blast_Level3")
+    {
+		Poison("8");
+    }
+
+    Damage("ElementalPoison_Level4")
+    {
+        Poison("10");
+    }
+
+    DamageDps("ElementalPoison_Critical_Level4")
+    {
+        Poison("10");
+    }
+
+    Damage("ElementalPoison_Blast_Level4")
+    {
+        Poison("10");
+    }
+	
+	Damage("ElementalPoison_Level5")
+    {
+        Poison("15");
+    }
+
+    DamageDps("ElementalPoison_Critical_Level5")
+    {
+        Poison("15");
+    }
+
+    Damage("ElementalPoison_Blast_Level5")
+    {
+        Poison("15");
+    }
+
+    // Crafting Elemental_Burning
+    DamageDps("ElementalBurning_Critical_Level0")
+    {
+        Fire("6");
+    }
+	
+	Damage("ElementalBurning_Level1")
+    {
+        Fire("10");
+    }
+    DamageDps("ElementalBurning_Critical_Level1")
+    {
+        Fire("10");
+    }
+
+    Damage("ElementalBurning_Blast_Level1")
+    {
+        Fire("10");
+    }
+
+    Damage("ElementalBurning_Level2")
+    {
+        Fire("15");
+    }
+
+    DamageDps("ElementalBurning_Critical_Level2")
+    {
+        Fire("15");
+    }
+
+    Damage("ElementalBurning_Blast_Level2")
+    {
+        Fire("15");
+    }
+
+    Damage("ElementalBurning_Level3")
+    {
+		Fire("15");
+    }
+
+    DamageDps("ElementalBurning_Critical_Level3")
+    {
+		Fire("15");
+    }
+
+    Damage("ElementalBurning_Blast_Level3")
+    {
+		Fire("15");
+    }
+
+    Damage("ElementalBurning_Level4")
+    {
+        Fire("20");
+    }
+
+    DamageDps("ElementalBurning_Critical_Level4")
+    {
+        Fire("20");
+    }
+
+    Damage("ElementalBurning_Blast_Level4")
+    {
+        Fire("20");
+    }
+	
+	Damage("ElementalBurning_Level5")
+    {
+        Fire("25");
+    }
+
+    DamageDps("ElementalBurning_Critical_Level5")
+    {
+        Fire("25");
+    }
+
+    Damage("ElementalBurning_Blast_Level5")
+    {
+        Fire("25");
+    }
+
+    // Crafting Elemental_Bleeding
+	Damage("ElementalBleeding_Level1")
+    {
+        Bleeding("4");
+    }
+
+    DamageDps("ElementalBleeding_Critical_Level1")
+    {
+        Bleeding("4");
+    }
+
+    Damage("ElementalBleeding_Blast_Level1")
+    {
+        Bleeding("4");
+    }
+
+    Damage("ElementalBleeding_Level2")
+    {
+        Bleeding("8");
+    }
+
+    DamageDps("ElementalBleeding_Critical_Level2")
+    {
+        Bleeding("8");
+    }
+
+    Damage("ElementalBleeding_Blast_Level2")
+    {
+        Bleeding("8");
+    }
+
+    Damage("ElementalBleeding_Level3")
+    {
+		Bleeding("8");
+    }
+
+    DamageDps("ElementalBleeding_Critical_Level3")
+    {
+		Bleeding("8");
+    }
+
+    Damage("ElementalBleeding_Blast_Level3")
+    {
+		Bleeding("8");
+    }
+
+    Damage("ElementalBleeding_Level4")
+    {
+        Bleeding("12");
+    }
+
+    DamageDps("ElementalBleeding_Critical_Level4")
+    {
+        Bleeding("12");
+    }
+
+    Damage("ElementalBleeding_Blast_Level4")
+    {
+        Bleeding("12");
+    }
+	
+	Damage("ElementalBleeding_Level5")
+    {
+        Bleeding("16");
+    }
+
+    DamageDps("ElementalBleeding_Critical_Level5")
+    {
+        Bleeding("16");
+    }
+
+    Damage("ElementalBleeding_Blast_Level5")
+    {
+        Bleeding("16");
+    }
+
+    // Crafting Elemental_Freezing
+    Damage("ElementalFreezing_Level1")
+    {
+        Freeze("8");
+    }
+
+    DamageDps("ElementalFreezing_Critical_Level1")
+    {
+        Freeze("8");
+    }
+
+    Damage("ElementalFreezing_Blast_Level1")
+    {
+        Freeze("8");
+    }
+
+    Damage("ElementalFreezing_Level2")
+    {
+        Freeze("12");
+    }
+
+    DamageDps("ElementalFreezing_Critical_Level2")
+    {
+        Freeze("12");
+    }
+
+    Damage("ElementalFreezing_Blast_Level2")
+    {
+        Freeze("12");
+    }
+
+    Damage("ElementalFreezing_Level3")
+    {
+		Freeze("12");
+    }
+
+    DamageDps("ElementalFreezing_Critical_Level3")
+    {
+		Freeze("12");
+    }
+
+    Damage("ElementalFreezing_Blast_Level3")
+    {
+		Freeze("18");
+    }
+
+    Damage("ElementalFreezing_Level4")
+    {
+        Freeze("18");
+    }
+
+    DamageDps("ElementalFreezing_Critical_Level4")
+    {
+        Freeze("18");
+    }
+
+    Damage("ElementalFreezing_Blast_Level4")
+    {
+        Freeze("18");
+    }
+	
+	Damage("ElementalFreezing_Level5")
+    {
+        Freeze("24");
+    }
+
+    DamageDps("ElementalFreezing_Critical_Level5")
+    {
+        Freeze("24");
+    }
+
+    Damage("ElementalFreezing_Blast_Level5")
+    {
+        Freeze("24");
+    }
+
+    // Crafting Elemental_Explosive
+    Damage("ElementalExplosive_Blast_Level1")
+    {
+        Blast("125");
+    }
+
+    Damage("ElementalExplosive_Blast_Level2")
+    {
+        Blast("250");
+    }
+
+    Damage("ElementalExplosive_Blast_Level3")
+    {
+        Blast("250");
+    }
+
+    // end of Crafting
+
+    Damage("BlowMovieKey_Blow")
+    {
+        Blast("?");
+    }
+
+    Damage("BombSwitchDI")
+    {
+        Blast("?");
+    }
+
+    Damage("PursuitBreakerBlast")
+    {
+		Physical("200");
+        Blast("100");
+    }
+	
+    Damage("pursuit_breaker_blast_tier_1")     // %50-150% of Biter Health
+    {
+		Blast("40-120");
+    }
+    Damage("pursuit_breaker_blast_tier_2")
+    {
+		Blast("64-192");
+    }
+    Damage("pursuit_breaker_blast_tier_3")
+    {
+		Blast("89-267");
+    }
+    Damage("pursuit_breaker_blast_tier_4")
+    {
+		Blast("130-390");
+    }
+    Damage("pursuit_breaker_blast_tier_5")
+    {
+		Blast("166-498");
+    }
+    Damage("pursuit_breaker_blast_tier_6")
+    {
+		Blast("216-648");
+    }
+    Damage("pursuit_breaker_blast_tier_7")
+    {
+		Blast("283-849");
+    }
+    Damage("pursuit_breaker_blast_tier_8")
+    {
+		Blast("353-1059");
+    }
+    Damage("pursuit_breaker_blast_tier_9")
+    {
+		Blast("397-1191");
+    }
+	
+    Damage("Burning_Car_Trap")
+    {
+        Fire("1");
+    }
+	
+	Damage("pursuit_breaker_electric_box_tier_1")  // %25-100% of Biter Health
+    {
+		Electricity("20-80");
+    }
+    Damage("pursuit_breaker_electric_box_tier_2")
+    {
+		Electricity("32-128");
+    }
+    Damage("pursuit_breaker_electric_box_tier_3")
+    {
+		Electricity("45-178");
+    }
+    Damage("pursuit_breaker_electric_box_tier_4")
+    {
+		Electricity("75-260");
+    }
+    Damage("pursuit_breaker_electric_box_tier_5")
+    {
+		Electricity("83-332");
+    }
+    Damage("pursuit_breaker_electric_box_tier_6")
+    {
+		Electricity("108-432");
+    }
+    Damage("pursuit_breaker_electric_box_tier_7")
+    {
+		Electricity("142-566");
+    }
+    Damage("pursuit_breaker_electric_box_tier_8")
+    {
+		Electricity("178-706");
+    }
+    Damage("pursuit_breaker_electric_box_tier_9")
+    {
+		Electricity("200-794");
+    }
+	
+	Damage("pursuit_breaker_electric_fence_tier_1")  // %50-100% of Biter Health
+    {
+		Electricity("40-80");
+    }
+    Damage("pursuit_breaker_electric_fence_tier_2")
+    {
+		Electricity("64-128");
+    }
+    Damage("pursuit_breaker_electric_fence_tier_3")
+    {
+		Electricity("89-178");
+    }
+    Damage("pursuit_breaker_electric_fence_tier_4")
+    {
+		Electricity("130-260");
+    }
+    Damage("pursuit_breaker_electric_fence_tier_5")
+    {
+		Electricity("166-332");
+    }
+    Damage("pursuit_breaker_electric_fence_tier_6")
+    {
+		Electricity("216-432");
+    }
+    Damage("pursuit_breaker_electric_fence_tier_7")
+    {
+		Electricity("283-566");
+    }
+    Damage("pursuit_breaker_electric_fence_tier_8")
+    {
+		Electricity("353-706");
+    }
+    Damage("pursuit_breaker_electric_fence_tier_9")
+    {
+		Electricity("397-794");
+    }
+
+    Damage("DynamicModelObject_ExecuteCameraShake")
+    {
+        Blast("500");
+    }
+
+    Damage("ExplodingObject_MakeDamage")
+    {
+        Blast("?");
+    }
+
+    DamageMul("ExplodingObject_AIMul")
+    {
+        Blast("+0");
+    }
+
+    DamageMul("ExplodingObject_PlayerMul")
+    {
+        Blast("+0");
+    }
+
+    Damage("Grenade_Default")
+    {
+        Blast("1000");
+    }
+
+    Damage("ThrowableRock_Default")
+    {
+        Blast("1000");
+    }
+
+    Damage("ThrowableRock_ExecuteCameraShake")
+    {
+        Blast("500");
+    }
+
+    Damage("Rocket_Default")
+    {
+        Blast("300");
+    }
+
+    DamageMul("Player_AirKickBaseDamageMul")
+    {
+        Ram("+0.5");
+    }
+
+    DamageMul("Player_KickBaseDamageMul")
+    {
+        Ram("+0");
+    }
+
+    DamageMul("Player_KickDamageMul")
+    {
+        Ram("+0");
+    }
+
+    DamageMul("Player_DisabledGrabDamage")
+    {
+        All("+0");
+    }
+
+    Damage("Player_KillVictim")
+    {
+        Ram("100% of MaxHealth");
+    }
+	
+	Damage("Player_TakedownDamage_1")    // 100% od Human Health
+    {
+        Physical("102");
+    }
+	Damage("Player_TakedownDamage_2")
+    {
+        Physical("151");
+    }
+	Damage("Player_TakedownDamage_3")
+    {
+        Physical("230");
+    }
+	Damage("Player_TakedownDamage_4")
+    {
+        Physical("358");
+    }
+	Damage("Player_TakedownDamage_5")
+    {
+        Physical("546");
+    }
+	Damage("Player_TakedownDamage_6")
+    {
+        Physical("810");
+    }
+	Damage("Player_TakedownDamage_7")
+    {
+        Physical("1254");
+    }
+	Damage("Player_TakedownDamage_8")
+    {
+        Physical("2016");
+    }
+	Damage("Player_TakedownDamage_9")
+    {
+        Physical("3180");
+    }
+	Damage("Player_TakedownDamageBiter_1")   // 100% Health of Biter XL
+    {
+        Physical("96");
+    }
+	Damage("Player_TakedownDamageBiter_2")
+    {
+        Physical("154");
+    }
+	Damage("Player_TakedownDamageBiter_3")
+    {
+        Physical("214");
+    }
+	Damage("Player_TakedownDamageBiter_4")
+    {
+        Physical("312");
+    }
+	Damage("Player_TakedownDamageBiter_5")
+    {
+        Physical("398");
+    }
+	Damage("Player_TakedownDamageBiter_6")
+    {
+        Physical("518");
+    }
+	Damage("Player_TakedownDamageBiter_7")
+    {
+        Physical("680");
+    }
+	Damage("Player_TakedownDamageBiter_8")
+    {
+        Physical("848");
+    }
+	Damage("Player_TakedownDamageBiter_9")
+    {
+        Physical("952");
+    }
+	Damage("Player_TakedownDamageViral_1")	// 100% Health of Viral
+    {
+        Physical("68");
+    }
+	Damage("Player_TakedownDamageViral_2")
+    {
+        Physical("101");
+    }
+	Damage("Player_TakedownDamageViral_3")
+    {
+        Physical("153");
+    }
+	Damage("Player_TakedownDamageViral_4")
+    {
+        Physical("239");
+    }
+	Damage("Player_TakedownDamageViral_5")
+    {
+        Physical("364");
+    }
+	Damage("Player_TakedownDamageViral_6")
+    {
+        Physical("540");
+    }
+	Damage("Player_TakedownDamageViral_7")
+    {
+        Physical("836");
+    }
+	Damage("Player_TakedownDamageViral_8")
+    {
+        Physical("1344");
+    }
+	Damage("Player_TakedownDamageViral_9")
+    {
+        Physical("2120");
+    }
+
+
+	Damage("Player_JumpAttackNonLethal")
+    {
+        Physical("80% of MaxHealth");
+    }
+
+	Damage("Player_2or1HitKillVictim")
+    {
+        Physical("75%-100% of MaxHealth");
+    }
+
+
+    Damage("Player_HumanTakedown")
+    {
+        Physical("100% of MaxHealth");
+    }
+
+    DamageDps("Player_HumanTakedownLoop")
+    {
+        Physical("100% of MaxHealth");
+    }
+
+    DamageMul("Player_HumanTakedownLoopMul")
+    {
+        Physical("?");
+    }
+    
+    Damage("Player_EliteTakedown")
+    {
+        Physical("20% of MaxHealth");
+    }
+
+	Damage("PlayerTackleGrab")
+	{
+		Ram("10");
+	}
+
+    DamageMul("Player_ParryDamageMult")
+    {
+        Ram("+2");
+    }
+
+    DamageMul("Player_BlockDisableDamage")
+    {
+        All("+0");
+    }
+	DamageMul("Player_PerfectDodgeDamage")
+    {
+        All("+0");
+    }
+
+    DamageMul("Player_PrepareTackle")
+    {
+        Ram("-0.1");
+    }
+
+    DamageMul("Player_Tackle_Normal")
+    {
+        Ram("-0.1");
+    }
+	DamageMul("Player_Tackle_Side")
+    {
+        Ram("-0.9");
+    }	
+
+    DamageMul("Player_Tackle_Hard")
+    {
+        Ram("-0.1");
+    }
+
+    DamageMul("Player_Tackle_Nightmare")
+    {
+        Ram("-0.1");
+    }
+
+    Damage("Player_SpawnArrow")
+    {
+        Ram("100");
+    }
+
+    DamageMul("Player_SpawnArrowMul")
+    {
+        Ram("+0");
+		Blunt("+0");
+		Cut("+0");
+    }
+
+    DamageMul("Player_ChargeVerticalStickBaseDamageMul")
+    {
+        Ram("+1");
+		Blunt("+1");
+		Cut("+1");
+    }
+
+	Damage("E3_electric_machete_damage")
+    {
+		Cut("39% of MaxHealth");
+    }
+
+	Damage("e3massivedamage")
+    {
+        Ram("1000% of MaxHealth");
+		Blunt("1000% of MaxHealth");
+		Cut("1000% of MaxHealth");
+    }
+
+	Damage("e3tinydamage")
+    {
+        Ram("0");
+    }
+
+	Damage("e3wrestleheavydamage")
+    {
+        Ram("5");
+    }
+
+    DamageResistance("e3HeavyDamageResistance")
+	{
+		Blunt("100%");
+		Cut("60%");
+        Blast("100%");
+	}
+    Damage("e3_Heavy_2hb_Weapon")
+	{
+		Blunt("40");
+	}
+
+    DamageMul("Player_ChargeStickBaseDamageMul")
+    {
+        Physical("+0.25");
+		Blunt("+0.25");
+		Cut("+0.25");
+    }
+
+	DamageMul("Player_ChargeFistsBaseDamageMul")
+    {
+        Physical("+0.25");
+		Blunt("+0.25");
+		Cut("+0.25");
+        Blast("+0.25");
+    }
+
+    DamageMul("Player_ChargeStick2CloseBaseDamageMul")
+    {
+        Physical("+0.25");
+		Blunt("+0.25");
+		Cut("+0.25");
+    }
+
+    DamageMul("Player_ChargeStick2HeavyBaseDamageMul")
+    {
+        Physical("+0.25");
+		Blunt("+0.25");
+		Cut("+0.25");
+    }
+
+    Damage("Player_ShootDefault")
+    {
+        Physical("0");
+		Blunt("+0");
+		Cut("+0");
+    }
+
+    DamageMul("Player_MeleeDamageFullStaminaMul")
+    {
+        Physical("+0.01");
+		Ram("+0.01");
+		Blunt("+0.01");
+		Cut("+0.01");
+    }
+
+    DamageMul("Player_MeleeDamageLowStaminaMul")
+    {
+        Physical("+0.01");
+		Ram("+0.01");
+		Blunt("+0.01");
+		Cut("+0.01");
+    }
+
+    DamageMul("Player_MeleeDamageFastHitMul")
+    {
+        Physical("-0.2");
+		Ram("+0.01");
+		Blunt("-0.2");
+		Cut("-0.2");
+    }
+
+    DamageMul("Player_MeleeDamageFullHealthMul")
+    {
+        Physical("+0.01");
+		Ram("+0.01");
+		Blunt("+0.01");
+		Cut("+0.01");
+    }
+
+    DamageMul("Player_MeleeDamageLowHealthMul")
+    {
+        Ram("+0.01");
+		Physical("+0.01");
+		Blunt("+0.01");
+		Cut("+0.01");
+    }
+
+    DamageMul("Player_MeleeDamageMul")
+    {
+        Ram("+0.01");
+		Physical("+0.01");
+		Blunt("+0.01");
+		Cut("+0.01");
+    }
+	DamageMul("Player_MeleeDamageShockMul")
+    {
+        Electricity("+0.01");
+    }
+	DamageMul("NightRunner_MeleeDamageMul")
+    {
+        Physical("+2");
+		Blunt("+2");
+		Cut("+2");
+		Blast("+2");
+    }
+	
+	
+
+	DamageMul("NightRunner_MeleeDamageMulPerInhibitor")
+    {
+        All("?");
+    }
+
+
+    DamageMul("Player_StrengthDamageMul")
+    {
+        Physical("+0");
+		Blunt("+0");
+		Cut("+0");
+    }
+
+    DamageMul("Item_StrengthBooster")
+    {
+        Physical("+0.5");
+		Blunt("+0.5");
+		Cut("+0.5");
+    }
+
+    DamageDps("Player_ChemicalDamage")
+    {
+        Chemical("10% of MaxHealth");
+    }
+
+    Damage("Player_Step")
+    {
+        Ram("5");
+    }
+
+    Damage("Player_DebugTest")
+    {
+        Ram("?");
+    }
+
+    Damage("Player_VolumetricDamage")
+    {
+        Ram("?");
+    }
+
+    Damage("Player_VolumetricDamagePrimary")
+    {
+        Ram("?");
+    }
+
+    DamageMul("Player_BulletHitRange")
+    {
+        All("?");
+    }
+
+    DamageResistance("Player_BrokenBlock")
+    {
+        Blunt("90%");
+        Cut("90%");
+    }
+
+    Damage("Player_DealCollisionDamage")
+    {
+        Ram("?");
+    }
+
+    Damage("Player_PushBackNearbyAI")
+    {
+        Ram("0");
+    }
+
+    DamageMul("Player_ElementalDamage")
+    {
+        All("+0.1");
+    }
+
+	Damage("Damage_GroundPoundLvl1")
+    {
+		Physical("34% of MaxHealth");        
+    }
+
+	Damage("Damage_GroundPoundLvl2")
+    {
+        Physical("50% of MaxHealth");        
+    }
+	
+	Damage("NightRunnerRoarItemDamage")
+    {
+        Physical("4");
+    }
+
+    Damage("Player_LegGrab")
+    {
+        Physical("100% of MaxHealth");
+    }
+
+	Damage("Volatile_Grab_Kill")
+    {
+        Physical("1000% of MaxHealth");
+    }
+	Damage("Volatile_Grab_Damage")
+    {
+        Physical("5% of MaxHealth");
+    }
+    Damage("Player_Falling_Kill")
+    {
+        Physical("100% of MaxHealth");
+    }
+
+	Damage("WrestleKickLegDamage")
+    {
+        Ram("20");
+    }
+	
+	Damage("WrestleKick_Tier_1") //25%-50% OneHanded
+    {
+        Ram("25-50");
+    }
+	Damage("WrestleKick_Tier_2")
+    {
+        Ram("37-75");
+    }
+	Damage("WrestleKick_Tier_3")
+    {
+        Ram("57-115");
+    }
+	Damage("WrestleKick_Tier_4")
+    {
+        Ram("89-179");
+    }
+	Damage("WrestleKick_Tier_5")
+    {
+        Ram("136-273");
+    }
+	Damage("WrestleKick_Tier_6")
+    {
+        Ram("202-405");
+    }
+	Damage("WrestleKick_Tier_7")
+    {
+        Ram("313-627");
+    }
+	Damage("WrestleKick_Tier_8")
+    {
+        Ram("504-1008");
+    }
+	Damage("WrestleKick_Tier_9")
+    {
+        Ram("795-1590");
+    }
+	
+	Damage("AirKick_Tier_1") //25%-33% OneHanded
+    {
+        Ram("25-34");
+    }
+	Damage("AirKick_Tier_2")
+    {
+        Ram("37-50");
+    }
+	Damage("AirKick_Tier_3")
+    {
+        Ram("57-76");
+    }
+	Damage("AirKick_Tier_4")
+    {
+        Ram("89-119");
+    }
+	Damage("AirKick_Tier_5")
+    {
+        Ram("136-180");
+    }
+	Damage("AirKick_Tier_6")
+    {
+        Ram("202-268");
+    }
+	Damage("AirKick_Tier_7")
+    {
+        Ram("313-414");
+    }
+	Damage("AirKick_Tier_8")
+    {
+        Ram("504-666");
+    }
+	Damage("AirKick_Tier_9")
+    {
+        Ram("795-1050");
+    }
+	
+	Damage("AirKick_BigEnemy_Tier_1") //25%-33% OneHanded
+    {
+        Ram("25-34");
+    }
+	Damage("AirKick_BigEnemy_Tier_2")
+    {
+        Ram("37-50");
+    }
+	Damage("AirKick_BigEnemy_Tier_3")
+    {
+        Ram("57-76");
+    }
+	Damage("AirKick_BigEnemy_Tier_4")
+    {
+        Ram("89-119");
+    }
+	Damage("AirKick_BigEnemy_Tier_5")
+    {
+        Ram("136-180");
+    }
+	Damage("AirKick_BigEnemy_Tier_6")
+    {
+        Ram("202-268");
+    }
+	Damage("AirKick_BigEnemy_Tier_7")
+    {
+        Ram("313-414");
+    }
+	Damage("AirKick_BigEnemy_Tier_8")
+    {
+        Ram("504-666");
+    }
+	Damage("AirKick_BigEnemy_Tier_9")
+    {
+        Ram("795-1050");
+    }
+
+	Damage("Player_Fists_Tier_0")
+    {
+        Ram("5");        
+    }
+	Damage("Player_Fists_Tier_1")
+    {
+        Ram("5");        
+    }
+	Damage("Player_Fists_Tier_2")
+    {
+        Ram("7");
+    }
+	Damage("Player_Fists_Tier_3")
+    {
+        Ram("10");
+    }
+	Damage("Player_Fists_Tier_4")
+    {
+        Ram("15");
+    }
+	Damage("Player_Fists_Tier_5")
+    {
+        Ram("21");
+    }
+	Damage("Player_Fists_Tier_6")
+    {
+        Ram("30");
+    }
+	Damage("Player_Fists_Tier_7")
+    {
+        Ram("41");
+    }
+	Damage("Player_Fists_Tier_8")
+    {
+        Ram("56");
+    }
+	Damage("Player_Fists_Tier_9")
+    {
+        Ram("62");
+    }
+
+	Damage("Player_Volumetric_VaultKick_Tier_1") //33% OneHanded
+    {
+        Ram("34");        
+    }
+	Damage("Player_Volumetric_VaultKick_Tier_2")
+    {
+        Ram("50");
+    }
+	Damage("Player_Volumetric_VaultKick_Tier_3")
+    {
+        Ram("76");
+    }
+	Damage("Player_Volumetric_VaultKick_Tier_4")
+    {
+        Ram("119");
+    }
+	Damage("Player_Volumetric_VaultKick_Tier_5")
+    {
+        Ram("180");
+    }
+	Damage("Player_Volumetric_VaultKick_Tier_6")
+    {
+        Ram("268");
+    }
+	Damage("Player_Volumetric_VaultKick_Tier_7")
+    {
+        Ram("414");
+    }
+	Damage("Player_Volumetric_VaultKick_Tier_8")
+    {
+        Ram("666");
+    }
+	Damage("Player_Volumetric_VaultKick_Tier_9")
+    {
+        Ram("1050");
+    }
+	
+	Damage("Player_Volumetric_LeapTackle_Tier_1") //33% OneHanded
+    {
+        Ram("34");           
+    }
+	Damage("Player_Volumetric_LeapTackle_Tier_2")
+    {
+        Ram("50");
+    }
+	Damage("Player_Volumetric_LeapTackle_Tier_3")
+    {
+        Ram("76");
+    }
+	Damage("Player_Volumetric_LeapTackle_Tier_4")
+    {
+        Ram("119");
+    }
+	Damage("Player_Volumetric_LeapTackle_Tier_5")
+    {
+        Ram("180");
+    }
+	Damage("Player_Volumetric_LeapTackle_Tier_6")
+    {
+        Ram("268");
+    }
+	Damage("Player_Volumetric_LeapTackle_Tier_7")
+    {
+        Ram("414");
+    }
+	Damage("Player_Volumetric_LeapTackle_Tier_8")
+    {
+        Ram("666");
+    }
+	Damage("Player_Volumetric_LeapTackle_Tier_9")
+    {
+        Ram("1050");
+    }
+	
+	Damage("Player_Stomp_Tier_1") //100% Biter - 100% OneHanded
+    {
+        Ram("80-102");        
+    }
+	Damage("Player_Stomp_Tier_2")
+    {
+        Ram("128-151");
+    }
+	Damage("Player_Stomp_Tier_3")
+    {
+        Ram("178-230");
+    }
+	Damage("Player_Stomp_Tier_4")
+    {
+        Ram("260-358");
+    }
+	Damage("Player_Stomp_Tier_5")
+    {
+        Ram("332-546");
+    }
+	Damage("Player_Stomp_Tier_6")
+    {
+        Ram("432-810");
+    }
+	Damage("Player_Stomp_Tier_7")
+    {
+        Ram("566-1254");
+    }
+	Damage("Player_Stomp_Tier_8")
+    {
+        Ram("706-2016");
+    }
+	Damage("Player_Stomp_Tier_9")
+    {
+        Ram("794-3180");
+    }
+	
+	Damage("Player_GroundPoundLvl1_Tier_1") //25%-50% OneHanded
+    {
+        Ram("25-50");        
+    }
+	Damage("Player_GroundPoundLvl1_Tier_2")
+    {
+        Ram("37-75");
+    }
+	Damage("Player_GroundPoundLvl1_Tier_3")
+    {
+        Ram("57-115");
+    }
+	Damage("Player_GroundPoundLvl1_Tier_4")
+    {
+        Ram("89-179");
+    }
+	Damage("Player_GroundPoundLvl1_Tier_5")
+    {
+        Ram("136-273");
+    }
+	Damage("Player_GroundPoundLvl1_Tier_6")
+    {
+        Ram("202-405");
+    }
+	Damage("Player_GroundPoundLvl1_Tier_7")
+    {
+        Ram("313-627");
+    }
+	Damage("Player_GroundPoundLvl1_Tier_8")
+    {
+        Ram("504-1008");
+    }
+	Damage("Player_GroundPoundLvl1_Tier_9")
+    {
+        Ram("795-1590");
+    }
+	
+	Damage("Player_GroundPoundLvl2_Tier_1") //25% OneHanded
+    {
+        Ram("25");        
+    }
+	Damage("Player_GroundPoundLvl2_Tier_2")
+    {
+        Ram("37");
+    }
+	Damage("Player_GroundPoundLvl2_Tier_3")
+    {
+        Ram("57");
+    }
+	Damage("Player_GroundPoundLvl2_Tier_4")
+    {
+        Ram("89");
+    }
+	Damage("Player_GroundPoundLvl2_Tier_5")
+    {
+        Ram("136");
+    }
+	Damage("Player_GroundPoundLvl2_Tier_6")
+    {
+        Ram("202");
+    }
+	Damage("Player_GroundPoundLvl2_Tier_7")
+    {
+        Ram("313");
+    }
+	Damage("Player_GroundPoundLvl2_Tier_8")
+    {
+        Ram("504");
+    }
+	Damage("Player_GroundPoundLvl2_Tier_9")
+    {
+        Ram("795");
+    }
+	
+	Damage("Player_Shockwave_Tier_1") //25% OneHanded
+    {
+        Ram("25");        
+    }
+	Damage("Player_Shockwave_Tier_2")
+    {
+        Ram("37");
+    }
+	Damage("Player_Shockwave_Tier_3")
+    {
+        Ram("57");
+    }
+	Damage("Player_Shockwave_Tier_4")
+    {
+        Ram("89");
+    }
+	Damage("Player_Shockwave_Tier_5")
+    {
+        Ram("136");
+    }
+	Damage("Player_Shockwave_Tier_6")
+    {
+        Ram("202");
+    }
+	Damage("Player_Shockwave_Tier_7")
+    {
+        Ram("313");
+    }
+	Damage("Player_Shockwave_Tier_8")
+    {
+        Ram("504");
+    }
+	Damage("Player_Shockwave_Tier_9")
+    {
+        Ram("795");
+    }
+	
+	Damage("Player_Nightrunner_Shockwave_Tier_1")
+    {
+        Ram("52");        
+    }
+	Damage("Player_Nightrunner_Shockwave_Tier_2")
+    {
+        Ram("66");
+    }
+	Damage("Player_Nightrunner_Shockwave_Tier_3")
+    {
+        Ram("86");
+    }
+	Damage("Player_Nightrunner_Shockwave_Tier_4")
+    {
+        Ram("104");
+    }
+	Damage("Player_Nightrunner_Shockwave_Tier_5")
+    {
+        Ram("152");
+    }
+	Damage("Player_Nightrunner_Shockwave_Tier_6")
+    {
+        Ram("194");
+    }
+	Damage("Player_Nightrunner_Shockwave_Tier_7")
+    {
+        Ram("242");
+    }
+	Damage("Player_Nightrunner_Shockwave_Tier_8")
+    {
+        Ram("302");
+    }
+	Damage("Player_Nightrunner_Shockwave_Tier_9")
+    {
+        Ram("370");
+    }
+	
+	
+	Damage("NightRunner_Fists")
+    {
+        Ram("100% of MaxHealth");        
+    }
+	Damage("NightRunner_Fists_Tier_1")
+    {
+        Ram("51-85");        
+    }
+	Damage("NightRunner_Fists_Tier_2")
+    {
+        Ram("69-138");
+    }
+	Damage("NightRunner_Fists_Tier_3")
+    {
+        Ram("96-192");
+    }
+	Damage("NightRunner_Fists_Tier_4")
+    {
+        Ram("138-276");
+    }
+	Damage("NightRunner_Fists_Tier_5")
+    {
+        Ram("195-390");
+    }
+	Damage("NightRunner_Fists_Tier_6")
+    {
+        Ram("270-540");
+    }
+	Damage("NightRunner_Fists_Tier_7")
+    {
+        Ram("369-738");
+    }
+	Damage("NightRunner_Fists_Tier_8")
+    {
+        Ram("504-1008");
+    }
+	Damage("NightRunner_Fists_Tier_9")
+    {
+        Ram("550-1376");
+    }
+	
+	Damage("NightRunner_Roar_Tier_1")
+    {
+        Ram("5");        
+    }
+	Damage("NightRunner_Roar_Tier_2")
+    {
+        Ram("7");
+    }
+	Damage("NightRunner_Roar_Tier_3")
+    {
+        Ram("9");
+    }
+	Damage("NightRunner_Roar_Tier_4")
+    {
+        Ram("14");
+    }
+	Damage("NightRunner_Roar_Tier_5")
+    {
+        Ram("19");
+    }
+	Damage("NightRunner_Roar_Tier_6")
+    {
+        Ram("27");
+    }
+	Damage("NightRunner_Roar_Tier_7")
+    {
+        Ram("37");
+    }
+	Damage("NightRunner_Roar_Tier_8")
+    {
+        Ram("50");
+    }
+	Damage("NightRunner_Roar_Tier_9")
+    {
+        Ram("55");
+    }
+	
+	
+	
+
+	Damage("Damage_GroundPoundSmallPush")
+    {
+        Physical("0");
+    }
+	Damage("Player_VaultOverDamage")
+    {
+        Ram("0");
+    }
+
+	Damage("CrowdBumpDamage")
+    {
+        Physical("0");
+    }
+
+	Damage("TackleDamage")
+    {
+        Ram("1% of MaxHealth");
+    }
+	
+    DamageDps("FirePlace")
+    {
+        Fire("1% of MaxHealth");
+    }
+
+	Damage("TackleFirstHitDamage")
+    {
+        Physical("20");
+    }
+
+    DamageMul("Player_Falling_Height")
+    {
+        Physical("?");
+    }
+
+    Damage("Player_Falling_BaseHealth")
+    {
+        Physical("100% of MaxHealth");
+    }
+
+    DamageMul("Player_FallDamageReduction")
+    {
+        Physical("+0");
+    }
+
+    DamageMul("Player_BowChargeDamageMul")
+    {
+        Ranged("+0");
+    }
+	DamageMul("Player_FirearmChargeMul")
+    {
+        Ranged("+0.5");
+    }
+
+    DamageMul("Player_BowChargeMul")
+    {
+        Ranged("?");
+    }
+
+    Damage("CODEPhysics")
+    {
+        Physical("?");
+    }
+
+    Damage("CoExplosionDamager")
+    {
+        Blast("?");
+    }
+
+    Damage("CoCollisionToDamage")
+    {
+        Physical("?");
+    }
+
+    DamageMul("CoExplosionDamager_Distance")
+    {
+        Blast("?");
+    }
+
+    DamageMul("CoExplosionDamager_HitCountFactor")
+    {
+        Blast("?");
+    }
+
+    Damage("ActivityModuleAttack_Push")
+    {
+        Physical("2");
+    }
+
+    Damage("CoDefenceAttackProp_Attack")
+    {
+        Physical("?");
+    }
+
+    Damage("CoDefenceBlockProp_Block")
+    {
+        Physical("?");
+    }
+
+    Damage("CoMeleeProp_ObstaclelHit")
+    {
+        Physical("?");
+    }
+
+    Damage("CoMeleeProp_DamagedDelt")
+    {
+        Physical("?");
+    }
+
+    Damage("CoSpikeTrap_DealDamage")
+    {
+        Physical("?");
+    }
+	
+	Damage("FallingTrap_Player")
+    {
+        Blast("20% of MaxHealth");
+    }
+	
+	Damage("FallingTrap_AI")
+    {
+        Physical("?");
+    }
+
+	Damage("PendulumSpikes_Player")
+    {
+        Blast("20% of MaxHealth");
+    }
+	
+    Damage("LethalObject_PhysicsContact")
+    {
+        Physical("?");
+    }
+
+    DamageMul("LethalObject_PhysicsScale")
+    {
+        Physical("?");
+    }
+
+    DamageMul("Spikes_PhysicsContact")
+    {
+        Physical("?");
+    }
+	
+    Damage("SteamEmitter_Damage")
+    {
+        Physical("?");
+    }
+
+    DamageMul("SteamEmitter_DamageDecrese")
+    {
+        Physical("-0.97");
+    }
+
+    Damage("ThrowableGuardian_DamageCurve")
+    {
+        Physical("?");
+    }
+
+    Damage("Flare_PhysicsContact")
+    {
+        Fire("1");
+    }
+
+    Damage("ThrowableLiquid")
+    {
+        Physical("?");
+    }
+
+    Damage("ThrowableRock_ExplodingObjects")
+    {
+        Physical("100% of MaxHealth");
+    }
+
+    Damage("FreecamDamage")
+    {
+        Physical("100");
+    }
+
+    Damage("BreakThroughHit")
+    {
+        Physical("?");
+    }
+
+    DamageDps("DrownDps")
+    {
+        Drowning("4% of MaxHealth");
+    }
+
+    Damage("LethalObjectDamage")
+    {
+        Physical("?");
+    }
+
+    Damage("LethalObjectDamage_PhysicCollisions")
+    {
+        Physical("?");
+    }
+
+    Damage("DynamicModelObject_ActorContact")
+    {
+        Physical("?");
+    }
+
+    DamageMul("CoSmokeZone_Drain")
+    {
+        Physical("?");
+    }
+
+    Damage("CoThrowableProp_DamageToCollider")
+    {
+        Blunt("1");
+    }
+
+    Damage("CoMeleeProp")
+    {
+        Physical("?");
+    }
+
+    Damage("CoDefenceAttackProp")
+    {
+        Physical("?");
+    }
+
+    Damage("AttachmentController_Push")
+    {
+        Blunt("10");
+    }
+
+    Damage("SpearThrow")
+    {
+        Physical("200");
+    }
+	
+	Damage("SpearThrow_RGD1")    ///100% Biter - 100% Human One handed
+    {
+        Physical("80-102");
+    }
+	Damage("SpearThrow_RGD2")
+    {
+        Physical("128-151");
+    }
+	Damage("SpearThrow_RGD3") 
+    {
+        Physical("178-230");
+    }
+	Damage("SpearThrow_RGD4") 
+    {
+        Physical("260-358");
+    }
+	Damage("SpearThrow_RGD5")
+    {
+        Physical("332-546");
+    }
+	Damage("SpearThrow_RGD6")
+    {
+        Physical("432-810");
+    }
+	Damage("SpearThrow_RGD7") 
+    {
+        Physical("566-1254");
+    }
+	Damage("SpearThrow_RGD8")
+    {
+        Physical("706-2016");
+    }
+	Damage("SpearThrow_RGD9")
+    {
+        Physical("794-3180");
+    }
+	
+	
+	Damage("Tackle_Spear_RGD1")
+    {
+		Physical("25");    
+		//Physical("50");
+    }
+	Damage("Tackle_Spear_RGD2")
+    {
+        Physical("30");
+		//Physical("60");
+    }
+	Damage("Tackle_Spear_RGD3")
+    {
+        Physical("35");
+		//Physical("80");
+    }
+	Damage("Tackle_Spear_RGD4")
+    {
+        Physical("40");    
+		//Physical("100");
+    }
+	Damage("Tackle_Spear_RGD5")
+    {
+        Physical("45");
+		//Physical("130");
+    }
+	Damage("Tackle_Spear_RGD6")
+    {
+        Physical("50");
+		//Physical("155");
+    }
+	Damage("Tackle_Spear_RGD7")
+    {
+        Physical("75");
+		//Physical("180");
+    }
+	Damage("Tackle_Spear_RGD8")
+    {
+        Physical("100");
+		//Physical("210");
+    }
+	Damage("Tackle_Spear_RGD9")
+    {
+        Physical("125");
+		//Physical("245");
+    }
+
+
+    Damage("Melee_Fists_a")
+    {
+        Ram("8");
+    }
+
+	Damage("NightRunnerItemDamage")
+    {
+        Ram("20");
+    }
+	
+	Damage("NightRunnerRagdollDamage")
+	{
+		Blast("10");
+	}
+	
+	DamageResistance("DamageResistanceNightRunner")
+	{
+		All("10%");
+	}
+
+    DamageResistance("NightRunnerGeneralDamageResistance")
+    {
+        All("50%");
+    }
+
+    Damage("Melee_Fists_b")
+    {
+        Physical("5");
+    }
+
+    Damage("Throwable_ExplosiveArrow")
+    {
+        Blast("25-76");   //25%-75% OneHanded
+    }
+
+    Damage("Throwable_ExplosiveGrenade")  //25-75% One Handed Human
+    {
+        Blast("26-77");
+    }
+    Damage("Throwable_ExplosiveGrenade_Upgrade1")
+    {
+        Blast("38-113");
+    }
+    Damage("Throwable_ExplosiveGrenade_Upgrade2")
+    {
+        Blast("58-173");
+    }
+	Damage("Throwable_ExplosiveGrenade_Upgrade3")
+    {
+        Blast("90-269");
+    }
+	Damage("Throwable_ExplosiveGrenade_Upgrade4")
+    {
+        Blast("137-410");
+    }
+	Damage("Throwable_ExplosiveGrenade_Upgrade5")
+    {
+        Blast("203-608");
+    }
+	Damage("Throwable_ExplosiveGrenade_Upgrade6")
+    {
+        Blast("314-941");
+    }
+    Damage("Throwable_ExplosiveGrenade_Upgrade7")
+    {
+        Blast("504-1512");
+    }
+	Damage("Throwable_ExplosiveGrenade_Upgrade8")
+    {
+        Blast("795-2385");
+    }
+	
+	Damage("Decoy")
+    {
+        Fire("0");
+    }
+
+    Damage("Oil_Puddle")
+    {
+        Fire("1");
+    }
+
+    Damage("Electric_Puddle")
+    {
+        Electricity("20");
+    }
+
+    Damage("Toxic_Puddle")
+    {
+        Poison("10");
+    }
+	
+    Damage("Spitter_Toxic_Buff_On_Infected")
+    {
+        Poison("3");
+    }
+	
+    Damage("Obstructor_Smoke")
+    {
+        Poison("5");
+    }
+    
+    Damage("Damageable_Tank_Toxic")
+    {
+        Poison("10");
+    }
+
+    Damage("electric_box")
+    {
+        Electricity("0"); // damage is dealing from Electricity effect
+    }
+	
+	DamageDps("Self_Burning")
+    {
+        Fire("10");
+    }
+
+    Damage("OP_OW_Firespot")
+    {
+        Fire("10");
+    }
+
+    Damage("Airborne_Dust")
+    {
+        Physical("5");
+    }
+
+    Damage("Damage_Area")
+    {
+        Physical("2");
+    }
+	
+	Damage("Damage_Area_Fence")
+    {
+        Physical("2");
+    }
+
+    Damage("Barrel_Leak")
+    {
+        Physical("5");
+    }
+
+    Damage("Fire_Area")
+    {
+        Fire("10");
+    }
+
+	Damage("Burning_AI")
+    {
+        Fire("5% of MaxHealth");
+    }
+
+    Damage("Water_Puddle")
+    {
+        Physical("5");
+    }
+	
+	Damage("Bullet_BoltCannon")
+    {
+        Physical("5");
+    }
+
+
+	
+	Damage("Damaging_Emitter_FirePlace")
+    {
+        Fire("1% of MaxHealth");
+    }
+    Damage("Damaging_Emitter_Default")
+    {
+        Physical("20");
+    }
+    Damage("Damaging_Emitter_Chemical")
+    {
+        Chemical("20");
+    }
+    Damage("Damaging_Emitter_Electric")
+    {
+        Electricity("20");
+    }
+    Damage("Damaging_Emitter_Fire")
+    {
+        Fire("20");
+    }
+    Damage("Damaging_Emitter_Poison")
+    {
+        Poison("20");
+    }
+    Damage("Damaging_Emitter_Smoke")
+    {
+		// Tmp?
+        Physical("20");
+    }
+    Damage("Damaging_Emitter_Steam")
+    {
+		// Tmp?
+        Physical("20");
+    }
+    Damage("Damaging_Emitter_Impact")
+    {
+		// Tmp?
+        Physical("20");
+    }
+	Damage("Damaging_Emitter_InstantKill")
+    {
+		// Tmp?
+        Physical("1000000");
+    }
+
+	Damage("fireplug_tier_1") //10%-25% OneHanded
+    {
+        Blast("10-25");
+    }
+	
+	Damage("fireplug_tier_2")
+    {
+		Blast("17-44");
+    }
+	
+	Damage("fireplug_tier_3")
+    {
+        Blast("27-68");
+    }
+	
+	Damage("fireplug_tier_4")
+    {
+        Blast("45-113");
+    }
+	
+	Damage("fireplug_tier_5")
+    {
+        Blast("67-168");
+    }
+	
+	Damage("fireplug_tier_6")
+    {
+        Blast("104-261");
+    }
+	
+	Damage("fireplug_tier_7")
+    {
+        Blast("170-425");
+    }
+	
+	Damage("fireplug_tier_8")
+    {
+        Blast("283-708");
+    }
+	
+	Damage("fireplug_tier_9")
+    {
+        Blast("318-795");
+    }
+
+    Damage("Fireplug_Wet")
+    {
+		Blast("1.0");
+    }
+
+
+    Damage("Fireplace_Logic")
+    {
+        Fire("10");
+    }
+	
+	
+	Damage("mine")
+    {
+        Blast("250");
+		Physical("500");
+    }
+
+    Damage("Mine_Explosive")    // 50%-100% One handed human
+    {
+        Blast("51-102");
+    }
+    Damage("Mine_Explosive_Upgrade1")
+    {
+        Blast("76-151");
+    }
+    Damage("Mine_Explosive_Upgrade2")
+    {
+        Blast("115-230");
+    }
+    Damage("Mine_Explosive_Upgrade3")
+    {
+        Blast("179-358");
+    }
+    Damage("Mine_Explosive_Upgrade4")
+    {
+        Blast("273-546");
+    }
+    Damage("Mine_Explosive_Upgrade5")
+    {
+        Blast("405-810");
+    }
+    Damage("Mine_Explosive_Upgrade6")
+    {
+        Blast("627-1254");
+    }
+    Damage("Mine_Explosive_Upgrade7")
+    {
+        Blast("1008-2016");
+    }
+	Damage("Mine_Explosive_Upgrade8")
+    {
+        Blast("1590-3180");
+    }
+	Damage("Mine_Explosive_Custom1")
+    {
+        Blast("20% of MaxHealth");
+    }
+
+    Damage("Mine_Fire")
+    {
+        Fire("20");
+    }
+    Damage("Mine_Toxic")
+    {
+        Poison("20");
+    }
+	
+	Damage("Remote_Explosive")  //50%-75 of one handed human
+    {
+        Blast("51-77");
+    }
+	Damage("Remote_Explosive_Upgrade1")
+    {
+        Blast("76-113");
+    }
+	Damage("Remote_Explosive_Upgrade2")
+    {
+        Blast("115-173");
+    }
+	Damage("Remote_Explosive_Upgrade3")
+    {
+        Blast("179-269");
+    }
+	Damage("Remote_Explosive_Upgrade4")
+    {
+        Blast("273-410");
+    }
+	Damage("Remote_Explosive_Upgrade5")
+    {
+        Blast("405-608");
+    }
+	Damage("Remote_Explosive_Upgrade6")
+    {
+        Blast("627-941");
+    }
+	Damage("Remote_Explosive_Upgrade7")
+    {
+        Blast("1008-1512");
+    }
+	Damage("Remote_Explosive_Upgrade8")
+    {
+        Blast("1590-2385");
+    }
+	Damage("Remote_Explosive_Resistance")
+    {
+        All("100%"); Blast("0%");
+    }
+	
+    Damage("ZZZZ_Bullet_Arrow")
+    {
+        Ranged("0% of MaxHealth");
+    }
+
+	Damage("Player_Armour_Damage")
+    {
+        Armour("80");
+    }
+	Damage("Armour_Damage_Low")
+    {
+        Armour("20");
+    }
+	Damage("Armour_Damage_Medium")
+    {
+        Armour("40");
+    }
+    Damage("MolotovCoctail")
+    {
+        Fire("10-15");
+    }
+	Damage("MolotovCoctail_Upgrade1")
+    {
+        Fire("15-26");
+    }
+    Damage("MolotovCoctail_Upgrade2")
+    {
+        Fire("23-37");
+    }
+	Damage("MolotovCoctail_Upgrade3")
+    {
+        Fire("35-58");
+    }
+	Damage("MolotovCoctail_Upgrade4")
+    {
+        Fire("54-90");
+    }
+    Damage("MolotovCoctail_Upgrade5")
+    {
+        Fire("81-137");
+    }
+	Damage("MolotovCoctail_Upgrade6")
+    {
+        Fire("125-203");
+    }
+	Damage("MolotovCoctail_Upgrade7")
+    {
+        Fire("201-314");
+    }
+    Damage("MolotovCoctail_Upgrade8")
+    {
+        Fire("318-504");
+    }
+	Damage("throwable_molotov")
+    {
+        Fire("4");
+    }
+    Damage("throwable_molotov_2")
+    {
+        Fire("6");
+    }
+	Damage("throwable_molotov_3")
+    {
+        Fire("6");
+    }
+    Damage("throwable_molotov_5")
+    {
+        Fire("8");
+    }
+	Damage("throwable_molotov_6")
+    {
+        Fire("8");
+    }
+    Damage("throwable_molotov_8")
+    {
+        Fire("10");
+    }
+	Damage("MolotovCoctailSpit")
+    {
+        Fire("5% of MaxHealth");
+    }
+    DamageDps("AIFireDamageOverTime")
+    {
+        Fire("5");
+    }
+    DamageDps("AIElectrocutedDamageOverTime")
+    {
+        Electricity("5");
+    }
+    DamageDps("AIIntoxicatedDamageOverTime")
+    {
+        Poison("5");
+    }
+    DamageDps("AIBleedingDamageOverTime")
+    {
+        Bleeding("5% of MaxHealth");
+    }
+    DamageMul("BleedingDamageDuringIntoxicated")
+    {
+        Bleeding("+1.0");
+    }
+    DamageMul("PoisonDamageDuringBleeding")
+    {
+        Poison("+1.0");
+    }
+    DamageResistance("FireDamageDuringWet")
+    {
+        Fire("100%");
+    }
+    DamageMul("ElectricityDamageDuringWet")
+    {
+        Electricity("+1.0");
+    }
+    Damage("Screamer_Scream")
+    {
+        Physical("5");
+    }
+    Damage("Screamer_Push")
+    {
+        Physical("2");
+    }
+	Damage("Spitter_Spit_RGD_1")
+    {
+        Poison("5");
+    }
+    Damage("Spitter_Spit_RGD_2")
+    {
+        Poison("10");
+    }
+    Damage("Spitter_Spit_RGD_3")
+    {
+        Poison("15");
+    }
+    Damage("Spitter_Spit_RGD_4")
+    {
+        Poison("20");
+    }
+    Damage("Spitter_Spit_RGD_5")
+    {
+        Poison("25");
+    }
+    Damage("Spitter_Spit_RGD_6")
+    {
+        Poison("30");
+    }
+    Damage("Spitter_Spit_RGD_7")
+    {
+        Poison("40");
+    }
+    Damage("Spitter_Spit_RGD_8")
+    {
+        Poison("50");
+    }
+    Damage("Spitter_Spit_RGD_9")
+    {
+        Poison("60");
+    }
+	Damage("Spitter_Mortar_Spit_RGD_1")
+    {
+        Poison("20");
+    }
+    Damage("Spitter_Mortar_Spit_RGD_2")
+    {
+        Poison("25");
+    }
+    Damage("Spitter_Mortar_Spit_RGD_3")
+    {
+        Poison("30");
+    }
+    Damage("Spitter_Mortar_Spit_RGD_4")
+    {
+        Poison("35");
+    }
+    Damage("Spitter_Mortar_Spit_RGD_5")
+    {
+        Poison("40");
+    }
+    Damage("Spitter_Mortar_Spit_RGD_6")
+    {
+        Poison("45");
+    }
+    Damage("Spitter_Mortar_Spit_RGD_7")
+    {
+        Poison("70");
+    }
+    Damage("Spitter_Mortar_Spit_RGD_8")
+    {
+        Poison("100");
+    }
+    Damage("Spitter_Mortar_Spit_RGD_9")
+    {
+        Poison("150");
+    }
+    Damage("Spitter_Puddle_RGD_1")
+    {
+        Poison("2");
+    }
+    Damage("Spitter_Puddle_RGD_2")
+    {
+        Poison("3");
+    }
+    Damage("Spitter_Puddle_RGD_3")
+    {
+        Poison("4");
+    }
+    Damage("Spitter_Puddle_RGD_4")
+    {
+        Poison("5");
+    }
+    Damage("Spitter_Puddle_RGD_5")
+    {
+        Poison("6");
+    }
+    Damage("Spitter_Puddle_RGD_6")
+    {
+        Poison("7");
+    }
+    Damage("Spitter_Puddle_RGD_7")
+    {
+        Poison("8");
+    }
+    Damage("Spitter_Puddle_RGD_8")
+    {
+        Poison("9");
+    }
+    Damage("Spitter_Puddle_RGD_9")
+    {
+        Poison("10");
+    }
+	Damage("Spitter_Fire_Spit_Damage")
+    {
+        Fire("10");
+    }
+    Damage("Portable_Tank_Explosive")
+    {
+        Blast("80-100");
+    }
+    Damage("Portable_Tank_Blast")
+    {
+        Blast("10-30");
+    }
+	Damage("Portable_Tank_Blast_tier_1") //25%-50% OneHanded
+    {
+        Blast("25-51");
+    }
+	Damage("Portable_Tank_Blast_tier_2")
+    {
+        Blast("37-75");
+    }
+	Damage("Portable_Tank_Blast_tier_3")
+    {
+        Blast("57-115");
+    }
+	Damage("Portable_Tank_Blast_tier_4")
+    {
+        Blast("89-179");
+    }
+	Damage("Portable_Tank_Blast_tier_5")
+    {
+        Blast("136-273");
+    }
+	Damage("Portable_Tank_Blast_tier_6")
+    {
+        Blast("202-405");
+    }
+	Damage("Portable_Tank_Blast_tier_7")
+    {
+        Blast("313-627");
+    }
+	Damage("Portable_Tank_Blast_tier_8")
+    {
+        Blast("504-1008");
+    }
+	Damage("Portable_Tank_Blast_tier_9")
+    {
+        Blast("795-1590");
+    }
+	
+    Damage("Damageable_Explosive_Barrel")
+    {
+        Blast("70");
+    }
+    
+    Damage("portable_tank_explosive_tier_1")   //50-100% One Handed
+    {
+        Blast("51-102");
+    }
+    Damage("portable_tank_explosive_tier_2")
+    {
+        Blast("75-151");
+    }
+    Damage("portable_tank_explosive_tier_3")
+    {
+        Blast("115-230");
+    }
+    Damage("portable_tank_explosive_tier_4")
+    {
+        Blast("179-358");
+    }
+    Damage("portable_tank_explosive_tier_5")
+    {
+        Blast("273-546");
+    }
+    Damage("portable_tank_explosive_tier_6")
+    {
+        Blast("405-810");
+    }
+    Damage("portable_tank_explosive_tier_7")
+    {
+        Blast("627-1254");
+    }
+    Damage("portable_tank_explosive_tier_8")
+    {
+        Blast("1008-2016");
+    }
+    Damage("portable_tank_explosive_tier_9")
+    {
+        Blast("1590-3180");
+    }
+	
+    Damage("biter_toxic_tier_1")
+    {
+        Poison("1");
+    }
+    Damage("biter_toxic_tier_2")
+    {
+        Poison("1");
+    }
+    Damage("biter_toxic_tier_3")
+    {
+        Poison("1");
+    }
+    Damage("biter_toxic_tier_4")
+    {
+        Poison("1");
+    }
+    Damage("biter_toxic_tier_5")
+    {
+        Poison("1");
+    }
+    Damage("biter_toxic_tier_6")
+    {
+        Poison("1");
+    }
+    Damage("biter_toxic_tier_7")
+    {
+        Poison("1");
+    }
+    Damage("biter_toxic_tier_8")
+    {
+        Poison("1");
+    }
+    Damage("biter_toxic_tier_9")
+    {
+        Poison("1");
+    }
+	
+	DamageDps("biter_chem_tier_1")
+    {
+        Chemical("1");
+    }
+    DamageDps("biter_chem_tier_2")
+    {
+        Chemical("1");
+    }
+    DamageDps("biter_chem_tier_3")
+    {
+        Chemical("1");
+    }
+    DamageDps("biter_chem_tier_4")
+    {
+        Chemical("1");
+    }
+    DamageDps("biter_chem_tier_5")
+    {
+        Chemical("1");
+    }
+    DamageDps("biter_chem_tier_6")
+    {
+        Chemical("1");
+    }
+    DamageDps("biter_chem_tier_7")
+    {
+        Chemical("1");
+    }
+    DamageDps("biter_chem_tier_8")
+    {
+        Chemical("1");
+    }
+    DamageDps("biter_chem_tier_9")
+    {
+        Chemical("1");
+    }
+	
+    Damage("Damageable_Tank_Explosive")
+    {
+        Blast("70");
+    }
+	
+    Damage("molotov_lantern_small_tier_1")   //50-100% of Biter XL Health
+    {
+        Fire("48-96");
+    }
+	Damage("molotov_lantern_small_tier_2")
+    {
+        Fire("77-154");
+    }
+    Damage("molotov_lantern_small_tier_3")
+    {
+        Fire("107-214");
+    }
+	Damage("molotov_lantern_small_tier_4")
+    {
+        Fire("156-312");
+    }
+    Damage("molotov_lantern_small_tier_5")
+    {
+        Fire("199-398");
+    }
+	Damage("molotov_lantern_small_tier_6")
+    {
+        Fire("259-518");
+    }
+    Damage("molotov_lantern_small_tier_7")
+    {
+        Fire("340-680");
+    }
+	Damage("molotov_lantern_small_tier_8")
+    {
+        Fire("424-848");
+    }
+    Damage("molotov_lantern_small_tier_9")
+    {
+        Fire("476-952");
+    }
+	
+	Damage("molotov_lantern_splash")
+	{
+		Fire("0");
+	}
+	
+	Damage("Harpoon_Melee")
+    {
+		Blunt("1000% of MaxHealth");
+    }
+
+	Damage("KaDoom_Damage")
+    {
+		Ranged("40%-80% of MaxHealth");
+    }
+	Damage("KaDoom_Damage_low")
+    {
+		Ranged("1%-2% of MaxHealth");
+    }
+	Damage("KaDoom_Damage_UI")
+    {
+		Ranged("1993");
+    }
+	
+	Damage("Shotgun_Damage")
+    {
+		Ranged("30");
+    }
+	Damage("Shotgun_Damage_Upgrade1")
+    {
+		Ranged("40");
+    }
+	Damage("Shotgun_Damage_Upgrade4")
+    {
+		Ranged("50");
+    }
+
+	Damage("Shotgun_Damage_Point1")
+    {
+		Ranged("10");
+    }
+	Damage("Shotgun_Damage_Point2")
+    {
+		Ranged("5");
+    }
+	Damage("Shotgun_Damage_Point3")
+    {
+		Ranged("0% of MaxHealth");
+    }
+    Damage("Shotgun_Damage_Point1_Upgrade1")
+    {
+        Ranged("20");
+    }
+    Damage("Shotgun_Damage_Point2_Upgrade1")
+    {
+        Ranged("10");
+    }
+    Damage("Shotgun_Damage_Point1_Upgrade4")
+    {
+        Ranged("30");
+    }
+    Damage("Shotgun_Damage_Point2_Upgrade4")
+    {
+        Ranged("15");
+    }
+	Damage("Shotgun_Damage_Point1_Upgrade7")
+    {
+        Ranged("40");
+    }
+    Damage("Shotgun_Damage_Point2_Upgrade7")
+    {
+        Ranged("20");
+    }
+	Damage("Shotgun_Damage_UI")
+    {
+        Ranged("80");
+    }	
+	Damage("Shotgun_Damage_UI_Upgrade1")
+    {
+        Ranged("160");
+    }	
+	Damage("Shotgun_Damage_UI_Upgrade4")
+    {
+        Ranged("240");
+    }	
+	Damage("Shotgun_Damage_UI_Upgrade7")
+    {
+        Ranged("480");
+    }	
+	
+	
+	
+	Damage("Harpoon_Crossbow")
+    {
+        Ranged("10000% of MaxHealth");
+    }
+	Damage("WaterCannon")
+    {
+        Ranged("10% of MaxHealth");
+    }
+	Damage("FireCannon")
+    {
+        Fire("10% of MaxHealth");
+    }
+	
+	Damage("BoltCannonV1")
+    {
+        Ranged("120% of MaxHealth");
+    }
+	Damage("BoltCannonV1_mid")
+    {
+        Ranged("120% of MaxHealth");
+    }
+	Damage("BoltCannonV1_low")
+    {
+        Ranged("120% of MaxHealth");
+    }
+	Damage("boltcannon_firepoint0_tier_damages_0")    //100% Human - 100% Human
+    {
+        Ranged("80-102");
+    }
+	Damage("boltcannon_firepoint0_tier_damages_1")
+    {
+        Ranged("80-102");
+    }
+    Damage("boltcannon_firepoint0_tier_damages_2")
+    {
+        Ranged("128-151");
+    }
+    Damage("boltcannon_firepoint0_tier_damages_3")
+    {
+        Ranged("178-230");
+    }
+    Damage("boltcannon_firepoint0_tier_damages_4")
+    {
+        Ranged("260-358");
+    }
+    Damage("boltcannon_firepoint0_tier_damages_5")
+    {
+        Ranged("332-546");
+    }
+    Damage("boltcannon_firepoint0_tier_damages_6")
+    {
+        Ranged("432-810");
+    }
+    Damage("boltcannon_firepoint0_tier_damages_7")
+    {
+        Ranged("566-1254");
+    }
+    Damage("boltcannon_firepoint0_tier_damages_8")
+    {
+        Ranged("706-2016");
+    }
+    Damage("boltcannon_firepoint0_tier_damages_9")
+    {
+        Ranged("794-3180");
+    }
+	Damage("boltcannon_firepoint1_tier_damages_0")   //50% Biter-50% Human
+    {
+        Ranged("40-51");
+    }
+	Damage("boltcannon_firepoint1_tier_damages_1")
+    {
+        Ranged("40-51");
+    }
+    Damage("boltcannon_firepoint1_tier_damages_2")
+    {
+        Ranged("64-76");
+    }
+    Damage("boltcannon_firepoint1_tier_damages_3")
+    {
+        Ranged("89-115");
+    }
+    Damage("boltcannon_firepoint1_tier_damages_4")
+    {
+        Ranged("130-179");
+    }
+    Damage("boltcannon_firepoint1_tier_damages_5")
+    {
+        Ranged("166-273");
+    }
+    Damage("boltcannon_firepoint1_tier_damages_6")
+    {
+        Ranged("216-405");
+    }
+    Damage("boltcannon_firepoint1_tier_damages_7")
+    {
+        Ranged("283-627");
+    }
+    Damage("boltcannon_firepoint1_tier_damages_8")
+    {
+        Ranged("353-1008");
+    }
+    Damage("boltcannon_firepoint1_tier_damages_9")
+    {
+        Ranged("397-1590");
+    }
+
+	Damage("BoltCannonV2")
+    {
+        Ranged("120% of MaxHealth");
+    }
+	Damage("RazorCannonChallenge")
+    {
+        Ranged("68");
+    }
+	Damage("wpn_2hr_crossbow_challenge")
+    {
+        Ranged("34% of MaxHealth");
+    }
+	Damage("wpn_2hr_crossbow_challenge-low")
+    {
+        Ranged("17% of MaxHealth");
+    }
+	
+	Damage("Bullet_Water")
+    {
+        Ranged("10% of MaxHealth");
+    }
+	Damage("Bullet_Fire")
+    {
+        Fire("10% of MaxHealth");
+    }
+	
+	Damage("Bullet_Harpoon")
+    {
+        Ranged("1000% of MaxHealth");
+    }
+
+	Damage("Increase_Base_Damage")
+    {
+       Physical("4");
+    }
+
+	Damage("Increase_Base_Damage_1")
+    {
+        Physical("4");
+    }
+	Damage("Increase_Base_Damage_2")
+    {
+        Physical("8");
+    }
+	Damage("Increase_Base_Damage_3")
+    {
+        Physical("12");
+    }
+	Damage("Increase_Base_Damage_4")
+    {
+        Physical("18");
+    }
+	Damage("Increase_Base_Damage_5")
+    {
+        Physical("24");
+    }
+	Damage("Increase_Base_Damage_6")
+    {
+		Physical("30");
+    }
+	Damage("Increase_Base_Damage_7")
+    {
+        Physical("36");
+    }
+	Damage("Increase_Base_Damage_8")
+    {
+        Physical("42");
+    }
+	Damage("Increase_Base_Damage_9")
+    {
+        Physical("48");
+    }
+	
+	DamageMul("Increase_Base_Damage_1_Burning")
+    {
+        Fire("+30.0");
+    }
+
+	DamageMul("Increase_Base_Damage_2_Burning")
+    {
+        Fire("+0.2");
+    }
+	DamageMul("Increase_Base_Damage_3_Burning")
+    {
+        Fire("+0.3");
+    }
+	DamageMul("Increase_Base_Damage_4_Burning")
+    {
+        Fire("+0.4");
+    }
+	DamageMul("Increase_Base_Damage_5_Burning")
+    {
+        Fire("+0.5");
+    }
+	DamageMul("Increase_Base_Damage_6_Burning")
+    {
+		Fire("+0.6");
+    }
+	DamageMul("Increase_Base_Damage_7_Burning")
+    {
+        Fire("+0.7");
+    }
+	DamageMul("Increase_Base_Damage_8_Burning")
+    {
+        Fire("+0.8");
+    }
+	DamageMul("Increase_Base_Damage_9_Burning")
+    {
+        Fire("+0.9");
+    }
+	
+	DamageMul("Increase_Base_DamageMul")
+    {
+		Blunt("+0.05"); Cut("+0.05"); 
+    }
+
+	DamageMul("Increase_Base_DamageMul_1")
+    {
+        Blunt("+0.00"); Cut("+0.00"); 
+    }
+
+	DamageMul("Increase_Base_DamageMul_2")
+    {
+        Blunt("+0.04"); Cut("+0.04"); 
+    }
+	DamageMul("Increase_Base_DamageMul_3")
+    {
+        Blunt("+0.08"); Cut("+0.08"); 
+    }
+	DamageMul("Increase_Base_DamageMul_4")
+    {
+        Blunt("+0.12"); Cut("+0.12"); 
+    }
+	DamageMul("Increase_Base_DamageMul_5")
+    {
+        Blunt("+0.16"); Cut("+0.16"); 
+    }
+	DamageMul("Increase_Base_DamageMul_6")
+    {
+		Blunt("+0.2"); Cut("+0.2"); 
+    }
+	DamageMul("Increase_Base_DamageMul_7")
+    {
+        Blunt("+0.25"); Cut("+0.25"); 
+    }
+	DamageMul("Increase_Base_DamageMul_8")
+    {
+        Blunt("+0.3"); Cut("+0.3"); 
+    }
+	DamageMul("Increase_Base_DamageMul_9")
+    {
+        Blunt("+0.4"); Cut("+0.4"); 
+    }
+	
+	
+	
+	
+	DamageMul("Increase_Impact_Damage")
+    {
+        Blast("+0.1");
+    }
+	
+	DamageMul("Increase_Impact_Damage_1")
+    {
+        Blast("+0.15");
+    }
+
+	DamageMul("Increase_Impact_Damage_2")
+    {
+        Blast("+0.2");
+    }
+	DamageMul("Increase_Impact_Damage_3")
+    {
+        Blast("+0.3");
+    }
+	DamageMul("Increase_Impact_Damage_4")
+    {
+        Blast("+0.4");
+    }
+	DamageMul("Increase_Impact_Damage_5")
+    {
+        Blast("+0.5");
+    }
+	DamageMul("Increase_Impact_Damage_6")
+    {
+        Blast("+0.6");
+    }
+	
+	
+
+    DamageMul("Animal_Head_Mul")
+    {
+        Physical("+0.0");
+    }
+    DamageMul("Animal_Body_Mul")
+    {
+        Physical("-0.5");
+    }
+
+    DamageMul("WeaponDamageMod_Green"){ Blunt("+0.05"); Cut("+0.05"); Ranged("+0.05");}
+    DamageMul("WeaponDamageMod_Blue"){ Blunt("+0.1"); Cut("+0.1"); Ranged("+0.1"); }
+    DamageMul("WeaponDamageMod_Violet"){ Blunt("+0.2"); Cut("+0.25"); Ranged("+0.25"); }
+    DamageMul("WeaponDamageMod_Orange"){ Blunt("+0.4"); Cut("+0.4"); Ranged("+0.4"); }
+    DamageMul("WeaponDamageMod_Platinum"){ Blunt("+0.6"); Cut("+0.6"); Ranged("+0.6"); }
+
+    DamageResistance("Player_FallDamageResistance")
+    {
+        Physical("?%");
+    }
+
+    DamageResistance("Player_AIDamageResistance")
+    {
+        Physical("?%");
+        Cut("?%");
+		Blunt("?%");
+        Ranged("?%");
+    }
+
+    DamageMul("Player_AIDamageVulnerability")
+    {
+        Physical("?");
+        Cut("?");
+		Blunt("?");
+        Ranged("?");
+    }
+
+	// Cheat Mode Damages
+	DamageVulnerability("Dev_OneHitDamage")
+    {
+        Physical("1000000");
+    }
+	DamageVulnerability("Dev_MinimalDamage")
+    {
+        Physical("1");
+    }
+	Damage("TutorialNoDamage")
+    {
+        Physical("0");
+    }
+	
+	
+	
+	// temporary damage fitlers converts to resistances
+	
+	DamageResistance("Airborne Dust DmgFilter")
+    {
+        All("100%");Fire("0%");Poison("0%"); // allowed EDamageContext: FIRE, TOXIC
+    }
+	
+	DamageResistance("Barrel Leak DmgFilter")
+    {
+        All("100%");Fire("0%");Poison("0%");Blast("0%"); // allowed EDamageContext: FIRE, TOXIC, BLAST
+    }
+	
+	DamageResistance("Fireplug A DmgFilter")
+    {
+        Poison("100%"); // allowed EDamageContext: all except TOXIC, 89?
+    }
+	
+	DamageResistance("Explosive Barrel DmgFilter")
+    {
+        Poison("100%"); // allowed EDamageContext: all except TOXIC, 89?
+    }
+	
+	DamageResistance("Container Padlock DmgFilter")
+    {
+        // allowed EDamageContext: all except PUNCH1, PUNCH2, PUNCH3, PUNCH_KO, PUNCH_BLOCKED, KICK, KICKHARD
+    }
+	
+	DamageResistance("Molotov Lantern Small DmgFilter")
+    {
+        Poison("100%"); // allowed EDamageContext: all except TOXIC, 89?
+    }
+	
+	DamageResistance("Molotov Backpack DmgFilter")
+    {
+        Poison("100%"); // allowed EDamageContext: all except TOXIC, 89?
+    }
+	
+	DamageResistance("Molotov Lantern DmgFilter")
+    {
+        Poison("100%"); // allowed EDamageContext: all except TOXIC, 89?
+    }
+	
+	DamageResistance("Oil Puddle DmgFilter")
+    {
+        All("100%");Fire("0%");Poison("0%");Blast("0%");Electricity("0%"); // allowed EDamageContext: FIRE, TOXIC, BLAST, ELECTRIC, // missing ELECTRIC_OVERLOAD in DamageFactors
+    }
+	
+	DamageResistance("OP OW Firespot DmgFilter")
+    {
+        All("100%");Fire("0%");Poison("0%"); // allowed EDamageContext: FIRE, TOXIC
+    }
+	
+	DamageResistance("Portable Tank Explosive DmgFilter")
+    {
+        Poison("100%"); // allowed EDamageContext: all except TOXIC
+    }
+	
+	DamageResistance("Toxic Puddle DmgFilter")
+    {
+        All("100%");Fire("0%");Chemical("0%"); // allowed EDamageContext: FIRE, TOXIC
+    }
+	
+	DamageVulnerability("30_percent_vulnerability")
+    {
+        All("0.3%");
+    }
+	DamageVulnerability("50_percent_electricity_vulnerability")
+    {
+        Electricity("0.5%");
+    }
+	DamageResistance("boss_damage_resistance")
+    {
+        Blunt("50%");
+		Cut("50%");
+		Physical("50%");
+		Ram("50%");
+		Blast("50%");
+		Bleeding("50%");
+		Fire("50%");
+		Poison("50%");
+		Electricity("50%");
+		Chemical("50%");
+		Drowning("50%");
+		Ranged("75%");
+    }
+	DamageResistance("50_percent_damage")
+    {
+        All("50%");
+    }
+	DamageResistance("25_percent_damage_prologue")
+    {
+        Blunt("25%");
+		Cut("25%");
+    }
+	DamageResistance("40_percent_damage_prologue")
+    {
+        Blunt("40%");
+		Cut("40%");
+    }
+	DamageResistance("75_percent_damage_prologue")
+    {
+        Blunt("75%");
+		Cut("75%");
+    }
+	DamageResistance("75_percent_damage")
+    {
+        All("75%");
+    }
+	
+	DamageResistance("99_percent_damage")
+    {
+        All("99%");
+    }
+	
+	DamageResistance("25_percent_damage")
+    {
+        All("25%");
+    }
+	
+	DamageResistance("25_percent_physical_damage")
+    {
+        Physical("25%");
+    }
+	
+	DamageResistance("50_percent_physical_damage")
+    {
+        Physical("50%");
+    }
+	
+	DamageResistance("Damage_Immunity")
+    {
+        All("1000%");
+    }   
+	DamageMul("damage_x_2")
+    {
+        All("+1.0");
+    }
+	DamageResistance("99_percent_damage_from_melee")
+    {
+        Blunt("99%");
+		Cut("99%");
+		Physical("10%"); 
+		Ram("99%");
+		
+    }
+	DamageResistance("mannequin_challange_target_resistance")
+    {
+        Fire("100%");
+		Blast("100%");
+    }
+	DamageMul("Canteen_Fight_Mul_vs_AI")
+	{
+		Physical("-0.8"); // Damage is 80% smaller
+		Blunt("-0.8"); // Damage is 80% smaller
+		Cut("-0.8"); // Damage is 80% smaller
+	}
+	
+	DamageMul("Screwed_Survivor_Dmg_Mul") // Exclusive for Screwed quest
+    {
+        All("-0.4");
+    }
+	
+    DamageDps("Player_Elemental_Burning_0")
+    {
+        Fire("2% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Burning_1")
+    {
+        Fire("1% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Burning_2")
+    {
+        Fire("2% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Burning_3")
+    {
+        Fire("3% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Burning_4")
+    {
+        Fire("4% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Burning_5")
+    {
+        Fire("5% of MaxHealth");
+    }
+
+    DamageDps("Player_Elemental_Intoxicated_0")
+    {
+        Poison("2% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Intoxicated_1")
+    {
+        Poison("1% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Intoxicated_2")
+    {
+        Poison("2% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Intoxicated_3")
+    {
+        Poison("3% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Intoxicated_4")
+    {
+        Poison("4% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Intoxicated_5")
+    {
+        Poison("5% of MaxHealth");
+    }
+	
+	DamageDps("Player_Elemental_Bleeding_0")
+    {
+        Bleeding("2% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Bleeding_1")
+    {
+        Bleeding("1% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Bleeding_2")
+    {
+        Bleeding("2% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Bleeding_3")
+    {
+        Bleeding("3% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Bleeding_4")
+    {
+        Bleeding("4% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Bleeding_5")
+    {
+        Bleeding("5% of MaxHealth");
+    }
+	
+    DamageDps("Player_Elemental_Electrocuted_0")
+    {
+        Electricity("2% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Electrocuted_1")
+    {
+        Electricity("1% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Electrocuted_2")
+    {
+        Electricity("2% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Electrocuted_3")
+    {
+        Electricity("3% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Electrocuted_4")
+    {
+        Electricity("4% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Electrocuted_5")
+    {
+        Electricity("5% of MaxHealth");
+    }
+	
+	DamageDps("Player_Elemental_Frozen_0")
+    {
+        Freeze("2% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Frozen_1")
+    {
+        Freeze("1% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Frozen_2")
+    {
+        Freeze("2% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Frozen_3")
+    {
+        Freeze("3% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Frozen_4")
+    {
+        Freeze("4% of MaxHealth");
+    }
+	DamageDps("Player_Elemental_Frozen_5")
+    {
+        Freeze("5% of MaxHealth");
+    }
+}

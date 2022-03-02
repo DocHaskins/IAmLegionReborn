@@ -1,0 +1,72 @@
+sub main()
+{
+	PresetDef("PlayerFallAmortizer")
+	{
+		Description("");
+		AddField("m_SoundName", "", false, true, false);
+		AddField("m_LandingAnimName", "DamperLand", false, true, false);
+		AddField("m_FxSequencePrefix", "amortizer_car", false, true, false);
+		AddField("m_AmortizerAnimName", "", false, true, false);
+		AddField("m_FallingAnimName", "", false, true, false);
+		AddField("m_MustLookOnToFocus", "0", false, true, false);
+		AddField("m_MinDistToPlayFallingAnim", "5.0", false, true, false);
+		AddField("m_PlayJumpSpeech", "0", false, true, false);
+		Preset("cable")
+		{
+			SetField("m_AmortizerAnimName", "");
+			SetField("m_FallingAnimName", "");
+			SetField("m_FxSequencePrefix", "");
+			SetField("m_LandingAnimName", "DamperLand");
+			SetField("m_MinDistToPlayFallingAnim", "5.0");
+			SetField("m_MustLookOnToFocus", "0");
+			SetField("m_SoundName", "landing_damper_cable");
+		}
+		Preset("garbage_bag_b.msh")
+		{
+			SetField("m_AmortizerAnimName", "");
+			SetField("m_FallingAnimName", "DamperTrashLandBeforeFall");
+			SetField("m_FxSequencePrefix", "dl_colission_dust");
+			SetField("m_LandingAnimName", "DamperTrashLand");
+			SetField("m_MinDistToPlayFallingAnim", "5.0");
+			SetField("m_MustLookOnToFocus", "0");
+			SetField("m_SoundName", "player_landing_damper_mattress");
+		}
+		Preset("garbage_bag_b_with_scream")
+		{
+			SetField("m_AmortizerAnimName", "");
+			SetField("m_FallingAnimName", "DamperTrashLandBeforeFall");
+			SetField("m_FxSequencePrefix", "dl_colission_dust");
+			SetField("m_LandingAnimName", "DamperTrashLand");
+			SetField("m_MinDistToPlayFallingAnim", "10.0");
+			SetField("m_MustLookOnToFocus", "0");
+			SetField("m_PlayJumpSpeech", "1");
+			SetField("m_SoundName", "landing_damper_trashbags");
+		}
+		Preset("trash_container_a_new_anm.msh")
+		{
+			SetField("m_FxSequencePrefix", "dl_colission_dust");
+			SetField("m_LandingAnimName", "DamperTrashLand");
+			SetField("m_SoundName", "landing_damper_trash");
+		}
+		Preset("umbrella")
+		{
+			SetField("m_AmortizerAnimName", "");
+			SetField("m_FallingAnimName", "");
+			SetField("m_FxSequencePrefix", "");
+			SetField("m_LandingAnimName", "DamperUmbrellaLand");
+			SetField("m_MinDistToPlayFallingAnim", "5.0");
+			SetField("m_MustLookOnToFocus", "0");
+			SetField("m_SoundName", "landing_damper_sunblind");
+		}
+		Preset("vehicle")
+		{
+			SetField("m_AmortizerAnimName", "");
+			SetField("m_FallingAnimName", "");
+			SetField("m_FxSequencePrefix", "amortizer_car");
+			SetField("m_LandingAnimName", "DamperLand");
+			SetField("m_MinDistToPlayFallingAnim", "5.0");
+			SetField("m_MustLookOnToFocus", "0");
+			SetField("m_SoundName", "landing_damper_car");
+		}
+	}
+}

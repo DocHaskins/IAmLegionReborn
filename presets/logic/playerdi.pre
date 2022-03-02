@@ -1,0 +1,35 @@
+sub main()
+{
+    PresetDef("Type")
+    {
+        Description("");
+    
+        AddField("m_Properties.m_AnimPrefix", "");
+        AddField("m_Properties.m_MeshTppName", "player_tpp.msh");
+        AddField("m_Properties.m_MeshFppName", "player.msh");
+        AddField("m_Properties.m_SkinName", "default");
+        AddField("m_Properties.m_SpeechesPrefix", "");
+        AddField("m_Properties.m_MenuPicture", "");
+        AddField("m_Properties.m_HudIcon", "no_icon");
+        AddField("m_Properties.m_ProgressionTemplateFile", "default_levels.xml");
+        AddField("m_Properties.m_HeelHeight", "0.0");
+        AddField("m_StepPreset", "Player");
+        AddField("m_MovePreset", "Move_Clothes");      
+        AddField("m_Properties.m_RespawnIdealDistance", "15.0");
+        AddField("m_Properties.m_RespawnMaxDifferenceFromIdeal", "500.0");
+        AddField("m_Properties.m_RespawnMinNeededDistance", "5.0");
+        AddField("m_Properties.m_TppVisUpdateDistanceMax", "30.0");
+        AddField("m_Properties.m_AimLookParamsScriptFPP", "PlayerAimLookParamsFPP.scr");
+        AddField("m_Properties.m_AimLookParamsScriptTPP", "PlayerAimLookParamsTPP.scr");       
+        AddField("m_UsesBiomarker", "1");
+        
+        Preset("PlayerM1")
+        {
+            SetField("m_Properties.m_MeshFppName", "player_fpp_skeleton.model");
+            SetField("m_Properties.m_MeshTppName", "player_tpp_skeleton.model");
+            SetField("m_Properties.m_SkinName", "default");
+            SetField("m_Properties.m_SpeechesPrefix", "playerm1_");
+            SetField("m_StepPreset", "Player");
+        }
+    }  
+}

@@ -1,0 +1,95 @@
+sub main()
+{
+	PresetDef("Type")
+    {
+        AddField("m_SkinName", "Default");
+        
+        Preset("Default")
+        {
+            SetField("m_SkinName", "Default");
+        }          
+		Preset("Dialogs")
+        {
+            SetField("m_SkinName", "Default_Blue");
+        }
+        Preset("Dialogs_End")
+        {
+            SetField("m_SkinName", "Default_Red");
+        }
+		Preset("AI Life")
+        {
+            SetField("m_SkinName", "Default_Yellow");
+        }       
+		Preset("Patrols")
+        {
+            SetField("m_SkinName", "Default_Purple");
+        } 
+    }
+	
+	PresetDef("Ranges")
+	{
+		AddField("m_NearRange_Max", "6.0", true, true);
+		AddField("m_MedRange_Min", "5.0", true, true);
+		AddField("m_MedRange_Max", "-1.0", true, true);
+		AddField("m_FarRange_Min", "-1.0", true, true);
+		
+		Preset("2states_default")
+        {
+            SetField("m_NearRange_Max", "6.0");
+			SetField("m_MedRange_Min", "5.0");
+        } 
+		
+		Preset("2states_default_far")
+        {
+            SetField("m_NearRange_Max", "10.0");
+			SetField("m_MedRange_Min", "8.0");
+        }
+		
+		Preset("2states_default_near")
+        {
+            SetField("m_NearRange_Max", "4.0");
+			SetField("m_MedRange_Min", "3.0");
+        }
+		
+		Preset("3states_default")
+        {
+            SetField("m_NearRange_Max", "6.0");
+			SetField("m_MedRange_Min", "5.0");
+			SetField("m_MedRange_Max", "10.0");
+			SetField("m_FarRange_Min", "8.0");
+        } 
+		
+		Preset("3states_default_far")
+        {
+            SetField("m_NearRange_Max", "10.0");
+			SetField("m_MedRange_Min", "8.0");
+			SetField("m_MedRange_Max", "15.0");
+			SetField("m_FarRange_Min", "13.0");
+        }
+		
+		Preset("3states_default_near")
+        {
+            SetField("m_NearRange_Max", "4.0");
+			SetField("m_MedRange_Min", "3.0");
+			SetField("m_MedRange_Max", "7.0");
+			SetField("m_FarRange_Min", "6.0");
+        }
+	}
+	
+	PresetDef("Replication")
+    {
+        Description("");
+
+        AddField("m_EntityVariant", "30;77;");
+		
+		Preset("Turned On")
+        {
+			SetField("m_EntityVariant", "30;77;");
+        }
+		
+		Preset("Turned Off")
+        {
+			SetField("m_EntityVariant", ";");
+        }
+	}
+}

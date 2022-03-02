@@ -1,0 +1,462 @@
+sub AutoAim_Default()
+{
+	SetField("m_EntityVariant", "");
+	SetField("m_ThrowAutoHitAssist", "0");
+	SetField("m_ThrowMultiAssist", "0");
+	SetField("m_InnerZone", "0.15");
+	SetField("m_OuterZone", "1.25");
+}
+	
+sub AutoAim_On()
+{
+	SetField("m_EntityVariant", "439;440");
+	
+	SetField("m_ThrowAutoHitAssist", "0");
+	SetField("m_ThrowMultiAssist", "0");
+
+	SetField("m_CalculatePointsFromCollidable", "1");
+	
+	SetField("m_InnerZone", "0.15");
+	SetField("m_OuterZone", "1.25");
+}
+
+sub AutoAim_Off()
+{
+	SetField("m_EntityVariant", "");
+}
+
+sub Replication_On()
+{
+	SetField("m_EntityVariant", "83;114;");
+}
+
+sub Replication_Off()
+{
+	SetField("m_EntityVariant", ";");
+}
+
+sub main()
+{
+	Version(0);
+	PresetDef("Destroyable Preset")
+	{
+		Description("");
+		AddField("m_MeshName", "crate_destr_a.msh", false, true, false);
+		AddField("m_SkinName", "Default", false, true, false);
+		AddField("m_DestroyedSkinName", "", false, true, false);
+		AddField("m_MaxHealth", "5.0", false, true, false);
+		AddField("m_DamageThreshold", "5.0", false, true, false);
+		AddField("m_MinSpeedThreshold", "3.0", false, true, false);
+		AddField("m_PhysicsType", "Simple", false, true, false);
+		AddField("m_SimSetName", "sim_box", false, true, false);
+		AddField("m_WakeOnActivate", "0", false, true, false);
+		AddField("m_CallContactHandlersWhenSleeping", "0", false, true, false);
+		AddField("m_BearingCapacityLimit", "-1.0", false, true, false);
+		AddField("m_MaxContactTime", "-1.0", false, true, false);
+		AddField("m_ContactCooldownTime", "3.0", false, true, false);
+		AddField("SoundEventName", "", false, true, false);
+		AddField("m_NoiseUid", "destroyables", false, true, false);
+		AddField("cbs::IDamageable::m_BleedsOnHit", "", false, true, false);
+		AddField("cbs::IDamageable::m_TakesSlideDamage", "", false, true, false);
+        AddField("m_CollisionMask", "-1", false, true, false);
+		AddField("m_DamageResistance", "", false, true, false);
+		AddField("m_CleanUpTime", "30.0", false, true, false);
+		AddField("m_GpuFxSequenceName", "crate_hit.gpufx", false, true, false);
+
+		// Auto Aim params
+		AddField("m_EntityVariant", "");
+		AddField("m_ThrowAutoHitAssist", "1");
+		AddField("m_ThrowMultiAssist", "1");
+		AddField("m_CalculatePointsFromCollidable", "1");
+		AddField("m_InnerZone", "0.15");
+		AddField("m_OuterZone", "2.0");
+		
+		// Replication
+		AddField("m_EntityVariant", ";");
+		
+		
+		Preset("Box Time and Weight Limit")
+		{
+			SetField("m_MeshName", "dummy_box.msh");
+			SetField("m_SkinName", "UserColor");
+			SetField("m_MaxHealth", "1000000.0");
+			SetField("m_DamageThreshold", "5.0");
+			SetField("m_MinSpeedThreshold", "5.0");
+			SetField("m_BearingCapacityLimit", "200.0");
+			SetField("m_MaxContactTime", "10.0");
+			SetField("m_ContactCooldownTime", "2.0");
+			SetField("m_PhysicsType", "None");
+			SetField("m_CallContactHandlersWhenSleeping", "1");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("Box Weight Limit")
+		{
+			SetField("m_MeshName", "dummy_box.msh");
+			SetField("m_SkinName", "UserColor");
+			SetField("m_MaxHealth", "1000000.0");
+			SetField("m_DamageThreshold", "5.0");
+			SetField("m_MinSpeedThreshold", "5.0");
+			SetField("m_BearingCapacityLimit", "400.0");
+			SetField("m_PhysicsType", "None");
+			SetField("m_CallContactHandlersWhenSleeping", "1");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}	
+		Preset("Box Time Limit")
+		{
+			SetField("m_MeshName", "dummy_box.msh");
+			SetField("m_SkinName", "UserColor");
+			SetField("m_MaxHealth", "1000000.0");
+			SetField("m_DamageThreshold", "5.0");
+			SetField("m_MinSpeedThreshold", "5.0");
+			SetField("m_MaxContactTime", "5.0");
+			SetField("m_ContactCooldownTime", "2.0");
+			SetField("m_PhysicsType", "None");
+			SetField("m_CallContactHandlersWhenSleeping", "1");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}	
+		Preset("Crate A")
+		{
+			SetField("m_MeshName", "crate_destr_a.msh");
+			SetField("m_MaxHealth", "5.0");
+			SetField("m_DamageThreshold", "5.0");
+			SetField("m_MinSpeedThreshold", "8.0");
+			SetField("SoundEventName", "wooden_box_break");
+			// test
+			//SetField("m_GpuFxSequenceName", "crate_hit.gpufx");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("Deadbody Cage")
+		{
+			SetField("m_MeshName", "deadbody_cage.msh");
+			SetField("m_SkinName", "Default");
+			SetField("m_MaxHealth", "1.0");
+			SetField("m_DamageThreshold", "1.0");
+			SetField("m_MinSpeedThreshold", "3.0");
+			SetField("SoundEventName", "chain_break");
+			SetField("m_WakeOnActivate", "1");
+			SetField("m_CollisionMask", "-268435457");
+
+			use AutoAim_Off();
+			
+			use Replication_On();
+		}
+		Preset("Floor A")
+		{
+			SetField("m_MeshName", "int_ce_a_floor_destroyed_a.msh");
+			SetField("SoundEventName", "roof_wooden_break");
+			SetField("m_MaxHealth", "1000.0");
+			SetField("m_DamageThreshold", "10.0");
+			SetField("m_MinSpeedThreshold", "10.0");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("Floor_Weight_Limit")
+		{
+			SetField("m_MeshName", "int_ce_a_floor_destroyed_a.msh");
+			SetField("SoundEventName", "roof_wooden_break");
+			SetField("m_MaxHealth", "10000.0");
+			SetField("m_DamageThreshold", "10.0");
+			SetField("m_MinSpeedThreshold", "10.0");
+			SetField("m_PhysicsType", "None");
+			SetField("m_CallContactHandlersWhenSleeping", "1");
+			SetField("m_BearingCapacityLimit", "50.0");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("Floor_Time_Limit")
+		{
+			SetField("m_MeshName", "int_ce_a_floor_destroyed_a.msh");
+			SetField("SoundEventName", "roof_wooden_break");
+			SetField("m_MaxHealth", "10000.0");
+			SetField("m_DamageThreshold", "10.0");
+			SetField("m_MinSpeedThreshold", "10.0");
+			SetField("m_PhysicsType", "None");
+			SetField("m_CallContactHandlersWhenSleeping", "1");
+			SetField("m_MaxContactTime", "2.0");
+			SetField("m_ContactCooldownTime", "5.0");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("E3_Floor_Destroyable_TL_01")
+		{
+			SetField("m_MeshName", "bld_ce_a_modern_shelf_str_c.msh");
+			SetField("SoundEventName", "metal_footbridge_destroy");
+			SetField("m_MaxHealth", "10000.0");
+			SetField("m_DamageThreshold", "10.0");
+			SetField("m_MinSpeedThreshold", "10.0");
+			SetField("m_PhysicsType", "None");
+			SetField("m_CallContactHandlersWhenSleeping", "1");
+			SetField("m_MaxContactTime", "0.43");
+			SetField("m_ContactCooldownTime", "5.0");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("E3_Floor_Destroyable_TL_01_Instant")
+		{
+			SetField("m_MeshName", "bld_ce_a_modern_shelf_str_c.msh");
+			SetField("SoundEventName", "metal_footbridge_destroy");
+			SetField("m_MaxHealth", "10000.0");
+			SetField("m_DamageThreshold", "10.0");
+			SetField("m_MinSpeedThreshold", "10.0");
+			SetField("m_PhysicsType", "None");
+			SetField("m_CallContactHandlersWhenSleeping", "1");
+			SetField("m_MaxContactTime", "0.1");
+			SetField("m_ContactCooldownTime", "5.0");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("E3_Floor_Destroyable")
+		{
+			SetField("m_MeshName", "int_ce_a_floor_destroyed_a.msh");
+			SetField("SoundEventName", "roof_wooden_break");
+			SetField("m_MaxHealth", "1000.0");
+			SetField("m_DamageThreshold", "10.0");
+			SetField("m_MinSpeedThreshold", "10.0");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("Manekin A")
+		{
+			SetField("m_MeshName", "mannequin_a.msh");
+			SetField("m_MaxHealth", "10.000000");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("Manekin B")
+		{
+			SetField("m_MeshName", "mannequin_b.msh");
+			SetField("m_MaxHealth", "10.000000");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("Manekin C_A")
+		{
+			SetField("m_MeshName", "mannequin_c_part_a.msh");
+			SetField("m_MaxHealth", "10.000000");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("Manekin C_B")
+		{
+			SetField("m_MeshName", "mannequin_c_part_b.msh");
+			SetField("m_MaxHealth", "10.000000");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("Partition_Wall")
+		{
+			SetField("m_MeshName", "int_un_a_partition_wall_str_1x1h_a.msh");
+			SetField("m_MaxHealth", "20.000000");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("Ot Door A")
+		{
+			SetField("m_MeshName", "ot_door_dest_a.msh");
+			SetField("SoundEventName", "barricade_wood_big_destroy");
+			SetField("m_MaxHealth", "12.000000");
+			SetField("m_MinSpeedThreshold", "5.0");
+			SetField("m_PhysicsType", "None");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("PRP A")
+		{
+			SetField("m_MeshName", "prp_destroyable_a.msh");
+			SetField("m_MaxHealth", "10.000000");
+			
+			use AutoAim_Default();
+			
+			use Replication_Off();
+		}
+		Preset("Wall Interior A")
+		{
+			SetField("m_MeshName", "int_ce_a_wall_damage_str_destroyable_2x.msh");
+			SetField("m_SkinName", "plastic_panel_a_grey");
+			SetField("m_DestroyedSkinName", "wood_panel_a_dark");
+			SetField("SoundEventName", "wall_concrete_break");
+			SetField("m_MaxHealth", "10.000000");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("bld_ce_a_wall_damage_cor_btm_0x_dynamic_a.msh")
+		{
+			SetField("m_MeshName", "bld_ce_a_wall_damage_cor_btm_0x_dynamic_a.msh");
+			SetField("SoundEventName", "wall_concrete_break");
+			SetField("m_MaxHealth", "10.000000");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("bld_ce_a_wall_damage_sin_btm_0x_dynamic_a.msh")
+		{
+			SetField("m_MeshName", "bld_ce_a_wall_damage_sin_btm_0x_dynamic_a.msh");
+			SetField("SoundEventName", "wall_concrete_break");
+			SetField("m_MaxHealth", "10.000000");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("bld_ce_a_wall_damage_str_btm_1x_dynamic_a")
+		{
+			SetField("m_MeshName", "bld_ce_a_wall_damage_str_btm_1x_dynamic_a.msh");
+			SetField("SoundEventName", "wall_concrete_break");
+			SetField("m_MaxHealth", "10.000000");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("bld_ce_a_wall_damage_str_btm_2x_dynamic_a")
+		{
+			SetField("m_MeshName", "bld_ce_a_wall_damage_str_btm_2x_dynamic_a.msh");
+			SetField("SoundEventName", "wall_concrete_break");
+			SetField("m_MaxHealth", "10.000000");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("bld_ce_a_wall_damage_str_btm_2x_dynamic_b")
+		{
+			SetField("m_MeshName", "bld_ce_a_wall_damage_str_btm_2x_dynamic_b.msh");
+			SetField("SoundEventName", "wall_concrete_break");
+			SetField("m_MaxHealth", "10.000000");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("bld_ce_a_wall_damage_str_btm_4x2h_dynamic_a")
+		{
+			SetField("m_MeshName", "bld_ce_a_wall_damage_str_btm_4x2h_dynamic_a.msh");
+			SetField("SoundEventName", "wall_concrete_break");
+			SetField("m_MaxHealth", "10.000000");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("int_ce_a_wall_damage_sin_btm_0x_dynamic_a.msh")
+		{
+			SetField("m_MeshName", "int_ce_a_wall_damage_sin_btm_0x_dynamic_a.msh");
+			SetField("SoundEventName", "wall_concrete_break");
+			SetField("m_MaxHealth", "10.000000");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("int_ce_a_wall_damage_str_btm_2x_dynamic_a.msh")
+		{
+			SetField("m_MeshName", "int_ce_a_wall_damage_str_btm_2x_dynamic_a.msh");
+			SetField("SoundEventName", "wall_concrete_break");
+			SetField("m_MaxHealth", "10.000000");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("bld_ce_a_modern_shelf_str_c")
+		{
+			SetField("m_MeshName", "bld_ce_a_modern_shelf_str_c.msh");
+			SetField("m_MaxHealth", "10.000000");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("bld_ce_a_scaffold_top_3x_d.msh")
+		{
+			SetField("m_MeshName", "bld_ce_a_scaffold_top_3x_d.msh");
+			SetField("m_MaxHealth", "10.000000");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("bld_ce_c_modern_window_l_d.msh")
+		{
+			SetField("m_MeshName", "bld_ce_c_modern_window_l_d.msh");
+			SetField("m_MaxHealth", "10.000000");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}		
+		Preset("bld_pa_a_table_a_destro")
+		{
+			SetField("m_MeshName", "bld_pa_a_table_a_destro.msh");
+			SetField("m_MaxHealth", "20.0");
+			SetField("m_DamageThreshold", "1.0");
+			SetField("m_MinSpeedThreshold", "500.0");
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("bld_pa_a_table_a_destro_child_01")
+		{
+			SetField("m_MeshName", "bld_pa_a_table_a_destro_child_01.msh");
+			SetField("m_MaxHealth", "20.0");
+			
+			SetField("m_SimSetName", "sim_helpers", false, true, false);
+			
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+		Preset("dest_dormer_door_a")
+		{
+			SetField("m_MeshName", "dest_dormer_door_a.msh");
+			SetField("SoundEventName", "barricade_wooden_brake");
+			SetField("m_MaxHealth", "20.0");
+			
+            SetField("m_PhysicsType", "None");
+            
+			use AutoAim_Default();
+			
+			use Replication_On();
+		}
+	}
+}

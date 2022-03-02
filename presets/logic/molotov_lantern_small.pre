@@ -1,0 +1,36 @@
+sub main()
+{
+	PresetDef("Auto Aim")
+	{
+		AddField("m_ThrowAutoHitAssist", "0");
+		AddField("m_ThrowMultiAssist", "0");
+
+		AddField("m_CalculatePointsFromCollidable", "1");
+		
+		AddField("m_InnerZone", "0.15");
+		AddField("m_OuterZone", "1.25");
+		
+		Preset("Default")
+        {
+			SetField("m_ThrowAutoHitAssist", "0");
+			SetField("m_ThrowMultiAssist", "0");
+
+			SetField("m_CalculatePointsFromCollidable", "1");
+			
+			SetField("m_InnerZone", "0.15");
+			SetField("m_OuterZone", "1.25");
+		}
+	}
+	
+	PresetDef("Molotov Params")
+	{
+		AddField("m_DamageDefinition", "Molotov_Lantern_Small");
+		AddField("m_DamageRange", "3.0");
+		
+		Preset("Default")
+        {
+			SetField("m_DamageDefinition", "Molotov_Lantern_Small");
+			SetField("m_DamageRange", "3.0");
+		}
+	}
+}

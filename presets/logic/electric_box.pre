@@ -1,0 +1,182 @@
+sub main()
+{
+	PresetDef("Electric Box")
+	{
+		AddField("m_MeshName", "urb_electric_box_a.msh");
+		AddField("m_SkinName", "Off");
+		
+		AddField("m_ChargeTime", "2.0");
+		AddField("m_DamagingTime", "5.0");
+		AddField("m_DamagingRadius", "5.0");
+		AddField("m_DamageDefinition", "pursuit_breaker_electric_box_tier_1");
+		AddField("m_DamageThresholdGeneral", "1.0");
+		AddField("m_DamageThresholdAI", "0.1");
+		
+		AddField("m_SkinPowerOff", "Off");
+		AddField("m_SkinPowerOn", "Ready");
+		AddField("m_SkinDestroyed", "Depleted");
+		AddField("m_AudioEventPowered", "int_electric_box_charged_loop");
+		AddField("m_OffsetSFX", "0.0 0.5 0.0");
+		AddField("m_OffsetFX", "0.0 0.5 0.0");
+		AddField("m_ChargingFX", "electric_box_damaged.gpufx");
+		AddField("m_DamagingFX", "electric_box_explosion.gpufx");
+		AddField("AutoAimHelperTransform", "1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.4 0.0");
+		//mtx [scale.x, rot, q, pos.x, q, scale.y, q, pos.y, q, q, scale.z, pos.z]
+		
+		Preset("Box A")
+        {
+			SetField("m_MeshName", "urb_electric_box_a.msh");
+			SetField("m_SkinName", "Off");
+			
+			SetField("m_ChargeTime", "2.0");
+			SetField("m_DamagingTime", "5.0");
+			SetField("m_DamagingRadius", "5.0");
+			SetField("m_DamageThresholdGeneral", "1.0");
+			SetField("m_DamageThresholdAI", "0.1");
+			
+			SetField("m_SkinPowerOff", "Off");
+			SetField("m_SkinPowerOn", "Ready");
+			SetField("m_SkinDestroyed", "Depleted");
+			
+			SetField("m_AudioEventPowered", "int_electric_box_charged_loop");
+			SetField("m_ChargingFX", "electric_box_damaged_02_small.gpufx");
+			SetField("m_DamagingFX", "electric_box_explosion_02_small.gpufx");
+			
+			SetField("AutoAimHelperTransform", "1.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.4 0.0");
+        }
+		
+		Preset("Box B")
+        {
+			SetField("m_MeshName", "urb_electric_box_b.msh");
+			SetField("m_SkinName", "Off");
+			
+			SetField("m_ChargeTime", "2.0");
+			SetField("m_DamagingTime", "5.0");
+			SetField("m_DamagingRadius", "5.0");
+			SetField("m_DamageThresholdGeneral", "1.0");
+			SetField("m_DamageThresholdAI", "0.1");
+			
+			SetField("m_SkinPowerOff", "Off");
+			SetField("m_SkinPowerOn", "Ready");
+			SetField("m_SkinDestroyed", "Depleted");
+			
+			SetField("m_AudioEventPowered", "int_electric_box_charged_loop");
+			SetField("m_ChargingFX", "electric_box_damaged_03_small.gpufx");
+			SetField("m_DamagingFX", "electric_box_explosion_03_small.gpufx");
+			
+			SetField("AutoAimHelperTransform", "0.5 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.4 0.0");
+        }
+		
+		Preset("Box C")
+        {
+			SetField("m_MeshName", "urb_electric_box_c.msh");
+			SetField("m_SkinName", "Off");
+			
+			SetField("m_ChargeTime", "2.0");
+			SetField("m_DamagingTime", "5.0");
+			SetField("m_DamagingRadius", "5.0");
+			SetField("m_DamageThresholdGeneral", "1.0");
+			SetField("m_DamageThresholdAI", "0.1");
+			
+			SetField("m_SkinPowerOff", "Off");
+			SetField("m_SkinPowerOn", "Ready");
+			SetField("m_SkinDestroyed", "Depleted");
+			
+			SetField("m_AudioEventPowered", "int_electric_box_charged_loop");
+			SetField("m_ChargingFX", "electric_box_damaged.gpufx");
+			SetField("m_DamagingFX", "electric_box_explosion.gpufx");
+			
+			SetField("AutoAimHelperTransform", "1.0 0.0 0.0 0.0 0.0 1.8 0.0 0.0 0.0 0.0 0.4 0.0");
+        }
+		
+		Preset("Wall Box A")
+        {
+			SetField("m_MeshName", "ch_electrical_box_a.msh");
+			SetField("m_SkinName", "Off");
+			
+			SetField("m_ChargeTime", "2.0");
+			SetField("m_DamagingTime", "5.0");
+			SetField("m_DamagingRadius", "5.0");
+			SetField("m_DamageThresholdGeneral", "1.0");
+			SetField("m_DamageThresholdAI", "0.1");
+			
+			SetField("m_SkinPowerOff", "Off");
+			SetField("m_SkinPowerOn", "Ready");
+			SetField("m_SkinDestroyed", "Depleted");
+			
+			SetField("m_AudioEventPowered", "int_electric_box_charged_loop");
+			SetField("m_ChargingFX", "electric_box_damaged_03_small.gpufx");
+			SetField("m_DamagingFX", "electric_box_explosion_03_small.gpufx");
+			
+			SetField("AutoAimHelperTransform", "0.2 0.0 0.0 0.2 0.0 0.7 0.0 1.2 0.0 0.0 0.4 0.0");
+        }
+		
+		Preset("Wall Box B")
+        {
+			SetField("m_MeshName", "ch_electrical_box_b.msh");
+			SetField("m_SkinName", "Off");
+			
+			SetField("m_ChargeTime", "2.0");
+			SetField("m_DamagingTime", "5.0");
+			SetField("m_DamagingRadius", "5.0");
+			SetField("m_DamageThresholdGeneral", "1.0");
+			SetField("m_DamageThresholdAI", "0.1");
+			
+			SetField("m_SkinPowerOff", "Off");
+			SetField("m_SkinPowerOn", "Ready");
+			SetField("m_SkinDestroyed", "Depleted");
+			
+			SetField("m_AudioEventPowered", "int_electric_box_charged_loop");
+			SetField("m_ChargingFX", "electric_box_damaged_03_small.gpufx");
+			SetField("m_DamagingFX", "electric_box_explosion_03_small.gpufx");
+			
+			SetField("m_OffsetFX", "0.0 -0.8 -0.3");
+			
+			SetField("AutoAimHelperTransform", "0.2 0.0 0.0 0.0 0.0 0.6 0.0 0.3 0.0 0.0 0.4 0.0");
+        }
+		
+		Preset("Wall Box C")
+        {
+			SetField("m_MeshName", "ch_electrical_box_c.msh");
+			SetField("m_SkinName", "Off");
+			
+			SetField("m_ChargeTime", "2.0");
+			SetField("m_DamagingTime", "5.0");
+			SetField("m_DamagingRadius", "5.0");
+			SetField("m_DamageThresholdGeneral", "1.0");
+			SetField("m_DamageThresholdAI", "0.1");
+			
+			SetField("m_SkinPowerOff", "Off");
+			SetField("m_SkinPowerOn", "Ready");
+			SetField("m_SkinDestroyed", "Depleted");
+			
+			SetField("m_AudioEventPowered", "int_electric_box_charged_loop");
+			SetField("m_ChargingFX", "electric_box_damaged_02_small.gpufx");
+			SetField("m_DamagingFX", "electric_box_explosion_02_small.gpufx");
+			
+			SetField("AutoAimHelperTransform", "0.6 0.0 0.0 0.0 0.0 1.1 0.0 0.1 0.0 0.0 0.2 0.0");
+        }
+	}
+	
+	PresetDef("Auto Aim")
+	{
+		AddField("m_ThrowAutoHitAssist", "0");
+		AddField("m_ThrowMultiAssist", "0");
+		
+		AddField("m_CalculatePointsFromCollidable", "1");
+
+		AddField("m_InnerZone", "0.15");
+		AddField("m_OuterZone", "1.25");
+		
+		Preset("Default")
+        {
+			SetField("m_ThrowAutoHitAssist", "0");
+			SetField("m_ThrowMultiAssist", "0");
+
+			SetField("m_CalculatePointsFromCollidable", "1");
+			
+			SetField("m_InnerZone", "0.15");
+			SetField("m_OuterZone", "1.25");
+		}
+	}
+}

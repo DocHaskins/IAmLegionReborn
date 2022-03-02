@@ -1,0 +1,99 @@
+sub AutoAim_Default()
+{
+	SetField("m_EntityVariant", "");
+	SetField("m_EntityVariant", "");
+	SetField("m_ThrowAutoHitAssist", "0");
+	SetField("m_ThrowMultiAssist", "0");
+	SetField("m_InnerZone", "0.15");
+	SetField("m_OuterZone", "1.25");
+}
+	
+sub AutoAim_On()
+{
+	SetField("m_EntityVariant", "139;140");
+	
+	SetField("m_ThrowAutoHitAssist", "0");
+	SetField("m_ThrowMultiAssist", "0");
+
+	SetField("m_CalculatePointsFromCollidable", "1");
+	
+	SetField("m_InnerZone", "0.15");
+	SetField("m_OuterZone", "1.25");
+}
+
+sub AutoAim_Off()
+{
+	SetField("m_EntityVariant", "");
+}
+
+sub main()
+{
+	Version(0);
+	PresetDef("Destroyable Preset")
+	{
+		Description("");
+		AddField("m_MeshName", "prp_vase_big_a.msh", false, true, false);
+		AddField("m_SkinName", "Default", false, true, false);
+		AddField("m_MaxHealth", "10.0", false, true, false);
+		AddField("m_DamageThreshold", "10.0", false, true, false);
+		AddField("m_MinSpeedThreshold", "1.0", false, true, false);
+		AddField("m_PhysicsType", "Simple", false, true, false);
+		AddField("m_SimSetName", "sim_box", false, true, false);
+		AddField("m_WakeOnActivate", "0", false, true, false);
+		AddField("m_CallContactHandlersWhenSleeping", "0", false, true, false);
+		AddField("m_BearingCapacityLimit", "-1.0", false, true, false);
+		AddField("m_MaxContactTime", "-1.0", false, true, false);
+		AddField("m_ContactCooldownTime", "3.0", false, true, false);
+		AddField("m_GpuFxSequenceName", "vase_break.gpufx", false, true, false);
+		AddField("SoundEventName", "ceramic_wase_break", false, true, false);
+		AddField("m_NoiseUid", "decoy", false, true, false);
+		AddField("cbs::IDamageable::m_BleedsOnHit", "", false, true, false);
+		AddField("cbs::IDamageable::m_TakesSlideDamage", "", false, true, false);
+		
+		// Auto Aim params
+		AddField("m_EntityVariant", "");
+		AddField("m_ThrowAutoHitAssist", "1");
+		AddField("m_ThrowMultiAssist", "1");
+		AddField("m_CalculatePointsFromCollidable", "1");
+		AddField("m_InnerZone", "0.15");
+		AddField("m_OuterZone", "2.0");
+		
+		Preset("Vase A")
+		{
+			SetField("m_MeshName", "prp_vase_big_a.msh");
+			SetField("m_SkinName", "pattern");
+			SetField("m_MaxHealth", "5.0");
+			SetField("m_DamageThreshold", "5.0");
+			SetField("m_MinSpeedThreshold", "2.0");
+			SetField("m_GpuFxSequenceName", "vase_break.gpufx");
+			SetField("SoundEventName", "ceramic_wase_break");
+			
+			use AutoAim_Default();
+		}
+		
+		Preset("Crystal")
+		{
+			SetField("m_MeshName", "loot_crystal_container_a.msh");
+			SetField("m_MaxHealth", "5.0");
+			SetField("m_DamageThreshold", "5.0");
+			SetField("m_MinSpeedThreshold", "2.0");
+			SetField("m_GpuFxSequenceName", "vase_break.gpufx");
+			SetField("SoundEventName", "ceramic_wase_break");
+			
+			use AutoAim_Default();
+		}
+		
+		Preset("Hanging Chain")
+		{
+			SetField("m_MeshName", "suicide_rope_b.msh");
+			SetField("m_SkinName", "Default");
+			SetField("m_MaxHealth", "5.0");
+			SetField("m_DamageThreshold", "5.0");
+			SetField("m_MinSpeedThreshold", "2.0");
+			SetField("m_GpuFxSequenceName", "rope_destruction_01a.gpufx");
+			SetField("SoundEventName", "chain_break");
+			
+			use AutoAim_On();
+		}
+	}
+}

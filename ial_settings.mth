@@ -220,6 +220,39 @@ export string IAL_AI_Encounter_Difficulty_Chemicals_Lvl_Min = "Tier_5";
 export string IAL_AI_Encounter_Difficulty_Chemicals_Lvl_Max = "Tier_9";
 ////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+////////////DISMEMBER SYSTEM\\\\\\\\\\\\\\\\\\\ 
+//- LOCATION - (AI/DamageModel/body_elements.scr) -----\\
+//Probably to cut Infected Limbs and Arms
+//Humans
+export int IAL_GORE_Dismember_Human_Head = 40;
+export int IAL_GORE_Dismember_Human_Arms = 80;
+export int IAL_GORE_Dismember_Human_Legs = 70;
+
+//Default INFECTED
+export int IAL_GORE_Dismember_DI_Head = 40;
+export bool IAL_GORE_Dismember_DI_KillOnComponent_Head = true;
+export int IAL_GORE_Dismember_DI_Arms = 80;
+export bool IAL_GORE_Dismember_DI_KillOnComponent_Arms = false;
+export int IAL_GORE_Dismember_DI_Legs = 70;
+export bool IAL_GORE_Dismember_DI_KillOnComponent_Legs = false;
+
+//Biter
+export int IAL_GORE_Dismember_Biter_Head = 40;
+export bool IAL_GORE_Dismember_Biter_KillOnComponent_Head = true;
+export int IAL_GORE_Dismember_Biter_Arms = 80;
+export bool IAL_GORE_Dismember_Biter_KillOnComponent_Arms = false;
+export int IAL_GORE_Dismember_Biter_Legs = 70;
+export bool IAL_GORE_Dismember_Biter_KillOnComponent_Legs = false;
+
+//Viral
+export int IAL_GORE_Dismember_Viral_Head = 40;
+export bool IAL_GORE_Dismember_Viral_KillOnComponent_Head = true;
+export int IAL_GORE_Dismember_Viral_Arms = 80;
+export bool IAL_GORE_Dismember_Viral_KillOnComponent_Arms = false;
+export int IAL_GORE_Dismember_Viral_Legs = 40;
+export bool IAL_GORE_Dismember_Viral_KillOnComponent_Legs = true;
+////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 
 ////////////CHASE SYSTEM\\\\\\\\\\\\\\\\\\\ 
 //- LOCATION - (ai/chasedata/chase_base_data.scr) -----\\

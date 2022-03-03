@@ -244,7 +244,7 @@ sub main()
     Param("FovSprintModif", "IAL_Run_FOV_Focus");
     Param("SplatsEnabled", "IAL_Run_VisualEffects");
     Param("ExhastedPPEnabled", "1");
-    Param("HeadBobFactor", "IAL_Run_Headbob" );    
+    Param("HeadBobFactor", "IAL_Run_Headbob");    
 	Param("AmortizerJumpHelpTimer", "0.2");
     Param("CableMaxLength", "50.0");
     Param("SpeedFxEnabled", "IAL_Run_VisualEffects");
@@ -378,7 +378,7 @@ sub main()
 	Param("ExhaustedMoveMaxSpeedFactor", "0.66");
     Param("TackleTimeToRegenOnEmpty", "3.0");
     Param("MoveSprintStaminaConsumption", "IAL_Run_Stamina_Drain");
-    Param("MoveSpeedFitnessFactor", "IAL_Run_Speed");
+    Param("MoveSpeedFitnessFactor", "IAL_Run_FitnessFactor");
     Param("MoveSpeedFitnessFactorTime", "5.0");
     Param("XrayEffectProbability", "IAL_XRAY_Chance");
     Param("SlowMoProbability", "IAL_Slowmo_Chance");
@@ -499,7 +499,7 @@ sub main()
 	Param("ThrowablesSpeedFactor", "0.70");	
 
 	Param("FOVCorrection", "0.2");
-    Param("CameraDefaultFOV", "57.0");
+    Param("CameraDefaultFOV", "IAL_Camera_FOV");
     Param("BulletHitMissEffects", "1.0");
     Param("HideWeaponsDuringSprintDelay", "6.0");
     Param("HideWeaponsDuringCrouchDelay", "-1.0");
@@ -540,11 +540,11 @@ sub main()
 	Param("QuickSlotsCount", "24");              //total inventory slots for weapons
     Param("VisibleQuickSlotsCount", "4");       //how many "quick slots" player have on hud wheels (must be < QuickSlotsCount)
     Param("InventorySize", "0");
-    Param("ItemsInventorySize", "99"); //limited max is 100
-    Param("MaxInventorySize", "8");
+    Param("ItemsInventorySize", "IAL_Inventory_Size"); //limited max is 100
+    Param("MaxInventorySize", "IAL_Inventory_Size");
     Param("AmmoSlotsCount", "12"); // limited max is 100
-    Param("SwimMoveSpeed", "2.5");
-    Param("SwimSprintSpeed", "4.0");
+    Param("SwimMoveSpeed", "IAL_Swimming_Speed");
+    Param("SwimSprintSpeed", "IAL_Swimming_Sprint_Spd");
     Param("SwimImpulsSpeed", "2.0");
     Param("SwimStrafeSpeed", "0.7");
     Param("SwimAcceleration", "0.7");
@@ -557,13 +557,13 @@ sub main()
     Param("SprintNitroMaxSpeedAdd", "0.6");
     Param("SprintAutoStartTime", "0.1");
     Param("SprintNitroAccelerationSlowdownMod", "0.5");
-    Param("MoveForwardMinSpeed", "0.5");
-    Param("MoveForwardMaxSpeed", "3.0");                // DL: 3.5, PREPROD: 3.0
+    Param("MoveForwardMinSpeed", "0.25");
+    Param("MoveForwardMaxSpeed", "IAL_Run_Speed");                // DL: 3.5, PREPROD: 3.0
     Param("MoveBackwardMinSpeed", "0.5");
-    Param("MoveBackwardMaxSpeed", "3.0");             // DL: 2.5, PREPROD: 2.0
-	Param("StorageEquipmentSlotsCount", "25");
-    Param("StorageConsumamblesSlotsCount", "25");
-    Param("StorageOtherSlotsCount", "50");
+    Param("MoveBackwardMaxSpeed", "2.0");             // DL: 2.5, PREPROD: 2.0
+	Param("StorageEquipmentSlotsCount", "IAL_Storage_Size");
+    Param("StorageConsumamblesSlotsCount", "IAL_Storage_Size");
+    Param("StorageOtherSlotsCount", "IAL_Storage_Size");
 	
 	Param("AttackMoveForwardMaxSpeed", "2.0");
 	Param("AttackMoveBackwardMaxSpeed", "1.0");
@@ -579,8 +579,8 @@ sub main()
     Param("MoveStrafeMinSpeed", "0.5");
     Param("MoveStrafeMaxSpeed", "3.0");                // DL: 2.5, PREPROD: 2.5
     Param("MoveSprintMinSpeed", "4.5");
-    Param("MoveSprintSpeed", "5.0");
-    Param("MoveAcceleration", "20.0");                // DL: 40.0, PREPROD: 20.0
+    Param("MoveSprintSpeed", "IAL_Sprint_Speed");
+    Param("MoveAcceleration", "40.0");                // DL: 40.0, PREPROD: 20.0
     Param("MoveAccelerationInAttackRest", "20.0");
     Param("MoveSprintMinAcceleration", "4.5");
     Param("MoveSprintAcceleration", "80.0");
@@ -782,9 +782,9 @@ sub main()
 	Param("NormalHoldJumpTime", "0.1");
 	Param("MonkeyBarHoldJumpTime", "0.2");
 	Param("RopeHoldJumpTime", "0.2");
-    Param("NormalJumpHeight", "0.52");
-	Param("DoubleJumpHeight", "3.2");
-	Param("FarJumpHeight", "0.8");
+    Param("NormalJumpHeight", "IAL_Jump_Normal");
+	Param("DoubleJumpHeight", "IAL_Jump_Double");
+	Param("FarJumpHeight", "IAL_Jump_Far");
 	
 	Param("FarJumpAvailable", "0");
 	Param("FarJumpTackleMaxHeightDiff", "2.0");
@@ -1262,7 +1262,7 @@ sub main()
 	
 	Param("HiglightNearEnemies", "false");	
 	
-    Param("MovingStaminaRegenFactor", "0.8");
+    Param("MovingStaminaRegenFactor", "IAL_Player_Stamina_Regen_Rate_Running");
     Param("SinusStaminaRegenFactor", "300.0");
     Param("SinusStaminaRegenFactorAmplitude", "0.9");
     Param("PerfectRepairChance", "0.0");
@@ -1501,7 +1501,7 @@ sub main()
 	Param("BicycleDecelerationSpeedLoss","2");
 	Param("BicycleMaxForwardSpeed","20");
 	Param("BicycleMaxBackSpeed","1");
-	Param("MaxVelSlopeSliding" , "7" );
+	Param("MaxVelSlopeSliding" , "7");
 	Param("MaxVelSlopeForcedSliding" , "9");
 	Param("MaxVelMovingDownSlope" , "5");	
 	Param("HumanTakeDownInitialStaminaCost" , "0.2");
@@ -1623,9 +1623,9 @@ sub main()
 	Param("NightRunnerDurationIncreasePerKill", "0.0");
 	Param("NightRunnerDisableSurvivalSense", "false");
 	
-	Param("HealthBarTimeToShowAfterHit", "10.0");
+	Param("HealthBarTimeToShowAfterHit", "IAL_HealthBar_ShowHit");
 	Param("HealthBarTimeToShowAfterMainTarget", "1.5");	
-	Param("HealthBarsMaxRange", "12.0");
+	Param("HealthBarsMaxRange", "IAL_HealthBar_ShowRange");
 	Param("AwakeningBarMaxRange", "12.0");
 	
 	Param("DodgeSynchroAnimScaleStick2Heavy", "0.75");
@@ -1714,8 +1714,8 @@ sub main()
     Param("ArmorResistanceMulElemental", "0.0");
 
     Param("FallDamageResistance", "0.0");
-    Param("AIDamageResistance", "0.0");
-    Param("AIDamageVulnerability", "0.0");
+    Param("AIDamageResistance", "IAL_AI_Damage_Resistance");
+    Param("AIDamageVulnerability", "IAL_AI_Damage_Vulnerability");
     Param("StaminaDamageMul", "1.0");
 
     Param("ParkourKickEnabled", "true");
@@ -1752,8 +1752,8 @@ sub main()
     Param("HumanDamageMulFactor", "0.0");
     Param("ZombieDamageMulFactor", "0.0");
 
-    Param("DayDamageMulFactor", "0.0");
-    Param("NightDamageMulFactor", "0.0");
+    Param("DayDamageMulFactor", "IAL_AI_Daytime_Dmg_Multiplier");
+    Param("NightDamageMulFactor", "IAL_AI_Nighttime_Dmg_Multiplier");
 
     Param("ItemStaminaDamageMul", "1.0");
 
@@ -1780,7 +1780,7 @@ sub main()
     Param("DpsMeleeRoleSkillRange", "2.5");
 
 
-    Param("AggresionPerHit", "0.25");
+    Param("AggresionPerHit", "0.75");
     Param("AggresionCooldownOnMax", "3.0");
     Param("AggresionDecreseTime", "7.0");
 
@@ -1825,7 +1825,7 @@ sub main()
 
     Param("InjectorDescSuffix", "");
 
-    Param("InfiniteArrows", "false");
+    Param("InfiniteArrows", "IAL_Bow_Arrow_Unlimited");
 
     Param("CrouchRollEnabled", "false");
 	

@@ -3,6 +3,13 @@
 ////////////////\\\\\\\\\\\\\\\\\
 
 ////////////GAMEPLAY\\\\\\\\\\\\\\\\\\\
+//INTERFACE\\
+export float IAL_HealthBar_ShowHit = 0.0; //Default is 10.0
+export float IAL_HealthBar_ShowRange = 0.0; //Default is 12.0
+
+//CAMERA\\
+export float IAL_Camera_FOV = 70.0; //Default is 57.0
+
 //SLOWMO\\
 export float IAL_Slowmo_Chance = 0.80;
 export float IAL_Slowmo_Cooldown = 30.0;
@@ -18,6 +25,10 @@ export float IAL_ZiplineSpeed_Max = 15.0; //Default is 11.0
 export int IAL_Loot_MultipleItems_LVL = 3; //Level that the player starts getting multiple items from loot
 export int IAL_Loot_MultipleItems_Amount = 2; //Number of items you recieve from MultipleItems_LVL
 
+//INVENTORY\\
+export int IAL_Inventory_Size = 12; Default is 99
+export int IAL_Storage_Size = 50; Default is 25
+
 //- PLAYER Settings -\\
 //- Health -\\
 
@@ -26,17 +37,27 @@ export float IAL_Player_Stamina = 0.80;
 export float IAL_Player_Stamina_Regen_Min = 1.20;
 export float IAL_Player_Stamina_Regen_Max = 2.00;
 export float IAL_Player_Stamina_Regen_TimeTo = 1.20;
+export float IAL_Player_Stamina_Regen_Rate_Running = 0.1; Default is 0.8
 export float IAL_Player_Stamina_Drain_Rate = 1.0;
 export float IAL_Player_Stamina_Drain_FromHit = 0.1;
 
 //Running Settings\\
-export float IAL_Run_Speed = 1.0; //Default is 0.6
+export float IAL_Run_Speed = 4.0; //Default is 3.0
+export float IAL_Sprint_Speed = 6.0; //Default is 5.0
+export float IAL_Run_FitnessFactor = 1.0; //Default is 0.6
 export float IAL_Run_FOV_Focus = 4.0;
 export int IAL_Run_VisualEffects = 0;
 export int IAL_Run_Headbob = 1;
 export float IAL_Run_Stamina_Drain = 0.001; //!!DRAINS STAMINA WHEN RUNNING!! Set to = 0.0 to remove
 
+//Jump\\
+export float IAL_Jump_Normal = 0.52; Default is 0.52
+export float IAL_Jump_Double = 3.2; Default is 3.2
+export float IAL_Jump_Far = 0.8; Default is 0.8
+
 //Swimming Settings\\
+export float IAL_Swimming_Speed = 2.75; Default is 2.5
+export float IAL_Swimming_Sprint_Spd = 4.50; Default is 4.0
 export int IAL_Swimming_HoldBreath_Secs = 30;
 export float IAL_Swimming_StaminaDrain = 0.15;
 export bool IAL_Swimming_Sprint = TRUE;
@@ -79,6 +100,7 @@ export float IAL_Bow_Stamina_Charging = 0.125;
 export float IAL_Bow_TimeBeforeShoot = 0.125;
 export float IAL_Bow_TimeBeforeAutoRelease = 2.125;
 export bool IAL_Bow_Arrow_Penetration = FALSE;
+export bool IAL_Bow_Arrow_Unlimited = FALSE;
 
 //NIGHT Experience Settings\\
 export float IAL_Night_XP_Actions_Reward = 1.0;
@@ -118,8 +140,10 @@ export float IAL_Special_SpawnDistance_max = 40.0;
 export string IAL_Biter_Swip_DMG_Percent = "4%-40% of MaxHealth"; //Total percent of health
 export string IAL_Biter_GrabBite_DMG_Percent = "70% of MaxHealth";
 export int IAL_Biter_Fist_DMG_Boost = 70;
-
-//BITER LOCOMOTION\\
+export float IAL_AI_Damage_Resistance = 0.0; //Default is 0.0
+export float IAL_AI_Damage_Vulnerability = 0.0; //Default is 0.0
+export float IAL_AI_Daytime_Dmg_Multiplier = 0.0; //Default is 0.0
+export float IAL_AI_Nighttime_Dmg_Multiplier = 0.0; //Default is 0.0
 
 //Grouping System\\
 export float IAL_Group_Enemies_Max = 12.0;

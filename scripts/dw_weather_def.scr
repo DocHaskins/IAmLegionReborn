@@ -1,0 +1,164 @@
+import "daytime.def"
+
+export int EventType_Unknown                = 0;
+export int EventType_Sound                  = 1;
+export int EventType_DayTime_Night          = 2;
+export int EventType_DayTime_NightFinish    = 3;
+export int EventType_DayTime_Morning        = 4;
+export int EventType_DayTime_Day            = 5;
+export int EventType_DayTime_Evening        = 6;
+export int EventType_DayTime_NightIsComming = 7;
+export int EventType_DayTime_NightStart     = 8;
+export int EventType_DayTime_NightAttack    = 9;
+
+export int ForcedMusicType_NoMusic    = -1;
+export int ForcedMusicType_NightMusic =  0;
+
+export float WHOLE_DAY_DURATION__DAY      = 8200.0;// 1h in game daytime means 3:20 minutes of real time    
+export float WHOLE_DAY_DURATION__NIGHT    = 8200.0;// 1h in game daytime means 1:40 minute of real time
+export float WHOLE_DAY_DURATION__INTERIOR = 8640.0;// 1h in game daytime means 6 minutes of real time
+
+sub main()
+{
+
+    event_def("refresh_crowd", EventType_Unknown)
+    {
+        Duration(0, 0);
+    }
+    
+    event_def("sound_night_day", EventType_Sound)
+    {
+        Type("wwise_event");
+        WwiseEventName("set_gp_daytime_dawn");
+        TimeShiftValid();
+    }
+    
+    event_def("sound_day", EventType_Sound)
+    {
+        Type("wwise_event");
+        WwiseEventName("set_gp_daytime_day");
+        TimeShiftValid();
+    }
+    
+	event_def("reset_flow", EventType_Sound)
+    {
+		ResetPlayerFlow();
+    }
+	
+    event_def("sound_day_night", EventType_Sound)
+    {
+        Type("wwise_event");
+        WwiseEventName("set_gp_daytime_dusk");
+        TimeShiftValid();
+    }
+	
+	event_def("sound_day_night_riser", EventType_Sound)
+    {
+        Type("wwise_event");
+        WwiseEventName("set_gp_daytime_dusk_riser");
+        TimeShiftValid();
+    }
+    
+    event_def("sound_night", EventType_Sound)
+    {
+        Type("wwise_event");
+        WwiseEventName("set_gp_daytime_night");
+        TimeShiftValid();
+    }
+	
+	event_def("sound_watch_beep", EventType_Sound)
+    {
+        Type("wwise_event");
+        WwiseEventName("player_watch_beep");
+    }
+	
+    event_def("night", EventType_DayTime_Night)
+    {
+        ForceMusic(ForcedMusicType_NightMusic);
+    }
+
+    event_def("night_final", EventType_DayTime_NightFinish)
+    {
+        ForceMusic(ForcedMusicType_NightMusic);
+    }  
+
+    event_def("morning", EventType_DayTime_Morning)
+    {
+    }
+
+    event_def("day", EventType_DayTime_Day)
+    {
+    }
+
+    event_def("evening", EventType_DayTime_Evening)
+    {
+        ForceMusic(ForcedMusicType_NoMusic)
+        {
+            Delay(150.0);
+        }
+    }
+
+    event_def("night_start", EventType_DayTime_NightStart)
+    {
+        ForceMusic(ForcedMusicType_NoMusic)
+        {
+        }
+        
+//         ForceMusic(ForcedMusicType_NightMusic)
+//         {
+//            Delay(12.0);
+//         }
+    }
+    
+    event_def("night_attack", EventType_DayTime_NightAttack)
+    {
+//         ForceMusic(ForcedMusicType_NoMusic)
+//         {
+//         }
+        
+        ForceMusic(ForcedMusicType_NightMusic)
+        {
+           Delay(0.0);
+        }
+    }
+	
+	event_def("night_is_comming", EventType_DayTime_NightIsComming)
+    {
+        ForceMusic(ForcedMusicType_NoMusic)
+        {
+        }
+        
+//         ForceMusic(ForcedMusicType_NightMusic)
+//         {
+//            Delay(12.0);
+//         }
+    }
+
+    events()
+    {
+        event("night",                      DAYTIME_NIGHT_START        ); // 20:00
+        event("night_final",                DAYTIME_NIGHT_END          ); // 7:00
+        event("sound_night_day",            DAYTIME_DAWN               ); // 8:00
+        event("sound_day",                  DAYTIME_DAWN+0.5           ); // 8:30
+		event("reset_flow",		            DAYTIME_DAWN+0.5	       ); // 8:30 - reset flow
+        event("morning",                    DAYTIME_DAWN               ); // 9:00
+        event("day",                        DAYTIME_DAWN+0.5           ); // 8:30
+        event("noon",                       DAYTIME_DAWN+2.5           ); // 11:30
+        //event("zombie_screams_init_low",    DAYTIME_DUSK_END - 1.25    );   //17:15
+        //event("zombie_screams_init_high",   DAYTIME_DUSK_END - 0.75    );   //17:45
+        event("evening",                    DAYTIME_DUSK               );   //18:30
+        event("watch_sequence",             DAYTIME_DUSK_END - 0.0523  );   //18:36
+        //event("zombie_screams",             DAYTIME_DUSK_END - 0.0520  );   //18:47
+        event("night_is_comming",           DAYTIME_DUSK_END - 0.5     );   //18:55
+		event("sound_watch_beep",           DAYTIME_DUSK_END - 0.5     );   //18:55
+        event("refresh_crowd",              DAYTIME_DUSK_END           );   //19:00
+        event("night_start",                DAYTIME_DUSK_END           );   //19:00		
+        event("sound_day_night",            DAYTIME_DUSK               );   //19:00
+		event("sound_day_night_riser",      DAYTIME_DUSK_END  - 0.175  );   //19:00
+        event("night_attack",               DAYTIME_DUSK_END + 0.0333  );   //19:02
+        event("sound_night",                DAYTIME_DUSK_END           );   //19:30
+        interior_day_duration(WHOLE_DAY_DURATION__INTERIOR);
+        day_duration(WHOLE_DAY_DURATION__DAY);
+        night_duration(WHOLE_DAY_DURATION__NIGHT);
+    }
+}

@@ -1,0 +1,120 @@
+{
+  "__filename__": {
+    "Version": 2,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "sanctuary"],
+            "m_PcId": [6, 2],
+            "m_PrefabName": [12, "sanctuary"]
+          },
+          "Fields": {
+            "m_AreaHeight": "10.000000",
+            "m_AreaPoints": "52.023071 -0.500000 2.037964;46.573730 -0.500000 11.054565;60.084961 -0.500122 21.235962;53.177002 -0.500053 33.498901;47.747314 -0.500011 31.202271;36.232910 -0.500084 34.158081;28.997803 -0.500000 31.202393;21.433105 -0.500011 31.246948;18.700073 -0.500008 27.689697;20.486816 -0.500134 24.769287;-1.629761 -0.500088 12.750854;-7.852539 -0.500088 10.154541;-11.948364 -0.500000 3.970947;9.639282 -0.499683 -24.810791;20.421753 -0.500141 -18.689087;41.142334 -0.500095 -4.956299;",
+            "m_IsSpawnBlocker": "1",
+            "MapZoneName": "Template_Sanctuary_Name",
+            "cbs::IEnable::m_State": "0",
+            "m_AreaEntity": "/~3",
+            "m_DisableClimbing": "0",
+            "m_DisableJumping": "0",
+            "m_HideWeapon": "0",
+            "m_MaxPlayerSpeed": "4.000000",
+            "m_ReduceAutostep": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 2.5, 0.0, 0.5, 2.5, 0.5]],
+            "m_Name": [12, "sanctuary_area"],
+            "m_PcId": [6, 3],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Scale": [14, [10.0, 1.0, 10.0]],
+            "m_Translate": [14, [5.1992192, 0.0, -0.4312129]]
+          },
+          "Fields": {
+            "m_AreaHeight": "5.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_EntityComponentsExtents": [69, [0.0, 2.5, 0.0, 0.5, 2.5, 0.5]],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "map_zone"],
+            "m_PcId": [6, 4],
+            "m_PrefabName": [12, "map_zone"],
+            "m_Scale": [14, [10.0, 1.0, 10.0]],
+            "m_Translate": [14, [-8.5755596, 0.0, -0.6693699]]
+          },
+          "Fields": {
+            "m_AreaHeight": "5.000000",
+            "m_EnterMusicEventName": "music_location_bazar",
+            "m_MusicZonePriority": "OverrideStoryAndCombat",
+            "m_Name": "Template_Location_Name"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "detectableobject"],
+            "m_PcId": [6, 5],
+            "m_PrefabName": [12, "detectableobject"],
+            "m_Translate": [14, [-2.1379389, 0.0, 1.575623]]
+          },
+          "Fields": {
+            "m_DetectableAreaObject": "/~3",
+            "m_ObjectName": "Template_Detectable_Name",
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_EntityComponentsExtents": [69, [-0.0, 1.5195729, 0.2309059, 0.0690789, 1.5195729, 0.2707889]],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "location"],
+            "m_PcId": [6, 7],
+            "m_PrefabName": [12, "location"],
+            "m_Translate": [14, [-2.1586909, 0.0, -0.1922149]]
+          },
+          "Fields": {
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "Locations::Logic::EntitySelfActiveLogic",
+            "DestinationField": "m_LogicPreset",
+            "Fields": {
+              "m_AreaMode": "None",
+              "m_LocCategory": "Neutral",
+              "m_LocType": "Default",
+              "m_MapDescription": ""
+            }
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 1.2695729, 0.0008479, 0.5, 1.7695729, 0.5008479]],
+            "m_Name": [12, "grouping_location"],
+            "m_PcId": [6, 8],
+            "m_PrefabName": [12, "grouping_location"],
+            "m_Translate": [14, [-1.208008, 0.0, -0.073181]]
+          },
+          "Fields": {
+            "m_SelfActive": "0"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

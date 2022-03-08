@@ -1,0 +1,226 @@
+{
+  "__filename__": {
+    "Version": 4,
+    "RuntimeData": {
+
+      "DetailSpawnType": {
+        "User": "1"
+      },
+      "PrefabInterfaces": [
+        "cbs::IEnable"
+      ],
+      "Interface": {
+        "Properties": [
+          {
+            "Type": "PropertyOut",
+            "RTTIType": "RTTI_TYPE_BOOL",
+            "Name": "cbs::IEnable::m_CanBeBatched",
+            "Value": "0",
+            "Init": "e:EDIT;f:EDIT;"
+          }
+        ],
+        "Pipes": [
+          {
+            "Type": "PipeIn",
+            "Name": "cbs::IEnable::m_Enable"
+          },
+          {
+            "Type": "PipeIn",
+            "Name": "cbs::IEnable::m_Disable"
+          }
+        ],
+        "VirtualFields": [
+          {
+            "Name": "cbs::IEnable::m_State",
+            "Init": "e:EDIT;f:EDIT|QUEST;l:Enabled;",
+            "DestinationFields": [
+              {
+                "Uuid": "271999",
+                "Name": "m_Enabled"
+              }
+            ]
+          },
+          {
+            "Name": "m_TriggerInfectionAttack",
+            "Init": "f:EDIT;e:EDIT;",
+            "DestinationFields": [
+              {
+                "Uuid": "272026",
+                "Name": "m_TriggerInfectionAttack"
+              }
+            ]
+          },
+          {
+            "Name": "m_AreaEntity",
+            "Init": "e:EDIT|BROWSE_OBJECT;f:EDIT;",
+            "DestinationFields": [
+              {
+                "Uuid": "272027",
+                "Name": "m_ActivationAreaEntity"
+              },
+              {
+                "Uuid": "272046",
+                "Name": "m_AreaEntity"
+              }
+            ]
+          },
+          {
+            "Name": "m_BlockFlashlight",
+            "Init": "f:EDIT;e:EDIT;",
+            "DestinationFields": [
+              {
+                "Uuid": "272026",
+                "Name": "m_BlockFlashlight"
+              }
+            ]
+          },
+          {
+            "Name": "m_BlockBinoculars",
+            "Init": "f:EDIT;e:EDIT;",
+            "DestinationFields": [
+              {
+                "Uuid": "272026",
+                "Name": "m_BlockBinoculars"
+              }
+            ]
+          }
+        ]
+      },
+      "Bindings": {
+        "Properties": [],
+        "Pipes": [
+          {
+            "src_uuid": "272027",
+            "src": "m_PipeOnPlayerEnter",
+            "dest_uuid": "272026",
+            "dest": "m_EnableRestrictions"
+          },
+          {
+            "src_uuid": "272027",
+            "src": "m_PipeOnPlayerExit",
+            "dest_uuid": "272026",
+            "dest": "m_DisableRestrictions"
+          },
+          {
+            "src_uuid": "271999",
+            "src": "m_PipeOnEnabled",
+            "dest_uuid": "272027",
+            "dest": "m_PipeActivate"
+          },
+          {
+            "src_uuid": "271999",
+            "src": "m_PipeOnDisabled",
+            "dest_uuid": "272027",
+            "dest": "m_PipeDeactivate"
+          },
+          {
+            "src_uuid": "271999",
+            "src": "m_PipeOnEnabled",
+            "dest_uuid": "272046",
+            "dest": "m_PipeActivate"
+          },
+          {
+            "src_uuid": "271999",
+            "src": "m_PipeOnDisabled",
+            "dest_uuid": "272046",
+            "dest": "m_PipeDeactivate"
+          }
+        ]
+      },
+      "Components": [
+        {
+          "Class": "CoEnable",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 271999]
+          },
+          "Fields": {
+            "m_Enabled": "0",
+            "m_ResolveStateAfterInitialize": "1"
+          }
+        },
+        {
+          "Class": "CoPlayerRestrictions",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 272026]
+          },
+          "Fields": {
+            "m_ReduceFOV": "1"
+          }
+        },
+        {
+          "Class": "CoPlayerSensor",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 272027]
+          },
+          "Fields": {
+            "m_RequireAlivePlayer": "1",
+            "m_RequireLocalPlayer": "1",
+            "m_SelfActive": "0",
+            "m_SignalExitOnDeactivate": "1"
+          }
+        },
+        {
+          "Class": "CoGameplayModifier",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 272046]
+          },
+          "Fields": {
+            "m_ModifierFlags": "8"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2",
+      "CreatedInEditor": "1",
+      "AllowsNonUniformScaling": "1",
+      "Nodes": [
+        {
+          "Uuid": "271999",
+          "Type": "0",
+          "X": "-660.00",
+          "Y": "405.00"
+        },
+        {
+          "Uuid": "272026",
+          "Type": "0",
+          "X": "705.00",
+          "Y": "30.00"
+        },
+        {
+          "Uuid": "272027",
+          "Type": "0",
+          "X": "120.00",
+          "Y": "-60.00"
+        },
+        {
+          "Uuid": "272046",
+          "Type": "0",
+          "X": "480.00",
+          "Y": "495.00"
+        },
+        {
+          "Uuid": "1",
+          "Type": "4",
+          "X": "-675.00",
+          "Y": "-270.00",
+          "Interface_Type": "0"
+        },
+        {
+          "Uuid": "2",
+          "Type": "4",
+          "X": "-615.00",
+          "Y": "-285.00",
+          "Interface_Type": "1"
+        },
+        {
+          "Uuid": "3",
+          "Type": "4",
+          "X": "-630.00",
+          "Y": "-105.00",
+          "Interface_Type": "2"
+        }
+      ]
+    }
+  }
+}

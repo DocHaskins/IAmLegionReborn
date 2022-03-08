@@ -1,0 +1,176 @@
+{
+  "__filename__": {
+    "Version": 1,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_Name": "sanctuary",
+            "m_PcId": "11",
+            "m_PrefabName": "sanctuary",
+            "m_Rotate": "179.999985 -0.384283 -179.999985",
+            "m_Scale": "1.000003 1.000000 1.000003",
+            "m_Translate": "3.873550 -10.999956 3.616089"
+          },
+          "Fields": {
+            "m_AreaHeight": "41.441502",
+            "m_AreaPoints": "56.696487 -0.499990 -1.764648;56.703995 -0.499996 25.386841;45.442368 -0.500002 25.380249;45.066803 -0.499994 46.368896;-23.474243 -0.500000 46.225098;-22.477066 -0.500000 20.220703;-16.705399 -0.500006 20.463989;-16.526169 -0.500002 3.246948;0.908798 -0.499998 3.623657;0.830582 -0.499998 -0.326904;7.004089 -0.499996 -0.302368;6.992386 -0.499996 3.602417;20.141525 -0.499994 3.712524;20.231064 -0.499992 -1.987915;29.277039 -0.499987 -2.042358;29.888580 -0.499989 -9.786133;45.541245 -0.499990 -9.548340;45.202835 -0.499990 -2.036011;",
+            "MapZoneName": "&Peacekeepers_Hub_zone_Name&",
+            "cbs::IEnable::m_State": "0",
+            "m_AreaEntity": "/~12",
+            "m_DisableClimbing": "0",
+            "m_DisableJumping": "0",
+            "m_HideWeapon": "0",
+            "m_MaxPlayerSpeed": "4.500000",
+            "m_ReduceAutostep": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_EntityComponentsExtents": "-0.009392 0.500000 0.002340 0.509392 0.500000 0.507374",
+            "m_Name": "sanctuary_area",
+            "m_PcId": "12",
+            "m_PrefabName": "area_marker",
+            "m_Rotate": "0.000000 90.000000 -0.000014",
+            "m_Scale": "57.535610 19.381161 66.837311",
+            "m_Translate": "-20.546021 -1.218120 -15.295547"
+          },
+          "Fields": {
+            "m_AreaPoints": "0.500000 -0.000000 -0.500000;0.500000 -0.000000 0.500000;0.098333 0.000000 0.509714;-0.217119 0.000001 0.351141;-0.433673 0.000001 0.242996;-0.497874 0.000000 0.181927;-0.518785 0.000001 -0.197935;-0.222053 0.000001 -0.363610;0.180117 0.000000 -0.505034;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_AlwaysSpawned": "1",
+            "m_EntityComponentsExtents": "0.000000 3.500000 0.000848 0.500000 4.000000 0.500848",
+            "m_MoveToDynamicRoot": "1",
+            "m_Name": "grouping_location_PK",
+            "m_PcId": "13",
+            "m_PrefabName": "grouping_location",
+            "m_Rotate": "0.000000 90.000000 -0.000014",
+            "m_Translate": "-13.800201 1.716652 -13.348511"
+          },
+          "Fields": {
+            "m_AreaHeight": "8.000000",
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "Locations::Logic::GroupingLogic",
+            "DestinationField": "m_LogicPreset",
+            "Fields": {
+              "m_AreaMode": "Point",
+              "m_LocCategory": "Neutral",
+              "m_LocType": "Hub_Peacekeepers",
+              "m_MapDescription": "&Peacekeepers_Hub_zone_Name&",
+              "m_Radius": "20.000000"
+            }
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_EntityComponentsExtents": "-0.000000 1.519573 0.230906 0.069079 1.519573 0.270788",
+            "m_Name": "hub_pk_citadel_location",
+            "m_PcId": "14",
+            "m_PrefabName": "location",
+            "m_Rotate": "-179.995773 89.616913 179.995789",
+            "m_Scale": "1.000003 1.000000 1.000003",
+            "m_Translate": "-13.555786 1.738007 -13.501831"
+          },
+          "Fields": {
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "Locations::Logic::EntitySelfActiveLogic",
+            "DestinationField": "m_LogicPreset",
+            "Fields": {
+              "m_AreaMode": "None",
+              "m_LocCategory": "Neutral",
+              "m_LocType": "Hub_Peacekeepers",
+              "m_MapDescription": "&Peacekeepers_Hub_zone_Name&"
+            }
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_Name": "detectableobject",
+            "m_PcId": "15",
+            "m_PrefabName": "detectableobject",
+            "m_Rotate": "0.000000 90.000000 -0.000014",
+            "m_Translate": "-14.915436 29.695381 -12.516235"
+          },
+          "Fields": {
+            "m_DetectableAreaObject": "/~12",
+            "m_ObjectName": "&Hub_Peacekeepers_Detail&"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2",
+      "Nodes": [
+        {
+          "Uuid": "10",
+          "Type": "1",
+          "X": "0.00",
+          "Y": "0.00"
+        },
+        {
+          "Uuid": "11",
+          "Type": "1",
+          "X": "25.00",
+          "Y": "20.00"
+        },
+        {
+          "Uuid": "9",
+          "Type": "1",
+          "X": "50.00",
+          "Y": "40.00"
+        },
+        {
+          "Uuid": "6",
+          "Type": "1",
+          "X": "75.00",
+          "Y": "60.00"
+        },
+        {
+          "Uuid": "7",
+          "Type": "1",
+          "X": "100.00",
+          "Y": "80.00"
+        },
+        {
+          "Uuid": "12",
+          "Type": "1",
+          "X": "125.00",
+          "Y": "100.00"
+        },
+        {
+          "Uuid": "272026",
+          "Type": "4",
+          "X": "150.00",
+          "Y": "120.00",
+          "Interface_Type": "0"
+        },
+        {
+          "Uuid": "272027",
+          "Type": "4",
+          "X": "175.00",
+          "Y": "140.00",
+          "Interface_Type": "1"
+        },
+        {
+          "Uuid": "272028",
+          "Type": "4",
+          "X": "200.00",
+          "Y": "160.00",
+          "Interface_Type": "2"
+        }
+      ]
+    }
+  }
+}

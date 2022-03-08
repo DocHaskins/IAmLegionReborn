@@ -1,0 +1,177 @@
+{
+  "__filename__": {
+    "Version": 2,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "sanctuary"],
+            "m_PcId": [6, 2],
+            "m_PrefabName": [12, "sanctuary"],
+            "m_Scale": [14, [7.9499998, 1.0, 1.0]],
+            "m_Translate": [14, [-1.439972, -1.32, 0.0000609]]
+          },
+          "Fields": {
+            "m_AreaHeight": "10.000000",
+            "m_AreaPoints": "52.023071 -0.500000 2.037964;46.573730 -0.500000 11.054565;60.084961 -0.500122 21.235962;53.177002 -0.500053 33.498901;47.747314 -0.500011 31.202271;36.232910 -0.500084 34.158081;28.997803 -0.500000 31.202393;21.433105 -0.500011 31.246948;18.700073 -0.500008 27.689697;20.486816 -0.500134 24.769287;-1.629761 -0.500088 12.750854;-7.852539 -0.500088 10.154541;-11.948364 -0.500000 3.970947;9.639282 -0.499683 -24.810791;20.421753 -0.500141 -18.689087;41.142334 -0.500095 -4.956299;",
+            "m_IsSpawnBlocker": "1",
+            "MapZoneName": "&MetroStation&",
+            "cbs::IEnable::m_State": "0",
+            "m_AreaEntity": "/~3",
+            "m_DisableClimbing": "0",
+            "m_DisableJumping": "0",
+            "m_GameplayModifierFlags": "1704",
+            "m_HideWeapon": "0",
+            "m_MaxPlayerSpeed": "4.000000",
+            "m_ReduceAutostep": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.4999999, 0.0, 0.4999999, 0.4999999, 0.4999999]],
+            "m_Name": [12, "sanctuary_area"],
+            "m_PcId": [6, 3],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Scale": [14, [112.8426361, 25.5002269, 68.7802581]],
+            "m_Translate": [14, [51.7592773, -31.0800209, 26.6886901]]
+          },
+          "Fields": {
+            "m_AreaHeight": "1.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "location"],
+            "m_PcId": [6, 7],
+            "m_PrefabName": [12, "location"],
+            "m_Translate": [14, [-2.1586909, 0.0, -0.1922149]]
+          },
+          "Fields": {
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "Locations::Logic::EntitySelfActiveLogic",
+            "DestinationField": "m_LogicPreset",
+            "Fields": {
+              "m_AreaMode": "None",
+              "m_LocCategory": "Neutral",
+              "m_LocType": "Default",
+              "m_MapDescription": ""
+            }
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 0.5000001, 0.5000001, 0.5000001]],
+            "m_Name": [12, "grouping_location"],
+            "m_PcId": [6, 8],
+            "m_PrefabName": [12, "grouping_location"],
+            "m_Scale": [14, [174.7979583, 174.7979888, 174.7979583]],
+            "m_Translate": [14, [11.6319885, -63.2400093, -12.5531921]]
+          },
+          "Fields": {
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "Locations::Logic::GroupingLogic",
+            "DestinationField": "m_LogicPreset",
+            "Fields": {
+              "m_ActivityName": "",
+              "m_AreaMode": "Point",
+              "m_LocCategory": "Neutral",
+              "m_LocType": "facility_metro_active",
+              "m_MapDescription": "",
+              "m_Radius": "20.000000"
+            }
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-9.5367431640625e-7, 0.0, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "quest_area"],
+            "m_PcId": [6, 9],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Rotate": [14, [-0.0, 0.0000019, -0.0]],
+            "m_Scale": [14, [124.1268997, 69.4014129, 96.292366]],
+            "m_Translate": [14, [58.7191162, -36.2400169, 31.1286926]]
+          },
+          "Fields": {
+            "m_AreaPoints": "0.500000 -0.500000 -0.500000;0.500000 -0.500000 0.500000;-0.500000 -0.500000 0.500000;-0.500000 -0.500000 -0.500000;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-3.3600006, 0.4999999, 9.1200323, 32.1599998, 0.4999999, 36.0]],
+            "m_Name": [12, "GMA_Infection"],
+            "m_PcId": [6, 10],
+            "m_PrefabName": [12, "gameplay_modifier_area"],
+            "m_Rotate": [14, [-0.0, -0.0000039, -0.0]],
+            "m_Scale": [14, [1.9374928, 60.0056381, 1.0296]],
+            "m_Translate": [14, [64.359375, -68.1600036, 22.7287902]]
+          },
+          "Fields": {
+            "m_Height": "1.000000",
+            "m_ModifierFlags": "4",
+            "m_Points": "28.799999 0.000000 -26.880001;27.840000 0.000000 45.120003;-33.600002 0.000000 45.120003;-35.520000 0.000000 -26.880001;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-3.3600006, 0.5, 9.1199989, 32.159996, 0.5, 36.0]],
+            "m_Name": [12, "GMA_UVSupplied"],
+            "m_PcId": [6, 11],
+            "m_PrefabName": [12, "gameplay_modifier_area"],
+            "m_Scale": [14, [1.7424, 24.1919975, 1.0]],
+            "m_Translate": [14, [54.8791503, -31.080017, 15.0487365]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_Height": "1.000000",
+            "m_ModifierFlags": "136",
+            "m_Points": "28.799999 0.000000 -26.880001;27.840000 0.000000 45.120003;-33.600002 0.000000 45.120003;-35.520000 0.000000 -26.880001;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 0.5, 0.4999999, 0.5]],
+            "m_Name": [12, "CA_Zombies"],
+            "m_PcId": [6, 12],
+            "m_PrefabName": [12, "clear_area"],
+            "m_Scale": [14, [101.5583648, 18.3601608, 61.9022331]],
+            "m_Translate": [14, [51.7592773, -19.3200187, 26.6886901]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "GMA_despawnAiOutsideBlockScenarios"],
+            "m_PcId": [6, 13],
+            "m_PrefabName": [12, "gameplay_modifier_area"],
+            "m_Rotate": [14, [-0.0000147, -0.0000019, 0.0000259]],
+            "m_Scale": [14, [106.080017, 29.2999954, 61.9199523]],
+            "m_Translate": [14, [50.6400146, -23.7499694, 28.0800781]]
+          },
+          "Fields": {
+            "m_Halo": "0.000000",
+            "m_ModifierFlags": "8208"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

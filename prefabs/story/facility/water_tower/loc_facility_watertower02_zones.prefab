@@ -1,0 +1,151 @@
+{
+  "__filename__": {
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_AlwaysSpawned": "1",
+            "m_MoveToDynamicRoot": "1",
+            "m_Name": "detectable",
+            "m_PcId": "1",
+            "m_PrefabName": "detectableobject",
+            "m_Rotate": "179.999954 -39.999981 179.999985",
+            "m_Scale": "20.205717 64.524353 20.499014",
+            "m_Translate": "0.432495 -24.009970 -0.351746"
+          },
+          "Fields": {
+            "DetetcableSkinName": "detectable",
+            "cbs::IEnable::m_State": "0",
+            "m_DetectableAreaObject": "/~5",
+            "m_ObjectName": "&WaterTower&",
+            "m_RevealDistance": "100.000000",
+            "m_SelfActive": "1"
+          },
+          "EmbeddedObject": {
+            "Class": "Locations::Logic::DetectableLocationLogic",
+            "DestinationField": "m_LogicPreset",
+            "Fields": {
+              "m_AreaMode": "Point",
+              "m_LocCategory": "Neutral",
+              "m_LocType": "facility_watertower_inactive",
+              "m_MapDescription": "&WaterTower&"
+            }
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_Name": "sanctuary",
+            "m_PcId": "2",
+            "m_PrefabName": "sanctuary",
+            "m_Rotate": "179.999985 50.000015 179.999985",
+            "m_Translate": "0.432457 25.184151 -0.351936"
+          },
+          "Fields": {
+            "MapZoneName": "&WaterTower&",
+            "m_AreaEntity": "/~3",
+            "m_DisableClimbing": "0",
+            "m_DisableJumping": "0",
+            "m_GameplayModifierFlags": "2235",
+            "m_HideWeapon": "0",
+            "m_SelfActive": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_EntityComponentsExtents": "0.000009 0.572214 0.000004 0.543592 0.572222 0.519019",
+            "m_Name": "sanctuary_area",
+            "m_PcId": "3",
+            "m_PrefabName": "area_marker",
+            "m_Rotate": "179.999985 49.999989 179.999985",
+            "m_Scale": "13.245215 4.394300 13.872321",
+            "m_Translate": "0.432495 25.184151 -0.351807"
+          },
+          "Fields": {
+            "m_AreaHeight": "1.144436",
+            "m_AreaPoints": "0.217446 0.000000 -0.519015;0.543602 -0.000001 -0.207604;0.543602 -0.000001 0.242213;0.217446 0.000000 0.519023;-0.217428 -0.000008 0.519023;-0.543583 -0.000002 0.207611;-0.543583 -0.000009 -0.207604;-0.217428 0.000000 -0.519015;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_EntityComponentsExtents": "0.000000 4.500000 0.000848 0.500000 5.000000 0.500848",
+            "m_Name": "grouping_location",
+            "m_PcId": "4",
+            "m_PrefabName": "grouping_location",
+            "m_Rotate": "179.999985 49.999992 179.999985",
+            "m_Translate": "0.432457 25.184151 -0.351936"
+          },
+          "Fields": {
+            "m_AreaHeight": "10.000000",
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "Locations::Logic::GroupingLogic",
+            "DestinationField": "m_LogicPreset",
+            "Fields": {
+              "m_AreaMode": "Point",
+              "m_LocCategory": "Neutral",
+              "m_LocType": "Default",
+              "m_MapDescription": "",
+              "m_Radius": "10.000000"
+            }
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_EntityComponentsExtents": "0.136456 1.161388 0.011190 0.465603 1.661388 0.404976",
+            "m_Name": "detectable_area",
+            "m_PcId": "5",
+            "m_PrefabName": "area",
+            "m_Rotate": "179.999954 -39.999981 179.999985",
+            "m_Scale": "74.566177 74.566177 74.566185",
+            "m_Translate": "0.432495 -22.815851 -0.351746"
+          },
+          "Fields": {
+            "m_AreaHeight": "3.322777",
+            "m_AreaPoints": "0.602032 -0.500000 -0.393762;0.602060 -0.500000 0.416166;-0.329142 -0.500000 0.416160;-0.329147 -0.500000 -0.393786;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_EntityComponentsExtents": "-0.006127 8.350780 0.005737 0.664138 8.350787 0.636464",
+            "m_Name": "quest_area",
+            "m_PcId": "6",
+            "m_PrefabName": "area_marker",
+            "m_Rotate": "179.999985 50.000011 179.999985",
+            "m_Scale": "20.695644 3.862176 21.675497",
+            "m_Translate": "0.432495 -24.032501 -0.351807"
+          },
+          "Fields": {
+            "m_AreaHeight": "16.701569",
+            "m_AreaPoints": "0.220024 0.000000 -0.625128;0.658011 0.000000 -0.223598;0.650082 0.000000 0.185101;0.231938 0.000000 0.642201;-0.255122 -0.000007 0.642202;-0.659033 -0.000002 0.198006;-0.670265 -0.000005 -0.207666;-0.221418 0.000000 -0.630727;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_EntityComponentsExtents": "-0.000001 26.079828 -0.000002 6.720000 26.579828 6.719999",
+            "m_Name": "gma_dz",
+            "m_PcId": "7",
+            "m_PrefabName": "gameplay_modifier_area",
+            "m_Rotate": "179.999985 50.000000 179.999985",
+            "m_Translate": "0.432470 -27.615849 -0.351902"
+          },
+          "Fields": {
+            "m_Height": "53.159657",
+            "m_ModifierFlags": "4",
+            "m_Points": "2.879999 -0.500000 -6.720001;6.719999 -0.500000 -2.880001;6.719999 -0.500000 2.879997;2.879999 -0.500000 6.719997;-2.880001 -0.500000 6.719997;-6.720001 -0.500000 3.359997;-6.720001 -0.500000 -2.880001;-3.360002 -0.500000 -6.720001;"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

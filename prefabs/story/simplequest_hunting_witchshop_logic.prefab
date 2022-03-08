@@ -1,0 +1,518 @@
+{
+  "__filename__": {
+    "Version": 4,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "PLAGUEWITCH"],
+            "m_PcId": [6, 2],
+            "m_PrefabName": [12, "humanai"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [-0.089722, 0.009018, -0.007263]]
+          },
+          "Fields": {
+            "m_PresetName": "Character;Plaguewitch",
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.4999999, 0.5, 0.4999999]],
+            "m_Name": [12, "PinlockShape"],
+            "m_PcId": [6, 3],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Scale": [14, [5.0, 1.0, 5.0]],
+            "m_Translate": [14, [0.068542, -0.018037, -0.005981]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "WitchesAssistant"],
+            "m_PcId": [6, 6],
+            "m_PrefabName": [12, "humanai"],
+            "m_Translate": [14, [0.2806091, 0.0251196, -1.5627441]]
+          },
+          "Fields": {
+            "m_DifficultyRangeSource": "UserDefinedDifficultyRange,();",
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_GenericBehaviorDisallowed": "1",
+            "m_PresetName": "Character;WitchesAssistant",
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource",
+            "Fields": {
+              "m_DifficultyModifier": "1",
+              "m_MaxDifficultyTier": "Tier_9",
+              "m_MinDifficultyTier": "Tier_5"
+            }
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.2309055, 0.0, -0.483114, 2.0192964, 0.5, 1.8104441]],
+            "m_Name": [12, "GMA_WitchesHut"],
+            "m_PcId": [6, 7],
+            "m_PrefabName": [12, "gameplay_modifier_area"],
+            "m_Rotate": [14, [-0.0, 30.0, -0.0]],
+            "m_Scale": [14, [11.8943796, 11.9370489, 13.8020105]],
+            "m_Translate": [14, [-2.3197937, 4.7103152, 1.5655517]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "1",
+            "m_ModifierFlags": "1705658",
+            "m_Points": "1.457787 -0.500000 1.311737;-1.788391 -0.500000 1.327330;-1.777809 -0.500000 -1.904633;-1.527817 -0.500000 -2.293558;0.948494 -0.500000 -1.049078;2.250202 -0.500000 0.916227;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0030349, 0.5831534, 0.0000049, 0.314215, 0.5708295, 0.1000049]],
+            "m_Name": [12, "Shop_Witch"],
+            "m_PcId": [6, 8],
+            "m_PrefabName": [12, "trading_shop"],
+            "m_Translate": [14, [0.0039061, 1.7796893, -0.00073]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_AssortmentName": "Quest_Witch",
+            "m_IsSurvivor": "1",
+            "m_Seller": "/~2"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "HunterCustomer"],
+            "m_PcId": [6, 9],
+            "m_PrefabName": [12, "humanai"],
+            "m_Translate": [14, [0.2806091, 0.0251196, -1.1336363]]
+          },
+          "Fields": {
+            "m_GenericBehaviorDisallowed": "1",
+            "m_PresetName": "Character;HunterCustomer",
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "pm_assistant_fight_start"],
+            "m_PcId": [6, 12],
+            "m_PrefabName": [12, "point_marker"],
+            "m_Rotate": [14, [179.9999847, -45.0000076, 179.9999847]],
+            "m_Translate": [14, [11.9886779, -0.7498257, 0.5459594]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "pm_player_startfight"],
+            "m_PcId": [6, 13],
+            "m_PrefabName": [12, "point_marker"],
+            "m_Translate": [14, [3.8627014, -0.7498257, -7.4776]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [5.960464477539063e-8, 0.150005, 0.1779812, 0.5000002, 0.150005, 0.6779813]],
+            "m_Name": [12, "bp_customer_fight_start"],
+            "m_PcId": [6, 14],
+            "m_PrefabName": [12, "behaviorplace_npc"],
+            "m_Rotate": [14, [0.0000135, 75.0000228, -0.0000146]],
+            "m_Translate": [14, [1.6902767, -0.7498257, -7.1637573]]
+          },
+          "Fields": {
+            "m_BehaviorName": "single_static_m_stand_idle_placeholder_01"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "dialogues"],
+            "m_PcId": [6, 17],
+            "m_PrefabName": [12, "hunting_witchshop_dialogues"],
+            "m_Translate": [14, [0.0211181, 0.0090177, 0.0132446]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "HuntingCustomerInit"],
+            "m_PcId": [6, 18],
+            "m_PrefabName": [12, "humanai"],
+            "m_Translate": [14, [0.6828917, 0.0170172, -2.4122619]]
+          },
+          "Fields": {
+            "m_PresetName": "Character;HuntingCustomerInit",
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.2414705, 0.5, -0.0071125, 0.7414705, 0.5, 0.5071125]],
+            "m_Name": [12, "sanctuary_area"],
+            "m_PcId": [6, 19],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Rotate": [14, [-0.0, 30.0, -0.0]],
+            "m_Scale": [14, [11.8148918, 6.3956999, 15.5264549]],
+            "m_Translate": [14, [-2.730194, -0.2802686, 0.7540283]]
+          },
+          "Fields": {
+            "m_AreaPoints": "0.500000 -0.000000 -0.500000;0.500000 -0.000000 0.500000;-0.500000 0.000000 0.500000;-0.496357 0.000000 0.245811;-0.982941 -0.000000 0.255567;-0.972095 0.000000 -0.514225;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "sanctuary"],
+            "m_PcId": [6, 20],
+            "m_PrefabName": [12, "sanctuary"],
+            "m_Translate": [14, [4.4224548, 0.0090174, 4.4585266]]
+          },
+          "Fields": {
+            "MapZoneName": "&Witch_Shop_zone_Name&",
+            "m_AreaEntity": "/~19",
+            "m_DisableClimbing": "0",
+            "m_DisableJumping": "0",
+            "m_GameplayModifierFlags": "520",
+            "m_HideWeapon": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0000048, 0.7631699, -0.0004026, 1.140505, 0.6685996, 0.4011988]],
+            "m_Name": [12, "restingplace"],
+            "m_PcId": [6, 21],
+            "m_PrefabName": [12, "restingplace"],
+            "m_Rotate": [14, [-0.0, -60.0000038, -0.0]],
+            "m_Translate": [14, [-6.314331, 0.015017, -3.9005432]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "1",
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 22],
+            "m_PrefabName": [12, "prp_bunk_bed_a"],
+            "m_Rotate": [14, [179.9999847, -30.0000038, 179.9999847]],
+            "m_Translate": [14, [-6.2898864, -0.0936397, -3.9088745]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "boss_noclimb"],
+            "m_PcId": [6, 29],
+            "m_PrefabName": [12, "hunting_witchshop_logic_boss_noclimb"],
+            "m_Translate": [14, [9.4107971, 2.8089985, -2.2801818]]
+          },
+          "Fields": {
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "PlaguewitchMission"],
+            "m_PcId": [6, 30],
+            "m_PrefabName": [12, "humanai"],
+            "m_Rotate": [14, [-0.0, 30.0000076, -0.0]],
+            "m_Translate": [14, [-1.1833496, 0.0170187, -5.4329833]]
+          },
+          "Fields": {
+            "m_PresetName": "Character;PlaguewitchMission",
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "WitchesAssistantMission"],
+            "m_PcId": [6, 32],
+            "m_PrefabName": [12, "humanai"],
+            "m_Translate": [14, [-0.6995239, 0.0251196, -4.5030212]]
+          },
+          "Fields": {
+            "m_DifficultyRangeSource": "UserDefinedDifficultyRange,();",
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_GenericBehaviorDisallowed": "1",
+            "m_PresetName": "Character;WitchesAssistantMission",
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource",
+            "Fields": {
+              "m_DifficultyModifier": "1",
+              "m_MaxDifficultyTier": "Tier_9",
+              "m_MinDifficultyTier": "Tier_5"
+            }
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [3.964569, 2.5, 0.4721755, 12.8396301, 2.5, 17.6840896]],
+            "m_Name": [12, "am_Corvus_Arena"],
+            "m_PcId": [6, 33],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Rotate": [14, [-0.0, 30.0, -0.0]],
+            "m_Translate": [14, [6.6466369, -1.3198455, -3.2897033]]
+          },
+          "Fields": {
+            "m_AreaHeight": "5.000000",
+            "m_AreaPoints": "16.804199 -0.000000 12.541656;6.946228 0.000000 17.728485;-4.675781 0.000000 18.156265;-4.690674 0.000000 6.139526;-4.161743 0.000000 -7.208527;-8.875061 0.000000 -7.407501;-4.884705 0.000000 -8.863953;-4.024475 0.000000 -10.587097;-3.922119 0.000000 -12.337296;-5.294006 0.000000 -14.251389;-3.513000 0.000000 -17.211914;0.982666 0.000000 -14.495682;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.5989561, 1.2854999, -0.0002032, 0.6020439, 1.2854999, 0.125973]],
+            "m_Name": [12, "door_mission"],
+            "m_PcId": [6, 34],
+            "m_PrefabName": [12, "door"],
+            "m_PresetNames": [12, "Door_Style;Wooden_c;Behaviour;Closed"],
+            "m_Rotate": [14, [-0.0, -60.0000038, -0.0]],
+            "m_Translate": [14, [2.4538574, 0.0090153, -1.822998]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "1",
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "Andrei"],
+            "m_PcId": [6, 35],
+            "m_PrefabName": [12, "humanai"],
+            "m_Rotate": [14, [-0.0, -75.0, -0.0]],
+            "m_Translate": [14, [4.0939025, 0.0139415, 3.5747985]]
+          },
+          "Fields": {
+            "m_PresetName": "Character;Andrei",
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.000005, 0.500005, 0.000005, 0.500005, 0.500005, 0.500005]],
+            "m_PcId": [6, 36],
+            "m_PrefabName": [12, "custommoveobject"],
+            "m_Rotate": [14, [-0.0, 60.0000038, -0.0]],
+            "m_Translate": [14, [-22.3404235, -0.7990908, 9.7890319]]
+          },
+          "Fields": {
+            "MeshName": "dummy_box.msh",
+            "RenderFlags": "0",
+            "SkinName": "Null",
+            "m_CollisionFlags": "64",
+            "m_Type": "WallSqueez"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_EntityComponentsExtents": [69, [-0.0002574, 1.4512833, 0.2189901, 0.0679944, 1.495648, 0.262777]],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "player_spawnpoint"],
+            "m_PcId": [6, 37],
+            "m_PrefabName": [12, "spawnpoint"],
+            "m_Rotate": [14, [-0.0, -60.0000038, -0.0]],
+            "m_Translate": [14, [-7.5651855, 0.009003, 0.595062]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_Respawn": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Storyteller"],
+            "m_PcId": [6, 39],
+            "m_PrefabName": [12, "witchshop_logic_storyteller"],
+            "m_Rotate": [14, [-0.0, -59.9999923, -0.0]],
+            "m_Translate": [14, [-6.2313537, 0.0424771, -0.1355589]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "GardenDoor_Open"],
+            "m_PcId": [6, 42],
+            "m_PrefabName": [12, "hunting_witchshop_logic_gardendoor_open"],
+            "m_Translate": [14, [9.8996276, -0.9098367, 11.5845642]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Configurations": [12, "visual_layer;house_classic_a;"],
+            "m_Name": [12, "GardenDoor_Closed"],
+            "m_PcId": [6, 44],
+            "m_PrefabName": [12, "bld_ce_a_fencegate_double_high_closed_a"],
+            "m_Rotate": [14, [-179.9999542, 60.0000305, 179.9999694]],
+            "m_Seed": [6, 873946215],
+            "m_Translate": [14, [10.8367614, -0.7498282, 13.2565917]]
+          },
+          "Fields": {
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.606019, 1.2884999, 0.0007366, 0.606019, 1.2884999, 0.1282461]],
+            "m_Name": [12, "door_elena_baba"],
+            "m_PcId": [6, 45],
+            "m_PrefabName": [12, "door"],
+            "m_PresetNames": [12, "Door_Style;Basement_Door"],
+            "m_Rotate": [14, [-0.0, 30.0, -0.0]],
+            "m_Translate": [14, [-4.6404724, 0.0090041, 6.2897033]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.5989561, 1.2854999, -0.0002032, 0.6020439, 1.2854999, 0.125973]],
+            "m_Name": [12, "door_NO_mission"],
+            "m_PcId": [6, 46],
+            "m_PrefabName": [12, "door"],
+            "m_PresetNames": [12, "Door_Style;Wooden_c;Behaviour;Closed"],
+            "m_Rotate": [14, [-0.0, -60.0000038, -0.0]],
+            "m_Translate": [14, [2.4538574, 0.009015, -1.822998]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.2336711, -0.0181913, 0.2613022, 0.2336711, 0.4838945]],
+            "m_Name": [12, "player_stash"],
+            "m_PcId": [6, 47],
+            "m_PrefabName": [12, "player_stash"],
+            "m_Rotate": [14, [-0.0, -60.0000038, -0.0]],
+            "m_Translate": [14, [-7.9447937, -0.003795, -4.5691833]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [6.7660827, 3.0, 2.0223693, 8.7466125, 3.5, 7.8263549]],
+            "m_Name": [12, "grouping_location"],
+            "m_PcId": [6, 48],
+            "m_PrefabName": [12, "grouping_location"],
+            "m_Rotate": [14, [-0.0, 30.0, -0.0]],
+            "m_Translate": [14, [-11.9087219, 0.009003, 3.8595581]]
+          },
+          "Fields": {
+            "m_AreaHeight": "7.000000",
+            "m_AreaPoints": "9.787476 -0.500000 -4.168716;15.512695 -0.500000 -4.088669;15.296143 -0.500000 9.821014;3.431458 -0.500000 9.848724;3.577637 -0.500000 5.987183;-1.980530 -0.500000 5.745850;-1.980042 -0.500000 -5.770065;9.595398 -0.500000 -5.803986;",
+            "m_LogicPreset": "Locations::Logic::GroupingLogic,();",
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "Locations::Logic::GroupingLogic",
+            "DestinationField": "m_LogicPreset",
+            "Fields": {
+              "m_ActivityName": "Plaguewitch_Shop",
+              "m_AreaMode": "Point",
+              "m_LocCategory": "Neutral",
+              "m_LocType": "SafeZone_Active",
+              "m_MapDescription": "&Witch_Shop_zone_Name&",
+              "m_MapTooltipKey": "",
+              "m_Radius": "20.000000"
+            }
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [6.7660827, 3.0, 2.0223693, 8.7466125, 3.5, 7.8263549]],
+            "m_Name": [12, "AM_PortalShape"],
+            "m_PcId": [6, 49],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Rotate": [14, [-0.0, 30.0, -0.0]],
+            "m_Translate": [14, [-11.9087219, 0.0090022, 3.8590698]]
+          },
+          "Fields": {
+            "m_AreaHeight": "7.000000",
+            "m_AreaPoints": "9.787476 -0.500000 -4.168716;15.512695 -0.500000 -4.088669;15.296143 -0.500000 9.821014;3.431458 -0.500000 9.848724;3.577637 -0.500000 5.987183;-1.980530 -0.500000 5.745850;-1.980042 -0.500000 -5.770065;9.595398 -0.500000 -5.803986;",
+            "m_Portals": "/~50;/~51;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0999999, 0.2799998, 0.0466231, 0.5999999, 1.2799996, 0.0816232]],
+            "m_Name": [12, "AM_PortalShape_Portal"],
+            "m_PcId": [6, 50],
+            "m_PrefabName": [12, "hud_helper"],
+            "m_PresetNames": [12, "Hud helper;Area Entrance"],
+            "m_Rotate": [14, [-0.0, -60.0000038, -0.0]],
+            "m_Translate": [14, [-13.6199035, 1.0433175, 4.7631225]]
+          },
+          "Fields": {
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0999999, 0.2799998, 0.0466231, 0.5999999, 1.2799996, 0.0816232]],
+            "m_Name": [12, "AM_PortalShape_Portal_Fight"],
+            "m_PcId": [6, 51],
+            "m_PrefabName": [12, "hud_helper"],
+            "m_PresetNames": [12, "Hud helper;Area Entrance"],
+            "m_Rotate": [14, [-0.0, -60.0000038, -0.0]],
+            "m_Translate": [14, [2.6860656, 1.0433176, -1.3152464]]
+          },
+          "Fields": {
+            "m_SelfActive": "0"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

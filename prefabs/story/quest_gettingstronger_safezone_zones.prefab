@@ -1,0 +1,114 @@
+{
+  "__filename__": {
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_Name": "sanctuary",
+            "m_PcId": "1",
+            "m_PrefabName": "sanctuary",
+            "m_Rotate": "-0.000000 0.000005 -0.000000",
+            "m_Translate": "4.028687 1.185059 1.583496"
+          },
+          "Fields": {
+            "MapZoneName": "&KarlsSafezone&",
+            "m_AreaEntity": "/~2",
+            "m_DisableClimbing": "0",
+            "m_DisableJumping": "0",
+            "m_HideWeapon": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_EntityComponentsExtents": "2.045288 5.000000 5.228210 13.369263 5.000000 13.435730",
+            "m_Name": "sanctuary_area",
+            "m_PcId": "2",
+            "m_PrefabName": "area_marker",
+            "m_Translate": "-4.680664 -5.139267 -5.428833"
+          },
+          "Fields": {
+            "m_AreaHeight": "10.000000",
+            "m_AreaPoints": "15.414551 0.000000 11.836914;3.573486 0.000000 18.663940;-4.237793 0.000000 5.447937;-7.385254 0.000000 7.443970;-11.323975 0.000000 0.122620;4.663086 0.000000 -8.207520;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_AlwaysSpawned": "1",
+            "m_MoveToDynamicRoot": "1",
+            "m_Name": "do",
+            "m_PcId": "3",
+            "m_PrefabName": "detectableobject",
+            "m_Translate": "-6.667969 8.959999 -3.155212"
+          },
+          "Fields": {
+            "m_DetectableAreaObject": "",
+            "m_ObjectName": "Template_Detectable_Name",
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "Locations::Logic::DetectableLocationLogic",
+            "DestinationField": "m_LogicPreset",
+            "Fields": {
+              "m_AreaMode": "None",
+              "m_LocCategory": "Neutral",
+              "m_LocType": "Default",
+              "m_MapDescription": ""
+            }
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_AlwaysSpawned": "1",
+            "m_EntityComponentsExtents": "-0.000000 1.519573 0.230906 0.069079 1.519573 0.270789",
+            "m_MoveToDynamicRoot": "1",
+            "m_Name": "location",
+            "m_PcId": "4",
+            "m_PrefabName": "location",
+            "m_Translate": "-1.191895 8.959999 -0.597290"
+          },
+          "Fields": {
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "Locations::Logic::EntitySelfActiveLogic",
+            "DestinationField": "m_LogicPreset",
+            "Fields": {
+              "m_AreaMode": "None",
+              "m_LocCategory": "Neutral",
+              "m_LocType": "Default",
+              "m_MapDescription": ""
+            }
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_EntityComponentsExtents": "0.000000 1.269573 0.000848 0.500000 1.769573 0.500848",
+            "m_Name": "grouping_location",
+            "m_PcId": "5",
+            "m_PrefabName": "grouping_location",
+            "m_Translate": "-1.150146 8.959999 -1.045288"
+          },
+          "EmbeddedObject": {
+            "Class": "Locations::Logic::GroupingLogic",
+            "DestinationField": "m_LogicPreset",
+            "Fields": {
+              "m_AreaMode": "Point",
+              "m_LocCategory": "Neutral",
+              "m_LocType": "Default",
+              "m_MapDescription": "",
+              "m_Radius": "20.000000"
+            }
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "1"
+    }
+  }
+}

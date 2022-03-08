@@ -1,0 +1,146 @@
+{
+  "__filename__": {
+    "Version": 2,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "sanctuary"],
+            "m_PcId": [6, 2],
+            "m_PrefabName": [12, "sanctuary"],
+            "m_Rotate": [14, [0.0, 0.0000016, -0.0]],
+            "m_Translate": [14, [-13.5303955, 14.1551132, -6.60083]]
+          },
+          "Fields": {
+            "m_AreaHeight": "10.000000",
+            "m_AreaPoints": "52.023071 -0.500000 2.037964;46.573730 -0.500000 11.054565;60.084961 -0.500122 21.235962;53.177002 -0.500053 33.498901;47.747314 -0.500011 31.202271;36.232910 -0.500084 34.158081;28.997803 -0.500000 31.202393;21.433105 -0.500011 31.246948;18.700073 -0.500008 27.689697;20.486816 -0.500134 24.769287;-1.629761 -0.500088 12.750854;-7.852539 -0.500088 10.154541;-11.948364 -0.500000 3.970947;9.639282 -0.499683 -24.810791;20.421753 -0.500141 -18.689087;41.142334 -0.500095 -4.956299;",
+            "m_IsSpawnBlocker": "1",
+            "MapZoneName": "Template_Sanctuary_Name",
+            "cbs::IEnable::m_State": "0",
+            "m_AreaEntity": "/~3",
+            "m_DisableClimbing": "0",
+            "m_DisableJumping": "0",
+            "m_HideWeapon": "0",
+            "m_MaxPlayerSpeed": "4.000000",
+            "m_ReduceAutostep": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0977096, 2.500004, 0.3960266, 0.4265518, 2.500004, 0.6800231]],
+            "m_Name": [12, "sanctuary_area"],
+            "m_PcId": [6, 3],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Scale": [14, [9.7513771, 0.8060183, 6.0521669]],
+            "m_Translate": [14, [-9.9291381, 2.6269264, -8.0708007]]
+          },
+          "Fields": {
+            "m_AreaHeight": "5.000000",
+            "m_AreaPoints": "0.328842 0.000000 -0.283997;0.328835 0.000008 1.076050;-0.524261 0.000000 1.076019;-0.524261 0.000000 -0.283997;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_EntityComponentsExtents": [69, [-0.118534, 2.5000054, -0.0457534, 1.138874, 2.5000054, 0.8092575]],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "map_zone"],
+            "m_PcId": [6, 4],
+            "m_PrefabName": [12, "map_zone"],
+            "m_Rotate": [14, [0.0, 0.0000027, -0.0]],
+            "m_Scale": [14, [9.999999, 0.9999998, 9.999999]],
+            "m_Translate": [14, [-12.5048828, 2.8666191, -6.7207031]]
+          },
+          "Fields": {
+            "m_AreaHeight": "5.000000",
+            "m_AreaPoints": "1.020340 0.000000 -0.855011;1.020332 0.000008 0.763489;-1.257401 0.000011 0.763504;-1.257408 0.000004 -0.854996;",
+            "m_EnterMusicEventName": "music_location_bazar",
+            "m_MusicZonePriority": "OverrideStoryAndCombat",
+            "m_Name": "&Hughs_WS&",
+            "m_SelfActive": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "detectableobject"],
+            "m_PcId": [6, 5],
+            "m_PrefabName": [12, "detectableobject"],
+            "m_Rotate": [14, [0.0, 0.0000016, -0.0]],
+            "m_Translate": [14, [-13.7315063, 14.8168716, -5.5976562]]
+          },
+          "Fields": {
+            "m_DetectableAreaObject": "/~3",
+            "m_ObjectName": "Template_Detectable_Name",
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_EntityComponentsExtents": [69, [-3.725290298461914e-8, 1.5195732, 0.230906, 0.0690794, 1.5195732, 0.270789]],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "location"],
+            "m_PcId": [6, 7],
+            "m_PrefabName": [12, "location"],
+            "m_Rotate": [14, [0.0, 0.0000016, -0.0]],
+            "m_Translate": [14, [-12.7996215, 13.0682067, -6.6787109]]
+          },
+          "Fields": {
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "Locations::Logic::EntitySelfActiveLogic",
+            "DestinationField": "m_LogicPreset",
+            "Fields": {
+              "m_AreaMode": "None",
+              "m_LocCategory": "Neutral",
+              "m_LocType": "Default",
+              "m_MapDescription": ""
+            }
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 1.2695732, 0.0008475, 0.5, 1.7695732, 0.5008475]],
+            "m_Name": [12, "grouping_location"],
+            "m_PcId": [6, 8],
+            "m_PrefabName": [12, "grouping_location"],
+            "m_Rotate": [14, [0.0, 0.0000016, -0.0]],
+            "m_Translate": [14, [-13.0675048, 13.0481185, -6.6586914]]
+          },
+          "Fields": {
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.000005, 0.0624483, 0.000005, 0.5003357, 0.5627791, 0.5003357]],
+            "m_Name": [12, "AAZL_cabin_safe_zone"],
+            "m_PcId": [6, 9],
+            "m_PrefabName": [12, "audioambientzonelogic"],
+            "m_PresetNames": [12, "Variant;WithState"],
+            "m_Rotate": [14, [179.9999847, 60.0458412, 179.9999847]],
+            "m_Translate": [14, [-13.6490478, 3.2000961, -7.1740722]]
+          },
+          "Fields": {
+            "m_AcousticInsulation": "0",
+            "m_AreaEntities": "/~3;",
+            "m_AudioStateName": "Structure_Type_Cabin"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

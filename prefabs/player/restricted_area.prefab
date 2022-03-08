@@ -1,0 +1,225 @@
+{
+  "__filename__": {
+    "Version": 4,
+    "RuntimeData": {
+      "PrefabInterfaces": [
+        "cbs::IEnable"
+      ],
+      "Interface": {
+        "Properties": [
+          {
+            "Type": "PropertyOut",
+            "RTTIType": "RTTI_TYPE_BOOL",
+            "Name": "cbs::IEnable::m_CanBeBatched",
+            "Value": "0",
+            "Init": "e:EDIT;f:EDIT;"
+          }
+        ],
+        "Pipes": [
+          {
+            "Type": "PipeIn",
+            "Name": "cbs::IEnable::m_Enable"
+          },
+          {
+            "Type": "PipeIn",
+            "Name": "cbs::IEnable::m_Disable"
+          }
+        ],
+        "VirtualFields": [
+          {
+            "Name": "m_AreaPoints",
+            "Init": "f:GRAPH_READ_ONLY;",
+            "DestinationFields": [
+              {
+                "Uuid": "6",
+                "Name": "m_Points"
+              }
+            ]
+          },
+          {
+            "Name": "m_AreaHeight",
+            "Init": "f:EDIT;",
+            "DestinationFields": [
+              {
+                "Uuid": "6",
+                "Name": "m_Height"
+              }
+            ]
+          },
+          {
+            "Name": "m_ForceSlidingMovement",
+            "Init": "f:EDIT;e:EDIT;",
+            "DestinationFields": [
+              {
+                "Uuid": "12",
+                "Name": "m_ForceSlidingMovement"
+              }
+            ]
+          },
+          {
+            "Name": "m_DisableSurvivalSense",
+            "Init": "f:EDIT;e:EDIT;",
+            "DestinationFields": [
+              {
+                "Uuid": "12",
+                "Name": "m_DisableSurvivalSense"
+              }
+            ]
+          },
+          {
+            "Name": "m_TriggerInfectionAttack",
+            "Init": "f:EDIT;e:EDIT;",
+            "DestinationFields": [
+              {
+                "Uuid": "12",
+                "Name": "m_TriggerInfectionAttack"
+              }
+            ]
+          },
+          {
+            "Name": "cbs::IEnable::m_State",
+            "Init": "e:EDIT;f:EDIT|QUEST;l:Enabled;",
+            "DestinationFields": [
+              {
+                "Uuid": "272050",
+                "Name": "m_Enabled"
+              }
+            ]
+          },
+        ]
+      },
+      "Bindings": {
+        "Properties": [
+          {
+            "src_uuid": "6",
+            "src": "this",
+            "dest_uuid": "13",
+            "dest": "m_ActivationArea"
+          }
+        ],
+        "Pipes": [
+          {
+            "src_uuid": "13",
+            "src": "m_PipeOnPlayerEnter",
+            "dest_uuid": "12",
+            "dest": "m_EnableRestrictions"
+          },
+          {
+            "src_uuid": "13",
+            "src": "m_PipeOnPlayerExit",
+            "dest_uuid": "12",
+            "dest": "m_DisableRestrictions"
+          },
+          {
+            "src_uuid": "272050",
+            "src": "m_PipeOnEnabled",
+            "dest_uuid": "13",
+            "dest": "m_PipeActivate"
+          },
+          {
+            "src_uuid": "272050",
+            "src": "m_PipeOnDisabled",
+            "dest_uuid": "13",
+            "dest": "m_PipeDeactivate"
+          }
+        ]
+      },
+      "Components": [
+        {
+          "Class": "CoArea",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 6],
+            "m_XformComponent": [6, 8]
+          }
+        },
+        {
+          "Class": "CoHierarchy",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 8],
+            "m_RootXform": [11, true]
+          }
+        },
+        {
+          "Class": "CoPlayerRestrictions",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 12]
+          }
+        },
+        {
+          "Class": "CoPlayerSensor",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 13]
+          },
+          "Fields": {
+            "m_RequireAlivePlayer": "1",
+            "m_RequireLocalPlayer": "1",
+            "m_SignalExitOnDeactivate": "1"
+          }
+        },
+        {
+          "Class": "CoEnable",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 272050]
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2",
+      "CreatedInEditor": "1",
+      "Nodes": [
+        {
+          "Uuid": "6",
+          "Type": "2",
+          "X": "300.00",
+          "Y": "0.00"
+        },
+        {
+          "Uuid": "8",
+          "Type": "2",
+          "X": "-225.00",
+          "Y": "390.00"
+        },
+        {
+          "Uuid": "12",
+          "Type": "0",
+          "X": "1215.00",
+          "Y": "345.00"
+        },
+        {
+          "Uuid": "13",
+          "Type": "0",
+          "X": "720.00",
+          "Y": "300.00"
+        },
+        {
+          "Uuid": "272050",
+          "Type": "0",
+          "X": "-180.00",
+          "Y": "1125.00"
+        },
+        {
+          "Uuid": "3",
+          "Type": "4",
+          "X": "0.00",
+          "Y": "0.00",
+          "Interface_Type": "0"
+        },
+        {
+          "Uuid": "4",
+          "Type": "4",
+          "X": "15.00",
+          "Y": "165.00",
+          "Interface_Type": "1"
+        },
+        {
+          "Uuid": "5",
+          "Type": "4",
+          "X": "-30.00",
+          "Y": "690.00",
+          "Interface_Type": "2"
+        }
+      ]
+    }
+  }
+}

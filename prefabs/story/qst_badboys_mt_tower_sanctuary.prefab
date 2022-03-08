@@ -1,0 +1,539 @@
+{
+  "__filename__": {
+    "Version": 3,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Sanctuary"],
+            "m_PcId": [6, 1],
+            "m_PrefabName": [12, "sanctuary"],
+            "m_Rotate": [14, [0.0, -90.0, 0.0]],
+            "m_Translate": [14, [1.4150998, 0.1735914, -0.2663573]]
+          },
+          "Fields": {
+            "MapZoneName": "",
+            "MapZoneXpAction": "MapZone",
+            "cbs::IEnable::m_CanBeBatched": "0",
+            "cbs::IEnable::m_State": "1",
+            "m_AreaEntity": "/~2",
+            "m_DialogTurnsOffFlashlight": "0",
+            "m_DisableClimbing": "0",
+            "m_DisableJumping": "0",
+            "m_DiscoverSoundName": "hud_location_discovered",
+            "m_DisplayEnterExitHudMessage": "1",
+            "m_DisplayUnlockHudMessage": "0",
+            "m_EnableEnterNotifying": "1",
+            "m_EnterSoundName": "hud_entering_safe_zone",
+            "m_GameplayModifierFlags": "115259",
+            "m_HideWeapon": "0",
+            "m_MaxPlayerSpeed": "-1.000000",
+            "m_ReduceAutostep": "0",
+            "m_ReduceFOV": "1",
+            "m_TriggerInfectionAttack": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.369507, 1.160408, 1.0657043, 2.6304931, 1.660408, 2.7496643]],
+            "m_Name": [12, "Sanctuary_Area"],
+            "m_PcId": [6, 2],
+            "m_PrefabName": [12, "area"],
+            "m_Rotate": [14, [0.0, -90.0, 0.0]],
+            "m_Translate": [14, [1.0938719, 0.1735914, -0.4072265]]
+          },
+          "Fields": {
+            "Transform": "-0.000000 0.000000 -1.000000 1.093872 0.000000 1.000000 0.000000 0.173591 1.000000 0.000000 -0.000000 -0.407227",
+            "m_AreaHeight": "3.320816",
+            "m_AreaPoints": "2.999756 -0.500000 -1.683960;3.000000 -0.500000 3.815186;-2.260986 -0.500000 3.815369;-2.260986 -0.500000 -1.683594;",
+            "m_Infinite": "0",
+            "m_Invert": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_EntityComponentsExtents": [69, [-0.0002574, 1.4512833, 0.2189901, 0.0679944, 1.495648, 0.262777]],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "Sanctuary_RESPAWN"],
+            "m_PcId": [6, 3],
+            "m_PrefabName": [12, "spawnpoint"],
+            "m_Rotate": [14, [179.9999847, 60.0000114, -179.9999847]],
+            "m_Translate": [14, [-0.8198242, 0.1735914, 1.9645996]]
+          },
+          "Fields": {
+            "EditorMeshAlpha": "1.000000",
+            "EditorMeshColor": "0.000000 0.000000 0.500000",
+            "EditorMeshName": "spawner.msh",
+            "EditorSkinName": "",
+            "cbs::IEnable::m_CanBeBatched": "0",
+            "cbs::IEnable::m_State": "0",
+            "m_AllowedConflictSide": "All",
+            "m_AppearState": "1",
+            "m_EnableAlignment": "0",
+            "m_ObjectName": "",
+            "m_QAppearState": "1",
+            "m_RescuePoint": "0",
+            "m_Respawn": "1",
+            "m_SurviorRespawnFaction": "None",
+            "m_TraceRangeDown": "5.000000",
+            "m_TranceRangeUp": "5.000000",
+            "m_ValidInArea": "",
+            "m_VehicleSpawner": ""
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-2.9802322387695315e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "UV_Loc"],
+            "m_PcId": [6, 9],
+            "m_PrefabName": [12, "uv_location"],
+            "m_Rotate": [14, [0.0, -90.0, 0.0]],
+            "m_Translate": [14, [0.0666503, 0.1735914, -0.0102538]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_CanBeBatched": "0",
+            "cbs::IEnable::m_State": "1",
+            "m_LogicPreset": "Locations::Logic::UVLightLogic,();",
+            "m_RegisterOnStart": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "Locations::Logic::UVLightLogic",
+            "DestinationField": "m_LogicPreset",
+            "Fields": {
+              "m_ActivityName": "",
+              "m_AreaMode": "None",
+              "m_LocCategory": "Neutral",
+              "m_LocType": "Default",
+              "m_MapDescription": "",
+              "m_UseElectricityFunctionality": "1"
+            }
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0000457, 0.0, 0.0, 1.000015, 1.0, 1.0]],
+            "m_Name": [12, "uv_corner_spot_1"],
+            "m_PcId": [6, 10],
+            "m_PrefabName": [12, "light"],
+            "m_PresetNames": [12, "Light;Spot;LightVisibility;Exterior"],
+            "m_Rotate": [14, [-86.4868927, -6.0583925, -40.8140487]],
+            "m_Scale": [14, [3.6403868, 2.6109335, 3.0198881]],
+            "m_Translate": [14, [3.1896972, 2.7519111, -3.0361328]]
+          },
+          "Fields": {
+            "Attenuation": "0.800000",
+            "Color": "0.341176 0.223529 1.000000",
+            "Intensity": "1.500000",
+            "Projector": "ph/source/data/textures/light_projectors/soft/soft_square_c_prj.png",
+            "Projector mip range": "0.000000 1.750000",
+            "m_ClippingXformEntity": "/~22",
+            "m_ClippingXformEntity_1": "/~23"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0000456, 0.0, 0.0, 1.0000149, 1.0, 0.9999998]],
+            "m_Name": [12, "uv_corner_spot_3"],
+            "m_PcId": [6, 11],
+            "m_PrefabName": [12, "light"],
+            "m_PresetNames": [12, "Light;Spot;LightVisibility;Exterior"],
+            "m_Rotate": [14, [-95.1946868, -4.6842465, -143.8917541]],
+            "m_Scale": [14, [3.7000656, 2.6109337, 3.0198886]],
+            "m_Translate": [14, [3.0901489, 2.5303153, 3.1174316]]
+          },
+          "Fields": {
+            "Attenuation": "0.800000",
+            "Color": "0.341176 0.223529 1.000000",
+            "Intensity": "1.500000",
+            "Projector": "ph/source/data/textures/light_projectors/soft/soft_square_c_prj.png",
+            "Projector mip range": "0.000000 1.750000",
+            "m_ClippingXformEntity": "/~21",
+            "m_ClippingXformEntity_1": "/~23"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, -0.0000915, 0.0000228, 0.9999999, 1.0000305, 1.0000076]],
+            "m_Name": [12, "uv_corner_spot_4"],
+            "m_PcId": [6, 12],
+            "m_PrefabName": [12, "light"],
+            "m_PresetNames": [12, "Light;Spot;LightVisibility;Exterior"],
+            "m_Rotate": [14, [-82.5977935, 8.3872299, 48.8361053]],
+            "m_Scale": [14, [3.6403868, 2.6109344, 3.0198886]],
+            "m_Translate": [14, [-3.2208862, 2.7526969, -3.0720214]]
+          },
+          "Fields": {
+            "Attenuation": "0.800000",
+            "Color": "0.341176 0.223529 1.000000",
+            "Intensity": "1.500000",
+            "Projector": "ph/source/data/textures/light_projectors/soft/soft_square_c_prj.png",
+            "Projector mip range": "0.000000 1.750000",
+            "m_ClippingXformEntity": "/~22",
+            "m_ClippingXformEntity_1": "/~24"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 1.0000002, 1.0000002, 1.0]],
+            "m_Name": [12, "uv_corner_spot_2"],
+            "m_PcId": [6, 13],
+            "m_PrefabName": [12, "light"],
+            "m_PresetNames": [12, "Light;Spot;LightVisibility;Exterior"],
+            "m_Rotate": [14, [-95.4543609, 4.3788943, 135.529541]],
+            "m_Scale": [14, [3.700066, 2.6109337, 3.0198886]],
+            "m_Translate": [14, [-3.1535034, 2.7493171, 3.0947265]]
+          },
+          "Fields": {
+            "Attenuation": "0.800000",
+            "Color": "0.341176 0.223529 1.000000",
+            "Intensity": "1.500000",
+            "Projector": "ph/source/data/textures/light_projectors/soft/soft_square_c_prj.png",
+            "Projector mip range": "0.000000 1.750000",
+            "m_ClippingXformEntity": "/~24",
+            "m_ClippingXformEntity_1": "/~21"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 1.0000002, 0.9999999, 1.0]],
+            "m_Name": [12, "uv_corner_omni_1"],
+            "m_PcId": [6, 14],
+            "m_PrefabName": [12, "light"],
+            "m_PresetNames": [12, "Light;Omni UV"],
+            "m_Rotate": [14, [0.0000035, -46.5000038, 0.0000052]],
+            "m_Scale": [14, [4.259253, 1.9330552, 1.9815539]],
+            "m_Translate": [14, [3.4466552, 1.0809211, -3.1931152]]
+          },
+          "Fields": {
+            "Attenuation": "1.000000",
+            "Color": "0.325490 0.207843 1.000000",
+            "Intensity": "0.400000",
+            "Projector": "",
+            "Projector mip range": "0.000000 1.750000",
+            "VisibilityRange": "130.000000",
+            "cbs::IEnable::m_State": "1",
+            "m_ClippingXformEntity": "/~22",
+            "m_ClippingXformEntity_1": "/~23"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 1.0000002, 0.9999999, 1.0]],
+            "m_Name": [12, "uv_corner_omni_2"],
+            "m_PcId": [6, 18],
+            "m_PrefabName": [12, "light"],
+            "m_PresetNames": [12, "Light;Omni UV"],
+            "m_Rotate": [14, [0.0000035, -46.5000038, 0.0000052]],
+            "m_Scale": [14, [4.259253, 1.9330552, 1.9815539]],
+            "m_Translate": [14, [-3.1308593, 1.0809211, 3.0485839]]
+          },
+          "Fields": {
+            "Attenuation": "1.000000",
+            "Color": "0.325490 0.207843 1.000000",
+            "Intensity": "0.400000",
+            "Projector": "",
+            "Projector mip range": "0.000000 1.750000",
+            "VisibilityRange": "130.000000",
+            "cbs::IEnable::m_State": "1",
+            "m_ClippingXformEntity": "/~24",
+            "m_ClippingXformEntity_1": "/~21"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 0.9999999, 0.9999999, 1.0]],
+            "m_Name": [12, "uv_corner_omni_3"],
+            "m_PcId": [6, 19],
+            "m_PrefabName": [12, "light"],
+            "m_PresetNames": [12, "Light;Omni UV"],
+            "m_Rotate": [14, [-0.0000031, 41.9999961, 0.0000048]],
+            "m_Scale": [14, [4.259253, 1.9330552, 1.981554]],
+            "m_Translate": [14, [3.241333, 1.0809211, 3.2683105]]
+          },
+          "Fields": {
+            "Attenuation": "1.000000",
+            "Color": "0.325490 0.207843 1.000000",
+            "Intensity": "0.400000",
+            "Projector": "",
+            "Projector mip range": "0.000000 1.750000",
+            "VisibilityRange": "130.000000",
+            "cbs::IEnable::m_State": "1",
+            "m_ClippingXformEntity": "/~21",
+            "m_ClippingXformEntity_1": "/~23"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 0.9999999, 0.9999999, 1.0]],
+            "m_Name": [12, "uv_corner_omni_4"],
+            "m_PcId": [6, 20],
+            "m_PrefabName": [12, "light"],
+            "m_PresetNames": [12, "Light;Omni UV"],
+            "m_Rotate": [14, [-0.0000031, 41.9999961, 0.0000048]],
+            "m_Scale": [14, [4.259253, 1.9330552, 1.981554]],
+            "m_Translate": [14, [-3.2996826, 1.0809211, -2.9938964]]
+          },
+          "Fields": {
+            "Attenuation": "1.000000",
+            "Color": "0.325490 0.207843 1.000000",
+            "Intensity": "0.400000",
+            "Projector": "",
+            "Projector mip range": "0.000000 1.750000",
+            "VisibilityRange": "130.000000",
+            "cbs::IEnable::m_State": "1",
+            "m_ClippingXformEntity": "/~22",
+            "m_ClippingXformEntity_1": "/~24"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 1.0, 0.9999999, 1.0]],
+            "m_Name": [12, "clipbox_2_3"],
+            "m_PcId": [6, 21],
+            "m_PrefabName": [12, "box"],
+            "m_Rotate": [14, [6.0029621, -0.4965677, 0.2092987]],
+            "m_Scale": [14, [5.8438673, 1.457176, 1.6106188]],
+            "m_Translate": [14, [-0.5327758, 1.4082298, 4.3627929]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 0.9999998, 0.9999999, 1.0]],
+            "m_Name": [12, "clipbox_1_4"],
+            "m_PcId": [6, 22],
+            "m_PrefabName": [12, "box"],
+            "m_Rotate": [14, [-3.9992589, 0.5007487, -0.0566854]],
+            "m_Scale": [14, [5.8438673, 1.4571759, 1.6106185]],
+            "m_Translate": [14, [-0.4589843, 1.466854, -4.3527832]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 1.0, 1.0000001, 1.0000002]],
+            "m_Name": [12, "clipbox_1_3"],
+            "m_PcId": [6, 23],
+            "m_PrefabName": [12, "box"],
+            "m_Rotate": [14, [85.2002563, 88.5011901, -85.2095642]],
+            "m_Scale": [14, [5.8438677, 1.4571762, 1.6106184]],
+            "m_Translate": [14, [4.2668457, 1.5937767, 0.0732421]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, -0.0000305, 0.9999999, 0.9999998, 0.9999998]],
+            "m_Name": [12, "clipbox_2_4"],
+            "m_PcId": [6, 24],
+            "m_PrefabName": [12, "box"],
+            "m_Rotate": [14, [-83.672966, 85.4723358, 83.6533203]],
+            "m_Scale": [14, [5.8438673, 1.457176, 1.6106183]],
+            "m_Translate": [14, [-4.3747558, 1.4530677, -0.013916]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0007338, 0.1313297, -0.0181649, 0.1168973, 0.1322301, 0.1006044]],
+            "m_Name": [12, "uv_corner_lamp"],
+            "m_PcId": [6, 25],
+            "m_PrefabName": [12, "lamp"],
+            "m_Rotate": [14, [135.790512, 36.4309883, 26.1247768]],
+            "m_Scale": [14, [0.900901, 0.9009011, 0.9009009]],
+            "m_Translate": [14, [3.0363769, 2.9509544, -3.0915527]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "1",
+            "m_ActiveDaytime": "769",
+            "m_ExternalLights": "/~10;/~14;",
+            "m_MeshName": "frn_industrial_lamp_desk_b.msh",
+            "m_SkinName": "ON_UV"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0007338, 0.1314213, -0.0181649, 0.1168973, 0.1322607, 0.1006045]],
+            "m_Name": [12, "uv_corner_lamp"],
+            "m_PcId": [6, 26],
+            "m_PrefabName": [12, "lamp"],
+            "m_Rotate": [14, [136.6287536, -35.2197418, -32.4723625]],
+            "m_Scale": [14, [0.900901, 0.9009011, 0.900901]],
+            "m_Translate": [14, [-3.1791381, 2.8220787, -3.0585937]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "1",
+            "m_ActiveDaytime": "769",
+            "m_ExternalLights": "/~12;/~20;",
+            "m_MeshName": "frn_industrial_lamp_desk_b.msh",
+            "m_SkinName": "ON_UV"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0007338, 0.1313297, -0.0181649, 0.1168972, 0.1322301, 0.1006045]],
+            "m_Name": [12, "uv_corner_lamp"],
+            "m_PcId": [6, 27],
+            "m_PrefabName": [12, "lamp"],
+            "m_Rotate": [14, [43.3712501, 35.2197532, 147.5276336]],
+            "m_Scale": [14, [0.900901, 0.9009011, 0.9009009]],
+            "m_Translate": [14, [3.0881347, 3.0442161, 3.0593261]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "1",
+            "m_ActiveDaytime": "769",
+            "m_ExternalLights": "/~11;/~19;",
+            "m_MeshName": "frn_industrial_lamp_desk_b.msh",
+            "m_SkinName": "ON_UV"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0009169, 0.1313297, -0.0181649, 0.1169583, 0.1322301, 0.1006045]],
+            "m_Name": [12, "uv_corner_lamp"],
+            "m_PcId": [6, 28],
+            "m_PrefabName": [12, "lamp"],
+            "m_Rotate": [14, [44.2094726, -36.4309616, -153.8752441]],
+            "m_Scale": [14, [0.9009011, 0.9009013, 0.9009009]],
+            "m_Translate": [14, [-3.0507812, 2.9493904, 3.1186523]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "1",
+            "m_ActiveDaytime": "769",
+            "m_ExternalLights": "/~13;/~18;",
+            "m_MeshName": "frn_industrial_lamp_desk_b.msh",
+            "m_SkinName": "ON_UV"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0005002, -0.3195819, 0.0777824, 0.3674989, 0.6875807, 0.0898828]],
+            "m_Name": [12, "uv_hanging_lamp"],
+            "m_PcId": [6, 30],
+            "m_PrefabName": [12, "lamp"],
+            "m_Rotate": [14, [179.9998626, -88.4998855, 179.9998626]],
+            "m_Scale": [14, [0.9009011, 0.9009013, 0.900901]],
+            "m_Translate": [14, [2.8449096, 2.6663627, -2.4384765]]
+          },
+          "Fields": {
+            "UserData": "4286600960 128 4294901760 0",
+            "cbs::IEnable::m_State": "1",
+            "m_ActiveDaytime": "769",
+            "m_ExternalLights": "/~10;/~14;",
+            "m_LampEmissiveMaxValue": "0.430000",
+            "m_MeshName": "frn_uv_lamp_wall_b.msh",
+            "m_SkinName": "Default"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 0.9999999, 1.0000002, 1.0]],
+            "m_Name": [12, "room_uv_omni"],
+            "m_PcId": [6, 32],
+            "m_PrefabName": [12, "light"],
+            "m_PresetNames": [12, "Light;Omni"],
+            "m_Rotate": [14, [0.0000062, -60.0000038, 0.0000071]],
+            "m_Scale": [14, [2.6034698, 2.6390454, 2.1339914]],
+            "m_Translate": [14, [2.5827636, 2.0778617, -2.3430175]]
+          },
+          "Fields": {
+            "Attenuation": "2.000000",
+            "Color": "0.549020 0.325490 1.000000",
+            "Intensity": "0.800000",
+            "cbs::IEnable::m_State": "1",
+            "m_ClippingXformEntity": "/~33",
+            "m_ClippingXformEntity_1": "/~34"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 1.0, 1.0, 1.0]],
+            "m_Name": [12, "room_clipbox"],
+            "m_PcId": [6, 33],
+            "m_PrefabName": [12, "box"],
+            "m_Rotate": [14, [-0.0, 0.0000072, 0.0000035]],
+            "m_Scale": [14, [2.8356232, 0.8446027, 2.9501698]],
+            "m_Translate": [14, [0.0281982, 2.1678657, 0.0129394]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 1.0, 1.0, 1.0]],
+            "m_Name": [12, "room_low_clipbox"],
+            "m_PcId": [6, 34],
+            "m_PrefabName": [12, "box"],
+            "m_Rotate": [14, [-0.0, 0.0000144, 0.0000035]],
+            "m_Scale": [14, [2.8346285, 0.8610026, 2.7595851]],
+            "m_Translate": [14, [0.0231323, 0.5778579, 0.0002441]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 1.0, 1.0000002, 1.0]],
+            "m_Name": [12, "room_uv_omni"],
+            "m_PcId": [6, 36],
+            "m_PrefabName": [12, "light"],
+            "m_PresetNames": [12, "Light;Omni"],
+            "m_Rotate": [14, [0.0000062, -60.0000038, 0.0000071]],
+            "m_Scale": [14, [2.60347, 2.6390454, 2.1339914]],
+            "m_Translate": [14, [2.5946044, 2.0778617, 2.2575683]]
+          },
+          "Fields": {
+            "Attenuation": "2.000000",
+            "Color": "0.549020 0.325490 1.000000",
+            "Intensity": "0.800000",
+            "cbs::IEnable::m_State": "1",
+            "m_ClippingXformEntity": "/~33",
+            "m_ClippingXformEntity_1": "/~34"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0005002, -0.3195818, 0.0777824, 0.3674989, 0.6875807, 0.0898827]],
+            "m_Name": [12, "uv_hanging_lamp"],
+            "m_PcId": [6, 38],
+            "m_PrefabName": [12, "lamp"],
+            "m_Rotate": [14, [179.9998474, -88.4998855, 179.9998474]],
+            "m_Scale": [14, [0.9009011, 0.9009013, 0.900901]],
+            "m_Translate": [14, [2.8540649, 2.6663627, 2.3271484]]
+          },
+          "Fields": {
+            "UserData": "4286600960 128 4294901760 0",
+            "cbs::IEnable::m_State": "1",
+            "m_ActiveDaytime": "769",
+            "m_ExternalLights": "/~10;/~14;",
+            "m_LampEmissiveMaxValue": "0.430000",
+            "m_MeshName": "frn_uv_lamp_wall_b.msh",
+            "m_SkinName": "Default"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

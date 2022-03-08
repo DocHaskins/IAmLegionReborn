@@ -1,0 +1,298 @@
+{
+  "__filename__": {
+    "Version": 4,
+    "RuntimeData": {
+      "PrefabInterfaces": [
+        "cbs::IEnable"
+      ],
+      "Interface": {
+        "Properties": [
+          {
+            "Type": "PropertyOut",
+            "RTTIType": "RTTI_TYPE_BOOL",
+            "Name": "cbs::IEnable::m_CanBeBatched",
+            "Value": "0",
+            "Init": "e:EDIT;f:EDIT;"
+          }
+        ],
+        "Pipes": [
+          {
+            "Type": "PipeIn",
+            "Name": "cbs::IEnable::m_Enable"
+          },
+          {
+            "Type": "PipeIn",
+            "Name": "cbs::IEnable::m_Disable"
+          }
+        ],
+        "VirtualFields": [
+          {
+            "Name": "cbs::IEnable::m_State",
+            "Init": "e:EDIT;f:EDIT|QUEST;l:Enabled;",
+            "DestinationFields": [
+              {
+                "Uuid": "271999",
+                "Name": "m_Enabled"
+              }
+            ]
+          },
+          {
+            "Name": "MapZoneName",
+            "Init": "f:EDIT;e:EDIT;",
+            "DestinationFields": [
+              {
+                "Uuid": "272039",
+                "Name": "m_Name"
+              }
+            ]
+          },
+          {
+            "Name": "MapZoneXpAction",
+            "Init": "f:EDIT;e:EDIT;",
+            "DestinationFields": [
+              {
+                "Uuid": "272039",
+                "Name": "m_XpAction"
+              }
+            ]
+          },
+          {
+            "Name": "m_EnableEnterNotifying",
+            "Init": "e:EDIT;f:EDIT;",
+            "DestinationFields": [
+              {
+                "Uuid": "272039",
+                "Name": "m_EnableEnterNotifying"
+              }
+            ]
+          },
+          {
+            "Name": "m_DiscoverSoundName",
+            "Init": "f:EDIT;e:EDIT|CALLBACK;c:SOUND;",
+            "DestinationFields": [
+              {
+                "Uuid": "272039",
+                "Name": "m_DiscoverSoundName"
+              }
+            ]
+          },
+          {
+            "Name": "m_EnterSoundName",
+            "Init": "f:EDIT;e:EDIT|CALLBACK;c:SOUND;",
+            "DestinationFields": [
+              {
+                "Uuid": "272039",
+                "Name": "m_EnterSoundName"
+              }
+            ]
+          },
+          {
+            "Name": "m_DisplayEnterExitHudMessage",
+            "Init": "f:EDIT;e:CHECKBOX;c:ACTIVATING;d:Should show special SafeZone enter/exit sign;",
+            "DestinationFields": [
+              {
+                "Uuid": "272019",
+                "Name": "m_EnterExitHudMsg"
+              }
+            ]
+          },
+          {
+            "Name": "m_DisplayUnlockHudMessage",
+            "Init": "f:EDIT;e:CHECKBOX;c:ACTIVATING;d:Should show special SafeZone unlocked sign on enabling;",
+            "DestinationFields": [
+              {
+                "Uuid": "272019",
+                "Name": "m_ShouldShowHudMessageOnEnable"
+              }
+            ]
+          },
+          {
+            "Name": "m_AreaEntity",
+            "Init": "e:EDIT|BROWSE_OBJECT;f:EDIT;",
+            "DestinationFields": [
+              {
+                "Uuid": "272039",
+                "Name": "m_AreaEntity"
+              },
+              {
+                "Uuid": "272027",
+                "Name": "m_ActivationAreaEntity"
+              },
+              {
+                "Uuid": "272019",
+                "Name": "m_AreaEntity"
+              },
+              {
+                "Uuid": "272046",
+                "Name": "m_AreaEntity"
+              }
+            ]
+          },
+          {
+            "Name": "m_TriggerInfectionAttack",
+            "Init": "f:EDIT;e:EDIT;",
+            "DestinationFields": [
+              {
+                "Uuid": "272026",
+                "Name": "m_TriggerInfectionAttack"
+              }
+            ]
+          },
+          {
+            "Name": "m_SystemModifierFlags",
+            "Init": "d:System flags which should be definied inside prefab and should not be changed outside;",
+            "DestinationFields": [
+              {
+                "Uuid": "272046",
+                "Name": "m_SystemModifierFlags"
+              }
+            ]
+          }
+        ]
+      },
+      "Bindings": {
+        "Properties": [],
+        "Pipes": [
+          {
+            "src_uuid": "271999",
+            "src": "m_PipeOnEnabled",
+            "dest_uuid": "272027",
+            "dest": "m_PipeActivate"
+          },
+          {
+            "src_uuid": "271999",
+            "src": "m_PipeOnDisabled",
+            "dest_uuid": "272027",
+            "dest": "m_PipeDeactivate"
+          },
+          {
+            "src_uuid": "271999",
+            "src": "m_PipeOnEnabled",
+            "dest_uuid": "272019",
+            "dest": "m_PipeEnable"
+          },
+          {
+            "src_uuid": "271999",
+            "src": "m_PipeOnDisabled",
+            "dest_uuid": "272019",
+            "dest": "m_PipeDisable"
+          },
+          {
+            "src_uuid": "271999",
+            "src": "m_PipeOnEnabled",
+            "dest_uuid": "272046",
+            "dest": "m_PipeActivate"
+          },
+          {
+            "src_uuid": "271999",
+            "src": "m_PipeOnDisabled",
+            "dest_uuid": "272046",
+            "dest": "m_PipeDeactivate"
+          }
+        ]
+      },
+      "Components": [
+        {
+          "Class": "CoEnable",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 271999]
+          },
+          "Fields": {
+            "m_Enabled": "0",
+            "m_ResolveStateAfterInitialize": "1"
+          }
+        },
+        {
+          "Class": "CoSafeZone",
+          "PrefabFieldsNative": {
+            "m_IsOptional": [11, true],
+            "m_PcId": [6, 272019]
+          }
+        },
+        {
+          "Class": "CoPlayerSensor",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 272027]
+          },
+          "Fields": {
+            "m_RequireAlivePlayer": "1",
+            "m_RequireLocalPlayer": "1",
+            "m_SelfActive": "0",
+            "m_SignalExitOnDeactivate": "1"
+          }
+        },
+        {
+          "Class": "CoMapZone",
+          "PrefabFieldsNative": {
+            "m_IsOptional": [11, true],
+            "m_PcId": [6, 272039]
+          }
+        },
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2",
+      "CreatedInEditor": "1",
+      "AllowsNonUniformScaling": "1",
+      "Nodes": [
+        {
+          "Uuid": "271999",
+          "Type": "0",
+          "X": "-690.00",
+          "Y": "660.00"
+        },
+        {
+          "Uuid": "272019",
+          "Type": "0",
+          "X": "810.00",
+          "Y": "945.00"
+        },
+        {
+          "Uuid": "272026",
+          "Type": "0",
+          "X": "315.00",
+          "Y": "1095.00"
+        },
+        {
+          "Uuid": "272027",
+          "Type": "0",
+          "X": "-180.00",
+          "Y": "975.00"
+        },
+        {
+          "Uuid": "272039",
+          "Type": "0",
+          "X": "315.00",
+          "Y": "75.00"
+        },
+        {
+          "Uuid": "272046",
+          "Type": "0",
+          "X": "480.00",
+          "Y": "795.00"
+        },
+        {
+          "Uuid": "1",
+          "Type": "4",
+          "X": "-675.00",
+          "Y": "-270.00",
+          "Interface_Type": "0"
+        },
+        {
+          "Uuid": "2",
+          "Type": "4",
+          "X": "-615.00",
+          "Y": "-285.00",
+          "Interface_Type": "1"
+        },
+        {
+          "Uuid": "3",
+          "Type": "4",
+          "X": "-720.00",
+          "Y": "-105.00",
+          "Interface_Type": "2"
+        }
+      ]
+    }
+  }
+}

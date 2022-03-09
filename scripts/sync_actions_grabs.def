@@ -612,7 +612,7 @@ sub sync_actions_grabs()
                     DisableGravity(1);
 
                     BreakCrouch(0);
-                    BlockBreakWhenDamaged(1);
+                    BlockBreakWhenDamaged(0);
 
                     Transition("BiterGrabLoop")
                     {
@@ -820,7 +820,7 @@ sub sync_actions_grabs()
                     BlendDirection(2, 0, 0.0, 0.75);
 
                     BreakCrouch(0);
-                    BlockBreakWhenDamaged(1);
+                    BlockBreakWhenDamaged(0);
 
                     Transition("BiterGrabLoop")
                     {
@@ -1216,7 +1216,13 @@ sub sync_actions_grabs()
                     MakeNoise(1, "biter_grab");
                     MakeShockwave(0, 4.0, "Melee_ZombieAmortizerShockwave", 0.0, 0.1);
                 }
+
+                Event(ANIM_EVENT, 0, ANIM_EVENT_PUNCH_HIT)
+                {
+                    DealDamage(0, 1, "block_charge@sync_action_damage_presets.scr");
+                }
             }
+
 
             States()
             {
@@ -1368,11 +1374,12 @@ sub sync_actions_grabs()
 
                 State("GrabFallEnd") //on victim's death
                 {
-                    RequiredActors(0);
+                    RequiredActors(0, 1);
 
                     Animation(0, "syncaction_grab_fall_absorb_attacker_01_fall_end");
+					Animation(1, "m_bit_syncaction_grab_fall_absorb_attacker_01_fall_end", 0.0);
 
-                    RemoveActor(1);
+                    //RemoveActor(1);
                     ActionCenter(0);
 
                     EndTransition()
@@ -1487,6 +1494,7 @@ sub sync_actions_grabs()
                 ExtendState("GrabFallEnd") //on victim's death
                 {
                     Animation(0, "m_fpp_syncaction_grab_fall_back_absorb_attacker_01_fall_end");
+					Animation(1, "m_bit_syncaction_grab_fall_back_absorb_victim_01_fall_end", 0.0);
                 }
 
             }

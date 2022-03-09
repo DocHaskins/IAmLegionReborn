@@ -57,6 +57,7 @@ sub main()
 		AddField("m_CalculatePointsFromCollidable", "1");
 		AddField("m_InnerZone", "0.15");
 		AddField("m_OuterZone", "2.0");
+		AddField("m_EntityOriginOffset", "0.0 0.0 0.0");
 		
 		Preset("Vase A")
 		{
@@ -92,6 +93,7 @@ sub main()
 			SetField("m_MinSpeedThreshold", "2.0");
 			SetField("m_GpuFxSequenceName", "rope_destruction_01a.gpufx");
 			SetField("SoundEventName", "chain_break");
+			SetField("m_EntityOriginOffset", "0.0 -0.25 0.0");
 			
 			use AutoAim_On();
 		}

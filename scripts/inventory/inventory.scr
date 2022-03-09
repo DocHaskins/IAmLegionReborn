@@ -658,6 +658,7 @@ sub main()
          UIStat("&StatsUI_InfectionTime&", 3, "Seconds");
          }
         InventoryMesh("wpn_throwing_knife_poisoned_a_fpp.msh");
+        FlyBySound("flyby_knife");
         GameVersion(1);
         UID("6844894719300691071");
     }
@@ -715,6 +716,7 @@ sub main()
          UIStat("&StatsUI_InfectionTime&", 3, "Seconds");
          }
         InventoryMesh("wpn_throwing_knife_poisoned_a_fpp.msh");
+        FlyBySound("flyby_knife");
         GameVersion(1);
         UID("6844902925977603568");
     }
@@ -772,6 +774,7 @@ sub main()
          UIStat("&StatsUI_InfectionTime&", 3, "Seconds");
          }
         InventoryMesh("wpn_throwing_knife_poisoned_a_fpp.msh");
+        FlyBySound("flyby_knife");
         GameVersion(1);
         UID("6844902926017635034");
     }
@@ -829,6 +832,7 @@ sub main()
          UIStat("&StatsUI_InfectionTime&", 3, "Seconds");
          }
         InventoryMesh("wpn_throwing_knife_poisoned_a_fpp.msh");
+        FlyBySound("flyby_knife");
         GameVersion(1);
         UID("6844902926031519726");
     }
@@ -886,6 +890,7 @@ sub main()
          UIStat("&StatsUI_InfectionTime&", 3, "Seconds");
          }
         InventoryMesh("wpn_throwing_knife_poisoned_a_fpp.msh");
+        FlyBySound("flyby_knife");
         GameVersion(1);
         UID("6844902926260730759");
     }
@@ -943,6 +948,7 @@ sub main()
          UIStat("&StatsUI_InfectionTime&", 3, "Seconds");
          }
         InventoryMesh("wpn_throwing_knife_poisoned_a_fpp.msh");
+        FlyBySound("flyby_knife");
         GameVersion(1);
         UID("6844902926927021790");
     }
@@ -1000,6 +1006,7 @@ sub main()
          UIStat("&StatsUI_InfectionTime&", 3, "Seconds");
          }
         InventoryMesh("wpn_throwing_knife_poisoned_a_fpp.msh");
+        FlyBySound("flyby_knife");
         GameVersion(1);
         UID("6844902927085226897");
     }
@@ -1057,6 +1064,7 @@ sub main()
          UIStat("&StatsUI_InfectionTime&", 3, "Seconds");
          }
         InventoryMesh("wpn_throwing_knife_poisoned_a_fpp.msh");
+        FlyBySound("flyby_knife");
         GameVersion(1);
         UID("6844902927200845327");
     }
@@ -1114,6 +1122,7 @@ sub main()
          UIStat("&StatsUI_InfectionTime&", 3, "Seconds");
          }
         InventoryMesh("wpn_throwing_knife_poisoned_a_fpp.msh");
+        FlyBySound("flyby_knife");
         GameVersion(1);
         UID("6844902927725374356");
     }
@@ -2703,6 +2712,7 @@ sub main()
         NoiseType("None");
         NoiseDataUid("bait");
         ThrowPrepareFx("decoy_meatbait_prepare.gpufx");
+        CanIgniteFlammableObjects(false);
         GameVersion(1);
         UID("6998020631779442822");
     }
@@ -3015,7 +3025,7 @@ sub main()
         use PickupSounds_Explosives();
         EquipmentSlot();
         Color(Color_Orange);
-        SpawnPrefabPresetName("Mesh Type;Inventory Mine;Type;Explosive;Sensor Type;AI;Upgrade;LVL7");
+        SpawnPrefabPresetName("Mesh Type;Inventory Mine;Type;Explosive;Sensor Type;AI;Upgrade;LVL8");
         ExplodeDelay(2.0);
         SpawnPrefabName("mine_explosive.prefab");
         ItemLevel(9, 9);
@@ -3051,7 +3061,7 @@ sub main()
         use PickupSounds_Explosives();
         EquipmentSlot();
         Color(Color_Violet);
-        SpawnPrefabPresetName("ExplodeOnDamageTaken;TurnedOff;Upgrade;Base");
+        SpawnPrefabPresetName("ExplodeOnDamageTaken;TurnedOn;Upgrade;Base");
         ExplodeDelay(2.0);
         SpawnPrefabName("remote_explosive.prefab");
         ItemLevel(1, 9);
@@ -3089,7 +3099,7 @@ sub main()
         use PickupSounds_Explosives();
         EquipmentSlot();
         Color(Color_Violet);
-        SpawnPrefabPresetName("ExplodeOnDamageTaken;TurnedOff;Upgrade;LVL1");
+        SpawnPrefabPresetName("ExplodeOnDamageTaken;TurnedOn;Upgrade;LVL1");
         ExplodeDelay(2.0);
         SpawnPrefabName("remote_explosive.prefab");
         ItemLevel(2, 9);
@@ -3127,7 +3137,7 @@ sub main()
         use PickupSounds_Explosives();
         EquipmentSlot();
         Color(Color_Violet);
-        SpawnPrefabPresetName("ExplodeOnDamageTaken;TurnedOff;Upgrade;LVL2");
+        SpawnPrefabPresetName("ExplodeOnDamageTaken;TurnedOn;Upgrade;LVL2");
         ExplodeDelay(2.0);
         SpawnPrefabName("remote_explosive.prefab");
         ItemLevel(3, 9);
@@ -3165,7 +3175,7 @@ sub main()
         use PickupSounds_Explosives();
         EquipmentSlot();
         Color(Color_Violet);
-        SpawnPrefabPresetName("ExplodeOnDamageTaken;TurnedOff;Upgrade;LVL3");
+        SpawnPrefabPresetName("ExplodeOnDamageTaken;TurnedOn;Upgrade;LVL3");
         ExplodeDelay(2.0);
         SpawnPrefabName("remote_explosive.prefab");
         ItemLevel(4, 9);
@@ -3203,7 +3213,7 @@ sub main()
         use PickupSounds_Explosives();
         EquipmentSlot();
         Color(Color_Orange);
-        SpawnPrefabPresetName("ExplodeOnDamageTaken;TurnedOff;Upgrade;LVL4");
+        SpawnPrefabPresetName("ExplodeOnDamageTaken;TurnedOn;Upgrade;LVL4");
         ExplodeDelay(2.0);
         SpawnPrefabName("remote_explosive.prefab");
         ItemLevel(5, 9);
@@ -3241,7 +3251,7 @@ sub main()
         use PickupSounds_Explosives();
         EquipmentSlot();
         Color(Color_Orange);
-        SpawnPrefabPresetName("ExplodeOnDamageTaken;TurnedOff;Upgrade;LVL5");
+        SpawnPrefabPresetName("ExplodeOnDamageTaken;TurnedOn;Upgrade;LVL5");
         ExplodeDelay(2.0);
         SpawnPrefabName("remote_explosive.prefab");
         ItemLevel(6, 9);
@@ -3279,7 +3289,7 @@ sub main()
         use PickupSounds_Explosives();
         EquipmentSlot();
         Color(Color_Orange);
-        SpawnPrefabPresetName("ExplodeOnDamageTaken;TurnedOff;Upgrade;LVL6");
+        SpawnPrefabPresetName("ExplodeOnDamageTaken;TurnedOn;Upgrade;LVL6");
         ExplodeDelay(2.0);
         SpawnPrefabName("remote_explosive.prefab");
         ItemLevel(7, 9);
@@ -3318,7 +3328,7 @@ sub main()
         use PickupSounds_Explosives();
         EquipmentSlot();
         Color(Color_Orange);
-        SpawnPrefabPresetName("ExplodeOnDamageTaken;TurnedOff;Upgrade;LVL7");
+        SpawnPrefabPresetName("ExplodeOnDamageTaken;TurnedOn;Upgrade;LVL7");
         ExplodeDelay(2.0);
         SpawnPrefabName("remote_explosive.prefab");
         ItemLevel(8, 9);
@@ -3357,7 +3367,7 @@ sub main()
         use PickupSounds_Explosives();
         EquipmentSlot();
         Color(Color_Orange);
-        SpawnPrefabPresetName("ExplodeOnDamageTaken;TurnedOff;Upgrade;LVL7");
+        SpawnPrefabPresetName("ExplodeOnDamageTaken;TurnedOn;Upgrade;LVL8");
         ExplodeDelay(2.0);
         SpawnPrefabName("remote_explosive.prefab");
         ItemLevel(9, 9);
@@ -17209,7 +17219,7 @@ sub main()
         Description("&ReinforceMod_Upgrade1_d&");
         ItemLevel(2, 8);
          UIStats(){
-         UIStat("&StatsUI_DurabilityDecrease&", -20, "Percent");
+         UIStat("&StatsUI_DurabilityDecrease&", -15, "Percent");
          }
         GameVersion(1);
         UID("6805107434955245206");
@@ -17242,7 +17252,7 @@ sub main()
         Description("&ReinforceMod_Upgrade2_d&");
         ItemLevel(3, 8);
          UIStats(){
-         UIStat("&StatsUI_DurabilityDecrease&", -30, "Percent");
+         UIStat("&StatsUI_DurabilityDecrease&", -20, "Percent");
          }
         GameVersion(1);
         UID("6805107435286252935");
@@ -17275,7 +17285,7 @@ sub main()
         Description("&ReinforceMod_Upgrade3_d&");
         ItemLevel(4, 8);
          UIStats(){
-         UIStat("&StatsUI_DurabilityDecrease&", -40, "Percent");
+         UIStat("&StatsUI_DurabilityDecrease&", -25, "Percent");
          }
         GameVersion(1);
         UID("6805107435331956534");
@@ -17308,7 +17318,7 @@ sub main()
         Description("&ReinforceMod_Upgrade4_d&");
         ItemLevel(5, 8);
          UIStats(){
-         UIStat("&StatsUI_DurabilityDecrease&", -50, "Percent");
+         UIStat("&StatsUI_DurabilityDecrease&", -30, "Percent");
          }
         GameVersion(1);
         UID("6805107435657102399");
@@ -17341,7 +17351,7 @@ sub main()
         Description("&ReinforceMod_Upgrade5_d&");
         ItemLevel(6, 8);
          UIStats(){
-         UIStat("&StatsUI_DurabilityDecrease&", -60, "Percent");
+         UIStat("&StatsUI_DurabilityDecrease&", -35, "Percent");
          }
         GameVersion(1);
         UID("6805107436107382354");
@@ -17374,7 +17384,7 @@ sub main()
         Description("&ReinforceMod_Upgrade6_d&");
         ItemLevel(7, 8);
          UIStats(){
-         UIStat("&StatsUI_DurabilityDecrease&", -75, "Percent");
+         UIStat("&StatsUI_DurabilityDecrease&", -40, "Percent");
          }
         GameVersion(1);
         UID("6805938048346705479");
@@ -17407,7 +17417,7 @@ sub main()
         Description("&ReinforceMod_Upgrade7_d&");
         ItemLevel(8, 8);
          UIStats(){
-         UIStat("&StatsUI_DurabilityDecrease&", -100, "Percent");
+         UIStat("&StatsUI_DurabilityDecrease&", -50, "Percent");
          }
         GameVersion(1);
         UID("6805938048352021543");
@@ -17454,7 +17464,7 @@ sub main()
         HudIcon("craft_scraps");
         Mesh("loot_scraps.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Scrap();
         Color(Color_White);
@@ -17471,7 +17481,7 @@ sub main()
         HudIcon("craft_wiring");
         Mesh("loot_wiring.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Electrical_Parts();
         Color(Color_White);
@@ -17488,7 +17498,7 @@ sub main()
         HudIcon("craft_container");
         Mesh("loot_container.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Tin_Can_Empty();
         Color(Color_White);
@@ -17505,7 +17515,7 @@ sub main()
         HudIcon("craft_resin");
         Mesh("loot_resin.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Bottle_Glass_With_Liquid();
         Color(Color_White);
@@ -17522,7 +17532,7 @@ sub main()
         HudIcon("craft_rags");
         Mesh("loot_rags.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Rugs();
         Color(Color_White);
@@ -17539,7 +17549,7 @@ sub main()
         HudIcon("craft_weights");
         Mesh("loot_weights.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Heavy_Metal_Parts();
         Color(Color_Green);
@@ -17556,7 +17566,7 @@ sub main()
         HudIcon("craft_blades");
         Mesh("loot_blades.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Scrap();
         Color(Color_Green);
@@ -17573,7 +17583,7 @@ sub main()
         HudIcon("craft_electricalparts");
         Mesh("loot_electrical_parts.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Electrical_Parts();
         Color(Color_Green);
@@ -17590,7 +17600,7 @@ sub main()
         HudIcon("craft_pigments");
         Mesh("loot_pigments.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Tin_Can_Empty();
         Color(Color_Green);
@@ -17607,7 +17617,7 @@ sub main()
         HudIcon("craft_feathers");
         Mesh("loot_feathers.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Rugs();
         Color(Color_Green);
@@ -17624,7 +17634,7 @@ sub main()
         HudIcon("craft_alcohol");
         Mesh("loot_alcohol.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Bottle_Glass_With_Liquid();
         Color(Color_Green);
@@ -17641,7 +17651,7 @@ sub main()
         HudIcon("craft_leather");
         Mesh("loot_leather.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Rugs();
         Color(Color_Green);
@@ -17658,7 +17668,7 @@ sub main()
         HudIcon("craft_oxidizers");
         Mesh("loot_oxidizer.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Bottle_Plastic_With_Liquid();
         Color(Color_Blue);
@@ -17675,7 +17685,7 @@ sub main()
         HudIcon("craft_cleaningsupplies");
         Mesh("loot_ok_bleach_a.msh");
         Skin("loot");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Bottle_Plastic_With_Liquid();
         Color(Color_Blue);
@@ -17692,7 +17702,7 @@ sub main()
         HudIcon("craft_battery");
         Mesh("loot_new_battery_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Violet);
@@ -17709,7 +17719,7 @@ sub main()
         HudIcon("craft_lavender");
         Mesh("loot_lavender_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Herbs();
         Color(Color_White);
@@ -17726,7 +17736,7 @@ sub main()
         HudIcon("craft_chamomile");
         Mesh("loot_chamomile_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Herbs();
         Color(Color_White);
@@ -17743,7 +17753,7 @@ sub main()
         HudIcon("craft_honey");
         Mesh("loot_honey.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Bottle_Glass_With_Liquid();
         Color(Color_Green);
@@ -17760,9 +17770,9 @@ sub main()
         HudIcon("craft_cordyceps");
         Mesh("loot_cordyceps_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
-        use PickupSounds_Default();
+        use PickupSounds_Default_Simple();
         Color(Color_Green);
         GenType(GenType_None);
         GameVersion(1);
@@ -17777,7 +17787,7 @@ sub main()
         HudIcon("craft_poppy");
         Mesh("loot_poppy_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Herbs();
         Color(Color_Blue);
@@ -17794,7 +17804,7 @@ sub main()
         HudIcon("Item_Military_Tech");
         Mesh("qi_airdrop_card_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Orange);
@@ -17812,9 +17822,9 @@ sub main()
         HudIcon("Item_Small_Gland");
         Mesh("loot_pouch_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
-        use PickupSounds_Default();
+        use PickupSounds_Default_Simple();
         Color(Color_Green);
         GenType(GenType_None);
         GameVersion(1);
@@ -17829,9 +17839,9 @@ sub main()
         HudIcon("Item_Medium_Gland");
         Mesh("loot_pouch_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
-        use PickupSounds_Default();
+        use PickupSounds_Default_Simple();
         Color(Color_Blue);
         GenType(GenType_None);
         GameVersion(1);
@@ -17846,9 +17856,9 @@ sub main()
         HudIcon("Item_Big_Gland");
         Mesh("loot_pouch_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
-        use PickupSounds_Default();
+        use PickupSounds_Default_Simple();
         Color(Color_Violet);
         GenType(GenType_None);
         GameVersion(1);
@@ -17863,7 +17873,7 @@ sub main()
         HudIcon("valuables_toilet_paper");
         Mesh("loot_bracelet_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Green);
@@ -17880,7 +17890,7 @@ sub main()
         HudIcon("valuables_soap");
         Mesh("loot_soap_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Green);
@@ -17897,7 +17907,7 @@ sub main()
         HudIcon("valuables_aspirin");
         Mesh("loot_aspirin_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Green);
@@ -17914,7 +17924,7 @@ sub main()
         HudIcon("valuables_dried_fruit");
         Mesh("loot_flour_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Food_Supply();
         Color(Color_Green);
@@ -17931,7 +17941,7 @@ sub main()
         HudIcon("valuables_cigarettes");
         Mesh("loot_cigarettes_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Green);
@@ -17948,7 +17958,7 @@ sub main()
         HudIcon("valuables_rice");
         Mesh("loot_rice_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Food_Supply();
         Color(Color_Green);
@@ -17965,9 +17975,9 @@ sub main()
         HudIcon("Valuable_beeswax");
         Mesh("loot_beeswax_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
-        use PickupSounds_Food_Supply();
+        use PickupSounds_Default_Simple();
         Color(Color_Blue);
         GenType(GenType_None);
         GameVersion(1);
@@ -17982,7 +17992,7 @@ sub main()
         HudIcon("valuables_jewelry");
         Mesh("loot_jewlery_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Blue);
@@ -17999,7 +18009,7 @@ sub main()
         HudIcon("valuables_antidepressant");
         Mesh("loot_antibiotic_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Blue);
@@ -18016,7 +18026,7 @@ sub main()
         HudIcon("valuables_wristwatch");
         Mesh("loot_wirstwatch_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Blue);
@@ -18033,7 +18043,7 @@ sub main()
         HudIcon("valuables_vodka");
         Mesh("loot_vodka_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Bottle_Glass_With_Liquid();
         Color(Color_Blue);
@@ -18050,7 +18060,7 @@ sub main()
         HudIcon("valuables_tools");
         Mesh("loot_tools_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Toolbox();
         Color(Color_Blue);
@@ -18067,7 +18077,7 @@ sub main()
         HudIcon("valuables_canned_food");
         Mesh("loot_canned_food.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Tin_Can_Empty();
         Color(Color_Blue);
@@ -18084,7 +18094,7 @@ sub main()
         HudIcon("valuables_shoes");
         Mesh("loot_shoes_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Rugs();
         Color(Color_Blue);
@@ -18101,7 +18111,7 @@ sub main()
         HudIcon("valuables_perfume");
         Mesh("loot_perfume_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Bottle_Tiny();
         Color(Color_Violet);
@@ -18118,7 +18128,7 @@ sub main()
         HudIcon("valuables_inhaler");
         Mesh("loot_inhaler_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Violet);
@@ -18135,7 +18145,7 @@ sub main()
         HudIcon("valuables_whiskey");
         Mesh("loot_ok_bottle_d.msh");
         Skin("loot");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Bottle_Glass_With_Liquid();
         Color(Color_Violet);
@@ -18152,7 +18162,7 @@ sub main()
         HudIcon("valuables_manual");
         Mesh("loot_manual_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Book();
         Color(Color_Violet);
@@ -18169,7 +18179,7 @@ sub main()
         HudIcon("valuables_MRE_rations");
         Mesh("loot_mre_a.msh");
         Skin("loot");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Food_Supply();
         Color(Color_Violet);
@@ -18186,7 +18196,7 @@ sub main()
         HudIcon("valuables_walkie_talkie");
         Mesh("walkie_talkie_a.msh");
         Skin("loot");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Violet);
@@ -18203,7 +18213,7 @@ sub main()
         HudIcon("valuables_morphine");
         Mesh("loot_morphine_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Bottle_Tiny();
         Color(Color_Orange);
@@ -18220,7 +18230,7 @@ sub main()
         HudIcon("valuables_smartphone");
         Mesh("loot_smartphone_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Orange);
@@ -18237,7 +18247,7 @@ sub main()
         HudIcon("valuables_wine");
         Mesh("loot_bottle_b.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Bottle_Glass_With_Liquid();
         Color(Color_Orange);
@@ -18254,7 +18264,7 @@ sub main()
         HudIcon("valuables_crystal_white");
         Mesh("prp_chemical_crystal_loot.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_White);
@@ -18271,7 +18281,7 @@ sub main()
         HudIcon("valuables_crystal_green");
         Mesh("prp_chemical_crystal_loot.msh");
         Skin("green");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Green);
@@ -18288,7 +18298,7 @@ sub main()
         HudIcon("valuables_crystal_blue");
         Mesh("prp_chemical_crystal_loot.msh");
         Skin("blue");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Blue);
@@ -18305,7 +18315,7 @@ sub main()
         HudIcon("valuables_crystal_violet");
         Mesh("prp_chemical_crystal_loot.msh");
         Skin("violet");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Violet);
@@ -18322,7 +18332,7 @@ sub main()
         HudIcon("valuables_crystal_orange");
         Mesh("prp_chemical_crystal_loot.msh");
         Skin("orange");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Orange);
@@ -18339,7 +18349,7 @@ sub main()
         HudIcon("valuables_crystal_necklace");
         Mesh("prp_chemical_crystal_necklace.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Violet);
@@ -18356,7 +18366,7 @@ sub main()
         HudIcon("valuables_crystal_statue");
         Mesh("prp_chemical_crystal_statue_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Blue);
@@ -18373,7 +18383,7 @@ sub main()
         HudIcon("valuables_teresa_necklace");
         Mesh("loot_jewlery_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Violet);
@@ -18390,7 +18400,7 @@ sub main()
         HudIcon("valuables_the_perfume");
         Mesh("loot_perfume_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Bottle_Tiny();
         Color(Color_Violet);
@@ -18407,7 +18417,7 @@ sub main()
         HudIcon("valuables_rose");
         Mesh("loot_jewlery_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Violet);
@@ -18424,7 +18434,7 @@ sub main()
         HudIcon("valuables_crystal_ball");
         Mesh("drugs.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Orange);
@@ -18441,7 +18451,7 @@ sub main()
         HudIcon("valuables_survivors_trinket");
         Mesh("loot_jewlery_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Violet);
@@ -18458,7 +18468,7 @@ sub main()
         HudIcon("valuables_pk_trinket");
         Mesh("loot_jewlery_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Violet);
@@ -18475,7 +18485,7 @@ sub main()
         HudIcon("valuables_manual_combat");
         Mesh("loot_manual_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Book();
         Color(Color_Violet);
@@ -18492,7 +18502,7 @@ sub main()
         HudIcon("valuables_manual_parkour");
         Mesh("loot_manual_a.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Book();
         Color(Color_Violet);
@@ -18509,7 +18519,7 @@ sub main()
         HudIcon("valuables_wine_nr_party");
         Mesh("loot_bottle_b.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Bottle_Glass_With_Liquid();
         Color(Color_Orange);
@@ -18526,7 +18536,7 @@ sub main()
         HudIcon("valuables_aerial_insignia");
         Mesh("drugs.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Violet);
@@ -18543,7 +18553,7 @@ sub main()
         HudIcon("valuables_seeds");
         Mesh("drugs.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Violet);
@@ -18560,7 +18570,7 @@ sub main()
         HudIcon("valuables_cookbook");
         Mesh("drugs.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Violet);
@@ -18577,7 +18587,7 @@ sub main()
         HudIcon("valuables_water_fight_soap");
         Mesh("drugs.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Violet);
@@ -18594,7 +18604,7 @@ sub main()
         HudIcon("valuables_fish_bait");
         Mesh("drugs.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Violet);
@@ -18611,7 +18621,7 @@ sub main()
         HudIcon("valuables_cornerstone");
         Mesh("drugs.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Violet);
@@ -18628,7 +18638,7 @@ sub main()
         HudIcon("valuables_chipper");
         Mesh("drugs.msh");
         Skin("default");
-        MaxStackCount(999);
+        MaxStackCount(9999);
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
         Color(Color_Violet);
@@ -20533,7 +20543,7 @@ sub main()
         DamageName("Bullet_Arrow");
         MaxStackCount(99);
         SelectorPriority(1);
-		FlyBySound("flyby_arrow");
+        FlyBySound("flyby_arrow");
         GameVersion(1);
         UID("6995547375364013605");
     }
@@ -20561,8 +20571,8 @@ sub main()
         NoiseDataUid("projectile_hit");
         MaxStackCount(99);
         SelectorPriority(2);
+        FlyBySound("flyby_arrow");
         GameVersion(1);
-		FlyBySound("flyby_arrow");
         UID("6995547375582478257");
     }
 
@@ -20589,8 +20599,8 @@ sub main()
         NoiseDataUid("projectile_hit");
         MaxStackCount(99);
         SelectorPriority(3);
+        FlyBySound("flyby_arrow");
         GameVersion(1);
-		FlyBySound("flyby_arrow");
         UID("6998170672985613344");
     }
 
@@ -20617,8 +20627,8 @@ sub main()
         NoiseDataUid("projectile_hit");
         MaxStackCount(99);
         SelectorPriority(4);
+        FlyBySound("flyby_arrow");
         GameVersion(1);
-		FlyBySound("flyby_arrow");
         UID("6998170673193287883");
     }
 
@@ -20644,8 +20654,8 @@ sub main()
         UniqueFxNameBase("mace");
         MaxStackCount(99);
         SelectorPriority(6);
+        FlyBySound("flyby_arrow");
         GameVersion(1);
-		FlyBySound("flyby_arrow");
         UID("6998170674312383272");
     }
 
@@ -20672,8 +20682,8 @@ sub main()
         NoiseDataUid("projectile_hit");
         MaxStackCount(99);
         SelectorPriority(7);
+        FlyBySound("flyby_arrow");
         GameVersion(1);
-		FlyBySound("flyby_arrow");
         UID("7002124225600949006");
     }
 
@@ -20699,8 +20709,8 @@ sub main()
         InfectionEffectDuration(5.0);
         MaxStackCount(99);
         SelectorPriority(8);
+        FlyBySound("flyby_arrow");
         GameVersion(1);
-		FlyBySound("flyby_arrow");
         UID("7002124225784618058");
     }
 
@@ -20722,9 +20732,9 @@ sub main()
         DamageName("Bullet_Bolt");
         MaxStackCount(99);
         SelectorPriority(1);
+        FlyBySound("flyby_quarrel");
         GameVersion(1);
         UID("6995547375888154504");
-		FlyBySound("flyby_quarrel");
     }
 
     Item("Bullet_Bolt_Toxic", CategoryType_Ammo)
@@ -20749,9 +20759,9 @@ sub main()
         NoiseDataUid("projectile_hit");
         MaxStackCount(99);
         SelectorPriority(4);
+        FlyBySound("flyby_quarrel");
         GameVersion(1);
         UID("6998173550428391265");
-		FlyBySound("flyby_quarrel");
     }
 
     Item("Bullet_Bolt_Freeze", CategoryType_Ammo)
@@ -20776,9 +20786,9 @@ sub main()
         NoiseDataUid("projectile_hit");
         MaxStackCount(99);
         SelectorPriority(5);
+        FlyBySound("flyby_quarrel");
         GameVersion(1);
         UID("6998173551027299327");
-		FlyBySound("flyby_quarrel");
     }
 
     Item("Bullet_Bolt_Stunning", CategoryType_Ammo)
@@ -20803,9 +20813,9 @@ sub main()
         StunnedEffectDuration(5.0);
         MaxStackCount(99);
         SelectorPriority(6);
+        FlyBySound("flyby_quarrel");
         GameVersion(1);
         UID("6998173551346819363");
-		FlyBySound("flyby_quarrel");
     }
 
     Item("Bullet_Bolt_Impact", CategoryType_Ammo)
@@ -20832,9 +20842,9 @@ sub main()
         SelectorPriority(7);
         ModPhysicsDamage(3.0);
         ModReactionFlags("Ragdoll");
+        FlyBySound("flyby_quarrel");
         GameVersion(1);
         UID("6998173551606264745");
-		FlyBySound("flyby_quarrel");
     }
 
     Item("Bullet_Bolt_Bleeding", CategoryType_Ammo)
@@ -20859,9 +20869,9 @@ sub main()
         NoiseDataUid("projectile_hit");
         MaxStackCount(99);
         SelectorPriority(8);
+        FlyBySound("flyby_quarrel");
         GameVersion(1);
         UID("7002124225925808120");
-		FlyBySound("flyby_quarrel");
     }
 
     Item("Ammo_Arrow", CategoryType_Ammo)

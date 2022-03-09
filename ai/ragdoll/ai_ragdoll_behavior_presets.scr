@@ -20,58 +20,79 @@ sub Defaults_MeleeWeaponBlunt()
     PhysicsForceMul("1.6");
 }
 
+sub Crouching_MeleeWeaponCut()
+{
+    PhysicsForceMul("0.5");
+    MaxPhysicsForce("1.5");
+}
+
+sub Crouching_MeleeWeaponBlunt()
+{
+    PhysicsForceMul("0.8");
+    MaxPhysicsForce("1.5");
+}
+
 sub main()
 {
 
 
 ///////////////
-//CUT BEHAVIORS
+// CUT BEHAVIORS
 ///////////////
-
-    RagdollBehaviorPreset("cut_melee_weapon_UB_right")
-    {
-        use Defaults_MeleeWeaponCut();
-
-        Behaviors("StickSharp_TorsoHorizontal1_Left");
-        Behaviors("StickSharp_TorsoHorizontal2_Left");
-        Behaviors("StickSharp_TorsoHorizontal3_Left");
-		PhysicsForceMul("0.75");
-    }
 
     RagdollBehaviorPreset("cut_melee_weapon_UB_left")
     {
         use Defaults_MeleeWeaponCut();
 
-        Behaviors("StickSharp_TorsoHorizontal1_Right");
-        Behaviors("StickSharp_TorsoHorizontal2_Right");
-        Behaviors("StickSharp_TorsoHorizontal3_Right");
-		PhysicsForceMul("0.75");
+        //Behaviors("New_StickSharp_TorsoHorizontal1_Right");
+        Behaviors("New_StickSharp_TorsoHorizontal2_Right");
+        Behaviors("New_StickSharp_TorsoHorizontal3_Right");
     }
-    
-    RagdollBehaviorPreset("cut_melee_weapon_legs_right")
+
+    RagdollBehaviorPreset("cut_melee_weapon_UB_right")
     {
         use Defaults_MeleeWeaponCut();
 
-        Behaviors("StickSharp_TorsoHorizontal1_Left");
-        Behaviors("StickSharp_TorsoHorizontal2_Left");
-        Behaviors("StickSharp_TorsoHorizontal3_Left");
-		PhysicsForceMul("2.0");
+        //Behaviors("New_StickSharp_LegsHorizontal1_Left");
+        Behaviors("New_StickSharp_LegsHorizontal2_Left");
+        Behaviors("New_StickSharp_LegsHorizontal3_Left");
     }
 
     RagdollBehaviorPreset("cut_melee_weapon_legs_left")
     {
         use Defaults_MeleeWeaponCut();
 
-        Behaviors("StickSharp_TorsoHorizontal1_Right");
-        Behaviors("StickSharp_TorsoHorizontal2_Right");
-        Behaviors("StickSharp_TorsoHorizontal3_Right");
-		PhysicsForceMul("2.0");
+        Behaviors("New_StickSharp_LegsHorizontal1_Right");
+        Behaviors("New_StickSharp_LegsHorizontal2_Right");
+        Behaviors("New_StickSharp_LegsHorizontal3_Right");
     }
 
+    RagdollBehaviorPreset("cut_melee_weapon_legs_right")
+    {
+        use Defaults_MeleeWeaponCut();
 
+        Behaviors("New_StickSharp_LegsHorizontal1_Left");
+        Behaviors("New_StickSharp_LegsHorizontal2_Left");
+        Behaviors("New_StickSharp_LegsHorizontal3_Left");
+    }
 
+    RagdollBehaviorPreset("crouching_cut_melee_weapon_left")
+    {
+        use Crouching_MeleeWeaponCut();
 
+        Behaviors("New_StickSharp_TorsoHorizontal1_Right");
+        Behaviors("New_StickSharp_TorsoHorizontal2_Right");
+        Behaviors("New_StickSharp_TorsoHorizontal3_Right");
+    }
 
+    RagdollBehaviorPreset("crouching_cut_melee_weapon_right")
+    {
+        use Crouching_MeleeWeaponCut();
+
+        Behaviors("New_StickSharp_TorsoHorizontal1_Left");
+        Behaviors("New_StickSharp_TorsoHorizontal2_Left");
+        Behaviors("New_StickSharp_TorsoHorizontal3_Left");
+    }
 
 ///////////////
 //BLUNT BEHAVIORS
@@ -104,10 +125,37 @@ sub main()
 		PhysicsForceMul("1.2");
     }
     
+    RagdollBehaviorPreset("blunt_melee_weapon_legs_left")
+    {
+        use Defaults_MeleeWeaponBlunt();
 
+        Behaviors("LegsHorizontal1_Right");
+        Behaviors("LegsHorizontal2_Right");
+        Behaviors("LegsHorizontal3_Right");
+    }
 
+    RagdollBehaviorPreset("blunt_melee_weapon_legs_right")
+    {
+        use Defaults_MeleeWeaponBlunt();
 
+        Behaviors("LegsHorizontal1_Left");
+        Behaviors("LegsHorizontal2_Left");
+        Behaviors("LegsHorizontal3_Left");
+    }
 
+    RagdollBehaviorPreset("crouching_blunt_melee_weapon_left")
+    {
+        use Crouching_MeleeWeaponBlunt();
+
+        Behaviors("TorsoVertical1_Right");
+    }
+
+    RagdollBehaviorPreset("crouching_blunt_melee_weapon_right")
+    {
+        use Crouching_MeleeWeaponBlunt();
+
+        Behaviors("TorsoVertical1_Left");
+    }
 
 ///////////////
 //OTHERS
@@ -164,5 +212,8 @@ sub main()
         Behaviors("Just_Ragdoll");
     }
 
-
+    RagdollBehaviorPreset("no_ragdoll_behavior")
+    {
+        Behaviors("Just_Ragdoll");
+    }
 }

@@ -31,7 +31,7 @@ sub SetLocomotionMoveStyleDefaults_Walk()
     // Physics
     
     //Starts
-    GoalDistToUseSlideInsteadOfStart(0.1);
+    GoalDistToUseSlideInsteadOfStart(0.2);
     MaxDistanceToTargetForTurnInPlaceInsteadOfStart(0.5);
     
     // Sudden stops
@@ -41,6 +41,10 @@ sub SetLocomotionMoveStyleDefaults_Walk()
     // Corrections
     // Assumed that a correct turn set is present. Otherwise it should be 180.
     MaxMovementRotCorrectionPerSecond(90.0);
+
+    // Obstacle Watchdog
+    MinDistToAvoidObstacle(0.1);
+    MinTimeToAvoidObstacle(1.0);
     
     // Turns
     MaxTurnDockCorrectionPercentage(0.25);

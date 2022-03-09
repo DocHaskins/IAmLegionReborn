@@ -337,6 +337,52 @@ sub main()
 		GameVersion(1);
     }
 	
+	Item("TEST_Shield", CategoryType_Melee)
+    {
+        Visibility(true);
+        ItemType(ItemType_Knuckles);
+        WeaponBuildType(WeaponBuildType_Metal);
+        Condition(-1);
+        DamageName("BrassKnuckles_Playtest");
+		ArmourDamageName("Player_Armour_Damage");
+        DamageRange(115.0 *0.01);
+        Force(50.0);
+        PhysicsDamage(50.0);
+        DamageToPhysicsObjects(5.0);
+        StaminaUsage(0.1);
+        DamageType(DamageType_Blunt);
+        Flags(3);
+        Price(-1);
+		InventoryMeshHQ("wpn_1hb_knuckle_duster_b_fpp.msh");
+        InventoryMesh("wpn_1hb_knuckle_duster_b_fpp.msh");
+        Mesh("wpn_1hb_knuckle_duster_b_fpp.msh");
+        AnimPrefix("LeftHandShield", "fist");
+        HudIcon("weapon_fist");
+        MinDamageAngle(-60.0);
+        MaxDamageAngle(45.0);
+        MinDamageMult(1.0);
+        MaxHitSeverity(HitSeverity_Heavy);
+        MinHitSeverity(HitSeverity_Heavy);
+        HorizontalAttackDamageMul(1.0);
+        RagdollBehavior(RagdollBehavior_Shotgun);
+		RagdollBehaviorPrefix("NightRunner");
+        TwoHanded(true);
+        AiHitSound("knuckle");
+        SoundInjuryDamageType("unarmed"); 
+        use HitEffects_Fists();
+        use PickupSounds_Default();
+        DamageSize(5.0);
+        StatsType(StatsType_Fists);
+        LootType(LootType_None);
+        FF_Left(0.6);
+        FF_Right(0.6);
+        FF_Duration(0.2);
+        FF_FadeOut(0.0);
+        Color(Color_White);
+		MoveSpeedFactor(1.25);
+		GameVersion(6);
+    }
+	
 	/*
 	Item("Charm_Test", CategoryType_CraftPart)
     {
@@ -2830,7 +2876,7 @@ sub main()
         Visibility(true);
         ItemType(ItemType_Injector);
         PhysicsScript("simple.phx");
-        Price(0);
+        Price(50);
         MaxStackCount(99);
         Mesh("player_loot_plant_mushroom_a.msh");
         Skin("default");
@@ -2847,7 +2893,7 @@ sub main()
         }
         //UseOnPickUp(true);
         Color(Color_Green);
-        use PickupSounds_Default();
+        use PickupSounds_Default_Simple();
 		GameVersion(1);
     }
 

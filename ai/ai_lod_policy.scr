@@ -10,7 +10,11 @@ sub set_common_params()
     Param("MaxDistanceToScanForZombieAgendaAIsToSimulate", "50");
     Param("CountOfAIsInAgendaBelowWhichOrEqualToAgendaWillBeTreatedAsAtomic", "6");
     Param("BossBehaviorTrees", "DEMOLISHER_BT");
-    Param("MaxBossesCountToSimulateWithPriority", "2");
+    Param("BossBehaviorTrees", "WALTZ_FOG_BT");
+    Param("BossBehaviorTrees", "WALTZ_HEAVY_BT");
+    Param("BossBehaviorTrees", "WALTZ_JUMPER_BT");
+    Param("BossBehaviorTrees", "WALTZ_FURY_BT");
+    Param("BossBehaviorTrees", "WALTZ_HEAVY_VERONIKA_BT");    Param("MaxBossesCountToSimulateWithPriority", "2");
     Param("MaxDistanceToScanForBossesToSimulateWithPriorityWithPrecisionTo10meters", "40");
     Param("MaxBTTicksPerFrameForGenericAIs", "2");
 	Param("VisualUpdateIndexModuloDenominator", "6");
@@ -116,6 +120,7 @@ sub set_common_params()
     Param("MinDistanceForNonOwnedAIToUseWeightedDistanceMultiplierForNonVisibleAIInMeters", "5");
     Param("MinDistanceForNonOwnedInvisibleAIToSwitchSimulationOffWhenNoBudgetForLastTaskInMeters", "5");
     Param("MaxLastTaskNonOwnedAIs", "10");
+	Param("MaxReplicatedResolveStateRequestedAIs", "15");
     Param("BlockAnimatorUpdateTillFirstAIActivationDelayInSeconds", "0.3");
 
     Param("EffectsLod0UpTo", "10.0");

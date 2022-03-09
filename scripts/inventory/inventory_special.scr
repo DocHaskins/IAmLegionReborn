@@ -217,6 +217,8 @@ sub main()
         ItemType(ItemType_Binoculars);
         PhysicsScript("simple.phx");
         Condition(-1);
+        InventoryMeshHq("eqp_binoculars_a.msh");
+        InventoryMesh("eqp_binoculars_a.msh");
         Mesh("binoculars.msh");
         HudIcon("weapon_binoculars");
         TwoHanded(false);
@@ -1484,7 +1486,7 @@ sub main()
         MaxStackCount(1);
         InventoryMeshHq("eqp_binoculars_a.msh");
         InventoryMesh("eqp_binoculars_a.msh");
-        Mesh("eqp_binoculars_a.msh");
+        Mesh("binoculars.msh");
         Skin("Default");
         use PickupSounds_Default();
 		GameVersion(1);
@@ -1580,7 +1582,7 @@ sub main()
         Skin("Default");
         PhysicsScript("simple.phx");
         AnimPrefix("Shroom");
-        use PickupSounds_Default();
+        use PickupSounds_Default_Simple();
         UseTime(4.0);
         Color(Color_Green);
         Buff("Potion_Antizine");

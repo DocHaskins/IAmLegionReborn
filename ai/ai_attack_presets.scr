@@ -42,6 +42,7 @@ sub main()
         DamagePreset("banshee_light@ai_damage_presets.scr");
         UseXZOnlyForPosCorrection("false");
         MoveLimit("false");
+        BlockMoveLimitOnNavi("true");
     }
     AttackPreset("banshee_jump_between_biters")
     {
@@ -58,6 +59,7 @@ sub main()
 		PosCorrectionOffset("0 2.0 0");
         DamagePreset("banshee_jump_off_biter@ai_damage_presets.scr");
         MoveLimit("false");
+        BlockMoveLimitOnNavi("true");
     }
     AttackPreset("banshee_jump_off_biter")
     {
@@ -72,6 +74,7 @@ sub main()
         AdditionalRange("0.2");
         DamagePreset("banshee_jump_off_biter@ai_damage_presets.scr");
         MoveLimit("false");
+        BlockMoveLimitOnNavi("true");
     }
 	AttackPreset("banshee_jump_from_ledge")
     {
@@ -86,6 +89,7 @@ sub main()
         VerticalRange("2.0");
         AdditionalRange("1.5");
         DamagePreset("banshee_light@ai_damage_presets.scr");
+        BlockMoveLimitOnNavi("true");
     }
     AttackPreset("banshee_jump_strike")
     {
@@ -99,6 +103,7 @@ sub main()
         ConeAngle("179.9");
         VerticalRange("2.0");
         AdditionalRange("1.5");
+        BlockMoveLimitOnNavi("true");
         
     }
     AttackPreset("banshee_landing_hit")
@@ -285,15 +290,6 @@ sub main()
         DamagePreset("biter_tar_hit@ai_damage_presets.scr");
         DamageCooldown("1.5");
     }
-    AttackPreset("biter_charge_swing")
-    {
-        Type("CHARGE_SWING");
-        Severity("HEAVY");
-        MoveLimit("false");
-		ForceForwardDir("true");
-        DamageReactionFlagInterrupt("true");
-        UseWeapon("true");
-    }
     AttackPreset("biter_charge")
     {
         Type("CHARGE_START");
@@ -302,7 +298,17 @@ sub main()
 		ForceForwardDir("true");
         DamageReactionFlagInterrupt("true");
         UseWeapon("true");
-    }
+    }   
+    AttackPreset("biter_charge_with_grab")
+    {
+        Type("CHARGE_WITH_GRAB");
+        Severity("HEAVY");
+        MoveLimit("false");
+		ForceForwardDir("true");
+        SyncActionGroupName("BiterGrab");
+        DamageReactionFlagInterrupt("true");
+        UseWeapon("true");
+    }  
     AttackPreset("biter_light_attack")
     {
         Type("MELEE_WEAPON");
@@ -1441,6 +1447,7 @@ sub main()
         DamageReactionFlagInterrupt("true");
         CanDamageAllies("true");
         UseWeapon("true");
+		ConeAngle("180");
         ImpactDirCalculation("TOWARDS_TARGET");
         VerticalRange("0.75");
         AdditionalRange("3.0");

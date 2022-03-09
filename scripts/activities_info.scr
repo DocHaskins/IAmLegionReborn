@@ -2637,6 +2637,23 @@ sub main()
 		use Preset_SafeZoneRewards();
     }
 	
+	Activity("ow_small_safezone_r02_20", "SafeZone")
+    {
+        TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");
+        TooltipDescLocked("&Hud_ActivityLocked&");
+		TooltipDesc("&safezone_desc&");
+        Icon("map_safe_zone");
+		Reward("&SafeZone_Desc&");
+		AdditionalInfo("&additionalinfo_safezone&");
+        
+        RewardIcon("Safe_Zone");
+        RewardIcon("UV_Spot");	
+        RewardIcon("ProfType_Traversal");	
+		Difficulty(3);
+        //Stamina(200);
+		use Preset_SafeZoneRewards();
+    }
+	
 	Activity("ow_small_safezone_r03_01", "SafeZone")
     {
         TooltipHeader("&OWA_SafeZone_NightrunnerHideout&");

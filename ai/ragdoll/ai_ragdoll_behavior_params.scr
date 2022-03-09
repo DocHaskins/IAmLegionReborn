@@ -3,8 +3,8 @@ sub RagdollBehaviorParams()
     Param("ImpactDirectionCorrection_MaxDistanceToTarget", "10.0");
     Param("ImpactDirectionCorrection_MaxHeightDifferenceToTarget", "2.0");
     Param("ImpactDirectionCorrection_AngleDeviationScorePenalty", "0.025");
-    Param("ImpactDirectionCorrection_DefaultMinHorizontalAngleDeviation", "-37.5");
-    Param("ImpactDirectionCorrection_DefaultMaxHorizontalAngleDeviation", "37.5");
+    Param("ImpactDirectionCorrection_DefaultMinHorizontalAngleDeviation", "-22.5");
+    Param("ImpactDirectionCorrection_DefaultMaxHorizontalAngleDeviation", "22.5");
     Param("ImpactDirectionCorrection_EnabledForNonPlayerAttackers", "false");
 
     Param("RagdollToAnimation_MinDelayTimeDelta", "0.1");
@@ -12,4 +12,7 @@ sub RagdollBehaviorParams()
     Param("RagdollToAnimation_MaxBodyHorizontalityAngle", "45.0");
     Param("RagdollToAnimation_PoseBlendingTimeDelta", "0.2");
     Param("RagdollToanimation_AnimationBlendingTimeDelta", "0.3");
-}
+    Param("FallingRagdollBehavior_BehaviorName", "High_Fall");
+    Param("FallingRagdollBehavior_StrengthMul", "0.7");
+    Param("FallingRagdollBehavior_BaseDirection", "BodyMoveDirection");
+    Param("FallingRagdollBehavior_UseNegatedBaseDirection", "false");}

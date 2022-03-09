@@ -14,14 +14,26 @@
                     <Selector>
                         <Trigger m_Key="#trigger_hit" m_CustomName="HitReaction" m_Hide="true">
                             <Sequence>
-                                <Opr_EvaluateHitReactionPhase m_Phase="#hit_reaction_phase" m_MinPhase="$hit_phase_min" m_MaxPhase="$hit_phase_max" m_CumulatedDamage="#cumulated_damage" m_AssasinLastAttackId="#assasin_last_attack_id" m_LastAttackTime="#last_attack_time" m_PhasesResetTime="$hit_phase_incremental_reset_time" m_UseRemainingHealthOnly="$enable_hit_phase_use_remaining_health_only" m_UseIncrementalPhases="$enable_hit_phase_incremental"/>
+                                <Opr_EvaluateHitReactionPhaseIncremental m_Phase="#hit_reaction_phase" m_MinPhase="$hit_phase_min" m_MaxPhase="$hit_phase_max" m_ResetTimeDelta="$hit_phase_incremental_reset_time"/>
                                 <Selector>
                                     <Sequence>
                                         <Selector>
                                             <Cnd_DamageReactionFlag m_Flag="Ragdoll"/>
                                             <Cnd_CanInterruptActivityModule_Movement m_Invert="true"/>
                                             <Cnd_ShouldFall/>
-                                        </Selector>
+                                            <Sequence>
+                                                <Cnd_IsLastHitToLegs/>
+                                                <Selector>
+                                                    <Sequence>
+                                                        <Cnd_DamageReactionType m_Type="Blunt"/>
+                                                        <Cnd_Random m_Value="0.3"/>
+                                                    </Sequence>
+                                                    <Sequence>
+                                                        <Cnd_DamageReactionType m_Type="Cut"/>
+                                                        <Cnd_Random m_Value="0.15"/>
+                                                    </Sequence>
+                                                </Selector>
+                                            </Sequence>                                        </Selector>
                                         <Opr_SetBBValue_bool m_Key="#prefer_ragdoll" m_Value="true"/>
                                     </Sequence>
                                     <Opr_SetBBValue_bool m_Key="#prefer_ragdoll" m_Value="false"/>

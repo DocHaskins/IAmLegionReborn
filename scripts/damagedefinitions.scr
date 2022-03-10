@@ -593,6 +593,10 @@ sub main()
 		Fire("90%");
         Physical("66%");
     }
+    DamageResistance("ScreamerResistance")
+    {
+        Ranged("50%");
+    }
 	DamageResistance("Infected_Elite")
     {
         All("50%");
@@ -3821,6 +3825,10 @@ sub main()
     {
         Cut("10");
     }
+	Damage("EasterEggSawBlade")
+    {
+		Cut("69% of MaxHealth");        
+    }
 
     Damage("CombatInteractableBrick")
     {
@@ -4283,10 +4291,12 @@ sub main()
 
     DamageDps("AI_InfectedData_Drowning")
     {
+        Drowning("50% of MaxHealth");
     }
 
     DamageDps("AI_ZombieData_Drowning")
     {
+        Drowning("50% of MaxHealth");
     }
 
     Damage("HumanAI_ImmediateDrowning")
@@ -5173,6 +5183,10 @@ sub main()
     Damage("Player_KillVictim")
     {
         Ram("100% of MaxHealth");
+    }
+	Damage("block_charge")
+    {
+        Ram("25% of MaxHealth");
     }
 	
 	Damage("Player_TakedownDamage_1")    // 100% od Human Health
@@ -7634,12 +7648,12 @@ sub main()
         Physical("?%");
     }
 
-    DamageResistance("Player_AIDamageResistance")
+    DamageMul("Player_AIDamageResistance")
     {
-        Physical("?%");
-        Cut("?%");
-		Blunt("?%");
-        Ranged("?%");
+        Physical("?");
+        Cut("?");
+		Blunt("?");
+        Ranged("?");
     }
 
     DamageMul("Player_AIDamageVulnerability")

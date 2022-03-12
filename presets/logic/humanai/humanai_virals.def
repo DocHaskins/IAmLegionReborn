@@ -1,0 +1,95 @@
+sub ViralsPresets()
+{
+    Preset("Viral") //OPEN WORLD
+    {
+        // Logic
+        SetField("m_ConflictSide", "zombie");
+        SetField("m_NavigationPreset", "viral");
+        SetField("m_ModulesPreset", "modules_viral");
+        SetField("m_MainBehaviorTree", "VIRAL_BT");
+        SetField("m_AnimationPreset", "viral@ai_animation_presets.scr");
+        SetField("m_FallRecoveryBank", "fall_recovery_viral_man");
+        SetField("m_PerceptionPreset", "infected");
+        SetField("m_DamageResistance", "PoisonImmunity");
+        SetField("m_EnemyIndicators", "NoHPGauge");
+        SetField("m_MusicPreset", "Viral");
+        SetField("m_CustomDataPreset", "viral_man");
+        SetField("m_InitBehaviorTree", "viral_init_tree_base");
+        SetField("m_AttackUnarmedDamageMul", "AI_Viral");
+        SetField("m_AttackOtherAIDamageMul", "Viral_Mul_VS_AI");
+        SetField("m_SurvivorSensePreset", "Preset_red");
+        SetField("m_SyncActionPreset", "Viral");
+		SetField("m_DeathHintType", "Viral");
+        SetField("m_BodyDamagePreset", "Viral");
+        // Model
+        SetField("m_AIAnimationVariant", "_m_a;_m_b;_m_c");
+        // Sound
+        SetField("m_AudioEventsScript", "viral_audio_events.scr");
+        SetField("m_ScreamPresetNames", "viral_m_a");
+        SetField("m_StepPreset", "viral");
+    }
+    Preset("Viral_Resting", "Viral") //OPEN WORLD
+    {
+        // Logic override
+        SetField("m_InitBehaviorTree", "viral_init_tree_resting");
+    }
+    Preset("Viral_Chase", "Viral") //OPEN WORLD
+    {
+        SetField("m_AttackOtherAIDamageMul", "Viral_Chase_Mul_VS_AI");
+        SetField("m_PerceptionProfile", "viral_chase");
+    }
+    Preset("Viral_Dying_From_Sun", "Viral") //OPEN WORLD
+    {
+        // Logic override
+        SetField("m_InitBehaviorTree", "viral_init_tree_dying_from_sun");
+    }
+    Preset("Viral_Woman", "Viral") //OPEN WORLD
+    {
+        SetField("m_FallRecoveryBank", "fall_recovery_viral_woman");
+        //Model override
+        SetField("m_AIAnimationVariant", "_w_a");
+        // Sound override
+        SetField("m_AudioEventsScript", "viral_woman_audio_events.scr");
+        SetField("m_ScreamPresetNames", "viral_w_a");
+    }
+	Preset("Viral_Prologue", "Viral") //Prologue specific - no biomarker
+    {
+        // Logic override
+         SetField("m_ForceDisableBiomarker", "1");
+    }
+    ////////////////////////////////// Special / Prototypes ////////////////////////////////////////////
+    Preset("Viral_Screamer", "Viral") // Catacombs quest - Seba
+    {
+        // Logic override
+        SetField("m_ConstFilename", "viral_profile_summoner");
+    }
+    Preset("Survivor_Viral", "Viral") //OPEN WORLD
+    {
+        // Model override
+        SetField("m_AIModelName", "srv_man_08_a.model;srv_man_08_b.model;srv_man_08_c.model;srv_man_08_d.model;srv_man_04_b.model;srv_man_09_a.model;srv_man_10_a.model;srv_man_11_a.model;srv_man_12_a.model");
+    }  
+	Preset("Viral_Nightrunner", "Viral") // X13
+    {
+        // Model override
+        SetField("m_AIModelName", "npc_x13_viral_nightrunner_a.model;npc_x13_viral_nightrunner_b.model;npc_x13_viral_wmn_nightrunner_a.model");
+    }  
+	Preset("Viral_PK", "Viral") // X13
+    {
+        // Model override
+        SetField("m_AIModelName", "npc_x13_viral_pk_a.model;npc_x13_viral_pk_b.model;npc_x13_viral_pk_c.model");
+    }  
+	Preset("Viral_SC", "Viral") // X13
+    {
+        // Model override
+        SetField("m_AIModelName", "npc_x13_viral_sc_a.model;npc_x13_viral_sc_b.model;npc_x13_viral_sc_c.model");
+    }  
+	Preset("Viral_Fog", "Viral") //GRE FOG TEST
+    {
+        // Logic override
+		SetField("m_PerceptionProfile", "viral_fog");
+    }
+    Preset("Viral_Transformation", "Viral_Chase")
+    {
+        SetField("m_IsTransformPreset", "1");
+    }
+}

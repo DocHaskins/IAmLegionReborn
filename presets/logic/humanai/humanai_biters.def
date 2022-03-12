@@ -38,6 +38,17 @@ sub BitersPresets()
         //Replication
         SetField("m_ReplInitDataId", "1");
     }
+	
+	Preset("Biter_Child", "Biter")
+    {
+		// Model
+        SetField("m_AIModelName", "child_boy_01_a_viral.model");
+		SetField("m_AIAnimationVariant", "_m_a;_m_b;_m_c;_m_d");
+		// BodyScale
+        SetField("m_ForcedBodyScaleMin", "0.85");
+        SetField("m_ForcedBodyScaleMax", "1.07");
+    }
+	
     Preset("Biter_Resting", "Biter")
     {
         // Logic override
@@ -253,7 +264,7 @@ sub BitersPresets()
     Preset("Biter_Weapon", "Biter") //AI
     {
         // Loot and weapon override
-        //SetField("m_WeaponSetName", "R0_Default"); // tsmektala: to verify!
+        SetField("m_WeaponSetName", "R0_Default"); // tsmektala: to verify!
     }
     Preset("Biter_Helmet", "Biter")
     {

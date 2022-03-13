@@ -1,7 +1,7 @@
 {
   "version": 6,
   "preset": {
-    "skeletonName": "child_skeleton.msh"
+    "skeletonName": "woman_sc_skeleton.msh"
   },
   "data": {
     "meshAttribute": [
@@ -17,7 +17,7 @@
       },
       {
         "name": "race",
-        "value": "caucasian"
+        "value": "african"
       },
       {
         "name": "sex",
@@ -25,7 +25,7 @@
       },
       {
         "name": "size",
-        "value": "little"
+        "value": "normal"
       },
       {
         "name": "type",
@@ -41,13 +41,13 @@
     {
       "slotUid": 100,
       "name": "HEAD",
-      "filterText": "multihead",
+      "filterText": "head",
       "tagsBits": 0,
-      "shadowMaps": 3,
+      "shadowMaps": 15,
       "meshResources": {
         "resources": [
           {
-            "name": "sh_scan_girl_003.msh",
+            "name": "sh_scan_wmn_013.msh",
             "selected": true,
             "layoutId": 4,
             "userData": [
@@ -60,7 +60,7 @@
             "materialsData": [
               {
                 "number": 1,
-                "name": "sh_scan_girl_003.mat",
+                "name": "sh_scan_wmn_013.mat",
                 "layoutId": 4,
                 "loadFlags": "S"
               },
@@ -100,20 +100,20 @@
                 "number": 1,
                 "resources": [
                   {
-                    "name": "sh_scan_girl_002.mat",
+                    "name": "sh_scan_wmn_013.mat",
                     "selected": true,
                     "layoutId": 4,
                     "loadFlags": "S",
                     "rttiValues": [
                       {
+                        "name": "dif_1_tex",
+                        "type": 7,
+                        "val_str": "chr_black_dif.png"
+                      },
+                      {
                         "name": "msk_1_tex",
                         "type": 7,
                         "val_str": "sh_wmn_hair_system_b_fringe_c_msk.png"
-                      },
-                      {
-                        "name": "dif_1_tex",
-                        "type": 7,
-                        "val_str": "chr_warm_brown_dif.png"
                       }
                     ]
                   }
@@ -123,7 +123,7 @@
                 "number": 2,
                 "resources": [
                   {
-                    "name": "sh_eye_zombie.mat",
+                    "name": "sh_eye_african.mat",
                     "selected": true,
                     "layoutId": 4,
                     "loadFlags": "S",
@@ -187,13 +187,13 @@
     {
       "slotUid": 101,
       "name": "HEAD_PART_1",
-      "filterText": "multihead",
+      "filterText": "head",
       "tagsBits": 0,
-      "shadowMaps": 1,
+      "shadowMaps": 15,
       "meshResources": {
         "resources": [
           {
-            "name": "child_hat_g_fringe_c.msh",
+            "name": "sh_wmn_hair_system_b_base_a.msh",
             "selected": true,
             "layoutId": 4,
             "userData": [
@@ -216,7 +216,7 @@
                 "number": 1,
                 "resources": [
                   {
-                    "name": "npc_hair_a_dark_brown.mat",
+                    "name": "npc_hair_a_dark.mat",
                     "selected": true,
                     "layoutId": 4,
                     "loadFlags": "S",
@@ -231,18 +231,18 @@
     },
     {
       "slotUid": 102,
-      "name": "HEAD_PART_2",
-      "filterText": "multihead",
+      "name": "LEGS_PART_2",
+      "filterText": "legs",
       "tagsBits": 0,
-      "shadowMaps": 3,
+      "shadowMaps": 15,
       "meshResources": {
         "resources": [
           {
-            "name": "child_hat_a.msh",
+            "name": "npc_wmn_pants_b_b.msh",
             "selected": true,
             "layoutId": 4,
             "userData": [
-              4286643986,
+              4286643968,
               128,
               4294901760,
               0
@@ -251,7 +251,7 @@
             "materialsData": [
               {
                 "number": 1,
-                "name": "wmn_srv_hat_a.mat",
+                "name": "npc_wmn_pants_b.mat",
                 "layoutId": 4,
                 "loadFlags": "S"
               }
@@ -261,7 +261,7 @@
                 "number": 1,
                 "resources": [
                   {
-                    "name": "chr_hat_a.mat",
+                    "name": "npc_wmn_pants_b.mat",
                     "selected": true,
                     "layoutId": 4,
                     "loadFlags": "S",
@@ -276,18 +276,18 @@
     },
     {
       "slotUid": 103,
-      "name": "HEAD_PART_3",
-      "filterText": "multihead",
+      "name": "LEGS_PART_3",
+      "filterText": "legs",
       "tagsBits": 0,
-      "shadowMaps": 1,
+      "shadowMaps": 15,
       "meshResources": {
         "resources": [
           {
-            "name": "child_hat_g_base_a.msh",
+            "name": "npc_wmn_pants_b_shoes_a.msh",
             "selected": true,
             "layoutId": 4,
             "userData": [
-              4286643968,
+              4286643978,
               128,
               4294901760,
               0
@@ -296,7 +296,13 @@
             "materialsData": [
               {
                 "number": 1,
-                "name": "npc_hair_a.mat",
+                "name": "npc_wmn_pants_b_shoes_a.mat",
+                "layoutId": 4,
+                "loadFlags": "S"
+              },
+              {
+                "number": 2,
+                "name": "npc_wmn_pants_b.mat",
                 "layoutId": 4,
                 "loadFlags": "S"
               }
@@ -306,7 +312,19 @@
                 "number": 1,
                 "resources": [
                   {
-                    "name": "npc_hair_a_dark_brown.mat",
+                    "name": "npc_wmn_pants_b_shoes_a.mat",
+                    "selected": true,
+                    "layoutId": 4,
+                    "loadFlags": "S",
+                    "rttiValues": []
+                  }
+                ]
+              },
+              {
+                "number": 2,
+                "resources": [
+                  {
+                    "name": "npc_wmn_pants_b.mat",
                     "selected": true,
                     "layoutId": 4,
                     "loadFlags": "S",
@@ -321,36 +339,6 @@
     },
     {
       "slotUid": 104,
-      "name": "HEAD_PART_4",
-      "filterText": "multihead",
-      "tagsBits": 0,
-      "shadowMaps": 0,
-      "meshResources": {
-        "resources": []
-      }
-    },
-    {
-      "slotUid": 200,
-      "name": "HEADCOVER",
-      "filterText": "head",
-      "tagsBits": 0,
-      "shadowMaps": 15,
-      "meshResources": {
-        "resources": []
-      }
-    },
-    {
-      "slotUid": 400,
-      "name": "ARMS",
-      "filterText": "arms",
-      "tagsBits": 0,
-      "shadowMaps": 15,
-      "meshResources": {
-        "resources": []
-      }
-    },
-    {
-      "slotUid": 500,
       "name": "HANDS",
       "filterText": "hands",
       "tagsBits": 0,
@@ -358,7 +346,7 @@
       "meshResources": {
         "resources": [
           {
-            "name": "child_hands_a.msh",
+            "name": "wmn_hands_d.msh",
             "selected": true,
             "layoutId": 4,
             "userData": [
@@ -381,7 +369,7 @@
                 "number": 1,
                 "resources": [
                   {
-                    "name": "wmn_hands_white_a.mat",
+                    "name": "wmn_hands_black_a.mat",
                     "selected": true,
                     "layoutId": 4,
                     "loadFlags": "S",
@@ -395,17 +383,7 @@
       }
     },
     {
-      "slotUid": 501,
-      "name": "HANDS_PART_1",
-      "filterText": "hands",
-      "tagsBits": 0,
-      "shadowMaps": 15,
-      "meshResources": {
-        "resources": []
-      }
-    },
-    {
-      "slotUid": 600,
+      "slotUid": 105,
       "name": "TORSO",
       "filterText": "torso",
       "tagsBits": 0,
@@ -413,11 +391,11 @@
       "meshResources": {
         "resources": [
           {
-            "name": "child_torso_a.msh",
+            "name": "wmn_ren_torso_a.msh",
             "selected": true,
             "layoutId": 4,
             "userData": [
-              4286643981,
+              4286643970,
               128,
               4294901760,
               0
@@ -426,7 +404,13 @@
             "materialsData": [
               {
                 "number": 1,
-                "name": "child_torso_a.mat",
+                "name": "wmn_ren_torso_a.mat",
+                "layoutId": 4,
+                "loadFlags": "S"
+              },
+              {
+                "number": 2,
+                "name": "wmn_hands_white_a.mat",
                 "layoutId": 4,
                 "loadFlags": "S"
               }
@@ -436,7 +420,19 @@
                 "number": 1,
                 "resources": [
                   {
-                    "name": "child_torso_a.mat",
+                    "name": "wmn_ren_torso_a.mat",
+                    "selected": true,
+                    "layoutId": 4,
+                    "loadFlags": "S",
+                    "rttiValues": []
+                  }
+                ]
+              },
+              {
+                "number": 2,
+                "resources": [
+                  {
+                    "name": "wmn_hands_black_a.mat",
                     "selected": true,
                     "layoutId": 4,
                     "loadFlags": "S",
@@ -450,60 +446,123 @@
       }
     },
     {
-      "slotUid": 601,
+      "slotUid": 106,
       "name": "TORSO_PART_1",
+      "filterText": "torso",
+      "tagsBits": 0,
+      "shadowMaps": 3,
+      "meshResources": {
+        "resources": [
+          {
+            "name": "wmn_srv_torso_d_belt_b_part_a.msh",
+            "selected": true,
+            "layoutId": 4,
+            "userData": [
+              4286643975,
+              128,
+              4294901760,
+              0
+            ],
+            "variantType": "standard",
+            "materialsData": [
+              {
+                "number": 1,
+                "name": "chr_rope_a.mat",
+                "layoutId": 4,
+                "loadFlags": "S"
+              },
+              {
+                "number": 2,
+                "name": "chr_addons_a.mat",
+                "layoutId": 4,
+                "loadFlags": "S"
+              }
+            ],
+            "materialsResources": [
+              {
+                "number": 1,
+                "resources": [
+                  {
+                    "name": "chr_rope_a.mat",
+                    "selected": true,
+                    "layoutId": 4,
+                    "loadFlags": "S",
+                    "rttiValues": []
+                  }
+                ]
+              },
+              {
+                "number": 2,
+                "resources": [
+                  {
+                    "name": "chr_addons_a.mat",
+                    "selected": true,
+                    "layoutId": 4,
+                    "loadFlags": "S",
+                    "rttiValues": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slotUid": 107,
+      "name": "TORSO_PART_2",
+      "filterText": "torso",
+      "tagsBits": 0,
+      "shadowMaps": 1,
+      "meshResources": {
+        "resources": [
+          {
+            "name": "wmn_ren_torso_a_necklace_a.msh",
+            "selected": true,
+            "layoutId": 4,
+            "userData": [
+              4286643972,
+              128,
+              4294901760,
+              0
+            ],
+            "variantType": "standard",
+            "materialsData": [
+              {
+                "number": 1,
+                "name": "chr_necklace_a.mat",
+                "layoutId": 4,
+                "loadFlags": "S"
+              }
+            ],
+            "materialsResources": [
+              {
+                "number": 1,
+                "resources": [
+                  {
+                    "name": "chr_necklace_a.mat",
+                    "selected": true,
+                    "layoutId": 4,
+                    "loadFlags": "S",
+                    "rttiValues": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slotUid": 108,
+      "name": "TORSO_PART_3",
       "filterText": "torso",
       "tagsBits": 0,
       "shadowMaps": 15,
       "meshResources": {
         "resources": [
           {
-            "name": "child_scarf_b_torso_a.msh",
-            "selected": true,
-            "layoutId": 4,
-            "userData": [
-              4286643989,
-              128,
-              4294901760,
-              0
-            ],
-            "variantType": "standard",
-            "materialsData": [
-              {
-                "number": 1,
-                "name": "man_srv_scarf_b.mat",
-                "layoutId": 4,
-                "loadFlags": "S"
-              }
-            ],
-            "materialsResources": [
-              {
-                "number": 1,
-                "resources": [
-                  {
-                    "name": "man_srv_scarf_b.mat",
-                    "selected": true,
-                    "layoutId": 4,
-                    "loadFlags": "S",
-                    "rttiValues": []
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "slotUid": 700,
-      "name": "LEGS",
-      "filterText": "legs",
-      "tagsBits": 786432,
-      "shadowMaps": 15,
-      "meshResources": {
-        "resources": [
-          {
-            "name": "child_torso_a_bottom_a.msh",
+            "name": "wmn_ren_torso_a_decal_logo_a.msh",
             "selected": true,
             "layoutId": 4,
             "userData": [
@@ -516,13 +575,7 @@
             "materialsData": [
               {
                 "number": 1,
-                "name": "child_torso_a_bottom_a.mat",
-                "layoutId": 4,
-                "loadFlags": "S"
-              },
-              {
-                "number": 2,
-                "name": "man_bdt_belt_a.mat",
+                "name": "chr_decal_logo_forest.mat",
                 "layoutId": 4,
                 "loadFlags": "S"
               }
@@ -532,19 +585,7 @@
                 "number": 1,
                 "resources": [
                   {
-                    "name": "child_torso_a_bottom_a.mat",
-                    "selected": true,
-                    "layoutId": 4,
-                    "loadFlags": "S",
-                    "rttiValues": []
-                  }
-                ]
-              },
-              {
-                "number": 2,
-                "resources": [
-                  {
-                    "name": "man_bdt_belt_a.mat",
+                    "name": "chr_decal_logo_yourself.mat",
                     "selected": true,
                     "layoutId": 4,
                     "loadFlags": "S",
@@ -558,19 +599,154 @@
       }
     },
     {
-      "slotUid": 701,
+      "slotUid": 109,
+      "name": "HEAD_PART_2",
+      "filterText": "head",
+      "tagsBits": 0,
+      "shadowMaps": 15,
+      "meshResources": {
+        "resources": [
+          {
+            "name": "sh_wmn_hair_system_b_fringe_c.msh",
+            "selected": true,
+            "layoutId": 4,
+            "userData": [
+              4286643968,
+              128,
+              4294901760,
+              0
+            ],
+            "variantType": "standard",
+            "materialsData": [
+              {
+                "number": 1,
+                "name": "npc_hair_a.mat",
+                "layoutId": 4,
+                "loadFlags": "S"
+              }
+            ],
+            "materialsResources": [
+              {
+                "number": 1,
+                "resources": [
+                  {
+                    "name": "npc_hair_a_dark.mat",
+                    "selected": true,
+                    "layoutId": 4,
+                    "loadFlags": "S",
+                    "rttiValues": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slotUid": 110,
       "name": "LEGS_PART_1",
+      "filterText": "legs",
+      "tagsBits": 0,
+      "shadowMaps": 3,
+      "meshResources": {
+        "resources": [
+          {
+            "name": "npc_wmn_pants_b_patch_decal_c.msh",
+            "selected": true,
+            "layoutId": 4,
+            "userData": [
+              4286643968,
+              128,
+              4294901760,
+              0
+            ],
+            "variantType": "standard",
+            "materialsData": [
+              {
+                "number": 1,
+                "name": "wmn_srv_torso_d_decal_a.mat",
+                "layoutId": 4,
+                "loadFlags": "S"
+              }
+            ],
+            "materialsResources": [
+              {
+                "number": 1,
+                "resources": [
+                  {
+                    "name": "wmn_srv_torso_d_decal_a.mat",
+                    "selected": true,
+                    "layoutId": 4,
+                    "loadFlags": "S",
+                    "rttiValues": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slotUid": 112,
+      "name": "HANDS_PART_1",
+      "filterText": "hands",
+      "tagsBits": 0,
+      "shadowMaps": 15,
+      "meshResources": {
+        "resources": [
+          {
+            "name": "wmn_tpp_biomarker_a.msh",
+            "selected": true,
+            "layoutId": 4,
+            "userData": [
+              4286643968,
+              128,
+              4294901760,
+              0
+            ],
+            "variantType": "standard",
+            "materialsData": [
+              {
+                "number": 1,
+                "name": "tpp_biomarker.mat",
+                "layoutId": 4,
+                "loadFlags": "S"
+              }
+            ],
+            "materialsResources": [
+              {
+                "number": 1,
+                "resources": [
+                  {
+                    "name": "tpp_biomarker.mat",
+                    "selected": true,
+                    "layoutId": 4,
+                    "loadFlags": "S",
+                    "rttiValues": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slotUid": 113,
+      "name": "LEGS_PART_5",
       "filterText": "legs",
       "tagsBits": 0,
       "shadowMaps": 15,
       "meshResources": {
         "resources": [
           {
-            "name": "child_socks_a.msh",
+            "name": "npc_wmn_pants_b_patch_decal_b.msh",
             "selected": true,
             "layoutId": 4,
             "userData": [
-              4286643973,
+              4286643979,
               128,
               4294901760,
               0
@@ -579,7 +755,7 @@
             "materialsData": [
               {
                 "number": 1,
-                "name": "child_sleeve_sock.mat",
+                "name": "wmn_srv_torso_d_decal_a.mat",
                 "layoutId": 4,
                 "loadFlags": "S"
               }
@@ -589,7 +765,7 @@
                 "number": 1,
                 "resources": [
                   {
-                    "name": "child_sleeve_sock.mat",
+                    "name": "wmn_srv_torso_d_decal_a.mat",
                     "selected": true,
                     "layoutId": 4,
                     "loadFlags": "S",
@@ -603,19 +779,19 @@
       }
     },
     {
-      "slotUid": 800,
-      "name": "PANTS",
-      "filterText": "pants",
+      "slotUid": 115,
+      "name": "HANDS_PART_2",
+      "filterText": "hands",
       "tagsBits": 0,
       "shadowMaps": 15,
       "meshResources": {
         "resources": [
           {
-            "name": "child_pants_a.msh",
+            "name": "wmn_tpp_biomarker_a.msh",
             "selected": true,
             "layoutId": 4,
             "userData": [
-              4286643984,
+              4286643968,
               128,
               4294901760,
               0
@@ -624,13 +800,7 @@
             "materialsData": [
               {
                 "number": 1,
-                "name": "child_pants_a.mat",
-                "layoutId": 4,
-                "loadFlags": "S"
-              },
-              {
-                "number": 2,
-                "name": "child_shoe_a.mat",
+                "name": "tpp_biomarker.mat",
                 "layoutId": 4,
                 "loadFlags": "S"
               }
@@ -640,64 +810,7 @@
                 "number": 1,
                 "resources": [
                   {
-                    "name": "child_pants_a.mat",
-                    "selected": true,
-                    "layoutId": 4,
-                    "loadFlags": "S",
-                    "rttiValues": []
-                  }
-                ]
-              },
-              {
-                "number": 2,
-                "resources": [
-                  {
-                    "name": "child_shoe_a.mat",
-                    "selected": true,
-                    "layoutId": 4,
-                    "loadFlags": "S",
-                    "rttiValues": []
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "slotUid": 900,
-      "name": "OTHER",
-      "filterText": "",
-      "tagsBits": 0,
-      "shadowMaps": 15,
-      "meshResources": {
-        "resources": [
-          {
-            "name": "child_sleeves_a.msh",
-            "selected": true,
-            "layoutId": 4,
-            "userData": [
-              4286643981,
-              128,
-              4294901760,
-              0
-            ],
-            "variantType": "standard",
-            "materialsData": [
-              {
-                "number": 1,
-                "name": "child_torso_a.mat",
-                "layoutId": 4,
-                "loadFlags": "S"
-              }
-            ],
-            "materialsResources": [
-              {
-                "number": 1,
-                "resources": [
-                  {
-                    "name": "child_torso_a.mat",
+                    "name": "tpp_biomarker.mat",
                     "selected": true,
                     "layoutId": 4,
                     "loadFlags": "S",

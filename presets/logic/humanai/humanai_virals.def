@@ -52,6 +52,15 @@ sub ViralsPresets()
         SetField("m_AudioEventsScript", "viral_woman_audio_events.scr");
         SetField("m_ScreamPresetNames", "viral_w_a");
     }
+	Preset("Viral_Child", "Viral")
+    {
+		// Model
+        SetField("m_AIModelName", "child_boy_01_a_viral.model;child_boy_01_b_viral.model;child_boy_02_a_viral.model;child_boy_03_a_viral.model;child_boy_04_a_viral.model;child_boy_05_a_viral.model;child_boy_05_b_viral.model;child_boy_06_a_viral.model;child_boy_06_b_viral.model;child_girl_01_a_viral.model;child_girl_01_b_viral.model;child_girl_01_c_viral.model;child_girl_02_a_viral.model;child_girl_02_b_viral.model;child_girl_02_c_viral.model;child_girl_02_d_viral.model");
+		SetField("m_AIAnimationVariant", "_m_a;_m_b;_m_c;_m_d");
+		// BodyScale
+        SetField("m_ForcedBodyScaleMin", "0.85");
+        SetField("m_ForcedBodyScaleMax", "1.07");
+    }
 	Preset("Viral_Prologue", "Viral") //Prologue specific - no biomarker
     {
         // Logic override

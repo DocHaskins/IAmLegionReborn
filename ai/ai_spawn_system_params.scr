@@ -57,7 +57,7 @@ sub SpawnSourceParamsElements()
     SpawnSourceParams("Chase")
     {
         Limit("300");
-        AllowSpawnOverLocalLimit("false");
+        AllowSpawnOverLocalLimit("true");
         AllowSpawnOverGlobalLimit("true");
         AllowSpawnOverCustomLimit("true");
         MaxSpawnDelaySec("0.5");
@@ -67,6 +67,8 @@ sub SpawnSourceParamsElements()
     {
         Limit("200");
         AllowSpawnOverLocalLimit("true");
+        AllowSpawnOverGlobalLimit("true");
+        AllowSpawnOverCustomLimit("true");
         MaxSpawnDelaySec("2");
     }
 
@@ -74,6 +76,8 @@ sub SpawnSourceParamsElements()
     {
         Limit("200");
         AllowSpawnOverLocalLimit("true");
+        AllowSpawnOverGlobalLimit("true");
+        AllowSpawnOverCustomLimit("true");
         MaxSpawnDelaySec("1");
     }
 
@@ -81,12 +85,16 @@ sub SpawnSourceParamsElements()
     {
         Limit("220");
         AllowSpawnOverLocalLimit("true");
+        AllowSpawnOverGlobalLimit("true");
+        AllowSpawnOverCustomLimit("true");
         MaxSpawnDelaySec("2");
     }
     SpawnSourceParams("Challenge")
     {
         Limit("50");
         AllowSpawnOverLocalLimit("true");
+        AllowSpawnOverGlobalLimit("true");
+        AllowSpawnOverCustomLimit("true");
         MaxSpawnDelaySec("1");
     }
     SpawnSourceParams("GameplayForced")
@@ -109,9 +117,15 @@ sub CustomPool()
     CustomPool("DarkzoneNight")
     {
         Limit("90"); //79
+		AllowSpawnOverLocalLimit("true");
+        AllowSpawnOverGlobalLimit("true");
+        AllowSpawnOverCustomLimit("true");
     }
     CustomPool("DarkzoneDay")
     {
         Limit("200"); // this may not be decreased to 30 as it breaks the logic currently
+		AllowSpawnOverLocalLimit("true");
+        AllowSpawnOverGlobalLimit("true");
+        AllowSpawnOverCustomLimit("true");
     }
 }

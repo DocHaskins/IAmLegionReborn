@@ -1,0 +1,109 @@
+{
+  "__filename__": {
+    "Version": 4,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Spitter"],
+            "m_PcId": [6, 1],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - daytime;Whole Day;Activation - distance;ClosedInterior"],
+            "m_Rotate": [14, [0.0000946, 79.9999694, -0.0001307]],
+            "m_Scale": [14, [1.0000013, 1.0000013, 1.0000015]],
+            "m_Translate": [14, [-7.6727294, 0.9106006, -11.8460693]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "1",
+            "m_EnforceLogicalConditionBeforeDistance": "0",
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_NumOfAIsToSpawn": "1",
+            "m_Preset": "Character;Spitter",
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkzone",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkzone",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Bitters_01"],
+            "m_PcId": [6, 5],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - daytime;Whole Day;Activation - distance;ClosedInterior"],
+            "m_Rotate": [14, [0.0000379, 70.0000381, -0.000075]],
+            "m_Scale": [14, [1.0000015, 1.0000009, 1.0000015]],
+            "m_Translate": [14, [-7.6677246, 0.9600086, -14.47583]]
+          },
+          "Fields": {
+            "m_EnforceLogicalConditionBeforeDistance": "0",
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_NumOfAIsToSpawn": "2",
+            "m_PointsSource": "4",
+            "m_Preset": "Character;Biter_Male_Bleached",
+            "m_SpawnPoints": "/~6;/~7;"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkzone",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkzone",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "Bitters_01_sp_01"],
+            "m_PcId": [6, 6],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999694, 30.0000038, -179.9999847]],
+            "m_Scale": [14, [1.0000015, 1.0000015, 1.0000015]],
+            "m_Translate": [14, [-2.8981933, 0.0467071, -8.852478]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195728, 0.230906, 0.0690794, 1.5195728, 0.270789]],
+            "m_Name": [12, "Bitters_01_sp_02"],
+            "m_PcId": [6, 7],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999694, 15.0000047, -179.9999847]],
+            "m_Scale": [14, [1.0000015, 1.0000013, 1.0000015]],
+            "m_Translate": [14, [2.7435302, 0.0250109, -3.8207397]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Bitter_init_01"],
+            "m_PcId": [6, 11],
+            "m_PrefabName": [12, "ai_spawner_init"],
+            "m_PresetNames": [12, "Force Target;Nearest Player;Preset;Infected_Biter;Animation;Infected_crawl_out"],
+            "m_Rotate": [14, [-0.0000311, 0.0000016, -0.0000043]],
+            "m_Scale": [14, [1.0000015, 1.0000014, 1.0000015]],
+            "m_Translate": [14, [2.8465576, 0.0000114, -18.7148437]]
+          },
+          "Fields": {
+            "Spawner_Wave_Enable": "1"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

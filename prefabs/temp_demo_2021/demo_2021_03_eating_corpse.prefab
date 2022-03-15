@@ -1,0 +1,467 @@
+{
+  "__filename__": {
+    "Version": 3,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "AI_01"],
+            "m_PcId": [6, 4],
+            "m_PrefabName": [12, "patrol_setup"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Activation - daytime;Whole Day"],
+            "m_Rotate": [14, [-0.0, 15.0000019, -0.0]],
+            "m_Translate": [14, [-3.6445846, 0.0, -4.5970687]]
+          },
+          "Fields": {
+            "IPatrolData::m_PatrolPoints": "/~8;/~10;",
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_Preset": "Character;Viral"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "AI_01_P_02"],
+            "m_PcId": [6, 8],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_Rotate": [14, [-0.0000104, 27.9999923, 0.0000024]],
+            "m_Translate": [14, [-0.5769041, 0.0, 0.4257811]]
+          },
+          "Fields": {
+            "Flags": "0",
+            "IPatrolPoint::m_WaitTime": "999.000000",
+            "m_BehaviorName": "single_static_inf_eating_corpse_01",
+            "m_ModelObjectEntities": "/~13;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "AI_01_P_01"],
+            "m_PcId": [6, 10],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_Rotate": [14, [-0.0, 15.0000019, -0.0]],
+            "m_Translate": [14, [-3.6445846, 0.0, -4.5970687]]
+          },
+          "Fields": {
+            "m_BehaviorName": "single_static_inf_idle_stand"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.000005, 0.125005, 0.000005, 0.125005, 0.125005, 0.125005]],
+            "m_Name": [12, "Corpse"],
+            "m_PcId": [6, 11],
+            "m_PrefabName": [12, "mesh"],
+            "m_PresetNames": [12, "Meshes;dlc_dummy_box_025m"],
+            "m_Translate": [14, [-0.4721831, 0.0, 0.5565719]]
+          },
+          "Fields": {
+            "SkinName": "Null"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.000005, 0.125005, 0.000005, 0.125005, 0.125005, 0.125005]],
+            "m_Name": [12, "Corpse"],
+            "m_PcId": [6, 12],
+            "m_PrefabName": [12, "mesh"],
+            "m_PresetNames": [12, "Meshes;dlc_dummy_box_025m"],
+            "m_Translate": [14, [-0.4721831, 0.0, 0.5565719]]
+          },
+          "Fields": {
+            "SkinName": "Null"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.000005, 0.125005, 0.000005, 0.125005, 0.125005, 0.125005]],
+            "m_Name": [12, "Corpse"],
+            "m_PcId": [6, 13],
+            "m_PrefabName": [12, "mesh"],
+            "m_PresetNames": [12, "Meshes;dlc_dummy_box_025m"],
+            "m_Translate": [14, [-1.2834091, 0.0, 0.8134992]]
+          },
+          "Fields": {
+            "SkinName": "Null"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.189823, -0.0000039, -0.1938555, 0.689823, 0.5000039, 0.6938555]],
+            "m_Name": [12, "GMA"],
+            "m_PcId": [6, 14],
+            "m_PrefabName": [12, "gameplay_modifier_area"],
+            "m_Rotate": [14, [-89.8700103, 89.5761795, 90.1349639]],
+            "m_Scale": [14, [12.3147945, 1.0, 10.0437517]],
+            "m_Translate": [14, [0.4704588, 0.4356763, 0.3018797]]
+          },
+          "Fields": {
+            "m_ModifierFlags": "131104",
+            "m_Points": "0.879646 -0.500000 -0.605316;0.443275 -0.500008 -0.158875;0.500000 -0.500000 0.500000;-0.500000 -0.500000 0.500000;-0.500000 -0.500000 -0.500000;0.425941 -0.500000 -0.887711;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_IsolateConfigurations": [11, true],
+            "m_PcId": [6, 15],
+            "m_PrefabName": [12, "decal_flat_round_a"],
+            "m_PresetNames": [12, "Decal_flat_skin;Floor_dry_blood_splatter_stain_big_a"],
+            "m_Rotate": [14, [-179.9999847, -49.5000038, -179.9999847]],
+            "m_Seed": [6, 2157559061],
+            "m_Translate": [14, [-0.3034667, -0.0144996, 1.6641844]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_IsEditorOnly": [11, true],
+            "m_Name": [12, "H1"],
+            "m_PcId": [6, 16],
+            "m_PrefabName": [12, "humanai"],
+            "m_Rotate": [14, [9.999999974752428e-7, 36.500019, -0.000003]],
+            "m_Scale": [14, [1.0920249, 1.0920249, 1.0920249]],
+            "m_Seed": [6, 2621924451],
+            "m_Translate": [14, [-9.9102783, -0.1049422, -12.1127929]]
+          },
+          "Fields": {
+            "m_PresetName": "Character;Biter_Male_Bleached"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "H2"],
+            "m_PcId": [6, 22],
+            "m_PrefabName": [12, "humanai"],
+            "m_Rotate": [14, [9.999996564147296e-7, 36.500019, -0.000003]],
+            "m_Seed": [6, 3670691735],
+            "m_Translate": [14, [0.7193601, 0.0213354, 0.3081054]]
+          },
+          "Fields": {
+            "IAIProxy::m_BehaviorPlace": "/~25",
+            "m_PresetName": "Character;Viral"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "H3"],
+            "m_PcId": [6, 24],
+            "m_PrefabName": [12, "humanai"],
+            "m_Rotate": [14, [9.999999974752428e-7, 36.5000228, -0.000003]],
+            "m_Scale": [14, [1.4400006, 1.44, 1.4400006]],
+            "m_Seed": [6, 2861636997],
+            "m_Translate": [14, [-0.7106931, 0.0213354, 1.3664549]]
+          },
+          "Fields": {
+            "IAIProxy::m_BehaviorPlace": "/~26",
+            "m_PresetName": "Character;Viral"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [5.960464477539063e-8, 0.150005, 0.1779812, 0.5000002, 0.150005, 0.6779813]],
+            "m_Name": [12, "H2_BP"],
+            "m_PcId": [6, 25],
+            "m_PrefabName": [12, "behaviorplace"],
+            "m_Rotate": [14, [0.0000064, 18.0000171, -0.0000086]],
+            "m_Translate": [14, [-0.4040527, 0.0213354, 0.455078]]
+          },
+          "Fields": {
+            "m_BehaviorName": "single_static_inf_eating_corpse_01",
+            "m_Flags": "0",
+            "m_ModelObjectEntities": ""
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [5.960464477539063e-8, 0.150005, 0.1779813, 0.5000004, 0.150005, 0.6779815]],
+            "m_Name": [12, "H3_BP"],
+            "m_PcId": [6, 26],
+            "m_PrefabName": [12, "behaviorplace"],
+            "m_Rotate": [14, [-179.9999847, 2.4999833, -179.9999847]],
+            "m_Translate": [14, [0.3732908, 0.0213354, 2.7436523]]
+          },
+          "Fields": {
+            "m_BehaviorName": "single_static_inf_eating_corpse_03",
+            "m_Flags": "0",
+            "m_ModelObjectEntities": ""
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_IsolateConfigurations": [11, true],
+            "m_PcId": [6, 27],
+            "m_PrefabName": [12, "decal_flat_round_a"],
+            "m_PresetNames": [12, "Decal_flat_skin;Floor_dry_blood_splatter_b"],
+            "m_Rotate": [14, [-179.9999847, -49.5, -179.9999847]],
+            "m_Scale": [14, [1.1999998, 1.1999998, 1.2]],
+            "m_Seed": [6, 2157559061],
+            "m_Translate": [14, [0.8765869, -0.0144996, 0.6412351]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_IsolateConfigurations": [11, true],
+            "m_PcId": [6, 28],
+            "m_PrefabName": [12, "decal_flat_round_a"],
+            "m_PresetNames": [12, "Decal_flat_skin;Floor_cracks_b"],
+            "m_Rotate": [14, [-179.9999847, -49.4999885, -179.9999847]],
+            "m_Scale": [14, [1.1999994, 1.1999994, 1.2]],
+            "m_Seed": [6, 2157559061],
+            "m_Translate": [14, [0.1746826, -0.0179366, 2.6116943]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_IsolateConfigurations": [11, true],
+            "m_PcId": [6, 29],
+            "m_PrefabName": [12, "decal_flat_round_a"],
+            "m_PresetNames": [12, "Decal_flat_skin;Floor_cracks_a"],
+            "m_Rotate": [14, [-179.9999847, -49.4999847, -179.9999847]],
+            "m_Scale": [14, [1.1999994, 1.1999994, 1.2]],
+            "m_Seed": [6, 2157559061],
+            "m_Translate": [14, [-2.5419921, -0.0179366, -1.1385498]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [5.960464477539063e-8, 0.150005, 0.1779812, 0.5000003, 0.150005, 0.6779814]],
+            "m_Name": [12, "H4_BP"],
+            "m_PcId": [6, 33],
+            "m_PrefabName": [12, "behaviorplace"],
+            "m_Rotate": [14, [179.9999847, -21.5000095, -179.9999847]],
+            "m_Translate": [14, [-0.245239, 0.0213354, 2.2321777]]
+          },
+          "Fields": {
+            "m_BehaviorName": "demo2021_inf_eating_corpse_01_victim_01",
+            "m_Flags": "0",
+            "m_ModelObjectEntities": ""
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "H4"],
+            "m_PcId": [6, 34],
+            "m_PrefabName": [12, "humanai"],
+            "m_Rotate": [14, [9.999999974752428e-7, 36.500019, -0.000003]],
+            "m_Seed": [6, 647873097],
+            "m_Translate": [14, [-0.9166259, 0.0013836, 2.7695312]]
+          },
+          "Fields": {
+            "IAIProxy::m_BehaviorPlace": "/~33",
+            "m_GenericBehaviorDisallowed": "1",
+            "m_PresetName": "Character;Survivor"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0008954, 0.1702763, 0.0063301, 0.0954459, 0.1702763, 0.0843217]],
+            "m_Name": [12, "lantern_lamp"],
+            "m_PcId": [6, 35],
+            "m_PrefabName": [12, "lamp"],
+            "m_PresetNames": [12, "Lamp Preset;lamp_old_b;Flicker;Flicker_Slow_candle_a"],
+            "m_Rotate": [14, [100.2803115, -21.1051483, 9.0380992]],
+            "m_Translate": [14, [0.9989013, 0.0757521, 1.0618896]]
+          },
+          "Fields": {
+            "UserData": "4294934015 4160749696 0 0",
+            "m_ActiveDaytime": "769",
+            "m_ExternalLights": "/~39;/~36;/~40;/~37;/~38;",
+            "m_LampEmissiveMaxValue": "0.490000",
+            "m_RenderFlags": "47"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0000038, 0.0, 1.0, 1.0, 1.0000001]],
+            "m_Name": [12, "lantern_spotshad"],
+            "m_PcId": [6, 36],
+            "m_PrefabName": [12, "light"],
+            "m_PresetNames": [12, "Light;Spot shadow"],
+            "m_Rotate": [14, [29.3939208, 77.4102706, -26.7727584]],
+            "m_Scale": [14, [4.4812555, 4.4812545, 2.2625346]],
+            "m_Translate": [14, [1.0845947, 0.1782491, 1.2283935]]
+          },
+          "Fields": {
+            "Attenuation": "2.000000",
+            "Color": "1.000000 0.780392 0.258824",
+            "Intensity": "1.100000",
+            "Projector": "ph/source/data/textures/light_projectors/soft/soft_round_d_prj.png",
+            "Projector mip range": "0.000000 2.290000",
+            "cbs::IEnable::m_State": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.000122, 0.0, 0.0, 1.0000001, 1.0000001, 1.0]],
+            "m_Name": [12, "lantern_omni"],
+            "m_PcId": [6, 37],
+            "m_PrefabName": [12, "light"],
+            "m_PresetNames": [12, "Light;Omni"],
+            "m_Rotate": [14, [-178.0528259, 37.2610092, -178.9954376]],
+            "m_Scale": [14, [1.6848099, 1.38773, 2.4525189]],
+            "m_Translate": [14, [0.2843016, 0.468647, 1.6917723]]
+          },
+          "Fields": {
+            "Attenuation": "2.000000",
+            "Color": "1.000000 0.568627 0.188235",
+            "Intensity": "0.400000",
+            "Projector": "",
+            "Projector mip range": "0.000000 2.290000",
+            "cbs::IEnable::m_State": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 1.0000001, 1.0000001, 1.0000001]],
+            "m_Name": [12, "lantern_omni"],
+            "m_PcId": [6, 38],
+            "m_PrefabName": [12, "light"],
+            "m_PresetNames": [12, "Light;Omni"],
+            "m_Rotate": [14, [177.3661346, 81.229042, -174.749649]],
+            "m_Scale": [14, [3.1337468, 1.3877296, 3.2127981]],
+            "m_Translate": [14, [-0.6759033, 0.7048109, 0.2038574]]
+          },
+          "Fields": {
+            "Attenuation": "2.000000",
+            "Color": "1.000000 0.568627 0.188235",
+            "Intensity": "0.400000",
+            "Projector": "",
+            "Projector mip range": "0.000000 2.290000",
+            "cbs::IEnable::m_State": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 0.9999999, 0.9999999, 0.9999999]],
+            "m_Name": [12, "lantern_volume"],
+            "m_PcId": [6, 39],
+            "m_PrefabName": [12, "light"],
+            "m_PresetNames": [12, "Light;Volume"],
+            "m_Rotate": [14, [-89.4917144, 4.7601232, 173.204544]],
+            "m_Scale": [14, [0.6788418, 0.3242438, 0.3016642]],
+            "m_Translate": [14, [0.9887694, -0.1080818, 1.1621092]]
+          },
+          "Fields": {
+            "Attenuation": "2.000000",
+            "Color": "1.000000 0.905882 0.360784",
+            "Intensity": "1.300000",
+            "Projector": "ph/source/data/textures/light_projectors/soft/soft_test_14_prj.png",
+            "Projector mip range": "0.000000 2.290000",
+            "cbs::IEnable::m_State": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, -0.0000038, 0.0, 0.9999999, 1.0, 0.9999999]],
+            "m_Name": [12, "lantern_spot"],
+            "m_PcId": [6, 40],
+            "m_PrefabName": [12, "light"],
+            "m_PresetNames": [12, "Light;Spot"],
+            "m_Rotate": [14, [83.7989501, -84.8582153, 87.7399673]],
+            "m_Scale": [14, [4.481256, 4.481256, 1.5212365]],
+            "m_Translate": [14, [0.9016113, 0.2047805, 1.1923828]]
+          },
+          "Fields": {
+            "Attenuation": "2.000000",
+            "Color": "1.000000 0.780392 0.258824",
+            "Intensity": "1.000000",
+            "Projector": "ph/source/data/textures/light_projectors/soft/soft_round_d_prj.png",
+            "Projector mip range": "0.000000 2.290000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 1.0, 1.0000001, 1.0]],
+            "m_Name": [12, "lantern_spot_small"],
+            "m_PcId": [6, 41],
+            "m_PrefabName": [12, "light"],
+            "m_PresetNames": [12, "Light;Spot"],
+            "m_Rotate": [14, [31.7571086, -12.6501922, 7.6771812]],
+            "m_Scale": [14, [0.1380583, 0.1258147, 0.1780449]],
+            "m_Translate": [14, [0.991333, 0.0032462, 1.2139892]]
+          },
+          "Fields": {
+            "Attenuation": "1.000000",
+            "Color": "1.000000 0.945098 0.321569",
+            "Intensity": "2.000000",
+            "Projector": "",
+            "Projector mip range": "0.000000 2.290000",
+            "cbs::IEnable::m_State": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 1.0000002, 1.0000001, 1.0]],
+            "m_Name": [12, "light_cold_spotshad"],
+            "m_PcId": [6, 42],
+            "m_PrefabName": [12, "light"],
+            "m_PresetNames": [12, "Light;Spot shadow"],
+            "m_Rotate": [14, [-92.4413681, -71.6831665, -96.5446929]],
+            "m_Scale": [14, [2.0076067, 1.5738538, 3.6535415]],
+            "m_Translate": [14, [-2.4621582, 1.5953216, 1.3085937]]
+          },
+          "Fields": {
+            "Attenuation": "1.000000",
+            "Color": "0.741176 0.874510 1.000000",
+            "Intensity": "1.000000",
+            "Projector": "ph/source/data/textures/light_projectors/soft/soft_square_b_prj.png",
+            "Projector mip range": "0.000000 2.290000",
+            "cbs::IEnable::m_State": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0002441, 0.0, 0.0000305, 1.0, 1.0, 1.0]],
+            "m_Name": [12, "light_cold_omni"],
+            "m_PcId": [6, 43],
+            "m_PrefabName": [12, "light"],
+            "m_PresetNames": [12, "Light;Omni"],
+            "m_Rotate": [14, [12.6041116, -55.6476402, -3.9496567]],
+            "m_Scale": [14, [0.7258269, 0.5690087, 1.3208954]],
+            "m_Translate": [14, [-0.1235349, 0.4494093, 0.6809082]]
+          },
+          "Fields": {
+            "Attenuation": "1.000000",
+            "Color": "0.741176 0.874510 1.000000",
+            "Intensity": "0.600000",
+            "Projector": "",
+            "Projector mip range": "0.000000 2.290000",
+            "cbs::IEnable::m_State": "1"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

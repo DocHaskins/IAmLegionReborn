@@ -1,0 +1,893 @@
+{
+  "__filename__": {
+    "Version": 4,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Number_Defend_Biter_2"],
+            "m_PcId": [6, 1],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Spawner_Difficulty;Tier_3;Activation - daytime;Whole Day;Activation - distance;Interior"],
+            "m_Rotate": [14, [0.0003457, -85.0000152, 0.000365]],
+            "m_Translate": [14, [3.3189392, -0.0304297, -2.1604614]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_ForcedTargetMode": "NearestPlayerCannotLose",
+            "m_NumOfAIsToSpawn": "1",
+            "m_Preset": "Character;Viral"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_3",
+            "DestinationField": "m_DifficultyRangeSource"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkplace",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkplace",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, -0.0000915, 0.5, 0.5, 0.5000305]],
+            "m_Name": [12, "Number_Defend_Viral_1"],
+            "m_PcId": [6, 2],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Spawner_Difficulty;Tier_3;Activation - daytime;Whole Day;Activation - distance;Interior"],
+            "m_Rotate": [14, [0.0001595, -79.9999923, 0.0001802]],
+            "m_Translate": [14, [4.3955993, -0.028759, -6.3546142]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_ForcedTargetMode": "NearestPlayerCannotLose",
+            "m_NumOfAIsToSpawn": "1",
+            "m_Preset": "Character;Viral"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_3",
+            "DestinationField": "m_DifficultyRangeSource"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkplace",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkplace",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-6.4966726, 0.5901041, 6.17839, 8.1007251, 1.0501228, 7.67839]],
+            "m_Name": [12, "elena_drunkard_found_dlg"],
+            "m_PcId": [6, 5],
+            "m_PrefabName": [12, "elena_drunkard_found_dlg"],
+            "m_Rotate": [14, [179.9999847, -39.9999694, 179.9999542]],
+            "m_Translate": [14, [-1.1020505, -0.0000228, 6.7662963]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0173448, 0.7712049, 0.3279865, 0.1536685, 0.8153049, 0.372056]],
+            "m_Name": [12, "Switch_Power"],
+            "m_PcId": [6, 6],
+            "m_PrefabName": [12, "switch"],
+            "m_PresetNames": [12, "Style;SA_industrial_power_switch"],
+            "m_Rotate": [14, [0.0, -90.0, -0.0000096]],
+            "m_Translate": [14, [7.5194702, 0.0070417, -8.5922241]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0000457, 1.5195729, 0.230906, 0.0690946, 1.5195729, 0.270789]],
+            "m_Name": [12, "Viral_Crawl"],
+            "m_PcId": [6, 9],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [0.000022, 0.0000392, -0.0000855]],
+            "m_Translate": [14, [-12.438385, 0.0098304, -3.0336914]]
+          },
+          "Fields": {
+            "m_BehaviorName": "no_state_m_vir_crawl"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0000457, 0.5, 0.0000915, 0.5000152, 0.5, 0.5000305]],
+            "m_Name": [12, "Number_Wave_Viral_2"],
+            "m_PcId": [6, 11],
+            "m_PrefabName": [12, "ai_spawner_wave"],
+            "m_PresetNames": [12, "Spawner_Difficulty;Tier_3;Activation - daytime;Whole Day;Activation - distance;Interior"],
+            "m_Rotate": [14, [179.9999847, -0.0000527, 179.9999694]],
+            "m_Translate": [14, [0.8795166, -0.0332106, -0.9371948]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_AlivePercentageToNextWave": "20",
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_NumberOfWaves": "50",
+            "m_Preset": "Character;Biter_Male_Bleached",
+            "m_WaveMaxDelay": "1.000000",
+            "m_WaveMinDelay": "1.000000"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_3",
+            "DestinationField": "m_DifficultyRangeSource"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkplace",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkplace",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0000457, 0.5, 0.0, 0.5000152, 0.5, 0.5]],
+            "m_Name": [12, "Number_Wave_Biter_2"],
+            "m_PcId": [6, 12],
+            "m_PrefabName": [12, "ai_spawner_wave"],
+            "m_PresetNames": [12, "Spawner_Difficulty;Tier_3;Activation - daytime;Whole Day;Activation - distance;Interior"],
+            "m_Rotate": [14, [-0.0000189, 0.0000512, 0.0000335]],
+            "m_Translate": [14, [-8.6790161, -0.0332183, -2.9540405]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_AlivePercentageToNextWave": "20",
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_NumberOfWaves": "50",
+            "m_Preset": "Character;Biter_Male_Bleached",
+            "m_WaveMaxDelay": "1.000000",
+            "m_WaveMinDelay": "1.000000"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_3",
+            "DestinationField": "m_DifficultyRangeSource"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkplace",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkplace",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0000457, 0.5, 0.0, 0.5000152, 0.5, 0.5]],
+            "m_Name": [12, "Number_Wave_Viral_1"],
+            "m_PcId": [6, 13],
+            "m_PrefabName": [12, "ai_spawner_wave"],
+            "m_PresetNames": [12, "Spawner_Difficulty;Tier_3;Activation - daytime;Whole Day;Activation - distance;Interior"],
+            "m_Rotate": [14, [-0.0000192, 0.0000494, 0.0000335]],
+            "m_Translate": [14, [-12.4847412, -0.0332221, -3.0266723]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_AlivePercentageToNextWave": "20",
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_NumberOfWaves": "50",
+            "m_Preset": "Character;Viral",
+            "m_WaveMaxDelay": "1.000000",
+            "m_WaveMinDelay": "1.000000"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_3",
+            "DestinationField": "m_DifficultyRangeSource"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkplace",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkplace",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.2613185, 0.6376929, 0.007923, 0.7248535, 0.6376899, 0.5419009]],
+            "m_Name": [12, "ClearArea_DefendJosh"],
+            "m_PcId": [6, 14],
+            "m_PrefabName": [12, "clear_area"],
+            "m_Rotate": [14, [0.014316, -0.0000084, 0.000036]],
+            "m_Scale": [14, [16.1223068, 3.6793324, 16.1535854]],
+            "m_Translate": [14, [0.2851561, -0.3544616, -1.1822508]]
+          },
+          "Fields": {
+            "m_AreaHeight": "1.275330",
+            "m_AreaPoints": "0.451941 0.000005 -0.533978;0.463535 0.000027 0.069260;-0.005663 0.000037 0.069729;-0.008858 0.000053 0.549824;-0.986172 0.000053 0.547508;-0.966055 0.000036 -0.167889;-0.496181 0.000008 -0.167271;-0.495895 0.000003 -0.515060;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.2613165, 0.500028, 0.0079191, 0.7248535, 0.500025, 0.5419009]],
+            "m_Name": [12, "GMA_DZ"],
+            "m_PcId": [6, 15],
+            "m_PrefabName": [12, "gameplay_modifier_area"],
+            "m_Rotate": [14, [0.014316, -0.0000201, 0.000036]],
+            "m_Scale": [14, [16.1223087, 3.6793324, 16.1535854]],
+            "m_Translate": [14, [0.2850952, -0.0005465, -1.1821899]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_ModifierFlags": "36",
+            "m_Points": "0.451941 0.000005 -0.533978;0.463535 0.000027 0.069260;-0.005663 0.000037 0.069729;-0.008858 0.000053 0.549824;-0.986172 0.000053 0.547508;-0.966055 0.000036 -0.167889;-0.496181 0.000008 -0.167271;-0.495895 0.000003 -0.515060;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "Josh_mission"],
+            "m_PcId": [6, 16],
+            "m_PrefabName": [12, "humanai"],
+            "m_PresetNames": [12, "Character;Josh;Activation - daytime;Whole Day;Activation - distance;Activator"],
+            "m_Rotate": [14, [179.9999847, 56.0000152, 179.9999847]],
+            "m_Scale": [14, [0.9999986, 0.9999997, 0.9999997]],
+            "m_Translate": [14, [-1.2610472, -0.0000189, 5.2791748]]
+          },
+          "Fields": {
+            "m_CustomConflictMatrixSource": "UserDefinedConflictMatrix,();",
+            "m_PresetName": "Character;Josh_mission",
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedConflictMatrix",
+            "DestinationField": "m_CustomConflictMatrixSource",
+            "Fields": {
+              "m_Name": "pk_player_friend"
+            }
+          },
+          "EmbeddedObject": {
+            "Class": "AIProxyActivationStrategyActivator",
+            "DestinationField": "m_ActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.5988645, 1.2854999, -0.0001576, 0.6020743, 1.2854999, 0.1139761]],
+            "m_Name": [12, "Door_Mission"],
+            "m_PcId": [6, 17],
+            "m_PrefabName": [12, "door"],
+            "m_PresetNames": [12, "Behaviour;Closed;Door_Style;Wooden_b;Side accesibility;AccessBothSides"],
+            "m_Rotate": [14, [0.0, -90.0, -9.046983251437268e-8]],
+            "m_Translate": [14, [7.7956542, 0.0406722, -5.4519653]]
+          },
+          "Fields": {
+            "ITriggerable::m_BlockInCombat": "1",
+            "cbs::IEnable::m_State": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_EntityComponentsExtents": [69, [-0.0002574, 1.4512833, 0.2190206, 0.0679944, 1.495648, 0.262777]],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "PM_Mission_Defend"],
+            "m_PcId": [6, 19],
+            "m_PrefabName": [12, "spawnpoint"],
+            "m_Rotate": [14, [0.0, -90.0, 0.0000042]],
+            "m_Translate": [14, [9.7368164, -0.0000076, -4.8185424]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_Enabled": "0",
+            "m_Respawn": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.2613185, 0.500028, 0.007923, 0.7248535, 0.500025, 0.5419009]],
+            "m_Name": [12, "AM_Hideout_Mission"],
+            "m_PcId": [6, 20],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Rotate": [14, [0.0143221, -0.0000067, 0.0000263]],
+            "m_Scale": [14, [16.1223049, 3.6793329, 16.1535892]],
+            "m_Translate": [14, [0.2852478, -0.0005465, -1.1821899]]
+          },
+          "Fields": {
+            "m_AreaPoints": "0.451941 0.000005 -0.533978;0.463535 0.000027 0.069260;-0.005663 0.000037 0.069729;-0.008858 0.000053 0.549824;-0.986172 0.000053 0.547508;-0.966055 0.000036 -0.167889;-0.496181 0.000008 -0.167271;-0.495895 0.000003 -0.515060;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.2613185, 0.500028, 0.007923, 0.7248535, 0.500025, 0.5419009]],
+            "m_Name": [12, "GMA_UV"],
+            "m_PcId": [6, 21],
+            "m_PrefabName": [12, "gameplay_modifier_area"],
+            "m_Rotate": [14, [0.0143178, -0.0000168, 0.0000349]],
+            "m_Scale": [14, [16.1223106, 3.6793329, 16.1535892]],
+            "m_Translate": [14, [0.2851867, -0.0005465, -1.1821899]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_ModifierFlags": "40",
+            "m_Points": "0.451941 0.000005 -0.533978;0.463535 0.000027 0.069260;-0.005663 0.000037 0.069729;-0.008858 0.000053 0.549824;-0.986172 0.000053 0.547508;-0.966055 0.000036 -0.167889;-0.496181 0.000008 -0.167271;-0.495895 0.000003 -0.515060;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195734, 0.230906, 0.0690794, 1.5195734, 0.270789]],
+            "m_Name": [12, "Biter_Crawl"],
+            "m_PcId": [6, 22],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [0.0000048, -4.9999508, -0.0000422]],
+            "m_Translate": [14, [-8.6605224, 0.0009227, -3.1357421]]
+          },
+          "Fields": {
+            "m_BehaviorName": "biter_crawl_through_hole_finish_in_bp_pos"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [2.2586355, 0.1404342, -0.663006, 8.9373703, 4.3436198, 7.5102787]],
+            "m_Name": [12, "elena_reaching_the_drunkard_after_fight_dlg"],
+            "m_PcId": [6, 24],
+            "m_PrefabName": [12, "elena_reaching_the_drunkard_after_fight_dlg"],
+            "m_Rotate": [14, [-179.9999847, -5.9952473, -179.9999694]],
+            "m_Translate": [14, [-3.8645629, 0.0059814, 6.7842407]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_EntityComponentsExtents": [69, [-0.0002574, 1.4512833, 0.2190206, 0.0679944, 1.495648, 0.262777]],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "PM_Mission_Dialog"],
+            "m_PcId": [6, 25],
+            "m_PrefabName": [12, "spawnpoint"],
+            "m_Rotate": [14, [0.0, -90.0, 0.0000039]],
+            "m_Translate": [14, [-1.7848205, 0.0035629, -3.0530395]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_Enabled": "0",
+            "m_Respawn": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0000457, 0.4999999, 0.5, 0.5000152]],
+            "m_Name": [12, "Number_Defend_Viral_2"],
+            "m_PcId": [6, 26],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Spawner_Difficulty;Tier_3;Activation - daytime;Whole Day;Activation - distance;Interior"],
+            "m_Rotate": [14, [0.0, -90.0, 0.0000177]],
+            "m_Translate": [14, [6.1860656, -0.028759, -1.7445677]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_ForcedTargetMode": "NearestPlayerCannotLose",
+            "m_NumOfAIsToSpawn": "1",
+            "m_Preset": "Character;Viral"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_3",
+            "DestinationField": "m_DifficultyRangeSource"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkplace",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkplace",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0000915, 0.5, 0.5, 0.5000305]],
+            "m_Name": [12, "Number_Defend_Biter_1"],
+            "m_PcId": [6, 27],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Spawner_Difficulty;Tier_3;Activation - daytime;Whole Day;Activation - distance;Interior"],
+            "m_Rotate": [14, [-0.0000177, -80.0000305, -0.0]],
+            "m_Translate": [14, [6.0176086, -0.0287628, -8.093872]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_ForcedTargetMode": "NearestPlayerCannotLose",
+            "m_NumOfAIsToSpawn": "1",
+            "m_Preset": "Character;Viral"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_3",
+            "DestinationField": "m_DifficultyRangeSource"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkplace",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkplace",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, -0.0000915, 0.5, 0.5, 0.5000305]],
+            "m_Name": [12, "Number_Defend_Viral_3"],
+            "m_PcId": [6, 28],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Spawner_Difficulty;Tier_3;Activation - daytime;Whole Day;Activation - distance;Interior"],
+            "m_Rotate": [14, [0.0001595, -79.9999923, 0.0001801]],
+            "m_Translate": [14, [5.9751892, -0.028759, -4.2013549]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_ForcedTargetMode": "NearestPlayerCannotLose",
+            "m_NumOfAIsToSpawn": "1",
+            "m_Preset": "Character;Viral"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_3",
+            "DestinationField": "m_DifficultyRangeSource"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkplace",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkplace",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "Viral_Crawl"],
+            "m_PcId": [6, 29],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [-179.9999847, -0.0000341, -179.9999084]],
+            "m_Translate": [14, [1.0007629, 0.0035552, -0.7486572]]
+          },
+          "Fields": {
+            "m_BehaviorName": "no_state_m_vir_crawl"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.000005, 0.4896953, 0.0000507, 0.5000049, 0.5103145, 0.5000202]],
+            "m_Name": [12, "DMG_Emitter_Electricity"],
+            "m_PcId": [6, 30],
+            "m_PrefabName": [12, "damaging_emitter"],
+            "m_PresetNames": [12, "Functioning Mode;Always_Functioning;Initial_State;Functioning;Kind;Electric"],
+            "m_Rotate": [14, [0.0, -90.0, -0.0000108]],
+            "m_Scale": [14, [0.9999997, 3.5730209, 1.0]],
+            "m_Translate": [14, [7.0806579, 0.0536651, -8.6814575]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 0.0762704, 0.0736729, 0.0725375]],
+            "m_Name": [12, "FX_Spark_3"],
+            "m_PcId": [6, 31],
+            "m_PrefabName": [12, "gpufx_emitter"],
+            "m_PresetNames": [12, "FXes;sparks_bursts_loop_a"],
+            "m_Rotate": [14, [0.0000807, 59.9999694, -0.0000807]],
+            "m_Translate": [14, [7.3403015, 1.5361862, -8.4627685]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 0.0762704, 0.0736729, 0.0725375]],
+            "m_Name": [12, "FX_Spark_1"],
+            "m_PcId": [6, 32],
+            "m_PrefabName": [12, "gpufx_emitter"],
+            "m_PresetNames": [12, "FXes;sparks_bursts_loop_b"],
+            "m_Rotate": [14, [0.0000807, 59.9999694, -0.0000807]],
+            "m_Translate": [14, [7.4746398, 1.933197, -8.7266235]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 0.0762704, 0.0736729, 0.0725375]],
+            "m_Name": [12, "FX_Spark_2"],
+            "m_PcId": [6, 33],
+            "m_PrefabName": [12, "gpufx_emitter"],
+            "m_PresetNames": [12, "FXes;sparks_bursts_loop_c"],
+            "m_Rotate": [14, [0.0000807, 59.9999694, -0.0000807]],
+            "m_Translate": [14, [7.4826049, 3.0684318, -8.4470214]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 34],
+            "m_PrefabName": [12, "op_weapon_bottle"],
+            "m_PresetNames": [12, "Bottle_Type;Regular"],
+            "m_Rotate": [14, [0.0000516, 44.9999656, -0.000057]],
+            "m_Translate": [14, [-8.1453552, 0.0114438, -0.0303344]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 35],
+            "m_PrefabName": [12, "op_weapon_bottle"],
+            "m_PresetNames": [12, "Bottle_Type;Regular"],
+            "m_Rotate": [14, [90.0000152, -0.000044, -44.999958]],
+            "m_Translate": [14, [-8.0814514, 0.093193, 0.1453855]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 36],
+            "m_PrefabName": [12, "op_weapon_bottle"],
+            "m_PresetNames": [12, "Bottle_Type;Regular"],
+            "m_Rotate": [14, [89.9999618, -0.0000104, -144.9999542]],
+            "m_Translate": [14, [-8.088562, 0.093193, -0.1127317]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 37],
+            "m_PrefabName": [12, "op_weapon_bottle"],
+            "m_PresetNames": [12, "Bottle_Type;Regular"],
+            "m_Rotate": [14, [89.9999923, 0.0000122, 175.0000305]],
+            "m_Translate": [14, [-12.3876953, 0.093193, 6.0276489]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 39],
+            "m_PrefabName": [12, "op_weapon_bottle"],
+            "m_PresetNames": [12, "Bottle_Type;Regular"],
+            "m_Rotate": [14, [90.0000152, -0.000048, -84.9999542]],
+            "m_Translate": [14, [-12.5406799, 0.093193, 5.8427734]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 41],
+            "m_PrefabName": [12, "op_weapon_bottle"],
+            "m_PresetNames": [12, "Bottle_Type;Regular"],
+            "m_Rotate": [14, [90.0000076, -0.0000513, -129.9999542]],
+            "m_Translate": [14, [-3.8823547, 0.0931854, 7.2861938]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 42],
+            "m_PrefabName": [12, "op_weapon_bottle"],
+            "m_PresetNames": [12, "Bottle_Type;Regular"],
+            "m_Rotate": [14, [90.0000381, 0.0000108, 130.0000305]],
+            "m_Translate": [14, [-3.6434631, 0.0931854, 7.3087158]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 43],
+            "m_PrefabName": [12, "op_weapon_bottle"],
+            "m_PresetNames": [12, "Bottle_Type;Regular"],
+            "m_Rotate": [14, [-179.9998779, -69.9999923, -179.9998779]],
+            "m_Translate": [14, [-1.447998, 0.0114364, 6.8024902]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 44],
+            "m_PrefabName": [12, "op_weapon_bottle"],
+            "m_PresetNames": [12, "Bottle_Type;Regular"],
+            "m_Rotate": [14, [89.9999923, -0.0000403, 110.0000381]],
+            "m_Translate": [14, [-1.2697143, 0.0931854, 6.6618652]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 45],
+            "m_PrefabName": [12, "op_weapon_bottle"],
+            "m_PresetNames": [12, "Bottle_Type;Regular"],
+            "m_Rotate": [14, [90.0000076, -0.0000201, 15.0000381]],
+            "m_Translate": [14, [-0.8565673, 0.0931854, 1.6110837]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 46],
+            "m_PrefabName": [12, "op_weapon_bottle"],
+            "m_PresetNames": [12, "Bottle_Type;Regular"],
+            "m_Rotate": [14, [90.0000228, -0.0000561, -104.9999618]],
+            "m_Translate": [14, [-1.0764465, 0.0931854, 1.5933227]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 47],
+            "m_PrefabName": [12, "op_weapon_bottle"],
+            "m_PresetNames": [12, "Bottle_Type;Regular"],
+            "m_Rotate": [14, [0.0000116, -0.0000408, -0.0000398]],
+            "m_Translate": [14, [9.8489685, 0.0114364, -0.6768187]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 48],
+            "m_PrefabName": [12, "op_weapon_bottle"],
+            "m_PresetNames": [12, "Bottle_Type;Regular"],
+            "m_Rotate": [14, [90.0000152, 0.0000147, 150.0000457]],
+            "m_Translate": [14, [10.0702514, 0.0931854, -0.7770996]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 49],
+            "m_PrefabName": [12, "op_weapon_bottle"],
+            "m_PresetNames": [12, "Bottle_Type;Regular"],
+            "m_Rotate": [14, [0.0004747, 84.9999389, -0.0004648]],
+            "m_Translate": [14, [10.1890258, 0.0114401, -1.1160278]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 50],
+            "m_PrefabName": [12, "op_weapon_bottle"],
+            "m_PresetNames": [12, "Bottle_Type;Regular"],
+            "m_Rotate": [14, [89.9999618, -0.0000521, -99.9999618]],
+            "m_Translate": [14, [9.7395629, 0.0931854, -1.0294797]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 51],
+            "m_PrefabName": [12, "op_weapon_bottle"],
+            "m_PresetNames": [12, "Bottle_Type;Regular"],
+            "m_Rotate": [14, [90.0000534, -0.0000598, 40.0000419]],
+            "m_Translate": [14, [9.6828613, 0.0931892, -1.225769]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 52],
+            "m_PrefabName": [12, "op_weapon_bottle"],
+            "m_PresetNames": [12, "Bottle_Type;Regular"],
+            "m_Rotate": [14, [0.0000116, -0.0000408, -0.0000398]],
+            "m_Translate": [14, [9.2774047, 0.0114364, -6.6795043]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 53],
+            "m_PrefabName": [12, "op_weapon_bottle"],
+            "m_PresetNames": [12, "Bottle_Type;Regular"],
+            "m_Rotate": [14, [0.0004747, 84.9999771, -0.0004648]],
+            "m_Translate": [14, [9.6174926, 0.0114401, -7.1187744]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 54],
+            "m_PrefabName": [12, "car_oil_puddle"],
+            "m_Rotate": [14, [-179.9999237, -59.9999694, -179.9999237]],
+            "m_Scale": [14, [0.7000001, 0.6999999, 0.7000001]],
+            "m_Translate": [14, [-0.1149291, 0.0192373, -1.3891601]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 55],
+            "m_PrefabName": [12, "car_oil_puddle"],
+            "m_Rotate": [14, [9.999999974752428e-7, -15.0000295, -0.0000408]],
+            "m_Scale": [14, [0.7000001, 0.6999999, 0.7000001]],
+            "m_Translate": [14, [-3.8350524, 0.0192412, -7.4668579]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 56],
+            "m_PrefabName": [12, "gas_cylinder_c"],
+            "m_Rotate": [14, [-179.9999847, -19.9999618, -179.9999694]],
+            "m_Translate": [14, [-3.7107543, -0.0000189, -8.7953491]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "player_tools_Molotov"],
+            "m_PcId": [6, 57],
+            "m_PrefabName": [12, "player_tools"],
+            "m_PresetNames": [12, "Type;Molotov"],
+            "m_Rotate": [14, [-179.9997711, -79.9999923, -179.9997711]],
+            "m_Translate": [14, [-9.8087463, 1.0804939, -2.97052]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0770109, 0.5990539, -0.0092185, 0.4334297, 0.6090814, 0.4782717]],
+            "m_PcId": [6, 58],
+            "m_PrefabName": [12, "destroyable_physics_object"],
+            "m_Rotate": [14, [0.0, -90.0, -0.0000104]],
+            "m_Translate": [14, [-6.8592529, 0.015293, 0.0455322]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0770109, 0.5990539, -0.0092642, 0.4334297, 0.6090814, 0.4782565]],
+            "m_PcId": [6, 59],
+            "m_PrefabName": [12, "destroyable_physics_object"],
+            "m_Rotate": [14, [0.0, -90.0, -0.0000104]],
+            "m_Translate": [14, [-7.0346069, 0.0152968, -4.1179199]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 60],
+            "m_PrefabName": [12, "spikes"],
+            "m_PresetNames": [12, "Spike_Type;Regular"],
+            "m_Rotate": [14, [0.0, -90.0, 4.9999885]],
+            "m_Translate": [14, [4.1497802, -0.0440214, -9.040039]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0038159, 0.0985788, 0.0147382, 0.091054, 0.2761564, 0.1221943]],
+            "m_Name": [12, "itemspawner_hammer"],
+            "m_PcId": [6, 65],
+            "m_PrefabName": [12, "itemspawner"],
+            "m_Rotate": [14, [-179.9999542, -39.9999656, -89.9999389]],
+            "m_Translate": [14, [-4.4305419, 0.0557441, -3.7666625]]
+          },
+          "Fields": {
+            "ID": "wpn_1hb_ham_a_fpp_r0_dukes",
+            "m_EditorItemName": "wpn_1hb_ham_a_fpp_r0_dukes"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 68],
+            "m_PrefabName": [12, "gas_cylinder_a"],
+            "m_Rotate": [14, [179.9995574, 85.0000534, -179.9995422]],
+            "m_Translate": [14, [-9.844696, -0.0000189, 6.5205688]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 69],
+            "m_PrefabName": [12, "gas_cylinder_a"],
+            "m_Rotate": [14, [-0.0000968, -70.0000457, -0.0001131]],
+            "m_Translate": [14, [-7.6091003, -0.0000152, -3.3878173]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0186488, 0.2973272, 0.0005, 0.1324801, 0.2973272, 0.0858218]],
+            "m_PcId": [6, 70],
+            "m_PrefabName": [12, "portable_tank_explosive"],
+            "m_PresetNames": [12, "tank_behaviour;flying_tank_wall"],
+            "m_Rotate": [14, [-0.0000948, -70.0000305, -0.0001122]],
+            "m_Translate": [14, [-2.0677795, -0.0000266, 1.208374]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "player_tools_ThrowingKnives"],
+            "m_PcId": [6, 72],
+            "m_PrefabName": [12, "player_tools"],
+            "m_PresetNames": [12, "Type;ThrowingKnives"],
+            "m_Rotate": [14, [-179.9997711, -79.9999923, 85.0002212]],
+            "m_Translate": [14, [-1.5303343, 0.3428305, 3.8627319]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "player_tools_ThrowingKnives"],
+            "m_PcId": [6, 73],
+            "m_PrefabName": [12, "player_tools"],
+            "m_PresetNames": [12, "Type;ThrowingKnives"],
+            "m_Rotate": [14, [-0.0, -84.9999771, -0.0]],
+            "m_Translate": [14, [1.0222778, 1.6213872, -0.413513]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "player_tools_ThrowingKnives"],
+            "m_PcId": [6, 74],
+            "m_PrefabName": [12, "player_tools"],
+            "m_PresetNames": [12, "Type;ThrowingKnives"],
+            "m_Rotate": [14, [-9.999999, -84.9999771, -0.0]],
+            "m_Translate": [14, [0.9291687, 1.5683708, -0.413574]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "cont_mission_Josh"],
+            "m_PcId": [6, 75],
+            "m_PrefabName": [12, "cont_mission"],
+            "m_Rotate": [14, [179.9999847, 17.5000343, -179.9999694]],
+            "m_Translate": [14, [-5.6604003, 0.0160712, 6.1404418]]
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

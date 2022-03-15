@@ -1,0 +1,207 @@
+{
+  "__filename__": {
+    "Version": 4,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 1],
+            "m_PrefabName": [12, "adv_spawnpoint_biter_resting"],
+            "m_Rotate": [14, [-0.0000702, 65.0000381, 0.000056]],
+            "m_Translate": [14, [-2.7926025, 0.007509, 3.5011596]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 2],
+            "m_PrefabName": [12, "adv_spawnpoint_biter_resting"],
+            "m_Rotate": [14, [-179.9993896, 85.0000915, 179.9993896]],
+            "m_Translate": [14, [-1.5754394, 0.007509, -2.4481811]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 4],
+            "m_PrefabName": [12, "adv_spawnpoint_biter_resting"],
+            "m_Rotate": [14, [-179.9995422, 85.0001678, 179.9995117]],
+            "m_Translate": [14, [7.6455078, 0.0075186, -1.7658691]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Spawner_Room_1"],
+            "m_PcId": [6, 5],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Metro;Activation - daytime;Whole Day"],
+            "m_Rotate": [14, [-0.0000302, 60.0, 0.0000304]],
+            "m_Scale": [14, [15.0000028, 3.4690008, 15.0410032]],
+            "m_Translate": [14, [-0.1771239, -0.0525951, 0.9075927]]
+          },
+          "Fields": {
+            "m_NumOfAIsToSpawn": "4",
+            "m_PointsSource": "2",
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_PresetPoolName": ""
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyMetro",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyMetro",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Viral_Room_a_1_BP_1"],
+            "m_PcId": [6, 6],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_PresetNames": [12, "Ranges;Interior"],
+            "m_Rotate": [14, [179.9999847, 25.0000019, -180.0]],
+            "m_Translate": [14, [-0.5513916, 0.0075149, 3.9628295]]
+          },
+          "Fields": {
+            "IPatrolPoint::m_UseGenericAnimation": "1",
+            "IPatrolPoint::m_WaitTime": "5.000000",
+            "m_BehaviorName": "combat_idle_standing"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Viral_Room_a_1"],
+            "m_PcId": [6, 7],
+            "m_PrefabName": [12, "patrol_setup"],
+            "m_PresetNames": [12, "Type;Without Activator;Activation - distance;Activator;Activation - daytime;Whole Day"],
+            "m_Rotate": [14, [179.9999847, 35.0000076, -179.9999847]],
+            "m_Translate": [14, [-1.6710205, 0.0228118, 5.9510498]]
+          },
+          "Fields": {
+            "IPatrolData::m_PatrolPoints": "/~6;/~8;/~11;/~12;",
+            "ISpawnData::m_GroupID": "1",
+            "TriggerAreaTransform": "1.000000 0.000000 0.000000 -0.000061 -0.000000 1.000000 0.000000 0.000000 -0.000000 0.000000 1.000000 6.422363",
+            "m_Preset": "Character;Viral"
+          },
+          "EmbeddedObject": {
+            "Class": "AttributeAreaDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyActivator",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Viral_Room_a_1_BP_2"],
+            "m_PcId": [6, 8],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_PresetNames": [12, "Ranges;Interior"],
+            "m_Rotate": [14, [0.0001422, 85.0000534, -0.0001461]],
+            "m_Translate": [14, [3.7469482, 0.0075166, -3.1967163]]
+          },
+          "Fields": {
+            "IPatrolPoint::m_UseGenericAnimation": "1",
+            "IPatrolPoint::m_WaitTime": "5.000000",
+            "m_BehaviorName": "combat_idle_standing"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [14.1207294, 2.3800001, -1.8839406, 16.8741474, 2.8800001, 11.9377145]],
+            "m_Name": [12, "activator_room01"],
+            "m_PcId": [6, 9],
+            "m_PrefabName": [12, "batch_ai_spawner_activator"],
+            "m_Rotate": [14, [0.0, -30.0, -0.0]],
+            "m_Translate": [14, [-9.5620117, -0.4781244, 1.4436645]]
+          },
+          "Fields": {
+            "m_AreaHeight": "5.760000",
+            "m_AreaPoints": "18.176636 -0.500000 -13.821655;18.446777 -0.500000 -6.942932;30.883911 -0.500000 -6.865295;30.994873 -0.500000 10.010193;15.540161 -0.500000 10.053772;15.407837 -0.500000 4.208618;7.883301 -0.500000 4.309814;-2.715332 -0.500000 4.196777;-2.753418 -0.500000 -13.781555;",
+            "m_SearchEntryPoints": "/;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 10],
+            "m_PrefabName": [12, "adv_spawnpoint_biter_resting"],
+            "m_Rotate": [14, [0.0000042, 26.4999694, 0.0000484]],
+            "m_Translate": [14, [-0.4487304, 0.0075073, 7.8227539]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Viral_Room_a_1_BP_3"],
+            "m_PcId": [6, 11],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_PresetNames": [12, "Ranges;Interior"],
+            "m_Rotate": [14, [-0.0000051, -4.999958, -0.0000128]],
+            "m_Translate": [14, [6.4962158, 0.0075166, -0.4274291]]
+          },
+          "Fields": {
+            "IPatrolPoint::m_UseGenericAnimation": "1",
+            "IPatrolPoint::m_WaitTime": "5.000000",
+            "m_BehaviorName": "combat_idle_standing"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Viral_Room_a_1_BP_4"],
+            "m_PcId": [6, 12],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_PresetNames": [12, "Ranges;Interior"],
+            "m_Rotate": [14, [-6.059680686121283e-7, 15.0000419, -0.0000129]],
+            "m_Translate": [14, [3.0839843, 0.0075166, 5.7542114]]
+          },
+          "Fields": {
+            "IPatrolPoint::m_UseGenericAnimation": "1",
+            "IPatrolPoint::m_WaitTime": "5.000000",
+            "m_BehaviorName": "combat_idle_standing"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Spawner_Room_1_Tracks"],
+            "m_PcId": [6, 13],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Activator;Activation - daytime;Whole Day"],
+            "m_Rotate": [14, [-0.0000302, 59.9999923, 0.0000304]],
+            "m_Scale": [14, [12.6360034, 3.4690008, 12.0000038]],
+            "m_Translate": [14, [12.8446044, -1.0525989, 13.6341552]]
+          },
+          "Fields": {
+            "m_NumOfAIsToSpawn": "2",
+            "m_PointsSource": "2",
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_PresetPoolName": ""
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyActivator",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyActivator",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

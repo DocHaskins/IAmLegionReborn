@@ -1,0 +1,1102 @@
+{
+  "__filename__": {
+    "Version": 4,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.2974624, 12.0000009, -0.219815, 0.7945134, 12.0000009, 0.5167339]],
+            "m_Name": [12, "AM_hunting_zone_1"],
+            "m_PcId": [6, 1],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Rotate": [14, [-0.0, 30.0, -0.0]],
+            "m_Scale": [14, [67.9930725, 1.0, 76.4200363]],
+            "m_Translate": [14, [9.9686279, -0.7006816, 0.3521727]]
+          },
+          "Fields": {
+            "m_AreaHeight": "24.000000",
+            "m_AreaPoints": "0.481075 0.000000 -0.340279;0.497051 0.000000 0.261069;0.044822 0.000000 0.296919;-0.453859 0.000000 0.064743;-0.960631 0.000000 -0.191829;-1.067567 0.000001 -0.434577;-1.091976 0.000000 -0.601666;-0.800550 0.000000 -0.736549;-0.417304 -0.000000 -0.481614;-0.071177 0.000000 -0.341793;",
+            "m_MarkerEntity": "/~6"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "hunted_infected_1"],
+            "m_PcId": [6, 2],
+            "m_PrefabName": [12, "humanai"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Activation - daytime;Night"],
+            "m_Rotate": [14, [-0.0, 60.0, -0.0]],
+            "m_Translate": [14, [2.1214904, 0.0009746, 0.6152343]]
+          },
+          "Fields": {
+            "IAIProxy::m_IgnoreAllEnemies": "0",
+            "IAIProxy::m_InvisibleToEnemies": "1",
+            "m_DifficultyRangeSource": "UserDefinedDifficultyRange,();",
+            "m_PresetName": "Character;Hunting_Banshee",
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "AIProxyActivationStrategyDefault",
+            "DestinationField": "m_ActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource",
+            "Fields": {
+              "m_DifficultyModifier": "0",
+              "m_MaxDifficultyTier": "Tier_9",
+              "m_MinDifficultyTier": "Tier_3"
+            }
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_EntityComponentsExtents": [69, [0.0032631, 0.042381, 0.0081164, 0.1340397, 0.0448343, 0.0545065]],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "infected_tissue_1"],
+            "m_PcId": [6, 3],
+            "m_PrefabName": [12, "quest_object"],
+            "m_Translate": [14, [3.2813415, 0.0059118, 1.4597778]]
+          },
+          "Fields": {
+            "MeshName": "prp_meat_small_a.msh",
+            "SkinName": "Default",
+            "cbs::IEnable::m_State": "1",
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "PinlockShape"],
+            "m_PcId": [6, 4],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Scale": [14, [10.0, 1.0, 10.0]],
+            "m_Translate": [14, [-0.1267088, 0.1117359, -0.2517718]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "PM_Hunting07"],
+            "m_PcId": [6, 5],
+            "m_PrefabName": [12, "point_marker"],
+            "m_Rotate": [14, [-179.9999847, 44.9999885, 179.9999847]],
+            "m_Translate": [14, [-52.2154541, 4.4489517, 22.904663]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.000005, 1.000005, 0.000005, 0.4939643, 1.000005, 0.4939643]],
+            "m_Name": [12, "marker"],
+            "m_PcId": [6, 6],
+            "m_PrefabName": [12, "marker"],
+            "m_Translate": [14, [7.0457763, 2.1208467, -4.3038635]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.74035, -0.000001, 0.1387119, 1.7892589, 0.500001, 0.7608169]],
+            "m_Name": [12, "GMA"],
+            "m_PcId": [6, 8],
+            "m_PrefabName": [12, "gameplay_modifier_area"],
+            "m_Scale": [14, [32.2480773, 7.5800533, 32.0128555]],
+            "m_Translate": [14, [3.2845458, 3.0575428, -6.7346191]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_ModifierFlags": "410144",
+            "m_Points": "0.527077 -0.500000 -0.622105;0.572733 -0.500000 -0.544203;0.627977 -0.500000 -0.578087;1.048909 -0.500000 0.111895;1.044668 -0.500000 0.197561;0.429315 -0.500000 0.610237;0.121423 -0.500000 0.623829;0.111638 -0.500000 0.532341;-1.498612 -0.500000 0.530138;-1.499903 -0.500000 0.899529;-1.691350 -0.500000 0.777746;-1.622644 -0.500000 0.630341;-1.726246 -0.500000 0.567326;-1.662517 -0.500001 0.466541;-2.201082 -0.500001 0.169619;-2.170015 -0.500001 0.105490;-2.217060 -0.500001 0.070744;-2.096962 -0.500001 -0.126497;-2.529609 -0.500001 -0.378551;-2.450442 -0.500001 -0.517550;-1.962878 -0.500001 -0.235832;-1.937965 -0.500001 -0.282902;-1.727128 -0.500000 -0.165691;-1.687714 -0.500000 -0.220478;-1.576827 -0.500000 -0.161768;-1.472501 -0.500000 -0.136948;-1.326759 -0.500000 -0.127460;-1.324265 -0.500000 -0.165009;-1.166703 -0.500000 -0.169025;-1.162232 -0.500000 -0.079578;-0.466885 -0.500000 -0.107262;-0.467174 -0.500002 -0.181023;0.006083 -0.500000 -0.373997;0.049872 -0.500000 -0.319542;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 11],
+            "m_PrefabName": [12, "spikes"],
+            "m_PresetNames": [12, "Spike_Type;Barrel"],
+            "m_Rotate": [14, [-0.0, 0.0000135, -0.0]],
+            "m_Translate": [14, [-2.2092895, 0.0009746, -9.5024414]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 12],
+            "m_PrefabName": [12, "spikes_with_barrel"],
+            "m_Rotate": [14, [0.0001863, -88.5000152, 0.0001912]],
+            "m_Translate": [14, [1.2992248, 0.0009746, 9.7905883]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [8.454132, 2.5, -4.3180541, 11.4519042, 2.5, 11.1184692]],
+            "m_Name": [12, "Biter_spawner_d"],
+            "m_PcId": [6, 15],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior"],
+            "m_Translate": [14, [3.3472595, 0.0009746, -10.2972412]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_DifficultyRangeSource": "AttributeAreaDifficultyRange,();",
+            "m_Height": "5.000000",
+            "m_NumOfAIsToSpawn": "6",
+            "m_PointDensityMultiplier": "0.100000",
+            "m_Points": "17.052979 -0.500000 -15.436523;19.906036 -0.500000 -10.165894;17.785126 -0.500000 -7.535522;9.423615 -0.500000 -2.515015;11.561005 -0.500000 0.952759;2.201965 -0.500000 6.800415;-2.997772 -0.500000 -2.420044;0.101440 -0.500000 -3.926514;4.192657 -0.500000 -1.217041;7.019226 -0.500000 -4.724365;5.731964 -0.500000 -6.823120;10.331268 -0.500000 -9.524048;13.292236 -0.500000 -11.227295;12.547089 -0.500000 -12.560608;",
+            "m_PointsSource": "8",
+            "m_Preset": "Character;Biter_Male_Bleached"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "AttributeAreaDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0004981, 0.3590755, 0.0005018, 0.2219564, 0.3590754, 0.2219565]],
+            "m_PcId": [6, 16],
+            "m_PrefabName": [12, "portable_tank_explosive"],
+            "m_PresetNames": [12, "tank_behaviour;flying_tank"],
+            "m_Rotate": [14, [-0.0, 30.0, -0.0]],
+            "m_Translate": [14, [-11.0639343, 0.0009746, -10.9992065]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0004981, 0.3590755, 0.0005018, 0.2219564, 0.3590754, 0.2219565]],
+            "m_PcId": [6, 17],
+            "m_PrefabName": [12, "portable_tank_explosive"],
+            "m_PresetNames": [12, "tank_behaviour;flying_tank"],
+            "m_Rotate": [14, [-0.0, 30.0, -0.0]],
+            "m_Translate": [14, [14.6721496, 4.8305454, -0.0275877]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0004981, 0.3590755, 0.0005018, 0.2219564, 0.3590754, 0.2219565]],
+            "m_PcId": [6, 18],
+            "m_PrefabName": [12, "portable_tank_explosive"],
+            "m_PresetNames": [12, "tank_behaviour;flying_tank"],
+            "m_Rotate": [14, [-0.0, 30.0, -0.0]],
+            "m_Translate": [14, [17.9580383, 4.9186162, -10.2149658]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [2.4479675, 2.4999985, -2.2799377, 15.0156898, 2.5000014, 13.3927955]],
+            "m_Name": [12, "Biter_spawner_a"],
+            "m_PcId": [6, 19],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior"],
+            "m_Rotate": [14, [-0.0, -40.0000038, -0.0]],
+            "m_Translate": [14, [-6.7545776, 0.0009746, 1.6900633]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_DifficultyRangeSource": "AttributeAreaDifficultyRange,();",
+            "m_Height": "5.000000",
+            "m_NumOfAIsToSpawn": "8",
+            "m_PointDensityMultiplier": "0.100000",
+            "m_Points": "-0.146484 -0.500000 11.112854;-12.567719 -0.500000 -3.914551;-5.995178 -0.500002 -9.346741;-5.363831 -0.500003 -15.672729;7.917572 -0.500000 -10.781189;7.397186 -0.500000 -9.245483;17.463654 -0.500000 -4.585205;",
+            "m_PointsSource": "8",
+            "m_Preset": "Character;Biter_Male_Bleached"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "AttributeAreaDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-6.2001361, 2.4999985, -9.3321552, 8.2755756, 2.5000014, 14.2433509]],
+            "m_Name": [12, "Biter_spawner_b"],
+            "m_PcId": [6, 20],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior"],
+            "m_Rotate": [14, [-0.0, -40.0000038, -0.0]],
+            "m_Translate": [14, [21.6530456, 0.0009746, 13.965332]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_DifficultyRangeSource": "AttributeAreaDifficultyRange,();",
+            "m_Height": "5.000000",
+            "m_NumOfAIsToSpawn": "4",
+            "m_PointDensityMultiplier": "0.100000",
+            "m_Points": "-7.528931 -0.500000 4.911194;-14.475708 -0.500000 2.082153;-12.305786 -0.500000 -4.651978;-9.799622 -0.500001 -4.304749;-3.082397 -0.500002 -23.575500;0.224609 -0.500002 -22.394226;0.106079 -0.500003 -21.204224;2.075439 -0.500000 -20.350342;-0.608582 -0.500000 -13.789001;-5.209778 -0.500000 -1.514465;-3.329193 -0.500000 -0.775085;",
+            "m_PointsSource": "8",
+            "m_Preset": "Character;Biter_Male_Bleached"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "AttributeAreaDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 21],
+            "m_PrefabName": [12, "spikes_with_barrel"],
+            "m_Rotate": [14, [0.0000097, -61.0000495, 0.0000133]],
+            "m_Translate": [14, [10.4017944, 0.0009746, -6.9012451]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 22],
+            "m_PrefabName": [12, "spikes_with_barrel"],
+            "m_Rotate": [14, [179.9999847, -28.9999694, -179.9999847]],
+            "m_Translate": [14, [26.428833, 0.0009746, -12.1063232]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 23],
+            "m_PrefabName": [12, "spikes"],
+            "m_PresetNames": [12, "Spike_Type;Regular"],
+            "m_Rotate": [14, [90.8604965, -1.2286937, -144.9907684]],
+            "m_Translate": [14, [8.4085388, 0.5826835, -5.161499]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-7.5261402, 1.499999, -5.1723642, 8.2292957, 1.5000019, 10.0291767]],
+            "m_Name": [12, "Biter_spawner_c"],
+            "m_PcId": [6, 24],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior"],
+            "m_Rotate": [14, [-0.0, -40.0000038, -0.0]],
+            "m_Translate": [14, [21.3322753, 4.7218656, 4.3041992]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_DifficultyRangeSource": "AttributeAreaDifficultyRange,();",
+            "m_Height": "3.000000",
+            "m_NumOfAIsToSpawn": "4",
+            "m_PointDensityMultiplier": "0.100000",
+            "m_Points": "-10.192871 -0.500000 4.856812;-15.755432 -0.500000 2.736755;-11.162903 -0.500002 -8.729797;-13.010498 -0.500003 -9.579529;-11.555054 -0.500002 -13.516479;-10.625549 -0.500001 -13.045776;-9.700745 -0.500001 -15.201538;0.703156 -0.499999 -11.627502;-1.586243 -0.499999 -4.523010;-4.934387 -0.499999 -5.699951;-7.254639 -0.500000 1.044434;-8.730103 -0.500000 0.486145;",
+            "m_PointsSource": "8",
+            "m_Preset": "Character;Biter_Male_Bleached"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "AttributeAreaDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0004981, 0.3590755, 0.0005018, 0.2219565, 0.3590755, 0.2219565]],
+            "m_PcId": [6, 25],
+            "m_PrefabName": [12, "portable_tank_explosive"],
+            "m_PresetNames": [12, "tank_behaviour;flying_tank"],
+            "m_Rotate": [14, [-90.0, -0.0000024, -9.9999971]],
+            "m_Translate": [14, [30.0081481, 0.2016181, 3.168518]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 26],
+            "m_PrefabName": [12, "street_car_spear_deco_group_04"],
+            "m_Rotate": [14, [-0.0, 30.0, -0.0]],
+            "m_Translate": [14, [25.0595092, 0.0009746, -17.8400268]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 27],
+            "m_PrefabName": [12, "street_car_spear_deco_group_02"],
+            "m_Rotate": [14, [-0.0, -15.0, -0.0]],
+            "m_Translate": [14, [24.1947631, 0.0009746, 1.6246335]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_NavmeshFlagsAllowed": [21, -3],
+            "m_PcId": [6, 28],
+            "m_PrefabName": [12, "combat_helper_zone_level_05_01_uv_mast"],
+            "m_Rotate": [14, [-0.0, 88.5001449, -0.0]],
+            "m_Translate": [14, [2.9573364, 0.0009746, -15.7601318]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 29],
+            "m_PrefabName": [12, "spikes"],
+            "m_PresetNames": [12, "Spike_Type;Barrel"],
+            "m_Rotate": [14, [-180.0, 44.9999923, -180.0]],
+            "m_Translate": [14, [-5.8023376, 0.0009746, 6.1239013]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 30],
+            "m_PrefabName": [12, "spikes"],
+            "m_PresetNames": [12, "Spike_Type;Barrel"],
+            "m_Rotate": [14, [179.9999847, 44.9999923, 179.9999847]],
+            "m_Translate": [14, [12.7646789, 4.8268203, -3.0744628]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "hunted_infected_sidekick"],
+            "m_PcId": [6, 31],
+            "m_PrefabName": [12, "humanai"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Activation - daytime;Night"],
+            "m_Rotate": [14, [-180.0, -85.0000152, -180.0]],
+            "m_Translate": [14, [15.59375, 4.8302593, -3.9509277]]
+          },
+          "Fields": {
+            "IAIProxy::m_IgnoreAllEnemies": "0",
+            "IAIProxy::m_InvisibleToEnemies": "1",
+            "m_DifficultyRangeSource": "AttributeAreaDifficultyRange,();",
+            "m_PresetName": "Character;Banshee",
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "AIProxyActivationStrategyDefault",
+            "DestinationField": "m_ActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "AttributeAreaDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "hunted_spitter01"],
+            "m_PcId": [6, 32],
+            "m_PrefabName": [12, "humanai"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Activation - daytime;Night"],
+            "m_Rotate": [14, [-2.1869318800327165e-7, 85.0000915, -2.18696513343275e-7]],
+            "m_Translate": [14, [11.0685424, 4.8302593, -18.7111816]]
+          },
+          "Fields": {
+            "IAIProxy::m_IgnoreAllEnemies": "0",
+            "IAIProxy::m_InvisibleToEnemies": "1",
+            "m_DifficultyRangeSource": "AttributeAreaDifficultyRange,();",
+            "m_PresetName": "Character;Spitter",
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "AIProxyActivationStrategyDefault",
+            "DestinationField": "m_ActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "AttributeAreaDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "hunted_spitter02"],
+            "m_PcId": [6, 33],
+            "m_PrefabName": [12, "humanai"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Activation - daytime;Night"],
+            "m_Rotate": [14, [-179.9999847, -85.0000152, -179.9999847]],
+            "m_Translate": [14, [22.8144531, 8.9739513, -2.0496215]]
+          },
+          "Fields": {
+            "IAIProxy::m_IgnoreAllEnemies": "0",
+            "IAIProxy::m_InvisibleToEnemies": "1",
+            "m_DifficultyRangeSource": "AttributeAreaDifficultyRange,();",
+            "m_PresetName": "Character;Spitter",
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "AIProxyActivationStrategyDefault",
+            "DestinationField": "m_ActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "AttributeAreaDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "hunted_spitter03"],
+            "m_PcId": [6, 34],
+            "m_PrefabName": [12, "humanai"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Activation - daytime;Night"],
+            "m_Rotate": [14, [-179.9999847, -25.000019, -180.0]],
+            "m_Translate": [14, [13.1804504, 13.7112369, 15.6420898]]
+          },
+          "Fields": {
+            "IAIProxy::m_IgnoreAllEnemies": "0",
+            "IAIProxy::m_InvisibleToEnemies": "1",
+            "m_DifficultyRangeSource": "AttributeAreaDifficultyRange,();",
+            "m_PresetName": "Character;Spitter",
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "AIProxyActivationStrategyDefault",
+            "DestinationField": "m_ActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "AttributeAreaDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "hunted_spitter04"],
+            "m_PcId": [6, 35],
+            "m_PrefabName": [12, "humanai"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Activation - daytime;Night"],
+            "m_Rotate": [14, [-0.0000204, 10.0000133, -0.0000108]],
+            "m_Translate": [14, [-6.7271423, 3.7894592, -10.8095092]]
+          },
+          "Fields": {
+            "IAIProxy::m_IgnoreAllEnemies": "0",
+            "IAIProxy::m_InvisibleToEnemies": "1",
+            "m_DifficultyRangeSource": "AttributeAreaDifficultyRange,();",
+            "m_PresetName": "Character;Spitter",
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "AIProxyActivationStrategyDefault",
+            "DestinationField": "m_ActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "AttributeAreaDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "static_agenda_infected_1"],
+            "m_PcId": [6, 36],
+            "m_PrefabName": [12, "static_agenda"],
+            "m_Rotate": [14, [-0.0, 30.0, -0.0]],
+            "m_Translate": [14, [0.5895078, 1.3731503, 1.8742674]]
+          },
+          "Fields": {
+            "ExternalAIs": "/~2;",
+            "m_StaticScenarioChooseMode": "Sequence",
+            "m_StaticScenarioLoopCount": "-1",
+            "m_StaticScenarios": "/~37;/~38;/~93;/~95;/~39;/~40;/~59;/~94;/~41;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "simple_scenario_infected_1_01"],
+            "m_PcId": [6, 37],
+            "m_PrefabName": [12, "simple_scenario"],
+            "m_Rotate": [14, [-0.0, 30.0, -0.0]],
+            "m_Translate": [14, [-0.0393676, 1.3972759, -0.132446]]
+          },
+          "Fields": {
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_MaxExecutionTime": "5.000000",
+            "m_MinExecutionTime": "3.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "simple_scenario_infected_1_02"],
+            "m_PcId": [6, 38],
+            "m_PrefabName": [12, "simple_scenario"],
+            "m_Rotate": [14, [179.9999847, 65.0000228, 179.9999847]],
+            "m_Translate": [14, [7.9888916, 4.850068, -1.1861572]]
+          },
+          "Fields": {
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_MaxExecutionTime": "5.000000",
+            "m_MinExecutionTime": "3.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "simple_scenario_infected_1_05"],
+            "m_PcId": [6, 39],
+            "m_PrefabName": [12, "simple_scenario"],
+            "m_Rotate": [14, [179.9999847, -0.0000067, 179.9999847]],
+            "m_Translate": [14, [34.4263305, -0.0039372, -1.0454709]]
+          },
+          "Fields": {
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_MaxExecutionTime": "5.000000",
+            "m_MinExecutionTime": "3.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "simple_scenario_infected_1_06"],
+            "m_PcId": [6, 40],
+            "m_PrefabName": [12, "simple_scenario"],
+            "m_Rotate": [14, [179.9999847, -60.0000038, 179.9999847]],
+            "m_Translate": [14, [26.2114562, -0.0039391, -16.7954101]]
+          },
+          "Fields": {
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_MaxExecutionTime": "5.000000",
+            "m_MinExecutionTime": "3.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "simple_scenario_infected_1_09"],
+            "m_PcId": [6, 41],
+            "m_PrefabName": [12, "simple_scenario"],
+            "m_Rotate": [14, [-0.0000027, -60.0000038, -0.0]],
+            "m_Translate": [14, [6.5724182, -0.0039428, -14.2461547]]
+          },
+          "Fields": {
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_MaxExecutionTime": "5.000000",
+            "m_MinExecutionTime": "3.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "static_agenda_infected_sidekick"],
+            "m_PcId": [6, 42],
+            "m_PrefabName": [12, "static_agenda"],
+            "m_Rotate": [14, [-0.0, 30.0, -0.0]],
+            "m_Translate": [14, [15.1119995, 4.8302593, -3.34375]]
+          },
+          "Fields": {
+            "ExternalAIs": "/~31;",
+            "m_StaticScenarioLoopCount": "-1",
+            "m_StaticScenarios": "/~43;/~45;/~44;/~46;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "simple_scenario_infected_sidekick_01"],
+            "m_PcId": [6, 43],
+            "m_PrefabName": [12, "simple_scenario"],
+            "m_Rotate": [14, [-0.0, -60.0000038, -0.0]],
+            "m_Translate": [14, [15.6146545, 4.8302593, -6.5708618]]
+          },
+          "Fields": {
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_MaxExecutionTime": "8.000000",
+            "m_MinExecutionTime": "6.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "simple_scenario_infected_sidekick_03"],
+            "m_PcId": [6, 44],
+            "m_PrefabName": [12, "simple_scenario"],
+            "m_Rotate": [14, [-180.0, 50.0000038, -180.0]],
+            "m_Translate": [14, [22.1081542, 8.9495811, -4.0181884]]
+          },
+          "Fields": {
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_MaxExecutionTime": "8.000000",
+            "m_MinExecutionTime": "6.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "simple_scenario_infected_sidekick_02"],
+            "m_PcId": [6, 45],
+            "m_PrefabName": [12, "simple_scenario"],
+            "m_Rotate": [14, [-0.0, 30.0, -0.0]],
+            "m_Translate": [14, [17.6472167, 4.8302593, 1.3114624]]
+          },
+          "Fields": {
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_MaxExecutionTime": "8.000000",
+            "m_MinExecutionTime": "6.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "simple_scenario_infected_sidekick_04"],
+            "m_PcId": [6, 46],
+            "m_PrefabName": [12, "simple_scenario"],
+            "m_Rotate": [14, [179.9999694, -45.0000038, 179.9999542]],
+            "m_Translate": [14, [21.0800476, 8.9825029, -13.9243774]]
+          },
+          "Fields": {
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_MaxExecutionTime": "8.000000",
+            "m_MinExecutionTime": "6.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "static_agenda_spitter_2"],
+            "m_PcId": [6, 47],
+            "m_PrefabName": [12, "static_agenda"],
+            "m_Rotate": [14, [-0.0, 30.0, -0.0]],
+            "m_Translate": [14, [24.2348632, 9.0334396, -1.682983]]
+          },
+          "Fields": {
+            "ExternalAIs": "/~33;",
+            "m_StaticScenarioLoopCount": "-1",
+            "m_StaticScenarios": "/~48;/~49;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "simple_scenario_spitter_2_01"],
+            "m_PcId": [6, 48],
+            "m_PrefabName": [12, "simple_scenario"],
+            "m_Rotate": [14, [0.0, -90.0, 0.0]],
+            "m_Translate": [14, [23.8133239, 8.9471206, -1.4335937]]
+          },
+          "Fields": {
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_MaxExecutionTime": "12.000000",
+            "m_MinExecutionTime": "10.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "simple_scenario_spitter_2_02"],
+            "m_PcId": [6, 49],
+            "m_PrefabName": [12, "simple_scenario"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [27.7638549, 8.9471206, -6.0211181]]
+          },
+          "Fields": {
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_MaxExecutionTime": "12.000000",
+            "m_MinExecutionTime": "10.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "static_agenda_spitter_4"],
+            "m_PcId": [6, 50],
+            "m_PrefabName": [12, "static_agenda"],
+            "m_Rotate": [14, [-0.0, 30.0, -0.0]],
+            "m_Translate": [14, [-7.19635, 3.7894592, -10.5133056]]
+          },
+          "Fields": {
+            "ExternalAIs": "/~35;",
+            "m_StaticScenarioLoopCount": "-1",
+            "m_StaticScenarios": "/~51;/~52;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "simple_scenario_spitter_4_01"],
+            "m_PcId": [6, 51],
+            "m_PrefabName": [12, "simple_scenario"],
+            "m_Rotate": [14, [-0.0000023, 50.0000038, 0.0000038]],
+            "m_Translate": [14, [-6.3131713, 3.7894592, -10.3128662]]
+          },
+          "Fields": {
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_MaxExecutionTime": "12.000000",
+            "m_MinExecutionTime": "10.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "simple_scenario_spitter_4_02"],
+            "m_PcId": [6, 52],
+            "m_PrefabName": [12, "simple_scenario"],
+            "m_Rotate": [14, [6.710728257530718e-7, 0.0000032, 0.0000024]],
+            "m_Translate": [14, [-10.0281982, 3.7894592, -10.3583984]]
+          },
+          "Fields": {
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_MaxExecutionTime": "12.000000",
+            "m_MinExecutionTime": "10.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0127148, 0.3768954, 0.4355864, 0.4472896, 0.4372746, 0.6258313]],
+            "m_PcId": [6, 53],
+            "m_PrefabName": [12, "multiskinned_mesh"],
+            "m_Rotate": [14, [-0.0, -35.0, -0.0]],
+            "m_Translate": [14, [5.5064086, -0.0108594, -14.3450927]]
+          },
+          "Fields": {
+            "ModelName": "db_lying_at_wall_srv_man_12_b.model",
+            "m_CollisionFlags": "107"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0784977, 0.1686488, -0.0499839, 0.6237635, 0.239896, 0.8747817]],
+            "m_PcId": [6, 54],
+            "m_PrefabName": [12, "multiskinned_mesh"],
+            "m_Rotate": [14, [-0.0, -85.0000534, -0.0]],
+            "m_Translate": [14, [34.7189331, -0.0108594, -2.5325927]]
+          },
+          "Fields": {
+            "ModelName": "db_lying_srv_wmn_21_a.model",
+            "m_CollisionFlags": "107"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 55],
+            "m_PrefabName": [12, "pr_streetcar"],
+            "m_Rotate": [14, [-180.0, 9.9999942, -180.0]],
+            "m_Translate": [14, [-0.0994872, 0.0505971, -0.1824951]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "simple_scenario_infected_1_07"],
+            "m_PcId": [6, 59],
+            "m_PrefabName": [12, "simple_scenario"],
+            "m_Rotate": [14, [179.9999847, -60.0000038, 179.9999847]],
+            "m_Translate": [14, [22.5621643, 4.9017686, -15.5964965]]
+          },
+          "Fields": {
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_MaxExecutionTime": "5.000000",
+            "m_MinExecutionTime": "3.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.3374986, 0.1400111, -0.6166373, 0.6077038, 0.2337495, 0.8507666]],
+            "m_PcId": [6, 60],
+            "m_PrefabName": [12, "multiskinned_mesh"],
+            "m_Rotate": [14, [-180.0, 40.0000114, -180.0]],
+            "m_Translate": [14, [20.6378479, 8.9712333, -14.8882446]]
+          },
+          "Fields": {
+            "ModelName": "db_lying_srv_man_14_b.model",
+            "m_CollisionFlags": "107"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 61],
+            "m_PrefabName": [12, "roofs_connector_dummybridge_20m"],
+            "m_Rotate": [14, [-179.9999847, -0.0000016, -179.9999694]],
+            "m_Translate": [14, [-23.9415893, 9.316905, 10.4555664]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 67],
+            "m_PrefabName": [12, "ce_crane_test_01"],
+            "m_Rotate": [14, [-179.9999847, 39.9999961, -179.9999847]],
+            "m_Translate": [14, [-1.8706357, 0.016022, -3.079895]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.000002, -6.5, 0.0000585, 0.2563446, 6.5000033, 0.2563451]],
+            "m_PcId": [6, 68],
+            "m_PrefabName": [12, "cable"],
+            "m_Rotate": [14, [-179.9999847, -10.0000038, -179.9999847]],
+            "m_Translate": [14, [1.4075622, 16.8105468, -7.2443847]]
+          },
+          "Fields": {
+            "m_EditorHookPoint": "0.000000 -13.000000 0.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 85],
+            "m_PrefabName": [12, "bld_ce_a_scaffold_top_2x_a"],
+            "m_Rotate": [14, [-0.0, 30.0, -0.0]],
+            "m_Translate": [14, [27.7967224, 5.3105468, 3.7064208]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 86],
+            "m_PrefabName": [12, "bld_ce_a_scaffold_btm_2x_0h_a"],
+            "m_Rotate": [14, [179.9999694, -29.999998, 179.9999847]],
+            "m_Translate": [14, [27.7967224, 1.4105465, 3.7064208]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 88],
+            "m_PrefabName": [12, "ce_water_tower_r01_crate_group_a"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [-20.8743286, 0.0009746, -9.319458]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [3.0384063, 2.4999985, -5.6673583, 14.3141059, 2.5000014, 12.7495155]],
+            "m_Name": [12, "Biter_spawner_e"],
+            "m_PcId": [6, 89],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior"],
+            "m_Rotate": [14, [-0.0, -40.0000038, -0.0]],
+            "m_Translate": [14, [-48.0954284, 0.0009746, 1.6901245]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_DifficultyRangeSource": "AttributeAreaDifficultyRange,();",
+            "m_Height": "5.000000",
+            "m_NumOfAIsToSpawn": "7",
+            "m_PointDensityMultiplier": "0.100000",
+            "m_Points": "-8.401764 -0.500000 7.082153;-11.275696 -0.500000 -8.589966;-5.995178 -0.500002 -9.346741;1.213440 -0.500003 -14.268433;5.923370 -0.500000 -18.416870;17.352509 -0.500000 -5.015686;5.752594 -0.500001 5.068726;",
+            "m_PointsSource": "8",
+            "m_Preset": "Character;Biter_Male_Bleached"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "AttributeAreaDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 90],
+            "m_PrefabName": [12, "pa_interaction_plank_half_b"],
+            "m_Rotate": [14, [-0.0, 65.0000152, -0.0]],
+            "m_Translate": [14, [8.2958374, 4.8739299, -3.7446289]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 91],
+            "m_PrefabName": [12, "pa_interaction_plank_half_c"],
+            "m_Rotate": [14, [-0.0, -25.0000019, -0.0]],
+            "m_Translate": [14, [27.5391845, 5.3321914, 3.6378173]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 92],
+            "m_PrefabName": [12, "pa_interaction_plank_half_b"],
+            "m_Rotate": [14, [-180.0, -65.0000305, -180.0]],
+            "m_Translate": [14, [8.2101135, 4.8739299, -4.1312255]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "simple_scenario_infected_1_03"],
+            "m_PcId": [6, 93],
+            "m_PrefabName": [12, "simple_scenario"],
+            "m_Rotate": [14, [-0.0, 60.0, -0.0]],
+            "m_Translate": [14, [19.2774047, 4.8305473, -0.7619016]]
+          },
+          "Fields": {
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_MaxExecutionTime": "5.000000",
+            "m_MinExecutionTime": "3.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "simple_scenario_infected_1_08"],
+            "m_PcId": [6, 94],
+            "m_PrefabName": [12, "simple_scenario"],
+            "m_Rotate": [14, [179.9999847, -60.0000038, 179.9999847]],
+            "m_Translate": [14, [17.0227966, 4.8305358, -13.7297973]]
+          },
+          "Fields": {
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_MaxExecutionTime": "5.000000",
+            "m_MinExecutionTime": "3.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "simple_scenario_infected_1_04"],
+            "m_PcId": [6, 95],
+            "m_PrefabName": [12, "simple_scenario"],
+            "m_Rotate": [14, [179.9999847, 55.000019, 179.9999847]],
+            "m_Translate": [14, [23.8946533, 0.11771, 2.7595214]]
+          },
+          "Fields": {
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_MaxExecutionTime": "5.000000",
+            "m_MinExecutionTime": "3.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0127148, 0.3768954, 0.4355864, 0.4472896, 0.4372746, 0.6258313]],
+            "m_PcId": [6, 96],
+            "m_PrefabName": [12, "multiskinned_mesh"],
+            "m_Rotate": [14, [-0.0, 39.9999923, -0.0]],
+            "m_Translate": [14, [17.816925, 4.8221378, 2.0661621]]
+          },
+          "Fields": {
+            "ModelName": "db_lying_at_wall_srv_man_10_a.model",
+            "m_CollisionFlags": "107"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 98],
+            "m_PrefabName": [12, "blood_basic_puddle_a_r"],
+            "m_Rotate": [14, [-0.0, 30.0, -0.0]],
+            "m_Translate": [14, [18.2790222, 4.8305492, 2.5010375]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 99],
+            "m_PrefabName": [12, "blood_basic_puddle_b_r"],
+            "m_Rotate": [14, [-0.0, 30.0, -0.0]],
+            "m_Translate": [14, [5.3103027, 0.0009749, -13.685852]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 100],
+            "m_PrefabName": [12, "blood_basic_puddle_a_r"],
+            "m_Rotate": [14, [-0.0, 30.0, -0.0]],
+            "m_Translate": [14, [19.4466552, 4.8614377, -14.4176025]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 102],
+            "m_PrefabName": [12, "blood_basic_puddle_b_l"],
+            "m_Rotate": [14, [-0.0, 30.0, -0.0]],
+            "m_Translate": [14, [34.9608764, 0.0009749, -2.3505249]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 103],
+            "m_PrefabName": [12, "chemical_container_a"],
+            "m_Rotate": [14, [-0.0, 30.0, -0.0]],
+            "m_Translate": [14, [12.0033874, 0.0009753, -7.6690063]]
+          },
+          "Fields": {
+            "SkinName": "red"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 104],
+            "m_PrefabName": [12, "chemical_container_a"],
+            "m_Rotate": [14, [-0.0, 30.0, -0.0]],
+            "m_Translate": [14, [13.2017517, 0.0009753, -8.3608398]]
+          },
+          "Fields": {
+            "SkinName": "blue"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "__filename__": {
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_EntityComponentsExtents": "0.000005 0.500005 0.000005 0.500005 0.500005 0.500005",
+            "m_PcId": "1",
+            "m_PrefabName": "mesh",
+            "m_PresetNames": "Meshes;dummy_box",
+            "m_Scale": "1.196424 1.123529 1.146000",
+            "m_Translate": "14.657757 1.027054 0.017366"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_EntityComponentsExtents": "0.000005 0.500005 0.000005 0.500005 0.500005 0.500005",
+            "m_Name": "BoxThree",
+            "m_PcId": "2",
+            "m_PrefabName": "mesh",
+            "m_PresetNames": "Meshes;dummy_box",
+            "m_Translate": "11.547649 1.393612 -5.901342"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_EntityComponentsExtents": "0.000005 0.500005 0.000005 0.500005 0.500005 0.500005",
+            "m_Name": "BoxTwo",
+            "m_PcId": "3",
+            "m_PrefabName": "mesh",
+            "m_PresetNames": "Meshes;dummy_box",
+            "m_Rotate": "-0.000000 0.000000 -3.500000",
+            "m_Translate": "1.253068 1.393612 -10.188498"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_EntityComponentsExtents": "0.000005 0.500005 0.000005 0.500005 0.500005 0.500005",
+            "m_Name": "BoxOne",
+            "m_PcId": "4",
+            "m_PrefabName": "mesh",
+            "m_PresetNames": "Meshes;dummy_box",
+            "m_Translate": "3.331602 1.393612 -0.725232"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_Name": "Bandit_scenario_Day",
+            "m_PcId": "5",
+            "m_PrefabName": "hub_scenario",
+            "m_PresetNames": "Activation - daytime;Not Night",
+            "m_Translate": "18.015318 1.218034 10.499886"
+          },
+          "Fields": {
+            "m_AgendaBlockTime": "1.000000",
+            "m_BPPickMode": "Random",
+            "m_BehaviorPlacesToUse": "/~8;/~9;/~11;",
+            "m_BlockTimeBtwnUses": "1.000000",
+            "m_MaxExecutionTime": "15.000000",
+            "m_MinExecutionTime": "10.000000",
+            "m_ScenarioBT": "scenario_hub",
+            "m_ScenarioScr": "GenericBanditsScenarioDay"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_Name": "Bandit_Agenda",
+            "m_PcId": "6",
+            "m_PrefabName": "static_agenda",
+            "m_PresetNames": "Activation - daytime;Whole Day;Setup;Hub",
+            "m_Translate": "18.175314 1.218034 10.339882"
+          },
+          "Fields": {
+            "m_MinSearchScenarioRadius": "0.100000",
+            "ExternalAIs": "/~7;",
+            "m_BTName": "agenda_bt",
+            "m_PlanName": "Generic_bandits",
+            "m_StaticScenarioChooseMode": "Random",
+            "m_StaticScenarios": "/~5;/~10;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_Name": "BanditTwo",
+            "m_PcId": "7",
+            "m_PrefabName": "humanai",
+            "m_PresetNames": "Character;Bandit_Tier_1_Bloods_Gang;Scenario;General",
+            "m_Rotate": "-0.000013 75.000008 0.000002",
+            "m_Translate": "-45.320904 1.218034 26.720892"
+          },
+          "Fields": {
+            "m_ObjectName": "BanditTwo",
+            "IAIProxy::m_WantedGroupId": "2"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_EntityComponentsExtents": "0.000000 0.150005 0.177981 0.500001 0.150005 0.677981",
+            "m_Name": "BP_01",
+            "m_PcId": "8",
+            "m_PrefabName": "behaviorplace",
+            "m_Rotate": "0.000067 69.500122 -0.000058",
+            "m_Scale": "0.999999 1.000000 1.000000",
+            "m_Translate": "18.883566 1.218034 7.494057"
+          },
+          "Fields": {
+            "IPatrolData::m_PatrolPoints": "/~8;/~9;/~11;",
+            "m_BPPreset": "<no preset>",
+            "m_BehaviorName": "single_static_m_stand_anger_idle_01"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_EntityComponentsExtents": "0.000000 0.150005 0.177981 0.500001 0.150005 0.677981",
+            "m_Name": "BP_02",
+            "m_PcId": "9",
+            "m_PrefabName": "behaviorplace",
+            "m_PresetNames": "Type;Patrols",
+            "m_Rotate": "-179.999908 -23.500063 -179.999939",
+            "m_Scale": "0.999999 1.000000 1.000001",
+            "m_Translate": "-22.361343 1.218015 15.936318"
+          },
+          "Fields": {
+            "m_BPPreset": "<no preset>",
+            "m_BehaviorName": "single_static_m_stand_anger_idle_01"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_Name": "Bandit_scenario_Night",
+            "m_PcId": "10",
+            "m_PrefabName": "hub_scenario",
+            "m_PresetNames": "Activation - daytime;Night",
+            "m_Rotate": "179.999329 -85.500374 179.999329",
+            "m_Translate": "-18.901430 -16.258457 9.863983"
+          },
+          "Fields": {
+            "m_AgendaBlockTime": "1.000000",
+            "m_BPPickMode": "Random",
+            "m_BehaviorPlacesToUse": "/~8;/~9;/~11;",
+            "m_BlockTimeBtwnUses": "1.000000",
+            "m_MaxExecutionTime": "30.000000",
+            "m_MinExecutionTime": "20.000000",
+            "m_ScenarioBT": "scenario_hub",
+            "m_ScenarioScr": "GenericBanditsScenarioNight"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_EntityComponentsExtents": "0.000003 0.150005 0.177981 0.500002 0.150005 0.677981",
+            "m_Name": "BP_03",
+            "m_PcId": "11",
+            "m_PrefabName": "behaviorplace",
+            "m_PresetNames": "Type;Patrols",
+            "m_Rotate": "-179.999893 45.000004 179.999878",
+            "m_Scale": "0.999999 1.000000 1.000001",
+            "m_Translate": "-4.437075 1.218030 2.921425"
+          },
+          "Fields": {
+            "m_BPPreset": "<no preset>",
+            "m_BehaviorName": "single_static_m_stand_anger_idle_01"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_Name": "BanditOne",
+            "m_PcId": "13",
+            "m_PrefabName": "humanai",
+            "m_PresetNames": "Character;Bandit_Tier_1_Bloods_Gang;Scenario;General",
+            "m_Rotate": "-0.000013 75.000008 0.000002",
+            "m_Translate": "-17.784555 1.218030 4.159580"
+          },
+          "Fields": {
+            "m_ObjectName": "BanditOne",
+            "IAIProxy::m_WantedGroupId": "2",
+            "cbs::IEnable::m_State": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_EntityComponentsExtents": "0.000000 0.500000 0.000000 0.500000 0.500000 0.500000",
+            "m_PcId": "14",
+            "m_PrefabName": "ai_spawner_number",
+            "m_PresetNames": "Activation - daytime;Whole Day;Activation - distance;Exterior",
+            "m_Scale": "6.217579 2.600000 5.575676",
+            "m_Translate": "48.402416 1.029024 -35.854309"
+          },
+          "Fields": {
+            "m_NumOfAIsToSpawn": "5",
+            "m_Preset": "Character;Biter_Male_Bleached"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_EntityComponentsExtents": "0.000000 0.500000 0.000000 0.500000 0.500000 0.500000",
+            "m_Name": "clearAreaTest",
+            "m_PcId": "15",
+            "m_PrefabName": "clear_area",
+            "m_Scale": "27.553371 6.070000 19.691360",
+            "m_Translate": "49.907806 0.327298 -36.850822"
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "1",
+            "m_SelfActive": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_EntityComponentsExtents": "0.000005 0.500005 0.000005 0.500005 0.500005 0.500005",
+            "m_Name": "podloga",
+            "m_PcId": "16",
+            "m_PrefabName": "mesh",
+            "m_PresetNames": "Meshes;dummy_box",
+            "m_Scale": "1000.000000 1.000000 1000.000000",
+            "m_Translate": "-225.424469 0.295860 -905.936279"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "1"
+    }
+  }
+}

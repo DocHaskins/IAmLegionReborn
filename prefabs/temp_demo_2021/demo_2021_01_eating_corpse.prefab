@@ -1,0 +1,197 @@
+{
+  "__filename__": {
+    "Version": 3,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5000001, 0.5, 0.5]],
+            "m_PcId": [6, 2],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_Scale": [14, [4.3830962, 1.0, 5.8807153]],
+            "m_Translate": [14, [-0.5439832, 0.0, 0.771305]]
+          },
+          "Fields": {
+            "m_NumOfAIsToSpawn": "2",
+            "m_PointsSource": "4",
+            "m_Preset": "Character;Biter_Male_Bleached",
+            "m_SpawnPoints": "/~5;/~3;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 3],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [179.9999847, -21.0, 179.9999847]],
+            "m_Translate": [14, [-0.9358518, 0.0, 0.852539]]
+          },
+          "Fields": {
+            "m_BehaviorName": "test_eating_corpse_biter",
+            "m_Flags": "0",
+            "m_SubEntities": "/~11;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "AI_01"],
+            "m_PcId": [6, 4],
+            "m_PrefabName": [12, "patrol_setup"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Activation - daytime;Whole Day"],
+            "m_Rotate": [14, [-0.0, 15.0000019, -0.0]],
+            "m_Translate": [14, [-3.6445846, 0.0, -4.5970687]]
+          },
+          "Fields": {
+            "IPatrolData::m_PatrolPoints": "/~10;/~8;",
+            "m_BehaviorName": "single_static_inf_idle_stand",
+            "m_Preset": "Character;Viral"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 5],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Translate": [14, [-0.1188964, 0.0, 0.8319091]]
+          },
+          "Fields": {
+            "m_BehaviorName": "test_eating_corpse_biter",
+            "m_Flags": "0",
+            "m_SubEntities": "/~12;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 6],
+            "m_PrefabName": [12, "deadbody_encounter"],
+            "m_Rotate": [14, [179.9999847, 2.9999926, 179.9999847]],
+            "m_Translate": [14, [-0.4721831, 0.0, 0.5565719]]
+          },
+          "Fields": {
+            "SELECTOR": "Survivor"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "AI_01_P_02"],
+            "m_PcId": [6, 8],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_Rotate": [14, [-180.0, 62.0000114, -180.0]],
+            "m_Translate": [14, [-0.7199478, 0.0, 0.6132583]]
+          },
+          "Fields": {
+            "Flags": "0",
+            "IPatrolPoint::m_WaitTime": "999.000000",
+            "m_BehaviorName": "test_eating_corpse_biter",
+            "m_ModelObjectEntities": "/~13;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0010785, 0.1702763, 0.0063301, 0.0953849, 0.1702763, 0.0843217]],
+            "m_PcId": [6, 9],
+            "m_PrefabName": [12, "molotov_lantern"],
+            "m_Rotate": [14, [-92.1893386, -7.2507476, 119.2211303]],
+            "m_Translate": [14, [-0.090492, 0.0818347, 1.3292845]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "AI_01_P_01"],
+            "m_PcId": [6, 10],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_Rotate": [14, [-0.0, 15.0000019, -0.0]],
+            "m_Translate": [14, [-3.6445846, 0.0, -4.5970687]]
+          },
+          "Fields": {
+            "m_BehaviorName": "single_static_inf_idle_stand"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.000005, 0.125005, 0.000005, 0.125005, 0.125005, 0.125005]],
+            "m_Name": [12, "Corpse"],
+            "m_PcId": [6, 11],
+            "m_PrefabName": [12, "mesh"],
+            "m_PresetNames": [12, "Meshes;dlc_dummy_box_025m"],
+            "m_Translate": [14, [-0.4721831, 0.0, 0.5565719]]
+          },
+          "Fields": {
+            "SkinName": "Null"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.000005, 0.125005, 0.000005, 0.125005, 0.125005, 0.125005]],
+            "m_Name": [12, "Corpse"],
+            "m_PcId": [6, 12],
+            "m_PrefabName": [12, "mesh"],
+            "m_PresetNames": [12, "Meshes;dlc_dummy_box_025m"],
+            "m_Translate": [14, [-0.4721831, 0.0, 0.5565719]]
+          },
+          "Fields": {
+            "SkinName": "Null"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.000005, 0.125005, 0.000005, 0.125005, 0.125005, 0.125005]],
+            "m_Name": [12, "Corpse"],
+            "m_PcId": [6, 13],
+            "m_PrefabName": [12, "mesh"],
+            "m_PresetNames": [12, "Meshes;dlc_dummy_box_025m"],
+            "m_Translate": [14, [-1.2834091, 0.0, 0.8134992]]
+          },
+          "Fields": {
+            "SkinName": "Null"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 0.5, 0.4999999, 0.5]],
+            "m_Name": [12, "GMA"],
+            "m_PcId": [6, 14],
+            "m_PrefabName": [12, "gameplay_modifier_area"],
+            "m_Rotate": [14, [-89.8700103, 89.5761795, 90.1349639]],
+            "m_Scale": [14, [12.3147945, 1.0, 10.0437517]],
+            "m_Translate": [14, [0.4704588, 0.4356763, 0.3018797]]
+          },
+          "Fields": {
+            "m_ModifierFlags": "32"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_IsolateConfigurations": [11, true],
+            "m_PcId": [6, 15],
+            "m_PrefabName": [12, "decal_flat_round_a"],
+            "m_PresetNames": [12, "Decal_flat_skin;Floor_dry_blood_splatter_stain_big_a"],
+            "m_Rotate": [14, [-179.9999847, -49.5000038, -179.9999847]],
+            "m_Seed": [6, 2157559061],
+            "m_Translate": [14, [0.3260498, 0.0, 0.6805419]]
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "__filename__": {
+    "RuntimeData": {
+      "PrefabInterfaces": [
+        "cbs::IEnable"
+      ],
+      "Interface": {
+        "VirtualFields": [
+          {
+            "Name": "m_preset_01",
+            "Init": "f:EDIT;e:EDIT|CALLBACK;l:m_preset_01;",
+            "DestinationFields": [
+              {
+                "Uuid": "2",
+                "Name": "m_Preset"
+              }
+            ]
+          },
+          {
+            "Name": "cbs::IEnable::m_State",
+            "Init": "e:EDIT;f:EDIT|QUEST;l:Enabled;",
+            "DestinationFields": [
+              {
+                "Uuid": "4",
+                "Name": "cbs::IEnable::m_State"
+              }
+            ]
+          }
+        ]
+      },
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_EntityComponentsExtents": "-0.000000 1.519573 0.230906 0.069079 1.519573 0.270789",
+            "m_Name": "spawn_point_01",
+            "m_PcId": "2",
+            "m_PrefabName": "ai_spawn_point_init",
+            "m_Rotate": "0.000000 -90.000000 0.000000",
+            "m_Translate": "-0.142212 0.000000 0.025269"
+          },
+          "Fields": {
+            "m_BehaviorName": "biter_crawl_through_hole_finish_in_bp_pos",
+            "m_Preset": "Character;Biter_Male_Bleached"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_EntityComponentsExtents": "0.000000 0.500000 0.000000 0.500000 0.500000 0.500000",
+            "m_PcId": "4",
+            "m_PrefabName": "ai_spawner_number",
+            "m_PresetNames": "Activation - daytime;Whole Day",
+            "m_Scale": "1.762085 1.000000 2.235809",
+            "m_Translate": "-0.591980 -0.024446 -0.000519"
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_NumOfAIsToSpawn": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFields": {
+            "m_PcId": "5",
+            "m_PrefabName": "bld_ce_zombie_hatch_b",
+            "m_Rotate": "179.999985 0.000005 179.999985",
+            "m_Translate": "0.616150 0.000000 0.031860"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "1",
+      "Nodes": [
+        {
+          "Uuid": "2",
+          "Type": "1",
+          "X": "-270.00",
+          "Y": "600.00"
+        },
+        {
+          "Uuid": "4",
+          "Type": "1",
+          "X": "-390.00",
+          "Y": "-720.00"
+        },
+        {
+          "Uuid": "5",
+          "Type": "1",
+          "X": "75.00",
+          "Y": "60.00"
+        },
+        {
+          "Uuid": "11",
+          "Type": "4",
+          "X": "125.00",
+          "Y": "100.00",
+          "Interface_Type": "0"
+        },
+        {
+          "Uuid": "8",
+          "Type": "4",
+          "X": "150.00",
+          "Y": "120.00",
+          "Interface_Type": "1"
+        },
+        {
+          "Uuid": "9",
+          "Type": "4",
+          "X": "-795.00",
+          "Y": "630.00",
+          "Interface_Type": "2"
+        }
+      ]
+    }
+  }
+}

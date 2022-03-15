@@ -1,0 +1,342 @@
+sub main()
+{
+    CorruptorPreset("Default")
+	{
+        DifficultyTier("Tier_1");
+		
+		Phase(1)
+		{
+			spawn("Biter", 3);
+			spawn("Viral", 1);		
+		}
+		Phase(2)
+		{
+			spawn("Biter", 2);
+			spawn("Viral", 2);
+			spawn("Spitter", 3);
+		}
+		Phase(3)
+		{
+			spawn("Biter", 2);
+			spawn("Viral", 2);	
+			spawn("Charger", 1);			
+		}	
+	}
+	
+	 // ZOMBIE BOSS R01 01 *****************************
+	CorruptorPreset("ZB_r1_01") // difficulty 1
+	{
+        DifficultyTier("Tier_1");
+		
+		Phase(1)
+		{
+			spawn("Biter", 8);
+			spawn("Viral", 2);
+			spawn("Spitter", 1);
+		}
+		Phase(2)
+		{
+			spawn("Biter", 6);
+			spawn("Viral", 3);
+
+		}
+		Phase(3)
+		{
+			spawn("Biter", 12);
+			spawn("Viral", 5);
+			spawn("Charger", 1);
+
+		}
+	}
+	
+		 // ZOMBIE BOSS R01 02 *****************************
+
+	CorruptorPreset("ZB_r1_03")
+	{
+		DifficultyTier("Tier_1");
+		
+        Phase(1)
+		{
+			spawn("Biter", 6);
+			spawn("Viral", 4);
+			spawn("Spitter", 2);
+		}
+		Phase(2)
+		{
+			spawn("Biter", 6);
+			spawn("Viral", 3);
+			spawn("Charger", 1);
+
+		}
+		Phase(3)
+		{
+			spawn("Biter", 12);
+			spawn("Viral", 4);
+			spawn("Goon", 1);
+
+		}
+	}
+	CorruptorPreset("ZB_r1_04")	// Difficult 4
+	{
+        DifficultyTier("Tier_4");
+		
+		Phase(1)
+		{		
+			spawn("Biter", 8);
+			spawn("Viral", 4);		
+		}
+		Phase(2)
+		{		
+			spawn("Biter", 6);
+			spawn("Charger", 1);
+			spawn("Viral", 4);
+		}
+		Phase(3)
+		{		
+			spawn("Biter", 8);
+			//spawn("Charger", 1);
+			spawn("Viral", 6);
+			spawn("Goon", 1);
+				
+		}	
+	}
+	
+	CorruptorPreset("ZB_r02_01")  // Diff 5
+	{
+        DifficultyTier("Tier_5");
+		
+		Phase(1)
+		{
+            spawn("Biter_Berserker", 4);
+			spawn("Viral", 5);
+			spawn("Biter", 6);
+			spawn("Spitter", 2);
+		}
+		Phase(2)
+		{		
+			//spawn("Charger", 1);
+			spawn("Biter_Berserker", 4);
+			spawn("Viral", 6);
+			spawn("Goon", 1);
+		}
+		Phase(3)
+		{		
+			spawn("Biter", 8);
+			spawn("Viral", 6);
+			//spawn("Charger", 1);
+		}	
+	
+	}
+	
+	CorruptorPreset("ZB_r02_02")	// Difficult 5
+	{
+        DifficultyTier("Tier_5");
+		
+		Phase(1)
+		{
+            spawn("Biter_Berserker", 5);
+			spawn("Viral", 4);
+			spawn("Biter", 6);
+		}
+		Phase(2)
+		{
+			//spawn("Charger", 1);
+			spawn("Biter_Berserker", 5);
+			spawn("Viral", 4);
+			spawn("Goon", 1);
+		}
+		Phase(3)
+		{
+			spawn("Biter_Berserker", 7);
+			spawn("Viral", 5);
+			spawn("Demolisher", 1);
+		}
+	
+	}
+	CorruptorPreset("ZB_r02_04")	// Difficult 3
+	{
+        DifficultyTier("Tier_3");
+		
+		Phase(1)
+		{
+            spawn("Biter_Berserker", 6);
+			spawn("Spitter", 2);
+			spawn("Biter", 5);
+		}
+		Phase(2)
+		{
+			spawn("Spitter", 1);
+			spawn("Biter_Berserker", 3);
+			spawn("Biter", 7);
+		}
+		Phase(3)
+		{
+			spawn("Spitter", 4);
+			spawn("Biter", 7);
+			spawn("Viral", 3);
+		}
+	}
+	CorruptorPreset("ZB_r02_05")	// Difficult 5
+	{
+        DifficultyTier("Tier_5");
+		
+		Phase(1)
+		{
+            spawn("Biter_Berserker", 6);
+			spawn("Viral", 4);
+			spawn("Biter", 7);
+		}
+		Phase(2)
+		{
+			spawn("Charger", 1);
+			spawn("Biter_Berserker", 5);
+			spawn("Viral", 5);
+		}
+		Phase(3)
+		{
+			spawn("Biter_Berserker", 5);
+			spawn("Viral", 3);
+			spawn("Spitter", 6);
+			spawn("Charger", 2);
+		}
+	
+	}
+	
+			
+	CorruptorPreset("ZB_r02_06")	// Difficult 5
+	{
+        DifficultyTier("Tier_5");
+		
+		Phase(1)
+		{
+            spawn("Biter_Berserker", 6);
+			spawn("Viral", 4);
+			spawn("Biter", 7);
+		}
+		Phase(2)
+		{
+		
+			spawn("Biter", 12);
+			spawn("Biter_Berserker", 6);
+			spawn("Viral", 4);
+		}
+		Phase(3)
+		{
+			spawn("Biter", 8);
+			spawn("Charger", 1);
+			spawn("Biter_Berserker", 7);
+			spawn("Viral", 6);
+			
+		}
+	
+	}
+	
+	CorruptorPreset("ZB_r02_07") 	// Difficult 3
+	{
+        DifficultyTier("Tier_3");
+		
+		Phase(1)
+		{		
+			spawn("Biter_Berserker", 5);
+			spawn("Biter", 4);
+			spawn("Viral", 2);
+			spawn("Charger", 1);
+		}
+		Phase(2)
+		{		
+			spawn("Biter", 7);
+			spawn("Biter_Berserker", 2);
+			spawn("Viral", 3);
+			spawn("Goon", 1);
+		}
+		Phase(3)
+		{		
+			spawn("Biter", 6);
+			spawn("Biter_Berserker", 2);
+			spawn("Viral", 2);
+			spawn("Demolisher", 1);
+		}	
+	
+	}
+	
+	CorruptorPreset("ZB_r02_09")	// Difficult 2
+	{
+        DifficultyTier("Tier_2");
+		
+		Phase(1)
+		{		
+			spawn("Biter_Berserker", 2);
+			spawn("Biter", 4);
+			spawn("Viral", 1);
+			spawn("Charger", 2);
+		}
+		Phase(2)
+		{		
+			spawn("Biter", 3);
+			spawn("Biter_Berserker", 4);
+			spawn("Viral", 5);
+			spawn("Demolisher", 1);
+		}
+		Phase(3)
+		{		
+			spawn("Biter", 12);
+			spawn("Biter_Berserker", 5);
+			spawn("Viral", 7);
+		}	
+	
+	}
+	
+	CorruptorPreset("ZB_r02_11")	// Difficult 3
+	{
+        DifficultyTier("Tier_3");
+		
+		Phase(1)
+		{		
+			spawn("Biter_Berserker", 4);
+			spawn("Biter", 6);
+			spawn("Viral", 2);
+			spawn("Charger", 1);
+		}
+		Phase(2)
+		{		
+			spawn("Biter", 4);
+			spawn("Biter_Berserker", 2);
+			spawn("Viral", 1);
+			spawn("Goon", 2);
+		}
+		Phase(3)
+		{	
+			spawn("Biter", 6);
+			spawn("Biter_Berserker", 4);
+			spawn("Biter_Berserker", 3);
+			spawn("Viral", 7);
+				
+		}	
+	
+	}
+	
+	CorruptorPreset("ZB_r02_17")	// Difficult 4
+	{
+        DifficultyTier("Tier_4");
+		
+		Phase(1)
+		{		
+			spawn("Biter_Berserker", 3);
+			spawn("Biter", 6);
+			spawn("Viral", 4);
+		}
+		Phase(2)
+		{		
+			spawn("Biter", 6);
+			spawn("Charger", 1);
+			spawn("Viral", 5);
+		}
+		Phase(3)
+		{		
+			spawn("Biter", 6);
+			spawn("Charger", 1);
+			spawn("Viral", 5);
+			spawn("Volatile", 1);
+		}	
+	}
+}

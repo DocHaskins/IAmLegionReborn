@@ -1,0 +1,691 @@
+{
+  "__filename__": {
+    "Version": 4,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "spawner_biters"],
+            "m_PcId": [6, 1],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Spawner_Difficulty;Tier_5;Activation - daytime;Whole Day;Activation - distance;Darkzone"],
+            "m_Rotate": [14, [-0.0, -30.0, -0.0]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_ForcedTargetMode": "None",
+            "m_NumOfAIsToSpawn": "16",
+            "m_PointsSource": "4",
+            "m_Preset": "Character;Biter_Male_Bleached",
+            "m_SpawnPoints": "/~49;/~2;/~3;/~5;/~7;/~8;/~9;/~10;/~11;/~12;/~13;/~21;/~22;/~23;/~48;/~51;",
+            "m_WantedGroupID": "215"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_5",
+            "DestinationField": "m_DifficultyRangeSource"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkzone",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkzone",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "garage_biter_point"],
+            "m_PcId": [6, 2],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [-180.0, 0.0000098, -180.0]],
+            "m_Translate": [14, [-0.2005614, -0.0161, 10.3938598]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "garage_biter_point"],
+            "m_PcId": [6, 3],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [-0.0000237, 74.9999847, 0.0000192]],
+            "m_Translate": [14, [-4.277832, -0.0035238, 7.5350341]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "garage_biter_point"],
+            "m_PcId": [6, 5],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [-0.0000098, 45.0, 0.000007]],
+            "m_Translate": [14, [0.1925047, 0.0031572, 1.6401367]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "garage_biter_point"],
+            "m_PcId": [6, 7],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999847, -75.0, 179.9999847]],
+            "m_Translate": [14, [14.1247558, -0.0161009, 11.5932617]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "garage_biter_point"],
+            "m_PcId": [6, 8],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999847, -14.999998, 179.9999847]],
+            "m_Translate": [14, [10.4022216, 0.0000016, 16.2394409]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "garage_biter_point"],
+            "m_PcId": [6, 9],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [-179.9999847, 60.0, 179.9999542]],
+            "m_Translate": [14, [14.9564208, -0.0135241, 25.9545593]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-3.725290298461914e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "garage_biter_point"],
+            "m_PcId": [6, 10],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0000719, -75.0000228, 0.0000958]],
+            "m_Translate": [14, [19.6373291, 0.0015675, 20.0381774]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.2707889]],
+            "m_Name": [12, "garage_biter_point"],
+            "m_PcId": [6, 11],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999847, 0.0000187, 179.9999847]],
+            "m_Translate": [14, [15.7720947, -0.0161003, 21.625885]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.2707889]],
+            "m_Name": [12, "garage_biter_point"],
+            "m_PcId": [6, 12],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999847, 0.0000187, 179.9999847]],
+            "m_Translate": [14, [12.5731201, -0.0160996, 31.4603271]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "garage_biter_point"],
+            "m_PcId": [6, 13],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999847, 0.0000187, 179.9999847]],
+            "m_Scale": [14, [0.9999997, 0.9999994, 0.9999997]],
+            "m_Translate": [14, [17.0700683, -0.0160997, 30.7300109]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "spawner_virals"],
+            "m_PcId": [6, 14],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Spawner_Difficulty;Tier_5;Activation - daytime;Whole Day;Activation - distance;Darkzone"],
+            "m_Rotate": [14, [-0.0, -30.0, -0.0]],
+            "m_Translate": [14, [0.5780029, 0.0, -1.0011595]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_ForcedTargetMode": "None",
+            "m_NumOfAIsToSpawn": "6",
+            "m_PointsSource": "4",
+            "m_Preset": "Character;Viral",
+            "m_SpawnPoints": "/~18;/~15;/~16;/~44;/~47;/~54;",
+            "m_WantedGroupID": "215"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_5",
+            "DestinationField": "m_DifficultyRangeSource"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkzone",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkzone",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195727, 0.230906, 0.0690794, 1.5195727, 0.2707889]],
+            "m_Name": [12, "garage_viral_point"],
+            "m_PcId": [6, 15],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999847, -44.9999885, 179.9999847]],
+            "m_Translate": [14, [11.0570068, 0.0000015, 10.9729614]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "garage_viral_point"],
+            "m_PcId": [6, 16],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [-0.0000223, 44.9999847, 0.0000223]],
+            "m_Translate": [14, [-1.5048828, -0.0161009, -4.7869262]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "garage_viral_point"],
+            "m_PcId": [6, 18],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0, -90.0, 0.0000064]],
+            "m_Translate": [14, [20.1439208, -0.0160996, 29.9491882]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "garage_biter_point"],
+            "m_PcId": [6, 21],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.000027, -30.0000228, -0.0000104]],
+            "m_Translate": [14, [-0.0581054, 0.0152526, 24.5582275]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195728, 0.230906, 0.0690794, 1.5195728, 0.270789]],
+            "m_Name": [12, "garage_biter_point"],
+            "m_PcId": [6, 22],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999084, -75.0, 179.9998779]],
+            "m_Translate": [14, [4.5285644, -0.009739, 30.7801513]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-2.9802322387695315e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "garage_biter_point"],
+            "m_PcId": [6, 23],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999847, 30.0000114, 179.9999847]],
+            "m_Translate": [14, [-2.6375732, 0.0152324, 28.0681152]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 1.9999998, 0.0, 0.5, 1.9999998, 0.4999999]],
+            "m_Name": [12, "AM_SpawnGrateZombies_01"],
+            "m_PcId": [6, 24],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Rotate": [14, [-0.0000049, -30.0001735, 0.0000049]],
+            "m_Scale": [14, [9.3503885, 1.0, 10.8342981]],
+            "m_Translate": [14, [-5.1196289, -0.0849379, 17.7270812]]
+          },
+          "Fields": {
+            "m_AreaHeight": "4.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 2.0, 0.0, 0.4999999, 2.0, 0.4999999]],
+            "m_Name": [12, "AM_SpawnGrateZombies_02"],
+            "m_PcId": [6, 25],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Rotate": [14, [179.9999847, 30.0001506, 179.9999847]],
+            "m_Scale": [14, [4.0712442, 1.0, 10.9480476]],
+            "m_Translate": [14, [-13.4204101, -0.0776804, 26.8251342]]
+          },
+          "Fields": {
+            "m_AreaHeight": "4.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5000001]],
+            "m_Name": [12, "spawner_grate01"],
+            "m_PcId": [6, 26],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - daytime;Whole Day;Spawner_Difficulty;Tier_5;Activation - distance;Darkzone"],
+            "m_Rotate": [14, [-0.0, 60.0, -0.0]],
+            "m_Scale": [14, [2.3356459, 1.0, 1.4940973]],
+            "m_Translate": [14, [-10.7089843, -0.0226134, 19.1985168]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_EnforceLogicalConditionBeforeDistance": "0",
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_PointsSource": "4",
+            "m_SpawnPoints": "/~29;/~28;/~27;",
+            "m_WantedGroupID": "215"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_5",
+            "DestinationField": "m_DifficultyRangeSource"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkzone",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkzone",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "init_point_grate01b"],
+            "m_PcId": [6, 27],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [-0.0, 60.0, -0.0]],
+            "m_Translate": [14, [-10.3690185, 0.0152313, 18.6252441]]
+          },
+          "Fields": {
+            "m_BehaviorName": "no_state_inf_crawl_out",
+            "m_Preset": "Character;Biter_Male_Bleached",
+            "m_SkipNavmeshCheck": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "init_point_grate01c"],
+            "m_PcId": [6, 28],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [-0.0, 60.0000038, -0.0]],
+            "m_Translate": [14, [-11.2412109, 0.0152313, 20.0013427]]
+          },
+          "Fields": {
+            "m_BehaviorName": "no_state_inf_crawl_out",
+            "m_Preset": "Character;Biter_Male_Bleached",
+            "m_SkipNavmeshCheck": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "init_point_grate01a"],
+            "m_PcId": [6, 29],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [-0.0, 60.0000038, -0.0]],
+            "m_Translate": [14, [-10.5040283, 0.0152313, 19.4292602]]
+          },
+          "Fields": {
+            "m_BehaviorName": "no_state_inf_crawl_out",
+            "m_Preset": "Character;Viral",
+            "m_SkipNavmeshCheck": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "spawner_grate02"],
+            "m_PcId": [6, 30],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - daytime;Whole Day;Spawner_Difficulty;Tier_5;Activation - distance;Darkzone"],
+            "m_Rotate": [14, [-0.0, 60.0000038, -0.0]],
+            "m_Translate": [14, [-17.1672363, -0.0226134, 31.0533142]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_EnforceLogicalConditionBeforeDistance": "0",
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_PointsSource": "4",
+            "m_SpawnPoints": "/~33;/~34;/~31;",
+            "m_WantedGroupID": "215"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_5",
+            "DestinationField": "m_DifficultyRangeSource"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkzone",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkzone",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "init_point_grate02"],
+            "m_PcId": [6, 31],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [-0.0, 60.0000038, -0.0]],
+            "m_Translate": [14, [-16.4217529, 0.0152313, 29.6790466]]
+          },
+          "Fields": {
+            "m_BehaviorName": "no_state_inf_crawl_out",
+            "m_Preset": "Character;Viral",
+            "m_SkipNavmeshCheck": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "init_point_grate02"],
+            "m_PcId": [6, 33],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [-0.0, 60.0000038, -0.0]],
+            "m_Translate": [14, [-16.1072998, 0.0152313, 28.5641784]]
+          },
+          "Fields": {
+            "m_BehaviorName": "no_state_inf_crawl_out",
+            "m_Preset": "Character;Biter_Male_Bleached",
+            "m_SkipNavmeshCheck": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "init_point_grate02"],
+            "m_PcId": [6, 34],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [-0.0, 60.0000038, -0.0]],
+            "m_Translate": [14, [-20.0733642, 0.0152313, 36.0038452]]
+          },
+          "Fields": {
+            "m_BehaviorName": "no_state_inf_crawl_out",
+            "m_Preset": "Character;Viral",
+            "m_SkipNavmeshCheck": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0004998, 0.0491358, -0.4806547, 0.4171115, 0.0714717, 0.4243992]],
+            "m_Name": [12, "hatch_high"],
+            "m_PcId": [6, 35],
+            "m_PrefabName": [12, "mesh"],
+            "m_PresetNames": [12, "Meshes;urb_ac_vent_spawner_cap_a"],
+            "m_Rotate": [14, [-89.9999694, 0.000048, -30.0001449]],
+            "m_Translate": [14, [-16.6947021, 3.4935109, 42.2259826]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "init_point_grate03"],
+            "m_PcId": [6, 36],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [-180.0, 30.0000114, -180.0]],
+            "m_Translate": [14, [-16.449707, 2.7032265, 41.9074401]]
+          },
+          "Fields": {
+            "m_BehaviorName": "no_state_crawl_out_high_vent",
+            "m_Preset": "Character;Viral",
+            "m_SkipNavmeshCheck": "1",
+            "m_SubEntities": "/~35;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "spawner_grate03"],
+            "m_PcId": [6, 37],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - daytime;Whole Day;Spawner_Difficulty;Tier_5;Activation - distance;Darkzone"],
+            "m_Rotate": [14, [-0.0, 60.0000038, -0.0]],
+            "m_Translate": [14, [-16.4921875, -0.0145316, 41.7815856]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_EnforceLogicalConditionBeforeDistance": "0",
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_NumOfAIsToSpawn": "1",
+            "m_PointsSource": "4",
+            "m_SpawnPoints": "/~36;",
+            "m_WantedGroupID": "215"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_5",
+            "DestinationField": "m_DifficultyRangeSource"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkzone",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkzone",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "spawner_grate04"],
+            "m_PcId": [6, 38],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - daytime;Whole Day;Spawner_Difficulty;Tier_5;Activation - distance;Darkzone"],
+            "m_Rotate": [14, [-0.0, 60.0000038, -0.0]],
+            "m_Translate": [14, [-8.6729736, 4.7594666, 46.5119018]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_EnforceLogicalConditionBeforeDistance": "0",
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_NumOfAIsToSpawn": "4",
+            "m_PointsSource": "4",
+            "m_SpawnPoints": "/~42;/~39;/~40;/~41;",
+            "m_WantedGroupID": "215"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_5",
+            "DestinationField": "m_DifficultyRangeSource"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkzone",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkzone",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "init_point_grate04"],
+            "m_PcId": [6, 39],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [-180.0, -59.9999923, -180.0]],
+            "m_Translate": [14, [-5.7729492, 4.8084764, 47.445343]]
+          },
+          "Fields": {
+            "m_BehaviorName": "no_state_inf_crawl_out",
+            "m_Preset": "Character;Biter_Male_Bleached",
+            "m_SkipNavmeshCheck": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "init_point_grate04"],
+            "m_PcId": [6, 40],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [-180.0, -59.9999923, -180.0]],
+            "m_Translate": [14, [-5.458496, 4.8084764, 46.3304748]]
+          },
+          "Fields": {
+            "m_BehaviorName": "no_state_inf_crawl_out",
+            "m_Preset": "Character;Viral",
+            "m_SkipNavmeshCheck": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "init_point_grate04"],
+            "m_PcId": [6, 41],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [179.9999847, -60.0, 179.9999847]],
+            "m_Translate": [14, [-3.4140625, 4.8084769, 43.032196]]
+          },
+          "Fields": {
+            "m_BehaviorName": "no_state_inf_crawl_out",
+            "m_Preset": "Character;Biter_Male_Bleached",
+            "m_SkipNavmeshCheck": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "init_point_grate04"],
+            "m_PcId": [6, 42],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [179.9999847, -60.0, 179.9999847]],
+            "m_Translate": [14, [-7.7307128, 4.8084764, 50.470581]]
+          },
+          "Fields": {
+            "m_BehaviorName": "no_state_inf_crawl_out",
+            "m_Preset": "Character;Biter_Male_Bleached",
+            "m_SkipNavmeshCheck": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 2.0000002, 0.0, 0.5, 2.0000002, 0.5]],
+            "m_Name": [12, "AM_SpawnGrateZombies_03"],
+            "m_PcId": [6, 43],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Rotate": [14, [-0.0, 59.9998626, -0.0]],
+            "m_Scale": [14, [7.5845279, 2.0925257, 7.692327]],
+            "m_Translate": [14, [-7.4023437, -0.352232, 43.1932067]]
+          },
+          "Fields": {
+            "m_AreaHeight": "4.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "garage_viral_point"],
+            "m_PcId": [6, 44],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0000431, -60.0000038, 0.0000263]],
+            "m_Translate": [14, [12.6157226, -0.016101, -2.3032226]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "garage_viral_point"],
+            "m_PcId": [6, 47],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0000223, -15.0, -0.0000049]],
+            "m_Translate": [14, [9.1312255, -0.016101, -5.0808105]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-5.960464477539063e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "garage_biter_point"],
+            "m_PcId": [6, 48],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [180.0, -60.0, -179.9999847]],
+            "m_Translate": [14, [11.2860107, -0.0161003, 4.3649291]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "garage_biter_point"],
+            "m_PcId": [6, 49],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [-179.9999847, -75.0, -179.9999847]],
+            "m_Translate": [14, [9.9643554, -0.0161006, -0.974304]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "garage_biter_point"],
+            "m_PcId": [6, 51],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [-0.0000058, 15.0000038, 0.0000023]],
+            "m_Translate": [14, [3.916748, -1.7881393432617188e-7, -4.9035644]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "garage_viral_point"],
+            "m_PcId": [6, 54],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [-0.0000063, -0.0000046, -0.0]],
+            "m_Translate": [14, [6.7678222, -0.0161013, -6.3861083]]
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

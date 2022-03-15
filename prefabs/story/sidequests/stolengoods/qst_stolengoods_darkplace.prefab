@@ -1,0 +1,421 @@
+{
+  "__filename__": {
+    "Version": 4,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-2.9802322387695315e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "ai_spawn_point_init"],
+            "m_PcId": [6, 1],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [0.0, -90.0, -0.0000024]],
+            "m_Translate": [14, [-5.0097656, -3.8400039, -2.8853759]]
+          },
+          "Fields": {
+            "m_BehaviorName": "biter_crawl_through_hole",
+            "m_PresetPool": ""
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Spawner_Viral"],
+            "m_PcId": [6, 2],
+            "m_PrefabName": [12, "ai_spawner_init"],
+            "m_PresetNames": [12, "Activation - daytime;Whole Day;Activation_Type;Deactivated;Point_Type;Point for stationary spawners - Situational;Preset;Infected_Viral;Animation;Infected_crawl_out;Activation - distance;Activator"],
+            "m_Rotate": [14, [-0.0478743, -89.972023, -0.0478063]],
+            "m_Scale": [14, [0.8599991, 1.25, 0.859999]],
+            "m_Translate": [14, [-2.9989013, -3.7200012, -2.9912109]]
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyActivator",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyActivator",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "SpawnPredicateInitSpawner",
+            "DestinationField": "m_SpawnPredicate"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "noise_area"],
+            "m_PcId": [6, 3],
+            "m_PrefabName": [12, "noise_area"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [-8.1032714, -3.4352226, -2.6386718]]
+          },
+          "Fields": {
+            "CountdownTimeTick": "20.000000",
+            "NoiseUid": "player_landing_amortizer",
+            "Tick_frequency": "0.100000",
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Spawner_BitterXL"],
+            "m_PcId": [6, 5],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - daytime;Whole Day;Activation - distance;Activator"],
+            "m_Rotate": [14, [-0.0, 15.0132074, -0.0]],
+            "m_Translate": [14, [-9.9570312, -3.9540061, -9.9255371]]
+          },
+          "Fields": {
+            "IAISpawnerActivator::m_IsActive": "1",
+            "cbs::IEnable::m_State": "0",
+            "m_DifficultyRangeSource": "UserDefinedDifficultyRange,();",
+            "m_NumOfAIsToSpawn": "1",
+            "m_Preset": "Character;Biter_Male_Bleached_XL"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource",
+            "Fields": {
+              "m_DifficultyModifier": "0",
+              "m_MaxDifficultyTier": "Tier_4",
+              "m_MinDifficultyTier": "Tier_4"
+            }
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyActivator",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyActivator",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0004999, 0.0005, 0.0021744, 0.3348421, 0.3520481, 0.3550135]],
+            "m_Name": [12, "Trail_HiddenHoleInTheFloor"],
+            "m_PcId": [6, 12],
+            "m_PrefabName": [12, "trail_spot"],
+            "m_PresetNames": [12, "Interactable;Interaction by trigger;Mesh;Sphere"],
+            "m_Rotate": [14, [-0.0, -14.9867916, -0.0]],
+            "m_Translate": [14, [-7.5112304, 1.0124511, -2.6551513]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0002574, 1.4512833, 0.2189901, 0.0679944, 1.495648, 0.262777]],
+            "m_Name": [12, "Respawn_Darkplace"],
+            "m_PcId": [6, 13],
+            "m_PrefabName": [12, "spawnpoint"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [-7.6032714, -3.1026725, -2.6403808]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_Respawn": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.7897949, 2.0000095, -0.3689575, 8.6755371, 2.5000014, 12.279602]],
+            "m_Name": [12, "batch_ai_spawner_activator"],
+            "m_PcId": [6, 14],
+            "m_PrefabName": [12, "batch_ai_spawner_activator"],
+            "m_Rotate": [14, [-180.0, 89.9802169, -180.0]],
+            "m_Scale": [14, [0.9599999, 0.9599996, 0.9599999]],
+            "m_Translate": [14, [-10.361206, -4.1815071, -7.1085205]]
+          },
+          "Fields": {
+            "Compiled Pointers": "",
+            "m_AreaHeight": "5.000000",
+            "m_AreaPoints": "7.885742 -0.499989 -12.647827;7.863525 -0.499992 11.910645;-9.465332 -0.499992 11.909912;-9.443115 -0.499989 -12.648560;",
+            "m_SearchEntryPoints": "/;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "ai_spawner_number_biters_resting"],
+            "m_PcId": [6, 15],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - daytime;Whole Day;Activation - distance;Activator"],
+            "m_Rotate": [14, [-0.0, 60.0132102, -0.0]],
+            "m_Translate": [14, [-4.0113525, -3.8400077, -9.8659667]]
+          },
+          "Fields": {
+            "m_NumOfAIsToSpawn": "10",
+            "m_PointsSource": "4",
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_SpawnPoints": "/~17;/~22;/~24;/~21;/~20;/~23;/~18;/~25;/~16;/~19;"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyActivator",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyActivator",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "ai_spawn_point_biter_resting"],
+            "m_PcId": [6, 16],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999847, -30.0132236, 179.9999847]],
+            "m_Translate": [14, [-3.4317626, -3.8104019, -8.9332275]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-2.9802322387695315e-8, 1.5195728, 0.230906, 0.0690794, 1.5195728, 0.270789]],
+            "m_Name": [12, "ai_spawn_point_biter_resting"],
+            "m_PcId": [6, 17],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [180.0, 24.9867687, 179.9999847]],
+            "m_Translate": [14, [-2.0770263, -3.8104019, -10.2858886]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-5.960464477539063e-8, 1.5195734, 0.230906, 0.0690794, 1.5195734, 0.270789]],
+            "m_Name": [12, "ai_spawn_point_biter_resting"],
+            "m_PcId": [6, 18],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [-179.9999847, 24.9867706, 179.9999847]],
+            "m_Translate": [14, [-7.5379638, -3.8104019, -8.1201171]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "ai_spawn_point_biter_resting"],
+            "m_PcId": [6, 19],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0000417, -54.9867782, 0.0000351]],
+            "m_Translate": [14, [-6.6243896, -3.8104019, -11.850708]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-5.960464477539063e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "ai_spawn_point_biter_resting"],
+            "m_PcId": [6, 20],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999847, -60.0132255, 179.9999694]],
+            "m_Translate": [14, [-8.5992431, -3.8104019, -9.2322998]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.2310891, 0.0690794, 1.5195729, 0.27085]],
+            "m_Name": [12, "ai_spawn_point_biter_resting"],
+            "m_PcId": [6, 21],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.000058, -69.9867858, 0.0000523]],
+            "m_Translate": [14, [-13.0892333, -3.8104019, -12.3338623]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "ai_spawn_point_biter_resting"],
+            "m_PcId": [6, 22],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999694, -70.0132217, 179.9999542]],
+            "m_Scale": [14, [0.9999994, 0.9999997, 0.9999995]],
+            "m_Translate": [14, [-17.800415, -3.8104019, -11.5651855]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-2.9802322387695315e-8, 1.5195728, 0.230906, 0.0690794, 1.5195728, 0.270789]],
+            "m_Name": [12, "ai_spawn_point_biter_resting"],
+            "m_PcId": [6, 23],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [-179.9999542, 39.9867858, 179.9999847]],
+            "m_Scale": [14, [0.9999992, 0.9999994, 0.9999992]],
+            "m_Translate": [14, [-14.1030273, -3.8104019, -6.3013916]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-2.9802322387695315e-8, 1.5195728, 0.230906, 0.0690794, 1.5195728, 0.270789]],
+            "m_Name": [12, "ai_spawn_point_biter_resting"],
+            "m_PcId": [6, 24],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999694, -70.0132217, 179.9999542]],
+            "m_Scale": [14, [0.9999994, 0.9999994, 0.9999994]],
+            "m_Translate": [14, [-13.7078857, -3.8104019, -3.5173339]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "ai_spawn_point_biter_resting"],
+            "m_PcId": [6, 25],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [-179.9999694, 54.9867973, 179.9999694]],
+            "m_Scale": [14, [0.9999994, 0.9999995, 0.9999995]],
+            "m_Translate": [14, [-13.239624, -3.8104019, -9.4241943]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "biterXL_patrol_setup"],
+            "m_PcId": [6, 26],
+            "m_PrefabName": [12, "patrol_setup"],
+            "m_PresetNames": [12, "Activation - daytime;Whole Day;Activation - distance;Activator"],
+            "m_Rotate": [14, [-0.0, 60.0132102, -0.0]],
+            "m_Translate": [14, [-17.505249, -3.8154296, -11.9123535]]
+          },
+          "Fields": {
+            "IPatrolData::m_PatrolPoints": "/~27;/~28;/~29;",
+            "IPatrolData::m_PatrolType": "Loop",
+            "cbs::IEnable::m_State": "0",
+            "m_DifficultyRangeSource": "AttributeAreaDifficultyRange,();",
+            "m_Preset": "Character;Biter_Male_Bleached_XL"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyActivator",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "AttributeAreaDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "biterXL_patrol_bp_01"],
+            "m_PcId": [6, 27],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_Rotate": [14, [0.0, -90.0, 0.0]],
+            "m_Translate": [14, [-17.9342041, -3.8212242, -10.5291748]]
+          },
+          "Fields": {
+            "IPatrolPoint::m_UseGenericAnimation": "1",
+            "IPatrolPoint::m_WaitTime": "5.000000",
+            "m_BehaviorName": "biter_stand_reaching"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "biterXL_patrol_bp_02"],
+            "m_PcId": [6, 28],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_Rotate": [14, [179.9999847, 20.0000057, 179.9999847]],
+            "m_Translate": [14, [-11.9447021, -3.8212242, -10.5214843]]
+          },
+          "Fields": {
+            "IPatrolPoint::m_UseGenericAnimation": "1",
+            "IPatrolPoint::m_WaitTime": "5.000000",
+            "m_BehaviorName": "biter_stand_reaching"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "biterXL_patrol_bp_03"],
+            "m_PcId": [6, 29],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_Rotate": [14, [-179.9999847, 70.0000228, 179.9999847]],
+            "m_Translate": [14, [-3.1123046, -3.8212242, -11.633789]]
+          },
+          "Fields": {
+            "IPatrolPoint::m_UseGenericAnimation": "1",
+            "IPatrolPoint::m_WaitTime": "5.000000",
+            "m_BehaviorName": "biter_stand_reaching"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "player_tools_twohanded"],
+            "m_PcId": [6, 30],
+            "m_PrefabName": [12, "player_tools"],
+            "m_PresetNames": [12, "Type;TwoHanded"],
+            "m_Rotate": [14, [-0.0, 65.0132141, -0.0]],
+            "m_Translate": [14, [-3.5554199, -3.7554359, -6.2316894]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "bld_plank_barricade_deco_a"],
+            "m_PcId": [6, 35],
+            "m_PrefabName": [12, "bld_plank_barricade_deco_a"],
+            "m_Rotate": [14, [0.0, -90.0, 0.0]],
+            "m_Translate": [14, [-5.7404785, 1.0111389, -2.8234863]]
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

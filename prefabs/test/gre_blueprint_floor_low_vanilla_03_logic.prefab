@@ -1,0 +1,1902 @@
+{
+  "__filename__": {
+    "Version": 4,
+    "RuntimeData": {
+      "Interface": {
+        "VirtualFields": [
+          {
+            "Name": "m_CollectableName",
+            "Init": "f:EDIT;e:CALLBACK;",
+            "DestinationFields": [
+              {
+                "Uuid": "94",
+                "Name": "m_CollectableName"
+              }
+            ]
+          }
+        ]
+      },
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 46],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [-179.9999237, -45.0000038, -179.9999694]],
+            "m_Scale": [14, [0.9999982, 0.9999988, 0.9999988]],
+            "m_Translate": [14, [6.8809814, 0.0000092, -0.6968383]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.4999995, 0.0, 0.5, 0.5, 0.5]],
+            "m_PcId": [6, 66],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Darkzone;Activation - daytime;Whole Day"],
+            "m_Rotate": [14, [-180.0, 89.9802169, -180.0]],
+            "m_Scale": [14, [29.555603, 3.580969, 30.3189716]],
+            "m_Translate": [14, [0.9231799, 0.180387, -1.3086849]]
+          },
+          "Fields": {
+            "m_DifficultyRangeSource": "UserDefinedDifficultyRange,();",
+            "m_NumOfAIsToSpawn": "33",
+            "m_PointsSource": "4",
+            "m_Preset": "Character;Biter_Male_Bleached_Resting_Fog",
+            "m_SpawnPoints": "/~46;/~105;/~152;/~153;/~155;/~156;/~157;/~158;/~159;/~160;/~161;/~162;/~163;/~171;/~172;/~173;/~174;/~177;/~180;/~182;/~186;/~188;/~189;/~190;/~193;/~195;/~196;/~208;/~209;/~219;/~220;/~221;/~225;"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource",
+            "Fields": {
+              "m_DifficultyModifier": "0",
+              "m_MaxDifficultyTier": "Tier_9",
+              "m_MinDifficultyTier": "Tier_5"
+            }
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-1.2665987014770509e-7, 1.5195729, 0.230906, 0.0690795, 1.5195729, 0.2707889]],
+            "m_IsEditorOnly": [11, true],
+            "m_PcId": [6, 69],
+            "m_PrefabName": [12, "text_mesh"],
+            "m_Rotate": [14, [-105.0000076, -0.000006, -179.9999847]],
+            "m_Translate": [14, [7.3722229, 0.180386, 17.9106445]]
+          },
+          "Fields": {
+            "m_Text": "Exit"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-1.2665987014770509e-7, 1.5195729, 0.2309288, 0.0690795, 1.5195729, 0.2707966]],
+            "m_IsEditorOnly": [11, true],
+            "m_PcId": [6, 70],
+            "m_PrefabName": [12, "text_mesh"],
+            "m_Rotate": [14, [-89.9999923, -15.0000162, -89.9999694]],
+            "m_Translate": [14, [20.3906402, 0.030006, -3.7953488]]
+          },
+          "Fields": {
+            "m_LettersScale": "4.000000 4.000000 4.000000",
+            "m_Text": "GRE floor vanilla 3 AB"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-1.2665987014770509e-7, 1.5195729, 0.230906, 0.0690795, 1.5195729, 0.2707889]],
+            "m_IsEditorOnly": [11, true],
+            "m_PcId": [6, 72],
+            "m_PrefabName": [12, "text_mesh"],
+            "m_Rotate": [14, [-105.0000076, -0.000006, -179.9999847]],
+            "m_Translate": [14, [14.3433837, 0.180387, 12.1721496]]
+          },
+          "Fields": {
+            "m_Text": "Inhibitors"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-1.2665987014770509e-7, 1.5195729, 0.230906, 0.0690795, 1.5195729, 0.2707889]],
+            "m_IsEditorOnly": [11, true],
+            "m_PcId": [6, 73],
+            "m_PrefabName": [12, "text_mesh"],
+            "m_Rotate": [14, [-105.0000152, -0.000006, -179.9999847]],
+            "m_Translate": [14, [11.0746612, 3.3920979, -15.0221557]]
+          },
+          "Fields": {
+            "m_Text": "Chemicals room"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-1.2665987014770509e-7, 1.5195729, 0.230906, 0.0690795, 1.5195729, 0.2707889]],
+            "m_IsEditorOnly": [11, true],
+            "m_PcId": [6, 74],
+            "m_PrefabName": [12, "text_mesh"],
+            "m_Rotate": [14, [-105.0000076, -0.000006, -179.9999847]],
+            "m_Translate": [14, [-15.7810058, 0.2406519, -2.5237119]]
+          },
+          "Fields": {
+            "m_Text": "Entrance lockpick"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-1.2665987014770509e-7, 1.5195729, 0.230906, 0.0690795, 1.5195729, 0.2707889]],
+            "m_IsEditorOnly": [11, true],
+            "m_PcId": [6, 76],
+            "m_PrefabName": [12, "text_mesh"],
+            "m_Rotate": [14, [-105.0000076, -0.000006, -179.9999847]],
+            "m_Translate": [14, [-16.9743652, 0.180386, -1.136993]]
+          },
+          "Fields": {
+            "m_Text": "Start"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0620689, 0.4952579, -0.7459475, 0.4999959, 0.9952579, 0.7941346]],
+            "m_Name": [12, "_despawn"],
+            "m_PcId": [6, 83],
+            "m_PrefabName": [12, "gameplay_modifier_area"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Scale": [14, [30.9304485, 2.655677, 23.998022]],
+            "m_Translate": [14, [15.2028656, 0.9599999, 0.904419]]
+          },
+          "Fields": {
+            "m_Height": "1.990505",
+            "m_ModifierFlags": "68",
+            "m_Points": "0.562065 -0.500000 -1.540080;0.562065 -0.500000 0.048187;-0.437927 -0.500000 0.048187;-0.437925 -0.500000 -0.676045;-0.003410 -0.499989 -0.660005;-0.011530 -0.500000 -1.540082;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "chest"],
+            "m_PcId": [6, 94],
+            "m_PrefabName": [12, "gre_blueprint_inhibitor_chest"],
+            "m_Rotate": [14, [0.000022, 0.0000097, -0.000022]],
+            "m_Scale": [14, [0.9999988, 1.0, 0.9999988]],
+            "m_Translate": [14, [-1.7150268, 0.0000019, -6.0067749]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-5.960464477539063e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 105],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999694, -0.0000116, 179.9999847]],
+            "m_Translate": [14, [15.3078613, 0.0000114, -1.09906]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 117],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [-0.0, -0.0000016, -0.0]],
+            "m_Translate": [14, [5.7808837, 0.0000019, 12.7528686]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 120],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [180.0, 82.9999923, -180.0]],
+            "m_Translate": [14, [8.0513916, 0.0000019, 11.4293823]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 121],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [0.0, 49.0000114, -0.0]],
+            "m_Translate": [14, [3.9332275, 0.0, 9.9022216]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 122],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [0.0000384, -44.9999923, 0.0000431]],
+            "m_Translate": [14, [3.9814147, 9.5367431640625e-7, 7.1334381]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 123],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [-0.0, -14.9999923, -0.0]],
+            "m_Translate": [14, [5.5814514, 0.0000019, 3.9334259]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 124],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [-0.0, -75.0000228, -0.0]],
+            "m_Translate": [14, [6.0480957, 0.0, -2.7968139]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 125],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [0.0, -90.0, 0.0]],
+            "m_Translate": [14, [4.6213989, 0.0, 2.0134279]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 126],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [-180.0, -0.0000032, 179.9999847]],
+            "m_Translate": [14, [3.6847534, 0.0, -0.1413574]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 127],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [-180.0, -75.0000076, -180.0]],
+            "m_Translate": [14, [10.1522216, 0.0000038, -2.666809]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 129],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [0.0000499, -60.0000038, 0.0000199]],
+            "m_Translate": [14, [13.8429565, 9.999999974752428e-7, -2.7815699]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 130],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [179.9999847, -44.9999923, 179.9999847]],
+            "m_Translate": [14, [14.0550155, -0.0000019, -6.1404109]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 131],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [179.9999847, -14.9999904, 179.9999847]],
+            "m_Translate": [14, [12.128334, -0.0000199, -9.3423461]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 132],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [179.9999237, 75.0000381, -179.9999389]],
+            "m_Translate": [14, [4.7859802, -0.0000039, -12.7743234]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 133],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [180.0, 60.0, 179.9999847]],
+            "m_Translate": [14, [-7.2899169, 0.0000019, -2.4304809]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 134],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [0.0, 90.0, -0.000017]],
+            "m_Translate": [14, [-15.5732574, 0.000047, -13.5760192]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 135],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [0.0, -0.0000016, -0.000017]],
+            "m_Translate": [14, [-11.0107421, 0.2362249, -4.7022094]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 136],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [0.0, -69.5, -0.000017]],
+            "m_Translate": [14, [-6.6087646, 0.0000189, -8.7199707]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 137],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [0.0, -45.0000038, -0.000017]],
+            "m_Translate": [14, [-3.4332699, 0.0000299, -10.7326965]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 138],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [-0.0, -0.0, -0.000017]],
+            "m_Translate": [14, [-2.106991, 0.0000308, -13.9346313]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 139],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [-0.0, 44.4999885, -0.000017]],
+            "m_Translate": [14, [1.3714598, 0.0000076, -13.6622314]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 140],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [0.0, -90.0, -0.000017]],
+            "m_Translate": [14, [-0.00679, 0.000017, -15.6344299]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 141],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [0.0, 90.0, -0.000017]],
+            "m_Translate": [14, [-9.7466239, 0.000036, -6.4605708]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 142],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [0.0, 30.0000076, -0.000017]],
+            "m_Translate": [14, [-12.4866523, 0.0000379, -8.2425231]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 144],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [0.0, -90.0, 0.0]],
+            "m_Translate": [14, [10.2799949, -0.000017, 10.8601989]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 145],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [-180.0, 0.0000098, -180.0]],
+            "m_Translate": [14, [15.8197898, -0.000006, 8.7200012]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 147],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [179.9999847, -29.9999923, 179.9999694]],
+            "m_Translate": [14, [13.1397714, -0.000012, 12.5021362]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 148],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [179.9999847, 30.0000114, 179.9999847]],
+            "m_Translate": [14, [15.0113258, -0.000006, 12.2745666]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 149],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [179.9999847, -60.0000038, 179.9999847]],
+            "m_Translate": [14, [8.4613914, 0.0000019, 4.3878173]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 150],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [179.9999847, -63.5, -179.9999847]],
+            "m_Translate": [14, [13.9916381, 0.0, 5.4474487]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 151],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [0.0, -90.0, -9.999981784858392e-7]],
+            "m_Translate": [14, [11.3413887, 0.0000019, 5.4209899]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-5.960464477539063e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 152],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999694, -0.0000116, 179.9999847]],
+            "m_Translate": [14, [8.2941284, 0.0000152, -1.6109006]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195727, 0.230906, 0.0690794, 1.5195727, 0.2707889]],
+            "m_PcId": [6, 153],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0, 90.0, -0.0]],
+            "m_Translate": [14, [4.2152099, 0.0000019, -7.9951171]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195727, 0.230906, 0.0690794, 1.5195727, 0.2707889]],
+            "m_PcId": [6, 155],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0, 90.0, -0.0]],
+            "m_Translate": [14, [8.1043701, 0.0000092, -5.9473266]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195727, 0.230906, 0.0690794, 1.5195727, 0.2707889]],
+            "m_PcId": [6, 156],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0, 90.0, -0.0]],
+            "m_Translate": [14, [2.7919921, 0.0000092, -6.2114868]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195734, 0.230906, 0.0690794, 1.5195734, 0.270789]],
+            "m_PcId": [6, 157],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999847, 29.9999961, 179.9999847]],
+            "m_Translate": [14, [7.2017822, 0.0000057, -6.5651245]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195727, 0.230906, 0.0690794, 1.5195727, 0.2707889]],
+            "m_PcId": [6, 158],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0, 90.0, -0.0]],
+            "m_Translate": [14, [8.9772949, 0.0000057, -8.3461303]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 159],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [-0.0, -59.9999923, -0.0]],
+            "m_Translate": [14, [14.4874267, 0.0000019, -8.4027709]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 160],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999847, 44.9999885, 179.9999847]],
+            "m_Translate": [14, [9.1730957, 0.0000076, -7.0530395]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 161],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0, 60.0000038, -0.0]],
+            "m_Translate": [14, [2.067749, 0.0068206, 5.3981323]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195727, 0.230906, 0.0690794, 1.5195727, 0.2707889]],
+            "m_PcId": [6, 162],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0, 90.0, -0.0]],
+            "m_Translate": [14, [2.9228515, 0.0000019, 4.2363891]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-5.960464477539063e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 163],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0000079, 0.0000016, 0.0000304]],
+            "m_Translate": [14, [11.1602783, 0.0000019, 8.9210815]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195727, 0.230906, 0.0690794, 1.5195727, 0.2707889]],
+            "m_PcId": [6, 171],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0, 90.0, -0.0]],
+            "m_Translate": [14, [3.2507324, 0.0000076, -14.5961303]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195727, 0.230906, 0.0690794, 1.5195727, 0.2707889]],
+            "m_PcId": [6, 172],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0, 90.0, -0.0]],
+            "m_Translate": [14, [-0.6201171, 0.0000057, -10.7044067]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.2707889]],
+            "m_PcId": [6, 173],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [180.0, 51.4999923, -180.0]],
+            "m_Translate": [14, [0.0661621, 0.0408019, -11.9586181]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 174],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0, -90.0, 0.0]],
+            "m_Translate": [14, [-1.368103, 0.0000076, -8.5991821]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195727, 0.230906, 0.0690794, 1.5195727, 0.2707889]],
+            "m_PcId": [6, 177],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0, 90.0, -0.0]],
+            "m_Translate": [14, [-5.8713378, 0.017494, -14.1063842]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 180],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [-0.0, 32.0000076, -0.0]],
+            "m_Scale": [14, [0.9999986, 1.0, 0.9999985]],
+            "m_Translate": [14, [-7.0546875, 0.0000057, -13.5466918]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 182],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0, 90.0, -0.0]],
+            "m_Scale": [14, [0.9999986, 1.0, 0.9999986]],
+            "m_Translate": [14, [-12.8260498, 0.2400224, -2.0250854]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-5.960464477539063e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 186],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0, 90.0, -0.0]],
+            "m_Scale": [14, [0.9999988, 1.0, 0.9999988]],
+            "m_Translate": [14, [-10.7016601, 0.0329741, -12.8012084]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-5.960464477539063e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 188],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0, 90.0, -0.0]],
+            "m_Scale": [14, [0.9999988, 1.0, 0.9999988]],
+            "m_Translate": [14, [-4.006958, 0.0174998, -14.3020019]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 189],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0, 90.0, -0.0]],
+            "m_Scale": [14, [0.9999986, 1.0, 0.9999986]],
+            "m_Translate": [14, [-11.913208, 0.0000092, -14.8449096]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-5.960464477539063e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 190],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0, 90.0, -0.0]],
+            "m_Scale": [14, [0.9999988, 1.0, 0.9999988]],
+            "m_Translate": [14, [-6.0847167, 0.0294971, -12.6536254]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 192],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [-0.000009, 0.000003, -0.0000147]],
+            "m_Translate": [14, [-13.5222778, 0.000037, -11.7727355]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-3.3527612686157229e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.2707889]],
+            "m_PcId": [6, 193],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.000029, -75.0000228, 0.0000249]],
+            "m_Translate": [14, [12.4556884, 0.0086364, 3.041809]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 195],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999847, 44.9999885, 179.9999847]],
+            "m_Translate": [14, [15.1691894, 0.0000114, 3.1366577]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 196],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999847, -60.0, 179.9999847]],
+            "m_Translate": [14, [11.1391601, -0.0000038, 2.8197631]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "patrol_setup_01"],
+            "m_PcId": [6, 200],
+            "m_PrefabName": [12, "patrol_setup"],
+            "m_PresetNames": [12, "Type;Without Activator;Activation - distance;Darkzone"],
+            "m_Rotate": [14, [-0.0000135, -8.9999837, 0.0000469]],
+            "m_Translate": [14, [4.244873, 0.0145797, 6.3909301]]
+          },
+          "Fields": {
+            "IPatrolData::m_PatrolPoints": "/~201;/~202;",
+            "m_DifficultyRangeSource": "UserDefinedDifficultyRange,();",
+            "m_Preset": "Character;Viral_Fog"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource",
+            "Fields": {
+              "m_DifficultyModifier": "0",
+              "m_MaxDifficultyTier": "Tier_9",
+              "m_MinDifficultyTier": "Tier_5"
+            }
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Infected_BP_01_1"],
+            "m_PcId": [6, 201],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_PresetNames": [12, "Ranges;Interior"],
+            "m_Rotate": [14, [-0.0, 25.9999256, -0.0]],
+            "m_Translate": [14, [3.916687, 0.0499989, 9.329956]]
+          },
+          "Fields": {
+            "IPatrolPoint::m_UseGenericAnimation": "1",
+            "IPatrolPoint::m_WaitTime": "2.000000",
+            "m_BehaviorName": "biter_stand_reaching"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Infected_BP_01_2"],
+            "m_PcId": [6, 202],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_Rotate": [14, [180.0, 18.9999828, 179.9999847]],
+            "m_Translate": [14, [4.6543579, 0.0000076, -0.2753295]]
+          },
+          "Fields": {
+            "IPatrolPoint::m_UseGenericAnimation": "1",
+            "IPatrolPoint::m_WaitTime": "2.000000",
+            "m_BehaviorName": "biter_stand_reaching"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "patrol_setup_02"],
+            "m_PcId": [6, 204],
+            "m_PrefabName": [12, "patrol_setup"],
+            "m_PresetNames": [12, "Type;Without Activator;Activation - distance;Darkzone"],
+            "m_Rotate": [14, [-179.9999847, 59.9999847, 179.9999847]],
+            "m_Translate": [14, [-1.458374, 0.0073242, -13.6616821]]
+          },
+          "Fields": {
+            "IPatrolData::m_PatrolPoints": "/~205;/~206;",
+            "m_DifficultyRangeSource": "UserDefinedDifficultyRange,();",
+            "m_Preset": "Character;Viral_Fog"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource",
+            "Fields": {
+              "m_DifficultyModifier": "0",
+              "m_MaxDifficultyTier": "Tier_9",
+              "m_MinDifficultyTier": "Tier_5"
+            }
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Infected_BP_02_1"],
+            "m_PcId": [6, 205],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_PresetNames": [12, "Ranges;Interior"],
+            "m_Rotate": [14, [-0.0, -79.000122, -0.0]],
+            "m_Translate": [14, [-3.9038696, 0.0294933, -12.2955932]]
+          },
+          "Fields": {
+            "IPatrolPoint::m_UseGenericAnimation": "1",
+            "IPatrolPoint::m_WaitTime": "2.000000",
+            "m_BehaviorName": "biter_stand_reaching"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Infected_BP_02_2"],
+            "m_PcId": [6, 206],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_Rotate": [14, [0.0, 86.0000686, -0.0]],
+            "m_Translate": [14, [1.6932373, 0.0500334, -13.3018188]]
+          },
+          "Fields": {
+            "IPatrolPoint::m_UseGenericAnimation": "1",
+            "IPatrolPoint::m_WaitTime": "2.000000",
+            "m_BehaviorName": "biter_stand_reaching"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 208],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [-0.0, 30.0000038, -0.0]],
+            "m_Translate": [14, [3.9797973, 0.0000114, -5.7020874]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 209],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999847, 44.9999885, 179.9999847]],
+            "m_Translate": [14, [11.960205, 0.0000076, -5.5783081]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 211],
+            "m_PrefabName": [12, "cont_molotov_materials"],
+            "m_Translate": [14, [11.4015502, 0.9012938, 0.388]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 212],
+            "m_PrefabName": [12, "cont_molotov_materials"],
+            "m_Translate": [14, [-2.9108886, 0.0, -15.0112304]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 213],
+            "m_PrefabName": [12, "gre_blueprint_floor_low_day_spawners"],
+            "m_Translate": [14, [0.0, 0.0, -0.0000147]]
+          },
+          "Fields": {
+            "m_NumOfAIsToSpawn": "10",
+            "m_NumOfAIsToSpawn(1)": "30",
+            "Volatile_01_Transform": "0.699689 0.000000 -0.714448 8.439270 -0.000000 1.000000 0.000000 0.000010 0.714447 -0.000000 0.699689 12.253845",
+            "Volatile_02_Transform": "1.000000 0.000000 -0.000000 4.506226 -0.000000 1.000000 -0.000000 0.000002 0.000000 -0.000000 1.000000 -3.691711",
+            "Volatile_03_Transform": "0.255332 0.000000 -0.966854 13.665100 0.000000 1.000000 0.000000 0.000004 0.966854 -0.000000 0.255332 -3.655701"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Loot"],
+            "m_PcId": [6, 215],
+            "m_PrefabName": [12, "gre_blueprint_floor_low_vanilla_03_logic_loot"],
+            "m_Scale": [14, [1.0000009, 1.0, 1.0000009]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.2309975, 0.0690794, 1.5195729, 0.2708195]],
+            "m_PcId": [6, 219],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0000092, 29.9999923, 0.0000256]],
+            "m_Translate": [14, [7.5355224, 0.0000019, 9.2288208]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 220],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0000092, 29.9999923, 0.0000256]],
+            "m_Translate": [14, [5.303955, 0.0000019, 9.0464477]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 221],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [-0.0, 45.0000076, -0.0000104]],
+            "m_Translate": [14, [9.9654541, 0.002882, -0.9130249]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "patrol_setup_03"],
+            "m_PcId": [6, 222],
+            "m_PrefabName": [12, "patrol_setup"],
+            "m_PresetNames": [12, "Type;Without Activator;Activation - distance;Darkzone"],
+            "m_Rotate": [14, [-179.9999847, 59.9999847, 179.9999847]],
+            "m_Translate": [14, [-9.9377441, 0.2594566, -6.3602294]]
+          },
+          "Fields": {
+            "IPatrolData::m_PatrolPoints": "/~224;/~223;",
+            "m_DifficultyRangeSource": "UserDefinedDifficultyRange,();",
+            "m_Preset": "Character;Viral_Fog"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource",
+            "Fields": {
+              "m_DifficultyModifier": "0",
+              "m_MaxDifficultyTier": "Tier_9",
+              "m_MinDifficultyTier": "Tier_5"
+            }
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Infected_BP_03_1"],
+            "m_PcId": [6, 223],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_PresetNames": [12, "Ranges;Interior"],
+            "m_Rotate": [14, [0.0, 70.9998931, -0.0]],
+            "m_Translate": [14, [-8.2869873, 0.240013, -5.2903442]]
+          },
+          "Fields": {
+            "IPatrolPoint::m_UseGenericAnimation": "1",
+            "IPatrolPoint::m_WaitTime": "2.000000",
+            "m_BehaviorName": "biter_stand_reaching"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Infected_BP_03_2"],
+            "m_PcId": [6, 224],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_PresetNames": [12, "Ranges;Interior"],
+            "m_Rotate": [14, [-179.9999847, -25.9998874, 179.9999847]],
+            "m_Translate": [14, [-9.6435546, 0.1326427, -7.953125]]
+          },
+          "Fields": {
+            "IPatrolPoint::m_UseGenericAnimation": "1",
+            "IPatrolPoint::m_WaitTime": "2.000000",
+            "m_BehaviorName": "biter_stand_reaching"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-5.587935447692871e-8, 1.5195727, 0.230906, 0.0690794, 1.5195727, 0.2707889]],
+            "m_PcId": [6, 225],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0, -90.0, 0.0]],
+            "m_Scale": [14, [0.9999986, 1.0, 0.9999986]],
+            "m_Translate": [14, [-6.8228759, 0.0245779, -6.595642]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1",
+            "m_ShowTakedownVsHumanNoiseRange": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 227],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [0.0, -75.0, -0.0000168]],
+            "m_Translate": [14, [-9.5666503, 0.2362249, -7.692749]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 228],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Hard"],
+            "m_Rotate": [14, [0.0, -90.0, -0.000017]],
+            "m_Translate": [14, [-9.4876708, 0.236227, -2.0272827]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0002871, 0.0003211, 0.0002254, 0.0237871, 0.0063211, 0.0392255]],
+            "m_Name": [12, "Collectable_Tape_GRE_Doctor_04"],
+            "m_PcId": [6, 229],
+            "m_PrefabName": [12, "collectableobject"],
+            "m_Rotate": [14, [0.000022, -59.9874343, 0.0000384]],
+            "m_Scale": [14, [1.0000009, 1.0000002, 1.0000009]],
+            "m_Translate": [14, [-1.1512451, 0.9068431, -1.9795532]]
+          },
+          "Fields": {
+            "CollectableId": "Collectable_Tape_GRE_Doctor_04",
+            "m_EditorItemName": "Collectable_Tape_GRE_Doctor_04"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2",
+      "Nodes": [
+        {
+          "Uuid": "36",
+          "Type": "1",
+          "X": "0.00",
+          "Y": "0.00"
+        },
+        {
+          "Uuid": "46",
+          "Type": "1",
+          "X": "25.00",
+          "Y": "20.00"
+        },
+        {
+          "Uuid": "66",
+          "Type": "1",
+          "X": "50.00",
+          "Y": "40.00"
+        },
+        {
+          "Uuid": "67",
+          "Type": "1",
+          "X": "75.00",
+          "Y": "60.00"
+        },
+        {
+          "Uuid": "68",
+          "Type": "1",
+          "X": "100.00",
+          "Y": "80.00"
+        },
+        {
+          "Uuid": "69",
+          "Type": "1",
+          "X": "125.00",
+          "Y": "100.00"
+        },
+        {
+          "Uuid": "70",
+          "Type": "1",
+          "X": "150.00",
+          "Y": "120.00"
+        },
+        {
+          "Uuid": "72",
+          "Type": "1",
+          "X": "175.00",
+          "Y": "140.00"
+        },
+        {
+          "Uuid": "73",
+          "Type": "1",
+          "X": "200.00",
+          "Y": "160.00"
+        },
+        {
+          "Uuid": "74",
+          "Type": "1",
+          "X": "225.00",
+          "Y": "180.00"
+        },
+        {
+          "Uuid": "76",
+          "Type": "1",
+          "X": "250.00",
+          "Y": "200.00"
+        },
+        {
+          "Uuid": "83",
+          "Type": "1",
+          "X": "275.00",
+          "Y": "220.00"
+        },
+        {
+          "Uuid": "84",
+          "Type": "1",
+          "X": "300.00",
+          "Y": "240.00"
+        },
+        {
+          "Uuid": "85",
+          "Type": "1",
+          "X": "325.00",
+          "Y": "260.00"
+        },
+        {
+          "Uuid": "94",
+          "Type": "1",
+          "X": "3495.00",
+          "Y": "2115.00"
+        },
+        {
+          "Uuid": "105",
+          "Type": "1",
+          "X": "375.00",
+          "Y": "300.00"
+        },
+        {
+          "Uuid": "106",
+          "Type": "1",
+          "X": "400.00",
+          "Y": "320.00"
+        },
+        {
+          "Uuid": "107",
+          "Type": "1",
+          "X": "425.00",
+          "Y": "340.00"
+        },
+        {
+          "Uuid": "112",
+          "Type": "1",
+          "X": "450.00",
+          "Y": "360.00"
+        },
+        {
+          "Uuid": "113",
+          "Type": "1",
+          "X": "475.00",
+          "Y": "380.00"
+        },
+        {
+          "Uuid": "115",
+          "Type": "1",
+          "X": "500.00",
+          "Y": "400.00"
+        },
+        {
+          "Uuid": "116",
+          "Type": "1",
+          "X": "525.00",
+          "Y": "420.00"
+        },
+        {
+          "Uuid": "117",
+          "Type": "1",
+          "X": "550.00",
+          "Y": "440.00"
+        },
+        {
+          "Uuid": "120",
+          "Type": "1",
+          "X": "575.00",
+          "Y": "460.00"
+        },
+        {
+          "Uuid": "121",
+          "Type": "1",
+          "X": "600.00",
+          "Y": "480.00"
+        },
+        {
+          "Uuid": "122",
+          "Type": "1",
+          "X": "625.00",
+          "Y": "500.00"
+        },
+        {
+          "Uuid": "123",
+          "Type": "1",
+          "X": "650.00",
+          "Y": "520.00"
+        },
+        {
+          "Uuid": "124",
+          "Type": "1",
+          "X": "675.00",
+          "Y": "540.00"
+        },
+        {
+          "Uuid": "125",
+          "Type": "1",
+          "X": "700.00",
+          "Y": "560.00"
+        },
+        {
+          "Uuid": "126",
+          "Type": "1",
+          "X": "725.00",
+          "Y": "580.00"
+        },
+        {
+          "Uuid": "127",
+          "Type": "1",
+          "X": "750.00",
+          "Y": "600.00"
+        },
+        {
+          "Uuid": "129",
+          "Type": "1",
+          "X": "775.00",
+          "Y": "620.00"
+        },
+        {
+          "Uuid": "130",
+          "Type": "1",
+          "X": "800.00",
+          "Y": "640.00"
+        },
+        {
+          "Uuid": "131",
+          "Type": "1",
+          "X": "825.00",
+          "Y": "660.00"
+        },
+        {
+          "Uuid": "132",
+          "Type": "1",
+          "X": "850.00",
+          "Y": "680.00"
+        },
+        {
+          "Uuid": "133",
+          "Type": "1",
+          "X": "875.00",
+          "Y": "700.00"
+        },
+        {
+          "Uuid": "134",
+          "Type": "1",
+          "X": "900.00",
+          "Y": "720.00"
+        },
+        {
+          "Uuid": "135",
+          "Type": "1",
+          "X": "925.00",
+          "Y": "740.00"
+        },
+        {
+          "Uuid": "136",
+          "Type": "1",
+          "X": "950.00",
+          "Y": "760.00"
+        },
+        {
+          "Uuid": "137",
+          "Type": "1",
+          "X": "975.00",
+          "Y": "780.00"
+        },
+        {
+          "Uuid": "138",
+          "Type": "1",
+          "X": "1000.00",
+          "Y": "800.00"
+        },
+        {
+          "Uuid": "139",
+          "Type": "1",
+          "X": "1025.00",
+          "Y": "820.00"
+        },
+        {
+          "Uuid": "140",
+          "Type": "1",
+          "X": "1050.00",
+          "Y": "840.00"
+        },
+        {
+          "Uuid": "141",
+          "Type": "1",
+          "X": "1075.00",
+          "Y": "860.00"
+        },
+        {
+          "Uuid": "142",
+          "Type": "1",
+          "X": "1100.00",
+          "Y": "880.00"
+        },
+        {
+          "Uuid": "144",
+          "Type": "1",
+          "X": "1125.00",
+          "Y": "900.00"
+        },
+        {
+          "Uuid": "145",
+          "Type": "1",
+          "X": "1150.00",
+          "Y": "920.00"
+        },
+        {
+          "Uuid": "147",
+          "Type": "1",
+          "X": "1175.00",
+          "Y": "940.00"
+        },
+        {
+          "Uuid": "148",
+          "Type": "1",
+          "X": "1200.00",
+          "Y": "960.00"
+        },
+        {
+          "Uuid": "149",
+          "Type": "1",
+          "X": "1225.00",
+          "Y": "980.00"
+        },
+        {
+          "Uuid": "150",
+          "Type": "1",
+          "X": "1250.00",
+          "Y": "1000.00"
+        },
+        {
+          "Uuid": "151",
+          "Type": "1",
+          "X": "1275.00",
+          "Y": "1020.00"
+        },
+        {
+          "Uuid": "152",
+          "Type": "1",
+          "X": "1300.00",
+          "Y": "1040.00"
+        },
+        {
+          "Uuid": "153",
+          "Type": "1",
+          "X": "1325.00",
+          "Y": "1060.00"
+        },
+        {
+          "Uuid": "154",
+          "Type": "1",
+          "X": "1350.00",
+          "Y": "1080.00"
+        },
+        {
+          "Uuid": "155",
+          "Type": "1",
+          "X": "1375.00",
+          "Y": "1100.00"
+        },
+        {
+          "Uuid": "156",
+          "Type": "1",
+          "X": "1400.00",
+          "Y": "1120.00"
+        },
+        {
+          "Uuid": "157",
+          "Type": "1",
+          "X": "1425.00",
+          "Y": "1140.00"
+        },
+        {
+          "Uuid": "158",
+          "Type": "1",
+          "X": "1450.00",
+          "Y": "1160.00"
+        },
+        {
+          "Uuid": "159",
+          "Type": "1",
+          "X": "1475.00",
+          "Y": "1180.00"
+        },
+        {
+          "Uuid": "160",
+          "Type": "1",
+          "X": "1500.00",
+          "Y": "1200.00"
+        },
+        {
+          "Uuid": "161",
+          "Type": "1",
+          "X": "1525.00",
+          "Y": "1220.00"
+        },
+        {
+          "Uuid": "162",
+          "Type": "1",
+          "X": "1550.00",
+          "Y": "1240.00"
+        },
+        {
+          "Uuid": "163",
+          "Type": "1",
+          "X": "1575.00",
+          "Y": "1260.00"
+        },
+        {
+          "Uuid": "164",
+          "Type": "1",
+          "X": "1600.00",
+          "Y": "1280.00"
+        },
+        {
+          "Uuid": "165",
+          "Type": "1",
+          "X": "1625.00",
+          "Y": "1300.00"
+        },
+        {
+          "Uuid": "166",
+          "Type": "1",
+          "X": "1650.00",
+          "Y": "1320.00"
+        },
+        {
+          "Uuid": "167",
+          "Type": "1",
+          "X": "1675.00",
+          "Y": "1340.00"
+        },
+        {
+          "Uuid": "168",
+          "Type": "1",
+          "X": "1700.00",
+          "Y": "1360.00"
+        },
+        {
+          "Uuid": "169",
+          "Type": "1",
+          "X": "1725.00",
+          "Y": "1380.00"
+        },
+        {
+          "Uuid": "170",
+          "Type": "1",
+          "X": "1750.00",
+          "Y": "1400.00"
+        },
+        {
+          "Uuid": "171",
+          "Type": "1",
+          "X": "1775.00",
+          "Y": "1420.00"
+        },
+        {
+          "Uuid": "172",
+          "Type": "1",
+          "X": "1800.00",
+          "Y": "1440.00"
+        },
+        {
+          "Uuid": "173",
+          "Type": "1",
+          "X": "1825.00",
+          "Y": "1460.00"
+        },
+        {
+          "Uuid": "174",
+          "Type": "1",
+          "X": "1850.00",
+          "Y": "1480.00"
+        },
+        {
+          "Uuid": "175",
+          "Type": "1",
+          "X": "1875.00",
+          "Y": "1500.00"
+        },
+        {
+          "Uuid": "176",
+          "Type": "1",
+          "X": "1900.00",
+          "Y": "1520.00"
+        },
+        {
+          "Uuid": "177",
+          "Type": "1",
+          "X": "1925.00",
+          "Y": "1540.00"
+        },
+        {
+          "Uuid": "178",
+          "Type": "1",
+          "X": "1950.00",
+          "Y": "1560.00"
+        },
+        {
+          "Uuid": "179",
+          "Type": "1",
+          "X": "1975.00",
+          "Y": "1580.00"
+        },
+        {
+          "Uuid": "180",
+          "Type": "1",
+          "X": "2000.00",
+          "Y": "1600.00"
+        },
+        {
+          "Uuid": "181",
+          "Type": "1",
+          "X": "2025.00",
+          "Y": "1620.00"
+        },
+        {
+          "Uuid": "182",
+          "Type": "1",
+          "X": "2050.00",
+          "Y": "1640.00"
+        },
+        {
+          "Uuid": "183",
+          "Type": "1",
+          "X": "2075.00",
+          "Y": "1660.00"
+        },
+        {
+          "Uuid": "184",
+          "Type": "1",
+          "X": "2100.00",
+          "Y": "1680.00"
+        },
+        {
+          "Uuid": "185",
+          "Type": "1",
+          "X": "2125.00",
+          "Y": "1700.00"
+        },
+        {
+          "Uuid": "186",
+          "Type": "1",
+          "X": "2150.00",
+          "Y": "1720.00"
+        },
+        {
+          "Uuid": "187",
+          "Type": "1",
+          "X": "2175.00",
+          "Y": "1740.00"
+        },
+        {
+          "Uuid": "188",
+          "Type": "1",
+          "X": "2200.00",
+          "Y": "1760.00"
+        },
+        {
+          "Uuid": "189",
+          "Type": "1",
+          "X": "2225.00",
+          "Y": "1780.00"
+        },
+        {
+          "Uuid": "190",
+          "Type": "1",
+          "X": "2250.00",
+          "Y": "1800.00"
+        },
+        {
+          "Uuid": "191",
+          "Type": "1",
+          "X": "2275.00",
+          "Y": "1820.00"
+        },
+        {
+          "Uuid": "192",
+          "Type": "1",
+          "X": "2300.00",
+          "Y": "1840.00"
+        },
+        {
+          "Uuid": "193",
+          "Type": "1",
+          "X": "2325.00",
+          "Y": "1860.00"
+        },
+        {
+          "Uuid": "194",
+          "Type": "1",
+          "X": "2350.00",
+          "Y": "1880.00"
+        },
+        {
+          "Uuid": "195",
+          "Type": "1",
+          "X": "2375.00",
+          "Y": "1900.00"
+        },
+        {
+          "Uuid": "196",
+          "Type": "1",
+          "X": "2400.00",
+          "Y": "1920.00"
+        },
+        {
+          "Uuid": "199",
+          "Type": "1",
+          "X": "2425.00",
+          "Y": "1940.00"
+        },
+        {
+          "Uuid": "200",
+          "Type": "1",
+          "X": "2450.00",
+          "Y": "1960.00"
+        },
+        {
+          "Uuid": "201",
+          "Type": "1",
+          "X": "2475.00",
+          "Y": "1980.00"
+        },
+        {
+          "Uuid": "202",
+          "Type": "1",
+          "X": "2500.00",
+          "Y": "2000.00"
+        },
+        {
+          "Uuid": "203",
+          "Type": "1",
+          "X": "2525.00",
+          "Y": "2020.00"
+        },
+        {
+          "Uuid": "204",
+          "Type": "1",
+          "X": "2550.00",
+          "Y": "2040.00"
+        },
+        {
+          "Uuid": "205",
+          "Type": "1",
+          "X": "2575.00",
+          "Y": "2060.00"
+        },
+        {
+          "Uuid": "206",
+          "Type": "1",
+          "X": "2600.00",
+          "Y": "2080.00"
+        },
+        {
+          "Uuid": "207",
+          "Type": "1",
+          "X": "2625.00",
+          "Y": "2100.00"
+        },
+        {
+          "Uuid": "208",
+          "Type": "1",
+          "X": "2650.00",
+          "Y": "2120.00"
+        },
+        {
+          "Uuid": "209",
+          "Type": "1",
+          "X": "2675.00",
+          "Y": "2140.00"
+        },
+        {
+          "Uuid": "210",
+          "Type": "1",
+          "X": "2700.00",
+          "Y": "2160.00"
+        },
+        {
+          "Uuid": "211",
+          "Type": "4",
+          "X": "2725.00",
+          "Y": "2180.00",
+          "Interface_Type": "0"
+        },
+        {
+          "Uuid": "212",
+          "Type": "4",
+          "X": "2750.00",
+          "Y": "2200.00",
+          "Interface_Type": "1"
+        },
+        {
+          "Uuid": "213",
+          "Type": "4",
+          "X": "3225.00",
+          "Y": "2670.00",
+          "Interface_Type": "2"
+        }
+      ]
+    }
+  }
+}

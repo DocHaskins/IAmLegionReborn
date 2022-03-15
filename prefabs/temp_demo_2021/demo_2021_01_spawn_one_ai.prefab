@@ -1,0 +1,63 @@
+{
+  "__filename__": {
+    "Version": 3,
+    "RuntimeData": {
+      "Interface": {
+        "VirtualFields": [
+          {
+            "Name": "m_Preset",
+            "Init": "e:EDIT|CALLBACK;f:EDIT;d:Single preset-lowest priority;c:Spawner;l:m_Preset;",
+            "DestinationFields": [
+              {
+                "Uuid": "1",
+                "Name": "m_Preset"
+              }
+            ]
+          }
+        ]
+      },
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0001831, 0.5000001, 0.0, 0.5000611, 0.5000002, 0.5000001]],
+            "m_Name": [12, "ai_spawner_number"],
+            "m_PcId": [6, 1],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior"],
+            "m_Rotate": [14, [0.1695449, 40.998085, -0.8909195]],
+            "m_Scale": [14, [1.0, 1.2229709, 1.0000001]],
+            "m_Translate": [14, [-0.0925292, -0.2710494, 0.0031737]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "1",
+            "m_NumOfAIsToSpawn": "1",
+            "m_PointsSource": "4",
+            "m_Preset": "Character;Biter_Male_Bleached",
+            "m_SpawnPoints": "/~2;"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 2],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0000129, 40.9999465, -0.000006]]
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

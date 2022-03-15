@@ -240,6 +240,21 @@ sub HumanAI_Base()
         ConnectionTypeCosts()
         {
             climb_low(3.0);
+
+            breakable_door(2.0);
+        }
+
+        use HumanAI_Base_InfectedSurfaces();
+        use HumanAI_Base_InfectedRandomness();
+    }
+	
+	    NavigationPreset("biter_fresh")
+    {
+        use HumanAI_Base_Defaults();
+		MaxPathLength(250.0);
+        ConnectionTypeCosts()
+        {
+            climb_low(3.0);
             climb_medium(5.0);
             climb_high(7.0);
 			

@@ -1,0 +1,407 @@
+{
+  "__filename__": {
+    "Version": 4,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "spawner_biters"],
+            "m_PcId": [6, 1],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Darkzone;Spawner_Difficulty;Tier_5;Activation - daytime;Whole Day"],
+            "m_Rotate": [14, [-0.0, -30.0, -0.0]],
+            "m_Translate": [14, [3.1054687, -9.5999994, 12.0904541]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_NumOfAIsToSpawn": "4",
+            "m_PointsSource": "4",
+            "m_Preset": "Character;Biter_Male_Bleached",
+            "m_SpawnPoints": "/~34;/~5;/~32;/~33;",
+            "m_WantedGroupID": "-1"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkzone",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkzone",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_5",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "btm_biter_point"],
+            "m_PcId": [6, 5],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [-180.0, -15.0000085, -180.0]],
+            "m_Translate": [14, [-3.28479, -9.5999994, 11.5492248]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "spawner_virals"],
+            "m_PcId": [6, 13],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Darkzone;Spawner_Difficulty;Tier_5;Activation - daytime;Whole Day"],
+            "m_Rotate": [14, [-0.0, -30.0, -0.0]],
+            "m_Translate": [14, [3.807373, -9.5999994, 10.9356994]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_NumOfAIsToSpawn": "3",
+            "m_PointsSource": "4",
+            "m_Preset": "Character;Viral",
+            "m_RequestObjects": ",0,();",
+            "m_SpawnPoints": "/~30;/~31;/~15;",
+            "m_WantedGroupID": "-1"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkzone",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkzone",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_5",
+            "DestinationField": "m_DifficultyRangeSource"
+          },
+          "EmbeddedObjectVector": {
+            "DestinationField": "m_RequestObjects",
+            "Objects": [
+              {
+                "Class": ""
+              }
+            ]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-2.9802322387695315e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "btm_viral_point"],
+            "m_PcId": [6, 15],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999847, -29.9999904, 179.9999847]],
+            "m_Translate": [14, [1.1844482, -5.7599983, 15.6092529]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 2.0000002, 0.0, 0.5, 2.0000002, 0.5]],
+            "m_Name": [12, "AM_SpawnGrate_zombies"],
+            "m_PcId": [6, 24],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Rotate": [14, [-0.0, 59.9998703, -0.0]],
+            "m_Scale": [14, [7.1321473, 0.8330866, 4.0493974]],
+            "m_Translate": [14, [-0.7611082, -0.8058853, -1.9153442]]
+          },
+          "Fields": {
+            "m_AreaHeight": "4.000000"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "init_point_grate"],
+            "m_PcId": [6, 25],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [-179.9999847, -60.000019, -179.9999847]],
+            "m_Translate": [14, [5.4727783, 0.0055332, -10.3205261]]
+          },
+          "Fields": {
+            "m_BehaviorName": "no_state_inf_crawl_out",
+            "m_Preset": "Character;Biter_Male_Bleached",
+            "m_SkipNavmeshCheck": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "init_point_grate"],
+            "m_PcId": [6, 26],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [-179.9999847, -60.000019, -179.9999847]],
+            "m_Translate": [14, [4.6141357, 0.0055332, -8.8215026]]
+          },
+          "Fields": {
+            "m_BehaviorName": "no_state_inf_crawl_out",
+            "m_Preset": "Character;Volatile",
+            "m_SkipNavmeshCheck": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "init_point_grate"],
+            "m_PcId": [6, 27],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [-179.9999847, -60.000019, -179.9999847]],
+            "m_Translate": [14, [2.5102539, 0.0055332, -5.3578796]]
+          },
+          "Fields": {
+            "m_BehaviorName": "no_state_inf_crawl_out",
+            "m_Preset": "Character;Viral",
+            "m_SkipNavmeshCheck": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "init_point_grate"],
+            "m_PcId": [6, 28],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [-179.9999847, -60.000019, -179.9999847]],
+            "m_Translate": [14, [1.4638669, 0.0055332, -3.3927917]]
+          },
+          "Fields": {
+            "m_BehaviorName": "no_state_inf_crawl_out",
+            "m_Preset": "Character;Biter_Male_Bleached",
+            "m_SkipNavmeshCheck": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "spawner_grate01"],
+            "m_PcId": [6, 29],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - daytime;Whole Day;Spawner_Difficulty;Tier_5;Activation - distance;Darkzone"],
+            "m_Rotate": [14, [179.9999847, 29.999998, 179.9999847]],
+            "m_Translate": [14, [-0.7869873, 0.0, 0.1026306]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_EnforceLogicalConditionBeforeDistance": "0",
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_NumOfAIsToSpawn": "4",
+            "m_PointsSource": "4",
+            "m_SpawnPoints": "/~28;/~25;/~26;/~27;",
+            "m_WantedGroupID": "215"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_5",
+            "DestinationField": "m_DifficultyRangeSource"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkzone",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkzone",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "btm_viral_point"],
+            "m_PcId": [6, 30],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [0.0000609, -75.0000076, 0.0000746]],
+            "m_Translate": [14, [7.0263671, -9.5999994, 5.8153381]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.2308602, 0.0690794, 1.5195729, 0.2708042]],
+            "m_Name": [12, "btm_viral_point"],
+            "m_PcId": [6, 31],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999847, 0.0000098, 179.9999847]],
+            "m_Translate": [14, [-9.4541015, -9.5999984, 10.8431091]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "btm_biter_point"],
+            "m_PcId": [6, 32],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999847, -15.0000085, 179.9999847]],
+            "m_Translate": [14, [1.6967773, -9.5999994, 13.8180541]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "btm_biter_point"],
+            "m_PcId": [6, 33],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [179.9999847, -15.0000066, 179.9999847]],
+            "m_Translate": [14, [0.805786, -5.7600002, 17.608612]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-2.9802322387695315e-8, 1.5195728, 0.230906, 0.0690794, 1.5195728, 0.270789]],
+            "m_Name": [12, "btm_biter_point"],
+            "m_PcId": [6, 34],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [-179.9999389, 75.0000228, 179.9999237]],
+            "m_Translate": [14, [-12.6577148, -5.7599887, 9.5101623]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "init_point_hands"],
+            "m_PcId": [6, 35],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [0.0000223, 60.0000305, -0.000022]],
+            "m_Translate": [14, [-2.0106201, 0.005537, -7.4638061]]
+          },
+          "Fields": {
+            "m_BehaviorName": "multiactivity_inf_flavor_bit_hands_reach_left_01",
+            "m_Preset": "Character;Biter_Male_Bleached_Simple_One_Hit",
+            "m_SkipNavmeshCheck": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "init_point_hands"],
+            "m_PcId": [6, 36],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [0.0000223, 60.0000305, -0.000022]],
+            "m_Translate": [14, [-3.5198974, 0.005537, -4.5433654]]
+          },
+          "Fields": {
+            "m_BehaviorName": "multiactivity_inf_flavor_bit_hands_reach_left_01",
+            "m_Preset": "Character;Biter_Male_Bleached_Simple_One_Hit",
+            "m_SkipNavmeshCheck": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "init_point_hands"],
+            "m_PcId": [6, 37],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [0.0000223, 60.0000305, -0.000022]],
+            "m_Translate": [14, [-4.4915771, 0.0, -3.2582397]]
+          },
+          "Fields": {
+            "m_BehaviorName": "multiactivity_inf_flavor_bit_hands_reach_left_01",
+            "m_Preset": "Character;Biter_Male_Bleached_Simple_One_Hit",
+            "m_SkipNavmeshCheck": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "init_point_hands"],
+            "m_PcId": [6, 38],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [0.0000223, 60.0000305, -0.000022]],
+            "m_Translate": [14, [-2.6625976, 0.005537, -5.9522705]]
+          },
+          "Fields": {
+            "m_BehaviorName": "multiactivity_inf_flavor_bit_hands_reach_left_01",
+            "m_Preset": "Character;Biter_Male_Bleached_Simple_One_Hit",
+            "m_SkipNavmeshCheck": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "init_point_hands"],
+            "m_PcId": [6, 39],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [0.0000223, 60.0000305, -0.000022]],
+            "m_Translate": [14, [0.0336912, 0.005537, -10.4809875]]
+          },
+          "Fields": {
+            "m_BehaviorName": "multiactivity_inf_flavor_bit_hands_reach_left_01",
+            "m_Preset": "Character;Biter_Male_Bleached_Simple_One_Hit",
+            "m_SkipNavmeshCheck": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "init_point_hands"],
+            "m_PcId": [6, 40],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [0.0000223, 60.0000305, -0.000022]],
+            "m_Translate": [14, [1.4217529, 0.005537, -11.5112915]]
+          },
+          "Fields": {
+            "m_BehaviorName": "multiactivity_inf_flavor_bit_hands_reach_left_01",
+            "m_Preset": "Character;Biter_Male_Bleached_Simple_One_Hit",
+            "m_SkipNavmeshCheck": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "spawner_hands01"],
+            "m_PcId": [6, 41],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - daytime;Whole Day;Spawner_Difficulty;Tier_5;Activation - distance;Darkzone"],
+            "m_Rotate": [14, [179.9999847, 29.999998, 179.9999847]],
+            "m_Translate": [14, [-0.0665282, 0.0, -1.1452026]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_EnforceLogicalConditionBeforeDistance": "0",
+            "m_ForcedTargetMode": "None",
+            "m_NumOfAIsToSpawn": "6",
+            "m_PointsSource": "4",
+            "m_SpawnPoints": "/~40;/~35;/~36;/~37;/~38;/~39;",
+            "m_WantedGroupID": "215"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_5",
+            "DestinationField": "m_DifficultyRangeSource"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkzone",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkzone",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

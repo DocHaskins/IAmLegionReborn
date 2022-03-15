@@ -1,0 +1,53 @@
+{
+  "__filename__": {
+    "Version": 3,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Spawner_Disabled_From_Field"],
+            "m_PcId": [6, 1],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_Rotate": [14, [-180.0, 0.0000049, -180.0]],
+            "m_Translate": [14, [-1.2999992, 0.0, 0.1500014]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_NumOfAIsToSpawn": "1",
+            "m_Preset": "Character;Biter_Male_Bleached"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Spawner_Disabled_From_Preset"],
+            "m_PcId": [6, 2],
+            "m_PrefabName": [12, "ai_spawner_init"],
+            "m_PresetNames": [12, "Preset;Infected_Biter;Animation;Infected_crawl_out;Activation_Type;Quest - On Enable"],
+            "m_Rotate": [14, [-180.0, 0.0000049, -180.0]],
+            "m_Translate": [14, [1.3000011, 0.0, -0.1500014]]
+          },
+          "EmbeddedObject": {
+            "Class": "SpawnPredicateAI",
+            "DestinationField": "m_SpawnPredicate"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.6396949, 0.0, 0.1710133, 0.6837949, 0.6999968]],
+            "m_Name": [12, "Switch"],
+            "m_PcId": [6, 3],
+            "m_PrefabName": [12, "switch"],
+            "m_Translate": [14, [0.2000007, 0.0, -2.8499984]]
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

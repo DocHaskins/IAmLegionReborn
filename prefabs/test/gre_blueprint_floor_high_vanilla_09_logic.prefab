@@ -1,0 +1,1135 @@
+{
+  "__filename__": {
+    "Version": 3,
+    "RuntimeData": {
+      "Interface": {
+        "VirtualFields": [
+          {
+            "Name": "m_CollectableName",
+            "Init": "f:EDIT;e:CALLBACK;",
+            "DestinationFields": [
+              {
+                "Uuid": "94",
+                "Name": "m_CollectableName"
+              }
+            ]
+          }
+        ]
+      },
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.2707889]],
+            "m_PcId": [6, 46],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [12.1931514, 0.0000161, -4.3035583]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 5.960464477539063e-8, 0.5, 0.5, 0.5000001]],
+            "m_PcId": [6, 66],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Activator;Activation - daytime;Whole Day"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Scale": [14, [27.8010902, 8.8323125, 27.0893802]],
+            "m_Translate": [14, [0.8795468, 0.180386, -0.8169779]]
+          },
+          "Fields": {
+            "m_NumOfAIsToSpawn": "27",
+            "m_PointsSource": "4",
+            "m_Preset": "Character;Biter_Male_Bleached_GRE_Resting",
+            "m_SpawnPoints": "/~258;/~46;/~162;/~169;/~170;/~171;/~172;/~173;/~174;/~175;/~176;/~178;/~229;/~230;/~231;/~232;/~233;/~234;/~235;/~239;/~240;/~241;/~242;/~259;/~260;/~261;/~262;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_IsEditorOnly": [11, true],
+            "m_PcId": [6, 69],
+            "m_PrefabName": [12, "text_mesh"],
+            "m_Rotate": [14, [-105.0000076, -0.000006, -179.9999847]],
+            "m_Translate": [14, [7.3722229, 0.180386, 17.9106445]]
+          },
+          "Fields": {
+            "m_Text": "Exit"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0000114, 1.5195729, 0.2309054, 0.0690832, 1.5195729, 0.2707892]],
+            "m_IsEditorOnly": [11, true],
+            "m_PcId": [6, 70],
+            "m_PrefabName": [12, "text_mesh"],
+            "m_Rotate": [14, [-89.9999923, -15.0000162, -89.9999694]],
+            "m_Translate": [14, [20.3906402, 0.030006, -3.7953488]]
+          },
+          "Fields": {
+            "m_LettersScale": "4.000000 4.000000 4.000000",
+            "m_Text": "GRE floor TEMPLATE"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.2309088, 0.0690794, 1.5195729, 0.2707899]],
+            "m_IsEditorOnly": [11, true],
+            "m_PcId": [6, 71],
+            "m_PrefabName": [12, "text_mesh"],
+            "m_Rotate": [14, [-105.0000076, -0.000006, -179.9999847]],
+            "m_Translate": [14, [-5.2788848, 0.240639, 11.1237182]]
+          },
+          "Fields": {
+            "m_Text": "Shortcut lockpick"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.2309117, 0.0690794, 1.5195729, 0.2707909]],
+            "m_IsEditorOnly": [11, true],
+            "m_PcId": [6, 75],
+            "m_PrefabName": [12, "text_mesh"],
+            "m_Rotate": [14, [-105.0000076, -0.000006, -179.9999847]],
+            "m_Translate": [14, [-5.3978271, 0.180386, 7.4190979]]
+          },
+          "Fields": {
+            "m_Text": "Viral Patrol"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.06207, 0.4952579, -0.7400619, 0.499995, 0.9952579, 0.8000199]],
+            "m_Name": [12, "_despawn"],
+            "m_PcId": [6, 83],
+            "m_PrefabName": [12, "gameplay_modifier_area"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Scale": [14, [30.9304485, 2.655677, 23.998022]],
+            "m_Translate": [14, [15.2028656, 0.9599999, 0.904419]]
+          },
+          "Fields": {
+            "m_Height": "1.990505",
+            "m_ModifierFlags": "68",
+            "m_Points": "0.562065 -0.500000 -1.540080;0.562065 -0.500000 0.059958;-0.437925 -0.500000 0.059958;-0.437925 -0.500000 -0.676045;-0.003410 -0.499989 -0.660005;-0.011530 -0.500000 -1.540082;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "chest"],
+            "m_PcId": [6, 94],
+            "m_PrefabName": [12, "gre_blueprint_inhibitor_chest"],
+            "m_Rotate": [14, [0.0, -90.0, 0.0]],
+            "m_Scale": [14, [0.9999988, 1.0, 0.9999988]],
+            "m_Translate": [14, [-14.3702144, -0.0400113, -12.1760559]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_IsEditorOnly": [11, true],
+            "m_PcId": [6, 111],
+            "m_PrefabName": [12, "text_mesh"],
+            "m_Rotate": [14, [-105.0000152, -0.000006, -179.9999847]],
+            "m_Translate": [14, [-12.1178283, 0.180386, 7.4190979]]
+          },
+          "Fields": {
+            "m_Text": "Craft parts"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 126],
+            "m_PrefabName": [12, "dz_quarantine_atlas_crucial_entrance"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [-15.2083444, 5.0406532, -13.7242584]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_IsolateConfigurations": [11, true],
+            "m_PcId": [6, 131],
+            "m_PrefabName": [12, "patrol_setup"],
+            "m_PresetNames": [12, "Activation - distance;Darkzone"],
+            "m_Rotate": [14, [-0.0000168, 25.9999408, 0.000014]],
+            "m_Translate": [14, [5.0007038, 0.0000122, -5.9082946]]
+          },
+          "Fields": {
+            "IPatrolData::m_PatrolPoints": "/~132;/~135;",
+            "m_Preset": "Character;Screamer"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Infected_BP_1"],
+            "m_PcId": [6, 132],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_PresetNames": [12, "Ranges;Interior"],
+            "m_Rotate": [14, [179.9999847, 4.0000877, 179.9999847]],
+            "m_Translate": [14, [10.8404941, 0.0000122, -7.3494262]]
+          },
+          "Fields": {
+            "IPatrolPoint::m_UseGenericAnimation": "1",
+            "IPatrolPoint::m_WaitTime": "5.000000",
+            "m_BehaviorName": "biter_stand_reaching"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Infected_BP_2"],
+            "m_PcId": [6, 135],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_Rotate": [14, [0.0000218, -79.0000152, 0.0000258]],
+            "m_Translate": [14, [3.0846462, 0.0000114, -4.8722839]]
+          },
+          "Fields": {
+            "IPatrolPoint::m_UseGenericAnimation": "1",
+            "IPatrolPoint::m_WaitTime": "5.000000",
+            "m_BehaviorName": "biter_stand_reaching"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.000005, 1.000005, 0.000005, 0.4939644, 1.000005, 0.4939643]],
+            "m_Name": [12, "patrol_direction"],
+            "m_PcId": [6, 136],
+            "m_PrefabName": [12, "marker"],
+            "m_Rotate": [14, [180.0, 15.0000085, -89.9999923]],
+            "m_Scale": [14, [0.5, 2.3203129, 0.5]],
+            "m_Translate": [14, [4.4537301, 0.0000039, 3.3222749]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_IsolateConfigurations": [11, true],
+            "m_PcId": [6, 138],
+            "m_PrefabName": [12, "patrol_setup"],
+            "m_PresetNames": [12, "Activation - distance;Darkzone"],
+            "m_Rotate": [14, [179.9999847, 34.0000801, -179.9999847]],
+            "m_Translate": [14, [-4.0031471, 0.0000027, -8.0607299]]
+          },
+          "Fields": {
+            "IPatrolData::m_PatrolPoints": "/~139;/~141;",
+            "IPatrolData::m_PatrolType": "Loop",
+            "m_Preset": "Character;Goon"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Infected_BP_1"],
+            "m_PcId": [6, 139],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_PresetNames": [12, "Ranges;Interior"],
+            "m_Rotate": [14, [0.0000029, -4.0000624, -0.0000122]],
+            "m_Translate": [14, [-2.8280086, 0.0000064, -2.4452514]]
+          },
+          "Fields": {
+            "IPatrolPoint::m_UseGenericAnimation": "1",
+            "IPatrolPoint::m_WaitTime": "5.000000",
+            "m_BehaviorName": "biter_stand_reaching"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Infected_BP_2"],
+            "m_PcId": [6, 141],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_Rotate": [14, [-179.9999847, 5.9999623, 179.9999847]],
+            "m_Translate": [14, [-5.7689762, 0.0000038, -13.2295532]]
+          },
+          "Fields": {
+            "IPatrolPoint::m_UseGenericAnimation": "1",
+            "IPatrolPoint::m_WaitTime": "5.000000",
+            "m_BehaviorName": "biter_stand_reaching"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 157],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Medium"],
+            "m_Rotate": [14, [179.9999847, -2.9999859, -179.9999847]],
+            "m_Translate": [14, [4.8539714, 4.8000078, 12.9628601]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.2309117, 0.0690794, 1.5195729, 0.2707909]],
+            "m_PcId": [6, 162],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0, 45.0000152, 0.0]],
+            "m_Translate": [14, [11.5576782, -0.0000076, -13.8657226]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.2707889]],
+            "m_PcId": [6, 169],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [-2.5243968, 0.0000046, -10.7071533]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.2707889]],
+            "m_PcId": [6, 170],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [0.3883438, 0.0000064, -9.1673583]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.2707889]],
+            "m_PcId": [6, 171],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [-12.2207984, 0.0, -7.4572448]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.2309052, 0.0690794, 1.5195729, 0.2707892]],
+            "m_PcId": [6, 172],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [-14.2659912, 4.7999954, -1.262451]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.2707889]],
+            "m_PcId": [6, 173],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [-11.8330459, 0.0000038, -5.1570434]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 174],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [179.9999847, 60.0000038, -179.9999847]],
+            "m_Translate": [14, [-11.8889751, 0.0, -14.2050476]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.2707889]],
+            "m_PcId": [6, 175],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [-9.6949443, 0.0000085, -3.207489]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.2707889]],
+            "m_PcId": [6, 176],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [2.8019771, 0.0000104, -7.792572]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.2707889]],
+            "m_PcId": [6, 178],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [2.8401355, 0.0000122, -3.1293029]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 187],
+            "m_PrefabName": [12, "cont_molotov_materials"],
+            "m_Translate": [14, [7.3458862, 0.899962, -7.4769439]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 188],
+            "m_PrefabName": [12, "cont_molotov_materials"],
+            "m_Translate": [14, [6.2192382, -0.0000038, -11.3010253]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 189],
+            "m_PrefabName": [12, "gre_blueprint_floor_high_day_spawners"]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Loot"],
+            "m_PcId": [6, 191],
+            "m_PrefabName": [12, "gre_blueprint_floor_high_vanilla_09_logic_loot"]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.2309174, 0.0690794, 1.5195729, 0.2707928]],
+            "m_PcId": [6, 229],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0000016, 45.0000076, -0.0000035]],
+            "m_Translate": [14, [-9.3912849, 5.923211574554443e-7, -13.8987731]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 230],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0000015, 45.0000152, -0.0000035]],
+            "m_Translate": [14, [7.9091739, 0.0000092, -12.1249389]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_PcId": [6, 231],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0000015, 45.0000152, -0.0000035]],
+            "m_Translate": [14, [10.815752, 0.0000168, 0.7772216]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.2309117, 0.0690794, 1.5195729, 0.2707909]],
+            "m_PcId": [6, 232],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0000016, 45.0000267, -0.0000035]],
+            "m_Translate": [14, [12.2451534, 0.000018, 0.6603698]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.2309117, 0.0690794, 1.5195729, 0.2707909]],
+            "m_PcId": [6, 233],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0000016, 45.000019, -0.0000035]],
+            "m_Translate": [14, [-4.1176757, 0.050354, -1.9893796]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.2309117, 0.0690794, 1.5195729, 0.2707909]],
+            "m_PcId": [6, 234],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0000016, 45.0000228, -0.0000035]],
+            "m_Translate": [14, [-7.7217407, 0.050354, -1.9404294]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.2309117, 0.0690794, 1.5195729, 0.2707909]],
+            "m_PcId": [6, 235],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0000016, 45.0000228, -0.0000035]],
+            "m_Translate": [14, [0.1174926, 0.050354, -1.248779]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.2707889]],
+            "m_PcId": [6, 239],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [-10.7148056, 4.8000164, -2.2851257]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.2707889]],
+            "m_PcId": [6, 240],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [10.7524414, 4.800003, 7.6411132]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.2707889]],
+            "m_PcId": [6, 241],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [-12.3473949, 4.8000097, -7.4949645]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.2707889]],
+            "m_PcId": [6, 242],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [-11.3772239, 4.8000001, -13.2623291]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 243],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Medium"],
+            "m_Rotate": [14, [179.9995574, 87.0000381, -179.9995727]],
+            "m_Translate": [14, [6.2791881, 4.7850418, 10.7371826]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 244],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Medium"],
+            "m_Rotate": [14, [179.9995574, 87.0001068, -179.9995727]],
+            "m_Translate": [14, [10.2819538, 4.7850418, 10.5274047]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 245],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Medium"],
+            "m_Rotate": [14, [-0.0000067, 17.9998855, -0.0000237]],
+            "m_Translate": [14, [3.6565952, 4.8000068, 9.2215881]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 246],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Medium"],
+            "m_Rotate": [14, [-0.0000129, 2.999885, -0.0000225]],
+            "m_Translate": [14, [2.9578571, 4.8000068, 5.486206]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 247],
+            "m_PrefabName": [12, "test_stealth_rld_paths"],
+            "m_PresetNames": [12, "Path width;Path Medium"],
+            "m_Rotate": [14, [-0.0000189, -12.0001163, -0.000023]],
+            "m_Translate": [14, [2.912878, 4.8000078, 3.480072]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 248],
+            "m_PrefabName": [12, "gre_quarantine_isolation_pod_a"],
+            "m_Rotate": [14, [179.9999847, -0.0000048, 179.9999847]],
+            "m_Translate": [14, [-7.0975666, 0.0000098, -3.0260925]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 249],
+            "m_PrefabName": [12, "gre_quarantine_isolation_pod_a"],
+            "m_Rotate": [14, [0.0, 90.0, -0.0000223]],
+            "m_Translate": [14, [-1.9071903, 0.0000027, -13.50885]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 250],
+            "m_PrefabName": [12, "frn_set_trafo_ceiling_balance_lamp_a"],
+            "m_Rotate": [14, [-180.0, 45.0, 179.9999694]],
+            "m_Translate": [14, [-3.0076885, 9.279994, -5.626892]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 252],
+            "m_PrefabName": [12, "frn_set_trafo_ceiling_balance_lamp_a"],
+            "m_Rotate": [14, [0.0, 90.0, -0.0000304]],
+            "m_Translate": [14, [7.2912273, 9.2799997, -2.1901245]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 253],
+            "m_PrefabName": [12, "frnset_gre_detention_carge_single_a"],
+            "m_Rotate": [14, [179.9999847, -0.0000048, 179.9999847]],
+            "m_Translate": [14, [3.1231327, 0.0000133, -0.1070555]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 254],
+            "m_PrefabName": [12, "frnset_gre_detention_carge_single_a"],
+            "m_Rotate": [14, [-0.0000129, 0.0000083, 0.0000197]],
+            "m_Translate": [14, [12.5882892, 0.000017, -1.8245848]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 255],
+            "m_PrefabName": [12, "frnset_gre_detention_carge_single_a"],
+            "m_Rotate": [14, [-0.0000218, 15.0000066, 0.0000177]],
+            "m_Scale": [14, [0.9999994, 1.0000001, 0.9999994]],
+            "m_Translate": [14, [11.3219966, 0.0000122, -10.4500122]]
+          },
+          "Fields": {
+            "Corpses": "B"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 256],
+            "m_PrefabName": [12, "frnset_gre_detention_carge_single_a"],
+            "m_Rotate": [14, [-0.0000043, -29.9999942, 0.0000206]],
+            "m_Scale": [14, [0.9999994, 1.0000001, 0.9999994]],
+            "m_Translate": [14, [4.3699855, 0.0000092, -10.2445373]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 257],
+            "m_PrefabName": [12, "frnset_gre_detention_carge_single_a"],
+            "m_Rotate": [14, [179.9999847, 14.9999895, 179.9999847]],
+            "m_Translate": [14, [-1.241888, -0.1592704, -5.4644775]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.2707889]],
+            "m_PcId": [6, 258],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [11.5354213, 4.8000097, 3.9635314]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.2707889]],
+            "m_PcId": [6, 259],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [8.9555873, 0.0000152, 9.3129577]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.2707889]],
+            "m_PcId": [6, 260],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [11.6818408, 0.0000141, 7.3710327]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.2707889]],
+            "m_PcId": [6, 261],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [11.6818408, 0.0000133, 5.1263427]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.2707889]],
+            "m_PcId": [6, 262],
+            "m_PrefabName": [12, "ai_spawn_point_with_perception_vis"],
+            "m_Rotate": [14, [0.0, 90.0, 0.0]],
+            "m_Translate": [14, [11.2701053, 0.0000122, 9.7378234]]
+          },
+          "Fields": {
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_ShowRestingPerceptionVis": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 263],
+            "m_PrefabName": [12, "frn_field_desk_mid_192_a"],
+            "m_Rotate": [14, [-0.0001055, 75.0000228, 0.0000862]],
+            "m_Translate": [14, [-0.7427443, 0.0000042, -5.1741333]]
+          },
+          "Fields": {
+            "SELECTOR": "ON"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 264],
+            "m_PrefabName": [12, "frn_field_desk_mid_192_a"],
+            "m_Rotate": [14, [-0.0000163, -14.9999713, 0.000023]],
+            "m_Translate": [14, [5.1281909, 4.8000044, 2.6392211]]
+          },
+          "Fields": {
+            "SELECTOR": "ON"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 265],
+            "m_PrefabName": [12, "frn_field_desk_mid_192_a"],
+            "m_Rotate": [14, [-0.0000163, -14.9999713, 0.000023]],
+            "m_Translate": [14, [7.0690441, 0.0000151, 0.3057554]]
+          },
+          "Fields": {
+            "SELECTOR": "ON"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2",
+      "Nodes": [
+        {
+          "Uuid": "6",
+          "Type": "1",
+          "X": "0.00",
+          "Y": "0.00"
+        },
+        {
+          "Uuid": "7",
+          "Type": "1",
+          "X": "25.00",
+          "Y": "20.00"
+        },
+        {
+          "Uuid": "36",
+          "Type": "1",
+          "X": "50.00",
+          "Y": "40.00"
+        },
+        {
+          "Uuid": "46",
+          "Type": "1",
+          "X": "75.00",
+          "Y": "60.00"
+        },
+        {
+          "Uuid": "65",
+          "Type": "1",
+          "X": "100.00",
+          "Y": "80.00"
+        },
+        {
+          "Uuid": "66",
+          "Type": "1",
+          "X": "125.00",
+          "Y": "100.00"
+        },
+        {
+          "Uuid": "67",
+          "Type": "1",
+          "X": "150.00",
+          "Y": "120.00"
+        },
+        {
+          "Uuid": "68",
+          "Type": "1",
+          "X": "175.00",
+          "Y": "140.00"
+        },
+        {
+          "Uuid": "69",
+          "Type": "1",
+          "X": "200.00",
+          "Y": "160.00"
+        },
+        {
+          "Uuid": "70",
+          "Type": "1",
+          "X": "225.00",
+          "Y": "180.00"
+        },
+        {
+          "Uuid": "71",
+          "Type": "1",
+          "X": "250.00",
+          "Y": "200.00"
+        },
+        {
+          "Uuid": "72",
+          "Type": "1",
+          "X": "275.00",
+          "Y": "220.00"
+        },
+        {
+          "Uuid": "73",
+          "Type": "1",
+          "X": "300.00",
+          "Y": "240.00"
+        },
+        {
+          "Uuid": "74",
+          "Type": "1",
+          "X": "325.00",
+          "Y": "260.00"
+        },
+        {
+          "Uuid": "75",
+          "Type": "1",
+          "X": "350.00",
+          "Y": "280.00"
+        },
+        {
+          "Uuid": "76",
+          "Type": "1",
+          "X": "375.00",
+          "Y": "300.00"
+        },
+        {
+          "Uuid": "83",
+          "Type": "1",
+          "X": "400.00",
+          "Y": "320.00"
+        },
+        {
+          "Uuid": "84",
+          "Type": "1",
+          "X": "425.00",
+          "Y": "340.00"
+        },
+        {
+          "Uuid": "85",
+          "Type": "1",
+          "X": "450.00",
+          "Y": "360.00"
+        },
+        {
+          "Uuid": "93",
+          "Type": "1",
+          "X": "475.00",
+          "Y": "380.00"
+        },
+        {
+          "Uuid": "94",
+          "Type": "1",
+          "X": "1845.00",
+          "Y": "870.00"
+        },
+        {
+          "Uuid": "105",
+          "Type": "1",
+          "X": "525.00",
+          "Y": "420.00"
+        },
+        {
+          "Uuid": "106",
+          "Type": "1",
+          "X": "550.00",
+          "Y": "440.00"
+        },
+        {
+          "Uuid": "107",
+          "Type": "1",
+          "X": "575.00",
+          "Y": "460.00"
+        },
+        {
+          "Uuid": "108",
+          "Type": "1",
+          "X": "600.00",
+          "Y": "480.00"
+        },
+        {
+          "Uuid": "109",
+          "Type": "1",
+          "X": "625.00",
+          "Y": "500.00"
+        },
+        {
+          "Uuid": "110",
+          "Type": "1",
+          "X": "650.00",
+          "Y": "520.00"
+        },
+        {
+          "Uuid": "111",
+          "Type": "1",
+          "X": "675.00",
+          "Y": "540.00"
+        },
+        {
+          "Uuid": "112",
+          "Type": "1",
+          "X": "700.00",
+          "Y": "560.00"
+        },
+        {
+          "Uuid": "113",
+          "Type": "1",
+          "X": "725.00",
+          "Y": "580.00"
+        },
+        {
+          "Uuid": "115",
+          "Type": "1",
+          "X": "750.00",
+          "Y": "600.00"
+        },
+        {
+          "Uuid": "116",
+          "Type": "1",
+          "X": "775.00",
+          "Y": "620.00"
+        },
+        {
+          "Uuid": "117",
+          "Type": "1",
+          "X": "800.00",
+          "Y": "640.00"
+        },
+        {
+          "Uuid": "118",
+          "Type": "1",
+          "X": "825.00",
+          "Y": "660.00"
+        },
+        {
+          "Uuid": "119",
+          "Type": "1",
+          "X": "850.00",
+          "Y": "680.00"
+        },
+        {
+          "Uuid": "120",
+          "Type": "1",
+          "X": "875.00",
+          "Y": "700.00"
+        },
+        {
+          "Uuid": "121",
+          "Type": "1",
+          "X": "900.00",
+          "Y": "720.00"
+        },
+        {
+          "Uuid": "122",
+          "Type": "1",
+          "X": "925.00",
+          "Y": "740.00"
+        },
+        {
+          "Uuid": "123",
+          "Type": "1",
+          "X": "950.00",
+          "Y": "760.00"
+        },
+        {
+          "Uuid": "124",
+          "Type": "1",
+          "X": "975.00",
+          "Y": "780.00"
+        },
+        {
+          "Uuid": "125",
+          "Type": "1",
+          "X": "1000.00",
+          "Y": "800.00"
+        },
+        {
+          "Uuid": "126",
+          "Type": "1",
+          "X": "1025.00",
+          "Y": "820.00"
+        },
+        {
+          "Uuid": "127",
+          "Type": "1",
+          "X": "1050.00",
+          "Y": "840.00"
+        },
+        {
+          "Uuid": "128",
+          "Type": "1",
+          "X": "1075.00",
+          "Y": "860.00"
+        },
+        {
+          "Uuid": "129",
+          "Type": "4",
+          "X": "1100.00",
+          "Y": "880.00",
+          "Interface_Type": "0"
+        },
+        {
+          "Uuid": "130",
+          "Type": "4",
+          "X": "1125.00",
+          "Y": "900.00",
+          "Interface_Type": "1"
+        },
+        {
+          "Uuid": "131",
+          "Type": "4",
+          "X": "1515.00",
+          "Y": "1425.00",
+          "Interface_Type": "2"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,632 @@
+{
+  "__filename__": {
+    "Version": 4,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0000305, 0.5, 0.0, 0.5000305, 0.5, 0.5]],
+            "m_Name": [12, "Goon_MiniBoss"],
+            "m_PcId": [6, 1],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Spawner_Difficulty;Tier_2"],
+            "m_Rotate": [14, [179.9999694, 19.999998, -179.9998931]],
+            "m_Translate": [14, [-4.3289794, -0.0584371, 12.3461914]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_NumOfAIsToSpawn": "1",
+            "m_Preset": "Character;Goon"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_2",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.4999999, 0.5, 0.4999999]],
+            "m_Name": [12, "Zombie_1"],
+            "m_PcId": [6, 4],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Spawner_Difficulty;Tier_2"],
+            "m_Rotate": [14, [0.0, -90.0, -0.0000211]],
+            "m_Scale": [14, [7.2759027, 1.0, 3.0055885]],
+            "m_Translate": [14, [-0.4035643, -0.159481, -6.6791992]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_NumOfAIsToSpawn": "3",
+            "m_Preset": "Character;Biter_Male_Bleached",
+            "m_ShuffleSpawnPoints": "1"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_2",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0000038, 0.5000001, 0.5, 0.5]],
+            "m_Name": [12, "Zombie_2"],
+            "m_PcId": [6, 5],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Spawner_Difficulty;Tier_2"],
+            "m_Rotate": [14, [0.0, -90.0, -0.0000039]],
+            "m_Scale": [14, [7.1609864, 1.0, 20.0394191]],
+            "m_Translate": [14, [9.6996459, -0.2266006, 7.1882324]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_NumOfAIsToSpawn": "4",
+            "m_Preset": "Character;Biter_Male_Bleached",
+            "m_ShuffleSpawnPoints": "1"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_2",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.3845214, 3.297476, 6.5003356, 16.1137695, 3.2974569, 22.1847229]],
+            "m_Name": [12, "AM_MT_Zone"],
+            "m_PcId": [6, 14],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Rotate": [14, [0.0, 90.0, -0.0]],
+            "m_Translate": [14, [0.0001218, 0.0000038, -0.0007312]]
+          },
+          "Fields": {
+            "m_AreaHeight": "6.594273",
+            "m_AreaPoints": "16.248291 0.000336 -15.684387;16.498291 0.000034 5.390808;15.178467 0.000027 5.387451;15.511475 0.000019 9.427063;16.494141 0.000069 13.822205;12.841553 0.000092 15.500427;9.262695 0.000111 17.118835;5.672852 0.000134 18.452148;3.584961 0.000141 19.285645;-0.083008 0.000168 20.798096;-3.373779 0.000191 22.578308;-6.106201 0.000187 26.589172;-9.680908 0.000225 28.685059;-13.847412 0.000252 21.260803;-13.313721 0.000267 20.827393;-14.168457 0.000278 17.106201;-15.120361 0.000286 16.838074;-15.005127 0.000301 12.414490;-15.729248 0.000324 12.441101;-15.713135 0.000660 -15.674866;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "GMA_BlockSpawn"],
+            "m_PcId": [6, 18],
+            "m_PrefabName": [12, "gameplay_modifier_area"],
+            "m_Rotate": [14, [-179.9999694, -0.0000325, -179.9999237]],
+            "m_Scale": [14, [87.2729339, 30.501913, 65.1144943]],
+            "m_Translate": [14, [-10.6782226, 14.005474, -1.7133789]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_ModifierFlags": "147506"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0095589, 0.6675968, 0.3468819, 0.1956073, 0.6725968, 0.3530692]],
+            "m_Name": [12, "Switch_Generator_3"],
+            "m_PcId": [6, 26],
+            "m_PrefabName": [12, "switch"],
+            "m_PresetNames": [12, "Style;SA_SlantedPanel"],
+            "m_Rotate": [14, [-0.0000045, -0.0209394, 0.0007605]],
+            "m_Translate": [14, [1.5184326, -0.104473, 3.1875]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_BlockInCombat": "1",
+            "m_ControlledObjects": ""
+          },
+          "EmbeddedObject": {
+            "Class": "TriggerStateDescription",
+            "PresetNames": "TSD;_On",
+            "DestinationField": "m_OnStateDescription"
+          },
+          "EmbeddedObject": {
+            "Class": "TriggerStateDescription",
+            "PresetNames": "TSD;_Off",
+            "DestinationField": "m_OffStateDescription"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.1199542, 0.6922508, 0.6028534, 0.7310395, 0.7688148, 0.6078534]],
+            "m_Name": [12, "Switch_Generator_1"],
+            "m_PcId": [6, 27],
+            "m_PrefabName": [12, "switch"],
+            "m_PresetNames": [12, "Style;SA_cable_connect"],
+            "m_Rotate": [14, [179.9999389, -4.9790592, 179.999237]],
+            "m_Translate": [14, [2.8095703, 0.0238914, 21.4069824]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_BlockInCombat": "1",
+            "m_ControlledObjects": "",
+            "m_ControlledObjectsInverted": ""
+          },
+          "EmbeddedObject": {
+            "Class": "TriggerStateDescription",
+            "PresetNames": "TSD;Unplug",
+            "DestinationField": "m_OnStateDescription"
+          },
+          "EmbeddedObject": {
+            "Class": "TriggerStateDescription",
+            "PresetNames": "TSD;Plug In",
+            "DestinationField": "m_OffStateDescription"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Sanctuary"],
+            "m_PcId": [6, 31],
+            "m_PrefabName": [12, "qst_badboys_mt_tower_sanctuary"],
+            "m_Rotate": [14, [2.761325674782711e-7, -0.0209276, 0.0007529]],
+            "m_Translate": [14, [-15.9180297, 12.4718894, 0.496582]]
+          },
+          "Fields": {
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "Goon_01"],
+            "m_PcId": [6, 33],
+            "m_PrefabName": [12, "humanai"],
+            "m_PresetNames": [12, "Activation - daytime;Whole Day;Activation - distance;Activator;Spawner_Difficulty;Tier_2"],
+            "m_Rotate": [14, [-179.9998626, 10.0209341, 179.9992218]],
+            "m_Translate": [14, [-7.7155761, 0.0610122, 15.2163085]]
+          },
+          "Fields": {
+            "m_PresetName": "Character;Goon_01",
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "AIProxyActivationStrategyActivator",
+            "DestinationField": "m_ActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_2",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0072238, 0.3166789, -0.0515863, 0.3523893, 0.3085487, 0.0288945]],
+            "m_Name": [12, "APE_bad_boys_compresor_1"],
+            "m_PcId": [6, 34],
+            "m_PrefabName": [12, "audiopointemitter"],
+            "m_Rotate": [14, [0.0013071, -60.0209312, 0.0015138]],
+            "m_Translate": [14, [2.8060913, 1.7693059, 21.2270507]]
+          },
+          "Fields": {
+            "EventName": "electric_compressor_working_loop",
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.000005, 0.0624483, 0.000005, 0.5003358, 0.5627791, 0.5003358]],
+            "m_Name": [12, "AAZL_bad_boys_goon_stealth_zone"],
+            "m_PcId": [6, 36],
+            "m_PrefabName": [12, "audioambientzonelogic"],
+            "m_PresetNames": [12, "Variant;WithState"],
+            "m_Rotate": [14, [0.0013071, -60.0209312, 0.0015139]],
+            "m_Translate": [14, [-12.1895141, 7.5220108, -5.652832]]
+          },
+          "Fields": {
+            "m_AcousticInsulation": "0",
+            "m_AreaEntities": "",
+            "m_AudioStateName": "gp_stealth_fight:stealth_zone",
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.00759, 0.3166789, -0.0515863, 0.3525114, 0.3085487, 0.0288945]],
+            "m_Name": [12, "APE_bad_boys_elevator"],
+            "m_PcId": [6, 37],
+            "m_PrefabName": [12, "audiopointemitter"],
+            "m_Rotate": [14, [0.0013071, -60.0209312, 0.0015138]],
+            "m_Translate": [14, [0.9738159, 1.951225, -0.0659179]]
+          },
+          "Fields": {
+            "EventName": "sfx_badboys_elevator_power_loop",
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.00759, 0.3166789, -0.0515863, 0.3525114, 0.3085487, 0.0288945]],
+            "m_Name": [12, "APE_bad_boys_power_break_1"],
+            "m_PcId": [6, 38],
+            "m_PrefabName": [12, "audiopointemitter"],
+            "m_Rotate": [14, [0.0014036, -61.7592506, 0.0015976]],
+            "m_Translate": [14, [7.8304443, 2.2834091, 22.3144531]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Goon_1"],
+            "m_PcId": [6, 40],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Spawner_Difficulty;Tier_2"],
+            "m_Rotate": [14, [-179.9998931, -50.0000572, -179.9998474]],
+            "m_Translate": [14, [-0.5690307, -0.3802298, 7.8215332]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_NumOfAIsToSpawn": "1",
+            "m_Preset": "Character;Goon"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_2",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0001831, 0.5, 0.0, 0.500061, 0.5, 0.5]],
+            "m_Name": [12, "Goon_2"],
+            "m_PcId": [6, 41],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Spawner_Difficulty;Tier_2"],
+            "m_Rotate": [14, [-0.0001094, -49.9999618, -0.0001422]],
+            "m_Translate": [14, [14.220642, -0.1048087, -6.9172363]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_NumOfAIsToSpawn": "1",
+            "m_Preset": "Character;Goon"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_2",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Generator_3_Viral"],
+            "m_PcId": [6, 42],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Spawner_Difficulty;Tier_2"],
+            "m_Rotate": [14, [0.0, -90.0, -0.0000209]],
+            "m_Scale": [14, [2.9403595, 1.0, 5.7853617]],
+            "m_Translate": [14, [5.7462158, -0.1594772, -11.2163085]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_NumOfAIsToSpawn": "5",
+            "m_PointsSource": "8",
+            "m_Preset": "Character;Viral",
+            "m_ShuffleSpawnPoints": "1"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_2",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Generator_2_Viral"],
+            "m_PcId": [6, 43],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Spawner_Difficulty;Tier_2"],
+            "m_Rotate": [14, [-179.9999847, 0.0000122, 179.9999847]],
+            "m_Scale": [14, [2.7912049, 0.9999998, 5.4134674]],
+            "m_Translate": [14, [16.4227905, -0.1594924, 3.7360839]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_NumOfAIsToSpawn": "4",
+            "m_PointsSource": "8",
+            "m_Preset": "Character;Viral",
+            "m_ShuffleSpawnPoints": "1"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_2",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Generator_1_Biter"],
+            "m_PcId": [6, 44],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Spawner_Difficulty;Tier_2"],
+            "m_Rotate": [14, [-180.0, 0.0209385, 179.999237]],
+            "m_Scale": [14, [2.3408129, 1.0, 1.5558778]],
+            "m_Translate": [14, [9.8859252, 0.7822036, 21.7573242]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_NumOfAIsToSpawn": "3",
+            "m_PointsSource": "8",
+            "m_Preset": "Character;Biter_Male_Bleached",
+            "m_ShuffleSpawnPoints": "1"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_2",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Generator_1_Viral"],
+            "m_PcId": [6, 45],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Spawner_Difficulty;Tier_2"],
+            "m_Rotate": [14, [179.9999847, 0.0209349, 179.999237]],
+            "m_Scale": [14, [3.3797101, 0.9999997, 3.2287321]],
+            "m_Translate": [14, [9.7333984, 0.9118118, 24.7314453]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_NumOfAIsToSpawn": "3",
+            "m_PointsSource": "8",
+            "m_Preset": "Character;Viral",
+            "m_ShuffleSpawnPoints": "1"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_2",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Audio_Bad_boys_elevator"],
+            "m_PcId": [6, 51],
+            "m_PrefabName": [12, "audio_bad_boys_elevator_power"],
+            "m_Rotate": [14, [0.0013072, -60.0209312, 0.0015139]],
+            "m_Translate": [14, [2.1602172, 1.0064392, 1.4169919]]
+          },
+          "Fields": {
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Zombie_3"],
+            "m_PcId": [6, 52],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Spawner_Difficulty;Tier_2"],
+            "m_Rotate": [14, [0.0, -90.0, -0.0000209]],
+            "m_Scale": [14, [7.2759027, 1.0, 3.0055882]],
+            "m_Translate": [14, [-4.270996, -0.1594848, 0.8408203]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_NumOfAIsToSpawn": "3",
+            "m_Preset": "Character;Biter_Male_Bleached",
+            "m_ShuffleSpawnPoints": "1"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_2",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.1199542, 0.6922508, 0.6028534, 0.7310395, 0.7688148, 0.6078534]],
+            "m_Name": [12, "Switch_Generator_2"],
+            "m_PcId": [6, 53],
+            "m_PrefabName": [12, "switch"],
+            "m_PresetNames": [12, "Style;SA_cable_connect"],
+            "m_Rotate": [14, [-0.0000043, -0.020943, 0.0007605]],
+            "m_Translate": [14, [-5.1294555, -0.10503, -6.0778808]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_BlockInCombat": "1",
+            "m_ControlledObjects": ""
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0072238, 0.3166789, -0.0515863, 0.3523893, 0.3085487, 0.0288945]],
+            "m_Name": [12, "APE_bad_boys_compresor_2"],
+            "m_PcId": [6, 56],
+            "m_PrefabName": [12, "audiopointemitter"],
+            "m_Rotate": [14, [0.0013071, -60.0209312, 0.0015138]],
+            "m_Translate": [14, [-5.7958374, 0.9857711, -5.8029785]]
+          },
+          "Fields": {
+            "EventName": "electric_compressor_working_loop",
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.00759, 0.3166789, -0.0515863, 0.3525114, 0.3085487, 0.0288945]],
+            "m_Name": [12, "APE_bad_boys_compresor_3"],
+            "m_PcId": [6, 57],
+            "m_PrefabName": [12, "audiopointemitter"],
+            "m_Rotate": [14, [0.0013071, -60.0209312, 0.0015138]],
+            "m_Translate": [14, [1.4498291, 1.3712842, 3.4609375]]
+          },
+          "Fields": {
+            "EventName": "electric_compressor_working_loop",
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.4999999, 0.0, 0.5, 0.4999999, 0.5]],
+            "m_Name": [12, "AM_Elevator_Exit"],
+            "m_PcId": [6, 58],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Rotate": [14, [177.9294586, -89.9802169, 177.9294586]],
+            "m_Scale": [14, [1.9947612, 2.4949359, 3.1183521]],
+            "m_Translate": [14, [0.2413329, -23.0708637, 0.0285643]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [2.2586965, 1.379642, -1.0636293, 8.9373703, 5.5828285, 7.1096553]],
+            "m_Name": [12, "thetunnel_viral_dlg"],
+            "m_PcId": [6, 60],
+            "m_PrefabName": [12, "thetunnel_viral_dlg"],
+            "m_Rotate": [14, [0.0, -90.0, 0.0]],
+            "m_Translate": [14, [0.0000609, 0.0000038, -0.0004873]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "Anderson_Infected_Dialogue"],
+            "m_PcId": [6, 61],
+            "m_PrefabName": [12, "humanai"],
+            "m_PresetNames": [12, "Activation - daytime;Whole Day;Activation - distance;Activator"],
+            "m_Rotate": [14, [0.0013091, -60.0209312, 0.0015139]],
+            "m_Translate": [14, [-0.4971311, 0.0716933, 0.7280272]]
+          },
+          "Fields": {
+            "m_ForcedTargetMode": "NearestPlayerCannotLose",
+            "m_PresetName": "Character;Anderson_Infected_Dialogue",
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "AIProxyActivationStrategyActivator",
+            "DestinationField": "m_ActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0173448, 0.7712049, 0.3279561, 0.1536685, 0.8153049, 0.372056]],
+            "m_Name": [12, "Switch_Elevator"],
+            "m_PcId": [6, 62],
+            "m_PrefabName": [12, "switch"],
+            "m_PresetNames": [12, "Style;HiddenMesh"],
+            "m_Rotate": [14, [177.9296112, -89.9802169, 177.9296112]],
+            "m_Translate": [14, [1.7092895, 0.0104179, 1.1335449]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_BlockInCombat": "1"
+          },
+          "EmbeddedObject": {
+            "Class": "TriggerStateDescription",
+            "PresetNames": "TSD;_Off",
+            "DestinationField": "m_OffStateDescription"
+          },
+          "EmbeddedObject": {
+            "Class": "TriggerStateDescription",
+            "PresetNames": "TSD;_On",
+            "DestinationField": "m_OnStateDescription"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Anderson_Infected_Spawner"],
+            "m_PcId": [6, 63],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior;Spawner_Difficulty;Tier_2"],
+            "m_Rotate": [14, [0.0, -90.0, -2.760613710961479e-7]],
+            "m_Translate": [14, [0.9676513, 0.0068815, 0.0622555]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_ForcedTargetMode": "NearestPlayerCannotLose",
+            "m_NumOfAIsToSpawn": "1",
+            "m_Preset": "Character;Anderson_Infected"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "UserDefinedDifficultyRange",
+            "PresetNames": "Difficulty;Tier_2",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "Anderson_Infected"],
+            "m_PcId": [6, 65],
+            "m_PrefabName": [12, "humanai"],
+            "m_Rotate": [14, [0.0, -90.0, 0.0]],
+            "m_Translate": [14, [3.1635131, 0.0000076, 0.1437987]]
+          },
+          "Fields": {
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_PresetName": "Character;Anderson_Infected",
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0004999, 0.0004084, 0.0005, 0.0308791, 0.0476884, 0.0049999]],
+            "m_Name": [12, "Anderson_Infected_QO"],
+            "m_PcId": [6, 66],
+            "m_PrefabName": [12, "quest_object"],
+            "m_Rotate": [14, [-90.0182342, -0.0112784, -60.0001258]],
+            "m_Translate": [14, [3.9697875, 0.005764, -0.1665039]]
+          },
+          "Fields": {
+            "MeshName": "prp_dog_tag_a.msh",
+            "m_Description": "&TriggerUse&"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

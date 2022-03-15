@@ -1,0 +1,227 @@
+{
+  "__filename__": {
+    "Version": 4,
+    "RuntimeData": {
+      "SpawnType": {
+        "User": "2"
+      },
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Spawner_Bitter_Adds_One"],
+            "m_PcId": [6, 1],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Interior;Activation - daytime;Whole Day"],
+            "m_Rotate": [14, [0.0000114, 60.0000305, -0.0000109]],
+            "m_Scale": [14, [0.9999989, 1.0, 0.9999989]],
+            "m_Translate": [14, [7.1341552, 0.0, 2.7093505]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_NumOfAIsToSpawn": "1",
+            "m_PointsSource": "4",
+            "m_Preset": "Character;Biter_Male_Bleached",
+            "m_SpawnPoints": "/~2;"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkplace",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-5.960464477539063e-8, 1.5195728, 0.2309059, 0.0690793, 1.5195728, 0.2707889]],
+            "m_Name": [12, "ai_spawn_point_init_crawl_One"],
+            "m_PcId": [6, 2],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [179.9999847, -35.5000267, 179.9999847]],
+            "m_Scale": [14, [0.9999988, 0.9999998, 0.9999988]],
+            "m_Translate": [14, [7.1105957, 0.1418609, 2.7478637]]
+          },
+          "Fields": {
+            "m_BehaviorName": "no_state_inf_crawl_out",
+            "m_Flags": "0",
+            "m_IsInit": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.499996, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Spawner_Spitter_Two"],
+            "m_PcId": [6, 3],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Darkplace;Activation - daytime;Whole Day"],
+            "m_Rotate": [14, [-0.0, -29.9999961, -0.0]],
+            "m_Scale": [14, [0.802904, 0.9336099, 0.802904]],
+            "m_Translate": [14, [9.921875, 0.0240364, -6.3548583]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_ForcedTargetMode": "None",
+            "m_NumOfAIsToSpawn": "1",
+            "m_PointsSource": "4",
+            "m_Preset": "Character;Stationary_Spitter",
+            "m_RequestObjects": "ai::RequestDataHoldEmbeddedObject,0,();",
+            "m_SpawnPoints": "/~10;"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkplace",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObjectVector": {
+            "DestinationField": "m_RequestObjects",
+            "Objects": [
+              {
+                "Class": "ai::RequestDataHoldEmbeddedObject",
+                "DestinationField": "m_RequestObjects",
+                "Fields": {
+                  "m_CenterEntity": "/~3",
+                  "m_Radius": "1.000000"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Spawner_Spitter_Three"],
+            "m_PcId": [6, 4],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Darkplace;Activation - daytime;Whole Day"],
+            "m_Rotate": [14, [-0.0, -60.0000038, -0.0]],
+            "m_Scale": [14, [1.4452271, 0.8402488, 1.4452271]],
+            "m_Translate": [14, [11.6309814, -0.0959625, -2.1193237]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_NumOfAIsToSpawn": "1",
+            "m_Preset": "Character;Spitter"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkplace",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.4999924, 0.0, 0.5, 0.5000001, 0.5]],
+            "m_Name": [12, "Spawner_Spitter_One"],
+            "m_PcId": [6, 5],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Darkplace;Activation - daytime;Whole Day"],
+            "m_Rotate": [14, [-0.0, 30.0000038, -0.0]],
+            "m_Scale": [14, [1.1240656, 0.6535269, 1.1240656]],
+            "m_Translate": [14, [4.7287597, -0.0771713, 10.3523559]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_NumOfAIsToSpawn": "1",
+            "m_Preset": "Character;Spitter"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkplace",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "Spawner_Bitter_Adds_Two"],
+            "m_PcId": [6, 6],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Interior;Activation - daytime;Whole Day"],
+            "m_Rotate": [14, [0.0000116, 60.0000305, -0.0000109]],
+            "m_Scale": [14, [0.9999989, 1.0, 0.9999989]],
+            "m_Translate": [14, [2.7232666, 0.0, -3.5606079]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_NumOfAIsToSpawn": "1",
+            "m_PointsSource": "4",
+            "m_Preset": "Character;Biter_Male_Bleached",
+            "m_SpawnPoints": "/~7;"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkplace",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195728, 0.2309059, 0.0690793, 1.5195728, 0.2707889]],
+            "m_Name": [12, "ai_spawn_point_init_crawl_Two"],
+            "m_PcId": [6, 7],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [0.000007, 41.0000228, -0.0000019]],
+            "m_Scale": [14, [0.9999988, 1.0, 0.9999988]],
+            "m_Translate": [14, [5.126831, 0.0770454, -5.7122192]]
+          },
+          "Fields": {
+            "m_BehaviorName": "no_state_inf_crawl_out",
+            "m_Flags": "0",
+            "m_IsInit": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.4999923, 0.0, 0.4999999, 0.5, 0.5]],
+            "m_Name": [12, "Spawner_Virals"],
+            "m_PcId": [6, 9],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Darkplace;Activation - daytime;Whole Day"],
+            "m_Rotate": [14, [-0.0, 30.0000038, -0.0]],
+            "m_Scale": [14, [1.1240656, 0.6535269, 2.023318]],
+            "m_Translate": [14, [5.9190673, 0.0283508, 3.9917602]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_NumOfAIsToSpawn": "2",
+            "m_PointsSource": "4",
+            "m_Preset": "Character;Viral",
+            "m_SpawnPoints": "/~2;/~7;"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyDarkplace",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195728, 0.2309059, 0.0690793, 1.5195728, 0.2707889]],
+            "m_Name": [12, "ai_spawn_point_spitter_01"],
+            "m_PcId": [6, 10],
+            "m_PrefabName": [12, "ai_spawn_point"],
+            "m_Rotate": [14, [-0.0, -63.0000152, -0.0]],
+            "m_Translate": [14, [10.4052734, 0.0683669, -2.881958]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 12],
+            "m_PrefabName": [12, "urb_water_collector_spawner_a"],
+            "m_Rotate": [14, [179.9999847, -30.5000019, 179.9999847]],
+            "m_Translate": [14, [7.9577636, 0.0625915, 4.1378173]]
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

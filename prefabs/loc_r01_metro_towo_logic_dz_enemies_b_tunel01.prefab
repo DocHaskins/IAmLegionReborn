@@ -1,0 +1,291 @@
+{
+  "__filename__": {
+    "Version": 4,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.000618, 0.4999989, 0.0200424, 0.5006179, 0.5000029, 0.5200424]],
+            "m_Name": [12, "Spawner_Tunnel_Tracks_1"],
+            "m_PcId": [6, 1],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - daytime;Whole Day;Activation - distance;Activator"],
+            "m_Rotate": [14, [-0.0000208, 60.0, 0.000022]],
+            "m_Scale": [14, [34.9178543, 3.4687597, 14.2811927]],
+            "m_Translate": [14, [-0.0239256, -0.1201305, -4.1054687]]
+          },
+          "Fields": {
+            "m_LimitSensesToSpawner": "1",
+            "m_NumOfAIsToSpawn": "12",
+            "m_Points": "0.498615 -0.499999 -0.229050;0.501236 -0.500000 0.540085;0.329020 -0.499999 0.521118;0.329073 -0.499999 0.458237;0.277164 -0.499999 0.455780;0.274961 -0.499999 0.227005;-0.231707 -0.499999 0.225143;-0.227741 -0.500000 0.463242;-0.415720 -0.500004 0.472763;-0.414530 -0.500004 0.537155;-0.498833 -0.500002 0.537155;-0.500000 -0.500000 -0.500000;-0.081707 -0.499999 -0.499527;-0.083979 -0.499998 -0.227768;",
+            "m_PointsSource": "2",
+            "m_Preset": "Character;Biter_Male_Bleached_Resting",
+            "m_PresetPoolName": ""
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyActivator",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyActivator",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Viral_Tunnel_1"],
+            "m_PcId": [6, 2],
+            "m_PrefabName": [12, "patrol_setup"],
+            "m_PresetNames": [12, "Type;Without Activator;Activation - daytime;Whole Day;Activation - distance;Activator"],
+            "m_Rotate": [14, [-179.9999847, 54.0, 179.9999847]],
+            "m_Translate": [14, [-19.2663574, 0.9642143, 29.5162353]]
+          },
+          "Fields": {
+            "IPatrolData::m_PatrolPoints": "/~4;/~3;",
+            "IPatrolData::m_PatrolType": "Loop",
+            "ISpawnData::m_GroupID": "1",
+            "TriggerAreaTransform": "2.647290 -0.000000 0.530901 2.838257 0.000000 2.999986 -0.000000 0.853407 -0.530901 -0.000000 2.647290 -6.064819",
+            "m_BehaviorName": "combat_idle_standing",
+            "m_Preset": "Character;Viral"
+          },
+          "EmbeddedObject": {
+            "Class": "AttributeAreaDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyActivator",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Viral_Tunnel_1_BP_2"],
+            "m_PcId": [6, 3],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_PresetNames": [12, "Ranges;Interior"],
+            "m_Rotate": [14, [179.9999542, 54.9999771, -179.9999542]],
+            "m_Translate": [14, [-12.7097167, 0.9642143, 24.8836059]]
+          },
+          "Fields": {
+            "IPatrolPoint::m_UseGenericAnimation": "1",
+            "IPatrolPoint::m_WaitTime": "10.000000",
+            "m_BehaviorName": "combat_idle_standing"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Viral_Tunnel_1_BP_1"],
+            "m_PcId": [6, 4],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_PresetNames": [12, "Ranges;Interior"],
+            "m_Rotate": [14, [179.9999847, -32.5000114, -179.9999847]],
+            "m_Translate": [14, [-20.0664062, 0.9642143, 30.0162353]]
+          },
+          "Fields": {
+            "IPatrolPoint::m_UseGenericAnimation": "1",
+            "IPatrolPoint::m_WaitTime": "5.000000",
+            "m_BehaviorName": "combat_idle_standing"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Viral_Tunnel_2"],
+            "m_PcId": [6, 5],
+            "m_PrefabName": [12, "patrol_setup"],
+            "m_PresetNames": [12, "Type;Without Activator;Activation - daytime;Whole Day;Activation - distance;Activator"],
+            "m_Rotate": [14, [-0.0, 60.0000038, 0.0]],
+            "m_Translate": [14, [-5.0498051, 0.029253, 2.5505371]]
+          },
+          "Fields": {
+            "IPatrolData::m_PatrolPoints": "/~6;/~7;",
+            "ISpawnData::m_GroupID": "1",
+            "m_Preset": "Character;Viral"
+          },
+          "EmbeddedObject": {
+            "Class": "AttributeAreaDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyActivator",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Viral_Tunnel_2_BP_2"],
+            "m_PcId": [6, 6],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_PresetNames": [12, "Ranges;Interior"],
+            "m_Rotate": [14, [179.9999847, 39.9999542, -179.9999694]],
+            "m_Translate": [14, [-1.9196777, 0.0063076, -2.9902954]]
+          },
+          "Fields": {
+            "IPatrolPoint::m_UseGenericAnimation": "1",
+            "IPatrolPoint::m_WaitTime": "10.000000",
+            "m_BehaviorName": "combat_idle_standing"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_Name": [12, "Viral_Tunnel_2_BP_1"],
+            "m_PcId": [6, 7],
+            "m_PrefabName": [12, "patrol_behaviorplace"],
+            "m_PresetNames": [12, "Ranges;Interior"],
+            "m_Rotate": [14, [0.0, -90.0, 0.0000048]],
+            "m_Translate": [14, [-7.3372802, 0.0063017, 7.2525024]]
+          },
+          "Fields": {
+            "IPatrolPoint::m_UseGenericAnimation": "1",
+            "IPatrolPoint::m_WaitTime": "5.000000",
+            "m_BehaviorName": "combat_idle_standing"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 8],
+            "m_PrefabName": [12, "adv_spawnpoint_biter_resting"],
+            "m_Rotate": [14, [179.9998321, -76.4999694, 179.9997863]],
+            "m_Scale": [14, [0.9999979, 0.9999969, 0.9999976]],
+            "m_Translate": [14, [-5.7625732, 0.0544641, 8.3106079]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-6.2961425, 2.6199998, -26.4980468, 8.5583496, 3.1199998, 39.4611206]],
+            "m_PcId": [6, 9],
+            "m_PrefabName": [12, "batch_ai_spawner_activator"],
+            "m_Rotate": [14, [6.764643245560365e-8, -30.0000038, -5.2093827918042737e-8]],
+            "m_Translate": [14, [-8.8782958, 0.254795, 26.0628051]]
+          },
+          "Fields": {
+            "m_AreaHeight": "6.240000",
+            "m_AreaPoints": "2.262207 -0.500000 -65.954590;2.184692 -0.500000 12.963074;-14.854492 -0.500000 12.958496;-14.777100 -0.500000 -65.959167;",
+            "m_SearchEntryPoints": "/;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 10],
+            "m_PrefabName": [12, "adv_spawnpoint_biter_resting"],
+            "m_Rotate": [14, [179.9999847, -45.4999809, 179.9999237]],
+            "m_Scale": [14, [0.9999976, 0.9999967, 0.9999976]],
+            "m_Translate": [14, [-5.0823974, 0.054466, 7.1480102]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 11],
+            "m_PrefabName": [12, "adv_spawnpoint_biter_resting"],
+            "m_Rotate": [14, [0.0000368, -4.5000076, 0.0000541]],
+            "m_Scale": [14, [0.9999976, 0.9999966, 0.9999976]],
+            "m_Translate": [14, [-7.5214843, 0.9742373, -3.6869506]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 12],
+            "m_PrefabName": [12, "adv_spawnpoint_biter_resting"],
+            "m_Rotate": [14, [-0.0000058, 35.4999923, 0.0000662]],
+            "m_Scale": [14, [0.9999976, 0.9999966, 0.9999976]],
+            "m_Translate": [14, [-8.7884521, 0.9742354, -2.0844116]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 15],
+            "m_PrefabName": [12, "adv_spawnpoint_biter_resting"],
+            "m_Rotate": [14, [0.0001036, -60.0000114, 0.0001045]],
+            "m_Scale": [14, [0.999997, 0.9999964, 0.999997]],
+            "m_Translate": [14, [0.1524658, 0.0509395, -4.4228515]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 16],
+            "m_PrefabName": [12, "adv_spawnpoint_biter_resting"],
+            "m_Rotate": [14, [-179.9999237, 51.5000152, 179.9999084]],
+            "m_Scale": [14, [0.9999967, 0.9999961, 0.9999973]],
+            "m_Translate": [14, [-0.9797363, 0.0509376, -6.0072021]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 17],
+            "m_PrefabName": [12, "adv_spawnpoint_biter_resting"],
+            "m_Rotate": [14, [179.9999847, -36.9999847, 179.9999389]],
+            "m_Scale": [14, [0.9999973, 0.9999966, 0.9999976]],
+            "m_Translate": [14, [-8.4703369, 0.0453987, 4.8226928]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 23],
+            "m_PrefabName": [12, "adv_spawnpoint_biter_resting"],
+            "m_Rotate": [14, [0.0000616, -28.5000324, 0.0000566]],
+            "m_Scale": [14, [0.9999976, 0.9999967, 0.9999976]],
+            "m_Translate": [14, [-1.6510008, 0.0544679, 9.0457763]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 24],
+            "m_PrefabName": [12, "adv_spawnpoint_biter_resting"],
+            "m_Rotate": [14, [179.9998931, -63.4999923, 179.9998474]],
+            "m_Scale": [14, [0.9999967, 0.999996, 0.9999969]],
+            "m_Translate": [14, [6.4747314, 0.0509204, -15.8256835]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 25],
+            "m_PrefabName": [12, "adv_spawnpoint_biter_resting"],
+            "m_Rotate": [14, [-0.0000219, 18.4999694, -0.0000632]],
+            "m_Scale": [14, [0.9999965, 0.9999958, 0.9999969]],
+            "m_Translate": [14, [8.883789, 0.0509223, -14.1718139]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 27],
+            "m_PrefabName": [12, "adv_spawnpoint_biter_resting"],
+            "m_Rotate": [14, [-0.0000555, -31.500019, 0.0000015]],
+            "m_Scale": [14, [0.9999969, 0.9999961, 0.9999973]],
+            "m_Translate": [14, [5.4365234, 0.0509185, -15.3400268]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_PcId": [6, 28],
+            "m_PrefabName": [12, "adv_spawnpoint_biter_resting"],
+            "m_Rotate": [14, [-0.0000475, -1.5000189, 0.0000294]],
+            "m_Scale": [14, [0.9999969, 0.9999961, 0.9999973]],
+            "m_Translate": [14, [4.0443115, 0.0363387, -16.6083984]]
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

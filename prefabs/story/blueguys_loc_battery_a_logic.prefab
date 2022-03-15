@@ -1,0 +1,465 @@
+{
+  "__filename__": {
+    "Version": 4,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0003795, 1.4512833, 0.2189901, 0.0679944, 1.495648, 0.262777]],
+            "m_Name": [12, "SP_Overpass_Bottom"],
+            "m_PcId": [6, 3],
+            "m_PrefabName": [12, "spawnpoint"],
+            "m_Rotate": [14, [179.9999847, 0.0000341, -179.9999847]],
+            "m_Translate": [14, [-27.3997802, -0.0000076, 9.2932739]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "AI_Goon_Ext"],
+            "m_PcId": [6, 5],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior"],
+            "m_Rotate": [14, [9.999999974752428e-7, 49.9999771, -9.999997701015673e-7]],
+            "m_Translate": [14, [4.9853515, -0.2111206, -38.8843994]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_NumOfAIsToSpawn": "1",
+            "m_Preset": "Character;BlueGuys_Goon"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.4999999, 0.5, 0.5]],
+            "m_Name": [12, "AI_Pool_Ext"],
+            "m_PcId": [6, 6],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior"],
+            "m_Rotate": [14, [-180.0, 74.9999847, -180.0]],
+            "m_Scale": [14, [15.1722793, 1.0, 10.9238557]],
+            "m_Translate": [14, [4.5559082, -0.1858482, -42.2562255]]
+          },
+          "Fields": {
+            "m_NumOfAIsToSpawn": "4",
+            "m_PresetPoolName": "Day_and_Night_BitersExterior",
+            "m_ShuffleSpawnPoints": "1"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "AI_Goon_Init"],
+            "m_PcId": [6, 8],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior"],
+            "m_Rotate": [14, [-0.0000032, -80.0000534, -0.0000035]],
+            "m_Translate": [14, [-21.4880371, -0.0567433, -19.9826049]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_ForcedTargetMode": "NearestPlayerCannotLose",
+            "m_NumOfAIsToSpawn": "1",
+            "m_Preset": "Character;BlueGuys_Goon"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5000001]],
+            "m_Name": [12, "AI_Pool_DZ_Init"],
+            "m_PcId": [6, 9],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior"],
+            "m_Rotate": [14, [-179.9999847, 89.9802169, 179.9999847]],
+            "m_Scale": [14, [8.450984, 0.9999997, 13.6611127]],
+            "m_Translate": [14, [-16.8708496, -0.1238975, -29.724121]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_NumOfAIsToSpawn": "3",
+            "m_PresetPoolName": "Day_and_Night_BitersExterior",
+            "m_ShuffleSpawnPoints": "1"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.2596676, 0.8196897, 2.1985869, 1.2967793, 0.8205373, 2.2832417]],
+            "m_Name": [12, "blueguys_transport_survivor_calling_for_help_gpl"],
+            "m_PcId": [6, 16],
+            "m_PrefabName": [12, "blueguys_transport_survivor_calling_for_help_gpl"],
+            "m_Rotate": [14, [0.0000057, -25.0000343, -0.0000042]],
+            "m_Translate": [14, [-24.604248, 0.0199928, -8.2318115]]
+          },
+          "Fields": {
+            "m_Bindings": ""
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.4999999, 0.5, 0.4999999]],
+            "m_Name": [12, "AM_Rafal"],
+            "m_PcId": [6, 17],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Rotate": [14, [7.609677510345137e-8, -0.0000256, -8.69794405389257e-7]],
+            "m_Scale": [14, [8.4950933, 10.5172519, 15.3725004]],
+            "m_Translate": [14, [-26.3291015, -0.2494771, 3.5676879]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-2.8917233, 2.3302423, -0.7720489, 7.4302978, 2.8302533, 5.3123326]],
+            "m_Name": [12, "CA_Convoy"],
+            "m_PcId": [6, 18],
+            "m_PrefabName": [12, "clear_area"],
+            "m_Rotate": [14, [7.60967182600325e-8, -0.0000294, -8.697938937984873e-7]],
+            "m_Scale": [14, [1.0434247, 1.0, 1.4817847]],
+            "m_Translate": [14, [-25.1606445, -0.0096549, 4.6311645]]
+          },
+          "Fields": {
+            "m_AreaHeight": "5.660492",
+            "m_AreaPoints": "-10.322021 -0.500000 4.540283;-10.182129 -0.500000 1.621033;-9.017822 -0.500004 -6.013885;2.795532 -0.500011 -6.084381;2.790161 -0.500008 -2.720184;4.476318 -0.500004 -1.206818;4.538574 -0.500000 0.759338;4.035156 -0.500000 2.792480;1.952148 -0.499996 4.446503;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-2.5009832, 1.0438499, -0.9861602, 15.8210515, 5.2470369, 22.4871063]],
+            "m_Name": [12, "blueguys_transport_survivor_dlg"],
+            "m_PcId": [6, 19],
+            "m_PrefabName": [12, "blueguys_transport_survivor_dlg"],
+            "m_Rotate": [14, [0.0000058, -25.0000324, -0.0000043]],
+            "m_Translate": [14, [-24.6043701, 0.0199928, -8.2317504]]
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [6.4003906, 6.58679, -20.2607116, 42.7020263, 7.08679, 28.086029]],
+            "m_Name": [12, "AM_Explosives"],
+            "m_PcId": [6, 20],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Rotate": [14, [7.609672536545986e-8, -0.0000256, -8.697940643287438e-7]],
+            "m_Translate": [14, [-12.0167236, -0.0096549, -22.0233764]]
+          },
+          "Fields": {
+            "m_AreaHeight": "14.173573",
+            "m_AreaPoints": "-10.438843 -0.500000 4.414856;-10.367798 -0.500000 7.825317;-18.155640 -0.500000 7.734436;-18.506958 -0.500000 6.229126;-22.697998 -0.500000 5.970947;-29.921387 -0.500000 1.717773;-28.572388 -0.500000 -0.824951;-35.580566 -0.500000 -4.933960;-34.781372 -0.500000 -6.638611;-36.301636 -0.500000 -7.678223;-32.329590 -0.500000 -14.228027;-25.554688 -0.500000 -10.641785;-11.123901 -0.500000 -35.878723;-17.599121 -0.500000 -39.930298;-15.557007 -0.500000 -43.806183;-16.992798 -0.500000 -44.796295;-15.026611 -0.500000 -48.346741;12.919800 -0.500000 -32.466492;14.992432 -0.500000 -35.591675;17.106201 -0.500000 -34.496582;17.290161 -0.500000 -30.971924;23.349243 -0.500000 -30.956787;23.522949 -0.500000 -33.041321;26.467651 -0.500000 -33.003967;26.749146 -0.500000 -30.991760;47.223267 -0.499996 -31.364807;47.225708 -0.499996 -16.966553;48.951660 -0.499996 -16.737488;49.102417 -0.499992 2.430847;33.899292 -0.500000 2.380432;33.864258 -0.500000 4.505249;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0833489, 0.647896, -0.1081364, 1.125475, 1.147896, 0.5750755]],
+            "m_Name": [12, "GMA_BlockSpawn"],
+            "m_PcId": [6, 21],
+            "m_PrefabName": [12, "gameplay_modifier_area"],
+            "m_Rotate": [14, [7.609678220887872e-8, -0.0000247, -8.697942917024193e-7]],
+            "m_Scale": [14, [42.4365196, 12.5749797, 72.595642]],
+            "m_Translate": [14, [-1.0778808, 0.6860846, -19.4464721]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_Height": "2.295792",
+            "m_ModifierFlags": "50226",
+            "m_Points": "1.042126 -0.500000 -0.683210;1.042126 -0.500000 0.466939;-1.208824 -0.500000 0.466939;-1.208817 -0.500000 -0.683212;"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-3.3527612686157229e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.2707889]],
+            "m_Name": [12, "Biter_Reaching03"],
+            "m_PcId": [6, 24],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [179.9999694, 0.995347, -179.9999847]],
+            "m_Translate": [14, [-26.3121337, -0.0096434, -3.8927001]]
+          },
+          "Fields": {
+            "m_BehaviorName": "biter_stand_reaching"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195734, 0.2308602, 0.0690794, 1.5195734, 0.2708042]],
+            "m_Name": [12, "Biter_Reaching01"],
+            "m_PcId": [6, 26],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [179.9999847, -19.0046634, -179.9999847]],
+            "m_Scale": [14, [0.9999992, 0.9999995, 1.0000001]],
+            "m_Translate": [14, [-25.4450683, -0.0096588, -3.9625244]]
+          },
+          "Fields": {
+            "m_BehaviorName": "biter_stand_reaching"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195728, 0.230906, 0.0690794, 1.5195728, 0.270789]],
+            "m_Name": [12, "Biter_Reaching02"],
+            "m_PcId": [6, 27],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [179.9999542, 40.9953422, -179.9999694]],
+            "m_Scale": [14, [0.9999992, 0.9999995, 1.0000002]],
+            "m_Translate": [14, [-26.9339599, -0.0096626, -3.7301025]]
+          },
+          "Fields": {
+            "m_BehaviorName": "biter_stand_reaching"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0000457, 0.5, 0.0, 0.5000152, 0.5, 0.5000001]],
+            "m_Name": [12, "Number_Biter_Gate"],
+            "m_PcId": [6, 29],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior"],
+            "m_Rotate": [14, [-179.9999389, 0.9953327, -179.9999542]],
+            "m_Scale": [14, [6.4420104, 2.2418153, 3.8191368]],
+            "m_Translate": [14, [-26.2185058, -0.3065795, -2.0516967]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_NumOfAIsToSpawn": "4",
+            "m_PointsSource": "4",
+            "m_Preset": "Character;Biter_Male_Bleached",
+            "m_ShuffleSpawnPoints": "1",
+            "m_SpawnPoints": "/~26;/~27;/~24;/~42;"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [5.960464477539063e-8, 0.150005, 0.1779812, 0.5000002, 0.150005, 0.6779813]],
+            "m_Name": [12, "BP_Rafal_BeforeGoon"],
+            "m_PcId": [6, 30],
+            "m_PrefabName": [12, "behaviorplace_npc"],
+            "m_Rotate": [14, [179.9999847, -49.9999198, 179.9999847]],
+            "m_Translate": [14, [-23.9250488, 0.0199928, -12.5499267]]
+          },
+          "Fields": {
+            "m_BehaviorName": "single_static_m_stand_idle_placeholder_01"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [5.960464477539063e-8, 0.150005, 0.1779812, 0.5000002, 0.150005, 0.6779813]],
+            "m_Name": [12, "BP_Rafal_Dead"],
+            "m_PcId": [6, 31],
+            "m_PrefabName": [12, "behaviorplace_npc"],
+            "m_Rotate": [14, [-180.0, 60.0000991, -179.9999847]],
+            "m_Translate": [14, [-22.9903564, -0.0096549, -21.4431762]]
+          },
+          "Fields": {
+            "m_BehaviorName": "single_static_m_deadbody_idle_09",
+            "m_FacialPresetId": "Dead",
+            "m_TrackingMode": "Disabled"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_AlwaysSpawned": [11, true],
+            "m_EntityComponentsExtents": [69, [-0.0001354, 1.4512834, 0.2189901, 0.0679944, 1.4956481, 0.262777]],
+            "m_MoveToDynamicRoot": [11, true],
+            "m_Name": [12, "RESPAWN_Temp"],
+            "m_PcId": [6, 32],
+            "m_PrefabName": [12, "spawnpoint"],
+            "m_Rotate": [14, [179.9999847, 0.0000768, 179.9999847]],
+            "m_Translate": [14, [-25.8500976, 0.0199928, -9.6209106]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_Respawn": "1"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "AI_Viral_Explosion_1"],
+            "m_PcId": [6, 33],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior"],
+            "m_Translate": [14, [-16.4165039, -0.1083106, -44.7741088]]
+          },
+          "Fields": {
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_NumOfAIsToSpawn": "2",
+            "m_Preset": "Character;Viral",
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "AI_Viral_Explosion_2"],
+            "m_PcId": [6, 34],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior"],
+            "m_Translate": [14, [14.8760986, -0.0686798, -40.5855102]]
+          },
+          "Fields": {
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_NumOfAIsToSpawn": "2",
+            "m_Preset": "Character;Viral",
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0000915, 0.5, 0.0, 0.5000306, 0.5, 0.5000001]],
+            "m_Name": [12, "AI_Viral_Explosion_3"],
+            "m_PcId": [6, 35],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior"],
+            "m_Rotate": [14, [179.9999847, 50.0000152, 179.9999847]],
+            "m_Translate": [14, [-4.1353759, -0.1483038, -45.6056518]]
+          },
+          "Fields": {
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_NumOfAIsToSpawn": "2",
+            "m_Preset": "Character;Viral",
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "AI_Viral_Explosion_4"],
+            "m_PcId": [6, 36],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior"],
+            "m_Rotate": [14, [179.9999847, 0.0000135, 180.0]],
+            "m_Translate": [14, [-2.3847656, -0.1042976, -18.5043334]]
+          },
+          "Fields": {
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_NumOfAIsToSpawn": "2",
+            "m_Preset": "Character;Viral",
+            "m_SelfActive": "0"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [1.5925292, 13.8834457, -24.019638, 61.6749267, 14.3834457, 41.5577239]],
+            "m_Name": [12, "Area_audio_zombie_boss"],
+            "m_PcId": [6, 40],
+            "m_PrefabName": [12, "area_marker"],
+            "m_Rotate": [14, [7.609669694375043e-8, -0.0000273, -8.697940643287438e-7]],
+            "m_Translate": [14, [-12.0167236, -0.0096549, -22.0233764]]
+          },
+          "Fields": {
+            "m_AreaHeight": "28.766872",
+            "m_AreaPoints": "-21.611328 -0.500000 16.953674;-39.348511 -0.500000 11.288940;-60.082397 -0.500000 -1.066589;-48.028809 -0.500000 -21.363617;-41.219360 -0.500000 -16.888428;-25.572876 -0.500000 -45.282593;-30.710205 -0.500000 -47.702209;-20.211914 -0.500000 -65.577362;18.494019 -0.500000 -44.770020;63.267456 -0.499996 -48.359802;62.466064 -0.499981 17.538086;",
+            "m_SelfActive": "0"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "AI_Goon_Ext_2"],
+            "m_PcId": [6, 41],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - distance;Exterior"],
+            "m_Rotate": [14, [9.999999974752428e-7, 49.9999732, -9.999996564147296e-7]],
+            "m_Translate": [14, [26.4846191, -0.2111206, -30.0680541]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "0",
+            "m_NumOfAIsToSpawn": "1",
+            "m_Preset": "Character;BlueGuys_Goon"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyExterior",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-3.3527612686157229e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.2707889]],
+            "m_Name": [12, "Biter_Reaching04"],
+            "m_PcId": [6, 42],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [179.9999694, 0.9953485, -179.9999847]],
+            "m_Translate": [14, [-25.8947753, -0.0096434, -3.4440307]]
+          },
+          "Fields": {
+            "m_BehaviorName": "biter_stand_reaching"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.0, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "GMA_Respawn"],
+            "m_PcId": [6, 44],
+            "m_PrefabName": [12, "gameplay_modifier_area"],
+            "m_Rotate": [14, [-0.0, 0.0000201, -0.0]],
+            "m_Scale": [14, [8.0763101, 3.8541796, 9.5615959]],
+            "m_Translate": [14, [-26.3088378, 1.9119566, -9.2609252]]
+          },
+          "Fields": {
+            "m_ModifierFlags": "8"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

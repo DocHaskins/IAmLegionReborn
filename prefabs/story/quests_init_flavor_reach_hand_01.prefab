@@ -1,0 +1,89 @@
+{
+  "__filename__": {
+    "Version": 4,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, 0.0, 0.5, 0.5, 0.5]],
+            "m_Name": [12, "spawner"],
+            "m_PcId": [6, 4],
+            "m_PrefabName": [12, "ai_spawner_number"],
+            "m_PresetNames": [12, "Activation - daytime;Whole Day"],
+            "m_Rotate": [14, [-2.3662950709990583e-8, -0.0000021, -0.0000098]],
+            "m_Translate": [14, [0.0371395, -0.0116167, 0.8276367]]
+          },
+          "Fields": {
+            "cbs::IEnable::m_State": "1",
+            "m_ForcedTargetMode": "NearestPlayerCanLose",
+            "m_NumOfAIsToSpawn": "1",
+            "m_PointsSource": "4",
+            "m_Preset": "Character;Biter_Male_Bleached_Simple_One_Hit",
+            "m_SpawnPoints": "/~5;"
+          },
+          "EmbeddedObject": {
+            "Class": "AttributeAreaDifficultyRange",
+            "DestinationField": "m_DifficultyRangeSource"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "spawn_point"],
+            "m_PcId": [6, 5],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [-2.3662950709990583e-8, -0.0000021, -0.0000098]],
+            "m_Translate": [14, [0.0714721, 0.0, 0.7692871]]
+          },
+          "Fields": {
+            "m_BehaviorName": "multiactivity_inf_flavor_bit_hands_reach_left_01",
+            "m_Flags": "1",
+            "m_IsInit": "1",
+            "m_PointType": "Point for stationary spawners",
+            "m_SubEntities": "/~6/~1;"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2",
+      "Nodes": [
+        {
+          "Uuid": "4",
+          "Type": "1",
+          "X": "-525.00",
+          "Y": "1155.00"
+        },
+        {
+          "Uuid": "5",
+          "Type": "1",
+          "X": "-465.00",
+          "Y": "-15.00"
+        },
+        {
+          "Uuid": "9",
+          "Type": "4",
+          "X": "100.00",
+          "Y": "80.00",
+          "Interface_Type": "0"
+        },
+        {
+          "Uuid": "10",
+          "Type": "4",
+          "X": "125.00",
+          "Y": "100.00",
+          "Interface_Type": "1"
+        },
+        {
+          "Uuid": "11",
+          "Type": "4",
+          "X": "-1320.00",
+          "Y": "1350.00",
+          "Interface_Type": "2"
+        }
+      ]
+    }
+  }
+}

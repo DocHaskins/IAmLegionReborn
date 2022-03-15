@@ -1,0 +1,136 @@
+{
+  "__filename__": {
+    "Version": 3,
+    "RuntimeData": {
+      "Components": [
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, -0.0000915, 0.4999999, 0.5, 0.5000305]],
+            "m_Name": [12, "Wave_Viral"],
+            "m_PcId": [6, 1],
+            "m_PrefabName": [12, "ai_spawner_wave"],
+            "m_PresetNames": [12, "Activation - daytime;Whole Day;Activation - distance;Metro"],
+            "m_Rotate": [14, [4.1080451751440707e-7, 0.0000365, 0.0000759]],
+            "m_Scale": [14, [5.2299995, 1.0000002, 1.0000002]],
+            "m_Translate": [14, [-0.0518798, 0.0000209, 0.7238767]]
+          },
+          "Fields": {
+            "SpawnPoints": "/~3;",
+            "cbs::IEnable::m_State": "0",
+            "m_ForcedTargetMode": "NearestPlayerCannotLose",
+            "m_NumOfAIsPerWave": "1",
+            "m_NumberOfWaves": "60",
+            "m_PointsSource": "4",
+            "m_Preset": "Character;Viral",
+            "m_WaveMaxDelay": "20.000000",
+            "m_WaveMinDelay": "10.000000"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyMetro",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyMetro",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.230906, 0.0690794, 1.5195729, 0.270789]],
+            "m_Name": [12, "SP_Biter"],
+            "m_PcId": [6, 2],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [-0.0000133, 0.0000341, 0.0000807]],
+            "m_Translate": [14, [-2.1479492, 0.000017, 0.6956787]]
+          },
+          "Fields": {
+            "m_BehaviorName": "biter_crawl_through_hole",
+            "m_Preset": "Character;Biter_Male_Bleached"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-0.0001831, 1.5195729, 0.2308144, 0.0691404, 1.5195729, 0.2708195]],
+            "m_Name": [12, "SP_Viral"],
+            "m_PcId": [6, 3],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [-0.0000133, 0.000029, 0.0000807]],
+            "m_Translate": [14, [-0.5268554, 0.0000189, 0.6956787]]
+          },
+          "Fields": {
+            "m_BehaviorName": "no_state_m_vir_crawl",
+            "m_Preset": "Character;Viral"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.2308144, 0.0690794, 1.5195729, 0.2708195]],
+            "m_Name": [12, "SP_Biter"],
+            "m_PcId": [6, 4],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [-0.0000133, 0.000029, 0.0000807]],
+            "m_Translate": [14, [0.5904541, 0.0000209, 0.6958007]]
+          },
+          "Fields": {
+            "m_BehaviorName": "biter_crawl_through_hole",
+            "m_Preset": "Character;Biter_Male_Bleached"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [-4.470348358154297e-8, 1.5195729, 0.2308144, 0.0690794, 1.5195729, 0.2708195]],
+            "m_Name": [12, "SP_Biter"],
+            "m_PcId": [6, 5],
+            "m_PrefabName": [12, "ai_spawn_point_init"],
+            "m_Rotate": [14, [-0.0000133, 0.000029, 0.0000807]],
+            "m_Translate": [14, [1.9029541, 0.0000228, 0.6957396]]
+          },
+          "Fields": {
+            "m_BehaviorName": "biter_crawl_through_hole",
+            "m_Preset": "Character;Biter_Male_Bleached"
+          }
+        },
+        {
+          "Class": "CEntity",
+          "PrefabFieldsNative": {
+            "m_EntityComponentsExtents": [69, [0.0, 0.5, -0.0000916, 0.5, 0.5, 0.5000306]],
+            "m_Name": [12, "Wave_Biter"],
+            "m_PcId": [6, 6],
+            "m_PrefabName": [12, "ai_spawner_wave"],
+            "m_PresetNames": [12, "Activation - daytime;Whole Day;Activation - distance;Metro"],
+            "m_Rotate": [14, [4.108047733097919e-7, 0.0000336, 0.0000759]],
+            "m_Scale": [14, [5.2299995, 1.0000002, 1.0000002]],
+            "m_Translate": [14, [-0.0518798, 0.0000189, 0.7238767]]
+          },
+          "Fields": {
+            "SpawnPoints": "/~4;/~2;/~5;",
+            "cbs::IEnable::m_State": "0",
+            "m_ForcedTargetMode": "NearestPlayerCannotLose",
+            "m_NumOfAIsPerWave": "1",
+            "m_NumberOfWaves": "60",
+            "m_PointsSource": "4",
+            "m_Preset": "Character;Biter_Male_Bleached",
+            "m_WaveMaxDelay": "0.000000",
+            "m_WaveMinDelay": "0.000000"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyMetro",
+            "DestinationField": "m_OverrideActivationDistanceStrategy2"
+          },
+          "EmbeddedObject": {
+            "Class": "ActivationStrategyMetro",
+            "DestinationField": "m_OverrideActivationDistanceStrategy"
+          }
+        }
+      ]
+    },
+    "PrefabEditorData": {
+      "DataVersion": "2"
+    }
+  }
+}

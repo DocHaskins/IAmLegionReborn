@@ -13,6 +13,19 @@
                     <Opr_GetObjectPosition m_Object="#chase_target" m_Position="#group_target_pos"/>
                 </Sequence>
                 <Cnd_HasBBValue m_Key="#group_target_pos"/>
+				<Sequence>
+                        <Cnd_ChaseInProgress/>
+                        <Cnd_IsOwnedByChase/>
+                        <Opr_GetChaseTarget m_Target="#chase_target"/>
+                        <Cnd_IsBBValueEqual_bool m_Key="#searching" m_Value="false"/>
+                        <Opr_SetBBValue_bool m_Key="#should_check_last_target_pos" m_Value="false"/>
+                        <Opr_GetTargetPosition m_Target="#chase_target" m_Position="#chase_position"/>
+                        <Selector>
+                            <Cnd_IsSpottedInChase/>
+                            <Cnd_PositionInRadius m_Radius="12" m_Position="#chase_position" m_Invert="true"/>
+                        </Selector>
+                        <Act_Move m_Destination="#chase_position" m_EndRadius="10" m_MoveStyle="#run_move_style" m_IsAvoidanceActive="false" m_FailIfDestUnreachable="true" m_MaxDistOutsideNavmeshXZ="10" m_MaxDistOutsideNavmeshY="10" m_AvoidRegionsPreset="$avoid_regions_preset"  m_StopAtDest="true" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                    </Sequence>
             </Selector>
             <ExposeLogicState m_ExposedState="chasing">
                 <Act_Move m_MoveStyle="Run" m_IsAvoidanceActive="$use_avoidance" m_SkipStart="#skip_start" m_Destination="#group_target_pos" m_AvoidRegionsPreset="$avoid_regions_preset" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>

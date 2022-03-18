@@ -1,120 +1,210 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../MetaData/schema_ai.xsd" m_ContextType="ai">
-    <SequenceMem>
-        <Cnd_HasBBValue m_Key="#target" m_Invert="true"/>
-        <InvestigatePOI m_Position="#poi_position" m_Type="#poi_type" m_Owner="#poi_owner" m_NoiseEffect="#noise_effect" m_NoiseRange="#noise_range" m_IsActive="#poi_active">
-            <SelectorMem>
-                <SequenceMem m_CustomName="SuspiciousEnemy" m_Hide="true">
-                    <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="Enemy"/>
-                    <ExposeLogicState m_ExposedState="detecting_target">
-                      <Act_Investigation m_Type="NOTICE" m_StimulusType="SIGHT" m_StimulusPosition="#poi_position" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
-                    </ExposeLogicState>
-                </SequenceMem>
-                <SequenceMem m_CustomName="Sight" m_Hide="true">
-                    <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="Sight"/>
-                    <Cnd_IsAlertLevelEqual m_AlertLevel="High" m_Invert="true"/>
-                    <ExposeLogicState m_ExposedState="detecting_target">
-                        <TimeDeltaLimit m_TimeMax="3.0" m_StatusReturned="SUCCESS">
-                            <Act_Investigation m_Type="NOTICE" m_StimulusType="SIGHT" m_StimulusPosition="#poi_position" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
-                        </TimeDeltaLimit>
-                    </ExposeLogicState>
-                </SequenceMem>
-                <SequenceMem m_CustomName="Attack" m_Hide="true">
-                    <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="Attack"/>
-                    <Act_TurnToPos m_Position="#poi_position" m_Type="Combat" m_StartPolicy="DISCARD" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
-                    <Selector>
-                        <Cnd_IsAlertLevelEqual m_AlertLevel="Low"/>
-                        <Act_Investigation m_Type="NOTICE" m_StimulusType="ATTACK" m_StimulusPosition="#poi_position" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
-                    </Selector>
-                    <Act_Move m_Destination="#poi_position" m_IsAvoidanceActive="$use_avoidance" m_MoveStyle="Walk" m_AvoidRegionsPreset="$avoid_regions_preset" m_StopAtDest="true" m_StartPolicy="DISCARD" m_AbandonPolicy="BLENDOUT"/>
-                    <TimeDeltaLimit m_TimeMax="3.0" m_StatusReturned="SUCCESS">
-                        <Act_Investigation m_Type="NOTICE" m_StimulusType="NONE" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
-                    </TimeDeltaLimit>
-                </SequenceMem>
-                <SequenceMem m_CustomName="Flashlight" m_Hide="true">
-                    <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="Flashlight"/>
-                    <ExposeLogicState m_ExposedState="checking_low_prio_poi">
-                        <SequenceMem>
-                            <Act_Investigation m_StimulusPosition="#poi_position" m_Type="NOTICE" m_StimulusType="FLASHLIGHT" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
-                            <Act_Move m_Destination="#poi_position" m_IsAvoidanceActive="$use_avoidance" m_MoveStyle="Walk" m_AvoidRegionsPreset="$avoid_regions_preset" m_StopAtDest="true" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
-                        </SequenceMem>
-                    </ExposeLogicState>
-                </SequenceMem>
-                <SequenceMem m_CustomName="Noise" m_Hide="true">
-                    <Selector>
-                        <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="LowPrioNoise"/>
-                        <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="HighPrioNoise"/>
-                    </Selector>
-                    <Selector>
-                        <SequenceMem m_CustomName="Repel" m_Hide="true">
-                            <Cnd_IsBBValueEqual_EPOIEffect m_Key="#noise_effect" m_Value="REPEL"/>
-                            <Cnd_PositionInRadius m_Radius="#noise_range" m_Position="#poi_position"/>
-                            <Opr_CloneBBValue m_KeySrc="#noise_range" m_KeyDst="#repel_end_range"/>
-                            <Opr_IncrementBBValue_float m_Key="#repel_end_range" m_Amount="3"/>
-                            <SelectorMem>
-                                <Cnd_IsHoldRequired/>
-                                <Cnd_IsDefendRequired/>
-                                <Selector>
-                                    <Cnd_PositionInRadius m_Radius="#repel_end_range" m_Position="#poi_position" m_Invert="true"/>
-                                    <Cnd_IsBBValueEqual_bool m_Key="#poi_active" m_Value="true" m_Invert="true"/>
-                                    <SelectorMem>
-                                        <SequenceMem>
-                                            <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="HighPrioNoise"/>
-                                            <Act_Move m_Destination="#poi_position" m_MoveStyle="#move_style_trot" m_MoveAwayFromEndPosition="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
-                                        </SequenceMem>
-                                        <Act_Move m_Destination="#poi_position" m_MoveStyle="#move_style_walk" m_MoveAwayFromEndPosition="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
-                                    </SelectorMem>
-                                </Selector>
-                            </SelectorMem>
-                            <TimeDeltaLimit m_TimeMax="0.5" m_StatusReturned="SUCCESS">
-                                <Act_Idle m_Type="Stand" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
-                            </TimeDeltaLimit>
-                            <Opr_RemoveBBValue m_Key="#repel_end_range"/>
-                        </SequenceMem>
-									<SequenceMem m_CustomName="Attract/Notice" m_Hide="true">
-									<Cnd_IsBBValueEqual_EPOIEffect m_Key="#noise_effect" m_Value="REPEL" m_Invert="true"/>
-									<Opr_RandomFloat m_Result="#randomized_end_radius" m_RangeMin="2.5" m_RangeMax="30"/>
-                            <Selector>
-                                <Cnd_IsBBValueEqual_bool m_Key="#searching" m_Value="true"/>
-                                <Sequence>
-                                    <Cnd_HasBBValue m_Key="#last_target" m_Invert="true"/>
-                                    <Cnd_HasBBValue m_Key="#group_target" m_Invert="true"/>
-                                </Sequence>
-                                <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="HighPrioNoise"/>
-                            </Selector>
-                            <ExposeLogicState m_ExposedState="checking_high_prio_poi">
-                                <SequenceMem>
-                                    <Selector>
-                                        <Cnd_IsAlertLevelEqual m_AlertLevel="High"/>
-                                        <Act_Investigation m_Type="NOTICE" m_StimulusType="NOISE" m_StimulusPosition="#poi_position" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
-                                    </Selector>
-                                    <Opr_RandomFloat m_Result="#randomized_end_radius" m_RangeMin="8.5" m_RangeMax="10"/>
-                                    <Sequence>
+    <!-- Attack -->
+                    <SequenceMem m_CustomName="Attack" m_Hide="true">
+                        <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="Attack"/>
+                        <Opr_RequestBark m_BarkID="poi_generic_high_alert" m_Priority="High"/>
+                        <SelectorMem>
+                            <SequenceMem>
+                                <Cnd_PositionInAngle m_Position="#poi_position" m_Angle="90"/>
+                                <Act_Reaction m_Type="STARTLE" m_Direction="BACKWARD" m_TargetPos="#poi_position" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                            </SequenceMem>
+                            <Act_Reaction m_Type="STARTLE" m_Direction="FORWARD" m_TargetPos="#poi_position" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                        </SelectorMem>
+                        <Act_Investigation m_Type="DETECT" m_StimulusType="NOISE" m_StimulusPosition="#poi_position" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                        <Act_Investigation m_Type="STANDBY" m_StimulusType="ATTACK" m_StimulusPosition="#poi_position" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                    </SequenceMem>
+                    <!-- Flashlight -->
+                    <SequenceMem m_CustomName="Flashlight" m_Hide="true">
+                        <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="Flashlight"/>
+                        <Opr_RequestBark m_BarkID="poi_light" m_Priority="Medium"/>
+                        <Opr_SetBBValue_bool m_Key="#can_inspect" m_Value="true"/>
+                        <ExposeLogicState m_ExposedState="checking_low_prio_poi">
+                            <SequenceMem>
+                                <Act_Investigation m_Type="DETECT" m_StimulusType="FLASHLIGHT" m_StimulusPosition="#poi_position" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                <Optional m_Enabled="$enable_poi_inspection">
+                                    <ExposePOIInspection>
                                         <Selector>
                                             <Cnd_ShouldInspectCurrentPOI m_Invert="true"/>
-                                            <SelectorMem>
-                                                <Cnd_PositionInRadius m_Radius="#randomized_end_radius" m_Position="#poi_position"/>
-                                                <Act_Move m_Destination="#poi_position" m_EndRadius="#randomized_end_radius" m_IsAvoidanceActive="$use_avoidance" m_AvoidRegionsPreset="$avoid_regions_preset" m_MoveStyle="Walk" m_StopAtDest="true" m_StartPolicy="DISCARD" m_AbandonPolicy="BLENDOUT"/>
-                                            </SelectorMem>
+                                            <SequenceMem>
+                                                <Cnd_IsBBValueEqual_bool m_Key="#can_inspect" m_Value="true"/>
+                                                <Cnd_IsHoldRequired m_Invert="true"/>
+                                                <Cnd_IsDefendRequired m_Invert="true"/>
+                                                <Cnd_IsPositionInRestrictedArea m_Position="#poi_position"/>
+                                                <Opr_GetDistanceToPosition m_Position="#poi_position" m_Distance="#poi_distance"/>
+                                                <Opr_RequestBark m_BarkID="poi_investigation_start" m_Priority="Medium"/>
+                                                <Act_Move m_Destination="#poi_position" m_MoveStyle="#move_style_walk_suspicious" m_StopAtDest="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                                <TimeDeltaLimit m_TimeMax="2" m_StatusReturned="SUCCESS">
+                                                    <Act_Investigation m_Type="INSPECT" m_StimulusType="NOISE" m_StimulusPosition="#poi_position" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                                </TimeDeltaLimit>
+                                                <Opr_RequestBark m_BarkID="poi_investigation_finish" m_Priority="Medium"/>
+                                            </SequenceMem>
                                         </Selector>
-                                        <Selector>
-                                            <Cnd_IsBBValueEqual_bool m_Key="#poi_active" m_Value="true" m_Invert="true"/>
-                                            <Act_Idle m_Type="Stand" m_StartPolicy="DISCARD" m_AbandonPolicy="BLENDOUT"/>
-                                        </Selector>
+                                    </ExposePOIInspection>
+                                </Optional>
+                                <Selector>
+                                    <Sequence>
+                                        <Cnd_AreOthersInspectingPOI m_Invert="true"/>
+                                        <Cnd_IsBBValueEqual_bool m_Key="#poi_active" m_Value="false"/>
                                     </Sequence>
-                                </SequenceMem>
+                                    <Runner>
+                                        <SequenceMem>
+                                            <Opr_SetBBValue_bool m_Key="#can_inspect" m_Value="false"/>
+                                            <Act_Investigation m_Type="STANDBY" m_StimulusType="NOISE" m_StimulusPosition="#poi_position" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                        </SequenceMem>
+                                    </Runner>
+                                </Selector>
+                            </SequenceMem>
+                        </ExposeLogicState>
+                    </SequenceMem>
+                    <!-- DeadAlly -->
+                    <SequenceMem m_CustomName="DeadBodyDetection" m_Hide="true">
+                        <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="DeadAlly"/>
+                        <Opr_RequestBark m_BarkID="poi_generic_low_alert" m_Priority="Medium"/>
+                        <Opr_SetBBValue_bool m_Key="#can_inspect" m_Value="true"/>
+                        <UseEntitySlots m_Entity="#poi_owner">
+                            <ExposeLogicState m_ExposedState="checking_high_prio_poi">
+                                <Selector>
+                                    <Optional m_Enabled="$enable_poi_inspection">
+                                        <ExposePOIInspection>
+                                            <SequenceMem>
+                                                <Cnd_IsBBValueEqual_bool m_Key="#can_inspect" m_Value="true"/>
+                                                <Cnd_IsHoldRequired m_Invert="true"/>
+                                                <Cnd_IsDefendRequired m_Invert="true"/>
+                                                <Cnd_IsPositionInRestrictedArea m_Position="#poi_position"/>
+                                                <Opr_GetDistanceToPosition m_Position="#poi_position" m_Distance="#poi_distance"/>
+                                                <CombatSlot m_Name="poi_investigation" m_Limit="1" m_MaxKeepTime="10" m_Cost="#poi_distance" m_RejectedPolicy="Allow">
+                                                    <SequenceMem>
+                                                        <Act_Move m_Destination="#poi_position" m_MoveStyle="#move_style_trot" m_StopAtDest="true" m_EndRadius="2" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                                        <Opr_RequestBark m_BarkID="poi_body_ally" m_Priority="High"/>
+                                                        <Act_Investigation m_Type="INSPECT" m_StimulusType="BODY" m_StimulusPosition="#poi_position" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                                        <ExternalTree m_UID="HUMAN_CALL_FOR_HELP" m_CustomName="CallForHelp" m_Hide="true"/>
+                                                    </SequenceMem>
+                                                </CombatSlot>
+                                            </SequenceMem>
+                                        </ExposePOIInspection>
+                                    </Optional>
+                                    <SequenceMem>
+                                        <Act_Investigation m_Type="DETECT" m_StimulusType="BODY" m_StimulusPosition="#poi_position" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                        <Selector>
+                                            <Sequence>
+                                                <Cnd_AreOthersInspectingPOI m_Invert="true"/>
+                                                <Cnd_IsBBValueEqual_bool m_Key="#poi_active" m_Value="false"/>
+                                            </Sequence>
+                                            <Runner>
+                                                <SequenceMem>
+                                                    <Opr_SetBBValue_bool m_Key="#can_inspect" m_Value="false"/>
+                                                    <Act_Investigation m_Type="STANDBY" m_StimulusType="BODY" m_StimulusPosition="#poi_position" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                                </SequenceMem>
+                                            </Runner>
+                                        </Selector>
+                                    </SequenceMem>
+                                </Selector>
                             </ExposeLogicState>
-                        </SequenceMem>
-                    </Selector>
-                </SequenceMem>
-            </SelectorMem>
-        </InvestigatePOI>
-        <Selector m_Hide="true">
-            <Cnd_HasBBValue m_Key="#poi_position" m_Invert="true"/>
-            <Sequence>
-                <Opr_RemoveBBValue m_Key="#poi_active"/>
-                <Opr_RemoveBBValue m_Key="#noise_effect"/>
-            </Sequence>
-        </Selector>
-    </SequenceMem>
+                        </UseEntitySlots>
+                    </SequenceMem>
+                    <!-- HighPrioNoise and LowPrioNoise -->
+                    <SequenceMem m_CustomName="Noise" m_Hide="true">
+                        <Selector>
+                            <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="LowPrioNoise"/>
+                            <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="HighPrioNoise"/>
+                        </Selector>
+                        <Selector>
+                            <!-- Repel -->
+                            <SequenceMem m_CustomName="Repel" m_Hide="true">
+                                <Cnd_IsBBValueEqual_EPOIEffect m_Key="#noise_effect" m_Value="REPEL"/>
+                                <Cnd_PositionInRadius m_Radius="#noise_range" m_Position="#poi_position"/>
+                                <Opr_RequestBark m_BarkID="poi_generic_retreat" m_Priority="High"/>
+                                <SelectorMem>
+                                    <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="HighPrioNoise" m_Invert="true"/>
+                                    <Cnd_PositionInRadius m_Position="#poi_position" m_Radius="3" m_Invert="true"/>
+                                    <SelectorMem>
+                                        <SequenceMem>
+                                            <Cnd_PositionInAngle m_Position="#poi_position" m_Angle="90"/>
+                                            <Act_Reaction m_Type="STARTLE" m_Direction="BACKWARD" m_TargetPos="#poi_position" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                        </SequenceMem>
+                                        <Act_Reaction m_Type="STARTLE" m_Direction="FORWARD" m_TargetPos="#poi_position" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                    </SelectorMem>
+                                </SelectorMem>
+                                <Opr_CloneBBValue m_KeySrc="#noise_range" m_KeyDst="#repel_end_range"/>
+                                <Opr_IncrementBBValue_float m_Key="#repel_end_range" m_Amount="3"/>
+                                <SelectorMem>
+                                    <Cnd_IsHoldRequired/>
+                                    <Cnd_IsDefendRequired/>
+                                    <Selector>
+                                        <Cnd_PositionInRadius m_Radius="#repel_end_range" m_Position="#poi_position" m_Invert="true"/>
+                                        <Cnd_IsBBValueEqual_bool m_Key="#poi_active" m_Value="true" m_Invert="true"/>
+                                        <SelectorMem>
+                                            <SequenceMem>
+                                                <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="HighPrioNoise"/>
+                                                <Act_Move m_Destination="#poi_position" m_MoveStyle="#move_style_trot" m_MoveAwayFromEndPosition="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                            </SequenceMem>
+                                            <Act_Move m_Destination="#poi_position" m_MoveStyle="#move_style_walk" m_MoveAwayFromEndPosition="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                        </SelectorMem>
+                                    </Selector>
+                                </SelectorMem>
+                                <Opr_RemoveBBValue m_Key="#repel_end_range"/>
+                            </SequenceMem>
+                            <SequenceMem m_CustomName="Attract/Notice" m_Hide="true">
+                                <Cnd_IsBBValueEqual_EPOIEffect m_Key="#noise_effect" m_Value="REPEL" m_Invert="true"/>
+                                <Selector>
+                                    <Sequence>
+                                        <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="HighPrioNoise"/>
+                                        <Opr_RequestBark m_BarkID="poi_generic_high_alert" m_Priority="High"/>
+                                    </Sequence>
+                                    <Opr_RequestBark m_BarkID="poi_generic_low_alert" m_Priority="High"/>
+                                </Selector>
+                                <ExposeLogicState m_ExposedState="checking_low_prio_poi">
+                                    <SequenceMem>
+                                        <ExposePOIInspection>
+                                            <SequenceMem>
+                                                <SelectorMem>
+                                                    <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="HighPrioNoise" m_Invert="true"/>
+                                                    <Cnd_PositionInRadius m_Position="#poi_position" m_Radius="3" m_Invert="true"/>
+                                                    <SelectorMem>
+                                                        <SequenceMem>
+                                                            <Cnd_PositionInAngle m_Position="#poi_position" m_Angle="90"/>
+                                                            <Act_Reaction m_Type="STARTLE" m_Direction="BACKWARD" m_TargetPos="#poi_position" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                                        </SequenceMem>
+                                                        <Act_Reaction m_Type="STARTLE" m_Direction="FORWARD" m_TargetPos="#poi_position" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                                    </SelectorMem>
+                                                </SelectorMem>
+                                                <Act_Investigation m_Type="DETECT" m_StimulusType="NOISE" m_StimulusPosition="#poi_position" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                                <Selector>
+                                                    <Cnd_ShouldInspectCurrentPOI m_Invert="true"/>
+                                                    <SelectorMem>
+                                                        <Cnd_IsBBValueEqual_EPOIEffect m_Key="#noise_effect" m_Value="ATTRACT" m_Invert="true"/>
+                                                        <Cnd_IsHoldRequired/>
+                                                        <Cnd_IsDefendRequired/>
+                                                        <Cnd_IsPositionInRestrictedArea m_Position="#poi_position" m_Invert="true"/>
+                                                        <SequenceMem>
+                                                            <Opr_RequestBark m_BarkID="poi_investigation_start" m_Priority="Medium"/>
+                                                            <SelectorMem>
+                                                                <SequenceMem>
+                                                                    <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="HighPrioNoise"/>
+                                                                    <Act_Move m_Destination="#poi_position" m_EndRadius="2" m_MoveStyle="#move_style_trot" m_StopAtDest="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                                                </SequenceMem>
+                                                                <Act_Move m_Destination="#poi_position" m_MoveStyle="#move_style_walk_suspicious" m_StopAtDest="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                                            </SelectorMem>
+                                                            <TimeDeltaLimit m_TimeMax="2" m_StatusReturned="SUCCESS">
+                                                                <Act_Investigation m_Type="INSPECT" m_StimulusType="NOISE" m_StimulusPosition="#poi_position" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                                            </TimeDeltaLimit>
+                                                            <Opr_RequestBark m_BarkID="poi_investigation_finish" m_Priority="Medium"/>
+                                                        </SequenceMem>
+                                                    </SelectorMem>
+                                                </Selector>
+                                            </SequenceMem>
+                                        </ExposePOIInspection>
+                                        <Selector>
+                                            <Cnd_AreOthersInspectingPOI m_Invert="true"/>
+                                            <Runner>
+                                                <Act_Investigation m_Type="STANDBY" m_StimulusType="NOISE" m_StimulusPosition="#poi_position" m_StartPolicy="WAIT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="ON_END"/>
+                                            </Runner>
+                                        </Selector>
+                                    </SequenceMem>
+                                </ExposeLogicState>
+                            </SequenceMem>
+                        </Selector>
+                    </SequenceMem>
+                </SelectorMem>
 </BehaviorTree>

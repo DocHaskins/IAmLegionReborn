@@ -6,16 +6,14 @@ sub main()
 
     Required()
     {
-        //Module("ActivityModuleSimpleLoiter");
-        Module("BuffLogicModule");
         Module("CollisionModuleHuman");
         Module("LogicModuleUV");
     }
 
     Parametrized()
     {
-        ModuleProfile("CollisionModuleHuman", "infected");
-        ModuleProfile("ActivityModuleDeath", "infected");
+        ModuleProfile("ActivityModuleDeath", "infected_large");
+        ModuleProfile("CollisionModuleHuman", "infected_large");
 		ModuleProfile("LogicModuleChase", "viral");
     }
 }

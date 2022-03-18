@@ -1,0 +1,65 @@
+
+// Example definition:
+//
+// Category(category_name, prioritize_least_used /* = false */)
+// {
+//      Slots(slot_name, capacity, is_exclusive /* = false */);
+//      ...
+// }
+
+sub main()
+{
+    ReserverTypes()
+    {
+        Type("human_default");
+        Type("human_ranged");
+    }
+
+    SlotGroups()
+    {
+        Group("attack_melee");
+        Group("attack_range");
+    }
+
+    Category("token", true)
+    {
+        Slots("attack_special", 2, true, -1.0, "attack_melee");
+        Slots("attack_two_handed", 2, true, -1.0, "attack_melee");
+        Slots("attack_combo", 2, true, -1.0, "attack_melee");
+        Slots("attack_power", 2, true, -1.0, "attack_melee");
+        Slots("attack_quick", 2, true, -1.0, "attack_melee");
+        Slots("attack_fury", 2, true, -1.0, "attack_melee");
+        Slots("attack", 4, false, -1.0, "attack_melee");
+        Slots("attack_range_special", 3, false, -1.0, "attack_range");
+        Slots("attack_range", 4, false, -1.0, "attack_range");
+
+        DebugMode("Line");
+        DebugColor([1.0, 0.0, 0.0, 1.0]);
+    }
+
+    Category("role")
+    {
+        Slots("melee", 8, false, 2.0);
+        Slots("range", 8);
+        Slots("idle", 1);
+
+        DebugMode("Circle");
+        DebugColor([0.1, 0.5, 0.7, 1.0]);
+    }
+
+    Category("poi")
+    {
+        Slots("poi_investigation", 8);
+        
+        DebugMode("Line");
+        DebugColor([0.05, 0.6, 0.05, 1.0]);
+    }
+
+    Category("taunt")
+    {
+        Slots("summon", 2);
+        
+        DebugMode("Line");
+        DebugColor([0.7, 0.05, 0.7, 1.0]);
+    }
+}

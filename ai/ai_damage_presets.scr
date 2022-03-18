@@ -1,0 +1,121 @@
+sub main()
+{
+    DamagePreset("gentle_push")
+    {
+        DamageDefinition("GentlePush");
+        ReactionPreset("gentle_push@damage_reaction_presets.scr");
+    }
+	DamagePreset("gentle_push_no_damage")
+    {
+        DamageDefinition("GentlePushNoDamage");
+        ReactionPreset("gentle_push@damage_reaction_presets.scr");
+    }
+    DamagePreset("heavy_push")
+    {
+        DamageDefinition("GentlePush");
+        ReactionPreset("heavy_push@damage_reaction_presets.scr");
+    }
+
+    DamagePreset("banshee_light")
+    {
+        DamageDefinition("Banshee_Jump_On_Biter");
+        ReactionPreset("melee_light_hit@damage_reaction_presets.scr");
+    }
+	
+	DamagePreset("banshee_jump_off_biter")
+    {
+        DamageDefinition("Banshee_Jump_Off_Biter");
+        ReactionPreset("banshee_jump_off_biter@damage_reaction_presets.scr");
+    }
+
+    DamagePreset("charger_heavy")
+    {
+        DamageDefinition("Charger_Fists");
+        ReactionPreset("melee_heavy_hit@damage_reaction_presets.scr");
+    }
+
+    DamagePreset("biter_tar_hit")
+    {
+        DamageDefinition("Biter_Tar_Hit");
+        ReactionPreset("melee_light_hit@damage_reaction_presets.scr");
+        Effects("Suppressed:1.0");
+		Effects("StaminaDecrease:5.0");
+    }
+
+    DamagePreset("domino_hit_light")
+    {
+        DamageDefinition("AI_DominoHitLight");
+        ReactionPreset("light_collision@damage_reaction_presets.scr");
+        Effects("StaminaDecrease:20.0");
+    }
+
+    DamagePreset("domino_hit_heavy")
+    {
+        DamageDefinition("AI_DominoHitHeavy");
+        ReactionPreset("light_collision@damage_reaction_presets.scr");
+        Effects("StaminaDecrease:45.0");
+    }
+
+    DamagePreset("human_domino_hit")
+    {
+        ReactionPreset("light_collision@damage_reaction_presets.scr");
+    }
+
+    DamagePreset("molotov_spit")
+    {
+        DamageDefinition("MolotovCoctailSpit");
+        Effects("Burning:1.0");
+    }
+
+    DamagePreset("object_hit")
+    {
+        ReactionPreset("light_collision@damage_reaction_presets.scr");
+        DamageDefinition("AI_ObjectHit");
+    }
+
+    DamagePreset("wall_hit")
+    {
+        ReactionPreset("wall_collision@damage_reaction_presets.scr");
+        DamageDefinition("AI_WallHit");
+    }
+	
+	DamagePreset("wall_hit_no_damage")
+    {
+        ReactionPreset("wall_collision@damage_reaction_presets.scr");
+    }
+	
+    DamagePreset("ragdoll_player_hit")
+    {
+        DamageDefinition("AI_RagdollPlayer");
+        ReactionPreset("heavy_push@damage_reaction_presets.scr");
+    }
+    DamagePreset("spear_swipe")
+    {
+        ReactionPreset("spear_swipe@damage_reaction_presets.scr");
+    }
+    
+    DamagePreset("spear_swipe_heavy")
+    {
+        ReactionPreset("spear_swipe_heavy@damage_reaction_presets.scr");
+    }
+    DamagePreset("waltz_combo")
+    {
+        DamageDefinition("Waltz_Combo_Hit");
+        ReactionPreset("waltz_combo@damage_reaction_presets.scr");
+    }
+    DamagePreset("waltz_light_combo")
+    {
+        DamageDefinition("Waltz_Combo_Hit");
+        ReactionPreset("waltz_light_combo@damage_reaction_presets.scr");
+    }
+    DamagePreset("waltz_ground_pound")
+    {
+        DamageDefinition("Waltz_Heavy_Ground_Pound");
+        ReactionPreset("melee_heavy_hit@damage_reaction_presets.scr");
+    }
+    DamagePreset("waltz_heavy_combo")
+    {
+        DamageDefinition("Waltz_Heavy_Combo");
+        ReactionPreset("melee_heavy_hit@damage_reaction_presets.scr");
+    }
+}

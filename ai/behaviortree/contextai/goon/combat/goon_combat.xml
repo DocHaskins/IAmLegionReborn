@@ -59,12 +59,13 @@
                             <Cnd_HasPathToCombatTarget/>
                             <Cnd_TargetInRadius m_Target="#target" m_Radius="3.5" m_HorizontalOnly="true" m_Invert="true"/>
                             <Opr_GetEntityFromAIObservable m_AIObservable="#target" m_Entity="#target_entity" />
-                            <Act_MoveFollow m_MoveStyle="$movestyle" m_TargetEntity="#target_entity" m_FailIfDestUnreachable="true" m_MaxDistOutsideNavmeshY="4.5" m_MaxDistOutsideNavmeshXZ="3.5" m_StopAtDest="false" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+							<Act_MoveFollow m_TargetEntity="#target_entity" m_IsAvoidanceActive="false" m_FailIfDestUnreachable="true" m_MaxDistOutsideNavmeshXZ="2" m_MaxDistOutsideNavmeshY="2" m_AvoidRegionsPreset="$avoid_regions_preset" m_LocomotionSpeed="#input_attack_approach_movement_speed" m_MoveStyle="#run_move_style" m_StopAtDest="false" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
                         </SequenceMem>
                         <SequenceMem>
                             <Cnd_IsHeightDiffToTargetGreater m_Target="#target" m_HeightDiff="1.5"/>
                             <Cnd_PositionInRadius m_Position="#ai_starting_pos" m_Radius="2.0" m_Invert="true"/>
-                            <Act_Move m_Destination="#ai_starting_pos" m_MoveStyle="$movestyle" m_StopAtDest="true" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+							<Opr_GetEntityFromAIObservable m_AIObservable="#target" m_Entity="#target_entity" />
+							<Act_MoveFollow m_TargetEntity="#target_entity" m_IsAvoidanceActive="false" m_FailIfDestUnreachable="true" m_MaxDistOutsideNavmeshXZ="2" m_MaxDistOutsideNavmeshY="2" m_AvoidRegionsPreset="$avoid_regions_preset" m_LocomotionSpeed="#input_attack_approach_movement_speed" m_MoveStyle="#run_move_style" m_StopAtDest="false" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
                         </SequenceMem>
                         <Act_Idle m_Type="Stand" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
                     </Selector>

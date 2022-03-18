@@ -7,13 +7,12 @@ sub main()
     Required()
     {
         Module("CollisionModuleHuman");
-        Module("FootprintsModule");
+        Module("LogicModuleBanshee");
     }
 
     Parametrized()
     {
         ModuleProfile("CollisionModuleHuman", "infected");
-        ModuleProfile("FootprintsModule", "spitter_footprints");
         ModuleProfile("ActivityModuleDeath", "infected");
 		ModuleProfile("LogicModuleChase", "volatile");
     }

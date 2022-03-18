@@ -66,11 +66,11 @@ sub main()
         use DefaultParams();
 
         ObjectHitDamagePreset("object_hit@ai_damage_presets.scr");
-        WallHitDamagePreset("wall_hit_no_damage@ai_damage_presets.scr");
-        AIRagdollHitDamagePreset("domino_hit_heavy@ai_damage_presets.scr");
+        WallHitDamagePreset("wall_hit@ai_damage_presets.scr");
+        AIRagdollHitDamagePreset("heavy_push@ai_damage_presets.scr");
 
-        AIMovePushReactionPreset("gentle_push@damage_reaction_presets.scr");
-        AIMovePushStrength("2.0");
+        AIMovePushReactionPreset("heavy_push@damage_reaction_presets.scr");
+        AIMovePushStrength("6.0");
         AIMovePushMinSelfSpeedToPushOthers("3.0");
 		FallHeightMinDamage("IAL_AI_FallHeight_Infected_MinDmg");
         FallHeightMaxDamage("IAL_AI_FallHeight_Infected_MaxDmg");
@@ -82,12 +82,13 @@ sub main()
         use DefaultParams();
 
         ObjectHitDamagePreset("object_hit@ai_damage_presets.scr");
-        WallHitDamagePreset("wall_hit_no_damage@ai_damage_presets.scr");
-        AIRagdollHitDamagePreset("domino_hit_light@ai_damage_presets.scr");
+        WallHitDamagePreset("wall_hit@ai_damage_presets.scr");
+        AIRagdollHitDamagePreset("heavy_push@ai_damage_presets.scr");
 
-        AIMovePushStrength("3.0");
+		AIMovePushReactionPreset("heavy_push@damage_reaction_presets.scr");
+        AIMovePushStrength("15.0");
         AIMovePushMinSelfSpeedToPushOthers("1.0");
-        WallHitMinRelativeHeight("0.4");
+        WallHitMinRelativeHeight("0.6");
 		FallHeightMinDamage("IAL_AI_FallHeight_InfectedLarge_MinDmg");
         FallHeightMaxDamage("IAL_AI_FallHeight_InfectedLarge_MaxDmg");
         FallHeightImmediateKill("IAL_AI_FallHeight_InfectedLarge_ImmediateKill");

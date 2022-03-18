@@ -2,7 +2,7 @@ sub main()
 {
     PositionalSlotsParams("default")
     {
-        MeleeAttackSlotsCount("5");
+        MeleeAttackSlotsCount("15);
         MeleeAttackSlotsDistance("3.0");
         MeleeAttackSlotsCheckIfBlockedByOthers("false");
         MeleeAttackSlotsReservableName("melee");
@@ -10,7 +10,7 @@ sub main()
         MeleeAttackSlotsKeepFactor("0.5");
         MeleeAttackSlotsMinDot("-0.25");
 
-        MeleeIdleSlotsCount("10");
+        MeleeIdleSlotsCount("20");
         MeleeIdleSlotsDistance("8.0");
         MeleeIdleSlotsScoring("ByDistance");
         MeleeIdleSlotsKeepFactor("0.5");
@@ -21,14 +21,14 @@ sub main()
         MeleeSlotsPrioritizationFactor("0.5");
         MeleeSlotsGeneratorParams("melee_points");
 
-        IdleSlotsCount("8");
+        IdleSlotsCount("1");
         IdleSlotsGeneratorParams("idle_points");
         IdleSlotsDistancePriorityFactor("1");
         IdleSlotsScoring("ByDistance");
         IdleSlotsKeepFactor("0.5");
         IdleSlotsMinDot("-0.5");
 
-        VantageSlotsCount("6");
+        VantageSlotsCount("12");
         VantageSlotsReserverType("human_ranged");
         VantageSlotsGeneratorParams("vantage_points");
         VantageSlotsDistancePriorityFactor("-0.5");
@@ -97,9 +97,9 @@ sub main()
         KeepMaxRelativeHeight("6.0");
 
         AcceptMinDistance2d("12.0");
-        AcceptMaxDistance2d("20.0");
+        AcceptMaxDistance2d("50.0");
         KeepMinDistance2d("10.0");
-        KeepMaxDistance2d("25.0");
+        KeepMaxDistance2d("55.0");
 
         SeparationDistance2d("5.0");
 
@@ -115,7 +115,7 @@ sub main()
         NavPathMaxDownwardConnectionHeight("6.0");
         NavPathMaxUpwardConnectionHeight("0.25");
         NavPathMaxHorizontalConnectionLength("3.0");
-        NavPathPreferHigherPlaces("false");
+        NavPathPreferHigherPlaces("true");
         NavPathCheckOnlyNavConnectedPoints("false");
         NavPathProcessingMaxNearestPolyCheckPerUpdate("2");
         NavPathProcessingMaxRayTracesPerUpdate("2");
@@ -150,15 +150,15 @@ sub main()
         UpdateTimeDelta("0.1");
         UpdateTimeDeltaThreshold("2.0");
 
-        AcceptMinRelativeHeight("1.0");
+        AcceptMinRelativeHeight("4.0");
         AcceptMaxRelativeHeight("10.0");
         KeepMinRelativeHeight("-1.5");
         KeepMaxRelativeHeight("15.0");
 
         AcceptMinDistance2d("6.0");
-        AcceptMaxDistance2d("25.0");
+        AcceptMaxDistance2d("55.0");
         KeepMinDistance2d("3.0");
-        KeepMaxDistance2d("30.0");
+        KeepMaxDistance2d("50.0");
 
         SeparationDistance2d("5.0");
         SeparationHeight("2.0");
@@ -190,7 +190,7 @@ sub main()
         NavPathDisallowedSpecialAreas("Chemicals");
         NavPathDisallowedSpecialAreas("HardToPass");
         NavPathDisallowedSpecialAreas("Water");
-        NavPathDisallowedSpecialAreas("Interior");
+        //NavPathDisallowedSpecialAreas("Interior");
         
         // Refer to defined dynamic surfaces in  ai_navigation_presets.scr
         NavPathDisallowedRuntimeUserAreas("fire");

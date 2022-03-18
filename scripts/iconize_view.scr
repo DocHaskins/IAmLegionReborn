@@ -1,0 +1,624 @@
+sub main()
+{
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//CITY PARKOUR HELPERS
+//OWNER: GUZEK
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	icon("bdp_connector_bridges_easy_16x_base_a", "connect_16.png", "[NM HELPER] Bridges");
+	icon("bdp_connector_bridges_easy_10x_base_a", "connect_16.png", "[NM HELPER] Bridges");
+	icon("bdp_connector_bridges_easy_6x_base_a", "connect_16.png", "[NM HELPER] Bridges");
+	icon("bdp_connector_bridges_easy_4x_base_a", "connect_16.png", "[NM HELPER] Bridges");
+	icon("airbag_custommove_randomizer", "crosshair.png", "[NM HELPER] Airbags - upgradable");
+	icon("airbag_custommove_randomizer_no_upgrade", "crosshair_16.png", "[NM HELPER] Airbags - no upgrade");
+	icon("zone_level_nm_con_hay_amortizer", "character_16.png", "[NM HELPER] Amortizer");
+	icon("zone_level_nm_con_zipline", "blocked_entity.png", "[NM HELPER] Ziplines");
+	icon("wind_fan_default", "asterisk_blue16.png", "[OW] Airvents - default");
+	icon("wind_fan_zone_level", "asterisk_orange16.png", "[OW] Airvents - zone level");
+	icon("wind_fan_disabled", "asterisk16.png", "[OW] Airvents - off");
+	icon("street_wind_fan_reg01", "dice_white.png", "[OW] Street airvents - region 1");
+	icon("street_wind_fan_reg02", "dice_white.png", "[OW] Street airvents - region 2");
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//GAMEPLAY MECHANICS
+//OWNER: Filip
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	icon("detectableobject", "info_16.png", "Detectables");
+	icon("fasttravel", "info_16.png", "Fast Travels");
+	icon("uv_spot_a", "info_16.png", "UV Spots");
+	icon("restingplace", "info_16.png", "[PLAYER] Resting Places");
+	icon("gpl_mini_safezone_a", "info_16.png", "[PLAYER] Mini Safe Zones");
+	icon("gpl_mini_safezone_b", "info_16.png", "[PLAYER] Mini Safe Zones");
+	icon("gpl_mini_safezone_c", "info_16.png", "[PLAYER] Mini Safe Zones");
+	icon("gpl_mini_safezone_d", "info_16.png", "[PLAYER] Mini Safe Zones");
+	icon("gpl_mini_safezone_lawan", "info_16.png", "[PLAYER] Safe Zones");
+	icon("prototype_small_safezone_loc_metro", "info_16.png", "[PLAYER] Mini Safe Zones");
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//GAMEPLAY COLLECTABLES
+//OWNER: SiCK
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	icon("inhibitor_collectable", "info_16.png", "[COLLECTABLE] Inhibitors");
+	icon("collectableobject", "info_16.png", "[COLLECTABLE] All");
+	icon("voice_mail_phone", "info_16.png", "[SECRET] Voice Mails"); 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//HUBs
+//OWNER: JACEK KOWALSKI
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	icon("reg01_market_church", "house_16.png", "Hubs");
+	icon("metro_building_reg1_a", "house_16.png", "Hubs");
+	icon("r02_canteen_building_base", "house_16.png", "Hubs");
+	icon("hub_scv_asp_logic", "house_16.png", "Hubs");
+	icon("ce_hub_scv_07b", "house_16.png", "Hubs");
+	icon("triumphal_arch_area", "house_16.png", "Hubs");
+	icon("e3_2019_region_3_dummy_pumping_station", "house_16.png", "Hubs");
+	icon("quest_blooddiamonds_part3", "house_16.png", "Hubs");
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//GRE Quarantines
+//OWNER: Kajetan
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	icon("gre.r1.z1.1_building", "bone_red_16.png", "GRE Quarantine");
+	icon("gre.r1.z1.1_building", "bone_red_16.png", "GRE Quarantine");
+	icon("gre.r1.z2.1_building", "bone_red_16.png", "GRE Quarantine");
+	icon("gre.r1.z2.2_building", "bone_red_16.png", "GRE Quarantine");
+	icon("gre.r2.z1.1_building", "bone_red_16.png", "GRE Quarantine");
+	icon("gre.r2.z2.1_building", "bone_red_16.png", "GRE Quarantine");
+	icon("gre.r2.z3.1_building", "bone_red_16.png", "GRE Quarantine");
+	icon("gre.r2.z4.1_building", "bone_red_16.png", "GRE Quarantine");
+	icon("gre.r2.z4.2_building", "bone_red_16.png", "GRE Quarantine");
+	icon("gre.r5.z4.1_building", "bone_red_16.png", "GRE Quarantine");
+	icon("gre.r5.z5.1_building", "bone_red_16.png", "GRE Quarantine");
+	icon("gre_blueprint_doors", "bone_red_16.png", "GRE CUBE Door");
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//FACILITIES
+//OWNER: FILIP
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Postapo
+	icon("pa_destroyed_7x_surv", "firewall_burn_16.png", "[OWA] Postapo SURV"); //Open world structures [TEMP]
+	icon("pa_destroyed_7x_pk", "add_slim_16.png", "[OWA] Postapo PK"); //Open world structures [TEMP]
+	icon("pa_destroyed_7x_default", "debugger_invoke_16.png", "[OWA] Postapo Both"); //Open world structures [TEMP]
+//CC rooftops
+	icon("flr_ex_a_frn_roof_7x9x_cc_01", "assetbrowser_16.png", "[OWA] CC roof"); //Open world structures
+	icon("flr_ex_a_frn_roof_7x9x_cc_03", "assetbrowser_16.png", "[OWA] CC roof"); //Open world structures
+	icon("flr_ex_a_frn_roof_7x9x_cc_sur_01", "assetbrowser_16.png", "[OWA] CC roof"); //Open world structures
+	icon("flr_ex_a_frn_roof_7x9x_cc_sur_02", "assetbrowser_16.png", "[OWA] CC roof"); //Open world structures
+	icon("flr_ex_a_frn_roof_7x9x_cc_sur_03", "assetbrowser_16.png", "[OWA] CC roof"); //Open world structures
+	icon("flr_ex_a_frn_roof_7x9x_cc_pk_01", "assetbrowser_16.png", "[OWA] CC roof"); //Open world structures
+	icon("flr_ex_a_frn_roof_7x9x_cc_pk_03", "assetbrowser_16.png", "[OWA] CC roof"); //Open world structures
+	icon("flr_ex_a_frn_roof_11x9x_cc_01", "assetbrowser_16.png", "[OWA] CC roof"); //Open world structures
+	icon("flr_ex_a_frn_roof_11x9x_cc_02", "assetbrowser_16.png", "[OWA] CC roof"); //Open world structures
+	icon("flr_ex_a_frn_roof_11x9x_cc_pk_01", "assetbrowser_16.png", "[OWA] CC roof"); //Open world structures
+	icon("flr_ex_a_frn_roof_11x9x_cc_pk_02", "assetbrowser_16.png", "[OWA] CC roof"); //Open world structures
+	icon("flr_ex_a_frn_roof_11x9x_cc_sur_01", "assetbrowser_16.png", "[OWA] CC roof"); //Open world structures
+	icon("flr_ex_a_frn_roof_11x9x_cc_sur_02", "assetbrowser_16.png", "[OWA] CC roof"); //Open world structures
+
+//Watchtowers
+	icon("bld_pa_a_tower_a", "add_16.png", "[OWA] Watch towers"); //Open world structures
+	
+//Watercollectors
+	icon("ce_ex_water_distributor_d", "entity_not_editable.png", "[OWA] Water collectors"); //Water collector
+
+//Water Towers
+	icon("bld_ce_watertower_a3", "assets_fx_16.png", "[OWA] Water Towers"); //Quest_REG01_Watertower
+	icon("reg_02_watertower_b", "assets_fx_16.png", "[OWA] Water Towers"); //Water Tower REG02 South
+	icon("reg_03_watertower_a", "assets_fx_16.png", "[OWA] Water Towers"); //Water Tower REG03 East
+	icon("reg_05_watertower_a", "assets_fx_16.png", "[OWA] Water Towers"); //Water Tower REG05 North
+	icon("reg_05_watertower_b", "assets_fx_16.png", "[OWA] Water Towers"); //Water Tower REG05 South
+	icon("reg_06_watertower_a", "assets_fx_16.png", "[OWA] Water Towers"); //Water Tower REG06
+
+//Electrical Substations
+	icon("loc_ps_r01", "assets_fx_16.png", "[OWA] Electrical Substations"); //Electrical Substation R01
+	icon("loc_ps_r02_north", "assets_fx_16.png", "[OWA] Electrical Substations"); //Electrical Substation R02 North
+	icon("loc_ps_r02_south", "assets_fx_16.png", "[OWA] Electrical Substations"); //Electrical Substation R02 South
+	icon("loc_ps_r03_south", "assets_fx_16.png", "[OWA] Electrical Substations"); //Electrical Substation R02 Cathedral
+	icon("loc_ps_r05_north", "assets_fx_16.png", "[OWA] Electrical Substations"); //Electrical Substation R05 North
+	icon("loc_ps_r05_south", "assets_fx_16.png", "[OWA] Electrical Substations"); //Electrical Substation R05 South
+
+//Bandit Camps
+	icon("reg01_bandit_camp_surroundings", "assets_fx_16.png", "[OWA] Bandit Camps"); //Bandit Camp - Razors
+	icon("reg02_bandit_camp_01", "assets_fx_16.png", "[OWA] Bandit Camps"); //Bandit Camp - Skyscraper
+	icon("reg02_bandit_camp_02b", "assets_fx_16.png", "[OWA] Bandit Camps"); //Bandit Camp - Water
+	icon("ce_square_exclusive_b", "assets_fx_16.png", "[OWA] Bandit Camps"); //Bandit Camp - Military
+	icon("loc_bandit_camp_r02_skyscraper", "assets_fx_16.png", "[OWA] Bandit Camps"); //Bandit Camp - Vertical
+	icon("reg02_bandit_camp_03", "assets_fx_16.png", "[OWA] Bandit Camps"); //Bandit Camp - Chemicals
+
+//Metro Stations
+	icon("loc_metrostation_r01_a", "assets_fx_16.png", "[OWA] Metro Stations"); //loc_metrostation_R1.Z4
+	icon("loc_metrostation_r02_e", "assets_fx_16.png", "[OWA] Metro Stations"); //loc_metrostation_R2.Z2.1
+	icon("loc_metrostation_r02_c", "assets_fx_16.png", "[OWA] Metro Stations"); //loc_metrostation_R2.Z3.1
+	icon("loc_metrostation_r02_d", "assets_fx_16.png", "[OWA] Metro Stations"); //loc_metrostation_R2.Z4.1
+	icon("loc_metrostation_r02_b", "assets_fx_16.png", "[OWA] Metro Stations"); //loc_metrostation_R2.Z6.1
+	icon("loc_metrostation_r02_central", "assets_fx_16.png", "[OWA] Metro Stations"); //loc_metrostation_r02_central
+	icon("loc_metrostation_r02_faction", "assets_fx_16.png", "[OWA] Metro Stations"); //loc_metrostation_r02_faction
+	icon("loc_metrostation_r05_a", "assets_fx_16.png", "[OWA] Metro Stations"); //loc_metrostation_R5.Z2.1
+	icon("loc_metrostation_R5.Z3.1", "assets_fx_16.png", "[OWA] Metro Stations"); //loc_metrostation_R5.Z3.1
+	icon("loc_metrostation_R5.Z4.1", "assets_fx_16.png", "[OWA] Metro Stations"); //loc_metrostation_R5.Z4.1
+	icon("loc_metrostation_r02_a", "assets_fx_16.png", "[OWA] Metro Stations"); //loc_metrostation_R5.Z5.1
+
+//Radio Towers
+	icon("loc_corptower_r01_separatepinlock_towertop_a", "assets_fx_16.png", "[OWA] Radio Towers"); //reg01_corptower_separatepinlock_towertop_a
+	icon("loc_rt_07", "assets_fx_16.png", "[OWA] Radio Towers"); //Radio Tower R02 Z01
+	icon("r04_radiotower", "assets_fx_16.png", "[OWA] Radio Towers"); //Radio Tower R02 Z02
+	icon("r02_radiotower", "assets_fx_16.png", "[OWA] Radio Towers"); //Radio Tower R02 Z05
+	icon("r03_radiotower", "assets_fx_16.png", "[OWA] Radio Towers"); //Radio Tower R03
+	icon("r05_radiotower", "assets_fx_16.png", "[OWA] Radio Towers"); //Radio Tower R05
+
+
+//Windmills
+	//icon("ow_windmill_platform_offline_a", "assets_fx_16.png", "[OWA] Windmills");
+
+	icon("ow_windmill_r01_01_pinlock", "assets_fx_16.png", "[OWA] Windmills"); //ow_windmill_r01_01
+	icon("ow_windmill_r01_02_pinlock", "assets_fx_16.png", "[OWA] Windmills"); //ow_windmill_r01_02
+	icon("ow_windmill_r01_03_pinlock", "assets_fx_16.png", "[OWA] Windmills"); //ow_windmill_r01_03
+	icon("ow_windmill_r01_04_pinlock", "assets_fx_16.png", "[OWA] Windmills"); //ow_windmill_r01_04
+	icon("ow_windmill_r01_05_pinlock", "assets_fx_16.png", "[OWA] Windmills"); //ow_windmill_r01_05
+	icon("ow_windmill_r01_06_pinlock", "assets_fx_16.png", "[OWA] Windmills"); //ow_windmill_r01_06
+	icon("ow_windmill_r01_07_pinlock", "assets_fx_16.png", "[OWA] Windmills"); //ow_windmill_r01_07
+
+	icon("ow_windmill_r02_01", "assets_fx_16.png", "[OWA] Windmills"); //ow_windmill_r02_01
+	icon("ow_windmill_r02_02", "assets_fx_16.png", "[OWA] Windmills"); //ow_windmill_r02_02
+	icon("ow_windmill_r02_03", "assets_fx_16.png", "[OWA] Windmills"); //ow_windmill_r02_03
+	icon("ow_windmill_r02_04", "assets_fx_16.png", "[OWA] Windmills"); //ow_windmill_r02_04
+	icon("ow_windmill_r02_05", "assets_fx_16.png", "[OWA] Windmills"); //ow_windmill_r02_05
+	icon("ow_windmill_r02_06", "assets_fx_16.png", "[OWA] Windmills"); //ow_windmill_r02_06
+	icon("ow_windmill_r02_07", "assets_fx_16.png", "[OWA] Windmills"); //ow_windmill_r02_07
+
+	icon("ow_windmill_r03_01", "assets_fx_16.png", "[OWA] Windmills"); //ow_windmill_r03_01
+	icon("ow_windmill_r03_02", "assets_fx_16.png", "[OWA] Windmills"); //ow_windmill_r03_02
+	icon("ow_windmill_r03_03", "assets_fx_16.png", "[OWA] Windmills"); //ow_windmill_r03_03
+
+	icon("ow_windmill_r05_01", "assets_fx_16.png", "[OWA] Windmills"); //ow_windmill_r05_01
+	icon("ow_windmill_r05_02", "assets_fx_16.png", "[OWA] Windmills"); //ow_windmill_r05_02
+	icon("ow_windmill_r05_03", "assets_fx_16.png", "[OWA] Windmills"); //ow_windmill_r05_03
+	icon("ow_windmill_r05_04", "assets_fx_16.png", "[OWA] Windmills"); //ow_windmill_r05_04
+	icon("ow_windmill_r05_05", "assets_fx_16.png", "[OWA] Windmills"); //ow_windmill_r05_05
+	icon("ow_windmill_r05_06", "assets_fx_16.png", "[OWA] Windmills"); //ow_windmill_r05_06
+
+//Zombie Bosses
+	icon("ow_activity_infected_demolisher_r1_z01", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R1_Z01
+	icon("ow_activity_infected_demolisher_r1_z03", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R1_Z03
+	icon("ow_activity_infected_demolisher_r1_z04", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R1_Z04
+
+	icon("ow_activity_infected_demolisher_r2_01", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R2_01
+	icon("ow_activity_infected_demolisher_r2_02", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R2_02
+	icon("ow_activity_infected_demolisher_r2_03", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R2_03
+	icon("ow_activity_infected_demolisher_r2_04", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R2_04
+	icon("ow_activity_infected_demolisher_r2_05", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R2_05
+	icon("ow_activity_infected_demolisher_r2_06", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R2_06
+	icon("ow_activity_infected_demolisher_r2_07", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R2_07
+	icon("ow_activity_infected_demolisher_r2_08", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R2_08
+	icon("ow_activity_infected_demolisher_r2_09", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R2_09
+	icon("ow_activity_infected_demolisher_r2_10", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R2_10
+	icon("ow_activity_infected_demolisher_r2_11", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R2_11
+	icon("ow_activity_infected_demolisher_r2_12", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R2_12
+	icon("ow_activity_infected_demolisher_r2_13", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R2_13
+	icon("ow_activity_infected_demolisher_r2_14", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R2_14
+	icon("ow_activity_infected_demolisher_r2_15", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R2_15
+	icon("ow_activity_infected_demolisher_r2_16", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R2_16
+	icon("ow_activity_infected_demolisher_r2_17", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R2_17
+
+	icon("ow_activity_infected_demolisher_r5_01", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R5_01
+	icon("ow_activity_infected_demolisher_r5_02", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R5_02
+	icon("ow_activity_infected_demolisher_r5_03", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R5_03
+	icon("ow_activity_infected_demolisher_r5_04", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R5_04
+	icon("ow_activity_infected_demolisher_r5_05", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R5_05
+	icon("ow_activity_infected_demolisher_r5_06", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R5_06
+	icon("ow_activity_infected_demolisher_r5_07", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R5_07
+	icon("ow_activity_infected_demolisher_r5_08", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R5_08
+	icon("ow_activity_infected_demolisher_r5_09", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R5_09
+	icon("ow_activity_infected_demolisher_r5_10", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R5_10
+	icon("ow_activity_infected_demolisher_r5_11", "assets_fx_16.png", "[OWA] Zombie Bosses"); //Special_Infected_Demolisher_R5_11
+	
+//Special Infecteds
+	//icon("ow_activity_infected_special_encounter_01", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_02", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_03", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_04", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_05", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_06", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_07", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_08", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_09", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_10", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_11", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_12", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_13", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_14", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_15", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_16", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_17", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_18", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_19", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_20", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_21", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_22", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_23", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_24", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_25", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_26", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_27", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_28", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_29", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_30", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_31", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_32", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_33", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_34", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_35", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_36", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_37", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_38", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_39", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_40", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_41", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_42", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_43", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_44", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_45", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_46", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_47", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_48", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_49", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_50", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_51", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_52", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_53", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_54", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_55", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_56", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_57", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_58", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_59", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_60", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_61", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_62", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_63", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_64", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_65", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_66", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_67", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_68", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_69", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_70", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_71", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_72", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_73", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_74", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_75", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_76", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_77", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_78", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_79", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_80", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_81", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_82", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_83", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_84", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_85", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_86", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_87", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_88", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_89", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_90", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_91", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_92", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_93", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_94", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_95", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_96", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_97", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_98", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_99", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_100", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_101", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_102", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_103", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_104", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_105", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_106", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_107", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_108", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_109", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_110", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_111", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_112", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_113", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_114", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_115", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_116", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_117", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_118", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_119", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_120", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_121", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_122", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_123", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_124", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_125", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_126", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_127", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_128", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_129", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_130", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_131", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_132", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_133", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_134", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_135", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_136", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_137", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_138", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_139", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_140", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_141", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_142", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_143", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_144", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_145", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_146", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_147", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_148", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_149", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_150", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_151", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_152", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_153", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_154", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_155", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_155", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_156", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_157", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_158", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_159", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_160", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_161", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_162", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_163", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_164", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_165", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_166", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_167", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_168", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_169", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_170", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_171", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_172", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_173", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_174", "info_16.png", "[AI] Special Infected");
+	//icon("ow_activity_infected_special_encounter_175", "info_16.png", "[AI] Special Infected");
+	//icon("enc_special_infected_flooded_area_01", "info_16.png", "[AI] Special Infected");
+
+//Air Drops
+	icon("ow_activity_airdrop_r1_01", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R1_01
+	icon("ow_activity_airdrop_r1_02", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R1_02
+	icon("ow_activity_airdrop_r1_03", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R1_03
+	icon("ow_activity_airdrop_r1_04", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R1_04
+
+	icon("ow_activity_airdrop_r2_01", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R2_01
+	icon("ow_activity_airdrop_r2_02", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R2_02
+	icon("ow_activity_airdrop_r2_03", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R2_03
+	icon("ow_activity_airdrop_r2_04", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R2_04
+	icon("ow_activity_airdrop_r2_05", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R2_05
+	icon("ow_activity_airdrop_r2_06", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R2_06
+	icon("ow_activity_airdrop_r2_07", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R2_07
+	icon("ow_activity_airdrop_r2_08", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R2_08
+	icon("ow_activity_airdrop_r2_09", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R2_09
+	icon("ow_activity_airdrop_r2_10", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R2_10
+	icon("ow_activity_airdrop_r2_11", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R2_11
+	icon("ow_activity_airdrop_r2_12", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R2_12
+
+	icon("ow_activity_airdrop_r5_01", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R5_01
+	icon("ow_activity_airdrop_r5_02", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R5_02
+	icon("ow_activity_airdrop_r5_03", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R5_03
+	icon("ow_activity_airdrop_r5_04", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R5_04
+	icon("ow_activity_airdrop_r5_05", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R5_05
+	icon("ow_activity_airdrop_r5_06", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R5_06
+	icon("ow_activity_airdrop_r5_07", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R5_07
+	icon("ow_activity_airdrop_r5_08", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R5_08
+	icon("ow_activity_airdrop_r5_09", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R5_09
+	icon("ow_activity_airdrop_r5_10", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R5_10
+
+	icon("ow_activity_airdrop_r3b_01", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R5_07
+	icon("ow_activity_airdrop_r3b_02", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R5_07
+	icon("ow_activity_airdrop_r3b_03", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R5_07
+	icon("ow_activity_airdrop_r3b_04", "assets_fx_16.png", "[OWA] Air Drops"); //Airdrop_R5_07
+
+//GRE Crate Detector
+	icon("loc_grecratedetector_r01_01", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r01_01
+	icon("loc_grecratedetector_r01_02", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r01_02
+	icon("loc_grecratedetector_r01_03", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r01_03
+	icon("loc_grecratedetector_r01_04", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r01_04
+	icon("loc_grecratedetector_r01_05", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r01_05
+	icon("loc_grecratedetector_r01_06", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r01_06
+
+	icon("loc_grecratedetector_r02_z02_01", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r02_z02_01
+	icon("loc_grecratedetector_r02_z02_02", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r02_z02_02
+	icon("loc_grecratedetector_r02_z02_03", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r02_z02_03
+	icon("loc_grecratedetector_r02_z02_04", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r02_z02_04
+	icon("loc_grecratedetector_r02_z02_05", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r02_z02_05
+	icon("loc_grecratedetector_r02_z02_06", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r02_z02_06
+	icon("loc_grecratedetector_r02_z05_01", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r02_z05_01
+	icon("loc_grecratedetector_r02_z05_02", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r02_z05_02
+	icon("loc_grecratedetector_r02_z05_03", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r02_z05_03
+	icon("loc_grecratedetector_r02_z05_04", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r02_z05_04
+	icon("loc_grecratedetector_r02_z05_05", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r02_z05_05
+	icon("loc_grecratedetector_r02_z05_06", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r02_z05_06
+
+	icon("loc_grecratedetector_r03_01", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r03_01
+	icon("loc_grecratedetector_r03_02", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r03_02
+	icon("loc_grecratedetector_r03_03", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r03_03
+	icon("loc_grecratedetector_r03_04", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r03_04
+	icon("loc_grecratedetector_r03_05", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r03_05
+	icon("loc_grecratedetector_r03_06", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r03_06
+
+	icon("loc_grecratedetector_r05_01", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r05_01
+	icon("loc_grecratedetector_r05_02", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r05_02
+	icon("loc_grecratedetector_r05_03", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r05_03
+	icon("loc_grecratedetector_r05_04", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r05_04
+	icon("loc_grecratedetector_r05_05", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r05_05
+	icon("loc_grecratedetector_r05_06", "assets_fx_16.png", "[OWA] GRE Crate Detector"); //loc_grecratedetector_r05_06
+
+// Inhibitors
+
+	icon("inhibitor_collectable", "assets_fx_16.png", "[OWA] Inhibitor"); 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//AI POPULATION - ENCOUNTERS
+//OWNER: ACIEK
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	//icon("encounter_ambush_chest_backyard_01", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_ambush_tunnel_bandits", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_ambush_loot_day_02", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_bandits_vs_pks", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_burning_at_stake", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_conscript_vs_biter", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_day_infected_defend", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_hanging_cage", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_hangman", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_infected_opportunity", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_infected_prisoner_rescue_night", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_infected_rescue_ai_in_grab", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_night_infected_defend", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_night_infected_defend_01", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_night_infected_defend_02", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_night_infected_defend_03", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_night_pk_vs_infected_01", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_pks_vs_bandits", "assets_fx_16.png", "Encounter");
+	//icon("encounter_prisoner_infected_01", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_prisoner_street", "assets_fx_16.png", "[AI] Encounter");
+	icon("encounter_retreat", "assets_fx_16.png", "[AI] Encounter");
+	icon("encounter_retreat_night", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_roof_temp", "assets_fx_16.png", "[AI] Encounter");
+	icon("night_encounter_biters", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_threat_humans_street", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_threat_humans_roof", "assets_fx_16.png", "[AI] Encounter");
+	icon("encounter_beggar_bandit_turn_infected", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_ambush_chest_backyard_01", "assets_fx_16.png", "[AI] Encounter");
+	icon("flr_md_office_zshape_16x_b_btm_runthrough_5h_b_special_infected_01", "assets_fx_16.png", "[AI] Encounter");
+	//icon("ow_activity_infected_special_encounter_gen_backyard", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_renegades_vs_pks", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_renegades_defend", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_ambush_fake_rescue_truck_day_02", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_dust_beggar_int", "assets_fx_16.png", "[AI] Encounter");
+	icon("encounter_survivor_viral_int", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_infected_special", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_ambush_fake_rescue_day_01", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_bandits_easy", "assets_fx_16.png", "[AI] Encounter");
+	//icon("encounter_ambush_loot_day_01", "assets_fx_16.png", "[AI] Encounter");
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//AI POPULATION - HANDCRAFTED ENCOUNTERS
+//OWNER: PAWEL JASINSKI
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//OLD
+icon("ex_backyard_18x12_a_encounter_handcrafted_01", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_defend_ex_backyard_18x06_c", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_defend_ex_backyard_15x12_b", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_opw_08", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_drop_attack_02_int", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_drop_attack_03", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_explosive_truck", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_opw_02", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_opw_09", "info_16.png", "[AI] Handcrafted Encounter");
+icon("ambush_encounter_opw_10", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_opw_03", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_opw_07", "info_16.png", "[AI] Handcrafted Encounter");
+icon("street_cross_t4_90_r2_90_b4_90_l2_90_encounter_handcrafted_01", "info_16.png", "[AI] Handcrafted Encounter");
+icon("flr_ce_b_back_roof_12x14x2h_a_enc_01", "info_16.png", "[AI] Handcrafted Encounter");
+
+//NEW - FOR REG 02
+icon("encounter_opw_11", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_opw_12", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_opw_13", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_opw_14", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_opw_15", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_opw_16", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_opw_17", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_opw_18", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_opw_19", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_opw_20", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_opw_21", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_opw_22", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_opw_23", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_opw_24", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_opw_25", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_opw_26", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_opw_27", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_opw_28", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_opw_29", "info_16.png", "[AI] Handcrafted Encounter");
+icon("encounter_opw_30", "info_16.png", "[AI] Handcrafted Encounter");
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//AI POPULATION - INITIAL SPAWNERS
+//OWNER: ACIEK
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	icon("infected_alarmed_outside_day_reaching_01", "zoomscene_16.png", "[AI] Initial Spawner");
+	icon("infected_alarmed_outside_jumping_out_car", "zoomscene_16.png", "[AI] Initial Spawner");
+	icon("infected_alarmed_outside_day_crawl", "zoomscene_16.png", "[AI] Initial Spawner");
+	icon("infected_alarmed_outside_day_crawl_distance", "zoomscene_16.png", "[AI] Initial Spawner");
+	icon("infected_alarmed_outside_day_car_crawl", "zoomscene_16.png", "[AI] Initial Spawner");
+	icon("infected_alarmed_outside_day_climb_out_pit", "zoomscene_16.png", "[AI] Initial Spawner");
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//AI POPULATION - AI LIFE SCENARIOS
+//OWNER: ACIEK
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	icon("binoculars_scenario", "walk_16.png", "[AI] Scenario");
+	icon("car_rage_scenario", "walk_16.png", "[AI] Scenario");
+	icon("chimney_01_scenario", "walk_16.png", "[AI] Scenario");
+	icon("chimney_02_scenario", "walk_16.png", "[AI] Scenario");
+	icon("chimney_03_scenario", "walk_16.png", "[AI] Scenario");
+	icon("collecting_plants_scenario", "walk_16.png", "[AI] Scenario");
+	icon("crouch_fixing_scenario", "walk_16.png", "[AI] Scenario");
+	icon("door_breakdown_scenario", "walk_16.png", "[AI] Scenario");
+	icon("fountain", "walk_16.png", "[AI] Scenario");
+	icon("garden_roof_scenario", "walk_16.png", "[AI] Scenario");
+	icon("generic_examine_scenario", "walk_16.png", "[AI] Scenario");
+	icon("generic_scenario", "walk_16.png", "[AI] Scenario");
+	icon("generic_wall_roof_scenario", "walk_16.png", "[AI] Scenario");
+	icon("high_examine_roof_scenario", "walk_16.png", "[AI] Scenario");
+	icon("high_examine_scenario", "walk_16.png", "[AI] Scenario");
+	icon("looting_scenario", "walk_16.png", "[AI] Scenario");
+	icon("low_examine_roof_scenario", "walk_16.png", "[AI] Scenario");
+	icon("low_examine_scenario", "walk_16.png", "[AI] Scenario");
+	icon("medium_examine_roof_scenario", "walk_16.png", "[AI] Scenario");
+	icon("medium_examine_scenario", "walk_16.png", "[AI] Scenario");
+	icon("resting_roof_scenario", "walk_16.png", "[AI] Scenario");
+	icon("pissing_scenario", "walk_16.png", "[AI] Scenario");
+	icon("resting_scenario", "walk_16.png", "[AI] Scenario");
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// AI SPAWN POINTS
+// Example of using preset filter
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	icon("ai_spawn_point_init", "walk_16.png", "[AI] Init Spawn Points - All");
+	icon("ai_spawn_point_init", "walk_16.png", "[AI] Init Spawn Points - Rooftop", "Tags;Rooftop");
+	
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//AI POPULATION - OW
+//OWNER: Mateusz
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+icon("urb_fireplug_a_logic", "info_16.png", "[OW] Water Prefabs");
+icon("water_logic", "info_16.png", "[OW] Water Prefabs");
+icon("fountain", "info_16.png", "[OW] Water Prefabs");
+
+
+}

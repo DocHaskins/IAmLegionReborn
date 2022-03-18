@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <CooldownTimeDelta m_CooldownTime="$throw_zombie_cooldown" m_CooldownOnAbort="true">
+        <SequenceMem>
+            <Cnd_TargetInRadiusPredicted  m_Target="#target" m_Radius="20" m_Time="$target_prediciton_time"/>
+            <Cnd_IsCombatTargetInRadius m_Radius="8.0" m_Invert="true"/>
+            <Cnd_IsCombatTargetInLOS/>
+            <Cnd_CanInterruptActivityModule_Movement/>
+            <Sequence>
+                <Cnd_TargetInAngle m_Target="#target" m_Angle="45"/>
+                <Cnd_TargetInRadiusPredicted  m_Target="#target" m_Radius="20" m_Time="$target_prediciton_time"/>
+                <Cnd_IsCombatTargetInRadius m_Radius="5.0" m_Invert="true"/>
+                <Opr_FindNearestAllyInFront m_Ally="#ally" m_AllyPosition="#ally_pos" m_Angle="45"/>
+                <Cnd_TargetInRadiusPredicted m_Target="#ally" m_Radius="4.0" m_Time="1"/>
+                <Selector>
+                    <Sequence>
+                        <Cnd_PositionInRadius m_Radius="1.5" m_Position="#ally_pos"/>
+                        <Cnd_PositionInAngle m_Angle="45" m_Position="#ally_pos"/>
+                    </Sequence>
+                    <Act_Move m_Destination="#ally_pos" m_MoveStyle="Walk" m_StopAtDest="false" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                </Selector>
+            </Sequence>
+            <Succeeder>
+                <RepeatUntilFail>
+                    <SequenceMem>
+                        <Opr_FindNearestAllyInFront m_Ally="#ally" m_AllyPosition="#ally_pos" m_Angle="60"/>
+                        <Cnd_TargetInRadiusPredicted  m_Target="#target" m_Radius="20" m_Time="$target_prediciton_time"/>
+                        <Cnd_IsCombatTargetInRadius m_Radius="5.0" m_Invert="true"/>
+                        <Cnd_PositionInRadius m_Radius="2.2" m_Position="#ally_pos"/>
+                        <Opr_SetWeapon m_WeaponType="Fists" m_Hand="Right"/>
+                        <Selector>
+                            <Sequence>
+                                <Cnd_OnLeftOfTarget m_Target="#ally"/>
+                                <Opr_SetBBValue_int m_Key="#throw_type" m_Value="1"/>
+                            </Sequence>
+                            <Opr_SetBBValue_int m_Key="#throw_type" m_Value="0"/>
+                        </Selector>
+                        <Opr_SetDirCorrectionSpeed m_MaxSpeed="$attack_stand_dir_correction_speed"/>
+                        <Act_Attack m_Target="#target" m_AttackPresetName="demolisher_throw_zombie" m_Phase="#throw_type" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+                    </SequenceMem>
+                </RepeatUntilFail>
+            </Succeeder>
+        </SequenceMem>
+    </CooldownTimeDelta>
+</BehaviorTree>

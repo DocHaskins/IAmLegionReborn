@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Cnd_TargetInRadiusPredicted  m_Target="#target" m_Radius="$attack_max_range" m_Time="$target_prediciton_time"/>
+        <Cnd_IsPathToTargetClear/>
+        <Cnd_CanInterruptActivityModule_Movement/>
+        <Opr_SetWeapon m_WeaponType="Fists" m_Hand="Right"/>
+        <Opr_SetDirCorrectionSpeed m_MaxSpeed="$attack_stand_dir_correction_speed"/>
+        <SelectorMem>
+            <SequenceMem>
+                <Cnd_TargetInAngle m_Target="#target" m_Angle="45"/>
+                <Selector>
+                    <Cnd_TargetIsCrouching m_Target="#target"/>
+                    <Cnd_Random m_Value="0.5"/>
+                </Selector>
+                <Act_Attack m_Target="#target" m_AttackPresetName="demolisher_vertical" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+            </SequenceMem>
+            <SequenceMem>
+                <Cnd_TargetInAngle m_Target="#target" m_Angle="$attack_max_angle"/>
+                <Act_Attack m_Target="#target" m_AttackPresetName="demolisher_horizontal" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+            </SequenceMem>
+            <Optional m_Enabled="$360_enabled">
+                <CooldownTimeDelta m_CooldownTime="$360_cooldown">
+                    <SequenceMem>
+                        <Act_Attack m_Target="#target" m_AttackPresetName="demolisher_360" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+                    </SequenceMem>
+                </CooldownTimeDelta>
+            </Optional>
+        </SelectorMem>
+    </SequenceMem>
+</BehaviorTree>

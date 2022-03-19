@@ -94,10 +94,6 @@ sub PlayerVariables()
     Param("CamouflageDepletionAddInWater", "IAL_Camo_RemoveRate_Water");
     Param("CamouflageDepletionAddInAir", "IAL_Camo_RemoveRate_AirTime");
     Param("CamouflageLooseOnShoot", "IAL_Camo_RemoveRate_Shoot");
- 
- 	Param("SwimSecondsUnderWater", "30");
-	Param("SwimStaminaUsage", "0.05");	
-	Param("SwimNitroAvailable", "TRUE");
 	
     Param("MaxStamina", "IAL_Player_Stamina");
     Param("MaxStaminaMinRegenerationTime", "IAL_Player_Stamina_Regen_Min");    
@@ -112,7 +108,7 @@ sub PlayerVariables()
     Param("StaminaTimeToRegenerateAfterParkour", "IAL_Player_Stamina_Regen_TimeTo");     // time after which stamina starts to regenerate if player still has some stamina left
     Param("StaminaRegeneration", "IAL_Player_Stamina_Regen_Max");                    // WARNING CHANGED SO EVERY THING IS IN SECONDS rate at which stamina regenerates in seconds to full bar!!
 	Param("StaminaRegenerationOutsideDanger", "IAL_Player_Stamina_Regen_Max");
-    Param("StaminaRegenerationFactorSlow", "0.1");               // factor when running or being on ladder
+    Param("StaminaRegenerationFactorSlow", "0.3");               // factor when running or being on ladder
 
 	Param("MoveSprintStaminaConsumption", "0.0075");
     Param("XrayEffectProbability", "IAL_XRAY_Chance");
@@ -132,17 +128,10 @@ sub PlayerVariables()
 	
 	Param("ItemsInventorySize", "IAL_Inventory_Size"); //limited max is 100
     Param("MaxInventorySize", "IAL_Inventory_Size");
-    Param("SwimMoveSpeed", "3.0");
-    Param("SwimSprintSpeed", "5.0");
 
-    Param("MoveForwardMaxSpeed", "3.2");                // DL: 3.5, PREPROD: 3.0
-    Param("MoveBackwardMaxSpeed", "2.0");             // DL: 2.5, PREPROD: 2.0
 	Param("StorageEquipmentSlotsCount", "IAL_Storage_Size");
     Param("StorageConsumamblesSlotsCount", "IAL_Storage_Size");
     Param("StorageOtherSlotsCount", "IAL_Storage_Size");
-
-    Param("MoveStrafeMaxSpeed", "3.0");                // DL: 2.5, PREPROD: 2.5
-    Param("MoveSprintSpeed", "5.5");
 	
 	Param("MovingStaminaRegenFactor", "IAL_Player_Stamina_Regen_Rate_Running");
  

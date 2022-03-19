@@ -1,3 +1,4 @@
+import "ial_settings.mth"
 import "daytime.def"
 
 export int EventType_Unknown                = 0;
@@ -14,9 +15,9 @@ export int EventType_DayTime_NightAttack    = 9;
 export int ForcedMusicType_NoMusic    = -1;
 export int ForcedMusicType_NightMusic =  0;
 
-export float WHOLE_DAY_DURATION__DAY      = 8200.0;// 1h in game daytime means 3:20 minutes of real time    
-export float WHOLE_DAY_DURATION__NIGHT    = 8200.0;// 1h in game daytime means 1:40 minute of real time
-export float WHOLE_DAY_DURATION__INTERIOR = 8640.0;// 1h in game daytime means 6 minutes of real time
+export float WHOLE_DAY_DURATION__DAY      = IAL_TimeScale_Day;// 1h in game daytime means 3:20 minutes of real time    
+export float WHOLE_DAY_DURATION__NIGHT    = IAL_TimeScale_Night;// 1h in game daytime means 1:40 minute of real time
+export float WHOLE_DAY_DURATION__INTERIOR = IAL_TimeScale_Interior;// 1h in game daytime means 6 minutes of real time
 
 sub main()
 {

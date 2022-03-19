@@ -43,8 +43,8 @@ sub SetLocomotionMoveStyleDefaults_Walk()
     MaxMovementRotCorrectionPerSecond(90.0);
 
     // Obstacle Watchdog
-    MinDistToAvoidObstacle(0.1);
-    MinTimeToAvoidObstacle(1.0);
+    MinDistToAvoidObstacle(0.3);
+    MinTimeToAvoidObstacle(2.0);
     
     // Turns
     MaxTurnDockCorrectionPercentage(0.25);
@@ -53,7 +53,7 @@ sub SetLocomotionMoveStyleDefaults_Walk()
 
     // Leans
     LeanTurnSpeed(1.75);
-    LeanEnabled(false);
+    LeanEnabled(true);
 }
 
 
@@ -100,9 +100,12 @@ sub SetLocomotionMoveStyleDefaults_Trot()
     MaxTurnSideCorrectionPercentage(0.5);
     MaxPathSegmentLengthToForceTurnOnGoal(1.5);
    
+   // Obstacle Watchdog
+    MinDistToAvoidObstacle(0.3);
+    MinTimeToAvoidObstacle(1.5);
 
     // Leans
-    LeanEnabled(false);
+    LeanEnabled(true);
 }
 
 
@@ -149,9 +152,12 @@ sub SetLocomotionMoveStyleDefaults_Run()
     MaxTurnSideCorrectionPercentage(0.5);
     MaxPathSegmentLengthToForceTurnOnGoal(2.0);
    
+    // Obstacle Watchdog
+    MinDistToAvoidObstacle(0.3);
+    MinTimeToAvoidObstacle(1.5);
 
     // Leans
-    LeanEnabled(false);
+    LeanEnabled(true);
 }
 
 
@@ -198,7 +204,10 @@ sub SetLocomotionMoveStyleDefaults_RunFast()
     MaxTurnSideCorrectionPercentage(0.5);
     MaxPathSegmentLengthToForceTurnOnGoal(2.0);
 
+ // Obstacle Watchdog
+    MinDistToAvoidObstacle(0.3);
+    MinTimeToAvoidObstacle(1.5);
 
     // Leans
-    LeanEnabled(false);
+    LeanEnabled(true);
 }

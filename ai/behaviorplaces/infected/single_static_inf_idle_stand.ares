@@ -1,0 +1,175 @@
+import "bp_definition_baker_params.def"
+import "npc_bp_template.def"
+
+sub main()
+{
+	use BehaviorPlaceBakerParams();
+	use Type_NPC();
+
+	Variant("banshee")
+    {
+        Requirements()
+        {
+            Property("class", "banshee");
+        }
+
+        use Graph_Singlestate(
+            preset = "single_static_bsh_idle_stand",
+            vis_preset="Character;Banshee");
+
+		DeactivateCnd("bp_cnd_is_alerted");
+		//DiscardCnd("bp_cnd_has_spotted_enemy_or_took_damage_or_is_in_takedown");
+    }
+
+	Variant("biter")
+    {
+        Requirements()
+        {
+            Property("class", "biter");
+        }
+
+        use Graph_Singlestate(
+            preset = "single_static_m_bit_idle_stand",
+            vis_preset="Character;Biter_Level_1");
+
+		DeactivateCnd("bp_cnd_is_alerted");
+		//DiscardCnd("bp_cnd_has_spotted_enemy_or_took_damage_or_is_in_takedown");
+    }
+
+	Variant("charger")
+    {
+        Requirements()
+        {
+            Property("class", "charger");
+        }
+
+        use Graph_Singlestate(
+            preset = "single_static_chr_idle_stand",
+            vis_preset="Character;Charger");
+
+		DeactivateCnd("bp_cnd_is_alerted");
+		//DiscardCnd("bp_cnd_has_spotted_enemy_or_took_damage_or_is_in_takedown");
+    }
+
+	Variant("corruptor")
+    {
+        Requirements()
+        {
+            Property("class", "corruptor");
+        }
+
+        use Graph_Singlestate(
+            preset = "single_static_m_vir_idle_stand",
+            vis_preset="Character;Corruptor");
+
+		DeactivateCnd("bp_cnd_is_alerted");
+		//DiscardCnd("bp_cnd_has_spotted_enemy_or_took_damage_or_is_in_takedown");
+    }
+	
+	Variant("demolisher")
+    {
+        Requirements()
+        {
+            Property("class", "demolisher");
+        }
+
+        use Graph_Singlestate(
+            preset = "single_static_dmr_idle_stand",
+            vis_preset="Character;Demolisher");
+
+		DeactivateCnd("bp_cnd_is_alerted");
+		//DiscardCnd("bp_cnd_has_spotted_enemy_or_took_damage_or_is_in_takedown");
+    }
+	
+	Variant("goon")
+    {
+        Requirements()
+        {
+            Property("class", "goon");
+        }
+
+        use Graph_Singlestate(
+            preset = "single_static_gon_idle_stand",
+            vis_preset="Character;Goon");
+
+		RequiredActiveWeapon("OneHandedMelee");
+		DeactivateCnd("bp_cnd_is_alerted");
+		//DiscardCnd("bp_cnd_has_spotted_enemy_or_took_damage_or_is_in_takedown");
+    }
+	
+	Variant("screamer")
+    {
+        Requirements()
+        {
+            Property("class", "screamer");
+        }
+
+        use Graph_Singlestate(
+            preset = "single_static_scr_idle_stand",
+            vis_preset="Character;Screamer");
+
+		DeactivateCnd("bp_cnd_is_alerted");
+		//DiscardCnd("bp_cnd_has_spotted_enemy_or_took_damage_or_is_in_takedown");
+    }
+	
+	Variant("spitter")
+    {
+        Requirements()
+        {
+            Property("class", "spitter");
+        }
+
+        use Graph_Singlestate(
+            preset = "single_static_spt_idle_stand",
+            vis_preset="Character;Spitter");
+
+		DeactivateCnd("bp_cnd_is_alerted");
+		//DiscardCnd("bp_cnd_has_spotted_enemy_or_took_damage_or_is_in_takedown");
+    }
+
+	Variant("suicider")
+    {
+        Requirements()
+        {
+            Property("class", "suicider");
+        }
+
+        use Graph_Singlestate(
+            preset = "single_static_scd_idle_stand",
+            vis_preset="Character;Suicider");
+
+		DeactivateCnd("bp_cnd_is_alerted");
+		//DiscardCnd("bp_cnd_has_spotted_enemy_or_took_damage_or_is_in_takedown");
+    }
+
+    Variant("viral")
+    {
+        Requirements()
+        {
+            Property("class", "viral");
+        }
+
+        use Graph_Singlestate(
+            preset = "single_static_m_vir_idle_stand",
+            vis_preset="Character;Viral");
+
+		DeactivateCnd("bp_cnd_is_alerted");
+		//DiscardCnd("bp_cnd_has_spotted_enemy_or_took_damage_or_is_in_takedown");
+    }
+	
+    Variant("volatile")
+    {
+        Requirements()
+        {
+            Property("class", "volatile");
+        }
+
+        use Graph_Singlestate(
+            preset = "single_static_m_vir_idle_stand",
+            vis_preset="Character;Volatile");
+
+		DeactivateCnd("bp_cnd_is_alerted");
+		//DiscardCnd("bp_cnd_has_spotted_enemy_or_took_damage_or_is_in_takedown");
+    }
+
+}

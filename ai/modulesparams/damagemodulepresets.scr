@@ -1,0 +1,16 @@
+sub main()
+{
+    DamageModulePreset("human")
+    {
+        DamageMitigationDefinition("DamageModuleHuman_HeavyDamageMitigation");
+        StaminaBlockingStateMul("0.25");
+        IgnoreDamageFromFriends("false");
+    }
+
+    DamageModulePreset("infected")
+    {
+        DamageMitigationDefinition("DamageModuleHuman_HeavyDamageMitigation");
+        StaminaBlockingStateMul("0.5");
+        IgnoreDrasticGameplayElementsFilter("true");
+    }
+}

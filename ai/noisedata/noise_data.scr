@@ -369,9 +369,13 @@ sub presets()
 
         interest_default(1.0, "attract");
         interest("human", 1.0, "repel");
-        spawner_activation_flag("screamer_dz_activation");
 		interest("biter", 0.9, "attract");
 		interest("viral", 0.9, "attract");
+		spawner_activation_flag("screamer_dz_activation");
+		reinforcement_id("SpecialTime");
+		reinforcement_id("Stalkers");
+		reinforcement_id("GoonAttack");
+		reinforcement_id("DemoTime");
         awakening_default(1.0);
     }
     NoisePreset("throwable_impact_geom")
@@ -889,7 +893,7 @@ sub presets()
 		interest("biter", 1.0, "attract");
 
         awakening_default(0.5);
-		awakening("biter", 0.6);
+		awakening("biter", 1.0);
     }
     NoisePreset("demolisher_groan")
     {
@@ -948,6 +952,7 @@ sub presets()
 		awakening("biter", 1.0);
 		
 		reinforcement_id("Bandit_Human");
+		reinforcement_id("RobbinTheHood");
     }
 	
 	NoisePreset("summoning_survivors")

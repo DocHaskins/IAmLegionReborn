@@ -1,0 +1,85 @@
+import "Locomotion_Jumps.def"
+import "Locomotion_Graph_Names.def"
+
+sub BansheeJumps()
+{
+	DefaultScript("Banshee_locomotion_anims.scr");
+	
+		JumpData()
+		{
+			JumpSeq(JumpType_JumpOn, 1, 1, 1, "bsh_fmv_jump_on_0_5m_rleg_01");
+			JumpSeq(JumpType_JumpOn, 1, 1, 1, "bsh_fmv_jump_on_0_5m_lleg_01");
+			JumpSeq(JumpType_JumpOn, 1, 1, 1, "bsh_fmv_jump_on_0_5m_01") { JumpFromIdle(); }
+			
+			JumpSeq(JumpType_JumpOn, 1, 1, 1, "bsh_fmv_jump_on_1_2m_rleg_01");
+			JumpSeq(JumpType_JumpOn, 1, 1, 1, "bsh_fmv_jump_on_1_2m_lleg_01");
+			JumpSeq(JumpType_JumpOn, 1, 1, 1, "bsh_fmv_jump_on_1_2m_01") { JumpFromIdle(); }
+			
+			JumpSeq(JumpType_JumpOn, 0, 1, 1, "bsh_fmv_jump_on_3m_rleg_01");
+			JumpSeq(JumpType_JumpOn, 0, 1, 1, "bsh_fmv_jump_on_3m_lleg_01");
+			JumpSeq(JumpType_JumpOn, 0, 1, 1, "bsh_fmv_jump_on_3m_01") { JumpFromIdle(); }
+			
+			JumpSeq(JumpType_JumpOn, 0, 1, 1, "bsh_fmv_jump_on_5m_rleg_01");
+			JumpSeq(JumpType_JumpOn, 0, 1, 1, "bsh_fmv_jump_on_5m_lleg_01");
+			JumpSeq(JumpType_JumpOn, 0, 1, 1, "bsh_fmv_jump_on_5m_01") { JumpFromIdle(); }
+			
+			JumpSeq(JumpType_JumpOff, 1, 1, 1, "Viral_Jump_Down_2m_LF_01@Viral.scr");
+			JumpSeq(JumpType_JumpOff, 1, 1, 1, "Viral_Jump_Down_2m_RF_01@Viral.scr");
+			
+			JumpSeq(JumpType_JumpOff, 1, 1, 1, "Viral_Jump_Down_3m_LF_01@Viral.scr");
+			JumpSeq(JumpType_JumpOff, 1, 1, 1, "Viral_Jump_Down_3m_RF_01@Viral.scr");
+			
+			JumpSeq(JumpType_JumpOff, 1, 1, 1, "Viral_Jump_Down_3m_LF_02@Viral.scr");
+			JumpSeq(JumpType_JumpOff, 1, 1, 1, "Viral_Jump_Down_3m_RF_02@Viral.scr");
+			
+			JumpSeq(JumpType_JumpOver, 1, 1, 1, "Viral_Jump_Over_Low_LF_01@Viral.scr");
+			JumpSeq(JumpType_JumpOver, 1, 1, 1, "Viral_Jump_Over_Low_RF_01@Viral.scr");
+			
+			JumpSeq(JumpType_LongJump, 1, 1, 1, "bsh_fmv_jump_long_1m_rleg_01");
+			JumpSeq(JumpType_LongJump, 1, 1, 1, "bsh_fmv_jump_long_1m_lleg_01");
+			JumpSeq(JumpType_LongJump, 1, 1, 1, "bsh_fmv_jump_long_1m_01") { JumpFromIdle(); }
+			
+			JumpSeq(JumpType_LongJump, 1, 1, 1, "bsh_fmv_jump_long_2_5m_rleg_01");
+			JumpSeq(JumpType_LongJump, 1, 1, 1, "bsh_fmv_jump_long_2_5m_lleg_01");
+			JumpSeq(JumpType_LongJump, 1, 1, 1, "bsh_fmv_jump_long_2_5m_01") { JumpFromIdle(); }
+			
+			JumpSeq(JumpType_LongJump, 1, 1, 1, "Viral_Jump_Long_5m_LF_01@Viral.scr");
+			JumpSeq(JumpType_LongJump, 1, 1, 1, "Viral_Jump_Long_5m_RF_01@Viral.scr");
+			JumpSeq(JumpType_LongJump, 1, 1, 1, "viral_jump_5m_01@Viral_locomotion_anims.scr") { JumpFromIdle(); }
+			
+			/*JumpSeq(JumpType_LongJumpWithClimbOn, 1, 1, 1, "Viral_Jump_Long_7m_LF_01@Viral.scr");
+			JumpSeq(JumpType_LongJumpWithClimbOn, 1, 1, 1, "Viral_Jump_Long_7m_RF_01@Viral.scr");
+			
+			JumpSeq(JumpType_ClimbOff, 1, 1, 1, "Viral_Climbing_Down_3m_LF_01@Viral.scr");
+			JumpSeq(JumpType_ClimbOff, 1, 1, 1, "Viral_Climbing_Down_3m_RF_01@Viral.scr");
+			
+			JumpSeq(JumpType_ClimbOff, 1, 1, 1, "Viral_Climbing_Down_6m_LF_01@Viral.scr");
+			JumpSeq(JumpType_ClimbOff, 1, 1, 1, "Viral_Climbing_Down_6m_RF_01@Viral.scr");
+			
+			JumpSeq(JumpType_ClimbOff, 1, 1, 1, "Viral_Climbing_Down_9m_LF_01@Viral.scr");
+			JumpSeq(JumpType_ClimbOff, 1, 1, 1, "Viral_Climbing_Down_9m_RF_01@Viral.scr");
+			
+			JumpSeq(JumpType_ClimbOn, 1, 1, 1, "m_bol_jump_up_3m_lleg@Bolter_locomotion_anims.scr");
+			JumpSeq(JumpType_ClimbOn, 1, 1, 1, "m_bol_jump_up_3m_rleg@Bolter_locomotion_anims.scr");
+			
+			JumpSeq(JumpType_ClimbOn, 1, 1, 1, "m_bol_jump_up_6m_lleg@Bolter_locomotion_anims.scr");
+			JumpSeq(JumpType_ClimbOn, 1, 1, 1, "m_bol_jump_up_6m_rleg@Bolter_locomotion_anims.scr");
+			
+			JumpSeq(JumpType_ClimbOn, 1, 1, 1, "m_bol_jump_up_9m_lleg@Bolter_locomotion_anims.scr");
+			JumpSeq(JumpType_ClimbOn, 1, 1, 1, "m_bol_jump_up_9m_rleg@Bolter_locomotion_anims.scr");
+
+			
+			JumpSeq(JumpType_JumpOverHighLow, 1, 1, 1, "Viral_Climbing_Up_3m_LF_Overbarrier_01@Viral.scr");
+			JumpSeq(JumpType_JumpOverHighLow, 1, 1, 1, "Viral_Climbing_Up_3m_RF_Overbarrier_01@Viral.scr");
+			
+			JumpSeq(JumpType_JumpOverHighLow, 1, 1, 1, "Viral_Climbing_Up_6m_LF_Overbarrier_01@Viral.scr");
+			JumpSeq(JumpType_JumpOverHighLow, 1, 1, 1, "Viral_Climbing_Up_6m_RF_Overbarrier_01@Viral.scr");
+			
+			JumpSeq(JumpType_JumpOverHighLow, 1, 1, 1, "Viral_Climbing_Up_9m_LF_Overbarrier_01@Viral.scr");
+			JumpSeq(JumpType_JumpOverHighLow, 1, 1, 1, "Viral_Climbing_Up_9m_RF_Overbarrier_01@Viral.scr");
+			
+			JumpSeq(JumpType_JumpOverLowHigh, 1, 1, 1, "Viral_Jump_OverBarrierDown_LF_01@Viral.scr");
+			JumpSeq(JumpType_JumpOverLowHigh, 1, 1, 1, "Viral_Jump_OverBarrierDown_RF_01@Viral.scr");*/
+			
+		}
+}

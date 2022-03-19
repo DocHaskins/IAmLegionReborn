@@ -1,0 +1,113 @@
+import "Locomotion_Jumps.def"
+import "Locomotion_Graph_Names.def"
+
+
+sub ChargerJumps()
+{
+	DefaultScript("Charger_locomotion_anims.scr");
+	
+	JumpData()
+	{
+
+		//JumpSeq(jump_type, can_blend_out_to_move, scale_to_lower_obstacles, can_blend_out_to_start, seq_name, target_move_style)
+
+		
+		JumpSeq(JumpType_JumpOn, 1, 1, 1, "m_vir_fmv_run_jumpon_05m_lleg_01@Charger_locomotion_anims.scr");
+		JumpSeq(JumpType_JumpOn, 1, 1, 1, "m_vir_fmv_run_jumpon_05m_rleg_01@Charger_locomotion_anims.scr");
+		JumpSeq(JumpType_JumpOn, 1, 1, 1, "m_vir_fmv_jump_on_05m_01@Charger_locomotion_anims.scr") { JumpFromIdle(); }
+	
+		JumpSeq(JumpType_JumpOn, 1, 1, 1, "Viral_Jump_Up_1m_LF_01");
+		JumpSeq(JumpType_JumpOn, 1, 1, 1, "Viral_Jump_Up_1m_RF_01");
+		JumpSeq(JumpType_JumpOn, 1, 1, 1, "m_vir_fmv_jump_on_1m_01@Charger_locomotion_anims.scr") { JumpFromIdle(); }
+		
+		JumpSeq(JumpType_JumpOn, 0, 1, 1, "Viral_Jump_Up_3m_LF_01"); // Blend to run is turned off because character doesn't start after jump.
+		JumpSeq(JumpType_JumpOn, 0, 1, 1, "Viral_Jump_Up_3m_RF_01"); // Blend to run is turned off because character doesn't start after jump.
+		JumpSeq(JumpType_JumpOn, 0, 1, 1, "Viral_Jump_Up_3m_01@Charger_locomotion_anims.scr") { JumpFromIdle(); } // Blend to run is turned off because character doesn't start after jump.
+		
+		JumpSeq(JumpType_JumpOff, 1, 1, 1, "m_vir_fmv_run_jump_off_05m_lleg_01@Charger_locomotion_anims.scr");
+		JumpSeq(JumpType_JumpOff, 1, 1, 1, "m_vir_fmv_run_jump_off_05m_rleg_01@Charger_locomotion_anims.scr");
+		JumpSeq(JumpType_JumpOff, 1, 1, 1, "m_vir_fmv_run_jump_off_05m_01@Charger_locomotion_anims.scr") { JumpFromIdle(); }
+			
+		JumpSeq(JumpType_JumpOff, 1, 1, 1, "m_vir_fmv_run_jump_off_1m_lleg_01@Charger_locomotion_anims.scr");
+		JumpSeq(JumpType_JumpOff, 1, 1, 1, "m_vir_fmv_run_jump_off_1m_rleg_01@Charger_locomotion_anims.scr");
+		JumpSeq(JumpType_JumpOff, 1, 1, 1, "m_vir_fmv_run_jump_off_1m_01@Charger_locomotion_anims.scr") { JumpFromIdle(); }
+
+		JumpSeq(JumpType_JumpOff, 1, 1, 1, "Viral_Jump_Down_2m_LF_01");
+		JumpSeq(JumpType_JumpOff, 1, 1, 1, "Viral_Jump_Down_2m_RF_01");
+		JumpSeq(JumpType_JumpOff, 1, 1, 1, "m_vir_fmv_run_jump_off_2m_01@Charger_locomotion_anims.scr") { JumpFromIdle(); }
+			
+		JumpSeq(JumpType_JumpOff, 1, 1, 1, "Viral_Jump_Down_3m_LF_01");
+		JumpSeq(JumpType_JumpOff, 1, 1, 1, "Viral_Jump_Down_3m_RF_01");
+		JumpSeq(JumpType_JumpOff, 0, 1, 1, "m_vir_fmv_run_jump_off_3m_01@Charger_locomotion_anims.scr") { JumpFromIdle(); }
+		JumpSeq(JumpType_JumpOff, 0, 1, 1, "Viral_Jump_Down_3m_LF_02"); // Blend to run is turned off because character doesn't start after jump.
+		JumpSeq(JumpType_JumpOff, 0, 1, 1, "Viral_Jump_Down_3m_RF_02"); // Blend to run is turned off because character doesn't start after jump.
+		
+		//JumpSeq(JumpType_JumpOver, 1, 0, 1, "Viral_Jump_Over_Low_LF_01");
+		//JumpSeq(JumpType_JumpOver, 1, 0, 1, "Viral_Jump_Over_Low_RF_01");
+		
+		JumpSeq(JumpType_LongJump, 1, 1, 1, "Viral_Jump_Long_1m_LF_01");
+		JumpSeq(JumpType_LongJump, 1, 1, 1, "Viral_Jump_Long_1m_RF_01");
+		JumpSeq(JumpType_LongJump, 1, 1, 1, "viral_jump_1m_01@Charger_locomotion_anims.scr") { JumpFromIdle(); }
+		
+		JumpSeq(JumpType_LongJump, 1, 1, 1, "Viral_Jump_Long_2m_LF_01");
+		JumpSeq(JumpType_LongJump, 1, 1, 1, "Viral_Jump_Long_2m_RF_01");
+		JumpSeq(JumpType_LongJump, 1, 1, 1, "viral_jump_2m_01@Charger_locomotion_anims.scr") { JumpFromIdle(); }
+		
+		JumpSeq(JumpType_LongJump, 1, 1, 1, "Viral_Jump_Long_3m_LF_01");
+		JumpSeq(JumpType_LongJump, 1, 1, 1, "Viral_Jump_Long_3m_RF_01");
+		JumpSeq(JumpType_LongJump, 1, 1, 1, "viral_jump_3m_01@Charger_locomotion_anims.scr") { JumpFromIdle(); }
+		
+		JumpSeq(JumpType_LongJump, 1, 1, 1, "Viral_Jump_Long_5m_LF_01");
+		JumpSeq(JumpType_LongJump, 1, 1, 1, "Viral_Jump_Long_5m_RF_01");
+		JumpSeq(JumpType_LongJump, 1, 1, 1, "viral_jump_5m_01@Charger_locomotion_anims.scr") { JumpFromIdle(); }
+
+		JumpSeq(JumpType_LongJumpWithClimbOn, 0, 1, 1, "Viral_Jump_Long_7m_LF_01"); // Blend to run is turned off because character doesn't start after jump.
+		JumpSeq(JumpType_LongJumpWithClimbOn, 0, 1, 1, "Viral_Jump_Long_7m_RF_01"); // Blend to run is turned off because character doesn't start after jump.
+		JumpSeq(JumpType_LongJumpWithClimbOn, 0, 1, 1, "viral_jump_7m_01@Charger_locomotion_anims.scr") { JumpFromIdle(); }
+
+		JumpSeq(JumpType_ClimbOff, 1, 1, 1, "Viral_Climbing_Down_3m_LF_01");
+		JumpSeq(JumpType_ClimbOff, 1, 1, 1, "Viral_Climbing_Down_3m_RF_01");
+		JumpSeq(JumpType_ClimbOff, 1, 1, 1, "m_vir_fmv_climb_off_3m_01@Charger_locomotion_anims.scr") { JumpFromIdle(); }
+		
+		JumpSeq(JumpType_ClimbOff, 1, 1, 1, "Viral_Climbing_Down_6m_LF_01");
+		JumpSeq(JumpType_ClimbOff, 1, 1, 1, "Viral_Climbing_Down_6m_RF_01");
+		JumpSeq(JumpType_ClimbOff, 1, 1, 1, "m_vir_fmv_climb_off_6m_01@Charger_locomotion_anims.scr") { JumpFromIdle(); }
+		
+		JumpSeq(JumpType_ClimbOff, 1, 1, 1, "Viral_Climbing_Down_9m_LF_01");
+		JumpSeq(JumpType_ClimbOff, 1, 1, 1, "Viral_Climbing_Down_9m_RF_01");
+		JumpSeq(JumpType_ClimbOff, 1, 1, 1, "m_vir_fmv_climb_off_9m_01@Charger_locomotion_anims.scr") { JumpFromIdle(); }
+		
+		JumpSeq(JumpType_ClimbOn, 1, 1, 1, "Viral_Climbing_Up_3m_LF_01");
+		JumpSeq(JumpType_ClimbOn, 1, 1, 1, "Viral_Climbing_Up_3m_RF_01");
+        JumpSeq(JumpType_ClimbOn, 1, 1, 1, "m_vir_fmv_climb_on_3m_01@Charger_locomotion_anims.scr") { JumpFromIdle(); }
+		
+		JumpSeq(JumpType_ClimbOn, 1, 1, 1, "Viral_Climbing_Up_6m_LF_01");
+		JumpSeq(JumpType_ClimbOn, 1, 1, 1, "Viral_Climbing_Up_6m_RF_01");
+		JumpSeq(JumpType_ClimbOn, 1, 1, 1, "m_vir_fmv_climb_on_6m_01@Charger_locomotion_anims.scr") { JumpFromIdle(); }
+		
+		JumpSeq(JumpType_ClimbOn, 1, 1, 1, "Viral_Climbing_Up_9m_LF_01");
+		JumpSeq(JumpType_ClimbOn, 1, 1, 1, "Viral_Climbing_Up_9m_RF_01");
+		JumpSeq(JumpType_ClimbOn, 1, 1, 1, "m_vir_fmv_climb_on_9m_01@Charger_locomotion_anims.scr") { JumpFromIdle(); }
+        
+        // TODO: Needs lower variants to look good.
+		JumpSeq(JumpType_ClimbOnLedge, 1, 1, 1, "Viral_Climbing_Up_ledge_9m_LF_01@Charger_locomotion_anims.scr");
+		JumpSeq(JumpType_ClimbOnLedge, 1, 1, 1, "Viral_Climbing_Up_ledge_9m_RF_01@Charger_locomotion_anims.scr");
+		JumpSeq(JumpType_ClimbOffLedge, 1, 1, 1, "Viral_Climbing_Down_ledge_7m_LF_01@Charger_locomotion_anims.scr");
+		JumpSeq(JumpType_ClimbOffLedge, 1, 1, 1, "Viral_Climbing_Down_ledge_7m_RF_01@Charger_locomotion_anims.scr");
+        
+		//JumpSeq(JumpType_ClimbOn, 1, 1, 1, "Viral_Climbing_Up_9m_01@Charger_locomotion_anims.scr") { JumpFromIdle(); }
+		
+		/*JumpSeq(JumpType_JumpOverHighLow, 1, 1, 1, "Viral_Climbing_Up_3m_LF_Overbarrier_01");
+		JumpSeq(JumpType_JumpOverHighLow, 1, 1, 1, "Viral_Climbing_Up_3m_RF_Overbarrier_01");
+		
+		JumpSeq(JumpType_JumpOverHighLow, 1, 1, 1, "Viral_Climbing_Up_6m_LF_Overbarrier_01");
+		JumpSeq(JumpType_JumpOverHighLow, 1, 1, 1, "Viral_Climbing_Up_6m_RF_Overbarrier_01");
+		
+		JumpSeq(JumpType_JumpOverHighLow, 1, 1, 1, "Viral_Climbing_Up_9m_LF_Overbarrier_01");
+		JumpSeq(JumpType_JumpOverHighLow, 1, 1, 1, "Viral_Climbing_Up_9m_RF_Overbarrier_01");
+		
+		JumpSeq(JumpType_JumpOverLowHigh, 1, 1, 1, "Viral_Jump_OverBarrierDown_LF_01");
+		JumpSeq(JumpType_JumpOverLowHigh, 1, 1, 1, "Viral_Jump_OverBarrierDown_RF_01");*/
+		
+	}
+}

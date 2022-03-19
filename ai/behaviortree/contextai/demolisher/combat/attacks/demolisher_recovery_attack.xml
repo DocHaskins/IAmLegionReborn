@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Cnd_TargetInRadiusPredicted  m_Target="#target" m_Radius="3.0" m_Time="$target_prediciton_time"/>
+        <Opr_SetDirCorrectionSpeed m_MaxSpeed="0"/>
+        <Sequence>
+            <Cnd_IsBodyInState m_State="STUNNED" m_Invert="true"/>
+            <Selector>
+                <Cnd_IsBBValueEqual_bool m_Key="#stunned" m_Value="true"/>
+                <Cnd_IsActivityModuleRunning_HitReaction/>
+            </Selector>
+        </Sequence>
+        <Opr_SetWeapon m_WeaponType="Fists" m_Hand="Right"/>
+        <Act_Attack m_Target="#target" m_AttackPresetName="demolisher_recover_from_stun" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+    </SequenceMem>
+</BehaviorTree>

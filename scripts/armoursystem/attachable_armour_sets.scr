@@ -1,0 +1,535 @@
+/// @owner juliusz.toczydlowski@techland.pl
+
+//  usage:
+//  ArmourSet("set name to be used i.e. in ai preset")
+//  {
+//      ArmourElement("EBones::TYPE bone id to attach to")
+//      {
+//          BodyElement("body element name defined i.e. in attachable_armour_body_parts.scr");
+//          Visual("mesh_name.msh", "skin_name")
+//          {
+//          	Piece("mesh_name_borken_piece.msh");   add all pieces of armour mesh     
+//				Piece...
+//          }
+//          HP("health_definition_name");
+//          RandomizationWeight(randomization weight if different than 1.0); // used only if more than one ArmourElement is attached to the same bone
+//      }
+//  }
+
+sub main()
+{
+  
+//// BANDIT ARMOR SETS ////
+
+	ArmourSet("Bandit_t1")
+    {
+        ArmourElement("HEAD")
+        {
+        }
+        ArmourElement("SPINE2")
+        {
+        }
+        ArmourElement("L_THIGH")
+        {
+            BodyElement("ThighLeft");
+            Visual("man_bandit_legs_armor_upperleft_a.msh", "default")
+            {
+                Piece("man_bandit_legs_armor_upperleft_a_broken_a.msh");
+				Piece("man_bandit_legs_armor_upperleft_a_broken_b.msh");
+				Piece("man_bandit_legs_armor_upperleft_a_broken_c.msh");
+				Piece("man_bandit_legs_armor_upperleft_a_broken_d.msh");
+            }
+            HP("armour_medium");
+        }
+        ArmourElement("L_CALF")
+        {
+            BodyElement("CalfLeft");
+            Visual("man_bandit_legs_armor_lowerleft_a.msh", "default")
+            {
+                Piece("man_bandit_legs_armor_lowerleft_a_broken_a.msh");
+                Piece("man_bandit_legs_armor_lowerleft_a_broken_b.msh");
+                Piece("man_bandit_legs_armor_lowerleft_a_broken_c.msh");				
+            }
+            HP("armour_light");
+        }        
+        ArmourElement("L_UPPERARM")
+        {
+            BodyElement("UpperarmLeft");
+            Visual("man_bandit_shoulders_armor_left_a.msh", "default")
+            {
+                Piece("man_bandit_shoulders_armor_left_a_broken_a.msh");
+				Piece("man_bandit_shoulders_armor_left_a_broken_b.msh");
+            }
+            HP("armour_light");
+        }
+        ArmourElement("L_CLAVICLE")
+        {
+            BodyElement("LeftClavicle");
+            Visual("man_bandit_shoulders_armor_left_a.msh", "default")
+            {
+                Piece("man_bandit_shoulders_armor_left_a_broken_a.msh");
+				Piece("man_bandit_shoulders_armor_left_a_broken_b.msh");
+            }
+            HP("armour_light");
+        }		
+        ArmourElement("L_FOREARM")
+        {
+            BodyElement("ForearmLeft");
+            Visual("man_bandit_arms_armor_lowerleft_a.msh", "default")
+            {
+                Piece("man_bandit_arms_armor_lowerleft_a_broken_a.msh");
+				Piece("man_bandit_arms_armor_lowerleft_a_broken_b.msh");
+                Piece("man_bandit_arms_armor_lowerleft_a_broken_c.msh");
+
+            }
+            HP("armour_light");
+        }
+    }
+
+
+	ArmourSet("Bandit_t2")
+    {
+        ArmourElement("HEAD")
+        {
+        }
+        ArmourElement("SPINE2")
+        {
+            BodyElement("UpperBody");
+            Visual("man_bandit_torso_armor_a.msh", "default")
+            {
+                Piece("man_bandit_torso_armor_a_broken_a.msh");
+                Piece("man_bandit_torso_armor_a_broken_b.msh");
+                Piece("man_bandit_torso_armor_a_broken_c.msh");
+                Piece("man_bandit_torso_armor_a_broken_d.msh");
+				Piece("man_bandit_torso_armor_a_broken_e.msh");
+				Piece("man_bandit_torso_armor_a_broken_f.msh");
+            }
+            HP("armour_medium");
+            RandomizationWeight(1.0);
+        }
+        ArmourElement("L_THIGH")
+        {
+            BodyElement("ThighLeft");
+            Visual("man_bandit_legs_armor_upperleft_a.msh", "default")
+            {
+                Piece("man_bandit_legs_armor_upperleft_a_broken_a.msh");
+				Piece("man_bandit_legs_armor_upperleft_a_broken_b.msh");
+				Piece("man_bandit_legs_armor_upperleft_a_broken_c.msh");
+				Piece("man_bandit_legs_armor_upperleft_a_broken_d.msh");
+            }
+            HP("armour_medium");
+        }
+        ArmourElement("L_CALF")
+        {
+            BodyElement("CalfLeft");
+            Visual("man_bandit_legs_armor_lowerleft_a.msh", "default")
+            {
+                Piece("man_bandit_legs_armor_lowerleft_a_broken_a.msh");
+                Piece("man_bandit_legs_armor_lowerleft_a_broken_b.msh");
+                Piece("man_bandit_legs_armor_lowerleft_a_broken_c.msh");				
+            }
+            HP("armour_light");
+        }        
+        ArmourElement("L_UPPERARM")
+        {
+            BodyElement("UpperarmLeft");
+            Visual("man_bandit_arms_armor_upperleft_a.msh", "default")
+            {
+                Piece("man_bandit_arms_armor_upperleft_a_broken_a.msh");
+				Piece("man_bandit_arms_armor_upperleft_a_broken_b.msh");
+            }
+            HP("armour_light");
+        }		
+        ArmourElement("L_CLAVICLE")
+        {
+            BodyElement("LeftClavicle");
+            Visual("man_bandit_shoulders_armor_left_a.msh", "default")
+            {
+                Piece("man_bandit_shoulders_armor_left_a_broken_a.msh");
+				Piece("man_bandit_shoulders_armor_left_a_broken_b.msh");
+            }
+            HP("armour_light");
+        }
+        ArmourElement("L_FOREARM")
+        {
+            BodyElement("ForearmLeft");
+            Visual("man_bandit_arms_armor_lowerleft_a.msh", "default")
+            {
+                Piece("man_bandit_arms_armor_lowerleft_a_broken_a.msh");
+				Piece("man_bandit_arms_armor_lowerleft_a_broken_b.msh");
+                Piece("man_bandit_arms_armor_lowerleft_a_broken_c.msh");
+
+            }
+            HP("armour_light");
+        }
+    }
+
+
+	ArmourSet("Bandit_t3")
+    {
+        ArmourElement("HEAD")
+        {
+            BodyElement("Head");
+            Visual("man_bandit_head_armor_a.msh", "default")
+			{
+				Piece("man_bandit_head_armor_a.msh");
+			}
+            HP("armour_heavy");
+            RandomizationWeight(1.0);
+        }
+        ArmourElement("SPINE2")
+        {
+            BodyElement("UpperBody");
+            Visual("man_bandit_torso_armor_a.msh", "default")
+            {
+                Piece("man_bandit_torso_armor_a_broken_a.msh");
+                Piece("man_bandit_torso_armor_a_broken_b.msh");
+                Piece("man_bandit_torso_armor_a_broken_c.msh");
+                Piece("man_bandit_torso_armor_a_broken_d.msh");
+				Piece("man_bandit_torso_armor_a_broken_e.msh");
+				Piece("man_bandit_torso_armor_a_broken_f.msh");
+            }
+            HP("armour_medium");
+            RandomizationWeight(1.0);
+        }
+        ArmourElement("L_THIGH")
+        {
+            BodyElement("ThighLeft");
+            Visual("man_bandit_legs_armor_upperleft_a.msh", "default")
+            {
+                Piece("man_bandit_legs_armor_upperleft_a_broken_a.msh");
+				Piece("man_bandit_legs_armor_upperleft_a_broken_b.msh");
+				Piece("man_bandit_legs_armor_upperleft_a_broken_c.msh");
+				Piece("man_bandit_legs_armor_upperleft_a_broken_d.msh");
+            }
+            HP("armour_medium");
+        }
+        ArmourElement("L_CALF")
+        {
+            BodyElement("CalfLeft");
+            Visual("man_bandit_legs_armor_lowerleft_a.msh", "default")
+            {
+                Piece("man_bandit_legs_armor_lowerleft_a_broken_a.msh");
+                Piece("man_bandit_legs_armor_lowerleft_a_broken_b.msh");
+                Piece("man_bandit_legs_armor_lowerleft_a_broken_c.msh");				
+            }
+            HP("armour_light");
+        }
+        ArmourElement("R_CALF")
+        {
+            BodyElement("CalfRight");
+            Visual("man_bandit_legs_armor_lowerright_a.msh", "default")
+            {
+                Piece("man_bandit_legs_armor_lowerright_a_broken_a.msh");
+                Piece("man_bandit_legs_armor_lowerright_a_broken_b.msh");
+                Piece("man_bandit_legs_armor_lowerright_a_broken_c.msh");				
+            }
+            HP("armour_light");
+        }        
+        ArmourElement("L_UPPERARM")
+        {
+            BodyElement("UpperarmLeft");
+            Visual("man_bandit_arms_armor_upperleft_a.msh", "default")
+            {
+                Piece("man_bandit_arms_armor_upperleft_a_broken_a.msh");
+				Piece("man_bandit_arms_armor_upperleft_a_broken_b.msh");
+            }
+            HP("armour_light");
+        }
+        ArmourElement("L_CLAVICLE")
+        {
+            BodyElement("LeftClavicle");
+            Visual("man_bandit_shoulders_armor_left_a.msh", "default")
+            {
+                Piece("man_bandit_shoulders_armor_left_a_broken_a.msh");
+				Piece("man_bandit_shoulders_armor_left_a_broken_b.msh");
+            }
+            HP("armour_light");
+        }		
+        ArmourElement("L_FOREARM")
+        {
+            BodyElement("ForearmLeft");
+            Visual("man_bandit_arms_armor_lowerleft_a.msh", "default")
+            {
+                Piece("man_bandit_arms_armor_lowerleft_a_broken_a.msh");
+				Piece("man_bandit_arms_armor_lowerleft_a_broken_b.msh");
+                Piece("man_bandit_arms_armor_lowerleft_a_broken_c.msh");
+
+            }
+            HP("armour_light");
+        }
+        ArmourElement("R_FOREARM")
+        {
+            BodyElement("ForearmRight");
+            Visual("man_bandit_arms_armor_lowerright_a.msh", "default")
+            {
+                Piece("man_bandit_arms_armor_lowerright_a_broken_a.msh");
+				Piece("man_bandit_arms_armor_lowerright_a_broken_b.msh");
+                Piece("man_bandit_arms_armor_lowerright_a_broken_c.msh");
+
+            }
+            HP("armour_light");
+        }		
+    }
+
+
+  
+//// EMPIRE ARMOR SETS ////
+  
+    ArmourSet("Empire_full_t1")
+    {
+        ArmourElement("HEAD")
+        {
+            BodyElement("Head");
+            Visual("man_pk_headcover_a.msh", "default");
+            HP("armour_heavy");
+            RandomizationWeight(1.0);
+        }
+        ArmourElement("SPINE2")
+        {
+            BodyElement("UpperBody");
+            Visual("man_pk_torso_a_armor_c.msh", "default")
+            {
+                Piece("man_pk_torso_a_armor_c_broken_a.msh");
+                Piece("man_pk_torso_a_armor_c_broken_b.msh");
+                Piece("man_pk_torso_a_armor_c_broken_c.msh");
+                Piece("man_pk_torso_a_armor_c_broken_d.msh");
+            }
+            HP("armour_heavy");
+            RandomizationWeight(2.0);
+        }
+        ArmourElement("R_THIGH")
+        {
+            BodyElement("ThighRight");
+            Visual("man_pk_legs_a_armor_upperright_b.msh", "default")
+            {
+                Piece("man_pk_legs_a_armor_upperleft_b_broken_a.msh");
+            }
+            HP("armour_medium");
+        }
+        ArmourElement("L_THIGH")
+        {
+            BodyElement("ThighLeft");
+            Visual("man_pk_legs_a_armor_upperleft_b.msh", "default")
+            {
+                Piece("man_pk_legs_a_armor_upperleft_b_broken_a.msh");
+            }
+            HP("armour_medium");
+        }
+        ArmourElement("R_CALF")
+        {
+            BodyElement("CalfLeft");
+            Visual("man_pk_legs_a_armor_lowerright_a.msh", "default")
+            {
+                Piece("man_pk_legs_a_armor_lowerleft_a_broken_a.msh");
+                Piece("man_pk_legs_a_armor_lowerleft_a_broken_b.msh");
+            }
+            HP("armour_light");
+        } 
+        ArmourElement("L_CALF")
+        {
+            BodyElement("CalfLeft");
+            Visual("man_pk_legs_a_armor_lowerleft_a.msh", "default")
+            {
+                Piece("man_pk_legs_a_armor_lowerleft_a_broken_a.msh");
+                Piece("man_pk_legs_a_armor_lowerleft_a_broken_b.msh");
+            }
+            HP("armour_light");
+        }        
+        ArmourElement("R_UPPERARM")
+        {
+            BodyElement("UpperarmRight");
+            Visual("man_pk_torso_c_armor_a_upperright_a.msh", "default")
+            {
+                Piece("man_pk_torso_c_armor_a_upperleft_a_broken_a.msh");
+            }
+            HP("armour_light");
+        }
+        ArmourElement("L_UPPERARM")
+        {
+            BodyElement("UpperarmLeft");
+            Visual("man_pk_torso_c_armor_a_upperleft_a.msh", "default")
+            {
+                Piece("man_pk_torso_c_armor_a_upperleft_a_broken_a.msh");
+            }
+            HP("armour_light");
+        }
+        ArmourElement("R_FOREARM")
+        {
+            BodyElement("ForearmRight");
+            Visual("man_pk_torso_c_armor_a_lowerright_a.msh", "default")
+            {
+                Piece("man_pk_torso_c_armor_a_lowerleft_a_broken_a.msh");
+            }
+            HP("armour_light");
+        }
+        ArmourElement("L_FOREARM")
+        {
+            BodyElement("ForearmLeft");
+            Visual("man_pk_torso_c_armor_a_lowerleft_a.msh", "default")
+            {
+                Piece("man_pk_torso_c_armor_a_lowerleft_a_broken_a.msh");
+            }
+            HP("armour_heavy");
+        }
+    }
+	ArmourSet("Demolisher")
+    {
+          ArmourElement("HEAD")
+        {
+            BodyElement("Head");
+            Visual("zmb_armored_light_helmet.msh", "default");
+            HP("armour_heavy");
+            ResistanceDefinition("Demo_Test");
+            RandomizationWeight(0.2);
+        }
+        ArmourElement("SPINE3")
+        {
+            BodyElement("UpperBody");
+            Visual("zmb_armored_light_armor.msh", "default");
+            HP("armour_heavy");
+            ResistanceDefinition("Demo_Test");
+            RandomizationWeight(1.0);
+        }
+
+    }
+
+//// TEST ARMOR SETS ////
+	
+	ArmourSet("Test")
+    {
+        ArmourElement("HEAD")
+        {
+            BodyElement("Head");
+            Visual("man_pk_headcover_a.msh", "default");
+            HP("armour_heavy");
+            RandomizationWeight(0.2);
+        }
+        ArmourElement("HEAD")
+        {
+        }
+        ArmourElement("SPINE2")
+        {
+            BodyElement("UpperBody");
+            Visual("man_pk_torso_a_armor_c.msh", "default")
+            {
+                Piece("man_pk_torso_a_armor_c_broken_a.msh");
+                Piece("man_pk_torso_a_armor_c_broken_b.msh");
+                Piece("man_pk_torso_a_armor_c_broken_c.msh");
+                Piece("man_pk_torso_a_armor_c_broken_d.msh");
+            }
+            HP("armour_heavy");
+            RandomizationWeight(2.0);
+        }
+        ArmourElement("SPINE2")
+        {
+            BodyElement("UpperBody");
+            Visual("man_pk_torso_a_armor_c.msh", "rusty")
+            {
+                Piece("man_pk_torso_a_armor_c_broken_a.msh");
+                Piece("man_pk_torso_a_armor_c_broken_b.msh");
+                Piece("man_pk_torso_a_armor_c_broken_c.msh");
+                Piece("man_pk_torso_a_armor_c_broken_d.msh");
+            }
+            HP("armour_medium");
+            RandomizationWeight(2.0);
+        }
+        ArmourElement("SPINE2")
+        {
+            RandomizationWeight(0.5);
+        }
+        ArmourElement("L_THIGH")
+        {
+            BodyElement("ThighLeft");
+            Visual("man_pk_legs_a_armor_upperleft_b.msh", "default")
+            {
+                Piece("man_pk_legs_a_armor_upperleft_b_broken_a.msh");
+            }
+            HP("armour_medium");
+        }
+        ArmourElement("L_CALF")
+        {
+            BodyElement("CalfLeft");
+            Visual("man_pk_legs_a_armor_lowerleft_a.msh", "default")
+            {
+                Piece("man_pk_legs_a_armor_lowerleft_a_broken_a.msh");
+                Piece("man_pk_legs_a_armor_lowerleft_a_broken_b.msh");
+            }
+            HP("armour_light");
+        }        
+        ArmourElement("L_UPPERARM")
+        {
+            BodyElement("UpperarmLeft");
+            Visual("man_pk_torso_c_armor_a_upperleft_a.msh", "default")
+            {
+                Piece("man_pk_torso_c_armor_a_upperleft_a_broken_a.msh");
+            }
+            HP("armour_light");
+        }
+        ArmourElement("L_FOREARM")
+        {
+            BodyElement("ForearmLeft");
+            Visual("man_pk_torso_c_armor_a_lowerleft_a.msh", "default")
+            {
+                Piece("man_pk_torso_c_armor_a_lowerleft_a_broken_a.msh");
+            }
+            HP("armour_light");
+        }
+    }
+    ArmourSet("Test2")
+    {
+        ArmourElement("SPINE2")
+        {
+            BodyElement("Chest");
+            Visual("man_pk_torso_a_armor_c.msh", "default");
+            HP("armour_heavy");
+        }
+        ArmourElement("SPINE2")
+        {
+            BodyElement("Chest");
+            RandomizationWeight(0.5);
+        }
+        ArmourElement("R_THIGH")
+        {
+            BodyElement("ThighRight");
+            Visual("man_pk_legs_a_armor_upperright_a.msh", "default");
+            HP("armour_medium");
+        }
+        ArmourElement("L_THIGH")
+        {
+            BodyElement("ThighLeft");
+            Visual("man_pk_legs_a_armor_upperleft_b.msh", "default");
+            HP("armour_medium");
+        }
+        ArmourElement("L_CALF")
+        {
+            BodyElement("CalfLeft");
+            Visual("man_pk_legs_a_armor_lowerleft_a.msh", "default");
+            HP("armour_medium");
+        }
+        ArmourElement("R_UPPERARM")
+        {
+            BodyElement("UpperarmRight");
+            Visual("man_pk_torso_c_armor_a_upperright_a.msh", "default");
+            HP("armour_medium");
+        }
+        ArmourElement("L_UPPERARM")
+        {
+            BodyElement("UpperarmLeft");
+            Visual("man_pk_torso_c_armor_a_upperleft_a.msh", "default");
+            HP("armour_medium");
+        }
+        ArmourElement("R_FOREARM")
+        {
+            BodyElement("ForearmRight");
+            Visual("man_pk_torso_c_armor_a_lowerright_a.msh", "default");
+            HP("armour_medium");
+        }
+        ArmourElement("L_FOREARM")
+        {
+            BodyElement("ForearmLeft");
+            Visual("man_pk_torso_c_armor_a_lowerleft_a.msh", "default");
+            HP("armour_medium");
+        }
+    }
+}

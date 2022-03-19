@@ -1,0 +1,34 @@
+sub main() 
+{
+	
+    Param("VALUABLE_ITEM_SELL_PRICE_MOD", 1.00);
+	Param("RANGED_WEAPON_SELL_PRICE_MOD", 0.25);
+    Param("MELEE_WEAPON_SELL_PRICE_MOD",  0.20);
+	Param("COMMON_ITEM_SELL_PRICE_MOD",   0.07);
+    Param("COLOR_ITEM_SELL_PRICE_MOD",    0.33);
+
+    ItemTypeSellPriceMod("Item_OutfitPart", 0.00);   // demo by slimak
+
+	//weapon price multiplayer by color
+	ColorPriceMul(0,  0.80);//white
+	ColorPriceMul(1,  1.20);//green
+	ColorPriceMul(2,  1.50);//blue
+	ColorPriceMul(3,  2.20);//violet
+	ColorPriceMul(4,  3.00);//orange
+	ColorPriceMul(5,  5.00);//platinum
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -641,6 +641,7 @@ sub main()
         {
             Pool("V");
 			Pool("V_V");
+			Pool("Children");
 			Pool("SC_V");
 			Pool("V_V_SC");  
 			Pool("B_B_SC");  
@@ -8718,16 +8719,19 @@ sub main()
         Difficulty("Easy")
         {
             Pool("AS_V_B_B_B_B_B");
+			Pool("Children");
         }
         
         Difficulty("Medium")
         {
             Pool("AS_V_B_B_B_B_B");
+			Pool("Children");
         }
         
         Difficulty("Hard")
         {
             Pool("AS_V_B_B_B_B_B");
+			Pool("Children");
         }
 
         Difficulty("Difficulty_R01")
@@ -8735,7 +8739,8 @@ sub main()
             Pool("AS_V_B_B_B_B_B");
             Pool("AS_V_V_B_B_B");   
             //Pool("AS_SC_V_B_B_B");   
-            Pool("AS_SPT_V_B_B_B");   			
+            Pool("AS_SPT_V_B_B_B"); Pool("AS_SPT_V_B_B_B");
+            Pool("Children"); 			
         }
 
         Difficulty("Difficulty_01")
@@ -8743,7 +8748,8 @@ sub main()
 			Pool("AS_V_B_B_B_B_B");
             Pool("AS_V_V_B_B_B");   
             //Pool("AS_SC_V_B_B_B");   
-            Pool("AS_SPT_V_B_B_B"); 
+            Pool("AS_SPT_V_B_B_B"); Pool("AS_SPT_V_B_B_B");
+			Pool("Children");
         }
 
         Difficulty("Difficulty_02")
@@ -8751,7 +8757,8 @@ sub main()
 			Pool("AS_V_B_B_B_B_B");
             Pool("AS_V_V_B_B_B");   
             //Pool("AS_SC_V_B_B_B");   
-            Pool("AS_SPT_V_B_B_B");      
+            Pool("AS_SPT_V_B_B_B"); Pool("AS_SPT_V_B_B_B");
+			Pool("Children");
         }           
 
         Difficulty("Difficulty_03")
@@ -8759,7 +8766,8 @@ sub main()
 			Pool("AS_V_B_B_B_B_B");
             Pool("AS_V_V_B_B_B");   
             //Pool("AS_SC_V_B_B_B");   
-            Pool("AS_SPT_V_B_B_B");    
+            Pool("AS_SPT_V_B_B_B");
+			Pool("Children");
         }   
 
         Difficulty("Difficulty_04")
@@ -8767,7 +8775,8 @@ sub main()
 			Pool("AS_V_B_B_B_B_B");
             Pool("AS_V_V_B_B_B");   
             //Pool("AS_SC_V_B_B_B");   
-            Pool("AS_SPT_V_B_B_B");             
+            Pool("AS_SPT_V_B_B_B"); Pool("AS_SPT_V_B_B_B");
+			Pool("Children");
         }   
 
         Difficulty("Difficulty_R04")
@@ -8775,14 +8784,16 @@ sub main()
 			Pool("AS_V_B_B_B_B_B");
             Pool("AS_V_V_B_B_B");   
             //Pool("AS_SC_V_B_B_B");   
-            Pool("AS_SPT_V_B_B_B");             
+            Pool("AS_SPT_V_B_B_B"); Pool("AS_SPT_V_B_B_B");
+			Pool("Children");            
         }   
 
         Difficulty("Difficulty_05")
         {
             Pool("AS_V_V_B_B_B");   
             //Pool("AS_SC_V_B_B_B");   
-            Pool("AS_SPT_V_B_B_B");   
+            Pool("AS_SPT_V_B_B_B");
+			Pool("Children");  
             Pool("AS_VOL_B_B_B_B");           
         }   
 
@@ -8790,7 +8801,8 @@ sub main()
         {
             Pool("AS_V_V_B_B_B");   
             //Pool("AS_SC_V_B_B_B");   
-            Pool("AS_SPT_V_B_B_B");   
+            Pool("AS_SPT_V_B_B_B");
+			Pool("Children");  
             Pool("AS_VOL_B_B_B_B");           
         }   
         
@@ -8798,7 +8810,8 @@ sub main()
         {
             Pool("AS_V_V_B_B_B");   
             //Pool("AS_SC_V_B_B_B");   
-            Pool("AS_SPT_V_B_B_B");   
+            Pool("AS_SPT_V_B_B_B"); Pool("AS_SPT_V_B_B_B");
+			Pool("Children");  
             Pool("AS_VOL_B_B_B_B");            
         }   
 
@@ -8806,7 +8819,8 @@ sub main()
         {
             Pool("AS_V_V_B_B_B");   
             //Pool("AS_SC_V_B_B_B");   
-            Pool("AS_SPT_V_B_B_B");   
+            Pool("AS_SPT_V_B_B_B"); Pool("AS_SPT_V_B_B_B");
+			Pool("Children");  
             Pool("AS_VOL_B_B_B_B");            
         }   
 
@@ -8814,7 +8828,8 @@ sub main()
         {
             Pool("AS_V_V_B_B_B");   
             //Pool("AS_SC_V_B_B_B");   
-            Pool("AS_SPT_V_B_B_B");   
+            Pool("AS_SPT_V_B_B_B"); Pool("AS_SPT_V_B_B_B");
+			Pool("Children");  
             Pool("AS_VOL_B_B_B_B");             
         }   
         
@@ -8830,16 +8845,19 @@ sub main()
         GeneralDifficulty()
         {
             Pool("V_V");
+			Pool("Children");
         }
         
         Difficulty("Medium")
         {
             Pool("V_V");
+			Pool("Children");
         }
         
         Difficulty("Hard")
         {
             Pool("V_V");
+			Pool("Children");
         }
 
         CooldownTime(1.0);

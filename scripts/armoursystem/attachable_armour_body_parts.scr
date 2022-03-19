@@ -1,0 +1,103 @@
+/// @owner juliusz.toczydlowski@techland.pl
+
+sub main()
+{
+    BodyElement("Head")
+    {
+        AddBone("head");
+        AddBone("neck");
+        AddBone("neck1");
+    }
+    BodyElement("Chest")
+    {
+        AddBone("spine1");
+        AddBone("spine2");
+        AddBone("spine3");
+	}
+		
+    BodyElement("LeftClavicle")
+    {		
+        AddBone("l_clavicle");
+    }
+	
+    BodyElement("RightClavicle")
+    {		
+        AddBone("r_clavicle");
+    }	
+	
+    BodyElement("Abdomen")
+    {
+        AddBone("pelvis");
+        AddBone("spine");
+    }
+    BodyElement("UpperBody")
+    {
+        AddBone("spine1");
+        AddBone("spine2");
+        AddBone("spine3");
+
+        AddBone("l_clavicle");
+        AddBone("r_clavicle");
+        
+        AddBone("pelvis");
+        AddBone("spine");
+    }
+    BodyElement("ArmRight")
+    {
+        AddBone("r_upperarm");
+        AddBone("r_forearm");
+        AddBone("r_hand");
+    }
+    BodyElement("ForearmRight")
+    {
+        AddBone("r_forearm");
+        AddBone("r_hand");
+    }
+    BodyElement("UpperarmRight")
+    {
+        AddBone("r_upperarm");
+    }
+    BodyElement("ArmLeft")
+    {
+        AddBone("l_upperarm");
+        AddBone("l_forearm");
+        AddBone("l_hand");
+    }
+    BodyElement("ForearmLeft")
+    {
+        AddBone("l_forearm");
+        AddBone("l_hand");
+    }
+    BodyElement("UpperarmLeft")
+    {
+        AddBone("l_upperarm");
+    }
+    BodyElement("LegRight")
+    {
+        AddBone("r_thigh");
+        AddBone("r_calf");
+        AddBone("r_foot");
+    }
+    BodyElement("ThighRight")
+    {
+        AddBone("r_thigh");
+    }
+    BodyElement("CalfRight")
+    {
+        AddBone("r_calf");
+    }
+    BodyElement("LegLeft")
+    {
+        AddBone("l_thigh");
+        AddBone("l_calf");
+        AddBone("l_foot");
+    }
+    BodyElement("ThighLeft")
+    {
+        AddBone("l_thigh");
+    }
+    BodyElement("CalfLeft")
+    {
+        AddBone("l_calf");
+    }
+}

@@ -2840,6 +2840,7 @@ sub main()
     Damage("BiterGrab")
     {
         Physical(IAL_Biter_GrabBite_DMG_Percent);
+		Poison("80");
     }
 	
 	Damage("Zombie_Fists")
@@ -6474,44 +6475,44 @@ sub main()
 
     Damage("Throwable_ExplosiveArrow")
     {
-        Blast("25-76");   //25%-75% OneHanded
+        Blast("150-350");   //25%-75% OneHanded
     }
 
     Damage("Throwable_ExplosiveGrenade")  //25-75% One Handed Human
     {
-        Blast("26-77");
+        Blast("150-450");
     }
     Damage("Throwable_ExplosiveGrenade_Upgrade1")
     {
-        Blast("38-113");
+        Blast("175-475");
     }
     Damage("Throwable_ExplosiveGrenade_Upgrade2")
     {
-        Blast("58-173");
+        Blast("215-600");
     }
 	Damage("Throwable_ExplosiveGrenade_Upgrade3")
     {
-        Blast("90-269");
+        Blast("245-630");
     }
 	Damage("Throwable_ExplosiveGrenade_Upgrade4")
     {
-        Blast("137-410");
+        Blast("350-800");
     }
 	Damage("Throwable_ExplosiveGrenade_Upgrade5")
     {
-        Blast("203-608");
+        Blast("350-908");
     }
 	Damage("Throwable_ExplosiveGrenade_Upgrade6")
     {
-        Blast("314-941");
+        Blast("500-1041");
     }
     Damage("Throwable_ExplosiveGrenade_Upgrade7")
     {
-        Blast("504-1512");
+        Blast("804-1512");
     }
 	Damage("Throwable_ExplosiveGrenade_Upgrade8")
     {
-        Blast("795-2385");
+        Blast("1095-2385");
     }
 	
 	Damage("Decoy")
@@ -6521,7 +6522,7 @@ sub main()
 
     Damage("Oil_Puddle")
     {
-        Fire("1");
+        Fire("100");
     }
 
     Damage("Electric_Puddle")

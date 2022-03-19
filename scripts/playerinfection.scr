@@ -1,0 +1,82 @@
+sub main()
+{
+    InitialAntizin(1.0);
+    InitialInfection(0.0);
+
+    // Chemical multiplier
+    // This factor will multiply value of night infection/antizin factor
+    // When player is at chemical surface then this will be used to calculate infection/antizin damage
+    ChemicalMultiplier(85.0); // SiCK - old 60.0
+ 	ChemicalInteriorMultiplier(0.0); // SiCK - old 8.0
+
+    // Chemical Latency
+    // This value is used for taking infection/antizin for specific time after player exits chemical area
+    ChemicalLatency(1.0); // SiCK - old 2.0
+
+    // Absolute antizine and infection drain times when influenced by exterior chemicals
+    // These factors are enabled when they are set to a positive value
+    // When enabled they determine the exact time in seconds to fully drain antizine and infection
+    ChemicalExteriorDrainTime(0.0);
+    ChemicalExteriorInfectionDrainTime(0.0);
+
+    // Max Health used for infection speed calculation
+    // Should match Player's Max Health at lvl1.
+    //
+    ReferenceHealth(100.0);
+
+    // Time [s] infection needs to kill player with reference health
+    // Negative values will 'heal' infection.
+    //
+    InfectionDayDuration(0.0);
+    InfectionNightDuration(0.0);
+    InfectionSafeZoneDuration(-10.0);
+    InfectionDarkZoneDuration(0.0);
+    InfectionUVFlashlightDuration(0.0);
+
+    // Minimal fraction of antizin after death [0.0 - 1.0]
+    AntizinAfterDeath(10.0);
+
+	// Minimal fraction of condition after death [0.0 - 1.0]
+    InfectionAfterDeath(0.1);
+
+    HealthAfterDeath(50.0);
+
+    // ml of antizin drained per second
+    SyringeInjectionSpeed(20.0);
+
+    // how much antizn player has in blood stream when antizin = 1.0
+    AntizinVolumeRatio(100.0);
+
+    // Defition for infection stages
+    //  InfectionStage(string)
+    //  Threshold(float);                      <--- lowest level of infection of this stage
+    //  StaminaRegenerationModifier(float);    <--- change of regeneration speed
+    //  MaxStaminaRation(float);               <--- proportion of max stamina
+    Stages()
+    {
+        InfectionStage("first")
+        {
+            Threshold(0.0);
+            StaminaRegenerationModifier(0.0);
+            MaxStaminaRatio(1.0);
+        }
+        InfectionStage("second")
+        {
+            Threshold(0.33);
+            StaminaRegenerationModifier(0.0);
+            MaxStaminaRatio(1.0);
+        }
+        InfectionStage("third")
+        {
+            Threshold(0.66);
+            StaminaRegenerationModifier(-0.25);
+            MaxStaminaRatio(1.0);
+        }
+        InfectionStage("last")
+        {
+            Threshold(1.0);
+            StaminaRegenerationModifier(-0.25);
+            MaxStaminaRatio(0.0);
+        }
+    }
+}

@@ -6,7 +6,7 @@ sub main()
 
     Required()
     {
-        Module("ActivityModuleSimpleLoiter");
+        //Module("ActivityModuleSimpleLoiter");
         Module("BuffLogicModule");
         Module("CollisionModuleHuman");
         Module("LogicModuleUV");
@@ -16,5 +16,6 @@ sub main()
     {
         ModuleProfile("CollisionModuleHuman", "infected");
         ModuleProfile("ActivityModuleDeath", "infected");
+		ModuleProfile("LogicModuleChase", "viral");
     }
 }

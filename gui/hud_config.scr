@@ -1,0 +1,332 @@
+// Package("name") - loads given package
+// DisplayList("name") - creates display list with given name
+// {
+//    ForceRenderLayer(layer) - sets display list render layer (see IGuiDisplayList::SetForcedRenderLayer)
+//    Layer(layer) - sets display list layer (higher values are on top)
+//    Symbol("symbol_name") - spawns given symbol on given display list
+//    AlwaysVisible() - display list will not be hidden when hud should be hidden
+//    Parallel(bool) - if true then the screen DisplaList::Update will be run in prarllalel to other screens, use with caution!
+// }
+// Group("group_name") - creates hud group. Group can be enabled/disabled from code or from action graph. All huds belonging to the group will become enabled/disabled.
+// {  
+//     Element("hud_name") - adds given hud to group (hud name is taken from the symbol where the gui::CHudComponent is attached)
+// }
+// InvertedGroup("group_name") - same as 'Group' but adds all huds except the one provided. Use Element("hud_name") to exclude elements
+// MutexGroup() - creates an exclusive hud group - only one hud from this group can be Active at the same time. Priority is from top to bottom. Use Element("hud_name") to add elements
+
+sub main()
+{
+    /////////// hud behaviour //////////
+    NewZoneDiscoveredEnabled(false);
+    RadarScale(0.9);
+    Location3DScale(0.7);
+    EnableCursorParalaxComponent(false);
+    DialogDelay(0.5);
+    LocLightPoleMaxDist(750.0);
+    LocLightPoleMinDist(100.0);
+    RankWarningMessageCooldown(45.0);
+    MaxHidingSpotsLocations(5);
+    HidingSpotLocationMaxDistanceVisibility(12.0);
+    
+    /////////// hud screens ////////////
+	Package("hud");
+	
+    DisplayList("before_binoculars")
+    {
+        Layer(-100);
+        ForceRenderLayer(4);
+        Symbol("before_binoculars");
+    }
+    
+    //due to Parallel update we had to split hud_screen into several separate display lists 
+    //only certain hud elements are rpocessed in parallel due to possibility of problems with non thread safe interaction between systems they belong to
+    DisplayList("hud_screen_layer_0")
+    {
+        Layer(-10);
+        Symbol("hud_screen_layer_0");
+    }
+    
+    DisplayList("hud_screen_layer_enemy_indicator")
+    {
+        Layer(-11);
+        Symbol("hud_screen_layer_enemy_indicator");
+        Parallel(true);
+    }
+    
+    DisplayList("hud_screen_layer_radar")
+    {
+        Layer(-12);
+        Symbol("hud_screen_layer_radar");
+        Parallel(true);
+    }
+    
+    DisplayList("hud_screen_layer_3dloc")
+	{
+		Layer(-13);
+		Symbol("hud_screen_layer_3dloc");
+        Parallel(true);
+	}
+    
+    DisplayList("hud_screen_layer_1")
+    {
+        Layer(-14);
+        Symbol("hud_screen_layer_1");
+        Parallel(true);
+    }
+    
+	DisplayList("hud_screen_layer_triggers")
+	{
+		Layer(-15);
+		Symbol("hud_screen_layer_triggers");
+        Parallel(true);
+	}
+    
+    DisplayList("hud_screen_layer_2")
+	{
+		Layer(-16);
+		Symbol("hud_screen_layer_2");
+	}   
+    
+    DisplayList("hud_screen_layer_3")
+	{
+		Layer(-17);
+		Symbol("hud_screen_layer_3");
+        Parallel(true);
+	}
+    
+    DisplayList("hud_screen")
+	{
+		Layer(-18);
+		Symbol("hud_screen");
+	}    
+    
+	
+	DisplayList("facility_unlock_layer")
+	{
+		Layer(-9);
+		Symbol("facility_unlock_holder");
+		AlwaysVisible();
+	}
+	
+	DisplayList("movie_background")
+	{
+		Layer(10);
+		Symbol("movie_background");
+        AlwaysVisible();
+	}
+	
+	DisplayList("hud_overlay")
+	{
+		Layer(20);
+		AlwaysVisible();
+		Symbol("hud_overlay_screen");
+	}
+    
+    DisplayList("hud_postprocess")
+	{
+		Layer(30);
+		AlwaysVisible();
+		Symbol("hud_postprocess_screen");
+	}
+    
+    DisplayList("hud_tcr")
+	{
+		Layer(4000); //should be before fadeouts
+		AlwaysVisible();
+		Symbol("hud_tcr_screen");
+	}
+    
+    ////////////// hud groups /////////////
+	
+	/// group is disabled when dialog shows up
+	InvertedGroup("HudDialog")
+	{
+		Element("dialog_widget");
+        Element("hud_objectives");
+        Element("big_messages_widget");
+        //Element("crosshair");
+	}
+	
+	/// Lockpicking group
+	InvertedGroup("HudLockpicking")
+	{
+		Element("radar");
+		Element("hud_timer_widget");
+		Element("lockpicking_widget");
+        Element("new_health_indicator");
+        Element("antizin_indicator");
+		Element("immunity_widget");
+		Element("stamina_bar");
+		Element("hud_objectives");
+		Element("enemy_indicator_widget");
+	}
+	
+	/// Revive group
+	InvertedGroup("ReviveGroup")
+	{
+		Element("revive_widget");
+        Element("hud_coop_healthbars");
+	}
+
+    /// Hide some elements on bitter grab
+	InvertedGroup("BitterGrabGroup")
+	{
+        Element("immunity_widget");
+        Element("new_health_indicator");
+        Element("antizin_indicator");
+	}
+    
+    /// Survivor sense group
+	Group("HudSurvivorSense")
+	{
+		Element("radar");
+	}
+	
+	/// Used in Getting Stronger quest to hide compass
+	Group("QuestRadar")
+	{
+		Element("radar");
+	}
+    
+    InvertedGroup("Binoculars") //when binoculars are shown hide all but thoes widgets
+    {
+        Element("radar");
+        Element("hud_objectives");
+        Element("crosshair");
+        Element("antizin_indicator");
+        Element("new_health_indicator");
+        Element("3D_location_holder");
+        Element("3D_location_holder_imgui");
+        Element("big_messages_widget");
+    }
+    
+    Group("QuestCompleted") //elements to hide during quest completed bigmsg
+    {
+        Element("hud_objectives");
+    }
+    
+    InvertedGroup("Inhibitor") //elements to be visible when inhibitor is shown
+    {
+        //Element("trigger_widget");
+		Element("inhibitor_symbol");
+    }
+    
+    InvertedGroup("DeathScreen") //element to be visible on death screen
+    {
+    }
+	
+    InvertedGroup("CampfireGroup") //element to be visible on death screen
+    {
+        Element("campfire_widget");
+        Element("hud_timer_widget");
+		Element("new_health_indicator");
+    }
+	
+	InvertedGroup("QuestChinkInTheArmorRetrospective")
+	{
+		Element("dialog_widget");
+        Element("hud_objectives");
+		Element("3D_location_holder");
+		Element("3D_location_holder_imgui");
+        Element("big_messages_widget");
+		Element("trigger_widget");
+	}
+    
+    Group("Timer") //used by LD to hide clock
+    {
+        Element("hud_timer_widget");
+    }
+    
+    Group("HideOnFury")
+    {
+        Element("weapon_selector");
+		Element("quick_select_group");
+		Element("entering_area_symbol_new");
+		Element("hud_objectives_challenge");
+		Element("xp_indicator");
+		Element("enemy_behind_player_holder");
+		Element("enemy_indicator_widget");
+		Element("radar");
+		Element("rope_target_indicator");
+		Element("nightbonus_widget_symbol");
+		Element("ghost_trigger_holder");
+		Element("collectable_tape_player_symbol");
+		Element("keyfinder");
+		Element("lockpicking_widget");
+		Element("revive_widget");
+		Element("stealth_symbol_holder");
+		Element("campfire_widget");
+		Element("player_rank_symbol");
+		Element("facility_unlock_holder");
+		Element("hud_objectives_button");
+		Element("immunity_widget");
+		Element("gameplay_hint_widget");
+    }
+
+    Group("HideOnWheel")
+    {
+        Element("crosshair");
+        Element("gameplay_hint_widget");
+    }
+
+    Group("ChallengeGroup")
+    {
+        Element("immunity_widget");
+    }
+	
+	MutexGroup()
+	{
+		Element("boss_hp_holder");
+		Element("radar");
+	}
+
+    MutexGroup()
+	{
+		Element("entering_area_symbol_new");
+		Element("collectable_tape_player_symbol");
+	}
+    
+    MutexGroup()
+    {
+        Element("hud_coop_healthbars");
+        Element("hud_voicechat_info_symbol");
+    }
+    
+    /*MutexGroup()
+    {
+        Element("mod_quick_menu");
+        Element("tutorial_hint_widget");
+    }*/
+    
+    Group("HideOnFade") {}
+    
+    Group("HideOnSubtitles") {
+        Element("keyfinder");
+    }
+    
+    Group("HideOnFirstInhibitor")
+    {
+        Element("trigger_widget");
+    }
+	
+	Group("MenuHideGroup")
+	{
+		Element("facility_unlock_holder");
+	}
+
+    Group("NightrunnerDifficulty")
+	{
+        Element("spot_indicator_symbol_new");
+        Element("enemy_awakening_indicator");
+        Element("enemy_indicator_widget");
+        Element("chase_widget");
+        Element("crosshair");
+	}
+    
+    MutexGroup("MpMsg")
+    {
+        Element("call_for_help_widget_symbol");
+        Element("mp_message_widget_symbol");
+        Element("mp_callforhelp_widget");
+    }
+}

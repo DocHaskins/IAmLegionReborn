@@ -49,6 +49,17 @@ sub PlayerVariables()
 	Param("CanUseSenseWhenMoving", IAL_SurvivorSense_WhileMoving);
 	Param("SurvivorSenseCooldown", "IAL_SurvivorSense_Cooldown"); // sensor rest time in seconds   
 	
+	//NIGHT INFECTION
+	Param("AntizinChangePerSecond", "0.0");
+    Param("AntizinPercentageChangePerSecond", "0.0");	
+	Param("InfectionPostprocessMaxValue", "0.7");
+    Param("InfectionChangePerSecond", "0.0");
+    Param("InfectionPercentageChangePerSecond", "0.0");
+    Param("PlayersAntizinCapacity", "3.0");
+    Param("PlayersAntizinCapacityCombatBoost", "0.0");
+    Param("PlayersAntizinCapacityParkourBoost", "0.0");
+    Param("AntizineValueToShoUVLightsLocations", "0.4"); //when antizin lvl is <= this value uv light locations show up on radar (value is the same units as PlayersAntizinCapacity
+	
 	// Visual
     Param("SurvivorSenseRange",        "IAL_SurvivorSense_Range"); // Range of visualization of sonar 
     Param("SurvivorSenseOpacity",      "IAL_SurvivorSense_Opacity"); // Strength of visual effect set in range 0.0 - 1.0. It is a global variable that affects all visualizations. If you want to control the intensity of the effect per object/AI type use AlphaMax and AlhpaMin in survivor_sense_presets.scr

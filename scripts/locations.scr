@@ -1,0 +1,3047 @@
+import "ial_settings.mth"
+
+sub Preset_AlwaysIn3D()
+{
+    ShowOnRadar(false);
+    CanShow3dLocation(IAL_Interface_HUD_Show3D);		
+    RadarVisibilityRange(0, 0, 0); //never on radar
+    Location3dDistanceTreshold(20000); //20km should be pretty much "always"
+    PriorityModifier(100);
+}
+
+sub Preset_UseGreenColor()
+{
+    //Day
+    IconColor(67, 168, 93, 230);
+    IconColorActivityTooHard(67, 168, 93, 230);
+
+    //Nigth
+    CategoryNight("Neutral")
+    {
+        IconColor(12, 235, 67, 255);
+        IconColorActivityTooHard(12, 235, 67, 255);
+        IconNightGlow("map_safezone_glow");
+    }
+
+    CategoryNight("Objective")
+    {
+        IconColor(12, 235, 67, 255);
+        IconColorActivityTooHard(12, 235, 67, 255);
+        IconNightGlow("map_safezone_glow");
+    }
+
+    CategoryMarkedNight("Neutral")
+    {
+        IconColor(12, 235, 67, 255);
+        IconColorActivityTooHard(12, 235, 67, 255);
+        IconNightGlow("map_safezone_glow");
+    }
+
+    CategoryMarkedNight("Objective")
+    {
+        IconColor(12, 235, 67, 255);
+        IconColorActivityTooHard(12, 235, 67, 255);
+        IconNightGlow("map_safezone_glow");
+    }
+}
+
+// sub Color_NightGreen()
+// {
+//     IconColor(235, 127, 12, 220);
+// }
+
+// sub Color_DayGreen()
+// {
+//     IconColor(215, 132, 24, 220);
+// }
+
+// sub Color_ActivityTooHardGreen()
+// {
+//     IconColorActivityTooHard(235, 64, 12, 220);
+// }
+
+sub Color_Grey()
+{
+    IconColor(114,114,114,192);
+}
+
+sub Color_Red()
+{
+    IconColor(235, 127, 12, 220);
+}
+
+sub Color_ActivityTooHardRed()
+{
+    IconColorActivityTooHard(235, 64, 12, 220);
+}
+
+sub Preset_MiscIcons()
+{
+    ShowOnRadar(false);
+    CanShow3dLocation(IAL_Interface_HUD_ShowMISC);
+    RadarVisibilityRange(0, 0, 0); //never on radar
+    ShowOnMap(false);
+    Binocular3DDistanceOverride(10);
+    PriorityModifier(100);
+    Can3dLocationClampToScreen(false);
+    Can3dLocationShowDistance(false);
+    CanBeMarked(false);
+}
+
+sub Preset_3dWhenClose_RadarWhenFurther()
+{
+    ShowOnRadar(true);
+    CanShow3dLocation(true);
+    Location3dDistanceTreshold(25); //3d  0 - 25m
+    RadarVisibilityRange(25, 100, 100); //radar 25 - 100m
+}
+
+sub ObjectiveColor()
+{
+    IconColor(255, 185, 11, 220);
+    AreaColor(255, 185, 11, 220);
+}
+
+sub Preset_In3DWhenClose()
+{
+    ShowOnRadar(true);
+    CanShow3dLocation(IAL_Interface_HUD_Show3DIconsWhenClose);
+    Location3dDistanceTreshold(25);
+    Can3dLocationClampToScreen(false);
+}
+
+sub Preset_VisibilityRange100m()
+{
+    RadarVisibilityRange(0, 99, 100);
+}
+
+sub WaypointPreset()
+{
+    IconBg("map_tracker");
+    MapDescription("&MMap_WaypointHint&");
+
+    ShowOnRadar(true);
+    CanShow3dLocation(true);
+    Location3dDistanceTreshold(40); //3d  0 - 40m
+    RadarVisibilityRange(40, 20000, 20000); //radar 40 - "always"
+    ShowOnRadarEdge(true);
+
+	PriorityModifier(15);
+	CanHideByInvisibilityZone(false);
+    ShowAs3dLocationInBinoculars(true);
+    ShowAs3dLocationInSurvivorSense(true);
+    ShouldSkipInterpolationIfFresh(true);
+    MapZoomLevelVisibility(1,1,1,0);
+    CanShowIn3dWhenOverridenByPortals(true);
+    
+	CanBeInteriorCulled(false);
+    CanBeMarked(false);
+    IgnoreFogOfWar(true);
+}
+
+sub MarkedPreset()
+{
+    IconBg("map_tracker");
+    UseMultipleIcons(true);
+    
+    ShowOnRadar(true);
+    CanShow3dLocation(IAL_Interface_HUD_Show3dMarkedIcon);
+    Location3dDistanceTreshold(40); //3d  0 - 40m
+    RadarVisibilityRange(40, 20000, 20000); //radar 40m - "always"
+    ShowOnRadarEdge(IAL_Interface_HUD_Show3dMarkedEdge);
+    CanHideByInvisibilityZone(false);
+    IgnoreFogOfWar(true);
+    CanShowIn3dWhenOverridenByPortals(true);
+    CanBeInteriorCulled(false);
+}
+
+sub StoryNeutral()
+{
+    Icon("map_loc_main");
+    UseMultipleIcons(true);
+    
+	use Color_IAL_WhiteWBorder();
+            
+    RadarVisibilityRange(0, 0, 0); //never on radar
+    use Preset_In3DWhenClose();
+    ShowOnMapEdge(false);
+    IgnoreFogOfWar(true);
+}
+
+sub StoryObjective()
+{
+    Icon("map_loc_main");
+    UseMultipleIcons(true);
+    ShowOnRadar(true);
+    CanShow3dLocation(true);
+    Location3dDistanceTreshold(40); //3d  0 - 40m
+    RadarVisibilityRange(40, 20000, 20000); //radar 40m - "always"
+    ShowOnRadarEdge(true);
+    CanHideByInvisibilityZone(false);
+    CanBeInteriorCulled(false);
+    CanShowIn3dWhenOverridenByPortals(true);
+
+    PriorityModifier(150);
+	use Color_IAL_Objective();
+    IgnoreFogOfWar(true);
+}
+
+sub StoryNeutralMarked()
+{
+    use StoryNeutral();
+    Icon("map_loc_main"); //neutral "tracked" should should have a default look
+    UseMultipleIcons(true);
+    IgnoreFogOfWar(true);
+}
+
+sub StoryObjectiveMarked()
+{
+    use StoryObjective();
+    Icon("map_loc_main");
+    UseMultipleIcons(true);
+    IgnoreFogOfWar(true);
+}
+
+sub Preset_BinocularAI()
+{
+    ShowOnMap(false);
+    CanBeMarked(false);
+    CanHideByInvisibilityZone(false);
+    Can3dLocationClampToScreen(false);
+	CanBeTempMarkedByBinoculars(true);
+	
+	CategoryMarked("Threat")
+	{
+		//IconBg("map_loc_main");
+        IgnoreFogOfWar(true);
+	}
+	CategoryMarked("Neutral")
+	{
+		//IconBg("map_loc_main");
+        IgnoreFogOfWar(true);
+	}
+    
+    use Preset_AlwaysIn3D();
+}
+
+sub Preset_ChallengeStart()
+{
+    ShowOnRadarEdge(true);  
+    ShowOnMapEdge(false);
+    CanShow3dLocation(true);
+        
+    CanBeMarked(true);
+        
+    use Preset_3dWhenClose_RadarWhenFurther();   
+		
+    CategoryMarked("Neutral")
+	{		
+		use MarkedPreset();
+	}
+	CategoryMarked("Objective")
+	{
+		use MarkedPreset();
+	}
+        
+    ShowPointOnMap(true);
+    MapZoomLevelVisibility(1,1,0,0);
+    PriorityModifier(50);
+}
+
+sub Preset_Story()
+{
+    MapZoomLevelVisibility(1,1,1,0); 
+    CanHighlightLocation(true);
+    IgnoreFogOfWar(true);
+    PriorityModifier(50);
+    
+    Category("Neutral")
+    {
+        use StoryNeutral();
+    }
+	Category("Objective")
+	{
+        use StoryObjective();
+	}
+       
+    CategoryMarked("Neutral")
+	{		
+		use StoryNeutralMarked();
+	}
+	CategoryMarked("Objective")
+	{
+		use StoryObjectiveMarked();
+	}
+}
+
+sub Preset_OWA()
+{
+    MapZoomLevelVisibility(1,1,1,0); 
+	use Color_IAL_WhiteWBorder();
+    
+    Category("Neutral")
+    {
+        use StoryNeutral();
+        ShowOnMap(false);
+        Icon("activity_icon");
+        UseMultipleIcons(true);
+        use Color_IAL_WhiteWBorder();
+    }
+	Category("Objective")
+	{
+        use StoryObjective();
+        PriorityModifier(100);
+        Icon("activity_icon");
+        UseMultipleIcons(true);
+        use Color_IAL_WhiteWBorder();
+	}
+       
+    CategoryMarked("Neutral")
+	{		
+		use StoryNeutralMarked();
+        ShowOnMap(false);
+        Icon("activity_icon");
+        UseMultipleIcons(true);
+        use Color_IAL_WhiteWBorder();
+	}
+	CategoryMarked("Objective")
+	{
+        use StoryObjectiveMarked();        
+        Icon("activity_icon");
+        UseMultipleIcons(true);
+        use Color_IAL_WhiteWBorder();
+	}
+}
+
+sub Preset_EnemyAI()
+{
+    ShowOnMap(false);
+		
+	Category("Objective")
+	{
+        use StoryObjective();
+        ShowOnMap(true);
+	}
+    Category("Threat")
+    {
+        ShowOnRadarEdge(true);             
+    }
+    Category("Neutral")
+    {            
+        use Color_IAL_Grey();
+        ShowOnRadarEdge(true);	
+    }
+        
+    CategoryMarked("Neutral")
+	{		
+		use MarkedPreset();
+	}
+	CategoryMarked("Objective")
+	{
+        use StoryObjectiveMarked();
+	}
+}
+
+sub Preset_EnemyAI_OWA()
+{
+    use Preset_EnemyAI();
+}
+
+sub Preset_Facility()
+{
+    use Preset_3dWhenClose_RadarWhenFurther();
+    
+    ShowOnMapEdge(false);    
+    MapZoomLevelVisibility(1,1,1,1);
+    ShowAsGroupingLocation(false);
+    use Color_IAL_ActivityTooHardRed();
+    
+    CategoryMarked("Neutral")
+	{		
+		use MarkedPreset();
+	}
+	CategoryMarked("Objective")
+	{
+		use MarkedPreset();
+	}
+}
+
+sub Preset_Facility_Finished()
+{
+    use Preset_Facility();   
+    use Preset_UseIALColors();
+    MapZoomLevelVisibility(1,1,1,1);
+}
+
+sub Preset_Activity()
+{
+    use Preset_3dWhenClose_RadarWhenFurther();
+    
+    ShowOnMapEdge(false);
+    MapZoomLevelVisibility(1,1,1,0);
+    Can3dLocationClampToScreen(true);
+    use Color_IAL_ActivityTooHardRed();
+    
+    CategoryMarked("Neutral")
+    {		
+        use MarkedPreset();
+    }
+    CategoryMarked("Objective")
+    {
+        use MarkedPreset();
+    }
+}
+
+sub Preset_NightActivity()
+{
+    use Preset_3dWhenClose_RadarWhenFurther();
+    
+    ShowOnMapEdge(false);
+    MapZoomLevelVisibility(1,1,1,0);
+    use Color_IAL_Landmark();
+    use Color_IAL_ActivityTooHardRed();
+    IconAddonTopRight("map_icon_addon_night");
+    Can3dLocationClampToScreen(false);
+    IconScale(0.8);
+
+    CategoryMarked("Neutral")
+    {		
+        use MarkedPreset();
+        use Color_IAL_White();
+        use Color_IAL_ActivityTooHardRed();
+        Can3dLocationClampToScreen(true);
+        IconScale(1.0);
+
+    }
+    CategoryMarked("Objective")
+    {
+        use MarkedPreset();
+        use Color_IAL_White();
+        use Color_IAL_ActivityTooHardRed();
+        Can3dLocationClampToScreen(true);
+        IconScale(1.0);
+
+    }
+
+    CategoryNight("Neutral")
+    {
+        use Color_IAL_White();
+        use Color_IAL_ActivityTooHardRed();
+        Can3dLocationClampToScreen(true);
+        IconScale(1.0);
+
+    }
+    CategoryNight("Objective")
+    {
+        use Color_IAL_White();
+        use Color_IAL_ActivityTooHardRed();
+        Can3dLocationClampToScreen(true);
+        IconScale(1.0);
+
+    }
+}
+
+sub Preset_LootCave() //Preset for DarkPlaces and Lootable Shops
+{
+    use Preset_3dWhenClose_RadarWhenFurther();
+    
+    ShowOnMapEdge(false);
+    MapZoomLevelVisibility(1,1,1,0);
+    Can3dLocationClampToScreen(false);
+	RadarVisibilityRange(25, 55, 55);
+	Location3dDistanceTreshold(25);
+
+    use Color_IAL_Loot();
+    IconScale(0.8);
+
+    CategoryMarked("Neutral")
+    {		
+        use MarkedPreset();
+        use Color_IAL_Loot();
+        IconScale(1);
+        Can3dLocationClampToScreen(true);
+    }
+    CategoryMarked("Objective")
+    {
+        use MarkedPreset();
+        use Color_IAL_Loot();
+        IconScale(1);
+        Can3dLocationClampToScreen(true);
+    }
+
+    CategoryNight("Neutral")
+    {
+        use Color_IAL_Loot();
+        IconScale(1);
+        Can3dLocationClampToScreen(true);
+    }
+    CategoryNight("Objective")
+    {
+		use Color_IAL_Loot();
+        IconScale(1);
+        Can3dLocationClampToScreen(true);
+    }
+}
+
+sub Preset_Activity_no3rdZoom()
+{
+    use Preset_Activity();    
+    MapZoomLevelVisibility(1,1,0,0);
+}
+
+sub Preset_Hub()
+{
+    use Preset_3dWhenClose_RadarWhenFurther();
+    
+    ShowOnMapEdge(false);
+    MapZoomLevelVisibility(0,1,1,0);
+    //ShowAsNonDiscoveredLocationFromDiscoverable(true);
+    CanHideByInvisibilityZone(false);
+	CanShowIn3dWhenOverridenByPortals(true);
+
+    CategoryMarked("Neutral")
+	{		
+		use MarkedPreset();
+	}
+	CategoryMarked("Objective")
+	{
+		use MarkedPreset();
+	} 
+}
+
+sub Preset_SafeZone_Common()
+{
+    use Preset_3dWhenClose_RadarWhenFurther();
+    
+    MapZoomLevelVisibility(1,1,0,0);
+    ShowOnMapEdge(false);
+    
+    CategoryMarked("Neutral")
+	{		
+		use MarkedPreset();
+	}
+	CategoryMarked("Objective")
+	{
+		use MarkedPreset();
+	}
+    
+    UndiscovoredAddonTopRight("map_icon_addon_safe_zone");    
+}
+
+sub Preset_SafeZone()
+{
+    use Preset_SafeZone_Common();
+    ShowOnMapEdge(false);
+}
+
+sub Preset_SmallSafeZone()
+{
+    use Preset_SafeZone_Common();
+    CanShow3dLocation(true);
+	ShowOnMap(true);
+    ShowOnRadarEdge(false);
+}
+
+sub Preset_Other()
+{
+    use Preset_3dWhenClose_RadarWhenFurther();
+    MapZoomLevelVisibility(1,0,0,0);    
+    ShowOnMapEdge(false);
+    ShowOnRadarEdge(false);
+    Can3dLocationClampToScreen(false);
+    
+    CategoryMarked("Neutral")
+	{		
+		use MarkedPreset();
+	}
+	CategoryMarked("Objective")
+	{
+		use MarkedPreset();
+    }
+    CategoryMarked("Threat")
+	{
+		use MarkedPreset();
+    }
+}
+
+sub Preset_QuestGiver()
+{
+    use Preset_Other();        
+    MapZoomLevelVisibility(1,1,1,0);
+    CanHideByInvisibilityZone(false); //always show on radar
+    CanBeGroupedByGroupingLocationsOnMap(true);
+    Can3dLocationClampToScreen(true);
+    PriorityModifier(50);
+}
+
+sub main()
+{
+    //Category("name") {...} 
+    //CategoryMarked("name") - if not specified, marked category will use values from nonmarked one. It will copoy values from Category at the moment of declaration
+    //CategoryNight() - default is set from category
+    //CategoryMarkedNight() - default is set from CategoryNight + CategoryMarked
+
+    //---- for default values see Locations::TypeDefinition::SData::SData()
+	//Icon("name")
+    //IconBg("name") - image will be displayed behind icon (used by marked icon preset!)
+    //IconAddonCenter("name") - image will be displayed in fron of icon
+    //IconAddonTopRight("name") - image will be displayed in fron of icon in the top right corner
+    //IconNightGlow("name") - image that is displayed behind the icon during the night (default: empty)
+    //IconScale(f) - icon scale (default: 1.f)
+    //MarkedIcon("name")
+	//IconColor(r,g,b,a) - tint color, 0-255 (default: white)
+    //IconColorActivityTooHard(r,g,b,a) - tint color for activity if player is below the rank or doesn't meet requriments, 0-255 (default: is set to IconColor)
+	//AreaColor(r,g,b,a) - area tint color (shape on map) (default: white)
+	//Color(r,g,b,a) - sets both Icon, MarkedIcon and Area color
+	//ShowPointOnRadar(b) (default: true)
+	//ShowAreaOnRadar(b)  (default: true)
+	//ShowPointOnMap(b)   (default: true)
+	//ShowAreaOnMap(b)    (default: true)
+	//ShowOnRadar(b) - sets both ShowPointOnRadar and ShowAreaOnRadar (default: true)
+	//ShowOnMap(b) - sets both ShowPointOnMap and ShowAreaOnMap (default: true)
+	//ShowOnMapEdge(b) - if true then in MenuMap an arrow will be displayed when location is outside of viewport (default: true)
+	//ShouldRotate(b) - if true then the cloation will display object roation in Z axis (default: false)
+	//IgnoreFogOfWar(b) (default: false)
+	//MapDescription("&LocalizationId&") - text displayed on map (unless something is displayed from code)
+	//PriorityModifier(i) - modifies priority - higher numbers will be shown on top (default 0)
+    //Can3dLocationClampToScreen(b) - if true then 3d location will be shown on screen edge with an arrow (default true)
+    //Can3dLocationShowDistance(b) - 3d location will display distance (default true)
+	//CanShow3dLocation(b) - can move down from radar into 3d space when player is less than Location3dDistanceTreshold (default false)
+	//Location3dDistanceTreshold(f) - distance where location moves down from radar into 3d (default 40m)
+    //ShowAs3dLocationInSurvivorSense(b) - will be shown in 3d in suvivor sense (all CanShow3dLocation will also work this way)
+    //ShowAs3dLocationInBinoculars(b) - will be shown in 3d in binoculars(all CanShow3dLocation will also work this way) default: false
+	//RadarVisibilityRange(min,max,[max-fade optional]) - location will be visible on radar between min and max distance. fi max-fade is psecified the icon will fade with opacity between max and max-fade distance
+	//UpDownArrowDistanceTreshold(f) - below this up/down arrows will show up (default 70m)
+	//MapZoomVisibilityTreshold(f_min, f_max) - the icon will be visible in MenuMap when zoom is between thoes values (1.0 - max zoom out, 0.1 - zoom in) (default 0, 1)
+    //MapZoomLevelVisibility(i,i,i,i) - the icon will be visible/hidden on given map zoom level (there are 4 discrete zoom in PH)
+	//CanHideByInvisibilityZone(b) - if true then icon will be hidden by GroupingLocation (and other effects that can hide icon) (default true)
+    //CanBeGroupedByGroupingLocationsOnMap(b) - (default false) if true then it will be only visible on zoom 1 if inside ANY grouping location range
+	//IgnoreVisibilityRange(b) - if true then location ignores RadarVisibilityRangeMin/Max and is always visible on radar (aka "ImportantLocation") (default false, true for Category("Objective") and "Coop")
+	//ShowDistanceOnRadar(b) - if true then distance will be shown on radar. (default true)
+    //ShowOnRadarEdge(b) - if true then the location is shown on separate layer above other locations that will not be trundcated near the radar edges (aka IsImportantLocation) (default: false)
+	//CanShowNewLocationHighlightOnMap(b) - if true the location will be highlighted on map if is has appeared since last map opening and also will try to display hint about new locations on map - (default false) //disabled
+	//ShouldSkipInterpolationIfFresh(b) - if true location will skip its travel from radar to the 3d world, (default: false)
+    //CanBeMarked(b) - default true
+	//CanBeTempMarkedByBinoculars(b) - Decides wether or not player can tempporary mark the location so it stays on the screen for some time after taking the binoculars off - default false
+	//Binocular3DDistanceOverride(f) - Separate value for the bincoulars to use when determining the location visibility in 3D - any value below zero is discraded and normal distance rules are used (default -1)
+    //ShowAsGroupingLocation(b) - if false then GroupingLogic will not create icon for it (default true) - used to hide redundant icon on map/radar
+    //CanHighlightLocation(b) - if true then the location will be "highlighted" when its near the center of the screen (default true)
+    //ShowAsNonDiscoveredLocationFromDiscoverable(b) - (default false)
+    //AlwaysShowDistanceTextOnRadar(b) - default false
+    //CanBeInteriorCulled(b) - whether or not location can be hidden when player enters the interior in which the location is not present - default true
+	//ChallengeLocation(b) - if true the locations won't be hidden during challenges - default false
+    //PlayMapAnimationAfterDiscovered - when player open the map, location that was descovered scince last open will play animation
+    //CanShowIn3dWhenOverridenByPortals(b) - when true the icons show up in the portal screen location otherwise they are on radar when affected by a portal area
+	
+	//Location("name") - defines data for given location type. The name must be one of the enum values from Locations::ELocationType
+	//CustomLocation("name") - adds new location type. The enum value is Locations::ELocationType::Custom
+    
+    //------ global ------
+    //CanShowStoryLocationsFromAllQuests(false); //only show story locations from tracked quests (default true)
+    
+    //DefaultValues() //you can define default values for all types here
+    //{
+    //}
+	
+	CategoryPriorities()
+    {
+        Priority("Objective", 10);
+        Priority("Encounter",  0);
+        Priority("Threat",     0);
+        Priority("Coop",       0);
+        Priority("Friendly",   0);
+        Priority("Neutral",    0);
+    }
+    
+    Location("Default")
+    {        
+        CategoryMarked("Neutral")
+		{		
+			use MarkedPreset();
+            ShowOnMapEdge(false);
+		}
+		CategoryMarked("Objective")
+		{
+			use MarkedPreset();
+            use Color_IAL_Objective();
+		}
+    }
+    
+    Location("Winch")
+    {        
+        ShowOnMap(false);
+        MapDescription("&MMap_Winch&");
+        
+        Icon("map_winch");
+        
+        CanShow3dLocation(true);
+        Can3dLocationClampToScreen(false);
+        Location3dDistanceTreshold(20);
+        ShowOnRadar(false);
+		CanBeMarked(false);
+    }
+
+    Location("Noise")
+    {        
+        ShowOnMap(false);
+        MapDescription("&MMap_Noise&");
+        
+        Icon("map_noise");
+        
+        CanShow3dLocation(true);
+        Can3dLocationClampToScreen(false);
+        Location3dDistanceTreshold(25);
+        RadarVisibilityRange(25, 60, 61);
+        use Color_IAL_Noise();
+		Can3dLocationShowDistance(false);
+    
+        CategoryMarked("Neutral")
+		{		
+			use MarkedPreset();
+            ShowOnMapEdge(false);
+		}
+		CategoryMarked("Objective")
+		{
+			use MarkedPreset();
+            use Color_IAL_Objective();
+		}
+    }
+
+	Location("LocalPlayer")
+	{
+		Icon("map_icon_player_white");
+		CanHideByInvisibilityZone(false);
+		ShowOnRadar(false);
+		ShouldRotate(true);
+        CanBeMarked(false);
+        IgnoreFogOfWar(true);
+	}
+	
+	Location("CoopPlayer")
+	{
+		Icon("map_icon_player_white");
+		ShouldRotate(true);
+        CanBeMarked(false);
+        MapZoomLevelVisibility(1,1,1,1);
+        IgnoreFogOfWar(true);
+	}
+
+	Location("Destination")
+	{		
+		Icon("map_loc_main");        
+        UseMultipleIcons(true);
+		
+		use Preset_Story();
+	}
+    
+    Location("LocalDestination") // Local version of location for AreaQuests only
+	{		
+		Icon("activity_icon");        
+        UseMultipleIcons(true);
+		
+		use Preset_OWA();
+        
+        use Color_IAL_WhiteWBorder();
+	}
+	
+    Location("GetAwayEnemy")
+	{		
+		Icon("map_loc_get_away");
+        IgnoreFogOfWar(true);
+        
+        Category("Neutral")
+        {
+            use StoryNeutral();
+            use Color_IAL_Red();
+            Icon("map_loc_get_away");
+        }
+        Category("Objective")
+        {
+            use StoryObjective();
+            use Color_IAL_Red();
+            Icon("map_loc_get_away");
+        }
+        
+        CategoryMarked("Neutral")
+        {		
+            use StoryNeutralMarked();
+            use Color_IAL_Red();
+            Icon("map_loc_get_away");
+        }
+        CategoryMarked("Objective")
+        {
+            use StoryObjectiveMarked();
+            use Color_IAL_Red();
+            Icon("map_loc_get_away");
+        }
+	}
+    
+	Location("Enemy")
+	{
+		Icon("enemy_circle");
+		use Color_IAL_Red();
+        use Preset_EnemyAI();
+	}   
+    
+    Location("TrackDebugEnemy")
+	{
+        Icon("enemy_circle");
+		IconColor(205, 81, 85, 255);
+        use Preset_AlwaysIn3D();
+	}  
+    
+    Location("LocalEnemy") // Local version of location for AreaQuests only
+	{
+		Icon("activity_icon");
+        UseMultipleIcons(true);
+		use Color_IAL_Red();
+        use Preset_EnemyAI_OWA();
+	}
+    
+    Location("FactionLeader1")
+    {
+        //icon/desc is replaced from code
+        
+        ShowOnRadar(false);
+        CanShow3dLocation(false);
+        ShowOnMap(true);
+        MapZoomLevelVisibility(0,0,0,1); //only on zoom 4
+        IgnoreFogOfWar(true);
+    }
+    
+    Location("FactionLeader2")
+    {
+        //icon/desc is replaced from code
+        
+        ShowOnRadar(false);
+        CanShow3dLocation(false);
+        ShowOnMap(true);
+        MapZoomLevelVisibility(0,0,0,1); //only on zoom 4
+        IgnoreFogOfWar(true);
+    }
+    
+    Location("BinocularAI")
+    {
+        Icon("enemy_circle");
+        use Preset_BinocularAI();
+        
+        use Color_IAL_Red();       
+        
+        Category("Friendly")
+        {
+            use Color_IAL_Friendly();
+        }
+    }
+    
+    Location("BinocularAI_PK")
+    {
+        Icon("enemy_circle");
+        use Preset_BinocularAI();        
+        
+        use Color_IAL_PK();    
+    }
+    
+    Location("BinocularAI_Scav")
+    {
+        Icon("enemy_circle");
+        use Preset_BinocularAI();
+        
+        use Color_IAL_Scav();
+    }
+    
+    Location("BinocularAI_Survivor")
+    {
+        Icon("enemy_circle");
+        use Preset_BinocularAI();
+        
+        use Color_IAL_Survivor();        
+    }
+    
+    Location("BinocularAI_Bandit")
+    {
+        Icon("enemy_circle");
+        use Preset_BinocularAI();
+        
+        use Color_IAL_Bandit();        
+    }
+	
+	CustomLocation("BinocularAI_Enemy")
+    {
+        Icon("enemy_circle");
+        use Preset_BinocularAI();
+        
+        use Color_IAL_Red();        
+    }
+    
+        
+    Location("ChallengePoint")
+    {
+        ShowOnRadar(true);
+        CanShow3dLocation(true);
+        ShowOnMap(false);
+        PriorityModifier(100);
+        Can3dLocationClampToScreen(true);
+        Can3dLocationShowDistance(true);        
+		AlwaysShowDistanceTextOnRadar(true);
+		use Color_IAL_Challenge();
+        CanBeMarked(false);
+        Location3dDistanceTreshold(20000); // always
+        RadarVisibilityRange(10, 20000); // always
+        MapDescription(" ");
+		ChallengeLocation(true);
+		CanBeInteriorCulled(false);
+		CanHideByInvisibilityZone(false);
+		Icon("map_challenge_objective_tracked");
+		UseLoudEntranceAnim(true);
+    }
+    
+    Location("ChallengeEnemiesWarning")
+    {
+        ShowOnRadar(false);
+        CanShow3dLocation(false);
+        ShowOnMap(false);
+        PriorityModifier(100);
+        Can3dLocationClampToScreen(true);
+        Can3dLocationShowDistance(false);        
+        CanBeMarked(false);
+		use Color_IAL_Red();
+        Location3dDistanceTreshold(20000); // always
+        RadarVisibilityRange(10, 20000); // always
+        MapDescription(" ");
+		ChallengeLocation(true);
+		CanBeInteriorCulled(false);
+		CanHideByInvisibilityZone(false);
+		Icon("challenge_enemies_approaching");
+        UseLoudEntranceAnim(true);
+    }
+    
+    Location("ChallengePointNext")
+    {
+        ShowOnRadar(true);
+        CanShow3dLocation(true);
+        ShowOnMap(false);
+        PriorityModifier(100);
+        Can3dLocationClampToScreen(true);
+        Can3dLocationShowDistance(true);        
+		AlwaysShowDistanceTextOnRadar(true);
+        CanBeMarked(false);
+        Location3dDistanceTreshold(20000); // always
+        RadarVisibilityRange(10, 20000); // always
+        MapDescription(" ");
+		ChallengeLocation(true);
+		CanBeInteriorCulled(false);
+		CanHideByInvisibilityZone(false);
+		Icon("icon_challenge_objective_secondary_grey");
+    }
+	
+    Location("ChallengePointDefend")
+    {
+        ShowOnRadar(true);
+        CanShow3dLocation(true);
+        ShowOnMap(false);
+        PriorityModifier(100);
+        Can3dLocationClampToScreen(true);
+        Can3dLocationShowDistance(false);        
+        CanBeMarked(false);
+        Location3dDistanceTreshold(20000); // always
+        ShowOnRadar(false);
+        MapDescription(" ");
+		CanBeInteriorCulled(false);
+		CanHideByInvisibilityZone(false);
+		ChallengeLocation(true);
+		IconAddonTopRight("challenge_defend_addon");
+		Icon("map_challenge_objective");
+    }
+ 
+    /*
+	CustomLocation("MiscIcon_Fire")
+    {
+        use Preset_MiscIcons();
+        Icon("sense_flammable_icon");
+        MapDescription("&MiscIcon_Fire&");
+        Binocular3DDistanceOverride(10);
+    }
+    
+    CustomLocation("MiscIcon_Damage")
+    {
+        use Preset_MiscIcons();
+        Icon("sense_damage_icon");
+        MapDescription("&MiscIcon_Damage&");
+        Binocular3DDistanceOverride(10);
+    }
+    
+    CustomLocation("MiscIcon_Water")
+    {
+        use Preset_MiscIcons();
+        Icon("sense_water_icon");
+        MapDescription("&MiscIcon_Water&");
+        Binocular3DDistanceOverride(10);
+    }
+    
+    CustomLocation("MiscIcon_Loot")
+    {
+        use Preset_MiscIcons();
+        Icon("sense_loot_icon");
+        MapDescription("&MiscIcon_Loot&");
+        Binocular3DDistanceOverride(10);
+    }
+    
+    CustomLocation("MiscIcon_Electricity")
+    {
+        use Preset_MiscIcons();
+        Icon("sense_electricity_icon");
+        MapDescription("&MiscIcon_Electricity&");
+        Binocular3DDistanceOverride(10);
+    }
+    CustomLocation("MiscIcon_Spawner")
+    {
+        use Preset_MiscIcons();
+        Icon("sense_zombie_spawner_icon");
+        MapDescription("&MiscIcon_Spawner&");
+        Binocular3DDistanceOverride(10);
+    }
+    CustomLocation("MiscIcon_Inhibitor")
+    {
+        use Preset_MiscIcons();
+        Icon("sense_inhibitor_icon");
+        MapDescription("&MiscIcon_Inhibitor&");
+        Binocular3DDistanceOverride(10);
+    }
+    */
+    CustomLocation("MiscIcon_CollectableInhibitor")
+    {
+        CanShow3dLocation(true);
+        ShowOnRadar(false);
+		ShowOnMap(false);
+        Location3dDistanceTreshold(10);
+        Icon("sense_inhibitor_icon");
+        MapDescription("&Inhibitor&");
+    }    
+    CustomLocation("MiscIcon_CollectableInhibitor_RadioBoosted")
+    {
+        CanShow3dLocation(true);
+        ShowOnRadar(true);
+        IgnoreFogOfWar(true);
+        ShowOnMapEdge(false);
+        CanBeMarked(true);
+        MapZoomLevelVisibility(1,0,0,0);
+        RadarVisibilityRange(10, 50, 50);
+        Location3dDistanceTreshold(10);
+        Icon("sense_inhibitor_icon");
+        MapDescription("&Inhibitor&");
+        
+        CategoryMarked("Neutral")
+        {
+            use MarkedPreset();
+        }
+    }    
+    CustomLocation("MiscIcon_CollectableInhibitorForced")
+    {
+        use Preset_3dWhenClose_RadarWhenFurther();
+        IgnoreVisibilityRange(true);
+        Icon("sense_inhibitor_icon");
+        MapDescription("&Inhibitor&");
+    }
+	CustomLocation("MiscIcon_Decoy")
+    {
+        use Preset_MiscIcons();
+        Icon("sense_decoy_icon");
+        MapDescription("&MiscIcon_Decoy&");
+        Binocular3DDistanceOverride(50);
+    }
+	
+	CustomLocation("MiscIcon_Mine")
+    {
+        use Preset_MiscIcons();
+        Icon("sense_mine_icon");
+        MapDescription("&MiscIcon_Mine&");
+        Binocular3DDistanceOverride(50);
+    }
+	
+	
+    CustomLocation("MiscIcon_AreaEntrance")
+    {
+        use Preset_MiscIcons();
+        Icon("map_entrance_temp_icon");
+        MapDescription("&MiscIcon_AreaEntrance&");
+        Binocular3DDistanceOverride(150);
+    }
+	
+	CustomLocation("MiscIcon_Investigation")
+    {
+        use Preset_MiscIcons();
+        Icon("map_investigate_icon");
+        MapDescription("&MiscIcon_Investigation&");
+        Binocular3DDistanceOverride(10);
+        CanBeInteriorCulled(false);
+    }
+    
+    CustomLocation("MiscIcon_ChallengeDamage")
+    {
+        ShowOnRadar(true);
+        CanShow3dLocation(true);
+        ShowOnMap(false);
+        PriorityModifier(100);
+        Can3dLocationClampToScreen(true);
+        Can3dLocationShowDistance(false);
+        CanBeMarked(false);
+        Icon("sense_damage_icon");
+        MapDescription("&MiscIcon_Damage&");
+        Binocular3DDistanceOverride(10);
+    }
+    
+    CustomLocation("MiscIcon_ChallengeCombat")
+    {
+        ShowOnRadar(true);
+        CanShow3dLocation(true);
+        ShowOnMap(false);
+        PriorityModifier(100);
+        Can3dLocationClampToScreen(true);
+        Can3dLocationShowDistance(false);
+        CanBeMarked(false);
+        Icon("map_challenge_combat");
+        MapDescription("&MMap_CombatChallenge&");
+        Binocular3DDistanceOverride(10);
+    }
+    
+    CustomLocation("MiscIcon_ChallengeParkour")
+    {
+        ShowOnRadar(true);
+        CanShow3dLocation(true);
+        ShowOnMap(false);
+        PriorityModifier(100);
+        Can3dLocationClampToScreen(true);
+        Can3dLocationShowDistance(false);
+        CanBeMarked(false);
+        Icon("map_challenge_parkour");
+        MapDescription("&MMap_ParkourChallenge&");
+        Binocular3DDistanceOverride(10);
+    }
+    
+    CustomLocation("MiscIcon_ChallengeCombatNight")
+    {
+        ShowOnRadar(true);
+        CanShow3dLocation(true);
+        ShowOnMap(false);
+        PriorityModifier(100);
+        Can3dLocationClampToScreen(true);
+        Can3dLocationShowDistance(false);
+        CanBeMarked(false);
+        Icon("map_challenge_combat");
+        IconAddonTopRight("map_icon_addon_night");
+        MapDescription("&MMap_CombatChallengeNight&");
+        Binocular3DDistanceOverride(10);
+    }
+    
+    CustomLocation("MiscIcon_ChallengeParkourNight")
+    {
+        ShowOnRadar(true);
+        CanShow3dLocation(true);
+        ShowOnMap(false);
+        PriorityModifier(100);
+        Can3dLocationClampToScreen(true);
+        Can3dLocationShowDistance(false);
+        CanBeMarked(false);
+        Icon("map_challenge_parkour");
+        IconAddonTopRight("map_icon_addon_night");
+        MapDescription("&MMap_ParkourChallengeNight&");
+        Binocular3DDistanceOverride(10);
+    }
+    
+    CustomLocation("MiscIcon_ChallengeAmmo")
+    {
+        CanShow3dLocation(true);
+        ShowOnMap(false);
+        PriorityModifier(100);
+        Can3dLocationShowDistance(false);
+        CanBeMarked(false);
+        Icon("ammo_arrow");
+        MapDescription("&MiscIcon_ChallengeAmmo&");
+        Binocular3DDistanceOverride(10);
+    }
+    
+    CustomLocation("MiscIcon_HideArea")
+    {
+        use Preset_MiscIcons();
+        Icon("hidden_icon");
+        MapDescription("&MiscIcon_HideArea&");
+        Binocular3DDistanceOverride(50);
+        CanBeInteriorCulled(false);
+    }
+    
+    CustomLocation("MiscIcon_FastTravelTrigger")
+    {
+        use Preset_MiscIcons();
+        MapDescription("&FastTravelLocation&");
+        Icon("map_fast_travel");
+        CanBeInteriorCulled(false);
+    }
+
+    CustomLocation("Enemy_Bandit_Leader") //location for radar
+    {
+        Icon("enemy_bandit_leader");
+        MapDescription("&Enemy_Bandit_Leader&");		
+        use Preset_EnemyAI();
+        
+        ShowOnMap(true);
+        MapZoomLevelVisibility(1,0,0,0);
+        
+        use Color_IAL_White();//this icon already has red color on texture
+    }
+    
+    CustomLocation("BinocularAI_Bandit_Leader") //location for binoculars
+    {
+        Icon("enemy_bandit_leader");
+        MapDescription("&BinocularAI_Bandit_Leader&");
+        use Preset_BinocularAI();    
+        
+        use Color_IAL_Bandit();
+    }
+
+    CustomLocation("Enemy_Bandit_Lieutenant") //location for radar
+    {
+        Icon("enemy_bandit_leader");
+        MapDescription("&Enemy_Bandit_Lieutenant&");		
+        use Preset_EnemyAI();
+        
+        ShowOnMap(true);
+        MapZoomLevelVisibility(1,0,0,0);
+        
+        use Color_IAL_Bandit(); //this icon already has red color on texture
+    }
+    
+    CustomLocation("BinocularAI_Bandit_Lieutenant") //location for binoculars
+    {
+        Icon("enemy_bandit_leader");
+        MapDescription("&BinocularAI_Bandit_Lieutenant&");
+        use Preset_BinocularAI();    
+        
+        use Color_IAL_Bandit();
+    } 
+ 
+    CustomLocation("Enemy_Bandit_Summoner") //location for radar
+    {
+        Icon("enemy_bandit_summoner");
+        MapDescription("&Enemy_Bandit_Summoner&");		
+        use Preset_EnemyAI();
+        
+        use Color_IAL_Bandit(); //this icon already has red color on texture
+    }
+    
+    CustomLocation("BinocularAI_Bandit_Summoner") //location for binoculars
+    {
+        Icon("enemy_bandit_summoner");
+        MapDescription("&BinocularAI_Bandit_Summoner&");
+        use Preset_BinocularAI();    
+        
+        use Color_IAL_Bandit();
+    }
+
+    CustomLocation("BinocularAI_Renegade") //location for binoculars
+    {
+        Icon("enemy_circle");
+        MapDescription("&BinocularAI_Renegade&");
+        use Preset_BinocularAI();    
+        
+		use Color_IAL_Renegade(); 
+    }
+
+    CustomLocation("BinocularAI_Duke") //location for binoculars
+    {
+        Icon("enemy_circle");
+        MapDescription("&BinocularAI_Duke&");
+        use Preset_BinocularAI();    
+        
+		use Color_IAL_Renegade();
+    }	
+
+    CustomLocation("BinocularAI_Duke_Summoner") //location for binoculars
+    {
+        Icon("enemy_bandit_summoner");
+        MapDescription("&BinocularAI_Duke_Summoner&");
+        use Preset_BinocularAI();    
+        
+		use Color_IAL_Renegade();
+    }
+
+    CustomLocation("BinocularAI_Duke_Leader") //location for binoculars
+    {
+        Icon("enemy_bandit_leader");
+        MapDescription("&BinocularAI_Duke_Leader&");
+        use Preset_BinocularAI();    
+        
+		use Color_IAL_Renegade();
+    }		
+
+	CustomLocation("Enemy_Renegade_Lieutenant") //location for radar
+    {
+        Icon("enemy_bandit_leader");
+        MapDescription("&BinocularAI_Renegade_Lieutenant&");		
+        use Preset_EnemyAI();
+        
+        use Color_IAL_Renegade();
+    }
+    
+    CustomLocation("BinocularAI_Renegade_Lieutenant") //location for binoculars
+    {
+        Icon("enemy_bandit_leader");
+        MapDescription("&BinocularAI_Renegade_Lieutenant&");
+        use Preset_BinocularAI();    
+        
+        use Color_IAL_Renegade();
+    }
+    
+    CustomLocation("Enemy_Renegade_Leader") //location for radar
+    {
+        Icon("enemy_bandit_leader");
+        MapDescription("&Enemy_Renegade_Leader&");		
+        use Preset_EnemyAI();
+        
+        use Color_IAL_Renegade();
+    }
+    
+    CustomLocation("BinocularAI_Renegade_Leader") //location for binoculars
+    {
+        Icon("enemy_bandit_leader");
+        MapDescription("&BinocularAI_Renegade_Leader&");
+        use Preset_BinocularAI();    
+        
+        use Color_IAL_Renegade();
+    }
+    
+    CustomLocation("Enemy_Renegade_Summoner") //location for radar
+    {
+        Icon("enemy_bandit_summoner");
+        MapDescription("&Enemy_Bandit_Summoner&");		
+        use Preset_EnemyAI();
+        
+        use Color_IAL_Renegade();
+    }
+    
+    CustomLocation("BinocularAI_Renegade_Summoner") //location for binoculars
+    {
+        Icon("enemy_bandit_summoner");
+        MapDescription("&BinocularAI_Renegade_Summoner&");
+        use Preset_BinocularAI();    
+        
+        use Color_IAL_Renegade();
+    }
+
+	Location("Screamer")
+    {
+		Icon("map_screamer");
+		ShowOnMap(false);
+		ShowOnRadar(false);
+		Location3dDistanceTreshold(30);
+		CanBeMarked(false);
+		MapDescription("&AI_Screamer&");
+		CanShow3dLocation(IAL_Interface_HUD_ShowScreamerIcon);
+        Can3dLocationShowDistance(false);
+        Can3dLocationClampToScreen(false);
+    }
+    
+    ConflictSideIcon("pk", "BinocularAI_PK");
+    ConflictSideIcon("pk_hostile", "BinocularAI_PK");
+    
+	ConflictSideIcon("scav", "BinocularAI_Scav");
+    
+	ConflictSideIcon("bandit", "BinocularAI_Bandit");
+	ConflictSideIcon("bandit_2", "BinocularAI_Bandit");
+	
+    ConflictSideIcon("survivor", "BinocularAI_Survivor");
+	ConflictSideIcon("survivor_ms_panic", "BinocularAI_Survivor");
+	ConflictSideIcon("survivor_encounter", "BinocularAI_Survivor");
+	
+	
+	Location("MapPortal")
+	{
+        CanShow3dLocation(true);
+        Location3dDistanceTreshold(20);
+		Icon("map_portal");
+		
+		use Preset_Story();
+	}
+	
+	Location("Talk")
+	{
+		Icon("map_loc_main");        
+        UseMultipleIcons(true);
+		
+        use Preset_Story();
+	}
+    
+    Location("LocalTalk") // Local version of location for AreaQuests only
+	{
+		Icon("activity_icon");        
+        UseMultipleIcons(true);
+		
+        use Preset_OWA();
+        
+        use Color_IAL_WhiteWBorder();
+    }
+	
+	Location("TakeItem")
+	{
+		Icon("map_loc_main");        
+        UseMultipleIcons(true);
+		
+        use Preset_Story();
+	}
+    
+    Location("LocalTakeItem") // Local version of location for AreaQuests only
+	{
+		Icon("activity_icon");                
+        UseMultipleIcons(true);
+		
+        use Preset_OWA();
+        
+        use Color_IAL_WhiteWBorder();
+	}
+	
+	Location("Zone")
+	{
+		Icon("map_loc_main_area");
+        UseMultipleIcons(true);
+        
+        MapZoomLevelVisibility(1,1,1,0);
+        IgnoreFogOfWar(true);
+		
+        Category("Neutral")
+        {
+            use StoryNeutral();
+            Icon("map_loc_main_area");
+            UseMultipleIcons(true);
+        }
+		Category("Objective")
+		{
+			use StoryObjective();
+            Icon("map_loc_main_area");
+            UseMultipleIcons(true);
+            MapZoomLevelVisibility(1,1,1,1);
+		}
+        
+        CategoryMarked("Neutral")
+		{		
+			use StoryNeutralMarked();
+            Icon("map_loc_main_area"); //neutral "tracked" should should have a default look
+            UseMultipleIcons(true);
+		}
+		CategoryMarked("Objective")
+		{
+			use StoryObjectiveMarked();
+            Icon("map_loc_main_area");
+            MapZoomLevelVisibility(1,1,1,1);
+		}
+	}
+    
+    Location("LocalZone") // Local version of location for AreaQuests only
+	{
+        //taken from Preset_OWA
+        
+		Icon("activity_icon");
+        UseMultipleIcons(true);
+		
+        MapZoomLevelVisibility(1,1,1,0);
+        
+        Category("Neutral")
+        {
+            use StoryNeutral();
+            use Color_IAL_WhiteWBorder();
+            ShowOnMap(false);
+            Icon("activity_icon");            
+            UseMultipleIcons(true);
+        }
+		Category("Objective")
+		{
+			use StoryObjective();
+            use Color_IAL_WhiteWBorder();
+            Icon("activity_icon");            
+            UseMultipleIcons(true);
+		}
+        
+        CategoryMarked("Neutral")
+		{		
+			use StoryNeutralMarked();
+            use Color_IAL_WhiteWBorder();
+            ShowOnMap(false);
+            Icon("activity_icon"); //neutral "tracked" should should have a default look            
+            UseMultipleIcons(true);
+		}
+		CategoryMarked("Objective")
+		{
+			use StoryObjectiveMarked();
+            use Color_IAL_WhiteWBorder();
+            Icon("activity_icon");
+            UseMultipleIcons(true);
+		}
+	}
+    
+    Location("QuestGiver")
+	{
+		Icon("map_questgiver");
+		
+        use Preset_QuestGiver();
+	}
+    
+    Location("QuestGiverMainQ")
+	{
+		Icon("map_questgiver_main");
+		
+        use Preset_QuestGiver();
+
+        use Color_IAL_Quest();
+	}
+    
+    Location("QuestGiverStoryteller")
+	{
+		Icon("map_questgiver_storyteller");
+		
+        use Preset_QuestGiver();
+	}
+    
+    Location("QuestGiverNight")
+	{
+        Icon("map_questgiver_night");
+        MapDescription("&hud_NightQuest_desc&");
+		
+        use Preset_QuestGiver();
+	}
+    
+    Location("QuestGiverMainQNight")
+	{
+        Icon("map_questgiver_main");
+        use Color_IAL_Quest();
+        MapDescription("&hud_NightQuest_desc&");
+
+        use Preset_QuestGiver();
+	}
+    
+    Location("QuestGiverStorytellerNight")
+	{
+        Icon("map_questgiver_storyteller");
+        MapDescription("&hud_NightQuest_desc&");
+		
+        use Preset_QuestGiver();
+	}
+	
+    Location("RewardGiver")
+	{
+		Icon("map_reward");
+		
+        use Preset_Other();
+        MapZoomLevelVisibility(1,1,1,0);		
+		CanBeGroupedByGroupingLocationsOnMap(true);
+	}
+
+	Location("Shop")
+	{
+        MapDescription("&MMap_LegendShop&");        
+		Icon("map_store");
+        ShowAs3dLocationInBinoculars(true);        
+        
+        use Preset_Other();
+	}
+	
+	Location("Craftmaster")
+	{
+        MapDescription("&MMap_LegendCraftmaster&");
+		Icon("map_craftmaster");
+        ShowAs3dLocationInBinoculars(true);
+        
+        use Preset_Other();
+	}
+	
+//special case for pk ship portal problem
+    CustomLocation("Craftmaster_pk_ship")
+    {
+        MapDescription("&MMap_LegendCraftmaster&");
+        Icon("map_craftmaster");
+        ShowAs3dLocationInBinoculars(true);
+        
+        use Preset_Other();
+        Location3dDistanceTreshold(57); //3d  0 - 57m
+        RadarVisibilityRange(57, 100, 100); //radar 57 - 100m
+    }
+
+    //special case for pk metro portal problem
+    CustomLocation("Shop_pk_metro")
+    {
+        MapDescription("&MMap_LegendShop&");        
+		Icon("map_store");
+        ShowAs3dLocationInBinoculars(true);        
+        
+        use Preset_Other();
+        Location3dDistanceTreshold(50); //3d  0 - 50m
+        RadarVisibilityRange(50, 100, 100); //radar 50 - 100m
+    }
+	
+	Location("FastTravel")
+	{
+		Icon("map_fast_travel");
+		PriorityModifier(100);
+        ShowOnMapEdge(false);
+        
+        CategoryMarked("Neutral")
+		{		
+			use MarkedPreset();
+			PriorityModifier(100);
+		}
+		CategoryMarked("Objective")
+		{
+			use MarkedPreset();
+			PriorityModifier(100);
+		}
+        
+        IgnoreFogOfWar(true);
+	}
+	
+	Location("SafeZone_Active")
+	{
+		Icon("map_safe_zone");
+        ExclusionGroup(0);
+
+        use Preset_SafeZone();
+
+        CanShow3dLocation(false);
+        RadarVisibilityRange(0, 100, 100);
+
+        CategoryMarked("Neutral")
+        {		
+            use MarkedPreset();
+        }
+        CategoryMarked("Objective")
+        {
+            use MarkedPreset();
+        }
+
+        use Preset_UseIALColors();
+        IconScale(0.8);
+
+	}
+	
+	Location("SafeZone_Inactive")
+	{
+		Icon("map_safe_zone_inactive");
+        
+        use Preset_SafeZone();
+	}
+
+	Location("Hub_Peacekeepers")
+	{
+		Icon("map_hub_pk");
+		MapDescription("&MMap_Hub_Peacekeepers&");
+
+        use Preset_Hub();
+		MapZoomLevelVisibility(1,1,1,1);
+        IconScale(1.1);
+
+        CanShow3dLocation(false);
+        RadarVisibilityRange(0, 100, 100);
+
+        CategoryMarked("Neutral")
+        {		
+            use MarkedPreset();
+        }
+        CategoryMarked("Objective")
+        {
+            use MarkedPreset();
+        }
+
+        use Preset_UseIALColors();
+
+	}
+	
+	Location("Hub_Scavengers")
+	{
+		Icon("map_hub");
+		MapDescription("&MMap_Hub_Scavengers&");
+
+        use Preset_Hub();
+        IconScale(1.1);
+
+        CanShow3dLocation(false);
+        RadarVisibilityRange(0, 100, 100);
+
+        CategoryMarked("Neutral")
+        {		
+            use MarkedPreset();
+        }
+        CategoryMarked("Objective")
+        {
+            use MarkedPreset();
+        }
+
+        use Preset_UseIALColors();
+
+	}
+	
+	Location("Hub")
+	{
+		Icon("map_hub");
+        HideForHandsOff();
+
+        use Preset_Hub();
+        IconScale(1.1);
+
+        CanShow3dLocation(false);
+        RadarVisibilityRange(0, 100, 100);
+
+        CategoryMarked("Neutral")
+        {		
+            use MarkedPreset();
+        }
+        CategoryMarked("Objective")
+        {
+            use MarkedPreset();
+        }
+        use Preset_UseIALColors();
+
+	}
+	
+	Location("BinocularPoint")
+	{
+        //no icon ?!?!
+		IgnoreVisibilityRange(true);		
+	}
+	
+	Location("Facility")
+	{
+		Icon("map_facility");
+		MapDescription("&MMap_UnknownFacility&");   
+
+        use Preset_Facility();     
+	}
+	
+	Location("Quartermaster")
+	{
+		Icon("map_quatermaster");
+        
+        use Preset_Other();
+	}
+
+	Location("Truck")
+	{
+		Icon("truck_icon");
+        
+        use Preset_Other();
+	}
+    
+	Location("Waypoint1")
+	{
+		Icon("map_waypoint");
+		
+        use WaypointPreset();
+	}
+    
+    Location("Waypoint2")
+	{
+		Icon("map_waypoint");
+		
+        use WaypointPreset();
+	}
+    
+    Location("Waypoint3")
+	{
+		Icon("map_waypoint");
+		
+        use WaypointPreset();
+	}
+    
+    Location("Waypoint4")
+	{
+		Icon("map_waypoint");
+		
+        use WaypointPreset();
+	}
+    
+    Location("Waypoint5")
+	{
+		Icon("map_waypoint");
+		
+        use WaypointPreset();
+	}
+	
+	
+	Location("Encounter")
+	{
+        Icon("map_encounter");
+        use Color_IAL_Encounter();
+        ShowOnRadarEdge(IAL_Interface_HUD_ShowEncounterEdge);  
+        ShowOnMapEdge(false);
+        CanShow3dLocation(IAL_Interface_HUD_ShowEncounterIcon);
+		RadarVisibilityRange(25, 99, 100);
+		Location3dDistanceTreshold(25);
+        
+        CanBeMarked(false);
+        
+        use Preset_3dWhenClose_RadarWhenFurther();   
+		
+        CategoryMarked("Neutral")
+		{		
+			use MarkedPreset();
+		}
+		CategoryMarked("Objective")
+		{
+			use MarkedPreset();
+		}
+        
+        ShowPointOnMap(true);
+        MapZoomLevelVisibility(1,0,0,0);
+	}
+	
+	Location("EncounterInfected")
+	{
+        Icon("map_encounter_infected");
+        use Color_IAL_EncounterInfected();
+
+        ShowOnMapEdge(false);
+        ShowOnRadarEdge(IAL_Interface_HUD_ShowEncounterInfectedEdge);        
+        CanShow3dLocation(IAL_Interface_HUD_ShowEncounterInfectedIcon);
+		RadarVisibilityRange(25, 99, 100);
+		Location3dDistanceTreshold(25);
+        
+        CanBeMarked(false);
+        
+        use Preset_3dWhenClose_RadarWhenFurther();   
+		
+        CategoryMarked("Neutral")
+		{		
+			use MarkedPreset();
+		}
+		CategoryMarked("Objective")
+		{
+			use MarkedPreset();
+		}
+        
+        ShowPointOnMap(true);
+        MapZoomLevelVisibility(1,0,0,0);
+	}
+
+    Location("EncounterReward")
+	{
+        Icon("map_encounter_reward");
+
+        ShowOnRadarEdge(IAL_Interface_HUD_ShowEncounterRewardEdge);  
+        ShowOnMapEdge(false);
+        CanShow3dLocation(IAL_Interface_HUD_ShowEncounterRewardIcon);
+		RadarVisibilityRange(10, 99, 100);
+		Location3dDistanceTreshold(10);
+        
+        CanBeMarked(false);
+        
+        use Preset_3dWhenClose_RadarWhenFurther();   
+		
+        CategoryMarked("Neutral")
+		{		
+			use MarkedPreset();
+		}
+		CategoryMarked("Objective")
+		{
+			use MarkedPreset();
+		}
+        
+        ShowPointOnMap(true);
+        MapZoomLevelVisibility(1,0,0,0);
+	}
+
+    Location("EncounterCampfireStoryteller")
+	{
+		Icon("map_questgiver_storyteller");
+		
+        use Preset_QuestGiver();
+		
+		RadarVisibilityRange(10, 99, 100);
+		Location3dDistanceTreshold(10);
+	}
+    
+	Location("Encounter_Endgame")
+	{
+        Icon("map_encounter_bandit_endgame");
+        use Color_IAL_Encounter_Endgame();
+        ShowOnRadarEdge(IAL_Interface_HUD_ShowEncounterEdge_Endgame);  
+        ShowOnMapEdge(false);
+        CanShow3dLocation(IAL_Interface_HUD_ShowEncounterIcon_Endgame);
+		RadarVisibilityRange(25, 99, 100);
+		Location3dDistanceTreshold(25);
+        
+        CanBeMarked(false);
+        
+        use Preset_3dWhenClose_RadarWhenFurther();   
+		
+        CategoryMarked("Neutral")
+		{		
+			use MarkedPreset();
+		}
+		CategoryMarked("Objective")
+		{
+			use MarkedPreset();
+		}
+        
+        ShowPointOnMap(true);
+        MapZoomLevelVisibility(1,0,0,0);
+	}
+	
+	Location("EncounterInfected_Endgame")
+	{
+        Icon("map_encounter_special_endgame");
+        use Color_IAL_Encounter_Endgame();
+
+        ShowOnMapEdge(false);
+        ShowOnRadarEdge(IAL_Interface_HUD_ShowEncounter_InfectedEdge_Endgame);        
+        CanShow3dLocation(IAL_Interface_HUD_ShowEncounter_InfectedIcon_Endgame);
+		RadarVisibilityRange(25, 99, 100);
+		Location3dDistanceTreshold(25);
+        
+        CanBeMarked(false);
+        
+        use Preset_3dWhenClose_RadarWhenFurther();   
+		
+        CategoryMarked("Neutral")
+		{		
+			use MarkedPreset();
+		}
+		CategoryMarked("Objective")
+		{
+			use MarkedPreset();
+		}
+        
+        ShowPointOnMap(true);
+        MapZoomLevelVisibility(1,0,0,0);
+	}
+    
+    CustomLocation("Challenge_Parkour")
+	{
+        Icon("map_challenge_parkour");
+        MapDescription("&MMap_ParkourChallenge&");
+
+        use Preset_ChallengeStart();
+	}
+    
+    CustomLocation("Challenge_ParkourNight")
+	{
+        Icon("map_challenge_parkour");
+        MapDescription("&MMap_ParkourChallengeNight&");
+
+        use Preset_ChallengeStart();
+        
+        CategoryNight("Neutral")
+        {
+            use Color_IAL_White();
+            use Color_IAL_ActivityTooHardRed();
+        }
+        CategoryNight("Objective")
+        {
+            use Color_IAL_White();
+            use Color_IAL_ActivityTooHardRed();
+        }
+	}
+    
+    CustomLocation("Challenge_Combat")
+	{
+        Icon("map_challenge_combat");
+        MapDescription("&MMap_CombatChallenge&");
+
+        use Preset_ChallengeStart();
+	}
+    
+    CustomLocation("Challenge_CombatNight")
+	{
+        Icon("map_challenge_combat");
+        MapDescription("&MMap_CombatChallengeNight&");
+
+        use Preset_ChallengeStart();
+        
+        CategoryNight("Neutral")
+        {
+            use Color_IAL_White();
+            use Color_IAL_ActivityTooHardRed();
+        }
+        CategoryNight("Objective")
+        {
+            use Color_IAL_White();
+            use Color_IAL_ActivityTooHardRed();
+        }
+	}
+
+    CustomLocation("RestingPlace")
+    {
+        Icon("map_resting_place");
+        MapDescription("&MMap_RestingPlace&");
+
+        use Preset_Other();
+        use Preset_UseIALColors();
+		
+		RadarVisibilityRange(10, 55, 55);
+        Location3dDistanceTreshold(10);
+    }
+    
+    CustomLocation("Stash")
+    {
+        Icon("map_stash");
+        MapDescription("&MMap_LegendStash&");
+        
+        use Preset_Other();
+        use Preset_UseIALColors();
+		
+		RadarVisibilityRange(10, 55, 55);
+        Location3dDistanceTreshold(10);
+    }
+    
+    Location("UVLightLocation") //this should be a special case on radar, e.g used for Quest Getting Stronger
+	{
+		Icon("map_uv");
+        ShowOnRadarEdge(IAL_Interface_HUD_ShowUVLightEdge);
+        ShowOnMap(true);
+        ShowOnMapEdge(false);
+        MapZoomLevelVisibility(1,0,0,0);
+        CanHideByInvisibilityZone(false);
+        CanBeMarked(false);
+        ShowAs3dLocationInSurvivorSense(false);
+		RadarVisibilityRange(0, 80, 80);
+        CanHighlightLocation(false);
+        CanBeInteriorCulled(false);
+
+        CanShow3dLocation(IAL_Interface_HUD_ShowUVLightIcon);
+        Location3dDistanceTreshold(20000);
+        
+        CategoryMarked("Neutral")
+		{		
+			use MarkedPreset();
+		}
+		CategoryMarked("Objective")
+		{
+			use MarkedPreset();
+		}
+	}
+
+	CustomLocation("NonDiscovered")
+    {
+		Icon("map_nondiscovered");
+        MapDescription("&MMap_NonDiscovered&");
+        ShowOnMapEdge(false);
+        use Color_IAL_Undiscovered();
+        
+        use Preset_Other();
+        IgnoreFogOfWar(true);
+        MapZoomLevelVisibility(1,1,0,0); 
+
+        RadarVisibilityRange(25, 99, 100); //we want to see the '?' from bigger distance so that we can tease the player into investigating
+		Location3dDistanceTreshold(25);
+        ShowAs3dLocationInBinoculars(true);
+        Can3dLocationClampToScreen(true);
+
+        CategoryMarked("Neutral")
+        {
+                use MarkedPreset();
+        }
+    }
+    
+    CustomLocation("FacilityPowerplanMain_disabled")
+    {
+        Icon("facility_powerplant_main_undiscovered");
+        MapDescription("&MMap_facility_powerplant_main&");     
+
+        use Preset_Facility();
+        MapZoomLevelVisibility(0,1,1,0);        
+    }
+	
+	CustomLocation("FacilityPowerplanMain")
+    {
+        Icon("facility_powerplant_main_undiscovered");
+        MapDescription("&MMap_facility_powerplant_main&");		
+        
+        use Preset_Facility_Finished();
+        MapZoomLevelVisibility(0,1,1,0);
+    }
+	
+	CustomLocation("facility_combatarena_aux_disabled")
+    {
+        Icon("facility_combatarena_aux_undiscovered");
+        MapDescription("&MMap_facility_combatarena_aux&");
+        
+        use Preset_Facility();
+        MapZoomLevelVisibility(0,1,1,0);
+    }
+	
+	CustomLocation("facility_combatarena_aux")
+    {
+        Icon("facility_combatarena_aux");
+        MapDescription("&MMap_facility_combatarena_aux&");
+        
+        use Preset_Facility_Finished();
+        MapZoomLevelVisibility(0,1,1,0);
+    }
+	
+	
+	CustomLocation("facility_combatarena_main_disabled")
+    {
+        Icon("facility_combatarena_main_undiscovered");
+        MapDescription("&MMap_facility_combatarena_main&");
+        
+        use Preset_Facility();
+        MapZoomLevelVisibility(0,1,1,0);
+    }
+	CustomLocation("facility_combatarena_main")
+    {
+        Icon("facility_combatarena_main");		
+        MapDescription("&MMap_facility_combatarena_main&");
+        
+        use Preset_Facility_Finished();
+        MapZoomLevelVisibility(0,1,1,0);
+    }	
+	
+	
+	CustomLocation("facility_metro_aux_disabled")
+    {
+        Icon("facility_metro_new");
+        MapDescription("&MMap_facility_metro_aux&");
+
+        use Preset_Facility();
+        MapZoomLevelVisibility(0,1,1,0);
+    }
+
+	CustomLocation("facility_metro_aux")
+    {
+        Icon("facility_metro_new");
+        MapDescription("&MMap_facility_metro_aux&");
+        
+        use Preset_Facility_Finished();
+        MapZoomLevelVisibility(1,1,1,1);
+    }
+	
+	
+	CustomLocation("facility_metro_main_disabled")
+    {
+        Icon("facility_metro_new");
+        MapDescription("&MMap_facility_metro_main&");
+
+        use Preset_Facility();
+        MapZoomLevelVisibility(0,1,1,0);
+    }
+	CustomLocation("facility_metro_main")
+    {
+        Icon("facility_metro_new");
+        MapDescription("&MMap_facility_metro_main&");
+        
+        use Preset_Facility_Finished();
+        
+        MapZoomLevelVisibility(1,1,1,1);
+    }	
+	
+	CustomLocation("facility_powerplant_main_disabled")
+    {
+        Icon("facility_power_hub");
+        MapDescription("&MMap_facility_powerplant_main&");
+        
+        use Preset_Facility();
+        MapZoomLevelVisibility(0,1,1,0);
+    }
+	CustomLocation("facility_powerplant_main")
+    {
+        Icon("facility_power_hub");
+        MapDescription("&MMap_facility_powerplant_main&");		
+        
+        use Preset_Facility_Finished();
+        MapZoomLevelVisibility(0,1,1,0);
+    }
+	
+    //////////////// hub
+	
+	CustomLocation("Bazaar_HUB_disabled")
+    {
+        Icon("map_hub_survivors");
+        MapDescription("&Bazaar_Name&");	        
+        
+        use Preset_Hub();
+        
+        ShowAsGroupingLocation(false);
+        IconScale(1.1);
+    }
+	CustomLocation("Bazaar_HUB")
+    {
+        Icon("map_hub_survivors");
+        MapDescription("&Bazaar_Name&");	
+
+        use Preset_Hub();
+        ShowAsGroupingLocation(false);
+        IconScale(1.1);
+
+        CanShow3dLocation(false);
+        RadarVisibilityRange(0, 100, 100);
+
+        CategoryMarked("Neutral")
+        {		
+            use MarkedPreset();
+        }
+        CategoryMarked("Objective")
+        {
+            use MarkedPreset();
+        }
+
+        use Preset_UseIALColors();
+
+    }
+	CustomLocation("Canteen_HUB")
+    {
+        Icon("map_hub_survivors");
+        MapDescription("&Canteen_Name&");	
+
+        use Preset_Hub();
+        ShowAsGroupingLocation(false);
+        IconScale(1.1);
+
+        CanShow3dLocation(false);
+        RadarVisibilityRange(0, 100, 100);
+
+        CategoryMarked("Neutral")
+        {		
+            use MarkedPreset();
+        }
+        CategoryMarked("Objective")
+        {
+            use MarkedPreset();
+        }
+
+        use Preset_UseIALColors();
+
+    }	
+	
+    //////////////////
+	
+	CustomLocation("LootableShop")
+    {
+       Icon("map_forsaken_store");
+       MapDescription("&LootableShop&");
+
+       use Preset_LootCave();
+    }
+
+    CustomLocation("LootIsland_Medium")
+    {
+        Icon("map_evacuation_convoy");
+        MapDescription("&LootableShop&"); //TODO uzupelnic dobry opis
+
+        use Preset_3dWhenClose_RadarWhenFurther();
+    
+        ShowOnMapEdge(false);
+        MapZoomLevelVisibility(1,1,1,0);
+        Can3dLocationClampToScreen(true);
+        RadarVisibilityRange(25, 55, 55);
+        Location3dDistanceTreshold(25);
+
+        use Color_IAL_LootIsland();
+        IconScale(1);
+
+        CategoryMarked("Neutral")
+        {		
+            use MarkedPreset();
+            use Color_IAL_LootIsland();
+            IconScale(1);
+        }
+        CategoryMarked("Objective")
+        {
+            use MarkedPreset();
+            use Color_IAL_LootIsland();
+            IconScale(1);
+        }
+
+        CategoryNight("Neutral")
+        {
+            use Color_IAL_LootIsland();
+            IconScale(0.8);
+            Can3dLocationClampToScreen(false);
+        }
+        CategoryNight("Objective")
+        {
+            use Color_IAL_LootIsland();
+            IconScale(0.8);
+            Can3dLocationClampToScreen(false);
+        }
+
+        CategoryMarkedNight("Neutral")
+        {		
+            use MarkedPreset();
+            use Color_IAL_LootIsland();
+            IconScale(1);
+        }
+        CategoryMarkedNight("Objective")
+        {
+            use MarkedPreset();
+            use Color_IAL_LootIsland();
+            IconScale(1);
+        }
+    }
+
+    CustomLocation("LootIsland_Big")
+    {
+        Icon("map_military_convoy");
+        MapDescription("&LootableShop&"); //TODO uzupelnic dobry opis
+
+        use Preset_3dWhenClose_RadarWhenFurther();
+    
+        ShowOnMapEdge(false);
+        MapZoomLevelVisibility(1,1,1,0);
+        Can3dLocationClampToScreen(true);
+        RadarVisibilityRange(25, 55, 55);
+        Location3dDistanceTreshold(25);
+
+        use Color_IAL_LootIsland();
+        IconScale(1);
+
+        CategoryMarked("Neutral")
+        {		
+            use MarkedPreset();
+            use Color_IAL_LootIsland();
+            IconScale(1);
+        }
+        CategoryMarked("Objective")
+        {
+            use MarkedPreset();
+            use Color_IAL_LootIsland();
+            IconScale(1);
+        }
+
+        CategoryNight("Neutral")
+        {
+            use Color_IAL_LootIsland();
+            IconScale(0.8);
+            Can3dLocationClampToScreen(false);
+        }
+        CategoryNight("Objective")
+        {
+            use Color_IAL_LootIsland();
+            IconScale(0.8);
+            Can3dLocationClampToScreen(false);
+        }
+
+        CategoryMarkedNight("Neutral")
+        {		
+            use MarkedPreset();
+            use Color_IAL_LootIsland();
+            IconScale(1);
+        }
+        CategoryMarkedNight("Objective")
+        {
+            use MarkedPreset();
+            use Color_IAL_LootIsland();
+            IconScale(1);
+        }
+    }
+
+    CustomLocation("AbandonedStructure_pk")
+    {
+        Icon("map_abandoned_structure_pk");
+        MapDescription("&AbandonedStructure_pk&"); 
+
+        use Preset_3dWhenClose_RadarWhenFurther();
+    
+        ShowOnMapEdge(false);
+        MapZoomLevelVisibility(1,1,1,0);
+        Can3dLocationClampToScreen(true);
+        CanShow3dLocation(false);
+        RadarVisibilityRange(0, 99, 99);
+        //Location3dDistanceTreshold(35);
+
+        use Color_IAL_AbandonedStructurePK();
+
+        CategoryMarked("Neutral")
+        {		
+            use MarkedPreset();
+        }
+
+        CategoryMarked("Objective")
+        {
+            use MarkedPreset();
+        }
+
+        CategoryNight("Neutral")
+        {
+            use Color_IAL_AbandonedStructurePK();
+        }
+
+        CategoryNight("Objective")
+        {
+            use Color_IAL_AbandonedStructurePK();
+        }
+
+        PlayMapAnimationAfterDiscovered(true);
+        Force3dAfterDiscovered(true);
+    }
+
+    CustomLocation("AbandonedStructure_survivors")
+    {
+        Icon("map_abandoned_structure_survivors");
+        MapDescription("&AbandonedStructure_survivors&"); 
+
+        use Preset_3dWhenClose_RadarWhenFurther();
+    
+        ShowOnMapEdge(false);
+        MapZoomLevelVisibility(1,1,1,0);
+        Can3dLocationClampToScreen(true);
+        CanShow3dLocation(false);
+        RadarVisibilityRange(0, 99, 99);
+        //Location3dDistanceTreshold(35);
+
+        use Color_IAL_AbandonedStructureSurvivor();
+
+        CategoryMarked("Neutral")
+        {		
+            use MarkedPreset();
+        }
+        CategoryMarked("Objective")
+        {
+            use MarkedPreset();
+        }
+        CategoryNight("Neutral")
+        {
+            use Color_IAL_AbandonedStructureSurvivor();
+        }
+        CategoryNight("Objective")
+        {
+            use Color_IAL_AbandonedStructureSurvivor();
+        }
+
+        PlayMapAnimationAfterDiscovered(true);
+        Force3dAfterDiscovered(true);
+    }
+
+    CustomLocation("PostmanLockers")
+	{
+        Icon("map_postman_lockers");
+        MapDescription("&PostmanLockers&"); 
+
+        use Preset_3dWhenClose_RadarWhenFurther();
+    
+        ShowOnMapEdge(false);
+        MapZoomLevelVisibility(0,1,1,0);
+        Can3dLocationClampToScreen(true);
+        RadarVisibilityRange(25, 55, 55);
+        Location3dDistanceTreshold(25);
+
+        CategoryMarked("Neutral")
+        {		
+            use MarkedPreset();
+        }
+
+        CategoryMarked("Objective")
+        {
+            use MarkedPreset();
+        }
+	}
+	
+	CustomLocation("exploration_POI")
+    {
+        Icon("poi_undiscovered");
+        MapDescription("&MMap_facility_workshop_main&");		
+        
+       use Preset_Other();
+    }
+	
+	CustomLocation("exploration_POI_Discovered")
+    {
+        Icon("poi_discovered");
+        MapDescription("&MMap_facility_workshop_main&");		
+		ShowOnRadar(false);
+		ShowOnMapEdge(false);
+        
+        use Preset_Other();
+    } 
+
+	CustomLocation("map_zone_darkzone_discovered")
+    {
+        Icon("map_dark_hollow");
+        MapDescription("&Loot_DarkZone_Name&");
+
+        use Preset_LootCave();
+    }
+
+	CustomLocation("map_zone_darkzone_undiscovered")
+    {
+        Icon("map_zone_darkzone_undiscovered");
+        MapDescription("&Loot_DarkZone_Name&");
+		ShowOnRadar(true);
+		ShowOnMapEdge(true);
+    }
+
+	CustomLocation("map_zone_darkzone_hive_discovered")
+    {
+        Icon("map_zone_darkzone_discovered");
+        MapDescription("&Hive_Discovered_Name&");		
+		ShowOnRadar(true);
+		ShowOnMapEdge(true);
+        
+        use Preset_Activity();
+    }
+
+	CustomLocation("map_zone_special_infected_discovered_locked")
+    {
+        Icon("map_zombie_boss");
+        MapDescription("&Special_Infected_Name&");		
+		ShowOnRadar(true);
+		ShowOnMapEdge(true);
+        //ShowAsNonDiscoveredLocationFromDiscoverable(true);
+        
+        use Preset_Activity();
+    }
+	
+	CustomLocation("map_zone_special_infected_discovered")
+    {
+        Icon("map_zombie_boss");
+        MapDescription("&Special_Infected_Name&");		
+		ShowOnRadar(true);
+		ShowOnMapEdge(true);
+        ShowAsNonDiscoveredLocationFromDiscoverable(true);
+
+        use Preset_NightActivity();
+    }
+    
+    CustomLocation("map_zone_special_infected_finished")
+    {
+        Icon("map_zombie_boss");
+        MapDescription("&Special_Infected_Name&");		
+		ShowOnRadar(true);
+		ShowOnMapEdge(true);    
+        
+        use Preset_Activity();
+        IconScale(0.8);
+        use Color_IAL_Grey();
+        IconColorActivityTooHard(160, 160, 160, 255);
+        IconAddonTopRight("map_icon_addon_finished");
+        Can3dLocationClampToScreen(false);
+    }
+
+	CustomLocation("map-zone-chemical_discovered")
+    {
+        Icon("map_zone_chemical_discovered");
+        MapDescription("&Loot_Chemical_Name&");
+		ShowOnRadar(true);
+		ShowOnMapEdge(true);
+        
+        use Preset_Activity();
+    }
+	CustomLocation("map-zone-chemical_undiscovered")
+    {
+        Icon("map_zone_chemical_undiscovered");
+        MapDescription("&Loot_Chemical_Name&");
+		ShowOnRadar(true);
+		ShowOnMapEdge(true);
+        
+        use Preset_Activity();
+    }
+	CustomLocation("map-zone-workshop_discovered")
+    {
+        Icon("map_zone_workshop_discovered");
+        MapDescription("&Loot_Workshop_Name&");
+		ShowOnRadar(true);
+		ShowOnMapEdge(true);
+        
+        use Preset_Activity();
+    }
+	CustomLocation("map-zone-workshop_undiscovered")
+    {
+        Icon("map_zone_workshop_undiscovered");
+        MapDescription("&Loot_Workshop_Name&");
+		ShowOnRadar(true);
+		ShowOnMapEdge(true);
+        
+       use Preset_Activity();
+    }
+	CustomLocation("map-zone-windmill_discovered")
+    {
+        Icon("map_zone_windmill");
+        MapDescription("&Loot_Windmill_Name&");
+		ShowOnRadar(true);
+		ShowOnMapEdge(true);
+        
+        use Preset_Activity_no3rdZoom();
+    }
+    
+    CustomLocation("map_landmark")
+    {
+        Icon("map_landmark");
+        MapDescription("&Map_Landmark&");
+		ShowOnRadar(true);
+		ShowOnMapEdge(false);
+        
+        use Preset_Activity_no3rdZoom();
+		CanShow3dLocation(false);
+        use Color_IAL_Landmark();
+
+    }
+    
+	CustomLocation("map-zone-windmill_undiscovered")
+    {
+        Icon("map_zone_windmill");
+        MapDescription("&MMap_NonDiscovered&");
+		ShowOnRadar(true);
+		ShowOnMapEdge(true);
+        
+        use Preset_Activity_no3rdZoom();
+    }
+	CustomLocation("map-zone-ruins_discovered")
+    {
+        Icon("map_zone_ruins_discovered");
+        MapDescription("&Loot_Overgrown_Name&");
+		ShowOnRadar(true);
+		ShowOnMapEdge(true);
+        
+        use Preset_Activity();
+    }
+	CustomLocation("map-zone-ruins_undiscovered")
+    {
+        Icon("map_zone_ruins_undiscovered");
+        MapDescription("&Loot_Overgrown_Name&");
+		ShowOnRadar(true);
+		ShowOnMapEdge(true);
+		ShowOnMap(false);
+        
+        use Preset_Activity();
+    }
+		
+	CustomLocation("Windmill_POI")
+    {
+        Icon("poi_undiscovered");		
+        IconAddonTopRight("map_icon_addon_safe_zone");
+        
+        use Preset_Activity();
+    }
+	
+	CustomLocation("Windmill_POI_unlocked")
+    {
+        Icon("poi_undiscovered");
+
+        use Preset_Activity();
+        use Preset_UseIALColors();
+    }
+
+    CustomLocation("SmallSafeZone_Active")
+	{
+		Icon("map_safe_zone");
+        MapDescription("&SafeZone_Active&");
+        ExclusionGroup(0);
+
+        use Preset_SmallSafeZone();
+
+        CanShow3dLocation(false);
+        RadarVisibilityRange(0, 100, 100);
+
+        CategoryMarked("Neutral")
+        {		
+            use MarkedPreset();
+        }
+        CategoryMarked("Objective")
+        {
+            use MarkedPreset();
+        }
+
+        use Preset_UseIALColors();
+        IconScale(0.8);
+
+
+	}
+
+    CustomLocation("SmallSafeZone_Inactive")
+	{
+		Icon("map_safe_zone_inactive");
+        MapDescription("&SafeZone_Inactive&");
+		
+        use Preset_SmallSafeZone();
+	}
+	
+	CustomLocation("facility_quarantine_helipad_aux_disabled")
+    {
+        Icon("facility_quarantine_aux_undiscovered");
+		ShowOnMapEdge(false);
+        MapDescription("&GREHelipad_Point_Name&");		
+        
+        use Preset_Facility();
+    }
+	
+	// REGION Facility
+	CustomLocation("facility_watertower_inactive_locked")
+    {
+        Icon("map_facility_watertower_inactive");
+        MapDescription("&WaterTower_Inactive&");
+		IconAddonTopRight("map_icon_addon_padlock");
+        
+        use Preset_Facility();
+        IconScale(0.8);
+        use Color_IAL_Landmark();
+        IconColorActivityTooHard(178,32,32,153);
+
+        Can3dLocationClampToScreen(false);
+    }
+	
+	CustomLocation("facility_watertower_inactive")
+    {
+        Icon("map_facility_watertower_inactive");
+        MapDescription("&WaterTower_Inactive&");
+        IconAddonTopRight("map_icon_addon_safe_zone");
+        
+        use Preset_Facility();
+        IconScale(1.1);
+        UndiscovoredAddonTopRight("map_icon_addon_safe_zone");
+    }
+	CustomLocation("facility_watertower_active")
+    {
+        Icon("map_facility_watertower");
+        MapDescription("&WaterTower_Active&");		
+
+        use Preset_Facility_Finished();
+        IconScale(1.1);
+
+        CanShow3dLocation(false);
+        RadarVisibilityRange(0, 100, 100);
+
+        CategoryMarked("Neutral")
+        {		
+            use MarkedPreset();
+        }
+        CategoryMarked("Objective")
+        {
+            use MarkedPreset();
+        }
+
+        use Preset_UseIALColors();
+        IconScale(1.0);
+
+    }
+
+	CustomLocation("facility_electricalsubstation_inactive_locked")
+    {
+        Icon("map_facility_electricalsubstation_inactive");
+        MapDescription("&ElectricalSubstation_Inactive&");
+		IconAddonTopRight("map_icon_addon_padlock");
+        
+        use Preset_Facility();
+        IconScale(0.8);
+        use Color_IAL_Landmark();
+        IconColorActivityTooHard(178,32,32,153);
+        Can3dLocationClampToScreen(false);
+    }	
+	
+	CustomLocation("facility_electricalsubstation_inactive")
+    {
+        Icon("map_facility_electricalsubstation_inactive");
+        MapDescription("&ElectricalSubstation_Inactive&");
+        IconAddonTopRight("map_icon_addon_safe_zone");
+        
+        use Preset_Facility();
+        IconScale(1.1);
+        UndiscovoredAddonTopRight("map_icon_addon_safe_zone");
+    }
+	CustomLocation("facility_electricalsubstation_active")
+    {
+        Icon("map_facility_electricalsubstation");
+        MapDescription("&ElectricalSubstation_Active&");		
+
+        use Preset_Facility_Finished();
+        IconScale(1.1);
+
+        CanShow3dLocation(false);
+        RadarVisibilityRange(0, 100, 100);
+
+        CategoryMarked("Neutral")
+        {		
+            use MarkedPreset();
+        }
+        CategoryMarked("Objective")
+        {
+            use MarkedPreset();
+        }
+
+        use Preset_UseIALColors();
+        IconScale(1.0);
+
+    }
+    
+    /// open world activities
+		
+	CustomLocation("facility_uvstation_inactive")
+    {
+        Icon("facility_uv_aux");
+        MapDescription("&UVStation_Inactive&");
+        
+        use Preset_Activity();
+    }
+	CustomLocation("facility_uvstation_active")
+    {
+        Icon("facility_uv_aux");
+        MapDescription("&UVStation_Active&");
+
+        use Preset_Activity();
+        use Preset_UseIALColors();
+    }
+
+	CustomLocation("facility_radiotower_inactive_locked")
+    {
+        Icon("map_radiotower_inactive");
+        MapDescription("&RadioTower_Inactive&");
+		IconAddonTopRight("map_icon_addon_padlock");
+
+        use Preset_Activity_no3rdZoom();
+        IconScale(0.8);
+        use Color_IAL_Landmark();
+        IconColorActivityTooHard(178,32,32,153);
+        Can3dLocationClampToScreen(false);
+    }
+
+	CustomLocation("facility_radiotower_inactive")
+    {
+        Icon("map_radiotower_inactive");
+        MapDescription("&RadioTower_Inactive&");
+        
+        use Preset_Activity_no3rdZoom();
+    }
+	CustomLocation("facility_radiotower_active")
+    {
+        Icon("map_radiotower");
+        MapDescription("&RadioTower_Active&");
+
+        use Preset_Activity_no3rdZoom();
+
+        use Color_IAL_Grey();
+        IconColorActivityTooHard(160, 160, 160, 255);
+
+        IconScale(0.8);
+        IconAddonTopRight("map_icon_addon_finished");
+	}
+	
+	CustomLocation("facility_quarantine_inactive_locked")
+    {
+        Icon("map_gre_facility");
+        MapDescription("&GREQuarantine_Inactive&");		
+        //ShowAsNonDiscoveredLocationFromDiscoverable(true);
+		IconAddonTopRight("map_icon_addon_padlock");    
+        use Preset_Activity();
+        IconScale(0.8);
+        use Color_IAL_Landmark();
+        IconColorActivityTooHard(178,32,32,153);
+        Can3dLocationClampToScreen(false);
+    
+	}		
+	CustomLocation("facility_quarantine_inactive")
+    {
+        Icon("map_gre_facility");
+        MapDescription("&GREQuarantine_Active&");		
+        //ShowAsNonDiscoveredLocationFromDiscoverable(true);
+        
+        use Preset_NightActivity();
+    }
+	CustomLocation("facility_quarantine_active")
+    {
+        Icon("map_gre_facility");
+        MapDescription("&GREQuarantine_Active&");	
+		use Color_IAL_Grey();
+        IconScale(0.8);
+        IconAddonTopRight("map_icon_addon_finished");
+        
+        use Preset_Activity();
+        IconColorActivityTooHard(160, 160, 160, 255);
+        Can3dLocationClampToScreen(false);
+
+    }
+
+	CustomLocation("facility_metro_inactive_locked")
+    {
+        Icon("facility_metro_new");
+        MapDescription("&MetroStation_Inactive&");
+		IconAddonTopRight("map_icon_addon_metro_locked");
+		//ShowAsNonDiscoveredLocationFromDiscoverable(true);
+        
+        use Preset_Activity();
+        IconScale(0.8);
+        use Color_IAL_Landmark();
+        Can3dLocationClampToScreen(false);
+    }
+
+	CustomLocation("facility_metro_inactive")
+    {
+        Icon("facility_metro_new");
+        MapDescription("&MetroStation_Inactive&");
+		//ShowAsNonDiscoveredLocationFromDiscoverable(true);
+        
+        use Preset_NightActivity();
+        IconAddonTopRight("map_icon_addon_metro_playable");
+        UndiscovoredAddonTopRight("map_icon_addon_safe_zone");
+    }
+	CustomLocation("facility_metro_hmf_inactive")
+    {
+        Icon("facility_metro_new");
+        MapDescription("&MetroStation_Inactive&");
+		//ShowAsNonDiscoveredLocationFromDiscoverable(true);
+        
+        use Preset_Activity();
+        IconAddonTopRight("map_icon_addon_safe_zone");
+        UndiscovoredAddonTopRight("map_icon_addon_safe_zone");
+    }
+	
+	CustomLocation("facility_metro_active")
+    {
+        Icon("facility_metro_new");
+        MapDescription("&MetroStation_Active&");
+        ShowAsGroupingLocation(false);
+
+        use Preset_Activity();
+        MapZoomLevelVisibility(1,1,1,1);
+        IconAddonTopRight("map_icon_addon_fast_travel");
+
+        CanShow3dLocation(false);
+        RadarVisibilityRange(0, 100, 100);
+
+        CategoryMarked("Neutral")
+        {		
+            use MarkedPreset();
+        }
+        CategoryMarked("Objective")
+        {
+            use MarkedPreset();
+        }
+
+        use Preset_UseIALColors();
+
+    }
+    
+	CustomLocation("BanditCamp_inactive_locked")
+    {
+        Icon("map_bandit_camp");
+        MapDescription("&city_bandit_area&");
+		IconAddonTopRight("map_icon_addon_padlock");
+        
+        use Preset_Activity();
+        IconScale(0.8);
+        use Color_IAL_Landmark();
+        IconColorActivityTooHard(178,32,32,153);
+        Can3dLocationClampToScreen(false);
+    }
+	
+    CustomLocation("BanditCamp_inactive")
+    {
+        Icon("map_bandit_camp");
+        MapDescription("&city_bandit_area&");
+		IconAddonTopRight("map_icon_addon_safe_zone");
+        
+        use Preset_Activity();
+        UndiscovoredAddonTopRight("map_icon_addon_safe_zone");
+    }
+	CustomLocation("BanditCamp_active")
+    {
+        Icon("map_bandit_camp");
+        MapDescription("&city_bandit_area&");
+        use Preset_Activity();
+
+        CanShow3dLocation(IAL_Interface_HUD_ShowBanditCampIcon);
+        RadarVisibilityRange(0, 100, 100);
+
+        CategoryMarked("Neutral")
+        {		
+            use MarkedPreset();
+        }
+        CategoryMarked("Objective")
+        {
+            use MarkedPreset();
+        }
+
+        use Preset_UseIALColors();
+        IconScale(0.8);
+
+
+    } 
+	
+	CustomLocation("facility_windmill_inactive")
+    {
+        Icon("map_zone_windmill");
+        MapDescription("&Windmill_Inactive&");
+        IconAddonTopRight("map_icon_addon_safe_zone");
+        
+        use Preset_Activity();
+        UndiscovoredAddonTopRight("map_icon_addon_safe_zone");
+    }
+
+	CustomLocation("facility_windmill_inactive_locked")
+    {
+        Icon("map_zone_windmill");
+        MapDescription("&Windmill_Inactive&");
+		IconAddonTopRight("map_icon_addon_padlock");
+        
+        use Preset_Activity();
+        IconScale(0.8);
+        use Color_IAL_Landmark();
+        IconColorActivityTooHard(178,32,32,153);
+        Can3dLocationClampToScreen(false);
+    }
+	
+	CustomLocation("facility_windmill_active")
+    {
+        Icon("map_zone_windmill");
+        MapDescription("&Windmill_Active&");
+
+        use Preset_Activity();
+        ShowAsGroupingLocation(false);
+        CanHideByInvisibilityZone(false);
+
+        CanShow3dLocation(false);
+        RadarVisibilityRange(0, 100, 100);
+
+        CategoryMarked("Neutral")
+        {		
+            use MarkedPreset();
+        }
+        CategoryMarked("Objective")
+        {
+            use MarkedPreset();
+        }
+
+        use Preset_UseIALColors();
+        IconScale(0.8);
+
+	}
+	
+    CustomLocation("facility_airdrop_inactive")
+    {
+        Icon("map_airdrop_inactive");
+        MapDescription("&Airdrop_Inactive&");
+        
+        use Preset_Activity_no3rdZoom();
+    }
+	CustomLocation("facility_airdrop_active")
+    {
+        Icon("map_airdrop");
+        MapDescription("&Airdrop_Active&");
+		use Color_IAL_Grey();
+        IconScale(0.8);
+        IconAddonTopRight("map_icon_addon_finished");
+        
+        use Preset_Activity_no3rdZoom();
+        IconColorActivityTooHard(160, 160, 160, 255);
+        Can3dLocationClampToScreen(false);
+
+	}
+	
+	// END region facility	
+
+	// QUESTS
+
+	CustomLocation("None")
+    {
+		//Left empty on purpose
+		ShowOnMap(false);
+    }	
+    
+    //////////////// to remove - should not be used ///////////////////
+    
+	CustomLocation("vantage_point") //to remove
+    {
+        Icon("compass_binoculars");
+        MapDescription("&vantage_point&");
+        
+        CategoryMarked("Neutral")
+		{		
+			use MarkedPreset();
+		}
+		CategoryMarked("Objective")
+		{
+			use MarkedPreset();
+		}
+    }
+}

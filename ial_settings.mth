@@ -2,6 +2,183 @@
 //- I Am Legion Global Config -\\
 ////////////////\\\\\\\\\\\\\\\\\
 
+////////////INTERFACE\\\\\\\\\\\\\\\\\\\
+//- LOCATION - (scripts/locations.scr) -----\\
+sub Preset_UseIALColors()
+{
+    //Day
+    IconColor(215, 132, 24, 220);
+    IconColorActivityTooHard(215, 69, 24, 220);
+
+    //Nigth
+    CategoryNight("Neutral")
+    {
+        IconColor(235, 127, 12, 220);
+        IconColorActivityTooHard(235, 64, 12, 220);
+    }
+
+    CategoryNight("Objective")
+    {
+        IconColor(235, 127, 12, 220);
+        IconColorActivityTooHard(235, 64, 12, 220);
+    }
+
+    CategoryMarkedNight("Neutral")
+    {
+        IconColor(235, 127, 12, 220);
+        IconColorActivityTooHard(235, 64, 12, 220);
+    }
+
+    CategoryMarkedNight("Objective")
+    {
+        IconColor(235, 127, 12, 220);
+        IconColorActivityTooHard(235, 64, 12, 220);
+        IconNightGlow("map_safezone_glow");
+    }
+}
+
+sub Color_IAL_Grey()
+{
+    IconColor(114,114,114,192);
+}
+
+sub Color_IAL_Red()
+{
+    IconColor(235, 127, 12, 220);
+}
+
+sub Color_IAL_White()
+{
+    IconColor(230, 230, 230, 220);
+}
+
+sub Color_IAL_ActivityTooHardRed()
+{
+    IconColorActivityTooHard(235, 64, 12, 220);
+}
+
+sub Color_IAL_Objective()
+{
+    IconColor(235, 127, 12, 220);
+    AreaColor(235, 190, 12, 220);
+}
+
+sub Color_IAL_Loot()
+{
+    IconColor(25, 25, 25, 220);
+}
+
+sub Color_IAL_LootIsland()
+{
+    IconColor(100, 100, 100, 220);
+}
+
+sub Color_IAL_Landmark()
+{
+    IconColor(125, 125, 125, 220);
+}
+
+sub Color_IAL_Noise()
+{
+    IconColor(255, 255, 255, 220);
+}
+
+sub Color_IAL_Friendly()
+{
+    IconColor(31, 157, 222, 220);
+}
+
+sub Color_IAL_PK()
+{
+    IconColor(48, 92, 233, 220);
+}
+
+sub Color_IAL_AbandonedStructurePK()
+{
+    IconColor(48, 92, 233, 220);
+}
+
+sub Color_IAL_Scav()
+{
+    IconColor(238, 82, 27, 220);
+}
+
+sub Color_IAL_Renegade()
+{
+    IconColor(238, 121, 27, 220);
+}
+
+sub Color_IAL_Survivor()
+{
+    IconColor(238, 211, 27, 220);
+}
+
+sub Color_IAL_AbandonedStructureSurvivor()
+{
+    IconColor(238, 211, 27, 220);
+}
+
+sub Color_IAL_Bandit()
+{
+    IconColor(121, 66, 29, 220);
+}
+
+sub Color_IAL_Encounter()
+{
+    IconColor(235, 127, 12, 220);
+}
+
+sub Color_IAL_WhiteWBorder()
+{
+    IconColor(255, 255, 255, 220);
+	AreaColor(200, 200, 200, 160);
+}
+
+sub Color_IAL_Undiscovered()
+{
+    IconColor(155, 155, 155, 200);
+}
+
+sub Color_IAL_Quest()
+{
+    IconColor(235, 127, 12, 220);
+}
+
+sub Color_IAL_Challenge()
+{
+    IconColor(235, 127, 12, 220);
+}
+
+sub Color_IAL_EncounterInfected()
+{
+    IconColor(235, 127, 12, 220);
+}
+
+sub Color_IAL_Encounter_Endgame()
+{
+    IconColor(235, 64, 12, 220);
+}
+
+export bool IAL_Interface_HUD_Show3D = TRUE;
+export bool IAL_Interface_HUD_ShowMISC = FALSE;
+export bool IAL_Interface_HUD_ShowUVLightIcon = FALSE;
+export bool IAL_Interface_HUD_ShowUVLightEdge = FALSE;
+export bool IAL_Interface_HUD_Show3dMarkedIcon = TRUE;
+export bool IAL_Interface_HUD_Show3dMarkedEdge = TRUE;
+export bool IAL_Interface_HUD_ShowBanditCampIcon = TRUE;
+export bool IAL_Interface_HUD_Show3DIconsWhenClose = FALSE;
+export bool IAL_Interface_HUD_ShowScreamerIcon = FALSE;
+export bool IAL_Interface_HUD_ShowEncounterIcon = FALSE;
+export bool IAL_Interface_HUD_ShowEncounterEdge = FALSE;
+export bool IAL_Interface_HUD_ShowEncounterRewardIcon = FALSE;
+export bool IAL_Interface_HUD_ShowEncounterRewardEdge = FALSE;
+export bool IAL_Interface_HUD_ShowInfectedIcon = FALSE;
+export bool IAL_Interface_HUD_ShowInfectedEdge = FALSE;
+export bool IAL_Interface_HUD_ShowEncounterIcon_Endgame = FALSE;
+export bool IAL_Interface_HUD_ShowEncounterEdge_Endgame = FALSE;
+export bool IAL_Interface_HUD_ShowEncounter_InfectedIcon_Endgame = FALSE;
+export bool IAL_Interface_HUD_ShowEncounter_InfectedEdge_Endgame = FALSE;
+
 ////////////GAMEPLAY\\\\\\\\\\\\\\\\\\\
 //INTERFACE\\
 export float IAL_HealthBar_ShowHit = 0.0; //Default is 10.0

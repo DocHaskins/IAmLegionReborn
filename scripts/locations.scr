@@ -1795,8 +1795,8 @@ sub main()
         use Color_IAL_EncounterInfected();
 
         ShowOnMapEdge(false);
-        ShowOnRadarEdge(IAL_Interface_HUD_ShowInfectedEdge);        
-        CanShow3dLocation(IAL_Interface_HUD_ShowSpecialInfectedIcon);
+        ShowOnRadarEdge(IAL_Interface_HUD_ShowEncounterInfectedEdge);        
+        CanShow3dLocation(IAL_Interface_HUD_ShowEncounterInfectedIcon);
 		RadarVisibilityRange(25, 99, 100);
 		Location3dDistanceTreshold(25);
         
@@ -1857,7 +1857,7 @@ sub main()
 	Location("Encounter_Endgame")
 	{
         Icon("map_encounter_bandit_endgame");
-        use Color_IAL_Encounter();
+        use Color_IAL_Encounter_Endgame();
         ShowOnRadarEdge(IAL_Interface_HUD_ShowEncounterEdge_Endgame);  
         ShowOnMapEdge(false);
         CanShow3dLocation(IAL_Interface_HUD_ShowEncounterIcon_Endgame);
@@ -1886,8 +1886,8 @@ sub main()
         Icon("map_encounter_special_endgame");
         use Color_IAL_Encounter_Endgame();
 
-        ShowOnMapEdge(IAL_Interface_HUD_ShowEncounter_InfectedEdge_Endgame);
-        ShowOnRadarEdge(true);        
+        ShowOnMapEdge(false);
+        ShowOnRadarEdge(IAL_Interface_HUD_ShowEncounter_InfectedEdge_Endgame);        
         CanShow3dLocation(IAL_Interface_HUD_ShowEncounter_InfectedIcon_Endgame);
 		RadarVisibilityRange(25, 99, 100);
 		Location3dDistanceTreshold(25);
@@ -1990,9 +1990,9 @@ sub main()
     Location("UVLightLocation") //this should be a special case on radar, e.g used for Quest Getting Stronger
 	{
 		Icon("map_uv");
-        ShowOnRadarEdge(true);
+        ShowOnRadarEdge(IAL_Interface_HUD_ShowUVLightEdge);
         ShowOnMap(true);
-        ShowOnMapEdge(IAL_Interface_HUD_ShowUVLightEdge);
+        ShowOnMapEdge(false);
         MapZoomLevelVisibility(1,0,0,0);
         CanHideByInvisibilityZone(false);
         CanBeMarked(false);

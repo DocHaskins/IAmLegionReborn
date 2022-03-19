@@ -63,9 +63,30 @@ sub Color_IAL_Objective()
     AreaColor(235, 190, 12, 220);
 }
 
+sub Color_IAL_WhiteWBorder()
+{
+    IconColor(255, 255, 255, 220);
+	AreaColor(200, 200, 200, 160);
+}
+
+sub Color_IAL_Undiscovered()
+{
+    IconColor(155, 155, 155, 200);
+}
+
+sub Color_IAL_Quest()
+{
+    IconColor(235, 127, 12, 220);
+}
+
+sub Color_IAL_Challenge()
+{
+    IconColor(235, 127, 12, 220);
+}
+
 sub Color_IAL_Loot()
 {
-    IconColor(25, 25, 25, 220);
+    IconColor(55, 55, 55, 220);
 }
 
 sub Color_IAL_LootIsland()
@@ -128,27 +149,6 @@ sub Color_IAL_Encounter()
     IconColor(235, 127, 12, 220);
 }
 
-sub Color_IAL_WhiteWBorder()
-{
-    IconColor(255, 255, 255, 220);
-	AreaColor(200, 200, 200, 160);
-}
-
-sub Color_IAL_Undiscovered()
-{
-    IconColor(155, 155, 155, 200);
-}
-
-sub Color_IAL_Quest()
-{
-    IconColor(235, 127, 12, 220);
-}
-
-sub Color_IAL_Challenge()
-{
-    IconColor(235, 127, 12, 220);
-}
-
 sub Color_IAL_EncounterInfected()
 {
     IconColor(235, 127, 12, 220);
@@ -172,8 +172,8 @@ export bool IAL_Interface_HUD_ShowEncounterIcon = FALSE;
 export bool IAL_Interface_HUD_ShowEncounterEdge = FALSE;
 export bool IAL_Interface_HUD_ShowEncounterRewardIcon = FALSE;
 export bool IAL_Interface_HUD_ShowEncounterRewardEdge = FALSE;
-export bool IAL_Interface_HUD_ShowInfectedIcon = FALSE;
-export bool IAL_Interface_HUD_ShowInfectedEdge = FALSE;
+export bool IAL_Interface_HUD_ShowEncounterInfectedIcon = FALSE;
+export bool IAL_Interface_HUD_ShowEncounterInfectedEdge = FALSE;
 export bool IAL_Interface_HUD_ShowEncounterIcon_Endgame = FALSE;
 export bool IAL_Interface_HUD_ShowEncounterEdge_Endgame = FALSE;
 export bool IAL_Interface_HUD_ShowEncounter_InfectedIcon_Endgame = FALSE;

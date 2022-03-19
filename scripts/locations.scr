@@ -407,7 +407,7 @@ sub Preset_NightActivity()
     CategoryMarked("Neutral")
     {		
         use MarkedPreset();
-        use Color_IAL_White()
+        use Color_IAL_White();
         use Color_IAL_ActivityTooHardRed();
         Can3dLocationClampToScreen(true);
         IconScale(1.0);
@@ -416,7 +416,7 @@ sub Preset_NightActivity()
     CategoryMarked("Objective")
     {
         use MarkedPreset();
-        use Color_IAL_White()
+        use Color_IAL_White();
         use Color_IAL_ActivityTooHardRed();
         Can3dLocationClampToScreen(true);
         IconScale(1.0);
@@ -425,7 +425,7 @@ sub Preset_NightActivity()
 
     CategoryNight("Neutral")
     {
-        use Color_IAL_White()
+        use Color_IAL_White();
         use Color_IAL_ActivityTooHardRed();
         Can3dLocationClampToScreen(true);
         IconScale(1.0);
@@ -433,7 +433,7 @@ sub Preset_NightActivity()
     }
     CategoryNight("Objective")
     {
-        use Color_IAL_White()
+        use Color_IAL_White();
         use Color_IAL_ActivityTooHardRed();
         Can3dLocationClampToScreen(true);
         IconScale(1.0);
@@ -1186,7 +1186,7 @@ sub main()
         ShowOnMap(true);
         MapZoomLevelVisibility(1,0,0,0);
         
-        use Color_IAL_White() //this icon already has red color on texture
+        use Color_IAL_White();//this icon already has red color on texture
     }
     
     CustomLocation("BinocularAI_Bandit_Leader") //location for binoculars
@@ -1207,7 +1207,7 @@ sub main()
         ShowOnMap(true);
         MapZoomLevelVisibility(1,0,0,0);
         
-        use Color_IAL_Bandit();; //this icon already has red color on texture
+        use Color_IAL_Bandit(); //this icon already has red color on texture
     }
     
     CustomLocation("BinocularAI_Bandit_Lieutenant") //location for binoculars
@@ -1252,7 +1252,7 @@ sub main()
         MapDescription("&BinocularAI_Duke&");
         use Preset_BinocularAI();    
         
-		use Color_IAL_Renegade()
+		use Color_IAL_Renegade();
     }	
 
     CustomLocation("BinocularAI_Duke_Summoner") //location for binoculars
@@ -1261,7 +1261,7 @@ sub main()
         MapDescription("&BinocularAI_Duke_Summoner&");
         use Preset_BinocularAI();    
         
-		use Color_IAL_Renegade()
+		use Color_IAL_Renegade();
     }
 
     CustomLocation("BinocularAI_Duke_Leader") //location for binoculars
@@ -1270,7 +1270,7 @@ sub main()
         MapDescription("&BinocularAI_Duke_Leader&");
         use Preset_BinocularAI();    
         
-		use Color_IAL_Renegade()
+		use Color_IAL_Renegade();
     }		
 
 	CustomLocation("Enemy_Renegade_Lieutenant") //location for radar
@@ -1279,7 +1279,7 @@ sub main()
         MapDescription("&BinocularAI_Renegade_Lieutenant&");		
         use Preset_EnemyAI();
         
-        use Color_IAL_Renegade()
+        use Color_IAL_Renegade();
     }
     
     CustomLocation("BinocularAI_Renegade_Lieutenant") //location for binoculars
@@ -1288,7 +1288,7 @@ sub main()
         MapDescription("&BinocularAI_Renegade_Lieutenant&");
         use Preset_BinocularAI();    
         
-        use Color_IAL_Renegade()
+        use Color_IAL_Renegade();
     }
     
     CustomLocation("Enemy_Renegade_Leader") //location for radar
@@ -1297,7 +1297,7 @@ sub main()
         MapDescription("&Enemy_Renegade_Leader&");		
         use Preset_EnemyAI();
         
-        use Color_IAL_Renegade()
+        use Color_IAL_Renegade();
     }
     
     CustomLocation("BinocularAI_Renegade_Leader") //location for binoculars
@@ -1306,7 +1306,7 @@ sub main()
         MapDescription("&BinocularAI_Renegade_Leader&");
         use Preset_BinocularAI();    
         
-        use Color_IAL_Renegade()
+        use Color_IAL_Renegade();
     }
     
     CustomLocation("Enemy_Renegade_Summoner") //location for radar
@@ -1315,7 +1315,7 @@ sub main()
         MapDescription("&Enemy_Bandit_Summoner&");		
         use Preset_EnemyAI();
         
-        use Color_IAL_Renegade()
+        use Color_IAL_Renegade();
     }
     
     CustomLocation("BinocularAI_Renegade_Summoner") //location for binoculars
@@ -1324,7 +1324,7 @@ sub main()
         MapDescription("&BinocularAI_Renegade_Summoner&");
         use Preset_BinocularAI();    
         
-        use Color_IAL_Renegade()
+        use Color_IAL_Renegade();
     }
 
 	Location("Screamer")
@@ -1926,12 +1926,12 @@ sub main()
         
         CategoryNight("Neutral")
         {
-            use Color_IAL_White()
+            use Color_IAL_White();
             use Color_IAL_ActivityTooHardRed();
         }
         CategoryNight("Objective")
         {
-            use Color_IAL_White()
+            use Color_IAL_White();
             use Color_IAL_ActivityTooHardRed();
         }
 	}
@@ -1953,12 +1953,12 @@ sub main()
         
         CategoryNight("Neutral")
         {
-            use Color_IAL_White()
+            use Color_IAL_White();
             use Color_IAL_ActivityTooHardRed();
         }
         CategoryNight("Objective")
         {
-            use Color_IAL_White()
+            use Color_IAL_White();
             use Color_IAL_ActivityTooHardRed();
         }
 	}
@@ -2019,7 +2019,7 @@ sub main()
 		Icon("map_nondiscovered");
         MapDescription("&MMap_NonDiscovered&");
         ShowOnMapEdge(false);
-        use Color_IAL_Undiscovered()
+        use Color_IAL_Undiscovered();
         
         use Preset_Other();
         IgnoreFogOfWar(true);

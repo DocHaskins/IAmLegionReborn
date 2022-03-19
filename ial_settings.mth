@@ -109,24 +109,24 @@ export int IAL_Night_XP_Combat_Reward = 20;
 //- LOCATION - (scripts/densitiesSettings.scr) -----\\
 //This is the Day Time density average for all groups
 //- Daytime - Ultimate Survivor = 3.0, Survivor = 3.5, Casual Survivor = 2.5, FPS Optimized = 5.0
-export float IAL_Density_Day = 1.0;
-export float IAL_Density_Day_Easy = 1.0;
-export float IAL_Density_Day_Medium = 1.0;
-export float IAL_Density_Day_Hard = 1.0;
-export float IAL_Density_Day_Flooded = 1.0;
-export float IAL_Density_Day_HUBOWA = 1.0; 
+export float IAL_Density_Day = 3.0;
+export float IAL_Density_Day_Easy = 3.0;
+export float IAL_Density_Day_Medium = 3.0;
+export float IAL_Density_Day_Hard = 3.0;
+export float IAL_Density_Day_Flooded = 3.0;
+export float IAL_Density_Day_HUBOWA = 3.0; 
 
 //This is the Night Time density average for all groups\\
 //- NightTime - Ultimate Survivor = 2.0, Survivor = 2.5, Casual Survivor = 1.5, FPS Optimized = 4.0
-export float IAL_Density_Night = 1.0;
-export float IAL_Density_Night_Easy = 1.0;
-export float IAL_Density_Night_Medium = 1.0;
-export float IAL_Density_Night_Hard = 0.5;
-export float IAL_Density_Night_Flooded = 1.0;
-export float IAL_Density_Night_HUBOWA = 1.0;
+export float IAL_Density_Night = 2.0;
+export float IAL_Density_Night_Easy = 2.0;
+export float IAL_Density_Night_Medium = 2.0;
+export float IAL_Density_Night_Hard = 2.5;
+export float IAL_Density_Night_Flooded = 2.0;
+export float IAL_Density_Night_HUBOWA = 2.0;
 
 //- SPAWN LOGIC -\\
-export float IAL_Special_SpawnDistance_min = 10.0;
+export float IAL_Special_SpawnDistance_min = 20.0;
 export float IAL_Special_SpawnDistance_max = 40.0;
 ////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -274,6 +274,19 @@ export int IAL_Chase_PointsPerSecondIfSeen_Screamer_Screaming = 15;
 //Range for the screamers screen to cause chase points to increase\\
 export int IAL_Chase_MaxRangeForScreamer = 20;
 
+sub IAL_Chase_ReinforcementPool()
+{
+    Spawn("Viral_Chase", 2,3);
+	Spawn("Banshee", 0,3);
+	Spawn("Spitter", 0,3);
+	Spawn("Goon", 0,1);
+	Spawn("Demolisher", 0,1);
+	force_player_target(true);
+	initial_spawn_delay(2.0);
+	chance_to_spawn(1.0);
+	cooldown(10.0);
+}
+
 //Time before chase ends\\
 export int IAL_Chase_LVL1_ChaseEndDelay = 15;
 export int IAL_Chase_LVL2_ChaseEndDelay = 25;
@@ -298,23 +311,23 @@ export int IAL_Chase_LVL3_LostPlayer_TimeBeforeEndChase = 30;
 export int IAL_Chase_LVL4_LostPlayer_TimeBeforeEndChase = 30;
 
 //Number of Infected based on Chase Points - SINGLE PLAYER\\
-export int IAL_Chase_LVL1_Avg_Virals = 8;
-export int IAL_Chase_LVL1_Max_Virals = 12;
-export int IAL_Chase_LVL2_Avg_Virals = 12;
-export int IAL_Chase_LVL2_Max_Virals = 18;
-export int IAL_Chase_LVL3_Avg_Virals = 18;
-export int IAL_Chase_LVL3_Max_Virals = 24;
-export int IAL_Chase_LVL4_Avg_Virals = 24;
-export int IAL_Chase_LVL4_Max_Virals = 30;
+export int IAL_Chase_LVL1_Avg_Virals = 4;
+export int IAL_Chase_LVL1_Max_Virals = 8;
+export int IAL_Chase_LVL2_Avg_Virals = 8;
+export int IAL_Chase_LVL2_Max_Virals = 12;
+export int IAL_Chase_LVL3_Avg_Virals = 12;
+export int IAL_Chase_LVL3_Max_Virals = 16;
+export int IAL_Chase_LVL4_Avg_Virals = 16;
+export int IAL_Chase_LVL4_Max_Virals = 20;
 
-export int IAL_Chase_LVL1_Avg_Volatiles = 2;
-export int IAL_Chase_LVL1_Max_Volatiles = 4;
-export int IAL_Chase_LVL2_Avg_Volatiles = 3;
-export int IAL_Chase_LVL2_Max_Volatiles = 4;
-export int IAL_Chase_LVL3_Avg_Volatiles = 4;
+export int IAL_Chase_LVL1_Avg_Volatiles = 1;
+export int IAL_Chase_LVL1_Max_Volatiles = 2;
+export int IAL_Chase_LVL2_Avg_Volatiles = 2;
+export int IAL_Chase_LVL2_Max_Volatiles = 3;
+export int IAL_Chase_LVL3_Avg_Volatiles = 2;
 export int IAL_Chase_LVL3_Max_Volatiles = 6;
-export int IAL_Chase_LVL4_Avg_Volatiles = 8;
-export int IAL_Chase_LVL4_Max_Volatiles = 10;
+export int IAL_Chase_LVL4_Avg_Volatiles = 2;
+export int IAL_Chase_LVL4_Max_Volatiles = 8;
 	
 //Number of Infected based on Chase Points - COOP\\
 export int IAL_Chase_Coop_LVL1_Virals_Close = 12;
@@ -351,14 +364,14 @@ export int IAL_Chase_LVL3_High_Intensity_Cooldown = 6;
 //CHASE DAMAGE MODIFIER\\
 export float IAL_Night_Aggression_Dmg_Multi_LVL1 = 0.1;
 export float IAL_Night_Aggression_Dmg_Multi_LVL2 = 0.2;
-export float IAL_Night_Aggression_Dmg_Multi_LVL3 = 0.75;
-export float IAL_Night_Aggression_Dmg_Multi_LVL4 = 1.5;	
+export float IAL_Night_Aggression_Dmg_Multi_LVL3 = 0.5;
+export float IAL_Night_Aggression_Dmg_Multi_LVL4 = 1.0;	
 ////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
 ////////////DAMAGE MODIFIERS\\\\\\\\\\\\\\\\\\\
 //GENERAL MODIFIER\\
-export float IAL_Overall_Dmg_To_Player = 1.0;
+export float IAL_Overall_Dmg_To_Player = 0.5;
 export float IAL_Overall_Fall_Dmg_To_Player = 1.5;
 
 //ARMOR\\

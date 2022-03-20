@@ -2,27 +2,9 @@ sub main()
 {
 	PresetDef("Auto Aim")
 	{
-		AddField("m_EntityVariant", "");
-	
-		AddField("m_ThrowAutoHitAssist", "0");
-		AddField("m_ThrowMultiAssist", "0");
-		
-		AddField("m_CalculatePointsFromCollidable", "1");
-		
-		AddField("m_InnerZone", "0.15");
-		AddField("m_OuterZone", "1.25");
-		
 		Preset("On")
         {
-			SetField("m_EntityVariant", "437;438");
-			
-			SetField("m_ThrowAutoHitAssist", "0");
-			SetField("m_ThrowMultiAssist", "0");
-
-			SetField("m_CalculatePointsFromCollidable", "1");
-			
-			SetField("m_InnerZone", "0.15");
-			SetField("m_OuterZone", "1.25");
+			SetField("m_EntityVariant", "");
 		}
 		
 		Preset("Off")

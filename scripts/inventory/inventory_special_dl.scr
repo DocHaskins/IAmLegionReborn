@@ -85,7 +85,7 @@ sub Inventory_Special_DL()
         Damage(10.0);
         DamageType(DamageType_Blunt);
         DamageName("AI_Throwable_Stone_Damage");
-        ExplodeDelay(10.0);
+        ExplodeDelay(-1);
         ExplodeOnCollision(false);
         PhysicsDamageMul(5.0);
         ThrowSpeed(30.0);
@@ -121,8 +121,8 @@ sub Inventory_Special_DL()
         Damage(10.0);
         DamageType(DamageType_Cut);
 		DamageName("AI_Throwable_Knife_Damage");
-        ExplodeDelay(10.0);
-        ExplodeOnCollision(true);
+        ExplodeDelay(-1);
+        ExplodeOnCollision(false);
         PhysicsDamageMul(5.0);
         ThrowSpeed(30.0);
         ThrowImpulseLook(13.0);
@@ -155,8 +155,8 @@ sub Inventory_Special_DL()
         Damage(10.0);
         DamageType(DamageType_Cut);
 		DamageName("AI_Throwable_KnifeBoss_Damage");
-        ExplodeDelay(10.0);
-        ExplodeOnCollision(true);
+        ExplodeDelay(-1);
+        ExplodeOnCollision(false);
         PhysicsDamageMul(5.0);
         ThrowSpeed(30.0);
         ThrowImpulseLook(13.0);
@@ -188,8 +188,8 @@ sub Inventory_Special_DL()
         PhysicsScript("simple.phx");
         HudIcon("jar");
         Damage(11.2);
-        ExplodeDelay(10.0);
-        ExplodeOnCollision(true);
+        ExplodeDelay(-1);
+        ExplodeOnCollision(false);
         PhysicsDamageMul(5.0);
         ThrowImpulseLook(13.0);
         ThrowImpulseUp(2.0);
@@ -217,8 +217,8 @@ sub Inventory_Special_DL()
         PhysicsScript("simple.phx");
         HudIcon("jar");
         Damage(15.0);
-        ExplodeDelay(10.0);
-        ExplodeOnCollision(true);
+        ExplodeDelay(-1);
+        ExplodeOnCollision(false);
         PhysicsDamageMul(5.0);
         ThrowImpulseLook(13.0);
         ThrowImpulseUp(2.0);
@@ -246,8 +246,8 @@ sub Inventory_Special_DL()
         PhysicsScript("simple.phx");
         HudIcon("jar");
         Damage(6.0);
-        ExplodeDelay(10.0);
-        ExplodeOnCollision(true);
+        ExplodeDelay(-1);
+        ExplodeOnCollision(false);
         PhysicsDamageMul(5.0);
         ThrowImpulseLook(13.0);
         ThrowImpulseUp(2.0);
@@ -648,7 +648,7 @@ sub Inventory_Special_DL()
 		IsAutomaticTierScaling(true);
 		DamageToPhysicsObjects(34.0);
         DamageRange(2.2);        
-        PhysicsDamageMul(1.25);
+        PhysicsDamageMul(1.75);
         StaminaUsage(0.0);       
         AiHitSound("kick");
         DamageType(DamageType_Kick);                                
@@ -656,11 +656,11 @@ sub Inventory_Special_DL()
         use HitEffects_Default();     
 		HitReactionType(EReactionType_Push);		
         HitReactionContext(EReactionContext_Melee);
-		HitReactionHitSeverity(EHitSeverity_Light);
+		HitReactionHitSeverity(EHitSeverity_Heavy);
 		HitReactionMoveSeverity(EMoveSeverity_Heavy);			
-		HitReactionFlags(EReactionFlag_Ragdoll);
-		ConfusionProb(0.0);
-	    FF_EffectName("KickLight");
+		HitReactionFlags(EReactionFlag_Interrupt);
+		ConfusionProb(0.5);
+	    FF_EffectName("KickHeavy");
         GameVersion(1);
     }
 	
@@ -671,9 +671,9 @@ sub Inventory_Special_DL()
         ItemType(ItemType_Fists);        
 		DamageTiers("WrestleKick_Tier");
 		IsAutomaticTierScaling(true);
-        DamageToPhysicsObjects(100.0);        
+        DamageToPhysicsObjects(50.0);        
         DamageRange(2.0);        
-        PhysicsDamageMul(2.5);
+        PhysicsDamageMul(2.4);
         AiHitSound("wrestler_kick");
         DamageType(DamageType_Ram);                
         Reparable(false);         
@@ -687,6 +687,7 @@ sub Inventory_Special_DL()
 		HitReactionHitSeverity(EHitSeverity_Heavy);
 		HitReactionMoveSeverity(EMoveSeverity_Heavy);		
 		HitReactionFlags(EReactionFlag_Ragdoll);
+		ConfusionProb(0.8);									
 		FF_EffectName("KickHeavy");
         GameVersion(1);
     }
@@ -700,7 +701,7 @@ sub Inventory_Special_DL()
 		IsAutomaticTierScaling(true);
         DamageToPhysicsObjects(100.0);        
         DamageRange(2.0);        
-        PhysicsDamageMul(2.0);
+        PhysicsDamageMul(2.3);
         AiHitSound("wrestler_kick");
         DamageType(DamageType_Ram);                
         Reparable(false);         
@@ -1063,7 +1064,7 @@ sub Inventory_Special_DL()
         DamageToPhysicsObjects(100.0);
         DamageRange(1.0);
         Force(1.0);
-        PhysicsDamageMul(0.2);
+        PhysicsDamageMul(0.3);
         StaminaUsage(0.0);       
         AiHitSound("push");
         DamageType(DamageType_Kick);                

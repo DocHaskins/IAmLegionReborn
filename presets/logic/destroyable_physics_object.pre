@@ -1,23 +1,11 @@
 sub AutoAim_Default()
 {
 	SetField("m_EntityVariant", "");
-	SetField("m_ThrowAutoHitAssist", "0");
-	SetField("m_ThrowMultiAssist", "0");
-	SetField("m_InnerZone", "0.15");
-	SetField("m_OuterZone", "1.25");
 }
 	
 sub AutoAim_On()
 {
-	SetField("m_EntityVariant", "439;440");
-	
-	SetField("m_ThrowAutoHitAssist", "0");
-	SetField("m_ThrowMultiAssist", "0");
-
-	SetField("m_CalculatePointsFromCollidable", "1");
-	
-	SetField("m_InnerZone", "0.15");
-	SetField("m_OuterZone", "1.25");
+	SetField("m_EntityVariant", "");
 }
 
 sub AutoAim_Off()

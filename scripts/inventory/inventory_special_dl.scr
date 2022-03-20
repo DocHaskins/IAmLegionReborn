@@ -660,7 +660,7 @@ sub Inventory_Special_DL()
 		HitReactionMoveSeverity(EMoveSeverity_Heavy);			
 		HitReactionFlags(EReactionFlag_Ragdoll);
 		ConfusionProb(0.0);
-	    FF_EffectName("KickHeavy");
+	    FF_EffectName("KickLight");
         GameVersion(1);
     }
 	
@@ -921,9 +921,9 @@ sub Inventory_Special_DL()
         PhysicsScript("simple.phx");
         Condition(-1);
         DamageName("RopeHookEnemyPull");
-        DamageToPhysicsObjects(80.0);
+        DamageToPhysicsObjects(60.0);
         StaminaDamage(30.0);
-        PhysicsDamageMul(2.7);
+        PhysicsDamageMul(1.0);
         StaminaUsage(0.8);
         DamageType(DamageType_Blast);
         InventoryMeshHq("wpn_rope_hook_a_fpp.msh");

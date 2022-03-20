@@ -1,0 +1,33 @@
+sub chase_handicap()
+{
+	ChaseHandicapCooldown(6.9);
+	// ChaseHandicapAction(action_name)
+	
+	ChaseHandicapAction("PassiveLandingLevel2"); 
+	ChaseHandicapAction("PassiveLandingLevel3");
+	ChaseHandicapAction("JumpTakedown");		
+	ChaseHandicapAction("LargeJump"); // Jumps over a lot of free space with enough air time (controlled by xp_runner_air curve) 
+	ChaseHandicapAction("VeryLargeJump"); // Jumps over a lot of free space with enough air time (controlled by ) distance defined in player_variable.scr VeryLargeJumpDistance
+	ChaseHandicapAction("Shimmy"); // Any shimmy
+	ChaseHandicapAction("LadderClimb"); // Climbing on a ladder
+	ChaseHandicapAction("JumpOnLow"); // Jump on a low obstacle
+	ChaseHandicapAction("Climb"); // Climb (from edge grab)
+	ChaseHandicapAction("EdgeGrab");    
+	ChaseHandicapAction("ZipLineSlide"); // Added at the end of zip line slide
+	ChaseHandicapAction("Slide"); // Slide under something
+	ChaseHandicapAction("ActiveLanding"); // Active landing performed (amortized landing)
+	ChaseHandicapAction("LargeActiveLanding"); // Active landing performed (amortized landing)	
+	ChaseHandicapAction("FarJump");
+	ChaseHandicapAction("DoubleJump");
+	ChaseHandicapAction("WallRunJump");
+	ChaseHandicapAction("GenericCustomMove"); // Any custom move that does not have its own action defined
+	ChaseHandicapAction("CM_HoleInTheWall");
+	ChaseHandicapAction("CM_DoorSkylight");	
+	ChaseHandicapAction("CM_PipeSlide");
+	ChaseHandicapAction("CM_TreeAmortizer");	
+	ChaseHandicapAction("MonkeyBarGrab");
+	ChaseHandicapAction("RopeGrab");
+	ChaseHandicapAction("WallRunSide");	
+	ChaseHandicapAction("Afterboost");
+	//ChaseHandicapAction("Runing");		
+}

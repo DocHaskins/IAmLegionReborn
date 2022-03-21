@@ -86,6 +86,7 @@ export int IAL_Camo_RemoveRate_Water = 40;
 //GENERAL SETTINGS\\
 export bool IAL_AutoAim = FALSE;
 export float IAL_Crossbow_Sway = 0.2;
+export float IAL_Weapon_Durability = 0.0; //Default value 1.0
 
 //Bow\\
 export float IAL_Bow_Sway = 0.2;
@@ -121,13 +122,298 @@ export float IAL_Density_Day_HUBOWA = 3.0;
 export float IAL_Density_Night = 2.0;
 export float IAL_Density_Night_Easy = 2.0;
 export float IAL_Density_Night_Medium = 2.0;
-export float IAL_Density_Night_Hard = 2.5;
+export float IAL_Density_Night_Hard = 2;
 export float IAL_Density_Night_Flooded = 2.0;
 export float IAL_Density_Night_HUBOWA = 2.0;
 
 //- SPAWN LOGIC -\\
 export float IAL_Special_SpawnDistance_min = 20.0;
 export float IAL_Special_SpawnDistance_max = 40.0;
+
+//- SPAWN POOLS -\\
+//General Population\\
+sub IAL_GenericWeighted_NightPool_Exterior()
+{
+	//Common Biters
+	PresetWeighted("Character;Biter", 100)
+	PresetWeighted("Character;Biter_Woman", 100)
+	PresetWeighted("Character;Biter_Berserker", 80)
+	PresetWeighted("Character;Biter_Weak", 90)
+	PresetWeighted("Character;Biter_Weak_Woman", 90)
+	PresetWeighted("Character;Biter_Armored", 80)
+    PresetWeighted("Character;Biter_XL", 80)
+	PresetWeighted("Character;Biter_Helmet", 60)	
+    PresetWeighted("Character;Viral", 40)
+	PresetWeighted("Character;Biter_GRE_Gas_Tank", 55)	
+	PresetWeighted("Character;Biter_Gas_Tank", 75) 
+	//Unique Biters 
+	PresetWeighted("Character;Biter_Backpack", 7)
+    PresetWeighted("Character;Biter_GRE", 10)
+    PresetWeighted("Character;Biter_GRE_Woman", 10)
+    PresetWeighted("Character;Biter_GRE_Weak", 10)
+    PresetWeighted("Character;Biter_GRE_Weak_Woman", 10)
+	PresetWeighted("Character;Biter_Toxic", 5)				 
+	PresetWeighted("Character;Biter_Explosive_Tank", 5)
+	PresetWeighted("Character;Biter_Chem", 5)
+    PresetWeighted("Character;Infected_Peacekeeper", 15)
+	PresetWeighted("Character;Infected_Scavenger", 15)
+    PresetWeighted("Character;Infected_Scavenger_Woman", 15)
+	PresetWeighted("Character;Infected_Renegade", 15)
+    PresetWeighted("Character;Infected_Renegade_Woman", 15)
+	//IAL Biters
+	PresetWeighted("Character;Biter_Male_FreshDead", 100)
+	PresetWeighted("Character;Biter_Male_Bleached", 100)
+	PresetWeighted("Character;Biter_Female_Child", 50)
+	PresetWeighted("Character;Biter_Male_Child", 50)
+    PresetWeighted("Character;Biter_Female_FreshDead", 100)
+	PresetWeighted("Character;Biter_Female_Bleached", 100)
+	//Common Specials
+	PresetWeighted("Character;Banshee", 5)
+	PresetWeighted("Character;Bolter", 2)
+	PresetWeighted("Character;Demolisher", 2)
+	PresetWeighted("Character;Charger", 2)
+	PresetWeighted("Character;Goon", 2) 
+	PresetWeighted("Character;Screamer", 15)
+	PresetWeighted("Character;Spitter", 8)
+	PresetWeighted("Character;Suicider", 3) 
+	PresetWeighted("Character;Volatile", 15)
+	//IAL Specials
+	PresetWeighted("Character;Banshee_Child", 5)
+}
+
+sub IAL_GenericWeighted_NightPool_Rooftop()
+{
+	//Common Biters
+	PresetWeighted("Character;Biter", 100)
+	PresetWeighted("Character;Biter_Woman", 100)
+	PresetWeighted("Character;Biter_Berserker", 80)
+    PresetWeighted("Character;Viral", 40)
+	//Unique Biters
+    PresetWeighted("Character;Infected_Peacekeeper", 15)
+	PresetWeighted("Character;Infected_Scavenger", 15)
+    PresetWeighted("Character;Infected_Scavenger_Woman", 15)
+	PresetWeighted("Character;Infected_Renegade", 15)
+    PresetWeighted("Character;Infected_Renegade_Woman", 15)
+	//IAL Biters
+	PresetWeighted("Character;Biter_Male_FreshDead", 100)
+	PresetWeighted("Character;Biter_Male_Bleached", 100)
+	PresetWeighted("Character;Biter_Female_Child", 50)
+	PresetWeighted("Character;Biter_Male_Child", 50)
+    PresetWeighted("Character;Biter_Female_FreshDead", 100)
+	PresetWeighted("Character;Biter_Female_Bleached", 100)
+	//Bandits
+	PresetWeighted("Character;Renegade_One_Handed", 5)
+	PresetWeighted("Character;Renegade_Two_Handed", 5)
+	PresetWeighted("Character;Renegade_Spear", 8)
+	PresetWeighted("Character;Renegade_Bow", 10)
+	PresetWeighted("Character;Renegade_Grenadier", 8)
+	//PK
+	PresetWeighted("Character;Peacekeeper_Commander", 25)
+	PresetWeighted("Character;Peacekeeper_Soldier", 25)
+	PresetWeighted("Character;Peacekeeper_2h", 28)
+	PresetWeighted("Character;Peacekeeper_Bow", 25)
+	//Common Specials
+	PresetWeighted("Character;Banshee", 50)
+	PresetWeighted("Character;Bolter", 2)
+	PresetWeighted("Character;Spitter", 30)
+	PresetWeighted("Character;Volatile", 85)
+	//IAL Specials
+	PresetWeighted("Character;Banshee_Child", 50)
+}
+
+sub IAL_GenericWeighted_NightPool_Interior()
+{
+	//Common Biters
+	PresetWeighted("Character;Biter", 100)
+	PresetWeighted("Character;Biter_Woman", 100)
+	PresetWeighted("Character;Biter_Berserker", 80)
+	PresetWeighted("Character;Biter_Weak", 90)
+	PresetWeighted("Character;Biter_Weak_Woman", 90)
+	PresetWeighted("Character;Biter_Armored", 80)
+    PresetWeighted("Character;Biter_XL", 80)
+	PresetWeighted("Character;Biter_Helmet", 60)	
+	PresetWeighted("Character;Biter_GRE_Gas_Tank", 55)	
+	PresetWeighted("Character;Biter_Gas_Tank", 75) 
+    PresetWeighted("Character;Viral", 40)
+	//Unique Biters
+	PresetWeighted("Character;Biter_Backpack", 7)
+    PresetWeighted("Character;Biter_GRE", 10)
+    PresetWeighted("Character;Biter_GRE_Woman", 10)
+    PresetWeighted("Character;Biter_GRE_Weak", 10)
+    PresetWeighted("Character;Biter_GRE_Weak_Woman", 10)
+	PresetWeighted("Character;Biter_Toxic", 5)				 
+	PresetWeighted("Character;Biter_Explosive_Tank", 5)
+	PresetWeighted("Character;Biter_Chem", 5)
+    PresetWeighted("Character;Infected_Peacekeeper", 15)
+	PresetWeighted("Character;Infected_Scavenger", 15)
+    PresetWeighted("Character;Infected_Scavenger_Woman", 15)
+	PresetWeighted("Character;Infected_Renegade", 15)
+    PresetWeighted("Character;Infected_Renegade_Woman", 15)
+	//IAL Biters
+	PresetWeighted("Character;Biter_Male_FreshDead", 100)
+	PresetWeighted("Character;Biter_Male_Bleached", 100)
+	PresetWeighted("Character;Biter_Female_Child", 50)
+	PresetWeighted("Character;Biter_Male_Child", 50)
+    PresetWeighted("Character;Biter_Female_FreshDead", 100)
+	PresetWeighted("Character;Biter_Female_Bleached", 100)
+	//Common Specials
+	PresetWeighted("Character;Banshee", 5)
+	PresetWeighted("Character;Charger", 5) 
+	PresetWeighted("Character;Goon", 5) 
+	PresetWeighted("Character;Screamer", 30)
+	PresetWeighted("Character;Suicider", 15) 
+	PresetWeighted("Character;Volatile", 30)
+}
+
+sub IAL_GenericWeighted_DayPool_Exterior()
+{
+	//Common Biters
+	PresetWeighted("Character;Biter", 100)
+	PresetWeighted("Character;Biter_Woman", 100)
+	PresetWeighted("Character;Biter_Berserker", 80)
+	PresetWeighted("Character;Biter_Weak", 90)
+	PresetWeighted("Character;Biter_Weak_Woman", 90)
+	PresetWeighted("Character;Biter_Armored", 80)
+	PresetWeighted("Character;Biter_Helmet", 60)	
+	PresetWeighted("Character;Biter_Gas_Tank", 75) 
+    PresetWeighted("Character;Viral", 40)
+	//Unique Biters	 
+	PresetWeighted("Character;Biter_Explosive_Tank", 5)
+    PresetWeighted("Character;Infected_Peacekeeper", 15)
+	PresetWeighted("Character;Infected_Scavenger", 15)
+    PresetWeighted("Character;Infected_Scavenger_Woman", 15)
+	PresetWeighted("Character;Infected_Renegade", 15)
+    PresetWeighted("Character;Infected_Renegade_Woman", 15)
+	//IAL Biters
+	PresetWeighted("Character;Biter_Male_FreshDead", 100)
+	PresetWeighted("Character;Biter_Male_Bleached", 100)
+	PresetWeighted("Character;Biter_Female_Child", 50)
+	PresetWeighted("Character;Biter_Male_Child", 50)
+    PresetWeighted("Character;Biter_Female_FreshDead", 100)
+	PresetWeighted("Character;Biter_Female_Bleached", 100)
+}
+
+sub IAL_GenericWeighted_DayPool_Rooftop()
+{
+	//Common Biters
+	PresetWeighted("Character;Biter", 50)
+	PresetWeighted("Character;Biter_Woman", 50)
+	PresetWeighted("Character;Biter_Berserker", 50)
+    PresetWeighted("Character;Viral", 20)
+	//Unique Biters
+    PresetWeighted("Character;Infected_Peacekeeper", 15)
+	PresetWeighted("Character;Infected_Scavenger", 15)
+    PresetWeighted("Character;Infected_Scavenger_Woman", 15)
+	PresetWeighted("Character;Infected_Renegade", 15)
+    PresetWeighted("Character;Infected_Renegade_Woman", 15)
+	//IAL Biters
+	PresetWeighted("Character;Biter_Male_FreshDead", 100)
+	PresetWeighted("Character;Biter_Male_Bleached", 100)
+	PresetWeighted("Character;Biter_Female_Child", 50)
+	PresetWeighted("Character;Biter_Male_Child", 50)
+    PresetWeighted("Character;Biter_Female_FreshDead", 100)
+	PresetWeighted("Character;Biter_Female_Bleached", 100)
+	//Bandits
+	PresetWeighted("Character;Renegade_One_Handed", 25)
+	PresetWeighted("Character;Renegade_Two_Handed", 25)
+	PresetWeighted("Character;Renegade_Spear", 28)
+	PresetWeighted("Character;Renegade_Bow", 30)
+	PresetWeighted("Character;Renegade_Grenadier", 28)
+	//PK
+	PresetWeighted("Character;Peacekeeper_Commander", 25)
+	PresetWeighted("Character;Peacekeeper_Soldier", 25)
+	PresetWeighted("Character;Peacekeeper_2h", 28)
+	PresetWeighted("Character;Peacekeeper_Bow", 25)
+	//Common Specials
+	PresetWeighted("Character;Banshee", 15)
+}
+
+sub IAL_GenericWeighted_DayPool_Interior()
+{
+	//Common Biters
+	PresetWeighted("Character;Biter", 25)
+	PresetWeighted("Character;Biter_Woman", 25)
+	PresetWeighted("Character;Biter_Berserker", 15)
+	PresetWeighted("Character;Biter_Weak", 15)
+	PresetWeighted("Character;Biter_Weak_Woman", 15)
+	PresetWeighted("Character;Biter_Armored", 15)
+    PresetWeighted("Character;Biter_XL", 15)
+	PresetWeighted("Character;Biter_Helmet", 15)	
+    PresetWeighted("Character;Viral", 15)
+	PresetWeighted("Character;Viral_Resting", 75)
+	PresetWeighted("Character;Biter_Resting", 75)
+	PresetWeighted("Character;Biter_GRE_Resting", 75)
+    PresetWeighted("Character;Biter_GRE_Woman_Resting", 75)
+    PresetWeighted("Character;Biter_GRE_Weak_Resting", 75)
+    PresetWeighted("Character;Biter_GRE_Weak_Woman_Resting", 75)
+	//Unique Biters
+	PresetWeighted("Character;Biter_Backpack", 1)
+    PresetWeighted("Character;Biter_GRE", 10)
+    PresetWeighted("Character;Biter_GRE_Woman", 10)
+    PresetWeighted("Character;Biter_GRE_Weak", 10)
+    PresetWeighted("Character;Biter_GRE_Weak_Woman", 10)
+	PresetWeighted("Character;Biter_GRE_Gas_Tank", 15)	
+	PresetWeighted("Character;Biter_Gas_Tank", 15) 
+	PresetWeighted("Character;Biter_Toxic", 50)				 
+	PresetWeighted("Character;Biter_Explosive_Tank", 25)
+	PresetWeighted("Character;Biter_Chem", 50)
+    PresetWeighted("Character;Infected_Peacekeeper", 25)
+	PresetWeighted("Character;Infected_Scavenger", 25)
+    PresetWeighted("Character;Infected_Scavenger_Woman", 25)
+	PresetWeighted("Character;Infected_Renegade", 25)
+    PresetWeighted("Character;Infected_Renegade_Woman", 25)
+	//IAL Biters
+	PresetWeighted("Character;Biter_Male_FreshDead", 100)
+	PresetWeighted("Character;Biter_Male_Bleached", 100)
+	PresetWeighted("Character;Biter_Female_Child", 50)
+	PresetWeighted("Character;Biter_Male_Child", 50)
+    PresetWeighted("Character;Biter_Female_FreshDead", 100)
+	PresetWeighted("Character;Biter_Female_Bleached", 100)
+}
+
+sub IAL_GenericWeighted_Darkzone_Interior()
+{
+	//Common Biters
+	PresetWeighted("Character;Biter", 30)
+	PresetWeighted("Character;Biter_Woman", 30)
+	PresetWeighted("Character;Biter_Berserker", 80)
+	PresetWeighted("Character;Biter_Weak", 20)
+	PresetWeighted("Character;Biter_Weak_Woman", 20)
+	PresetWeighted("Character;Biter_Armored", 80)
+    PresetWeighted("Character;Biter_XL", 40)
+	PresetWeighted("Character;Biter_Helmet", 30)	
+	PresetWeighted("Character;Biter_GRE_Gas_Tank", 85)	
+	PresetWeighted("Character;Biter_Gas_Tank", 75) 
+    PresetWeighted("Character;Viral", 70)
+	PresetWeighted("Character;Viral_Resting", 80)
+	PresetWeighted("Character;Biter_Resting", 80)
+	PresetWeighted("Character;Biter_GRE_Resting", 50)
+    PresetWeighted("Character;Biter_GRE_Woman_Resting", 50)
+    PresetWeighted("Character;Biter_GRE_Weak_Resting", 50)
+    PresetWeighted("Character;Biter_GRE_Weak_Woman_Resting", 50)
+	//Unique Biters
+	PresetWeighted("Character;Biter_Backpack", 7)
+    PresetWeighted("Character;Biter_GRE", 40)
+    PresetWeighted("Character;Biter_GRE_Woman", 40)
+    PresetWeighted("Character;Biter_GRE_Weak", 40)
+    PresetWeighted("Character;Biter_GRE_Weak_Woman", 40)
+	PresetWeighted("Character;Biter_Toxic", 25)				 
+	PresetWeighted("Character;Biter_Explosive_Tank", 25)
+	PresetWeighted("Character;Biter_Chem", 25)
+    PresetWeighted("Character;Infected_Peacekeeper", 15)
+	PresetWeighted("Character;Infected_Scavenger", 15)
+    PresetWeighted("Character;Infected_Scavenger_Woman", 15)
+	PresetWeighted("Character;Infected_Renegade", 15)
+    PresetWeighted("Character;Infected_Renegade_Woman", 15)
+	//IAL Biters
+	PresetWeighted("Character;Biter_Male_FreshDead", 100)
+	PresetWeighted("Character;Biter_Male_Bleached", 100)
+	PresetWeighted("Character;Biter_Female_Child", 50)
+	PresetWeighted("Character;Biter_Male_Child", 50)
+    PresetWeighted("Character;Biter_Female_FreshDead", 100)
+	PresetWeighted("Character;Biter_Female_Bleached", 100)
+}
+
 ////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
@@ -274,13 +560,22 @@ export int IAL_Chase_PointsPerSecondIfSeen_Screamer_Screaming = 15;
 //Range for the screamers screen to cause chase points to increase\\
 export int IAL_Chase_MaxRangeForScreamer = 20;
 
-sub IAL_Chase_ReinforcementPool()
+sub IAL_Chase_Easy_ReinforcementPool()
 {
     Spawn("Viral_Chase", 2,3);
-	Spawn("Banshee", 0,3);
-	Spawn("Spitter", 0,3);
-	Spawn("Goon", 0,1);
-	Spawn("Demolisher", 0,1);
+	Spawn("Banshee", 8,8);
+	force_player_target(true);
+	initial_spawn_delay(2.0);
+	chance_to_spawn(1.0);
+	cooldown(10.0);
+}
+
+sub IAL_Chase_Hard_ReinforcementPool()
+{
+	Spawn("Chargers", 5,5);
+	Spawn("Spitter", 5,5);
+	Spawn("Goon", 5,5);
+	Spawn("Demolisher", 5,5);
 	force_player_target(true);
 	initial_spawn_delay(2.0);
 	chance_to_spawn(1.0);
@@ -320,14 +615,14 @@ export int IAL_Chase_LVL3_Max_Virals = 16;
 export int IAL_Chase_LVL4_Avg_Virals = 16;
 export int IAL_Chase_LVL4_Max_Virals = 20;
 
-export int IAL_Chase_LVL1_Avg_Volatiles = 1;
-export int IAL_Chase_LVL1_Max_Volatiles = 2;
-export int IAL_Chase_LVL2_Avg_Volatiles = 2;
-export int IAL_Chase_LVL2_Max_Volatiles = 3;
-export int IAL_Chase_LVL3_Avg_Volatiles = 2;
-export int IAL_Chase_LVL3_Max_Volatiles = 6;
-export int IAL_Chase_LVL4_Avg_Volatiles = 2;
-export int IAL_Chase_LVL4_Max_Volatiles = 8;
+export int IAL_Chase_LVL1_Avg_Volatiles = 0;
+export int IAL_Chase_LVL1_Max_Volatiles = 1;
+export int IAL_Chase_LVL2_Avg_Volatiles = 1;
+export int IAL_Chase_LVL2_Max_Volatiles = 2;
+export int IAL_Chase_LVL3_Avg_Volatiles = 1;
+export int IAL_Chase_LVL3_Max_Volatiles = 3;
+export int IAL_Chase_LVL4_Avg_Volatiles = 1;
+export int IAL_Chase_LVL4_Max_Volatiles = 4;
 	
 //Number of Infected based on Chase Points - COOP\\
 export int IAL_Chase_Coop_LVL1_Virals_Close = 12;
@@ -339,14 +634,14 @@ export int IAL_Chase_Coop_LVL3_Virals_Far = 24;
 export int IAL_Chase_Coop_LVL4_Virals_Close = 30;
 export int IAL_Chase_Coop_LVL4_Virals_Far = 30;
 
-export int IAL_Chase_Coop_LVL1_Volatiles_Close = 4;
-export int IAL_Chase_Coop_LVL1_Volatiles_Far = 5;
-export int IAL_Chase_Coop_LVL2_Volatiles_Close = 5;
-export int IAL_Chase_Coop_LVL2_Volatiles_Far = 6;
-export int IAL_Chase_Coop_LVL3_Volatiles_Close = 6;
-export int IAL_Chase_Coop_LVL3_Volatiles_Far = 7;
-export int IAL_Chase_Coop_LVL4_Volatiles_Close = 10;
-export int IAL_Chase_Coop_LVL4_Volatiles_Far = 12;
+export int IAL_Chase_Coop_LVL1_Volatiles_Close = 0;
+export int IAL_Chase_Coop_LVL1_Volatiles_Far = 1;
+export int IAL_Chase_Coop_LVL2_Volatiles_Close = 2;
+export int IAL_Chase_Coop_LVL2_Volatiles_Far = 3;
+export int IAL_Chase_Coop_LVL3_Volatiles_Close = 2;
+export int IAL_Chase_Coop_LVL3_Volatiles_Far = 4;
+export int IAL_Chase_Coop_LVL4_Volatiles_Close = 5;
+export int IAL_Chase_Coop_LVL4_Volatiles_Far = 8;
 
 //CHASE GENERAL COOP Settings\\
 export int IAL_Chase_Coop_Range_Far = 80;

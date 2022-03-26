@@ -1,0 +1,852 @@
+import "activation_presets.def"
+import "_embeded_object_requests.def"
+
+sub main()
+{
+    use declare_activation_daytime_presets();
+
+    use declare_embeded_object_requests();
+
+    PresetDef("Spawn")
+    {
+        AddField("m_Prefab", "humanaiinternal");
+        AddField("m_Preset", "Character;Bandit_Tier_0;Scenario;General;");
+        AddField("m_PresetPoolName", "");
+        AddField("m_NumOfAIsToSpawn", "1");
+        AddField("m_MinNumOfAIsToSpawn", "0");
+        AddField("m_MaxNumOfAIsToSpawn", "0");
+        AddField("m_FactionName", "");
+
+        Preset("Bandits_1")
+        {
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
+            SetField("m_FactionName", "bandits");
+        }
+
+        Preset("Bandits_2")
+        {
+            SetField("m_NumOfAIsToSpawn", "2");
+            SetField("m_FactionName", "bandits");
+        }
+
+        Preset("Bandits_3")
+        {
+            SetField("m_NumOfAIsToSpawn", "3");
+            SetField("m_FactionName", "bandits");
+        }
+
+        Preset("Survivors_1")
+        {
+            SetField("m_PresetPoolName", "Survivors");
+            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_FactionName", "survivors");
+        }
+
+        Preset("Survivors_2")
+        {
+            SetField("m_PresetPoolName", "Survivors_2");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "2");
+            SetField("m_FactionName", "survivors");
+        }
+
+        Preset("Survivors_3")
+        {
+            SetField("m_Preset", "Character;Survivor;Scenario;General;");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "2");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
+            SetField("m_FactionName", "survivors");
+        }
+		
+        Preset("Survivors_4")
+        {
+            SetField("m_Preset", "Character;Survivor;Scenario;General;");
+            SetField("m_NumOfAIsToSpawn", "3");
+            SetField("m_FactionName", "survivors");
+        }
+		
+        Preset("Survivor_Shop")
+        {
+            SetField("m_Preset", "Character;Survivor_Shop;Scenario;General;");
+            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_FactionName", "survivors");
+        }
+
+        Preset("Peace_Keeper_1")
+        {
+            SetField("m_Preset", "Character;Peacekeeper;Scenario;General;");
+            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_FactionName", "peacekeepers");
+        }
+
+        Preset("Peace_Keeper_2")
+        {
+            SetField("m_Preset", "Character;Peacekeeper;Scenario;General;");
+            SetField("m_NumOfAIsToSpawn", "2");
+            SetField("m_FactionName", "peacekeepers");
+        }
+
+        Preset("Peace_Keeper_3")
+        {
+            SetField("m_Preset", "Character;Peacekeeper;Scenario;General;");
+            SetField("m_NumOfAIsToSpawn", "3");
+            SetField("m_FactionName", "peacekeepers");
+        }
+
+        Preset("Bandits_1_3")
+        {
+            SetField("m_Preset", "Character;Bandit_Tier_0;Scenario;General;");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
+            SetField("m_FactionName", "bandits");
+        }
+
+        Preset("Survivors_1_3")
+        {
+            SetField("m_Preset", "Character;Survivor;Scenario;General;");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
+            SetField("m_FactionName", "survivors");
+        }
+
+        Preset("Peace_Keeper_1_3")
+        {
+            SetField("m_Preset", "Character;Peacekeeper;Scenario;General;");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "2");
+            SetField("m_FactionName", "peacekeepers");
+        }
+        Preset("Peacekeeper_1")
+        {
+            SetField("m_PresetPoolName", "Peacekeeper_power_1");
+            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_FactionName", "peacekeepers");
+        }
+        Preset("Peacekeeper_Power_1")
+        {
+            SetField("m_PresetPoolName", "Peacekeeper_power_1");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "2");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
+            SetField("m_FactionName", "peacekeepers");
+        }
+
+        Preset("Peacekeeper_Power_2")
+        {
+            SetField("m_PresetPoolName", "Peacekeeper_power_2");
+           SetField("m_NumOfAIsToSpawn", "4");
+            SetField("m_FactionName", "peacekeepers");
+        }
+
+        Preset("Peacekeeper_Power_3")
+        {
+            SetField("m_PresetPoolName", "Peacekeeper_power_2");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "3");
+            SetField("m_MaxNumOfAIsToSpawn", "4");
+            SetField("m_FactionName", "peacekeepers");
+        }
+		
+        Preset("Peacekeeper_Power_4")
+        {
+            SetField("m_PresetPoolName", "Peacekeeper_power_2");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "4");
+            SetField("m_MaxNumOfAIsToSpawn", "4");
+            SetField("m_FactionName", "peacekeepers");
+        }
+        Preset("Peacekeeper_Empire")
+        {
+            SetField("m_PresetPoolName", "Peacekeeper_Empire");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "2");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
+            SetField("m_FactionName", "peacekeepers");
+        }
+        Preset("Peacekeeper_Conscript")
+        {
+            SetField("m_PresetPoolName", "Peacekeeper_Conscript");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "2");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
+            SetField("m_FactionName", "peacekeepers");
+        }
+
+        Preset("Bandit_Power_1")
+        {
+            SetField("m_PresetPoolName", "Bandit_power_1");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "2");
+            SetField("m_MaxNumOfAIsToSpawn", "2");
+            SetField("m_FactionName", "bandits");
+        }
+
+        Preset("Bandit_Power_2")
+        {
+            SetField("m_PresetPoolName", "Bandit_power_2");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "2");
+            SetField("m_MaxNumOfAIsToSpawn", "2");
+            SetField("m_FactionName", "bandits");
+        }
+		
+        Preset("Bandit_Power_3")
+        {
+            SetField("m_PresetPoolName", "Bandit_power_3");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "2");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
+            SetField("m_FactionName", "bandits");
+        }
+		
+        Preset("Bandit_Power_4")
+        {
+            SetField("m_PresetPoolName", "Bandit_power_4");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "2");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
+            SetField("m_FactionName", "bandits");
+        }
+
+        Preset("Bandit_Bloods_Gang")
+        {
+            SetField("m_PresetPoolName", "Bandit_Bloods_Gang");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "2");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
+            SetField("m_FactionName", "bandits");
+        }
+
+        Preset("Bandit_Test_Elemental_1")
+        {
+            SetField("m_PresetPoolName", "Bandit_Bloods_Gang");
+            SetField("m_NumOfAIsToSpawn", "1");
+            SetField("m_FactionName", "bandits");
+        }
+
+        Preset("Bandit_Test_Elemental_3")
+        {
+            SetField("m_PresetPoolName", "Bandit_Bloods_Gang");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "2");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
+            SetField("m_FactionName", "bandits");
+        }
+		
+		Preset("Renegades_Power_1")
+        {
+            SetField("m_PresetPoolName", "Renegades_Power_1");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "2");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
+            SetField("m_FactionName", "bandits");
+        }
+
+        Preset("Bandit_Knife_Thrower")
+        {
+            SetField("m_PresetPoolName", "Bandit_Knife_Thrower");
+            SetField("m_NumOfAIsToSpawn", "2");
+            SetField("m_FactionName", "bandits");
+        }
+
+        Preset("Bandit_PA_Combo_1")
+        {
+            SetField("m_PresetPoolName", "Bandit_PA_Combo_1");
+            SetField("m_NumOfAIsToSpawn", "2");
+            SetField("m_FactionName", "bandits");
+        }
+
+        Preset("Bandit_PA_Combo_2")
+        {
+            SetField("m_PresetPoolName", "Bandit_PA_Combo_2");
+            SetField("m_NumOfAIsToSpawn", "2");
+            SetField("m_FactionName", "bandits");
+        }
+
+        Preset("Bandit_Hard")
+        {
+            SetField("m_PresetPoolName", "Bandit_Hard");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "2");
+            SetField("m_FactionName", "bandits");
+        }
+
+        Preset("Bandit_Electric")
+        {
+            SetField("m_PresetPoolName", "Bandit_Electric");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "1");
+            SetField("m_MaxNumOfAIsToSpawn", "2");
+            SetField("m_FactionName", "bandits");
+        }
+
+        Preset("Scav_Power_1")
+        {
+            SetField("m_PresetPoolName", "Scav_Power_1");
+            SetField("m_NumOfAIsToSpawn", "2");
+            SetField("m_FactionName", "scavengers");
+        }
+
+        Preset("Scav_Power_2")
+        {
+            SetField("m_PresetPoolName", "Scav_Power_2");
+            SetField("m_NumOfAIsToSpawn", "3");
+            SetField("m_FactionName", "scavengers");
+        }
+
+        Preset("Scav_Power_3")
+        {
+            SetField("m_PresetPoolName", "Scav_Power_3");
+            SetField("m_NumOfAIsToSpawn", "4");
+            SetField("m_FactionName", "scavengers");
+        }
+
+        ////////// REGIONS ////////////
+
+        Preset("Bandits_R1")
+        {
+            SetField("m_PresetPoolName", "Bandits_R1");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "2");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
+            SetField("m_FactionName", "bandits");
+        }
+
+        Preset("Bandits_R2")
+        {
+            SetField("m_PresetPoolName", "Bandits_R2");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "2");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
+            SetField("m_FactionName", "bandits");
+        }
+
+        Preset("Bandits_R3")
+        {
+            SetField("m_PresetPoolName", "Bandits_R3");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "2");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
+            SetField("m_FactionName", "bandits");
+        }
+
+        Preset("Bandits_R4")
+        {
+            SetField("m_PresetPoolName", "Bandits_R4");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "2");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
+            SetField("m_FactionName", "bandits");
+        }
+
+        Preset("Bandits_R5")
+        {
+            SetField("m_PresetPoolName", "Bandits_R5");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "2");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
+            SetField("m_FactionName", "bandits");
+        }
+
+        Preset("Bandits_R6")
+        {
+            SetField("m_PresetPoolName", "Bandits_R6");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "2");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
+            SetField("m_FactionName", "bandits");
+        }
+
+        /////////// TEST VIRAL AGENDA /////////////
+
+        Preset("Viral_R2")
+        {
+            SetField("m_Preset", "Character;Viral_Region_02;Scenario;General;");
+            SetField("m_NumOfAIsToSpawn", "0");
+            SetField("m_MinNumOfAIsToSpawn", "2");
+            SetField("m_MaxNumOfAIsToSpawn", "3");
+        }
+
+        /////////// HUBS /////////////
+// (DEFAULT) EXAMPLE HUB-HOW-TO
+		
+        Preset("Example_man_Hub_base")
+        {
+			SetField("m_Preset", "Character;Example_man_Hub_base;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("Example_wmn_Hub_base")
+        {
+			SetField("m_Preset", "Character;Example_wmn_Hub_base;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		
+        Preset("Example_man_Hub_guard")
+        {
+			SetField("m_Preset", "Character;Example_man_Hub_guard;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("Example_wmn_Hub_guard")
+        {
+			SetField("m_Preset", "Character;Example_wmn_Hub_guard;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		
+        Preset("Example_man_Hub_worker")
+        {
+			SetField("m_Preset", "Character;Example_man_Hub_worker;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("Example_wmn_Hub_worker")
+        {
+			SetField("m_Preset", "Character;Example_wmn_Hub_worker;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+	
+// (SRV/SURV) Survivors HUB Agenda Presets
+		
+        Preset("Surv_man_Hub_base")
+        {
+			SetField("m_Preset", "Character;Surv_man_Hub_base;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		
+		Preset("Surv_man_Hub_base_bark_a")
+        {
+			SetField("m_Preset", "Character;Surv_man_Hub_base_bark_a;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		
+		Preset("Surv_man_Hub_base_group_2")
+        {
+			SetField("m_Preset", "Character;Surv_man_Hub_base;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "2");
+        }
+		
+		Preset("Surv_man_Hub_base_group_3")
+        {
+			SetField("m_Preset", "Character;Surv_man_Hub_base;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "3");
+        }
+		
+        Preset("Surv_wmn_Hub_base")
+        {
+			SetField("m_Preset", "Character;Surv_wmn_Hub_base;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		
+		Preset("Surv_wmn_Hub_base_group_2")
+        {
+			SetField("m_Preset", "Character;Surv_wmn_Hub_base;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "2");
+        }
+		
+		Preset("Surv_kid_Hub_base")
+        {
+			SetField("m_Preset", "Character;Surv_kid_Hub_base;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		
+		Preset("Surv_kid_Hub_base_group_2")
+        {
+			SetField("m_Preset", "Character;Surv_kid_Hub_base;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "2");
+        }
+		
+        Preset("Surv_man_Hub_guard")
+        {
+			SetField("m_Preset", "Character;Surv_man_Hub_guard;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("Surv_wmn_Hub_guard")
+        {
+			SetField("m_Preset", "Character;Surv_wmn_Hub_guard;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		
+        Preset("Surv_man_Hub_worker")
+        {
+			SetField("m_Preset", "Character;Surv_man_Hub_worker;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("Surv_wmn_Hub_worker")
+        {
+			SetField("m_Preset", "Character;Surv_wmn_Hub_worker;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		
+		Preset("Surv_man_Hub_worker_1h")
+        {
+			SetField("m_Preset", "Character;Hub_Main_Canteen_Man_1h;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		
+// (PK) Peacekeepers HUB Agenda Presets
+		
+        Preset("PK_man_Hub_base")
+        {
+			SetField("m_Preset", "Character;PK_man_Hub_base;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("PK_wmn_Hub_base")
+        {
+			SetField("m_Preset", "Character;PK_wmn_Hub_base;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		Preset("PK_wmn_Hub_base_group_2")
+        {
+			SetField("m_Preset", "Character;PK_wmn_Hub_base;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "2");
+        }
+		Preset("PK_man_Hub_base_group_2")
+        {
+			SetField("m_Preset", "Character;PK_man_Hub_worker;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "2");
+        }
+        Preset("PK_man_Hub_guard")
+        {
+			SetField("m_Preset", "Character;PK_man_Hub_guard;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		Preset("PK_man_Hub_guard_group_2")
+        {
+			SetField("m_Preset", "Character;PK_man_Hub_guard;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "2");
+        }
+		Preset("PK_wmn_Hub_guard")
+        {
+			SetField("m_Preset", "Character;PK_wmn_Hub_guard;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		Preset("PK_wmn_Hub_guard_group_2")
+        {
+			SetField("m_Preset", "Character;PK_wmn_Hub_guard;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "2");
+        }
+		
+        Preset("PK_man_Hub_worker")
+        {
+			SetField("m_Preset", "Character;PK_man_Hub_worker;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("PK_wmn_Hub_worker")
+        {
+			SetField("m_Preset", "Character;PK_wmn_Hub_worker;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		Preset("PK_man_Hub_Ship_basic")
+        {
+			SetField("m_Preset", "Character;PK_man_Hub_Ship_basic;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("PK_wmn_Hub_Ship_basic")
+        {
+			SetField("m_Preset", "Character;PK_wmn_Hub_Ship_basic;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		Preset("PK_man_Hub_worker_group_4")
+        {
+			SetField("m_Preset", "Character;PK_man_Hub_worker;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "4");
+        }
+		Preset("PK_wmn_Hub_worker_group_2")
+        {
+			SetField("m_Preset", "Character;PK_wmn_Hub_worker;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "2");
+        }
+		Preset("PK_man_Hub_guard_group_4")
+        {
+			SetField("m_Preset", "Character;PK_man_Hub_Ship_basic;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "4");
+		}
+		Preset("PK_man_Hub_Ship_worker")
+        {
+			SetField("m_Preset", "Character;PK_man_Hub_Ship_worker;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("PK_wmn_Hub_Ship_worker")
+        {
+			SetField("m_Preset", "Character;PK_wmn_Hub_Ship_worker;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		Preset("PK_man_Hub_Ship_common")
+        {
+			SetField("m_Preset", "Character;PK_man_Hub_Ship_common;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("PK_wmn_Hub_Ship_common")
+        {
+			SetField("m_Preset", "Character;PK_wmn_Hub_Ship_common;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		Preset("PK_man_Hub_Ship_doctor")
+        {
+			SetField("m_Preset", "Character;PK_man_Hub_Ship_doctor;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("PK_wmn_Hub_Ship_nurse")
+        {
+			SetField("m_Preset", "Character;PK_wmn_Hub_Ship_nurse;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		Preset("PK_wmn_Hub_Ship_nurse_2")
+        {
+			SetField("m_Preset", "Character;PK_wmn_Hub_Ship_nurse;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "2");
+        }
+		Preset("PK_man_Hub_base_1h")
+        {
+			SetField("m_Preset", "Character;PK_man_Hub_base_1h;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		Preset("PK_man_Hub_base_1h_bark_a_b")
+        {
+			SetField("m_Preset", "Character;PK_man_Hub_base_1h_bark_a_b;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("PK_man_Hub_base_spear")
+        {
+			SetField("m_Preset", "Character;PK_man_Hub_base_spear;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		
+		Preset("PK_man_Hub_base_3m_spear")
+        {
+			SetField("m_Preset", "Character;PK_man_Hub_base_spear;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "3");
+        }
+		
+		Preset("PK_kid_Hub_Ship")
+        {
+			SetField("m_Preset", "Character;PK_kid_Hub_Ship;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		Preset("PK_kid_Hub_Ship_group_2")
+        {
+			SetField("m_Preset", "Character;PK_kid_Hub_Ship;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "2");
+        }
+		Preset("PK_Hub_guard_group_2m_2w")
+        {
+			SetField("m_PresetPoolName", "PK_Hub_guard_group_2m_2w_pool");
+			SetField("m_NumOfAIsToSpawn", "4");
+        }
+		Preset("PK_Hub_tavern_group_3m_1w")
+        {
+            SetField("m_PresetPoolName", "PK_Hub_tavern_group_3m_1w_pool");
+            SetField("m_NumOfAIsToSpawn", "4");
+		}
+		
+// (SCAV/SCV) Scavengers HUB Presets
+		
+        Preset("Scav_man_Hub_base")
+        {
+			SetField("m_Preset", "Character;Scav_man_Hub_base;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("Scav_wmn_Hub_base")
+        {
+			SetField("m_Preset", "Character;Scav_wmn_Hub_base;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		
+        Preset("Scav_man_Hub_guard")
+        {
+			SetField("m_Preset", "Character;Scav_man_Hub_guard;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("Scav_wmn_Hub_guard")
+        {
+			SetField("m_Preset", "Character;Scav_wmn_Hub_guard;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		
+        Preset("Scav_man_Hub_worker")
+        {
+			SetField("m_Preset", "Character;Scav_man_Hub_worker;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("Scav_wmn_Hub_worker")
+        {
+			SetField("m_Preset", "Character;Scav_wmn_Hub_worker;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		
+//  Main HUB Presets
+		
+        Preset("Hub_Main_Canteen_Man")
+        {
+			SetField("m_Preset", "Character;Hub_Main_Canteen_Man;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("Hub_Main_Canteen_Woman")
+        {
+			SetField("m_Preset", "Character;Scav_wmn_Hub_base;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		
+		Preset("Canteen_Hub_Group_3m1f")
+        {
+            SetField("m_PresetPoolName", "Canteen_Hub_Group_3m1f_pool");
+            SetField("m_NumOfAIsToSpawn", "4");
+		}
+		
+		Preset("Canteen_Hub_Group_PK_2m")
+        {
+            SetField("m_PresetPoolName", "PK_Hub_2m_pool");
+            SetField("m_NumOfAIsToSpawn", "2");
+		}
+		
+//  Archers Presets
+		
+		Preset("Archers_man_Hub_base")
+        {
+			SetField("m_Preset", "Character;Archers_man_Hub_base;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		Preset("Archers_wmn_Hub_base")
+        {
+			SetField("m_Preset", "Character;Archers_wmn_Hub_base;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		Preset("Archers_man_Hub_base_group_2")
+        {
+			SetField("m_Preset", "Character;Archers_man_Hub_base;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "2");
+        }
+		Preset("Archers_wmn_Hub_base_group_2")
+        {
+			SetField("m_Preset", "Character;Archers_wmn_Hub_base;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "2");
+        }
+		
+		
+// (PSYCHO) Psycho Market HUB Presets
+		
+		Preset("Psycho_man_Hub_base")
+        {
+			SetField("m_Preset", "Character;Psycho_man_Hub_base;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("Psycho_wmn_Hub_base")
+        {
+			SetField("m_Preset", "Character;Psycho_wmn_Hub_base;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		
+		Preset("Psycho_man_Hub_guard")
+        {
+			SetField("m_Preset", "Character;Psycho_man_Hub_guard;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("Psycho_wmn_Hub_guard")
+        {
+			SetField("m_Preset", "Character;Psycho_wmn_Hub_guard;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		
+		Preset("Psycho_man_Hub_worker")
+        {
+			SetField("m_Preset", "Character;Psycho_man_Hub_worker;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("Psycho_wmn_Hub_worker")
+        {
+			SetField("m_Preset", "Character;Psycho_wmn_Hub_worker;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		
+		/////////// POSTMAN //////////////
+
+		Preset("Postman_Man")
+        {
+			SetField("m_Preset", "Character;Postman_Man;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("Postman_Woman")
+        {
+			SetField("m_Preset", "Character;Postman_Woman;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		
+		/////////// ABANDONED STRUCTURE //////////////
+
+		Preset("AS_Peacekeeper_Man")
+        {
+			SetField("m_Preset", "Character;Peacekeeper_Soldier;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("AS_Peacekeeper_Woman")
+        {
+			SetField("m_Preset", "Character;Conscript_Woman;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("AS_Scavenger_Man")
+        {
+			SetField("m_Preset", "Character;Scavenger;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("AS_Scavenger_Woman")
+        {
+			SetField("m_Preset", "Character;Scavenger_woman;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("AS_Survivor_Man")
+        {
+			SetField("m_Preset", "Character;Survivor;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("AS_Survivor_Woman")
+        {
+			SetField("m_Preset", "Character;Survivor_Woman;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+        Preset("AS_Child")
+        {
+			SetField("m_Preset", "Character;Surv_kid_Hub_base;Scenario;General;"); 
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+
+	//////////////FRANKS CANTEEN////////////
+		Preset("Canteen_Hub_Man")
+        {
+			SetField("m_PresetPoolName", "Canteen_Hub_Man_Pool");
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		
+		Preset("Canteen_Hub_Man_Wounded")
+        {
+			SetField("m_PresetPoolName", "Canteen_Hub_Man_Wounded_Pool");
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		
+		Preset("Canteen_Hub_Woman")
+        {
+			SetField("m_PresetPoolName", "Canteen_Hub_Woman_Pool");
+			SetField("m_NumOfAIsToSpawn", "1");
+        }
+		Preset("Canteen_Hub_Group_MM")
+        {
+			SetField("m_PresetPoolName", "Canteen_Hub_Group_MM_Pool");
+			SetField("m_NumOfAIsToSpawn", "2");
+        }
+		Preset("Canteen_Hub_Group_WW")
+        {
+			SetField("m_PresetPoolName", "Canteen_Hub_Group_WW_Pool");
+			SetField("m_NumOfAIsToSpawn", "2");
+        }
+		Preset("Canteen_Hub_Group_MW")
+        {
+			SetField("m_PresetPoolName", "Canteen_Hub_Group_MW_Pool");
+			SetField("m_NumOfAIsToSpawn", "2");
+        }
+    }
+}

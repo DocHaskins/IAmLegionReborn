@@ -43,7 +43,8 @@ sub main()
 		RunThrough(8, 20);
         Easy(14, 50);
         Medium(14, 50);
-        VeryHard(85, 120);
+		Hard(90, 125); 
+        VeryHard(120, 120);
 		
 		OWA(4, 6);
     }
@@ -118,11 +119,11 @@ sub main()
     DensitiesTagged(Day, "init_ground_flavor") // Biter One Shot spawns in BP and won't leave it.
     {
         None("0%");
-		RunThrough("3%");
-        Easy("6%");
-        Medium("9%");
-        Hard("12%");
-        VeryHard("15%");
+		RunThrough("15%");
+        Easy("30%");
+        Medium("55%");
+        Hard("85%");
+        VeryHard("85%");
 		
 		HUB("5%");
 		OWA("5%");
@@ -133,10 +134,10 @@ sub main()
     {
         None(0, 0);
 		RunThrough(0, 0);
-        Easy(0, 0);
-        Medium(0, 0);
-        Hard(0, 0);
-        VeryHard(0, 0);
+        Easy(50, 100);
+        Medium(50, 100);
+        Hard(50, 100);
+        VeryHard(50, 100);
 		
 		HUB(0, 0);
 		OWA(0, 0);
@@ -299,8 +300,8 @@ sub main()
 		RunThrough(1, 2, 100.0);
         Easy(7, 10, 100.0);
 		Medium(7, 15, 100.0);
-        Hard(22, 25, 100.0);
-        VeryHard(50, 50, 100.0); // Used for Shops and Dark Places
+        Hard(82, 125, 200.0);
+        VeryHard(80, 160, 200.0); // Used for Shops and Dark Places
     }
     
     DensitiesTagged(Night, "dz_default")
@@ -321,10 +322,10 @@ sub main()
     {
         None(0, 0, 100.0);
 		RunThrough(2, 3, 100.0);
-		Easy(10, 12, 100.0);
-		Medium(14, 16, 100.0);
-        Hard(18, 20, 100.0);
-        VeryHard(50, 50, 100.0); // Used for Shops and Dark Places
+		Easy(20, 52, 100.0);
+		Medium(25, 100, 200.0);
+        Hard(50, 175, 200.0);
+        VeryHard(50, 175, 200.0); // Used for Shops and Dark Places
     }
     
     DensitiesTagged(Night, "dz_region_01")
@@ -347,8 +348,8 @@ sub main()
 		RunThrough(0, 0.5, 100.0);
         Easy(0.5, 1.0, 100.0);
         Medium(8, 9, 100.0);
-        Hard(8, 9, 100.0);
-        VeryHard(8, 9, 100.0); // Used for Shops and Dark Places
+        Hard(40, 175, 200.0);
+        VeryHard(50, 175, 200.0); // Used for Shops and Dark Places
     }
     
     DensitiesTagged(Night, "dz_region_02")
@@ -370,21 +371,21 @@ sub main()
 		HUB()
         {
             Group(1, 1);
-            Radius(2.0, 2.0);
+            Radius(2.0, 4.0);
             DistanceBetween(IAL_Density_Day_HUBOWA);
         }
 
         OWA()
         {
             Group(1, 2);
-            Radius(2.0, 2.0);
+            Radius(2.0, 4.0);
             DistanceBetween(IAL_Density_Day_HUBOWA);
         }
 
         Park()
         {
             Group(1, 2);
-            Radius(2.0, 2.0);
+            Radius(2.0, 4.0);
             DistanceBetween(IAL_Density_Day_Flooded);
         }		
 

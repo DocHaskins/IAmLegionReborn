@@ -564,7 +564,8 @@ sub main()
         EncounterGroup("Eating_Corpses");
 		GeneralDifficulty()
         {
-            Pool("Biter_Crawler");
+            Pool("Threat_Bandits_Roof");
+			Pool("Biter_Crawler");
         }
         
         CooldownTime(1.0);
@@ -2215,20 +2216,21 @@ sub main()
             Pool("2BT1_1TH");
             Pool("1BT1_1TH_1BS");
             Pool("2BT1_1S_1BB");
+			Pool("IAL_GenericWeighted_DayPool_Bandits");
         }
 
         Difficulty("Difficulty_R01")
         {
             Pool("1H_1H_S_R01");
             Pool("1H_1H_1H_1H_R01");
-            //Pool("S_S_R01");
+            Pool("S_S_R01");
         }
         
         Difficulty("Difficulty_01")
         {
             Pool("1H_1H_1H");
             Pool("1H_1H_S");
-            //Pool("S_S");
+            Pool("S_S");
         }
         
         Difficulty("Difficulty_02")
@@ -2280,7 +2282,7 @@ sub main()
         {
             Pool("1H_1H_S_R01");
             Pool("1H_1H_1H_1H_R01");
-            //Pool("S_S_R01");
+            Pool("S_S_R01");
         }
 
         Difficulty("Difficulty_05")
@@ -3753,7 +3755,20 @@ sub main()
         TimeOfDay(8.1, 19.0);
     }
     
-    
+    Encounter("Bandits_Day_Roof")
+    {
+        EncounterGroup("Icon_Day");
+		GeneralDifficulty()
+        {
+            Pool("3S");
+            Pool("3BT2");
+        }	
+
+        CooldownTime(0.0);
+        TimeOfDay(8.0, 19.5);
+        MaxActiveInstances(12);
+        //ZoneLevelEncounterCondition(-3,1);
+    }
     
         Encounter("UV_Substation_03")
     {
@@ -5420,6 +5435,7 @@ sub main()
             Pool("2H_2H_1H_A");
             Pool("2H_2H_S_S");
             Pool("2H_2H_A_A");
+			Pool("2BT2_1TH_1S_1A");
         }
         
         Difficulty("Difficulty_06")
@@ -5446,6 +5462,7 @@ sub main()
             Pool("2H_1H_M_M");
             Pool("SP_1H_M_M");
             Pool("2H_M_M_M");
+			Pool("2BT2_1TH_1S_1A");
         }
         
         Difficulty("Difficulty_07")
@@ -5484,6 +5501,7 @@ sub main()
             Pool("SP_SP_1H_1H_S");
             Pool("1H_2H_S_M_M");
             Pool("1H_SP_S_M_M");
+			Pool("2BT2_1TH_1S_1A");
         }
         
         Difficulty("Difficulty_08")
@@ -5522,6 +5540,7 @@ sub main()
             Pool("SP_SP_1H_1H_S");
             Pool("1H_2H_S_M_M");
             Pool("1H_SP_S_M_M");
+			Pool("2BT2_1TH_1S_1A");
         }
 
         Difficulty("Difficulty_09")
@@ -5560,6 +5579,7 @@ sub main()
             Pool("SP_SP_1H_1H_S");
             Pool("1H_2H_S_M_M");
             Pool("1H_SP_S_M_M");
+			Pool("2BT2_1TH_1S_1A");
         }
         CooldownTime(1.0);
         TimeOfDay(8.1, 19.0);
@@ -7149,9 +7169,9 @@ sub main()
             Pool("Peacekeepers_2");
         }
         WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(3);
+        MaxActiveInstances(12);
         CooldownTime(1.0);
-        TimeOfDay(8.1, 19.0);
+        TimeOfDay(0.1, 23.9);
     }
     
     Encounter("Scene_Peacekeepers_3_Street")
@@ -7162,9 +7182,9 @@ sub main()
             Pool("Peacekeepers_3");
         }
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(3);
+        MaxActiveInstances(12);
         CooldownTime(1.0);
-        TimeOfDay(8.1, 19.0);
+        TimeOfDay(0.1, 23.9);
     }
     
     Encounter("Scene_Peacekeepers_4_Street")
@@ -7175,9 +7195,9 @@ sub main()
             Pool("Peacekeepers_4");
         }
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(3);
+        MaxActiveInstances(12);
         CooldownTime(1.0);
-        TimeOfDay(8.1, 19.0);
+        TimeOfDay(0.1, 23.9);
     }
     
     Encounter("Scene_Peacekeepers_2_3_Street")
@@ -7191,7 +7211,7 @@ sub main()
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
         MaxActiveInstances(3);
         CooldownTime(1.0);
-        TimeOfDay(8.1, 19.0);
+        TimeOfDay(0.1, 23.9);
     }
 
     Encounter("Scene_Peacekeepers_2_4_Street")
@@ -7204,9 +7224,9 @@ sub main()
             Pool("Peacekeepers_4");
         }
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(3);
+        MaxActiveInstances(12);
         CooldownTime(1.0);
-        TimeOfDay(8.1, 19.0);
+        TimeOfDay(0.1, 23.9);
     }
     
     Encounter("Scene_Peacekeepers_3_4_Street")
@@ -7218,9 +7238,9 @@ sub main()
             Pool("Peacekeepers_4");
         }
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(3);
+        MaxActiveInstances(8);
         CooldownTime(1.0);
-        TimeOfDay(8.1, 19.0);
+        TimeOfDay(0.1, 23.9);
     }
     
     */
@@ -7412,9 +7432,9 @@ sub main()
         {
             Pool("Peacekeepers_2");
         }
-        MaxActiveInstances(3);
+        MaxActiveInstances(12);
         CooldownTime(1.0);
-        TimeOfDay(8.1, 19.0);
+        TimeOfDay(0.1, 23.9);
     }
     
     Encounter("Scene_Peacekeepers_3_Roof")
@@ -7424,9 +7444,9 @@ sub main()
         {
             Pool("Peacekeepers_3");
         }
-        MaxActiveInstances(3);
+        MaxActiveInstances(12);
         CooldownTime(1.0);
-        TimeOfDay(8.1, 19.0);
+        TimeOfDay(0.1, 23.9);
     }
     
     Encounter("Scene_Peacekeepers_4_Roof")
@@ -7436,9 +7456,9 @@ sub main()
         {
             Pool("Peacekeepers_4");
         }
-        MaxActiveInstances(3);
+        MaxActiveInstances(12);
         CooldownTime(1.0);
-        TimeOfDay(8.1, 19.0);
+        TimeOfDay(0.1, 23.9);
     }
     
 
@@ -7450,9 +7470,9 @@ sub main()
             Pool("Peacekeepers_2");
             Pool("Peacekeepers_3");
         }
-        MaxActiveInstances(3);
+        MaxActiveInstances(12);
         CooldownTime(1.0);
-        TimeOfDay(8.1, 19.0);
+        TimeOfDay(0.1, 23.9);
     }
 
     Encounter("Scene_Peacekeepers_2_4_Roof")
@@ -7464,9 +7484,9 @@ sub main()
             Pool("Peacekeepers_3");
             Pool("Peacekeepers_4");
         }
-        MaxActiveInstances(3);
+        MaxActiveInstances(12);
         CooldownTime(1.0);
-        TimeOfDay(8.1, 19.0);
+        TimeOfDay(0.1, 23.9);
     }
     
     Encounter("Scene_Peacekeepers_3_4_Roof")
@@ -7477,9 +7497,9 @@ sub main()
             Pool("Peacekeepers_3");
             Pool("Peacekeepers_4");
         }
-        MaxActiveInstances(3);
+        MaxActiveInstances(12);
         CooldownTime(1.0);
-        TimeOfDay(8.1, 19.0);
+        TimeOfDay(0.1, 23.9);
     }
 
     
@@ -7656,7 +7676,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(15);
+        MaxActiveInstances(22);
         CooldownTime(1.0);
         TimeOfDay(0.0, 24.0);
     }
@@ -7668,7 +7688,7 @@ sub main()
             Pool("Scene_Scenario_Box_Empire");
         }
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(10);
+        MaxActiveInstances(22);
         CooldownTime(1.0);
         TimeOfDay(0.0, 24.0);
     }	
@@ -7681,7 +7701,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(15);
+        MaxActiveInstances(22);
         CooldownTime(1.0);
         TimeOfDay(8.1, 19.0);
     }
@@ -7695,7 +7715,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
         WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(7);
+        MaxActiveInstances(22);
         CooldownTime(1.0);
         TimeOfDay(8.1, 19.0);
     }
@@ -7709,7 +7729,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
         WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(4);
+        MaxActiveInstances(22);
         CooldownTime(1.0);
         TimeOfDay(8.1, 19.0);
     }
@@ -7740,7 +7760,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
 
-        MaxActiveInstances(12);
+        MaxActiveInstances(22);
         CooldownTime(1.0);
         TimeOfDay(8.1, 19.0);  
     }
@@ -7754,7 +7774,7 @@ sub main()
             Pool("Scene_Scenario_Box_Empire");
         }
 
-        MaxActiveInstances(10);
+        MaxActiveInstances(20);
         CooldownTime(1.0);
         TimeOfDay(8.1, 19.0);  
     }	
@@ -7782,7 +7802,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
         
-        MaxActiveInstances(8);
+        MaxActiveInstances(12);
         CooldownTime(1.0);
         TimeOfDay(8.1, 19.0);
     }
@@ -7796,7 +7816,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
         
-        MaxActiveInstances(6);
+        MaxActiveInstances(12);
         CooldownTime(1.0);
         TimeOfDay(8.1, 19.0);
     }
@@ -7840,7 +7860,7 @@ sub main()
             Pool("Scene_Scenario_Box");
         }
 		WeatherEncounterCondition("Foggy","Clear","Overcast","Cloudy", "Rainy"); // No Stormy weather 
-        MaxActiveInstances(4);
+        MaxActiveInstances(10);
         CooldownTime(10.0);
         TimeOfDay(8.1, 19.0);
     }
@@ -7852,7 +7872,7 @@ sub main()
         {
             Pool("Scene_Scenario_Box");
         }
-        MaxActiveInstances(5);
+        MaxActiveInstances(12);
         CooldownTime(10.0);
         TimeOfDay(8.1, 19.0);
     }

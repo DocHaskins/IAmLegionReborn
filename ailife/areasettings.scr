@@ -144,6 +144,19 @@ sub main()
 
     AreaSettings("City_All_Area")
     { 
+		EncounterCategoryWeight("Bandits,1");
+		EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
+		EncounterCategoryWeight("Base_Looting_Easy_HMF,1");
+		EncounterCategoryWeight("Base_Looting_Medium_HMF,1");
+		EncounterCategoryWeight("Scene_Bandits_Street,100");
+		EncounterCategoryWeight("Scene_Bandits_Roof,100");
+		EncounterCategoryWeight("Scene_Renegades_Roof,100");
+		EncounterCategoryWeight("Scene_Peacekeepers_Roof,100");
+		EncounterCategoryWeight("Scene_Peacekeepers_Ground,100");
+		EncounterCategoryWeight("Bandits_Day_Roof,100");
+		
 	    DynamicSpawnerDayPresetPool("Day_Exterior");
         DynamicSpawnerNightPresetPool("Night_Exterior");
         DynamicSpawnerDayDensity("High");
@@ -157,6 +170,7 @@ sub main()
     {
 		//EncounterDifficulty(IAL_AI_Encounter_Difficulty_Lvl);
 		EncounterCategoryWeight("Bandits,1");
+		EncounterCategoryWeight("Scene_Renegades_Roof,100");
 		DynamicSpawnerDayDensity("High");
         DynamicSpawnerNightDensity("High");
 		DarkZoneDayPresetPool("Infected_Population_Day_R01");
@@ -265,7 +279,7 @@ sub main()
 		EncounterCategoryWeight("Infected_Patrol_Volatile,15"); 
 		DynamicSpawnerDayPresetPool("Day_Exterior_D01");
         DynamicSpawnerNightPresetPool("Night_Exterior_D01");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D01");
         DarkZoneNightPresetPool("Infected_Population_Night_D01");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -307,7 +321,7 @@ sub main()
 	AreaSettings("Bloods_Gang_Area")
     {
 		//EncounterDifficulty(IAL_AI_Encounter_Difficulty_Lvl);
-		//EncounterCategoryWeight("Bandits_Barricade,1");
+		EncounterCategoryWeight("Bandits_Barricade,1");
 		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");	
 
 		//HACK
@@ -340,7 +354,7 @@ sub main()
 	AreaSettings("Skyscraper_Gang_Area")
     {
 		//EncounterDifficulty(IAL_AI_Encounter_Difficulty_Lvl);
-		//EncounterCategoryWeight("Bandits_Barricade,1");
+		EncounterCategoryWeight("Bandits_Barricade,1");
 		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");		
 		
 		//HACK
@@ -373,7 +387,7 @@ sub main()
 	AreaSettings("Flooded_Gang_Area")
     {
 		//EncounterDifficulty(IAL_AI_Encounter_Difficulty_Lvl);
-		//EncounterCategoryWeight("Bandits_Barricade,1");
+		EncounterCategoryWeight("Bandits_Barricade,1");
 		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");
 
 		//HACK
@@ -405,7 +419,7 @@ sub main()
 	AreaSettings("Vertical_Gang_Area")
     {
 		//EncounterDifficulty(IAL_AI_Encounter_Difficulty_Lvl);
-		//EncounterCategoryWeight("Bandits_Barricade,1");
+		EncounterCategoryWeight("Bandits_Barricade,1");
 		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");	
 
 		//HACK
@@ -437,7 +451,7 @@ sub main()
 	AreaSettings("Military_Gang_Area")
     {
 		//EncounterDifficulty(IAL_AI_Encounter_Difficulty_Lvl);
-		//EncounterCategoryWeight("Bandits_Barricade,1");
+		EncounterCategoryWeight("Bandits_Barricade,1");
 		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");	
 
 		//HACK
@@ -721,7 +735,9 @@ sub main()
         EncounterCategoryWeight("AS_Infecteds_01,1");
         EncounterCategoryWeight("AS_HMF_01,1");	
 		EncounterCategoryWeight("Exterior_Defend,1");
-		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");			
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");	
+		EncounterCategoryWeight("Scene_Peacekeepers_Roof,100");
+		EncounterCategoryWeight("Scene_Peacekeepers_Ground,100");		
 		//
 		
 		//EncounterCategoryWeight("Infected_Corpse_Eating_Day,1");
@@ -1788,7 +1804,7 @@ sub main()
 		EncounterDifficulty("Difficulty_R01");
 	    DynamicSpawnerDayPresetPool("Day_Exterior_R01_Starting_Area");
         DynamicSpawnerNightPresetPool("Night_Exterior_R01_Starting_Area");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D01");
         DarkZoneNightPresetPool("Infected_Population_Night_D01");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -1807,7 +1823,7 @@ sub main()
 		EncounterDifficulty("Difficulty_02");
 		DynamicSpawnerDayPresetPool("Day_Exterior_D01");
         DynamicSpawnerNightPresetPool("Night_Exterior_D01");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D01");
         DarkZoneNightPresetPool("Infected_Population_Night_D01");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -1824,7 +1840,7 @@ sub main()
 	    EncounterDifficulty("Difficulty_R01");
 		DynamicSpawnerDayPresetPool("Day_Exterior_R01_Starting_Area");
         DynamicSpawnerNightPresetPool("Night_Exterior_R01_Starting_Area");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D01");
         DarkZoneNightPresetPool("Infected_Population_Night_D01");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -1843,7 +1859,7 @@ sub main()
 	    EncounterDifficulty("Difficulty_02");
 		DynamicSpawnerDayPresetPool("Day_Exterior_D01");
         DynamicSpawnerNightPresetPool("Night_Exterior_D01");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D01");
         DarkZoneNightPresetPool("Infected_Population_Night_D01");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -1860,7 +1876,7 @@ sub main()
 	    EncounterDifficulty("Difficulty_R01");
 		DynamicSpawnerDayPresetPool("Day_Exterior_R01_Starting_Area");
         DynamicSpawnerNightPresetPool("Night_Exterior_R01_Starting_Area");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D01");
         DarkZoneNightPresetPool("Infected_Population_Night_D01");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -1879,7 +1895,7 @@ sub main()
 	    EncounterDifficulty("Difficulty_02");
 		DynamicSpawnerDayPresetPool("Day_Exterior_D01");
         DynamicSpawnerNightPresetPool("Night_Exterior_D01");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D01");
         DarkZoneNightPresetPool("Infected_Population_Night_D01");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -1897,7 +1913,7 @@ sub main()
 		EncounterCategoryWeight("Infected_Patrol_Volatile,15"); 
 		DynamicSpawnerDayPresetPool("Day_Exterior_R01_Starting_Area");
         DynamicSpawnerNightPresetPool("Night_Exterior_R01_Starting_Area");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D04");
         DarkZoneNightPresetPool("Infected_Population_Night_D04");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -1917,7 +1933,7 @@ sub main()
 		EncounterCategoryWeight("Infected_Patrol_Volatile,15"); 
 		DynamicSpawnerDayPresetPool("Day_Exterior_D04");
         DynamicSpawnerNightPresetPool("Night_Exterior_D04");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D04");
         DarkZoneNightPresetPool("Infected_Population_Night_D04");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -1937,7 +1953,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_D02");
         DynamicSpawnerNightPresetPool("Night_Exterior_D02");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D02");
         DarkZoneNightPresetPool("Infected_Population_Night_D02");
         DarkZoneDensityTag("dz_region_01");
 
@@ -1946,7 +1962,7 @@ sub main()
 
 /////Infected densities/////	
         DynamicSpawnerDayDensity("Hard");
-        DynamicSpawnerNightDensity("Hard");			
+        DynamicSpawnerNightDensity("Easy");			
 	}
 	
 	AreaSettings("R2_2_Zone_06")
@@ -1956,7 +1972,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_D05");
         DynamicSpawnerNightPresetPool("Night_Exterior_D05");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D05");
         DarkZoneNightPresetPool("Infected_Population_Night_D05");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -1965,7 +1981,7 @@ sub main()
 		
 /////Infected densities/////	
         DynamicSpawnerDayDensity("Hard");
-        DynamicSpawnerNightDensity("Hard");				
+        DynamicSpawnerNightDensity("Easy");				
 	}
 	
 	AreaSettings("R2_3_Zone_07")
@@ -1975,7 +1991,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_D02");
         DynamicSpawnerNightPresetPool("Night_Exterior_D02");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D02");
         DarkZoneNightPresetPool("Infected_Population_Night_D02");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -1984,7 +2000,7 @@ sub main()
 		
 /////Infected densities/////	
         DynamicSpawnerDayDensity("Hard");
-        DynamicSpawnerNightDensity("Hard");				
+        DynamicSpawnerNightDensity("Easy");				
 	}
 	
 	AreaSettings("R2_4_Zone_08")
@@ -1994,7 +2010,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_D03");
         DynamicSpawnerNightPresetPool("Night_Exterior_D03");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D03");
         DarkZoneNightPresetPool("Infected_Population_Night_D03");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2003,7 +2019,7 @@ sub main()
 		
 /////Infected densities/////	
         DynamicSpawnerDayDensity("Hard");
-        DynamicSpawnerNightDensity("Hard");				
+        DynamicSpawnerNightDensity("Easy");				
 	}
 	
 	AreaSettings("R2_5_Zone_09")
@@ -2013,7 +2029,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_D03");
         DynamicSpawnerNightPresetPool("Night_Exterior_D03");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D03");
         DarkZoneNightPresetPool("Infected_Population_Night_D03");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2022,7 +2038,7 @@ sub main()
 		
 /////Infected densities/////	
         DynamicSpawnerDayDensity("Hard");
-        DynamicSpawnerNightDensity("Hard");				
+        DynamicSpawnerNightDensity("Easy");				
 	}
 	
 	AreaSettings("R2_6_Zone_10")
@@ -2032,7 +2048,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_D02");
         DynamicSpawnerNightPresetPool("Night_Exterior_D02");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D02");
         DarkZoneNightPresetPool("Infected_Population_Night_D02");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2041,7 +2057,7 @@ sub main()
 		
 /////Infected densities/////	
         DynamicSpawnerDayDensity("Hard");
-        DynamicSpawnerNightDensity("Hard");				
+        DynamicSpawnerNightDensity("Easy");				
 	}
 	
 	AreaSettings("R2_7_Zone_11")
@@ -2051,7 +2067,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_D02");
         DynamicSpawnerNightPresetPool("Night_Exterior_D02");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D02");
         DarkZoneNightPresetPool("Infected_Population_Night_D02");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2060,7 +2076,7 @@ sub main()
 		
 /////Infected densities/////	
         DynamicSpawnerDayDensity("Hard");
-        DynamicSpawnerNightDensity("Hard");				
+        DynamicSpawnerNightDensity("Easy");				
 	}
 	
 	AreaSettings("R2_8_Zone_12")
@@ -2070,7 +2086,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_D02");
         DynamicSpawnerNightPresetPool("Night_Exterior_D02");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D02");
         DarkZoneNightPresetPool("Infected_Population_Night_D02");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2079,7 +2095,7 @@ sub main()
 		
 /////Infected densities/////	
         DynamicSpawnerDayDensity("Hard");
-        DynamicSpawnerNightDensity("Hard");				
+        DynamicSpawnerNightDensity("Easy");				
 	}
 	
 	AreaSettings("R4_1")
@@ -2088,7 +2104,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_D04");
         DynamicSpawnerNightPresetPool("Night_Exterior_D04");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D04");
         DarkZoneNightPresetPool("Infected_Population_Night_D04");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2106,7 +2122,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_D05");
         DynamicSpawnerNightPresetPool("Night_Exterior_D05");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D05");
         DarkZoneNightPresetPool("Infected_Population_Night_D05");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2125,7 +2141,7 @@ sub main()
 	    EncounterDifficulty("Difficulty_07");
 		DynamicSpawnerDayPresetPool("Day_Exterior_D07_Flooded");
         DynamicSpawnerNightPresetPool("Day_Exterior_D07_Flooded");
-        //DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        //DarkZoneDayPresetPool("Infected_Population_Day_D07");
         //DarkZoneNightPresetPool("Infected_Population_Night_D07");
         DarkZoneDensityTag("None");
 		DynamicSpawnerDayDensity("Flooded_1");
@@ -2145,7 +2161,7 @@ sub main()
 	    EncounterDifficulty("Difficulty_07");
 		DynamicSpawnerDayPresetPool("Day_Exterior_D08_Flooded");
         DynamicSpawnerNightPresetPool("Day_Exterior_D08_Flooded");
-        //DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        //DarkZoneDayPresetPool("Infected_Population_Day_D08");
         //DarkZoneNightPresetPool("Infected_Population_Night_D08");
         DarkZoneDensityTag("None");
 		DynamicSpawnerDayDensity("Flooded_1");
@@ -2165,7 +2181,7 @@ sub main()
 	    EncounterDifficulty("Difficulty_07");
 		DynamicSpawnerDayPresetPool("Day_Exterior_D09_Flooded");
         DynamicSpawnerNightPresetPool("Day_Exterior_D09_Flooded");
-        //DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        //DarkZoneDayPresetPool("Infected_Population_Day_D09");
         //DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("None");
 		DynamicSpawnerDayDensity("Flooded_1");
@@ -2185,7 +2201,7 @@ sub main()
 	    EncounterDifficulty("Difficulty_05");
 		DynamicSpawnerDayPresetPool("Day_Exterior_D05");
         DynamicSpawnerNightPresetPool("Night_Exterior_D05");
-        //DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        //DarkZoneDayPresetPool("Infected_Population_Day_D07");
         //DarkZoneNightPresetPool("Infected_Population_Night_D07");
         DarkZoneDensityTag("None");
 		DynamicSpawnerDayDensity("OWA");
@@ -2211,7 +2227,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
         DynamicSpawnerNightPresetPool("Night_Exterior_D09");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2237,7 +2253,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
         DynamicSpawnerNightPresetPool("Night_Exterior_D09");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2263,7 +2279,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
         DynamicSpawnerNightPresetPool("Night_Exterior_D09");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2290,7 +2306,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
         DynamicSpawnerNightPresetPool("Night_Exterior_D09");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2316,7 +2332,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
         DynamicSpawnerNightPresetPool("Night_Exterior_D09");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 
@@ -2325,7 +2341,7 @@ sub main()
 
 /////Infected densities/////	
         DynamicSpawnerDayDensity("Hard");
-        DynamicSpawnerNightDensity("Hard");			
+        DynamicSpawnerNightDensity("Easy");			
 	}
 	
 	AreaSettings("R2_2_Zone_06_EndGame")
@@ -2342,7 +2358,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
         DynamicSpawnerNightPresetPool("Night_Exterior_D09");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2351,7 +2367,7 @@ sub main()
 		
 /////Infected densities/////	
         DynamicSpawnerDayDensity("Hard");
-        DynamicSpawnerNightDensity("Hard");				
+        DynamicSpawnerNightDensity("Easy");				
 	}
 	
 	AreaSettings("R2_3_Zone_07_EndGame")
@@ -2368,7 +2384,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
         DynamicSpawnerNightPresetPool("Night_Exterior_D09");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2377,7 +2393,7 @@ sub main()
 		
 /////Infected densities/////	
         DynamicSpawnerDayDensity("Hard");
-        DynamicSpawnerNightDensity("Hard");				
+        DynamicSpawnerNightDensity("Easy");				
 	}
 	
 	AreaSettings("R2_4_Zone_08_EndGame")
@@ -2394,7 +2410,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
         DynamicSpawnerNightPresetPool("Night_Exterior_D09");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2403,7 +2419,7 @@ sub main()
 		
 /////Infected densities/////	
         DynamicSpawnerDayDensity("Hard");
-        DynamicSpawnerNightDensity("Hard");				
+        DynamicSpawnerNightDensity("Easy");				
 	}
 	
 	AreaSettings("R2_5_Zone_09_EndGame")
@@ -2420,7 +2436,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
         DynamicSpawnerNightPresetPool("Night_Exterior_D09");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2429,7 +2445,7 @@ sub main()
 		
 /////Infected densities/////	
         DynamicSpawnerDayDensity("Hard");
-        DynamicSpawnerNightDensity("Hard");				
+        DynamicSpawnerNightDensity("Easy");				
 	}
 	
 	AreaSettings("R2_6_Zone_10_EndGame")
@@ -2446,7 +2462,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
         DynamicSpawnerNightPresetPool("Night_Exterior_D09");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2455,7 +2471,7 @@ sub main()
 		
 /////Infected densities/////	
         DynamicSpawnerDayDensity("Hard");
-        DynamicSpawnerNightDensity("Hard");				
+        DynamicSpawnerNightDensity("Easy");				
 	}
 	
 	AreaSettings("R2_7_Zone_11_EndGame")
@@ -2472,7 +2488,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
         DynamicSpawnerNightPresetPool("Night_Exterior_D09");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2481,7 +2497,7 @@ sub main()
 		
 /////Infected densities/////	
         DynamicSpawnerDayDensity("Hard");
-        DynamicSpawnerNightDensity("Hard");				
+        DynamicSpawnerNightDensity("Easy");				
 	}
 	
 	AreaSettings("R2_8_Zone_12_EndGame")
@@ -2498,7 +2514,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
         DynamicSpawnerNightPresetPool("Night_Exterior_D09");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2507,7 +2523,7 @@ sub main()
 		
 /////Infected densities/////	
         DynamicSpawnerDayDensity("Hard");
-        DynamicSpawnerNightDensity("Hard");				
+        DynamicSpawnerNightDensity("Easy");				
 	}
 
 	AreaSettings("R3_Zone_Renegades_EndGame")
@@ -2524,7 +2540,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
         DynamicSpawnerNightPresetPool("Night_Exterior_D09");
-        //DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        //DarkZoneDayPresetPool("Infected_Population_Day_D09");
         //DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("None");
 		DynamicSpawnerDayDensity("OWA");
@@ -2541,7 +2557,7 @@ sub main()
 	    EncounterDifficulty("Difficulty_09");
 		DynamicSpawnerDayPresetPool("Day_Exterior_Flooded_Endgame");
         DynamicSpawnerNightPresetPool("Night_Exterior_Flooded_Endgame");
-        //DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        //DarkZoneDayPresetPool("Infected_Population_Day_D07");
         //DarkZoneNightPresetPool("Infected_Population_Night_D07");
         DarkZoneDensityTag("None");
 		DynamicSpawnerDayDensity("Flooded_1");
@@ -2561,7 +2577,7 @@ sub main()
 	    EncounterDifficulty("Difficulty_09");
 		DynamicSpawnerDayPresetPool("Day_Exterior_Flooded_Endgame");
         DynamicSpawnerNightPresetPool("Night_Exterior_Flooded_Endgame");
-        //DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        //DarkZoneDayPresetPool("Infected_Population_Day_D08");
         //DarkZoneNightPresetPool("Infected_Population_Night_D08");
         DarkZoneDensityTag("None");
 		DynamicSpawnerDayDensity("Flooded_1");
@@ -2581,7 +2597,7 @@ sub main()
 	    EncounterDifficulty("Difficulty_09");
 		DynamicSpawnerDayPresetPool("Day_Exterior_Flooded_Endgame");
         DynamicSpawnerNightPresetPool("Night_Exterior_Flooded_Endgame");
-        //DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        //DarkZoneDayPresetPool("Infected_Population_Day_D09");
         //DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("None");
 		DynamicSpawnerDayDensity("Flooded_1");
@@ -2602,7 +2618,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
         DynamicSpawnerNightPresetPool("Night_Exterior_D09");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2632,7 +2648,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_End");
         DynamicSpawnerNightPresetPool("Night_Exterior_End");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2660,7 +2676,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_End");
         DynamicSpawnerNightPresetPool("Night_Exterior_End");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2688,7 +2704,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_End");
         DynamicSpawnerNightPresetPool("Night_Exterior_End");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2717,7 +2733,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_End");
         DynamicSpawnerNightPresetPool("Night_Exterior_End");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2745,7 +2761,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_End");
         DynamicSpawnerNightPresetPool("Night_Exterior_End");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2756,7 +2772,7 @@ sub main()
 
 /////Infected densities/////	
         DynamicSpawnerDayDensity("Hard");
-        DynamicSpawnerNightDensity("Hard");			
+        DynamicSpawnerNightDensity("Easy");			
 	}
 	
 	AreaSettings("R2_2_Zone_06_EndGame_Flooded")
@@ -2773,7 +2789,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_End");
         DynamicSpawnerNightPresetPool("Night_Exterior_End");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 	
@@ -2784,7 +2800,7 @@ sub main()
 		
 /////Infected densities/////	
         DynamicSpawnerDayDensity("Hard");
-        DynamicSpawnerNightDensity("Hard");				
+        DynamicSpawnerNightDensity("Easy");				
 	}
 	
 	AreaSettings("R2_3_Zone_07_EndGame_Flooded")
@@ -2801,7 +2817,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_End");
         DynamicSpawnerNightPresetPool("Night_Exterior_End");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 
@@ -2812,7 +2828,7 @@ sub main()
 		
 /////Infected densities/////	
         DynamicSpawnerDayDensity("Hard");
-        DynamicSpawnerNightDensity("Hard");				
+        DynamicSpawnerNightDensity("Easy");				
 	}
 	
 	AreaSettings("R2_4_Zone_08_EndGame_Flooded")
@@ -2829,7 +2845,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_End");
         DynamicSpawnerNightPresetPool("Night_Exterior_End");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2840,7 +2856,7 @@ sub main()
 		
 /////Infected densities/////	
         DynamicSpawnerDayDensity("Hard");
-        DynamicSpawnerNightDensity("Hard");				
+        DynamicSpawnerNightDensity("Easy");				
 	}
 	
 	AreaSettings("R2_5_Zone_09_EndGame_Flooded")
@@ -2857,7 +2873,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_End");
         DynamicSpawnerNightPresetPool("Night_Exterior_End");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -2868,7 +2884,7 @@ sub main()
 		
 /////Infected densities/////	
         DynamicSpawnerDayDensity("Hard");
-        DynamicSpawnerNightDensity("Hard");				
+        DynamicSpawnerNightDensity("Easy");				
 	}
 	
 	AreaSettings("R2_6_Zone_10_EndGame_Flooded")
@@ -2885,7 +2901,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_End");
         DynamicSpawnerNightPresetPool("Night_Exterior_End");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 
@@ -2896,7 +2912,7 @@ sub main()
 		
 /////Infected densities/////	
         DynamicSpawnerDayDensity("Hard");
-        DynamicSpawnerNightDensity("Hard");				
+        DynamicSpawnerNightDensity("Easy");				
 	}
 	
 	AreaSettings("R2_7_Zone_11_EndGame_Flooded")
@@ -2913,7 +2929,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_End");
         DynamicSpawnerNightPresetPool("Night_Exterior_End");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 
@@ -2924,7 +2940,7 @@ sub main()
 		
 /////Infected densities/////	
         DynamicSpawnerDayDensity("Hard");
-        DynamicSpawnerNightDensity("Hard");				
+        DynamicSpawnerNightDensity("Easy");				
 	}
 	
 	AreaSettings("R2_8_Zone_12_EndGame_Flooded")
@@ -2941,7 +2957,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_End");
         DynamicSpawnerNightPresetPool("Night_Exterior_End");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 
@@ -2952,7 +2968,7 @@ sub main()
 		
 /////Infected densities/////	
         DynamicSpawnerDayDensity("Hard");
-        DynamicSpawnerNightDensity("Hard");				
+        DynamicSpawnerNightDensity("Easy");				
 	}
 
 	AreaSettings("R3_Zone_Renegades_EndGame_Flooded")
@@ -2969,7 +2985,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_End");
         DynamicSpawnerNightPresetPool("Night_Exterior_End");
-        //DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        //DarkZoneDayPresetPool("Infected_Population_Day_D09");
         //DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("None");
 		DynamicSpawnerDayDensity("OWA");
@@ -2995,7 +3011,7 @@ sub main()
 		
 		DynamicSpawnerDayPresetPool("Day_Exterior_End");
         DynamicSpawnerNightPresetPool("Night_Exterior_End");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
         DarkZoneNightPresetPool("Infected_Population_Night_D09");
         DarkZoneDensityTag("dz_region_01");
 
@@ -3019,7 +3035,7 @@ sub main()
 		
 	    DynamicSpawnerDayPresetPool("Day_Exterior_D03");
         DynamicSpawnerNightPresetPool("Night_Exterior_D03");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D03");
         DarkZoneNightPresetPool("Infected_Population_Night_D03");
         DarkZoneDensityTag("dz_region_01");
 
@@ -3032,7 +3048,7 @@ sub main()
 	    EncounterDifficulty("Difficulty_03");
 		DynamicSpawnerDayPresetPool("Day_Exterior_D03");
         DynamicSpawnerNightPresetPool("Night_Exterior_D03");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D03");
         DarkZoneNightPresetPool("Infected_Population_Night_D03");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -3045,7 +3061,7 @@ sub main()
 	    EncounterDifficulty("Difficulty_05");
 		DynamicSpawnerDayPresetPool("Day_Exterior_D05");
         DynamicSpawnerNightPresetPool("Night_Exterior_D05");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D05");
         DarkZoneNightPresetPool("Infected_Population_Night_D05");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -3058,7 +3074,7 @@ sub main()
 	    EncounterDifficulty("Difficulty_04");
 		DynamicSpawnerDayPresetPool("Day_Exterior_D04");
         DynamicSpawnerNightPresetPool("Night_Exterior_D04");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D04");
         DarkZoneNightPresetPool("Infected_Population_Night_D04");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -3071,7 +3087,7 @@ sub main()
 	    EncounterDifficulty("Difficulty_06");
 		DynamicSpawnerDayPresetPool("Day_Exterior_D06");
         DynamicSpawnerNightPresetPool("Night_Exterior_D06");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D06");
         DarkZoneNightPresetPool("Infected_Population_Night_D06");
         DarkZoneDensityTag("dz_region_01");
 		
@@ -3084,7 +3100,7 @@ sub main()
 	    EncounterDifficulty("Difficulty_03");
 		DynamicSpawnerDayPresetPool("Day_Exterior_D03");
         DynamicSpawnerNightPresetPool("Night_Exterior_D03");
-        DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+        DarkZoneDayPresetPool("Infected_Population_Day_D03");
         DarkZoneNightPresetPool("Infected_Population_Night_D03");
         DarkZoneDensityTag("dz_region_01");
 
@@ -3130,7 +3146,7 @@ sub main()
         DynamicSpawnerNightPresetPool("Epilogue");
         DynamicSpawnerDayDensity("VeryHard");
         DynamicSpawnerNightDensity("Medium");
-		DarkZoneDayPresetPool("IAL_GenericWeighted_DayPool_Interior");
+		DarkZoneDayPresetPool("Infected_Population_Day_D06");
         DarkZoneNightPresetPool("Infected_Population_Night_D06");
         DarkZoneDensityTag("dz_region_01");
 		

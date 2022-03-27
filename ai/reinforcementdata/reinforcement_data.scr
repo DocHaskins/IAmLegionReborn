@@ -114,8 +114,6 @@ sub main()
         cooldown(10.0);
     }	
 
-	IALReinforcementData()
-	{
 		ReinforcementData("Bandit_Human")
 		{
 			force_player_target(false);
@@ -172,45 +170,4 @@ sub main()
         //is_infected_reinforcement(false);
         //cooldown(120.0);
 		//}
-		
-	}
-	
-	Difficulty("Easy")
-    {
-		IALReinforcementData()
-		{
-			ReinforcementData("SpecialTime")
-			{
-				use IAL_Chase_Easy_ReinforcementPool();
-				delay_between_spawns(0.5);
-				is_infected_reinforcement(true);
-			}	
-		}
-	}
-	
-	Difficulty("Medium")
-	{
-		IALReinforcementData()
-		{
-			ReinforcementData("SpecialTime")
-			{
-				use IAL_Chase_Hard_ReinforcementPool()
-				delay_between_spawns(0.5);
-				is_infected_reinforcement(true);
-			}	
-		}
-	}
-	
-	Difficulty("Hard")
-    {
-		IALReinforcementData()
-		{
-			ReinforcementData("SpecialTime")
-			{
-				use IAL_Chase_Hard_ReinforcementPool()
-				delay_between_spawns(0.5);
-				is_infected_reinforcement(true);
-			}	
-		}
-	}
 }

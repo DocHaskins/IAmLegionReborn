@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Parallel m_PolicySuccess="REQUIRE_ALL_DONE" m_PolicyFailure="REQUIRE_NONE">
+        <Selector>
+            <Cnd_IsInUVLight m_Invert="true"/>
+            <Sequence>
+                <Opr_GetClosestUVLightData m_Position="#uv_light_pos" m_Direction="#uv_light_dir" m_Type="#uv_light_type"/>
+                <Opr_GetCurrentTime m_TimePoint="#last_time_in_uv_light"/>
+            </Sequence>
+        </Selector>
+        <Selector>
+            <Sequence>
+                <Cnd_IsBodyInState m_State="SUNLIGHT_REACTION" m_Invert="true"/>
+                <Cnd_IsNight m_Invert="true"/>
+                <Cnd_IsInDarkzone m_Invert="true"/>
+                <Opr_StartBodyState m_State="SUNLIGHT_REACTION" m_Duration="999999"/>
+            </Sequence>
+            <Sequence>
+                <Cnd_IsBodyInState m_State="SUNLIGHT_REACTION"/>
+                <Selector>
+                    <Cnd_IsNight/>
+                    <Cnd_IsInDarkzone/>
+                </Selector>
+                <Opr_StopBodyState m_State="SUNLIGHT_REACTION"/>
+            </Sequence>
+        </Selector>
+    </Parallel>
+</BehaviorTree>

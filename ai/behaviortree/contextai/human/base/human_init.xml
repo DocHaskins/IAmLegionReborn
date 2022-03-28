@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Sequence>
+        <!-- attack variables -->
+        <Opr_GetModifiedTime m_TimePoint="#attack_cooldown" m_TimeDelta="$attack_cooldown_initial"/>
+        <Opr_GetModifiedTime m_TimePoint="#fake_attack_cooldown" m_TimeDelta="4"/>
+        <Optional m_Enabled="$enable_attack_tackle">
+            <Opr_GetCurrentTime m_TimePoint="#tackle_cooldown"/>
+        </Optional>
+        <Optional m_Enabled="$enable_attack_finisher">
+            <Opr_GetCurrentTime m_TimePoint="#finisher_cooldown"/>
+        </Optional>
+        <Opr_GetCurrentTime m_TimePoint="#push_cooldown"/>
+        <!-- defence variables -->
+        <Opr_SetBBValue_int m_Key="#block_next_phase" m_Value="$block_phase_min"/>
+        <!-- hit reaction -->
+        <Opr_SetBBValue_int m_Key="#breaker_hit_counter" m_Value="0"/>
+        <Opr_GetCurrentTime m_TimePoint="#breaker_hit_reset_time"/>
+        <!-- morale variables -->
+        <Opr_SetBBValue_string m_Key="#morale_state" m_Value="cautious"/>
+        <!-- combat slots -->
+        <Opr_SetBBValue_float m_Key="#attack_quick_min_delay" m_Value="$attack_quick_min_delay"/>
+        <Opr_SetBBValue_bool m_Key="#attack_token_release_on_damage" m_Value="false"/>
+        <!-- other -->
+        <Opr_SetBBValue_bool m_Key="#searching" m_Value="false"/>
+        <Opr_SetBBValue_bool m_Key="#should_check_last_target_pos" m_Value="false"/>
+        <!-- <Opr_SetBBValue_bool m_Key="#post_combat_action_available" m_Value="false"/> -->
+        <!-- weapon holster cooldown -->
+        <Optional m_Enabled="$weapon_holster_enabled">
+            <Opr_GetModifiedTime m_TimePoint="#weapon_holster_cooldown" m_TimeDelta="#weapon_holster_delay"/>
+        </Optional>
+        <!-- setup forced go to position -->
+        <Succeeder>
+            <Opr_GetForcedChasePosition m_Position="#forced_chase_position"/>
+        </Succeeder>
+        <Opr_SetBBValue_bool m_Key="#forced_target_set" m_Value="false"/>
+        <!-- setup senses -->
+        <Succeeder>
+            <Sequence>
+				<Opr_EnableSense m_Sense="combat_enviro"/>
+				<Opr_EnableSense m_Sense="interest"/>
+                <Opr_EnableSense m_Sense="dangerzone"/>
+                <Opr_EnableSense m_Sense="target"/>
+                <Opr_EnableSense m_Sense="defend"/>
+                <Opr_EnableSense m_Sense="threatening"/>
+            </Sequence>
+        </Succeeder>
+    </Sequence>
+</BehaviorTree>

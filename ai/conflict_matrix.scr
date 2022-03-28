@@ -1,0 +1,309 @@
+// DefaultMatrix();             - default game matrix definition
+// CustomMatrix("SomeName");    - custom conflict matrix which takes default as a base and overrides some of the relations (see the example in eg/source/data/AI/conflict_matrix.scr)
+
+sub main()
+{
+    DefaultMatrix()
+    {
+        SetupRelations("none")
+        {
+            Relation("none", "friend");
+            Relation("player", "friend");
+            Relation("zombie", "friend");
+            Relation("pk", "friend");
+            Relation("scav", "friend");
+            Relation("bandit", "friend");
+            Relation("bandit_2", "friend");
+            Relation("survivor", "friend");
+            Relation("animal", "friend");
+            Relation("renegade", "friend");
+            Relation("counter_player", "friend");
+            Relation("counter_all", "friend");
+        }
+
+        SetupRelations("player")
+        {
+            Relation("none", "friend");
+            Relation("player", "friend");
+            Relation("zombie", "enemy");
+            Relation("pk", "neutral");
+            Relation("pk_encounter", "friend");
+            Relation("scav", "friend");
+            Relation("bandit", "enemy");
+            Relation("bandit_2", "enemy");
+            Relation("survivor", "neutral");
+            Relation("survivor_ms_panic", "enemy");
+            Relation("survivor_encounter", "friend");
+            Relation("animal", "enemy");
+            Relation("renegade", "enemy");
+            Relation("counter_player", "enemy");
+            Relation("counter_all", "enemy");
+        }
+        
+        SetupRelations("zombie")
+        {
+            Relation("none", "friend");
+            Relation("player", "enemy");
+            Relation("zombie", "friend");
+            Relation("pk", "enemy");
+            Relation("scav", "enemy");
+            Relation("bandit", "enemy");
+            Relation("bandit_2", "enemy");
+            Relation("survivor", "enemy");
+            Relation("survivor_encounter", "enemy");
+            Relation("animal", "enemy");
+            Relation("survivor_ms_panic", "friend");
+            Relation("renegade", "enemy");
+            Relation("counter_player", "enemy");
+            Relation("counter_all", "enemy");
+        }
+
+        SetupRelations("pk")
+        {
+            Relation("none", "friend");
+            Relation("player", "auto");
+            Relation("zombie", "enemy");
+            Relation("pk", "friend");
+            Relation("scav", "neutral");
+            Relation("bandit", "enemy");
+            Relation("bandit_2", "enemy");
+            Relation("survivor", "neutral");
+            Relation("animal", "enemy");
+            Relation("renegade", "enemy");
+            Relation("counter_player", "friend");
+            Relation("counter_all", "enemy");
+        }
+
+        SetupRelations("scav")
+        {
+            Relation("none", "friend");
+            Relation("player", "auto");
+            Relation("zombie", "auto");
+            Relation("pk", "auto");
+            Relation("pk_hostile", "enemy");
+            Relation("scav", "friend");
+            Relation("bandit", "enemy");
+            Relation("bandit_2", "enemy");
+            Relation("survivor", "neutral");
+            Relation("animal", "enemy");
+            Relation("renegade", "enemy");
+            Relation("counter_player", "friend");
+            Relation("counter_all", "enemy");
+        }
+
+        SetupRelations("bandit")
+        {
+            Relation("none", "friend");
+            Relation("player", "auto");
+            Relation("zombie", "enemy");
+            Relation("pk", "enemy");
+            Relation("scav", "auto");
+            Relation("bandit", "friend");
+            Relation("bandit_2", "friend");
+            Relation("survivor", "enemy");
+            Relation("survivor_encounter", "enemy");
+            Relation("animal", "enemy");
+            Relation("renegade", "neutral");
+            Relation("counter_player", "enemy");
+            Relation("counter_all", "enemy");
+        }
+
+        SetupRelations("bandit_2")
+        {
+            Relation("none", "friend");
+            Relation("player", "auto");
+            Relation("zombie", "enemy");
+            Relation("pk", "enemy");
+            Relation("scav", "enemy");
+            Relation("bandit", "friend");
+            Relation("bandit_2", "friend");
+            Relation("survivor", "enemy");
+            Relation("survivor_encounter", "enemy");
+            Relation("animal", "enemy");
+            Relation("renegade", "neutral");
+            Relation("counter_player", "friend");
+            Relation("counter_all", "enemy");
+        }
+
+        SetupRelations("survivor")
+        {
+            Relation("none", "friend");
+            Relation("player", "auto");
+            Relation("zombie", "enemy");
+            Relation("pk", "auto");
+            Relation("scav", "auto");
+            Relation("bandit", "enemy");
+            Relation("bandit_2", "enemy");
+            Relation("survivor", "friend");
+            Relation("animal", "enemy");
+            Relation("renegade", "neutral");
+            Relation("counter_player", "friend");
+            Relation("counter_all", "enemy");
+        }
+
+        SetupRelations("survivor_ms_panic")
+        {
+            Relation("none", "friend");
+            Relation("player", "auto");
+            Relation("zombie", "auto");
+            Relation("pk", "auto");
+            Relation("scav", "auto");
+            Relation("bandit", "auto");
+            Relation("bandit_2", "enemy");
+            Relation("survivor", "friend");
+            Relation("pk_hostile", "auto");
+            Relation("animal", "enemy");
+            Relation("renegade", "neutral");
+            Relation("counter_player", "friend");
+            Relation("counter_all", "enemy");
+        }
+
+        SetupRelations("survivor_encounter")
+        {
+            Relation("none", "friend");
+            Relation("player", "auto");
+            Relation("zombie", "auto");
+            Relation("pk", "auto");
+            Relation("scav", "auto");
+            Relation("bandit", "auto");
+            Relation("bandit_2", "enemy");
+            Relation("survivor", "friend");
+            Relation("pk_hostile", "enemy");
+            Relation("animal", "enemy");
+            Relation("renegade", "neutral");
+            Relation("counter_player", "friend");
+            Relation("counter_all", "enemy");
+        }
+
+        SetupRelations("pk_hostile")
+        {
+            Relation("none", "friend");
+            Relation("player", "enemy");
+            Relation("zombie", "enemy");
+            Relation("pk", "friend");
+            Relation("scav", "enemy");
+            Relation("bandit", "enemy");
+            Relation("bandit_2", "enemy");
+            Relation("survivor", "neutral");
+            Relation("survivor_encounter", "enemy");
+            Relation("animal", "enemy");
+            Relation("renegade", "enemy");
+            Relation("counter_player", "friend");
+            Relation("counter_all", "enemy");
+        }
+        
+        SetupRelations("pk_encounter")
+        {
+            Relation("none", "friend");
+            Relation("player", "friend");
+            Relation("zombie", "enemy");
+            Relation("pk", "friend");
+            Relation("scav", "neutral");
+            Relation("bandit", "enemy");
+            Relation("bandit_2", "enemy");
+            Relation("survivor", "neutral");
+            Relation("animal", "enemy");
+            Relation("renegade", "enemy");
+            Relation("counter_player", "friend");
+            Relation("counter_all", "enemy");
+        }
+        
+        SetupRelations("monster")
+        {
+            Relation("none", "enemy");
+            Relation("player", "enemy");
+            Relation("bandit", "enemy");
+            Relation("monster", "enemy");
+            Relation("animal", "enemy");
+        }
+
+        SetupRelations("animal")
+        {
+            Relation("none", "friend");
+            Relation("player", "auto");
+            Relation("zombie", "auto");
+            Relation("pk", "auto");
+            Relation("scav", "auto");
+            Relation("bandit", "auto");
+            Relation("bandit_2", "auto");
+            Relation("survivor", "auto");
+            Relation("pk_hostile", "auto");
+            Relation("survivor_encounter", "auto");
+            Relation("monster", "enemy");
+            Relation("animal", "friend");
+            Relation("renegade", "enemy");
+            Relation("counter_player", "friend");
+            Relation("counter_all", "enemy");
+        }
+
+        SetupRelations("renegade")
+        {
+            Relation("none", "friend");
+            Relation("player", "auto");
+            Relation("zombie", "auto");
+            Relation("pk", "enemy");
+            Relation("scav", "auto");
+            Relation("bandit", "auto");
+            Relation("bandit_2", "auto");
+            Relation("survivor", "auto");
+            Relation("pk_hostile", "auto");
+            Relation("survivor_encounter", "auto");
+            Relation("animal", "auto");
+            Relation("renegade", "friend");
+            Relation("counter_player", "friend");
+            Relation("counter_all", "enemy");
+        }
+
+        SetupRelations("counter_player")
+        {
+            Relation("none", "friend");
+            Relation("player", "auto");
+            Relation("zombie", "auto");
+            Relation("pk", "auto");
+            Relation("scav", "auto");
+            Relation("bandit", "auto");
+            Relation("bandit_2", "auto");
+            Relation("survivor", "auto");
+            Relation("pk_hostile", "auto");
+            Relation("survivor_encounter", "auto");
+            Relation("animal", "auto");
+            Relation("renegade", "auto");
+            Relation("counter_player", "friend");
+            Relation("counter_all", "enemy");
+        }
+        
+        SetupRelations("counter_all")
+        {
+            Relation("none", "friend");
+            Relation("player", "auto");
+            Relation("zombie", "auto");
+            Relation("pk", "auto");
+            Relation("scav", "auto");
+            Relation("bandit", "auto");
+            Relation("bandit_2", "auto");
+            Relation("survivor", "auto");
+            Relation("pk_hostile", "auto");
+            Relation("survivor_encounter", "auto");
+            Relation("animal", "auto");
+            Relation("renegade", "auto");
+            Relation("counter_player", "auto");
+            Relation("counter_all", "enemy");
+        }
+    }
+	
+	CustomMatrix("Survivor_player_enemy")
+	{
+        SetupRelations("survivor")
+        {
+            Relation("player", "enemy");
+        }
+	}
+	
+	CustomMatrix("pk_player_friend")
+	{
+        SetupRelations("pk")
+        {
+            Relation("player", "friend");
+        }
+	}
+}

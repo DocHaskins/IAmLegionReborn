@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
     <Parallel m_PolicySuccess="REQUIRE_ALL_DONE" m_PolicyFailure="REQUIRE_NONE">
-        <Sequence>
-            <Cnd_IsLeftArmDestroyed/>
-            <Cnd_IsRightArmDestroyed/>
-        </Sequence>
-        <Sequence>
+		<Sequence>
             <Cnd_IsBBValueEqual_bool m_Key="#any_stimulus_received" m_Value="false"/>
             <Selector>
                 <Cnd_HasBBValue m_Key="#target"/>

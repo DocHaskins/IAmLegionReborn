@@ -656,11 +656,11 @@ sub Inventory_Special_DL()
         use HitEffects_Default();     
 		HitReactionType(EReactionType_Push);		
         HitReactionContext(EReactionContext_Melee);
-		HitReactionHitSeverity(EHitSeverity_Heavy);
+		HitReactionHitSeverity(EHitSeverity_Light);
 		HitReactionMoveSeverity(EMoveSeverity_Heavy);			
 		HitReactionFlags(EReactionFlag_Interrupt);
 		ConfusionProb(0.5);
-	    FF_EffectName("KickHeavy");
+	    FF_EffectName("KickLight");
         GameVersion(1);
     }
 	

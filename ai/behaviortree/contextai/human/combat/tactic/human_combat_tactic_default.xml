@@ -34,28 +34,6 @@
                     <Opr_SetBBValue_string m_Key="#morale_state" m_Value="aggressive"/>
                 </Sequence>
             </Optional>
-            <!-- stay back -->
-            <Optional m_Enabled="$enable_tactic_stay_back">
-                <Sequence>
-                    <Selector>
-                        <Sequence>
-                            <Cnd_IsCombatTargetInRadius m_Radius="$enable_tactic_stay_back_calm_min_range" m_Invert="true"/>
-                            <Opr_GetCurrentTime m_TimePoint="#stay_back_cooldown"/>
-                        </Sequence>
-                        <Selector>
-                            <Cnd_IsCombatTargetInRadius m_Radius="$enable_tactic_stay_back_aggression_max_range" m_Invert="true"/>
-                            <Opr_GetModifiedTime m_TimePoint="#stay_back_cooldown" m_TimeDelta="$enable_tactic_stay_back_aggression_time"/>
-                        </Selector>
-                    </Selector>
-                    <Selector>
-                        <Cnd_HasBBValue m_Key="#stay_back_cooldown" m_Invert="true"/>
-                        <Cnd_HasTimePassed m_TimePoint="#stay_back_cooldown"/>
-                    </Selector>
-                    <Cnd_AreCombatSlotsOccupiedByOthers m_Name="melee" m_MinNumOfOccupiedSlots="5"/>
-                    <Opr_SetBBValue_string m_Key="#tactic" m_Value="stay_back"/>
-                    <Opr_SetBBValue_string m_Key="#morale_state" m_Value="cautious"/>
-                </Sequence>
-            </Optional>
             <!-- aggressive -->
             <Sequence>
                 <Selector>

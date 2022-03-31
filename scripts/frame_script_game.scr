@@ -1,0 +1,735 @@
+import "frame_script.def"
+
+sub game_modify()
+{
+	extern float f_difficulty_level_1;
+	extern float f_difficulty_level_2;
+	extern float f_difficulty_level_3;
+	float difficulty_level = max(f_difficulty_level_1, f_difficulty_level_2);
+	float difficulty_level = max(difficulty_level, f_difficulty_level_3);
+
+	extern float f_game_player_blood_health_state;
+	float health_state = f_game_player_blood_health_state > 0.0 ? sqrt(1.0 - f_game_player_blood_health_state) : 0.0;
+	extern float f_game_player_low_health;
+	float health_critical = max(health_state, sqrt(clamp(f_game_player_low_health - 1.0)));
+	Set("f_pp_game_player_health_critical", health_critical);
+
+	extern float f_skybox_night;
+
+	extern float f_game_player_hit_reaction;
+	Set("f_pp_game_player_hit_reaction", f_game_player_hit_reaction);
+
+	extern float f_game_player_hit_reaction_strong;
+	Set("f_pp_game_player_hit_reaction_strong", f_game_player_hit_reaction_strong);
+	
+	extern float f_game_decision;
+	extern float f_game_decision_beat;
+	float game_decision_sqrt = sqrt(f_game_decision);
+	float game_decision_sqrt_sqrt = sqrt(game_decision_sqrt);
+
+	extern int i_menu_lighting_on;
+	float menu_lighting = i_menu_lighting_on > 0 ? 1.0 : 0.0;
+
+	extern float f_filmgrain_4;
+	extern float f_filmgrain_4_color;
+	extern float f_filmgrain_4_speed;
+	extern float f_filmgrain_8;
+	extern float f_filmgrain_8_color;
+	extern float f_filmgrain_8_speed;
+	extern float f_filmgrain_16;
+	extern float f_filmgrain_16_color;
+	extern float f_filmgrain_16_speed;
+
+	Set("f_pp_filmgrain_4", f_filmgrain_4);
+	Set("f_pp_filmgrain_4_color", f_filmgrain_4_color);
+	Set("f_pp_filmgrain_4_speed", f_filmgrain_4_speed);
+	Set("f_pp_filmgrain_8", f_filmgrain_8);
+	Set("f_pp_filmgrain_8_color", f_filmgrain_8_color);
+	Set("f_pp_filmgrain_8_speed", f_filmgrain_8_speed);
+	Set("f_pp_filmgrain_16", f_filmgrain_16);
+	Set("f_pp_filmgrain_16_color", f_filmgrain_16_color);
+	Set("f_pp_filmgrain_16_speed", f_filmgrain_16_speed);
+	Set("f_pp_filmgrain_4or8or16", max(f_filmgrain_4, max(f_filmgrain_8, f_filmgrain_16)));
+	Set("f_pp_filmgrain_8or16", max(f_filmgrain_8, f_filmgrain_16));
+
+
+	extern float f_game_player_state_exhausted;
+	extern float f_game_player_fatigue;
+	float exhausted = clamp(f_game_player_state_exhausted);
+	float exhausted = max(exhausted, clamp(f_game_player_fatigue));
+	Set("f_pp_color_grading_effect_exhausted", exhausted);
+
+    //OVERLAYS
+    extern float f_overlay_map;
+    extern float f_overlay_game;
+    extern float f_overlay_weather_0;
+    extern float f_overlay_weather_1;
+    extern float f_overlay_weather_2;
+    extern float f_overlay_weather_3;
+    extern float f_overlay_sensor;
+    extern float f_overlay_movie;
+    extern float f_overlay_effect_0;
+    extern float f_overlay_effect_1;
+    extern float f_overlay_effect_2;
+    extern float f_overlay_effect_3;
+    extern float f_overlay_effect_4;
+    extern float f_overlay_effect_5;
+    extern float f_overlay_effect_6;
+    extern float f_overlay_effect_7;
+
+	extern float f_lockpicking_minigame;
+	float overlay_effect_3 = max(f_overlay_effect_3, f_lockpicking_minigame);
+	float overlay_effect_5 = max(f_overlay_effect_5, pow(exhausted, 0.25));
+
+    Set("f_pp_overlay_map", f_overlay_map);
+    Set("f_pp_overlay_game", f_overlay_game);
+    Set("f_pp_overlay_weather_0", f_overlay_weather_0);
+    Set("f_pp_overlay_weather_1", f_overlay_weather_1);
+    Set("f_pp_overlay_weather_2", f_overlay_weather_2);
+    Set("f_pp_overlay_weather_3", f_overlay_weather_3);
+    Set("f_pp_overlay_sensor", f_overlay_sensor);
+    Set("f_pp_overlay_movie", f_overlay_movie);
+    Set("f_pp_overlay_effect_0", f_overlay_effect_0);
+    Set("f_pp_overlay_effect_1", f_overlay_effect_1);
+    Set("f_pp_overlay_effect_2", f_overlay_effect_2);
+    Set("f_pp_overlay_effect_3", overlay_effect_3);
+    Set("f_pp_overlay_effect_4", f_overlay_effect_4);
+    Set("f_pp_overlay_effect_5", overlay_effect_5);
+    Set("f_pp_overlay_effect_6", f_overlay_effect_6);
+    Set("f_pp_overlay_effect_7", f_overlay_effect_7);
+
+    extern float TIME;
+
+
+	// Screamer / Dazed
+	extern float f_game_player_screamer;
+	extern float f_movie_screamer;
+	extern float f_game_player_state_dazed;
+	float dazed = clamp(f_game_player_state_dazed);
+	float dazed = max(dazed, clamp(max(f_game_player_screamer, f_movie_screamer)));
+	float dazed_inv = 1.0 - dazed;
+	Set("f_pp_color_grading_effect_dazed", dazed);
+
+	// Toxic
+	extern float f_map_player_toxic;
+	extern float f_game_player_infection;
+	extern float f_movie_infection;
+	extern float f_game_player_state_poisoned;
+	extern float f_movie_toxic;
+	float poisoned = clamp(f_game_player_state_poisoned);
+	float poisoned = max(poisoned, clamp(f_map_player_toxic));
+	float poisoned = max(poisoned, clamp(max(f_game_player_infection, f_movie_infection)));
+	float poisoned = max(poisoned, clamp(f_movie_toxic));
+	float poisoned_inv = 1.0 - poisoned;
+	float poisoned_1by = 1.0 / max(poisoned, f_div_delta);
+	Set("f_pp_color_grading_effect_poisoned", poisoned);
+
+	extern float f_game_player_gre;
+	float gre = clamp(f_game_player_gre);
+	Set("f_pp_color_grading_effect_gre", gre);
+
+	extern float f_game_player_cureaura;
+	float cureaura = clamp(f_game_player_cureaura);
+	float cureaura_inv = 1 - cureaura;
+	Set("f_pp_color_grading_effect_cureaura", cureaura);
+
+	extern float f_game_player_cureaura_strong;
+	float cureaura_strong = clamp(f_game_player_cureaura_strong);
+	float cureaura_strong_inv = 1 - cureaura_strong;
+	float cur_var = clamp(sin(0.6 * TIME) * 3.0 - 2.0) * clamp(sin(0.6 * TIME) * 3.0 - 2.0);
+	Set("f_pp_color_grading_effect_cureaura_strong", cureaura_strong);
+
+	extern float f_game_player_hunter_drained;
+	float hunter_drained = clamp(f_game_player_hunter_drained);
+	Set("f_pp_color_grading_effect_hunter_drained", hunter_drained);
+
+    extern float f_game_player_explosion;
+	float collided = clamp(f_game_player_explosion) * 0.5;
+	float collided_inv = 1.0 - collided;
+	Set("f_pp_color_grading_effect_explosion", f_game_player_explosion);
+
+	// Tahir Fight
+	extern float f_tahir_fight_on;
+	float tahir_fight = clamp(f_tahir_fight_on);
+	float tahir_fight_inv = 1.0 - tahir_fight;
+	float tahir_fight_1by = 1.0 / max(tahir_fight, f_div_delta);
+	Set("f_pp_color_grading_effect_tahir_fight", tahir_fight);
+
+	// Zombie vision
+	extern float f_game_zombie_vision;
+	extern float f_game_player_night_vision;
+	float zombie_vision = clamp(f_game_zombie_vision);
+	float zombie_vision = max(zombie_vision, clamp(f_game_player_night_vision));
+	float zombie_vision_inv = 1.0 - zombie_vision;
+	float zombie_vision_1by = 1.0 / max(zombie_vision, f_div_delta);
+	Set("f_pp_game_zombie_vision", zombie_vision);
+	Set("f_pp_color_grading_effect_zombie_vision", zombie_vision);
+
+	extern float f_game_noire;
+	float noire = pow(clamp(f_game_noire), 2.2);
+	float noire_inv = 1.0 - noire;
+	Set("f_pp_color_grading_effect_noire", noire);
+
+	extern float f_game_noire_red;
+	float noire_red = clamp(f_game_noire_red);
+	float noire_red_inv = 1.0 - noire_red;
+	Set("f_pp_color_grading_effect_noire_red", noire_red);
+
+	extern float f_game_dream;
+	float dream = pow(clamp(f_game_dream), 2.2);
+	float dream_inv = 1.0 - dream;
+    float dream_1by = 1.0 / max(dream, f_div_delta);
+	Set("f_pp_color_grading_effect_dream", dream);
+
+	// Dialogs
+	extern float f_game_dialog_near;
+	extern float f_game_dialog_far;
+	extern float f_game_dialog_near_min;
+	extern float f_game_dialog_near_max;
+	extern float f_game_dialog_far_min;
+	extern float f_game_dialog_far_max;
+    float dialog_near = clamp(f_game_dialog_near);
+	float dialog_near_min = f_game_dialog_near_min;
+	float dialog_near_max = f_game_dialog_near_max;
+	float dialog_far = clamp(f_game_dialog_far);
+	float dialog_far_1by = 1.0 / max(dialog_far, f_div_delta);
+	float dialog_far_min = f_game_dialog_far_min;
+	float dialog_far_max = f_game_dialog_far_max;
+
+	extern float f_drunk;
+	extern float f_game_flashback;
+	extern float f_soft_glow;
+	float soft_glow = f_drunk > 0.0 ? f_drunk * 0.3 : f_soft_glow;
+	float soft_glow = f_game_flashback > 0.0 ? f_soft_glow * sqrt(f_game_flashback) : soft_glow;
+	Set("f_pp_soft_glow", soft_glow);
+
+    extern float f_game_player_damage;
+	extern float f_movie_damage;
+    float damage = max(clamp(f_game_player_damage), clamp(f_movie_damage));
+	Set("f_pp_color_grading_effect_damage", damage);
+
+	extern float f_game_player_flash;
+	float flash = clamp(f_game_player_flash);
+	float flash_inv = 1.0 - flash;
+	Set("f_pp_color_grading_effect_flash", flash);
+
+    
+    extern float f_menu_desaturate;
+	float menu_desaturate = max(f_lockpicking_minigame * 0.5, f_menu_desaturate);
+	Set("f_pp_color_grading_effect_menu_desaturate", menu_desaturate);
+
+    // aberration - zombie bite
+    extern float f_p_aberration_scale;
+    extern float f_p_aberration_speed;
+    extern float f_p_aberration_strength;
+
+	float aberration_scale = f_p_aberration_scale;
+    float aberration_speed = f_p_aberration_speed;
+    float aberration_strength = f_p_aberration_strength;
+
+	float aberration_scale = max(aberration_scale, 0.05 * dazed);
+    float aberration_speed = max(aberration_speed, 20.0 * clamp(dazed * 100000.0));
+    float aberration_strength = max(aberration_strength, 0.75 * dazed);
+
+	float aberration_scale = max(aberration_scale, 0.01 * tahir_fight);
+    float aberration_speed = max(aberration_speed, 0.75 * clamp(tahir_fight * 100000.0));
+    float aberration_strength = max(aberration_strength, tahir_fight);
+	
+	float decision_shake = clamp(f_game_decision * 1.25);
+	float decision_shake_sqrt = sqrt(decision_shake);
+	float aberration_scale = max(aberration_scale, decision_shake_sqrt * 0.13);
+	float aberration_strength = max(aberration_strength, decision_shake_sqrt);
+	float aberration_speed = max(aberration_speed, decision_shake > 0.0 ? 0.9 : 0.0);	
+
+    Set("f_pp_aberration_scale", aberration_scale);
+    Set("f_pp_aberration_speed", aberration_speed);
+    Set("f_pp_aberration_strength", aberration_strength);
+	
+	extern float f_game_player_blood_eye;
+	
+	extern float f_death_screen;	
+	float death_screen = max(f_death_screen, f_game_player_blood_eye > 1.0 ? 1.0 : 0.0);
+	Set("f_pp_death_screen", death_screen);
+	
+	float blood_eye_off = max(f_game_player_blood_eye - 1.0, 0.0);
+	float blood_eye_off = blood_eye_off * blood_eye_off;
+	float blood_eye_off_ceil_inv = 1.0 - min(blood_eye_off * 10000000.0, 1.0);
+	float blood_eye = min(f_game_player_blood_eye, 1.0);
+	float blood_eye = max(0.0, blood_eye - blood_eye_off);
+	
+	extern float f_contamination_pp_on;
+	extern float f_contamination_state;
+	
+	float contamination_fallof = max(0.0, min(f_contamination_state  - 3.0, 1.0));
+	float contamination_fallof = 1.0 - contamination_fallof * contamination_fallof  * contamination_fallof;
+	float contamination = min(f_contamination_state, 1.0) * f_contamination_pp_on * contamination_fallof;
+	float contamination_abber = 2.0;
+	float contamination_abber = contamination_abber + sin(TIME * 1.25) * 3.75 + sin(TIME * 5.73) * sin(TIME * 2.73) * 2.15;
+	float contamination_abber = contamination_abber * contamination * 4.5;
+	
+	
+	extern float f_chromatic_aberration_range;
+	float chromatic_range = max(f_chromatic_aberration_range, contamination_abber);
+	float chromatic_range = max(chromatic_range, blood_eye * 150.0 * blood_eye_off_ceil_inv);
+	
+	float decision_abber = (sin(TIME * 1.3) * 5.5 + sin(TIME * 0.73) * sin(TIME * 2.53) * 12.0 + 21.0) * f_game_decision;
+	float chromatic_range = max(chromatic_range, decision_abber);
+	
+	Set("f_pp_chromatic_aberration_range", chromatic_range);
+	
+	extern float f_p_aberration_on;	
+	float abberation_on =  aberration_strength * clamp(aberration_scale * 100000.0) * clamp(aberration_speed * 100000.0);
+	float abberation_on = max(f_p_aberration_on, abberation_on);
+    Set("f_pp_aberration_on", abberation_on);
+
+    // shake - zombie bite
+    extern float f_p_shake_scale;
+    extern float f_p_shake_speed;
+    extern float f_p_shake_strength;
+
+    float shake_scale = max(f_p_shake_scale, 0.05 * cureaura);
+	float shake_strength = max(f_p_shake_strength, 0.5 * cureaura);
+	float shake_speed = max(f_p_shake_speed, 15.0 * cureaura);
+	
+    float shake_scale = max(shake_scale, 0.05 * collided);
+	float shake_strength = max(shake_strength, 0.5 * collided);
+	float shake_speed = max(shake_speed, collided * collided * 4.0);
+
+	float shake_scale = max(shake_scale, 0.25 * cureaura_strong);
+	float shake_strength = max(shake_strength, 1.0 * cureaura_strong);
+	float shake_speed = max(shake_speed, 15.0 * cureaura_strong);
+	
+	float shake_scale = max(shake_scale, sqrt(blood_eye) * blood_eye_off_ceil_inv * 0.625);
+	float shake_strength = max(shake_strength, 0.2 * sqrt(blood_eye) * blood_eye_off_ceil_inv);
+	float shake_speed = max(shake_speed, blood_eye * blood_eye_off_ceil_inv > 0.0 ? 0.075 : 0.0);
+
+	Set("f_pp_shake_scale", shake_scale);
+    Set("f_pp_shake_speed", shake_speed);
+    Set("f_pp_shake_strength", shake_strength);
+	
+	extern float f_p_shake_on;
+	float shake_on = shake_strength * clamp(shake_scale * 100000.0) * clamp(shake_speed * 100000.0);
+	float shake_on = max(f_p_shake_on, shake_on);
+    Set("f_pp_shake_on", shake_on);
+	
+    //blur
+   
+	extern float f_menu_blur;
+	extern float f_blur;
+	extern float f_eye_opening;
+	extern float f_m3d_on;
+	
+	float blur = max(f_blur, f_lockpicking_minigame);
+	float blur = max(blur, collided);
+	float blur = max(blur, dazed);
+	float blur = max(blur, noire * 0.175);
+	float blur = max(blur, damage * 0.2);
+	float blur = max(blur, clamp(f_menu_blur) );
+	float blur = max(blur, f_m3d_on * 0.095);
+	float blur = max(blur, cureaura_strong  * cur_var * 0.02);
+	float blur = max(f_eye_opening * f_eye_opening * 0.675, blur);
+	float blur = max(sqrt(blood_eye) * blood_eye_off_ceil_inv * 0.85, blur);
+    Set("f_pp_blur", blur);
+	
+    //DOF
+    extern float f_p_blur_near;
+    extern float f_p_blur_near_min;
+    extern float f_p_blur_near_max;
+    extern float f_p_blur_far_min;
+    extern float f_p_blur_far_max;
+    extern float f_p_blur_far;
+
+	//DOF - Dialogs
+    float blur_near = max(f_p_blur_near, dialog_near);
+	float blur_near_min = max(f_p_blur_near_min, dialog_near * dialog_near_min);
+    float blur_near_max = max(f_p_blur_near_max, dialog_near * dialog_near_max);
+    float blur_far = max(f_p_blur_far, dialog_far);
+    float blur_far_min = min(f_p_blur_far_min, dialog_far_1by * dialog_far_min);
+    float blur_far_max = min(f_p_blur_far_max, dialog_far_1by * dialog_far_max);
+
+    float blur_far_min = min(blur_far_min, poisoned_1by * 8.0);
+    float blur_far_max = min(blur_far_max, poisoned_1by * 32.0);
+    float blur_far = max(blur_far, poisoned);
+	
+
+    float blur_far_min = min(blur_far_min, dream_1by * 15.0);
+    float blur_far_max = min(blur_far_max, dream_1by * 175.0);
+    float blur_far = max(blur_far, dream);
+
+    float blur_far_min = min(blur_far_min, tahir_fight_1by * 2.0);
+    float blur_far_max = min(blur_far_max, tahir_fight_1by * 12.0);
+    float blur_far = max(blur_far, tahir_fight);
+
+    float blur_far_min = min(blur_far_min, 1.0 / game_decision_sqrt_sqrt * 4.0);
+    float blur_far_max = min(blur_far_max, 1.0 / game_decision_sqrt_sqrt * 12.5);
+    float blur_far = max(blur_far, game_decision_sqrt_sqrt * 0.65);
+  
+	extern float f_drunk;
+	float drunk_blend = sqrt(f_drunk);
+ 	float blur_far_min = f_drunk > 0.0 ? 50.0 - f_drunk * 10.0 : blur_far_min;
+	float blur_far_max = f_drunk > 0.0 ? 230.0 - 175.0 * f_drunk : blur_far_max;
+	float blur_far = max(blur_far, f_drunk * 0.175 + drunk_blend * 0.3);
+
+	//LENS WHACKING
+	extern float f_dof_lens_whacking;
+	float dof_lens_whacking = max(f_dof_lens_whacking, f_drunk);
+	float dof_lens_whacking = max(dof_lens_whacking, game_decision_sqrt_sqrt * 0.5);
+	//whacking variation in time
+	
+	float whacking_speed = f_drunk > 0.0 ? 1.75 : 1.0;
+	float whacking_speed = f_game_decision > 0.0 ? 3.0 : whacking_speed;
+	vec4 lw_speed4 = [TIME * 1.275, TIME * 3.0, TIME * 6.375, TIME * 10.5] * whacking_speed;
+	vec4 lw_time_variation4 = sin( lw_speed4 ) * [0.5, 0.65, 0.35, 0.125];
+	vec4 lw_time_variation4 = lw_time_variation4 * 0.9 + [lw_time_variation4.y, lw_time_variation4.w * lw_time_variation4.w, lw_time_variation4.y, lw_time_variation4.y] * 0.1;
+	vec4 lw_time_variation4 = lw_time_variation4 * 0.7 + ([lw_time_variation4.w, lw_time_variation4.x, lw_time_variation4.w * lw_time_variation4.w, lw_time_variation4.z] * 0.5 + 0.5);
+	vec4 lw_time_variation4 = lw_time_variation4 * 0.8 + [lw_time_variation4.x, lw_time_variation4.z * lw_time_variation4.z, lw_time_variation4.y, lw_time_variation4.w] * 0.2;
+	vec4 lw_time_variation4 = lw_time_variation4 * 0.6 + [lw_time_variation4.x, lw_time_variation4.w, lw_time_variation4.x, lw_time_variation4.y] * 0.4;
+
+	//dof near jitter
+	float blur_near_jitter = abs(lw_time_variation4.y) *  abs(0.75 + lw_time_variation4.x * 0.5) * blur_near * 2.5;
+	float blur_near_jitter = f_drunk > 0.0 ? 0.0 : blur_near_jitter;
+    float blur_near = blur_near - blur_near_jitter * dof_lens_whacking;
+	float near_dist_jitter_scale = f_drunk > 0.0 ? 0.0 : 0.0625;
+	
+	float lw_jitter_distance = (blur_near_max - blur_near_min) * near_dist_jitter_scale;
+	float blur_near_max_jitter = abs(lw_time_variation4.w) * lw_jitter_distance;
+    float blur_near_max = blur_near_max + blur_near_max_jitter * dof_lens_whacking;
+	
+	float lw_jitter_distance = (blur_near_max - blur_near_min) * near_dist_jitter_scale;
+	float blur_near_min_jitter = abs(lw_time_variation4.z) * abs(lw_time_variation4.z) * lw_jitter_distance;
+	float blur_near_min = blur_near_min - blur_near_min_jitter * dof_lens_whacking;
+	
+	//dof far jitter
+	float jittered_blur_far = abs(lw_time_variation4.x) * blur_far; 
+	float blur_far = blur_far - jittered_blur_far * dof_lens_whacking;
+	float far_dist_jitter_scale = 0.15;
+	
+	float lw_jitter_distance = (blur_far_max - blur_far_min) * far_dist_jitter_scale;
+	float jittered_blur_far_min = abs(lw_time_variation4.z) * lw_jitter_distance;
+    float blur_far_min = blur_far_min - jittered_blur_far_min * dof_lens_whacking;
+
+	float lw_jitter_distance = (blur_far_max - blur_far_min) * far_dist_jitter_scale;
+	float jittered_blur_far_max = abs(lw_time_variation4.w) * lw_jitter_distance;
+    float blur_far_max = blur_far_max + jittered_blur_far_max * dof_lens_whacking;
+
+
+	//DOF - set variables
+    Set("f_pp_blur_near", blur_near);
+    Set("f_pp_blur_near_min", blur_near_min);
+    Set("f_pp_blur_near_max", blur_near_max);
+    Set("f_pp_blur_far_min", blur_far_min);
+    Set("f_pp_blur_far_max", blur_far_max);
+    Set("f_pp_blur_far", blur_far);
+
+	extern int i_blur_quality;
+	int i_bokeh_on = (blur_near > 0.0) ? 1 : 0;
+	int i_bokeh_on = (blur > 0.0) ? 1 : i_bokeh_on;
+	Set("i_pp_blurs_bokeh_on", i_blur_quality * i_bokeh_on);	
+	
+	
+	//motion blur copy
+	extern float f_p_prv_copy;
+	float prv_copy = f_p_prv_copy;
+	float prv_copy = max(prv_copy, poisoned);
+	float prv_copy = max(prv_copy, dream);
+	float prv_copy = max(prv_copy, cureaura);
+	float prv_copy = max(prv_copy, cureaura_strong);
+	float prv_copy = max(prv_copy, tahir_fight);
+	float prv_copy = max(prv_copy, f_game_player_hit_reaction);
+	float prv_copy = max(prv_copy, f_game_player_hit_reaction_strong);
+	Set("f_pp_prv_copy", prv_copy);
+
+	extern float f_p_prv_add;
+	float prv_add = f_p_prv_add;
+	float prv_add = max(prv_add, poisoned * 0.2);
+	float prv_add = max(prv_add, cureaura * 0.15);
+	float prv_add = max(prv_add, cureaura_strong * 0.5 * cur_var);
+	float prv_add = max(prv_add, dream * 0.15);
+	Set("f_pp_prv_add", prv_add);
+
+    //motion blur
+    extern float f_p_prv_lrp;
+	float prv_lrp = max(f_p_prv_lrp, tahir_fight * 0.3);
+	float prv_lrp = max(prv_lrp, f_game_player_hit_reaction * 0.33);
+	float prv_lrp = max(prv_lrp, f_game_player_hit_reaction_strong * 0.66);
+	float prv_lrp = max(prv_lrp, f_game_decision * 0.3 + game_decision_sqrt * 0.2);
+    Set("f_pp_prv_lrp", prv_lrp);
+	
+	
+    //Blur radial mask
+    extern float f_p_blur_mask_radial_bias;
+    extern float f_p_blur_mask_radial_scale;
+    extern float f_p_blur_mask_radial_opacity;
+    extern float f_p_blur_mask_radial_scale_x;
+    extern float f_p_blur_mask_radial_scale_y;
+    extern float f_p_blur_mask_radial_center_offset_x;
+    extern float f_p_blur_mask_radial_center_offset_y;
+
+	float blur_mask_radial_scale = max(f_p_blur_mask_radial_scale, exhausted);
+	float blur_mask_radial_opacity = max(f_p_blur_mask_radial_opacity, exhausted);
+
+	float blur_mask_radial_scale = max(blur_mask_radial_scale, tahir_fight);
+    float blur_mask_radial_opacity = max(blur_mask_radial_opacity, tahir_fight * 0.25);
+
+	extern float f_game_player_state_stealth;
+	float blur_mask_radial_scale = max(blur_mask_radial_scale, f_game_player_state_stealth);
+	float blur_mask_radial_opacity = max(blur_mask_radial_opacity, f_game_player_state_stealth * 0.1725);
+
+	float blur_mask_radial_scale = max(blur_mask_radial_scale, min(contamination * 2.0, 1.0) * 0.4);
+	float blur_mask_radial_opacity = max(blur_mask_radial_opacity, min(contamination * 2.0, 1.0) * 0.8 );
+
+	float blur_mask_radial_scale = max(blur_mask_radial_scale, poisoned);
+	float blur_mask_radial_opacity = max(blur_mask_radial_opacity, poisoned);
+
+	float blur_mask_radial_opacity = max(blur_mask_radial_opacity, health_critical * 0.85);
+	float blur_mask_radial_scale = max(blur_mask_radial_scale, health_critical * 0.75);
+	
+	float blur_mask_radial_opacity = max(blur_mask_radial_opacity, game_decision_sqrt_sqrt * 0.2);
+	float blur_mask_radial_scale = max(blur_mask_radial_scale, game_decision_sqrt_sqrt * 0.1);
+
+	float blur_mask_radial_on = blur_mask_radial_scale * blur_mask_radial_opacity;
+	
+    Set("f_pp_blur_mask_radial_bias", f_p_blur_mask_radial_bias);
+    Set("f_pp_blur_mask_radial_scale", blur_mask_radial_scale);
+    Set("f_pp_blur_mask_radial_opacity", blur_mask_radial_opacity);
+    Set("f_pp_blur_mask_radial_scale_x", f_p_blur_mask_radial_scale_x);
+    Set("f_pp_blur_mask_radial_scale_y", f_p_blur_mask_radial_scale_y);
+    Set("f_pp_blur_mask_radial_center_offset_x", f_p_blur_mask_radial_center_offset_x);
+    Set("f_pp_blur_mask_radial_center_offset_y", f_p_blur_mask_radial_center_offset_y);
+
+    //Radial blur
+    extern float f_p_blur_radial_mask_scale;
+    extern float f_p_blur_radial_mask_opacity;
+    extern float f_p_blur_radial_power;
+    extern float f_p_blur_radial_range;
+    extern float f_p_blur_radial_center_x;
+    extern float f_p_blur_radial_center_y;
+	
+	float blur_radial_mask_scale = f_p_blur_radial_mask_scale * zombie_vision_inv + 0.4 * zombie_vision;
+	float blur_radial_mask_opacity = max(f_p_blur_radial_mask_opacity, zombie_vision);
+	float blur_radial_power = max(f_p_blur_radial_power, zombie_vision * 5.0);
+	float blur_radial_range = max(f_p_blur_radial_range, zombie_vision * 0.2);
+
+	extern float f_game_player_boost;
+	float blur_radial_mask_scale = blur_radial_mask_scale * (1.0 - f_game_player_boost) + 2.0 * f_game_player_boost;
+	float blur_radial_mask_opacity = max(blur_radial_mask_opacity, f_game_player_boost);
+	float blur_radial_power = max(blur_radial_power, f_game_player_boost * 0.7);
+	float blur_radial_range = max(blur_radial_range, f_game_player_boost * 0.3);
+
+	float blur_radial_mask_scale = max(blur_radial_mask_scale, dream * 1.0);
+	float blur_radial_mask_opacity = max(blur_radial_mask_opacity, dream * 0.65);
+	float blur_radial_power = max(blur_radial_power, dream * 1.0);
+	float blur_radial_range = max(blur_radial_range, dream * 0.3);
+	float blur_radial_center_x = f_p_blur_radial_center_x + sin(TIME * 0.73) * dream * 0.1;
+	float blur_radial_center_y = f_p_blur_radial_center_y + sin(TIME * 1.37) * dream * 0.1;
+
+	float blur_radial_mask_scale = max(blur_radial_mask_scale, cureaura * 0.01);
+	float blur_radial_mask_opacity = max(blur_radial_mask_opacity, cureaura * cur_var);
+	float blur_radial_power = max(blur_radial_power, cureaura * 0.6);
+	float blur_radial_range = max(blur_radial_range, cureaura * 0.2);
+	float blur_radial_center_x = blur_radial_center_x + sin(TIME * 2.73) * cureaura * 0.2;
+	float blur_radial_center_y = blur_radial_center_y + sin(TIME * 1.37) * cureaura * 0.2;
+
+	float blur_radial_mask_scale = max(blur_radial_mask_scale, cureaura_strong * 0.01);
+	float blur_radial_mask_opacity = max(blur_radial_mask_opacity, cureaura_strong * cur_var * 0.3);
+	float blur_radial_power = max(blur_radial_power, cureaura_strong );
+	float blur_radial_range = max(blur_radial_range, cureaura_strong * 0.5);
+	float blur_radial_center_x = blur_radial_center_x + sin(TIME * 2.73) * cureaura_strong * 0.1;
+	float blur_radial_center_y = blur_radial_center_y + sin(TIME * 1.37) * cureaura_strong * 0.1;
+	
+	float blur_radial_mask_scale = max(blur_radial_mask_scale, f_lockpicking_minigame * 10.0);
+	float blur_radial_mask_opacity = max(blur_radial_mask_opacity, f_lockpicking_minigame);
+	float blur_radial_power = max(blur_radial_power, f_lockpicking_minigame );
+	float blur_radial_range = max(blur_radial_range, f_lockpicking_minigame * 0.25);
+	
+	float blur_radial_mask_scale = max(blur_radial_mask_scale, blood_eye * blood_eye_off_ceil_inv);
+	float blur_radial_mask_opacity = max(blur_radial_mask_opacity, blood_eye * blood_eye_off_ceil_inv);
+	float blur_radial_power = max(blur_radial_power, blood_eye * blood_eye_off_ceil_inv);
+	float blur_radial_range = max(blur_radial_range, sqrt(blood_eye) * blood_eye_off_ceil_inv);	
+	
+	float blur_radial_mask_scale = max(blur_radial_mask_scale, game_decision_sqrt_sqrt * 0.45);
+	float blur_radial_mask_opacity = max(blur_radial_mask_opacity, game_decision_sqrt_sqrt * 0.175 + sin(TIME * 4.0) * 0.05);
+	float blur_radial_power = max(blur_radial_power, game_decision_sqrt_sqrt);
+	float blur_radial_range = max(blur_radial_range, game_decision_sqrt_sqrt);
+	float blur_radial_center_x = blur_radial_center_x + sin(TIME * 2.3) * sin(TIME * 0.7 + 0.3) * f_game_decision * 0.125;
+	float blur_radial_center_y = blur_radial_center_y + sin(TIME * 2.0) * sin(TIME * 0.9) * sin(TIME * 1.45) * f_game_decision * 0.125;
+
+	Set("f_pp_blur_radial_mask_scale", blur_radial_mask_scale);
+	Set("f_pp_blur_radial_mask_opacity", blur_radial_mask_opacity);
+    Set("f_pp_blur_radial_power", blur_radial_power);
+    Set("f_pp_blur_radial_range", blur_radial_range);
+    Set("f_pp_blur_radial_center_x", blur_radial_center_x);
+    Set("f_pp_blur_radial_center_y", blur_radial_center_y);
+	
+	extern float f_p_blur_radial_on;
+    float blur_radial_on = max(f_p_blur_radial_on, blur_radial_range * blur_radial_mask_scale * blur_radial_power);
+	Set("f_pp_blur_radial_on", blur_radial_on);
+
+	//fade pp
+	extern float f_fade_pp;
+	extern vec3 v_fade_pp;
+	extern float f_fade_pp_clr;
+	extern float f_fade_pp_msk;
+	extern float f_fade_pp_opc;
+	extern string s_fade_pp_clr;
+	extern string s_fade_pp_msk;
+	extern string s_eye_opening_fade_pp_msk;
+	extern string s_bloody_eye;
+	
+	float fade_pp_msk = f_eye_opening > 0.0 ? 1.0 - f_eye_opening * f_eye_opening * 0.5 : f_fade_pp_msk;
+
+	string pp_fade_pp_msk = f_eye_opening > 0.0 ? s_eye_opening_fade_pp_msk : s_fade_pp_msk;
+
+	float3 fade_pp_clr =  f_eye_opening > 0.0 ? [0.0, 0.0, 0.0] : v_fade_pp;
+	
+	float fade_amount = f_eye_opening > 0.0 ? f_eye_opening * 0.75 : f_fade_pp;
+	
+	float fade_opc = f_eye_opening > 0.0 ? 1.0 : f_fade_pp_opc;
+
+	Set("s_pp_fade_pp_clr", s_fade_pp_clr);
+	Set("s_pp_fade_pp_msk", pp_fade_pp_msk);
+	Set("f_pp_fade_pp", fade_amount);
+	Set("v_pp_fade_pp", fade_pp_clr);
+	Set("f_pp_fade_pp_clr", f_fade_pp_clr);
+	Set("f_pp_fade_pp_msk", fade_pp_msk);
+	Set("f_pp_fade_pp_opc", fade_opc);
+
+	extern float f_pp_filmgrain_8;
+	extern float f_pp_filmgrain_8_color;
+	extern float f_pp_filmgrain_8_speed;
+
+	float filmgrain_8 = f_pp_filmgrain_8;
+	float filmgrain_8 = max(filmgrain_8, zombie_vision * 0.005);
+
+	float filmgrain_8_color = f_pp_filmgrain_8_color;
+	float filmgrain_8_color = max(filmgrain_8_color, zombie_vision);
+
+	float filmgrain_8_speed = f_pp_filmgrain_8_speed;
+	float filmgrain_8_speed = max(filmgrain_8_speed, zombie_vision * 1.5);
+
+	Set("f_pp_filmgrain_8", filmgrain_8);
+	Set("f_pp_filmgrain_8_color", filmgrain_8_color);
+	Set("f_pp_filmgrain_8_speed", filmgrain_8_speed);
+
+	//ZOMBIE VISION
+	float exposure_white_zombie_vision = 0.1;
+	float game_zombie_vision_weight = zombie_vision * zombie_vision;
+	
+	
+	extern float f_p_auto_exposure_white;
+	float auto_exposure_white = exposure_white_zombie_vision * game_zombie_vision_weight + f_p_auto_exposure_white * (1.0 - game_zombie_vision_weight);
+	Set("f_pp_auto_exposure_white", auto_exposure_white);
+
+    extern float f_p_auto_exposure_key_value;
+	
+	float auto_exposure_key_value = f_p_auto_exposure_key_value * (1.0 + blood_eye * 2.0 * blood_eye_off_ceil_inv);
+	float auto_exposure_key_value = auto_exposure_key_value + health_critical * 0.0625;
+    Set("f_pp_auto_exposure_key_value", auto_exposure_key_value);
+
+    extern float f_p_auto_exposure_min;
+    Set("f_pp_auto_exposure_min", f_p_auto_exposure_min);
+
+    extern float f_p_auto_exposure_max;
+    Set("f_pp_auto_exposure_max", f_p_auto_exposure_max);
+
+    extern float f_p_auto_exposure_adaptation_rate;
+    Set("f_pp_auto_exposure_adaptation_rate", f_p_auto_exposure_adaptation_rate);
+	
+	extern float f_bombed;
+	float bombed = menu_lighting > 0.0 ? 0.0 : f_bombed;
+	Set("f_pp_bombed", bombed);
+
+	float bombed_inv = 1.0 - (bombed * 0.95);
+	extern vec3 v_pp_shading_sun_color;
+	Set("v_pp_shading_sun_color", v_pp_shading_sun_color * bombed_inv);
+	
+
+	extern float f_p_fog_height;
+	float fog_height = f_m3d_on > 0.0 ? 0.0 : f_p_fog_height;
+	float fog_height = fog_height * (1.0 - f_game_flashback); 
+	Set("f_pp_fog_height", fog_height);
+
+
+	extern float f_drunk;
+	float drunk_blend = sqrt(f_drunk);
+	float drunk_blend_sqrt = sqrt(drunk_blend);
+
+	//barrel
+	extern float f_barrel_lens_distort;
+	extern float f_dof_lens_whacking;
+	extern int i_menu_option_aa;
+	float barrel_lens_distort = max(f_barrel_lens_distort, 0.0);
+	float barrel_lens_distort = max(barrel_lens_distort, f_dof_lens_whacking * 0.125);
+	float barrel_lens_distort = max(barrel_lens_distort, drunk_blend * 0.425);
+	float barrel_lens_distort = max(barrel_lens_distort, blood_eye * 0.25);
+	float barrel_lens_distort = barrel_lens_distort * i_menu_option_aa;
+	
+	//pincushion
+	// float decision_distort = (game_decision_sqrt * -1.75 - f_game_decision * 0.25) * 0.75 - f_game_decision_beat * (0.325 + f_game_decision * f_game_decision * 3.5);
+	// float pincushion_lens_distort = min(pincushion_lens_distort, decision_distort);
+	float pincushion_lens_distort = (game_decision_sqrt * -1.75 - f_game_decision * 0.25) * 0.8 - f_game_decision_beat * (0.325 + f_game_decision * f_game_decision * 3.5);
+	float pincushion_lens_distort = min(f_barrel_lens_distort, pincushion_lens_distort);
+		
+	float lens_distort = barrel_lens_distort + pincushion_lens_distort;
+	Set("f_pp_barrel_lens_distort", lens_distort);
+	float pincushion_on = lens_distort < 0.0 ? 1.0 : 0.0;
+	Set("f_pincushion_on", pincushion_on);
+	float lens_distort_on = lens_distort != 0.0 ? 1.0 : 0.0;
+	Set("f_lens_distort_on", lens_distort_on);
+	
+	extern float f_p_vignetting;
+	float vignetting = max(health_critical * 0.75, f_p_vignetting);
+	float vignetting = max(difficulty_level, vignetting);
+	float vignetting = max(vignetting, f_m3d_on);
+	Set("f_pp_vignetting", vignetting);
+
+
+	extern float f_pp_game_enemy_hit_splat_on;
+
+	extern vec4 v_pp_screen_drops_splat_xform;
+	vec4 screen_drops_splat_xform = f_pp_game_enemy_hit_splat_on > 0.0 ? [0.0, 0.0, TIME * 10.0, 1.0] : v_pp_screen_drops_splat_xform;
+	Set("v_pp_screen_drops_splat_xform", screen_drops_splat_xform);
+
+	extern float f_pp_screen_drops_splat_move;
+	float screen_drops_splat_move = f_pp_game_enemy_hit_splat_on > 0.0 ? 10.0 : f_pp_screen_drops_splat_move;
+	Set("f_pp_screen_drops_splat_move", screen_drops_splat_move);
+
+
+
+	extern float f_p_screen_drops_splat_emissive;
+	// extern float f_game_player_blood_hit_strength;
+	// Set("f_pp_screen_drops_splat_emissive", f_p_screen_drops_splat_emissive * (1.0 - f_skybox_night * 0.9) + f_game_player_blood_hit_strength * 0.025);
+	Set("f_pp_screen_drops_splat_emissive", f_p_screen_drops_splat_emissive * (1.0 - f_skybox_night * 0.9));
+
+	extern float f_p_blur_on;
+	extern float f_pp_screen_drops_on;
+	extern float f_pp_game_player_blood_hit_on;
+	float screen_drops_on = menu_lighting > 0.0 ? 0.0 : f_pp_screen_drops_on;
+
+	float blurs_near_on = max(f_p_blur_on, blur_radial_on);
+	float blurs_near_on = max(blurs_near_on, blur_mask_radial_on);
+	float blurs_near_on = max(blurs_near_on, blur);
+	float blurs_near_on = max(blurs_near_on, blur_near);
+	float blurs_near_on = max(blurs_near_on, screen_drops_on);
+	float blurs_near_on = max(blurs_near_on, f_pp_game_player_blood_hit_on);
+	Set("i_pp_blurs_near_on", (blurs_near_on > 0.0) ? 1 : 0);
+
+	float blur_on = max(blurs_near_on, blur_far);
+	Set("f_pp_blurs_on", blur_on);
+	
+	extern float f_p_light_leak;
+	float light_leak = max(f_p_light_leak, game_decision_sqrt);
+	Set("f_pp_light_leak", light_leak);
+
+	extern int i_menu_option_upscaler;
+	extern float f_pp_sharpen_amount;
+	float sharpen_value = max(f_pp_sharpen_amount, f_pp_sharpen_amount + f_game_player_state_stealth * 3.0);
+	float sharpen_value = i_menu_option_upscaler == 2 ? (sharpen_value / 1.45) : sharpen_value;
+	Set("f_pp_sharpen_amount", sharpen_value);
+}
+
+sub game_set()
+{
+
+}
+

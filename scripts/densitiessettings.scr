@@ -64,14 +64,14 @@ sub main()
     // no zombies on rooftops during the day
     DensitiesTagged(Day, "rooftop")
     {
-        None(0, 0);
-		RunThrough(0, 0);
-        Easy(1, 4);
-        Medium(8, 36);
-        Hard(10, 50);
-        VeryHard(10, 50);
+        None(15, 50);
+		RunThrough(15, 50);
+        Easy(15, 50);
+        Medium(15, 50);
+        Hard(20, 70);
+        VeryHard(20, 70);
 		
-		OWA(10, 50);
+		OWA(40, 50);
     }
     
     DensitiesTagged(Night, "rooftop")

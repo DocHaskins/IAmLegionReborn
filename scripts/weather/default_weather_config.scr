@@ -1,0 +1,416 @@
+import "daytime.def"
+// TimeScope (start_time)
+// Weather ("story_system_name", probability)
+// Weather ("story_system_name", probability, duration)
+// Version (order_number, "weather_script_name.scr", internal_probability, "envprobe lighting", "heightmap lighting")
+// Default() - sets default weather
+
+// LightingPresets() - used for envprobes and heightmaps
+// LIGHTING_PRESET_*** - defined in daytime.def
+// LIGHTING_TAG - defined in daytime.def (FDayTimeTag), optional
+// Preset("name", "varlist", LIGHTING_PRESET_***, LIGHTING_TAG);
+
+sub main()   //DL2 Weather script
+{
+	LightingPresets()
+	{
+		Preset("dawn_clear_a", "dawn_clear_a.scr", LIGHTING_PRESET_ALL, DAWN_TAG);
+		Preset("dawn_cloudy_a", "dawn_cloudy_a.scr", LIGHTING_PRESET_LIGHTMAP);
+		Preset("dawn_foggy_a", "dawn_foggy_a.scr", LIGHTING_PRESET_LIGHTMAP);
+		Preset("dawn_foggy_b", "dusk_foggy_b_heavyfog.scr", LIGHTING_PRESET_ALL, DAWN_TAG);
+		Preset("dawn_rainy_a", "dawn_rainy_a.scr", LIGHTING_PRESET_ALL, DAWN_TAG);
+		Preset("dawn_stormy_a", "dawn_stormy_a.scr", LIGHTING_PRESET_LIGHTMAP);
+		Preset("dawn_overcast_a", "dawn_overcast_a.scr", LIGHTING_PRESET_ALL, DAWN_TAG);
+
+		Preset("sunrise_clear_a", "sunrise_clear_a.scr", LIGHTING_PRESET_ALL, SUNRISE_TAG);
+		Preset("sunrise_cloudy_a", "sunrise_cloudy_a.scr", LIGHTING_PRESET_LIGHTMAP);
+		Preset("sunrise_foggy_a", "sunrise_foggy_a.scr", LIGHTING_PRESET_LIGHTMAP);
+		Preset("sunrise_foggy_b", "sunrise_foggy_b_heavyfog.scr", LIGHTING_PRESET_ALL, SUNRISE_TAG);
+		Preset("sunrise_rainy_a", "sunrise_rainy_a.scr", LIGHTING_PRESET_ALL, SUNRISE_TAG);
+		Preset("sunrise_stormy_a", "sunrise_stormy_a.scr", LIGHTING_PRESET_ALL, SUNRISE_TAG);
+		Preset("sunrise_overcast_a", "sunrise_overcast_a.scr", LIGHTING_PRESET_ALL, SUNRISE_TAG);
+
+		Preset("morning_clear_a", "morning_clear_a.scr", LIGHTING_PRESET_ALL, MORNING_TAG);
+		Preset("morning_cloudy_a", "morning_cloudy_a.scr", LIGHTING_PRESET_LIGHTMAP);
+		Preset("morning_foggy_a", "morning_foggy_a.scr", LIGHTING_PRESET_LIGHTMAP);
+		Preset("morning_foggy_b", "morning_foggy_b_heavyfog.scr", LIGHTING_PRESET_ALL, MORNING_TAG);
+		Preset("morning_overcast_a", "morning_overcast_a.scr", LIGHTING_PRESET_LIGHTMAP);
+
+		Preset("forenoon_clear_a", "forenoon_clear_a.scr", LIGHTING_PRESET_ALL, FORENOON_TAG);
+		Preset("forenoon_cloudy_a", "forenoon_cloudy_a.scr", LIGHTING_PRESET_LIGHTMAP);
+		Preset("forenoon_foggy_a", "forenoon_foggy_a.scr", LIGHTING_PRESET_LIGHTMAP);
+		Preset("forenoon_foggy_b", "forenoon_foggy_b_heavyfog.scr", LIGHTING_PRESET_ALL, FORENOON_TAG);
+
+		Preset("noon_clear_a", "noon_clear_a.scr", LIGHTING_PRESET_ALL, NOON_TAG);
+		Preset("noon_cloudy_a", "noon_cloudy_a.scr", LIGHTING_PRESET_LIGHTMAP);
+		Preset("noon_foggy_a", "noon_foggy_a.scr", LIGHTING_PRESET_LIGHTMAP);
+		Preset("noon_foggy_b", "noon_foggy_b_heavyfog.scr", LIGHTING_PRESET_ALL, NOON_TAG);
+		Preset("noon_rainy_a", "noon_rainy_a.scr", LIGHTING_PRESET_ALL, NOON_TAG);
+		Preset("noon_stormy_a", "noon_stormy_a.scr", LIGHTING_PRESET_ALL, NOON_TAG);
+		Preset("noon_overcast_a", "noon_overcast_a.scr", LIGHTING_PRESET_ALL, NOON_TAG);
+
+		Preset("afternoon_clear_a", "afternoon_clear_a.scr", LIGHTING_PRESET_ALL, AFTERNOON_TAG);
+		Preset("afternoon_cloudy_a", "afternoon_cloudy_a.scr", LIGHTING_PRESET_LIGHTMAP);
+		Preset("afternoon_foggy_a", "afternoon_foggy_a.scr", LIGHTING_PRESET_LIGHTMAP);
+		Preset("afternoon_foggy_b", "afternoon_foggy_b_heavyfog.scr", LIGHTING_PRESET_ALL, AFTERNOON_TAG);
+
+		Preset("evening_clear_a", "evening_clear_a.scr", LIGHTING_PRESET_ALL, EVENING_TAG);
+		Preset("evening_cloudy_a", "evening_cloudy_a.scr", LIGHTING_PRESET_LIGHTMAP);
+		Preset("evening_foggy_a", "evening_foggy_a.scr", LIGHTING_PRESET_LIGHTMAP);
+		Preset("evening_foggy_b", "evening_foggy_b_heavyfog.scr", LIGHTING_PRESET_ALL, EVENING_TAG);
+		Preset("evening_overcast_a", "evening_overcast_a.scr", LIGHTING_PRESET_LIGHTMAP);
+
+		Preset("sunset_clear_a", "sunset_clear_a.scr", LIGHTING_PRESET_ALL, SUNSET_TAG);
+		Preset("sunset_cloudy_a", "sunset_cloudy_a.scr", LIGHTING_PRESET_LIGHTMAP);
+		Preset("sunset_foggy_a", "sunset_foggy_a.scr", LIGHTING_PRESET_LIGHTMAP);
+		Preset("sunset_foggy_b", "sunset_foggy_b_heavyfog.scr", LIGHTING_PRESET_ALL, SUNSET_TAG);
+		Preset("sunset_rainy_b", "sunset_rainy_a.scr", LIGHTING_PRESET_ALL, SUNSET_TAG);
+		Preset("sunset_stormy_a", "sunset_stormy_a.scr", LIGHTING_PRESET_ALL, SUNSET_TAG);
+		Preset("sunset_overcast_a", "sunset_overcast_a.scr", LIGHTING_PRESET_ALL, SUNSET_TAG);
+
+		Preset("dusk_clear_a", "dusk_clear_a.scr", LIGHTING_PRESET_ALL, DUSK_TAG);
+		Preset("dusk_cloudy_a", "dusk_cloudy_a.scr", LIGHTING_PRESET_LIGHTMAP);
+		Preset("dusk_foggy_a", "dusk_foggy_a.scr", LIGHTING_PRESET_LIGHTMAP);
+		Preset("dusk_foggy_b", "dusk_foggy_b_heavyfog.scr", LIGHTING_PRESET_ALL, DUSK_TAG);
+		Preset("dusk_rainy_a", "dusk_rainy_a.scr", LIGHTING_PRESET_ALL, DUSK_TAG);
+		Preset("dusk_stormy_a", "dusk_stormy_a.scr", LIGHTING_PRESET_ALL, DUSK_TAG);
+		Preset("dusk_overcast_a", "dusk_overcast_a.scr", LIGHTING_PRESET_ALL, DUSK_TAG);
+
+		Preset("night_clear_a", "night_clear_a.scr", LIGHTING_PRESET_ALL, NIGHT_TAG);
+		Preset("night_overcast_a", "night_overcast_a.scr", LIGHTING_PRESET_LIGHTMAP);
+		Preset("night_cloudy_a", "night_cloudy_a.scr", LIGHTING_PRESET_LIGHTMAP);
+		Preset("night_foggy_a", "night_foggy_a.scr", LIGHTING_PRESET_LIGHTMAP);
+		Preset("night_foggy_b", "noon_foggy_b_heavyfog.scr", LIGHTING_PRESET_ALL, NIGHT_TAG);
+		Preset("night_rainy_a", "night_rainy_a.scr", LIGHTING_PRESET_ALL, NIGHT_TAG);
+		Preset("night_stormy_a", "night_stormy_a.scr", LIGHTING_PRESET_ALL, NIGHT_TAG);
+		Preset("night_overcast_a", "night_overcast_a.scr", LIGHTING_PRESET_ALL, NIGHT_TAG);
+	}
+
+	WeatherRules()
+	{
+		BlockTransition("Clear", "Clear");
+		BlendTime(85);
+	}
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	//DAWN
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	TimeScope(DAYTIME_DAWN_START)
+	{
+		Weather("Clear", 10, 60)
+		{
+			Version(0, "dawn_clear_a.scr", 1, "dawn_clear_a", "dawn_clear_a");
+		}
+		Weather("Cloudy", 10, 120)
+		{
+			Version(0, "dawn_cloudy_a.scr", 1, "dawn_clear_a", "dawn_cloudy_a");
+		}
+		Weather("Foggy", 80)
+		{
+			Version(0, "dawn_foggy_a.scr", 8, "dawn_clear_a", "dawn_foggy_a");
+			
+		}
+		Weather("Overcast", 30, 120)
+		{
+			Version(0, "dawn_overcast_a.scr", 3, "dawn_overcast_a", "dawn_overcast_a");
+		}
+		Weather("Rainy", 50, 180)
+		{
+			Version(0, "dawn_rainy_a.scr", 5, "dawn_overcast_a", "dawn_overcast_a");
+		}
+		Weather("Stormy", 30, 180)
+		{
+			Version(0, "dawn_stormy_a.scr", 3, "dawn_overcast_a", "dawn_overcast_a");
+		}
+	}
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	//SUNRISE
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	TimeScope(DAYTIME_DAWN)
+	{
+		Weather("Clear", 15, 60)
+		{
+			Version(0, "sunrise_clear_a.scr", 1, "sunrise_clear_a", "sunrise_clear_a");
+		}
+		Weather("Cloudy", 15, 120)
+		{
+			Version(0, "sunrise_cloudy_a.scr", 1, "sunrise_clear_a", "sunrise_cloudy_a");
+		}
+		Weather("Foggy", 80)
+		{
+			Version(0, "sunrise_foggy_a.scr", 8, "sunrise_clear_a", "sunrise_foggy_a");
+		}
+		
+		Weather("Overcast", 40, 120)
+		{
+			Version(0, "sunrise_overcast_a.scr", 4, "sunrise_overcast_a", "sunrise_overcast_a");
+		}
+		Weather("Rainy", 60, 180)
+		{
+			Version(0, "sunrise_rainy_a.scr", 6, "sunrise_rainy_a", "sunrise_rainy_a");
+		}
+		Weather("Stormy", 40, 180)
+		{
+			Version(0, "sunrise_stormy_a.scr", 4, "sunrise_stormy_a", "sunrise_stormy_a");
+		}
+	}
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	//MORNING
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	TimeScope(DAYTIME_DAWN_END)
+	{
+		Weather("Clear", 20, 60)
+		{
+			Version(0, "morning_clear_a.scr", 2, "morning_clear_a", "morning_clear_a");
+		}
+		Weather("Cloudy", 25, 120)
+		{
+			Version(0, "morning_cloudy_a.scr", 2, "morning_clear_a", "morning_cloudy_a");
+		}
+		Weather("Foggy", 80)
+		{
+			Version(0, "morning_foggy_a.scr", 8, "morning_clear_a", "morning_foggy_a");
+			
+		}
+		Weather("Overcast", 50, 120)
+		{
+			Version(0, "morning_overcast_a.scr", 5, "noon_overcast_a", "morning_overcast_a");
+		}
+		Weather("Rainy", 60, 180)
+		{
+			Version(0, "noon_rainy_a.scr", 6, "noon_overcast_a", "noon_overcast_a");
+		}
+		Weather("Stormy", 50, 180)
+		{
+			Version(0, "noon_stormy_a.scr", 5, "noon_overcast_a", "noon_overcast_a");
+		}
+	}
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	//FORENOON
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	TimeScope(DAYTIME_DAY_START)
+	{
+		Weather("Clear", 20, 60)
+		{
+			Version(0, "forenoon_clear_a.scr", 2, "forenoon_clear_a", "forenoon_clear_a");
+		}
+		Weather("Cloudy", 25, 120)
+		{
+			Version(0, "forenoon_cloudy_a.scr", 2, "forenoon_clear_a", "forenoon_cloudy_a");
+		}
+		Weather("Foggy", 30)
+		{
+			Version(0, "forenoon_foggy_a.scr", 3, "forenoon_clear_a", "forenoon_foggy_a");
+		}
+		Weather("Overcast", 45, 120)
+		{
+			Version(0, "noon_overcast_a.scr", 4, "noon_overcast_a", "noon_overcast_a");
+		}
+		Weather("Rainy", 60, 180)
+		{
+			Version(0, "noon_rainy_a.scr", 6, "noon_overcast_a", "noon_overcast_a");
+			
+		}
+		Weather("Stormy", 60, 180)
+		{
+			Version(0, "noon_stormy_a.scr", 6, "noon_overcast_a", "noon_overcast_a");
+		}
+	}
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	//NOON
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	TimeScope(DAYTIME_NOON)
+	{
+		Weather("Clear", 25, 60)
+		{
+			Version(0, "noon_clear_a.scr", 2, "noon_clear_a", "noon_clear_a");
+			Default();
+		}
+		Weather("Cloudy", 30, 120)
+		{
+			Version(0, "noon_cloudy_a.scr", 3, "noon_clear_a", "noon_cloudy_a");
+		}
+		Weather("Foggy", 25)
+		{
+			Version(0, "noon_foggy_a.scr", 2, "noon_clear_a", "noon_foggy_a");
+		}
+		Weather("Overcast", 35, 120)
+		{
+			Version(0, "noon_overcast_a.scr", 3, "noon_overcast_a", "noon_overcast_a");
+		}
+		Weather("Rainy", 60, 180)
+		{
+			Version(0, "noon_rainy_a.scr", 6, "noon_overcast_a", "noon_rainy_a");
+			
+		}
+		Weather("Stormy", 60, 180)
+		{
+			Version(0, "noon_stormy_a.scr", 6, "noon_overcast_a", "noon_stormy_a");
+		}
+	}
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	//AFTERNOON
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	TimeScope(DAYTIME_DAY_END)
+	{
+		Weather("Clear", 25, 60)
+		{
+			Version(0, "afternoon_clear_a.scr", 2, "afternoon_clear_a", "afternoon_clear_a");
+		}
+		Weather("Cloudy", 30, 120)
+		{
+			Version(0, "afternoon_cloudy_a.scr", 3, "afternoon_clear_a", "afternoon_cloudy_a");
+		}
+		Weather("Foggy",30)
+		{
+			Version(0, "afternoon_foggy_a.scr", 3, "afternoon_clear_a", "afternoon_foggy_a");
+		}
+		Weather("Overcast", 40, 120)
+		{
+			Version(0, "noon_overcast_a.scr", 4, "noon_overcast_a", "noon_overcast_a");
+		}
+		Weather("Rainy", 65, 180)
+		{
+			Version(0, "noon_rainy_a.scr", 6, "noon_overcast_a", "noon_overcast_a");
+			
+		}
+		Weather("Stormy", 65, 180)
+		{
+			Version(0, "noon_stormy_a.scr", 6, "noon_overcast_a", "noon_overcast_a");
+		}
+	}
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	//EVENING
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	TimeScope(DAYTIME_EVENING)
+	{
+		Weather("Clear", 25, 60)
+		{
+			Version(0, "evening_clear_a.scr", 2, "evening_clear_a", "evening_clear_a");
+		}
+		Weather("Cloudy", 25, 120)
+		{
+			Version(0, "evening_cloudy_a.scr", 2, "evening_clear_a", "evening_cloudy_a");
+		}
+		Weather("Foggy", 30)
+		{
+			Version(0, "evening_foggy_a.scr", 3, "evening_clear_a", "evening_foggy_a");
+		}
+		Weather("Overcast", 40, 120)
+		{
+			Version(0, "evening_overcast_a.scr", 4, "noon_overcast_a", "evening_overcast_a");
+		}
+		Weather("Rainy", 65, 180)
+		{
+			Version(0, "noon_rainy_a.scr", 6, "noon_overcast_a", "noon_overcast_a");
+			
+		}
+		Weather("Stormy", 60, 180)
+		{
+			Version(0, "noon_stormy_a.scr", 6, "noon_overcast_a", "noon_overcast_a");
+		}
+	}
+
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	//SUNSET
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	TimeScope(DAYTIME_DUSK_START)
+	{
+		Weather("Clear", 25, 60)
+		{
+			Version(0, "sunset_clear_a.scr", 2, "sunset_clear_a", "sunset_clear_a");
+			Version(1, "weather_MED.scr", 1, "sunset_clear_a", "sunset_clear_a");
+		}
+		Weather("Cloudy", 30, 120)
+		{
+			Version(0, "sunset_cloudy_a.scr", 3, "sunset_clear_a", "sunset_cloudy_a");
+		}
+		Weather("Foggy", 50)
+		{
+			Version(0, "sunset_foggy_a.scr", 5, "sunset_clear_a", "sunset_foggy_a");
+		}
+		Weather("Overcast", 40, 120)
+		{
+			Version(0, "sunset_overcast_a.scr", 4, "sunset_overcast_a", "sunset_overcast_a");
+		}
+		Weather("Rainy", 50, 180)
+		{
+			Version(0, "sunset_rainy_a.scr", 5, "sunset_overcast_a", "sunset_overcast_a");
+			
+		}
+		Weather("Stormy", 50, 180)
+		{
+			Version(0, "sunset_stormy_a.scr", 5, "sunset_overcast_a", "sunset_overcast_a");
+		}
+	}
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	//DUSK 
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	TimeScope(DAYTIME_DUSK)
+	{
+		Weather("Clear", 25, 60)
+		{
+			Version(0, "dusk_clear_a.scr", 2, "dusk_clear_a", "dusk_clear_a");
+		}
+		Weather("Cloudy", 30, 120)
+		{
+			Version(0, "dusk_cloudy_a.scr", 3, "dusk_clear_a", "dusk_cloudy_a");
+		}
+		Weather("Foggy", 40)
+		{
+			Version(0, "dusk_foggy_a.scr", 4, "dusk_clear_a", "dusk_foggy_a");
+		}
+		Weather("Overcast", 50, 120)
+		{
+			Version(0, "dusk_overcast_a.scr", 5, "dusk_overcast_a", "dusk_overcast_a");
+		}
+		Weather("Rainy", 60, 180)
+		{
+			Version(0, "dusk_rainy_a.scr", 6, "dusk_overcast_a", "dusk_overcast_a");
+			
+		}
+		Weather("Stormy", 60, 180)
+		{
+			Version(0, "dusk_stormy_a.scr", 6, "dusk_overcast_a", "dusk_overcast_a");
+		}
+	}
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	//NIGHT
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	TimeScope(DAYTIME_DUSK_END)
+	{
+		Weather("Clear", 25, 60)
+		{
+			Version(0, "night_clear_a.scr", 2, "night_clear_a", "night_clear_a");
+		}
+		Weather("Cloudy", 30, 120)
+		{
+			Version(0, "night_cloudy_a.scr", 3, "night_clear_a", "night_cloudy_a");
+		}
+		Weather("Foggy", 70)
+		{
+			Version(0, "night_foggy_a.scr", 7, "night_clear_a", "night_foggy_a");
+		}
+		Weather("Overcast", 60, 120)
+		{
+			Version(0, "night_overcast_a.scr", 6, "night_clear_a", "night_overcast_a");
+		}
+		Weather("Rainy", 80, 180)
+		{
+			Version(0, "night_rainy_a.scr", 8, "night_clear_a", "night_overcast_a");
+		}
+		Weather("Stormy", 60, 180)
+		{
+			Version(0, "night_stormy_a.scr", 6, "night_clear_a", "night_overcast_a");
+		}
+	}
+
+}

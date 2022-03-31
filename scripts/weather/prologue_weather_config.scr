@@ -1,0 +1,85 @@
+import "daytime.def"
+// TimeScope (start_time)
+// Weather ("story_system_name", probability)
+// Weather ("story_system_name", probability, duration)
+// Version (order_number, "weather_script_name.scr", internal_probability, "envprobe lighting", "heightmap lighting")
+// Default() - sets default weather
+
+// LightingPresets() - used for envprobes and heightmaps
+// LIGHTING_PRESET_*** - defined in daytime.def
+// LIGHTING_TAG - defined in daytime.def (FDayTimeTag), optional
+// Preset("name", "varlist", LIGHTING_PRESET_***, LIGHTING_TAG);
+
+sub main()   //DL2 Weather script
+{
+	LightingPresets()
+	{
+		Preset("morning_clear_a", "prologue_morning_cloudy_a.scr", LIGHTING_PRESET_ALL, MORNING_TAG);
+
+		Preset("sunset_clear_a", "prologue_sunset_clear_a.scr", LIGHTING_PRESET_ALL, SUNSET_TAG);
+		
+		Preset("sunset_cloudy_a", "prologue_sunset_cloudy_a.scr", LIGHTING_PRESET_ALL, SUNSET_TAG);
+
+		Preset("dusk_clear_a", "prologue_dusk_clear_a.scr", LIGHTING_PRESET_ALL, DUSK_TAG);
+
+		Preset("night_clear_a", "prologue_night_clear_a.scr", LIGHTING_PRESET_ALL, NIGHT_TAG);
+	}
+
+	WeatherRules()
+	{
+		BlendTime(120);
+	}
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	//MORNING
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	TimeScope(DAYTIME_DAWN_END)
+	{
+		Weather("Clear", 40)
+		{
+			Version(0, "prologue_morning_clear_a.scr", 1, "morning_clear_a", "morning_clear_a");
+		}
+		Weather("Cloudy", 40)
+		{
+			Version(0, "prologue_morning_cloudy_a.scr", 1, "morning_clear_a", "morning_clear_a");
+		}
+	}
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	//SUNSET
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	TimeScope(DAYTIME_DUSK_START)
+	{
+		Weather("Clear", 47)
+		{
+			Version(0, "prologue_sunset_clear_a.scr", 1, "sunset_clear_a", "sunset_clear_a");
+		}
+		Weather("Cloudy", 47)
+		{
+			Version(0, "prologue_sunset_cloudy_a.scr", 1, "sunset_cloudy_a", "sunset_cloudy_a");
+		}
+	}
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	//DUSK 
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	TimeScope(DAYTIME_DUSK)
+	{
+		Weather("Clear", 47)
+		{
+			Version(0, "prologue_dusk_clear_a.scr", 1, "dusk_clear_a", "dusk_clear_a");
+		}
+	}
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	//NIGHT
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	TimeScope(DAYTIME_DUSK_END)
+	{
+		Weather("Clear", 45)
+		{
+			Version(0, "prologue_night_clear_a.scr", 1, "night_clear_a", "night_clear_a");
+		}
+	}
+
+}

@@ -1,0 +1,186 @@
+// Once at the start of the game, and each time at 00:00 the system draws one of the scenarios of weather
+
+// Scenario::AddTask(f, f, f, f) f-wanted weather val, f-start interpolation hour(format hh::mm), f-end interpolation hour(format hh:mm), f-weather duration(format hh::mm)
+// QuestScenario::AddTask(f, f) f-wanted weather val, f-interpolation duration(format hh::mm)
+
+// How to set weather val:
+// if (val > 0.000 && val <= 0.125) = fog;
+// if (val > 0.125 && val <= 0.375) = clear;
+// if (val > 0.375 && val <= 0.625) = cloudy;
+// if (val > 0.625 && val <= 0.875) = rain;
+// if (val > 0.875 && val <= 1.000) = storm;
+
+sub main()
+{
+    // Duration of weather after sleep or map reload (in game time, format mm). If 0, the weather will be active till next event
+    RandomWeatherDuration(12.0); 
+
+    // Probability of changing weather after player's death
+    ProbabilityOfChangingWeatherAfterDeath(0.2);
+
+    // Possible weather values, chances and time boundaries
+    AddRandomWeather(0.08, 1.8, 23.30, 8.45);
+	AddRandomWeather(0.1, 1.8, 23.30, 8.45);	
+    AddRandomWeather(0.2, 0.1);
+	AddRandomWeather(0.3, 0.1);	
+	AddRandomWeather(0.5, 1.4);
+	AddRandomWeather(0.6, 1.4);
+    AddRandomWeather(0.7, 1.5);
+	AddRandomWeather(0.8, 1.5);
+	AddRandomWeather(0.9, 1.3,);
+	AddRandomWeather(1.0, 1.3,);	
+    
+	Scenario("1") // Night storm
+    {
+        AddTask(1.0,   22.00,   22.28,  2.20);
+    }
+	
+	Scenario("2") // Night storm
+    {
+        AddTask(1.0,   0.55,   1.19,  1.45);      
+    }
+	
+	Scenario("3") // Night storm
+    {
+        AddTask(1.0,   2.00,   2.28,  1.40);				      
+    }
+	
+	Scenario("4") // Night storm
+    {
+        AddTask(1.0,   3.20,   3.53,  2.30);	      
+    }
+	
+	Scenario("5") // Night rain
+    {
+        AddTask(0.8,   22.00,   22.36,  2.10);		      
+    }
+	
+	Scenario("6") // Night rain
+    {
+        AddTask(0.8,   1.30,   1.57,  1.50);
+    }
+	
+	Scenario("7") // Night rain
+    {
+        AddTask(0.8,   5.00,   5.48,  2.10);	
+    }
+	
+	Scenario("8") // Afternoon storm
+    {
+        AddTask(0.9,   12.00,   12.43,  2.20);
+    }
+    
+    Scenario("9") // Afternoon storm
+    {
+        AddTask(0.9,   12.55,   13.29,  1.45);      
+    }
+    
+    Scenario("10") // Afternoon storm
+    {
+        AddTask(1.0,   14.10,   14.38,  1.40);
+    }	
+	
+	Scenario("11") // Afternoon storm
+    {
+        AddTask(1.0,   15.20,   15.53,  2.30);
+    }	
+	
+	Scenario("12") // Afternoon Rain
+    {
+        AddTask(0.7,   12.00,   12.46,  2.10);	
+    }	
+	
+	Scenario("13") // Afternoon Rain
+    {
+        AddTask(0.7,   13.20,   13.57,  1.50);
+    }	
+	
+	Scenario("14") // Afternoon Rain
+    {
+        AddTask(0.8,   15.00,   15.38,  2.10);
+    }	
+	
+	Scenario("15")	// Afternoon Rain
+    {
+		AddTask(0.7,   17.00,   17.38,  2.10);
+    }	
+	
+	Scenario("16")	// Morning Rain
+    {
+        AddTask(0.8,   6.30,   7.28,  2.80);
+    }	
+	
+	Scenario("17")	// Morning Rain
+    {
+        AddTask(0.7,   8.00,   8.48,  2.10);
+    }	
+	
+	Scenario("18")	// Morning Rain
+    {
+        AddTask(0.8,   9.03,   9.47,  2.50);
+    }	
+	
+	Scenario("19")	// Morning Rain
+    {
+        AddTask(0.7,   10.13,   10.58,  2.10);
+    }	
+	
+	Scenario("20")	// Morning Storm
+    {
+        AddTask(0.9,   7.45,   8.12,  2.20);
+    }	
+    
+	Scenario("21")	// Morning Storm
+    {
+        AddTask(1.0,   8.45,   9.24,  2.45); 
+    }	
+	
+	Scenario("22")	// Morning Storm
+    {
+        AddTask(0.9,   10.00,   10.48,  2.10);
+    }	
+	
+	Scenario("23")	// Morning Storm
+    {
+         AddTask(1.0,   11.10,   11.43,  2.30);
+    }	
+	
+	Scenario("24")	// Night Fog
+    {
+        AddTask(0.08,   21.20,   22.03,  2.20);
+    }	
+	
+	Scenario("25")	// Night Fog
+    {
+        AddTask(0.06,   1.00,   2.13,  4.20);
+    }	
+	
+	Scenario("26")	// Night Fog
+    {
+        AddTask(0.06,   3.00,   4.13,  4.30);
+    }
+	
+	Scenario("27")	// Night Fog
+    {
+        AddTask(0.08,   4.23,   5.13,  3.90);
+    }
+	
+	Scenario("28")	// Afternoon Fog
+    {
+        AddTask(0.09,   15.10,   15.46,  2.10);
+    }
+	
+	Scenario("29")	// Afternoon Fog
+    {
+        AddTask(0.09,   17.15,   17.48,  2.30);
+    }
+	
+	Scenario("30")	// Morning Fog
+    {
+        AddTask(0.06,   6.05,   7.31,  5.30);
+    }
+    QuestScenario("slums_start_weather")
+    {
+        AddTask(0.2, 0.20);       						
+    }
+}

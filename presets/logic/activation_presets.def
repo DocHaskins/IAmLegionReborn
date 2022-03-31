@@ -1,0 +1,411 @@
+import "daytime.def"
+
+sub declare_activation_daytime_presets()
+{
+    PresetDef("Activation_TypeDebug")
+    {
+        AddField("m_AIValidatorDeactivateSpawner", "0", false, true, false);
+        Preset("Deactivated")
+        {
+            SetField("m_AIValidatorDeactivateSpawner", "1");
+        }
+    }
+
+    PresetDef("Activation - daytime")
+    {
+        AddField("m_ActivityHourStart", "-1");
+        AddField("m_ActivityHourEnd", "-1");
+
+        Preset("Morning")
+        {
+			SetField("m_ActivityHourStart", DAYTIME_DAWN_START_PRE);
+			SetField("m_ActivityHourEnd", DAYTIME_DAY_START_PRE);
+        }
+		
+        Preset("Day")
+        {
+			SetField("m_ActivityHourStart", DAYTIME_DAY_START_PRE);
+			SetField("m_ActivityHourEnd", DAYTIME_DUSK_START_PRE);
+        }
+		
+        Preset("Evening")
+        {
+			SetField("m_ActivityHourStart", DAYTIME_DUSK_START_PRE);
+			SetField("m_ActivityHourEnd", DAYTIME_NIGHT_START_PRE);
+        }
+		
+        Preset("Night")
+        {
+			SetField("m_ActivityHourStart", DAYTIME_NIGHT_START_PRE);
+			SetField("m_ActivityHourEnd", DAYTIME_DAWN_START_PRE);
+        }
+		
+		Preset("Not Night")
+		{
+			SetField("m_ActivityHourStart", DAYTIME_DAWN_START_PRE);
+			SetField("m_ActivityHourEnd", DAYTIME_NIGHT_START_PRE);
+		}
+		
+        Preset("Whole Day")
+        {
+			SetField("m_ActivityHourStart", "-1");
+			SetField("m_ActivityHourEnd", "-1");
+        }
+		
+		Preset("A_Day - Autumn")
+        {
+			SetField("m_ActivityHourStart", "8.0");
+			SetField("m_ActivityHourEnd", "19.30");
+        }
+		
+		Preset("A_Night - Autumn")
+        {
+			SetField("m_ActivityHourStart", "19.30");
+			SetField("m_ActivityHourEnd", "8.0");
+        }
+    }
+}
+
+sub declare_activation_distance_presets()
+{
+	PresetDef("Activation - distance")
+    {
+        AddField("m_ActivateRadius", "90.0");
+        AddField("m_DeactivateRadius", "120.0");
+        AddField("m_OverrideActivationDistanceStrategy", "");
+        AddField("m_OverrideActivationDistanceStrategy2", "");
+        AddField("m_OverrideDespawnStrategy", "");
+
+        Preset("Interior")
+        {
+            SetField("m_ActivateRadius", "-1.0");
+            SetField("m_DeactivateRadius", "-1.0");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyDarkplace,();");
+            SetField("m_OverrideActivationDistanceStrategy2", "ActivationStrategyDarkplace,();");
+        }
+
+        Preset("Darkplace")
+        {
+            SetField("m_ActivateRadius", "-1.0");
+            SetField("m_DeactivateRadius", "-1.0");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyDarkplace,();");
+            SetField("m_OverrideActivationDistanceStrategy2", "ActivationStrategyDarkplace,();");
+        }
+
+        Preset("DarkplacePassage")
+        {
+            SetField("m_ActivateRadius", "-1.0");
+            SetField("m_DeactivateRadius", "-1.0");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyDarkplacePassage,();");
+            SetField("m_OverrideActivationDistanceStrategy2", "ActivationStrategyDarkplacePassage,();");
+        }
+
+        Preset("Exterior")
+        {
+            SetField("m_ActivateRadius", "-1.0");
+            SetField("m_DeactivateRadius", "-1.0");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyExterior,();");
+            SetField("m_OverrideActivationDistanceStrategy2", "ActivationStrategyExterior,();");
+        }
+
+        Preset("BuildingPassthrough")
+        {
+            SetField("m_ActivateRadius", "-1");
+            SetField("m_DeactivateRadius", "-1");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyBuildingPassthrough,();");
+            SetField("m_OverrideActivationDistanceStrategy2", "ActivationStrategyBuildingPassthrough,();");
+        }
+
+        Preset("Darkzone")
+        {
+            SetField("m_ActivateRadius", "-1");
+            SetField("m_DeactivateRadius", "-1");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyDarkzone,();");
+            SetField("m_OverrideActivationDistanceStrategy2", "ActivationStrategyDarkzone,();");
+        }
+
+        Preset("GRE")
+        {
+            SetField("m_ActivateRadius", "-1");
+            SetField("m_DeactivateRadius", "-1");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyGRE,();");
+            SetField("m_OverrideActivationDistanceStrategy2", "ActivationStrategyGRE,();");
+        }
+
+        Preset("Hive")
+        {
+            SetField("m_ActivateRadius", "-1");
+            SetField("m_DeactivateRadius", "-1");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyHive,();");
+            SetField("m_OverrideActivationDistanceStrategy2", "ActivationStrategyHive,();");
+        }
+
+        Preset("Activator")
+        {
+            SetField("m_ActivateRadius", "-1.0");
+            SetField("m_DeactivateRadius", "-1.0");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyActivator,();");
+            SetField("m_OverrideActivationDistanceStrategy2", "ActivationStrategyActivator,();");
+        }
+
+        Preset("BasementHatch")
+        {
+            SetField("m_ActivateRadius", "-1.0");
+            SetField("m_DeactivateRadius", "-1.0");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyBasementHatch,();");
+            SetField("m_OverrideActivationDistanceStrategy2", "ActivationStrategyBasementHatch,();");
+        }
+        
+        Preset("BanditCamp")
+        {
+            SetField("m_ActivateRadius", "-1.0");
+            SetField("m_DeactivateRadius", "-1.0");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyBanditCamp,();");
+            SetField("m_OverrideActivationDistanceStrategy2", "ActivationStrategyBanditCamp,();");
+        }
+
+        Preset("Metro")
+        {
+            SetField("m_ActivateRadius", "-1.0");
+            SetField("m_DeactivateRadius", "-1.0");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyMetro,();");
+            SetField("m_OverrideActivationDistanceStrategy2", "ActivationStrategyMetro,();");
+        }
+
+        Preset("MetroViralUV")
+        {
+            SetField("m_ActivateRadius", "-1.0");
+            SetField("m_DeactivateRadius", "-1.0");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyMetroViralsUV,();");
+            SetField("m_OverrideActivationDistanceStrategy2", "ActivationStrategyMetroViralsUV,();");
+        }
+
+        Preset("OpenedInterior")
+        {
+            SetField("m_ActivateRadius", "-1.0");
+            SetField("m_DeactivateRadius", "-1.0");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyDarkplace,();");
+            SetField("m_OverrideActivationDistanceStrategy2", "ActivationStrategyDarkplace,();");
+        }
+
+        Preset("ClosedInterior")
+        {
+            SetField("m_ActivateRadius", "-1");
+            SetField("m_DeactivateRadius", "-1");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyDarkzone,();");
+            SetField("m_OverrideActivationDistanceStrategy2", "ActivationStrategyDarkzone,();");
+        }
+
+        Preset("WidelyOpenedInterior")
+        {
+            SetField("m_ActivateRadius", "-1.0");
+            SetField("m_DeactivateRadius", "-1.0");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyWidelyOpenedInterior,();");
+            SetField("m_OverrideActivationDistanceStrategy2", "ActivationStrategyWidelyOpenedInterior,();");
+        }
+
+        Preset("MediumOpenedInterior")
+        {
+            SetField("m_ActivateRadius", "-1.0");
+            SetField("m_DeactivateRadius", "-1.0");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyMediumOpenedInterior,();");
+            SetField("m_OverrideActivationDistanceStrategy2", "ActivationStrategyMediumOpenedInterior,();");
+        }
+
+        Preset("AgendaOnlyGREAnomalyBoss")
+        {
+            SetField("m_ActivateRadius", "-1.0");
+            SetField("m_DeactivateRadius", "-1.0");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyGREAnomalyBoss,();");
+            SetField("m_OverrideActivationDistanceStrategy2", "ActivationStrategyGREAnomalyBoss,();");
+        }
+    }
+}
+
+sub declare_activation_distance_darkzone_presets()
+{
+    PresetDef("Activation - distance")
+    {
+        AddField("m_DarkPlaceActivateRadius", "90.0");
+        AddField("m_DarkPlaceDeactivateRadius", "120.0");
+        AddField("m_OverrideActivationDistanceStrategy", "");
+        AddField("m_OverrideDespawnStrategy", "");
+
+        Preset("Interior")
+        {
+            SetField("m_DarkPlaceActivateRadius", "-1");
+            SetField("m_DarkPlaceDeactivateRadius", "-1");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyDarkplace,();");
+            SetField("m_OverrideDespawnStrategy", "DespawnStrategyDarkplace,();");
+        }
+
+        Preset("Darkplace")
+        {
+            SetField("m_DarkPlaceActivateRadius", "-1");
+            SetField("m_DarkPlaceDeactivateRadius", "-1");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyDarkplace,();");
+            SetField("m_OverrideDespawnStrategy", "DespawnStrategyDarkplace,();");
+        }
+
+        Preset("DarkplacePassage")
+        {
+            SetField("m_DarkPlaceActivateRadius", "-1");
+            SetField("m_DarkPlaceDeactivateRadius", "-1");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyDarkplacePassage,();");
+        }
+
+        Preset("Exterior")
+        {
+            SetField("m_DarkPlaceActivateRadius", "-1");
+            SetField("m_DarkPlaceDeactivateRadius", "-1");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyExterior,();");
+        }
+
+        Preset("BuildingPassthrough")
+        {
+            SetField("m_DarkPlaceActivateRadius", "-1");
+            SetField("m_DarkPlaceDeactivateRadius", "-1");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyBuildingPassthrough,();");
+        }
+
+        Preset("Darkzone")
+        {
+            SetField("m_DarkPlaceActivateRadius", "-1");
+            SetField("m_DarkPlaceDeactivateRadius", "-1");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyDarkzone,();");
+        }
+
+        Preset("GRE")
+        {
+            SetField("m_DarkPlaceActivateRadius", "-1");
+            SetField("m_DarkPlaceDeactivateRadius", "-1");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyGRE,();");
+        }
+
+        Preset("Hive")
+        {
+            SetField("m_DarkPlaceActivateRadius", "-1");
+            SetField("m_DarkPlaceDeactivateRadius", "-1");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyHive,();");
+        }
+
+        Preset("Activator")
+        {
+            SetField("m_DarkPlaceActivateRadius", "-1.0");
+            SetField("m_DarkPlaceDeactivateRadius", "-1.0");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyActivator,();");
+        }
+
+        Preset("Metro")
+        {
+            SetField("m_DarkPlaceActivateRadius", "-1.0");
+            SetField("m_DarkPlaceDeactivateRadius", "-1.0");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyMetro,();");
+        }
+
+        Preset("MetroViralUV")
+        {
+            SetField("m_DarkPlaceActivateRadius", "-1.0");
+            SetField("m_DarkPlaceDeactivateRadius", "-1.0");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyMetroViralsUV,();");
+        }
+
+        Preset("OpenedInterior")
+        {
+            SetField("m_DarkPlaceActivateRadius", "-1");
+            SetField("m_DarkPlaceDeactivateRadius", "-1");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyDarkplace,();");
+        }
+
+        Preset("ClosedInterior")
+        {
+            SetField("m_DarkPlaceActivateRadius", "-1");
+            SetField("m_DarkPlaceDeactivateRadius", "-1");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyDarkzone,();");
+        }
+
+        Preset("WidelyOpenedInterior")
+        {
+            SetField("m_DarkPlaceActivateRadius", "-1");
+            SetField("m_DarkPlaceDeactivateRadius", "-1");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyWidelyOpenedInterior,();");
+        }
+
+        Preset("MediumOpenedInterior")
+        {
+            SetField("m_DarkPlaceActivateRadius", "-1");
+            SetField("m_DarkPlaceDeactivateRadius", "-1");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyMediumOpenedInterior,();");
+        }
+
+        Preset("AgendaOnlyGREAnomalyBoss")
+        {
+            SetField("m_DarkPlaceActivateRadius", "-1");
+            SetField("m_DarkPlaceDeactivateRadius", "-1");
+            SetField("m_OverrideActivationDistanceStrategy", "ActivationStrategyGREAnomalyBoss,();");
+        }
+    }
+}
+
+sub declare_activation_distance_humanai_presets()
+{
+    PresetDef("Activation - distance")
+    {
+        AddField("m_ActivationDistanceStrategy", "AIProxyActivationStrategyDefault,();");
+
+        Preset("Interior")
+        {
+            SetField("m_ActivationDistanceStrategy", "AIProxyActivationStrategyInterior,();");
+        }
+
+        Preset("Darkplace")
+        {
+            SetField("m_ActivationDistanceStrategy", "AIProxyActivationStrategyInterior,();");
+        }
+
+        Preset("DarkplacePassage")
+        {
+            SetField("m_ActivationDistanceStrategy", "AIProxyActivationStrategyDefault,();");
+        }
+
+        Preset("Exterior")
+        {
+            SetField("m_ActivationDistanceStrategy", "AIProxyActivationStrategyDefault,();");
+        }
+
+        Preset("Activator")
+        {
+            SetField("m_ActivationDistanceStrategy", "AIProxyActivationStrategyActivator,();");
+        }
+
+        Preset("Metro")
+        {
+            SetField("m_ActivationDistanceStrategy", "AIProxyActivationStrategyDefault,();");
+        }
+
+        Preset("MetroViralUV")
+        {
+            SetField("m_ActivationDistanceStrategy", "AIProxyActivationStrategyDefault,();");
+        }
+
+        Preset("OpenedInterior")
+        {
+            SetField("m_ActivationDistanceStrategy", "AIProxyActivationStrategyDefault,();");
+        }
+
+        Preset("ClosedInterior")
+        {
+            SetField("m_ActivationDistanceStrategy", "AIProxyActivationStrategyDefault,();");
+        }
+
+        Preset("WidelyOpenedInterior")
+        {
+            SetField("m_ActivationDistanceStrategy", "AIProxyActivationStrategyDefault,();");
+        }
+
+        Preset("MediumOpenedInterior")
+        {
+            SetField("m_ActivationDistanceStrategy", "AIProxyActivationStrategyDefault,();");
+        }
+    }
+}

@@ -1,0 +1,353 @@
+!include( "varlist_render_loop.scd" )
+!include( "varlist_ambient.scd" )
+!include( "varlist_editor.scd" )
+!include( "varlist_level.scr" )
+!include( "varlist_debug.scr" )
+!include( "varlist_water.scr" )
+!include( "varlist_engine.scd" )
+!include( "varlist_exposure.scd" )
+!include( "varlist_heat.scd" )
+!include( "varlist_ssao.scd" )
+!include( "varlist_performance.scd" )
+!include( "varlist_dof.scd" )
+!include( "varlist_snow.scd" )
+!include( "varlist_blur.scd" )
+!include( "varlist_blur_radial.scd" )
+!include( "varlist_ocean.scr" )
+!include( "varlist_noise.scd" )
+!include( "varlist_wind.scd" )
+!include( "varlist_fx.scr" )
+!include( "varlist_menu.scr" )
+!include( "varlist_m3d_lighting.scr" )
+!include( "varlist_screen_border.scd" )
+!include( "varlist_screen_shake.scd" )
+!include( "varlist_shadows.scd" )
+!include( "varlist_glow.scd" )
+!include( "varlist_sky.scd" )
+!include( "varlist_ssss.scd" )
+!include( "varlist_screen_drops.scd" )
+!include( "varlist_technique.scd")
+!include( "varlist_prv.scd" )
+!include( "varlist_hud.scr" )
+!include( "varlist_underwater.scd" )
+!include( "varlist_fade_pp.scd" )
+!include( "varlist_be_the_zombie_tuning.scr" )
+!include( "varlist_matchmaking.scr" )
+!include( "varlist_obsolete.scr" )
+!include( "varlist_facial_expressions.scr" )
+!include( "varlist_clustering.scd" )
+!include( "varlist_envprobe_generation.scd" )
+!include( "varlist_editor_baked_heightmaps.scd" )
+!include( "varlist_editor_baked_heightmaps_post.scd" )
+!include("varlist_tonemapping.scd")
+!include("varlist_sharpen.scd")
+!include("varlist_color_grading.scd")
+!include("varlist_lodgen.scr")
+!include("varlist_highlight_1st.scr")
+!include("varlist_highlight_2nd.scr")
+!include("varlist_player_hands.scr")
+!include("varlist_wind_compute.scr")
+!include("varlist_image_processing_tool.scr")
+!include( "varlist_face_edit_mode.scd" )
+!include("varlist_dxrt.scd")
+!include("varlist_fog.scr")
+!include("varlist_light_leak.scr") 
+!include("varlist_soft_glow.scr" ) 
+!include("varlist_dissolve_lods.scd" )
+!include("varlist_heightmap_default.scr")
+!include("varlist_sun_rays.scd")
+!include("varlist_contact_shadows.scr")
+!include("varlist_eye_opening.scr")
+!include("varlist_rastocc.scr")
+
+VarInt("fullscreen", 0)
+
+VarInt("i_pp_gbuffer_fill_clear", 0)
+
+VarInt("i_odd_frame", 1)
+VarInt("i_frame_number", 0)
+
+
+
+VarInt("i_called_on_buffers_created", 0)
+
+VarInt("i_wireframe_off", 1)
+
+VarFloat("f_frame_offset", 0.0)
+VarFloat("f_frame_offset_prv", 0.0)
+
+VarFloat("f_ground_height", -4.1)
+
+VarFloat("f_camera_overlay_opacity", 0)
+VarString("s_camera_overlay_texture", "")
+
+VarFloat("f_night_lights", 0.0)
+VarFloat("f_pp_night_lights", 0.0)
+VarFloat("f_horizon_shadow_height", 0.0)
+VarFloat("f_horizon_shadow_distance", 20000.0)
+VarFloat("f_pp_hdr_intensity_emissive", 2.0)
+VarFloat("f_pp_hdr_intensity_shading_lights", 1.0)
+VarFloat("f_dissolve_on", 1.0)
+VarFloat("f_horizon_water_on", 0.0)
+
+VarFloat("f_weather_blend", 0.5)
+
+VarFloat("f_prev_weather_blend", 0.5)
+
+VarFloat("f_oems_generated", 0.0)
+VarFloat("f_oems_gen_interval_len", 32.0)//EVERY N frames oem will recalculate if weather has been changed
+VarFloat("f_oems_gen_interval_prv", 0.0)
+VarFloat("f_reload_oems", 0.0)
+
+
+VarFloat("f_reload_rfl_outdoor_near", 0.0)
+VarFloat("f_rfl_outdoor_near_generated", 0.0)
+VarVec3("v_rfl_outdoor_near_last_cam_pos", [0.0, 0.0, 0.0])
+VarFloat("f_rfl_outdoor_near_update_dist_treshold", 0.325)
+
+VarFloat("f_rfl_outdoor_far_update_y_treshold", 1.0)
+VarFloat("f_reload_rfl_outdoor_far", 0.0)
+VarFloat("f_rfl_outdoor_far_generated", 0.0)
+VarFloat("f_rfl_outdoor_far_last_cam_y", 0.0)
+
+VarInt("i_spot_pcf_quality", 2) //0 - Low , 1 - Medium, 2 - High
+
+VarInt("i_texture_quality", 2) //0 - Low (SD), 1 - Medium (FHD), 2 - High (UHD)
+
+VarInt("i_reflections_quality", 2) // 0 - low, 1- medium , 2 high
+
+VarInt("i_taa_quality", 1)//0 - Low, 1 - High
+
+VarFloat("f_mv_test_on", 0.0)
+VarFloat("f_motion_blur", 1.0)
+VarFloat("f_pp_motion_blur", 1.0)
+VarInt("i_motion_blur_quality", 0)
+
+VarInt("i_ao_quality", 1)
+VarInt("i_pp_ao_quality", 1)
+
+VarInt("i_ssss_quality", 1)
+
+VarFloat("f_game_time", 16.0)
+
+VarFloat("f_weather_wet", 0.0)
+VarFloat("f_weather_snow_cover", 0.0)
+VarFloat("f_weather_shadows4rain", 0.0)
+
+VarFloat("f_probe_dist_tolerance", 40.0)
+
+VarVec3("v_uva_msk_clr", [0.0196078431372549, 0.8196078431372549, 1.0])
+VarVec3("v_camera_pos_ws", [0.0, 0.0, 0.0])
+VarVec3("v_camera_dir_ws", [0.0, 0.0, 0.0])
+
+VarVec3("v_shading_sun_color", [1.0, 1.0, 1.0])
+VarVec3("v_shading_sun_color_prv", [1.0, 1.0, 1.0])
+VarVec3( "v_pp_shading_sun_color", [1.0, 1.0, 1.0])
+
+
+VarInt("i_sun_shadows_mode", 1)
+VarInt("i_sun_shading_mode", 0)
+VarInt("i_id_outdoor_mode", 0)
+VarInt("i_ssao_mode", 0)
+VarInt("i_indirect_game_type", 0)
+
+VarFloat("f_pp_indirect_game_on", 0.0)
+
+VarInt("i_menu_lighting_on", 0)
+VarInt("i_menu_lighting_on_prv", 0)
+VarFloat("f_pp_menu_lighting_on", 0.0)
+
+VarVec3("v_uv_flashlight_debug_color", [1.0, 1.0, 1.0])
+
+VarFloat("f_shading_sun_power", 0.0)
+VarFloat("f_shading_sun_power_prv", 0.0)
+
+VarFloat("f_lightning_on", 0.0)
+
+VarInt("i_indoor_on", 0)
+VarInt("i_indoor_on_prv", 0)
+
+VarFloat("f_horizon_fallback_on", 1.0)
+VarFloat("f_pp_horizon_fallback_on", 0.0)
+
+VarFloat("f_rain", 0.0)
+VarVec3("v_pp_rain_direction", [0.0, 1.0, 0.0])
+
+VarFloat("f_logo_time", 0.0)
+
+VarFloat("f_ambient_def", 1.0)
+
+VarFloat("f_cull_2s_back_lum", 0.1960)
+
+VarFloat("f_forced_player_watch", -1.0)
+
+VarFloat("f_flow_blur_on", 0.0)
+VarFloat("f_pp_flow_blur_on", 0.0)
+VarFloat("f_chromatic_aberration_on", 0.0)
+VarFloat("f_pp_chromatic_aberration_on", 0.0)
+VarFloat("f_chromatic_aberration_range", 0.0)
+VarFloat("f_p_chromatic_aberration_range", 0.0)
+VarFloat("f_pp_chromatic_aberration_range", 0.0)
+
+VarFloat("f_barrel_lens_distort", 0.0)
+VarFloat("f_p_barrel_lens_distort", 0.0)
+VarFloat("f_pp_barrel_lens_distort", 0.0)
+VarFloat("f_pincushion_on", 0.0)
+VarFloat("f_lens_distort_on", 0.0)
+VarFloat("f_drunk", 0.0)
+
+VarFloat("f_color_grading_on", 1.0)
+VarString("s_color_grading_map", "default_clg.dds")
+VarString("s_color_grading_uv", "uvlight_uvg.png")
+
+VarFloat("f_vignetting", 0.0)
+VarFloat("f_p_vignetting", 0.0)
+VarFloat("f_pp_vignetting", 0.0)
+VarString("s_vignetting", "default_vgn.png")
+
+VarFloat("f_slopevis", 0.0)
+
+VarVec4("v_pp_horizon_shadows_xform_n_distance", [0.0, 0.0, 1.0, 1.0])
+VarVec3("v_pp_horizon_shadows_falloff", [1.0, 0.0, 1.0])
+VarString("s_player_reflection", "player_reflection_def.dds")
+VarFloat("f_free_camera_on", 0.0)
+VarFloat("f_editor_normal_on", 0.0)
+
+// Camera settings
+VarFloat("f_heightmap_vis_opacity", 0.0)
+VarFloat("f_heightmap_vis_offset_v", 0.0)
+VarFloat("f_heightmap_vis_height_vertex_on", 0.0)
+VarFloat("f_heightmap_vis_height_pixel_borders_on", 0.0)
+VarFloat("f_heightmap_vis_light_pixel_borders_on", 0.0)
+
+VarFloat("f_heightmap_vis_hgt_on", 00.0)
+VarFloat("f_heightmap_vis_hwd_on", 0.0)
+VarFloat("f_heightmap_vis_default_on", 0.0)
+VarFloat("f_heightmap_vis_skylight_on", 0.0)
+VarFloat("f_heightmap_vis_lights_on", 0.0)
+VarFloat("f_heightmap_vis_filter_on", 0.0)
+
+VarFloat("f_heightmap_gen_on", 0.0)
+VarFloat("f_heightmap_lighting_gen_on", 0.0)
+
+VarVec3("v_heightmap_center", [0.0, 0.0, 0.0])
+VarFloat("f_heightmap_span_v", 255.0)
+
+VarFloat("f_heightmap_hmap_tex_span", 1024.0)
+VarInt("i_heightmap_hmap_tex_res", 1025)
+VarFloat("f_heightmap_light_tex_span", 1024.0)
+VarInt("i_heightmap_light_tex_res", 2048)
+VarInt("i_heightmap_hmap_no_wind_on", 0)
+VarInt("i_heightmap_current_blend", 0)
+VarFloat("f_heightmap_blend_ratio", 0.0)
+
+VarInt("i_heightmap_post_blend_duration", 0)
+
+VarString("s_heightmap_hcl", "default_hcl.png")
+VarString("s_heightmap_hgt", "default_hgt.png")
+VarString("s_heightmap_hli", "default_hli.png")
+VarString("s_heightmap_hli1", "default_hli.png")
+VarString("s_heightmap_hnm", "default_hnm.png")
+VarString("s_heightmap_hsh", "default_hsh.png")
+VarString("s_heightmap_hsh1", "default_hsh.png")
+VarString("s_heightmap_hwd", "default_hwd.png")
+
+VarString("s_heightmap_pk_hli", "default_hli.png")
+VarString("s_heightmap_pk_hsh", "default_hsh.png")
+VarString("s_heightmap_scav_hli", "default_hli.png")
+VarString("s_heightmap_scav_hsh", "default_hsh.png")
+
+VarString("s_gbuffer_overlays_map", "")
+VarVec4("v_gbuffer_overlays_map_extents", [-1.0, -1.0, 1.0, 1.0])
+VarVec4("v_gbuffer_overlays_map_extents_m3d", [-1.0, -1.0, 1.0, 1.0])
+VarFloat("f_gbuffer_overlays_map_hgt_on", 1.0)
+VarVec3("v_gbuffer_overlays_get_0", [0.0, 0.0, 0.0])
+VarVec3("v_gbuffer_overlays_get_1", [0.0, 0.0, 0.0])
+VarVec3("v_gbuffer_overlays_get_2", [0.0, 0.0, 0.0])
+VarVec3("v_gbuffer_overlays_get_3", [0.0, 0.0, 0.0])
+VarVec3("v_gbuffer_overlays_get_4", [0.0, 0.0, 0.0])
+VarVec3("v_gbuffer_overlays_get_5", [0.0, 0.0, 0.0])
+VarVec3("v_gbuffer_overlays_get_6", [0.0, 0.0, 0.0])
+VarVec3("v_gbuffer_overlays_get_7", [0.0, 0.0, 0.0])
+VarVec3("v_gbuffer_overlays_get_8", [0.0, 0.0, 0.0])
+VarVec3("v_gbuffer_overlays_get_9", [0.0, 0.0, 0.0])
+VarVec3("v_gbuffer_overlays_get_10", [0.0, 0.0, 0.0])
+VarVec3("v_gbuffer_overlays_get_11", [0.0, 0.0, 0.0])
+VarVec3("v_gbuffer_overlays_get_12", [0.0, 0.0, 0.0])
+VarVec3("v_gbuffer_overlays_get_13", [0.0, 0.0, 0.0])
+VarVec3("v_gbuffer_overlays_get_14", [0.0, 0.0, 0.0])
+VarVec3("v_gbuffer_overlays_get_15", [0.0, 0.0, 0.0])
+VarFloat("f_gbuffer_overlays_map_get_debug_on", 0.0)
+
+VarFloat("f_shadows_blur_enabled", 1.0)
+VarFloat("f_shadows_blur_multiplier", 5.0)
+
+
+VarFloat("f_gen_probes_env_direct_on", 0.0)
+VarFloat("f_gen_probes_env_bounce_on", 0.0)
+VarFloat("f_gen_probes_reflections_on", 0.0)
+
+VarFloat("f_pp_id_init_clear_on", 0.0)
+VarFloat("f_pp_gen_probes_env_on", 0.0)
+VarFloat("f_pp_gen_probes_on", 0.0)
+
+VarFloat("f_lod_generation_on", 0.0)
+
+VarFloat("f_gradient_maps_world_offset_on", 1.0)
+
+VarFloat("f_fpp_scale", 1.0)
+
+VarFloat("f_m3d_on", 0.0)
+VarFloat("f_m3d_on_prv", 0.0)
+VarFloat("f_m3d_day_on", 0.0)
+VarFloat("f_m3d_night_on", 0.0)
+
+VarInt("i_hash_tmp", 0)
+VarInt("i_hash_float", 0)
+
+
+VarFloat("f_electrical_substation_ems_scale_1", 0.0)
+VarFloat("f_electrical_substation_ems_scale_2", 0.0)
+VarFloat("f_electrical_substation_ems_scale_3", 0.0)
+VarFloat("f_electrical_substation_ems_scale_4", 0.0)
+
+VarFloat("f_image_contrast", -0.3)
+VarFloat("f_pp_image_contrast", 0.0)
+
+VarFloat("f_image_saturation", 0.5)
+VarFloat("f_pp_image_saturation", 0.1)
+
+VarVec3("v_camera_pos_ws_prv", [0.0, 0.0, 0.0])
+VarVec3("v_camera_dir_ws_prv", [0.0, 0.0, -1.0])
+
+/****************/
+/* FX			*/
+/****************/
+
+	// depth bias params for blobs and fxes
+	VarFloat("zbias", 0.0)
+	VarFloat("zsbias", 0.0)
+
+/****************/
+/* Other		*/
+/*************** */
+    //    VarInt("iBloodAlphaRef",0)
+    VarVec3("editor_simple_pp", [0, 1.5, 0])
+
+// OLD
+	VarVec4( "vsuncolor", [1.00000000000000000000, 1.00000000000000000000, 1.00000000000000000000, 1.00000000000000000000] )
+	VarVec4("vambient", [0.5, 0.5, 0.5, 1.0] )
+	VarFloat( "daylightamount", 1.0)
+    VarFloat("f_engine_srl_far", 500000.0)
+	VarFloat("f_fx_smoke_intensity", 1.0)
+	VarFloat("f_fx_smoke_raytrace_len", 1.0)
+
+/****************/
+/* FXes	       	*/
+/****************/
+
+!include( "varlist_icons.scr")
+
+!include( "varlist_ranges.scr")
+
+!include("varlist_game.scd" ) //the last one

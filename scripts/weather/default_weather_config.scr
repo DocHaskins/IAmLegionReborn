@@ -169,7 +169,7 @@ sub main()   //DL2 Weather script
 		}
 		Weather("Foggy", 25, 320)
 		{
-			Version(0, "morning_foggy_a.scr", 1 "morning_clear_a", "morning_foggy_a");
+			Version(0, "morning_foggy_a.scr", 1, "morning_clear_a", "morning_foggy_a");
 			Version(1, "morning_foggy_b_heavyfog.scr", 1, "morning_foggy_b", "morning_foggy_b");
 		}
 		Weather("Overcast", 25, 320)
@@ -243,11 +243,11 @@ sub main()   //DL2 Weather script
 		}
 		Weather("Rainy", 60, 320)
 		{
-			Version(0, "noon_rainy_a.scr", 1, "noon_rainy_a", "noon_rainy_a");
+			Version(0, "noon_rainy_a.scr", 1, "noon_overcast_a", "noon_overcast_a");
 		}
 		Weather("Stormy", 60, 320)
 		{
-			Version(0, "noon_stormy_a.scr", 1, "noon_stormy_a", "noon_stormy_a");
+			Version(0, "noon_stormy_a.scr", 1, "noon_overcast_a", "noon_overcast_a");
 		}
 	}
 
@@ -303,7 +303,7 @@ sub main()   //DL2 Weather script
 		}
 		Weather("Foggy", 30, 320)
 		{
-			Version(0, "evening_foggy_a.scr", 1, "evening_clear_a", "evening_foggy_a");
+			Version(0, "evening_foggy_a.scr", 1, "noon_overcast_a", "evening_overcast_a");
 		}
 		Weather("Rainy", 65, 320)
 		{
@@ -392,11 +392,11 @@ sub main()   //DL2 Weather script
 		}
 		Weather("Cloudy", 30, 120)
 		{
-			Version(0, "night_cloudy_a.scr", 1, "night_clear_a", "night_cloudy_a");
+			Version(0, "night_cloudy_a.scr", 1, "night_clear_a", "night_clear_a");
 		}
 		Weather("Foggy", 60, 320)
 		{
-			Version(0, "night_foggy_a.scr", 1, "night_clear_a", "night_foggy_a");
+			Version(0, "night_foggy_a.scr", 1, "night_clear_a", "night_clear_a");
 			Version(1, "night_foggy_b_heavyfog", 1, "night_foggy_b", "night_foggy_b");
 		}
 		Weather("Overcast", 60, 320)

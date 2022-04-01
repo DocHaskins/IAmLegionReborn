@@ -2,6 +2,44 @@
 <ConstParams xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_const.xsd">
     <ExternalParams m_UID="human_consts_ovrd_bow"/>
     <!-- overrides - bow tier 1 -->
+	<Param m_Name="$enable_poi_inspection" m_Value="true"/>
+	<!-- panic -->
+    <Param m_Name="$enable_panic" m_Value="false"/>
+    <Param m_Name="$panic_last_man_prob" m_Value="0.5"/>
+    <!-- retreat -->
+    <Param m_Name="$enable_retreat_from_high_threat" m_Value="false"/>
+    <Param m_Name="$retreat_avoid_connections_min_cost_mul" m_Value="15"/>
+	    <!-- dodge -->
+    <Param m_Name="$enable_dodge" m_Value="true"/>
+    <Param m_Name="$enable_dodge_on_spot" m_Value="true"/>
+    <Param m_Name="$dodge_cooldown" m_Value="0.5"/>
+    <Param m_Name="$enable_dodge_throwable" m_Value="true"/>
+    <Param m_Name="$dodge_throwable_cooldown" m_Value="2.0"/>
+    <Param m_Name="$dodge_abused_cooldown" m_Value="1.0"/>
+    <Param m_Name="$enable_dodge_melee" m_Value="true"/>
+    <Param m_Name="$dodge_melee_cooldown" m_Value="1.5"/>
+    <Param m_Name="$dodge_melee_from_hit_count" m_Value="3"/>
+    <Param m_Name="$dodge_melee_from_hit_prob" m_Value="0.8"/>
+    <Param m_Name="$dodge_melee_default_prob" m_Value="0.1"/>
+	    <!-- escape steps -->
+    <Param m_Name="$enable_escape_step_back" m_Value="true"/>
+    <Param m_Name="$escape_step_back_cooldown" m_Value="3"/>
+    <Param m_Name="$escape_step_back_max_range" m_Value="2"/>
+    <Param m_Name="$escape_step_back_max_angle" m_Value="90"/>
+    <Param m_Name="$escape_step_back_followup_max_range" m_Value="5"/>
+    <Param m_Name="$escape_step_back_followup_max_angle" m_Value="90"/>
+	<!-- COMBAT - POSITIONING -->
+    <!-- attack attempt and cancel ranges -->
+    <Param m_Name="$attack_cancel_range" m_Value="4"/>
+	    <!-- attack behavior -->
+    <Param m_Name="$enable_attack_step_back" m_Value="true"/>
+    <Param m_Name="$attack_vs_other_ai_approach_min_space" m_Value="0.5"/>
+    <Param m_Name="$attack_min_space" m_Value="0.5"/>
+	    <!-- COMBAT - PANIC AND RETREAT -->
+    <Param m_Name="$enable_retreat" m_Value="true"/>
+    <Param m_Name="$disable_forced_retreat_if_cornered" m_Value="true"/>
+	    <!-- PERCEPTION -->
+    <Param m_Name="$enable_sense_dangerzone" m_Value="true"/>
     <!-- defensive moves -->
     <Param m_Name="$attack_push_max_range" m_Value="3.5"/>
     <!-- bow - single shot -->
@@ -18,6 +56,4 @@
     <!-- group tokens -->
     <Param m_Name="$attack_range_min_delay" m_Value="1.0"/>
     <Param m_Name="$attack_range_limit" m_Value="3"/>
-    <!-- defensive moves -->
-    <Param m_Name="$enable_dodge" m_Value="true"/>
 </ConstParams>

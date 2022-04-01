@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Cnd_CanStartTask m_StartPolicy="DISCARD"/>
+        <Cnd_IsBBValueEqual_bool m_Key="#panic_evaluated" m_Value="true" m_Invert="true"/>
+        <Cnd_CanPanicFlee/>
+        <Cnd_HasBBValue m_Key="#target"/>
+        <Cnd_IsCombatTargetConflictSideEqual m_TargetConflictSide="zombie" m_Invert="true"/>
+        <Cnd_HasActiveWeapon m_WeaponType="OneHandedMelee"/>
+        <!-- last man standing panic -->
+        <CooldownTimeDelta m_CooldownTime="0.1">
+            <Cnd_HasGroupMemberDiedRecently m_TimeWindow="0.5"/>
+        </CooldownTimeDelta>
+        <Cnd_AreOtherGroupMembersAlive m_MinMembersCount="2" m_Invert="true"/>
+        <Opr_SetBBValue_bool m_Key="#panic_evaluated" m_Value="true"/>
+        <Cnd_Random m_Value="$panic_last_man_prob"/>
+        <Opr_SetBBValue_bool m_Key="#should_flee" m_Value="true"/>
+        <Cnd_IsCombatTargetInRadius m_Radius="8"/>
+        <Cnd_CanInterruptActivityModule_Attack/>
+        <Selector>
+            <SequenceMem>
+                <Cnd_HasBBValue m_Key="#target"/>
+                <Cnd_IsCombatTargetInRadius m_Radius="$attack_push_retreat_max_range"/>
+            </SequenceMem>
+            <SequenceMem>
+                <Opr_RequestBark m_Priority="Medium" m_BarkID="panic"/>
+                <TimeDeltaLimitRandom m_TimeMin="1.4" m_TimeMax="1.4" m_StatusReturned="SUCCESS">
+                    <Act_Reaction m_Type="Panic" m_StartPolicy="DISCARD" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                </TimeDeltaLimitRandom>
+                <SelectorMem>
+                    <!-- throw weapon -->
+                    <SequenceMem>
+                        <Cnd_IsCombatTargetInRadius m_Radius="4" m_Invert="true"/>
+                        <Cnd_Random m_Value="0.2"/>
+                        <Opr_GetThrowPredictedTargetPosition m_Target="#target" m_Position="#throw_pos" m_HeadYOffset="-0.25" m_PredictionTime="0.1"/>
+                        <Selector>
+                            <Cnd_Random m_Value="0.2" m_Invert="true"/>
+                            <Sequence>
+                                <Opr_GetDirectionToPosition m_Position="#throw_pos" m_Direction="#dir_to_throw"/>
+                                <Opr_GetDistanceToPosition m_Position="#throw_pos" m_Distance="#dist_to_throw"/>
+                                <Opr_RandomFloat m_Result="#rot_angle" m_RangeMin="-10" m_RangeMax="10"/>
+                                <Opr_RotateVectorHorizontally m_Angle="#rot_angle" m_Vector="#dir_to_throw" m_Result="#dir_to_throw"/>
+                                <Opr_GetSelfPosition m_Position="#self_pos"/>
+                                <Opr_GetPositionInDirection m_Distance="#dist_to_throw" m_Direction="#dir_to_throw" m_Origin="#self_pos" m_Position="#throw_pos"/>
+                            </Sequence>
+                        </Selector>
+                        <Act_Throw m_TargetPosition="#throw_pos" m_Type="Weapon" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+                    </SequenceMem>
+                    <!-- withdraw -->
+                    <SequenceMem>
+                        <Opr_RequestBark m_Priority="Medium" m_BarkID="surrender"/>
+                        <SelectorMem>
+                            <Cnd_Random m_Value="0.3" m_Invert="true"/>
+                            <Act_Throw m_TargetPosition="#target_pos" m_Type="Weapon_Drop" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+                        </SelectorMem>
+                        <TimeDeltaLimit m_TimeMax="4" m_StatusReturned="SUCCESS">
+                            <Selector>
+                                <Cnd_HasBBValue m_Key="#target" m_Invert="true"/>
+                                <Cnd_IsCombatTargetInRadius m_Radius="12" m_Invert="true"/>
+                                <Sequence>
+                                    <Opr_GetDirToCombatTarget m_DirToTarget="#dir_to_target"/>
+                                    <Opr_GetRetreatDirection m_Source="#target_pos" m_Direction="#retreat_dir"/>
+                                    <Act_StrafeInDirection m_Direction="#retreat_dir" m_WantedForwardDir="#dir_to_target" m_Speed="0.5" m_SpringUpdateSpeed="$strafe_spring_update_speed" m_Style="Retreat" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                </Sequence>
+                            </Selector>
+                        </TimeDeltaLimit>
+                    </SequenceMem>
+                </SelectorMem>
+            </SequenceMem>
+        </Selector>
+    </SequenceMem>
+</BehaviorTree>

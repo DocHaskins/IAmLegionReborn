@@ -186,7 +186,7 @@ sub main()
 
     float rl_lighting_emissive_on = (i_lighting_mode == LMODE_DIRECT) ? f_rl_lighting_emissive_on
 									: (i_lighting_mode == LMODE_INDIRECT) ? 0.0 : f_rl_lighting_emissive_on;
-	float f_emissive_power = 6.0;
+	float f_emissive_power = 4.5;
     Set("f_pp_hdr_intensity_emissive", rl_lighting_emissive_on * pow(2.0, f_emissive_power));	
 
 	float f_lights_power = 3.0;

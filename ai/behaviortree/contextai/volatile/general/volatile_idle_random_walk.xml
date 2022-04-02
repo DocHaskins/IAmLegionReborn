@@ -1,22 +1,27 @@
 <?xml version="1.0"?>
 <BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
     <SequenceMem>
-	<Cnd_CanStartTask m_StartPolicy="INTERRUPT"/>
-	<ExternalTree m_UID="VIRAL_CHASE" m_CustomName="Chase" m_Hide="true"/>
-	<Cnd_CanInterruptActivityModule_Movement/>
         <Selector m_Hide="true">
             <Sequence>
                 <Opr_GetSelfPosition m_Position="#self_pos"/>
-                <Opr_RandomFloat m_Result="#angle" m_RangeMin="2" m_RangeMax="30"/>
+                <Opr_GetLocalPlayer m_Player="#player"/>
+                <Opr_GetObjectPosition m_Object="#player" m_Position="#player_pos"/>
+                <Opr_GetDirectionToPosition m_Position="#player_pos" m_Direction="#dir"/>
+                <Opr_RandomFloat m_Result="#angle" m_RangeMin="10" m_RangeMax="-10"/>
                 <Opr_RotateVectorHorizontally m_Angle="#angle" m_Vector="#dir" m_Result="#dir"/>
+                <Opr_GetDistanceToPosition m_Distance="#dist" m_Position="#player_pos"/>
+                <Selector>
+                    <Cnd_IsBBValueGreaterOrEqual_float m_Key="#dist" m_Value="20"/>
+                    <Opr_SetBBValue_float m_Key="#dist" m_Value="20"/>
+                </Selector>
                 <Opr_RandomFloat m_Result="#dist_mul" m_RangeMin="1.8" m_RangeMax="2.5"/>
                 <Opr_MultiplyBBValue_float m_Key="#dist" m_Amount="#dist_mul"/>
             </Sequence>
             <Sequence>
                 <Opr_GetSelfPosition m_Position="#self_pos"/>
-                <Opr_RandomFloat m_Result="#angle" m_RangeMin="5" m_RangeMax="40"/>
+                <Opr_RandomFloat m_Result="#angle" m_RangeMin="-100" m_RangeMax="40"/>
                 <Opr_GetDirectionFromAngle m_Angle="#angle" m_Direction="#dir"/>
-                <Opr_RandomFloat m_Result="#dist" m_RangeMin="5" m_RangeMax="60"/>
+                <Opr_RandomFloat m_Result="#dist" m_RangeMin="10" m_RangeMax="20"/>
             </Sequence>
         </Selector>
         <Opr_GetPositionInDirection m_Distance="#dist" m_Position="#pos" m_Direction="#dir" m_Origin="#self_pos"/>
@@ -32,8 +37,8 @@
         <Opr_SetBBValue_float m_Key="#request_move_dest_nav_tolerance_xz" m_Value="$request_move_dest_nav_tolerance_xz"/>
         <Opr_SetBBValue_float m_Key="#request_move_dest_nav_tolerance_y" m_Value="$request_move_dest_nav_tolerance_y"/>
         <SelectorMem>
-			<Act_Move m_Destination="#request_move_dest_pos" m_Radius="3" m_FailIfDestUnreachable="true" m_MaxDistOutsideNavmeshXZ="2" m_MaxDistOutsideNavmeshY="2" m_LocomotionSpeed="#degenerated_speed" m_MoveStyle="$force_slower_movestyle" m_StopAtDest="false" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_EndDir="#last_target_move_dir"/>
-            <ExternalTree m_UID="VOLATILE_COMBAT" m_Hide="true"/>
+            <Cnd_PositionInRadius m_Position="#request_move_dest_pos" m_Radius="3"/>
+            <ExternalTree m_UID="VOLATILE_MOVE" m_Hide="true"/>
         </SelectorMem>
     </SequenceMem>
 </BehaviorTree>

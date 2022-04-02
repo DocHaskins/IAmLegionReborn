@@ -10,9 +10,6 @@
                     <Cnd_HasBBValue m_Key="#target"/>
                     <Selector>
                         <Cnd_IsBBValueEqual_EThreatLevel m_Key="#group_threat_level" m_Value="HIGH"/>
-                        <Optional m_Enabled="$enable_combat_with_low_threat">
-                            <Cnd_IsCombatTargetHighThreat m_Invert="true"/>
-                        </Optional>
                     </Selector>
                     <Selector>
                         <Cnd_IsBBValueEqual_bool m_Key="#flag_threatening" m_Value="true" m_Invert="true"/>

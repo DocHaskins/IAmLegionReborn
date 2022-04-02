@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <!-- input #request_move_dest_pos vec3 -->
+    <!-- input #request_move_dest_dir vec3 -->
+    <!-- input #request_move_dest_radius float -->
+    <!-- input #request_move_style string -->
+    <!-- input #request_move_intermediate_points vector<vec3> -->
+    <!-- input #request_move_skip_start bool -->
+    <!-- input #request_move_stop_at_dest bool -->
+    <!-- input #request_move_fail_if_unreachable bool -->
+    <!-- input #request_move_dest_nav_tolerance_xz float -->
+    <!-- input #request_move_dest_nav_tolerance_y float -->
+    <Selector>
+        <!-- move with group gather -->
+        <Sequence>
+            <Opr_RequestGroupDestinationGet m_GroupDestination="#group_destination" m_GroupDestRadius="#group_dest_radius"/>
+            <ExposeMoveState m_Destination="#request_move_dest_pos" m_GroupDestination="#group_destination">
+                <Selector>
+                    <!-- group gather -->
+                    <Optional m_Enabled="$request_move_gather_enabled">
+                        <Failer>
+                            <ExternalTree m_UID="BITER_MOVE_GROUP_GATHER" m_CustomName="GroupGather" m_Hide="true"/>
+                        </Failer>
+                    </Optional>
+                    <!-- generic look around -->
+                    <ExternalTree m_UID="BITER_MOVE_SIMPLE" m_CustomName="MoveSimple" m_Hide="true"/>
+                </Selector>
+            </ExposeMoveState>
+        </Sequence>
+    </Selector>
+</BehaviorTree>

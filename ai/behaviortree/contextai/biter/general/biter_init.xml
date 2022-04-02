@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
     <Sequence>
+	        <!-- other -->
+        <Opr_SetBBValue_bool m_Key="#searching" m_Value="true"/>
+        <Opr_SetBBValue_bool m_Key="#should_check_last_target_pos" m_Value="true"/>
         <Opr_SetBBValue_bool m_Key="#flag_combat_rest" m_Value="false"/>
         <Opr_EnableSense m_Sense="target"/>
         <Opr_EnableSense m_Sense="uv"/>

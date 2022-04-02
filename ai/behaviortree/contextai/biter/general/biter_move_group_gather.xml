@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Sequence>
+        <Opr_RequestBark m_BarkID="Generic_Idle" m_Priority="Low"/>
+        <Cnd_PositionInRadius m_Position="#group_destination" m_Radius="#group_dest_radius" m_Invert="true"/>
+        <Cnd_AreOtherMembersInMovementGroup/>
+        <Opr_EvaluateGroupMovementLeader m_Position="#gather_pos"/>
+        <Selector>
+            <SequenceMem>
+                <Cnd_AreOtherGroupMembersInState m_State="RETURN"/>
+                <Cnd_PositionInRadius m_Radius="5" m_Position="#gather_pos" m_Invert="true"/>
+                <Sequence>
+                    <Cnd_PositionInRadius m_Radius="2" m_Position="#gather_pos" m_Invert="true"/>
+                    <Act_Move
+                        m_Destination="#gather_pos"
+                        m_EndRadius="$move_end_radius_default"
+                        m_MoveStyle="#move_style_trot"
+                        m_StopAtDest="true"
+                        m_TeleportIfBlocked="true"
+                        m_IsAvoidanceActive="$use_avoidance"
+                        m_AvoidRegionsPreset="$avoid_regions_preset"
+                        m_StartPolicy="INTERRUPT"
+                        m_AbandonPolicy="BLENDOUT"
+                        m_DecisionPolicy="ON_END"
+                        m_StopRequest="REGULAR"/>
+                </Sequence>
+            </SequenceMem>
+            <SequenceMem>
+                <Cnd_IsMovementGroupCloseTogether m_MaxDistanceToGroupCenter="6" m_Invert="true"/>
+                <Selector>
+                    <Cnd_IsMovementGroupCloseTogether m_MaxDistanceToGroupCenter="2"/>
+                    <Selector>
+                        <Sequence>
+                            <Cnd_PositionInRadius m_Radius="1.5" m_Position="#gather_pos" m_Invert="true"/>
+                            <Act_Move
+                                m_Destination="#gather_pos"
+                                m_EndRadius="$move_end_radius_default"
+                                m_MoveStyle="#move_style_walk"
+                                m_StopAtDest="true"
+                                m_TeleportIfBlocked="true"
+                                m_IsAvoidanceActive="false"
+                                m_AvoidRegionsPreset="$avoid_regions_preset"
+                                m_StartPolicy="INTERRUPT"
+                                m_AbandonPolicy="BLENDOUT"
+                                m_DecisionPolicy="ON_END"
+                                m_StopRequest="REGULAR"/>
+
+                        </Sequence>
+                        <SequenceMem>
+                            <Opr_GetSelfPosition m_Position="#last_look_around_pos"/>
+                            <Act_Investigation m_Type="LOOK_AROUND" m_StimulusType="NONE" m_StimulusPosition="#last_look_around_pos" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END" m_StopRequest="REGULAR"/>
+                            <Act_Idle m_Type="Stand" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                        </SequenceMem>
+                    </Selector>
+                </Selector>
+                <TimeDeltaLimitRandom m_TimeMin="0.25" m_TimeMax="1.25" m_StatusReturned="FAILURE">
+                    <Act_Idle m_Type="Stand" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_StopRequest="REGULAR"/>
+                </TimeDeltaLimitRandom>
+            </SequenceMem>
+        </Selector>
+    </Sequence>
+</BehaviorTree>

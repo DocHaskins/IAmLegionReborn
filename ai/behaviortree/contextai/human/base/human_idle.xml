@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <ExposeLogicState m_ExposedState="AGGRESSION_LOW">
+        <Parallel m_PolicyFailure="REQUIRE_ONE" m_PolicySuccess="REQUIRE_ONE">
+            <ExternalTree m_UID="HUMAN_WEAPON_STOWING" m_CustomName="WeaponStowing" m_Hide="true"/>
+            <Sequence>
+                <Opr_RequestBark m_BarkID="Generic_Idle" m_Priority="Low"/>
+                <Selector>
+                    <Sequence>
+                        <Cnd_IsDefendRequired/>
+                        <SequenceMem>
+                            <DelayerTimeDeltaRandom m_DelayTimeMin="2" m_DelayTimeMax="4">
+                                <Cnd_SelfInDefendRadius m_Invert="true"/>
+                            </DelayerTimeDeltaRandom>
+                            <Selector>
+                                <SequenceMem>
+                                    <Cnd_PositionInRadius m_Position="#defend_position" m_Radius="6" m_Invert="true"/>
+                                    <Act_Move m_Destination="#defend_position" m_MoveStyle="#move_style_run" m_StopAtDest="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                </SequenceMem>
+                                <Act_Move m_Destination="#defend_position" m_MoveStyle="#move_style_walk" m_StopAtDest="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                            </Selector>
+                        </SequenceMem>
+                    </Sequence>
+                    <ExternalTree m_UID="HUMAN_IDLE_RANDOM_WALK" m_CustomName="Idle"/>
+                    <SequenceMem>
+                        <Cnd_IsSwitchingWeapon/>
+                        <RunUntilSuccess>
+                            <Cnd_IsSwitchingWeapon m_Invert="true"/>
+                        </RunUntilSuccess>
+                        <TimeDeltaLimit m_TimeMax="1">
+                            <Act_Idle m_Type="Stand" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT"/>
+                        </TimeDeltaLimit>
+                    </SequenceMem>
+                    <Act_Status m_StatusRequired="RUNNING"/>
+                </Selector>
+            </Sequence>
+        </Parallel>
+    </ExposeLogicState>
+</BehaviorTree>

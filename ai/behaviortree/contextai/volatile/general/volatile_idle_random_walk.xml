@@ -1,6 +1,22 @@
 <?xml version="1.0"?>
 <BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
     <SequenceMem>
+		<!-- translate move style -->
+        <Selector>
+            <Sequence>
+                <Cnd_IsBBValueEqual_string m_Key="#request_move_style" m_Value="Run"/>
+                <Opr_SetBBValue_string m_Key="#move_style" m_Value="#move_style_run"/>
+            </Sequence>
+            <Sequence>
+                <Cnd_IsBBValueEqual_string m_Key="#request_move_style" m_Value="Trot"/>
+                <Opr_SetBBValue_string m_Key="#move_style" m_Value="#move_style_trot"/>
+            </Sequence>
+            <Sequence>
+                <Cnd_IsBBValueEqual_string m_Key="#request_move_style" m_Value="Walk"/>
+                <Opr_SetBBValue_string m_Key="#move_style" m_Value="#move_style_walk"/>
+            </Sequence>
+            <Opr_SetBBValue_string m_Key="#move_style" m_Value="#request_move_style"/>
+        </Selector>
         <Selector m_Hide="true">
             <Sequence>
                 <Opr_GetSelfPosition m_Position="#self_pos"/>

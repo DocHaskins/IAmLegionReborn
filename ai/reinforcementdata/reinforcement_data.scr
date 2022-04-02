@@ -115,9 +115,7 @@ sub main()
 		ReinforcementData("Bandit_Human")
 		{
 			force_player_target(false);
-			Spawn("Bandit_One_Handed", 0,4);
-			Spawn("Bandit_Two_Handed", 0,2);
-			Spawn("Bandit_Bow", 0,3);
+			Spawn("Duke_One_Handed", 2,6);
 			initial_spawn_delay(6.0);
 			delay_between_spawns(0.5);
 			chance_to_spawn(0.7);
@@ -143,6 +141,15 @@ sub main()
 			Spawn("Spitter", 0,1);
 			Spawn("Goon", 0,1);
 			Spawn("Demolisher", 0,1);
+			force_player_target(true);
+			initial_spawn_delay(2.0);
+			chance_to_spawn(1.0);
+			cooldown(10.0);
+		}	
+		
+		ReinforcementData("VolatileHunt")
+		{
+			Spawn("Volatile", 0,2);
 			force_player_target(true);
 			initial_spawn_delay(2.0);
 			chance_to_spawn(1.0);

@@ -892,6 +892,18 @@ sub presets()
         awakening_default(0.5);
 		awakening("biter", 1.0);
     }
+	NoisePreset("volatile_groan")
+    {
+        range(50.0);
+        range_effective(40.0);
+        duration(0.99);
+        interest_default(0.7, "notice"); // #TODO continuous noises support
+        interest("human", 1.0, "repel");
+		interest("biter", 1.0, "attract");
+		reinforcement_id("VolatileHunt");
+        awakening_default(0.5);
+		awakening("biter", 1.0);
+    }
     NoisePreset("demolisher_groan")
     {
         range(15.0);
@@ -952,7 +964,7 @@ sub presets()
 		awakening("biter", 1.0);
 		
 		reinforcement_id("Bandit_Human");
-		reinforcement_id("RobbinTheHood");
+		//reinforcement_id("RobbinTheHood");
     }
 	
 	NoisePreset("summoning_survivors")

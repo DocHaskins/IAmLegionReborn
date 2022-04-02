@@ -233,7 +233,7 @@ sub presets()
         duration(2.0);
 
         interest_default(0.75, "attract");
-        interest("human", 0.1, "notice");
+        interest("human", 0.2, "notice");
 		interest("biter", 0.8, "attract");
 
         awakening_default(0.8);
@@ -703,7 +703,7 @@ sub presets()
     }
     NoisePreset("player_step_run_day")
     {
-        range(16.0);
+        range(5.0);
         range_effective(14.0);
         duration(5.0);
 
@@ -718,8 +718,8 @@ sub presets()
     }
     NoisePreset("player_step_run_night")
     {
-        range(17.0);
-        range_effective(17.0);
+        range(8.0);
+        range_effective(6.0);
         duration(1.0);
 
         interest_default(0.3, "attract");
@@ -873,7 +873,7 @@ sub presets()
         duration(0.99);
 
         interest_default(0.0, "notice");
-        interest("human", 0.2, "notice"); // #TODO continuous noises support
+        interest("human", 0.4, "notice"); // #TODO continuous noises support
 		interest("biter", 0.9, "attract");
 
         awakening_default(0.8);
@@ -898,9 +898,12 @@ sub presets()
         range_effective(15.0);
         duration(0.99);
 
-        interest_default(0.0, "notice");
+        interest_default(0.0, "notice"); // #TODO continuous noises support
+        interest("human", 0.9, "repel");
+		interest("biter", 1.0, "attract");
 
         awakening_default(0.5);
+		awakening("biter", 1.0);
     }
     NoisePreset("biter_grab")
     {

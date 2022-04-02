@@ -1,0 +1,1567 @@
+//WeaponSetPreset(name)
+//  Weapon(weapon/pool_name)
+
+sub AI_Throwable_Knife_Boss() { Weapon("AI_Throwable_KnifeBoss"); }
+sub AI_Throwable_Knife() { Weapon("AI_Throwable_Knife"); }
+sub AI_Throwable_Stone() { Weapon("AI_Throwable_Stone"); }
+
+sub AI_Throwables()
+{
+    use AI_Throwable_Knife();
+    use AI_Throwable_Stone();
+}
+
+sub main()
+{
+    ///////////////////// Developer presets //////////////////////////////
+    WeaponSetPreset("dev_one_handed")
+    {
+        Weapon("Weapons_pool_d1");
+    }
+    WeaponSetPreset("dev_two_handed")
+    {
+        Weapon("Weapons_pool_T1_2h_d1");
+        use AI_Throwable_Stone();
+    }
+    WeaponSetPreset("dev_bow")
+    {
+        Weapon("Bow_T1");
+    }
+    WeaponSetPreset("dev_spear")
+    {
+        Weapon("Tackle_Spear_t1");
+    }
+	
+	///////////////////// Difficulty Sets //////////////////////////////
+	///////////////////// RGD_1 //////////////////////////////
+	WeaponSetPreset("Weapon_pool_RGD_1")
+    {
+        Weapon("Weapons_pool_d1");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Spear_RGD_1")
+    {
+		Weapon("Tackle_Spear_t1");
+    }
+	WeaponSetPreset("Bow_RGD_1")
+    {
+		Weapon("Bow_T1");
+    }
+	
+	WeaponSetPreset("Shoddy_Weapon_pool_RGD_1")
+    {
+        Weapon("Survivor_Random_Pool");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Bandit_TwoHanded_RGD_1")
+    {
+		Weapon("Weapons_pool_T1_2h_d1");
+        use AI_Throwable_Stone();
+    }
+    WeaponSetPreset("Summoner_RGD_1")
+    {
+        Weapon("Weapons_pool_d1");
+        Weapon("Summoner_Horn");
+        use AI_Throwables();
+    }
+    WeaponSetPreset("Molotov_RGD_1")
+    {
+        Weapon("Throwable_Molotov");
+        use AI_Throwables();
+    }
+	
+	WeaponSetPreset("PK_OneHanded_RGD_1")
+    {
+		Weapon("PK_Weapons_pool_d1");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("PK_TwoHanded_RGD_1")
+    {
+		Weapon("PK_Weapons_pool_2h_d1");
+        use AI_Throwable_Stone();
+    }
+	
+	WeaponSetPreset("Dukes_OneHanded_RGD_1")
+    {
+		Weapon("Dukes_Weapons_pool_d1");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Dukes_TwoHanded_RGD_1")
+    {
+		Weapon("Dukes_Weapons_pool_2h_d1");
+        use AI_Throwable_Stone();
+    }
+	
+	WeaponSetPreset("Renegades_OneHanded_Prologue")
+    {
+		Weapon("Renegades_Weapons_pool_d1");
+    }
+	
+	WeaponSetPreset("Renegades_OneHanded_RGD_1")
+    {
+		Weapon("Renegades_Weapons_pool_d1");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Renegades_TwoHanded_RGD_1")
+    {
+		Weapon("Renegades_Weapons_pool_2h_d1");
+        use AI_Throwable_Stone();
+    }
+	
+	
+	///////////////////// RGD_2 //////////////////////////////
+	WeaponSetPreset("Weapon_pool_RGD_2")
+    {
+        Weapon("Weapons_pool_d2");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Spear_RGD_2")
+    {
+		Weapon("Tackle_Spear_t2");
+    }
+	WeaponSetPreset("Bow_RGD_2")
+    {
+		Weapon("Bow_T2");
+    }
+	
+	WeaponSetPreset("Shoddy_Weapon_pool_RGD_2")
+    {
+        Weapon("Survivor_Random_Pool");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Bandit_TwoHanded_RGD_2")
+    {
+		Weapon("Weapons_pool_T1_2h_d2");
+        use AI_Throwable_Stone();
+    }
+    WeaponSetPreset("Summoner_RGD_2")
+    {
+        Weapon("Weapons_pool_d2");
+        Weapon("Summoner_Horn");
+        use AI_Throwables();
+    }
+    WeaponSetPreset("Molotov_RGD_2")
+    {
+        Weapon("Throwable_Molotov");
+        use AI_Throwables();
+    }
+	
+	WeaponSetPreset("PK_OneHanded_RGD_2")
+    {
+		Weapon("PK_Weapons_pool_d2");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("PK_TwoHanded_RGD_2")
+    {
+		Weapon("PK_Weapons_pool_2h_d2");
+        use AI_Throwable_Stone();
+    }
+	
+	WeaponSetPreset("Dukes_OneHanded_RGD_2")
+    {
+		Weapon("Dukes_Weapons_pool_d2");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Dukes_TwoHanded_RGD_2")
+    {
+		Weapon("Dukes_Weapons_pool_2h_d2");
+        use AI_Throwable_Stone();
+    }
+	
+	WeaponSetPreset("Renegades_OneHanded_RGD_2")
+    {
+		Weapon("Renegades_Weapons_pool_d2");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Renegades_TwoHanded_RGD_2")
+    {
+		Weapon("Renegades_Weapons_pool_2h_d2");
+        use AI_Throwable_Stone();
+    }
+	
+	///////////////////// RGD_3 //////////////////////////////
+	WeaponSetPreset("Weapon_pool_RGD_3")
+    {
+        Weapon("Weapons_pool_d3");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Spear_RGD_3")
+    {
+		Weapon("Tackle_Spear_t3");
+    }
+	WeaponSetPreset("Bow_RGD_3")
+    {
+		Weapon("Bow_T3");
+    }
+	
+	WeaponSetPreset("Shoddy_Weapon_pool_RGD_3")
+    {
+        Weapon("Survivor_Random_Pool");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Bandit_TwoHanded_RGD_3")
+    {
+		Weapon("Weapons_pool_T1_2h_d3");
+        use AI_Throwable_Stone();
+    }
+    WeaponSetPreset("Summoner_RGD_3")
+    {
+        Weapon("Weapons_pool_d3");
+        Weapon("Summoner_Horn");
+        use AI_Throwables();
+    }
+    WeaponSetPreset("Molotov_RGD_3")
+    {
+        Weapon("Throwable_Molotov");
+        use AI_Throwables();
+    }
+	
+	WeaponSetPreset("PK_OneHanded_RGD_3")
+    {
+		Weapon("PK_Weapons_pool_d3");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("PK_TwoHanded_RGD_3")
+    {
+		Weapon("PK_Weapons_pool_2h_d3");
+        use AI_Throwable_Stone();
+    }
+	
+	WeaponSetPreset("Dukes_OneHanded_RGD_3")
+    {
+		Weapon("Dukes_Weapons_pool_d3");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Dukes_TwoHanded_RGD_3")
+    {
+		Weapon("Dukes_Weapons_pool_2h_d3");
+        use AI_Throwable_Stone();
+    }
+	
+	WeaponSetPreset("Renegades_OneHanded_RGD_3")
+    {
+		Weapon("Renegades_Weapons_pool_d3");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Renegades_TwoHanded_RGD_3")
+    {
+		Weapon("Renegades_Weapons_pool_2h_d3");
+        use AI_Throwable_Stone();
+    }
+	
+	///////////////////// RGD_4 //////////////////////////////
+	WeaponSetPreset("Weapon_pool_RGD_4")
+    {
+        Weapon("Weapons_pool_d4");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Spear_RGD_4")
+    {
+		Weapon("Tackle_Spear_t4");
+    }
+	WeaponSetPreset("Bow_RGD_4")
+    {
+		Weapon("Bow_T4");
+    }
+	
+	WeaponSetPreset("Shoddy_Weapon_pool_RGD_4")
+    {
+        Weapon("Survivor_Random_Pool");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Bandit_TwoHanded_RGD_4")
+    {
+		Weapon("Weapons_pool_T1_2h_d4");
+        use AI_Throwable_Stone();
+    }
+    WeaponSetPreset("Summoner_RGD_4")
+    {
+        Weapon("Weapons_pool_d4");
+        Weapon("Summoner_Horn");
+        use AI_Throwables();
+    }
+    WeaponSetPreset("Molotov_RGD_4")
+    {
+        Weapon("Throwable_Molotov");
+        use AI_Throwables();
+    }
+	
+	WeaponSetPreset("PK_OneHanded_RGD_4")
+    {
+		Weapon("PK_Weapons_pool_d4");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("PK_TwoHanded_RGD_4")
+    {
+		Weapon("PK_Weapons_pool_2h_d4");
+        use AI_Throwable_Stone();
+    }
+	
+	WeaponSetPreset("Dukes_OneHanded_RGD_4")
+    {
+		Weapon("Dukes_Weapons_pool_d4");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Dukes_TwoHanded_RGD_4")
+    {
+		Weapon("Dukes_Weapons_pool_2h_d4");
+        use AI_Throwable_Stone();
+    }
+	
+	WeaponSetPreset("Renegades_OneHanded_RGD_4")
+    {
+		Weapon("Renegades_Weapons_pool_d4");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Renegades_TwoHanded_RGD_4")
+    {
+		Weapon("Renegades_Weapons_pool_2h_d4");
+        use AI_Throwable_Stone();
+    }
+	
+	///////////////////// RGD_5 //////////////////////////////
+	WeaponSetPreset("Weapon_pool_RGD_5")
+    {
+        Weapon("Weapons_pool_d5");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Spear_RGD_5")
+    {
+		Weapon("Tackle_Spear_t5");
+    }
+	WeaponSetPreset("Bow_RGD_5")
+    {
+		Weapon("Bow_T5");
+    }
+	
+	WeaponSetPreset("Shoddy_Weapon_pool_RGD_5")
+    {
+        Weapon("Survivor_Random_Pool");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Bandit_TwoHanded_RGD_5")
+    {
+		Weapon("Weapons_pool_T1_2h_d5");
+        use AI_Throwable_Stone();
+    }
+    WeaponSetPreset("Summoner_RGD_5")
+    {
+        Weapon("Weapons_pool_d5");
+        Weapon("Summoner_Horn");
+        use AI_Throwables();
+    }
+    WeaponSetPreset("Molotov_RGD_5")
+    {
+        Weapon("Throwable_Molotov");
+        use AI_Throwables();
+    }
+	
+	WeaponSetPreset("PK_OneHanded_RGD_5")
+    {
+		Weapon("PK_Weapons_pool_d5");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("PK_TwoHanded_RGD_5")
+    {
+		Weapon("PK_Weapons_pool_2h_d5");
+        use AI_Throwable_Stone();
+    }
+	
+	WeaponSetPreset("Dukes_OneHanded_RGD_5")
+    {
+		Weapon("Dukes_Weapons_pool_d5");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Dukes_TwoHanded_RGD_5")
+    {
+		Weapon("Dukes_Weapons_pool_2h_d5");
+        use AI_Throwable_Stone();
+    }
+	
+	WeaponSetPreset("Renegades_OneHanded_RGD_5")
+    {
+		Weapon("Renegades_Weapons_pool_d5");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Renegades_TwoHanded_RGD_5")
+    {
+		Weapon("Renegades_Weapons_pool_2h_d5");
+        use AI_Throwable_Stone();
+    }
+	
+	///////////////////// RGD_6 //////////////////////////////
+	WeaponSetPreset("Weapon_pool_RGD_6")
+    {
+        Weapon("Weapons_pool_d6");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Spear_RGD_6")
+    {
+		Weapon("Tackle_Spear_t6");
+    }
+	WeaponSetPreset("Bow_RGD_6")
+    {
+		Weapon("Bow_T6");
+    }
+	
+	WeaponSetPreset("Shoddy_Weapon_pool_RGD_6")
+    {
+        Weapon("Survivor_Random_Pool");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Bandit_TwoHanded_RGD_6")
+    {
+		Weapon("Weapons_pool_T1_2h_d6");
+        use AI_Throwable_Stone();
+    }
+    WeaponSetPreset("Summoner_RGD_6")
+    {
+        Weapon("Weapons_pool_d6");
+        Weapon("Summoner_Horn");
+        use AI_Throwables();
+    }
+    WeaponSetPreset("Molotov_RGD_6")
+    {
+        Weapon("Throwable_Molotov");
+        use AI_Throwables();
+    }
+	
+	WeaponSetPreset("PK_OneHanded_RGD_6")
+    {
+		Weapon("PK_Weapons_pool_d6");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("PK_TwoHanded_RGD_6")
+    {
+		Weapon("PK_Weapons_pool_2h_d6");
+        use AI_Throwable_Stone();
+    }
+	
+	WeaponSetPreset("Dukes_OneHanded_RGD_6")
+    {
+		Weapon("Dukes_Weapons_pool_d6");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Dukes_TwoHanded_RGD_6")
+    {
+		Weapon("Dukes_Weapons_pool_2h_d6");
+        use AI_Throwable_Stone();
+    }
+	
+	WeaponSetPreset("Renegades_OneHanded_RGD_6")
+    {
+		Weapon("Renegades_Weapons_pool_d6");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Renegades_TwoHanded_RGD_6")
+    {
+		Weapon("Renegades_Weapons_pool_2h_d6");
+        use AI_Throwable_Stone();
+    }
+	
+	///////////////////// RGD_7 //////////////////////////////
+	WeaponSetPreset("Weapon_pool_RGD_7")
+    {
+        Weapon("Weapons_pool_d7");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Spear_RGD_7")
+    {
+		Weapon("Tackle_Spear_t7");
+    }
+	WeaponSetPreset("Bow_RGD_7")
+    {
+		Weapon("Bow_T7");
+    }
+	
+	WeaponSetPreset("Shoddy_Weapon_pool_RGD_7")
+    {
+        Weapon("Shoddy_Weapons_pool_d7");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Bandit_TwoHanded_RGD_7")
+    {
+		Weapon("Weapons_pool_T1_2h_d7");
+        use AI_Throwable_Stone();
+    }
+    WeaponSetPreset("Summoner_RGD_7")
+    {
+        Weapon("Weapons_pool_d7");
+        Weapon("Summoner_Horn");
+        use AI_Throwables();
+    }
+    WeaponSetPreset("Molotov_RGD_7")
+    {
+        Weapon("Throwable_Molotov");
+        use AI_Throwables();
+    }
+	
+	WeaponSetPreset("PK_OneHanded_RGD_7")
+    {
+		Weapon("PK_Weapons_pool_d7");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("PK_TwoHanded_RGD_7")
+    {
+		Weapon("PK_Weapons_pool_2h_d7");
+        use AI_Throwable_Stone();
+    }
+	
+	WeaponSetPreset("Dukes_OneHanded_RGD_7")
+    {
+		Weapon("Dukes_Weapons_pool_d7");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Dukes_TwoHanded_RGD_7")
+    {
+		Weapon("Dukes_Weapons_pool_2h_d7");
+        use AI_Throwable_Stone();
+    }
+	
+	WeaponSetPreset("Renegades_OneHanded_RGD_7")
+    {
+		Weapon("Renegades_Weapons_pool_d7");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Renegades_TwoHanded_RGD_7")
+    {
+		Weapon("Renegades_Weapons_pool_2h_d7");
+        use AI_Throwable_Stone();
+    }
+	
+	///////////////////// RGD_8 //////////////////////////////
+	WeaponSetPreset("Weapon_pool_RGD_8")
+    {
+        Weapon("Weapons_pool_d8");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Spear_RGD_8")
+    {
+		Weapon("Tackle_Spear_t8");
+    }
+	WeaponSetPreset("Bow_RGD_8")
+    {
+		Weapon("Bow_T8");
+    }
+	
+	WeaponSetPreset("Shoddy_Weapon_pool_RGD_8")
+    {
+        Weapon("Shoddy_Weapons_pool_d8");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Bandit_TwoHanded_RGD_8")
+    {
+		Weapon("Weapons_pool_T1_2h_d8");
+        use AI_Throwable_Stone();
+    }
+    WeaponSetPreset("Summoner_RGD_8")
+    {
+        Weapon("Weapons_pool_d8");
+        Weapon("Summoner_Horn");
+        use AI_Throwables();
+    }
+    WeaponSetPreset("Molotov_RGD_8")
+    {
+        Weapon("Throwable_Molotov");
+        use AI_Throwables();
+    }
+	
+	WeaponSetPreset("PK_OneHanded_RGD_8")
+    {
+		Weapon("PK_Weapons_pool_d8");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("PK_TwoHanded_RGD_8")
+    {
+		Weapon("PK_Weapons_pool_2h_d8");
+        use AI_Throwable_Stone();
+    }
+	
+	WeaponSetPreset("Dukes_OneHanded_RGD_8")
+    {
+		Weapon("Dukes_Weapons_pool_d8");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Dukes_TwoHanded_RGD_8")
+    {
+		Weapon("Dukes_Weapons_pool_2h_d8");
+        use AI_Throwable_Stone();
+    }
+	
+	WeaponSetPreset("Renegades_OneHanded_RGD_8")
+    {
+		Weapon("Renegades_Weapons_pool_d8");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Renegades_TwoHanded_RGD_8")
+    {
+		Weapon("Renegades_Weapons_pool_2h_d8");
+        use AI_Throwable_Stone();
+    }
+	
+	///////////////////// RGD_9 //////////////////////////////
+	WeaponSetPreset("Weapon_pool_RGD_9")
+    {
+        Weapon("Weapons_pool_d9");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Spear_RGD_9")
+    {
+		Weapon("Tackle_Spear_t9");
+    }
+	WeaponSetPreset("Bow_RGD_9")
+    {
+		Weapon("Bow_T9");
+    }
+	
+	WeaponSetPreset("Shoddy_Weapon_pool_RGD_9")
+    {
+        Weapon("Shoddy_Weapons_pool_d9");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Bandit_TwoHanded_RGD_9")
+    {
+		Weapon("Weapons_pool_T1_2h_d9");
+        use AI_Throwable_Stone();
+    }
+    WeaponSetPreset("Summoner_RGD_9")
+    {
+        Weapon("Weapons_pool_d9");
+        Weapon("Summoner_Horn");
+        use AI_Throwables();
+    }
+    WeaponSetPreset("Molotov_RGD_9")
+    {
+        Weapon("Throwable_Molotov");
+        use AI_Throwables();
+    }
+	
+	WeaponSetPreset("PK_OneHanded_RGD_9")
+    {
+		Weapon("PK_Weapons_pool_d9");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("PK_TwoHanded_RGD_9")
+    {
+		Weapon("PK_Weapons_pool_2h_d9");
+        use AI_Throwable_Stone();
+    }
+	
+	WeaponSetPreset("Dukes_OneHanded_RGD_9")
+    {
+		Weapon("Dukes_Weapons_pool_d9");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Dukes_TwoHanded_RGD_9")
+    {
+		Weapon("Dukes_Weapons_pool_2h_d9");
+        use AI_Throwable_Stone();
+    }
+	
+	WeaponSetPreset("Renegades_OneHanded_RGD_9")
+    {
+		Weapon("Renegades_Weapons_pool_d9");
+        use AI_Throwables();
+    }
+	WeaponSetPreset("Renegades_TwoHanded_RGD_9")
+    {
+		Weapon("Renegades_Weapons_pool_2h_d9");
+        use AI_Throwable_Stone();
+    }
+	
+	
+	////////////////// Bandit_Leaders //////////////////////////////////
+	WeaponSetPreset("Duke_Boss")
+    {
+        Weapon("LeaderWeapon_BC_Razors");
+        use AI_Throwables();
+    }
+
+    ///////////////////////// Basic //////////////////////////////
+    WeaponSetPreset("Basic_Spear")
+    {
+        Weapon("Tackle_Spear_t1");
+    }
+	WeaponSetPreset("Basic_Bow")
+    {
+        Weapon("Bow_T1");
+    }
+
+    /////////////////////// Bandit Electric ///////////////////////
+    WeaponSetPreset("Bandit_Electric")
+    {
+        Weapon("Weapons_pool_d1");
+        use AI_Throwables();
+    }
+
+    ////////////////////// Zombie ////////////////////////////////
+    WeaponSetPreset("Zombie_Default")
+    {
+        Weapon("Zombie_Fists");
+    }
+    WeaponSetPreset("Zombie_RGD_1")
+    {
+        Weapon("Zombie_Fists_1");
+    }
+    WeaponSetPreset("Zombie_RGD_2")
+    {
+        Weapon("Zombie_Fists_2");
+    }
+    WeaponSetPreset("Zombie_RGD_3")
+    {
+        Weapon("Zombie_Fists_3");
+    }
+    WeaponSetPreset("Zombie_RGD_4")
+    {
+        Weapon("Zombie_Fists_4");
+    }
+    WeaponSetPreset("Zombie_RGD_5")
+    {
+        Weapon("Zombie_Fists_5");
+    }
+    WeaponSetPreset("Zombie_RGD_6")
+    {
+        Weapon("Zombie_Fists_6");
+    }
+    WeaponSetPreset("Zombie_RGD_7")
+    {
+        Weapon("Zombie_Fists_7");
+    }
+    WeaponSetPreset("Zombie_RGD_8")
+    {
+        Weapon("Zombie_Fists_8");
+    }
+    WeaponSetPreset("Zombie_RGD_9")
+    {
+        Weapon("Zombie_Fists_9");
+    }
+
+    WeaponSetPreset("Screamer")
+    {
+        Weapon("Screamer_Weapon");
+    }
+	WeaponSetPreset("Zombie_Corruptor_RGD_1")
+    {
+        Weapon("Corruptor_Fists_RGD_1");
+        Weapon("Corruptor_Puddle_RGD_1");
+    }
+		WeaponSetPreset("Zombie_Corruptor_RGD_2")
+    {
+        Weapon("Corruptor_Fists_RGD_2");
+        Weapon("Corruptor_Puddle_RGD_2");
+    }
+		WeaponSetPreset("Zombie_Corruptor_RGD_3")
+    {
+        Weapon("Corruptor_Fists_RGD_3");
+        Weapon("Corruptor_Puddle_RGD_3");
+    }
+		WeaponSetPreset("Zombie_Corruptor_RGD_4")
+    {
+        Weapon("Corruptor_Fists_RGD_4");
+        Weapon("Corruptor_Puddle_RGD_4");
+    }
+		WeaponSetPreset("Zombie_Corruptor_RGD_5")
+    {
+        Weapon("Corruptor_Fists_RGD_5");
+        Weapon("Corruptor_Puddle_RGD_5");
+    }
+		WeaponSetPreset("Zombie_Corruptor_RGD_6")
+    {
+        Weapon("Corruptor_Fists_RGD_6");
+        Weapon("Corruptor_Puddle_RGD_6");
+    }
+		WeaponSetPreset("Zombie_Corruptor_RGD_7")
+    {
+        Weapon("Corruptor_Fists_RGD_7");
+        Weapon("Corruptor_Puddle_RGD_7");
+    }
+		WeaponSetPreset("Zombie_Corruptor_RGD_8")
+    {
+        Weapon("Corruptor_Fists_RGD_8");
+        Weapon("Corruptor_Puddle_RGD_8");
+    }
+	WeaponSetPreset("Zombie_Corruptor_RGD_9")
+    {
+        Weapon("Corruptor_Fists_RGD_9");
+        Weapon("Corruptor_Puddle_RGD_9");
+    }
+    
+    WeaponSetPreset("Zombie_Spitter_RGD_1")
+    {
+        Weapon("Spitter_Puddle_RGD_1");
+    }
+		WeaponSetPreset("Zombie_Spitter_RGD_2")
+    {
+        Weapon("Spitter_Puddle_RGD_2");
+    }
+		WeaponSetPreset("Zombie_Spitter_RGD_3")
+    {
+        Weapon("Spitter_Puddle_RGD_3");
+    }
+		WeaponSetPreset("Zombie_Spitter_RGD_4")
+    {
+        Weapon("Spitter_Puddle_RGD_4");
+    }
+		WeaponSetPreset("Zombie_Spitter_RGD_5")
+    {
+        Weapon("Spitter_Puddle_RGD_5");
+    }
+		WeaponSetPreset("Zombie_Spitter_RGD_6")
+    {
+        Weapon("Spitter_Puddle_RGD_6");
+    }
+		WeaponSetPreset("Zombie_Spitter_RGD_7")
+    {
+        Weapon("Spitter_Puddle_RGD_7");
+    }
+		WeaponSetPreset("Zombie_Spitter_RGD_8")
+    {
+        Weapon("Spitter_Puddle_RGD_8");
+    }
+	WeaponSetPreset("Zombie_Spitter_RGD_9")
+    {
+        Weapon("Spitter_Puddle_RGD_9");
+    }
+
+    WeaponSetPreset("Goon_RGD_1")
+    {
+        Weapon("Goon_Weapon_RGD_1"); // NOT SET YET
+        Weapon("Goon_Fists_RGD_1"); // NOT SET YET
+    }
+    WeaponSetPreset("Goon_RGD_2")
+    {
+        Weapon("Goon_Weapon_RGD_2"); // NOT SET YET
+        Weapon("Goon_Fists_RGD_2"); // NOT SET YET
+    }
+    WeaponSetPreset("Goon_RGD_3")
+    {
+        Weapon("Goon_Weapon_RGD_3"); // NOT SET YET
+        Weapon("Goon_Fists_RGD_3"); // NOT SET YET
+    }
+    WeaponSetPreset("Goon_RGD_4")
+    {
+        Weapon("Goon_Weapon_RGD_4"); // NOT SET YET
+        Weapon("Goon_Fists_RGD_4"); // NOT SET YET
+    }
+    WeaponSetPreset("Goon_RGD_5")
+    {
+        Weapon("Goon_Weapon_RGD_5"); // NOT SET YET
+        Weapon("Goon_Fists_RGD_5"); // NOT SET YET
+    }
+    WeaponSetPreset("Goon_RGD_6")
+    {
+        Weapon("Goon_Weapon_RGD_6"); // NOT SET YET
+        Weapon("Goon_Fists_RGD_6"); // NOT SET YET
+    }
+    WeaponSetPreset("Goon_RGD_7")
+    {
+        Weapon("Goon_Weapon_RGD_7"); // NOT SET YET
+        Weapon("Goon_Fists_RGD_7"); // NOT SET YET
+    }
+    WeaponSetPreset("Goon_RGD_8")
+    {
+        Weapon("Goon_Weapon_RGD_8"); // NOT SET YET
+        Weapon("Goon_Fists_RGD_8"); // NOT SET YET
+    }
+    WeaponSetPreset("Goon_RGD_9")
+    {
+        Weapon("Goon_Weapon_RGD_9"); // NOT SET YET
+        Weapon("Goon_Fists_RGD_9"); // NOT SET YET
+    }
+     
+    WeaponSetPreset("Zombie_Demolisher_RGD_1")
+    {
+        Weapon("Demolisher_Fists_RGD_1");
+        Weapon("Demolisher_Rubble_RGD_1");
+        Weapon("Demolisher_Charge_RGD_1");
+    }
+	WeaponSetPreset("Zombie_Demolisher_RGD_2")
+    {
+        Weapon("Demolisher_Fists_RGD_2");
+        Weapon("Demolisher_Rubble_RGD_2");
+        Weapon("Demolisher_Charge_RGD_2");
+    }
+	WeaponSetPreset("Zombie_Demolisher_RGD_3")
+    {
+        Weapon("Demolisher_Fists_RGD_3");
+        Weapon("Demolisher_Rubble_RGD_3");
+        Weapon("Demolisher_Charge_RGD_3");
+    }
+	WeaponSetPreset("Zombie_Demolisher_RGD_4")
+    {
+        Weapon("Demolisher_Fists_RGD_4");
+        Weapon("Demolisher_Rubble_RGD_4");
+        Weapon("Demolisher_Charge_RGD_4");
+    }
+	WeaponSetPreset("Zombie_Demolisher_RGD_5")
+    {
+        Weapon("Demolisher_Fists_RGD_5");
+        Weapon("Demolisher_Rubble_RGD_5");
+        Weapon("Demolisher_Charge_RGD_5");
+    }
+	WeaponSetPreset("Zombie_Demolisher_RGD_6")
+    {
+        Weapon("Demolisher_Fists_RGD_6");
+        Weapon("Demolisher_Rubble_RGD_6");
+        Weapon("Demolisher_Charge_RGD_6");
+    }
+	WeaponSetPreset("Zombie_Demolisher_RGD_7")
+    {
+		Weapon("Demolisher_Fists_RGD_7");
+        Weapon("Demolisher_Rubble_RGD_7");
+        Weapon("Demolisher_Charge_RGD_7");
+    }
+	WeaponSetPreset("Zombie_Demolisher_RGD_8")
+    {
+		Weapon("Demolisher_Fists_RGD_8");
+        Weapon("Demolisher_Rubble_RGD_8");
+        Weapon("Demolisher_Charge_RGD_8");
+    }
+	WeaponSetPreset("Zombie_Demolisher_RGD_9")
+    {
+        Weapon("Demolisher_Fists_RGD_9");
+        Weapon("Demolisher_Rubble_RGD_9");
+        Weapon("Demolisher_Charge_RGD_9");
+    }
+	
+	WeaponSetPreset("Zombie_Charger_RGD_1")
+    {
+        Weapon("Charger_Fists_RGD_1");
+        Weapon("Charger_Charge_RGD_1");
+	}
+	WeaponSetPreset("Zombie_Charger_RGD_2")
+    {
+        Weapon("Charger_Fists_RGD_2");
+        Weapon("Charger_Charge_RGD_2");
+    }
+	WeaponSetPreset("Zombie_Charger_RGD_3")
+    {
+        Weapon("Charger_Fists_RGD_3");
+        Weapon("Charger_Charge_RGD_3");
+    }
+	WeaponSetPreset("Zombie_Charger_RGD_4")
+    {
+        Weapon("Charger_Fists_RGD_4");
+        Weapon("Charger_Charge_RGD_4");
+    }
+	WeaponSetPreset("Zombie_Charger_RGD_5")
+    {
+        Weapon("Charger_Fists_RGD_5");
+        Weapon("Charger_Charge_RGD_5");
+    }
+	WeaponSetPreset("Zombie_Charger_RGD_6")
+    {
+        Weapon("Charger_Fists_RGD_6");
+        Weapon("Charger_Charge_RGD_6");
+    }
+	WeaponSetPreset("Zombie_Charger_RGD_7")
+    {
+        Weapon("Charger_Fists_RGD_7");
+        Weapon("Charger_Charge_RGD_7");
+    }
+	WeaponSetPreset("Zombie_Charger_RGD_8")
+    {
+        Weapon("Charger_Fists_RGD_8");
+        Weapon("Charger_Charge_RGD_8");
+    }
+	WeaponSetPreset("Zombie_Charger_RGD_9")
+    {
+        Weapon("Charger_Fists_RGD_9");
+        Weapon("Charger_Charge_RGD_9");
+    }
+
+    WeaponSetPreset("Zombie_Volatile_RGD_1")
+    {
+        Weapon("Volatile_fists_RGD_1");
+    }
+	WeaponSetPreset("Zombie_Volatile_RGD_2")
+    {
+        Weapon("Volatile_fists_RGD_2");
+    }
+	WeaponSetPreset("Zombie_Volatile_RGD_3")
+    {
+        Weapon("Volatile_fists_RGD_3");
+    }
+	WeaponSetPreset("Zombie_Volatile_RGD_4")
+    {
+        Weapon("Volatile_fists_RGD_4");
+    }
+	WeaponSetPreset("Zombie_Volatile_RGD_5")
+    {
+        Weapon("Volatile_fists_RGD_5");
+    }
+	WeaponSetPreset("Zombie_Volatile_RGD_6")
+    {
+        Weapon("Volatile_fists_RGD_6");
+    }
+	WeaponSetPreset("Zombie_Volatile_RGD_7")
+    {
+        Weapon("Volatile_fists_RGD_7");
+    }
+	WeaponSetPreset("Zombie_Volatile_RGD_8")
+    {
+        Weapon("Volatile_fists_RGD_8");
+    }
+	WeaponSetPreset("Zombie_Volatile_RGD_9")
+    {
+        Weapon("Volatile_fists_RGD_9");
+    }
+    
+    WeaponSetPreset("Alpha_Zombie_RGD_1")
+    {
+        Weapon("Alpha_Zombie_Fists_RGD_1");
+    }
+	WeaponSetPreset("Alpha_Zombie_RGD_2")
+    {
+        Weapon("Alpha_Zombie_Fists_RGD_2");
+    }
+	WeaponSetPreset("Alpha_Zombie_RGD_3")
+    {
+        Weapon("Alpha_Zombie_Fists_RGD_3");
+    }
+	WeaponSetPreset("Alpha_Zombie_RGD_4")
+    {
+        Weapon("Alpha_Zombie_Fists_RGD_4");
+    }
+	WeaponSetPreset("Alpha_Zombie_RGD_5")
+    {
+        Weapon("Alpha_Zombie_Fists_RGD_5");
+    }
+	WeaponSetPreset("Alpha_Zombie_RGD_6")
+    {
+        Weapon("Alpha_Zombie_Fists_RGD_6");
+    }
+	WeaponSetPreset("Alpha_Zombie_RGD_7")
+    {
+        Weapon("Alpha_Zombie_Fists_RGD_7");
+    }
+	WeaponSetPreset("Alpha_Zombie_RGD_8")
+    {
+        Weapon("Alpha_Zombie_Fists_RGD_8");
+    }
+	WeaponSetPreset("Alpha_Zombie_RGD_9")
+    {
+        Weapon("Alpha_Zombie_Fists_RGD_9");
+    }
+
+    WeaponSetPreset("Waltz_Volatile")
+    {
+        Weapon("Waltz_Volatile_Fists");
+    }
+    WeaponSetPreset("Waltz_Fog_Level_1")
+    {
+        Weapon("Volatile_fists_RGD_1");
+        Weapon("Waltz_Rubble_RGD_1");
+    }
+    WeaponSetPreset("Waltz_Fog_Level_2")
+    {
+        Weapon("Volatile_fists_RGD_2");
+        Weapon("Waltz_Rubble_RGD_2");
+    }
+    WeaponSetPreset("Waltz_Fog_Level_3")
+    {
+        Weapon("Volatile_fists_RGD_3");
+        Weapon("Waltz_Rubble_RGD_3");
+    }
+    WeaponSetPreset("Waltz_Fog_Level_4")
+    {
+        Weapon("Volatile_fists_RGD_4");
+        Weapon("Waltz_Rubble_RGD_4");
+    }
+    WeaponSetPreset("Waltz_Fog_Level_5")
+    {
+        Weapon("Volatile_fists_RGD_5");
+        Weapon("Waltz_Rubble_RGD_5");
+    }
+    WeaponSetPreset("Waltz_Fog_Level_6")
+    {
+        Weapon("Volatile_fists_RGD_6");
+        Weapon("Waltz_Rubble_RGD_6");
+    }
+    WeaponSetPreset("Waltz_Fog_Level_7")
+    {
+        Weapon("Volatile_fists_RGD_7");
+        Weapon("Waltz_Rubble_RGD_7");
+    }
+    WeaponSetPreset("Waltz_Fog_Level_8")
+    {
+        Weapon("Volatile_fists_RGD_8");
+        Weapon("Waltz_Rubble_RGD_8");
+    }
+    WeaponSetPreset("Waltz_Fog_Level_9")
+    {
+        Weapon("Volatile_fists_RGD_9");
+        Weapon("Waltz_Rubble_RGD_9");
+    }
+    WeaponSetPreset("Waltz_Heavy_Level_1")
+    {
+        Weapon("Waltz_Heavy_Weapon_Level_1"); // NOT SET YET        
+        Weapon("Waltz_Rubble_RGD_1"); 
+        Weapon("Waltz_Throwable_Knife");
+    }
+    WeaponSetPreset("Waltz_Heavy_Level_2")
+    {
+        Weapon("Waltz_Heavy_Weapon_Level_2"); // NOT SET YET        
+        Weapon("Waltz_Rubble_RGD_2"); 
+        Weapon("Waltz_Throwable_Knife");
+    }
+    WeaponSetPreset("Waltz_Heavy_Level_3")
+    {
+        Weapon("Waltz_Heavy_Weapon_Level_3"); // NOT SET YET        
+        Weapon("Waltz_Rubble_RGD_3"); 
+        Weapon("Waltz_Throwable_Knife");
+    }
+    WeaponSetPreset("Waltz_Heavy_Level_4")
+    {
+        Weapon("Waltz_Heavy_Weapon_Level_4"); // NOT SET YET        
+        Weapon("Waltz_Rubble_RGD_4"); 
+        Weapon("Waltz_Throwable_Knife");
+    }
+    WeaponSetPreset("Waltz_Heavy_Level_5")
+    {
+        Weapon("Waltz_Heavy_Weapon_Level_5"); // NOT SET YET        
+        Weapon("Waltz_Rubble_RGD_5"); 
+        Weapon("Waltz_Throwable_Knife");
+    }
+    WeaponSetPreset("Waltz_Heavy_Level_6")
+    {
+        Weapon("Waltz_Heavy_Weapon_Level_6"); // NOT SET YET        
+        Weapon("Waltz_Rubble_RGD_6"); 
+        Weapon("Waltz_Throwable_Knife");
+    }
+    WeaponSetPreset("Waltz_Heavy_Level_7")
+    {
+        Weapon("Waltz_Heavy_Weapon_Level_7"); // NOT SET YET        
+        Weapon("Waltz_Rubble_RGD_7"); 
+        Weapon("Waltz_Throwable_Knife");
+    }
+    WeaponSetPreset("Waltz_Heavy_Level_8")
+    {
+        Weapon("Waltz_Heavy_Weapon_Level_8"); // NOT SET YET        
+        Weapon("Waltz_Rubble_RGD_8"); 
+        Weapon("Waltz_Throwable_Knife");
+    }
+    WeaponSetPreset("Waltz_Heavy_Level_9")
+    {
+        Weapon("Waltz_Heavy_Weapon_Level_9"); // NOT SET YET        
+        Weapon("Waltz_Rubble_RGD_9"); 
+        Weapon("Waltz_Throwable_Knife");
+    }
+
+    WeaponSetPreset("Zombie_Banshee_RGD_1")
+    {
+        Weapon("Banshee_Fists_RGD_1");
+    }
+	WeaponSetPreset("Zombie_Banshee_RGD_2")
+    {
+        Weapon("Banshee_Fists_RGD_2");
+    }
+	WeaponSetPreset("Zombie_Banshee_RGD_3")
+    {
+        Weapon("Banshee_Fists_RGD_3");
+    }
+	WeaponSetPreset("Zombie_Banshee_RGD_4")
+    {
+        Weapon("Banshee_Fists_RGD_4");
+    }
+	WeaponSetPreset("Zombie_Banshee_RGD_5")
+    {
+        Weapon("Banshee_Fists_RGD_5");
+    }
+	WeaponSetPreset("Zombie_Banshee_RGD_6")
+    {
+        Weapon("Banshee_Fists_RGD_6");
+    }
+	WeaponSetPreset("Zombie_Banshee_RGD_7")
+    {
+        Weapon("Banshee_Fists_RGD_7");
+    }
+	WeaponSetPreset("Zombie_Banshee_RGD_8")
+    {
+        Weapon("Banshee_Fists_RGD_8");
+    }
+	WeaponSetPreset("Zombie_Banshee_RGD_9")
+    {
+        Weapon("Banshee_Fists_RGD_9");
+    }
+
+    
+	WeaponSetPreset("Viral_RGD_0")
+    {
+        Weapon("Viral_Fists_RGD_0");
+    }
+	WeaponSetPreset("Viral_RGD_1")
+    {
+        Weapon("Viral_Fists_RGD_1");
+    }
+    WeaponSetPreset("Viral_RGD_2")
+    {
+        Weapon("Viral_Fists_RGD_2");
+    }
+    WeaponSetPreset("Viral_RGD_3")
+    {
+        Weapon("Viral_Fists_RGD_3");
+    }
+    WeaponSetPreset("Viral_RGD_4")
+    {
+        Weapon("Viral_Fists_RGD_4");
+    }
+    WeaponSetPreset("Viral_RGD_5")
+    {
+        Weapon("Viral_Fists_RGD_5");
+    }
+    WeaponSetPreset("Viral_RGD_6")
+    {
+        Weapon("Viral_Fists_RGD_6");
+    }
+    WeaponSetPreset("Viral_RGD_7")
+    {
+        Weapon("Viral_Fists_RGD_7");
+    }
+    WeaponSetPreset("Viral_RGD_8")
+    {
+        Weapon("Viral_Fists_RGD_8");
+    }
+    WeaponSetPreset("Viral_RGD_9")
+    {
+        Weapon("Viral_Fists_RGD_9");
+    }
+    
+	WeaponSetPreset("Viral_Chase_RGD_0")
+    {
+        Weapon("Viral_Chase_Fists_RGD_0");
+    }
+	WeaponSetPreset("Viral_Chase_RGD_1")
+    {
+        Weapon("Viral_Chase_Fists_RGD_1");
+    }
+    WeaponSetPreset("Viral_Chase_RGD_2")
+    {
+        Weapon("Viral_Chase_Fists_RGD_2");
+    }
+    WeaponSetPreset("Viral_Chase_RGD_3")
+    {
+        Weapon("Viral_Chase_Fists_RGD_3");
+    }
+    WeaponSetPreset("Viral_Chase_RGD_4")
+    {
+        Weapon("Viral_Chase_Fists_RGD_4");
+    }
+    WeaponSetPreset("Viral_Chase_RGD_5")
+    {
+        Weapon("Viral_Chase_Fists_RGD_5");
+    }
+    WeaponSetPreset("Viral_Chase_RGD_6")
+    {
+        Weapon("Viral_Chase_Fists_RGD_6");
+    }
+    WeaponSetPreset("Viral_Chase_RGD_7")
+    {
+        Weapon("Viral_Chase_Fists_RGD_7");
+    }
+    WeaponSetPreset("Viral_Chase_RGD_8")
+    {
+        Weapon("Viral_Chase_Fists_RGD_8");
+    }
+    WeaponSetPreset("Viral_Chase_RGD_9")
+    {
+        Weapon("Viral_Chase_Fists_RGD_9");
+    }
+    WeaponSetPreset("Suicider_RGD_1")
+    {
+        Weapon("Suicider_Explosion_Level_1");
+    }
+    WeaponSetPreset("Suicider_RGD_2")
+    {
+        Weapon("Suicider_Explosion_Level_2");
+    }
+    WeaponSetPreset("Suicider_RGD_3")
+    {
+        Weapon("Suicider_Explosion_Level_3");
+    }
+    WeaponSetPreset("Suicider_RGD_4")
+    {
+        Weapon("Suicider_Explosion_Level_4");
+    }
+    WeaponSetPreset("Suicider_RGD_5")
+    {
+        Weapon("Suicider_Explosion_Level_5");
+    }
+    WeaponSetPreset("Suicider_RGD_6")
+    {
+        Weapon("Suicider_Explosion_Level_6");
+    }
+    WeaponSetPreset("Suicider_RGD_7")
+    {
+        Weapon("Suicider_Explosion_Level_7");
+    }
+    WeaponSetPreset("Suicider_RGD_8")
+    {
+        Weapon("Suicider_Explosion_Level_8");
+    }
+	WeaponSetPreset("Suicider_RGD_9")
+    {
+        Weapon("Suicider_Explosion_Level_9");
+    }
+	
+	WeaponSetPreset("Zombie_Obstructor_RGD_1")
+    {
+        Weapon("Viral_Fists_RGD_1");
+    }
+    WeaponSetPreset("Zombie_Obstructor_RGD_2")
+    {
+        Weapon("Viral_Fists_RGD_2");
+    }
+    WeaponSetPreset("Zombie_Obstructor_RGD_3")
+    {
+        Weapon("Viral_Fists_RGD_3");
+    }
+    WeaponSetPreset("Zombie_Obstructor_RGD_4")
+    {
+        Weapon("Viral_Fists_RGD_4");
+    }
+    WeaponSetPreset("Zombie_Obstructor_RGD_5")
+    {
+        Weapon("Viral_Fists_RGD_5");
+    }
+    WeaponSetPreset("Zombie_Obstructor_RGD_6")
+    {
+        Weapon("Viral_Fists_RGD_6");
+    }
+    WeaponSetPreset("Zombie_Obstructor_RGD_7")
+    {
+        Weapon("Viral_Fists_RGD_7");
+    }
+    WeaponSetPreset("Zombie_Obstructor_RGD_8")
+    {
+        Weapon("Viral_Fists_RGD_8");
+    }
+    WeaponSetPreset("Zombie_Obstructor_RGD_9")
+    {
+        Weapon("Viral_Fists_RGD_9");
+    }
+    
+	WeaponSetPreset("Hermann_Mission_1")
+    {
+        Weapon("wpn_2hb_n_hermann_fpp_diff1");
+		use AI_Throwables();
+    }
+	WeaponSetPreset("Hermann_Mission_2")
+    {
+		Weapon("wpn_2hb_n_hermann_fpp_diff2");
+		use AI_Throwables();
+    }
+	WeaponSetPreset("Hermann_Mission_3")
+    {
+        Weapon("wpn_2hb_n_hermann_fpp_diff3");
+		use AI_Throwables();
+    }
+	WeaponSetPreset("Hermann_Mission_4")
+    {
+        Weapon("wpn_2hb_n_hermann_fpp_diff4");
+		use AI_Throwables();
+    }
+	WeaponSetPreset("Hermann_Mission_5")
+    {
+		Weapon("wpn_2hb_n_hermann_fpp_diff5");
+		use AI_Throwables();
+    }
+	WeaponSetPreset("Hermann_Mission_6")
+    {
+        Weapon("wpn_2hb_n_hermann_fpp_diff6");
+		use AI_Throwables();
+    }
+	WeaponSetPreset("Hermann_Mission_7")
+    {
+        Weapon("wpn_2hb_n_hermann_fpp_diff7");
+		use AI_Throwables();
+    }
+	WeaponSetPreset("Hermann_Mission_8")
+    {
+        Weapon("wpn_2hb_n_hermann_fpp_diff8");
+		use AI_Throwables();
+    }
+	WeaponSetPreset("Hermann_Mission_9")
+    {
+        Weapon("wpn_2hb_n_hermann_fpp_diff9");
+		use AI_Throwables();
+    }
+	WeaponSetPreset("Anderson_hostile_mission")
+    {
+        Weapon("wpn_15hs_b_anderson_fpp_r6");
+		use AI_Throwables();
+    }
+	WeaponSetPreset("Marco_mission")
+    {
+        Weapon("wpn_1hb_ham_m_marco_fpp_r11");
+		use AI_Throwables();
+    }
+	
+	WeaponSetPreset("Barney_mission")
+    {
+        Weapon("WPN_1HB_STK_A_barney_fpp_r4");
+		use AI_Throwables();
+    }
+	
+	WeaponSetPreset("Francis")
+    {
+        Weapon("wpn_1hb_stk_h_francis_fpp_r6");
+		use AI_Throwables();
+    }
+	
+	WeaponSetPreset("Avery")
+    {
+        Weapon("wpn_1hs_mach_t_avery_fpp_r6");
+		use AI_Throwables();
+    }
+	
+	WeaponSetPreset("ColonelsChampion")
+    {
+        Weapon("wpn_2hb_f_colonelschampion");
+        use AI_Throwable_Knife_Boss();
+    }
+	WeaponSetPreset("Hakon")
+    {
+        Weapon("wpn_1hs_axe_k_hakon_fpp");
+        use AI_Throwable_Knife_Boss();
+    }
+	WeaponSetPreset("Bart_hostile")
+    {
+        Weapon("wpn_1hs_mach_p_bart_fpp_r6");
+		use AI_Throwables();
+    }
+	WeaponSetPreset("Jack")
+    {
+        Weapon("wpn_1hs_mach_s_fpp_r6_dukes");
+		use AI_Throwables();
+    }
+	WeaponSetPreset("Joe")
+    {
+        Weapon("wpn_1hb_mace_f_fpp_r6_dukes");
+		use AI_Throwables();
+    }
+	
+	
+	WeaponSetPreset("E3_Renegades_Heavy")
+    {
+        Weapon("wpn_2hb_E3");
+        Weapon("AI_Throwable_Knife");
+    }
+	
+	///Trailer presets below
+	WeaponSetPreset("PK_marketing_Trailer")
+    {
+        Weapon("wpn_1hs_mach_j_fpp_r5");
+    }
+
+	WeaponSetPreset("wpn_1hb_stk_a_fpp")
+    {
+        Weapon("wpn_1hb_stk_a_fpp_r1");
+    }
+
+	WeaponSetPreset("wpn_1hb_stk_a_fpp_dukes")
+    {
+        Weapon("wpn_1hb_stk_a_fpp_r1_dukes");
+    }
+
+
+	WeaponSetPreset("wpn_1hb_mace_f_fpp")
+    {
+        Weapon("wpn_1hb_mace_f_fpp_r1");
+    }
+	
+	WeaponSetPreset("wpn_1hb_mace_f_fpp_dukes")
+    {
+        Weapon("wpn_1hb_mace_f_fpp_r1_dukes");
+    }
+
+	WeaponSetPreset("wpn_1hs_axe_p")
+    {
+        Weapon("wpn_1hs_axe_p_fpp_r1");
+    }
+	
+	WeaponSetPreset("wpn_1hs_axe_p_dukes")
+    {
+        Weapon("wpn_1hs_axe_p_fpp_r1_dukes");
+    }
+	
+
+	WeaponSetPreset("wpn_2hs_d_fpp_dukes")
+    {
+        Weapon("wpn_2hs_d_fpp_r1_dukes");
+    }
+	
+		WeaponSetPreset("wpn_2hs_d_fpp")
+    {
+        Weapon("wpn_2hs_d_fpp_r1");
+    }
+
+	WeaponSetPreset("wpn_1hs_axe_g_dukes")
+    {
+        Weapon("wpn_1hs_axe_g_fpp_r1");
+    }	
+	
+		WeaponSetPreset("wpn_1hs_axe_g")
+    {
+        Weapon("wpn_1hs_axe_g_fpp_r1");
+    }	
+	
+	WeaponSetPreset("wpn_1hs_mach_s_fpp_r0_dukes")
+    {
+        Weapon("wpn_1hs_mach_s_fpp_r0_dukes");
+    }	
+	
+	
+
+	WeaponSetPreset("WPN_1HB_HAM_M_FPP")
+    {
+        Weapon("WPN_1HB_HAM_M_FPP_r1");
+    }	
+	
+	WeaponSetPreset("wpn_1hb_ham_a_fpp_r1_dukes")
+    {
+        Weapon("wpn_1hb_ham_a_fpp_r1_dukes");
+    }	
+
+
+
+	WeaponSetPreset("wpn_lbow_d_fpp")
+    {
+        Weapon("wpn_2hp_bow_t1");
+    }	
+
+	WeaponSetPreset("WPN_1Hs_mach_G_FPP")
+    {
+        Weapon("WPN_1Hs_mach_G_FPP_r1");
+    }		
+
+	WeaponSetPreset("WPN_1HB_HAM_I_FPP")
+    {
+        Weapon("WPN_1HB_HAM_I_FPP_r1");
+    }	
+
+	WeaponSetPreset("wpn_1hs_mach_h")
+    {
+        Weapon("wpn_1hs_mach_h_fpp_r1");
+    }	
+
+	WeaponSetPreset("wpn_1hs_mach_l_fpp")
+    {
+        Weapon("wpn_1hs_mach_l_fpp_r0");
+    }		
+	
+	WeaponSetPreset("wpn_1hs_mach_l_fpp_dukes")
+    {
+        Weapon("wpn_1hs_mach_l_fpp_r0_dukes");
+    }		
+	
+	WeaponSetPreset("wpn_1hb_mace_b_fpp_dukes")
+    {
+        Weapon("wpn_1hb_mace_b_fpp_r0_dukes");
+    }	
+	
+	WeaponSetPreset("wpn_1hb_mace_b_fpp")
+    {
+        Weapon("wpn_1hb_mace_b_fpp_r0");
+    }	
+}

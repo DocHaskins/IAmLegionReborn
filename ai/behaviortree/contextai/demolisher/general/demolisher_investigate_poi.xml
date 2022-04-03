@@ -42,18 +42,6 @@
                                         </Selector>
                                     </ExposePOIInspection>
                                 </Optional>
-                                <Selector>
-                                    <Sequence>
-                                        <Cnd_AreOthersInspectingPOI m_Invert="true"/>
-                                        <Cnd_IsBBValueEqual_bool m_Key="#poi_active" m_Value="false"/>
-                                    </Sequence>
-                                    <Runner>
-                                        <SequenceMem>
-                                            <Opr_SetBBValue_bool m_Key="#can_inspect" m_Value="false"/>
-                                            <Act_Investigation m_Type="STANDBY" m_StimulusType="NOISE" m_StimulusPosition="#poi_position" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
-                                        </SequenceMem>
-                                    </Runner>
-                                </Selector>
                             </SequenceMem>
                         </ExposeLogicState>
                     </SequenceMem>

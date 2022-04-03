@@ -1,26 +1,27 @@
 sub Human_HighAlert_FOV()
 {
-    range("30.0");
-    range_effective("5.0");
-    range_vertical_up("12.0");
-    range_vertical_down("12.0");
-    angle("120.0");
-    darkness_modifier("0.7");
-    secondary_angle("180");
-    secondary_range("5.0");
+    range("25.0");
+	range_effective("20.0");
+	range_vertical_up("3.0");
+	min_horz_range_for_full_up_range("4.0");
+	range_vertical_down("10.0");
+	angle("80.0");
+	darkness_modifier("0.7");
+	secondary_angle("160");
+	secondary_range("5.0");
 }
 
 sub Human_LowAlert_FOV()
 {
-    range("25.0");
-    range_effective("5.0");
-    range_vertical_up("3.0");
-    min_horz_range_for_full_up_range("5.0");
-    range_vertical_down("10.0");
-    angle("80.0");
-    darkness_modifier("0.7");
-    secondary_angle("160");
-    secondary_range("5.0");
+	range("25.0");
+	range_effective("20.0");
+	range_vertical_up("3.0");
+	min_horz_range_for_full_up_range("4.0");
+	range_vertical_down("10.0");
+	angle("80.0");
+	darkness_modifier("0.7");
+	secondary_angle("160");
+	secondary_range("5.0");
 }
 
 sub main()
@@ -43,20 +44,20 @@ sub main()
     }
     SensorParamsFOV("banshee_default")
     {
-        range("12.0");
-        range_effective("5.0");
-        range_vertical_up("3.0");
-        min_horz_range_for_full_up_range("4.0");
-        range_vertical_down("20.0");
+        range("30.0");
+        range_effective("20.0");
+        range_vertical_up("5.0");
+        min_horz_range_for_full_up_range("2.0");
+        range_vertical_down("30.0");
         angle("90.0");
     }
     SensorParamsFOV("banshee_high_alert")
     {
         range("40.0");
-        range_effective("5.0");
-        range_vertical_up("5.0");
-        min_horz_range_for_full_up_range("1.0");
-        range_vertical_down("20.0");
+        range_effective("25.0");
+        range_vertical_up("8.0");
+        min_horz_range_for_full_up_range("0.5");
+        range_vertical_down("50.0");
         angle("150.0");
     }
     SensorParamsFOV("biter_night_low_alert")
@@ -367,15 +368,39 @@ sub main()
     }
     SensorParamsFOV("human_default")
     {
-        use Human_LowAlert_FOV();
+		range("25.0");
+		range_effective("15.0");
+		range_vertical_up("3.0");
+		min_horz_range_for_full_up_range("4.0");
+		range_vertical_down("10.0");
+		angle("80.0");
+		darkness_modifier("0.7");
+		secondary_angle("160");
+		secondary_range("5.0");
     }
     SensorParamsFOV("human_medium_alert")
     {
-        use Human_LowAlert_FOV();
+        range("25.0");
+		range_effective("17.5");
+		range_vertical_up("3.0");
+		min_horz_range_for_full_up_range("4.0");
+		range_vertical_down("10.0");
+		angle("80.0");
+		darkness_modifier("0.7");
+		secondary_angle("160");
+		secondary_range("5.0");
     }
     SensorParamsFOV("human_high_alert")
     {
-        use Human_HighAlert_FOV();
+        range("25.0");
+		range_effective("20.0");
+		range_vertical_up("3.0");
+		min_horz_range_for_full_up_range("4.0");
+		range_vertical_down("10.0");
+		angle("80.0");
+		darkness_modifier("0.7");
+		secondary_angle("160");
+		secondary_range("5.0");
     }
     SensorParamsFOV("human_resting")
     {
@@ -396,39 +421,111 @@ sub main()
     }
     SensorParamsFOV("human_level_1_RGD")
     {
-        use Human_LowAlert_FOV();
+		range("25.0");
+		range_effective("15.0");
+		range_vertical_up("3.0");
+		min_horz_range_for_full_up_range("4.0");
+		range_vertical_down("10.0");
+		angle("80.0");
+		darkness_modifier("0.7");
+		secondary_angle("160");
+		secondary_range("5.0");
     }
     SensorParamsFOV("human_level_2_RGD")
     {
-        use Human_LowAlert_FOV();
+        range("25.0");
+		range_effective("16.0");
+		range_vertical_up("3.0");
+		min_horz_range_for_full_up_range("4.0");
+		range_vertical_down("10.0");
+		angle("80.0");
+		darkness_modifier("0.7");
+		secondary_angle("160");
+		secondary_range("5.0");
     }
     SensorParamsFOV("human_level_3_RGD")
     {
-        use Human_LowAlert_FOV();
+        range("25.0");
+		range_effective("17.0");
+		range_vertical_up("3.0");
+		min_horz_range_for_full_up_range("4.0");
+		range_vertical_down("10.0");
+		angle("80.0");
+		darkness_modifier("0.7");
+		secondary_angle("160");
+		secondary_range("5.0");
     }
     SensorParamsFOV("human_level_4_RGD")
     {
-        use Human_LowAlert_FOV();
+        range("25.0");
+		range_effective("18.0");
+		range_vertical_up("3.0");
+		min_horz_range_for_full_up_range("4.0");
+		range_vertical_down("10.0");
+		angle("80.0");
+		darkness_modifier("0.7");
+		secondary_angle("160");
+		secondary_range("5.0");
     }
     SensorParamsFOV("human_level_5_RGD")
     {
-        use Human_LowAlert_FOV();
+        range("25.0");
+		range_effective("19.0");
+		range_vertical_up("3.0");
+		min_horz_range_for_full_up_range("4.0");
+		range_vertical_down("10.0");
+		angle("80.0");
+		darkness_modifier("0.7");
+		secondary_angle("160");
+		secondary_range("5.0");
     }
     SensorParamsFOV("human_level_6_RGD")
     {
-        use Human_LowAlert_FOV();
+        range("25.0");
+		range_effective("20.0");
+		range_vertical_up("3.0");
+		min_horz_range_for_full_up_range("4.0");
+		range_vertical_down("10.0");
+		angle("80.0");
+		darkness_modifier("0.7");
+		secondary_angle("160");
+		secondary_range("5.0");
     }
     SensorParamsFOV("human_level_7_RGD")
     {
-        use Human_LowAlert_FOV();
+        range("25.0");
+		range_effective("20.5");
+		range_vertical_up("3.0");
+		min_horz_range_for_full_up_range("4.0");
+		range_vertical_down("10.0");
+		angle("80.0");
+		darkness_modifier("0.7");
+		secondary_angle("160");
+		secondary_range("5.0");
     }
     SensorParamsFOV("human_level_8_RGD")
     {
-        use Human_LowAlert_FOV();
+        range("25.0");
+		range_effective("21.0");
+		range_vertical_up("3.0");
+		min_horz_range_for_full_up_range("4.0");
+		range_vertical_down("10.0");
+		angle("80.0");
+		darkness_modifier("0.7");
+		secondary_angle("160");
+		secondary_range("5.0");
     }
     SensorParamsFOV("human_level_9_RGD")
     {
-        use Human_LowAlert_FOV();
+        range("25.0");
+		range_effective("21.5");
+		range_vertical_up("3.0");
+		min_horz_range_for_full_up_range("4.0");
+		range_vertical_down("10.0");
+		angle("80.0");
+		darkness_modifier("0.7");
+		secondary_angle("160");
+		secondary_range("5.0");
     }
     SensorParamsFOV("human_level_1_RGD_medium")
     {
@@ -570,8 +667,8 @@ sub main()
     }
     SensorParamsFOV("viral_low_alert")
     {
-        range("15.0");
-        range_effective("2.0");
+        range("20.0");
+        range_effective("10.0");
         range_vertical_up("5.0");
         min_horz_range_for_full_up_range("5.0");
         range_vertical_down("10.0");
@@ -581,7 +678,7 @@ sub main()
     SensorParamsFOV("viral_high_alert")
     {
         range("25.0");
-        range_effective("8.0");
+        range_effective("15.0");
         range_vertical_up("25.0");
         min_horz_range_for_full_up_range("0.1");
         range_vertical_down("15.0");
@@ -589,8 +686,8 @@ sub main()
     }
     SensorParamsFOV("viral_chase_low_alert")
     {
-        range("15.0");
-        range_effective("8.0");
+        range("35.0");
+        range_effective("12.0");
         range_vertical_up("25.0");
         min_horz_range_for_full_up_range("0.1");
         range_vertical_down("15.0");
@@ -598,8 +695,8 @@ sub main()
     }
     SensorParamsFOV("viral_chase_high_alert")
     {
-        range("25.0");
-        range_effective("8.0");
+        range("35.0");
+        range_effective("15.0");
         range_vertical_up("25.0");
         min_horz_range_for_full_up_range("0.1");
         range_vertical_down("15.0");
@@ -607,9 +704,9 @@ sub main()
     }
     SensorParamsFOV("viral_level_1_RGD")
     {
-        range("25.0");
-        range_effective("10.0");
-        range_vertical_up("4.0");
+        range("20.0");
+        range_effective("4.0");
+        range_vertical_up("3.0");
         min_horz_range_for_full_up_range("5.0");
         range_vertical_down("10.0");
         angle("70.0");
@@ -617,9 +714,9 @@ sub main()
     }
     SensorParamsFOV("viral_level_2_RGD")
     {
-        range("25.0");
-        range_effective("10.0");
-        range_vertical_up("4.0");
+        range("21.0");
+        range_effective("4.0");
+        range_vertical_up("3.0");
         min_horz_range_for_full_up_range("5.0");
         range_vertical_down("10.0");
         angle("70.0");
@@ -627,9 +724,9 @@ sub main()
     }
     SensorParamsFOV("viral_level_3_RGD")
     {
-        range("25.0");
-        range_effective("10.0");
-        range_vertical_up("4.0");
+        range("22.0");
+        range_effective("4.0");
+        range_vertical_up("3.0");
         min_horz_range_for_full_up_range("5.0");
         range_vertical_down("10.0");
         angle("70.0");
@@ -637,9 +734,9 @@ sub main()
     }
     SensorParamsFOV("viral_level_4_RGD")
     {
-        range("25.0");
-        range_effective("10.0");
-        range_vertical_up("4.0");
+        range("23.0");
+        range_effective("4.0");
+        range_vertical_up("3.0");
         min_horz_range_for_full_up_range("5.0");
         range_vertical_down("10.0");
         angle("70.0");
@@ -647,9 +744,9 @@ sub main()
     }
     SensorParamsFOV("viral_level_5_RGD")
     {
-        range("25.0");
-        range_effective("10.0");
-        range_vertical_up("4.0");
+        range("24.0");
+        range_effective("4.0");
+        range_vertical_up("3.0");
         min_horz_range_for_full_up_range("5.0");
         range_vertical_down("10.0");
         angle("70.0");
@@ -658,8 +755,8 @@ sub main()
     SensorParamsFOV("viral_level_6_RGD")
     {
         range("25.0");
-        range_effective("10.0");
-        range_vertical_up("4.0");
+        range_effective("4.0");
+        range_vertical_up("3.0");
         min_horz_range_for_full_up_range("5.0");
         range_vertical_down("10.0");
         angle("70.0");
@@ -667,9 +764,9 @@ sub main()
     }
     SensorParamsFOV("viral_level_7_RGD")
     {
-        range("25.0");
-        range_effective("10.0");
-        range_vertical_up("4.0");
+        range("26.0");
+        range_effective("5.0");
+        range_vertical_up("3.0");
         min_horz_range_for_full_up_range("5.0");
         range_vertical_down("10.0");
         angle("70.0");
@@ -677,9 +774,9 @@ sub main()
     }
     SensorParamsFOV("viral_level_8_RGD")
     {
-        range("25.0");
-        range_effective("10.0");
-        range_vertical_up("4.0");
+        range("27.0");
+        range_effective("5.5");
+        range_vertical_up("3.0");
         min_horz_range_for_full_up_range("5.0");
         range_vertical_down("10.0");
         angle("70.0");
@@ -687,8 +784,8 @@ sub main()
     }
     SensorParamsFOV("viral_level_9_RGD")
     {
-        range("25.0");
-        range_effective("10.0");
+        range("30.0");
+        range_effective("7.0");
         range_vertical_up("4.0");
         min_horz_range_for_full_up_range("5.0");
         range_vertical_down("10.0");
@@ -787,26 +884,26 @@ sub main()
     }
     SensorParamsFOV("volatile_low_alert")
     {
-        range("20.0");
-        range_effective("5.0");
-        range_vertical_up("3.0");
-        min_horz_range_for_full_up_range("5.0");
-        range_vertical_down("10.0");
+        range("30.0");
+        range_effective("7.0");
+        range_vertical_up("4.0");
+        min_horz_range_for_full_up_range("2.5");
+        range_vertical_down("20.0");
         angle("120.0");
     }
     SensorParamsFOV("volatile_medium_alert")
     {
-        range("20.0");
-        range_effective("5.0");
+        range("35.0");
+        range_effective("7.5");
         range_vertical_up("10.0");
-        min_horz_range_for_full_up_range("5.0");
-        range_vertical_down("10.0");
+        min_horz_range_for_full_up_range("2.0");
+        range_vertical_down("20.0");
         angle("135.0");
     }
     SensorParamsFOV("volatile_high_alert")
     {
-        range("35.0");
-        range_effective("8.0");
+        range("40.0");
+        range_effective("10.0");
         range_vertical_up("25.0");
         min_horz_range_for_full_up_range("0.1");
         range_vertical_down("10.0");

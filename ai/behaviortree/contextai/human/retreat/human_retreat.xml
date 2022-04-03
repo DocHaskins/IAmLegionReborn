@@ -14,7 +14,7 @@
                     <Cnd_IsHoldRequired m_Invert="true"/>
                     <Selector>
                         <Cnd_IsCombatTargetHighThreat/>
-                        <Cnd_HasHealthLowerThan m_HealthLevel="0.5"/>
+                        <Cnd_HasHealthLowerThan m_HealthLevel="0.3"/>
                     </Selector>
                 </Sequence>
             </Optional>
@@ -41,6 +41,7 @@
                                             <Opr_SetBBValue_bool m_Key="#disable_forced_retreat" m_Value="true"/>
                                         </Optional>
                                     </Selector>
+									<Opr_SetBBValue_bool m_Key="#disable_forced_retreat" m_Value="true"/>
                                 </Sequence>
                             </CooldownTimeDelta>
                             <Sequence>

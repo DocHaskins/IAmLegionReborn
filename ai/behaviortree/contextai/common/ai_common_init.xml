@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Sequence>
+        <Opr_SetBBValue_bool m_Key="#searching" m_Value="true"/>
+        <Opr_SetBBValue_bool m_Key="#should_check_last_target_pos" m_Value="true"/>
+        <Opr_SetBBValue_bool m_Key="#is_awake" m_Value="true"/>
+        <Selector>
+            <Cnd_HasBBValue m_Key="#ai_starting_pos"/>
+            <Opr_GetSelfPosition m_Position="#ai_starting_pos"/>
+        </Selector>
+    </Sequence>
+</BehaviorTree>

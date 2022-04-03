@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Sequence m_CustomName="Idle">
+        <Succeeder>
+            <SequenceMem>
+                <Cnd_HasBBValue m_Key="#target"/>
+                <Cnd_TargetInAngle m_Target="#target" m_Angle="45.00" m_Invert="true"/>
+                <Act_TurnToPos m_Position="#target_pos" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+            </SequenceMem>
+        </Succeeder>
+		<ExternalTree m_UID="HUMAN_IDLE_RANDOM_WALK" m_CustomName="Idle"/>
+    </Sequence>
+</BehaviorTree>

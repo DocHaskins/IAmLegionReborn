@@ -16,16 +16,6 @@
             </Sequence>
         </Succeeder>
         <Succeeder>
-			<Selector>
-				<Cnd_TargetInRadius m_Target="#target" m_Radius="20.0" m_HorizontalOnly="true"/>
-				<Cnd_HasWeaponInInventory m_WeaponType="Bow"/>
-                <Opr_RequestCombatSlot m_Name="range" m_Limit="$combat_slot_range_limit" m_MinDelay="$combat_slot_range_min_delay" m_MaxKeepTime="$combat_slot_range_max_keep_time" m_Cost="#role_cost"/>
-                <Opr_SetBBValue_string m_Key="#role" m_Value="range"/>
-			</Selector>
-			<Selector>
-				<Cnd_TargetInRadius m_Target="#target" m_Radius="6.0" m_HorizontalOnly="true"/>
-				<ExternalTree m_UID="HUMAN_COMBAT_ONE_HANDED" m_CustomName="Bow" m_Hide="true"/>
-			</Selector>
             <Selector>
                 <Sequence>
                     <Opr_GetPathDistanceToCombatTarget m_PathLength="#attack_cost"/>

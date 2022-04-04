@@ -17,6 +17,10 @@
                         <Selector>
                             <ExternalTree m_UID="SPITTER_REACTION" m_CustomName="Reaction" m_Hide="true"/>
                             <ExternalTree m_UID="SPITTER_COMBAT" m_CustomName="Combat" m_Hide="true"/>
+							<Sequence>
+								<Cnd_IsNight/>
+								<ExternalTree m_UID="SPITTER_IDLE_RANDOM_WALK" m_CustomName="Idle_Random_Walk"/>
+							</Sequence>
                             <ExternalTree m_UID="INFECTED_ESCAPE_FROM_SUNLIGHT" m_CustomName="Sunlight_Escape" m_Hide="true"/>
                             <ExternalTree m_UID="SPITTER_CHASE" m_CustomName="Chase" m_Hide="true"/>
                             <Sequence>
@@ -32,7 +36,6 @@
                     <Act_Status m_StatusRequired="RUNNING"/>
                 </ExposeTarget>
                 <ExternalTree m_UID="AI_TRACK" m_CustomName="TrackEnemy" m_Hide="true"/>
-				<ExternalTree m_UID="SPITTER_IDLE_RANDOM_WALK" m_CustomName="Idle_Random_Walk"/>
             </ParallelRepeat>
         </Selector>
     </SequenceMem>

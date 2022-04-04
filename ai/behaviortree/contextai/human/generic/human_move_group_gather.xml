@@ -17,6 +17,7 @@
                         m_MoveStyle="#move_style_trot"
                         m_StopAtDest="true"
                         m_TeleportIfBlocked="true"
+						m_IsAvoidanceActive="$use_avoidance"									
                         m_AvoidRegionsPreset="$avoid_regions_preset"
                         m_StartPolicy="INTERRUPT"
                         m_AbandonPolicy="BLENDOUT"
@@ -37,12 +38,12 @@
                                 m_MoveStyle="#move_style_walk"
                                 m_StopAtDest="true"
                                 m_TeleportIfBlocked="true"
+								m_IsAvoidanceActive="false"						   
                                 m_AvoidRegionsPreset="$avoid_regions_preset"
                                 m_StartPolicy="INTERRUPT"
                                 m_AbandonPolicy="BLENDOUT"
                                 m_DecisionPolicy="ON_END"
                                 m_StopRequest="REGULAR"/>
-
                         </Sequence>
                         <SequenceMem>
                             <Opr_GetSelfPosition m_Position="#last_look_around_pos"/>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Cnd_CanStartTask m_StartPolicy="DISCARD"/>
+        <Cnd_IsAlertLevelEqual m_AlertLevel="Low" m_Invert="true"/>
+        <Selector>
+            <Sequence>
+                <Cnd_HasBBValue m_Key="#last_target_pos"/>
+                <Opr_SetBBValue_vec3 m_Key="#last_investigated_pos" m_Value="#last_target_pos"/>
+            </Sequence>
+            <Sequence>
+                <Cnd_HasBBValue m_Key="#poi_position"/>
+                <Selector>
+                    <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="DeadAlly"/>
+                    <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="CallForHelp"/>
+                    <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="Attack"/>
+                    <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="HighPrioNoise"/>
+                </Selector>
+                <Cnd_IsBBValueEqual_EPOIEffect m_Key="#noise_effect" m_Value="REPEL" m_Invert="true"/>
+                <Opr_SetBBValue_vec3 m_Key="#last_investigated_pos" m_Value="#poi_position"/>
+            </Sequence>
+        </Selector>
+        <Cnd_HasBBValue m_Key="#target" m_Invert="true"/>
+        <!-- change to any weapon -->
+        <Opr_RequestBark m_BarkID="search_start" m_Priority="High"/>
+        <SetFlagOnRunning m_Key="#searching">
+            <ExposePOIOwner m_PoiOwner="#poi_owner">
+                <ExposeLogicState m_ExposedState="checking_high_prio_poi">
+                    <SequenceMem>
+                        <Opr_GetSelfPosition m_Position="#self_pos"/>
+                        <Opr_GetDirectionFromPosition m_Position="#last_investigated_pos" m_Origin="#self_pos" m_Direction="#search_dir"/>
+                        <Opr_GetPositionInDirection m_Distance="5" m_Position="#search_pos" m_Origin="#self_pos" m_Direction="#search_dir"/>
+                        <TimeDeltaLimitRandom m_TimeMin="4" m_TimeMax="6" m_StatusReturned="SUCCESS">
+                            <Act_Move m_Destination="#search_pos" m_MoveStyle="#move_style_walk_suspicious" m_MoveAwayFromEndPosition="true" m_StopAtDest="true" m_IsAvoidanceActive="$use_avoidance" m_AvoidConnections="$search_avoid_connections" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                        </TimeDeltaLimitRandom>
+                        <RunUntilSuccess>
+                            <SelectorMem>
+                                <Cnd_IsAlertLevelEqual m_AlertLevel="Low"/>
+                                <Failer>
+                                    <SequenceMem>
+                                        <SelectorMem>
+                                            <Cnd_Random m_Value="0.5"/>
+                                            <SequenceMem>
+                                                <Opr_GetSelfPosition m_Position="#self_pos"/>
+                                                <Opr_GetDirectionFromPosition m_Position="#last_investigated_pos" m_Origin="#self_pos" m_Direction="#search_dir"/>
+                                                <Opr_GetPositionInDirection m_Distance="5" m_Position="#search_pos" m_Origin="#self_pos" m_Direction="#search_dir"/>
+                                                <TimeDeltaLimitRandom m_TimeMin="4" m_TimeMax="6" m_StatusReturned="SUCCESS">
+                                                    <Act_Move m_Destination="#search_pos" m_MoveStyle="#move_style_walk_suspicious" m_MoveAwayFromEndPosition="true" m_StopAtDest="true" m_IsAvoidanceActive="$use_avoidance" m_AvoidConnections="$search_avoid_connections" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                                </TimeDeltaLimitRandom>
+                                            </SequenceMem>
+                                        </SelectorMem>
+                                        <TimeDeltaLimitRandom m_TimeMin="4" m_TimeMax="8" m_StatusReturned="SUCCESS">
+                                            <Act_Investigation m_Type="STANDBY" m_StimulusType="ENEMY" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                        </TimeDeltaLimitRandom>
+                                    </SequenceMem>
+                                </Failer>
+                            </SelectorMem>
+                        </RunUntilSuccess>
+                    </SequenceMem>
+                </ExposeLogicState>
+            </ExposePOIOwner>
+        </SetFlagOnRunning>
+        <Opr_RemoveBBValue m_Key="#poi_position"/>
+        <Opr_RemoveBBValue m_Key="#poi_type"/>
+        <Opr_RemoveBBValue m_Key="#poi_owner"/>
+        <Opr_RemoveBBValue m_Key="#noise_effect"/>
+        <Opr_RequestBark m_BarkID="search_finished" m_Priority="Medium"/>
+    </SequenceMem>
+</BehaviorTree>

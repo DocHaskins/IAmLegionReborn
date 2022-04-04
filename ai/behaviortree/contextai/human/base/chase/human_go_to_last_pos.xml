@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Cnd_CanStartTask m_StartPolicy="DISCARD"/>
+        <Starter m_Key="#should_check_last_target_pos">
+            <Sequence>
+                <Cnd_HasBBValue m_Key="#last_target"/>
+                <Cnd_IsAlertLevelEqual m_AlertLevel="Low" m_Invert="true"/>
+                <Selector>
+                    <Cnd_HasBBValue m_Key="#poi_position" m_Invert="true"/>
+                    <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="HighPrioNoise" m_Invert="true"/>
+                </Selector>
+                <ExposeLogicState m_ExposedState="chasing">
+                    <SequenceMem>
+                        <SelectorMem>
+                            <Cnd_PositionInRadius m_Radius="1.0" m_Position="#last_target_pos"/>
+                            <Cnd_IsBBValueEqual_EThreatLevel m_Key="#group_threat_level" m_Value="HIGH" m_Invert="true"/>
+                            <Cnd_IsHoldRequired/>
+                            <Cnd_IsDefendRequired/>
+                            <Cnd_IsPositionInRestrictedArea m_Position="#last_target_pos" m_Invert="true"/>
+                            <SequenceMem>
+                                <Opr_GetTargetMoveDirection m_Target="#last_target" m_Direction="#last_target_move_dir"/>
+                                <Act_Move m_Destination="#last_target_pos" m_EndDir="#last_target_move_dir" m_MoveStyle="#move_style_walk" m_StopAtDest="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                            </SequenceMem>
+                        </SelectorMem>
+                        <!--<Opr_RequestBark m_Priority="Low" m_BarkID="enemy_lost"/> -->
+                    </SequenceMem>
+                </ExposeLogicState>
+            </Sequence>
+        </Starter>
+    </SequenceMem>
+</BehaviorTree>

@@ -39,12 +39,12 @@
                                             <ExposeLogicState m_ExposedState="checking_target_position">
                                                 <CombatSlot m_Name="poi_investigation" m_Limit="3" m_MaxKeepTime="40" m_Cost="#poi_distance">
                                                     <SequenceMem>
-                                                        <Opr_RequestBark m_BarkID="poi_possible_enemy" m_Priority="High"/>
+                                                        <!-- <Opr_RequestBark m_BarkID="poi_possible_enemy" m_Priority="High"/> -->
                                                         <Act_Move m_Destination="#poi_position" m_MoveStyle="#move_style_walk_suspicious" m_StopAtDest="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
                                                         <TimeDeltaLimit m_TimeMax="2" m_StatusReturned="SUCCESS">
                                                             <Act_Investigation m_Type="INSPECT" m_StimulusType="ENEMY" m_StimulusPosition="#poi_position" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
                                                         </TimeDeltaLimit>
-                                                        <Opr_RequestBark m_BarkID="poi_investigation_finish" m_Priority="Medium"/>
+                                                        <!-- <Opr_RequestBark m_BarkID="poi_investigation_finish" m_Priority="Medium"/> -->
                                                     </SequenceMem>
                                                 </CombatSlot>
                                             </ExposeLogicState>
@@ -52,13 +52,11 @@
                                     </ExposePOIInspection>
                                 </Optional>
                                 <SequenceMem m_CustomName="sight">
-                                    <Opr_RequestBark m_BarkID="poi_generic_low_alert" m_Priority="Medium"/>
+                                    <!--<Opr_RequestBark m_BarkID="poi_generic_low_alert" m_Priority="Medium"/> -->
                                     <ExposeLogicState m_ExposedState="detecting_target">
                                         <SequenceMem>
                                             <Act_Investigation m_Type="DETECT" m_StimulusType="ENEMY" m_StimulusPosition="#poi_position" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
-                                            <Selector>
-                                                <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="Enemy" m_Invert="true"/>
-                                            </Selector>
+                                            <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="Enemy" m_Invert="true"/>
                                         </SequenceMem>
                                     </ExposeLogicState>
                                 </SequenceMem>
@@ -243,7 +241,7 @@
                                                         <Cnd_IsDefendRequired/>
                                                         <Cnd_IsPositionInRestrictedArea m_Position="#poi_position" m_Invert="true"/>
                                                         <SequenceMem>
-                                                            <Opr_RequestBark m_BarkID="poi_investigation_start" m_Priority="Medium"/>
+                                                            <!-- <Opr_RequestBark m_BarkID="poi_investigation_start" m_Priority="Medium"/> -->
                                                             <SelectorMem>
                                                                 <SequenceMem>
                                                                     <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="HighPrioNoise"/>
@@ -254,7 +252,7 @@
                                                             <TimeDeltaLimit m_TimeMax="2" m_StatusReturned="SUCCESS">
                                                                 <Act_Investigation m_Type="INSPECT" m_StimulusType="NOISE" m_StimulusPosition="#poi_position" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
                                                             </TimeDeltaLimit>
-                                                            <Opr_RequestBark m_BarkID="poi_investigation_finish" m_Priority="Medium"/>
+                                                            <!-- <Opr_RequestBark m_BarkID="poi_investigation_finish" m_Priority="Medium"/> -->
                                                         </SequenceMem>
                                                     </SelectorMem>
                                                 </Selector>

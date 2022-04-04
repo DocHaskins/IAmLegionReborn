@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Sequence>
+        <!-- high alert trigger -->
+        <Succeeder>
+            <Sequence>
+                <Cnd_GenericBehaviorDisallowed m_Invert="true"/>
+                <Cnd_IsAlertLevelEqual m_AlertLevel="High"/>
+                <Cnd_HasBBValue m_Key="#high_alert_triggered" m_Invert="true"/>
+                <Opr_SetBBValue_bool m_Key="#high_alert_triggered" m_Value="true"/>
+                <Selector>
+                    <!-- TODO: Sync Action support -->
+                    <!-- <Cnd_IsHeld/> -->
+                    <!-- <Cnd_IsHolding/> -->
+                    <Cnd_IsCombatTargetForced/>
+                    <Cnd_IsActivityModuleRunning_SyncAction/>
+                    <Cnd_HasBBValue m_Key="#target" m_Invert="true"/>
+                    <!-- <Opr_RequestBark m_BarkID="Enemy_Spotted" m_Priority="Highest"/> -->
+                </Selector>
+            </Sequence>
+        </Succeeder>
+        <Succeeder>
+            <Sequence>
+                <Cnd_GenericBehaviorDisallowed m_Invert="true"/>
+                <Cnd_IsAlertLevelEqual m_AlertLevel="Low"/>
+                <Cnd_HasBBValue m_Key="#high_alert_triggered"/>
+                <Opr_RemoveBBValue m_Key="#high_alert_triggered"/>
+            </Sequence>
+        </Succeeder>
+        <!-- weapon holster cooldown -->
+        <Optional m_Enabled="$weapon_holster_enabled">
+            <Succeeder>
+                <Sequence>
+                    <Selector>
+                        <Cnd_HasBBValue m_Key="#potential_target"/>
+                        <Cnd_DialogStarted/>
+                        <Cnd_IsActivityModuleRunning_BehaviorPlace/>
+                    </Selector>
+                    <Opr_GetModifiedTime m_TimePoint="#weapon_holster_cooldown" m_TimeDelta="#weapon_holster_delay"/>
+                </Sequence>
+            </Succeeder>
+        </Optional>
+        <!-- forced go to position -->
+        <Succeeder>
+            <Sequence>
+                <Cnd_HasBBValue m_Key="#forced_chase_position"/>
+                <Sequence>
+                    <Selector>
+                        <Cnd_HasBBValue m_Key="#target"/>
+                        <Cnd_HasBBValue m_Key="#group_target"/>
+                        <Cnd_PositionInRadius m_Radius="3.0" m_Position="#forced_chase_position"/>
+                    </Selector>
+                    <Opr_RemoveBBValue m_Key="#forced_chase_position"/>
+                </Sequence>
+            </Sequence>
+        </Succeeder>
+    </Sequence>
+</BehaviorTree>

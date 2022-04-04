@@ -112,73 +112,73 @@ sub main()
         cooldown(10.0);
     }	
 
-		ReinforcementData("Bandit_Human")
-		{
-			force_player_target(false);
-			Spawn("Duke_One_Handed", 2,6);
-			initial_spawn_delay(6.0);
-			delay_between_spawns(0.5);
-			chance_to_spawn(0.7);
-			is_infected_reinforcement(false);
-			cooldown(120.0);
-		}
-		
-		ReinforcementData("RobbinTheHood")
-		{
-			force_player_target(false);
-			Spawn("Bandit_Bow", 2,8);
-			initial_spawn_delay(6.0);
-			delay_between_spawns(100.0);
-			chance_to_spawn(0.1);
-			is_infected_reinforcement(false);
-			cooldown(220.0);
-		}
-		
-		ReinforcementData("SpecialTime")
-		{
-			Spawn("Chargers", 0,1);
-			Spawn("Banshee", 1,3);
-			Spawn("Spitter", 0,1);
-			Spawn("Goon", 0,1);
-			Spawn("Demolisher", 0,1);
-			force_player_target(true);
-			initial_spawn_delay(2.0);
-			chance_to_spawn(1.0);
-			cooldown(10.0);
-		}	
-		
-		ReinforcementData("VolatileHunt")
-		{
-			Spawn("Volatile", 0,2);
-			force_player_target(true);
-			initial_spawn_delay(2.0);
-			chance_to_spawn(1.0);
-			cooldown(10.0);
-		}	
-		
-		ReinforcementData("RockinTheBoat")
-		{
-			force_player_target(true);
-			Spawn("Banshee", 0,2);
-			Spawn("Goon", 0,1);
-			initial_spawn_delay(2.0);
-			delay_between_spawns(0.5);
-			chance_to_spawn(1.0);
-			is_infected_reinforcement(true);
-			cooldown(100.0);
-		}
-		
-		//ReinforcementData("Survivors_Backup")
-		//{
-        //force_player_target(false);
-        //Spawn("Survivor", 0,4);
-		//Spawn("Survivor_Woman", 0,2);
-		//Spawn("Survivor_Man_Bow", 0,2);
-		//Spawn("Survivor_Woman_Bow", 0,1);
-        //initial_spawn_delay(8.0);
-        //delay_between_spawns(0.5);
-        //chance_to_spawn(0.6);
-        //is_infected_reinforcement(false);
-        //cooldown(120.0);
-		//}
+	ReinforcementData("Bandit_Human")
+	{
+		force_player_target(false);
+		Spawn("Duke_One_Handed", 2,3);
+		initial_spawn_delay(6.0);
+		delay_between_spawns(0.5);
+		chance_to_spawn(1.0);
+		is_infected_reinforcement(false);
+		cooldown(120.0);
+	}
+	
+	ReinforcementData("RobbinTheHood")
+	{
+		force_player_target(false);
+		Spawn("Bandit_Bow", 2,8);
+		initial_spawn_delay(6.0);
+		delay_between_spawns(100.0);
+		chance_to_spawn(0.1);
+		is_infected_reinforcement(false);
+		cooldown(220.0);
+	}
+	
+	ReinforcementData("SpecialTime")
+	{
+		Spawn("Chargers", 0,1);
+		Spawn("Banshee", 1,3);
+		Spawn("Spitter", 0,1);
+		Spawn("Goon", 0,1);
+		Spawn("Demolisher", 0,1);
+		force_player_target(true);
+		initial_spawn_delay(2.0);
+		chance_to_spawn(1.0);
+		cooldown(10.0);
+	}	
+	
+	ReinforcementData("VolatileHunt")
+	{
+		Spawn("Volatile", 0,2);
+		force_player_target(true);
+		initial_spawn_delay(2.0);
+		chance_to_spawn(1.0);
+		cooldown(10.0);
+	}	
+	
+	ReinforcementData("RockinTheBoat")
+	{
+		force_player_target(true);
+		Spawn("Banshee", 0,2);
+		Spawn("Goon", 0,1);
+		initial_spawn_delay(2.0);
+		delay_between_spawns(0.5);
+		chance_to_spawn(1.0);
+		is_infected_reinforcement(true);
+		cooldown(100.0);
+	}
+	
+	//ReinforcementData("Survivors_Backup")
+	//{
+	//force_player_target(false);
+	//Spawn("Survivor", 0,4);
+	//Spawn("Survivor_Woman", 0,2);
+	//Spawn("Survivor_Man_Bow", 0,2);
+	//Spawn("Survivor_Woman_Bow", 0,1);
+	//initial_spawn_delay(8.0);
+	//delay_between_spawns(0.5);
+	//chance_to_spawn(0.6);
+	//is_infected_reinforcement(false);
+	//cooldown(120.0);
+	//}
 }

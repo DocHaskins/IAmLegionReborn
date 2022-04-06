@@ -1,0 +1,118 @@
+sub main()
+{
+    comment("[Default] Creator: 'ddabrowski' Modifier: 'ddabrowski'");
+    configuration("OW_Truck_Default")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("truck_selector", "Truck_pack", 1, false);
+        }
+
+    }
+
+    configuration("OW_Truck_No_Encounters")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("gameplay_logic", "empty", 1, false);
+        }
+
+    }
+	
+    configuration("Disable_Trees")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("Trees", "empty", 1, false);			
+        }
+    }
+	
+    configuration("Trees_Small")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("Trees", "Trees_Small", 1, false);
+			select_preset_random("Trees", "Trees_Big", 1, false);
+        }
+    }
+	
+    configuration("Disable_All_Encounters")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("Encounter_Spawn", "Disabled", 1, false);
+            select_preset_random("Enable_Spawner", "False", 1, false);
+            select_preset_random("Encounter", "Empty", 1, false);
+        }
+    }
+	
+    configuration("Disable_Encounter_Box_Spawner")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("Enable_Spawner", "False", 1, false);
+        }
+    }
+
+    configuration("Special_Infected_01_flr_md_office_zshape_16x_b_btm_runthrough_5h_b")
+    {
+        entry("Handcrafted_Encounter")
+        {
+            select_preset_random("Encounter", "Special_Infected_01", 5, false);
+        }
+    }
+	
+    configuration("Building_No_Encounter")
+    {
+        entry("Handcrafted_Encounter")
+        {
+            select_preset_random("Encounter", "Default", 5, false);
+        }
+    }
+	
+    configuration("LootEnc_and_Enc_Disabled")
+    {
+        entry("_ANY_")
+        {
+            apply_to_children();
+            select_preset_random("LootEnc", "Disabled", 5, false);
+            select_preset_random("Encounter", "Default", 5, false);
+        }
+    }
+
+   configuration("Street_Encounter_Variant_A")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("Deco Special", "Encounter_A", 5, false);
+        }
+    }
+    configuration("Street_Encounter_Variant_B")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("Deco Special", "Encounter_B", 5, false);
+        }
+    }
+	    configuration("Street_Encounter_Variant_C")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("Deco Special", "Encounter_C", 5, false);
+        }
+    }	
+	configuration("Street_Encounter_Variant_D")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("Deco Special", "Encounter_D", 5, false);
+        }
+	}
+	configuration("Street_Encounter_Variant_E")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("Deco Special", "Encounter_E", 5, false);
+        }
+	}		
+}

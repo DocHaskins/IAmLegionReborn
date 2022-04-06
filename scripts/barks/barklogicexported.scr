@@ -1,0 +1,2558 @@
+sub BarkLogicExported() 
+{   
+
+    Group("Shop")
+    {
+        Cnd_CooldownTime(20.00);
+        Cnd_CooldownTime(40.00, 2);
+        Cnd_ExpireTime(2.0);
+        Cnd_GlobalDelayBetweenBarks(5.0);
+        //
+        Bark("shop_exit");
+        Bark("shop_welcome");
+    }
+
+    Group("Combat")
+    {
+        Cnd_CooldownTime(10.0);
+        Cnd_ExpireTime(0.5);
+        Cnd_GlobalDelayBetweenBarks(6.0);
+        Cnd_PlayerProxmity(2.0, 50.0);
+        //
+        Bark("combat_block_enter");
+        Bark("combat_block_hit");
+        Bark("combat_block");
+        Bark("combat_dodge");
+        Bark("combat_idle_taunt_human");
+        Bark("combat_idle_taunt_infected");
+        Bark("combat_attack_taunt_human");
+        Bark("combat_attack_taunt_infected");
+    }
+
+    Group("Combat_Idle_Taunt_Player")
+    {
+        Cnd_CooldownTime(30.0);
+        Cnd_ExpireTime(0.5);
+        Cnd_GlobalDelayBetweenBarks(15.0);
+        Cnd_PlayerProxmity(2.0, 50.0);
+        //
+        Bark("combat_idle_taunt_player");
+
+    
+}
+
+    Group("Combat_Attack_Taunt_Player")
+    {
+        Cnd_CooldownTime(30.0);
+        Cnd_ExpireTime(0.5);
+        Cnd_GlobalDelayBetweenBarks(15.0);
+        Cnd_PlayerProxmity(2.0, 50.0);
+        //
+        Bark("combat_attack_taunt_player");
+
+    Bark("combat_attack_taunt_player_PS", "MustPlay")
+    {
+        Cnd_CooldownTime(4.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_pumpingstation");
+    }
+
+    Bark("combat_attack_taunt_player_OOYL", "MustPlay")
+    {
+        Cnd_CooldownTime(4.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_OOYL");
+    }
+
+    Bark("combat_attack_taunt_player_sister2", "MustPlay")
+    {
+        Cnd_CooldownTime(4.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_sister_afterdlg");
+    }
+
+    Bark("combat_attack_taunt_player_DC", "MustPlay")
+    {
+        Cnd_CooldownTime(4.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_DC");
+    }
+
+    Bark("combat_attack_taunt_player_renegades", "MustPlay")
+    {
+        Cnd_CooldownTime(4.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_renegades");
+    }
+
+    Bark("combat_attack_taunt_player_renegades2", "MustPlay")
+    {
+        Cnd_CooldownTime(4.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_renegades2");
+    }
+
+    Bark("combat_attack_taunt_player_renegades3", "MustPlay")
+    {
+        Cnd_CooldownTime(4.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_renegades3");
+    }
+
+    Bark("combat_attack_taunt_player_renegades4", "MustPlay")
+    {
+        Cnd_CooldownTime(4.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_renegades4");
+    }
+
+    
+}
+
+    Group("Threatening")
+    {
+        Cnd_CooldownTime(5.0);
+        Cnd_ExpireTime(1.0);
+        Cnd_GlobalDelayBetweenBarks(6.0);
+        //
+        Bark("threatening_warning");
+        Bark("threatening_last_warning");
+        Bark("threatening_engage");
+    }
+
+    Group("Investigation_Reactions")
+    {
+        Cnd_CooldownTime(1.0);
+        Cnd_ExpireTime(1.0);
+        Cnd_GlobalDelayBetweenBarks(1.0);
+        //
+        Bark("enemy_unrecognized");
+        Bark("enemy_suspicious");
+        Bark("enemy_spotted");
+        Bark("enemy_spotted_alarm");
+        Bark("enemy_spotted_startle");
+        Bark("enemy_lost");
+        Bark("poi_noise_notice");
+        Bark("poi_noise");
+        Bark("poi_generic_low_alert");
+        Bark("poi_generic_high_alert");
+        Bark("poi_generic_retreat");
+        Bark("poi_light");
+        Bark("group_member_missing");
+        Bark("poi_attack");
+        Bark("poi_body_neutral");
+        Bark("poi_body_ally");
+        Bark("poi_call_for_help");
+    }
+
+    Group("Investigation")
+    {
+        Cnd_CooldownTime(20.0);
+        Cnd_ExpireTime(2.0);
+        Cnd_GlobalDelayBetweenBarks(1.0);
+        //
+        Bark("poi_possible_enemy");
+        Bark("poi_investigation_start");
+        Bark("poi_investigation_finish");
+        Bark("search_start");
+        Bark("search_finished");
+    }
+
+    Group("Search")
+    {
+        Cnd_CooldownTime(25.0);
+        Cnd_ExpireTime(1.0);
+        Cnd_GlobalDelayBetweenBarks(10.0);
+        //
+        Bark("search_start");
+        Bark("search_finished");
+    }
+
+    Group("Retreat")
+    {
+        Cnd_CooldownTime(5.0);
+        Cnd_ExpireTime(1.0);
+        //
+        Bark("panic");
+        Bark("surrender");
+        Bark("retreat");
+        Bark("retreat_push");
+    }
+
+    Group("Grab")
+    {
+        Cnd_ExpireTime(0.5);
+        //
+        Bark("grab_fight");
+        Bark("grab_finish");
+    }
+
+    Group("Generic_Idle")
+    {
+        Cnd_CooldownTime(30.0);
+        Cnd_ExpireTime(1.0);
+        Cnd_GlobalDelayBetweenBarks(10.0);
+        //
+        Bark("generic_idle");
+
+    Bark("generic_idle_dd1", "High")
+    {
+        Cnd_CooldownTime(35.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_deylayeddelivery_dd1");
+    }
+
+    Bark("generic_idle_dd2", "High")
+    {
+        Cnd_CooldownTime(35.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_deylayeddelivery_dd2");
+    }
+
+    Bark("generic_idle_dd1", "High")
+    {
+        Cnd_CooldownTime(35.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_deylayeddelivery_dd1");
+    }
+
+    Bark("generic_idle_veronika", "High")
+    {
+        Cnd_CooldownTime(35.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_veronika");
+    }
+
+    Bark("generic_idle_CYR", "High")
+    {
+        Cnd_CooldownTime(35.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_CYR");
+    }
+
+    Bark("generic_idle_CW", "High")
+    {
+        Cnd_CooldownTime(35.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_CW");
+    }
+
+    Bark("generic_idle_DC", "High")
+    {
+        Cnd_CooldownTime(35.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_DC");
+    }
+
+    Bark("generic_idle_sister", "High")
+    {
+        Cnd_CooldownTime(35.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_sister");
+    }
+
+    Bark("generic_idle_sister2", "High")
+    {
+        Cnd_CooldownTime(35.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_sister_afterdlg");
+    }
+
+    Bark("generic_idle_renegades", "High")
+    {
+        Cnd_CooldownTime(35.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_renegades");
+    }
+
+    Bark("generic_idle_renegades2", "High")
+    {
+        Cnd_CooldownTime(35.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_renegades2");
+    }
+
+    Bark("generic_idle_renegades3", "High")
+    {
+        Cnd_CooldownTime(35.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_renegades3");
+    }
+
+    Bark("generic_idle_renegades4", "High")
+    {
+        Cnd_CooldownTime(35.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_renegades4");
+    }
+
+    
+}
+
+    Group("Encounters")
+    {
+        Cnd_ExpireTime(3.0);
+        //
+        Bark("ENC_Interior_DLG01");
+        Bark("ENC_Exterior_DLG01");
+        Bark("ENC_Exterior_DLG02");
+        Bark("ENC_Exterior_DLG02_02");
+        Bark("ENC_Exterior_DLG03");
+        Bark("ENC_Exterior_DLG04");
+        Bark("ENC_Exterior_DLG05");
+        Bark("ENC_Prisoner_DLG01");
+        Bark("ENC_Prisoner_DLG02");
+        Bark("ENC_Prisoner_DLG03");
+        Bark("ENC_Prisoner_DLG04");
+        Bark("ENC_Prisoner_DLG05");
+        Bark("ENC_Hangman_DLG01");
+        Bark("ENC_Hangman_DLG02");
+        Bark("ENC_Hangman_DLG03");
+        Bark("ENC_Hangman_DLG04");
+        Bark("ENC_Hangman_DLG05");
+        Bark("ENC_Hangman_DLG06");
+        Bark("ENC_Witch_DLG01");
+        Bark("ENC_Witch_DLG02");
+        Bark("ENC_Witch_DLG03");
+        Bark("ENC_Witch_DLG04");
+        Bark("ENC_Witch_DLG05");
+        Bark("ENC_Cage_DLG01");
+        Bark("ENC_Cage_DLG02");
+    }
+
+    Group("Unused")
+    {
+        //
+        Bark("grab_attempt");
+        Bark("chatter_cautious");
+        Bark("chatter_aggressive");
+        Bark("chatter_archer_attack");
+        Bark("attack_warning");
+    }
+
+    Group("IdleComment")
+    {
+        Cnd_CooldownTime(1800.0);
+        Cnd_ExpireTime(1.0);
+        //
+        Bark("IdleComment");
+        Bark("IdleComment2");
+    }
+
+    Group("Enemy_Spotted")
+    {
+        Cnd_CooldownTime(1.0);
+        Cnd_ExpireTime(1.0);
+        Cnd_GlobalDelayBetweenBarks(0.5);
+        //
+        Bark("enemy_spotted");
+
+    Bark("enemy_spotted_alarm_bg", "MustPlay")
+    {
+        Cnd_CooldownTime(20.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_blueguys_windmill");
+    }
+
+    Bark("enemy_spotted_dd1", "MustPlay")
+    {
+        Cnd_CooldownTime(20.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_deylayeddelivery_dd1");
+    }
+
+    Bark("enemy_spotted_dd2", "MustPlay")
+    {
+        Cnd_CooldownTime(20.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_deylayeddelivery_dd2");
+    }
+
+    Bark("enemy_spotted_veronika", "MustPlay")
+    {
+        Cnd_CooldownTime(20.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_veronika");
+    }
+
+    Bark("enemy_spotted_veronika2", "MustPlay")
+    {
+        Cnd_CooldownTime(20.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_veronika_bottomfloor");
+    }
+
+    Bark("enemy_spotted_PS", "MustPlay")
+    {
+        Cnd_CooldownTime(20.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_pumpingstation");
+    }
+
+    Bark("enemy_spotted_OOYL", "MustPlay")
+    {
+        Cnd_CooldownTime(20.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_OOYL");
+    }
+
+    Bark("enemy_spotted_CYR", "MustPlay")
+    {
+        Cnd_CooldownTime(20.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_CYR");
+    }
+
+    Bark("enemy_spotted_CW", "MustPlay")
+    {
+        Cnd_CooldownTime(20.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_CW");
+    }
+
+    Bark("enemy_spotted_DC", "MustPlay")
+    {
+        Cnd_CooldownTime(20.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_DC");
+    }
+
+    Bark("enemy_spotted_sister", "MustPlay")
+    {
+        Cnd_CooldownTime(20.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_sister");
+    }
+
+    Bark("enemy_spotted_sister2", "MustPlay")
+    {
+        Cnd_CooldownTime(20.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_sister_afterdlg");
+    }
+
+    Bark("enemy_spotted_renegades", "MustPlay")
+    {
+        Cnd_CooldownTime(20.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_renegades");
+    }
+
+    Bark("enemy_spotted_renegades2", "MustPlay")
+    {
+        Cnd_CooldownTime(20.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_renegades2");
+    }
+
+    Bark("enemy_spotted_renegades3", "MustPlay")
+    {
+        Cnd_CooldownTime(20.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_renegades3");
+    }
+
+    Bark("enemy_spotted_renegades4", "MustPlay")
+    {
+        Cnd_CooldownTime(20.0);
+        Cnd_PlayerAreaAttribute("brk_qst_area_renegades4");
+    }
+
+    
+}
+
+    Group("interact_player", 0, 1.0, 10.0, 2)
+    {
+        Cnd_CooldownTime(10.0);
+        Cnd_CooldownTime(15.0, 2);
+        Cnd_ExpireTime(2.0);
+        Cnd_GlobalDelayBetweenBarks(5.0);
+        Cnd_PlayerProxmity(0.0, 3.0);
+        //
+
+    Bark("interact_player_ca_sur1", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_AlignmentPointsDifference("Survivors", "Peacekeepers", 1, 7);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_ca_sur1_morning", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_AlignmentPointsDifference("Survivors", "Peacekeepers", 1, 7);
+        Cnd_DayTime(7.00,12.00);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_ca_sur1_evening", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_AlignmentPointsDifference("Survivors", "Peacekeepers", 1, 7);
+        Cnd_DayTime(16.00,21.00);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_ca_sur1_night", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_AlignmentPointsDifference("Survivors", "Peacekeepers", 1, 7);
+        Cnd_DayTime(18.00,23.59);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_ca_sur1_12h", "High")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_AlignmentPointsDifference("Survivors", "Peacekeepers", 1, 7);
+        Cnd_HoursPlayedGreaterThan(12.0);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_ca_sur2", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_AlignmentPointsDifference("Survivors", "Peacekeepers", 2, 7);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_ca_sur3", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_AlignmentPointsDifference("Survivors", "Peacekeepers", 3, 7);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_ca_sur4", "High")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_AlignmentPointsDifference("Survivors", "Peacekeepers", 4, 7);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_ca_pk1", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_AlignmentPointsDifference("Peacekeepers", "Survivors", 1, 7);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_ca_pk2", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_AlignmentPointsDifference("Peacekeepers", "Survivors", 2, 7);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_ca_pk3", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_AlignmentPointsDifference("Peacekeepers", "Survivors", 3, 7);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_ca_pk4", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_AlignmentPointsDifference("Peacekeepers", "Survivors", 4, 7);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_under_6h", "Low")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_HoursPlayedLessThan(6.0);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_under_5h", "Low")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_HoursPlayedLessThan(5.0);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_under_4h", "Low")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_HoursPlayedLessThan(4.0);
+        NegCnd_PlayerAreaAttribute("brk_qst_LetsWaltz_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_over_5h", "Low")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_HoursPlayedGreaterThan(5.0);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_over_6h", "Low")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_HoursPlayedGreaterThan(6.0);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_over_10h", "Low")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_HoursPlayedGreaterThan(10.0);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_over_12h", "Low")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_HoursPlayedGreaterThan(12.0);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_over_15h", "Low")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_HoursPlayedGreaterThan(15.0);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_dusk", "Medium")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_DayTime(17.00,19.00);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_open_world", "Low")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("City_Survivors_HUB_Zone");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+        NegCnd_PlayerAreaAttribute("City_Peacekeepers_HUB_Zone_R02");
+    }
+
+    Bark("interact_player_area_bandit_camp", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_PlayerAnyAreaAttribute("Bloods_Gang_Area", "Skyscraper_Gang_Area", "Flooded_Gang_Area", "Vertical_Gang_Area", "Military_Gang_Area", "Chemicals_Gang_Area", "Block_5");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_bandit_camp_not_done", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAnyAreaAttribute("Bloods_Gang_Area", "Skyscraper_Gang_Area", "Flooded_Gang_Area", "Vertical_Gang_Area", "Military_Gang_Area", "Chemicals_Gang_Area", "Block_5");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_generic", "Low")
+    {
+        Cnd_CooldownTime(20.0);
+        Cnd_CooldownTime(30.0, 2);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_generic_kid", "Medium")
+    {
+        Cnd_Size("Little");
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_epic_weapon", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerEquippedWeaponMinColor("Violet");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_immunity_low", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_GameEventHasRecentlyOccured("LocalPlayerImmunityLow", 120);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_after_chase", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_GameEventHasRecentlyOccured("ChaseEnded", 60);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_special_killed", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_GameEventHasRecentlyOccured("LocalPlayerKilledSpecialInfected", 120);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_gre", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAnyAreaAttribute("DP_GRE_Edge_Area", "DP_GRE_Center_Area", "Block_1", "Block_2", "Block_3", "Block_4", "Block_5");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_darkzone_under_8h", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_HoursPlayedLessThan(8.0);
+        Cnd_PlayerAnyAreaAttribute("DP_GRE_Edge_Area", "DP_GRE_Center_Area", "Dark_Place_Area", "Block_1", "Block_2", "Block_3", "Block_4");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_darkzone", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_PlayerAnyAreaAttribute("DP_GRE_Edge_Area", "DP_GRE_Center_Area", "Dark_Place_Area", "Block_1", "Block_2", "Block_3", "Block_4");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_windmill_done_5h", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_HoursPlayedGreaterThan(5.0);
+        Cnd_PlayerAnyAreaAttribute("Settlement_Survivors_Windmill", "Settlement_Factions_Windmill", "Block_1", "Block_2", "Block_3", "Block_4", "Block_5");
+        Cnd_CustomGameEventHasRecentlyOccured("barks_windmill_activated", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_windmill_done_10h", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_HoursPlayedGreaterThan(10.0);
+        Cnd_PlayerAnyAreaAttribute("Settlement_Survivors_Windmill", "Settlement_Factions_Windmill", "Block_1", "Block_2", "Block_3", "Block_4", "Block_5");
+        Cnd_CustomGameEventHasRecentlyOccured("barks_windmill_activated", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_windmill_done", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_PlayerAnyAreaAttribute("Settlement_Survivors_Windmill", "Settlement_Factions_Windmill", "Block_1", "Block_2", "Block_3", "Block_4", "Block_5");
+        Cnd_CustomGameEventHasRecentlyOccured("barks_windmill_activated", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_windmill_not_done", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("brk_owa_area_windmill_not_done");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_bandit_camp_done", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_CustomGameEventHasRecentlyOccured("barks_bandit_camp_activated", 300, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_substation_done", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_CustomGameEventHasRecentlyOccured("barks_electrical_substation_activated", 300, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_substation_not_done", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_HoursPlayedLessThan(5.0);
+        Cnd_PlayerAreaAttribute("brk_owa_area_substation_not_done");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_metro", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("brk_owa_area_metro_not_done");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_water_to_pk_puls", "MustPlay")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_CustomGameEventHasRecentlyOccured("barks_water_tower_reg01_PK", 1800, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_water_to_bazaar_puls", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_CustomGameEventHasRecentlyOccured("barks_water_tower_reg01_Survivors", 1800, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_paraglider", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_GameEventHasRecentlyOccured("LocalPlayerUsedParaglider", 30);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_paraglider24h", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_GameEventHasRecentlyOccured("LocalPlayerUsedParaglider", 30);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_grappling", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_GameEventHasRecentlyOccured("LocalPlayerWasSwingingOnRopeOrCable", 30);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_clinic", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("FC_ElectricalSubstation_R1_4_Zone_04");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_water_tower_r1", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("FC_WaterTower_R1_3_Zone_03");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_canteen", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_area_bazaar");
+        Cnd_PlayerAreaAttribute("City_Survivors_HUB_Zone");
+        Cnd_PlayerAreaAttribute("R2_6_Zone_10");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_cathedral", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAnyAreaAttribute("Hive_Area", "R2_4_Zone_08", "Block_1", "Block_2", "Block_3", "Block_4", "Block_5");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_rain", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+        Cnd_Weather("Rainy");
+        NegCnd_PlayerAreaAttribute("City_Peacekeepers_HUB_Zone_R02");
+    }
+
+    Bark("interact_player_rain_open_world", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("City_Survivors_HUB_Zone");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+        Cnd_Weather("Rainy");
+        NegCnd_PlayerAreaAttribute("City_Peacekeepers_HUB_Zone_R02");
+    }
+
+    Bark("interact_player_area_bakery", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Survivors_Bakery");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_farm", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Survivors_Pumpkin");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_trading_post", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Survivors_Recycle");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_rooftop_school", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Survivors_School");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_rooftop_outpost", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Faction_Outpost");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_brewery", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Faction_Brewery");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_academy", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Faction_Academy");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_butcher", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Faction_Smokehouse");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_uni_workshop", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Faction_Uniform_Workshop");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_art_workshop", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Survivors_Workshop");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_pk_hub", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("City_Peacekeepers_HUB_Zone_R02");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_farm_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_WaterTower_done");
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Survivors_Pumpkin");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_bakery_10m_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_WaterTower_done");
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Survivors_Bakery");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_pk_ship_entrance", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAnyAreaAttribute("HUB_R02_Ship_Main_Entrance", "HUB_R02_Ship_Extra_Entrance", "HUB_R02_Ship_Main_Entrance_Outside", "Block_2", "Block_3", "Block_4", "Block_5");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_pk_ship_entrance_night", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_DayTime(19.00,6.00);
+        Cnd_PlayerAnyAreaAttribute("HUB_R02_Ship_Main_Entrance", "HUB_R02_Ship_Extra_Entrance", "HUB_R02_Ship_Main_Entrance_Outside", "Block_2", "Block_3", "Block_4", "Block_5");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_pk_ship_entrance_morning", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_DayTime(7.00,12.00);
+        Cnd_PlayerAnyAreaAttribute("HUB_R02_Ship_Main_Entrance", "HUB_R02_Ship_Extra_Entrance", "HUB_R02_Ship_Main_Entrance_Outside", "Block_2", "Block_3", "Block_4", "Block_5");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_pk_terminal_entrance", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("brk_qst_area_pk_metro");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_pk_terminal_entrance_night", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_DayTime(19.00,6.00);
+        Cnd_PlayerAreaAttribute("brk_qst_area_pk_metro");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_bazaar_entrance", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("Hub_exterior_Survivors");
+        Cnd_PlayerAreaAttribute("R1_2_Zone_02");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_bazaar_entrance_night", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_DayTime(19.00,6.00);
+        Cnd_PlayerAreaAttribute("Hub_exterior_Survivors");
+        Cnd_PlayerAreaAttribute("R1_2_Zone_02");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_quarters", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAnyAreaAttribute("HUB_R02_Ship_Workers_bedrooms", "HUB_R02_Ship_PK_main_bedroom_top", "HUB_R02_Ship_PK_main_bedroom_officers", "Block_1", "Block_2", "Block_3", "Block_4");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_prison", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("HUB_R02_Ship_PK_prison");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_pk_tower", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("brk_owa_area_PK_tower");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_enc_def_success", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_CustomGameEventHasRecentlyOccured("enc_defend_success", 60, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_enc_amb", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_CustomGameEventHasRecentlyOccured("enc_ambush_success", 60, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_enc_pris_success", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_CustomGameEventHasRecentlyOccured("enc_prisoner_success", 60, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_enc_res_success", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_CustomGameEventHasRecentlyOccured("enc_rescue_success", 60, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_enc_chase_success", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_CustomGameEventHasRecentlyOccured("enc_retreat_success", 60, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_enc_chase_fail", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_CustomGameEventHasRecentlyOccured("enc_retreat_failure", 60, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_enc_begg_success", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_CustomGameEventHasRecentlyOccured("enc_beggar_success", 60, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_enc_begg_fail", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_CustomGameEventHasRecentlyOccured("enc_beggar_failure", 60, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_bazaar_to_bazaarians", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Orders_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Bazaar_Survivors");
+        Cnd_PlayerAreaAttribute("brk_qst_APTCH_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_broadcast_done_frank", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Veronika_start");
+        Cnd_PlayerAreaAttribute("brk_qst_Broadcast_Frank");
+        Cnd_CustomGameEventHasRecentlyOccured("barks_Broadcast_end", 2700, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_broadcast_done_jack", "MustPlay")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Veronika_start");
+        Cnd_PlayerAreaAttribute("brk_qst_Broadcast_JackMatt");
+        Cnd_CustomGameEventHasRecentlyOccured("barks_Broadcast_end", 2700, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_area_canteen_orders_start", "MustPlay")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Hive_start");
+        Cnd_PlayerAreaAttribute("brk_qst_Orders_start");
+        Cnd_PlayerAreaAttribute("City_Survivors_HUB_Zone");
+        Cnd_PlayerAreaAttribute("R2_6_Zone_10");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+        NegCnd_PlayerAreaAttribute("brk_qst_WelcomeOnBoard_start");
+    }
+
+    Bark("interact_player_delayed_delivery_lamps", "MustPlay")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_PlayerAreaAttribute("brk_qst_Orders_start");
+        Cnd_PlayerAreaAttribute("brk_qst_DelayedDelivery_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_ptch_done", "MustPlay")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_DayTime(8.00,20.00);
+        NegCnd_PlayerAreaAttribute("brk_qst_Orders_end");
+        Cnd_PlayerAreaAttribute("brk_qst_APTCH_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_wt_done_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_LetsWaltz_start");
+        Cnd_PlayerAreaAttribute("brk_qst_WaterTower_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_wt_done_puls2", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_LetsWaltz_end");
+        Cnd_PlayerAreaAttribute("brk_qst_WaterTower_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_elena_puls", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Broadcast_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Elena_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_broadcast_done_frank_hub", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Veronika_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Broadcast_Frank");
+        Cnd_PlayerAreaAttribute("City_Survivors_HUB_Zone");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_renegades_puls", "MustPlay")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Veronika_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Veronika_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_wt_puls", "Low")
+    {
+        Cnd_CooldownTime(60.0);
+        Cnd_CooldownTime(120.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_WaterTower_done");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_looter_puls", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Looter_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Looter_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_looter_puls2", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Arrival_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Looter_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_arrival_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_WaterTower_done");
+        Cnd_PlayerAreaAttribute("brk_qst_Arrival_FindSuzie");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_arrival_puls2", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_WaterTower_done");
+        Cnd_PlayerAreaAttribute("brk_qst_Arrival_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_screwed_puls", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Screwed_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Screwed_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_screwed_sophie_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_WaterTower_done");
+        Cnd_PlayerAreaAttribute("brk_qst_Screwed_Sophie");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_screwed_aitor_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_WaterTower_done");
+        Cnd_PlayerAreaAttribute("brk_qst_Screwed_Aitor");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_water_to_bazaar_puls2", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_LetsWaltz_start");
+        Cnd_PlayerAreaAttribute("brk_qst_WaterTower_done");
+        Cnd_PlayerAreaAttribute("brk_qst_BlueGuys_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_water_to_pk_puls2", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_LetsWaltz_start");
+        Cnd_PlayerAreaAttribute("brk_qst_WaterTower_done");
+        Cnd_PlayerAreaAttribute("brk_qst_BadBoys_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_water_to_pk_puls3", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_LetsWaltz_start");
+        Cnd_PlayerAreaAttribute("brk_qst_WaterTower_end");
+        Cnd_PlayerAreaAttribute("brk_qst_BadBoys_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_aptch_puls2", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Broadcast_start");
+        Cnd_PlayerAreaAttribute("brk_qst_APTCH_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_renegades_attack_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Orders_end");
+        Cnd_PlayerAreaAttribute("brk_qst_APTCH_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_orders_to_rowe_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Orders_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Orders_Rowe");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_hive_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Hive_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Hive_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_hive_done_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Broadcast_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Hive_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_dd_done_puls", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Broadcast_end");
+        Cnd_PlayerAreaAttribute("brk_qst_DelayedDelivery_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_broadcast_puls", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Broadcast_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Broadcast_AfterMeeting");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_aptch_done_puls", "MustPlay")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 300, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_broadcast_done_frank_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Nightrunners_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Broadcast_Frank");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_sg_puls", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Veronika_start");
+        Cnd_PlayerAreaAttribute("brk_qst_SpyGame_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_nightrunners_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Nightrunners_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Nightrunners_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_nightrunners_puls2", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Veronika_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Nightrunners_AfterRadio");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("interact_player_veronika_done_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_PumpingStation_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Veronika_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_PlayerAreaAttribute("brk_qst_Colonel_end");
+        NegCnd_PlayerAreaAttribute("brk_qst_Assassination_end");
+    }
+
+    Bark("interact_player_veronika_done", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_PumpingStation_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Veronika_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_PlayerAreaAttribute("brk_qst_Colonel_end");
+        NegCnd_PlayerAreaAttribute("brk_qst_Assassination_end");
+    }
+
+    Bark("interact_player_aptch_done_puls2", "MustPlay")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 300, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    
+}
+
+    Group("contemplate",   1, 1.0, 15.0, 1)
+    {
+        Cnd_CooldownTime(15.0);
+        Cnd_CooldownTime(20.0, 2);
+        Cnd_ExpireTime(2.0);
+        Cnd_GlobalDelayBetweenBarks(5.0);
+        Cnd_PlayerProxmity(00.00, 10.00);
+        //
+        Cnd_GroupCooldownTime(20.00);
+
+    Bark("contemplate_generic", "Low")
+    {
+        Cnd_CooldownTime(20.0);
+        Cnd_CooldownTime(30.0, 2);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_hub", "Low")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("brk_qst_area_bazaar");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_over_5h", "Low")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_HoursPlayedGreaterThan(5.0);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_darkzone", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_PlayerAnyAreaAttribute("DP_GRE_Edge_Area", "DP_GRE_Center_Area", "Dark_Place_Area", "Block_1", "Block_2", "Block_3", "Block_4");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_windmill_done", "High")
+    {
+        Cnd_CooldownTime(720.0);
+        Cnd_CooldownTime(1440.0, 2);
+        Cnd_PlayerAnyAreaAttribute("Settlement_Survivors_Windmill", "Settlement_Factions_Windmill", "Block_1", "Block_2", "Block_3", "Block_4", "Block_5");
+        Cnd_CustomGameEventHasRecentlyOccured("barks_windmill_activated", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_windmill", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_PlayerAnyAreaAttribute("Settlement_Survivors_Windmill", "Settlement_Factions_Windmill", "Block_1", "Block_2", "Block_3", "Block_4", "Block_5");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_bandit_camp_not_done", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAnyAreaAttribute("Bloods_Gang_Area", "Skyscraper_Gang_Area", "Flooded_Gang_Area", "Vertical_Gang_Area", "Military_Gang_Area", "Chemicals_Gang_Area", "Block_5");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_bandit_camp_done", "High")
+    {
+        Cnd_CooldownTime(720.0);
+        Cnd_CooldownTime(1440.0, 2);
+        Cnd_CustomGameEventHasRecentlyOccured("barks_bandit_camp_activated", 900, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_substation_done", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_CustomGameEventHasRecentlyOccured("barks_electrical_substation_activated", 600, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_water_to_pk_puls", "MustPlay")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_CustomGameEventHasRecentlyOccured("barks_water_tower_reg01_PK", 1800, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_paraglider", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_GameEventHasRecentlyOccured("LocalPlayerUsedParaglider", 30);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_grappling", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_GameEventHasRecentlyOccured("LocalPlayerWasSwingingOnRopeOrCable", 30);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_rain", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+        Cnd_Weather("Rainy");
+    }
+
+    Bark("contemplate_area_canteen", "Low")
+    {
+        Cnd_CooldownTime(60.0);
+        Cnd_CooldownTime(120.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_area_bazaar");
+        Cnd_PlayerAreaAttribute("City_Survivors_HUB_Zone");
+        Cnd_PlayerAreaAttribute("R2_6_Zone_10");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_canteen_ca_pk2", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_AlignmentPointsDifference("Peacekeepers", "Survivors", 2, 4);
+        NegCnd_PlayerAreaAttribute("brk_qst_area_bazaar");
+        Cnd_PlayerAreaAttribute("City_Survivors_HUB_Zone");
+        Cnd_PlayerAreaAttribute("R2_6_Zone_10");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_ship", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAnyAreaAttribute("HUB_R02_Ship_Main_Entrance", "HUB_R02_Ship_Extra_Entrance", "HUB_R02_Ship_PK_main", "HUB_R02_Ship_PK_main_hospital", "Block_1", "Block_2", "Block_3");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_workshop", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAnyAreaAttribute("HUB_R02_Ship_Workers_main", "HUB_R02_Ship_Workers_workshops", "Block_1", "Block_2", "Block_3", "Block_4", "Block_5");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_prison", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("HUB_R02_Ship_PK_prison");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_substation_pk", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_PlayerAnyAreaAttribute("Settlement_Factions_ES_R01", "Settlement_Factions_ES_R02_Cathedral", "Settlement_Factions_ES_R02_North", "Settlement_Factions_ES_R02_South", "Block_2", "Block_3", "Block_4");
+        Cnd_CustomGameEventHasRecentlyOccured("barks_electrical_substation_PK", 900, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_substation_survivors", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_PlayerAnyAreaAttribute("Settlement_Survivors_ES_R01", "Settlement_Survivors_ES_R02_Cathedral", "Settlement_Survivors_ES_R02_North", "Settlement_Survivors_ES_R02_South", "Block_2", "Block_3", "Block_4");
+        Cnd_CustomGameEventHasRecentlyOccured("barks_electrical_substation_Survivors", 900, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_infirmary", "Low")
+    {
+        Cnd_CooldownTime(60.0);
+        Cnd_CooldownTime(120.0, 2);
+        Cnd_PlayerAreaAttribute("HUB_R02_Ship_PK_main_hospital");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_ca_pk2", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_AlignmentPointsDifference("Peacekeepers", "Survivors", 2, 4);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_over_6h", "Low")
+    {
+        Cnd_CooldownTime(60.0);
+        Cnd_CooldownTime(120.0, 2);
+        Cnd_HoursPlayedGreaterThan(6.0);
+        NegCnd_PlayerAreaAttribute("brk_qst_DelayedDelivery_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_rain_open_world", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("City_Survivors_HUB_Zone");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+        Cnd_Weather("Rainy");
+    }
+
+    Bark("contemplate_player_area_windmill_done_5h", "MustPlay")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_HoursPlayedGreaterThan(5.0);
+        Cnd_PlayerAnyAreaAttribute("Settlement_Survivors_Windmill", "Settlement_Factions_Windmill", "Block_1", "Block_2", "Block_3", "Block_4", "Block_5");
+        Cnd_CustomGameEventHasRecentlyOccured("barks_windmill_activated", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_pk_metro", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAnyAreaAttribute("brk_qst_area_pk_metro", "R1_1_Zone_01", "Block_1", "Block_2", "Block_3", "Block_4", "Block_5");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_bakery", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Survivors_Bakery");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_farm", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Survivors_Pumpkin");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_art_workshop", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Survivors_Workshop");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_trading_post", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Survivors_Recycle");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_rooftop_school", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Survivors_School");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_butcher", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Faction_Smokehouse");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_butcher_morning", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_DayTime(8.00,12.00);
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Faction_Smokehouse");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_rooftop_outpost", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Faction_Outpost");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_uni_workshop", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Faction_Uniform_Workshop");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_brewery", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Faction_Brewery");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_academy", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Faction_Academy");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_brewery_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_WaterTower_done");
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Faction_Brewery");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_farm_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_WaterTower_done");
+        Cnd_PlayerAreaAttribute("Abandoned_Structure_Survivors_Pumpkin");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_aptch_done_reg2", "Low")
+    {
+        Cnd_CooldownTime(120.0);
+        Cnd_CooldownTime(240.0, 2);
+        Cnd_PlayerAreaAttribute("brk_qst_APTCH_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_bb_done_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_LetsWaltz_end");
+        Cnd_PlayerAreaAttribute("brk_qst_BlueGuys_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_bazaar_to_bazaarians", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_DelayedDelivery_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Bazaar_Survivors");
+        Cnd_PlayerAreaAttribute("brk_qst_APTCH_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+        NegCnd_PlayerAreaAttribute("brk_qst_Orders_end");
+    }
+
+    Bark("contemplate_ptch_start", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_APTCH_end");
+        Cnd_PlayerAreaAttribute("brk_qst_APTCH_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_broadcast_done_frank", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Veronika_start");
+        Cnd_PlayerAreaAttribute("brk_qst_Broadcast_Frank");
+        Cnd_CustomGameEventHasRecentlyOccured("barks_Broadcast_end", 2700, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_canteen_orders_start", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_WelcomeOnBoard_start");
+        Cnd_PlayerAreaAttribute("brk_qst_Orders_start");
+        Cnd_PlayerAreaAttribute("City_Survivors_HUB_Zone");
+        Cnd_PlayerAreaAttribute("R2_6_Zone_10");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_orders_start", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Broadcast_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Orders_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_orders_done", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Broadcast_start");
+        Cnd_PlayerAreaAttribute("brk_qst_Orders_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+        NegCnd_PlayerAreaAttribute("brk_qst_Aitor_end");
+    }
+
+    Bark("contemplate_orders_both", "Low")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Aitor_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Orders_Rowe");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_orders_after_aitor", "Low")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Aitor_end");
+        Cnd_PlayerAreaAttribute("brk_qst_WelcomeOnBoard_AitorWounded");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+        NegCnd_PlayerAreaAttribute("brk_qst_Broadcast_start");
+    }
+
+    Bark("contemplate_aptch_before_reg1", "Low")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_APTCH_start");
+        Cnd_PlayerAnyAreaAttribute("R1_1_Zone_01", "R1_2_Zone_02", "R1_3_Zone_03", "R1_4_Zone_04", "Block_3", "Block_4", "Block_5");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_aptch_puls_reg2", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Orders_end");
+        Cnd_PlayerAreaAttribute("brk_qst_APTCH_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_aptch_puls", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_APTCH_end");
+        Cnd_PlayerAreaAttribute("brk_qst_APTCH_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_aptch_puls2", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Broadcast_start");
+        Cnd_PlayerAreaAttribute("brk_qst_APTCH_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_aptch_done_puls", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Orders_end");
+        Cnd_PlayerAreaAttribute("brk_qst_APTCH_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_aptch_done_puls2", "MustPlay")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        Cnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 300, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_wt_done_puls", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_LetsWaltz_start");
+        Cnd_PlayerAreaAttribute("brk_qst_WaterTower_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_wt_done_puls2", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_LetsWaltz_end");
+        Cnd_PlayerAreaAttribute("brk_qst_WaterTower_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_lw_done_puls", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_APTCH_end");
+        Cnd_PlayerAreaAttribute("brk_qst_LetsWaltz_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_elena_puls", "High")
+    {
+        Cnd_CooldownTime(720.0);
+        Cnd_CooldownTime(1440.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Broadcast_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Elena_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_veronika_done", "MustPlay")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_PumpingStation_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Veronika_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_PlayerAreaAttribute("brk_qst_Colonel_end");
+        NegCnd_PlayerAreaAttribute("brk_qst_Assassination_end");
+    }
+
+    Bark("contemplate_broadcast_done_frank_puls", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Veronika_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Broadcast_Frank");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_spy_game_puls", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Veronika_start");
+        Cnd_PlayerAreaAttribute("brk_qst_SpyGame_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_renegades_puls", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Veronika_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Veronika_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_wt_puls", "Low")
+    {
+        Cnd_CooldownTime(60.0);
+        Cnd_CooldownTime(120.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_WaterTower_done");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_wt_puls2", "Low")
+    {
+        Cnd_CooldownTime(120.0);
+        Cnd_CooldownTime(240.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_WaterTower_done");
+        Cnd_PlayerAreaAttribute("brk_qst_WaterTower_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_wt_done", "Low")
+    {
+        Cnd_CooldownTime(120.0);
+        Cnd_CooldownTime(240.0, 2);
+        Cnd_PlayerAreaAttribute("brk_qst_WaterTower_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_water_tower_r1_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_WaterTower_done");
+        Cnd_PlayerAreaAttribute("R1_3_Zone_03");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_towa_puls", "Low")
+    {
+        Cnd_CooldownTime(120.0);
+        Cnd_CooldownTime(240.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_APTCH_start");
+        Cnd_PlayerAreaAttribute("brk_qst_TOWO_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_towa_puls2", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_TOWO_end");
+        Cnd_PlayerAreaAttribute("brk_qst_TOWO_MetroStation");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_towa_puls3", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_WaterTower_done");
+        Cnd_PlayerAreaAttribute("brk_qst_TOWO_Sophie");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_towa_puls4", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_TOWO_end");
+        Cnd_PlayerAreaAttribute("brk_qst_TOWO_ReportedAitor");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_looter_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Looter_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Looter_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_arrival_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_WaterTower_done");
+        Cnd_PlayerAreaAttribute("brk_qst_Arrival_FindSuzie");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_screwed_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Screwed_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Screwed_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_water_to_bazaar_puls2", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_LetsWaltz_start");
+        Cnd_PlayerAreaAttribute("brk_qst_WaterTower_done");
+        Cnd_PlayerAreaAttribute("brk_qst_BlueGuys_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_water_to_pk_puls2", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_LetsWaltz_start");
+        Cnd_PlayerAreaAttribute("brk_qst_WaterTower_done");
+        Cnd_PlayerAreaAttribute("brk_qst_BadBoys_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_wt_done_puls3", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_LetsWaltz_start");
+        Cnd_PlayerAreaAttribute("brk_qst_WaterTower_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_renegades_attack_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Orders_end");
+        Cnd_PlayerAreaAttribute("brk_qst_APTCH_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_orders_to_rowe_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Orders_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Orders_Rowe");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_wob_wonded_aitor_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_WelcomeOnBoard_end");
+        Cnd_PlayerAreaAttribute("brk_qst_WelcomeOnBoard_AitorWounded");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_wob_wonded_aitor_puls2", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Aitor_end");
+        Cnd_PlayerAreaAttribute("brk_qst_WelcomeOnBoard_AitorWounded");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+        NegCnd_PlayerAreaAttribute("brk_qst_Broadcast_start");
+    }
+
+    Bark("contemplate_wob_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_DelayedDelivery_end");
+        Cnd_PlayerAreaAttribute("brk_qst_WelcomeOnBoard_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+        NegCnd_PlayerAreaAttribute("brk_qst_Hive_start");
+    }
+
+    Bark("contemplate_dd_done_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Broadcast_end");
+        Cnd_PlayerAreaAttribute("brk_qst_DelayedDelivery_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_broadcast_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Broadcast_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Broadcast_AfterMeeting");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_broadcast_done_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Veronika_start");
+        Cnd_PlayerAreaAttribute("brk_qst_Broadcast_end");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_broadcast_done_juan_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Nightrunners_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Broadcast_Frank");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_broadcast_done_matt_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Veronika_start");
+        Cnd_PlayerAreaAttribute("brk_qst_Broadcast_JackMatt");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_sg_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Veronika_start");
+        Cnd_PlayerAreaAttribute("brk_qst_SpyGame_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_sg_done_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Veronika_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Veronika_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_empire_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Veronika_start");
+        Cnd_PlayerAreaAttribute("brk_qst_Empire_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_empire_puls2", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Veronika_start");
+        Cnd_PlayerAreaAttribute("brk_qst_Empire_AntennasWorking");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+        NegCnd_PlayerAreaAttribute("brk_qst_Empire_end");
+    }
+
+    Bark("contemplate_empire_done_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Veronika_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Veronika_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_nightrunners_puls", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Nightrunners_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Nightrunners_start");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_nightrunners_puls2", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Veronika_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Nightrunners_AfterRadio");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_ship_orders_done", "High")
+    {
+        Cnd_CooldownTime(480.0);
+        Cnd_CooldownTime(960.0, 2);
+        NegCnd_PlayerAreaAttribute("brk_qst_Broadcast_end");
+        Cnd_PlayerAreaAttribute("brk_qst_Orders_end");
+        Cnd_PlayerAnyAreaAttribute("HUB_R02_Ship_Main_Entrance", "HUB_R02_Ship_Extra_Entrance", "HUB_R02_Ship_PK_main", "HUB_R02_Ship_PK_main_hospital", "Block_1", "Block_2", "Block_3");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_gre_anomaly_day", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_DayTime(8.00,20.00);
+        Cnd_PlayerAreaAttribute("brk_owa_area_anomaly_not_done");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_gre", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_PlayerAreaAttribute("brk_owa_area_anomaly_not_done");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    Bark("contemplate_area_metro", "Medium")
+    {
+        Cnd_CooldownTime(240.0);
+        Cnd_CooldownTime(480.0, 2);
+        Cnd_DayTime(8.00,20.00);
+        Cnd_PlayerAreaAttribute("brk_owa_area_metro_not_done");
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_APTCH_end", 240, 1);
+        NegCnd_CustomGameEventHasRecentlyOccured("barks_DroneBombing", 240, 1);
+    }
+
+    
+}
+}

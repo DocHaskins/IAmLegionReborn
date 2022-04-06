@@ -1,0 +1,238 @@
+sub main()
+{
+    comment("[Default] Creator: 'mkubas' Modifier: 'isapijaszko'");
+    configuration("CLOSEDINTERIOR")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("Activation - distance", "ClosedInterior", 5, false);
+        }
+
+    }
+
+    configuration("DarkZone")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("Activation - distance", "Darkzone", 5, false);
+            select_preset_random("Darkzone", "UndergroundNoDarkzone", 5, false);
+        }
+
+    }
+
+    configuration("Exterior")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("Activation - distance", "Exterior", 5, false);
+            select_preset_random("Darkzone", "UndergroundNoDarkzone", 5, false);
+        }
+
+    }
+
+    configuration("GRE")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("Activation - distance", "Darkzone", 5, false);
+            select_preset_random("Darkzone", "UndergroundNoDarkzone", 5, false);
+            select_preset_random("STAIRCASE GLOWSTICKS", "OFF", 5, false);
+            select_preset_random("Zombie Spawner", "Empty", 5, false);
+        }
+
+    }
+
+    configuration("GRE_Interior")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("Activation - distance", "GRE", 5, false);
+            select_preset_random("Darkzone", "UndergroundNoDarkzone", 5, false);
+            select_preset_random("STAIRCASE GLOWSTICKS", "OFF", 5, false);
+            select_preset_random("Zombie Spawner", "Empty", 5, false);
+        }
+
+    }
+
+    configuration("HIVE")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("Activation - distance", "Activator", 5, false);
+        }
+
+    }
+
+    configuration("Activator")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("Activation - distance", "Activator", 5, false);
+        }
+
+    }
+	
+    configuration("HUB")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("Activation - distance", "Activator", 5, false);
+            select_preset_random("Darkzone", "UndergroundNoDarkzone", 5, false);
+        }
+
+    }
+
+    configuration("METRO")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("Activation - distance", "Metro", 5, false);
+            //select_preset_random("Darkzone", "UndergroundNoDarkzone", 5, false);
+        }
+
+    }
+
+    configuration("OPENEDINTERIOR")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("Activation - distance", "OpenedInterior", 5, false);
+            select_preset_random("Darkzone", "UndergroundNoDarkzone", 5, false);
+        }
+    }
+	
+    configuration("WidelyOpenedInterior")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("Activation - distance", "WidelyOpenedInterior", 5, false);
+            select_preset_random("Darkzone", "Enabled", 5, false);
+			select_preset_random("Entity_Variant", "Varlist Blend Enabled", 5, false);
+            select_preset_random("ShopCategory", "darkplace", 5, false);
+            select_preset_random("Varlist_Blend", "Generic", 5, false);
+        }
+
+    }
+
+    configuration("OW_DarkPlace")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("Activation - distance", "ClosedInterior", 5, false);
+        }
+
+        entry("opened_interior")
+        {
+            select_preset_random("Activation - distance", "OpenedInterior", 5, false);
+        }
+
+    }
+
+    configuration("SHOP")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("Activation - distance", "Activator", 5, false);
+            select_preset_random("Darkzone", "Enabled", 5, false);
+			select_preset_random("ShopCategory", "encounter", 5, false);
+        }
+
+    }
+
+    configuration("WINDMILL")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("Activation - distance", "Exterior", 5, false);
+            select_preset_random("Darkzone", "UndergroundNoDarkzone", 5, false);
+        }
+
+    }
+
+    configuration("bandits")
+    {
+        entry("_ANY_")
+        {
+            apply_to_children();
+            select_preset_random("Darkzone", "UndergroundNoDarkzone", 5, false);
+            select_preset_random("ShopCategory", "encounter", 5, false);
+        }
+
+    }
+
+    configuration("dark_place")
+    {
+        entry("Windmill")
+        {
+            select_preset_random("do_LootIcon", "Loot_Windmill", 5, false);
+            select_preset_random("do_Type", "Loot_Windmill", 5, false);
+        }
+
+        entry("_ANY_")
+        {
+            apply_to_children();
+            select_preset_random("Activation - distance", "Interior", 5, false);
+            select_preset_random("Darkzone", "Enabled", 5, false);
+            comment("Added to enable switching varlist in generic inteiors");
+            select_preset_random("Entity_Variant", "Varlist Blend Enabled", 5, false);
+            comment("Added to enable switching varlist in generic inteiors");
+            select_preset_random("ShopCategory", "darkplace", 5, false);
+            comment("Changes light shafts and color grading in generic interiors");
+            select_preset_random("Varlist_Blend", "Generic", 5, false);
+            comment("Changes light shafts and color grading in generic interiors");
+            select_preset_random("do_LootIcon", "Loot_Darkzone", 5, false);
+            comment("Changes light shafts and color grading in generic interiors");
+            select_preset_random("do_Type", "Loot_Darkzone", 5, false);
+        }
+
+        entry("storey_outline_passage")
+        {
+            apply_to_children();
+            select_preset_random("Activation - distance", "DarkplacePassage", 5, false);
+        }
+
+    }
+	
+	configuration("MediumOpenedInterior")
+    {
+
+        entry("_ANY_")
+        {
+            apply_to_children();
+            select_preset_random("Activation - distance", "MediumOpenedInterior", 5, false);
+            select_preset_random("Darkzone", "Enabled", 5, false);
+            select_preset_random("Entity_Variant", "Varlist Blend Enabled", 5, false);
+            select_preset_random("ShopCategory", "darkplace", 5, false);
+            select_preset_random("Varlist_Blend", "Generic", 5, false);
+        }
+
+        entry("storey_outline_passage")
+        {
+            apply_to_children();
+            select_preset_random("Activation - distance", "DarkplacePassage", 5, false);
+        }
+
+    }
+
+    configuration("darkzone_disabled")
+    {
+        entry("_ANY_")
+        {
+            apply_to_children();
+            select_preset_random("Darkzone", "Disabled", 5, false);
+        }
+
+    }
+
+    configuration("generic_interior_hard")
+    {
+        entry("_ANY_")
+        {
+            apply_to_children();
+            select_preset_random("Activation - distance", "ClosedInterior", 5, false);
+            select_preset_random("Darkzone", "Enabled", 5, false);
+        }
+
+    }
+
+}

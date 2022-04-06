@@ -1,0 +1,21 @@
+sub main()
+{
+    comment("");
+    configuration("Disabled")
+    {
+        entry("_ANY_")
+        {
+        }
+
+    }
+
+    configuration("Enabled")
+    {
+        entry("_ANY_")
+        {
+            select_preset_random("Spawner_flap", "Enabled", 5, false);
+        }
+
+    }
+
+}

@@ -1,0 +1,52 @@
+sub main()
+{
+    comment("[Default] Creator: 'ddabrowski' Modifier: 'ddabrowski'");
+    configuration("Override_Init_Spawn_No_Logic")
+    {
+        entry("_ANY_")
+        {
+            apply_to_children();
+            select_preset_random("Activation_Type", "Deactivated", 5, false);
+        }
+    }
+	
+    configuration("Disable_Init_Roof_Logic")
+    {
+        entry("_ANY_")
+        {
+            apply_to_children();
+            select_preset_random("Init_Roof", "Enabled", 5, false);
+        }
+    }
+	
+    configuration("Disable_Init_Roof_Logic_And_Scenarios")
+    {
+        entry("_ANY_")
+        {
+            apply_to_children();
+            select_preset_random("Init_Roof", "Enabled", 5, false);
+            select_preset_random("Scenario", "False", 5, false);
+        }
+    }
+
+    configuration("Override_Roof_No_Logic")
+    {
+        entry("_ANY_")
+        {
+            apply_to_children();
+            select_preset_random("Enable_Spawner", "True", 5, false);
+            select_preset_random("Roof_Logic", "Enabled", 5, false);
+            select_preset_random("Init_Roof", "Enabled", 5, false);
+        }
+    }
+	
+    configuration("Override_No_Scenarios")
+    {
+        entry("_ANY_")
+        {
+            apply_to_children();
+            select_preset_random("Scenario", "False", 5, false);
+        }
+    }
+
+}

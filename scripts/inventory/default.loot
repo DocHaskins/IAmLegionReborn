@@ -1,0 +1,5188 @@
+//This script is generated from Inventory.xlsm. Don't modify it!!!
+
+import "color_sets.loot"
+import "color_sets_special.loot"
+import "item_sets.loot"
+import "containers_object_type.def"
+
+export int LootType_None            = 0;
+export int LootType_Knuckles        = 1;
+export int LootType_Blunt           = 2;
+export int LootType_Sharp           = 3;
+export int LootType_Firearm_Short   = 4;
+export int LootType_Firearm_Long    = 5;
+export int LootType_Firearm_Auto    = 6;
+export int LootType_Throwable       = 7;
+export int LootType_Powerup         = 8;
+
+//----- CONTAINERS -----
+sub Loot()
+{
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////General Pools ////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	
+	//CASH TEST
+	LootedObject("Cash")
+    {
+        ColorSet(ColorSet_Equal);
+		use Cash_Low (weight = 1.0);
+    }
+	LootedObject("Cash_Mid")
+    {
+        ColorSet(ColorSet_Equal);
+		use Cash_Mid (weight = 1.0);
+    }
+	LootedObject("Cash_High")
+    {
+        ColorSet(ColorSet_Equal);
+		use Cash_High (weight = 1.0);
+    }
+	LootedObject("Use_Items")
+    {
+        ColorSet(ColorSet_Equal);
+		use Use_Items (weight = 1.0);
+    }
+	
+	LootedObject("Valuables")
+    {
+        ColorSet(ColorSet_Equal);
+		use Valuable (weight = 1.0);
+    }
+	
+	LootedObject("Valuables_Uncommon")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		use Valuable (weight = 1.0);
+    }
+	
+	LootedObject("Valuables_Rare")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		use Valuable (weight = 1.0);
+    }
+	
+	LootedObject("Valuables_Chest_Uncommon")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		use Valuable_Chest (weight = 1.0);
+    }
+	
+	LootedObject("Valuables_Chest_Rare")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		use Valuable_Chest (weight = 1.0);
+    }
+	
+	LootedObject("Craftparts")
+    {
+        ColorSet(ColorSet_Equal);
+		use Craftparts (weight = 1.0);
+    }
+	
+	LootedObject("Craftparts_Common")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		use Craftparts (weight = 1.0);
+    }
+	
+	LootedObject("Craftparts_Uncommon")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		use Craftparts (weight = 1.0);
+    } 
+	
+	LootedObject("Craftparts_Rare")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		use Craftparts (weight = 1.0);
+    }
+	
+	LootedObject("Coins")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1, 1);
+		use Coins (weight = 1.0, min_amount = 1, max_amount = 3);
+    }
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////AI Loot //////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	LootedObject("DefaultAILoot")
+    {
+        ColorSet(ColorSet_DefaultZombieLoot);
+		LootAmount(1);
+		use Empty(weight = 50.0, min_amount = 1, max_amount = 1);
+		use DefaultAILoot (weight = 50.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("DefaultBiterLoot")
+    {
+        ColorSet(ColorSet_DefaultZombieLoot);
+		LootAmount(1);
+		use Empty(weight = 2.0, min_amount = 0, max_amount = 1);
+		use DefaultAILoot (weight = 1.0, min_amount = 0, max_amount = 1);
+    }
+	
+	LootedObject("Biter_Backpack")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(4);
+		use Biter_Bag (weight = 1.0, min_amount = 3, max_amount = 5);
+    }
+	
+	LootedObject("T2_BiterLoot")
+    {
+        ColorSet(ColorSet_DefaultZombieLoot);
+		LootAmount(1);
+		use Empty(weight = 1.8, min_amount = 0, max_amount = 1);
+		use DefaultAILoot (weight = 1.0, min_amount = 0, max_amount = 1);
+    }
+	
+	LootedObject("T3_BiterLoot")
+    {
+        ColorSet(ColorSet_DefaultZombieLoot);
+		LootAmount(1);
+		use Empty(weight = 1.8, min_amount = 0, max_amount = 1);
+		use DefaultAILoot (weight = 1.0, min_amount = 0, max_amount = 1);
+    }
+	
+	LootedObject("T4_BiterLoot")
+    {
+        ColorSet(ColorSet_DefaultZombieLoot);
+		LootAmount(1);
+		use Empty(weight = 1.6, min_amount = 0, max_amount = 1);
+		use DefaultAILoot (weight = 1.0, min_amount = 0, max_amount = 1);
+    }
+	
+	LootedObject("T5_BiterLoot")
+    {
+        ColorSet(ColorSet_DefaultZombieLoot);
+		LootAmount(1);
+		use Empty(weight = 1.6, min_amount = 0, max_amount = 1);
+		use DefaultAILoot (weight = 1.0, min_amount = 0, max_amount = 1);
+    }
+	
+	LootedObject("T6_BiterLoot")
+    {
+        ColorSet(ColorSet_DefaultZombieLoot);
+		LootAmount(1);
+		use Empty(weight = 1.5, min_amount = 0, max_amount = 1);
+		use DefaultAILoot (weight = 1.0, min_amount = 0, max_amount = 1);
+    }
+	
+	LootedObject("T7_BiterLoot")
+    {
+        ColorSet(ColorSet_DefaultZombieLoot);
+		LootAmount(1);
+		use Empty(weight = 1.5, min_amount = 0, max_amount = 1);
+		use DefaultAILoot (weight = 1.0, min_amount = 0, max_amount = 1);
+    }
+	
+	LootedObject("T8_BiterLoot")
+    {
+        ColorSet(ColorSet_DefaultZombieLoot);
+		LootAmount(1);
+		use Empty(weight = 1.0, min_amount = 0, max_amount = 1);
+		use DefaultAILoot (weight = 1.0, min_amount = 0, max_amount = 1);
+    }
+	
+	LootedObject("T9_BiterLoot")
+    {
+        ColorSet(ColorSet_DefaultZombieLoot);
+		LootAmount(1);
+		use Empty(weight = 1.0, min_amount = 0, max_amount = 1);
+		use DefaultAILoot (weight = 1.0, min_amount = 0, max_amount = 1);
+    }
+	
+	//Viral
+	
+	LootedObject("DefaultViralLoot")
+    {
+        ColorSet(ColorSet_Viral);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ViralGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T2_ViralLoot")
+    {
+        ColorSet(ColorSet_Viral);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ViralGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T3_ViralLoot")
+    {
+        ColorSet(ColorSet_Viral);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ViralGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T4_ViralLoot")
+    {
+        ColorSet(ColorSet_Viral);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ViralGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T5_ViralLoot")
+    {
+        ColorSet(ColorSet_Viral);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ViralGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T6_ViralLoot")
+    {
+        ColorSet(ColorSet_Viral);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ViralGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T7_ViralLoot")
+    {
+        ColorSet(ColorSet_Viral);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ViralGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T8_ViralLoot")
+    {
+        ColorSet(ColorSet_Viral);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ViralGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T9_ViralLoot")
+    {
+        ColorSet(ColorSet_Viral);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ViralGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	// Screamer
+	
+	LootedObject("DefaultScreamerLoot")
+    {
+        ColorSet(ColorSet_Howler);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ScreamerGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T2_ScreamerLoot")
+    {
+        ColorSet(ColorSet_Howler);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ScreamerGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T3_ScreamerLoot")
+    {
+        ColorSet(ColorSet_Howler);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ScreamerGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T4_ScreamerLoot")
+    {
+        ColorSet(ColorSet_Howler);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ScreamerGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T5_ScreamerLoot")
+    {
+        ColorSet(ColorSet_Howler);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ScreamerGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T6_ScreamerLoot")
+    {
+        ColorSet(ColorSet_Howler);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ScreamerGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T7_ScreamerLoot")
+    {
+        ColorSet(ColorSet_Howler);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ScreamerGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T8_ScreamerLoot")
+    {
+        ColorSet(ColorSet_Howler);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ScreamerGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T9_ScreamerLoot")
+    {
+        ColorSet(ColorSet_Howler);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ScreamerGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	// Spitter
+	
+	LootedObject("DefaultSpitterLoot")
+    {
+        ColorSet(ColorSet_Spitter);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use SpitterGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T2_SpitterLoot")
+    {
+        ColorSet(ColorSet_Spitter);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use SpitterGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T3_SpitterLoot")
+    {
+        ColorSet(ColorSet_Spitter);
+		LootAmount(1);
+		use SpitterGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T4_SpitterLoot")
+    {
+        ColorSet(ColorSet_Spitter);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use SpitterGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T5_SpitterLoot")
+    {
+        ColorSet(ColorSet_Spitter);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use SpitterGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T6_SpitterLoot")
+    {
+        ColorSet(ColorSet_Spitter);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use SpitterGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T7_SpitterLoot")
+    {
+        ColorSet(ColorSet_Spitter);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use SpitterGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T8_SpitterLoot")
+    {
+        ColorSet(ColorSet_Spitter);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use SpitterGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T9_SpitterLoot")
+    {
+        ColorSet(ColorSet_Spitter);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use SpitterGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	// Suicider
+	
+	LootedObject("SuiciderHead")
+    {
+        ColorSet(ColorSet_Suicider);
+		LootAmount(1);
+		use SuiciderGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("DefaultSuiciderLoot")
+    {
+        ColorSet(ColorSet_Suicider);
+		LootAmount(1);
+		use Valuable (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T2_SuiciderLoot")
+    {
+        ColorSet(ColorSet_Suicider);
+		LootAmount(1);
+		use Valuable (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T3_SuiciderLoot")
+    {
+        ColorSet(ColorSet_Suicider);
+		LootAmount(1);
+		use Valuable (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T4_SuiciderLoot")
+    {
+        ColorSet(ColorSet_Suicider);
+		LootAmount(1);
+		use Valuable (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T5_SuiciderLoot")
+    {
+        ColorSet(ColorSet_Suicider);
+		LootAmount(1);
+		use Valuable (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T6_SuiciderLoot")
+    {
+        ColorSet(ColorSet_Suicider);
+		LootAmount(1);
+		use Valuable (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T7_SuiciderLoot")
+    {
+        ColorSet(ColorSet_Suicider);
+		LootAmount(2);
+		use Valuable (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T8_SuiciderLoot")
+    {
+        ColorSet(ColorSet_Suicider);
+		LootAmount(2);
+		use Valuable (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T9_SuiciderLoot")
+    {
+        ColorSet(ColorSet_Suicider);
+		LootAmount(2);
+		use Valuable (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	// Bolter
+	
+	LootedObject("DefaultBolterLoot")
+    {
+        ColorSet(ColorSet_Bolter);
+		LootAmount(2);
+		//use Valuable (weight = 33.0, min_amount = 1, max_amount = 1);
+		use BolterGland (weight = 1.0, min_amount = 1, max_amount = 1);
+		use BolterMeat (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T2_BolterLoot")
+    {
+        ColorSet(ColorSet_Bolter);
+		LootAmount(2);
+		//use Valuable (weight = 33.0, min_amount = 1, max_amount = 1);
+		use BolterGland (weight = 1.0, min_amount = 1, max_amount = 1);
+		use BolterMeat (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T3_BolterLoot")
+    {
+        ColorSet(ColorSet_Bolter);
+		LootAmount(2);
+		//use Valuable (weight = 33.0, min_amount = 1, max_amount = 1);
+		use BolterGland (weight = 1.0, min_amount = 1, max_amount = 1);
+		use BolterMeat (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T4_BolterLoot")
+    {
+        ColorSet(ColorSet_Bolter);
+		LootAmount(2);
+		//use Valuable (weight = 33.0, min_amount = 1, max_amount = 1);
+		use BolterGland (weight = 1.0, min_amount = 1, max_amount = 1);
+		use BolterMeat (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T5_BolterLoot")
+    {
+        ColorSet(ColorSet_Bolter);
+		LootAmount(2);
+		//use Valuable (weight = 33.0, min_amount = 1, max_amount = 1);
+		use BolterGland (weight = 1.0, min_amount = 1, max_amount = 1);
+		use BolterMeat (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T6_BolterLoot")
+    {
+        ColorSet(ColorSet_Bolter);
+		LootAmount(2);
+		//use Valuable (weight = 33.0, min_amount = 1, max_amount = 1);
+		use BolterGland (weight = 1.0, min_amount = 1, max_amount = 1);
+		use BolterMeat (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T7_BolterLoot")
+    {
+        ColorSet(ColorSet_Bolter);
+		LootAmount(2);
+		//use Valuable (weight = 33.0, min_amount = 1, max_amount = 1);
+		use BolterGland (weight = 1.0, min_amount = 1, max_amount = 1);
+		use BolterMeat (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T8_BolterLoot")
+    {
+        ColorSet(ColorSet_Bolter);
+		LootAmount(2);
+		//use Valuable (weight = 33.0, min_amount = 1, max_amount = 1);
+		use BolterGland (weight = 1.0, min_amount = 1, max_amount = 1);
+		use BolterMeat (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T9_BolterLoot")
+    {
+        ColorSet(ColorSet_Bolter);
+		LootAmount(2);
+		//use Valuable (weight = 33.0, min_amount = 1, max_amount = 1);
+		use BolterGland (weight = 1.0, min_amount = 1, max_amount = 1);
+		use BolterMeat (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	// Banshee
+	
+	LootedObject("DefaultBansheeLoot")
+    {
+        ColorSet(ColorSet_Banshee);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use BansheeGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T2_BansheeLoot")
+    {
+        ColorSet(ColorSet_Banshee);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use BansheeGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T3_BansheeLoot")
+    {
+        ColorSet(ColorSet_Banshee);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use BansheeGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T4_BansheeLoot")
+    {
+        ColorSet(ColorSet_Banshee);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use BansheeGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T5_BansheeLoot")
+    {
+        ColorSet(ColorSet_Banshee);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use BansheeGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T6_BansheeLoot")
+    {
+        ColorSet(ColorSet_Banshee);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use BansheeGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T7_BansheeLoot")
+    {
+        ColorSet(ColorSet_Banshee);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use BansheeGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T8_BansheeLoot")
+    {
+        ColorSet(ColorSet_Banshee);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use BansheeGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T9_BansheeLoot")
+    {
+        ColorSet(ColorSet_Banshee);
+		LootAmount(2);
+		use Cash_Mid (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use BansheeGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	// Goon
+	
+	LootedObject("DefaultGoonLoot")
+    {
+        ColorSet(ColorSet_Goon);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use GoonGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T2_GoonLoot")
+    {
+        ColorSet(ColorSet_Goon);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use GoonGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T3_GoonLoot")
+    {
+        ColorSet(ColorSet_Goon);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use GoonGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T4_GoonLoot")
+    {
+        ColorSet(ColorSet_Goon);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use GoonGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T5_GoonLoot")
+    {
+        ColorSet(ColorSet_Goon);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use GoonGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T6_GoonLoot")
+    {
+        ColorSet(ColorSet_Goon);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use GoonGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T7_GoonLoot")
+    {
+        ColorSet(ColorSet_Goon);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use GoonGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T8_GoonLoot")
+    {
+        ColorSet(ColorSet_Goon);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use GoonGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T9_GoonLoot")
+    {
+        ColorSet(ColorSet_Goon);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use GoonGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	// Charger
+	
+	LootedObject("DefaultChargerLoot")
+    {
+        ColorSet(ColorSet_Charger);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ChargerGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T2_ChargerLoot")
+    {
+        ColorSet(ColorSet_Charger);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ChargerGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T3_ChargerLoot")
+    {
+        ColorSet(ColorSet_Charger);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ChargerGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T4_ChargerLoot")
+    {
+        ColorSet(ColorSet_Charger);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ChargerGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T5_ChargerLoot")
+    {
+        ColorSet(ColorSet_Charger);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ChargerGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T6_ChargerLoot")
+    {
+        ColorSet(ColorSet_Charger);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ChargerGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T7_ChargerLoot")
+    {
+        ColorSet(ColorSet_Charger);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ChargerGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T8_ChargerLoot")
+    {
+        ColorSet(ColorSet_Charger);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ChargerGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T9_ChargerLoot")
+    {
+        ColorSet(ColorSet_Charger);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use ChargerGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	// Demolisher
+	
+	LootedObject("DefaultDemolisherLoot")
+    {
+        ColorSet(ColorSet_Demolisher);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use DemolisherGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T2_DemolisherLoot")
+    {
+        ColorSet(ColorSet_Demolisher);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use DemolisherGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T3_DemolisherLoot")
+    {
+        ColorSet(ColorSet_Demolisher);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use DemolisherGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T4_DemolisherLoot")
+    {
+        ColorSet(ColorSet_Demolisher);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use DemolisherGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T5_DemolisherLoot")
+    {
+        ColorSet(ColorSet_Demolisher);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use DemolisherGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T6_DemolisherLoot")
+    {
+        ColorSet(ColorSet_Demolisher);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use DemolisherGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T7_DemolisherLoot")
+    {
+        ColorSet(ColorSet_Demolisher);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use DemolisherGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T8_DemolisherLoot")
+    {
+        ColorSet(ColorSet_Demolisher);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use DemolisherGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T9_DemolisherLoot")
+    {
+        ColorSet(ColorSet_Demolisher);
+		LootAmount(2);
+		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
+		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
+		use DemolisherGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	// Obstructor
+	
+	LootedObject("DefaultCorruptorLoot")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(2);
+		use Valuable_Orange (weight = 1.0, min_amount = 1, max_amount = 1);
+		use CorruptorGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T2_CorruptorLoot")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(2);
+		use Valuable_Orange (weight = 1.0, min_amount = 1, max_amount = 1);
+		use CorruptorGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T3_CorruptorLoot")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(2);
+		use Valuable_Orange (weight = 1.0, min_amount = 1, max_amount = 1);
+		use CorruptorGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("T4_CorruptorLoot")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(3);
+		use Valuable_Orange (weight = 1.0, min_amount = 1, max_amount = 1);
+		use CorruptorGland (weight = 1.0, min_amount = 1, max_amount = 2);
+    }
+	LootedObject("T5_CorruptorLoot")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(3);
+		use Valuable_Orange (weight = 1.0, min_amount = 1, max_amount = 1);
+		use CorruptorGland (weight = 1.0, min_amount = 1, max_amount = 2);
+    }
+	LootedObject("T6_CorruptorLoot")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(4);
+		use Valuable_Orange (weight = 1.0, min_amount = 1, max_amount = 2);
+		use CorruptorGland (weight = 1.0, min_amount = 1, max_amount = 2);
+    }
+	LootedObject("T7_CorruptorLoot")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(4);
+		use Valuable_Orange (weight = 1.0, min_amount = 1, max_amount = 2);
+		use CorruptorGland (weight = 1.0, min_amount = 1, max_amount = 2);
+    }
+	LootedObject("T8_CorruptorLoot")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(5);
+		use Valuable_Orange (weight = 1.0, min_amount = 1, max_amount = 2);
+		use CorruptorGland (weight = 1.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("T9_CorruptorLoot")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(5);
+		use Valuable_Orange (weight = 1.0, min_amount = 1, max_amount = 2);
+		use CorruptorGland (weight = 1.0, min_amount = 1, max_amount = 3);
+    }
+	
+	// Volatile
+	
+	LootedObject("DefaultVolatileLoot")
+    {
+        ColorSet(ColorSet_Volatile);
+		LootAmount(2);
+		//use Cash_High (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Valuable (weight = 1.0, min_amount = 1, max_amount = 1);
+		use VolatileGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	// Human AI
+	
+	LootedObject("DeadBody_Human")
+    {
+        ColorSet(ColorSet_DefaultFodderLoot);
+		LootAmount(1);
+		use Empty(weight = 10.0, min_amount = 1, max_amount = 2);
+		use DefaultSurvivorEncounterLoot (weight = 90.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("DefaultSurvivorLoot")
+    {
+        ColorSet(ColorSet_WhiteOnly);
+		LootAmount(0, 2);
+		use Empty(weight = 6.0, min_amount = 0, max_amount = 2);
+		use DefaultSurvivorEncounterLoot (weight = 4.0, min_amount = 0, max_amount = 2);
+    }
+	
+	LootedObject("DefaultBanditLoot")
+    {
+        ColorSet(ColorSet_DefaultBanditLoot);
+		LootAmount(1);
+		use Empty(weight = 12.0, min_amount = 1, max_amount = 1);
+		use DefaultBanditLoot (weight = 25.0, min_amount = 1, max_amount = 1);
+		use Cash_Mid (weight = 35.0, min_amount = 1, max_amount = 1);
+		
+		use OutfitsWhite (weight = 10.0, min_amount = 1, max_amount = 1);
+		use OutfitsGreen (weight = 4.0, min_amount = 1, max_amount = 1);
+		use OutfitsBlue (weight = 1.0, min_amount = 1, max_amount = 1);
+		
+		use Machete_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_s (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_m (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_g (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("DefaultBanditOficerLoot_1h")
+    {
+        ColorSet(ColorSet_DefaultFactionLoot);
+		LootAmount(1);
+		use DefaultBanditLoot (weight = 25.0, min_amount = 1, max_amount = 1);
+		use Cash_High (weight = 35.0, min_amount = 1, max_amount = 1);
+		
+		use OutfitsGreen (weight = 10.0, min_amount = 1, max_amount = 1);
+		use OutfitsBlue (weight = 4.0, min_amount = 1, max_amount = 1);
+		use OutfitsViolet (weight = 1.0, min_amount = 1, max_amount = 1);
+		
+		use Machete_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_s (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_m (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_g (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("DefaultBanditLoot_2h")
+    {
+        ColorSet(ColorSet_DefaultBanditLoot);
+		LootAmount(1);
+		use DefaultBanditLoot (weight = 25.0, min_amount = 1, max_amount = 1);
+		use Cash_Mid (weight = 35.0, min_amount = 1, max_amount = 1);
+		
+		use OutfitsWhite (weight = 20.0, min_amount = 1, max_amount = 1);
+		use OutfitsGreen (weight = 10.0, min_amount = 1, max_amount = 1);
+		use OutfitsBlue (weight = 5.0, min_amount = 1, max_amount = 1);
+		
+		use TwoHandS_a (weight = 2.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_b (weight = 2.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_e (weight = 2.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_i (weight = 2.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("DefaultBanditOficerLoot_2h")
+    {
+        ColorSet(ColorSet_DefaultFactionLoot);
+		LootAmount(1);
+		use DefaultBanditLoot (weight = 25.0, min_amount = 1, max_amount = 1);
+		use Cash_High (weight = 35.0, min_amount = 1, max_amount = 1);
+		
+		use OutfitsBlue (weight = 10.0, min_amount = 1, max_amount = 1);
+		use OutfitsViolet (weight = 5.0, min_amount = 1, max_amount = 1);
+		
+		use TwoHandS_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_n (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("DefaultFodderLoot")
+    {
+        ColorSet(ColorSet_DefaultFodderLoot);
+		LootAmount(1);
+		use Empty(weight = 10.0, min_amount = 1, max_amount = 1);
+		use DefaultFodderLoot (weight = 40.0, min_amount = 1, max_amount = 1);
+		use Cash_Low (weight = 40.0, min_amount = 1, max_amount = 1);
+		
+		use Machete_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_s (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_m (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_g (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	//PK LOOT
+	
+	LootedObject("DefaultPeacekeeperLoot")
+    {
+        ColorSet(ColorSet_DefaultFactionLoot);
+		LootAmount(1, 3);
+		
+		//Base
+		use Empty(weight = 12.0, min_amount = 0, max_amount = 3);
+		use Cash_Mid (weight = 30.0, min_amount = 1, max_amount = 3);
+		use DefaultPeacekeeperLoot (weight = 40.0, min_amount = 0, max_amount = 3);
+		
+		//Weapons
+		use AxeDualbladed_a_Peacekeepers(weight = 1.0, min_amount = 0, max_amount = 1);
+		use Axe_e_Peacekeepers(weight = 1.0, min_amount = 0, max_amount = 1);
+		use Machete_k_Peacekeepers(weight = 1.0, min_amount = 0, max_amount = 1);
+		use Machete_u_Peacekeepers(weight = 1.0, min_amount = 0, max_amount = 1);
+		use Hammer_d_Peacekeepers(weight = 1.0, min_amount = 0, max_amount = 1);
+		use Hammer_k_Peacekeepers(weight = 1.0, min_amount = 0, max_amount = 1);
+		use Stick_e_Peacekeepers(weight = 1.0, min_amount = 0, max_amount = 1);
+		use Stick_d_Peacekeepers(weight = 1.0, min_amount = 0, max_amount = 1);
+		
+		//Outfits
+		use OutfitsBlue (weight = 10.0, min_amount = 0, max_amount = 1);
+    }
+	
+	LootedObject("DefaultPeacekeeper2hLoot")
+    {
+        ColorSet(ColorSet_DefaultFactionLoot);
+		LootAmount(1, 3);
+		
+		//Base
+		use Empty(weight = 14.0, min_amount = 0, max_amount = 3);
+		use Cash_Mid (weight = 30.0, min_amount = 1, max_amount = 3);
+		use DefaultPeacekeeperLoot (weight = 40.0, min_amount = 0, max_amount = 3);
+		
+		//Weapons
+		use TwoHand_e_Peacekeepers(weight = 2.0, min_amount = 0, max_amount = 1);
+		use TwoHand_c_Peacekeepers(weight = 2.0, min_amount = 0, max_amount = 1);
+		use TwoHand_a_Peacekeepers(weight = 2.0, min_amount = 0, max_amount = 1);
+		
+		//Outfits
+		use OutfitsBlue (weight = 10.0, min_amount = 0, max_amount = 1);
+    }
+	
+	LootedObject("DefaultScavengerLoot")
+    {
+        ColorSet(ColorSet_DefaultFactionLoot);
+		LootAmount(1, 3);
+		use Empty(weight = 5.0, min_amount = 1, max_amount = 3);
+		use DefaultScavengerLoot (weight = 8.0, min_amount = 1, max_amount = 3);
+    }
+	
+	LootedObject("DefaultBanditMolotoveLoot")
+    {
+        ColorSet(ColorSet_DefaultBanditLoot);
+		LootAmount(2);
+		use Empty(weight = 5.0, min_amount = 1, max_amount = 3);
+		use DefaultBanditLoot (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Molotov (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("DefaultBanditBowLoot")
+    {
+        ColorSet(ColorSet_DefaultBanditLoot);
+		LootAmount(2);
+		use DefaultBanditBowLoot (weight = 40.0, min_amount = 1, max_amount = 2);
+		
+		use Empty(weight = 2.0, min_amount = 0, max_amount = 1);
+		use DefaultBanditLoot (weight = 5.0, min_amount = 0, max_amount = 1);
+		use Cash_Mid (weight = 5.0, min_amount = 0, max_amount = 1);
+		
+		use OutfitsWhite_Ranged (weight = 5.0, min_amount = 0, max_amount = 1);
+		use OutfitsGreen_Ranged (weight = 3.0, min_amount = 0, max_amount = 1);
+    }
+	
+    LootedObject("DefaultBanditHardLoot")
+    {
+        ColorSet(ColorSet_DefaultBanditLoot);
+		LootAmount(3, 5);
+		use DefaultBanditLoot (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("DefaultSurvivorEncounterLoot")
+    {
+        ColorSet(ColorSet_DefaultEncounterLoot);
+		LootAmount(1, 3);
+		use DefaultSurvivorEncounterLoot (weight = 5.0, min_amount = 1, max_amount = 3);
+    }	
+	
+	LootedObject("BanditRunnerLoot")
+    {
+        ColorSet(ColorSet_DefaultEncounterLoot);
+		LootAmount(5, 8);
+		use DefaultBanditLoot (weight = 1.0, min_amount = 2, max_amount = 8);
+		use DefaultSurvivorEncounterLoot (weight = 1.0, min_amount = 3, max_amount = 8);
+		use DefaultPeacekeeperLoot (weight = 1.0, min_amount = 3, max_amount = 8);
+		use DefaultScavengerLoot (weight = 1.0, min_amount = 3, max_amount = 8);
+    }
+	
+	LootedObject("DefaultAnimalLoot")
+    {
+        ColorSet(ColorSet_DefaultBanditLoot);
+		LootAmount(1,3);
+		use DefaultAnimalLoot (weight = 1.0, min_amount = 1, max_amount = 3);
+    }
+	
+	LootedObject("Infected_Bandit")
+    {
+        ColorSet(ColorSet_DefaultBanditLoot);
+		LootAmount(1);
+		use Empty(weight = 5.0, min_amount = 1, max_amount = 3);
+		use DefaultBanditLoot (weight = 3.0, min_amount = 1, max_amount = 3);
+    }
+	
+	LootedObject("Infected_PK")
+    {
+        ColorSet(ColorSet_DefaultFactionLoot);
+		LootAmount(1);
+		use DefaultPeacekeeperLoot (weight = 8.0, min_amount = 1, max_amount = 3);
+		use Infected_PK (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Infected_Scav")
+    {
+        ColorSet(ColorSet_DefaultFactionLoot);
+		LootAmount(1);
+		use Empty(weight = 5.0, min_amount = 1, max_amount = 3);
+		use DefaultScavengerLoot (weight = 8.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Infected_GRE")
+    {
+        ColorSet(ColorSet_DefaultFactionLoot);
+		LootAmount(1);
+		use Infected_GRE (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Outfits")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(1);
+		use OutfitsWhite (weight = 1.0, min_amount = 1, max_amount = 1);
+		use OutfitsGreen (weight = 1.0, min_amount = 1, max_amount = 1);
+		use OutfitsBlue (weight = 1.0, min_amount = 1, max_amount = 1);
+		use OutfitsViolet (weight = 1.0, min_amount = 1, max_amount = 1);
+		use OutfitsOrange (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Outfits_White")
+    {
+        ColorSet(ColorSet_WhiteOnly);
+		LootAmount(1);
+		use OutfitsWhite (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Outfits_Green")
+    {
+        ColorSet(ColorSet_GreenOnly);
+		LootAmount(1);
+		use OutfitsGreen (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Outfits_Blue")
+    {
+        ColorSet(ColorSet_BlueOnly);
+		LootAmount(1);
+		use OutfitsBlue (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Outfits_Violet")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(1);
+		use OutfitsViolet (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Outfits_Orange")
+    {
+        ColorSet(ColorSet_OrangeOnly);
+		LootAmount(1);
+		use OutfitsOrange (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Outfits_Lv2")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(1);
+		use OutfitsGreen (weight = 85.0, min_amount = 1, max_amount = 1);
+		use OutfitsBlue (weight = 15.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Outfits_Lv3")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(1);
+		use OutfitsBlue (weight = 85.0, min_amount = 1, max_amount = 1);
+		use OutfitsViolet (weight = 15.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Outfits_Lv4")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(1);
+		use OutfitsViolet (weight = 85.0, min_amount = 1, max_amount = 1);
+		use OutfitsOrange (weight = 15.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Outfits_Lv5")
+    {
+        ColorSet(ColorSet_ContainerLv5);
+		LootAmount(1);
+		use OutfitsViolet (weight = 65.0, min_amount = 1, max_amount = 1);
+		use OutfitsOrange (weight = 35.0, min_amount = 1, max_amount = 1);
+    }
+	
+	//Endgame
+	
+	LootedObject("Endgame_WeaponSlot_Encounter")
+    {
+        ColorSet(ColorSet_WeaponT3);
+		LootAmount(1);
+		use Airdrop_Loot (weight = 60.0, min_amount = 1, max_amount = 1);
+		use Weapons_Endgame_Scaling_T3 (weight = 20.0, min_amount = 1, max_amount = 1);
+		use OutfitsOrange_Endgame_Scaling (weight = 20.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Endgame_RewardSlot_Encounter")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(2);
+		use Weapons_Endgame_Scaling_T2 (weight = 50.0, min_amount = 0, max_amount = 1);
+		use OutfitsBlue_Endgame_Scaling (weight = 30.0, min_amount = 0, max_amount = 1);
+		use OutfitsViolet_Endgame_Scaling (weight = 20.0, min_amount = 0, max_amount = 1);
+    }
+	
+	LootedObject("Endgame_Boss")
+    {
+        ColorSet(ColorSet_WeaponT3);
+		LootAmount(1);
+		use Weapons_Endgame_Scaling_T3 (weight = 1.0, min_amount = 1, max_amount = 1);
+		use OutfitsOrange_Endgame_Scaling (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Endgame_Elite")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(1);
+		use Weapons_Endgame_Scaling_T2 (weight = 50.0, min_amount = 0, max_amount = 1);
+		use OutfitsBlue_Endgame_Scaling (weight = 30.0, min_amount = 0, max_amount = 1);
+		use OutfitsViolet_Endgame_Scaling (weight = 20.0, min_amount = 0, max_amount = 1);
+    }
+	
+	LootedObject("Endgame_Enemy")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(1);
+		use Weapons_Endgame_Scaling_T2 (weight = 4.0, min_amount = 0, max_amount = 1);
+		use OutfitsBlue_Endgame_Scaling (weight = 3.0, min_amount = 0, max_amount = 1);
+		use OutfitsViolet_Endgame_Scaling (weight = 1.0, min_amount = 0, max_amount = 1);
+    }
+	
+	//Difficulty 7
+	
+	
+	LootedObject("Difficulty7_WeaponSlot_Rooftop")
+    {
+        ColorSet(ColorSet_WeaponT2_LowChance);
+		LootAmount(1);
+		use Valuable_Chest (weight = 30.0, min_amount = 1, max_amount = 1);
+		use Weapons_D7_T1 (weight = 70.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Difficulty7_RewardSlot_Rooftop")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(3);
+		use Empty (weight = 10.0, min_amount = 0, max_amount = 1);
+		use Valuable_Chest (weight = 20.0, min_amount = 1, max_amount = 2);
+		use Craftparts_Flooded (weight = 10.0, min_amount = 0, max_amount = 2);
+		use Healing_Supplies_End (weight = 60.0, min_amount = 0, max_amount = 2);
+    }
+	
+	LootedObject("Difficulty7_WeaponSlot_GRE")
+    {
+        ColorSet(ColorSet_WeaponT3);
+		LootAmount(1);
+		use OutfitsOrange_T7 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Difficulty7_RewardSlot_GRE")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(3);
+		use Immunity_Mixture_GRE (weight = 1.0, min_amount = 2, max_amount = 2);
+		use Military_Rations (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Difficulty7_WeaponSlot_Military")
+    {
+        ColorSet(ColorSet_WeaponT3);
+		LootAmount(1);
+		use Airdrop_Loot (weight = 60.0, min_amount = 1, max_amount = 1);
+		use Weapons_D7_T3 (weight = 20.0, min_amount = 1, max_amount = 1);
+		use OutfitsOrange_T7 (weight = 20.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Difficulty7_RewardSlot_Military")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(2);
+		use Weapons_D7_T2 (weight = 50.0, min_amount = 0, max_amount = 1);
+		use OutfitsBlue_T7 (weight = 30.0, min_amount = 0, max_amount = 1);
+		use OutfitsViolet_T7 (weight = 20.0, min_amount = 0, max_amount = 1);
+    }
+	
+	LootedObject("Difficulty7_Boss")
+    {
+        ColorSet(ColorSet_WeaponT3);
+		LootAmount(1);
+		use Weapons_D7_T3 (weight = 1.0, min_amount = 1, max_amount = 1);
+		use OutfitsOrange_T7 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Difficulty7_Elite")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(1);
+		use Weapons_D7_T2 (weight = 50.0, min_amount = 0, max_amount = 1);
+		use OutfitsBlue_T7 (weight = 30.0, min_amount = 0, max_amount = 1);
+		use OutfitsViolet_T7 (weight = 20.0, min_amount = 0, max_amount = 1);
+    }
+	
+	//Difficulty 8
+	
+	
+	LootedObject("Difficulty8_WeaponSlot_Rooftop")
+    {
+        ColorSet(ColorSet_WeaponT2_LowChance);
+		LootAmount(1);
+		use Valuable_Chest (weight = 30.0, min_amount = 1, max_amount = 1);
+		use Weapons_D8_T1 (weight = 70.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Difficulty8_RewardSlot_Rooftop")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(3);
+		use Empty (weight = 10.0, min_amount = 0, max_amount = 1);
+		use Valuable_Chest (weight = 20.0, min_amount = 0, max_amount = 2);
+		use Craftparts_Flooded (weight = 10.0, min_amount = 0, max_amount = 2);
+		use Healing_Supplies_End (weight = 60.0, min_amount = 0, max_amount = 2);
+    }
+	
+	LootedObject("Difficulty8_WeaponSlot_GRE")
+    {
+        ColorSet(ColorSet_WeaponT3);
+		LootAmount(1);
+		use OutfitsOrange_T8 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Difficulty8_RewardSlot_GRE")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(3);
+		use Immunity_Mixture_GRE (weight = 1.0, min_amount = 2, max_amount = 2);
+		use Military_Rations (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Difficulty8_WeaponSlot_Military")
+    {
+        ColorSet(ColorSet_WeaponT3);
+		LootAmount(1);
+		use Airdrop_Loot (weight = 60.0, min_amount = 1, max_amount = 1);
+		use Weapons_D8_T3 (weight = 20.0, min_amount = 1, max_amount = 1);
+		use OutfitsOrange_T8 (weight = 20.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Difficulty8_RewardSlot_Military")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(2);
+		use Weapons_D8_T2 (weight = 50.0, min_amount = 0, max_amount = 1);
+		use OutfitsBlue_T8 (weight = 30.0, min_amount = 0, max_amount = 1);
+		use OutfitsViolet_T8 (weight = 20.0, min_amount = 0, max_amount = 1);
+    }
+	
+	LootedObject("Difficulty8_Boss")
+    {
+        ColorSet(ColorSet_WeaponT3);
+		LootAmount(1);
+		use Weapons_D8_T3 (weight = 1.0, min_amount = 1, max_amount = 1);
+		use OutfitsOrange_T8 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Difficulty8_Elite")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(1);
+		use Weapons_D8_T2 (weight = 50.0, min_amount = 0, max_amount = 1);
+		use OutfitsBlue_T8 (weight = 30.0, min_amount = 0, max_amount = 1);
+		use OutfitsViolet_T8 (weight = 20.0, min_amount = 0, max_amount = 1);
+    }
+	
+	//Difficulty 9
+	
+	
+	LootedObject("Difficulty9_WeaponSlot_Rooftop")
+    {
+        ColorSet(ColorSet_WeaponT2_LowChance);
+		LootAmount(1);
+		use Empty (weight = 30.0, min_amount = 1, max_amount = 1);
+		use Weapons_D9_T1 (weight = 70.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Difficulty9_RewardSlot_Rooftop")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(3);
+		use Empty (weight = 10.0, min_amount = 0, max_amount = 1);
+		use Valuable_Chest (weight = 20.0, min_amount = 0, max_amount = 2);
+		use Craftparts_Flooded (weight = 10.0, min_amount = 0, max_amount = 2);
+		use Healing_Supplies_End (weight = 60.0, min_amount = 0, max_amount = 2);
+    }
+	
+	LootedObject("Difficulty9_WeaponSlot_GRE")
+    {
+        ColorSet(ColorSet_WeaponT3);
+		LootAmount(1);
+		use OutfitsOrange_T9 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Difficulty9_RewardSlot_GRE")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(3);
+		use Immunity_Mixture_GRE (weight = 1.0, min_amount = 2, max_amount = 2);
+		use Military_Rations (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Difficulty9_WeaponSlot_Military")
+    {
+        ColorSet(ColorSet_WeaponT3);
+		LootAmount(1);
+		use Airdrop_Loot (weight = 60.0, min_amount = 1, max_amount = 1);
+		use Weapons_D9_T3 (weight = 20.0, min_amount = 1, max_amount = 1);
+		use OutfitsOrange_T9 (weight = 20.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Difficulty9_RewardSlot_Military")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(2);
+		use Weapons_D9_T2 (weight = 30.0, min_amount = 0, max_amount = 1);
+		use OutfitsBlue_T9 (weight = 12.0, min_amount = 0, max_amount = 1);
+		use OutfitsViolet_T9 (weight = 8.0, min_amount = 0, max_amount = 1);
+    }
+	
+	LootedObject("Difficulty9_Boss")
+    {
+        ColorSet(ColorSet_WeaponT3);
+		LootAmount(1);
+		use Weapons_D9_T3 (weight = 1.0, min_amount = 1, max_amount = 1);
+		use OutfitsOrange_T9 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Difficulty9_Elite")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(1);
+		use Weapons_D9_T2 (weight = 30.0, min_amount = 0, max_amount = 1);
+		use OutfitsBlue_T9 (weight = 12.0, min_amount = 0, max_amount = 1);
+		use OutfitsViolet_T9 (weight = 8.0, min_amount = 0, max_amount = 1);
+    }
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////Weapons //////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	LootedObject("Starting_Weapons")
+    {
+        ColorSet(ColorSet_WhiteOnly);
+		LootAmount(1);
+		use Machete_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_m (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_j (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	//GENERAL
+	
+	LootedObject("Weapon_Temporary")
+    {
+        ColorSet(ColorSet_WhiteOnly);
+		LootAmount(1);
+		use Machete_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_m (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_j (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Temporary_Sharp")
+    {
+        ColorSet(ColorSet_WhiteOnly);
+		LootAmount(1);
+		use Machete_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_j (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Temporary_Heavy")
+    {
+        ColorSet(ColorSet_WhiteOnly);
+		LootAmount(1);
+		use TwoHandS_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_i (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Temporary_Heavy_Sharp")
+    {
+        ColorSet(ColorSet_WhiteOnly);
+		LootAmount(1);
+		use TwoHandS_b (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Melee")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Machete_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_s (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_m (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_k (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_m (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_n (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_o (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_p (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_r (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_s (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_t (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_u (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_v (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_n (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_p (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_k (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleS_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleS_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_k (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_n (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_o (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_n (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleB_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleB_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_w (weight = 1.0, min_amount = 1, max_amount = 1);
+		use AxeDualbladed_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_r (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleS_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_p (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_k (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_m (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleB_c (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_MBlade")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Machete_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_s (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_k (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_m (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_n (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_o (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_p (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_r (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_s (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_t (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_u (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_v (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_n (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_p (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_k (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleS_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleS_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_w (weight = 1.0, min_amount = 1, max_amount = 1);
+		use AxeDualbladed_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_r (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleS_c (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_MBlunt")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Hammer_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_m (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_k (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_n (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_o (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_n (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleB_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleB_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_p (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_k (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_m (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleB_c (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Heavy")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use TwoHandS_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_n (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_HBlade")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use TwoHandS_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_i (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_HBlunt")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use TwoHandB_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_n (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Spear")
+    {
+        ColorSet(ColorSet_WhiteOnly);
+		LootAmount(1);
+		use Spear (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Bow")
+    {
+        ColorSet(ColorSet_WeaponT1);
+		LootAmount(1);
+		use BowT1 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Bow_T1_Story")
+    {
+        ColorSet(ColorSet_BlueOnly);
+		LootAmount(1);
+		use BowT1 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Bow_T2_Story")
+    {
+        ColorSet(ColorSet_BlueOnly);
+		LootAmount(1);
+		use BowT2 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Bow_T3_Story")
+    {
+        ColorSet(ColorSet_BlueOnly);
+		LootAmount(1);
+		use BowT3 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Bow_T4_Story")
+    {
+        ColorSet(ColorSet_BlueOnly);
+		LootAmount(1);
+		use BowT4 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Bow_T5_Story")
+    {
+        ColorSet(ColorSet_BlueOnly);
+		LootAmount(1);
+		use BowT5 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Bow_T6_Story")
+    {
+        ColorSet(ColorSet_BlueOnly);
+		LootAmount(1);
+		use BowT6 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Bow_T7_Story")
+    {
+        ColorSet(ColorSet_BlueOnly);
+		LootAmount(1);
+		use BowT7 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Bow_T8_Story")
+    {
+        ColorSet(ColorSet_BlueOnly);
+		LootAmount(1);
+		use BowT8 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Bow_T9_Story")
+    {
+        ColorSet(ColorSet_BlueOnly);
+		LootAmount(1);
+		use BowT9 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Bow_T1_Airdrop")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(1);
+		use BowT1 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Bow_T2_Airdrop")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(1);
+		use BowT2 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Bow_T3_Airdrop")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(1);
+		use BowT3 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Bow_T4_Airdrop")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(1);
+		use BowT4 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Bow_T5_Airdrop")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(1);
+		use BowT5 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Bow_T6_Airdrop")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(1);
+		use BowT6 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Bow_T7_Airdrop")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(1);
+		use BowT7 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Bow_T8_Airdrop")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(1);
+		use BowT8 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Bow_T9_Airdrop")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(1);
+		use BowT9 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	
+	
+	
+	LootedObject("Weapon_Bow_Reg01_Airdrop")
+    {
+        ColorSet(ColorSet_BlueOnly);
+		LootAmount(1);
+		use BowT1 (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	// Weapon T1
+	
+	LootedObject("Weapon_Melee_T1")
+    {
+        ColorSet(ColorSet_WeaponT1);
+		LootAmount(1);
+		use Machete_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_s (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_m (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_g (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Melee_T1_LowChance")
+    {
+        ColorSet(ColorSet_WeaponT1_LowChance);
+		LootAmount(1);
+		use Machete_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_s (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_m (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_g (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_MBlade_T1")
+    {
+        ColorSet(ColorSet_WeaponT1);
+		LootAmount(1);
+		use Machete_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_s (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_j (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_MBlade_T1_LowChance")
+    {
+        ColorSet(ColorSet_WeaponT1_LowChance);
+		LootAmount(1);
+		use Machete_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_s (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_j (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_MBlunt_T1")
+    {
+        ColorSet(ColorSet_WeaponT1);
+		LootAmount(1);
+		use Hammer_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_m (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_g (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Heavy_T1")
+    {
+        ColorSet(ColorSet_WeaponT1_LowChance);
+		LootAmount(1);
+		use TwoHandS_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_i (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_HBlade_T1")
+    {
+        ColorSet(ColorSet_WeaponT1);
+		LootAmount(1);
+		use TwoHandS_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_b (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_HBlunt_T1")
+    {
+        ColorSet(ColorSet_WeaponT1);
+		LootAmount(1);
+		use TwoHandB_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_i (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	// Weapon T2
+	
+	LootedObject("Weapon_Melee_T2")
+    {
+        ColorSet(ColorSet_WeaponT2);
+		LootAmount(1);
+		use Machete_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_k (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_m (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_n (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_o (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_p (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_r (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_s (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_t (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_u (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_v (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_n (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_p (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_k (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleS_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleS_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_k (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_n (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_o (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_n (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleB_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleB_b (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_MBlade_T2")
+    {
+        ColorSet(ColorSet_WeaponT2);
+		LootAmount(1);
+		use Machete_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_k (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_m (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_n (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_o (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_p (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_r (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_s (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_t (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_u (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_v (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_n (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_p (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_k (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleS_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleS_b (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_MBlunt_T2")
+    {
+        ColorSet(ColorSet_WeaponT2);
+		LootAmount(1);
+		use Hammer_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_k (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_n (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_o (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_n (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleB_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleB_b (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Heavy_T2")
+    {
+        ColorSet(ColorSet_WeaponT2_LowChance);
+		LootAmount(1);
+		use TwoHandS_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_n (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_HBlade_T2")
+    {
+        ColorSet(ColorSet_WeaponT2);
+		LootAmount(1);
+		use TwoHandS_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_i (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_HBlunt_T2")
+    {
+        ColorSet(ColorSet_WeaponT2);
+		LootAmount(1);
+		use TwoHandB_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_n (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	// Weapon T3
+	
+	LootedObject("Weapon_Melee_T3")
+    {
+        ColorSet(ColorSet_WeaponT3);
+		LootAmount(1);
+		use Machete_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_w (weight = 1.0, min_amount = 1, max_amount = 1);
+		use AxeDualbladed_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_r (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleS_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_p (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_k (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_m (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleB_c (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_MBlade_T3")
+    {
+        ColorSet(ColorSet_WeaponT3);
+		LootAmount(1);
+		use Machete_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_w (weight = 1.0, min_amount = 1, max_amount = 1);
+		use AxeDualbladed_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_r (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleS_c (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_MBlunt_T3")
+    {
+        ColorSet(ColorSet_WeaponT3);
+		LootAmount(1);
+		use Hammer_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_p (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_k (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_m (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleB_c (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_Heavy_T3")
+    {
+        ColorSet(ColorSet_WeaponT3);
+		LootAmount(1);
+		use TwoHandS_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_d (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_HBlade_T3")
+    {
+        ColorSet(ColorSet_WeaponT3);
+		LootAmount(1);
+		use TwoHandS_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandS_g (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapon_HBlunt_T3")
+    {
+        ColorSet(ColorSet_WeaponT3);
+		LootAmount(1);
+		use TwoHandB_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHandB_d (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	// Weapon Container
+	
+	LootedObject("Weapons_ContainerLv1")
+    {
+        ColorSet(ColorSet_WeaponT1_LowChance);
+		LootAmount(1);
+		use Machete_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_s (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_m (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Outfits (weight = 10.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapons_ContainerLv2")
+    {
+        ColorSet(ColorSet_GreenOnly);
+		LootAmount(1);
+		use Machete_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_s (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_m (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_j (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Outfits (weight = 10.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapons_ContainerLv3")
+    {
+        ColorSet(ColorSet_WeaponT2);
+		LootAmount(1);
+		use Machete_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_k (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_m (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_n (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_o (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_p (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_r (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_s (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_t (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_u (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_v (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_n (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_p (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_k (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleS_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleS_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_k (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_n (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_o (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_n (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleB_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleB_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Outfits (weight = 20.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapons_ContainerLv4")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(1);
+		use Machete_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_k (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_m (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_n (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_o (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_p (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_r (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_s (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_t (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_u (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_v (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_n (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_p (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_k (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleS_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleS_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_k (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_n (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_o (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_i (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_n (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleB_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleB_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Outfits (weight = 20.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Weapons_ContainerLv5")
+    {
+        ColorSet(ColorSet_OrangeOnly);
+		LootAmount(1);
+		use Machete_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_w (weight = 1.0, min_amount = 1, max_amount = 1);
+		use AxeDualbladed_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_r (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongS_l (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleS_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_p (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_e (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_h (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_d (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_b (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_f (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_k (weight = 1.0, min_amount = 1, max_amount = 1);
+		use LongB_m (weight = 1.0, min_amount = 1, max_amount = 1);
+		use KnuckleB_c (weight = 1.0, min_amount = 1, max_amount = 1);
+		use OutfitsOrange (weight = 5.0, min_amount = 1, max_amount = 1);
+    }
+	
+	//Factions
+	
+	//Dukes1h
+	
+	LootedObject("Dukes1hGreen")
+    {
+        ColorSet(ColorSet_GreenOnly);
+		LootAmount(1);
+		use Hammer_a_dukes (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_s_dukes (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_l_dukes (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_b_dukes (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_f_dukes (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_p_dukes (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_a_dukes (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Dukes1hBlue")
+    {
+        ColorSet(ColorSet_BlueOnly);
+		LootAmount(1);
+		use Hammer_a_dukes (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_s_dukes (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_l_dukes (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_b_dukes (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_f_dukes (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_p_dukes (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_a_dukes (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Dukes1hOutfits")
+    {
+        ColorSet(ColorSet_GreenOnly);
+		LootAmount(1);
+		
+		use Empty(weight = 5.0, min_amount = 1, max_amount = 1);
+		use DefaultBanditLoot (weight = 30.0, min_amount = 1, max_amount = 1);
+		use Cash_Mid (weight = 30.0, min_amount = 1, max_amount = 1);
+		
+		use Hammer_a_dukes (weight = 2.0, min_amount = 1, max_amount = 1);
+		use Machete_s_dukes (weight = 2.0, min_amount = 1, max_amount = 1);
+		use Machete_l_dukes (weight = 2.0, min_amount = 1, max_amount = 1);
+		use Mace_b_dukes (weight = 2.0, min_amount = 1, max_amount = 1);
+		use Mace_f_dukes (weight = 2.0, min_amount = 1, max_amount = 1);
+		use Axe_p_dukes (weight = 2.0, min_amount = 1, max_amount = 1);
+		use Stick_a_dukes (weight = 2.0, min_amount = 1, max_amount = 1);
+		use OutfitsGreen (weight = 20.0, min_amount = 1, max_amount = 1);
+    }
+	
+	//Dukes2h
+	
+	LootedObject("Dukes2hGreen")
+    {
+        ColorSet(ColorSet_GreenOnly);
+		LootAmount(1);
+		use TwoHand_d_dukes (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHand_f_dukes (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Dukes2hBlue")
+    {
+        ColorSet(ColorSet_BlueOnly);
+		LootAmount(1);
+		use TwoHand_d_dukes (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHand_f_dukes (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Dukes2hOutfits")
+    {
+        ColorSet(ColorSet_BlueOnly);
+		LootAmount(1);
+		
+		use DefaultBanditLoot (weight = 30.0, min_amount = 1, max_amount = 1);
+		use Cash_Mid (weight = 30.0, min_amount = 1, max_amount = 1);
+		
+		use TwoHand_d_dukes (weight = 10.0, min_amount = 1, max_amount = 1);
+		use TwoHand_f_dukes (weight = 10.0, min_amount = 1, max_amount = 1);
+		use OutfitsBlue (weight = 20.0, min_amount = 1, max_amount = 1);
+    }
+	
+	//Renegades1h
+	
+	LootedObject("Renegades1hGreen")
+    {
+        ColorSet(ColorSet_GreenOnly);
+		LootAmount(1);
+		use Hammer_a_renegades (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_s_renegades (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_l_renegades (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_b_renegades (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_f_renegades (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_p_renegades (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_a_renegades (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Renegades1hBlue")
+    {
+        ColorSet(ColorSet_BlueOnly);
+		LootAmount(1);
+		use Hammer_a_renegades (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_s_renegades (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_l_renegades (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_b_renegades (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mace_f_renegades (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_p_renegades (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_a_renegades (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Renegades1hOutfits")
+    {
+        ColorSet(ColorSet_GreenOnly);
+		LootAmount(1);
+		
+		use Empty(weight = 5.0, min_amount = 1, max_amount = 1);
+		use DefaultBanditLoot (weight = 30.0, min_amount = 1, max_amount = 1);
+		use Cash_Mid (weight = 30.0, min_amount = 1, max_amount = 1);
+		
+		use Hammer_a_renegades (weight = 3.0, min_amount = 1, max_amount = 1);
+		use Machete_s_renegades (weight = 3.0, min_amount = 1, max_amount = 1);
+		use Machete_l_renegades (weight = 3.0, min_amount = 1, max_amount = 1);
+		use Mace_b_renegades (weight = 3.0, min_amount = 1, max_amount = 1);
+		use Mace_f_renegades (weight = 3.0, min_amount = 1, max_amount = 1);
+		use Axe_p_renegades (weight = 3.0, min_amount = 1, max_amount = 1);
+		use Stick_a_renegades (weight = 3.0, min_amount = 1, max_amount = 1);
+		use OutfitsGreen (weight = 20.0, min_amount = 1, max_amount = 1);
+    }
+	
+	//Renegades2h
+	
+	LootedObject("Renegades2hGreen")
+    {
+        ColorSet(ColorSet_GreenOnly);
+		LootAmount(1);
+		use TwoHand_d_renegades (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHand_f_renegades (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Renegades2hBlue")
+    {
+        ColorSet(ColorSet_BlueOnly);
+		LootAmount(1);
+		use TwoHand_d_renegades (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHand_f_renegades (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Renegades2hOutfits")
+    {
+        ColorSet(ColorSet_BlueOnly);
+		LootAmount(1);
+		
+		use DefaultBanditLoot (weight = 30.0, min_amount = 1, max_amount = 1);
+		use Cash_Mid (weight = 30.0, min_amount = 1, max_amount = 1);
+		
+		use TwoHand_d_renegades (weight = 10.0, min_amount = 1, max_amount = 1);
+		use TwoHand_f_renegades (weight = 10.0, min_amount = 1, max_amount = 1);
+		use OutfitsBlue (weight = 20.0, min_amount = 1, max_amount = 1);
+    }
+	
+	//PK1h
+	
+	LootedObject("Peacekeepers1hBlue")
+    {
+        ColorSet(ColorSet_BlueOnly);
+		LootAmount(1);
+		use AxeDualbladed_a_Peacekeepers (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_e_Peacekeepers (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_k_Peacekeepers (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_u_Peacekeepers (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_d_Peacekeepers (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_k_Peacekeepers (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_e_Peacekeepers (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_d_Peacekeepers (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Peacekeepers1hViolet")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(1);
+		use AxeDualbladed_a_Peacekeepers (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_e_Peacekeepers (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_k_Peacekeepers (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Machete_u_Peacekeepers (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_d_Peacekeepers (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_k_Peacekeepers (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_e_Peacekeepers (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_d_Peacekeepers (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Peacekeepers1hOutfits")
+    {
+        ColorSet(ColorSet_BlueOnly);
+		LootAmount(1);
+		
+		use DefaultPeacekeeperLoot (weight = 30.0, min_amount = 1, max_amount = 1);
+		use Cash_Mid (weight = 30.0, min_amount = 1, max_amount = 1);
+		
+		use AxeDualbladed_a_Peacekeepers (weight = 2.0, min_amount = 1, max_amount = 1);
+		use Axe_e_Peacekeepers (weight = 2.0, min_amount = 1, max_amount = 1);
+		use Machete_k_Peacekeepers (weight = 2.0, min_amount = 1, max_amount = 1);
+		use Machete_u_Peacekeepers (weight = 2.0, min_amount = 1, max_amount = 1);
+		use Hammer_d_Peacekeepers (weight = 2.0, min_amount = 1, max_amount = 1);
+		use Hammer_k_Peacekeepers (weight = 2.0, min_amount = 1, max_amount = 1);
+		use Stick_e_Peacekeepers (weight = 2.0, min_amount = 1, max_amount = 1);
+		use Stick_d_Peacekeepers (weight = 2.0, min_amount = 1, max_amount = 1);
+		use OutfitsBlue (weight = 20.0, min_amount = 1, max_amount = 1);
+    }
+	
+	//PK2h
+	
+	LootedObject("Peacekeepers2hBlue")
+    {
+        ColorSet(ColorSet_BlueOnly);
+		LootAmount(1);
+		use TwoHand_e_Peacekeepers (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHand_c_Peacekeepers (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHand_a_Peacekeepers (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Peacekeepers2hViolet")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(1);
+		use TwoHand_e_Peacekeepers (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHand_c_Peacekeepers (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TwoHand_a_Peacekeepers (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Peacekeepers2hOutfits")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(1);
+		
+		use DefaultPeacekeeperLoot (weight = 30.0, min_amount = 1, max_amount = 1);
+		use Cash_Mid (weight = 30.0, min_amount = 1, max_amount = 1);
+		
+		use TwoHand_e_Peacekeepers (weight = 7.0, min_amount = 1, max_amount = 1);
+		use TwoHand_c_Peacekeepers (weight = 7.0, min_amount = 1, max_amount = 1);
+		use TwoHand_a_Peacekeepers (weight = 7.0, min_amount = 1, max_amount = 1);
+		use OutfitsViolet (weight = 20.0, min_amount = 1, max_amount = 1);
+    }
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////Activities Rewards  //////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	LootedObject("Keycraft_Military")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Keycraft_Military (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Useitem_Military")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Military_UseItem (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Weapon_Military")
+    {
+        ColorSet(ColorSet_OrangeOnly);
+		LootAmount(1);
+		use Machete_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Axe_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use AxeDualbladed_a (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Hammer_g (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Stick_e (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Truck_Evac_Weapons_Outfits")
+    {
+        ColorSet(ColorSet_WeaponT2_LowChance);
+		LootAmount(1);
+		use Axe_b (weight = 3.5, min_amount = 1, max_amount = 1);
+		use Axe_n (weight = 3.5, min_amount = 1, max_amount = 1);
+		use Machete_v (weight = 3.5, min_amount = 1, max_amount = 1);
+		use Machete_r (weight = 3.5, min_amount = 1, max_amount = 1);
+		use Machete_s (weight = 3.5, min_amount = 1, max_amount = 1);
+		use LongS_k (weight = 3.5, min_amount = 1, max_amount = 1);
+		use Hammer_f (weight = 3.5, min_amount = 1, max_amount = 1);
+		use Stick_a (weight = 3.5, min_amount = 1, max_amount = 1);
+		use Mace_c (weight = 3.5, min_amount = 1, max_amount = 1);
+		use Mace_i (weight = 3.5, min_amount = 1, max_amount = 1);
+		use LongB_h (weight = 3.5, min_amount = 1, max_amount = 1);
+		use LongB_n (weight = 3.5, min_amount = 1, max_amount = 1);
+		
+		use TwoHandS_c (weight = 3.5, min_amount = 1, max_amount = 1);
+		use TwoHandB_n (weight = 3.5, min_amount = 1, max_amount = 1);
+		
+		use OutfitsGreen (weight = 10.0, min_amount = 1, max_amount = 1);
+		use OutfitsBlue (weight = 41.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Truck_Military_Weapons_Outfits")
+    {
+        ColorSet(ColorSet_WeaponT2);
+		LootAmount(1);
+		use Axe_b (weight = 3.5, min_amount = 1, max_amount = 1);
+		use Axe_n (weight = 3.5, min_amount = 1, max_amount = 1);
+		use Machete_v (weight = 3.5, min_amount = 1, max_amount = 1);
+		use Machete_r (weight = 3.5, min_amount = 1, max_amount = 1);
+		use Machete_s (weight = 3.5, min_amount = 1, max_amount = 1);
+		use LongS_k (weight = 3.5, min_amount = 1, max_amount = 1);
+		use Hammer_f (weight = 3.5, min_amount = 1, max_amount = 1);
+		use Stick_a (weight = 3.5, min_amount = 1, max_amount = 1);
+		use Mace_c (weight = 3.5, min_amount = 1, max_amount = 1);
+		use Mace_i (weight = 3.5, min_amount = 1, max_amount =1);
+		use LongB_h (weight = 3.5, min_amount = 1, max_amount = 1);
+		use LongB_n (weight = 3.5, min_amount = 1, max_amount = 1);
+		
+		use TwoHandS_c (weight = 3.5, min_amount = 1, max_amount = 1);
+		use TwoHandB_n (weight = 3.5, min_amount = 1, max_amount = 1);
+		
+		use OutfitsBlue_Bruiser (weight = 40.0, min_amount = 1, max_amount = 1);
+		use OutfitsViolet_Bruiser (weight = 11.0, min_amount = 1, max_amount = 1);
+    }
+	
+	
+	LootedObject("GRE_Chest_Inhibitor")
+    {
+        ColorSet(ColorSet_ContainerLv5);
+		LootAmount(1);
+		use OutfitsBlue (weight = 15.0, min_amount = 1, max_amount = 1);
+		use OutfitsViolet (weight = 70.0, min_amount = 1, max_amount = 1);
+		use OutfitsOrange (weight = 15.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("GRE_Chest")
+    {
+        ColorSet(ColorSet_ContainerLv5);
+		LootAmount(1);
+		use OutfitsBlue_Healer (weight = 15.0, min_amount = 1, max_amount = 1);
+		use OutfitsViolet_Healer (weight = 70.0, min_amount = 1, max_amount = 1);
+		use OutfitsOrange_Healer (weight = 15.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("GRE_Chest_Weapon")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(1);
+		use Weapons_Military (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Military_Chest")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(1);
+		use Military_Loot (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Airdrop_Chest_WeaponSlot")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(1);
+		use OutfitsBlue_Ranged (weight = 1.0, min_amount = 1, max_amount = 1);
+		use OutfitsViolet_Ranged (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Airdrop_Chest_LootSlot")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(2);
+		use Airdrop_Loot (weight = 1.0, min_amount = 1, max_amount = 2);
+    }
+	LootedObject("Military_Lv4")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(1);
+		use Military_Loot (weight = 3.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Military_Lv5")
+    {
+        ColorSet(ColorSet_ContainerLv5);
+		LootAmount(1);
+		use Military_Loot (weight = 2.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("DarkZone_Valuables")
+    {
+        ColorSet(ColorSet_ExplorationMedium);
+		LootAmount(1);
+		use Valuable (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Encounter_Valuables")
+    {
+        ColorSet(ColorSet_ExplorationMedium);
+		LootAmount(1);
+		use Valuable (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Encounter_Craftparts")
+    {
+        ColorSet(ColorSet_ExplorationMedium);
+		LootAmount(1);
+		use Craftparts (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Backpack")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(1, 2);
+		use ScrapMid (weight = 15.0, min_amount = 0, max_amount = 2);
+		use Craftparts (weight = 5.0, min_amount = 0, max_amount = 2);
+		use Valuable (weight = 70.0, min_amount = 0, max_amount = 2);
+    }
+	LootedObject("Beehive")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Beehive (weight = 80.0, min_amount = 1, max_amount = 1);
+		use BeehiveVal (weight = 20.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Beehive_Construct")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1, 3);
+		use Beehive (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Treeresin")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Resin_Extractor (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Birdsnest")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Feathers (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Cordyceps")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Cordyceps (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Container")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Container (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Container_Easy")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Container (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Container_Easy_Lootplace")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Container (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Rags")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Rags (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Rags_Easy")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Rags (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Rags_Easy_Lootplace")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Rags (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Alcohol")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Alcohol (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Chamomile")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Chamomile (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Lavender")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Lavender (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Poppy")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Poppy (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Recluse")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Recluse (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("UVShroom")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use UVShroom (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Trashcan")
+    {
+        ColorSet(ColorSet_WhiteOnly);
+		LootAmount(1);
+		use Empty(weight = 50.0, min_amount = 1, max_amount = 1);
+		use ScrapTrash (weight = 40.0, min_amount = 0, max_amount = 1);
+		use ScrapLow (weight = 10.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("LightGenerator")
+    {
+        ColorSet(ColorSet_WhiteOnly);
+		LootAmount(1);
+		use Empty(weight = 5.0, min_amount = 1, max_amount = 1);
+		use Wiring (weight = 5.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Truck_Easy")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Empty(weight = 60.0, min_amount = 1, max_amount = 1);
+		use Truck (weight = 40.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Flour")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1, 2);
+		use Flour (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////Specific Locations////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	LootedObject("Plants_Runthrough")
+    {
+        ColorSet(ColorSet_ExplorationEasy);
+		LootAmount(1, 1);
+		use Plants_Medium (weight = 1.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Plants_Easy")
+    {
+        ColorSet(ColorSet_ExplorationEasy);
+		LootAmount(1, 1);
+		use Plants_Medium (weight = 1.0, min_amount = 1, max_amount = 3);
+    }	
+	LootedObject("Plants_Medium")
+    {
+        ColorSet(ColorSet_ExplorationMedium);
+		LootAmount(1, 1);
+		use Plants_Medium (weight = 1.0, min_amount = 1, max_amount = 3);
+    }	
+	LootedObject("Plants_Hard")
+    {
+        ColorSet(ColorSet_ExplorationHard);
+		LootAmount(1, 1);
+		use Plants_Hard (weight = 1.0, min_amount = 1, max_amount = 3);
+    }	
+	LootedObject("BanditCamp_Bow")
+    {
+        ColorSet(ColorSet_BlueOnly);
+		LootAmount(1, 1);
+		use BanditCamp_Bow (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////Containers////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	LootedObject("Chest_Deadzone")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(1);
+		use Chest_Deadzone (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+    LootedObject("Chest_Deadzone_Antizin")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(3);
+		use Chest_Deadzone_Antizin (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Darkzone_Chest_GRE")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(1);
+		use Darkzone_Chest_GRE (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Darkzone_Chest_Military")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(1);
+		use Darkzone_Chest_Military (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Furniture_Wardrobe")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(1);
+		use Empty(weight = 75.0, min_amount = 1, max_amount = 1);
+		use ScrapLow(weight = 7.0, min_amount = 1, max_amount = 1);
+		use ScrapMid(weight = 3.0, min_amount = 1, max_amount = 1);
+		use General(weight = 15.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Crystal_Survivor")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Empty(weight = 60.0, min_amount = 0, max_amount = 1);
+		use Crystal_Statuette(weight = 30.0, min_amount = 0, max_amount = 1);
+		use Crystal_Jewelry(weight = 10.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("Crystal_Survivor_Lv1")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Empty(weight = 60.0, min_amount = 0, max_amount = 1);
+		use Crystal_Statuette(weight = 38.0, min_amount = 0, max_amount = 1);
+		use Crystal_Jewelry(weight = 2.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("Crystal_Survivor_Lv2")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Empty(weight = 30.0, min_amount = 0, max_amount = 1);
+		use Crystal_Statuette(weight = 60.0, min_amount = 0, max_amount = 1);
+		use Crystal_Jewelry(weight = 10.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("Crystal_Survivor_Lv3")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Empty(weight = 10.0, min_amount = 0, max_amount = 1);
+		use Crystal_Statuette(weight = 70.0, min_amount = 0, max_amount = 1);
+		use Crystal_Jewelry(weight = 20.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("Crystal_Survivor_Lv4")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Crystal_Statuette(weight = 1.0, min_amount = 1, max_amount = 1);
+		use Crystal_Jewelry(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Crystal_Survivor_Lv5")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Crystal_Statuette(weight = 30.0, min_amount = 1, max_amount = 1);
+		use Crystal_Jewelry(weight = 70.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Crystal")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Crystals(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Crystal_Easy")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Crystal_Easy(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Crystal_Medium")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Crystal_Medium(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Crystal_Hard")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Crystal_Hard(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Crystal_Lv1")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(1);
+		use Crystal_White(weight = 80.0, min_amount = 1, max_amount = 1);
+		use Crystal_Green(weight = 20.0, min_amount = 1, max_amount = 1);
+		//use Crystal_Blue(weight = 1.0, min_amount = 1, max_amount = 1);
+		//use Crystal_Violet(weight = 1.0, min_amount = 1, max_amount = 1);
+		//use Crystal_Orange(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Crystal_Lv2")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(1);
+		use Crystal_White(weight = 15.0, min_amount = 1, max_amount = 1);
+		use Crystal_Green(weight = 70.0, min_amount = 1, max_amount = 1);
+		use Crystal_Blue(weight = 15.0, min_amount = 1, max_amount = 1);
+		//use Crystal_Violet(weight = 1.0, min_amount = 1, max_amount = 1);
+		//use Crystal_Orange(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Crystal_Lv3")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(1);
+		//use Crystal_White(weight = 1.0, min_amount = 1, max_amount = 1);
+		use Crystal_Green(weight = 15.0, min_amount = 1, max_amount = 1);
+		use Crystal_Blue(weight = 70.0, min_amount = 1, max_amount = 1);
+		use Crystal_Violet(weight = 15.0, min_amount = 1, max_amount = 1);
+		//use Crystal_Orange(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Crystal_Lv4")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(1);
+		//use Crystal_White(weight = 1.0, min_amount = 1, max_amount = 1);
+		use Crystal_Green(weight = 10.0, min_amount = 1, max_amount = 1);
+		use Crystal_Blue(weight = 15.0, min_amount = 1, max_amount = 1);
+		use Crystal_Violet(weight = 70.0, min_amount = 1, max_amount = 1);
+		use Crystal_Orange(weight = 5.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Crystal_Lv5")
+    {
+        ColorSet(ColorSet_ContainerLv5);
+		LootAmount(1);
+		//use Crystal_White(weight = 1.0, min_amount = 1, max_amount = 1);
+		use Crystal_Green(weight = 5.0, min_amount = 1, max_amount = 1);
+		use Crystal_Blue(weight = 10.0, min_amount = 1, max_amount = 1);
+		use Crystal_Violet(weight = 70.0, min_amount = 1, max_amount = 1);
+		use Crystal_Orange(weight = 10.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Resupply")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Resupply_Medicine(weight = 1.0, min_amount = 0, max_amount = 1);
+    }
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////????//////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    LootedObject("GREMarker")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(2, 2);
+		use GREMarker (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Key (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+    LootedObject("GREMarkerForce")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1, 1);
+		use GREMarkerForce (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+    LootedObject("Quarantine_Keycard")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Quarantine_Keycard (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Waltz_box")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(2);
+		use Waltz_box (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Waltz_card (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+    LootedObject("WL_TEST_01")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(5);
+        use WL_DefinedByItem();
+    }
+    LootedObject("WL_TEST_02")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(5);
+        use WL_DefinedInHeader();
+    }
+
+    LootedObject("WL_TEST_03")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(4);
+        use WL_DefinedInSetBody(stat_min = 2, stat_med = 4, stat_max = 6);
+    }   
+
+	LootedObject("DevBox")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(6);
+		use DevBox1(weight = 1.0, min_amount = 1, max_amount = 1);
+		use DevBox2(weight = 1.0, min_amount = 1, max_amount = 1);
+		use DevBox3(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////ENCOUNTERS////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	LootedObject("Encounter_Prisoner")
+    {
+        ColorSet(ColorSet_ExplorationMedium);
+		LootAmount(2);
+        use Encounter_SurvivorReward(weight = 3.0, min_amount = 0, max_amount = 1);
+		use Potions_Encounter(weight = 4.0, min_amount = 1, max_amount = 2);
+		use Cash_High(weight = 3.0, min_amount = 0, max_amount = 1);
+    }    	
+	
+	LootedObject("Encounter_Buring_At_Stake")
+    {
+        ColorSet(ColorSet_ExplorationMedium);
+		LootAmount(2);
+        use Encounter_SurvivorReward(weight = 3.0, min_amount = 0, max_amount = 1);
+		use Potions_Encounter(weight = 4.0, min_amount = 1, max_amount = 2);
+		use Cash_High(weight = 3.0, min_amount = 0, max_amount = 1);
+    }    	
+	
+	LootedObject("Encounter_Hanging_In_Cage")
+    {
+        ColorSet(ColorSet_ExplorationMedium);
+		LootAmount(2);
+        use Encounter_SurvivorReward(weight = 3.0, min_amount = 0, max_amount = 1);
+		use Potions_Encounter(weight = 4.0, min_amount = 1, max_amount = 2);
+		use Cash_High(weight = 3.0, min_amount = 0, max_amount = 1);
+    }    
+	
+	LootedObject("Encounter_Hangman")
+    {
+        ColorSet(ColorSet_ExplorationMedium);
+		LootAmount(2);
+        use Encounter_SurvivorReward(weight = 3.0, min_amount = 0, max_amount = 1);
+		use Potions_Encounter(weight = 4.0, min_amount = 1, max_amount = 2);
+		use Cash_High(weight = 3.0, min_amount = 0, max_amount = 1);
+    }
+	
+	LootedObject("Encounter_Turning")
+    {
+        ColorSet(ColorSet_ExplorationMedium);
+		LootAmount(2);
+        use Encounter_SurvivorReward(weight = 3.0, min_amount = 0, max_amount = 1);
+		use Potions_EncounterTurning(weight = 4.0, min_amount = 1, max_amount = 2);
+		use Cash_High(weight = 3.0, min_amount = 0, max_amount = 1);
+    }
+	
+	LootedObject("Encounter_AI_In_Grab")
+    {
+        //ColorSet(ColorSet_ExplorationMedium);
+		//LootAmount(2);
+        //use Encounter_SurvivorReward(weight = 3.0, min_amount = 0, max_amount = 1);
+		//use Potions_Encounter(weight = 4.0, min_amount = 1, max_amount = 2);
+		//use Cash_High(weight = 3.0, min_amount = 0, max_amount = 1);
+    }
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////QUEST ////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	LootedObject("Quest_Deserter")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Quest_Deserter_DogTag(weight = 1.0, min_amount = 1, max_amount = 1);
+		//use Quest_Deserter_Code(weight = 1.0, min_amount = 1, max_amount = 1); //Code now is obtained via StorySystem.
+    }
+	
+	LootedObject("Quest_Predator")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Quest_Predator_Thorsten_Key(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Quest_ToKillorNotToKill")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(1);
+		use Valuable(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Quest_BlueGuys_Sadbazarian")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(1);
+		use Outfits(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Quest_Hunting_Yarrow")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Quest_Hunting_Yarrow(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Quest_Hunting_Demolisher")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(2);
+		use Valuable(weight = 1.0, min_amount = 1, max_amount = 1);
+		use Quest_Hunting_Demolisher(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Quest_Hunting_Bolter")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(2);
+		use Valuable(weight = 1.0, min_amount = 1, max_amount = 1);
+		use Quest_Hunting_Bolter(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Quest_Hunting_Goon")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(2);
+		use Valuable(weight = 1.0, min_amount = 1, max_amount = 1);
+		use Quest_Hunting_Goon(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Quest_Hunting_Spitter")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(2);
+		use Valuable(weight = 1.0, min_amount = 1, max_amount = 1);
+		use Quest_Hunting_Spitter(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Quest_Hunting_Banshee")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(2);
+		use Valuable(weight = 1.0, min_amount = 1, max_amount = 1);
+		use Quest_Hunting_Banshee(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Quest_Hunting_Charger")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(2);
+		use Valuable(weight = 1.0, min_amount = 1, max_amount = 1);
+		use Quest_Hunting_Charger(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Quest_Hunting_Volatile")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(2);
+		use Valuable(weight = 1.0, min_amount = 1, max_amount = 1);
+		use Quest_Hunting_Volatile(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Quest_Hive_Leto")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(3);
+		use Medkit(weight = 1.0, min_amount = 1, max_amount = 1);
+		use Crystal_Blue(weight = 1.0, min_amount = 1, max_amount = 1);
+		use Quest_Hive_Leto(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Quest_Looter")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(1);
+		use Quest_Looter(weight = 15.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Quest_Cheers")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(2);
+		use Flour(weight = 1.0, min_amount = 1, max_amount = 1);
+		use Quest_Cheers_MarcosKey(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Quest_Postman_Normal")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Healing_Supplies(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Quest_Postman_Elite")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(1);
+		use OutfitsViolet (weight = 20.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Quest_Broadcast_Chris")
+    {
+        ColorSet(ColorSet_Viral);
+		LootAmount(3);
+		use Beehive (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Chamomile (weight = 1.0, min_amount = 2, max_amount = 2);
+    }
+	
+	LootedObject("Quest_Hakon")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(2);
+		use Medkit (weight = 1.0, min_amount = 1, max_amount = 1);
+		use OutfitsViolet_Ranged (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Quest_Hakon_Kill")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Quest_Hakon (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////Gen Containers //////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	LootedObject("Scraps_Runthrough")
+    {
+		ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use ScrapLow(weight = 3.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Scraps_Easy")
+    {
+		ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use ScrapLow(weight = 3.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Scraps_Medium")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use ScrapMid(weight = 3.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Scraps_Hard")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use ScrapHigh(weight = 3.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("CoinContainer")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use CoinContainer(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Darkplace_Runthrough")
+    {
+		ColorSet(ColorSet_ContainerLv1);
+		LootAmount(1);
+		use Darkplace(weight = 15.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Darkplace_Easy")
+    {
+		ColorSet(ColorSet_ContainerLv1);
+		LootAmount(1);
+		use Darkplace(weight = 15.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Darkplace_Medium")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(1);
+		use Darkplace(weight = 15.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Darkplace_Hard")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(1);
+		use Darkplace(weight = 15.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Darkplace_Lv2")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(1);
+		use Darkplace(weight = 15.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Darkplace_Lv3")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(3);
+		use Darkplace(weight = 15.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Darkplace_Lv4")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(3);
+		use Darkplace(weight = 15.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Darkplace_Lv5")
+    {
+        ColorSet(ColorSet_ContainerLv5);
+		LootAmount(3);
+		use Darkplace(weight = 15.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("General_Runthrough")
+    {
+		ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 15.0, min_amount = 0, max_amount = 2);
+		use General_Craft(weight = 15.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("General_Easy")
+    {
+		ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 15.0, min_amount = 0, max_amount = 2);
+		use General_Craft(weight = 15.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("General_Medium")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(3);
+		use Empty(weight = 15.0, min_amount = 0, max_amount = 2);
+		use General_Craft(weight = 15.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("General_Hard")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(3);
+		use General_Craft(weight = 15.0, min_amount = 3, max_amount = 3);
+    }
+	LootedObject("Chemical_Runthrough")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 15.0, min_amount = 0, max_amount = 2);
+		use Chemical_Craft(weight = 15.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Chemical_Easy")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 15.0, min_amount = 0, max_amount = 2);
+		use Chemical_Craft(weight = 15.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Chemical_Medium")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(3);
+		use Empty(weight = 15.0, min_amount = 0, max_amount = 2);
+		use Chemical_Craft(weight = 15.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Chemical_Hard")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(3);
+		use Chemical_Craft(weight = 15.0, min_amount = 3, max_amount = 3);
+    }
+	LootedObject("Mechanical_Runthrough")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 15.0, min_amount = 0, max_amount = 2);
+		use Mechanical_Craft(weight = 15.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Mechanical_Easy")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 15.0, min_amount = 0, max_amount = 2);
+		use Mechanical_Craft(weight = 15.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Mechanical_Medium")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(3);
+		use Empty(weight = 15.0, min_amount = 0, max_amount = 2);
+		use Mechanical_Craft(weight = 15.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Mechanical_Hard")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(3);
+		use Mechanical_Craft(weight = 15.0, min_amount = 3, max_amount = 3);
+    }
+	LootedObject("Electrical_Craft")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(1);
+		use Wiring(weight = 40.0, min_amount = 1, max_amount = 1);
+		use Electrical_Parts(weight = 59.0, min_amount = 1, max_amount = 1);
+		use Battery(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Electrical_Runthrough")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 15.0, min_amount = 0, max_amount = 2);
+		use Electrical_Craft(weight = 15.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Electrical_Easy")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 15.0, min_amount = 0, max_amount = 2);
+		use Electrical_Craft(weight = 15.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Electrical_Medium")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(3);
+		use Empty(weight = 15.0, min_amount = 0, max_amount = 2);
+		use Electrical_Craft(weight = 15.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Electrical_Hard")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(3);
+		use Electrical_Craft(weight = 15.0, min_amount = 3, max_amount = 3);
+    }
+	LootedObject("Vanity_Runthrough")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 15.0, min_amount = 0, max_amount = 2);
+		use Vanity_Craft(weight = 15.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Vanity_Easy")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 15.0, min_amount = 0, max_amount = 2);
+		use Vanity_Craft(weight = 15.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Vanity_Medium")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(3);
+		use Empty(weight = 15.0, min_amount = 0, max_amount = 2);
+		use Vanity_Craft(weight = 15.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Vanity_Hard")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(3);
+		use Vanity_Craft(weight = 15.0, min_amount = 3, max_amount = 3);
+    }
+	LootedObject("Trunk_Lv1")
+    {
+        ColorSet(ColorSet_ExplorationEasy);
+		LootAmount(1);
+		use Empty(weight = 40.0, min_amount = 0, max_amount = 1);
+		use Streets(weight = 60.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("Trunk_Lv2")
+    {
+        ColorSet(ColorSet_ExplorationMedium);
+		LootAmount(2);
+		use StreetsPost(weight = 1.0, min_amount = 1, max_amount = 2);
+    }
+	LootedObject("Trunk_Lv3")
+    {
+        ColorSet(ColorSet_ExplorationHard);
+		LootAmount(2);
+		use StreetsPolice(weight = 1.0, min_amount = 1, max_amount = 2);
+    }
+	LootedObject("Trunk_Lv4")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(3);
+		use StreetsPost(weight = 1.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Trunk_Lv5")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(3);
+		use StreetsMedical(weight = 1.0, min_amount = 1, max_amount = 3);
+    }
+	
+	
+	//Street Island
+	
+	LootedObject("PostalPackageLocker")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(1);
+		use Empty(weight = 1.0, min_amount = 0, max_amount = 1);
+		use StreetsPost(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("PoliceCompact")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(2);
+		use Empty(weight = 1.0, min_amount = 0, max_amount = 1);
+		use StreetsPolice(weight = 1.0, min_amount = 1, max_amount = 2);
+    }
+	LootedObject("PoliceSedan")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(2);
+		use Empty(weight = 1.0, min_amount = 0, max_amount = 1);
+		use StreetsPolice(weight = 1.0, min_amount = 1, max_amount = 2);
+    }
+	LootedObject("PostalVan")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(3);
+		use Empty(weight = 100.0, min_amount = 0, max_amount = 2);
+		use StreetsPost(weight = 60.0, min_amount = 1, max_amount = 3);
+		use OutfitsWhite_Bruiser(weight = 25.0, min_amount = 1, max_amount = 1);
+		use OutfitsGreen_Bruiser(weight = 15.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("TruckEvac")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(3);
+		use Empty(weight = 100.0, min_amount = 0, max_amount = 2);
+		use StreetsEvac(weight = 50.0, min_amount = 1, max_amount = 3);
+		use OutfitsGreen_Bruiser(weight = 30.0, min_amount = 0, max_amount = 1);
+		use OutfitsBlue_Bruiser(weight = 19.0, min_amount = 0, max_amount = 1);
+		use OutfitsViolet_Bruiser(weight = 1.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("Ambulance")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(3);
+		use Empty(weight = 1.0, min_amount = 0, max_amount = 2);
+		use StreetsMedical(weight = 1.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("TruckMilitary")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(3);
+		use Empty(weight = 100.0, min_amount = 0, max_amount = 2);
+		use StreetsMilitary(weight = 50.0, min_amount = 1, max_amount = 3);
+		use OutfitsBlue_Bruiser(weight = 30.0, min_amount = 0, max_amount = 1);
+		use OutfitsViolet_Bruiser(weight = 19.0, min_amount = 0, max_amount = 1);
+		use OutfitsOrange_Bruiser(weight = 1.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("Tank")
+    {
+        ColorSet(ColorSet_ContainerLv5);
+		LootAmount(3);
+		use Empty(weight = 1.0, min_amount = 0, max_amount = 1);
+		use StreetsTank(weight = 1.0, min_amount = 1, max_amount = 3);
+    }
+	
+	
+	
+	LootedObject("Fridge_Runthrough")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 40.0, min_amount = 0, max_amount = 2);
+		use Fridge(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Fridge_Easy")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 30.0, min_amount = 0, max_amount = 2);
+		use Fridge(weight = 70.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Fridge_Medium")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 30.0, min_amount = 0, max_amount = 2);
+		use Fridge(weight = 70.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Fridge_Hard")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use Fridge(weight = 80.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Streets_Runthrough")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(1);
+		use Empty(weight = 40.0, min_amount = 0, max_amount = 1);
+		use ScrapLow(weight = 10.0, min_amount = 1, max_amount = 1);
+		use ScrapMid(weight = 5.0, min_amount = 1, max_amount = 1);
+		use Streets(weight = 45.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Streets_Easy")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(1);
+		use Empty(weight = 40.0, min_amount = 0, max_amount = 1);
+		use ScrapLow(weight = 10.0, min_amount = 1, max_amount = 1);
+		use ScrapMid(weight = 5.0, min_amount = 1, max_amount = 1);
+		use Streets(weight = 45.0, min_amount = 1, max_amount = 3);
+    }
+    LootedObject("Streets_Medium")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(1);
+		use Streets(weight = 1.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Streets_Hard")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(1);
+		use Streets(weight = 1.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Streets_Lv4")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(1);
+		use Streets(weight = 1.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Streets_Lv5")
+    {
+        ColorSet(ColorSet_ContainerLv5);
+		LootAmount(1);
+		use Streets(weight = 1.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Medical_Lv5")
+    {
+        ColorSet(ColorSet_ContainerLv5);
+		LootAmount(1);
+		use Chemical(weight = 1.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Streets_Electrical")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(1);
+		use Empty(weight = 50.0, min_amount = 1, max_amount = 1);
+		use Streets_Electrical(weight = 50.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Streets_Bin")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(1);
+		use Empty(weight = 40.0, min_amount = 1, max_amount = 1);
+		use ScrapLow(weight = 40.0, min_amount = 1, max_amount = 1);
+		use ScrapMid(weight = 10.0, min_amount = 1, max_amount = 1);
+		use Streets_Bin(weight = 10.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Mail_Easy")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(1);
+		use Mail(weight = 45.0, min_amount = 1, max_amount = 1);
+    }
+    LootedObject("Mail_Medium")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(1);
+		use Mail(weight = 45.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Mail_Hard")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(1);
+		use Mail(weight = 45.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Valuables_Locked_Easy")
+    {
+        ColorSet(ColorSet_InteriorMedium);
+		LootAmount(1);
+		use Valuables_Locked(weight = 45.0, min_amount = 1, max_amount = 1);
+    }
+    LootedObject("Valuables_Locked_Medium")
+    {
+        ColorSet(ColorSet_InteriorMedium);
+		LootAmount(1);
+		use Valuables_Locked(weight = 45.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Valuables_Locked_Hard")
+    {
+        ColorSet(ColorSet_InteriorMedium);
+		LootAmount(1);
+		use Valuables_Locked(weight = 45.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Attic_Runthrough")
+    {
+		ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use General_DPCraft(weight = 20.0, min_amount = 0, max_amount = 1);
+		use Attic(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Attic_Easy")
+    {
+		ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use General_DPCraft(weight = 20.0, min_amount = 0, max_amount = 1);
+		use Attic(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+    LootedObject("Attic_Medium")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use General_DPCraft(weight = 20.0, min_amount = 0, max_amount = 1);
+		use Attic(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Attic_Hard")
+    {
+        ColorSet(ColorSet_Darkplace);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use General_DPCraft(weight = 20.0, min_amount = 0, max_amount = 1);
+		use Attic(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Attic_Lv3")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use General_DPCraft(weight = 20.0, min_amount = 0, max_amount = 1);
+		use Bathroom(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Bathroom_Runthrough")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use Chemical_DPCraft(weight = 15.0, min_amount = 0, max_amount = 1);
+		use Cleaning_Supplies(weight = 5.0, min_amount = 0, max_amount = 1);
+		use Bathroom(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Bathroom_Easy")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use Chemical_DPCraft(weight = 15.0, min_amount = 0, max_amount = 1);
+		use Cleaning_Supplies(weight = 5.0, min_amount = 0, max_amount = 1);
+		use Bathroom(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+    LootedObject("Bathroom_Medium")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use Chemical_DPCraft(weight = 15.0, min_amount = 0, max_amount = 1);
+		use Cleaning_Supplies(weight = 5.0, min_amount = 0, max_amount = 1);
+		use Bathroom(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Bathroom_Hard")
+    {
+        ColorSet(ColorSet_Darkplace);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use Chemical_DPCraft(weight = 15.0, min_amount = 0, max_amount = 1);
+		use Cleaning_Supplies(weight = 5.0, min_amount = 0, max_amount = 1);
+		use Bathroom(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Corridor_Runthrough")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use Chemical_DPCraft(weight = 20.0, min_amount = 0, max_amount = 1);
+		use Kitchen(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Corridor_Easy")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use General_DPCraft(weight = 20.0, min_amount = 0, max_amount = 1);
+		use Kitchen(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+    LootedObject("Corridor_Medium")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use General_DPCraft(weight = 20.0, min_amount = 0, max_amount = 1);
+		use Kitchen(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Corridor_Hard")
+    {
+        ColorSet(ColorSet_Darkplace);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use General_DPCraft(weight = 20.0, min_amount = 0, max_amount = 1);
+		use Kitchen(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Kitchen_Runthrough")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use General_DPCraft(weight = 20.0, min_amount = 0, max_amount = 1);
+		use Kitchen(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Kitchen_Easy")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use General_DPCraft(weight = 20.0, min_amount = 0, max_amount = 1);
+		use Kitchen(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+    LootedObject("Kitchen_Medium")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use General_DPCraft(weight = 20.0, min_amount = 0, max_amount = 1);
+		use Kitchen(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Kitchen_Hard")
+    {
+		ColorSet(ColorSet_Darkplace);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use General_DPCraft(weight = 20.0, min_amount = 0, max_amount = 1);
+		use Kitchen(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Bedroom_Runthrough")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use General_DPCraft(weight = 20.0, min_amount = 0, max_amount = 1);
+		use Bedroom(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Bedroom_Easy")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use General_DPCraft(weight = 20.0, min_amount = 0, max_amount = 1);
+		use Bedroom(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+    LootedObject("Bedroom_Medium")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use General_DPCraft(weight = 20.0, min_amount = 0, max_amount = 1);
+		use Bedroom(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Bedroom_Hard")
+    {
+        ColorSet(ColorSet_Darkplace);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use General_DPCraft(weight = 20.0, min_amount = 0, max_amount = 1);
+		use Bedroom(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Living_room_Runthrough")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use General_DPCraft(weight = 20.0, min_amount = 0, max_amount = 1);
+		use Living_room(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Living_room_Easy")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use General_DPCraft(weight = 20.0, min_amount = 0, max_amount = 1);
+		use Living_room(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+    LootedObject("Living_room_Medium")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use General_DPCraft(weight = 20.0, min_amount = 0, max_amount = 1);
+		use Living_room(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Living_room_Hard")
+    {
+        ColorSet(ColorSet_Darkplace);
+		LootAmount(3);
+		use Empty(weight = 20.0, min_amount = 0, max_amount = 2);
+		use General_DPCraft(weight = 20.0, min_amount = 0, max_amount = 1);
+		use Living_room(weight = 60.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Office_Runthrough")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(1);
+		use Office(weight = 28.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Office_Easy")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(1);
+		use Office(weight = 28.0, min_amount = 1, max_amount = 3);
+    }
+    LootedObject("Office_Medium")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(1);
+		use Office(weight = 28.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Office_Hard")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(1);
+		use Office(weight = 37.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Metro_Runthrough")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(1);
+		use Metro(weight = 28.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Metro_Easy")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(1);
+		use Metro(weight = 28.0, min_amount = 1, max_amount = 3);
+    }
+    LootedObject("Metro_Medium")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(1);
+		use Metro(weight = 28.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Metro_Hard")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(1);
+		use Metro(weight = 37.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Facilities_Runthrough")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 10.0, min_amount = 0, max_amount = 1);
+		use Mechanical(weight = 45.0, min_amount = 0, max_amount = 2);
+		use Facilities(weight = 45.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Facilities_Easy")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 10.0, min_amount = 0, max_amount = 1);
+		use Mechanical(weight = 45.0, min_amount = 0, max_amount = 2);
+		use Facilities(weight = 45.0, min_amount = 1, max_amount = 3);
+    }
+    LootedObject("Facilities_Medium")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(3);
+		use Empty(weight = 10.0, min_amount = 0, max_amount = 1);
+		use Mechanical(weight = 45.0, min_amount = 0, max_amount = 2);
+		use Facilities(weight = 45.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Facilities_Hard")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(3);
+		use Empty(weight = 10.0, min_amount = 0, max_amount = 1);
+		use Mechanical(weight = 45.0, min_amount = 0, max_amount = 2);
+		use Facilities(weight = 45.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Locker")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(3);
+		use Empty(weight = 10.0, min_amount = 0, max_amount = 1);
+		use Locker(weight = 90.0, min_amount = 0, max_amount = 3);
+    }
+	LootedObject("Locker_Runthrough")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(1);
+		use Empty(weight = 10.0, min_amount = 0, max_amount = 1);
+		use Locker(weight = 90.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("Locker_Easy")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(2);
+		use Empty(weight = 10.0, min_amount = 0, max_amount = 1);
+		use Locker(weight = 90.0, min_amount = 0, max_amount = 2);
+    }
+    LootedObject("Locker_Medium")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(3);
+		use Empty(weight = 10.0, min_amount = 0, max_amount = 1);
+		use Locker(weight = 90.0, min_amount = 0, max_amount = 3);
+    }
+	LootedObject("Locker_Hard")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(3);
+		use Empty(weight = 10.0, min_amount = 0, max_amount = 1);
+		use Locker(weight = 90.0, min_amount = 0, max_amount = 3);
+    }
+	LootedObject("BanditCamp_Runthrough")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 10.0, min_amount = 0, max_amount = 1);
+		use Mechanical(weight = 10.0, min_amount = 0, max_amount = 2);
+		use Facilities(weight = 10.0, min_amount = 0, max_amount = 2);
+		use BanditCamp(weight = 70.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("BanditCamp_Easy")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(3);
+		use Empty(weight = 10.0, min_amount = 0, max_amount = 1);
+		use Mechanical(weight = 10.0, min_amount = 0, max_amount = 2);
+		use Facilities(weight = 10.0, min_amount = 0, max_amount = 2);
+		use BanditCamp(weight = 70.0, min_amount = 1, max_amount = 3);
+    }
+    LootedObject("BanditCamp_Medium")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(3);
+		use Empty(weight = 10.0, min_amount = 0, max_amount = 1);
+		use Mechanical(weight = 10.0, min_amount = 0, max_amount = 2);
+		use Facilities(weight = 10.0, min_amount = 0, max_amount = 2);
+		use BanditCamp(weight = 70.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("BanditCamp_Hard")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(3);
+		use Empty(weight = 10.0, min_amount = 0, max_amount = 1);
+		use Mechanical(weight = 10.0, min_amount = 0, max_amount = 2);
+		use Facilities(weight = 10.0, min_amount = 0, max_amount = 2);
+		use BanditCamp(weight = 70.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("GRERoom_Runthrough")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(1);
+		use GRERoom(weight = 18.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("GRERoom_Easy")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(1);
+		use GRERoom(weight = 16.0, min_amount = 1, max_amount = 3);
+    }
+    LootedObject("GRERoom_Medium")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(1);
+		use GRERoom(weight = 18.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("GRERoom_Hard")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(1);
+		use GRERoom(weight = 20.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Hospital_Easy")
+    {
+        ColorSet(ColorSet_ContainerLv1);
+		LootAmount(1);
+		use Hospital(weight = 15.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Hospital_Medium")
+    {
+        ColorSet(ColorSet_ContainerLv2);
+		LootAmount(1);
+		use Hospital(weight = 15.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Hospital_Hard")
+    {
+        ColorSet(ColorSet_ContainerLv3);
+		LootAmount(1);
+		use Hospital(weight = 15.0, min_amount = 1, max_amount = 1);
+    }
+	
+	
+	//Static Containers
+	
+	LootedObject("Tool_HealingSupplies")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(2);
+		use Beehive (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Chamomile (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Tool_Immunity_Mixture")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Immunity_Mixture(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Tool_Immunity_Mixture_GRE")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Immunity_Mixture_GRE(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Tool_Medkit")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Medkit (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Tool_Arrow")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Arrow (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Tool_ArrowBundle")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use ArrowBundle (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Tool_Bolt")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Bolt (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Tool_BoltBundle")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use BoltsBundle (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Tool_Throwingknives")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use ThrowingKnife (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Tool_Decoy")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Decoy (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Tool_Molotov")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Molotov (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Tool_Grenade")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Grenade (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Tool_Mine")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Mine (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Tool_Outfits_Easy")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use OutfitsWhite (weight = 70.0, min_amount = 1, max_amount = 1);
+		use OutfitsGreen (weight = 30.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Tool_Outfits_Medium")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use OutfitsGreen (weight = 70.0, min_amount = 1, max_amount = 1);
+		use OutfitsBlue (weight = 30.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Tool_Outfits_Hard")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use OutfitsBlue (weight = 50.0, min_amount = 1, max_amount = 1);
+		use OutfitsViolet (weight = 45.0, min_amount = 1, max_amount = 1);
+		use OutfitsOrange (weight = 5.0, min_amount = 1, max_amount = 1);
+    }
+	
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////Lootplaces //////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	LootedObject("General_Runthrough_Lootplace")
+    {
+		ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 0, max_amount = 1);
+		use General(weight = 30.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("General_Easy_Lootplace")
+    {
+		ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 0, max_amount = 1);
+		use General(weight = 30.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("General_Medium_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 0, max_amount = 1);
+		use General(weight = 30.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("General_Hard_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 0, max_amount = 1);
+		use General(weight = 30.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("Chemical_Runthrough_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 0, max_amount = 1);
+		use Chemical(weight = 30.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("Chemical_Easy_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 0, max_amount = 1);
+		use Chemical(weight = 30.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("Chemical_Medium_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 0, max_amount = 1);
+		use Chemical(weight = 30.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("Chemical_Hard_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 0, max_amount = 1);
+		use Chemical(weight = 30.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("Mechanical_Runthrough_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 0, max_amount = 1);
+		use Mechanical(weight = 30.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("Mechanical_Easy_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 0, max_amount = 1);
+		use Mechanical(weight = 30.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("Mechanical_Medium_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		//use Empty(weight = 70.0, min_amount = 0, max_amount = 1);
+		use Mechanical(weight = 30.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("Mechanical_Hard_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 0, max_amount = 1);
+		use Mechanical(weight = 30.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("Electrical_Runthrough_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 0, max_amount = 1);
+		use Electrical(weight = 30.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("Electrical_Easy_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 0, max_amount = 1);
+		use Electrical(weight = 30.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("Electrical_Medium_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 0, max_amount = 1);
+		use Electrical(weight = 30.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("Electrical_Hard_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 0, max_amount = 1);
+		use Electrical(weight = 30.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("Vanity_Runthrough_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 75.0, min_amount = 0, max_amount = 1);
+		use Vanity(weight = 20.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("Vanity_Easy_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 75.0, min_amount = 0, max_amount = 1);
+		use Vanity(weight = 20.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("Vanity_Medium_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 75.0, min_amount = 0, max_amount = 1);
+		use Vanity(weight = 20.0, min_amount = 0, max_amount = 1);
+    }
+	LootedObject("Vanity_Hard_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 75.0, min_amount = 0, max_amount = 1);
+		use Vanity(weight = 20.0, min_amount = 0, max_amount = 1);
+    }
+	
+	LootedObject("Attic_Runthrough_Lootplace")
+    {
+		ColorSet(ColorSet_InteriorRunthrough);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 5.0, min_amount = 1, max_amount = 1);
+		//use General_Craft(weight = 20.0, min_amount = 1, max_amount = 1);
+		//use Attic(weight = 5.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Attic_Easy_Lootplace")
+    {
+		ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 60.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 10.0, min_amount = 1, max_amount = 1);
+		//use General_Craft(weight = 20.0, min_amount = 1, max_amount = 1);
+		//use Attic(weight = 10.0, min_amount = 1, max_amount = 1);
+    }
+    LootedObject("Attic_Medium_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorMedium);
+		LootAmount(1);
+		use Empty(weight = 60.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 10.0, min_amount = 1, max_amount = 1);
+		//use General_Craft(weight = 20.0, min_amount = 1, max_amount = 1);
+		//use Attic(weight = 10.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Attic_Hard_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorHard);
+		LootAmount(1);
+		use Empty(weight = 50.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 10.0, min_amount = 1, max_amount = 1);
+		//use General_Craft(weight = 20.0, min_amount = 1, max_amount = 1);
+		//use Attic(weight = 20.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Bathroom_Runthrough_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorRunthrough);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 5.0, min_amount = 1, max_amount = 1);
+		//use General_Craft(weight = 20.0, min_amount = 1, max_amount = 1);
+		//use Bathroom(weight = 5.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Bathroom_Easy_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 60.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 10.0, min_amount = 1, max_amount = 1);
+		//use General_Craft(weight = 20.0, min_amount = 1, max_amount = 1);
+		//use Bathroom(weight = 10.0, min_amount = 1, max_amount = 1);
+    }
+    LootedObject("Bathroom_Medium_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorMedium);
+		LootAmount(1);
+		use Empty(weight = 60.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 10.0, min_amount = 1, max_amount = 1);
+		//use General_Craft(weight = 20.0, min_amount = 1, max_amount = 1);
+		//use Bathroom(weight = 10.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Bathroom_Hard_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorHard);
+		LootAmount(1);
+		use Empty(weight = 50.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 10.0, min_amount = 1, max_amount = 1);
+		//use General_Craft(weight = 20.0, min_amount = 1, max_amount = 1);
+		//use Bathroom(weight = 20.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Corridor_Runthrough_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorRunthrough);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 5.0, min_amount = 1, max_amount = 1);
+		//use General_Craft(weight = 20.0, min_amount = 1, max_amount = 1);
+		//use Corridor(weight = 5.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Corridor_Easy_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 60.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 10.0, min_amount = 1, max_amount = 1);
+		//use General_Craft(weight = 20.0, min_amount = 1, max_amount = 1);
+		//use Corridor(weight = 10.0, min_amount = 1, max_amount = 1);
+    }
+    LootedObject("Corridor_Medium_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorMedium);
+		LootAmount(1);
+		use Empty(weight = 60.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 10.0, min_amount = 1, max_amount = 1);
+		//use General_Craft(weight = 20.0, min_amount = 1, max_amount = 1);
+		//use Corridor(weight = 28.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Corridor_Hard_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorHard);
+		LootAmount(1);
+		use Empty(weight = 50.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 10.0, min_amount = 1, max_amount = 1);
+		//use General_Craft(weight = 20.0, min_amount = 1, max_amount = 1);
+		//use Corridor(weight = 20.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Kitchen_Runthrough_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorRunthrough);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 5.0, min_amount = 1, max_amount = 1);
+		//use General_Craft(weight = 20.0, min_amount = 1, max_amount = 1);
+		//use Kitchen(weight = 5.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Kitchen_Easy_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 60.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 10.0, min_amount = 1, max_amount = 1);
+		//use General_Craft(weight = 20.0, min_amount = 1, max_amount = 1);
+		//use Beehive(weight = 2.0, min_amount = 1, max_amount = 1);
+		//use Kitchen(weight = 8.0, min_amount = 1, max_amount = 1);
+    }
+    LootedObject("Kitchen_Medium_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorMedium);
+		LootAmount(1);
+		use Empty(weight = 45.0, min_amount = 1, max_amount = 1);
+		use ScrapLow(weight = 5.0, min_amount = 1, max_amount = 1);
+		use Kitchen(weight = 50.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Kitchen_Hard_Lootplace")
+    {
+		ColorSet(ColorSet_InteriorHard);
+		LootAmount(1);
+		use Empty(weight = 40.0, min_amount = 1, max_amount = 1);
+		use ScrapLow(weight = 5.0, min_amount = 1, max_amount = 1);
+		use Kitchen(weight = 55.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Bedroom_Runthrough_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorRunthrough);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 5.0, min_amount = 1, max_amount = 1);
+		//use General_Craft(weight = 20.0, min_amount = 1, max_amount = 1);
+		//use Bedroom(weight = 5.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Bedroom_Easy_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 60.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 10.0, min_amount = 1, max_amount = 1);
+		//use General_Craft(weight = 20.0, min_amount = 1, max_amount = 1);
+		//use Bedroom(weight = 10.0, min_amount = 1, max_amount = 1);
+    }
+    LootedObject("Bedroom_Medium_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorMedium);
+		LootAmount(1);
+		use Empty(weight = 60.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 10.0, min_amount = 1, max_amount = 1);
+		//use General_Craft(weight = 20.0, min_amount = 1, max_amount = 1);
+		//use Bedroom(weight = 10.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Bedroom_Hard_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorHard);
+		LootAmount(1);
+		use Empty(weight = 50.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 10.0, min_amount = 1, max_amount = 1);
+		//use General_Craft(weight = 20.0, min_amount = 1, max_amount = 1);
+		//use Bedroom(weight = 20.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Living_room_Runthrough_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorRunthrough);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 5.0, min_amount = 1, max_amount = 1);
+		//use General_Craft(weight = 20.0, min_amount = 1, max_amount = 1);
+		//use Living_room(weight = 5.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Living_room_Easy_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 60.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 10.0, min_amount = 1, max_amount = 1);
+		//use General_Craft(weight = 20.0, min_amount = 1, max_amount = 1);
+		//use Living_room(weight = 10.0, min_amount = 1, max_amount = 1);
+    }
+    LootedObject("Living_room_Medium_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorMedium);
+		LootAmount(1);
+		use Empty(weight = 60.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 10.0, min_amount = 1, max_amount = 1);
+		//use General_Craft(weight = 20.0, min_amount = 1, max_amount = 1);
+		//use Living_room(weight = 10.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Living_room_Hard_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorHard);
+		LootAmount(1);
+		use Empty(weight = 50.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 10.0, min_amount = 1, max_amount = 1);
+		//use General_Craft(weight = 20.0, min_amount = 1, max_amount = 1);
+		//use Living_room(weight = 20.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Office_Runthrough_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorRunthrough);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 5.0, min_amount = 1, max_amount = 1);
+		//use Office(weight = 25.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Office_Easy_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 60.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 8.0, min_amount = 1, max_amount = 1);
+		//use ScrapMid(weight = 4.0, min_amount = 1, max_amount = 1);
+		//use Office(weight = 28.0, min_amount = 1, max_amount = 1);
+    }
+    LootedObject("Office_Medium_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorMedium);
+		LootAmount(1);
+		use Empty(weight = 60.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 8.0, min_amount = 1, max_amount = 1);
+		//use ScrapMid(weight = 4.0, min_amount = 1, max_amount = 1);
+		//use Office(weight = 28.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Office_Hard_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorHard);
+		LootAmount(1);
+		use Empty(weight = 50.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 7.0, min_amount = 1, max_amount = 1);
+		//use ScrapMid(weight = 4.0, min_amount = 1, max_amount = 1);
+		//use ScrapHigh(weight = 2.0, min_amount = 1, max_amount = 1);
+		//use Office(weight = 37.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Metro_Runthrough_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorRunthrough);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 5.0, min_amount = 1, max_amount = 1);
+		//use Metro(weight = 25.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Metro_Easy_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 60.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 8.0, min_amount = 1, max_amount = 1);
+		//use ScrapMid(weight = 4.0, min_amount = 1, max_amount = 1);
+		//use Metro(weight = 28.0, min_amount = 1, max_amount = 1);
+    }
+    LootedObject("Metro_Medium_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorMedium);
+		LootAmount(1);
+		use Empty(weight = 60.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 8.0, min_amount = 1, max_amount = 1);
+		//use ScrapMid(weight = 4.0, min_amount = 1, max_amount = 1);
+		//use Metro(weight = 28.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Metro_Hard_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorHard);
+		LootAmount(1);
+		use Empty(weight = 50.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 7.0, min_amount = 1, max_amount = 1);
+		//use ScrapMid(weight = 4.0, min_amount = 1, max_amount = 1);
+		//use ScrapHigh(weight = 2.0, min_amount = 1, max_amount = 1);
+		//use Metro(weight = 37.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Facilities_Runthrough_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorRunthrough);
+		LootAmount(1);
+		use Empty(weight = 150.0, min_amount = 1, max_amount = 1);
+		//use ScrapMid(weight = 5.0, min_amount = 1, max_amount = 1);
+		//use Mechanical(weight = 90.0, min_amount = 1, max_amount = 1);
+		//use Facilities(weight = 5.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Facilities_Easy_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 120.0, min_amount = 1, max_amount = 1);
+		//use ScrapMid(weight = 5.0, min_amount = 1, max_amount = 1);
+		//use Mechanical(weight = 90.0, min_amount = 1, max_amount = 1);
+		//use Facilities(weight = 5.0, min_amount = 1, max_amount = 1);
+    }
+    LootedObject("Facilities_Medium_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorMedium);
+		LootAmount(1);
+		use Empty(weight = 100.0, min_amount = 1, max_amount = 1);
+		//use ScrapMid(weight = 10.0, min_amount = 1, max_amount = 1);
+		//use Mechanical(weight = 80.0, min_amount = 1, max_amount = 1);
+		//use Facilities(weight = 10.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Facilities_Hard_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorHard);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 1, max_amount = 1);
+		//use ScrapMid(weight = 10.0, min_amount = 1, max_amount = 1);
+		//use Mechanical(weight = 80.0, min_amount = 1, max_amount = 1);
+		//use Facilities(weight = 10.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("BanditCamp_Runthrough_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorMedium);
+		LootAmount(1);
+		use Empty(weight = 150.0, min_amount = 1, max_amount = 1);
+		//use ScrapMid(weight = 5.0, min_amount = 1, max_amount = 1);
+		//use Mechanical(weight = 90.0, min_amount = 1, max_amount = 1);
+		//use BanditCamp(weight = 5.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("BanditCamp_Easy_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorMedium);
+		LootAmount(1);
+		use Empty(weight = 120.0, min_amount = 1, max_amount = 1);
+		//use ScrapMid(weight = 5.0, min_amount = 1, max_amount = 1);
+		//use Mechanical(weight = 90.0, min_amount = 1, max_amount = 1);
+		//use BanditCamp(weight = 5.0, min_amount = 1, max_amount = 1);
+    }
+    LootedObject("BanditCamp_Medium_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorMedium);
+		LootAmount(1);
+		use Empty(weight = 100.0, min_amount = 1, max_amount = 1);
+		//use ScrapMid(weight = 10.0, min_amount = 1, max_amount = 1);
+		//use Mechanical(weight = 80.0, min_amount = 1, max_amount = 1);
+		//use BanditCamp(weight = 10.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("BanditCamp_Hard_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorHard);
+		LootAmount(1);
+		use Empty(weight = 70.0, min_amount = 1, max_amount = 1);
+		//use ScrapMid(weight = 10.0, min_amount = 1, max_amount = 1);
+		//use Mechanical(weight = 80.0, min_amount = 1, max_amount = 1);
+		//use BanditCamp(weight = 10.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("GRERoom_Runthrough_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorRunthrough);
+		LootAmount(1);
+		use Empty(weight = 50.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 8.0, min_amount = 1, max_amount = 1);
+		//use ScrapMid(weight = 4.0, min_amount = 1, max_amount = 1);
+		//use GRERoom(weight = 18.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("GRERoom_Easy_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 50.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 11.0, min_amount = 1, max_amount = 1);
+		//use ScrapMid(weight = 9.0, min_amount = 1, max_amount = 1);
+		//use GRERoom(weight = 20.0, min_amount = 1, max_amount = 3);
+    }
+    LootedObject("GRERoom_Medium_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorMedium);
+		LootAmount(1);
+		use Empty(weight = 50.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 9.0, min_amount = 1, max_amount = 1);
+		//use ScrapMid(weight = 7.0, min_amount = 1, max_amount = 1);
+		//use GRERoom(weight = 24.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("GRERoom_Hard_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorHard);
+		LootAmount(1);
+		use Empty(weight = 40.0, min_amount = 1, max_amount = 1);
+		//use ScrapHigh(weight = 15.0, min_amount = 1, max_amount = 1);
+		//use GRERoom(weight = 35.0, min_amount = 1, max_amount = 3);
+    }
+	LootedObject("Hospital_Easy_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorEasy);
+		LootAmount(1);
+		use Empty(weight = 60.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 8.0, min_amount = 1, max_amount = 1);
+		//use ScrapMid(weight = 4.0, min_amount = 1, max_amount = 1);
+		//use Hospital(weight = 28.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Hospital_Medium_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorMedium);
+		LootAmount(1);
+		use Empty(weight = 60.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 8.0, min_amount = 1, max_amount = 1);
+		//use ScrapMid(weight = 4.0, min_amount = 1, max_amount = 1);
+		//use Hospital(weight = 28.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("Hospital_Hard_Lootplace")
+    {
+        ColorSet(ColorSet_InteriorHard);
+		LootAmount(1);
+		use Empty(weight = 50.0, min_amount = 1, max_amount = 1);
+		//use ScrapLow(weight = 7.0, min_amount = 1, max_amount = 1);
+		//use ScrapMid(weight = 4.0, min_amount = 1, max_amount = 1);
+		//use ScrapHigh(weight = 2.0, min_amount = 1, max_amount = 1);
+		//use Hospital(weight = 37.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Empty")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Empty(weight = 1.0, min_amount = 1, max_amount = 1);
+	}
+}
+
+sub default()
+{
+    use DefineColors();
+    use DefineColorsSpecial();
+    use Loot();
+}
+
+sub default_hard()
+{
+    use DefineColorsHard();
+    use DefineColorsSpecialHard();
+    use Loot();
+}
+
+sub default_nightmare()
+{
+    use DefineColorsNightmare();
+    use DefineColorsSpecialNightmare();
+    use Loot();
+}

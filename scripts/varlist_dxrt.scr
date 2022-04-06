@@ -1,0 +1,155 @@
+VarInt("i_dxrt_available", 0)
+VarInt("i_dxrt_on", 1)
+
+VarInt("i_dxrt_ao_on", 1)
+VarInt("i_dxrt_soft_shadows_on", 1)
+VarInt("i_dxrt_lit_on", 0)
+VarInt("i_dxrt_flashlight_on", 0)
+
+VarInt("i_dxrt_gi_diffuse", 0)
+VarInt("i_dxrt_gi_specular", 0)
+
+VarInt("i_dxrt_both_indirect_dif_on", 0)
+VarInt("i_dxrt_ao_or_dif_gi_on", 0)
+
+VarInt("i_dxrt_lit_on_prv", 0)
+VarInt("i_dxrt_lit_on_changed", 0)
+
+VarInt("i_dxrt_dbg_tlas_on", 0)
+VarInt("i_dxrt_dbg_z_on", 0)
+VarInt("i_dxrt_dbg_nrm_on", 0)
+VarInt("i_dxrt_dbg_pos_on", 0)
+VarInt("i_dxrt_dbg_uv_on", 0)
+VarInt("i_dxrt_dbg_stats_on", 0)
+
+VarInt("i_dxrt_show_debug", 0)
+
+VarInt("i_dxrt_rays", 1)
+VarFloat("f_dxrt_sun_angular_diameter", 0.5)
+
+VarFloat("f_dxrt_spot_intensity", 5.0)
+VarFloat("f_dxrt_spot_angle", 11.0)
+VarFloat("f_dxrt_spot_range", 13.0)
+VarFloat("f_dxrt_spot_falloff_start", 1.0)
+VarFloat("f_dxrt_spot_falloff_end", 0.8)
+
+VarFloat("f_dxrt_hit_distance_const_scale", 1)
+VarFloat("f_dxrt_hit_distance_view_z_scale", 0.15)
+VarFloat("f_dxrt_hit_distance_max_multiplier", 1)
+
+VarInt("i_dxrt_enable_blue_noise", 1)
+
+VarFloat("f_dxrt_ray_min_t", 0.015)
+VarFloat("f_dxrt_ray_max_t", 60.0)
+
+VarFloat("f_dxrt_ray_range_mult", 1.0)
+
+VarFloat("f_dxrt_2_fallback_blend_dist", 6.0)
+VarFloat("f_dxrt_fallback_near", 55.0)
+
+VarInt("i_dxrt_quarter_res_flashlight", 1)
+
+
+// Nvidia raytracing denoising
+VarInt("i_nrd_reset_history", 0)
+VarFloat("f_nrd_disocclusion_threshold", 0.01)
+VarFloat("f_nrd_splitscreen", 0.0)
+
+VarFloat("f_nrd_force_reference_accumulation", 0)
+VarFloat("f_nrd_antilag_intensity_enabled", 1)
+VarFloat("f_nrd_antilag_hit_distance_enabled", 1)
+
+// 0 - OFF, 1 - SIMPLE
+// Enabled from PPManager.cpp, currently when gi is enabled
+// (assumption - rt gi = high rt preset)
+VarInt("i_nrd_prepass_mode", 0)
+
+// Nvidia Raytracing Denoiser - Flashlight
+VarFloat("f_nrd_diff_flashlight_history_clamp_a", 0.5)
+VarFloat("f_nrd_diff_flashlight_history_clamp_b", 15)
+VarFloat("f_nrd_diff_flashlight_history_clamp_exp", 1.0)
+
+VarFloat("f_nrd_diff_flashlight_antilag_intensity_threshold_min", 0.015)
+VarFloat("f_nrd_diff_flashlight_antilag_intensity_threshold_max", 0.15)
+VarFloat("f_nrd_diff_flashlight_antilag_intensity_sigma_scale", 1)
+VarFloat("f_nrd_diff_flashlight_antilag_intensity_sensitivity", 0.01)
+
+VarFloat("f_nrd_diff_flashlight_antilag_hit_distance_threshold_min", 0.015)
+VarFloat("f_nrd_diff_flashlight_antilag_hit_distance_threshold_max", 0.15)
+VarFloat("f_nrd_diff_flashlight_antilag_hit_distance_sigma_scale", 1)
+
+VarFloat("f_nrd_diff_flashlight_hit_distance_parameters_a", 3)
+
+VarFloat("f_nrd_diff_flashlight_max_accumulated_frame_num", 24)
+VarFloat("f_nrd_diff_flashlight_blur_radius", 30)
+VarFloat("f_nrd_diff_flashlight_max_adaptive_radius_scale", 5)
+VarFloat("f_nrd_diff_flashlight_normal_weight_strictness", 1)
+VarFloat("f_nrd_diff_flashlight_stabilization_strength", 1)
+
+VarFloat("f_nrd_diff_flashlight_anti_firefly", 0)
+VarFloat("f_nrd_diff_flashlight_antilag_intensity_enabled", 1)
+VarFloat("f_nrd_diff_flashlight_antilag_hit_distance_enabled", 1)
+
+
+// Nvidia Raytracing Denoiser - GI diffuse
+VarFloat("f_nrd_diff_antilag_intensity_threshold_min", 0.015)
+VarFloat("f_nrd_diff_antilag_intensity_threshold_max", 0.15)
+VarFloat("f_nrd_diff_antilag_intensity_sigma_scale", 1)
+VarFloat("f_nrd_diff_antilag_intensity_sensitivity", 0.02)
+
+VarFloat("f_nrd_diff_antilag_hit_distance_threshold_min", 0.015)
+VarFloat("f_nrd_diff_antilag_hit_distance_threshold_max", 0.15)
+VarFloat("f_nrd_diff_antilag_hit_distance_sigma_scale", 1)
+
+VarFloat("f_nrd_diff_hit_distance_parameters_a", 3)
+
+VarFloat("f_nrd_diff_max_accumulated_frame_num", 31)
+VarFloat("f_nrd_diff_blur_radius", 30)
+VarFloat("f_nrd_diff_max_adaptive_radius_scale", 5)
+VarFloat("f_nrd_diff_normal_weight_strictness", 1)
+VarFloat("f_nrd_diff_stabilization_strength", 1)
+
+VarFloat("f_nrd_diff_anti_firefly", 0)
+
+
+// Nvidia Raytracing Denoiser - GI specular
+VarFloat("f_nrd_spec_antilag_intensity_threshold_min", 0.015)
+VarFloat("f_nrd_spec_antilag_intensity_threshold_max", 0.15)
+VarFloat("f_nrd_spec_antilag_intensity_sigma_scale", 1)
+VarFloat("f_nrd_spec_antilag_intensity_sensitivity", 0.02)
+
+VarFloat("f_nrd_spec_antilag_hit_distance_threshold_min", 0.015)
+VarFloat("f_nrd_spec_antilag_hit_distance_threshold_max", 0.15)
+VarFloat("f_nrd_spec_antilag_hit_distance_sigma_scale", 1)
+
+VarFloat("f_nrd_spec_hit_distance_parameters_a", 3)
+
+VarFloat("f_nrd_spec_max_accumulated_frame_num", 31)
+VarFloat("f_nrd_spec_blur_radius", 30)
+VarFloat("f_nrd_spec_max_adaptive_radius_scale", 5)
+VarFloat("f_nrd_spec_normal_weight_strictness", 1)
+VarFloat("f_nrd_spec_stabilization_strength", 1)
+
+VarFloat("f_nrd_spec_anti_firefly", 0)
+
+VarFloat("f_nrd_gi_antilag_intensity_enabled", 1)
+VarFloat("f_nrd_gi_antilag_hit_distance_enabled", 1)
+
+
+// Nvidia Raytracing Denoiser - AO diffuse only
+VarFloat("f_nrd_ao_antilag_intensity_enabled", 1)
+VarFloat("f_nrd_ao_antilag_hit_distance_enabled", 1)
+
+// Variables for RTGI + IBL
+VarFloat("f_non_rt_ambient_amount", 0.5)
+
+// dlss
+VarInt("i_dlss_hdr_on", 1)
+VarFloat("f_dlss_jitter_x_scale", 1.0) // as scale
+VarFloat("f_dlss_jitter_y_scale", -1.0) // as scale
+VarFloat("f_dlss_jitter_x", 0.0) // as scale
+VarFloat("f_dlss_jitter_y", 0.0) // as scale
+VarFloat("f_dlss_sharpness", -1.0)
+VarInt("i_dlss_reset", 0)
+VarFloat("f_dlss_mv_scale_x", 1.0)
+VarFloat("f_dlss_mv_scale_y", 1.0)

@@ -14,7 +14,7 @@ sub main()
         Skin("default");
         RequiredItem("Plant_Honey", 1);
         RequiredItem("Plant_Chamomile", 2);
-        Color(Color_Green);
+        Color(Color_White);
         CraftedItem("Medkit_Small", 1, 1);
         HudIcon("blueprint_b");
         TokenPrice(EFaction_Exploration, 1);
@@ -165,7 +165,7 @@ sub main()
 		RequiredItem("Craft_Rags", 3);
 		RequiredItem("Craft_Alcohol", 3);
         Color(Color_Green);
-        CraftedItem("Medkit_Small_Upgrade6", 1, 1);
+        CraftedItem("Medkit_Small_Upgrade6", 2, 2);
         HudIcon("blueprint_b");
         AlternativePrice("KeyCraft_SpecialInfected_Token_T1", 25);
         AlternativePrice("KeyCraft_SpecialInfected_Token_T2", 9);
@@ -191,17 +191,17 @@ sub main()
         RequiredItem("Plant_Chamomile", 4);
 		RequiredItem("Craft_Rags", 3);
 		RequiredItem("Craft_Alcohol", 4);
-		RequiredItem("Valuable_Morphine", 1);
-        Color(Color_Green);
-        CraftedItem("Medkit_Small_Upgrade7", 1, 1);
-        HudIcon("blueprint_b");
+		RequiredItem("Valuable_Aspirin", 1);
+        Color(Color_Blue);
+        CraftedItem("Medkit_Small_Upgrade7", 3, 3);
+        HudIcon("valuables_aspirin");
         AlternativePrice("KeyCraft_SpecialInfected_Token_T1", 25);
         AlternativePrice("KeyCraft_SpecialInfected_Token_T2", 9);
         AlternativePrice("KeyCraft_SpecialInfected_Token_T3", 6);
         AlternativePrice("Cash_Cash", 1030);
         TokenPrice(EFaction_Exploration, 1);
-        RequiredItemToShowInShop("Craftplan_Medkit_Small_Upgrade6");
-        ItemLevel(8, 9);
+        //RequiredItemToShowInShop("Craftplan_Medkit_Small_Upgrade6");
+        //ItemLevel(8, 9);
         GameVersion(1);
         UID("6808848056019432233");
     }
@@ -220,48 +220,20 @@ sub main()
 		RequiredItem("Craft_Rags", 4);
 		RequiredItem("Craft_Alcohol", 4);
 		RequiredItem("Valuable_Morphine", 1);
-        Color(Color_Green);
-        CraftedItem("Medkit_Small_Upgrade8", 1, 1);
-        HudIcon("blueprint_b");
+        Color(Color_Violet);
+        CraftedItem("Medkit_Small_Upgrade8", 5, 5);
+        HudIcon("valuables_morphine");
         AlternativePrice("KeyCraft_SpecialInfected_Token_T1", 100);
         AlternativePrice("KeyCraft_SpecialInfected_Token_T2", 12);
         AlternativePrice("KeyCraft_SpecialInfected_Token_T3", 9);
         AlternativePrice("Cash_Cash", 1320);
         TokenPrice(EFaction_Exploration, 1);
-        RequiredItemToShowInShop("Craftplan_Medkit_Small_Upgrade7");
-        ItemLevel(9, 9);
+        //RequiredItemToShowInShop("Craftplan_Medkit_Small_Upgrade7");
+        //ItemLevel(9, 9);
         GameVersion(1);
         UID("6598080677910657287");
     }
 	
-	Item("Craftplan_Medkit_Small_Upgrade_test", CategoryType_Collectable)
-    {
-        Name("&Craftplan_Medkit_Small_Upgrade8_N&");
-        Description('&Craftplan_Medkit_Small_Upgrade8_D&');
-        ItemType(ItemType_CraftPlan);
-        CraftplanType("Consumable");
-        Price(1320);
-        Mesh("blueprint.msh");
-        Skin("default");
-        RequiredItem("Plant_Honey", 4);
-        RequiredItem("Plant_Chamomile", 4);
-		RequiredItem("Craft_Rags", 4);
-		RequiredItem("Craft_Alcohol", 4);
-		RequiredItem("Valuable_Morphine", 1);
-        Color(Color_Green);
-        CraftedItem("Medkit_Small_Upgrade8", 1, 1);
-        HudIcon("blueprint_b");
-        AlternativePrice("KeyCraft_SpecialInfected_Token_T1", 100);
-        AlternativePrice("KeyCraft_SpecialInfected_Token_T2", 12);
-        AlternativePrice("KeyCraft_SpecialInfected_Token_T3", 9);
-        AlternativePrice("Cash_Cash", 1320);
-        TokenPrice(EFaction_Exploration, 1);
-        RequiredItemToShowInShop("Craftplan_Medkit_Small_Upgrade6");
-        ItemLevel(9, 9);
-        GameVersion(1);
-        UID("6598080677910657287");
-    }
-
     Item("Craftplan_Lockpick", CategoryType_Collectable)
     {
         Name("&Craftplan_Lockpick_N&");
@@ -273,7 +245,7 @@ sub main()
         Skin("default");
         RequiredItem("Craft_Scrap", 5);
         Color(Color_White);
-        CraftedItem("LockpickItem", 2, 2);
+        CraftedItem("LockpickItem", 1, 1);
         HudIcon("blueprint_b");
         TokenPrice(EFaction_Exploration, 1);
         ItemLevel(1, 9);
@@ -409,7 +381,8 @@ sub main()
         Mesh("blueprint.msh");
         Skin("default");
         RequiredItem("Craft_Scrap", 12);
-        Color(Color_White);
+		RequiredItem("Valuable_Tools", 1);
+        Color(Color_Green);
         CraftedItem("LockpickItem_Upgrade6", 4, 4);
         HudIcon("blueprint_b");
         AlternativePrice("KeyCraft_SpecialInfected_Token_T1", 25);
@@ -417,8 +390,8 @@ sub main()
         AlternativePrice("KeyCraft_SpecialInfected_Token_T3", 3);
         AlternativePrice("Cash_Cash", 300);
         TokenPrice(EFaction_Exploration, 1);
-        RequiredItemToShowInShop("Craftplan_Lockpick_Upgrade5");
-        ItemLevel(7, 9);
+        //RequiredItemToShowInShop("Craftplan_Lockpick_Upgrade5");
+        //ItemLevel(7, 9);
         AdditionalItemToAddWhenBuy("Craftplan_LockpickBreak1");
         GameVersion(1);
         UID("6809246353924372189");
@@ -434,7 +407,8 @@ sub main()
         Mesh("blueprint.msh");
         Skin("default");
         RequiredItem("Craft_Scrap", 12);
-        Color(Color_White);
+		RequiredItem("Valuable_Tools", 1);
+        Color(Color_Blue);
         CraftedItem("LockpickItem_Upgrade7", 4, 4);
         HudIcon("blueprint_b");
         AlternativePrice("KeyCraft_SpecialInfected_Token_T1", 25);
@@ -443,8 +417,8 @@ sub main()
         AlternativePrice("Cash_Cash", 380);
         TokenPrice(EFaction_Exploration, 1);
         LockpicksDurabilityMod(0.33);
-        RequiredItemToShowInShop("Craftplan_Lockpick_Upgrade6");
-        ItemLevel(8, 9);
+        //RequiredItemToShowInShop("Craftplan_Lockpick_Upgrade6");
+        //ItemLevel(8, 9);
         GameVersion(1);
         UID("6809246353925703918");
     }
@@ -461,7 +435,8 @@ sub main()
         RequiredItem("Craft_Scrap", 10);
 		RequiredItem("Craft_Blades", 1);
 		RequiredItem("Craft_Leather", 1);
-        Color(Color_White);
+		RequiredItem("Valuable_Tools", 1);
+        Color(Color_Violet);
         CraftedItem("LockpickItem_Upgrade8", 4, 4);
         HudIcon("blueprint_b");
         AlternativePrice("KeyCraft_SpecialInfected_Token_T1", 100);
@@ -469,8 +444,8 @@ sub main()
         AlternativePrice("KeyCraft_SpecialInfected_Token_T3", 9);
         AlternativePrice("Cash_Cash", 500);
         TokenPrice(EFaction_Exploration, 1);
-        RequiredItemToShowInShop("Craftplan_Lockpick_Upgrade7");
-        ItemLevel(9, 9);
+        //RequiredItemToShowInShop("Craftplan_Lockpick_Upgrade7");
+        //ItemLevel(9, 9);
         AdditionalItemToAddWhenBuy("Craftplan_LockpickBreak2");
         GameVersion(1);
         UID("6597348657515678677");
@@ -1426,9 +1401,9 @@ sub main()
         Mesh("blueprint.msh");
         Skin("default");
         RequiredItem("Craft_Rags", 10);
-        RequiredItem("Craft_Alcohol", 4);
+        RequiredItem("Valuable_Vodka", 1);
 		RequiredItem("Craft_Oxidizer", 2);
-        Color(Color_Blue);
+        Color(Color_Violet);
         CraftedItem("Throwable_Molotov_Upgrade7", 2, 4);
         HudIcon("blueprint_b");
         AlternativePrice("KeyCraft_SpecialInfected_Token_T1", 25);
@@ -1436,8 +1411,8 @@ sub main()
         AlternativePrice("KeyCraft_SpecialInfected_Token_T3", 6);
         AlternativePrice("Cash_Cash", 1220);
         TokenPrice(EFaction_Exploration, 4);
-        RequiredItemToShowInShop("Craftplan_Molotov_Upgrade6");
-        ItemLevel(8, 9);
+        //RequiredItemToShowInShop("Craftplan_Molotov_Upgrade6");
+        //ItemLevel(8, 9);
         GameVersion(1);
         UID("6808142378898127679");
     }
@@ -1452,18 +1427,18 @@ sub main()
         Mesh("blueprint.msh");
         Skin("default");
         RequiredItem("Craft_Rags", 10);
-        RequiredItem("Craft_Alcohol", 4);
+        RequiredItem("Valuable_Whiskey", 2);
 		RequiredItem("Craft_Oxidizer", 3);
-        Color(Color_Violet);
-        CraftedItem("Throwable_Molotov_Upgrade8", 2, 4);
+        Color(Color_Orange);
+        CraftedItem("Throwable_Molotov_Upgrade8", 5, 5);
         HudIcon("blueprint_b");
         AlternativePrice("KeyCraft_SpecialInfected_Token_T1", 100);
         AlternativePrice("KeyCraft_SpecialInfected_Token_T2", 12);
         AlternativePrice("KeyCraft_SpecialInfected_Token_T3", 9);
         AlternativePrice("Cash_Cash", 1890);
         TokenPrice(EFaction_Exploration, 4);
-        RequiredItemToShowInShop("Craftplan_Molotov_Upgrade7");
-        ItemLevel(9, 9);
+        //RequiredItemToShowInShop("Craftplan_Molotov_Upgrade7");
+        //ItemLevel(9, 9);
         GameVersion(1);
         UID("6808142379259467738");
     }
@@ -1685,16 +1660,17 @@ sub main()
         RequiredItem("Craft_Container", 4);
 		RequiredItem("Craft_Resin", 4);
 		RequiredItem("Craft_Cleaning_Supplies", 4);
+		RequiredItem("Valuable_Wristwatch", 1);
         Color(Color_Blue);
-        CraftedItem("Throwable_Decoy_Upgrade8", 5, 4);
+        CraftedItem("Throwable_Decoy_Upgrade8", 5, 5);
         HudIcon("blueprint_b");
         AlternativePrice("KeyCraft_SpecialInfected_Token_T1", 100);
         AlternativePrice("KeyCraft_SpecialInfected_Token_T2", 12);
         AlternativePrice("KeyCraft_SpecialInfected_Token_T3", 9);
         AlternativePrice("Cash_Cash", 1350);
         TokenPrice(EFaction_Exploration, 4);
-        RequiredItemToShowInShop("Craftplan_Firecrackers_Upgrade7");
-        ItemLevel(9, 9);
+        //RequiredItemToShowInShop("Craftplan_Firecrackers_Upgrade7");
+        //ItemLevel(9, 9);
         GameVersion(1);
         UID("6830815637182279860");
     }
@@ -1713,7 +1689,7 @@ sub main()
         RequiredItem("Craft_Wiring", 5);
         RequiredItem("Craft_Electrical_Parts", 1);
         RequiredItem("Craft_Cleaning_Supplies", 1);
-        Color(Color_Blue);
+        Color(Color_White);
         CraftedItem("Remote_Explosive", 1, 2);
         HudIcon("blueprint_b");
         TokenPrice(EFaction_Exploration, 1);
@@ -1736,7 +1712,7 @@ sub main()
         RequiredItem("Craft_Wiring", 5);
         RequiredItem("Craft_Electrical_Parts", 1);
         RequiredItem("Craft_Cleaning_Supplies", 1);
-        Color(Color_Blue);
+        Color(Color_Green);
         CraftedItem("Remote_Explosive_Upgrade1", 1, 2);
         HudIcon("blueprint_b");
         AlternativePrice("KeyCraft_SpecialInfected_Token_T1", 5);
@@ -1761,7 +1737,7 @@ sub main()
         RequiredItem("Craft_Wiring", 5);
         RequiredItem("Craft_Electrical_Parts", 1);
         RequiredItem("Craft_Cleaning_Supplies", 1);
-        Color(Color_Blue);
+        Color(Color_Green);
         CraftedItem("Remote_Explosive_Upgrade2", 1, 2);
         HudIcon("blueprint_b");
         AlternativePrice("KeyCraft_SpecialInfected_Token_T1", 10);
@@ -1788,7 +1764,7 @@ sub main()
         RequiredItem("Craft_Wiring", 5);
         RequiredItem("Craft_Electrical_Parts", 1);
         RequiredItem("Craft_Cleaning_Supplies", 1);
-        Color(Color_Blue);
+        Color(Color_Green);
         CraftedItem("Remote_Explosive_Upgrade3", 2, 3);
         HudIcon("blueprint_b");
         AlternativePrice("KeyCraft_SpecialInfected_Token_T1", 10);
@@ -1815,7 +1791,8 @@ sub main()
         RequiredItem("Craft_Wiring", 5);
         RequiredItem("Craft_Electrical_Parts", 1);
         RequiredItem("Craft_Cleaning_Supplies", 1);
-        Color(Color_Violet);
+		RequiredItem("Valuable_Wristwatch", 1);
+        Color(Color_Blue);
         CraftedItem("Remote_Explosive_Upgrade4", 2, 3);
         HudIcon("blueprint_b");
         AlternativePrice("KeyCraft_SpecialInfected_Token_T1", 15);
@@ -1823,8 +1800,8 @@ sub main()
         AlternativePrice("KeyCraft_SpecialInfected_Token_T3", 1);
         AlternativePrice("Cash_Cash", 960);
         TokenPrice(EFaction_Exploration, 4);
-        RequiredItemToShowInShop("Craftplan_Remote_Explosive_Upgrade3");
-        ItemLevel(5, 9);
+        //RequiredItemToShowInShop("Craftplan_Remote_Explosive_Upgrade3");
+        //ItemLevel(5, 9);
         GameVersion(1);
         UID("6856716470651130071");
     }
@@ -1843,7 +1820,8 @@ sub main()
         RequiredItem("Craft_Wiring", 5);
         RequiredItem("Craft_Electrical_Parts", 1);
         RequiredItem("Craft_Cleaning_Supplies", 1);
-        Color(Color_Violet);
+		RequiredItem("Valuable_Wristwatch", 1);
+        Color(Color_Blue);
         CraftedItem("Remote_Explosive_Upgrade5", 2, 3);
         HudIcon("blueprint_b");
         AlternativePrice("KeyCraft_SpecialInfected_Token_T1", 15);
@@ -1852,7 +1830,7 @@ sub main()
         AlternativePrice("Cash_Cash", 1250);
         TokenPrice(EFaction_Exploration, 4);
         RequiredItemToShowInShop("Craftplan_Remote_Explosive_Upgrade4");
-        ItemLevel(6, 9);
+        //ItemLevel(6, 9);
         GameVersion(1);
         UID("6856716471099459664");
     }
@@ -1869,8 +1847,9 @@ sub main()
         RequiredItem("Craft_Scrap", 20);
         RequiredItem("Craft_Container", 3);
         RequiredItem("Craft_Wiring", 5);
-        RequiredItem("Craft_Electrical_Parts", 1);
+        RequiredItem("Craft_Electrical_Parts", 2);
         RequiredItem("Craft_Cleaning_Supplies", 1);
+		RequiredItem("Valuable_Walkie_Talkies", 1);
         Color(Color_Violet);
         CraftedItem("Remote_Explosive_Upgrade6", 2, 3);
         HudIcon("blueprint_b");
@@ -1879,8 +1858,8 @@ sub main()
         AlternativePrice("KeyCraft_SpecialInfected_Token_T3", 3);
         AlternativePrice("Cash_Cash", 1530);
         TokenPrice(EFaction_Exploration, 4);
-        RequiredItemToShowInShop("Craftplan_Remote_Explosive_Upgrade5");
-        ItemLevel(7, 9);
+        //RequiredItemToShowInShop("Craftplan_Remote_Explosive_Upgrade5");
+        //ItemLevel(7, 9);
         GameVersion(1);
         UID("6856716471318744967");
     }
@@ -1897,8 +1876,9 @@ sub main()
         RequiredItem("Craft_Scrap", 20);
         RequiredItem("Craft_Container", 3);
         RequiredItem("Craft_Wiring", 5);
-        RequiredItem("Craft_Electrical_Parts", 1);
+        RequiredItem("Craft_Electrical_Parts", 2);
         RequiredItem("Craft_Cleaning_Supplies", 1);
+		RequiredItem("Valuable_Walkie_Talkies", 1);
         Color(Color_Violet);
         CraftedItem("Remote_Explosive_Upgrade7", 2, 3);
         HudIcon("blueprint_b");
@@ -1925,8 +1905,9 @@ sub main()
         RequiredItem("Craft_Scrap", 20);
         RequiredItem("Craft_Container", 3);
         RequiredItem("Craft_Wiring", 5);
-        RequiredItem("Craft_Electrical_Parts", 1);
+        RequiredItem("Craft_Electrical_Parts", 3);
         RequiredItem("Craft_Cleaning_Supplies", 1);
+		RequiredItem("Valuable_Smartphone", 1);
         Color(Color_Orange);
         CraftedItem("Remote_Explosive_Upgrade8", 3, 4);
         HudIcon("blueprint_b");
@@ -1935,8 +1916,8 @@ sub main()
         AlternativePrice("KeyCraft_SpecialInfected_Token_T3", 9);
         AlternativePrice("Cash_Cash", 3250);
         TokenPrice(EFaction_Exploration, 4);
-        RequiredItemToShowInShop("Craftplan_Remote_Explosive_Upgrade7");
-        ItemLevel(9, 9);
+        //RequiredItemToShowInShop("Craftplan_Remote_Explosive_Upgrade7");
+        //ItemLevel(9, 9);
         GameVersion(1);
         UID("6856716471871339784");
     }
@@ -2209,6 +2190,7 @@ sub main()
         RequiredItem("Craft_Resin", 5);
         RequiredItem("Craft_Pigments", 3);
         RequiredItem("Craft_Oxidizer", 1);
+		RequiredItem("Plant_UVShroom", 1);
         Color(Color_Violet);
         CraftedItem("UV_Flare_Upgrade1", 1, 2);
         HudIcon("blueprint_b");
@@ -2233,6 +2215,7 @@ sub main()
         RequiredItem("Craft_Resin", 5);
         RequiredItem("Craft_Pigments", 3);
         RequiredItem("Craft_Oxidizer", 1);
+		RequiredItem("Plant_UVShroom", 1);
         Color(Color_Violet);
         CraftedItem("UV_Flare_Upgrade2", 1, 2);
         HudIcon("blueprint_b");
@@ -2259,6 +2242,7 @@ sub main()
         RequiredItem("Craft_Resin", 5);
         RequiredItem("Craft_Pigments", 3);
         RequiredItem("Craft_Oxidizer", 1);
+		RequiredItem("Plant_UVShroom", 2);
         Color(Color_Violet);
         CraftedItem("UV_Flare_Upgrade3", 2, 3);
         HudIcon("blueprint_b");
@@ -2285,6 +2269,7 @@ sub main()
         RequiredItem("Craft_Resin", 5);
         RequiredItem("Craft_Pigments", 3);
         RequiredItem("Craft_Oxidizer", 1);
+		RequiredItem("Plant_UVShroom", 2);
         Color(Color_Orange);
         CraftedItem("UV_Flare_Upgrade4", 2, 3);
         HudIcon("blueprint_b");
@@ -2312,6 +2297,7 @@ sub main()
         RequiredItem("Craft_Resin", 5);
         RequiredItem("Craft_Pigments", 3);
         RequiredItem("Craft_Oxidizer", 1);
+		RequiredItem("Plant_UVShroom", 2);
         Color(Color_Orange);
         CraftedItem("UV_Flare_Upgrade5", 2, 3);
         HudIcon("blueprint_b");
@@ -2339,6 +2325,7 @@ sub main()
         RequiredItem("Craft_Resin", 5);
         RequiredItem("Craft_Pigments", 3);
         RequiredItem("Craft_Oxidizer", 1);
+		RequiredItem("Plant_UVShroom", 2);
         Color(Color_Orange);
         CraftedItem("UV_Flare_Upgrade6", 2, 3);
         HudIcon("blueprint_b");
@@ -2366,6 +2353,7 @@ sub main()
         RequiredItem("Craft_Resin", 5);
         RequiredItem("Craft_Pigments", 3);
         RequiredItem("Craft_Oxidizer", 1);
+		RequiredItem("Plant_UVShroom", 3);
         Color(Color_Orange);
         CraftedItem("UV_Flare_Upgrade7", 3, 4);
         HudIcon("blueprint_b");
@@ -2393,6 +2381,7 @@ sub main()
         RequiredItem("Craft_Resin", 5);
         RequiredItem("Craft_Pigments", 3);
         RequiredItem("Craft_Oxidizer", 1);
+		RequiredItem("Plant_UVShroom", 3);
         Color(Color_Orange);
         CraftedItem("UV_Flare_Upgrade8", 3, 4);
         HudIcon("blueprint_b");
@@ -2440,6 +2429,7 @@ sub main()
         RequiredItem("Craft_Scrap", 10);
         RequiredItem("Craft_Alcohol", 1);
         RequiredItem("Craft_Battery", 1);
+		RequiredItem("Craft_Wiring", 1);
         Color(Color_Blue);
         CraftedItem("Throwable_ExplosiveGrenade_Upgrade1", 1, 2);
         HudIcon("blueprint_b");
@@ -2463,6 +2453,7 @@ sub main()
         RequiredItem("Craft_Scrap", 10);
         RequiredItem("Craft_Alcohol", 1);
         RequiredItem("Craft_Battery", 1);
+		RequiredItem("Craft_Wiring", 1);
         Color(Color_Blue);
         CraftedItem("Throwable_ExplosiveGrenade_Upgrade2", 1, 2);
         HudIcon("blueprint_b");
@@ -2488,6 +2479,7 @@ sub main()
         RequiredItem("Craft_Scrap", 10);
         RequiredItem("Craft_Alcohol", 1);
         RequiredItem("Craft_Battery", 1);
+		RequiredItem("Craft_Wiring", 1);
         Color(Color_Blue);
         CraftedItem("Throwable_ExplosiveGrenade_Upgrade3", 2, 3);
         HudIcon("blueprint_b");
@@ -2513,6 +2505,7 @@ sub main()
         RequiredItem("Craft_Scrap", 10);
         RequiredItem("Craft_Alcohol", 1);
         RequiredItem("Craft_Battery", 1);
+		RequiredItem("Craft_Wiring", 2);
         Color(Color_Violet);
         CraftedItem("Throwable_ExplosiveGrenade_Upgrade4", 2, 3);
         HudIcon("blueprint_b");
@@ -2539,6 +2532,7 @@ sub main()
         RequiredItem("Craft_Scrap", 10);
         RequiredItem("Craft_Alcohol", 1);
         RequiredItem("Craft_Battery", 1);
+		RequiredItem("Craft_Wiring", 2);
         Color(Color_Violet);
         CraftedItem("Throwable_ExplosiveGrenade_Upgrade5", 2, 3);
         HudIcon("blueprint_b");
@@ -2565,6 +2559,7 @@ sub main()
         RequiredItem("Craft_Scrap", 10);
         RequiredItem("Craft_Alcohol", 1);
         RequiredItem("Craft_Battery", 1);
+		RequiredItem("Craft_Wiring", 2);
         Color(Color_Violet);
         CraftedItem("Throwable_ExplosiveGrenade_Upgrade6", 2, 3);
         HudIcon("blueprint_b");
@@ -2591,6 +2586,7 @@ sub main()
         RequiredItem("Craft_Scrap", 10);
         RequiredItem("Craft_Alcohol", 1);
         RequiredItem("Craft_Battery", 1);
+		RequiredItem("Craft_Wiring", 3);
         Color(Color_Violet);
         CraftedItem("Throwable_ExplosiveGrenade_Upgrade7", 2, 3);
         HudIcon("blueprint_b");
@@ -2617,6 +2613,8 @@ sub main()
         RequiredItem("Craft_Scrap", 10);
         RequiredItem("Craft_Alcohol", 1);
         RequiredItem("Craft_Battery", 1);
+		RequiredItem("Craft_Wiring", 3);
+		RequiredItem("Craft_Oxidizer", 1);
         Color(Color_Orange);
         CraftedItem("Throwable_ExplosiveGrenade_Upgrade8", 3, 4);
         HudIcon("blueprint_b");
@@ -2625,8 +2623,8 @@ sub main()
         AlternativePrice("KeyCraft_SpecialInfected_Token_T3", 9);
         AlternativePrice("Cash_Cash", 3250);
         TokenPrice(EFaction_Exploration, 1);
-        RequiredItemToShowInShop("Craftplan_Grenade_Upgrade7");
-        ItemLevel(9, 9);
+        //RequiredItemToShowInShop("Craftplan_Grenade_Upgrade7");
+        //ItemLevel(9, 9);
         GameVersion(1);
         UID("6743942835858137409");
     }
@@ -5058,7 +5056,8 @@ sub main()
         Mesh("blueprint.msh");
         Skin("default");
         RequiredItem("Craft_Scrap", 100);
-        Color(Color_Violet);
+		RequiredItem("Valuable_Tools", 1);
+        Color(Color_Green);
         CraftedItem("Firearm_Shotgun", 1, 1);
         HudIcon("blueprint_b");
         TokenPrice(EFaction_Exploration, 1);
@@ -5077,7 +5076,8 @@ sub main()
         Mesh("blueprint.msh");
         Skin("default");
         RequiredItem("Craft_Scrap", 100);
-        Color(Color_Violet);
+		RequiredItem("Valuable_Tools", 1);
+        Color(Color_Green);
         CraftedItem("Firearm_Shotgun_Upgrade1", 1, 1);
         HudIcon("blueprint_b");
         AlternativePrice("KeyCraft_SpecialInfected_Token_T1", 5);
@@ -5098,7 +5098,9 @@ sub main()
         Mesh("blueprint.msh");
         Skin("default");
         RequiredItem("Craft_Scrap", 100);
-        Color(Color_Violet);
+		RequiredItem("Craft_Leather", 1);
+		RequiredItem("Valuable_Tools", 1);
+        Color(Color_Blue);
         CraftedItem("Firearm_Shotgun_Upgrade2", 1, 1);
         HudIcon("blueprint_b");
         AlternativePrice("KeyCraft_SpecialInfected_Token_T1", 10);
@@ -5121,7 +5123,9 @@ sub main()
         Mesh("blueprint.msh");
         Skin("default");
         RequiredItem("Craft_Scrap", 100);
-        Color(Color_Violet);
+		RequiredItem("Craft_Leather", 2);
+		RequiredItem("Valuable_Tools", 1);
+        Color(Color_Blue);
         CraftedItem("Firearm_Shotgun_Upgrade3", 1, 1);
         HudIcon("blueprint_b");
         AlternativePrice("KeyCraft_SpecialInfected_Token_T1", 10);
@@ -5144,7 +5148,10 @@ sub main()
         Mesh("blueprint.msh");
         Skin("default");
         RequiredItem("Craft_Scrap", 100);
-        Color(Color_Orange);
+		RequiredItem("Craft_Leather", 2);
+		RequiredItem("Craft_Rags", 2);
+		RequiredItem("Valuable_Tools", 1);
+        Color(Color_Violet);
         CraftedItem("Firearm_Shotgun_Upgrade4", 1, 1);
         HudIcon("blueprint_b");
         AlternativePrice("KeyCraft_SpecialInfected_Token_T1", 15);
@@ -5167,8 +5174,11 @@ sub main()
         Price(1450);
         Mesh("blueprint.msh");
         Skin("default");
-        RequiredItem("Craft_Scrap", 100);
-        Color(Color_Orange);
+		RequiredItem("Craft_Scrap", 100);
+		RequiredItem("Craft_Leather", 2);
+		RequiredItem("Craft_Rags", 2);
+		RequiredItem("Valuable_Tools", 1);
+        Color(Color_Violet);
         CraftedItem("Firearm_Shotgun_Upgrade5", 1, 1);
         HudIcon("blueprint_b");
         AlternativePrice("KeyCraft_SpecialInfected_Token_T1", 15);
@@ -5192,7 +5202,10 @@ sub main()
         Mesh("blueprint.msh");
         Skin("default");
         RequiredItem("Craft_Scrap", 100);
-        Color(Color_Orange);
+		RequiredItem("Craft_Leather", 2);
+		RequiredItem("Craft_Rags", 3);
+		RequiredItem("Valuable_Tools", 1);
+        Color(Color_Violet);
         CraftedItem("Firearm_Shotgun_Upgrade6", 1, 1);
         HudIcon("blueprint_b");
         AlternativePrice("KeyCraft_SpecialInfected_Token_T1", 25);
@@ -5216,6 +5229,9 @@ sub main()
         Mesh("blueprint.msh");
         Skin("default");
         RequiredItem("Craft_Scrap", 100);
+		RequiredItem("Craft_Leather", 3);
+		RequiredItem("Craft_Rags", 4);
+		RequiredItem("Valuable_Tools", 1);
         Color(Color_Orange);
         CraftedItem("Firearm_Shotgun_Upgrade7", 1, 1);
         HudIcon("blueprint_b");
@@ -5240,6 +5256,8 @@ sub main()
         Mesh("blueprint.msh");
         Skin("default");
         RequiredItem("Craft_Scrap", 100);
+		RequiredItem("Craft_Leather", 5);
+		RequiredItem("Valuable_Tools", 2);
         Color(Color_Orange);
         CraftedItem("Firearm_Shotgun_Upgrade8", 1, 1);
         HudIcon("blueprint_b");

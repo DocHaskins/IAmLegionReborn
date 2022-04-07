@@ -12,20 +12,6 @@ sub main()
         get_group_target_max_range("500.0");
         keep_last_target_only_for_player("true");
     }
-    SensorParamsTarget("biter_default")
-    {
-        keep_target_grace_period("5.0");
-        keep_target_range_lastPos("10.0");
-        keep_target_rangeAI("30.0");
-        prediction_target_time("0.25");
-        target_evaluation_type("ByDistanceOnlyPlayers");
-        target_evaluation_los_grace_period("2.0");
-        potential_target_required("true");
-        trail_required("true");
-        get_group_target_max_range("25.0");
-        ignore_actors_in_sync_action("false");
-        keep_last_target_only_for_player("true");
-    }
 	SensorParamsTarget("human_default")
     {
         keep_target_grace_period("5.0");
@@ -39,6 +25,20 @@ sub main()
         get_group_target_max_range("25.0");
         ignore_actors_in_sync_action("false");
         keep_last_target_only_for_player("false");
+    }
+	SensorParamsTarget("biter_default")
+    {
+        keep_target_grace_period("5.0");
+        keep_target_range_lastPos("10.0");
+        keep_target_rangeAI("30.0");
+        prediction_target_time("0.25");
+        target_evaluation_type("ByDistanceOnlyPlayers");
+        target_evaluation_los_grace_period("2.0");
+        potential_target_required("true");
+        trail_required("true");
+        get_group_target_max_range("25.0");
+        ignore_actors_in_sync_action("false");
+        keep_last_target_only_for_player("true");
     }
     SensorParamsTarget("banshee_default")
     {
@@ -74,18 +74,6 @@ sub main()
         potential_target_required("false");
         trail_required("false");
         get_group_target_max_range("500.0");
-        keep_last_target_only_for_player("true");
-    }
-	SensorParamsTarget("volatile_default")
-    {
-        keep_target_grace_period("60.0");
-        keep_target_range_lastPos("45.0");
-        keep_target_rangeAI("45.0");
-        prediction_target_time("0.25");
-        target_evaluation_type("ByDistanceFavorPlayers");
-        potential_target_required("false");
-        trail_required("false");
-        get_group_target_max_range("30.0");
         keep_last_target_only_for_player("true");
     }
 }

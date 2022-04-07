@@ -3,6 +3,7 @@ For Dying Light 2
 
 _____________________________________Change log:_____________________________________
 Updates to I Am Legion - Reborn 0.99pre
+Update 1 - 11
 - Fix for stamina- Fix for all runners
 - Fix for Banshee glitch
 - Fix for Biter glitch
@@ -46,6 +47,8 @@ Updates to I Am Legion - Reborn 0.99pre
 - Increase day densities in "ial_settings.mth" for more zombies during day on the streets
 - Removed HumanAI stutter bug from update 10
 - Improved spawn balance for daytime
+
+Update 12
 - Removed HD and Color settings from main mod, they are now optionals
 - Added logic for more interactions on rooftops, let me know how this goes
 - Reduced sighting possibilities for Volatile and virals

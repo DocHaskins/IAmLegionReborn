@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <!-- Init -->
+        <ExternalTree m_UID="AI_COMMON_INIT" m_CustomName="Params" m_Hide="true"/>
+        <ExternalTree m_UID="BANSHEE_INIT" m_CustomName="Init" m_Hide="true"/>
+        <Selector>
+            <ExternalTree m_UID="INFECTED_DEATH_UV" m_CustomName="Death_UV" m_Hide="true"/>
+            <ExternalTree m_UID="BANSHEE_DEATH" m_CustomName="Death" m_Hide="true"/>
+            <ParallelRepeat m_PolicySuccess="REQUIRE_NONE" m_PolicyFailure="REQUIRE_NONE">
+                <Sequence>
+                    <!-- Gather data from senses -->
+                    <ExternalTree m_UID="AI_UPDATE_ENEMY_PROTO" m_CustomName="Find_Enemy" m_Hide="true"/>
+                    <!-- Update state -->
+                    <ExternalTree m_UID="BANSHEE_UPDATE" m_CustomName="Update" m_Hide="true"/>
+                    <!-- Select behavior -->
+                    <UseCombatSlots m_Target="#target">
+                        <RepeatOnceOnSuccess>
+                            <Selector>
+                                <ExternalTree m_UID="BANSHEE_REACTION" m_CustomName="Reactions" m_Hide="true"/>
+                                <ExternalTree m_UID="BANSHEE_ESCAPE_FROM_SUNLIGHT" m_CustomName="Sunlight_Escape" m_Hide="true"/>
+								<Sequence>
+									<Cnd_IsNight/>
+									<ExternalTree m_UID="BANSHEE_PROLONGED_UV_BEHAVIOR" m_CustomName="UV" m_Hide="true"/>
+								</Sequence>
+                                <ExternalTree m_UID="BANSHEE_COMBAT" m_CustomName="Combat" m_Hide="true"/>
+                                <ExternalTree m_UID="BANSHEE_CHASE" m_CustomName="Combat" m_Hide="true"/>
+                                <ExternalTree m_UID="BP_SIMULATE" m_CustomName="BP_Simulate" m_Hide="true"/>
+                                <ExternalTree m_UID="BANSHEE_INVESTIGATE_POI" m_CustomName="Investigate" m_Hide="true"/>
+                                <ExternalTree m_UID="AI_REQUESTS" m_CustomName="Scripted" m_Hide="true"/>
+                                <ExternalTree m_UID="BANSHEE_RETURN_TO_SPAWN" m_CustomName="Return" m_Hide="true"/>
+                                <Act_Status m_StatusRequired="RUNNING"/>
+                            </Selector>
+                        </RepeatOnceOnSuccess>
+                    </UseCombatSlots>
+                </Sequence>
+                <ExposeTarget m_Target="#target">
+                    <Act_Status m_StatusRequired="RUNNING"/>
+                </ExposeTarget>
+                <ExternalTree m_UID="AI_TRACK" m_CustomName="TrackEnemy" m_Hide="true"/>
+                    <Sequence>
+                        <Cnd_IsInUVLight/>
+                        <Act_Status m_StatusRequired="RUNNING"/>
+                    </Sequence>
+            </ParallelRepeat>
+        </Selector>
+    </SequenceMem>
+</BehaviorTree>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Cnd_CanStartTask m_StartPolicy="INTERRUPT"/>
+        <Cnd_UVReactionDisabled m_Invert="true"/>
+        <Selector>
+            <!-- On edge behavior -->
+            <SequenceMem>
+                <Opr_RandomFloat m_RangeMin="3.0" m_RangeMax="8.0" m_Result="#uv_taunt_cooldown"/>
+                <Parallel m_PolicySuccess="REQUIRE_ALL" m_PolicyFailure="REQUIRE_ONE">
+                    <RunUntilFailure>
+                        <Sequence>
+                            <Cnd_IsPoseEqual m_Pose="Standing"/>
+                            <Cnd_IsInUVLight m_Invert="true"/>
+                            <Cnd_HasTimePassed m_TimePoint="#last_time_in_uv_light" m_TimeDelta="2.0" m_Invert="true"/>
+                            <Cnd_IsPlayerTargetInUVLight m_Target="#target"/>
+                            <Opr_SetDirCorrectionSpeed m_MaxSpeed="300"/>
+                            <SelectorMem>
+                                <CooldownTimeDeltaRandom m_MinCooldownTime="2.0" m_MaxCooldownTime="6.0" m_CooldownOnAbort="true">
+                                    <Act_Taunt m_Type="Normal" m_Target="#target" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                                </CooldownTimeDeltaRandom>
+                                <SequenceMem>
+                                    <Selector>
+                                        <Sequence>
+                                            <Cnd_Random />
+                                            <Opr_SetBBValue_EStepDirection m_Key="#combat_strafe_dir" m_Value="FORWARD"/>
+                                        </Sequence>
+                                        <Opr_SetBBValue_EStepDirection m_Key="#combat_strafe_dir" m_Value="LEFT"/>
+                                    </Selector>
+                                    <Selector>
+                                        <Sequence>
+                                            <Cnd_PositionInAngle m_Position="#uv_light_pos" m_Angle="15.0"/>
+                                            <Opr_SetBBValue_vec3 m_Key="#strafe_pos" m_Value="#uv_light_pos"/>
+                                        </Sequence>
+                                        <Opr_SetBBValue_vec3 m_Key="#strafe_pos" m_Value="#target_pos"/>
+                                    </Selector>
+                                    <Act_Step m_Type="UV_LIGHT" m_Direction="#combat_strafe_dir" m_TargetPos="#strafe_pos" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                                    <Opr_RemoveBBValue m_Key="#combat_strafe_dir"/>
+                                </SequenceMem>
+                            </SelectorMem>
+                        </Sequence>
+                    </RunUntilFailure>
+                </Parallel>
+            </SequenceMem>
+        </Selector>
+    </SequenceMem>
+</BehaviorTree>

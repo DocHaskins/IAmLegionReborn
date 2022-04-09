@@ -14,7 +14,7 @@
                             </DelayerTimeDeltaRandom>
                             <Selector>
                                 <SequenceMem>
-                                    <Cnd_PositionInRadius m_Position="#defend_position" m_Radius="6" m_Invert="true"/>
+                                    <Cnd_PositionInRadius m_Position="#defend_position" m_Radius="10" m_Invert="true"/>
                                     <Act_Move m_Destination="#defend_position" m_MoveStyle="#move_style_run" m_StopAtDest="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
                                 </SequenceMem>
                                 <Act_Move m_Destination="#defend_position" m_MoveStyle="#move_style_walk" m_StopAtDest="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>

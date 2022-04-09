@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Cnd_CanStartTask m_StartPolicy="DISCARD"/>
+        <Sequence>
+            <Cnd_HasBBValue m_Key="#target"/>
+            <Selector>
+                <Cnd_IsDefendRequired/>
+                <Cnd_IsHoldRequired/>
+            </Selector>
+            <SetFlagOnRunning m_Key="#flag_threatening">
+                <Parallel m_PolicyFailure="REQUIRE_ONE" m_PolicySuccess="REQUIRE_ONE">
+                    <SelectorMem>
+                        <!-- defending -->
+                        <SequenceMem>
+                            <Cnd_IsDefendRequired/>
+                            <Cnd_IsHoldRequired m_Invert="true"/>
+                            <!-- returing to defend area -->
+                            <SelectorMem>
+                                <Cnd_SelfInDefendRadius/>
+                                <Selector>
+                                    <Cnd_SelfInDefendRadius/>
+                                    <Sequence>
+                                        <Opr_GetDirectionToPosition m_Position="#target_pos" m_Direction="#end_dir"/>
+                                        <SequenceMem>
+                                            <TimeDeltaLimitRandom m_TimeMin="1" m_TimeMax="3" m_StatusReturned="SUCCESS">
+                                                <Act_Taunt m_Type="Threatening" m_Target="#target" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                                            </TimeDeltaLimitRandom>
+                                            <Act_Move m_Destination="#defend_position" m_MoveStyle="#move_style_trot" m_EndDir="#end_dir" m_StopAtDest="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                        </SequenceMem>
+                                    </Sequence>
+                                </Selector>
+                            </SelectorMem>
+                            <UseActorSlots m_Target="#target">
+                                <Sequence>
+                                    <!-- move around defend area when threat level is higher -->
+                                    <Succeeder>
+                                        <CooldownTimeDelta m_CooldownTime="1">
+                                            <SequenceMem>
+                                                <Cnd_IsBBValueEqual_EThreatLevel m_Key="#threat_level" m_Value="LOW" m_Invert="true"/>
+                                                <Cnd_HasWeaponInInventory m_WeaponType="Bow" m_Invert="true"/>
+                                                <Opr_GetSelfPosition m_Position="#best_pos"/>
+                                                <Sequence>
+                                                    <Opr_GetPredictedTargetPosition m_Target="#target" m_PredictionTime="1" m_Position="#target_predicted_pos"/>
+                                                    <Opr_GetDirectionOriginToPosition m_Position="#target_predicted_pos" m_Origin="#defend_position" m_Direction="#dir_from_defend"/>
+                                                    <Opr_GetPositionInDirection m_Distance="#defend_radius" m_Origin="#defend_position" m_Direction="#dir_from_defend" m_Position="#wanted_pos"/>
+                                                    <Opr_FindNearestPositionOnNavmesh m_Position="#found_pos" m_WantedPosition="#wanted_pos" m_XZRadius="6" m_YRadius="8"/>
+                                                    <Selector>
+                                                        <Cnd_PositionInRadius m_Radius="8" m_Position="#found_pos"/>
+                                                        <Sequence>
+                                                            <Opr_SetBBValue_vec3 m_Key="#best_pos" m_Value="#found_pos"/>
+                                                            <Opr_GetDirectionToPosition m_Position="#target_pos" m_Origin="#best_pos" m_Direction="#stop_dir"/>
+                                                        </Sequence>
+                                                    </Selector>
+                                                    <Opr_GetDistanceToTarget m_Target="#target" m_Distance="#cost"/>
+                                                    <CombatSlot m_Name="melee" m_Limit="1" m_Cost="#cost" m_MaxKeepTime="5">
+                                                        <SequenceMem>
+                                                            <Cnd_PositionInRadius m_Position="#best_pos" m_Radius="6" m_Invert="true"/>
+                                                            <Act_Move m_Destination="#best_pos" m_MoveStyle="#move_style_walk_combat" m_StopAtDest="true" m_EndDir="#stop_dir" m_TryToFindDestinationOnNavmesh="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                                        </SequenceMem>
+                                                    </CombatSlot>
+                                                </Sequence>
+                                            </SequenceMem>
+                                        </CooldownTimeDelta>
+                                    </Succeeder>
+                                    <!-- idling -->
+                                    <ExternalTree m_UID="HUMAN_THREATENING_IDLE"/>
+                                </Sequence>
+                            </UseActorSlots>
+                        </SequenceMem>
+                        <!-- holding -->
+                        <SequenceMem>
+                            <Cnd_IsHoldRequired/>
+                            <!-- returing to hold area -->
+                            <SelectorMem>
+                                <Cnd_SelfInHoldRadius/>
+                                <Selector>
+                                    <Cnd_SelfInHoldRadius/>
+                                    <Sequence>
+                                        <Opr_GetDirectionToPosition m_Position="#target_pos" m_Direction="#end_dir"/>
+                                        <Act_Move m_Destination="#hold_position" m_MoveStyle="#move_style_trot" m_EndDir="#end_dir" m_StopAtDest="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                    </Sequence>
+                                </Selector>
+                            </SelectorMem>
+                            <Sequence>
+                                <!-- move around hold area when threat level is higher -->
+                                <Optional m_Enabled="true">
+                                    <Succeeder>
+                                        <CooldownTimeDelta m_CooldownTime="1">
+                                            <SequenceMem>
+                                                <Cnd_IsBBValueEqual_EThreatLevel m_Key="#threat_level" m_Value="LOW" m_Invert="true"/>
+                                                <Cnd_HasWeaponInInventory m_WeaponType="Bow" m_Invert="true"/>
+                                                <Opr_GetSelfPosition m_Position="#best_pos"/>
+                                                <Sequence>
+                                                    <Opr_GetPredictedTargetPosition m_Target="#target" m_PredictionTime="1" m_Position="#target_predicted_pos"/>
+                                                    <Opr_GetDirectionOriginToPosition m_Position="#target_predicted_pos" m_Origin="#hold_position" m_Direction="#dir_from_hold"/>
+                                                    <Opr_GetPositionInDirection m_Distance="#hold_radius" m_Origin="#hold_position" m_Direction="#dir_from_hold" m_Position="#wanted_pos"/>
+                                                    <Opr_FindNearestPositionOnNavmesh m_Position="#found_pos" m_WantedPosition="#wanted_pos" m_XZRadius="3" m_YRadius="8"/>
+                                                    <Selector>
+                                                        <Cnd_PositionInRadius m_Radius="6" m_Position="#found_pos"/>
+                                                        <Sequence>
+                                                            <Opr_SetBBValue_vec3 m_Key="#best_pos" m_Value="#found_pos"/>
+                                                            <Opr_GetDirectionToPosition m_Position="#target_pos" m_Origin="#best_pos" m_Direction="#stop_dir"/>
+                                                        </Sequence>
+                                                    </Selector>
+                                                    <Opr_GetDistanceToTarget m_Target="#target" m_Distance="#cost"/>
+                                                    <CombatSlot m_Name="melee" m_Limit="1" m_Cost="#cost" m_MaxKeepTime="5">
+                                                        <SequenceMem>
+                                                            <Cnd_PositionInRadius m_Position="#best_pos" m_Radius="6" m_Invert="true"/>
+                                                            <Act_Move m_Destination="#best_pos" m_MoveStyle="#move_style_walk_combat" m_StopAtDest="true" m_EndDir="#stop_dir" m_TryToFindDestinationOnNavmesh="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                                        </SequenceMem>
+                                                    </CombatSlot>
+                                                </Sequence>
+                                            </SequenceMem>
+                                        </CooldownTimeDelta>
+                                    </Succeeder>
+                                </Optional>
+                                <!-- idling -->
+                                <ExternalTree m_UID="HUMAN_THREATENING_IDLE"/>
+                            </Sequence>
+                        </SequenceMem>
+                    </SelectorMem>
+                    <Runner>
+                        <ExternalTree m_UID="HUMAN_WEAPON_PULL_OUT" m_CustomName="PullOutWeapon" m_Hide="true"/>
+                    </Runner>
+                </Parallel>
+            </SetFlagOnRunning>
+        </Sequence>
+    </SequenceMem>
+</BehaviorTree>

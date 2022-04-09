@@ -180,7 +180,7 @@
                                 <Opr_RequestBark m_BarkID="poi_generic_retreat" m_Priority="High"/>
                                 <SelectorMem>
                                     <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="HighPrioNoise" m_Invert="true"/>
-                                    <Cnd_PositionInRadius m_Position="#poi_position" m_Radius="3" m_Invert="true"/>
+                                    <Cnd_PositionInRadius m_Position="#poi_position" m_Radius="6" m_Invert="true"/>
                                     <SelectorMem>
                                         <SequenceMem>
                                             <Cnd_PositionInAngle m_Position="#poi_position" m_Angle="90"/>
@@ -223,7 +223,7 @@
                                             <SequenceMem>
                                                 <SelectorMem>
                                                     <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="HighPrioNoise" m_Invert="true"/>
-                                                    <Cnd_PositionInRadius m_Position="#poi_position" m_Radius="3" m_Invert="true"/>
+                                                    <Cnd_PositionInRadius m_Position="#poi_position" m_Radius="8" m_Invert="true"/>
                                                     <SelectorMem>
                                                         <SequenceMem>
                                                             <Cnd_PositionInAngle m_Position="#poi_position" m_Angle="90"/>
@@ -245,7 +245,7 @@
                                                             <SelectorMem>
                                                                 <SequenceMem>
                                                                     <Cnd_IsBBValueEqual_EPOIType m_Key="#poi_type" m_Value="HighPrioNoise"/>
-                                                                    <Act_Move m_Destination="#poi_position" m_EndRadius="2" m_MoveStyle="#move_style_trot" m_StopAtDest="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                                                                    <Act_Move m_Destination="#poi_position" m_EndRadius="5" m_MoveStyle="#move_style_trot" m_StopAtDest="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
                                                                 </SequenceMem>
                                                                 <Act_Move m_Destination="#poi_position" m_MoveStyle="#move_style_walk_suspicious" m_StopAtDest="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
                                                             </SelectorMem>

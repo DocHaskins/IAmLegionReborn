@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <CooldownTimeDelta m_CooldownTime="10" m_CooldownOnAbort="true">
+        <SequenceMem>
+            <Cnd_CanStartTask m_StartPolicy="INTERRUPT"/>
+            <Cnd_PositionInRadius m_Position="#request_move_dest_pos" m_Radius="5" m_Invert="true"/>
+            <Cnd_HasBBValue m_Key="#tracked_ally"/>
+            <Cnd_HasBBValue m_Key="#tracked_ally_pos"/>
+            <Cnd_IsPlayer m_Target="#tracked_ally"/>
+            <!-- temp only -->
+            <Cnd_Const m_Enabled="$enable_debug_idle_random_walk" m_Invert="true"/>
+            <Selector>
+                <Cnd_HasBBValue m_Key="#last_interact_pos" m_Invert="true"/>
+                <Cnd_PositionInRadius m_Position="#last_interact_pos" m_Radius="10" m_Invert="true"/>
+            </Selector>
+            <Cnd_PositionInRadius m_Position="#tracked_ally_pos" m_Radius="8"/>
+            <Opr_GetSelfPosition m_Position="#last_interact_pos"/>
+            <Opr_RequestBark m_BarkID="interact_player" m_Priority="Medium"/>
+            <SelectorMem>
+                <Cnd_Random m_Value="0.2"/>
+                <Selector>
+                    <Sequence>
+                        <Cnd_HasBBValue m_Key="#potential_target"/>
+                        <Cnd_PositionInRadius m_Position="#potential_target_pos" m_Radius="12"/>
+                    </Sequence>
+                    <TimeDeltaLimitRandom m_TimeMin="1" m_TimeMax="3" m_StatusReturned="SUCCESS">
+                        <Sequence>
+                            <Cnd_PositionInRadius m_Position="#tracked_ally_pos" m_Radius="10"/>
+                            <Selector>
+                                <Cnd_PositionInAngle m_Position="#tracked_ally_pos" m_Angle="45"/>
+                                <Act_TurnToPos m_Position="#tracked_ally_pos" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                            </Selector>
+                            <Act_Idle m_Type="Stand" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                        </Sequence>
+                    </TimeDeltaLimitRandom>
+                </Selector>
+            </SelectorMem>
+        </SequenceMem>
+    </CooldownTimeDelta>
+</BehaviorTree>

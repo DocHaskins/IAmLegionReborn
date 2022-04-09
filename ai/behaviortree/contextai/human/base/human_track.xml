@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Sequence>
+        <Cnd_GenericBehaviorDisallowed m_Invert="true"/>
+        <!-- Don't track in scenario BPs -->
+        <Cnd_IsActivityModuleRunning_BehaviorPlace m_Invert="true"/>
+        <Runner>
+            <Selector>
+                <!-- track enemy -->
+                <Sequence>
+                    <Cnd_IsCombatTargetInLOS/>
+                    <Selector>
+                        <Cnd_IsBBValueEqual_bool m_Key="#flag_retreating" m_Value="true" m_Invert="true"/>
+                        <Cnd_IsCombatTargetInAngle m_Angle="60"/>
+                    </Selector>
+                    <Act_Track m_Target="#target" m_Look="true" m_Aim="false"/>
+                </Sequence>
+                <!-- track  poi -->
+                <Sequence>
+                    <Cnd_IsInvestigatingPOI/>
+                    <Cnd_HasBBValue m_Key="#poi_position"/>
+                    <Cnd_PositionInRadius m_Position="#poi_position" m_Radius="12" m_Invert="true"/>
+                    <Cnd_PositionInAngle m_Position="#poi_position" m_Angle="90"/>
+                    <Act_TrackPosition m_Position="#poi_position"/>
+                </Sequence>
+                <!-- track potential (ignored) enemy target -->
+                <Sequence>
+                    <Cnd_HasBBValue m_Key="#potential_target"/>
+                    <Cnd_IsTargetInLOS m_Target="#potential_target"/>
+                    <Act_Track m_Target="#potential_target" m_Look="true" m_Aim="false"/>
+                </Sequence>
+                <!-- if there is no threat, track player or neutral AIs -->
+                <Sequence>
+                    <Cnd_HasBBValue m_Key="#target" m_Invert="true"/>
+                    <Cnd_HasBBValue m_Key="#last_target" m_Invert="true"/>
+                    <Cnd_HasBBValue m_Key="#tracked_ally"/>
+                    <Selector>
+                        <Cnd_HasBBValue m_Key="#track_ally_time" m_Invert="true"/>
+                        <Cnd_HasTimePassed m_TimePoint="#track_ally_time" m_Invert="true"/>
+                    </Selector>
+                    <Act_Track m_Target="#tracked_ally" m_Look="true" m_Aim="false"/>
+                </Sequence>
+            </Selector>
+        </Runner>
+    </Sequence>
+</BehaviorTree>

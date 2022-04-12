@@ -51,6 +51,9 @@
                                     <Cnd_IsCombatTargetInAngle m_Angle="45"/>
                                     <Act_Attack m_Target="#target" m_AttackPresetName="volatile_light_attack" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
                                 </SequenceMem>
+								<Cnd_IsCombatTargetMeleeReachable m_Invert="true"/>
+								<Cnd_IsCombatTargetInLOS/>
+								<Act_RangedAttack m_Target="#target" m_Type="VOLATILE_SPITTER_SPIT" m_TargetPredictionTime="0.2" m_BoneName="HEAD" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
                             </CooldownTimeDelta>
                             <SelectorMem>
                                 <CooldownTimeDelta m_CooldownTime="3.50">

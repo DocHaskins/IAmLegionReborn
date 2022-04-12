@@ -9,20 +9,20 @@
                     <Cnd_IsInUVLight m_Invert="true"/>
                     <Selector>
                         <Sequence>
-                            <Cnd_HasTimePassed m_TimePoint="#last_time_in_uv_light" m_TimeDelta="3.0" m_Invert="true"/>
+                            <Cnd_HasTimePassed m_TimePoint="#last_time_in_uv_light" m_TimeDelta="30.0" m_Invert="true"/>
                             <Cnd_HasBBValue m_Key="#target" m_Invert="true"/>
                             <Opr_SetBBValue_vec3 m_Key="#run_pos" m_Value="#last_target_pos"/>
                         </Sequence>
-                        <DelayerTimeDelta m_DelayTime="3.0">
+                        <DelayerTimeDelta m_DelayTime="30.0">
                             <Sequence>
                                 <Cnd_IsPlayerTargetInUVLight m_Target="#target"/>
                                 <Opr_SetBBValue_vec3 m_Key="#run_pos" m_Value="#target_pos"/>
                             </Sequence>
                         </DelayerTimeDelta>
                     </Selector>
-                    <Act_Move m_Destination="#run_pos" m_MoveStyle="Run" m_StopAtDest="true" m_MoveAwayFromEndPosition="true" m_AvoidRegionsPreset="$avoid_regions_preset" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                    <Act_Move m_Destination="#run_pos" m_MoveStyle="Trot" m_StopAtDest="true" m_MoveAwayFromEndPosition="true" m_AvoidRegionsPreset="$avoid_regions_preset" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
                     <Opr_SetBBValue_bool m_Key="#should_check_last_target_pos" m_Value="false"/>
-                    <Opr_SetBBValue_bool m_Key="#should_search" m_Value="false"/>
+                    <Opr_SetBBValue_bool m_Key="#should_search" m_Value="true"/>
                 </SequenceMem>
             </SetFlagOnRunning>
             <!-- Turn to light source - later on we might add directional reactions -->
@@ -31,7 +31,7 @@
                 <Cnd_CanInterruptActivityModule_Dodge/>
                 <Cnd_IsInUVLightOfType m_Type="FLASHLIGHT"/>
                 <Cnd_PositionInAngle m_Position="#uv_light_pos" m_Angle="60.0" m_Invert="true"/>
-                <Act_TurnToPos m_Position="#uv_light_pos" m_Type="Combat" m_StartPolicy="DISCARD" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+                <Act_TurnToPos m_Position="#uv_light_pos" m_Type="UV" m_StartPolicy="DISCARD" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
             </SequenceMem>
             <!-- Strafe near spotlight area -->
             <Sequence>
@@ -44,7 +44,13 @@
                     <RunUntilFailure>
                         <Selector>
                             <CooldownTimeDelta m_CooldownTime="2.50">
-                                <ExternalTree m_UID="VIRAL_ATTACK_QUICK" m_CustomName="VIRAL_ATTACK_QUICK"/>
+                                <SequenceMem>
+                                    <Cnd_IsCombatTargetMeleeReachable/>
+                                    <Cnd_IsCombatTargetInLOS/>
+                                    <Cnd_IsCombatTargetInRadius m_Radius="4.5" m_UsePrediction="true"/>
+                                    <Cnd_IsCombatTargetInAngle m_Angle="45"/>
+                                    <Act_Attack m_Target="#target" m_AttackPresetName="volatile_light_attack" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+                                </SequenceMem>
                             </CooldownTimeDelta>
                             <SelectorMem>
                                 <CooldownTimeDelta m_CooldownTime="3.50">

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
-    <CooldownTimeDelta m_CooldownTime="2.0">
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <CooldownTimeDelta m_CooldownTime="5.0">
         <SequenceMem>
             <Selector>
                 <Sequence>
                     <Cnd_IsInSunlight/>
+                    <!-- <Opr_StartBodyState m_State="SUNLIGHT_REACTION" m_Duration="1.0"/> -->
 					<Parallel m_PolicySuccess="REQUIRE_ONE" m_PolicyFailure="REQUIRE_ONE">
 						<Act_Track m_Target="#target" m_Look="true" m_Aim="false"/>
 						<RunUntilFailure>
@@ -20,29 +21,19 @@
 								</CooldownTimeDelta>
 							</Selector>
 						</RunUntilFailure>
-					</Parallel>
-                    <Opr_StartBodyState m_State="SUNLIGHT_REACTION" m_Duration="1.0"/>
+						</Parallel>
                     <Cnd_IsBBValueGreater_float m_Key="#uv_progress" m_Value="0.2"/>
+                    <Opr_FindPositionForSunlightRetreat m_Position="#sunlight_retreat_pos"/>
                 </Sequence>
                 <Sequence>
                     <Cnd_IsNightEnding/>
                     <Cnd_IsInDarkzone m_Invert="true"/>
-                </Sequence>
-            </Selector>
-            <Selector>
-                <Sequence>
                     <Opr_FindPositionForSunlightRetreat m_Position="#sunlight_retreat_pos"/>
-                    <Opr_SetBBValue_bool m_Key="#run_to_starting_pos" m_Value="false"/>
                 </Sequence>
-                <Opr_SetBBValue_bool m_Key="#run_to_starting_pos" m_Value="true"/>
             </Selector>
-            <SelectorMem>
-                <SequenceMem>
-                    <Cnd_IsBBValueEqual_bool m_Key="#run_to_starting_pos" m_Value="false"/>
-                    <Act_Move m_Destination="#sunlight_retreat_pos" m_MoveStyle="#sunlight_escape_movestyle" m_FailIfDestUnreachable="true" m_MaxDistOutsideNavmeshXZ="5" m_MaxDistOutsideNavmeshY="5" m_StopAtDest="true" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
-                </SequenceMem>
-                <Act_Move m_Destination="#ai_starting_pos" m_MoveStyle="#sunlight_escape_movestyle" m_FailIfDestUnreachable="true" m_MaxDistOutsideNavmeshXZ="5" m_MaxDistOutsideNavmeshY="5" m_StopAtDest="true" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
-            </SelectorMem>
+            <Act_Move m_Destination="#sunlight_retreat_pos" m_MoveStyle="#sunlight_escape_movestyle" m_EndRadius="3.0" m_StopAtDest="true" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+            <Opr_RemoveBBValue m_Key="#target"/>
+            <Opr_RemoveBBValue m_Key="#last_target"/>
             <Opr_GetCurrentTime m_TimePoint="#sunlight_escape_time"/>
         </SequenceMem>
     </CooldownTimeDelta>

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../MetaData/schema_ai.xsd" m_ContextType="ai">
     <SequenceMem>
-        <SequenceMem m_CustomName="Init" m_Hide="true">
-            <ExternalTree m_UID="SPITTER_PARAM_INIT" m_CustomName="Const"/>
+        <SequenceMem>
             <ExternalTree m_UID="AI_COMMON_INIT" m_CustomName="Params" m_Hide="true"/>
-            <!-- move this -->
+            <ExternalTree m_UID="CHARGER_INIT" m_CustomName="Params" m_Hide="true"/>
         </SequenceMem>
         <Selector>
             <ExternalTree m_UID="INFECTED_DEATH_UV" m_CustomName="Death_UV" m_Hide="true"/>
@@ -12,26 +11,21 @@
             <ParallelRepeat m_PolicySuccess="REQUIRE_NONE" m_PolicyFailure="REQUIRE_NONE">
                 <Sequence>
                     <ExternalTree m_UID="AI_UPDATE_ENEMY_PROTO" m_CustomName="Find_Enemy" m_Hide="true"/>
-                    <ExternalTree m_UID="SPITTER_UPDATE" m_CustomName="Update" m_Hide="true"/>
+                    <ExternalTree m_UID="CHARGER_UPDATE" m_CustomName="Update" m_Hide="true"/>
                     <RepeatOnceOnSuccess>
                         <Selector>
-                            <ExternalTree m_UID="SPITTER_REACTION" m_CustomName="Reaction" m_Hide="true"/>
+                            <ExternalTree m_UID="CHARGER_REACTION" m_CustomName="Reactions" m_Hide="true"/>
+                            <ExternalTree m_UID="CHARGER_ESCAPE_FROM_SUNLIGHT" m_CustomName="Sunlight_Escape" m_Hide="true"/>
 							<Sequence>
 								<Cnd_IsNight/>
-								<ExternalTree m_UID="SPITTER_PROLONGED_UV_BEHAVIOR" m_CustomName="UV" m_Hide="true"/>
+								<ExternalTree m_UID="CHARGER_PROLONGED_UV_BEHAVIOR" m_CustomName="UV" m_Hide="true"/>
 							</Sequence>
-                            <ExternalTree m_UID="SPITTER_COMBAT" m_CustomName="Combat" m_Hide="true"/>
-							<Sequence>
-								<Cnd_IsNight/>
-								<ExternalTree m_UID="SPITTER_IDLE_RANDOM_WALK" m_CustomName="Idle_Random_Walk"/>
-							</Sequence>
-                            <ExternalTree m_UID="INFECTED_ESCAPE_FROM_SUNLIGHT" m_CustomName="Sunlight_Escape" m_Hide="true"/>
-                            <ExternalTree m_UID="SPITTER_CHASE" m_CustomName="Chase" m_Hide="true"/>
-                            <Sequence>
-                                <Cnd_HasBBValue m_Key="#stationary_mod" m_Invert="true"/>
-                                <ExternalTree m_UID="AI_INVESTIGATE_POI" m_CustomName="Investigate" m_Hide="true"/>
-                            </Sequence>
-                            <ExternalTree m_UID="AI_REQUESTS" m_CustomName="Scripted" m_Hide="true"/>
+                            <ExternalTree m_UID="CHARGER_GO_TO_FORCED" m_CustomName="GoToForced" m_Hide="true"/>
+                            <ExternalTree m_UID="CHARGER_COMBAT" m_CustomName="Combat" m_Hide="true"/>
+                            <ExternalTree m_UID="CHARGER_CHASE" m_CustomName="Chase" m_Hide="true"/>
+                            <ExternalTree m_UID="AI_INVESTIGATE_POI" m_CustomName="Investigate" m_Hide="true"/>
+                            <ExternalTree m_UID="CHARGER_SEARCH" m_CustomName="Search" m_Hide="true"/>
+                            <ExternalTree m_UID="AI_REQUESTS" m_CustomName="AI_Requests" m_Hide="true"/>
                             <Act_Status m_StatusRequired="RUNNING"/>
                         </Selector>
                     </RepeatOnceOnSuccess>

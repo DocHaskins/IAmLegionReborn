@@ -1,6 +1,91 @@
 # IAmLegionReborn
 For Dying Light 2
 
+_____________________________________Change log:_____________________________________
+Updates to I Am Legion - Reborn 0.99pre
+Update 1 - 11
+- Fix for stamina- Fix for all runners
+- Fix for Banshee glitch
+- Fix for Biter glitch
+- Fixed the spawn code! Actually found why people are sometimes seeing different special zombies scattered throughout the city and now howlers should be fixed for all areas.
+- !!Removed!! the glitched howler? Please let me know if this killed him dead.
+- Added back demolishers to night spawn exterior lists
+- Added a Romero edition of the mod which features "Walking Dead"styled zombies that slowly shuffle around the map towards you and then attack when close enough to strike.
+- Fixed Goons running around the map randomly
+- Fixed Banshee's running away, disabled hunting mod for now to continue to develop code.Update 4:- Weather system   
+     - New weather events unique to IAL 
+- Dynamic lighting and sun rays 
+- Darker nights and interiors
+- Reduced saturation of color in the world without effecting GUIs 
+- Improved bowmen 
+- Removed Spitter footprints
+- Fixes for Volatile code to improve stalking and hunting at night
+- Fixes for a glitch with the Banshee
+- Fixes for zombies not spawning with explosions
+- Fixes for special zombies not spawning with Chase start
+- Added bowmen dodge, step back, fire while moving
+- Continued work on weather system to decrease fog brightness at night.
+- Fix for crash, audio glitching
+- Fix for spawn pools in metro and a few other locations
+- Improved AI Pool for Lore based Bandits and Renegades at day
+- Added Mini Chases to Volatiles, if spotted at night they will call other volatiles towards your location (NOT A FULL CHASE EVENT)
+- Fixed Arrow swap
+- Fixed day spawn glitches with Specials
+- Fixed daytime running Volatiles
+- Responsive AI, AI will now attack zombies and don't have to wait to be attacked
+- Restore Immunity Timer
+- Bowmen now added to Survivors and Bandit class
+- Bowmen dodge and are more aggressive
+- Fix for patrolling Volatiles, they now actually explore again at night
+- Better balanced FOV for humans, hearing system
+- Removed a large amount of chatter from AI, they will no longer constantly speak (as much).
+- Fix for a crash reported by discord community.
+- Fix for throw always for NPCs 
+- Fix for detection for volatiles and virals reduced unless they scream, then they hunt
+- Fix for npc stutter glitch on movement 
+- More banshees and specials during the day 
+- Increase day densities in "ial_settings.mth" for more zombies during day on the streets
+- Removed HumanAI stutter bug from update 10
+- Improved spawn balance for daytime
+
+Update 12
+- Removed HD and Color settings from main mod, they are now optionals
+- Added logic for more interactions on rooftops, let me know how this goes
+- Reduced sighting possibilities for Volatile and virals
+- Fix for Hydrant explosions blasting NPC's into space randomly
+- Fix added for config crash (Arrow penetration)
+- Rebalanced loot system, less loot overall with higher chance at empty
+- Lowered $$$ loot amounts and most valuable loot amounts
+- Lowered Tokens received by Biters and special infected
+- You're more likely to get glands with different types of special infected: Screamers and Demolishers have the highest chance.
+- Early stage - Unique Medkits, Lockpicks, Molotovs, Remote Explosives, Shotgun, Grenades
+
+Updates to I Am Legion - Reborn 0.9b
+- Fixed issues with ragdoll on drop kick and normal kick
+- Fixed and improved grapple pull on zombies
+- Fixed chemical zone timer bug
+- Added full changelog to the link below
+
+Updates to I Am Legion - Reborn 0.9a
+- Fixed issue with the new chase spawn system where only demolishers were spawning.
+- Raised the density back to 3.0 for day (8x as many zombies and specials) and 2.0 for night (15x as many zombies and specials), remember lower means high number of zombies and you can edit in the config file, see above videos for information on the configuration. (Density now makes a HUGE difference in difficulty with the volatiles on the map at night so make sure to tweak to your ideal settings).
+- Added new chase spawn table to the "ial_setting.mth" config! Under Chase section.
+- Fixed infection timer bug
+
+Updates to I Am Legion - Reborn 0.9
+- New chase system, special zombies included in the chase logic: Banshee's, Goons, Demolishers
+- New persistence system, if you die in a location with special zombies spawned in during Chase, they may remain in the area to begin chasing you again after respawn.
+- Banshee's reworked to stalk the player after they have been summoned during a chase.
+- Demolishers reworked, they now climb and hunt down the player, throwing everything they can and charging the player.
+- Improved grenades, explosive arrows, do alot more damage even at low levels.
+- Faster walkers, variation to speeds
+- Improved zombie reactions, pathing, and logic.
+- Configuration settings added for the HUD, new color scheme
+- Added timescale to the configuration files, added HUD options and easy access to color variables to design your own maps and HUD colors.
+- Increased time for infection, currently working on rebalancing infection system based on bites and other factors in the game.
+- Better trading prices, improved for different types of weapons and their color.
+
+
 Updates to I Am Legion - Reborn 0.9a
 - Fixed issue with the new chase spawn system where only demolishers were spawning.
 - Raised the density back to 3.0 for day (8x as many zombies and specials) and 2.0 for night (15x as many zombies and specials), remember lower means high number of zombies and you can edit in the config file, see above videos for information on the configuration. (Density now makes a HUGE difference in difficulty with the volatiles on the map at night so make sure to tweak to your ideal settings).

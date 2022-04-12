@@ -9,7 +9,7 @@
             <!-- enemy is behind -->
             <CooldownTimeDelta m_CooldownTime="1.0" m_CustomName="ForwardEscape">
                 <SequenceMem>
-                    <Cnd_IsCombatTargetInRadius m_Radius="2.0"/>
+                    <Cnd_IsCombatTargetInRadius m_Radius="6.0"/>
                     <Cnd_IsCombatTargetInAngle m_Angle="75.0" m_Invert="true"/>
                     <Selector>
                         <Sequence>
@@ -39,7 +39,7 @@
                 <CooldownTimeDelta m_CooldownTime="$escape_step_back_cooldown" m_CustomName="BackwardEscape">
                     <SequenceMem>
                         <Cnd_IsCombatTargetInRange m_Radius="$escape_step_back_max_range" m_Angle="$escape_step_back_max_angle"/>
-                        <Cnd_IsTargetApproaching m_Target="#target" m_MinVel="1" m_MaxAngle="45"/>
+                        <Cnd_IsTargetApproaching m_Target="#target" m_MinVel="0.1" m_MaxAngle="45"/>
                         <Cnd_IsTargetAttacking m_Target="#target" m_Invert="true"/>
                         <Cnd_IsTargetInAir m_Target="#target" m_Invert="true"/>
                         <Selector>

@@ -5,14 +5,14 @@
         <Cnd_HasBBValue m_Key="#target"/>
         <Selector m_Hide="true">
             <Optional m_Enabled="$forced_retreat_from_player">
-                <Cnd_IsBBValueEqual_bool m_Key="#disable_forced_retreat" m_Value="true" m_Invert="true"/>
+                <Cnd_IsBBValueEqual_bool m_Key="#disable_forced_retreat" m_Value="true" m_Invert="false"/>
             </Optional>
             <Cnd_IsBBValueEqual_bool m_Key="#should_flee" m_Value="true"/>
             <Optional m_Enabled="$enable_retreat_from_high_threat">
                 <Sequence>
                     <Cnd_IsDefendRequired m_Invert="true"/>
                     <Cnd_IsHoldRequired m_Invert="true"/>
-                    <Selector>
+                    <Selector>					   
                         <Cnd_HasHealthLowerThan m_HealthLevel="0.3"/>
                     </Selector>
                 </Sequence>
@@ -30,18 +30,7 @@
                         </Selector>
                         <Selector>
                             <CooldownTimeDelta m_CooldownTime="2" m_CooldownOnFailure="true">
-                                <Sequence>
-                                    <CooldownTimeDelta m_CooldownTime="5" m_StatusReturned="SUCCESS">
-                                        <Opr_SetBBValue_vec3 m_Key="#flee_source_pos" m_Value="#target_pos"/>
-                                    </CooldownTimeDelta>
-                                    <Selector>
-                                        <Act_Move m_MoveAwayFromEndPosition="true" m_Destination="#flee_source_pos" m_EndRadius="$move_end_radius_default" m_MoveStyle="#move_style_run" m_TeleportIfBlocked="true" m_IsAvoidanceActive="$use_avoidance" m_AvoidRegionsPreset="$avoid_regions_preset" m_AvoidConnections="$retreat_avoid_connections" m_AvoidConnectionsMinCostMul="$retreat_avoid_connections_min_cost_mul" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
-                                        <Optional m_Enabled="$disable_forced_retreat_if_cornered">
-                                            <Opr_SetBBValue_bool m_Key="#disable_forced_retreat" m_Value="true"/>
-                                        </Optional>
-                                    </Selector>
-									<Opr_SetBBValue_bool m_Key="#disable_forced_retreat" m_Value="true"/>
-                                </Sequence>
+                                <ExternalTree m_UID="HUMAN_GO_TO_HIGH_GROUND" m_CustomName="Go to high ground" m_Hide="true"/>
                             </CooldownTimeDelta>
                             <Sequence>
                                 <Optional m_Enabled="$disable_forced_retreat_if_cornered">
@@ -60,7 +49,6 @@
                             </Sequence>
                         </Selector>
                     </Sequence>
-                    <ExternalTree m_UID="HUMAN_MOVE_GROUP_GATHER" m_CustomName="GroupGather" m_Hide="true"/>
                 </Parallel>
             </SequenceMem>
         </SetFlagOnRunning>

@@ -12,14 +12,14 @@
             <Cnd_IsBlockActive/>
             <!-- block as response to incoming attack or approaching enemy -->
             <Optional m_Enabled="$enable_block_reaction">
-                <CooldownTimeDelta m_CooldownTime="10">
+                <CooldownTimeDelta m_CooldownTime="5">
                     <Sequence>
                         <Cnd_CanBlock/>
                         <Cnd_IsCombatTargetInLOS/>
                         <Cnd_IsPlayer m_Target="#target"/>
                         <Cnd_InTargetAttackRange m_Target="#target"/>
                         <Selector>
-                            <Cnd_IsTargetApproaching m_Target="#target" m_MinVel="1" m_MaxAngle="45"/>
+                            <Cnd_IsTargetApproaching m_Target="#target" m_MinVel="0.1" m_MaxAngle="45"/>
                             <Sequence>
                                 <Cnd_IsTargetAttacking m_Target="#target"/>
                                 <Cnd_IsTargetAttackWindingUp m_Target="#target"/>
@@ -65,7 +65,7 @@
             <SequenceMem>
                 <Cnd_IsCombatTargetInRadius m_Radius="$block_distance_start"/>
                 <Cnd_InTargetHorzAngle m_Target="#target" m_Angle="30"/>
-                <Cnd_AllyInLineOfFire m_Target="#target" m_CheckMelee="true" m_SpaceNeeded="2" m_Invert="true"/>
+                <Cnd_AllyInLineOfFire m_Target="#target" m_CheckMelee="true" m_SpaceNeeded="1" m_Invert="true"/>
                 <Opr_GetModifiedTime m_TimePoint="#block_end_time" m_TimeDelta="$block_start_hold_time"/>
                 <Selector>
                     <Cnd_IsActivityModuleRunning_Block/>

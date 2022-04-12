@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <TimeDeltaLimit m_TimeMax="$attack_attempt_time">
+        <Sequence>
+            <Cnd_HasPathToCombatTarget/>
+            <Selector>
+                <Cnd_IsBBValueEqual_string m_Key="#tactic" m_Value="aggressive"/>
+                <Cnd_IsCombatTargetInRadius m_Radius="$attack_cancel_range"/>
+            </Selector>
+            <Opr_RequestBarkTarget m_Player="Combat_Attack_Taunt_Player" m_Human="combat_attack_taunt_human" m_Infected="combat_attack_taunt_infected" m_Priority="Low"/>
+            <Selector>
+                <Optional m_Enabled="$enable_tactic_rush">
+                    <SequenceMem>
+                        <Cnd_IsBBValueEqual_string m_Key="#tactic" m_Value="rush"/>
+                        <Act_Move m_Destination="#target_pos" m_MoveStyle="#move_style_run" m_StopAtDest="false" m_TryToFindDestinationOnNavmesh="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                    </SequenceMem>
+                </Optional>
+                <SequenceMem>
+                    <Cnd_HasActiveWeapon m_WeaponType="TwoHandedMelee" m_Invert="true"/>
+                    <Cnd_HasActiveWeapon m_WeaponType="ShortSpear" m_Invert="true"/>
+                    <Opr_GetDistanceTraveledByTarget m_Distance="#distance_traveled" m_Time="3"/>
+                    <Cnd_AllyInLineOfFire m_Target="#target" m_CheckMelee="true" m_SpaceNeeded="$attack_min_space" m_Invert="true"/>
+                    <Selector>
+                        <SequenceMem>
+                            <Selector>
+                                <Cnd_IsBBValueGreater_float m_Key="#distance_traveled" m_Value="25"/>
+                                <Cnd_IsCombatTargetInRadius m_Radius="$attack_approach_run_distance" m_Invert="true"/>
+                            </Selector>
+                            <Act_Move m_Destination="#target_pos" m_MoveStyle="#move_style_run" m_StopAtDest="false" m_TryToFindDestinationOnNavmesh="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                        </SequenceMem>
+                        <SequenceMem>
+                            <Selector>
+                                <Cnd_IsBBValueGreater_float m_Key="#distance_traveled" m_Value="12"/>
+                                <Cnd_IsCombatTargetInRadius m_Radius="$attack_approach_trot_distance" m_Invert="true"/>
+                            </Selector>
+                            <Act_Move m_Destination="#target_pos" m_MoveStyle="#move_style_trot_combat" m_StopAtDest="false" m_TryToFindDestinationOnNavmesh="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                        </SequenceMem>
+                    </Selector>
+                </SequenceMem>
+                <Sequence>
+                    <Cnd_HasStrafePathToCombatTarget/>
+                    <Act_Strafe m_Target="#target" m_Logic="ATTACK_APPROACH" m_Style="Aggressive" m_FailIfDestUnreachable="true" m_Speed="1" m_SpringUpdateSpeed="$strafe_spring_update_speed" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                </Sequence>
+                <Act_Move m_Destination="#target_pos" m_MoveStyle="#move_style_walk_combat" m_StopAtDest="false" m_TryToFindDestinationOnNavmesh="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+            </Selector>
+        </Sequence>
+    </TimeDeltaLimit>
+</BehaviorTree>

@@ -3,7 +3,7 @@
     <Sequence>
         <!-- attack variables -->
         <Opr_GetModifiedTime m_TimePoint="#attack_cooldown" m_TimeDelta="$attack_cooldown_initial"/>
-        <Opr_GetModifiedTime m_TimePoint="#fake_attack_cooldown" m_TimeDelta="4"/>
+        <Opr_GetModifiedTime m_TimePoint="#fake_attack_cooldown" m_TimeDelta="8"/>
         <Optional m_Enabled="$enable_attack_tackle">
             <Opr_GetCurrentTime m_TimePoint="#tackle_cooldown"/>
         </Optional>

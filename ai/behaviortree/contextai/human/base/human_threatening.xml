@@ -44,18 +44,18 @@
                                                     <Opr_GetPredictedTargetPosition m_Target="#target" m_PredictionTime="1" m_Position="#target_predicted_pos"/>
                                                     <Opr_GetDirectionOriginToPosition m_Position="#target_predicted_pos" m_Origin="#defend_position" m_Direction="#dir_from_defend"/>
                                                     <Opr_GetPositionInDirection m_Distance="#defend_radius" m_Origin="#defend_position" m_Direction="#dir_from_defend" m_Position="#wanted_pos"/>
-                                                    <Opr_FindNearestPositionOnNavmesh m_Position="#found_pos" m_WantedPosition="#wanted_pos" m_XZRadius="6" m_YRadius="8"/>
+                                                    <Opr_FindNearestPositionOnNavmesh m_Position="#found_pos" m_WantedPosition="#wanted_pos" m_XZRadius="12" m_YRadius="8"/>
                                                     <Selector>
-                                                        <Cnd_PositionInRadius m_Radius="8" m_Position="#found_pos"/>
+                                                        <Cnd_PositionInRadius m_Radius="12" m_Position="#found_pos"/>
                                                         <Sequence>
                                                             <Opr_SetBBValue_vec3 m_Key="#best_pos" m_Value="#found_pos"/>
                                                             <Opr_GetDirectionToPosition m_Position="#target_pos" m_Origin="#best_pos" m_Direction="#stop_dir"/>
                                                         </Sequence>
                                                     </Selector>
                                                     <Opr_GetDistanceToTarget m_Target="#target" m_Distance="#cost"/>
-                                                    <CombatSlot m_Name="melee" m_Limit="1" m_Cost="#cost" m_MaxKeepTime="5">
+                                                    <CombatSlot m_Name="melee" m_Limit="5" m_Cost="#cost" m_MaxKeepTime="12">
                                                         <SequenceMem>
-                                                            <Cnd_PositionInRadius m_Position="#best_pos" m_Radius="6" m_Invert="true"/>
+                                                            <Cnd_PositionInRadius m_Position="#best_pos" m_Radius="12" m_Invert="true"/>
                                                             <Act_Move m_Destination="#best_pos" m_MoveStyle="#move_style_walk_combat" m_StopAtDest="true" m_EndDir="#stop_dir" m_TryToFindDestinationOnNavmesh="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
                                                         </SequenceMem>
                                                     </CombatSlot>
@@ -95,18 +95,18 @@
                                                     <Opr_GetPredictedTargetPosition m_Target="#target" m_PredictionTime="1" m_Position="#target_predicted_pos"/>
                                                     <Opr_GetDirectionOriginToPosition m_Position="#target_predicted_pos" m_Origin="#hold_position" m_Direction="#dir_from_hold"/>
                                                     <Opr_GetPositionInDirection m_Distance="#hold_radius" m_Origin="#hold_position" m_Direction="#dir_from_hold" m_Position="#wanted_pos"/>
-                                                    <Opr_FindNearestPositionOnNavmesh m_Position="#found_pos" m_WantedPosition="#wanted_pos" m_XZRadius="3" m_YRadius="8"/>
+                                                    <Opr_FindNearestPositionOnNavmesh m_Position="#found_pos" m_WantedPosition="#wanted_pos" m_XZRadius="12" m_YRadius="8"/>
                                                     <Selector>
-                                                        <Cnd_PositionInRadius m_Radius="6" m_Position="#found_pos"/>
+                                                        <Cnd_PositionInRadius m_Radius="15" m_Position="#found_pos"/>
                                                         <Sequence>
                                                             <Opr_SetBBValue_vec3 m_Key="#best_pos" m_Value="#found_pos"/>
                                                             <Opr_GetDirectionToPosition m_Position="#target_pos" m_Origin="#best_pos" m_Direction="#stop_dir"/>
                                                         </Sequence>
                                                     </Selector>
                                                     <Opr_GetDistanceToTarget m_Target="#target" m_Distance="#cost"/>
-                                                    <CombatSlot m_Name="melee" m_Limit="1" m_Cost="#cost" m_MaxKeepTime="5">
+                                                    <CombatSlot m_Name="melee" m_Limit="1" m_Cost="#cost" m_MaxKeepTime="10">
                                                         <SequenceMem>
-                                                            <Cnd_PositionInRadius m_Position="#best_pos" m_Radius="6" m_Invert="true"/>
+                                                            <Cnd_PositionInRadius m_Position="#best_pos" m_Radius="12" m_Invert="true"/>
                                                             <Act_Move m_Destination="#best_pos" m_MoveStyle="#move_style_walk_combat" m_StopAtDest="true" m_EndDir="#stop_dir" m_TryToFindDestinationOnNavmesh="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
                                                         </SequenceMem>
                                                     </CombatSlot>

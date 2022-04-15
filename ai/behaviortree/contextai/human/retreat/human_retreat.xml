@@ -44,7 +44,23 @@
                                             <ExternalTree m_UID="HUMAN_ATTACK_PUSH" m_CustomName="Push" m_Hide="true"/>
                                         </SequenceMem>
                                     </CooldownTimeDelta>
-                                    <ExternalTree m_UID="HUMAN_COMBAT_IDLE" m_CustomName="Idle" m_Hide="true"/>
+									<SequenceMem>
+										<Cnd_HasWeaponInInventory m_WeaponType="Bow"/>
+										<Selector>
+											<ExternalTree m_UID="HUMAN_COMBAT_ATTACK_BOW" m_CustomName="RangeAttack" m_Hide="true"/>
+											<CooldownTimeDelta m_CooldownTime="$attack_push_cooldown" m_CustomName="ReactionPush" m_CooldownOnAbort="true" m_StatusReturned="FAILURE" m_Hide="true">
+												<SequenceMem>
+													<Cnd_CanStartTask m_StartPolicy="INTERRUPT"/>
+													<DelayerTimeDelta m_DelayTime="1">
+														<Cnd_IsCombatTargetInRadius m_Radius="16"/>
+													</DelayerTimeDelta>
+													<ExternalTree m_UID="HUMAN_ATTACK_PUSH" m_CustomName="Push" m_Hide="true"/>
+												</SequenceMem>
+											</CooldownTimeDelta>
+											<ExternalTree m_UID="HUMAN_COMBAT_POSITION_BOW" m_CustomName="Position" m_Hide="true"/>
+										</Selector>
+									</SequenceMem>
+                                    <ExternalTree m_UID="HUMAN_COMBAT_HOLD_POSITION" m_CustomName="HoldPosition" m_Hide="true"/>
                                 </Selector>
                             </Sequence>
                         </Selector>

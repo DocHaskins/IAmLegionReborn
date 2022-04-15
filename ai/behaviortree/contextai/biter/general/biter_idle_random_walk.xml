@@ -28,8 +28,13 @@
         <Opr_FindNearestPositionOnNavmesh m_Position="#pos" m_WantedPosition="#pos"/>
         <Opr_SetBBValue_vec3 m_Key="#request_move_dest_pos" m_Value="#pos"/>
         <Opr_SetBBValue_vec3 m_Key="#request_move_dest_dir" m_Value="#dir"/>
-        <Opr_SetBBValue_string m_Key="#request_move_style" m_Value="Walk_To_Enemy"/>
-        <Opr_SetBBValue_float m_Key="#request_move_dest_radius" m_Value="0.5"/>
+		<Selector>
+			<Opr_SetBBValue_string m_Key="#request_move_style" m_Value="notice_walk_degenerated"/>
+			<Opr_SetBBValue_string m_Key="#request_move_style" m_Value="notice_walk"/>
+			<Opr_SetBBValue_string m_Key="#request_move_style" m_Value="Walk_To_Enemy"/>
+			<Opr_SetBBValue_string m_Key="#request_move_style" m_Value="Degenerated_Walk"/>
+		</Selector>
+        <Opr_SetBBValue_float m_Key="#request_move_dest_radius" m_Value="4.5"/>
         <Opr_SetBBValue_vec3_vector m_Key="#request_move_intermediate_points" m_Value=""/>
         <Opr_SetBBValue_bool m_Key="#request_move_skip_start" m_Value="false"/>
         <Opr_SetBBValue_bool m_Key="#request_move_stop_at_dest" m_Value="true"/>

@@ -96,7 +96,10 @@
                             <Act_Move m_Destination="#target_pos" m_LocomotionSpeed="#degenerated_speed" m_MoveStyle="#move_style" m_StopAtDest="false" m_FailIfDestUnreachable="false" m_MaxDistOutsideNavmeshXZ="2" m_MaxDistOutsideNavmeshY="2" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
                         </Sequence>
                     </Selector>
-                    <Act_Idle m_Type="Stand" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT"/>
+					<Selector>
+						<ExternalTree m_UID="BITER_IDLE_RANDOM_WALK" m_CustomName="Idle_Random_Walk"/>
+						<!--<Act_Idle m_Type="Stand" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT"/>-->
+					</Selector>
                 </Selector>
             </Selector>
         </SequenceMem>

@@ -4,53 +4,61 @@
         <Cnd_CanStartTask m_StartPolicy="DISCARD"/>
         <Cnd_HasBBValue m_Key="#target"/>
         <Selector m_Hide="true">
-            <Optional m_Enabled="$forced_retreat_from_player">
-                <Cnd_IsBBValueEqual_bool m_Key="#disable_forced_retreat" m_Value="true" m_Invert="false"/>
-            </Optional>
             <Cnd_IsBBValueEqual_bool m_Key="#should_flee" m_Value="true"/>
             <Optional m_Enabled="$enable_retreat_from_high_threat">
                 <Sequence>
                     <Cnd_IsDefendRequired m_Invert="true"/>
                     <Cnd_IsHoldRequired m_Invert="true"/>
-                    <Selector>					   
-                        <Cnd_HasHealthLowerThan m_HealthLevel="0.3"/>
+                    <Selector>
+						<Cnd_AreOtherGroupMembersAlive m_MinMembersCount="1" m_Invert="true"/>								   
+                        <Cnd_HasHealthLowerThan m_HealthLevel="0.2"/>
                     </Selector>
                 </Sequence>
             </Optional>
         </Selector>
-        <SetFlagOnRunning m_Key="#flag_retreating" m_Hide="true">
-            <SequenceMem>
-                <Opr_SetBBValue_vec3 m_Key="#flee_source_pos" m_Value="#target_pos"/>
-                <Opr_RequestBark m_Priority="Medium" m_BarkID="retreat"/>
-                <Parallel m_PolicyFailure="REQUIRE_ONE" m_PolicySuccess="REQUIRE_ONE">
-                    <Sequence>
-                        <Selector>
-                            <Cnd_HasBBValue m_Key="#target"/>
-                            <Cnd_HasBBValue m_Key="#last_target"/>
-                        </Selector>
-                        <Selector>
-                            <CooldownTimeDelta m_CooldownTime="2" m_CooldownOnFailure="true">
-                                <ExternalTree m_UID="HUMAN_GO_TO_HIGH_GROUND" m_CustomName="Go to high ground" m_Hide="true"/>
-                            </CooldownTimeDelta>
-                            <Sequence>
-                                <Optional m_Enabled="$disable_forced_retreat_if_cornered">
-                                    <Cnd_IsBBValueEqual_bool m_Key="#disable_forced_retreat" m_Value="true" m_Invert="true"/>
-                                </Optional>
-                                <Selector>
-                                    <CooldownTimeDelta m_CooldownTime="$attack_push_retreat_cooldown" m_CooldownOnAbort="true" m_StatusReturned="FAILURE">
-                                        <SequenceMem>
-                                            <Cnd_IsCombatTargetInRadius m_Radius="$attack_push_retreat_max_range"/>
-                                            <Opr_RequestBark m_Priority="Medium" m_BarkID="retreat_push"/>
-                                            <ExternalTree m_UID="HUMAN_ATTACK_PUSH" m_CustomName="Push" m_Hide="true"/>
-                                        </SequenceMem>
-                                    </CooldownTimeDelta>
-                                    <ExternalTree m_UID="HUMAN_COMBAT_IDLE" m_CustomName="Idle" m_Hide="true"/>
-                                </Selector>
-                            </Sequence>
-                        </Selector>
-                    </Sequence>
-                </Parallel>
-            </SequenceMem>
-        </SetFlagOnRunning>
+		<SequenceMem>
+			<Opr_SetBBValue_vec3 m_Key="#flee_source_pos" m_Value="#target_pos"/>
+			<Opr_RequestBark m_Priority="Medium" m_BarkID="retreat"/>
+			<Parallel m_PolicyFailure="REQUIRE_ONE" m_PolicySuccess="REQUIRE_ONE">
+				<Sequence>
+					<Selector>
+						<Cnd_HasBBValue m_Key="#target"/>
+						<Cnd_HasBBValue m_Key="#last_target"/>
+					</Selector>
+					<Selector>
+						<CooldownTimeDelta m_CooldownTime="2" m_CooldownOnFailure="true">
+							<Sequence>
+								<CooldownTimeDelta m_CooldownTime="5" m_StatusReturned="SUCCESS">
+									<Opr_SetBBValue_vec3 m_Key="#flee_source_pos" m_Value="#target_pos"/>
+								</CooldownTimeDelta>
+								<Selector>
+									<Act_Move m_MoveAwayFromEndPosition="true" m_Destination="#flee_source_pos" m_EndRadius="$move_end_radius_default" m_MoveStyle="#move_style_run" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+									<Optional m_Enabled="$disable_forced_retreat_if_cornered">
+										<Opr_SetBBValue_bool m_Key="#disable_forced_retreat" m_Value="true"/>
+									</Optional>
+									<ExternalTree m_UID="HUMAN_GO_TO_HIGH_GROUND" m_CustomName="Go to high ground" m_Hide="true"/>
+								</Selector>
+							</Sequence>
+						</CooldownTimeDelta>
+						<Sequence>
+							<Optional m_Enabled="$disable_forced_retreat_if_cornered">
+								<Cnd_IsBBValueEqual_bool m_Key="#disable_forced_retreat" m_Value="true" m_Invert="true"/>
+							</Optional>
+							<Selector>
+								<CooldownTimeDelta m_CooldownTime="$attack_push_retreat_cooldown" m_CooldownOnAbort="true" m_StatusReturned="FAILURE">
+									<SequenceMem>
+										<Cnd_IsCombatTargetInRadius m_Radius="$attack_push_retreat_max_range"/>
+										<Opr_RequestBark m_Priority="Medium" m_BarkID="retreat_push"/>
+										<ExternalTree m_UID="HUMAN_ATTACK_PUSH" m_CustomName="Push" m_Hide="true"/>
+									</SequenceMem>
+								</CooldownTimeDelta>
+								<ExternalTree m_UID="HUMAN_COMBAT_IDLE" m_CustomName="Idle" m_Hide="true"/>
+							</Selector>
+						</Sequence>
+					</Selector>
+					<ExternalTree m_UID="HUMAN_GO_TO_HIGH_GROUND" m_CustomName="Go to high ground" m_Hide="true"/>
+				</Sequence>
+			</Parallel>
+		</SequenceMem>
     </SequenceMem>
 </BehaviorTree>

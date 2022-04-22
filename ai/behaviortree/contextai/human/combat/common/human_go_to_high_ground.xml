@@ -4,7 +4,7 @@
         <Cnd_HasBBValue m_Key="#target"/>
         <Opr_GetSelfPosition m_Position="#preferred_pos"/>
         <Cnd_IsHeightDiffToTargetGreater m_Target="#target" m_HeightDiff="5.5" m_Invert="true"/>
-        <Opr_FindClosestElevatedPosition  m_Position="#move_pos" m_SearchPosition="#preferred_pos" m_MaxHorizontalRadius="3" m_HeightDifference="4" m_HeightDifferenceTolerance="2"/>
+        <Opr_FindClosestElevatedPosition  m_Position="#move_pos" m_SearchPosition="#preferred_pos" m_MaxHorizontalRadius="6" m_HeightDifference="4" m_HeightDifferenceTolerance="2"/>
         <Cnd_DistanceBetweenPositionsLower m_Distance="15" m_FirstPosition="#target_pos" m_SecondPosition="#move_pos"/>
         <Act_Move m_Destination="#move_pos" m_IsAvoidanceActive="false" m_EndRadius="6.0" m_MoveStyle="#move_style_run" m_StopAtDest="false" m_SkipStart="#skip_start" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
     </SequenceMem>

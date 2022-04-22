@@ -87,6 +87,7 @@ sub OpenWorldPresets()
     /////////////////////////////////////////////////////////
     Preset("Renegade_One_Handed", "Generic_One_Handed")
     {
+		SetField("m_ConflictSide", "renegade");
         SetField("m_BinocularIconType", "BinocularAI_Renegade");
         SetField("m_CustomLootTypeString", "Renegades1hOutfits");
 		SetField("m_MusicPreset", "Renegade");
@@ -95,6 +96,7 @@ sub OpenWorldPresets()
     }
     Preset("Renegade_Two_Handed", "Generic_Two_Handed")
     {
+		SetField("m_ConflictSide", "renegade");
         SetField("m_AIModelName", "ren_man_heavy_01_a.model;ren_man_heavy_02_a.model;ren_man_heavy_02_b.model;ren_man_heavy_02_c.model;ren_man_heavy_03_a.model;ren_man_heavy_03_b.model;ren_man_heavy_04_a.model;ren_man_heavy_04_b.model");
         SetField("m_ForcedBodyScaleMax", "1.2");
         SetField("m_ForcedBodyScaleMin", "1.2");
@@ -107,6 +109,7 @@ sub OpenWorldPresets()
     }
     Preset("Renegade_Two_Handed_Material_Slot_Test", "Generic_Base")
     {
+		SetField("m_ConflictSide", "renegade");
         SetField("m_AIModelName", "ren_man_heavy_02_c.model");
         SetField("m_CustomDataPreset", "m_bandit");
         SetField("m_AnimationPreset", "bandit@ai_animation_presets.scr");
@@ -127,6 +130,7 @@ sub OpenWorldPresets()
     }
     Preset("Renegade_Bow", "Generic_Bow")
     {
+		SetField("m_ConflictSide", "renegade");
         SetField("m_BinocularIconType", "BinocularAI_Renegade");
 		SetField("m_MusicPreset", "Renegade");
 		SetField("m_BarkPresetNames", "ren_m_a;ren_m_b;ren_m_c;ren_m_d;ren_m_e");
@@ -135,6 +139,7 @@ sub OpenWorldPresets()
     }
     Preset("Renegade_Spear", "Generic_Spear")
     {
+		SetField("m_ConflictSide", "renegade");
         SetField("m_BinocularIconType", "BinocularAI_Renegade");
 		SetField("m_MusicPreset", "Renegade");
 		SetField("m_BarkPresetNames", "ren_m_a;ren_m_b;ren_m_c;ren_m_d;ren_m_e");
@@ -142,6 +147,7 @@ sub OpenWorldPresets()
     }
     Preset("Renegade_Grenadier", "Generic_Grenadier")
     {
+		SetField("m_ConflictSide", "renegade");
 		SetField("m_AIModelName", "ren_man_molotov_01_a.model;ren_man_molotov_01_b.model;ren_man_molotov_02_a.model;ren_man_molotov_02_b.model;ren_man_molotov_03_a.model");
         SetField("m_BinocularIconType", "BinocularAI_Renegade");
 		SetField("m_MusicPreset", "Renegade");
@@ -151,6 +157,7 @@ sub OpenWorldPresets()
     }
     Preset("Renegade_Summoner", "Generic_Summoner")
     {
+		SetField("m_ConflictSide", "renegade");
         SetField("m_BinocularIconType", "BinocularAI_Renegade_Summoner");
 		SetField("m_MusicPreset", "Renegade");
 		SetField("m_BarkPresetNames", "ren_m_a;ren_m_b;ren_m_c;ren_m_d;ren_m_e");
@@ -192,6 +199,7 @@ sub OpenWorldPresets()
     /////////////////////////////////////////////////////////
     Preset("Colonel_One_Handed", "Generic_One_Handed")
     {
+		SetField("m_ConflictSide", "colonel");
         SetField("m_AIModelName", "colonel_man_medium_01_a.model;colonel_man_medium_01_b.model;colonel_man_medium_01_c.model;colonel_man_medium_01_d.model;colonel_man_medium_01_f.model;colonel_man_medium_01_h.model;colonel_man_medium_01_i.model;colonel_man_medium_01_j.model;colonel_man_medium_04_a.model;colonel_man_medium_04_b.model;colonel_man_light_01_c.model;colonel_man_light_01_a.model;colonel_man_light_01_b.model;colonel_man_light_02_a.model;colonel_man_light_02_d.model");
 		SetField("m_BinocularIconType", "BinocularAI_Renegade");
         SetField("m_CustomLootTypeString", "Renegades1hOutfits");
@@ -199,6 +207,7 @@ sub OpenWorldPresets()
     }
     Preset("Colonel_Two_Handed", "Generic_Two_Handed")
     {
+		SetField("m_ConflictSide", "colonel");
         SetField("m_AIModelName", "colonel_man_heavy_01_a.model;colonel_man_heavy_02_a.model;colonel_man_heavy_02_b.model;colonel_man_heavy_02_c.model;colonel_man_heavy_03_a.model;colonel_man_heavy_03_b.model");
         SetField("m_ForcedBodyScaleMax", "1.2");
         SetField("m_ForcedBodyScaleMin", "1.2");
@@ -208,24 +217,28 @@ sub OpenWorldPresets()
     }
     Preset("Colonel_Bow", "Generic_Bow")
     {
+		SetField("m_ConflictSide", "colonel");
         SetField("m_AIModelName", "colonel_man_medium_05_a.model;colonel_man_medium_05_b.model;colonel_man_medium_02_e.model;colonel_man_medium_03_a.model");
 		SetField("m_BinocularIconType", "BinocularAI_Renegade");
 		SetField("m_MusicPreset", "Renegade");
     }
     Preset("Colonel_Spear", "Generic_Spear")
     {
+		SetField("m_ConflictSide", "colonel");
         SetField("m_AIModelName", "colonel_man_medium_02_c.model;colonel_man_medium_02_b.model;colonel_man_medium_02_a.model;colonel_man_medium_01_e.model;colonel_man_medium_01_g.model");
 		SetField("m_BinocularIconType", "BinocularAI_Renegade");
 		SetField("m_MusicPreset", "Renegade");
     }
     Preset("Colonel_Summoner", "Generic_Summoner")
     {
+		SetField("m_ConflictSide", "colonel");
         SetField("m_AIModelName", "colonel_man_light_02_b.model;colonel_man_light_03_a.model;colonel_man_light_03_b.model");
 		SetField("m_BinocularIconType", "BinocularAI_Renegade_Summoner");
 		SetField("m_MusicPreset", "Renegade");
     }	
 	Preset("Colonel_Grenadier", "Renegade_Grenadier")
     {
+		SetField("m_ConflictSide", "colonel");
         SetField("m_AIModelName", "colonel_man_light_02_b.model;colonel_man_light_03_a.model;colonel_man_light_03_b.model");
 		SetField("m_BinocularIconType", "BinocularAI_Renegade");
 		SetField("m_MusicPreset", "Renegade");
@@ -233,12 +246,14 @@ sub OpenWorldPresets()
 	// COLONELS BASIC
     Preset("Colonel_Basic_One_Handed", "Generic_One_Handed")
     {
+		SetField("m_ConflictSide", "colonel");
         SetField("m_AIModelName", "colonel_man_basic_01_a.model;colonel_man_basic_01_b.model;colonel_man_basic_01_c.model;colonel_man_basic_02_a.model;colonel_man_basic_02_b.model;colonel_man_basic_03_a.model;colonel_man_basic_03_b.model;colonel_man_basic_04_b.model;colonel_man_basic_05_a.model;colonel_man_basic_05_b.model;colonel_man_basic_06_a.model;colonel_man_basic_06_b.model;colonel_man_basic_06_c.model;colonel_man_basic_07_a.model;colonel_man_basic_08_b.model;colonel_man_basic_08_c.model");
 		SetField("m_BinocularIconType", "BinocularAI_Renegade");
 		SetField("m_MusicPreset", "Renegade");
     }
     Preset("Colonel_Basic_Woman_One_Handed", "Generic_One_Handed")
     {
+		SetField("m_ConflictSide", "colonel");
         SetField("m_FallRecoveryBank", "fall_recovery_hmf_woman");
         SetField("m_AIModelName", "srv_wmn_01_a.model");
 		SetField("m_AIModelName", "ren_wmn_01_a.model;ren_wmn_01_b.model;ren_wmn_01_c.model;ren_wmn_01_d.model;ren_wmn_01_f.model;ren_wmn_01_e.model;ren_wmn_02_a.model;ren_wmn_02_b.model;ren_wmn_02_c.model;ren_wmn_02_d.model;ren_wmn_02_e.model;ren_wmn_03_a.model;ren_wmn_03_b.model;ren_wmn_03_c.model;ren_wmn_03_d.model;ren_wmn_03_e.model");
@@ -248,6 +263,7 @@ sub OpenWorldPresets()
     }	
     Preset("Colonel_Basic_Summoner", "Generic_Summoner")
     {
+		SetField("m_ConflictSide", "colonel");
         SetField("m_AIModelName", "colonel_man_light_01_a.model;colonel_man_basic_08_a.model;colonel_man_basic_04_a.model");
 		SetField("m_BinocularIconType", "BinocularAI_Renegade_Summoner");
 		SetField("m_MusicPreset", "Renegade");
@@ -558,6 +574,7 @@ sub OpenWorldPresets()
     /////////////////////////////////////////////////////////
     Preset("Peacekeeper_One_Handed", "Generic_One_Handed")
     {
+		SetField("m_ConflictSide", "pk");
         SetField("m_AIModelName", "pk_light_man_01_a.model;pk_light_man_01_b.model;pk_light_man_02_a.model;pk_light_man_03_a.model;pk_light_man_04_a.model;pk_light_man_05_a.model;pk_light_man_06_a.model;pk_light_man_07_a.model;pk_light_man_08_a.model;pk_light_man_09_a.model");
         SetField("m_ConflictSide", "pk");
         SetField("m_CustomDataPreset", "m_peacekeeper");
@@ -572,6 +589,7 @@ sub OpenWorldPresets()
     }
     Preset("Peacekeeper_Two_Handed", "Generic_Two_Handed")
     {
+		SetField("m_ConflictSide", "pk");
         SetField("m_AIModelName", "pk_heavy_man_01_a.model;pk_heavy_man_02_a.model;pk_heavy_man_03_a.model;pk_heavy_man_04_a.model;pk_heavy_man_05_a.model;pk_heavy_man_06_a.model;pk_heavy_man_07_a.model;pk_heavy_man_08_a.model;pk_heavy_man_09_a.model");
         SetField("m_ConflictSide", "pk");
         SetField("m_CustomDataPreset", "m_peacekeeper");
@@ -586,6 +604,7 @@ sub OpenWorldPresets()
     }
     Preset("Peacekeeper_Commander", "Peacekeeper_One_Handed")
     {
+		SetField("m_ConflictSide", "pk");
         SetField("m_AIModelName", "pk_officer_man_01_a.model;pk_officer_man_01_b.model;pk_officer_man_02_a.model;pk_officer_man_03_a.model");
         SetField("m_CombatMusicRelevanceValue", "2");
         SetField("m_SyncActionPreset", "Human_1h");
@@ -593,12 +612,14 @@ sub OpenWorldPresets()
     }
     Preset("Peacekeeper_Soldier", "Peacekeeper_One_Handed")
     {
+		SetField("m_ConflictSide", "pk");
         SetField("m_AIModelName", "pk_light_man_01_a.model;pk_light_man_01_b.model;pk_light_man_02_a.model;pk_light_man_03_a.model;pk_light_man_04_a.model;pk_light_man_05_a.model;pk_light_man_06_a.model;pk_light_man_07_a.model;pk_light_man_08_a.model;pk_light_man_09_a.model");
         SetField("m_SyncActionPreset", "Human_1h");
 		SetField("m_MusicPreset", "Pk");
     }
     Preset("Peacekeeper_Encounter", "Peacekeeper_One_Handed")
     {
+		SetField("m_ConflictSide", "pk_encounter");
         SetField("m_AIModelName", "pk_light_man_01_a.model;pk_light_man_01_b.model;pk_light_man_02_a.model;pk_light_man_03_a.model;pk_light_man_07_a.model;pk_light_man_08_a.model;pk_light_man_09_a.model");
         SetField("m_SyncActionPreset", "Human_1h");
 		SetField("m_MusicPreset", "Pk");
@@ -609,6 +630,7 @@ sub OpenWorldPresets()
     }	
     Preset("Peacekeeper_Encounter_One_Hit", "Peacekeeper_One_Handed")
     {
+		SetField("m_ConflictSide", "pk_encounter");
         SetField("m_AIModelName", "pk_light_man_01_a.model;pk_light_man_01_b.model;pk_light_man_02_a.model;pk_light_man_03_a.model;pk_light_man_07_a.model;pk_light_man_08_a.model;pk_light_man_09_a.model");
         SetField("m_SyncActionPreset", "Human_1h");
 		SetField("m_MusicPreset", "Pk");
@@ -618,6 +640,7 @@ sub OpenWorldPresets()
     }		
     Preset("Peacekeeper_Bow", "Generic_Bow")
     {
+		SetField("m_ConflictSide", "pk");
         SetField("m_AIModelName", "pk_light_man_01_a.model;pk_light_man_01_b.model;pk_light_man_02_a.model;pk_light_man_03_a.model;pk_light_man_04_a.model;pk_light_man_05_a.model;pk_light_man_06_a.model;pk_light_man_07_a.model;pk_light_man_08_a.model;pk_light_man_09_a.model");
         SetField("m_ConflictSide", "pk");
         SetField("m_CustomDataPreset", "m_peacekeeper");
@@ -632,6 +655,7 @@ sub OpenWorldPresets()
     }
     Preset("Peacekeeper_Spear", "Generic_Spear")
     {
+		SetField("m_ConflictSide", "pk");
         SetField("m_AIModelName", "pk_light_man_01_a.model;pk_light_man_01_b.model;pk_light_man_02_a.model;pk_light_man_03_a.model;pk_light_man_04_a.model;pk_light_man_05_a.model;pk_light_man_06_a.model;pk_light_man_07_a.model;pk_light_man_08_a.model;pk_light_man_09_a.model");
         SetField("m_ConflictSide", "pk");
         SetField("m_CustomDataPreset", "m_peacekeeper");
@@ -646,6 +670,7 @@ sub OpenWorldPresets()
     }
     Preset("Peacekeeper_Commander_Hostile", "Peacekeeper_Commander")
     {
+		SetField("m_ConflictSide", "pk_hostile");
         SetField("m_ConflictSide", "pk_hostile");
         SetField("m_CombatMusicRelevanceValue", "2");
         SetField("m_SurvivorSensePreset", "Preset_red_strong");
@@ -655,6 +680,7 @@ sub OpenWorldPresets()
     }
     Preset("Peacekeeper_Soldier_Hostile", "Peacekeeper_Soldier")
     {
+		SetField("m_ConflictSide", "pk_hostile");
         SetField("m_ConflictSide", "pk_hostile");
         SetField("m_SurvivorSensePreset", "Preset_red");
 		SetField("m_BarkPresetNames", "pk_m_a;pk_m_b;pk_m_c");
@@ -663,6 +689,7 @@ sub OpenWorldPresets()
     }
     Preset("Peacekeeper_Two_Handed_Hostile", "Peacekeeper_Two_Handed")
     {
+		SetField("m_ConflictSide", "pk_hostile");
         SetField("m_ConflictSide", "pk_hostile");
         SetField("m_CombatMusicRelevanceValue", "2");
 		SetField("m_BarkPresetNames", "pk_m_a;pk_m_b;pk_m_c");
@@ -741,12 +768,14 @@ sub OpenWorldPresets()
     }
     Preset("Scavenger_Bow", "Scavenger")
     {
+		SetField("m_ConflictSide", "scav");
         SetField("m_ConstFilename", "human_profile_generic_bow");
         SetField("m_HealthPreset", "Body_115");
         SetField("m_WeaponSetName", "Bow_RGD_1");
     }
     Preset("Scavenger_woman", "Scavenger")
     {
+		SetField("m_ConflictSide", "scav");
         SetField("m_FallRecoveryBank", "fall_recovery_hmf_woman");
         SetField("m_AIModelName", "sc_runner_wmn_02_a.model;sc_runner_wmn_02_b.model;sc_runner_wmn_03_a.model;sc_runner_wmn_03_b.model;sc_runner_wmn_04_a.model;sc_runner_wmn_04_b.model;sc_runner_wmn_05_a.model;sc_runner_wmn_06_a.model;sc_runner_wmn_06_b.model;sc_runner_wmn_06_c.model");
 		SetField("m_ScreamPresetNames", "bdt_w_a");
@@ -756,6 +785,7 @@ sub OpenWorldPresets()
     /////////////////////////////////////////////////////////
     Preset("Survivor", "Generic_Base")
     {
+	    SetField("m_ConflictSide", "survivor");
 		SetField("m_AIModelName", "srv_man_01_a.model;srv_man_01_b.model;srv_man_01_c.model;srv_man_01_e.model;srv_man_01_f.model;srv_man_02_a.model;srv_man_02_b.model;srv_man_02_c.model;srv_man_03_a.model;srv_man_04_a.model;srv_man_04_b.model;srv_man_04_c.model;srv_man_05_a.model;srv_man_06_a.model;srv_man_07_a.model;srv_man_07_b.model;srv_man_08_a.model;srv_man_08_b.model;srv_man_08_c.model;srv_man_08_d.model;srv_man_08_e.model;srv_man_08_f.model;srv_man_08_g.model;srv_man_08_h.model;srv_man_08_i.model;srv_man_09_a.model;srv_man_09_b.model;srv_man_10_a.model;srv_man_11_a.model;srv_man_11_b.model;srv_man_11_c.model;srv_man_12_a.model;srv_man_12_b.model;srv_man_12_c.model;srv_man_12_d.model;srv_man_12_f.model;srv_man_14_a.model;srv_man_14_b.model;srv_man_14_c.model;srv_man_14_d.model;srv_man_14_e.model;srv_man_15_a.model;srv_man_15_b.model;srv_man_15_c.model;srv_man_15_d.model;srv_man_15_e.model;srv_man_15_f.model;srv_man_15_g.model;srv_man_15_h.model;srv_man_15_i.model;srv_man_15_j.model;srv_man_15_k.model;srv_man_15_l.model;srv_man_17_a.model;srv_man_17_b.model;srv_man_17_c.model;srv_man_17_d.model;srv_man_17_e.model");
         SetField("m_ConflictSide", "survivor");
         SetField("m_CustomDataPreset", "m_survivor");
@@ -774,25 +804,7 @@ sub OpenWorldPresets()
 	
 	Preset("Survivor_Summoner", "Generic_Summoner")
     {
-        SetField("m_AIModelName", "srv_man_02_a.model;srv_man_02_b.model;srv_man_02_c.model;srv_man_03_a.model;srv_man_04_a.model;srv_man_04_b.model;srv_man_04_c.model;srv_man_05_a.model;srv_man_06_a.model;srv_man_07_a.model;srv_man_07_b.model;srv_man_08_a.model;srv_man_08_b.model;srv_man_08_c.model;srv_man_08_d.model;srv_man_08_e.model;srv_man_08_f.model;srv_man_08_g.model;srv_man_08_h.model;srv_man_08_i.model;srv_man_09_a.model;srv_man_09_b.model;srv_man_10_a.model;srv_man_11_a.model;srv_man_11_b.model;srv_man_11_c.model;srv_man_12_a.model;srv_man_12_c.model;srv_man_12_d.model;srv_man_12_f.model;srv_man_13_a.model");
-        SetField("m_ConflictSide", "survivor");
-        SetField("m_CustomDataPreset", "m_survivor");
-        SetField("m_AnimationPreset", "survivor@ai_animation_presets.scr");
-        SetField("m_ConstFilename", "human_profile_survivor_one_handed");
-		SetField("m_MainBehaviorTree", "HUMAN_SURVIVOR_BT");
-        SetField("m_HealthPreset", "Body_050");
-        SetField("m_WeaponSetName", "Survivor_Random_Pool");
-        SetField("m_BarkPresetNames", "sur_m_a;sur_m_b;sur_m_c");
-		SetField("m_BarkPresetNamesAfAm", "sur_m_d;sur_m_e;surv_m_d;surv_m_e");
-        SetField("m_ScreamPresetNames", "sur_m_a");
-        SetField("m_NavigationPreset", "ow_survivor_1h");
-        SetField("m_CustomLootTypeString", "DefaultSurvivorLoot");
-        SetField("m_CombatMusicRelevanceValue", "0");
-        SetField("m_TakedownEnabled", "0");
-    }
-	
-	Preset("Survivor_Summoner", "Generic_Grenadier")
-    {
+	    SetField("m_ConflictSide", "survivor");
         SetField("m_AIModelName", "srv_man_02_a.model;srv_man_02_b.model;srv_man_02_c.model;srv_man_03_a.model;srv_man_04_a.model;srv_man_04_b.model;srv_man_04_c.model;srv_man_05_a.model;srv_man_06_a.model;srv_man_07_a.model;srv_man_07_b.model;srv_man_08_a.model;srv_man_08_b.model;srv_man_08_c.model;srv_man_08_d.model;srv_man_08_e.model;srv_man_08_f.model;srv_man_08_g.model;srv_man_08_h.model;srv_man_08_i.model;srv_man_09_a.model;srv_man_09_b.model;srv_man_10_a.model;srv_man_11_a.model;srv_man_11_b.model;srv_man_11_c.model;srv_man_12_a.model;srv_man_12_c.model;srv_man_12_d.model;srv_man_12_f.model;srv_man_13_a.model");
         SetField("m_ConflictSide", "survivor");
         SetField("m_CustomDataPreset", "m_survivor");
@@ -812,6 +824,7 @@ sub OpenWorldPresets()
 	
 	Preset("Survivor_Man_Bow", "Generic_Bow")
     {
+	    SetField("m_ConflictSide", "survivor");
         SetField("m_AIModelName", "srv_man_02_a.model;srv_man_02_b.model;srv_man_02_c.model;srv_man_03_a.model;srv_man_04_a.model;srv_man_04_b.model;srv_man_04_c.model;srv_man_05_a.model;srv_man_06_a.model;srv_man_07_a.model;srv_man_07_b.model;srv_man_08_a.model;srv_man_08_b.model;srv_man_08_c.model;srv_man_08_d.model;srv_man_08_e.model;srv_man_08_f.model;srv_man_08_g.model;srv_man_08_h.model;srv_man_08_i.model;srv_man_09_a.model;srv_man_09_b.model;srv_man_10_a.model;srv_man_11_a.model;srv_man_11_b.model;srv_man_11_c.model;srv_man_12_a.model;srv_man_12_c.model;srv_man_12_d.model;srv_man_12_f.model;srv_man_13_a.model");
         SetField("m_ConflictSide", "survivor");
         SetField("m_CustomDataPreset", "m_survivor");
@@ -830,6 +843,7 @@ sub OpenWorldPresets()
 	
 	Preset("Survivor_Woman_Bow", "Generic_Bow")
     {
+	    SetField("m_ConflictSide", "survivor");
         SetField("m_FallRecoveryBank", "fall_recovery_hmf_woman");
 		SetField("m_AIModelName", "srv_wmn_01_a.model;srv_wmn_02_a.model;srv_wmn_02_b.model;srv_wmn_02_c.model;srv_wmn_03_a.model;srv_wmn_04_a.model;srv_wmn_04_b.model;srv_wmn_05_a.model;srv_wmn_05_b.model;srv_wmn_06_a.model;srv_wmn_07_a.model;srv_wmn_07_b.model;srv_wmn_07_c.model;srv_wmn_08_a.model;srv_wmn_09_a.model;srv_wmn_10_a.model;srv_wmn_10_b.model;srv_wmn_10_c.model;srv_wmn_10_d.model;srv_wmn_10_e.model;srv_wmn_10_f.model;srv_wmn_11_a.model;srv_wmn_12_a.model;srv_wmn_13_a.model;srv_wmn_13_b.model;srv_wmn_13_c.model;srv_wmn_14_a.model;srv_wmn_15_a.model;srv_wmn_16_a.model;srv_wmn_17_a.model;srv_wmn_18_a.model;srv_wmn_24_a.model;srv_wmn_25_a.model;srv_wmn_25_b.model;srv_wmn_27_a.model;srv_wmn_27_b.model;srv_wmn_27_c.model;srv_wmn_28_a.model;srv_wmn_28_b.model;srv_wmn_28_c.model");
         SetField("m_ConflictSide", "survivor");
@@ -849,6 +863,7 @@ sub OpenWorldPresets()
 	
     Preset("Survivor_decoy_body")
     {
+	    SetField("m_ConflictSide", "survivor");
         SetField("m_AIModelName", "bzr_man_01_a.model;bzr_wmn_03_a.model;bzr_man_04_a.model;bzr_wmn_01_a.model");
         SetField("m_ConflictSide", "survivor");
         SetField("m_CustomDataPreset", "m_survivor");
@@ -868,6 +883,7 @@ sub OpenWorldPresets()
     }
     Preset("Survivor_Encounter", "Survivor")
     {
+	    SetField("m_ConflictSide", "survivor");
         SetField("m_AIModelName", "srv_man_02_a.model;srv_man_02_b.model;srv_man_02_c.model;srv_man_03_a.model;srv_man_04_a.model;srv_man_04_b.model;srv_man_04_c.model;srv_man_06_a.model;srv_man_07_a.model;srv_man_07_b.model;srv_man_08_c.model;srv_man_08_d.model;srv_man_08_e.model;srv_man_08_f.model;srv_man_08_g.model;srv_man_08_h.model;srv_man_10_a.model;srv_man_11_a.model;srv_man_11_c.model;srv_man_12_a.model;srv_man_12_d.model;srv_man_13_a.model");
         SetField("m_ConflictSide", "survivor_encounter");
         SetField("m_ConstFilename", "human_profile_survivor_prisoner_one_handed");

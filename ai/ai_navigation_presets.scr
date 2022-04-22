@@ -138,8 +138,7 @@ sub DisallowAllDynamicSurfaces()
     // But it introduces problems when AI lands inside by accident - infinite cost will make it impossible to escape
     // (this issue is related with all ruas/special areas marked with infinite cost).
     // Waiting for potential fix in nav query calculation: conditionally allow to escape from infinite cost areas.
-    Surface("water", MAXIMUM_PASSABLE_COST);
-	Surface("fire", MAXIMUM_PASSABLE_COST);
+    Surface("fire", MAXIMUM_PASSABLE_COST);
     Surface("zombie", INFINITE_COST);
     Surface("bandit", INFINITE_COST);
     
@@ -158,7 +157,7 @@ sub DisallowAllDynamicSurfaces()
 
 sub HumanAI_Base_Defaults()
 {
-    MaxPathLength(250.0);
+    MaxPathLength(120.0);
     MinPathWidth(0.55);
 }
 
@@ -274,6 +273,9 @@ sub HumanAI_Base()
     NavigationPreset("demolisher")
     {
         use HumanAI_Base_Defaults();
+
+        MaxPathLength(250.0);
+        MinPathWidth(0.55);
 		
         ConnectionTypeCosts()
         {
@@ -290,6 +292,9 @@ sub HumanAI_Base()
     NavigationPreset("goon")
     {
         use HumanAI_Base_Defaults();
+
+        MaxPathLength(250.0);
+        MinPathWidth(0.15);
 		
         ConnectionTypeCosts()
         {
@@ -308,6 +313,9 @@ sub HumanAI_Base()
     {
         use HumanAI_Base_Defaults();
 
+		MaxPathLength(250.0);
+        MinPathWidth(0.55);
+
         ConnectionTypeCosts()
         {
             destroyable_wall(1.0);
@@ -324,6 +332,9 @@ sub HumanAI_Base()
     NavigationPreset("spitter")
     {
         use HumanAI_Base_Defaults();
+
+		MaxPathLength(250.0);
+        MinPathWidth(0.55);
 
         ConnectionTypeCosts()
         {
@@ -345,6 +356,9 @@ sub HumanAI_Base()
     NavigationPreset("suicider")
     {
         use HumanAI_Base_Defaults();
+
+		MaxPathLength(250.0);
+        MinPathWidth(0.55);
  
        ConnectionTypeCosts()
         {
@@ -365,6 +379,9 @@ sub HumanAI_Base()
     NavigationPreset("suicider_flooded")
     {
         use HumanAI_Base_Defaults();
+
+		MaxPathLength(250.0);
+        MinPathWidth(0.55);
 
         ConnectionTypeCosts()
         {
@@ -390,6 +407,8 @@ sub HumanAI_Base()
     NavigationPreset("screamer")
     {
         use HumanAI_Base_Defaults();
+		MaxPathLength(250.0);
+        MinPathWidth(0.55);
 
 		ConnectionTypeCosts()
         {
@@ -413,6 +432,10 @@ sub HumanAI_Base()
     NavigationPreset("bolter")
     {
         use HumanAI_Base_Defaults();
+
+		MaxPathLength(250.0);
+        MinPathWidth(0.55);
+
 
         ConnectionTypeCosts()
         {

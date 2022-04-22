@@ -23,7 +23,7 @@
                     <Selector>
                         <SequenceMem>
                             <Selector>
-                                <Cnd_IsBBValueGreater_float m_Key="#distance_traveled" m_Value="15"/>
+                                <Cnd_IsBBValueGreater_float m_Key="#distance_traveled" m_Value="25"/>
                                 <Cnd_IsCombatTargetInRadius m_Radius="$attack_approach_run_distance" m_Invert="true"/>
                             </Selector>
                             <Act_Move m_Destination="#target_pos" m_MoveStyle="#move_style_run" m_StopAtDest="false" m_TryToFindDestinationOnNavmesh="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>

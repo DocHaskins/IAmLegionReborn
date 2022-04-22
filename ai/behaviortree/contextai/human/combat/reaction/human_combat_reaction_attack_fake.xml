@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <CooldownUntil m_TimePoint="#fake_attack_cooldown" m_CooldownTime="#attack_fake_cooldown" m_CooldownOnAbort="true">
+        <SequenceMem>
+            <Cnd_CanStartTask m_StartPolicy="INTERRUPT"/>
+            <!-- common conditions -->
+            <Cnd_IsTargetUsingWeapon m_Target="#target" m_WeaponType="OneHandedMelee"/>
+            <Cnd_IsBBValueEqual_string m_Key="#morale_state" m_Value="cautious"/>
+            <Cnd_HasActiveWeapon m_WeaponType="OneHandedMelee"/>
+            <!-- target conditions -->
+            <Cnd_IsCombatTargetMeleeReachable/>
+            <Cnd_InTargetHorzAngle m_Target="#target" m_Angle="45"/>
+            <Cnd_IsTargetInAir m_Target="#target" m_Invert="true"/>
+            <Cnd_TargetInAngle m_Target="#target" m_Angle="25"/>
+            <!-- fake attacks -->
+            <SelectorMem>
+                <CooldownTimeDelta m_CooldownTime="5.0" m_CustomName="IntimidationStep" m_CooldownOnAbort="true">
+                    <SequenceMem>
+                        <Cnd_IsTargetAttacking m_Target="#target" m_Invert="true"/>
+                        <Cnd_IsTargetChargingAttack m_Target="#target" m_Invert="true"/>
+                        <Cnd_IsTargetApproaching m_Target="#target" m_MinVel="1" m_MaxAngle="45" m_Invert="true"/>
+                        <Cnd_IsCombatTargetInRadius m_Radius="12.0" m_Invert="true"/>
+                        <Cnd_IsCombatTargetInRadius m_Radius="12.5"/>
+                        <Act_Step m_Direction="FORWARD" m_Type="INTIMIDATION" m_Target="#target" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+                    </SequenceMem>
+                </CooldownTimeDelta>
+                <CooldownTimeDelta m_CooldownTime="2.0" m_CustomName="FakeCautious" m_CooldownOnAbort="true">
+                    <SequenceMem>
+                        <Cnd_IsCombatTargetInRadius m_Radius="12.5" m_Invert="true"/>
+                        <Cnd_IsCombatTargetInRadius m_Radius="14.0"/>
+                        <Opr_GetModifiedTime m_TimePoint="#fake_attack_cooldown" m_TimeDelta="2"/>
+                        <Opr_RandomTimeDelta m_TimeDelta="#attack_fake_cooldown" m_TimeMin="1.5" m_TimeMax="3.0"/>
+                        <ExternalTree m_UID="HUMAN_ATTACK_QUICK_FAKE_CAUTIOUS" m_CustomName="FakeCautious" m_Hide="true"/>
+                    </SequenceMem>
+                </CooldownTimeDelta>
+            </SelectorMem>
+        </SequenceMem>
+    </CooldownUntil>
+</BehaviorTree>

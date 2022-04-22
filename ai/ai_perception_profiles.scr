@@ -2,7 +2,7 @@ sub main()
 {
     PerceptionProfile("human_default")
     {
-        DefaultProfile("human_default");
+        DefaultProfile("human_low_alert");
         LowAlertProfile("human_low_alert");
         MediumAlertProfile("human_medium_alert");
         HighAlertProfile("human_high_alert");
@@ -68,8 +68,8 @@ sub main()
     }
     PerceptionProfile("goon_default")
     {
-        DefaultProfile("goon_medium_alert");
-        LowAlertProfile("goon_medium_alert");
+        DefaultProfile("goon_default");
+        LowAlertProfile("goon_low_alert");
         MediumAlertProfile("goon_medium_alert");
         HighAlertProfile("goon_high_alert");
     }

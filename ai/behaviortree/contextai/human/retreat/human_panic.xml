@@ -11,7 +11,7 @@
         <CooldownTimeDelta m_CooldownTime="15.0">
             <Cnd_HasGroupMemberDiedRecently m_TimeWindow="1.0"/>
         </CooldownTimeDelta>
-        <Cnd_AreOtherGroupMembersAlive m_MinMembersCount="1" m_Invert="true"/>
+        <Cnd_AreOtherGroupMembersAlive m_MinMembersCount="2" m_Invert="true"/>
         <Opr_SetBBValue_bool m_Key="#panic_evaluated" m_Value="true"/>
         <Cnd_Random m_Value="$panic_last_man_prob"/>
         <Opr_SetBBValue_bool m_Key="#should_flee" m_Value="true"/>
@@ -25,7 +25,7 @@
             <SequenceMem>
                 <Opr_RequestBark m_Priority="Medium" m_BarkID="panic"/>
                 <TimeDeltaLimitRandom m_TimeMin="1.4" m_TimeMax="1.4" m_StatusReturned="SUCCESS">
-                    <Act_Reaction m_Type="Panic" m_StartPolicy="DISCARD" m_AbandonPolicy="BLENDOUT"/>
+                    <Act_Reaction m_Type="Panic" m_StartPolicy="DISCARD" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
                 </TimeDeltaLimitRandom>
                 <SelectorMem>
                     <!-- throw weapon -->
@@ -56,11 +56,11 @@
                         <TimeDeltaLimit m_TimeMax="4" m_StatusReturned="SUCCESS">
                             <Selector>
                                 <Cnd_HasBBValue m_Key="#target" m_Invert="true"/>
-                                <Cnd_IsCombatTargetInRadius m_Radius="8" m_Invert="true"/>
+                                <Cnd_IsCombatTargetInRadius m_Radius="12" m_Invert="true"/>
                                 <Sequence>
                                     <Opr_GetDirToCombatTarget m_DirToTarget="#dir_to_target"/>
                                     <Opr_GetRetreatDirection m_Source="#target_pos" m_Direction="#retreat_dir"/>
-                                    <ExternalTree m_UID="HUMAN_GO_TO_HIGH_GROUND" m_CustomName="Go to high ground" m_Hide="true"/>
+                                    <Act_StrafeInDirection m_Direction="#retreat_dir" m_WantedForwardDir="#dir_to_target" m_Speed="0.5" m_SpringUpdateSpeed="$strafe_spring_update_speed" m_Style="Retreat" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
                                 </Sequence>
                             </Selector>
                         </TimeDeltaLimit>

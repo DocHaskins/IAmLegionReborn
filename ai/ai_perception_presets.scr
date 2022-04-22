@@ -1,0 +1,88 @@
+// required - sensor enabled by default.
+
+sub main()
+{
+    PerceptionPreset("human")
+    {
+        Sensor("fov");
+        Sensor("proximity");
+        Sensor("hearing");
+        Sensor("light");
+        Sensor("actors");
+        Sensor("group");
+        Sensor("awakening");
+        Sensor("interest");
+        Sensor("trail");
+        Sensor("dangerzone");
+        Sensor("navmesh", "required");
+        Sensor("combat_enviro");
+        Sensor("combat_positions_enemy_slots");
+        Sensor("ground", "required");
+        Sensor("target");
+        Sensor("defend");
+        Sensor("threatening");
+        Sensor("bodies");
+    }
+	PerceptionPreset("infected")
+    {
+        Sensor("fov");
+        Sensor("proximity");
+        Sensor("hearing");
+        Sensor("light");
+        Sensor("actors");
+        Sensor("group");
+        Sensor("awakening");
+        Sensor("interest");
+        Sensor("trail");
+        Sensor("navmesh", "required");
+        Sensor("combat_enviro");
+        Sensor("combat_positions_enemy_slots");
+        Sensor("ground", "required");
+        Sensor("target");
+        Sensor("uv");
+		Sensor("defend");
+		Sensor("objects");
+		Sensor("threatening");
+		Sensor("bodies");
+    }
+    PerceptionPreset("animal")
+    {
+        Sensor("fov");
+        Sensor("los");
+        Sensor("proximity");
+        Sensor("observable");
+        Sensor("navmesh", "required");
+        Sensor("hearing");
+    }
+
+    PerceptionPreset("horse")
+    {
+        Sensor("navmesh");
+    }
+
+    PerceptionPreset("heron")
+    {
+        Sensor("fov");
+        Sensor("los");
+        Sensor("proximity");
+        Sensor("observable");
+        Sensor("navmesh", "required");
+    }
+
+    PerceptionPreset("wolf")
+    {
+        Sensor("fov");
+        Sensor("los");
+        Sensor("proximity");
+        Sensor("observable");
+        Sensor("navmesh", "required");
+        Sensor("hearing");
+        Sensor("interest");
+        Sensor("animal_awareness");
+    }
+    PerceptionPreset("biter_simple")
+    {
+        Sensor("navmesh", "required");
+        Sensor("ground", "required");
+    }
+}

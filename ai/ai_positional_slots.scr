@@ -44,7 +44,7 @@ sub main()
         GatherEnemiesDistanceY("10");
         GatherOthersDistanceY("4");
 
-        EnemyRadius("2.0");
+        EnemyRadius("4.0");
 
         // Off / Simple / Detailed (flags)
         DebugMeleeAttackSlots("Detailed");
@@ -74,16 +74,17 @@ sub main()
 
         NavRayEndOffset("0");
         NavRayMaxTrimmedToleranceXZ("1.5");
-        NavRayMaxConnectionHeightUp("0.0");
+        NavRayMaxConnectionHeightUp("3.0");
         NavRayMaxConnectionHeightDown("2.0");
 
         // RegularGround / HardToPass / Chemicals / Water / Road / Connection / Interior (enum)
-        NavPathDisallowedSpecialAreas("HardToPass");
-        NavPathDisallowedSpecialAreas("Chemicals");
+        //NavPathDisallowedSpecialAreas("HardToPass");
+        //NavPathDisallowedSpecialAreas("Chemicals");
         NavPathDisallowedSpecialAreas("Water");
         
         // Refer to defined dynamic surfaces in  ai_navigation_presets.scr
         NavPathDisallowedRuntimeUserAreas("fire");
+		NavPathDisallowedRuntimeUserAreas("Water");
     }
 
     DynamicGeneratorParams("idle_points")
@@ -92,7 +93,7 @@ sub main()
         UpdateTimeDeltaThreshold("2.0");
 
         AcceptMinRelativeHeight("-6.0");
-        AcceptMaxRelativeHeight("1.0");
+        AcceptMaxRelativeHeight("4.0");
         KeepMinRelativeHeight("-8.0");
         KeepMaxRelativeHeight("6.0");
 
@@ -106,14 +107,14 @@ sub main()
         NavMeshToleranceXZ("1.0");
         NavMeshToleranceY("1.0");
 
-        NavAreaMinDistanceToEdges("2.0");
-        NavAreaMaxHeightDifference("2.5");
+        NavAreaMinDistanceToEdges("8.0");
+        NavAreaMaxHeightDifference("5.5");
 
         NavPathCheckAngle("180");
-        NavPathRandomMaxDeviation("2.0");
+        NavPathRandomMaxDeviation("4.0");
         NavPathRandomCost("0.95");
         NavPathMaxDownwardConnectionHeight("6.0");
-        NavPathMaxUpwardConnectionHeight("0.25");
+        NavPathMaxUpwardConnectionHeight("4.25");
         NavPathMaxHorizontalConnectionLength("3.0");
         NavPathPreferHigherPlaces("true");
         NavPathCheckOnlyNavConnectedPoints("false");
@@ -127,12 +128,13 @@ sub main()
         NavPathAllowedUserConnections("Ladder");
 
         // RegularGround / HardToPass / Chemicals / Water / Road / Connection / Interior (enum)
-        NavPathDisallowedSpecialAreas("Chemicals");
-        NavPathDisallowedSpecialAreas("HardToPass");
+        //NavPathDisallowedSpecialAreas("Chemicals");
+        //NavPathDisallowedSpecialAreas("HardToPass");
         NavPathDisallowedSpecialAreas("Water");
         
         // Refer to defined dynamic surfaces in  ai_navigation_presets.scr
         NavPathDisallowedRuntimeUserAreas("fire");
+		NavPathDisallowedRuntimeUserAreas("Water");
 
         // None / Visibility / Occlusion (enum)
         Raytest("Visibility");
@@ -150,7 +152,7 @@ sub main()
         UpdateTimeDelta("0.1");
         UpdateTimeDeltaThreshold("2.0");
 
-        AcceptMinRelativeHeight("4.0");
+        AcceptMinRelativeHeight("-6.0");
         AcceptMaxRelativeHeight("10.0");
         KeepMinRelativeHeight("-1.5");
         KeepMaxRelativeHeight("15.0");
@@ -166,13 +168,13 @@ sub main()
         NavMeshToleranceXZ("0.5");
         NavMeshToleranceY("1.0");
 
-        NavAreaMinDistanceToEdges("1.3");
-        NavAreaMaxHeightDifference("3.4");
+        NavAreaMinDistanceToEdges("5.3");
+        NavAreaMaxHeightDifference("6.4");
 
         NavPathCheckAngle("90");
         NavPathRandomMaxDeviation("2.0");
         NavPathRandomCost("0.5");
-        NavPathMaxDownwardConnectionHeight("0.25");
+        NavPathMaxDownwardConnectionHeight("6.25");
         NavPathMaxUpwardConnectionHeight("10.0");
         NavPathMaxHorizontalConnectionLength("3.0");
         NavPathPreferHigherPlaces("true");
@@ -187,13 +189,14 @@ sub main()
         NavPathAllowedUserConnections("Ladder");
 
         // RegularGround / HardToPass / Chemicals / Water / Road / Connection / Interior (enum)
-        NavPathDisallowedSpecialAreas("Chemicals");
-        NavPathDisallowedSpecialAreas("HardToPass");
+        //NavPathDisallowedSpecialAreas("Chemicals");
+        //NavPathDisallowedSpecialAreas("HardToPass");
         NavPathDisallowedSpecialAreas("Water");
-        NavPathDisallowedSpecialAreas("Interior");
+        //NavPathDisallowedSpecialAreas("Interior");
         
         // Refer to defined dynamic surfaces in  ai_navigation_presets.scr
         NavPathDisallowedRuntimeUserAreas("fire");
+		NavPathDisallowedRuntimeUserAreas("Water");
 
         // None / Visibility / Occlusion (enum)
         Raytest("Visibility");

@@ -22,6 +22,14 @@
             </Sequence>
             <ExternalTree m_UID="HUMAN_COMBAT_KEEP_RESTRICTED_AREA" m_CustomName="RestrictedArea" m_Hide="true"/>
 			<ExternalTree m_UID="HUMAN_MOVE_GROUP_GATHER" m_CustomName="GroupGather" m_Hide="true"/>
+			<Optional m_Enabled="$enable_molotov_throw" m_CustomName="Molotov" m_Hide="true">
+                <Sequence>
+				<ExternalTree m_UID="HUMAN_COMBAT_THROW_MOLOTOV"/>
+				<Runner>
+					<ExternalTree m_UID="HUMAN_WEAPON_PULL_OUT_MOLOTOV" m_CustomName="PullOutThrowable" m_Hide="true"/>
+				</Runner>
+				</Sequence>
+            </Optional>
         </Selector>
         <Runner>
             <ExternalTree m_UID="HUMAN_WEAPON_PULL_OUT_ONE_HANDED" m_CustomName="PullOutOneHanded" m_Hide="true"/>

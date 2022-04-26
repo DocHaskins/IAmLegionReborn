@@ -11,10 +11,10 @@
                 <Selector>
                     <Sequence>
                         <Cnd_IsBBValueGreaterOrEqual_float m_Key="#degeneration_progress" m_Value="1.0"/>
-                        <Opr_SetBBValue_string m_Key="#move_style" m_Value="run"/>
+                        <Opr_SetBBValue_string m_Key="#move_style" m_Value="Degenerated_Walk"/>
                     </Sequence>
                     <Sequence>
-                        <Opr_SetBBValue_string m_Key="#move_style" m_Value="run"/>
+                        <Opr_SetBBValue_string m_Key="#move_style" m_Value="Walk_To_Enemy"/>
                     </Sequence>
                 </Selector>
             </Sequence>
@@ -23,20 +23,20 @@
                 <Selector>
                     <Sequence>
                         <Cnd_IsBBValueGreaterOrEqual_float m_Key="#degeneration_progress" m_Value="1.0"/>
-                        <Opr_SetBBValue_string m_Key="#move_style" m_Value="run"/>
+                        <Opr_SetBBValue_string m_Key="#move_style" m_Value="notice_walk_degenerated"/>
                     </Sequence>
                     <Sequence>
-                        <Opr_SetBBValue_string m_Key="#move_style" m_Value="run"/>
+                        <Opr_SetBBValue_string m_Key="#move_style" m_Value="notice_walk"/>
                     </Sequence>
                 </Selector>
             </Sequence>
             <Selector>
                 <Sequence>
                     <Cnd_IsBBValueGreaterOrEqual_float m_Key="#degeneration_progress" m_Value="1.0"/>
-                    <Opr_SetBBValue_string m_Key="#move_style" m_Value="run"/>
+                    <Opr_SetBBValue_string m_Key="#move_style" m_Value="degenerated_walk"/>
                 </Sequence>
                 <Sequence>
-                    <Opr_SetBBValue_string m_Key="#move_style" m_Value="run"/>
+                    <Opr_SetBBValue_string m_Key="#move_style" m_Value="walk"/>
                 </Sequence>
             </Selector>
         </Selector>

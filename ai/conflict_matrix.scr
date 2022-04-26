@@ -11,9 +11,12 @@ sub main()
             Relation("player", "friend");
             Relation("zombie", "friend");
             Relation("pk", "friend");
+			Relation("pk_hostile", "friend");
+			Relation("pk_encounter", "friend");
             Relation("scav", "friend");
             Relation("bandit", "friend");
             Relation("bandit_2", "friend");
+			Relation("colonel", "friend");
             Relation("survivor", "friend");
             Relation("animal", "friend");
             Relation("renegade", "friend");
@@ -26,11 +29,13 @@ sub main()
             Relation("none", "friend");
             Relation("player", "friend");
             Relation("zombie", "enemy");
-            Relation("pk", "neutral");
-            Relation("pk_encounter", "friend");
+            Relation("pk", "friend");
+			Relation("pk_hostile", "enemy");
+			Relation("pk_encounter", "friend");
             Relation("scav", "friend");
             Relation("bandit", "enemy");
             Relation("bandit_2", "enemy");
+			Relation("colonel", "neutral");
             Relation("survivor", "neutral");
             Relation("survivor_ms_panic", "enemy");
             Relation("survivor_encounter", "friend");
@@ -46,15 +51,18 @@ sub main()
             Relation("player", "enemy");
             Relation("zombie", "friend");
             Relation("pk", "enemy");
+			Relation("pk_hostile", "enemy");
+			Relation("pk_encounter", "enemy");
             Relation("scav", "enemy");
             Relation("bandit", "enemy");
             Relation("bandit_2", "enemy");
+			Relation("colonel", "enemy");
             Relation("survivor", "enemy");
             Relation("survivor_encounter", "enemy");
             Relation("animal", "enemy");
             Relation("survivor_ms_panic", "friend");
             Relation("renegade", "enemy");
-            Relation("counter_player", "enemy");
+            Relation("counter_player", "friend");
             Relation("counter_all", "enemy");
         }
 
@@ -64,9 +72,12 @@ sub main()
             Relation("player", "auto");
             Relation("zombie", "enemy");
             Relation("pk", "friend");
+			Relation("pk_hostile", "friend");
+			Relation("pk_encounter", "friend");
             Relation("scav", "neutral");
             Relation("bandit", "enemy");
             Relation("bandit_2", "enemy");
+			Relation("colonel", "neutral");
             Relation("survivor", "neutral");
             Relation("animal", "enemy");
             Relation("renegade", "enemy");
@@ -81,9 +92,11 @@ sub main()
             Relation("zombie", "auto");
             Relation("pk", "auto");
             Relation("pk_hostile", "enemy");
+			Relation("pk_encounter", "friend");
             Relation("scav", "friend");
             Relation("bandit", "enemy");
             Relation("bandit_2", "enemy");
+			Relation("colonel", "neutral");
             Relation("survivor", "neutral");
             Relation("animal", "enemy");
             Relation("renegade", "enemy");
@@ -97,14 +110,17 @@ sub main()
             Relation("player", "auto");
             Relation("zombie", "enemy");
             Relation("pk", "enemy");
+			Relation("pk_hostile", "enemy");
+			Relation("pk_encounter", "enemy");
             Relation("scav", "auto");
             Relation("bandit", "friend");
-            Relation("bandit_2", "friend");
+            Relation("bandit_2", "enemy");
+			Relation("colonel", "enemy");
             Relation("survivor", "enemy");
             Relation("survivor_encounter", "enemy");
             Relation("animal", "enemy");
-            Relation("renegade", "neutral");
-            Relation("counter_player", "enemy");
+            Relation("renegade", "enemy");
+            Relation("counter_player", "friend");
             Relation("counter_all", "enemy");
         }
 
@@ -114,13 +130,36 @@ sub main()
             Relation("player", "auto");
             Relation("zombie", "enemy");
             Relation("pk", "enemy");
+			Relation("pk_hostile", "enemy");
+			Relation("pk_encounter", "enemy");
             Relation("scav", "enemy");
-            Relation("bandit", "friend");
+            Relation("bandit", "enemy");
             Relation("bandit_2", "friend");
+			Relation("colonel", "enemy");
             Relation("survivor", "enemy");
             Relation("survivor_encounter", "enemy");
             Relation("animal", "enemy");
-            Relation("renegade", "neutral");
+            Relation("renegade", "enemy");
+            Relation("counter_player", "friend");
+            Relation("counter_all", "enemy");
+        }
+		
+		SetupRelations("colonel")
+        {
+            Relation("none", "friend");
+            Relation("player", "auto");
+            Relation("zombie", "enemy");
+            Relation("pk", "enemy");
+			Relation("pk_hostile", "enemy");
+			Relation("pk_encounter", "enemy");
+            Relation("scav", "enemy");
+            Relation("bandit", "enemy");
+            Relation("bandit_2", "friend");
+			Relation("colonel", "friend");
+            Relation("survivor", "enemy");
+            Relation("survivor_encounter", "enemy");
+            Relation("animal", "enemy");
+            Relation("renegade", "enemy");
             Relation("counter_player", "friend");
             Relation("counter_all", "enemy");
         }
@@ -130,13 +169,16 @@ sub main()
             Relation("none", "friend");
             Relation("player", "auto");
             Relation("zombie", "enemy");
-            Relation("pk", "auto");
+            Relation("pk", "neutral");
+			Relation("pk_hostile", "enemy");
+			Relation("pk_encounter", "neutral");
             Relation("scav", "auto");
             Relation("bandit", "enemy");
             Relation("bandit_2", "enemy");
+			Relation("colonel", "neutral");
             Relation("survivor", "friend");
             Relation("animal", "enemy");
-            Relation("renegade", "neutral");
+            Relation("renegade", "enemy");
             Relation("counter_player", "friend");
             Relation("counter_all", "enemy");
         }
@@ -146,10 +188,13 @@ sub main()
             Relation("none", "friend");
             Relation("player", "auto");
             Relation("zombie", "auto");
-            Relation("pk", "auto");
+            Relation("pk", "neutral");
+			Relation("pk_hostile", "enemy");
+			Relation("pk_encounter", "neutral");
             Relation("scav", "auto");
             Relation("bandit", "auto");
             Relation("bandit_2", "enemy");
+			Relation("colonel", "neutral");
             Relation("survivor", "friend");
             Relation("pk_hostile", "auto");
             Relation("animal", "enemy");
@@ -163,10 +208,13 @@ sub main()
             Relation("none", "friend");
             Relation("player", "auto");
             Relation("zombie", "auto");
-            Relation("pk", "auto");
+            Relation("pk", "neutral");
+			Relation("pk_hostile", "enemy");
+			Relation("pk_encounter", "neutral");
             Relation("scav", "auto");
             Relation("bandit", "auto");
             Relation("bandit_2", "enemy");
+			Relation("colonel", "neutral");
             Relation("survivor", "friend");
             Relation("pk_hostile", "enemy");
             Relation("animal", "enemy");
@@ -181,10 +229,13 @@ sub main()
             Relation("player", "enemy");
             Relation("zombie", "enemy");
             Relation("pk", "friend");
+			Relation("pk_hostile", "friend");
+			Relation("pk_encounter", "friend");
             Relation("scav", "enemy");
             Relation("bandit", "enemy");
             Relation("bandit_2", "enemy");
-            Relation("survivor", "neutral");
+			Relation("colonel", "neutral");
+            Relation("survivor", "enemy");
             Relation("survivor_encounter", "enemy");
             Relation("animal", "enemy");
             Relation("renegade", "enemy");
@@ -198,9 +249,12 @@ sub main()
             Relation("player", "friend");
             Relation("zombie", "enemy");
             Relation("pk", "friend");
+			Relation("pk_hostile", "friend");
+			Relation("pk_encounter", "friend");
             Relation("scav", "neutral");
             Relation("bandit", "enemy");
             Relation("bandit_2", "enemy");
+			Relation("colonel", "neutral");
             Relation("survivor", "neutral");
             Relation("animal", "enemy");
             Relation("renegade", "enemy");
@@ -223,9 +277,12 @@ sub main()
             Relation("player", "auto");
             Relation("zombie", "auto");
             Relation("pk", "auto");
+			Relation("pk_hostile", "auto");
+			Relation("pk_encounter", "auto");
             Relation("scav", "auto");
             Relation("bandit", "auto");
             Relation("bandit_2", "auto");
+			Relation("colonel", "auto");
             Relation("survivor", "auto");
             Relation("pk_hostile", "auto");
             Relation("survivor_encounter", "auto");
@@ -240,14 +297,17 @@ sub main()
         {
             Relation("none", "friend");
             Relation("player", "auto");
-            Relation("zombie", "auto");
+            Relation("zombie", "enemy");
             Relation("pk", "enemy");
-            Relation("scav", "auto");
-            Relation("bandit", "auto");
-            Relation("bandit_2", "auto");
-            Relation("survivor", "auto");
-            Relation("pk_hostile", "auto");
-            Relation("survivor_encounter", "auto");
+			Relation("pk_hostile", "enemy");
+			Relation("pk_encounter", "enemy");
+            Relation("scav", "enemy");
+            Relation("bandit", "enemy");
+            Relation("bandit_2", "enemy");
+			Relation("colonel", "enemy");
+            Relation("survivor", "enemy");
+            Relation("pk_hostile", "enemy");
+            Relation("survivor_encounter", "enemy");
             Relation("animal", "auto");
             Relation("renegade", "friend");
             Relation("counter_player", "friend");
@@ -260,9 +320,12 @@ sub main()
             Relation("player", "auto");
             Relation("zombie", "auto");
             Relation("pk", "auto");
+			Relation("pk_hostile", "auto");
+			Relation("pk_encounter", "auto");
             Relation("scav", "auto");
             Relation("bandit", "auto");
             Relation("bandit_2", "auto");
+			Relation("colonel", "auto");
             Relation("survivor", "auto");
             Relation("pk_hostile", "auto");
             Relation("survivor_encounter", "auto");
@@ -278,9 +341,12 @@ sub main()
             Relation("player", "auto");
             Relation("zombie", "auto");
             Relation("pk", "auto");
+			Relation("pk_hostile", "auto");
+			Relation("pk_encounter", "auto");
             Relation("scav", "auto");
             Relation("bandit", "auto");
             Relation("bandit_2", "auto");
+			Relation("colonel", "auto");
             Relation("survivor", "auto");
             Relation("pk_hostile", "auto");
             Relation("survivor_encounter", "auto");

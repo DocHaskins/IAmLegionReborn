@@ -20,25 +20,19 @@
                         <Optional m_Enabled="$summoning_reinforcements_enabled" m_Hide="true">
                             <ExternalTree m_UID="HUMAN_CALL_REINFORCEMENTS" m_CustomName="CallReinforcements"/>
                         </Optional>
-                        <SelectorMem>
-                            <Optional m_Enabled="$enable_combat_bow">
-                                <ExternalTree m_UID="HUMAN_COMBAT_BOW" m_CustomName="Bow" m_Hide="true"/>
-                            </Optional>
-                            <Optional m_Enabled="$enable_combat_grenadier">
+						<Optional m_Enabled="$enable_combat_grenadier">
                                 <ExternalTree m_UID="HUMAN_COMBAT_GRENADIER" m_CustomName="Grenadier" m_Hide="true"/>
-                            </Optional>
+                        </Optional>
+						<SelectorMem>
+							<Selector>
+                                <ExternalTree m_UID="HUMAN_COMBAT_BOW" m_CustomName="Bow" m_Hide="true"/>
                             <Optional m_Enabled="$enable_combat_harpoon">
                                 <ExternalTree m_UID="HUMAN_COMBAT_HARPOON" m_CustomName="Harpoon" m_Hide="true"/>
                             </Optional>
-                            <Optional m_Enabled="$enable_combat_one_handed">
                                 <ExternalTree m_UID="HUMAN_COMBAT_ONE_HANDED" m_CustomName="OneHanded" m_Hide="true"/>
-                            </Optional>
-                            <Optional m_Enabled="$enable_combat_spear">
                                 <ExternalTree m_UID="HUMAN_COMBAT_SPEAR" m_CustomName="Spear" m_Hide="true"/>
-                            </Optional>
-                            <Optional m_Enabled="$enable_combat_two_handed">
                                 <ExternalTree m_UID="HUMAN_COMBAT_TWO_HANDED" m_CustomName="TwoHanded" m_Hide="true"/>
-                            </Optional>
+                            </Selector>
                         </SelectorMem>
                     </Selector>
                 </Sequence>

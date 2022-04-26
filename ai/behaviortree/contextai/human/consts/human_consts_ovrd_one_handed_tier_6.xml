@@ -21,11 +21,17 @@
     <Param m_Name="$enable_attack_counter" m_Value="true"/>
     <Param m_Name="$enable_attack_push" m_Value="true"/>
     <Param m_Name="$enable_attack_push_followup" m_Value="true"/>
-    <Param m_Name="$enable_attack_step_back" m_Value="false"/>
+    <Param m_Name="$enable_attack_step_back" m_Value="true"/>
 	<!-- overrides - bow -->
     <Param m_Name="$enable_combat_bow" m_Value="true"/>
 	<Param m_Name="$enable_search" m_Value="true"/>
     <Param m_Name="$enable_poi_inspection" m_Value="true"/>
+	<!-- molotov throw -->
+    <Param m_Name="$enable_molotov_throw" m_Value="true"/>
+    <Param m_Name="$molotov_throw_min_range" m_Value="4"/>
+    <Param m_Name="$molotov_throw_max_range" m_Value="25"/>
+    <Param m_Name="$molotov_throw_max_angle" m_Value="90.0"/>
+    <Param m_Name="$molotov_throw_cooldown" m_Value="8.0"/>
 	<!-- defensive moves -->
     <Param m_Name="$attack_push_max_range" m_Value="3.5"/>
     <!-- bow - single shot -->
@@ -39,4 +45,14 @@
     <Param m_Name="$bow_aim_delay" m_Value="0.75"/>
     <Param m_Name="$bow_arrow_speed" m_Value="20"/>
     <Param m_Name="$bow_arrow_correction_angle" m_Value="0"/>
+	<!-- COMBAT - PANIC AND RETREAT -->
+    <Param m_Name="$enable_retreat" m_Value="true"/>
+    <Param m_Name="$forced_retreat_from_player" m_Value="false"/>
+    <Param m_Name="$disable_forced_retreat_if_cornered" m_Value="false"/>
+    <!-- panic -->
+    <Param m_Name="$enable_panic" m_Value="true"/>
+    <Param m_Name="$panic_last_man_prob" m_Value="0.5"/>
+    <!-- retreat -->
+    <Param m_Name="$enable_retreat_from_high_threat" m_Value="true"/>
+    <Param m_Name="$retreat_avoid_connections_min_cost_mul" m_Value="1"/>
 </ConstParams>

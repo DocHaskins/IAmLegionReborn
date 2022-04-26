@@ -4,16 +4,20 @@
         <!-- translate move style -->
         <Selector>
             <Sequence>
-                <Cnd_IsBBValueEqual_string m_Key="#request_move_style" m_Value="Run"/>
-                <Opr_SetBBValue_string m_Key="#move_style" m_Value="#move_style_run"/>
+                <Cnd_IsBBValueEqual_string m_Key="#request_move_style" m_Value="notice_walk"/>
+                <Opr_SetBBValue_string m_Key="#move_style" m_Value="notice_walk"/>
             </Sequence>
             <Sequence>
-                <Cnd_IsBBValueEqual_string m_Key="#request_move_style" m_Value="Trot"/>
-                <Opr_SetBBValue_string m_Key="#move_style" m_Value="#move_style_trot"/>
+                <Cnd_IsBBValueEqual_string m_Key="#request_move_style" m_Value="notice_walk_degenerated"/>
+                <Opr_SetBBValue_string m_Key="#move_style" m_Value="notice_walk_degenerated"/>
+            </Sequence>
+			<Sequence>
+                <Cnd_IsBBValueEqual_string m_Key="#request_move_style" m_Value="Walk_To_Enemy"/>
+                <Opr_SetBBValue_string m_Key="#move_style" m_Value="Walk_To_Enemy"/>
             </Sequence>
             <Sequence>
-                <Cnd_IsBBValueEqual_string m_Key="#request_move_style" m_Value="Walk"/>
-                <Opr_SetBBValue_string m_Key="#move_style" m_Value="#move_style_walk"/>
+                <Cnd_IsBBValueEqual_string m_Key="#request_move_style" m_Value="Degenerated_Walk"/>
+                <Opr_SetBBValue_string m_Key="#move_style" m_Value="Degenerated_Walk"/>
             </Sequence>
             <Opr_SetBBValue_string m_Key="#move_style" m_Value="#request_move_style"/>
         </Selector>

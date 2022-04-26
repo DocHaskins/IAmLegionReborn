@@ -14,7 +14,7 @@ sub BarkLogicExported()
 
     Group("Combat")
     {
-        Cnd_CooldownTime(10.0);
+        Cnd_CooldownTime(20.0);
         Cnd_ExpireTime(0.5);
         Cnd_GlobalDelayBetweenBarks(6.0);
         Cnd_PlayerProxmity(2.0, 50.0);
@@ -103,9 +103,9 @@ sub BarkLogicExported()
 
     Group("Threatening")
     {
-        Cnd_CooldownTime(5.0);
+        Cnd_CooldownTime(25.0);
         Cnd_ExpireTime(1.0);
-        Cnd_GlobalDelayBetweenBarks(6.0);
+        Cnd_GlobalDelayBetweenBarks(20.0);
         //
         Bark("threatening_warning");
         Bark("threatening_last_warning");
@@ -114,9 +114,9 @@ sub BarkLogicExported()
 
     Group("Investigation_Reactions")
     {
-        Cnd_CooldownTime(1.0);
+        Cnd_CooldownTime(20.0);
         Cnd_ExpireTime(1.0);
-        Cnd_GlobalDelayBetweenBarks(1.0);
+        Cnd_GlobalDelayBetweenBarks(6.0);
         //
         Bark("enemy_unrecognized");
         Bark("enemy_suspicious");
@@ -141,7 +141,7 @@ sub BarkLogicExported()
     {
         Cnd_CooldownTime(20.0);
         Cnd_ExpireTime(2.0);
-        Cnd_GlobalDelayBetweenBarks(1.0);
+        Cnd_GlobalDelayBetweenBarks(5.0);
         //
         Bark("poi_possible_enemy");
         Bark("poi_investigation_start");

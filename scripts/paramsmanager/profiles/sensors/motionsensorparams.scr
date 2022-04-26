@@ -1,0 +1,24 @@
+sub main()
+{
+    SensorParamsMotion("default")
+    {
+        min_fall_height("0.5");
+        fall_threshold("0.01");
+        fall_navmesh_threshold_xz("0.1");
+        fall_navmesh_threshold_y("0.1");
+        walk_navmesh_threshold_xz("1.0");
+        walk_navmesh_threshold_y("1.0");
+        can_fall("true");
+    }
+	
+	SensorParamsMotion("biter_default")
+    {
+        min_fall_height("0.1");
+        fall_threshold("0.01");
+        fall_navmesh_threshold_xz("0.1");
+        fall_navmesh_threshold_y("0.1");
+        walk_navmesh_threshold_xz("0.5");
+        walk_navmesh_threshold_xz("0.5");
+        can_fall("true");
+    }
+}

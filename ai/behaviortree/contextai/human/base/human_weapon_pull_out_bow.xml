@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SelectorMem>
+        <Cnd_HasActiveWeapon m_WeaponType="Bow"/>
+        <Optional m_Enabled="$weapon_anim_switch_enabled">
+            <SequenceMem>
+                <Cnd_CanInterruptActivityModule_Movement/>
+                <Cnd_IsSwitchingWeapon m_Invert="true"/>
+                <Cnd_HasWeaponInInventory m_WeaponType="Bow"/>
+                <Optional m_Enabled="$weapon_holster_enabled">
+                    <Opr_GetModifiedTime m_TimePoint="#weapon_holster_cooldown" m_TimeDelta="#weapon_holster_delay"/>
+                </Optional>
+                <SelectorMem>
+                    <Cnd_HasActiveWeapon m_WeaponType="OneHandedMelee" m_Hand="RIGHT"/>
+                    <Act_ChangeWeapon m_WeaponType="NONE" m_Hand="RIGHT" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+                </SelectorMem>
+				<Opr_SetWeapon m_WeaponType="NONE" m_Hand="RIGHT"/>
+                <Act_ChangeWeapon m_WeaponType="Bow" m_Hand="LEFT" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+            </SequenceMem>
+        </Optional>
+        <Optional m_Enabled="$weapon_no_anim_switch_enabled">
+            <Sequence>
+                <Cnd_HasWeaponInInventory m_WeaponType="Bow"/>
+                <Opr_SetWeapon m_WeaponType="NONE" m_Hand="RIGHT"/>
+                <Opr_SetWeapon m_WeaponType="Bow" m_Hand="LEFT"/>
+            </Sequence>
+        </Optional>
+    </SelectorMem>
+</BehaviorTree>

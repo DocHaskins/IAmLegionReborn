@@ -4,6 +4,7 @@
         <Cnd_HasBBValue m_Key="#target"/>
         <SequenceMem>
             <Cnd_CanStartTask m_StartPolicy="DISCARD"/>
+			<Cnd_CanInterruptActivityModule_Movement/>
             <Cnd_IsPoseEqual m_Pose="Standing"/>
             <Cnd_IsActivityModuleRunning_HitReaction m_Invert="true"/>
             <Selector>
@@ -96,7 +97,6 @@
                             <Act_Move m_Destination="#target_pos" m_LocomotionSpeed="#degenerated_speed" m_MoveStyle="#move_style" m_StopAtDest="false" m_FailIfDestUnreachable="false" m_MaxDistOutsideNavmeshXZ="2" m_MaxDistOutsideNavmeshY="2" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
                         </Sequence>
                     </Selector>
-                    <Act_Idle m_Type="Stand" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT"/>
                 </Selector>
             </Selector>
         </SequenceMem>

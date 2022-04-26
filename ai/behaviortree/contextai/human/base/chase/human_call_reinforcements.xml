@@ -2,15 +2,15 @@
 <BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
     <CooldownTimeDeltaRandom m_MaxCooldownTime="$summon_cooldown_max" m_MinCooldownTime="$summon_cooldown_min" m_CooldownOnAbort="true">
         <SequenceMem>
+			<Cnd_CanStartTask m_StartPolicy="INTERRUPT"/>											 
             <Optional m_Enabled="$allow_only_one_summon_completion">
-                <Cnd_HasBBValue m_Key="#reinforcements_summoned" m_Invert="true"/>
+                <Cnd_HasSummonedAlliesAtLeastOnce m_Invert="true"/>
             </Optional>
             <Cnd_HasBBValue m_Key="#target"/>
             <Cnd_IsPlayer m_Target="#target"/>
-            <Cnd_TargetInRadius m_Target="#target" m_Radius="50.0" m_HorizontalOnly="true"/>
+            <Cnd_TargetInRadius m_Target="#target" m_Radius="30" m_HorizontalOnly="true"/>
             <Cnd_IsHeightDiffToTargetGreater m_Target="#target" m_HeightDiff="5.0" m_Invert="true"/>
             <Cnd_IsNight m_Invert="true"/>
-            <Cnd_HasTimePassed m_TimePoint="#summoning_taunt_time"/>
             <Cnd_CanSummonReinforcements/>
             <Cnd_HasWeaponInInventory m_WeaponType="SummoningTool"/>
             <Opr_EvaluateDistanceCost m_Cost="#summon_cost" m_Position="#target_pos" m_Inverse="true"/>
@@ -20,7 +20,7 @@
                     <SequenceMem>
                         <TimeDeltaLimit m_TimeMax="5" m_StatusReturned="SUCCESS">
                             <Selector>
-                                <Cnd_TargetInRadius m_Target="#target" m_Radius="$min_distance_from_target_to_summon" m_Invert="true"/>
+                                <Cnd_IsCombatTargetInRadius m_Radius="$min_distance_from_target_to_summon" m_Invert="true"/>
                                 <Sequence>
                                     <Opr_GetSelfPosition m_Position="#self_pos"/>
                                     <Opr_GetDirectionFromPosition m_Position="#target_pos" m_Origin="#self_pos" m_Direction="#flee_dir" m_CalcInXZ="true"/>
@@ -39,7 +39,6 @@
                         <Opr_GetSelfPosition m_Position="#self_pos"/>
                         <Opr_MakeNoise m_NoiseUid="summoning_horn" m_Position="#self_pos"/>
                         <Act_SummonAllies m_CustomDuration="8.0" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
-                        <Opr_MakeNoise m_NoiseUid="summoning_horn" m_Position="#self_pos"/>
                         <Opr_SetBBValue_bool m_Key="#reinforcements_summoned" m_Value="true"/>
                     </SequenceMem>
                 </ExposeLogicState>

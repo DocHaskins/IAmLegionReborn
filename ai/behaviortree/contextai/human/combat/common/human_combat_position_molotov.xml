@@ -4,19 +4,15 @@
         <Sequence>
             <Opr_RequestBarkTarget m_Player="Combat_Idle_Taunt_Player" m_Human="combat_idle_taunt_human" m_Infected="combat_idle_taunt_infected" m_Priority="Low"/>
             <Selector>
-                <ExternalTree m_UID="HUMAN_GO_TO_HIGH_GROUND" m_CustomName="Go to high ground" m_Hide="true"/>
 				<ExternalTree m_UID="HUMAN_COMBAT_HOLD_POSITION" m_CustomName="HoldPosition" m_Hide="true"/>
-                <ExternalTree m_UID="HUMAN_COMBAT_USE_VANTAGE_SLOT" m_CustomName="VantageSlot" m_Hide="true"/>
+                <ExternalTree m_UID="HUMAN_COMBAT_USE_MELEE_SLOT_ONE_HANDED" m_CustomName="MeleeSlot" m_Hide="true"/>
                 <ExternalTree m_UID="HUMAN_COMBAT_USE_IDLE_SLOT_ONE_HANDED" m_CustomName="IdleSlot" m_Hide="true"/>
-                <ExternalTree m_UID="HUMAN_COMBAT_KEEP_IDLE_DISTANCE_ONE_HANDED" m_CustomName="IdleDistance" m_Hide="true"/>
+                <ExternalTree m_UID="HUMAN_COMBAT_KEEP_RESTRICTED_AREA" m_CustomName="RestrictedArea" m_Hide="true"/>
                 <ExternalTree m_UID="HUMAN_COMBAT_IDLE" m_CustomName="Idle" m_Hide="true"/>
             </Selector>
         </Sequence>
         <Runner>
-            <SequenceMem>
-                <ExternalTree m_UID="HUMAN_WEAPON_PULL_OUT_BOW" m_CustomName="PullOutBow" m_Hide="true"/>
-                <ExternalTree m_UID="HUMAN_WEAPON_RELOAD" m_CustomName="WeaponReload" m_Hide="true"/>
-            </SequenceMem>
+            <ExternalTree m_UID="HUMAN_WEAPON_PULL_OUT_MOLOTOV" m_CustomName="PullOutThrowable" m_Hide="true"/>
         </Runner>
     </Parallel>
 </BehaviorTree>

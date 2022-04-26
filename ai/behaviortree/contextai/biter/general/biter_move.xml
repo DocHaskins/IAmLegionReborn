@@ -17,11 +17,7 @@
             <ExposeMoveState m_Destination="#request_move_dest_pos" m_GroupDestination="#group_destination">
                 <Selector>
                     <!-- group gather -->
-                    <Optional m_Enabled="$request_move_gather_enabled">
-                        <Failer>
-                            <ExternalTree m_UID="BITER_MOVE_GROUP_GATHER" m_CustomName="GroupGather" m_Hide="true"/>
-                        </Failer>
-                    </Optional>
+                    <ExternalTree m_UID="BITER_MOVE_GROUP_GATHER" m_CustomName="GroupGather" m_Hide="true"/>
                     <!-- generic look around -->
                     <ExternalTree m_UID="BITER_MOVE_SIMPLE" m_CustomName="MoveSimple" m_Hide="true"/>
                 </Selector>

@@ -3897,16 +3897,16 @@ sub main()
 
 	Damage("AI_Throwable_Knife_Damage")
     {
-        Physical("5% of MaxHealth");
+        Physical("25% of MaxHealth");
     }
 	Damage("AI_Throwable_KnifeBoss_Damage")
     {
-        Physical("5%-12% of MaxHealth");
+        Physical("25%-35% of MaxHealth");
     }
 
     Damage("AI_Throwable_Stone_Damage")
     {
-        Physical("2% of MaxHealth");
+        Physical("6% of MaxHealth");
     }
 
 	Damage("JumpOnHeadDamage")
@@ -4036,12 +4036,12 @@ sub main()
 
     Damage("HumanAI_NonActorHit")
     {
-        Physical("30");
+        Physical("35");
     }
 
     Damage("AI_DominoHitHeavy")
     {
-        Physical("30% of MaxHealth");
+        Physical("20% of MaxHealth");
     }
 
     Damage("AI_DominoHitLight")
@@ -4066,7 +4066,7 @@ sub main()
 
     DamageMul("AI_BiterHeadshot")
     {
-        Physical("+4");
+        Physical("+5");
     }
 
     DamageMul("AI_BiterLevel1")
@@ -4137,7 +4137,7 @@ sub main()
 
     DamageMul("AI_BaseDamageMul")
     {
-        Physical("+0.0");
+        Physical("+0.5");
     }
     DamageTotalMul("AI_Human_ComboAttackDamageMul")
     {
@@ -4185,51 +4185,51 @@ sub main()
     }
 	DamageTotalMul("AI_LowDamageMul_Tier2")
     {
-        Physical("0.85");
-		Cut("0.85");
-		Blunt("0.85");
+        Physical("1.0");
+		Cut("1.0");
+		Blunt("1.0");
     }
 	DamageTotalMul("AI_LowDamageMul_Tier3")
     {
-        Physical("0.75");
-		Cut("0.75");
-		Blunt("0.75");
+        Physical("1.0");
+		Cut("1.0");
+		Blunt("1.0");
     }
 	DamageTotalMul("AI_LowDamageMul_Tier4")
     {
-        Physical("0.6");
-		Cut("0.6");
-		Blunt("0.6");
+        Physical("1.0");
+		Cut("1.0");
+		Blunt("1.0");
     }
 	DamageTotalMul("AI_LowDamageMul_Tier5")
     {
-        Physical("0.5");
-		Cut("0.5");
-		Blunt("0.5");
+        Physical("1.0");
+		Cut("1.0");
+		Blunt("1.0");
     }
 	DamageTotalMul("AI_LowDamageMul_Tier6")
     {
-        Physical("0.4");
-		Cut("0.4");
-		Blunt("0.4");
+        Physical("1.0");
+		Cut("1.0");
+		Blunt("1.0");
     }
 	DamageTotalMul("AI_LowDamageMul_Tier7")
     {
-        Physical("0.4");
-		Cut("0.4");
-		Blunt("0.4");
+        Physical("1.0");
+		Cut("1.0");
+		Blunt("1.0");
     }
 	DamageTotalMul("AI_LowDamageMul_Tier8")
     {
-        Physical("0.4");
-		Cut("0.4");
-		Blunt("0.4");
+        Physical("1.0");
+		Cut("1.0");
+		Blunt("1.0");
     }
 	DamageTotalMul("AI_LowDamageMul_Tier9")
     {
-        Physical("0.5");
-		Cut("0.5");
-		Blunt("0.5");
+        Physical("1.0");
+		Cut("1.0");
+		Blunt("1.0");
     }
 	DamageTotalMul("AI_LowDamageMul_Ranged_Tier1")
     {
@@ -4237,35 +4237,35 @@ sub main()
     }
 	DamageTotalMul("AI_LowDamageMul_Ranged_Tier2")
     {
-        Ranged("0.65");
+        Ranged("0.7");
     }
 	DamageTotalMul("AI_LowDamageMul_Ranged_Tier3")
     {
-        Ranged("0.6");
+        Ranged("0.7");
     }
 	DamageTotalMul("AI_LowDamageMul_Ranged_Tier4")
     {
-        Ranged("0.55");
+        Ranged("0.7");
     }
 	DamageTotalMul("AI_LowDamageMul_Ranged_Tier5")
     {
-        Ranged("0.5");
+        Ranged("0.7");
     }
 	DamageTotalMul("AI_LowDamageMul_Ranged_Tier6")
     {
-        Ranged("0.45");
+        Ranged("0.7");
     }
 	DamageTotalMul("AI_LowDamageMul_Ranged_Tier7")
     {
-        Ranged("0.4");
+        Ranged("0.7");
     }
 	DamageTotalMul("AI_LowDamageMul_Ranged_Tier8")
     {
-        Ranged("0.4");
+        Ranged("0.7");
     }
 	DamageTotalMul("AI_LowDamageMul_Ranged_Tier9")
     {
-        Ranged("0.4");
+        Ranged("0.7");
     }	
 	
 	
@@ -4296,7 +4296,7 @@ sub main()
 
     DamageDps("AI_ZombieData_Drowning")
     {
-        Drowning("50% of MaxHealth");
+        Drowning("1% of MaxHealth");
     }
 
     Damage("HumanAI_ImmediateDrowning")
@@ -4321,12 +4321,12 @@ sub main()
 
     Damage("AI_BiterProfileBurning_BurningDamagePerSec")
     {
-        All("3");
+        All("5");
     }
 
     Damage("AI_DamageTarget_BaseDamage")
     {
-        Physical("1");
+        Physical("3");
     }
 	
 	Damage("Suicider_Explosion_Level_1")
@@ -6354,44 +6354,44 @@ sub main()
 
     Damage("SpearThrow")
     {
-        Physical("200");
+        Physical("300");
     }
 	
 	Damage("SpearThrow_RGD1")    ///100% Biter - 100% Human One handed
     {
-        Physical("80-102");
+        Physical("300");
     }
 	Damage("SpearThrow_RGD2")
     {
-        Physical("128-151");
+        Physical("300");
     }
 	Damage("SpearThrow_RGD3") 
     {
-        Physical("178-230");
+        Physical("300");
     }
 	Damage("SpearThrow_RGD4") 
     {
-        Physical("260-358");
+        Physical("300");
     }
 	Damage("SpearThrow_RGD5")
     {
-        Physical("332-546");
+        Physical("300");
     }
 	Damage("SpearThrow_RGD6")
     {
-        Physical("432-810");
+        Physical("300");
     }
 	Damage("SpearThrow_RGD7") 
     {
-        Physical("566-1254");
+        Physical("300");
     }
 	Damage("SpearThrow_RGD8")
     {
-        Physical("706-2016");
+        Physical("300");
     }
 	Damage("SpearThrow_RGD9")
     {
-        Physical("794-3180");
+        Physical("300");
     }
 	
 	
@@ -6884,11 +6884,11 @@ sub main()
     }
 	Damage("MolotovCoctailSpit")
     {
-        Fire("5% of MaxHealth");
+        Fire("15% of MaxHealth");
     }
     DamageDps("AIFireDamageOverTime")
     {
-        Fire("5");
+        Fire("10");
     }
     DamageDps("AIElectrocutedDamageOverTime")
     {
@@ -6916,7 +6916,7 @@ sub main()
     }
     DamageMul("ElectricityDamageDuringWet")
     {
-        Electricity("+1.0");
+        Electricity("+5.0");
     }
     Damage("Screamer_Scream")
     {
@@ -7048,23 +7048,23 @@ sub main()
     }
 	Damage("Portable_Tank_Blast_tier_1") //25%-50% OneHanded
     {
-        Blast("25-51");
+        Blast("150-250");
     }
 	Damage("Portable_Tank_Blast_tier_2")
     {
-        Blast("37-75");
+        Blast("150-250");
     }
 	Damage("Portable_Tank_Blast_tier_3")
     {
-        Blast("57-115");
+        Blast("150-250");
     }
 	Damage("Portable_Tank_Blast_tier_4")
     {
-        Blast("89-179");
+        Blast("150-250");
     }
 	Damage("Portable_Tank_Blast_tier_5")
     {
-        Blast("136-273");
+        Blast("186-273");
     }
 	Damage("Portable_Tank_Blast_tier_6")
     {
@@ -7090,15 +7090,15 @@ sub main()
     
     Damage("portable_tank_explosive_tier_1")   //50-100% One Handed
     {
-        Blast("51-102");
+        Blast("150-250");
     }
     Damage("portable_tank_explosive_tier_2")
     {
-        Blast("75-151");
+        Blast("150-250");
     }
     Damage("portable_tank_explosive_tier_3")
     {
-        Blast("115-230");
+        Blast("150-250");
     }
     Damage("portable_tank_explosive_tier_4")
     {
@@ -7201,7 +7201,7 @@ sub main()
 	
     Damage("Damageable_Tank_Explosive")
     {
-        Blast("70");
+        Blast("150");
     }
 	
     Damage("molotov_lantern_small_tier_1")   //50-100% of Biter XL Health
@@ -7266,15 +7266,15 @@ sub main()
 	
 	Damage("Shotgun_Damage")
     {
-		Ranged("30");
+		Ranged("80");
     }
 	Damage("Shotgun_Damage_Upgrade1")
     {
-		Ranged("40");
+		Ranged("120");
     }
 	Damage("Shotgun_Damage_Upgrade4")
     {
-		Ranged("50");
+		Ranged("150");
     }
 
 	Damage("Shotgun_Damage_Point1")

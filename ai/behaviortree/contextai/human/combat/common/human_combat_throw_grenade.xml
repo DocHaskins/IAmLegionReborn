@@ -7,7 +7,7 @@
             <Cnd_HasActiveWeapon m_WeaponType="LightThrowObj" m_Hand="RIGHT"/>
             <Cnd_IsCombatTargetInAngle m_Angle="$molotov_throw_max_angle"/>
             <Cnd_DistanceToTargetBetween m_Target="#target" m_MinDistance="$molotov_throw_min_range" m_MaxDistance="$molotov_throw_max_range"/>
-            <Cnd_IsTargetApproaching m_Target="#target" m_MinVel="0.1" m_MaxAngle="45" m_Invert="true"/>
+            <Cnd_IsTargetApproaching m_Target="#target" m_MinVel="1" m_MaxAngle="45" m_Invert="true"/>
             <Cnd_IsTargetVisible m_Target="#target"/>
             <Selector>
                 <!-- target is higher - throw at him directly -->
@@ -17,16 +17,16 @@
                 </Sequence>
                 <!-- target is close to group members - look for spot behind target-->
                 <Sequence>
-                    <Cnd_IsOtherGroupMemberCloseToPosition m_Position="#target_pos" m_MaxDistance="6"/>
-                    <Opr_GetThrowTargetPosition m_Target="#target" m_Position="#throw_pos" m_Offset="-10"/>
+                    <Cnd_IsOtherGroupMemberCloseToPosition m_Position="#target_pos" m_MaxDistance="15"/>
+                    <Opr_GetThrowTargetPosition m_Target="#target" m_Position="#throw_pos" m_Offset="-4"/>
                 </Sequence>
                 <!-- throw in front of target -->
-                <Opr_GetThrowTargetPosition m_Target="#target" m_Position="#throw_pos"  m_Offset="3"/>
+                <Opr_GetThrowTargetPosition m_Target="#target" m_Position="#throw_pos"  m_Offset="2"/>
             </Selector>
             <Cnd_IsOtherGroupMemberCloseToPosition m_Position="#throw_pos" m_MaxDistance="5" m_Invert="true"/>
             <Cnd_IsThrowTrajectoryValid m_Position="#throw_pos" m_WeaponType="LightThrowObj"/>
             <Parallel m_PolicyFailure="REQUIRE_ONE" m_PolicySuccess="REQUIRE_ONE">
-                <Act_Throw m_Type="Molotov" m_TargetPosition="#throw_pos" m_WeaponType="LightThrowObj" m_UseBullet="false" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+                <Act_Throw m_Type="Grenade" m_TargetPosition="#throw_pos" m_WeaponType="LightThrowObj" m_UseBullet="false" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
                 <Runner>
                     <Sequence>
                         <Opr_GetDirectionToPosition m_Position="#throw_pos" m_Direction="#dir_to_target"/>

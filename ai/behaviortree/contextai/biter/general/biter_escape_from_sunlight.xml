@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <CooldownTimeDelta m_CooldownTime="2.0">
+        <SequenceMem>
+			<Cnd_CanInterruptActivityModule_Movement/>
+            <Selector>
+                <Sequence>
+                    <Cnd_IsInSunlight/>
+                    <Opr_StartBodyState m_State="SUNLIGHT_REACTION" m_Duration="1.0"/>
+                    <Cnd_IsBBValueGreater_float m_Key="#uv_progress" m_Value="0.2"/>
+                </Sequence>
+                <Sequence>
+                    <Cnd_IsNightEnding/>
+                    <Cnd_IsInDarkzone m_Invert="true"/>
+                </Sequence>
+            </Selector>
+            <Selector>
+                <Sequence>
+                    <Opr_FindPositionForSunlightRetreat m_Position="#sunlight_retreat_pos"/>
+                    <Opr_SetBBValue_bool m_Key="#run_to_starting_pos" m_Value="false"/>
+                </Sequence>
+                <Opr_SetBBValue_bool m_Key="#run_to_starting_pos" m_Value="true"/>
+            </Selector>
+            <SelectorMem>
+                <SequenceMem>
+                    <Cnd_IsBBValueEqual_bool m_Key="#run_to_starting_pos" m_Value="false"/>
+                    <Act_Move m_Destination="#sunlight_retreat_pos" m_MoveStyle="#sunlight_escape_movestyle" m_FailIfDestUnreachable="true" m_MaxDistOutsideNavmeshXZ="5" m_MaxDistOutsideNavmeshY="5" m_StopAtDest="true" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                </SequenceMem>
+                <Act_Move m_Destination="#ai_starting_pos" m_MoveStyle="#sunlight_escape_movestyle" m_FailIfDestUnreachable="true" m_MaxDistOutsideNavmeshXZ="5" m_MaxDistOutsideNavmeshY="5" m_StopAtDest="true" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+            </SelectorMem>
+            <Opr_GetCurrentTime m_TimePoint="#sunlight_escape_time"/>
+        </SequenceMem>
+    </CooldownTimeDelta>
+</BehaviorTree>

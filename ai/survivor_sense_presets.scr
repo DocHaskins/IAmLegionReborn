@@ -1,0 +1,200 @@
+// HighestAlphaDistance("5.0") - distance from the player where alpha has its highest value, so the visual effect is strongest
+// MaxVisibilityDistance("10.0") - max distance where the visual effect is still visible
+
+sub SurvivorSensePreset()
+{   
+    SurvivorSensePreset("Preset_red")	//all generic enemies - Biters, 1H Humans, etc.
+    {
+        ColorR("191");
+        ColorG("45");
+        ColorB("45");
+        ColorAMin("0");
+        ColorAMax("150");
+		HighestAlphaDistance("20.0");
+        ColorAMinNight("0");
+        ColorAMaxNight("150");
+		HighestAlphaDistanceNight("20.0");
+		MaxVisibilityDistance("20.0");
+    }
+	SurvivorSensePreset("Preset_red_strong")	//Stronger enemies - goon, demolisher, camp boss. lieutenants, virals, all special infected
+    {
+        ColorR("200");
+        ColorG("0");
+        ColorB("0");
+        ColorAMin("0");
+        ColorAMax("255");
+		HighestAlphaDistance("20.0");
+        ColorAMinNight("0");
+        ColorAMaxNight("255");
+		HighestAlphaDistanceNight("20.0");
+		MaxVisibilityDistance("20.0");
+    }
+    
+    SurvivorSensePreset("Preset_white")    //  Deafault NPC preset, not used
+    {
+		ColorR("238");
+        ColorG("226");
+        ColorB("226");
+        ColorAMin("0");
+        ColorAMax("255");
+        HighestAlphaDistance("20.0");
+        ColorAMinNight("0");
+        ColorAMaxNight("255");
+        HighestAlphaDistanceNight("20.0");
+		MaxVisibilityDistance("20.0");
+    }
+    
+    SurvivorSensePreset("Preset_blue")   //not used, maybe PKS?
+    {
+        ColorR("100");
+        ColorG("100");
+        ColorB("255");
+        ColorAMin("0");
+        ColorAMax("255");
+		HighestAlphaDistance("20.0");
+        ColorAMinNight("0");
+        ColorAMaxNight("255");
+		HighestAlphaDistanceNight("20.0");
+		MaxVisibilityDistance("20.0");
+    }
+	
+	SurvivorSensePreset("Preset_grey")   //not used, maybe PKS?
+    {
+        ColorR("238");
+        ColorG("226");
+        ColorB("226");
+        ColorAMin("0");
+        ColorAMax("255");
+		HighestAlphaDistance("20.0");
+        ColorAMinNight("0");
+        ColorAMaxNight("255");
+		HighestAlphaDistanceNight("20.0");
+		MaxVisibilityDistance("20.0");
+    }
+	
+	SurvivorSensePreset("Preset_quest")   // Quest NPCs
+    {
+        ColorR("89");
+        ColorG("191");
+        ColorB("89");
+        ColorAMin("0");
+        ColorAMax("100");
+		HighestAlphaDistance("20.0");
+        ColorAMinNight("0");
+        ColorAMaxNight("100");
+		HighestAlphaDistanceNight("20.0");
+		MaxVisibilityDistance("20.0");
+    }
+	
+	SurvivorSensePreset("Preset_shopkeeper")   // Shopkeepers NPCs
+    {
+        ColorR("238");
+        ColorG("226");
+        ColorB("226");
+        ColorAMin("0");
+        ColorAMax("255");
+		HighestAlphaDistance("20.0");
+        ColorAMinNight("0");
+        ColorAMaxNight("255");
+		HighestAlphaDistanceNight("20.0");
+		MaxVisibilityDistance("20.0");
+    }
+	
+	SurvivorSensePreset("Preset_yellow")   //Bolter - non offensive units
+    {
+        ColorR("236");
+        ColorG("82");
+        ColorB("32");
+        ColorAMin("100");
+        ColorAMax("200");
+		HighestAlphaDistance("20.0");
+        ColorAMinNight("100");
+        ColorAMaxNight("200");
+		HighestAlphaDistanceNight("20.0");
+		MaxVisibilityDistance("20.0");
+    }
+
+    SurvivorSensePreset("heavy_attack")	//heavy attack indicator
+    {
+        ColorR("230");
+        ColorG("3");
+        ColorB("28");
+        ColorAMin("50");
+        ColorAMax("255");
+		HighestAlphaDistance("5.0");
+        ColorAMinNight("50");
+        ColorAMaxNight("255");
+		HighestAlphaDistanceNight("5.0");
+		MaxVisibilityDistance("10.0");
+    }
+	
+	SurvivorSensePreset("Preset_gameplay_objects")	//Default preset for all objects that are not AI
+    {
+        ColorR("238");
+        ColorG("226");
+        ColorB("226");
+        ColorAMin("10");
+        ColorAMax("40");
+		HighestAlphaDistance("10.0");
+        ColorAMinNight("10");
+        ColorAMaxNight("40");
+		HighestAlphaDistanceNight("10.0");
+		MaxVisibilityDistance("20.0");
+    }
+    
+    SurvivorSensePreset("Preset_gameplay_objects_red") // Same as default, but red color
+    {
+        ColorR("191");
+        ColorG("45");
+        ColorB("45");
+        ColorAMin("10");
+        ColorAMax("100");
+		HighestAlphaDistance("10.0");
+        ColorAMinNight("10");
+        ColorAMaxNight("100");
+		HighestAlphaDistanceNight("10.0");
+		MaxVisibilityDistance("20.0");
+    }
+	
+	SurvivorSensePreset("Preset_investigation_objects")
+    {
+        ColorR("255");
+        ColorG("0");
+        ColorB("0");
+        ColorAMin("50");
+        ColorAMax("150");
+		HighestAlphaDistance("10.0");
+        ColorAMinNight("50");
+        ColorAMaxNight("150");
+		HighestAlphaDistanceNight("10.0");
+		MaxVisibilityDistance("20.0");
+    }
+	
+	SurvivorSensePreset("Preset_containers")
+    {
+        ColorR("237");
+        ColorG("205");
+        ColorB("125");
+        ColorAMin("10");
+        ColorAMax("45");
+		HighestAlphaDistance("7.5");
+        ColorAMinNight("10");
+        ColorAMaxNight("45");
+		HighestAlphaDistanceNight("7.5");
+		MaxVisibilityDistance("20.0");
+    }
+	
+	SurvivorSensePreset("Preset_hiding_spots")
+    {
+		ColorR("238");
+        ColorG("226");
+        ColorB("226");
+        ColorAMin("100");
+        ColorAMax("200");
+		HighestAlphaDistance("10.0");
+        ColorAMinNight("100");
+        ColorAMaxNight("200");
+		HighestAlphaDistanceNight("10.0");
+		MaxVisibilityDistance("20.0");
+    }
+}

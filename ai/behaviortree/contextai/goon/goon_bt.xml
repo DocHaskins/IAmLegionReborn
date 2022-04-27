@@ -4,6 +4,9 @@
         <Sequence>
             <ExternalTree m_UID="AI_COMMON_INIT" m_CustomName="Params" m_Hide="true"/>
             <ExternalTree m_UID="GOON_INIT" m_CustomName="Params" m_Hide="true"/>
+			<Optional m_Enabled="$enable_initial_body_state">
+                <Opr_StartBodyState m_State="$initial_body_state" m_Duration="$initial_body_state_duration"/>
+            </Optional>
         </Sequence>
         <SequenceMem>
             <Selector>

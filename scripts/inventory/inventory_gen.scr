@@ -59174,4 +59174,18 @@ sub main()
         GameVersion(4);
         DamageHeadMult(6.0);
     }
+	
+	Item("wpn_pipe", CategoryType_Melee)
+    {
+        use wpn_1hs_mach_e();
+        Condition(40);
+        CriticalCondition(15);
+        StaminaDamage(0);
+        StaminaUsage(0.11);
+        Price(380);
+        TierSpread(0, 1);
+        Rank(1);
+        GameVersion(5);
+        UID("6849290613102027391");
+    }
 }

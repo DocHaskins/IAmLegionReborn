@@ -25,6 +25,12 @@
                             <ExternalTree m_UID="GOON_ATTACK_HORIZONTAL" m_CustomName="Attack_Horizontal" m_Hide="true"/>
                         </Optional>
                     </Selector>
+					<Optional m_Enabled="$enable_elemental_ranged_attacks">
+                        <ExternalTree m_UID="GOON_ATTACK_HORIZONTAL_ELEMENTAL" m_CustomName="Stomp" m_Hide="true"/>
+                    </Optional>
+                    <Optional m_Enabled="$enable_elemental_ranged_attacks">
+                        <ExternalTree m_UID="GOON_ATTACK_AOE_LOW" m_CustomName="Stomp" m_Hide="true"/>
+                    </Optional>
                 </SelectorMem>
                 <Sequence m_Hide="true">
                     <Cnd_HasBBValue m_Key="#target"/>

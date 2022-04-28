@@ -113,7 +113,7 @@ sub Loot()
 	
 	LootedObject("DefaultAILoot")
     {
-        ColorSet(ColorSet_DefaultZombieLoot);
+		ColorSet(ColorSet_DefaultZombieLoot);
 		LootAmount(1);
 		use Empty(weight = 50.0, min_amount = 1, max_amount = 1);
 		use DefaultAILoot (weight = 50.0, min_amount = 1, max_amount = 1);
@@ -121,7 +121,7 @@ sub Loot()
 	
 	LootedObject("DefaultBiterLoot")
     {
-        ColorSet(ColorSet_DefaultZombieLoot);
+		ColorSet(ColorSet_DefaultZombieLoot);
 		LootAmount(1);
 		use Empty(weight = 2.0, min_amount = 0, max_amount = 1);
 		use DefaultAILoot (weight = 1.0, min_amount = 0, max_amount = 1);
@@ -136,7 +136,7 @@ sub Loot()
 	
 	LootedObject("T2_BiterLoot")
     {
-        ColorSet(ColorSet_DefaultZombieLoot);
+		ColorSet(ColorSet_DefaultZombieLoot);
 		LootAmount(1);
 		use Empty(weight = 1.8, min_amount = 0, max_amount = 1);
 		use DefaultAILoot (weight = 1.0, min_amount = 0, max_amount = 1);
@@ -144,7 +144,7 @@ sub Loot()
 	
 	LootedObject("T3_BiterLoot")
     {
-        ColorSet(ColorSet_DefaultZombieLoot);
+		ColorSet(ColorSet_DefaultZombieLoot);
 		LootAmount(1);
 		use Empty(weight = 1.8, min_amount = 0, max_amount = 1);
 		use DefaultAILoot (weight = 1.0, min_amount = 0, max_amount = 1);
@@ -707,6 +707,21 @@ sub Loot()
 		use Cash_High (weight = 40.0, min_amount = 0, max_amount = 1);
 		use Valuable (weight = 49.0, min_amount = 0, max_amount = 1);
 		use GoonGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Normal_ElementalGoonLoot")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Normal_ElementalGoonGland (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Elite_ElementalGoonLoot")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(2);
+		use Crystal_Violet (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Elite_ElementalGoonGland (weight = 1.0, min_amount = 1, max_amount = 1);
     }
 	
 	// Charger
@@ -1306,7 +1321,7 @@ sub Loot()
 	
 	LootedObject("Endgame_WeaponSlot_Encounter")
     {
-        ColorSet(ColorSet_WeaponT3);
+        ColorSet(ColorSet_WeaponT3_Endgame_LowChance);
 		LootAmount(1);
 		use Airdrop_Loot (weight = 60.0, min_amount = 1, max_amount = 1);
 		use Weapons_Endgame_Scaling_T3 (weight = 20.0, min_amount = 1, max_amount = 1);
@@ -1315,16 +1330,16 @@ sub Loot()
 	
 	LootedObject("Endgame_RewardSlot_Encounter")
     {
-        ColorSet(ColorSet_ContainerLv4);
+        ColorSet(ColorSet_ContainerLv5);
 		LootAmount(2);
-		use Weapons_Endgame_Scaling_T2 (weight = 50.0, min_amount = 0, max_amount = 1);
-		use OutfitsBlue_Endgame_Scaling (weight = 30.0, min_amount = 0, max_amount = 1);
-		use OutfitsViolet_Endgame_Scaling (weight = 20.0, min_amount = 0, max_amount = 1);
+		use Airdrop_Loot (weight = 50.0, min_amount = 1, max_amount = 1);
+		use OutfitsViolet_Endgame_Scaling (weight = 30.0, min_amount = 1, max_amount = 1);
+		use OutfitsOrange_Endgame_Scaling (weight = 20.0, min_amount = 1, max_amount = 1);
     }
 	
 	LootedObject("Endgame_Boss")
     {
-        ColorSet(ColorSet_WeaponT3);
+        ColorSet(ColorSet_WeaponT3_Endgame_LowChance);
 		LootAmount(1);
 		use Weapons_Endgame_Scaling_T3 (weight = 1.0, min_amount = 1, max_amount = 1);
 		use OutfitsOrange_Endgame_Scaling (weight = 1.0, min_amount = 1, max_amount = 1);
@@ -1346,6 +1361,13 @@ sub Loot()
 		use Weapons_Endgame_Scaling_T2 (weight = 4.0, min_amount = 0, max_amount = 1);
 		use OutfitsBlue_Endgame_Scaling (weight = 3.0, min_amount = 0, max_amount = 1);
 		use OutfitsViolet_Endgame_Scaling (weight = 1.0, min_amount = 0, max_amount = 1);
+    }
+	
+	LootedObject("Endgame_Platinum")
+    {
+        ColorSet(ColorSet_WeaponT3_Endgame);
+		LootAmount(1);
+		use Weapons_Endgame_Scaling_T3 (weight = 1.0, min_amount = 1, max_amount = 1);
     }
 	
 	//Difficulty 7
@@ -3451,11 +3473,11 @@ sub Loot()
 	
 	LootedObject("Encounter_AI_In_Grab")
     {
-        //ColorSet(ColorSet_ExplorationMedium);
-		//LootAmount(2);
-        //use Encounter_SurvivorReward(weight = 3.0, min_amount = 0, max_amount = 1);
-		//use Potions_Encounter(weight = 4.0, min_amount = 1, max_amount = 2);
-		//use Cash_High(weight = 3.0, min_amount = 0, max_amount = 1);
+        ColorSet(ColorSet_ExplorationMedium);
+		LootAmount(2);
+        use Encounter_SurvivorReward(weight = 3.0, min_amount = 0, max_amount = 1);
+		use Potions_Encounter(weight = 4.0, min_amount = 1, max_amount = 2);
+		use Cash_High(weight = 3.0, min_amount = 0, max_amount = 1);
     }
 	
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

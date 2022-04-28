@@ -886,6 +886,98 @@ sub Inventory_Special_DL()
         EquipmentSlot(2);
         GameVersion(2);
     }
+		Item("Parachute_Authority", CategoryType_Throwable)
+    {
+        Visibility(true);
+        ItemType(ItemType_Special);
+        PhysicsScript("simple.phx");
+        Condition(25.0);
+		AnimPrefix("Unarmed");
+        InventoryMeshHq("parachute_a.msh");
+        InventoryMesh("parachute_a.msh");
+        Mesh("parachute_a_tpp.msh");
+		Skin("player_pk_a");
+        HudIcon("weapon_scanner");
+        HolderElement("r_thigh");
+        HolderOffset([0.0,10.0,10.0]);
+        HolderAngle([0.0,0.0,-90.0]);
+        AiHitSound("weapon_rope_hit_body");
+        use PickupSounds_Default();
+        Reparable(false);
+        Color(Color_White);
+        CraftingSlots(0);
+        EquipmentSlot(2);
+        GameVersion(7);
+    }
+	Item("Parachute_Ronin", CategoryType_Throwable)
+    {
+        Visibility(true);
+        ItemType(ItemType_Special);
+        PhysicsScript("simple.phx");
+        Condition(25.0);
+		AnimPrefix("Unarmed");
+        InventoryMeshHq("parachute_a.msh");
+        InventoryMesh("parachute_a.msh");
+        Mesh("parachute_a_tpp.msh");
+		Skin("player_ronin");
+        HudIcon("weapon_scanner");
+        HolderElement("r_thigh");
+        HolderOffset([0.0,10.0,10.0]);
+        HolderAngle([0.0,0.0,-90.0]);
+        AiHitSound("weapon_rope_hit_body");
+        use PickupSounds_Default();
+        Reparable(false);
+        Color(Color_White);
+        CraftingSlots(0);
+        EquipmentSlot(2);
+        GameVersion(7);
+    }
+	Item("Parachute_GoodNight_orange", CategoryType_Throwable)
+    {
+        Visibility(true);
+        ItemType(ItemType_Special);
+        PhysicsScript("simple.phx");
+        Condition(25.0);
+		AnimPrefix("Unarmed");
+        InventoryMeshHq("parachute_a.msh");
+        InventoryMesh("parachute_a.msh");
+        Mesh("parachute_a_tpp.msh");
+		Skin("player_goodnight_orange");
+        HudIcon("weapon_scanner");
+        HolderElement("r_thigh");
+        HolderOffset([0.0,10.0,10.0]);
+        HolderAngle([0.0,0.0,-90.0]);
+        AiHitSound("weapon_rope_hit_body");
+        use PickupSounds_Default();
+        Reparable(false);
+        Color(Color_White);
+        CraftingSlots(0);
+        EquipmentSlot(2);
+        GameVersion(7);
+    }
+	Item("Parachute_GoodNight_red", CategoryType_Throwable)
+    {
+        Visibility(true);
+        ItemType(ItemType_Special);
+        PhysicsScript("simple.phx");
+        Condition(25.0);
+		AnimPrefix("Unarmed");
+        InventoryMeshHq("parachute_a.msh");
+        InventoryMesh("parachute_a.msh");
+        Mesh("parachute_a_tpp.msh");
+		Skin("player_goodnight_orange");
+        HudIcon("weapon_scanner");
+        HolderElement("r_thigh");
+        HolderOffset([0.0,10.0,10.0]);
+        HolderAngle([0.0,0.0,-90.0]);
+        AiHitSound("weapon_rope_hit_body");
+        use PickupSounds_Default();
+        Reparable(false);
+        Color(Color_White);
+        CraftingSlots(0);
+        EquipmentSlot(2);
+        GameVersion(7);
+    }
 	// used in freeclimb controlelr / attach tool
 	Item("ClimbPickaxe", CategoryType_Other)
     {

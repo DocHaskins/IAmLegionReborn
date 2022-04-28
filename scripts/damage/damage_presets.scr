@@ -494,4 +494,21 @@ sub main()
 		DamageDefinition("Damage_0");
 		ReactionPreset("portable_tank_explosive_default");
 	}
+	SDamagePreset("Goon_Fire_Splash")
+    {
+		DamageDefinition("Goon_Fire_Splash");
+		//ReactionPreset("");
+		Effects("Burning:3.0:0");
+    }
+    SDamagePreset("Goon_Electric_Splash")
+    {
+		DamageDefinition("Goon_Electric_Splash");
+		//ReactionPreset("");
+		Effects("Electrocuted:0.5");
+    }
+    SDamagePreset("Goon_Toxic_Splash")
+    {
+		DamageDefinition("Goon_Toxic_Splash");
+		//ReactionPreset("");
+    }
 }

@@ -353,9 +353,9 @@ sub main()
         DamageType(DamageType_Blunt);
         Flags(3);
         Price(-1);
-		InventoryMeshHQ("wpn_1hb_knuckle_duster_b_fpp.msh");
-        InventoryMesh("wpn_1hb_knuckle_duster_b_fpp.msh");
-        Mesh("wpn_1hb_knuckle_duster_b_fpp.msh");
+		InventoryMeshHQ("wpn_shield_a_fpp.msh");
+        InventoryMesh("wpn_shield_a_fpp.msh");
+        Mesh("wpn_shield_a_fpp.msh");
         AnimPrefix("LeftHandShield", "fist");
         HudIcon("weapon_fist");
         MinDamageAngle(-60.0);
@@ -4317,6 +4317,8 @@ sub main()
         InWorldScale(0.9);
         OpportunityWeapon(false);
         LimbsCutProb(1.0);
+		Name("&wpn_1hs_axe_a_n&");
+        Description("&wpn_1hs_axe_a_d&");
 		GameVersion(1);
     }
 	
@@ -7427,7 +7429,6 @@ sub main()
         PhysicsScript("simple.phx");
         Condition(64);
         CriticalCondition(2);
-        DamageTiers("2h_blunt_tier_damages");
         ArmourDamageName("Player_Armour_Damage");
         StaminaDamage(60);
         Force(200.0);
@@ -7483,13 +7484,14 @@ sub main()
         HandInertiaFactor(1.8);
         Price(600);
         GenType(GenType_MeleeWeapon);
-        TierSpread(5, 5);
         InWorldScale(0.9);
         OpportunityWeapon(false);
         StunnedEffectDuration(1.0);
         Name("&LeaderWeapon_BC_Razors_n&");
         Description("&LeaderWeapon_BC_Razors_d&");
-        Rank(2);
+		IsAutomaticTierScaling(true);
+        DamageTiers("scaling_2h_blunt_tier_damages");
+        RelativeStaminaUsage(0.175);
 		GameVersion(1);
     }
 	
@@ -7500,7 +7502,6 @@ sub main()
         ItemType(ItemType_TwoHandedHeavyStick);
         PhysicsScript("simple.phx");
         CriticalCondition(15);
-        DamageTiers("2h_slashing_tier_damages");
         ArmourDamageName("Player_Armour_Damage");
         CriticalProb(0.0);
         CriticalDamage(2.0);
@@ -7557,17 +7558,16 @@ sub main()
         LimbsCutProb(0.8);
         FullBodyCutProb(0.6);
         StunnedEffectDuration(1.0);
-		
 		Condition(60);
         CriticalCondition(15);
         StaminaDamage(0);
         StaminaUsage(0.27);
         Price(800);
-        TierSpread(9, 9);
-		
         Name("&LeaderWeapon_BC_Skyscrapper_n&");
         Description("&LeaderWeapon_BC_Skyscrapper_d&");
-        Rank(3);
+		IsAutomaticTierScaling(true);
+        DamageTiers("scaling_2h_slashing_tier_damages");
+        RelativeStaminaUsage(0.175);
 		GameVersion(1);
     }
 	
@@ -7578,7 +7578,6 @@ sub main()
         PhysicsScript("simple.phx");
         Condition(60);
         CriticalCondition(2);
-        DamageTiers("2h_slashing_tier_damages");
         ArmourDamageName("Player_Armour_Damage");
         StaminaDamage(156);
         Force(200.0);
@@ -7634,15 +7633,15 @@ sub main()
         HandInertiaFactor(1.8);
         Price(1800);
         GenType(GenType_MeleeWeapon);
-        TierSpread(17, 17);
         InWorldScale(0.9);
         OpportunityWeapon(false);
         LimbsCutProb(0.6);
         StunnedEffectDuration(1.0);
         Name("&LeaderWeapon_BC_Water_n&");
         Description("&LeaderWeapon_BC_Water_d&");
-        Rank(6);
-		GameVersion(1);
+		IsAutomaticTierScaling(true);
+        DamageTiers("scaling_2h_slashing_tier_damages");
+        RelativeStaminaUsage(0.175);GameVersion(1);
     }
 	
 	Item("LeaderWeapon_BC_Vertical", CategoryType_Melee) //4
@@ -7652,7 +7651,6 @@ sub main()
         ItemType(ItemType_TwoHandedHeavyStick);
         PhysicsScript("simple.phx");
         CriticalCondition(15);
-        DamageTiers("2h_blunt_tier_damages");
         ArmourDamageName("Player_Armour_Damage");
         CriticalProb(0.0);
         CriticalDamage(2.0);
@@ -7707,17 +7705,16 @@ sub main()
         OpportunityWeapon(false);
         LimbsDestroyProb(0.6);
         StunnedEffectDuration(1.0);
-		
 		Condition(60);
         CriticalCondition(15);
         StaminaDamage(40);
         StaminaUsage(0.33);
         Price(1200);
-        TierSpread(12, 12);
-		
         Name("&LeaderWeapon_BC_Vertical_n&");
         Description("&LeaderWeapon_BC_Vertical_d&");
-        Rank(4);
+		IsAutomaticTierScaling(true);
+        DamageTiers("scaling_2h_blunt_tier_damages");
+        RelativeStaminaUsage(0.175);
 		GameVersion(1);
     }
 	
@@ -7728,7 +7725,6 @@ sub main()
         PhysicsScript("simple.phx");
         Condition(60);
         CriticalCondition(2);
-        DamageTiers("2h_slashing_tier_damages");
         ArmourDamageName("Player_Armour_Damage");
         StaminaDamage(208);
         Force(200.0);
@@ -7784,14 +7780,15 @@ sub main()
         HandInertiaFactor(1.8);
         Price(2500);
         GenType(GenType_MeleeWeapon);
-        TierSpread(24, 24);
         InWorldScale(0.9);
         OpportunityWeapon(false);
         LimbsCutProb(0.6);
         StunnedEffectDuration(1.0);
         Name("&LeaderWeapon_BC_Military_n&");
         Description("&LeaderWeapon_BC_Military_d&");
-        Rank(8);
+		IsAutomaticTierScaling(true);
+        DamageTiers("scaling_2h_blunt_tier_damages");
+        RelativeStaminaUsage(0.175);
 		GameVersion(1);
     }
 	
@@ -7802,7 +7799,6 @@ sub main()
         ItemType(ItemType_TwoHandedHeavyStick);
         PhysicsScript("simple.phx");
         CriticalCondition(15);
-        DamageTiers("2h_blunt_tier_damages");
         ArmourDamageName("Player_Armour_Damage");
         CriticalProb(0.0);
         CriticalDamage(2.0);
@@ -7857,17 +7853,17 @@ sub main()
         OpportunityWeapon(false);
         LimbsDestroyProb(0.6);
         StunnedEffectDuration(1.0);
-		
 		Condition(60);
         CriticalCondition(15);
         StaminaDamage(60);
         StaminaUsage(0.45);
         Price(1900);
-        TierSpread(18, 18);
-		
         Name("&LeaderWeapon_BC_Chemicals_n&");
         Description("&LeaderWeapon_BC_Chemicals_d&");
         Rank(6);
+		IsAutomaticTierScaling(true);
+        DamageTiers("scaling_2h_blunt_tier_damages");
+        RelativeStaminaUsage(0.175);
 		GameVersion(1);
     }
 	Item("Throwable_LavanCrossbowSinpersAlley", CategoryType_Throwable)
@@ -8855,5 +8851,94 @@ sub main()
         Rank(2);
         StartupMod("ShockMod_Random_TIP");
 		GameVersion(1);
-    }		
+    }	
+	Item("wpn_2hb_d_goon_event", CategoryType_Melee)
+    {
+        WpnSubtype(EWpnSubtype_Mace);
+        Visibility(true);
+        ItemType(ItemType_TwoHandedHeavyStick);
+        PhysicsScript("simple.phx");
+        CriticalCondition(15);
+        ArmourDamageName("Player_Armour_Damage");
+        CriticalProb(0.0);
+        CriticalDamage(2.0);
+        DamageRange(2.0);
+        DamageToPhysicsObjects(70.0);
+        PhysicsDamageMul(3.0);
+        ConfusionProb(0.0);
+        WeaponBuildType(WeaponBuildType_Universal);
+        DamageType(DamageType_Blunt);
+        Flags(1);
+        InventoryMeshHQ("WPN_2HB_D_FPP.msh");
+        InventoryMesh("WPN_2HB_D_FPP.msh");
+        Mesh("WPN_2HB_D_TPP.msh");
+        SkinTag("Weapon_Craft0");
+        AnimPrefix("Stick2Heavy");
+        HudIcon("wpn_2hb_d");
+        HitReactionType(EReactionType_Blunt);
+        HitReactionHitSeverity(EHitSeverity_Heavy);
+        HitReactionMoveSeverity(EMoveSeverity_Medium);
+        HitReactionStrongHitSeverity(EHitSeverity_Heavy);
+        HitReactionStrongMoveSeverity(EMoveSeverity_Heavy);
+        HorizontalAttackDamageMul(3.0);
+        TwoHanded(true);
+        DestroySound("damaged_heavy_weapon_XX.wav");
+        AiHitSound("hammer_wood_2h_low");
+        Material("wood");
+        use HitEffects_StickWood_2h();
+        use PickupSounds_Hammer_Wood_2h_low();
+        DamageSize(5.0);
+        StatsType(StatsType_Blunt);
+        FF_EffectName("Hit_Stick2HeavyBlunt");
+        FF_Left(0.6);
+        FF_Right(0.6);
+        FF_Duration(0.2);
+        FF_FadeOut(0.0);
+        Reparable(true);
+        RepairTags("Weapon_Craft4");
+        RepairPart("Craft_MetalScrap", 1);
+        AllowedRepairs(3);
+        Color(Color_Platinum);
+        AchType(AchType_BigHammer);
+        DismantleResultItem("Valuable_V0");
+        DismantleResultItemCnt(2);
+        CraftingSlots(false, false, false, false);
+        UniqueFxNameBase("machete");
+        RagdollBehaviorPrefix("Stick2HeavyBlunt");
+        HandInertiaFactor(1.8);
+        GenType(GenType_MeleeWeapon);
+        InWorldScale(0.9);
+        OpportunityWeapon(false);
+        LimbsDestroyProb(0.6);
+        StunnedEffectDuration(1.0);
+        StaminaUsage(0.11);
+		Condition(40);
+        CriticalCondition(15);
+        StaminaDamage(10);
+        StaminaUsage(0.22);
+        Price(0);
+        GameVersion(7);
+        IsAutomaticTierScaling(true);
+        DamageTiers("scaling_2h_blunt_tier_damages");
+        RelativeStaminaUsage(0.150);
+        Name("&wpn_2hb_goon_event_n&");
+        Description("&wpn_2hb_goon_event_d&");
+    }
+	Item("Craftplan_ITEM_goon_event", CategoryType_Collectable)
+    {
+        Name("&wpn_2hb_goon_event_n&");
+        Description('&wpn_2hb_goon_event_d&');
+        ItemType(ItemType_CraftPlan);
+        CraftplanType("Skill");
+        Price(0);
+        Mesh("blueprint.msh");
+        Skin("default");
+        Color(Color_Platinum);
+        use PickupSounds_Default();
+        Color(Color_Platinum);
+        HudIcon("wpn_2hb_d");
+        GameVersion(7);
+    }
+}
+	
 }

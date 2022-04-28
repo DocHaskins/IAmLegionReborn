@@ -65,26 +65,41 @@ sub main()
 	AreaSettings("Abandoned_Structure_Survivors_School")
     {
 		EncounterCategoryWeight("scene_surv_herald_01,100");
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
     }
 
 	AreaSettings("Abandoned_Structure_Survivors_Workshop")
     {
 		EncounterCategoryWeight("scene_surv_herald_01,100");
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
     }
 
 	AreaSettings("Abandoned_Structure_Survivors_Recycle")
     {
 		EncounterCategoryWeight("scene_surv_herald_01,100");
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
     }
 
 	AreaSettings("Abandoned_Structure_Survivors_Pumpkin")
     {
 		EncounterCategoryWeight("scene_surv_herald_01,100");
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
     }
 
 	AreaSettings("Abandoned_Structure_Survivors_Bakery")
     {
 		EncounterCategoryWeight("scene_surv_herald_01,100");
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
     }
 
 	
@@ -104,6 +119,9 @@ sub main()
 		EncounterCategoryWeight("scene_pk_biomarker_working_01,100");
 		EncounterCategoryWeight("scene_pk_wounded_01,100");
 		EncounterCategoryWeight("scene_pk_wounded_02,100");
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
     }
 	
 	AreaSettings("Abandoned_Structure_Faction_Brewery")
@@ -113,6 +131,9 @@ sub main()
 		EncounterCategoryWeight("scene_pk_biomarker_working_01,100");
 		EncounterCategoryWeight("scene_pk_wounded_01,100");
 		EncounterCategoryWeight("scene_pk_wounded_02,100");
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
     }
 	
 	AreaSettings("Abandoned_Structure_Faction_Uniform_Workshop")
@@ -122,6 +143,9 @@ sub main()
 		EncounterCategoryWeight("scene_pk_biomarker_working_01,100");
 		EncounterCategoryWeight("scene_pk_wounded_01,100");
 		EncounterCategoryWeight("scene_pk_wounded_02,100");
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
     }
 	
 	AreaSettings("Abandoned_Structure_Faction_Outpost")
@@ -131,6 +155,9 @@ sub main()
 		EncounterCategoryWeight("scene_pk_biomarker_working_01,100");
 		EncounterCategoryWeight("scene_pk_wounded_01,100");
 		EncounterCategoryWeight("scene_pk_wounded_02,100");
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
     }
 	
 	AreaSettings("Abandoned_Structure_Faction_Smokehouse")
@@ -140,6 +167,9 @@ sub main()
 		EncounterCategoryWeight("scene_pk_biomarker_working_01,100");
 		EncounterCategoryWeight("scene_pk_wounded_01,100");
 		EncounterCategoryWeight("scene_pk_wounded_02,100");
+        EncounterCategoryWeight("Base_Looting_Easy,1");
+        EncounterCategoryWeight("Base_Looting_Medium,1");
+        EncounterCategoryWeight("Base_Looting_Hard,1");
     }
 
     AreaSettings("City_All_Area")
@@ -683,6 +713,12 @@ sub main()
         EncounterCategoryWeight("Infected_Corpse_Eating_Day_Street,1");
         EncounterCategoryWeight("Infected_Corpse_Eating_Day_Flavor,1");
         EncounterCategoryWeight("Infected_Corpse_Eating_Day_Roof,1");
+        EncounterCategoryWeight("Special_Infected,1"); 
+        EncounterCategoryWeight("Special_Infected_10x10,1"); 
+        EncounterCategoryWeight("Special_Infected_15x15,1"); 	
+        EncounterCategoryWeight("Special_Infected_20x20,1"); 	
+        EncounterCategoryWeight("Special_Infected_25x25,1"); 	
+        EncounterCategoryWeight("Special_Infected_20x7,1"); 
         //EncounterCategoryWeight("Infected_Corpse_Eating_PK_Roof,1");
         //EncounterCategoryWeight("Infected_Corpse_Eating_PK_Street,100");
 		
@@ -735,9 +771,10 @@ sub main()
         EncounterCategoryWeight("AS_Infecteds_01,1");
         EncounterCategoryWeight("AS_HMF_01,1");	
 		EncounterCategoryWeight("Exterior_Defend,1");
-		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");	
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted,1000");
 		EncounterCategoryWeight("Scene_Peacekeepers_Roof,100");
 		EncounterCategoryWeight("Scene_Peacekeepers_Ground,100");		
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Goon,1");
 		//
 		
 		//EncounterCategoryWeight("Infected_Corpse_Eating_Day,1");
@@ -3025,6 +3062,491 @@ sub main()
         DynamicSpawnerNightDensity("HUB");				
 	}	
 
+///////////// NEW GAME PLUS AREAS ///////////////
+
+	AreaSettings("R1_1_Zone_01_NewGamePlus")
+    {	
+		EncounterDifficulty("NewGamePlus");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,10000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,10000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,10000");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_All,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Demolisher,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Goon,1");
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_1");
+		MaxDifficultyTier("Tier_9");
+
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("Medium");				
+	}
+	
+	AreaSettings("R1_2_Zone_02_NewGamePlus")
+    {
+	    EncounterDifficulty("NewGamePlus");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,10000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,10000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_All,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Demolisher,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Goon,1");
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_1");
+		MaxDifficultyTier("Tier_9");
+
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("Medium");			
+	}
+	
+	AreaSettings("R1_3_Zone_03_NewGamePlus")
+    {
+	    EncounterDifficulty("NewGamePlus");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,10000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,10000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,10000");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_All,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Demolisher,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Goon,1");
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_1");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("Medium");			
+	}
+		
+	
+	AreaSettings("R1_4_Zone_04_NewGamePlus")
+    {
+	    EncounterDifficulty("NewGamePlus");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,10000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,10000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,10000");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_All,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Demolisher,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Goon,1");
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_1");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Medium");
+        DynamicSpawnerNightDensity("Medium");			
+	}	
+	
+	AreaSettings("R2_1_Zone_05_NewGamePlus")
+    {
+	    EncounterDifficulty("NewGamePlus");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,10000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,10000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,10000");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_All,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Demolisher,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Goon,1");
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+
+		MinDifficultyTier("Tier_1");
+		MaxDifficultyTier("Tier_9");	
+
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");			
+	}
+	
+	AreaSettings("R2_2_Zone_06_NewGamePlus")
+    {		
+	    EncounterDifficulty("NewGamePlus");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,10000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,10000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_All,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Demolisher,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Goon,1");
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_1");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R2_3_Zone_07_NewGamePlus")
+    {
+	    EncounterDifficulty("NewGamePlus");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,10000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,10000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_All,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Demolisher,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Goon,1");
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_1");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R2_4_Zone_08_NewGamePlus")
+    {
+	    EncounterDifficulty("NewGamePlus");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,10000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,10000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_All,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Demolisher,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Goon,1");
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_1");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R2_5_Zone_09_NewGamePlus")
+    {
+	    EncounterDifficulty("NewGamePlus");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,10000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,10000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 	
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_All,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Demolisher,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Goon,1");
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_1");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R2_6_Zone_10_NewGamePlus")
+    {
+	    EncounterDifficulty("NewGamePlus");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,10000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,10000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_All,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Demolisher,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Goon,1");
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_1");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R2_7_Zone_11_NewGamePlus")
+    {
+	    EncounterDifficulty("NewGamePlus");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,10000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,10000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_All,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Demolisher,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Goon,1");
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_1");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+	
+	AreaSettings("R2_8_Zone_12_NewGamePlus")
+    {
+	    EncounterDifficulty("NewGamePlus");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,10000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,10000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_All,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Demolisher,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Goon,1");
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		MinDifficultyTier("Tier_1");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("Hard");
+        DynamicSpawnerNightDensity("Easy");				
+	}
+
+	AreaSettings("R3_Zone_Renegades_NewGamePlus")
+    {
+	    EncounterDifficulty("NewGamePlus");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,10000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,10000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000"); 
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_All,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Demolisher,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Goon,1");
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        //DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        //DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("None");
+		DynamicSpawnerDayDensity("OWA");
+        DynamicSpawnerNightDensity("HUB");	
+		
+		MinDifficultyTier("Tier_1");
+		MaxDifficultyTier("Tier_9");
+	}
+	
+//// PUMPING STATION & FLOODED AREA ////
+
+	AreaSettings("R3_Flooded_1_NewGamePlus")
+    {
+	    EncounterDifficulty("NewGamePlus");
+		DynamicSpawnerDayPresetPool("Day_Exterior_Flooded_Endgame");
+        DynamicSpawnerNightPresetPool("Night_Exterior_Flooded_Endgame");
+        //DarkZoneDayPresetPool("Infected_Population_Day_D07");
+        //DarkZoneNightPresetPool("Infected_Population_Night_D07");
+        DarkZoneDensityTag("None");
+		DynamicSpawnerDayDensity("Flooded_1");
+        DynamicSpawnerNightDensity("Flooded_1");
+		
+		//EncounterCategoryWeight("Special_Infected_Flooded,1");
+		EncounterCategoryWeight("Base_Looting_Flooded,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_All,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Demolisher,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Goon,1");
+		
+		InfectedReinforcementDataId("Flooded_Infected_EndGame"); 
+		
+		MinDifficultyTier("Tier_1");
+		MaxDifficultyTier("Tier_9");
+	}
+
+	AreaSettings("R3_Flooded_2_NewGamePlus")
+    {
+	    EncounterDifficulty("NewGamePlus");
+		DynamicSpawnerDayPresetPool("Day_Exterior_Flooded_Endgame");
+        DynamicSpawnerNightPresetPool("Night_Exterior_Flooded_Endgame");
+        //DarkZoneDayPresetPool("Infected_Population_Day_D08");
+        //DarkZoneNightPresetPool("Infected_Population_Night_D08");
+        DarkZoneDensityTag("None");
+		DynamicSpawnerDayDensity("Flooded_1");
+        DynamicSpawnerNightDensity("Flooded_1");	
+
+		//EncounterCategoryWeight("Special_Infected_Flooded,1");
+		EncounterCategoryWeight("Base_Looting_Flooded,1");		
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_All,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Demolisher,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Goon,1");
+		
+		InfectedReinforcementDataId("Flooded_Infected_EndGame"); 
+		
+		MinDifficultyTier("Tier_1");
+		MaxDifficultyTier("Tier_9");
+	}	
+	
+	AreaSettings("R3_Flooded_3_NewGamePlus")
+    {
+	    EncounterDifficulty("NewGamePlus");
+		DynamicSpawnerDayPresetPool("Day_Exterior_Flooded_Endgame");
+        DynamicSpawnerNightPresetPool("Night_Exterior_Flooded_Endgame");
+        //DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        //DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("None");
+		DynamicSpawnerDayDensity("Flooded_1");
+        DynamicSpawnerNightDensity("Flooded_1");		
+		
+		InfectedReinforcementDataId("Flooded_Infected_EndGame"); 
+		
+		//EncounterCategoryWeight("Special_Infected_Flooded,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_All,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Demolisher,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Goon,1");
+		
+		MinDifficultyTier("Tier_1");
+		MaxDifficultyTier("Tier_9");
+	}	
+	
+	AreaSettings("R4_1_NewGamePlus")
+    {		
+		EncounterDifficulty("NewGamePlus");
+		
+		DynamicSpawnerDayPresetPool("Day_Exterior_D09");
+        DynamicSpawnerNightPresetPool("Night_Exterior_D09");
+        DarkZoneDayPresetPool("Infected_Population_Day_D09");
+        DarkZoneNightPresetPool("Infected_Population_Night_D09");
+        DarkZoneDensityTag("dz_region_01");
+		
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_All,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Demolisher,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Goon,1");
+		
+		MinDifficultyTier("Tier_1");
+		MaxDifficultyTier("Tier_9");
+		
+/////Infected densities/////	
+        DynamicSpawnerDayDensity("OWA");
+        DynamicSpawnerNightDensity("HUB");				
+	}	
+	
+	AreaSettings("RX_NewGamePlus_Encounters")
+    {
+	    EncounterDifficulty("NewGamePlus");
+		EncounterCategoryWeight("Exterior_Defend_EndGame,10000"); 
+		EncounterCategoryWeight("Exterior_Defend_Handcrafted_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_10x10_EndGame,10000"); 
+		EncounterCategoryWeight("Special_Infected_15x15_EndGame,10000"); 		
+		EncounterCategoryWeight("Special_Infected_20x20_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_25x25_EndGame,10000"); 	
+		EncounterCategoryWeight("Special_Infected_20x7_EndGame,1000");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_All,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Demolisher,1");
+		EncounterCategoryWeight("Base_Looting_NewGamePlus_Goon,1");
+	}
 
 ///////////// REGION 05 ////////////////////
 

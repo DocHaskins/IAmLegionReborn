@@ -113,9 +113,24 @@ sub main()
         DamageDefinition("Waltz_Heavy_Ground_Pound");
         ReactionPreset("melee_heavy_hit@damage_reaction_presets.scr");
     }
+    DamagePreset("waltz_light_combo")
+    {
+        DamageDefinition("Waltz_Light_Hit");
+        ReactionPreset("waltz_light_combo@damage_reaction_presets.scr");
+    }
+    DamagePreset("waltz_combo")
+    {
+        DamageDefinition("Waltz_Medium_Hit");
+        ReactionPreset("waltz_combo@damage_reaction_presets.scr");
+    }
     DamagePreset("waltz_heavy_combo")
     {
-        DamageDefinition("Waltz_Heavy_Combo");
+        DamageDefinition("Waltz_Heavy_Hit");
         ReactionPreset("melee_heavy_hit@damage_reaction_presets.scr");
     }
+    DamagePreset("waltz_ground_pound")
+    {
+        DamageDefinition("Waltz_Heavy_Ground_Pound");
+        ReactionPreset("melee_heavy_hit@damage_reaction_presets.scr");
+    }  
 }

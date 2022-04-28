@@ -783,6 +783,53 @@ sub main()
         DamageBoxWidth("1.5");
         RangeOffsetEachSecond("20");
         AdditionalRange("1.0");
+    }    AttackPreset("goon_vertical_attack_fire")
+    {
+        Type("USE_WEAPON");
+		Hand("RIGHT");
+        Severity("HEAVY");
+        MoveLimit("false");
+        DamageReactionFlagInterrupt("true");
+        CanDamageAllies("true");
+        ForceForwardDir("true");
+        UseWeapon("true");
+        ImpactDirCalculation("TOWARDS_TARGET");
+        DamageBoxWidth("1.5");
+        RangeOffsetEachSecond("20");
+        AdditionalRange("1.0");
+        PuddleItem("Goon_Fire_Puddle");
+    }
+    AttackPreset("goon_vertical_attack_toxic")
+    {
+        Type("USE_WEAPON");
+		Hand("RIGHT");
+        Severity("HEAVY");
+        MoveLimit("false");
+        DamageReactionFlagInterrupt("true");
+        CanDamageAllies("true");
+        ForceForwardDir("true");
+        UseWeapon("true");
+        ImpactDirCalculation("TOWARDS_TARGET");
+        DamageBoxWidth("1.5");
+        RangeOffsetEachSecond("20");
+        AdditionalRange("1.0");
+        PuddleItem("Goon_Toxic_Puddle");
+    }
+    AttackPreset("goon_vertical_attack_electric")
+    {
+        Type("USE_WEAPON");
+		Hand("RIGHT");
+        Severity("HEAVY");
+        MoveLimit("false");
+        DamageReactionFlagInterrupt("true");
+        CanDamageAllies("true");
+        ForceForwardDir("true");
+        UseWeapon("true");
+        ImpactDirCalculation("TOWARDS_TARGET");
+        DamageBoxWidth("1.5");
+        RangeOffsetEachSecond("20");
+        AdditionalRange("1.0");
+        PuddleItem("Goon_Electric_Puddle");
     }
     AttackPreset("goon_stomp")
     {
@@ -799,6 +846,57 @@ sub main()
         ConeAngle("179");
         VerticalRange("0.2");
         AdditionalRange("2.5");
+    }
+    AttackPreset("goon_stomp_fire")
+    {
+        Type("STOMP_ATTEMPT");
+		Hand("RIGHT");
+        Severity("HEAVY");
+        MoveLimit("false");
+        DamageType("BLAST_SPECIAL");
+        DamageReactionFlagInterrupt("true");
+        CanDamageAllies("true");
+        EnableVerticalChecks("true");
+        UseWeapon("true");
+        ImpactDirCalculation("TOWARDS_TARGET");
+        ConeAngle("179");
+        VerticalRange("0.2");
+        AdditionalRange("2.5");
+        PuddleItem("Goon_Fire_Puddle");
+    }
+    AttackPreset("goon_stomp_electric")
+    {
+        Type("STOMP_ATTEMPT");
+		Hand("RIGHT");
+        Severity("HEAVY");
+        MoveLimit("false");
+        DamageType("BLAST_SPECIAL");
+        DamageReactionFlagInterrupt("true");
+        CanDamageAllies("true");
+        EnableVerticalChecks("true");
+        UseWeapon("true");
+        ImpactDirCalculation("TOWARDS_TARGET");
+        ConeAngle("179");
+        VerticalRange("0.2");
+        AdditionalRange("2.5");
+        PuddleItem("Goon_Electric_Puddle");
+    }
+    AttackPreset("goon_stomp_toxic")
+    {
+        Type("STOMP_ATTEMPT");
+		Hand("RIGHT");
+        Severity("HEAVY");
+        MoveLimit("false");
+        DamageType("BLAST_SPECIAL");
+        DamageReactionFlagInterrupt("true");
+        CanDamageAllies("true");
+        EnableVerticalChecks("true");
+        UseWeapon("true");
+        ImpactDirCalculation("TOWARDS_TARGET");
+        ConeAngle("179");
+        VerticalRange("0.2");
+        AdditionalRange("2.5");
+        PuddleItem("Goon_Toxic_Puddle");
     }
     //HUMAN_GENERIC
     AttackPreset("human_finisher")

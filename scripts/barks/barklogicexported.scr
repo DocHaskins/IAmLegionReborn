@@ -15,8 +15,11 @@ sub BarkLogicExported()
     Group("Combat")
     {
         Cnd_CooldownTime(20.0);
-        Cnd_ExpireTime(0.5);
-        Cnd_GlobalDelayBetweenBarks(6.0);
+        Cnd_CooldownTime(7.00, 2);
+		Cnd_ExpireTime(0.5);
+		Cnd_CooldownTime(10.00, 3);
+		Cnd_ExpireTime(0.5);
+        Cnd_GlobalDelayBetweenBarks(5.0);
         Cnd_PlayerProxmity(2.0, 50.0);
         //
         Bark("combat_block_enter");
@@ -32,8 +35,11 @@ sub BarkLogicExported()
     Group("Combat_Idle_Taunt_Player")
     {
         Cnd_CooldownTime(30.0);
-        Cnd_ExpireTime(0.5);
-        Cnd_GlobalDelayBetweenBarks(15.0);
+        Cnd_CooldownTime(7.00, 2);
+		Cnd_ExpireTime(0.5);
+		Cnd_CooldownTime(10.00, 3);
+		Cnd_ExpireTime(0.5);
+		Cnd_GlobalDelayBetweenBarks(5.0);
         Cnd_PlayerProxmity(2.0, 50.0);
         //
         Bark("combat_idle_taunt_player");
@@ -44,8 +50,11 @@ sub BarkLogicExported()
     Group("Combat_Attack_Taunt_Player")
     {
         Cnd_CooldownTime(30.0);
-        Cnd_ExpireTime(0.5);
-        Cnd_GlobalDelayBetweenBarks(15.0);
+        Cnd_CooldownTime(7.00, 2);
+		Cnd_ExpireTime(0.5);
+		Cnd_CooldownTime(10.00, 3);
+		Cnd_ExpireTime(0.5);
+		Cnd_GlobalDelayBetweenBarks(5.0);
         Cnd_PlayerProxmity(2.0, 50.0);
         //
         Bark("combat_attack_taunt_player");
@@ -53,48 +62,72 @@ sub BarkLogicExported()
     Bark("combat_attack_taunt_player_PS", "MustPlay")
     {
         Cnd_CooldownTime(4.0);
+		Cnd_CooldownTime(7.00, 2);
+		Cnd_CooldownTime(10.00, 3);
+		Cnd_GlobalDelayBetweenBarks(5.0);
         Cnd_PlayerAreaAttribute("brk_qst_area_pumpingstation");
     }
 
     Bark("combat_attack_taunt_player_OOYL", "MustPlay")
     {
         Cnd_CooldownTime(4.0);
+		Cnd_CooldownTime(7.00, 2);
+		Cnd_CooldownTime(10.00, 3);
+		Cnd_GlobalDelayBetweenBarks(5.0);
         Cnd_PlayerAreaAttribute("brk_qst_area_OOYL");
     }
 
     Bark("combat_attack_taunt_player_sister2", "MustPlay")
     {
         Cnd_CooldownTime(4.0);
+		Cnd_CooldownTime(7.00, 2);
+		Cnd_CooldownTime(10.00, 3);
+		Cnd_GlobalDelayBetweenBarks(5.0);
         Cnd_PlayerAreaAttribute("brk_qst_area_sister_afterdlg");
     }
 
     Bark("combat_attack_taunt_player_DC", "MustPlay")
     {
         Cnd_CooldownTime(4.0);
+		Cnd_CooldownTime(7.00, 2);
+		Cnd_CooldownTime(10.00, 3);
+		Cnd_GlobalDelayBetweenBarks(5.0);
         Cnd_PlayerAreaAttribute("brk_qst_area_DC");
     }
 
     Bark("combat_attack_taunt_player_renegades", "MustPlay")
     {
-        Cnd_CooldownTime(4.0);
+        Cnd_CooldownTime(25.0);
+		Cnd_CooldownTime(7.00, 2);
+		Cnd_CooldownTime(10.00, 3);
+		Cnd_GlobalDelayBetweenBarks(5.0);
         Cnd_PlayerAreaAttribute("brk_qst_area_renegades");
     }
 
     Bark("combat_attack_taunt_player_renegades2", "MustPlay")
     {
-        Cnd_CooldownTime(4.0);
+        Cnd_CooldownTime(25.0);
+		Cnd_CooldownTime(7.00, 2);
+		Cnd_CooldownTime(10.00, 3);
+		Cnd_GlobalDelayBetweenBarks(5.0);
         Cnd_PlayerAreaAttribute("brk_qst_area_renegades2");
     }
 
     Bark("combat_attack_taunt_player_renegades3", "MustPlay")
     {
-        Cnd_CooldownTime(4.0);
+        Cnd_CooldownTime(25.0);
+		Cnd_CooldownTime(7.00, 2);
+		Cnd_CooldownTime(10.00, 3);
+		Cnd_GlobalDelayBetweenBarks(5.0);
         Cnd_PlayerAreaAttribute("brk_qst_area_renegades3");
     }
 
     Bark("combat_attack_taunt_player_renegades4", "MustPlay")
     {
-        Cnd_CooldownTime(4.0);
+        Cnd_CooldownTime(25.0);
+		Cnd_CooldownTime(7.00, 2);
+		Cnd_CooldownTime(10.00, 3);
+		Cnd_GlobalDelayBetweenBarks(5.0);
         Cnd_PlayerAreaAttribute("brk_qst_area_renegades4");
     }
 

@@ -311,6 +311,25 @@ sub Preset_Reward_GRE()
 	RewardIcon("ProfType_Traversal");
 }
 
+sub Preset_Reward_GRE_ngplus()
+{
+    TooltipHeader("&OWA_GRE&");
+    TooltipDesc("&GRE_Desc&");
+    TooltipDescLocked("");
+    ExtraInfo("&Hud_NightOwa&");
+    BadgeText("&Hud_NightActivityBadge&");
+    NightActivity(true);
+    Icon("map_gre_facility");
+    AdditionalInfo("&additionalinfo_grequarantine&");
+    
+    //RewardIcon("Inhibitor");
+    //RewardIcon("Inhibitor");
+    //RewardIcon("Inhibitor");
+    RewardItem("Valuable_Crystal_Orange");	
+	RewardIcon("ProfType_Combat");	
+	RewardIcon("ProfType_Traversal");
+}
+
 sub main()
 {
     //EActivity::TYPE -> 
@@ -903,6 +922,20 @@ sub main()
         TooltipDesc("&gre_desc&");
     }
 	
+	   Activity("gre.r1.z1.2_ngplus", "GREQuarantine")
+    {
+        Difficulty(1);
+        //Immunity(89);
+		//Lockpicks(75); 
+		use Preset_Reward_GRE_ngplus();
+		TooltipHeader("&gre.r1.z1.2&");
+    	
+        //Inhibitor("Collectable_Inhibitor_OW_4");
+        //Inhibitor("Collectable_Inhibitor_OW_5");
+        //Inhibitor("Collectable_Inhibitor_OW_6");
+        TooltipDesc("&gre_desc&");
+    }
+	
 	Activity("gre.r1.z2.2", "GREQuarantine")
     {
         Difficulty(4);
@@ -917,12 +950,39 @@ sub main()
         //Inhibitor("Collectable_Inhibitor_OW_9");
     }
 	
+	Activity("gre.r1.z2.2_ngplus", "GREQuarantine")
+    {
+        Difficulty(4);
+        //Immunity(143);
+		//Lockpicks(75);
+		use Preset_Reward_GRE_ngplus();
+		TooltipDesc("&gre_desc&");
+		TooltipHeader("&gre.r1.z2.2&");
+        
+        //Inhibitor("Collectable_Inhibitor_OW_7");
+        //Inhibitor("Collectable_Inhibitor_OW_8");
+        //Inhibitor("Collectable_Inhibitor_OW_9");
+    }
     Activity("gre.r2.z1.1", "GREQuarantine")
     {
         Difficulty(3);
         //Immunity(103);
 		//Lockpicks(75);
 		use Preset_Reward_GRE();
+		TooltipDesc("&gre_desc&");
+		TooltipHeader("&gre.r2.z1.1&");
+        
+        //Inhibitor("Collectable_Inhibitor_OW_10");
+        //Inhibitor("Collectable_Inhibitor_OW_11");
+        //Inhibitor("Collectable_Inhibitor_OW_12");
+    }
+    
+	    Activity("gre.r2.z1.1_ngplus", "GREQuarantine")
+    {
+        Difficulty(2);
+        //Immunity(103);
+		//Lockpicks(75);
+		use Preset_Reward_GRE_ngplus();
 		TooltipDesc("&gre_desc&");
 		TooltipHeader("&gre.r2.z1.1&");
         
@@ -945,6 +1005,20 @@ sub main()
         //Inhibitor("Collectable_Inhibitor_OW_15");
     }
 	
+	Activity("gre.r2.z2.1_ngplus", "GREQuarantine")
+    {
+        Difficulty(5);
+        //Immunity(170);
+		//Lockpicks(75);
+		use Preset_Reward_GRE_ngplus();
+		TooltipDesc("&gre_desc&");
+		TooltipHeader("&gre.r2.z2.1&");
+        
+        //Inhibitor("Collectable_Inhibitor_OW_13");
+        //Inhibitor("Collectable_Inhibitor_OW_14");
+        //Inhibitor("Collectable_Inhibitor_OW_15");
+    }
+	
     Activity("gre.r2.z3.1", "GREQuarantine")
     {
         Difficulty(3);
@@ -959,12 +1033,40 @@ sub main()
         //Inhibitor("Collectable_Inhibitor_OW_18");
     }
 	
+	Activity("gre.r2.z3.1_ngplus", "GREQuarantine")
+    {
+        Difficulty(3);
+        //Immunity(116);
+		//Lockpicks(75);	
+		use Preset_Reward_GRE_ngplus();
+		TooltipDesc("&gre_desc&");
+		TooltipHeader("&gre.r2.z3.1&");
+        
+        //Inhibitor("Collectable_Inhibitor_OW_16");
+        //Inhibitor("Collectable_Inhibitor_OW_17");
+        //Inhibitor("Collectable_Inhibitor_OW_18");
+    }
+	
     Activity("gre.r2.z4.1", "GREQuarantine")
     {
         Difficulty(4);
         //Immunity(143);
 		//Lockpicks(75);
 		use Preset_Reward_GRE();
+		TooltipDesc("&gre_desc&");
+		TooltipHeader("&gre.r2.z4.1&");
+        
+        //Inhibitor("Collectable_Inhibitor_OW_19");
+        //Inhibitor("Collectable_Inhibitor_OW_20");
+        //Inhibitor("Collectable_Inhibitor_OW_21");
+    }
+	
+	Activity("gre.r2.z4.1_ngplus", "GREQuarantine")
+    {
+        Difficulty(4);
+        //Immunity(143);
+		//Lockpicks(75);
+		use Preset_Reward_GRE_ngplus();
 		TooltipDesc("&gre_desc&");
 		TooltipHeader("&gre.r2.z4.1&");
         

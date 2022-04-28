@@ -108,14 +108,13 @@ sub main()
     {
         Poison("100%");
 		Chemical("100%");
-        Ram("96%");
         Physical("75%");
-        Blast("75%");
+        Blast("95%");
 		Bleeding("75%");
-		Fire("75%");
+		Fire("95%");
 		Poison("75%");
 		Electricity("75%");
-		Ranged("75%");
+		Ranged("75%");		
     }
     DamageResistance("Waltz_Fury_Resistance")
     {
@@ -592,6 +591,7 @@ sub main()
         Poison("100%");
 		Fire("90%");
         Physical("66%");
+		Ranged("50%");
     }
     DamageResistance("ScreamerResistance")
     {
@@ -599,19 +599,19 @@ sub main()
     }
 	DamageResistance("Infected_Elite")
     {
-        All("50%");
+        All("25%");
     }
 	DamageResistance("Infected_Boss")
     {
-        All("75%");
+        All("33%");
     }
 	DamageResistance("Infected_Elite_Special")
     {
         Poison("100%");
 		Fire("66%");
 		Physical("66%");
-		Cut("50%");
-		Blunt("50%");
+		Cut("33%");
+		Blunt("33%");
 		Ram("33%");
     }
 	DamageResistance("Infected_Boss_Special")
@@ -619,9 +619,9 @@ sub main()
         Poison("100%");
 		Fire("75%");
 		Physical("75%");
-		Cut("75%");
-		Blunt("75%");
-		Ram("50%");
+		Cut("50%");
+		Blunt("50%");
+		Ram("33%");
     }
 	DamageResistance("HuntingInfectedResistance")
     {
@@ -1489,6 +1489,18 @@ sub main()
     {
         Blunt("310");
     }
+	Damage("2h_blunt_tier_damages_25")
+    {
+        Blunt("341");
+    }
+	Damage("2h_blunt_tier_damages_26")
+    {
+        Blunt("372");
+    }
+	Damage("2h_blunt_tier_damages_27")
+    {
+        Blunt("403");
+    }
 
     Damage("blunt_tier_damages_0")
     {
@@ -1614,7 +1626,18 @@ sub main()
     {
         Blunt("226");
     }
-
+    Damage("blunt_tier_damages_25")
+    {
+        Blunt("249");
+    }
+	Damage("blunt_tier_damages_26")
+    {
+        Blunt("271");
+    }
+	Damage("blunt_tier_damages_27")
+    {
+        Blunt("293");
+    }
 
     Damage("default_tier_damages_0")
     {
@@ -1732,11 +1755,11 @@ sub main()
     }
 	Damage("default_tier_damages_26")
     {
-        Blunt("203");
+        Blunt("220");
     }
 	Damage("default_tier_damages_27")
     {
-        Blunt("203");
+        Blunt("240");
     }
 	Damage("default_tier_damages_28")
     {
@@ -1876,6 +1899,18 @@ sub main()
     {
         Cut("346");
     }
+	Damage("2h_slashing_tier_damages_25")
+    {
+        Cut("380");
+    }
+	Damage("2h_slashing_tier_damages_26")
+    {
+        Cut("415");
+    }
+	Damage("2h_slashing_tier_damages_27")
+    {
+        Cut("449");
+    }
 	
 	Damage("scaling_2h_slashing_tier_damages_0")
     {
@@ -1917,6 +1952,30 @@ sub main()
     {
         Cut("346");
     }
+	Damage("scaling_2h_slashing_tier_damages_10")
+    {
+        Cut("346");
+    }
+	Damage("scaling_2h_slashing_tier_damages_11")
+    {
+        Cut("346");
+    }
+	Damage("scaling_2h_slashing_tier_damages_12")
+    {
+        Cut("346");
+    }
+	Damage("scaling_2h_slashing_tier_damages_13")
+    {
+        Cut("346");
+    }
+	Damage("scaling_2h_slashing_tier_damages_14")
+    {
+        Cut("346");
+    }
+	Damage("scaling_2h_slashing_tier_damages_15")
+    {
+        Cut("346");
+    }
 	
 	Damage("scaling_2h_blunt_tier_damages_0")
     {
@@ -1955,6 +2014,30 @@ sub main()
         Cut("291");
     }
     Damage("scaling_2h_blunt_tier_damages_9")
+    {
+        Cut("301");
+    }
+	Damage("scaling_2h_blunt_tier_damages_10")
+    {
+        Cut("301");
+    }
+	Damage("scaling_2h_blunt_tier_damages_11")
+    {
+        Cut("301");
+    }
+	Damage("scaling_2h_blunt_tier_damages_12")
+    {
+        Cut("301");
+    }
+	Damage("scaling_2h_blunt_tier_damages_13")
+    {
+        Cut("301");
+    }
+	Damage("scaling_2h_blunt_tier_damages_14")
+    {
+        Cut("301");
+    }
+	Damage("scaling_2h_blunt_tier_damages_15")
     {
         Cut("301");
     }
@@ -2083,6 +2166,18 @@ sub main()
     {
         Cut("189");
     }
+	Damage("slashing_knuckles_tier_damages_25")
+    {
+        Cut("208");
+    }
+	Damage("slashing_knuckles_tier_damages_26")
+    {
+        Cut("226");
+    }
+	Damage("slashing_knuckles_tier_damages_27")
+    {
+        Cut("245");
+    }
 
 	Damage("scaling_slashing_knuckles_tier_damages_0")
     {
@@ -2121,6 +2216,30 @@ sub main()
         Cut("177");
     }
     Damage("scaling_slashing_knuckles_tier_damages_9")
+    {
+        Cut("189");
+    }
+	Damage("scaling_slashing_knuckles_tier_damages_10")
+    {
+        Cut("189");
+    }
+	Damage("scaling_slashing_knuckles_tier_damages_11")
+    {
+        Cut("189");
+    }
+	Damage("scaling_slashing_knuckles_tier_damages_12")
+    {
+        Cut("189");
+    }
+	Damage("scaling_slashing_knuckles_tier_damages_13")
+    {
+        Cut("189");
+    }
+	Damage("scaling_slashing_knuckles_tier_damages_14")
+    {
+        Cut("189");
+    }
+	Damage("scaling_slashing_knuckles_tier_damages_15")
     {
         Cut("189");
     }
@@ -2166,6 +2285,31 @@ sub main()
     {
         Cut("252");
     }
+	Damage("scaling_slashing_tier_damages_10")
+    {
+        Cut("252");
+    }
+	Damage("scaling_slashing_tier_damages_11")
+    {
+        Cut("252");
+    }
+	Damage("scaling_slashing_tier_damages_12")
+    {
+        Cut("252");
+    }
+	Damage("scaling_slashing_tier_damages_13")
+    {
+        Cut("252");
+    }
+	Damage("scaling_slashing_tier_damages_14")
+    {
+        Cut("252");
+    }
+	Damage("scaling_slashing_tier_damages_15")
+    {
+        Cut("252");
+    }
+	
 	Damage("scaling_blunt_tier_damages_0")
     {
         Blunt("11");
@@ -2207,7 +2351,30 @@ sub main()
     {
         Blunt("226");
     }
-
+	Damage("scaling_blunt_tier_damages_10")
+    {
+        Blunt("226");
+    }
+	Damage("scaling_blunt_tier_damages_11")
+    {
+        Blunt("226");
+    }
+	Damage("scaling_blunt_tier_damages_12")
+    {
+        Blunt("226");
+    }
+	Damage("scaling_blunt_tier_damages_13")
+    {
+        Blunt("226");
+    }
+	Damage("scaling_blunt_tier_damages_14")
+    {
+        Blunt("226");
+    }
+	Damage("scaling_blunt_tier_damages_15")
+    {
+        Blunt("226");
+    }
 	Damage("slashing_tier_damages_0")
     {
         Cut("13");
@@ -2331,6 +2498,18 @@ sub main()
     Damage("slashing_tier_damages_24")
     {
         Cut("252");
+    }
+	Damage("slashing_tier_damages_25")
+    {
+        Cut("277");
+    }
+	Damage("slashing_tier_damages_26")
+    {
+        Cut("302");
+    }
+	Damage("slashing_tier_damages_27")
+    {
+        Cut("327");
     }
 
 	Damage("blunt_knuckles_tier_damages_0")
@@ -2456,6 +2635,18 @@ sub main()
     Damage("blunt_knuckles_tier_damages_24")
     {
         Blunt("170");
+    }
+	Damage("blunt_knuckles_tier_damages_25")
+    {
+        Blunt("187");
+    }
+	Damage("blunt_knuckles_tier_damages_26")
+    {
+        Blunt("204");
+    }
+	Damage("blunt_knuckles_tier_damages_27")
+    {
+        Blunt("221");
     }
 	
 	
@@ -2808,7 +2999,7 @@ sub main()
 
 	Damage("Player_KickBaseDamage")
     {
-        Physical("10");
+        All("0");
     }
 	
 	Damage("Biter_Tar_Hit")
@@ -3228,6 +3419,66 @@ sub main()
     Damage("Viral_Power_Attack")
     {
         Physical("12% of MaxHealth");
+    }
+    DamageResistance("Goon_Fire_Resistance")
+    { 
+		Physical("50%");
+		Fire("100%");
+		Poison("25%");
+		Electricity("25%");
+		Ranged("75%");
+    }
+    DamageResistance("Goon_Toxic_Resistance")
+    {
+        Physical("50%");
+		Ranged("75%");
+		Poison("100%");
+		Electricity("25%");
+		Fire("25%");
+    }
+    DamageResistance("Goon_Electric_Resistance")
+    {
+        Physical("50%");
+		Ranged("75%");
+		Poison("75%");
+		Fire("75%");
+		Electricity("100%");
+    }
+	DamageResistance("Goon_Fire_Resistance_Trio")
+    { 
+		Physical("50%");
+		Fire("100%");
+		Poison("75%");
+		Electricity("75%");
+		Ranged("75%");
+    }
+    DamageResistance("Goon_Toxic_Resistance_Trio")
+    {
+        Physical("50%");
+		Ranged("75%");
+		Poison("100%");
+		Electricity("75%");
+		Fire("75%");
+    }
+    DamageResistance("Goon_Electric_Resistance_Trio")
+    {
+        Physical("50%");
+		Ranged("75%");
+		Poison("25%");
+		Fire("25%");
+		Electricity("100%");
+    }
+    Damage("Goon_Fire_Splash")
+    {
+        Fire("4% of MaxHealth");
+    }
+    Damage("Goon_Toxic_Splash")
+    {
+        Poison("4% of MaxHealth");
+    }
+    Damage("Goon_Electric_Splash")
+    {
+        Electricity("4% of MaxHealth");
     }
     Damage("Goon_Weapon")
     {
@@ -3760,17 +4011,21 @@ sub main()
     {
         Blast("65");
     }
-	Damage("Waltz_Combo_Hit")
+	Damage("Waltz_Light_Hit")
     {
-        Blunt("20");
+        Blunt("7.5% of MaxHealth");
+    }
+    Damage("Waltz_Medium_Hit")
+    {
+        Blunt("12.5% of MaxHealth");
+    }
+    Damage("Waltz_Heavy_Hit")
+    {
+        Blast("17.5% of MaxHealth");
     }
     Damage("Waltz_Heavy_Ground_Pound")
     {
-        Blast("50");
-    }
-    Damage("Waltz_Heavy_Combo")
-    {
-        Blast("45");
+        Blast("30% of MaxHealth");
     }
 	Damage("Waltz_Heavy_Weapon_Level_1")
     {
@@ -4176,6 +4431,12 @@ sub main()
         Physical("-0.5");
 		Cut("-0.5");
 		Blunt("-0.5");
+    }
+	DamageTotalMul("Goon_Elite")
+    {
+        Physical("2.0");
+		Cut("2.0");
+		Blunt("2.0");
     }
 	DamageTotalMul("AI_LowDamageMul_Tier1")
     {
@@ -6371,27 +6632,27 @@ sub main()
     }
 	Damage("SpearThrow_RGD4") 
     {
-        Physical("300");
+        Physical("260-358");
     }
 	Damage("SpearThrow_RGD5")
     {
-        Physical("300");
+        Physical("332-546");
     }
 	Damage("SpearThrow_RGD6")
     {
-        Physical("300");
+        Physical("432-810");
     }
 	Damage("SpearThrow_RGD7") 
     {
-        Physical("300");
+        Physical("566-1254");
     }
 	Damage("SpearThrow_RGD8")
     {
-        Physical("300");
+        Physical("706-2016");
     }
 	Damage("SpearThrow_RGD9")
     {
-        Physical("300");
+        Physical("794-3180");
     }
 	
 	
@@ -6459,12 +6720,12 @@ sub main()
 	
 	DamageResistance("DamageResistanceNightRunner")
 	{
-		All("10%");
+		All("1%");
 	}
 
     DamageResistance("NightRunnerGeneralDamageResistance")
     {
-        All("50%");
+        All("25%");
     }
 
     Damage("Melee_Fists_b")
@@ -7648,12 +7909,12 @@ sub main()
         Physical("?%");
     }
 
-    DamageMul("Player_AIDamageResistance")
+    DamageResistance("Player_AIDamageResistance")
     {
-        Physical("?");
-        Cut("?");
-		Blunt("?");
-        Ranged("?");
+        Physical("?%");
+        Cut("?%");
+		Blunt("?%");
+        Ranged("?%");
     }
 
     DamageMul("Player_AIDamageVulnerability")
@@ -7788,6 +8049,22 @@ sub main()
     {
         All("75%");
     }
+	DamageResistance("hakon_75_percent_damage")
+    {
+        Blunt("75%");
+		Cut("75%");
+		Physical("75%");
+		Ram("90%");
+		Blast("75%");
+		Bleeding("75%");
+		Fire("75%");
+		Poison("75%");
+		Electricity("75%");
+		Chemical("75%");
+		Drowning("75%");
+		Ranged("75%");
+    }
+	
 	
 	DamageResistance("99_percent_damage")
     {
@@ -7965,5 +8242,10 @@ sub main()
 	DamageDps("Player_Elemental_Frozen_5")
     {
         Freeze("5% of MaxHealth");
+    }
+
+    Damage("Player_NoDamage")
+    {
+        Physical("0");
     }
 }

@@ -90,6 +90,19 @@ sub main()
 		SpawnCooldownTimePendingActive(60.0);
 		CanBeBlocked(true);
 	}
+
+	EncounterGroup("Icon_Day_EndGame")
+	{
+		MaxNumOfActiveEncounters(1);
+		EncounterMinSearchRadius(60.0);
+		EncounterMaxSearchRadius(85.0);
+		EncounterMaxHeightDifference(30.0);
+		DefaultDifficulty("Easy");
+		MinDistBtwEncounters(20.0);
+		SpawnCooldownTime(240.0);
+		SpawnCooldownTimePendingActive(60.0);
+		CanBeBlocked(true);
+	}
 	
 	EncounterGroup("Barricade")
 	{

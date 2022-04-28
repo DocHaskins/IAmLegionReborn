@@ -217,11 +217,11 @@ sub main()
         ItemType(ItemType_Binoculars);
         PhysicsScript("simple.phx");
         Condition(-1);
-        InventoryMeshHq("eqp_binoculars_a.msh");
-        InventoryMesh("eqp_binoculars_a.msh");
-        Mesh("binoculars.msh");
         HudIcon("weapon_binoculars");
-        TwoHanded(false);
+		Mesh("eqp_binoculars_a.msh");
+        InventoryMesh("eqp_binoculars_a.msh");
+        InventoryMeshTPP("binoculars.msh");
+		TwoHanded(false);
         HolderElement("r_thigh");
         HolderOffset([0.0,10.0,10.0]);
         HolderAngle([0.0,0.0,-90.0]);

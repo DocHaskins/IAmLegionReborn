@@ -153,6 +153,7 @@ sub MarkedPreset()
     IgnoreFogOfWar(true);
     CanShowIn3dWhenOverridenByPortals(true);
     CanBeInteriorCulled(false);
+	MapZoomLevelVisibility(1,1,0,0);
 }
 
 sub StoryNeutral()
@@ -1969,10 +1970,23 @@ sub main()
         MapDescription("&MMap_RestingPlace&");
 
         use Preset_Other();
-        use Preset_UseIALColors();
+        use Preset_UseGreenColor();
 		
 		RadarVisibilityRange(10, 55, 55);
         Location3dDistanceTreshold(10);
+
+        CategoryMarked("Neutral")
+        {		
+            use MarkedPreset();
+        }
+        CategoryMarked("Objective")
+        {
+            use MarkedPreset();
+        }
+        CategoryMarked("Threat")
+        {
+            use MarkedPreset();
+        }
     }
     
     CustomLocation("Stash")
@@ -1981,10 +1995,23 @@ sub main()
         MapDescription("&MMap_LegendStash&");
         
         use Preset_Other();
-        use Preset_UseIALColors();
+        use Preset_UseGreenColor();
 		
 		RadarVisibilityRange(10, 55, 55);
         Location3dDistanceTreshold(10);
+
+        CategoryMarked("Neutral")
+        {		
+            use MarkedPreset();
+        }
+        CategoryMarked("Objective")
+        {
+            use MarkedPreset();
+        }
+        CategoryMarked("Threat")
+        {
+            use MarkedPreset();
+        }
     }
     
     Location("UVLightLocation") //this should be a special case on radar, e.g used for Quest Getting Stronger

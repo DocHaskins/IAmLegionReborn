@@ -1557,8 +1557,6 @@ sub main()
         EmptySound("harpoon_empty");
         BaseSoundPrefix("harpoon");
 		HandInertiaRotFactor([0.0,0.0,0.0]);
-		EnabledAutoAim(IAL_AutoAim);
-        EnabledAutoAimTarget(IAL_AutoAim);
         ShootMinAngle(0.0);
 		ShootMaxAngle(0.0);
 		GameVersion(1);
@@ -2685,8 +2683,6 @@ sub main()
 		AimTime(0.7);
         ShootMinAngle(0.1);
 		TierSpread(1, 1);
-		EnabledAutoAim(IAL_AutoAim);
-        EnabledAutoAimTarget(IAL_AutoAim);
         DamageTiers("crossbow_tier_damages");
 		//IsAutomaticTierScaling(true);
 		GameVersion(1);
@@ -7053,8 +7049,6 @@ sub main()
         AIHandElement("L_HandHolder");
         DamageName("bow_r0");
         EnablePenetration(false);
-		EnabledAutoAim(IAL_AutoAim);
-        EnabledAutoAimTarget(IAL_AutoAim);
         ItemLevel(9, 9);
         StaminaDamage(135);
         ChallengeItem(true);
@@ -7902,8 +7896,6 @@ sub main()
         StaminaDamage(6);
 		Mesh("wpn_crossbow_bolt_a_tpp.msh");
         Skin("Default");
-		EnabledAutoAim(IAL_AutoAim);
-        EnabledAutoAimTarget(IAL_AutoAim);
         DamageName("Bullet_LavanCrossbowSnipersAlley");
 		MotionTrailFx("arrow_trail.gpufx");
 		ThrowSoundName("crossbow_shot_tpp");
@@ -8941,4 +8933,3 @@ sub main()
     }
 }
 	
-}

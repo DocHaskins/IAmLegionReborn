@@ -2,7 +2,7 @@ import "ial_settings.mth"
 
 sub DefaultParams()
 {
-    FallHeightImmediateKill("IAL_AI_FallHeight_ImmediateKill");
+    FallHeightImmediateKill("20.0");
 
     WallHitMinRelativeHeight("0.9");
     WallHitMinCollisionDepth("0.2");
@@ -110,9 +110,9 @@ sub main()
         AIMovePushStrength("4.0");
         AIMovePushMinSelfSpeedToPushOthers("0.1");
 
-        FallHeightMinDamage("IAL_AI_FallHeight_Volatile_MinDmg");
-        FallHeightMaxDamage("IAL_AI_FallHeight_Volatile_MaxDmg");
-        FallHeightImmediateKill("IAL_AI_FallHeight_Volatile_ImmediateKill");
+        FallHeightMinDamage("8.0");
+        FallHeightMaxDamage("19.0");
+        FallHeightImmediateKill("25.0");
     }
     CollisionModuleHumanPreset("waltz")
     {

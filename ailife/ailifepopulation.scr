@@ -588,6 +588,37 @@ sub main()
 
 	Attribute("REG1_TakeoverBySCAVs")
     {
+			PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(PKs_AGENDA_POWER_1, "Plan_PK", 100);
+			PresetToSpawnAmount(1);
+		}
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(PKs_AGENDA_CONSCRIPT, "Plan_PK", 100);
+			PresetToSpawnAmount(1);
+		}
+		PercentageBased()
+		{
+			TimeOfDayCondition(8.1, 19.0);
+			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 100);
+		//	PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 30);
+			PresetToSpawnAmount(12);
+		}
+		PercentageBased()
+		{
+			TimeOfDayCondition(20.0, 8.0);
+			PresetPercentage(PKs_AGENDA_POWER_1, "Plan_PK", 100);
+			PresetToSpawnAmount(1);
+		}
+		PercentageBased()
+		{
+			TimeOfDayCondition(20.0, 8.0);
+			PresetPercentage(PKs_AGENDA_CONSCRIPT, "Plan_PK", 100);
+			PresetToSpawnAmount(1);
+		}
 	}
 
 	Attribute("REG1_TakeoverByPKs")
@@ -596,13 +627,13 @@ sub main()
 		{
 			TimeOfDayCondition(8.1, 19.0);
 			PresetPercentage(PKs_AGENDA_POWER_1, "Plan_PK", 100);
-			PresetToSpawnAmount(5);
+			PresetToSpawnAmount(12);
 		}
 		PercentageBased()
 		{
 			TimeOfDayCondition(8.1, 19.0);
 			PresetPercentage(PKs_AGENDA_CONSCRIPT, "Plan_PK", 100);
-			PresetToSpawnAmount(5);
+			PresetToSpawnAmount(12);
 		}
 		PercentageBased()
 		{
@@ -615,13 +646,13 @@ sub main()
 		{
 			TimeOfDayCondition(20.0, 8.0);
 			PresetPercentage(PKs_AGENDA_POWER_1, "Plan_PK", 100);
-			PresetToSpawnAmount(3);
+			PresetToSpawnAmount(12);
 		}
 		PercentageBased()
 		{
 			TimeOfDayCondition(20.0, 8.0);
 			PresetPercentage(PKs_AGENDA_CONSCRIPT, "Plan_PK", 100);
-			PresetToSpawnAmount(3);
+			PresetToSpawnAmount(12);
 		}
 	}
 

@@ -30,7 +30,9 @@ sub PlayerVariables()
 	Param("SpecialMoveAbusePenaltyCount", "1.0"); // max time the AI will avoid the move
 	Param("DropAttackMaxFallHeight", "15.0"); // block using jump attack after faling from 15 meters
 	
-	//IAL CHANGES
+	///////////////////////IAL CHANGES\\\\\\\\\\\\\\\\\
+	Param("ManualSloMoEnabled", "IAL_Slowmo_Enabled");
+	Param("ManualSloMoCooldown", "IAL_AlwaysSlowmo_Cooldown");  
 	Param("FirearmsCrossbowAccuracyFactor", "IAL_Crossbow_Sway");
     Param("BowAccuracyFactor", "IAL_Bow_Sway");
     Param("BowStaminaShoot", "IAL_Bow_Stamina_OnFire");
@@ -49,6 +51,8 @@ sub PlayerVariables()
 	//Survivor sense	
 	Param("CanUseSenseWhenMoving", IAL_SurvivorSense_WhileMoving ? "true" : "false");
 	Param("SurvivorSenseCooldown", "IAL_SurvivorSense_Cooldown"); // sensor rest time in seconds   
+	Param("SurvivorSenseAIRange", "IAL_SurvivorSense_AIRange"); // range of detecting active AI
+    Param("SurvivorSenseRestingAIRange", "IAL_SurvivorSense_AIRange"); // range of detecting sleeping AI
 	
 	//NIGHT INFECTION
 	Param("AntizinChangePerSecond", "0.0");
@@ -65,8 +69,10 @@ sub PlayerVariables()
     Param("SurvivorSenseOpacity",      "IAL_SurvivorSense_Opacity"); // Strength of visual effect set in range 0.0 - 1.0. It is a global variable that affects all visualizations. If you want to control the intensity of the effect per object/AI type use AlphaMax and AlhpaMin in survivor_sense_presets.scr
     Param("SurvivorSenseAIDuration",   "IAL_SurvivorSense_DetectionTime_AI"); // how long AIs will be highlited
 
-		// detection ranges for AIs:
-	Param("SurvivorSenseAIRange", "IAL_SurvivorSense_Range"); // range of detecting active AI
+	// detection ranges for AIs:
+	Param("SurvivorSenseAIRange", "IAL_SurvivorSense_AIRange"); // range of detecting active AI
+	Param("SurvivorSenseRestingAIRange", "IAL_SurvivorSense_AIRange"); // range of detecting sleeping AI
+	Param("SurvivorSenseAIIndicatorRange", "IAL_SurvivorSense_AIRange"); //range of showing AI Indicators (shield icon)
 	
 		// Gui related
 	Param("SurvivorSenseEnemyBehindPlayerMaxDistance", "IAL_SurvivorSense_DetectionTime_BehindPlayer"); //maximum distance where enemies behind player are detected while using survivor sense

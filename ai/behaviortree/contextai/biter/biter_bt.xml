@@ -37,13 +37,10 @@
                                                         <Cnd_CanStand/>
                                                         <ExternalTree m_UID="AI_REQUESTS" m_CustomName="AI_Requests" m_Hide="true"/>
                                                     </SequenceMem>
-                                                    <ExposeLogicState m_ExposedState="ALLOW_DESPAWN">
-                                                        <ExternalTree m_UID="BITER_RETURN_TO_SPAWN" m_CustomName="Return" m_Hide="true"/>
-                                                    </ExposeLogicState>
                                                     <Act_Status m_StatusRequired="RUNNING"/>
+													<ExternalTree m_UID="BITER_IDLE_RANDOM_WALK" m_CustomName="Idle"/>
                                                 </Selector>
                                             </SetFlagOnRunning>
-											<ExternalTree m_UID="BITER_IDLE_RANDOM_WALK" m_CustomName="Idle"/>
                                         </Selector>
                                     </RepeatOnceOnSuccess>
                                 </Sequence>

@@ -123,17 +123,6 @@ sub main()
 		cooldown(120.0);
 	}
 	
-	ReinforcementData("RobbinTheHood")
-	{
-		force_player_target(false);
-		Spawn("Bandit_Bow", 2,8);
-		initial_spawn_delay(6.0);
-		delay_between_spawns(100.0);
-		chance_to_spawn(0.1);
-		is_infected_reinforcement(false);
-		cooldown(220.0);
-	}
-	
 	ReinforcementData("SpecialTime")
 	{
 		Spawn("Chargers", 0,1);
@@ -149,7 +138,7 @@ sub main()
 	
 	ReinforcementData("VolatileHunt")
 	{
-		Spawn("Volatile", 0,2);
+		Spawn("Volatile", 1,3);
 		force_player_target(true);
 		initial_spawn_delay(2.0);
 		chance_to_spawn(1.0);

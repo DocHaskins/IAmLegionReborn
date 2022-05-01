@@ -2,7 +2,6 @@
 <BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
     <Sequence>
         <Selector>
-			<Cnd_Const m_Enabled="$uv_immunity"/>
             <Cnd_Const m_Enabled="$hunting_mod"/>
             <Opr_EnableSense m_Sense="uv"/>
         </Selector>
@@ -10,7 +9,7 @@
         <Opr_SetBBValue_bool m_Key="#any_target_noticed" m_Value="false"/>
         <Opr_GetModifiedTime m_TimeDelta="-99" m_TimePoint="#last_hit_reaction_time"/>
         <Opr_GetModifiedTime m_TimeDelta="-99" m_TimePoint="#last_time_in_uv_light"/>
-        <Opr_GetModifiedTime m_TimeDelta="10" m_TimePoint="#sunlight_escape_time"/>
+        <Opr_GetModifiedTime m_TimeDelta="-99" m_TimePoint="#sunlight_escape_time"/>
         <Opr_SetBBValue_bool m_Key="#forced_target_set" m_Value="false"/>
         <Opr_SetBBValue_string m_Key="#sunlight_escape_movestyle" m_Value="RunFast"/>
         <Opr_SetWeapon m_WeaponType="Fists" m_Hand="Right"/>

@@ -1,0 +1,17 @@
+!include("ai_data.def")
+// TODO - get rid of this include, find the few parameters that actually matter
+!include("infected_data_params.scr")
+
+ParamString("locomotion_script_name", "Locomotion_Spitter")
+ParamString("ragdoll_script", "ragdoll_human.phx")
+ParamFloat("melee_range", 0.6)
+
+ParamFloat("ellipsoid_size_mul", 1.7)
+ParamFloat("push_physics_damage_light", 17.0)
+ParamFloat("push_physics_damage_heavy", 25.0)
+
+ParamBool("can_execute_finisher", 1)
+
+ParamString("morph_anim_preset", "biter")
+
+ParamBool("enable_static_collision_with_other_ais", 1)

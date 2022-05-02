@@ -36,7 +36,7 @@ sub PlayerVariables()
     Param("BowStaminaChargingPerSecond", "IAL_Bow_Stamina_Charging");
 	Param("BowChargeDamageMul", "Player_BowChargeDamageMul");
     Param("BowZoomValue", "IAL_Bow_Zoom_Amount");
-	Param("BowPenetrationEnabled", IAL_Bow_Arrow_Penetration);
+	Param("BowPenetrationEnabled", IAL_Bow_Arrow_Penetration ? "true" : "false");
     Param("BowMinReadyTimeToShoot", "IAL_Bow_TimeBeforeShoot");
 	Param("BowAutoReleaseTime", "IAL_Bow_TimeBeforeAutoRelease");	
 	
@@ -46,7 +46,7 @@ sub PlayerVariables()
     Param("NightExpKillReward", "IAL_Night_XP_Combat_Reward");
 	
 	//Survivor sense	
-	Param("CanUseSenseWhenMoving", IAL_SurvivorSense_WhileMoving);
+	Param("CanUseSenseWhenMoving", IAL_SurvivorSense_WhileMoving ? "true" : "false");
 	Param("SurvivorSenseCooldown", "IAL_SurvivorSense_Cooldown"); // sensor rest time in seconds   
 	
 	//NIGHT INFECTION
@@ -83,7 +83,7 @@ sub PlayerVariables()
     Param("HarvestingLevelForMultipleItems", "IAL_Loot_MultipleItems_LVL");            // since this level player will get multipple items
     Param("HarvestingMultipleItemsCount", "IAL_Loot_MultipleItems_Amount");
 
-	Param("InVisibleToEnemies", "IAL_GhostMode");
+	Param("InVisibleToEnemies", IAL_GhostMode ? "true" : "false");
     Param("CamouflageCanRun", "IAL_Camo_Actions_CanRun");
     Param("CamouflageCanAttack", "IAL_Camo_Actions_CanAttack");
     Param("CamouflageDepletionAddFlashlightDay", "IAL_Camo_RemoveRate_Flashlight");
@@ -130,5 +130,5 @@ sub PlayerVariables()
 	
 	Param("AggresionPerHit", "0.75");
 	
-	Param("InfiniteArrows", "IAL_Bow_Arrow_Unlimited");
+	Param("InfiniteArrows", IAL_Bow_Arrow_Unlimited ? "true" : "false");
 }

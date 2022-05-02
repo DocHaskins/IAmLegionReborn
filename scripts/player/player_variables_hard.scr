@@ -65,7 +65,9 @@ sub PlayerVariables()
     Param("SurvivorSenseAIDuration",   "IAL_SurvivorSense_DetectionTime_AI"); // how long AIs will be highlited
 
 		// detection ranges for AIs:
-	Param("SurvivorSenseAIRange", "IAL_SurvivorSense_Range"); // range of detecting active AI
+	Param("SurvivorSenseAIRange", "IAL_SurvivorSense_AIRange"); // range of detecting active AI
+	Param("SurvivorSenseRestingAIRange", "IAL_SurvivorSense_AIRange"); // range of detecting sleeping AI
+	Param("SurvivorSenseAIIndicatorRange", "IAL_SurvivorSense_AIRange"); //range of showing AI Indicators (shield icon)
 	
 		// Gui related
 	Param("SurvivorSenseEnemyBehindPlayerMaxDistance", "IAL_SurvivorSense_DetectionTime_BehindPlayer"); //maximum distance where enemies behind player are detected while using survivor sense

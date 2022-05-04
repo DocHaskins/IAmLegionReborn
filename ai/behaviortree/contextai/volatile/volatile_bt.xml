@@ -23,10 +23,12 @@
                                 <ExternalTree m_UID="VIRAL_RETREAT" m_CustomName="Retreat" m_Hide="true"/>
                                 <ExternalTree m_UID="VIRAL_GO_TO_FORCED" m_CustomName="GoToForced" m_Hide="true"/>
                                 <ExternalTree m_UID="VOLATILE_COMBAT" m_CustomName="Combat" m_Hide="true"/>
+								<TimeDeltaLimitRandom m_TimeMin="3" m_TimeMax="7" m_StatusReturned="SUCCESS">
 								<Sequence>
 									<Cnd_IsNight/>
 									<ExternalTree m_UID="VOLATILE_IDLE_RANDOM_WALK" m_CustomName="Idle_Random_Walk"/>
 								</Sequence>
+								</TimeDeltaLimitRandom>
                                 <ExternalTree m_UID="BP_SIMULATE" m_CustomName="BP_Simulate" m_Hide="true"/>
                                 <ExternalTree m_UID="VOLATILE_INVESTIGATE_POI" m_CustomName="Investigate" m_Hide="true"/>
                                 <ExternalTree m_UID="VIRAL_GO_TO_LAST_POS" m_CustomName="LastPos" m_Hide="true"/>

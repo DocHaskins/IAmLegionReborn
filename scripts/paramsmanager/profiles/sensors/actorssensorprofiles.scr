@@ -350,6 +350,7 @@ sub main()
         recognition_decay_per_sec("0.05");
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("goon_default")
     {
@@ -373,6 +374,7 @@ sub main()
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.05");
         min_recognition_vs_player("0.5");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("human_high_alert")
     {
@@ -387,6 +389,7 @@ sub main()
         recognition_decay_per_sec("0.05");
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles_for_players_only("true");
         min_recognition_vs_player("0.5");
 		check_for_hostiles_outside_of_limiting_area("true");
     }
@@ -403,6 +406,7 @@ sub main()
         recognition_decay_per_sec("0.05");
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles_for_players_only("true");
         min_recognition_vs_player("0.5");
     }
     SensorParamsActors("human_low_alert")
@@ -418,6 +422,7 @@ sub main()
         recognition_decay_per_sec("0.05");
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles_for_players_only("true");
     }
     SensorParamsActors("human_default")
     {
@@ -432,6 +437,7 @@ sub main()
         recognition_decay_per_sec("0.05");
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles_for_players_only("true");
     }
     SensorParamsActors("human_level_1_RGD")
     {
@@ -446,6 +452,7 @@ sub main()
         recognition_decay_per_sec("0.05");
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles_for_players_only("true");
     }
     SensorParamsActors("human_level_2_RGD")
     {
@@ -460,6 +467,7 @@ sub main()
         recognition_decay_per_sec("0.05");
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles_for_players_only("true");
     }
     SensorParamsActors("human_level_3_RGD")
     {
@@ -474,6 +482,7 @@ sub main()
         recognition_decay_per_sec("0.05");
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles_for_players_only("true");
     }
     SensorParamsActors("human_level_4_RGD")
     {
@@ -488,6 +497,7 @@ sub main()
         recognition_decay_per_sec("0.05");
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles_for_players_only("true");
     }
     SensorParamsActors("human_level_5_RGD")
     {
@@ -502,6 +512,7 @@ sub main()
         recognition_decay_per_sec("0.05");
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles_for_players_only("true");
     }
     SensorParamsActors("human_level_6_RGD")
     {
@@ -516,6 +527,7 @@ sub main()
         recognition_decay_per_sec("0.05");
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles_for_players_only("true");
     }
     SensorParamsActors("human_level_7_RGD")
     {
@@ -530,6 +542,7 @@ sub main()
         recognition_decay_per_sec("0.05");
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles_for_players_only("true");
     }
     SensorParamsActors("human_level_8_RGD")
     {
@@ -544,6 +557,7 @@ sub main()
         recognition_decay_per_sec("0.05");
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles_for_players_only("true");
     }
     SensorParamsActors("human_level_9_RGD")
     {
@@ -558,6 +572,7 @@ sub main()
         recognition_decay_per_sec("0.05");
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles_for_players_only("true");
     }
     SensorParamsActors("human_level_1_RGD_medium")
     {
@@ -572,6 +587,7 @@ sub main()
         recognition_decay_per_sec("0.05");
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles_for_players_only("true");
         min_recognition_vs_player("0.5");		
     }
     SensorParamsActors("human_level_2_RGD_medium")
@@ -587,6 +603,7 @@ sub main()
         recognition_decay_per_sec("0.05");
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles_for_players_only("true");
         min_recognition_vs_player("0.5");
     }
     SensorParamsActors("human_level_3_RGD_medium")
@@ -602,6 +619,7 @@ sub main()
         recognition_decay_per_sec("0.05");
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles_for_players_only("true");
         min_recognition_vs_player("0.5");
     }
     SensorParamsActors("human_level_4_RGD_medium")
@@ -617,6 +635,7 @@ sub main()
         recognition_decay_per_sec("0.05");
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles_for_players_only("true");
         min_recognition_vs_player("0.5");
     }
     SensorParamsActors("human_level_5_RGD_medium")
@@ -632,6 +651,7 @@ sub main()
         recognition_decay_per_sec("0.05");
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles_for_players_only("true");
         min_recognition_vs_player("0.5");
     }
     SensorParamsActors("human_level_6_RGD_medium")
@@ -647,6 +667,7 @@ sub main()
         recognition_decay_per_sec("0.05");
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles_for_players_only("true");
         min_recognition_vs_player("0.5");
     }
     SensorParamsActors("human_level_7_RGD_medium")
@@ -662,6 +683,7 @@ sub main()
         recognition_decay_per_sec("0.05");
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles_for_players_only("true");
         min_recognition_vs_player("0.5");
     }
     SensorParamsActors("human_level_8_RGD_medium")
@@ -677,6 +699,7 @@ sub main()
         recognition_decay_per_sec("0.05");
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles_for_players_only("true");
         min_recognition_vs_player("0.5");
     }
     SensorParamsActors("human_level_9_RGD_medium")
@@ -692,6 +715,7 @@ sub main()
         recognition_decay_per_sec("0.05");
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles_for_players_only("true");
         min_recognition_vs_player("0.5");
     }
     SensorParamsActors("runner_default")
@@ -735,6 +759,7 @@ sub main()
         recognition_reset_time("40.0");
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.25");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("screamer_high_alert")
     {
@@ -746,6 +771,7 @@ sub main()
         recognition_reset_time("40.0");
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.25");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("spitter_default")
     {
@@ -764,6 +790,7 @@ sub main()
         partial_cover_recognition_multiplier("1.0");
         remember_actor_time("15.0");
         recognition_reset_time("10.0");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("suicider_default")
     {
@@ -785,6 +812,7 @@ sub main()
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.05");
         min_recognition_vs_player("0.5");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("spitter_low_alert")
     {
@@ -803,6 +831,7 @@ sub main()
         partial_cover_recognition_multiplier("2.0");
         remember_actor_time("15.0");
         recognition_reset_time("10.0");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("spitter_high_alert")
     {
@@ -813,6 +842,7 @@ sub main()
         remember_actor_time("15.0");
         recognition_reset_time("10.0");
         check_for_non_hostiles("true");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("viral_low_alert")
     {
@@ -824,6 +854,7 @@ sub main()
         recognition_reset_time("40.0");
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.05");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("viral_medium_alert")
     {
@@ -836,6 +867,7 @@ sub main()
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.05");
         min_recognition_vs_player("0.5");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("viral_high_alert")
     {
@@ -848,6 +880,7 @@ sub main()
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.05");
         min_recognition_vs_player("0.5");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("viral_chase_low_alert")
     {
@@ -874,6 +907,7 @@ sub main()
         recognition_decay_per_sec("0.05");
         min_recognition_vs_player("0.5");
         time_out_of_sight_for_hiding_spot_to_start_working("5.0");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("viral_level_1_RGD")
     {
@@ -885,6 +919,7 @@ sub main()
         recognition_reset_time("40.0");
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.05");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("viral_level_2_RGD")
     {
@@ -896,6 +931,7 @@ sub main()
         recognition_reset_time("40.0");
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.05");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("viral_level_3_RGD")
     {
@@ -907,6 +943,7 @@ sub main()
         recognition_reset_time("40.0");
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.05");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("viral_level_4_RGD")
     {
@@ -918,6 +955,7 @@ sub main()
         recognition_reset_time("40.0");
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.05");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("viral_level_5_RGD")
     {
@@ -929,6 +967,7 @@ sub main()
         recognition_reset_time("40.0");
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.05");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("viral_level_6_RGD")
     {
@@ -940,6 +979,7 @@ sub main()
         recognition_reset_time("40.0");
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.05");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("viral_level_7_RGD")
     {
@@ -951,6 +991,7 @@ sub main()
         recognition_reset_time("40.0");
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.05");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("viral_level_8_RGD")
     {
@@ -962,6 +1003,7 @@ sub main()
         recognition_reset_time("40.0");
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.05");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("viral_level_9_RGD")
     {
@@ -973,6 +1015,7 @@ sub main()
         recognition_reset_time("40.0");
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.05");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("viral_level_1_RGD_medium")
     {
@@ -985,6 +1028,7 @@ sub main()
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.05");
         min_recognition_vs_player("0.5");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("viral_level_2_RGD_medium")
     {
@@ -997,6 +1041,7 @@ sub main()
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.05");
         min_recognition_vs_player("0.5");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("viral_level_3_RGD_medium")
     {
@@ -1009,6 +1054,7 @@ sub main()
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.05");
         min_recognition_vs_player("0.5");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("viral_level_4_RGD_medium")
     {
@@ -1021,6 +1067,7 @@ sub main()
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.05");
         min_recognition_vs_player("0.5");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("viral_level_5_RGD_medium")
     {
@@ -1033,6 +1080,7 @@ sub main()
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.05");
         min_recognition_vs_player("0.5");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("viral_level_6_RGD_medium")
     {
@@ -1045,6 +1093,7 @@ sub main()
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.05");
         min_recognition_vs_player("0.5");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("viral_level_7_RGD_medium")
     {
@@ -1057,6 +1106,7 @@ sub main()
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.05");
         min_recognition_vs_player("0.5");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("viral_level_8_RGD_medium")
     {
@@ -1069,6 +1119,7 @@ sub main()
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.05");
         min_recognition_vs_player("0.5");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("viral_level_9_RGD_medium")
     {
@@ -1081,6 +1132,7 @@ sub main()
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.05");
         min_recognition_vs_player("0.5");
+		check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("viral_default")
     {
@@ -1092,6 +1144,7 @@ sub main()
         recognition_reset_time("40.0");
         recognition_decay_delay("0.5");
         recognition_decay_per_sec("0.05");
+		check_for_hostiles_outside_of_limiting_area("true");
     } 
     SensorParamsActors("charger_default")
     {

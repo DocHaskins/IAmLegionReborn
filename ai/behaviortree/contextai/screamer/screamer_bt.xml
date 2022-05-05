@@ -20,6 +20,9 @@
                             <ExternalTree m_UID="SCREAMER_SCREAM_ON_SPOT" m_CustomName="First scream" m_Hide="true"/>
                             <ExternalTree m_UID="SCREAMER_COMBAT" m_CustomName="Combat" m_Hide="true"/>
                             <ExternalTree m_UID="SCREAMER_INVESTIGATE_POI" m_CustomName="Investigate" m_Hide="true"/>
+							<TimeDeltaLimitRandom m_TimeMin="3" m_TimeMax="7" m_StatusReturned="SUCCESS">
+								<ExternalTree m_UID="SCREAMER_IDLE_RANDOM_WALK" m_CustomName="Idle_Random_Walk"/>
+							</TimeDeltaLimitRandom>
 							<ExternalTree m_UID="SCREAMER_SEARCH" m_CustomName="Search" m_Hide="true"/>
                             <ExternalTree m_UID="AI_REQUESTS" m_CustomName="Scripted" m_Hide="true"/>
                             <Act_Status m_StatusRequired="RUNNING"/>
@@ -34,7 +37,6 @@
                         <Cnd_IsInUVLight/>
                         <Act_Status m_StatusRequired="RUNNING"/>
                     </Sequence>
-				<ExternalTree m_UID="SCREAMER_IDLE_RANDOM_WALK" m_CustomName="Idle_Random_Walk"/>
             </ParallelRepeat>
         </Selector>
     </SequenceMem>

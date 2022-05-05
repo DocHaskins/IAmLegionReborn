@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Sequence>
+        <Opr_GetCombatRangePosition m_Position="#range_pos"/>
+        <Selector>
+            <SequenceMem>
+                <Opr_GetSelfPosition m_Position="#self_pos"/>
+                <Selector>
+                    <Cnd_PositionInRadius m_Position="#range_pos" m_Radius="4" m_Invert="true"/>
+                    <Cnd_DistanceYBetweenPositionsLower m_FirstPosition="#self_pos" m_SecondPosition="#range_pos" m_Distance="2.5" m_Invert="true"/>
+                </Selector>
+                <Selector>
+                    <SequenceMem>
+                        <Selector>
+                            <Cnd_PositionInRadius m_Position="#target_pos" m_Radius="$combat_loco_start" m_Invert="true"/>
+                            <Cnd_HasStrafePathToCombatRangePosition m_Invert="true"/>
+                        </Selector>
+                        <Sequence>
+                            <Selector>
+                                <Cnd_PositionInRadius m_Position="#target_pos" m_Radius="$combat_loco_end" m_Invert="true"/>
+                                <Cnd_HasStrafePathToCombatRangePosition m_Invert="true"/>
+                            </Selector>
+                            <Opr_GetDirToCombatTarget m_DirToTarget="#end_dir"/>
+                            <Act_Move m_Destination="#range_pos" m_MoveStyle="#move_style_trot_combat" m_StopAtDest="true" m_EndDir="#end_dir" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                        </Sequence>
+                    </SequenceMem>
+                    <Act_StrafeToDestination m_Target="#target" m_Destination="#range_pos" m_Style="Aggressive" m_FailIfDestUnreachable="true" m_Speed="3" m_SpringUpdateSpeed="$strafe_spring_update_speed" m_EndRadius="$strafe_end_radius" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
+                </Selector>
+            </SequenceMem>
+            <ExternalTree m_UID="HUMAN_COMBAT_IDLE" m_CustomName="Idle" m_Hide="true"/>
+        </Selector>
+    </Sequence>
+</BehaviorTree>

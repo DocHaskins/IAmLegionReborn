@@ -1,0 +1,107 @@
+sub main()
+{
+	Plan("Plan_PK")
+	{
+		SkipBeginScenarioProb(1.0);
+		SpawnMinDistFromActiveAgendas(45.0);
+		BeginStage("begin")
+		{
+			ScenarioTags("body_looting;doors_breakdown;car_looting;car_trunk_looting;fountain;fueldrain;fixing;resting_bench;resting_bench_crouch");
+			ScenarioSearchRange(40, 50);
+			MaxHeightDifference(10);
+		}
+		
+		MiddleStage("middle")
+		{
+			ScenarioTags("test_scenario;");
+			ScenarioSearchRange(40, 50);
+			MaxHeightDifference(10);
+		}
+		
+		EndStage("end")
+		{
+			ScenarioTags("body_looting;doors_breakdown;car_looting;car_trunk_looting;fountain;fueldrain;fixing;resting_bench;resting_bench_crouch");
+			MaxHeightDifference(10);
+			ScenarioSearchRange(1, 5);
+		}
+	}
+	
+	Plan("Plan_PK_Roof")
+	{
+		SkipBeginScenarioProb(0.0);
+		SpawnMinDistFromActiveAgendas(1.0);
+		
+		BeginStage("begin")
+		{
+			ScenarioTags("binoculars;resting_roof;generic_wall_roof;");
+			ScenarioSearchRange(40, 50);
+			MaxHeightDifference(10);
+		}
+		
+		MiddleStage("middle")
+		{
+			ScenarioTags("binoculars;resting_roof;generic_wall_roof;");
+			MaxHeightDifference(10);
+			ScenarioSearchRange(1, 10);
+		}
+		
+		EndStage("end")
+		{
+			ScenarioTags("binoculars;collecting_plants;fixing_crouch;examine_roof;garden_roof;resting_roof;generic_wall_roof;Chimney01;Chimney02;Chimney03;survivors_1_roof;");
+            ScenarioSearchRange(1, 5);
+			MaxHeightDifference(5);
+		}
+	}
+	
+	
+	Plan("Plan_Factions_Ground_Testmap")
+	{
+		SpawnMinDistFromActiveAgendas(0.01);
+		
+		BeginStage("begin")
+		{
+			ScenarioTags("factions_1_ground;");
+			ScenarioSearchRange(20, 40);
+			MaxHeightDifference(2);
+		}
+		
+		MiddleStage("middle")
+		{
+			ScenarioTags("factions_1_ground;");
+			MaxHeightDifference(2);
+			ScenarioSearchRange(1, 10);
+		}
+		
+		EndStage("end")
+		{
+			ScenarioTags("factions_1_ground;");
+            ScenarioSearchRange(1, 5);
+			MaxHeightDifference(1);
+		}
+	}
+	Plan("Plan_Factions_Roof_Testmap")
+	{
+		SpawnMinDistFromActiveAgendas(0.01);
+		
+		BeginStage("begin")
+		{
+			ScenarioTags("factions_1_roof;");
+			ScenarioSearchRange(20, 40);
+			MaxHeightDifference(2);
+		}
+		
+		MiddleStage("middle")
+		{
+			ScenarioTags("factions_1_roof;");
+			MaxHeightDifference(2);
+			ScenarioSearchRange(1, 10);
+		}
+		
+		EndStage("end")
+		{
+			ScenarioTags("factions_1_roof;");
+            ScenarioSearchRange(1, 5);
+			MaxHeightDifference(1);
+		}
+	}
+}

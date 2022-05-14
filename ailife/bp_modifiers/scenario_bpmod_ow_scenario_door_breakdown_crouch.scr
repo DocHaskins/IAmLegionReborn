@@ -1,0 +1,36 @@
+sub main()
+{
+    Variants()
+    {
+        Variant()
+        {
+            Faction("survivors");
+            Behaviors()
+            {
+                Behavior("single_citizen_m_crouch_looting_fail_door_locked_left_side_01")
+                {
+                    AcceptableZoneLevel(1, 12);
+                }
+                Behavior("single_citizen_m_crouch_looting_fail_door_locked_right_side_01")
+                {
+                    AcceptableZoneLevel(1, 12);
+                }
+            }
+        }
+        Variant()
+        {
+            Faction("bandits");
+            Behaviors()
+            {
+                Behavior("single_citizen_m_crouch_looting_fail_door_locked_left_side_01")
+                {
+                    AcceptableZoneLevel(1, 12);
+                }
+                Behavior("single_citizen_m_crouch_looting_fail_door_locked_right_side_01")
+                {
+                    AcceptableZoneLevel(1, 12);
+                }
+            }
+        }
+    }
+}

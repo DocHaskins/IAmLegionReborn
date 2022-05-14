@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SetFlagOnRunning m_Key="#during_special_attack">
+        <SequenceMem>
+            <Cnd_CanStartTask m_StartPolicy="INTERRUPT"/>
+            <Cnd_IsPoseEqual m_Pose="Standing"/>
+            <Cnd_IsBBValueEqual_string m_Key="#tactic" m_Value="rush" m_Invert="true"/>
+            <Cnd_IsPlayer m_Target="#target"/>
+            <Cnd_IsPlayerTargetInUVLight m_Target="#target" m_Invert="true"/>
+            <Cnd_IsPathToTargetClear/>
+            <Cnd_HasStrafePathToCombatTarget/>
+            <Cnd_IsCombatTargetInLOS/>
+            <Cnd_IsCombatTargetInRadius m_Radius="$attack_power_max_range" m_UsePrediction="true"/>
+            <Cnd_IsCombatTargetInRadius m_Radius="$attack_power_min_range" m_UsePrediction="true" m_Invert="true"/>
+            <Cnd_IsCombatTargetInAngle m_Angle="$attack_power_max_angle"/>
+            <Parallel m_PolicySuccess="REQUIRE_ONE" m_PolicyFailure="REQUIRE_ONE">
+                <SequenceMem>
+                    <Opr_SetDirCorrectionSpeed m_MaxSpeed="$attack_power_dir_correction_speed"/>
+                    <Act_Attack m_Target="#target" m_AttackPresetName="volatile_power_attack" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+                </SequenceMem>
+                <Runner>
+                    <Sequence>
+                        <Cnd_TargetIsDodging m_Target="#target"/>
+                        <Cnd_CanDisableAttackRotCorrection/>
+                        <Opr_SetDirCorrectionSpeed m_MaxSpeed="0.00"/>
+                    </Sequence>
+                </Runner>
+                <RunUntilSuccess>
+                    <Sequence>
+                        <Cnd_CanInterruptActivityModule_Attack/>
+                        <Cnd_DamageGiven m_TimeWindow="3.0"/>
+                    </Sequence>
+                </RunUntilSuccess>
+            </Parallel>
+        </SequenceMem>
+    </SetFlagOnRunning>
+</BehaviorTree>

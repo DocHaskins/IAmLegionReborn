@@ -1,25 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
-    <RepeatOnceOnSuccess>
+    <Sequence>
+        <Cnd_HasBBValue m_Key="#target"/>
         <Selector>
-            <SequenceMem>
-                <Cnd_IsPoseEqual m_Pose="Laying"/>
-                <Act_Attack m_Target="#target" m_AttackPresetName="suicider_explode" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
-            </SequenceMem>
-            <ExternalTree m_UID="SUICIDER_EXPLODE" m_CustomName="Explode" m_Hide="true"/>
-            <Selector>
-                <Sequence>
-                    <Cnd_HasBBValue m_Key="#target"/>
-                    <Cnd_HasPathToCombatTarget m_Invert="true"/>
-                    <Cnd_TargetInRadius m_Target="#target" m_Radius="$fight_max_range"/>
-                    <Act_Idle m_Type="Stand" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
-                </Sequence>
-                <Sequence>
-                    <Cnd_HasBBValue m_Key="#target"/>
-                    <Opr_GetEntityFromAIObservable m_AIObservable="#target" m_Entity="#target_entity"/>
-                    <Act_MoveFollow m_TargetEntity="#target_entity" m_LocomotionSpeed="$movement_speed_multiplier" m_MoveStyle="$movestyle" m_StopAtDest="false" m_SkipStart="#should_skip_start" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
-                </Sequence>
-            </Selector>
+            <ExternalTree m_UID="SUICIDER_OFFENSIVE" m_CustomName="Offensive" m_Hide="true"/>
+            <ExternalTree m_UID="SUICIDER_KEEP_DISTANCE" m_CustomName="KeepDistance" m_Hide="true"/>
         </Selector>
-    </RepeatOnceOnSuccess>
+    </Sequence>
 </BehaviorTree>

@@ -64,12 +64,12 @@ sub main()
     // no zombies on rooftops during the day
     DensitiesTagged(Day, "rooftop")
     {
-        None(15, 50);
+        None(50, 100);
 		RunThrough(15, 50);
         Easy(15, 50);
-        Medium(15, 50);
-        Hard(20, 70);
-        VeryHard(20, 70);
+        Medium(25, 50);
+        Hard(60, 100);
+        VeryHard(70, 120);
 		
 		OWA(40, 50);
     }
@@ -93,13 +93,13 @@ sub main()
         None("0%");
 		RunThrough("25%");
         Easy("25%");
-        Medium("25%");
-        Hard("25%");
-        VeryHard("25%");
+        Medium("30%");
+        Hard("50%");
+        VeryHard("60%");
 		
 		HUB("25%");
 		OWA("25%");
-		Park("25%");		
+		Park("50%");		
     }
     
     DensitiesTagged(Night, "init_ground")
@@ -299,7 +299,7 @@ sub main()
         None(0, 0, 100.0);
 		RunThrough(1, 2, 100.0);
         Easy(7, 10, 100.0);
-		Medium(7, 15, 100.0);
+		Medium(50, 100, 100.0);
         Hard(82, 125, 200.0);
         VeryHard(80, 160, 200.0); // Used for Shops and Dark Places
     }
@@ -309,8 +309,8 @@ sub main()
         None(0, 0, 100.0);
 		RunThrough(0, 0.5, 100.0);
         Easy(0.5, 1.0, 100.0);
-        Medium(8, 9, 100.0);
-        Hard(8, 9, 100.0);
+        Medium(12, 22, 100.0);
+        Hard(16, 30, 100.0);
         VeryHard(8, 9, 100.0); // Used for Shops and Dark Places
     }
     
@@ -333,9 +333,9 @@ sub main()
         None(0, 0, 100.0);
 		RunThrough(0, 0.5, 100.0);
         Easy(0.5, 1.0, 100.0);
-        Medium(8, 9, 100.0);
-        Hard(8, 9, 100.0);
-        VeryHard(8, 9, 100.0); // Used for Shops and Dark Places
+        Medium(12, 22, 100.0);
+        Hard(16, 30, 100.0);
+        VeryHard(16, 40, 100.0); // Used for Shops and Dark Places
     }
 	
 	//////////////// REGION_02 ////////////////
@@ -345,10 +345,10 @@ sub main()
 	DensitiesTagged(Day, "dz_region_02")
     {
         None(0, 0, 100.0);
-		RunThrough(0, 0.5, 100.0);
-        Easy(0.5, 1.0, 100.0);
-        Medium(8, 9, 100.0);
-        Hard(40, 175, 200.0);
+		RunThrough(2, 3, 100.0);
+		Easy(20, 52, 100.0);
+		Medium(25, 100, 200.0);
+        Hard(50, 175, 200.0);
         VeryHard(50, 175, 200.0); // Used for Shops and Dark Places
     }
     
@@ -357,9 +357,9 @@ sub main()
         None(0, 0, 100.0);
 		RunThrough(0, 0.5, 100.0);
         Easy(0.5, 1.0, 100.0);
-        Medium(8, 9, 100.0);
-        Hard(8, 9, 100.0);
-        VeryHard(8, 9, 100.0); // Used for Shops and Dark Places
+        Medium(12, 22, 100.0);
+        Hard(16, 30, 100.0);
+        VeryHard(16, 40, 100.0); // Used for Shops and Dark Places
     }
 	
     /////////////////////////////////////////////////////////////

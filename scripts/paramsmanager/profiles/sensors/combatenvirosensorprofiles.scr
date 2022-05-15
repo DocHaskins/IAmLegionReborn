@@ -1,0 +1,31 @@
+sub main()
+{
+    SensorParamsCombatEnviro("default")
+    {
+        actor_space_checker_range("5.0");
+        actor_space_checker_prediction_time("0.0");
+        nav_ray_to_target_query_cooldown_time_delta("0.1");
+        nav_ray_to_target_max_xz_tolerance("2.0");
+        nav_ray_to_target_max_y_tolerance("2.0");
+        nav_ray_to_target_max_connection_height_up("12.0");
+        nav_ray_to_target_max_connection_height_down("0.0");
+        nav_ray_to_target_consider_dynamic_objects("true");
+        nav_ray_to_target_allow_nav_connections("true");
+        nav_path_to_target_max_xz_tolerance("2.0");
+        nav_path_to_target_max_y_tolerance("2.0");
+    }
+    SensorParamsCombatEnviro("goon_default")
+    {
+        actor_space_checker_range("5.0");
+        actor_space_checker_prediction_time("0.0");
+        nav_ray_to_target_query_cooldown_time_delta("0.1");
+        nav_ray_to_target_max_xz_tolerance("3.5");
+        nav_ray_to_target_max_y_tolerance("4.5");
+        nav_ray_to_target_max_connection_height_up("4.0");
+        nav_ray_to_target_max_connection_height_down("0.0");
+        nav_ray_to_target_consider_dynamic_objects("true");
+        nav_ray_to_target_allow_nav_connections("true");
+        nav_path_to_target_max_xz_tolerance("3.5");
+        nav_path_to_target_max_y_tolerance("4.5");
+    }
+}

@@ -198,7 +198,7 @@ sub presets()
         range_effective(3.0);
         duration(2.0);
 
-        interest_default(1.0, "force_attract");
+        interest_default(1.0, "attract");
         awakening_default(1.0);
     }
     NoisePreset("takedown_with_knife")
@@ -372,7 +372,7 @@ sub presets()
 		interest("biter", 0.9, "attract");
 		interest("viral", 0.9, "attract");
 		spawner_activation_flag("screamer_dz_activation");
-		reinforcement_id("SpecialTime");
+		//reinforcement_id("SpecialTime");
         awakening_default(1.0);
     }
     NoisePreset("throwable_impact_geom")

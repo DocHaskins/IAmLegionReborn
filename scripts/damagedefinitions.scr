@@ -808,8 +808,8 @@ sub main()
     DamageMul("Biter_Head_Health_Mul")
     {
         Ram("+0.1");
-		Cut("+0.65");
-		Blunt("+0.85");
+		Cut("+0.15");
+		Blunt("+0.15");
     }
 	DamageMul("Biter_Helmet_Head_Health_Mul")
     {
@@ -827,16 +827,16 @@ sub main()
     DamageMul("Biter_Arm_Health_Mul")
     {
         Ram("+0.0");
-		Cut("+0.8");
-		Blunt("+0.5");
-		Ranged("+0.1");
+		Cut("+0.0");
+		Blunt("+0.0");
+		Ranged("-0.1");
     }
     DamageMul("Biter_Leg_Health_Mul")
     {
         Ram("+0.0");
-		Cut("+0.8");
-		Blunt("+0.6");
-		Ranged("+0.1");
+		Cut("+0.0");
+		Blunt("+0.0");
+		Ranged("-0.1");
     }
 	
 	DamageMul("Biter_Armored_Chest_Health_Mul")
@@ -4316,7 +4316,7 @@ sub main()
 
     DamageMul("AI_BiterArmored")
     {
-        Physical("20% of MaxHealth");
+        Physical("+3.0");
     }
 
     DamageMul("AI_BiterHeadshot")

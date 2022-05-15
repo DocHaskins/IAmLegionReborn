@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SetFlagOnRunning m_Key="#during_special_attack">
+        <SequenceMem>
+            <Cnd_CanStartTask m_StartPolicy="INTERRUPT"/>
+            <Cnd_IsPoseEqual m_Pose="Crouching"/>
+            <Cnd_IsPathToTargetClear/>
+            <Cnd_HasStrafePathToCombatTarget/>
+            <Cnd_IsCombatTargetInLOS/>
+            <SelectorMem>
+                <CooldownTimeDelta m_CooldownTime="20">
+                    <SequenceMem>
+                        <Selector>
+                            <Cnd_IsActivityModuleRunning_HitReaction/>
+                            <Cnd_IsBBValueEqual_bool m_Key="#dodging" m_Value="true"/>
+                        </Selector>
+                        <Cnd_IsCombatTargetInRadius m_Radius="10" m_UsePrediction="true"/>
+                        <Cnd_IsCombatTargetInRadius m_Radius="2.5" m_UsePrediction="true" m_Invert="true"/>
+                        <Opr_SetDirCorrectionSpeed m_MaxSpeed="240"/>
+                        <Parallel m_PolicySuccess="REQUIRE_ONE" m_PolicyFailure="REQUIRE_ONE">
+                            <Act_Attack m_Target="#target" m_AttackPresetName="volatile_jump_grab" m_Phase="2" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+                            <Runner>
+                                <Sequence>
+                                    <Cnd_TargetIsDodging m_Target="#target"/>
+                                    <Cnd_CanDisableAttackRotCorrection/>
+                                    <Opr_SetDirCorrectionSpeed m_MaxSpeed="0.00"/>
+                                </Sequence>
+                            </Runner>
+                            <RunUntilSuccess>
+                                <Sequence>
+                                    <Cnd_CanInterruptActivityModule_Attack/>
+                                    <Cnd_DamageGiven m_TimeWindow="3.0"/>
+                                </Sequence>
+                            </RunUntilSuccess>
+                        </Parallel>
+                    </SequenceMem>
+                </CooldownTimeDelta>
+                <SequenceMem>
+                    <Selector>
+                        <Cnd_IsActivityModuleRunning_HitReaction/>
+                        <Cnd_IsBBValueEqual_bool m_Key="#dodging" m_Value="true"/>
+                        <Cnd_IsActivityModuleRunning_Step/>
+                    </Selector>
+                    <Cnd_IsCombatTargetInRadius m_Radius="4.5" m_UsePrediction="true"/>
+                    <Opr_SetDirCorrectionSpeed m_MaxSpeed="240"/>
+                    <Act_Attack m_Target="#target" m_AttackPresetName="volatile_recovery_attack" m_Phase="1" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+                </SequenceMem>
+            </SelectorMem>
+        </SequenceMem>
+    </SetFlagOnRunning>
+</BehaviorTree>

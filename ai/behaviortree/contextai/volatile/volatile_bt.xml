@@ -57,6 +57,10 @@
                 </ExposeTarget>
                 <ExternalTree m_UID="AI_TRACK" m_CustomName="TrackEnemy" m_Hide="true"/>
                 <Sequence>
+                    <Cnd_IsInSunlight/>
+                    <ExternalTree m_UID="VOLATILE_ESCAPE_FROM_SUNLIGHT" m_CustomName="Sunlight_Escape" m_Hide="true"/>
+                </Sequence>
+				<Sequence>
                     <Cnd_IsInUVLight/>
                     <Act_Status m_StatusRequired="RUNNING"/>
                 </Sequence>

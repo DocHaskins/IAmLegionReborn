@@ -32,8 +32,8 @@ sub main()
     // head with deformations, can be cut off
     BodyElement("Head")
     {
-		MaxBodyHealthPercToCut(IAL_GORE_Dismember_Human_Head);
-        MaxBodyHealthPercToDestroy(IAL_GORE_Dismember_Human_Head);
+		MaxBodyHealthPercToCut(50);
+        MaxBodyHealthPercToDestroy(40);
         
         KillBodyOnDestroy(true);   // kill body after death
 

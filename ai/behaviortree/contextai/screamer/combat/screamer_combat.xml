@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Sequence>
+        <Cnd_HasBBValue m_Key="#target"/>
+        <Cnd_IsActivityModuleRunning_HitReaction m_Invert="true"/>
+        <Selector>
+            <Optional m_Enabled="$enable_push">
+                <ExternalTree m_UID="SCREAMER_OFFENSIVE" m_CustomName="Offensive" m_Hide="true"/>
+            </Optional>
+            <Optional m_Enabled="$enable_stunning_scream">
+                <ExternalTree m_UID="SCREAMER_STUNNING_SCREAM" m_CustomName="Stunning_scream" m_Hide="true"/>
+            </Optional>
+            <ExternalTree m_UID="SCREAMER_ALARM_SCREAM" m_CustomName="Alarm_Scream" m_Hide="true"/>
+            <SequenceMem>
+                <Cnd_IsCombatTargetInAngle m_Angle="60" m_Invert="true"/>
+                <Act_TurnToPos m_Position="#target_pos" m_Type="COMBAT" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+            </SequenceMem>
+            <Optional m_Enabled="$enable_step">
+                <ExternalTree m_UID="SCREAMER_KEEP_DISTANCE" m_CustomName="KeepDistance" m_Hide="true"/>
+            </Optional>
+        </Selector>
+    </Sequence>
+</BehaviorTree>

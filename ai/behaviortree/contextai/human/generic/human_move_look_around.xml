@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Cnd_PositionInRadius m_Position="#request_move_dest_pos" m_Radius="5" m_Invert="true"/>
+        <Selector>
+            <Cnd_HasBBValue m_Key="#last_danger_pos" m_Invert="true"/>
+            <Cnd_PositionInRadius m_Position="#last_danger_pos" m_Radius="15" m_Invert="true"/>
+        </Selector>
+        <Selector>
+            <Cnd_HasBBValue m_Key="#last_look_around_pos" m_Invert="true"/>
+            <Cnd_PositionInRadius m_Position="#last_look_around_pos" m_Radius="10" m_Invert="true"/>
+        </Selector>
+        <Selector>
+            <Cnd_HasBBValue m_Key="#tracked_ally_pos" m_Invert="true"/>
+            <Cnd_PositionInRadius m_Position="#tracked_ally_pos" m_Radius="10" m_Invert="true"/>
+        </Selector>
+        <Cnd_IsPotentialGroupLeader/>
+        <Cnd_IsBBValueEqual_string m_Key="#request_move_style" m_Value="Walk"/>
+        <CooldownTimeDeltaRandom m_MinCooldownTime="8" m_MaxCooldownTime="15" m_CooldownOnFailure="true" m_CooldownOnAbort="true" m_CooldownBeforeFirstTick="true">
+            <SequenceMem>
+                <Opr_GetSelfPosition m_Position="#last_look_around_pos"/>
+                <TimeDeltaLimitRandom m_TimeMin="3" m_TimeMax="5">
+                    <Act_Investigation m_Type="LOOK_AROUND" m_StimulusType="NONE" m_StimulusPosition="#last_look_around_pos" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END" m_StopRequest="REGULAR"/>
+                </TimeDeltaLimitRandom>
+            </SequenceMem>
+        </CooldownTimeDeltaRandom>
+		<ExternalTree m_UID="HUMAN_GO_TO_HIGH_GROUND" m_CustomName="Go to high ground" m_Hide="true"/>
+    </SequenceMem>
+</BehaviorTree>

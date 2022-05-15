@@ -12,7 +12,7 @@
                         <SelectorMem>
                             <SequenceMem>
                                 <SelectorMem>
-                                    <Cnd_IsCombatTargetInRadius m_Radius="8"/>
+                                    <Cnd_IsCombatTargetInRadius m_Radius="12"/>
                                     <Cnd_PositionInRadius m_Radius="8" m_Position="#hold_position"/>
                                 </SelectorMem>
                                 <!-- TODO: This strafing should fail if there is no path without connections to hold position -->
@@ -56,8 +56,8 @@
                     <Cnd_IsCombatTargetInAngle m_Angle="45"/>
                     <Act_TurnToPos m_Position="#target_pos" m_Type="Combat" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END"/>
                 </SelectorMem>
-                <ExternalTree m_UID="HUMAN_COMBAT_ATTACK_ONE_HANDED_AI" m_CustomName="AttackAI" m_Hide="true"/>
             </Sequence>
         </SequenceMem>
+		<ExternalTree m_UID="HUMAN_COMBAT_ATTACK_ONE_HANDED_AI" m_CustomName="AttackAI" m_Hide="true"/>
     </Sequence>
 </BehaviorTree>

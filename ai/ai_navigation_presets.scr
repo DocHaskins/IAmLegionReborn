@@ -195,17 +195,14 @@ sub HumanAI_Base()
             climb_high(1.0);
 
             jump_short(1.0);
+            jump_medium(1.0);
             
             ladder(1.0);
         }
 
         MaxUpwardConnectionHeight(16.0);
         MaxDownwardConnectionHeight(16.0);
-
-        DynamicSurfaceTypeCosts()
-        {
-            use DisallowAllDynamicSurfaces();
-        }
+		MaxHorizontalConnectionLength(INFINITE_COST);
     }
 
     NavigationPreset("npc_combat")
@@ -218,6 +215,7 @@ sub HumanAI_Base()
             climb_medium(3.0);
 
             jump_short(1.0);
+			jump_medium(1.0);
 
             breakable_door(1.3);
             ladder(1.0);
@@ -226,11 +224,6 @@ sub HumanAI_Base()
         MaxUpwardConnectionHeight(16.0);
         MaxDownwardConnectionHeight(16.0);
         MaxHorizontalConnectionLength(INFINITE_COST);
-
-        DynamicSurfaceTypeCosts()
-        {
-            use DisallowAllDynamicSurfaces();
-        }
     }
 
     NavigationPreset("biter")
@@ -239,12 +232,7 @@ sub HumanAI_Base()
 		MaxPathLength(250.0);
         ConnectionTypeCosts()
         {
-            climb_low(3.0);
-            climb_medium(5.0);
-            climb_high(7.0);
-
-			jump_short(1.0);
-            jump_medium(1.0);		  
+            climb_low(2.0);
 
             breakable_door(2.0);
         }
@@ -425,7 +413,6 @@ sub HumanAI_Base()
             
             jump_short(1.0);
             jump_medium(1.0);
-            jump_long(1.0);
         }
 
         MaxUpwardConnectionHeight(9.0);
@@ -481,6 +468,10 @@ sub HumanAI_Base()
             jump_long(1.0);
         }
 
+		MaxUpwardConnectionHeight(9.5);
+        MaxDownwardConnectionHeight(10.5);
+		MaxHorizontalConnectionLength(INFINITE_COST);
+
         use HumanAI_Base_InfectedSurfaces();
         use HumanAI_Base_InfectedRandomness();
     }
@@ -505,6 +496,7 @@ sub HumanAI_Base()
 
         MaxUpwardConnectionHeight(9.5);
         MaxDownwardConnectionHeight(10.5);
+		MaxHorizontalConnectionLength(INFINITE_COST);
 
         use HumanAI_Base_InfectedSurfaces();
         use HumanAI_Base_InfectedRandomness();
@@ -617,6 +609,7 @@ sub HumanAI_Quest()
             climb_medium(3.0);
 
             jump_short(5.0);
+			jump_medium(1.0);
 
             breakable_door(1.3);
             ladder(1.0);
@@ -780,10 +773,6 @@ sub HumanAI_OpenWorld_Defaults()
 sub HumanAI_OpenWorld_BanditSurfaces()
 {
     GenerateDynamicSurface("bandit");
-    DynamicSurfaceTypeCosts()
-    {
-        use DisallowAllDynamicSurfaces();
-    }
 }
 
 sub HumanAI_OpenWorld()
@@ -797,7 +786,8 @@ sub HumanAI_OpenWorld()
             climb_low(10.0);
             climb_medium(10.0);
 
-            jump_short(10.0);
+            jump_short(1.0);
+			jump_medium(1.0);
 
             breakable_door(1.3);
             ladder(1.0);
@@ -806,6 +796,7 @@ sub HumanAI_OpenWorld()
 
         MaxUpwardConnectionHeight(16.0);
         MaxDownwardConnectionHeight(16.0);
+		MaxHorizontalConnectionLength(INFINITE_COST);
 
         use HumanAI_OpenWorld_BanditSurfaces();
     }
@@ -819,7 +810,8 @@ sub HumanAI_OpenWorld()
             climb_low(10.0);
             climb_medium(10.0);
 
-            jump_short(10.0);
+            jump_short(1.0);
+			jump_medium(1.0);
 
             breakable_door(1.3);
             ladder(1.0);
@@ -828,6 +820,7 @@ sub HumanAI_OpenWorld()
 
         MaxUpwardConnectionHeight(16.0);
         MaxDownwardConnectionHeight(16.0);
+		MaxHorizontalConnectionLength(INFINITE_COST);
 
         use HumanAI_OpenWorld_BanditSurfaces();
     }
@@ -857,13 +850,18 @@ sub HumanAI_OpenWorld()
         ConnectionTypeCosts()
         {
             climb_low(10.0);
+            climb_medium(10.0);
+
+            jump_short(1.0);
+			jump_medium(1.0);
 
             breakable_door(1.3);
+            ladder(1.0);
             door(1.5);
         }
-
         MaxUpwardConnectionHeight(16.0);
         MaxDownwardConnectionHeight(16.0);
+		MaxHorizontalConnectionLength(INFINITE_COST);
 
         use HumanAI_OpenWorld_BanditSurfaces();
     }
@@ -874,10 +872,11 @@ sub HumanAI_OpenWorld()
 
         ConnectionTypeCosts()
         {
-            climb_low(3.0);
-            climb_medium(5.0);
+            climb_low(10.0);
+            climb_medium(10.0);
 
-            jump_short(3.0);
+            jump_short(1.0);
+			jump_medium(1.0);
 
             breakable_door(1.3);
             ladder(1.0);
@@ -886,6 +885,7 @@ sub HumanAI_OpenWorld()
 
         MaxUpwardConnectionHeight(16.0);
         MaxDownwardConnectionHeight(16.0);
+		MaxHorizontalConnectionLength(INFINITE_COST);
 
         use HumanAI_OpenWorld_BanditSurfaces();
     }
@@ -896,17 +896,20 @@ sub HumanAI_OpenWorld()
 
         ConnectionTypeCosts()
         {
-            climb_low(3.0);
-            climb_medium(3.0);
+            climb_low(10.0);
+            climb_medium(10.0);
 
             jump_short(1.0);
+			jump_medium(1.0);
 
             breakable_door(1.3);
+            ladder(1.0);
             door(1.5);
         }
 
         MaxUpwardConnectionHeight(16.0);
         MaxDownwardConnectionHeight(16.0);
+		MaxHorizontalConnectionLength(INFINITE_COST);
 
         use HumanAI_OpenWorld_BanditSurfaces();
     }
@@ -917,10 +920,11 @@ sub HumanAI_OpenWorld()
 
         ConnectionTypeCosts()
         {
-            climb_low(3.0);
-            climb_medium(5.0);
+            climb_low(10.0);
+            climb_medium(10.0);
 
-            jump_short(5.0);
+            jump_short(1.0);
+			jump_medium(1.0);
 
             breakable_door(1.3);
             ladder(1.0);
@@ -929,6 +933,7 @@ sub HumanAI_OpenWorld()
 
         MaxUpwardConnectionHeight(16.0);
         MaxDownwardConnectionHeight(16.0);
+		MaxHorizontalConnectionLength(INFINITE_COST);
 
         DynamicSurfaceTypeCosts()
         {
@@ -967,10 +972,11 @@ sub HumanAI_OpenWorld()
 
         ConnectionTypeCosts()
         {
-            climb_low(3.0);
-            climb_medium(5.0);
+            climb_low(10.0);
+            climb_medium(10.0);
 
-            jump_short(5.0);
+            jump_short(1.0);
+			jump_medium(1.0);
 
             breakable_door(1.3);
             ladder(1.0);
@@ -979,6 +985,7 @@ sub HumanAI_OpenWorld()
 
         MaxUpwardConnectionHeight(16.0);
         MaxDownwardConnectionHeight(16.0);
+		MaxHorizontalConnectionLength(INFINITE_COST);
 
         DynamicSurfaceTypeCosts()
         {
@@ -992,10 +999,11 @@ sub HumanAI_OpenWorld()
 
         ConnectionTypeCosts()
         {
-            climb_low(3.0);
-            climb_medium(5.0);
+            climb_low(10.0);
+            climb_medium(10.0);
 
-            jump_short(5.0);
+            jump_short(1.0);
+			jump_medium(1.0);
 
             breakable_door(1.3);
             ladder(1.0);
@@ -1004,6 +1012,7 @@ sub HumanAI_OpenWorld()
 
         MaxUpwardConnectionHeight(16.0);
         MaxDownwardConnectionHeight(16.0);
+		MaxHorizontalConnectionLength(INFINITE_COST);
 
         DynamicSurfaceTypeCosts()
         {
@@ -1017,18 +1026,20 @@ sub HumanAI_OpenWorld()
 
         ConnectionTypeCosts()
         {
-            climb_low(3.0);
-            climb_medium(5.0);
+            climb_low(10.0);
+            climb_medium(10.0);
 
-            jump_short(5.0);
+            jump_short(1.0);
+			jump_medium(1.0);
 
             breakable_door(1.3);
-            ladder(INFINITE_COST);
+            ladder(1.0);
             door(1.5);
         }
 
         MaxUpwardConnectionHeight(16.0);
         MaxDownwardConnectionHeight(16.0);
+		MaxHorizontalConnectionLength(INFINITE_COST);
 
         DynamicSurfaceTypeCosts()
         {

@@ -1,44 +1,15 @@
 //WeaponSetPreset(name)
 //  Weapon(weapon/pool_name)
 
-
-sub AI_Throwable_Knife_Boss() 
-{ 
-	Weapon("AI_Throwable_KnifeBoss"); 
-}
-
-sub AI_Throwable_Knife() 
-{ 
-	Weapon("AI_Throwable_Knife"); 
-}
-
-sub AI_Throwable_Stone() 
-{ 
-	Weapon("AI_Throwable_Stone"); 
-}
-
-sub AI_Throwable_Molotov() 
-{ 
-	Weapon("Throwable_Molotov"); 
-}
-
-sub AI_Throwable_Grenade() 
-{ 
-	Weapon("Throwable_Small_ExplosiveGrenade"); 
-}
-
-sub AI_Throwable_UVFlare() 
-{ 
-	Weapon("UV_Flare"); 
-}
+sub AI_Throwable_Knife_Boss() { Weapon("AI_Throwable_KnifeBoss"); }
+sub AI_Throwable_Knife() { Weapon("AI_Throwable_Knife"); }
+sub AI_Throwable_Stone() { Weapon("AI_Throwable_Stone"); }
 
 sub AI_Throwables()
 {
     use AI_Throwable_Knife();
     use AI_Throwable_Stone();
 }
-
-
 
 sub main()
 {
@@ -66,27 +37,27 @@ sub main()
 	WeaponSetPreset("Weapon_pool_RGD_1")
     {
         Weapon("Weapons_pool_d1");
-		Weapon("Bow_T1");
-	}
+        use AI_Throwables();
+    }
 	WeaponSetPreset("Spear_RGD_1")
     {
 		Weapon("Tackle_Spear_t1");
-	}
+    }
 	WeaponSetPreset("Bow_RGD_1")
     {
 		Weapon("Bow_T1");
-	}
+    }
 	
 	WeaponSetPreset("Shoddy_Weapon_pool_RGD_1")
     {
         Weapon("Weapons_pool_d1");
-		Weapon("Bow_T1");
-	}
+        use AI_Throwables();
+    }
 	WeaponSetPreset("Bandit_TwoHanded_RGD_1")
     {
 		Weapon("Weapons_pool_T1_2h_d1");
         use AI_Throwable_Stone();
-	}
+    }
     WeaponSetPreset("Summoner_RGD_1")
     {
         Weapon("Weapons_pool_d1");
@@ -95,32 +66,31 @@ sub main()
     }
     WeaponSetPreset("Molotov_RGD_1")
     {
-		Weapon("Throwable_Molotov");							
+        Weapon("Throwable_Molotov");
         use AI_Throwables();
     }
 	
 	WeaponSetPreset("PK_OneHanded_RGD_1")
     {
-		Weapon("Crossbow");
 		Weapon("PK_Weapons_pool_d1");
         use AI_Throwables();
-	}
+    }
 	WeaponSetPreset("PK_TwoHanded_RGD_1")
     {
 		Weapon("PK_Weapons_pool_2h_d1");
         use AI_Throwable_Stone();
-	}
+    }
 	
 	WeaponSetPreset("Dukes_OneHanded_RGD_1")
     {
 		Weapon("Dukes_Weapons_pool_d1");
-		Weapon("Bow_T1");
-	}
+        use AI_Throwables();
+    }
 	WeaponSetPreset("Dukes_TwoHanded_RGD_1")
     {
 		Weapon("Dukes_Weapons_pool_2h_d1");
         use AI_Throwable_Stone();
-	}
+    }
 	
 	WeaponSetPreset("Renegades_OneHanded_Prologue")
     {
@@ -131,39 +101,39 @@ sub main()
     {
 		Weapon("Renegades_Weapons_pool_d1");
         use AI_Throwables();
-	}
+    }
 	WeaponSetPreset("Renegades_TwoHanded_RGD_1")
     {
 		Weapon("Renegades_Weapons_pool_2h_d1");
         use AI_Throwable_Stone();
-	}
+    }
 	
 	
 	///////////////////// RGD_2 //////////////////////////////
 	WeaponSetPreset("Weapon_pool_RGD_2")
     {
         Weapon("Weapons_pool_d2");
-		Weapon("Bow_T2");
-	}
+        use AI_Throwables();
+    }
 	WeaponSetPreset("Spear_RGD_2")
     {
 		Weapon("Tackle_Spear_t2");
-	}
+    }
 	WeaponSetPreset("Bow_RGD_2")
     {
 		Weapon("Bow_T2");
-	}
+    }
 	
 	WeaponSetPreset("Shoddy_Weapon_pool_RGD_2")
     {
         Weapon("Weapons_pool_d2");
-		Weapon("Bow_T2");
+        use AI_Throwables();
     }
 	WeaponSetPreset("Bandit_TwoHanded_RGD_2")
     {
 		Weapon("Weapons_pool_T1_2h_d2");
         use AI_Throwable_Stone();
-	}
+    }
     WeaponSetPreset("Summoner_RGD_2")
     {
         Weapon("Weapons_pool_d2");
@@ -172,69 +142,68 @@ sub main()
     }
     WeaponSetPreset("Molotov_RGD_2")
     {
-		Weapon("Throwable_Molotov");							
+        Weapon("Throwable_Molotov");
         use AI_Throwables();
     }
 	
 	WeaponSetPreset("PK_OneHanded_RGD_2")
     {
-		Weapon("Crossbow");
 		Weapon("PK_Weapons_pool_d2");
-		Weapon("AI_Throwable_Knife");
-	}
+        use AI_Throwables();
+    }
 	WeaponSetPreset("PK_TwoHanded_RGD_2")
     {
 		Weapon("PK_Weapons_pool_2h_d2");
-		use AI_Throwable_Stone();
-	}
+        use AI_Throwable_Stone();
+    }
 	
 	WeaponSetPreset("Dukes_OneHanded_RGD_2")
     {
 		Weapon("Dukes_Weapons_pool_d2");
-		Weapon("Bow_T2");
+        use AI_Throwables();
     }
 	WeaponSetPreset("Dukes_TwoHanded_RGD_2")
     {
 		Weapon("Dukes_Weapons_pool_2h_d2");
-		use AI_Throwable_Stone();						 
+        use AI_Throwable_Stone();
     }
 	
 	WeaponSetPreset("Renegades_OneHanded_RGD_2")
     {
 		Weapon("Renegades_Weapons_pool_d2");
-		use AI_Throwables();					
+        use AI_Throwables();
     }
 	WeaponSetPreset("Renegades_TwoHanded_RGD_2")
     {
 		Weapon("Renegades_Weapons_pool_2h_d2");
-		use AI_Throwable_Stone();						 
+        use AI_Throwable_Stone();
     }
 	
 	///////////////////// RGD_3 //////////////////////////////
 	WeaponSetPreset("Weapon_pool_RGD_3")
     {
         Weapon("Weapons_pool_d3");
-		Weapon("Bow_T3");
+        use AI_Throwables();
     }
 	WeaponSetPreset("Spear_RGD_3")
     {
 		Weapon("Tackle_Spear_t3");
-	}
+    }
 	WeaponSetPreset("Bow_RGD_3")
     {
 		Weapon("Bow_T3");
-	}
+    }
 	
 	WeaponSetPreset("Shoddy_Weapon_pool_RGD_3")
     {
         Weapon("Weapons_pool_d3");
-		Weapon("Bow_T3");
+        use AI_Throwables();
     }
 	WeaponSetPreset("Bandit_TwoHanded_RGD_3")
     {
 		Weapon("Weapons_pool_T1_2h_d3");
         use AI_Throwable_Stone();
-	}
+    }
     WeaponSetPreset("Summoner_RGD_3")
     {
         Weapon("Weapons_pool_d3");
@@ -243,68 +212,68 @@ sub main()
     }
     WeaponSetPreset("Molotov_RGD_3")
     {
-		Weapon("Throwable_Molotov");							
+        Weapon("Throwable_Molotov");
         use AI_Throwables();
     }
 	
 	WeaponSetPreset("PK_OneHanded_RGD_3")
     {
-		Weapon("Crossbow");
 		Weapon("PK_Weapons_pool_d3");
-        Weapon("AI_Throwable_Knife");
-	}
+        use AI_Throwables();
+    }
 	WeaponSetPreset("PK_TwoHanded_RGD_3")
     {
 		Weapon("PK_Weapons_pool_2h_d3");
-        Weapon("AI_Throwable_Knife");
-	}
+        use AI_Throwable_Stone();
+    }
 	
 	WeaponSetPreset("Dukes_OneHanded_RGD_3")
     {
 		Weapon("Dukes_Weapons_pool_d3");
-		Weapon("Bow_T3");
+        use AI_Throwables();
     }
 	WeaponSetPreset("Dukes_TwoHanded_RGD_3")
     {
 		Weapon("Dukes_Weapons_pool_2h_d3");
+        use AI_Throwable_Stone();
     }
 	
 	WeaponSetPreset("Renegades_OneHanded_RGD_3")
     {
 		Weapon("Renegades_Weapons_pool_d3");
         use AI_Throwables();
-	}
+    }
 	WeaponSetPreset("Renegades_TwoHanded_RGD_3")
     {
 		Weapon("Renegades_Weapons_pool_2h_d3");
-		use AI_Throwable_Stone();						 
+        use AI_Throwable_Stone();
     }
 	
 	///////////////////// RGD_4 //////////////////////////////
 	WeaponSetPreset("Weapon_pool_RGD_4")
     {
         Weapon("Weapons_pool_d4");
-		Weapon("Bow_T4");
+        use AI_Throwables();
     }
 	WeaponSetPreset("Spear_RGD_4")
     {
 		Weapon("Tackle_Spear_t4");
-	}
+    }
 	WeaponSetPreset("Bow_RGD_4")
     {
 		Weapon("Bow_T4");
-	}
+    }
 	
 	WeaponSetPreset("Shoddy_Weapon_pool_RGD_4")
     {
         Weapon("Weapons_pool_d4");
-		Weapon("Bow_T4");
+        use AI_Throwables();
     }
 	WeaponSetPreset("Bandit_TwoHanded_RGD_4")
     {
 		Weapon("Weapons_pool_T1_2h_d4");
         use AI_Throwable_Stone();
-	}
+    }
     WeaponSetPreset("Summoner_RGD_4")
     {
         Weapon("Weapons_pool_d4");
@@ -313,68 +282,67 @@ sub main()
     }
     WeaponSetPreset("Molotov_RGD_4")
     {
-		Weapon("Throwable_Molotov");							
+        Weapon("Throwable_Molotov");
         use AI_Throwables();
     }
 	
 	WeaponSetPreset("PK_OneHanded_RGD_4")
     {
-		Weapon("Crossbow");
 		Weapon("PK_Weapons_pool_d4");
-        Weapon("AI_Throwable_Knife");
-	}
+        use AI_Throwables();
+    }
 	WeaponSetPreset("PK_TwoHanded_RGD_4")
     {
 		Weapon("PK_Weapons_pool_2h_d4");
-        Weapon("AI_Throwable_Knife");
-	}
+        use AI_Throwable_Stone();
+    }
 	
 	WeaponSetPreset("Dukes_OneHanded_RGD_4")
     {
 		Weapon("Dukes_Weapons_pool_d4");
-		Weapon("Bow_T4");
-		Weapon("AI_Throwable_Knife");
+        use AI_Throwables();
     }
 	WeaponSetPreset("Dukes_TwoHanded_RGD_4")
     {
 		Weapon("Dukes_Weapons_pool_2h_d4");
-		use AI_Throwable_Stone();						 
+        use AI_Throwable_Stone();
     }
 	
 	WeaponSetPreset("Renegades_OneHanded_RGD_4")
     {
 		Weapon("Renegades_Weapons_pool_d4");
-		use AI_Throwables();					
+        use AI_Throwables();
     }
 	WeaponSetPreset("Renegades_TwoHanded_RGD_4")
     {
 		Weapon("Renegades_Weapons_pool_2h_d4");
-		use AI_Throwable_Stone();						 
+        use AI_Throwable_Stone();
     }
 	
 	///////////////////// RGD_5 //////////////////////////////
 	WeaponSetPreset("Weapon_pool_RGD_5")
     {
         Weapon("Weapons_pool_d5");
-		Weapon("Bow_T5");
+        use AI_Throwables();
     }
 	WeaponSetPreset("Spear_RGD_5")
     {
 		Weapon("Tackle_Spear_t5");
-	}
+    }
 	WeaponSetPreset("Bow_RGD_5")
     {
 		Weapon("Bow_T5");
-	}
+    }
 	
 	WeaponSetPreset("Shoddy_Weapon_pool_RGD_5")
     {
         Weapon("Weapons_pool_d5");
-		Weapon("Bow_T5");
+        use AI_Throwables();
     }
 	WeaponSetPreset("Bandit_TwoHanded_RGD_5")
     {
 		Weapon("Weapons_pool_T1_2h_d5");
+        use AI_Throwable_Stone();
     }
     WeaponSetPreset("Summoner_RGD_5")
     {
@@ -384,68 +352,67 @@ sub main()
     }
     WeaponSetPreset("Molotov_RGD_5")
     {
-		Weapon("Throwable_Molotov");							
+        Weapon("Throwable_Molotov");
         use AI_Throwables();
     }
 	
 	WeaponSetPreset("PK_OneHanded_RGD_5")
     {
-		Weapon("Crossbow");
 		Weapon("PK_Weapons_pool_d5");
-        Weapon("AI_Throwable_Knife");
-	}
+        use AI_Throwables();
+    }
 	WeaponSetPreset("PK_TwoHanded_RGD_5")
     {
 		Weapon("PK_Weapons_pool_2h_d5");
-        Weapon("AI_Throwable_Knife");
-	}
+        use AI_Throwable_Stone();
+    }
 	
 	WeaponSetPreset("Dukes_OneHanded_RGD_5")
     {
 		Weapon("Dukes_Weapons_pool_d5");
-		Weapon("Bow_T5");
+        use AI_Throwables();
     }
 	WeaponSetPreset("Dukes_TwoHanded_RGD_5")
     {
 		Weapon("Dukes_Weapons_pool_2h_d5");
-		use AI_Throwable_Stone();						 
+        use AI_Throwable_Stone();
     }
 	
 	WeaponSetPreset("Renegades_OneHanded_RGD_5")
     {
 		Weapon("Renegades_Weapons_pool_d5");
-		use AI_Throwables();					
+        use AI_Throwables();
     }
 	WeaponSetPreset("Renegades_TwoHanded_RGD_5")
     {
 		Weapon("Renegades_Weapons_pool_2h_d5");
-		use AI_Throwable_Stone();						 
+        use AI_Throwable_Stone();
     }
 	
 	///////////////////// RGD_6 //////////////////////////////
 	WeaponSetPreset("Weapon_pool_RGD_6")
     {
         Weapon("Weapons_pool_d6");
-		Weapon("Bow_T6");
+        use AI_Throwables();
     }
 	WeaponSetPreset("Spear_RGD_6")
     {
 		Weapon("Tackle_Spear_t6");
-	}
+    }
 	WeaponSetPreset("Bow_RGD_6")
     {
 		Weapon("Bow_T6");
-	}
+    }
 	
 	WeaponSetPreset("Shoddy_Weapon_pool_RGD_6")
     {
         Weapon("Weapons_pool_d6");
-		Weapon("Bow_T6");
+        use AI_Throwables();
     }
 	WeaponSetPreset("Bandit_TwoHanded_RGD_6")
     {
 		Weapon("Weapons_pool_T1_2h_d6");
-		use AI_Throwable_Stone();						 
+        use AI_Throwable_Stone();
     }
     WeaponSetPreset("Summoner_RGD_6")
     {
@@ -455,66 +422,67 @@ sub main()
     }
     WeaponSetPreset("Molotov_RGD_6")
     {
-		Weapon("Throwable_Molotov");							
+        Weapon("Throwable_Molotov");
         use AI_Throwables();
     }
 	
 	WeaponSetPreset("PK_OneHanded_RGD_6")
     {
-		Weapon("Crossbow");
 		Weapon("PK_Weapons_pool_d6");
-		Weapon("AI_Throwable_Knife");
-	}
+        use AI_Throwables();
+    }
 	WeaponSetPreset("PK_TwoHanded_RGD_6")
     {
 		Weapon("PK_Weapons_pool_2h_d6");
-		Weapon("AI_Throwable_Knife");
-	}
+        use AI_Throwable_Stone();
+    }
 	
 	WeaponSetPreset("Dukes_OneHanded_RGD_6")
     {
 		Weapon("Dukes_Weapons_pool_d6");
-		Weapon("Bow_T6");
+        use AI_Throwables();
     }
 	WeaponSetPreset("Dukes_TwoHanded_RGD_6")
     {
 		Weapon("Dukes_Weapons_pool_2h_d6");
+        use AI_Throwable_Stone();
     }
 	
 	WeaponSetPreset("Renegades_OneHanded_RGD_6")
     {
 		Weapon("Renegades_Weapons_pool_d6");
-		use AI_Throwables();					
+        use AI_Throwables();
     }
 	WeaponSetPreset("Renegades_TwoHanded_RGD_6")
     {
 		Weapon("Renegades_Weapons_pool_2h_d6");
-		use AI_Throwable_Stone();						 
+        use AI_Throwable_Stone();
     }
 	
 	///////////////////// RGD_7 //////////////////////////////
 	WeaponSetPreset("Weapon_pool_RGD_7")
     {
         Weapon("Weapons_pool_d7");
-		Weapon("Bow_T7");
+        use AI_Throwables();
     }
 	WeaponSetPreset("Spear_RGD_7")
     {
 		Weapon("Tackle_Spear_t7");
-	}
+    }
 	WeaponSetPreset("Bow_RGD_7")
     {
 		Weapon("Bow_T7");
-	}
+    }
 	
 	WeaponSetPreset("Shoddy_Weapon_pool_RGD_7")
     {
         Weapon("Weapons_pool_d7");
-		Weapon("Bow_T7");
+        use AI_Throwables();
     }
 	WeaponSetPreset("Bandit_TwoHanded_RGD_7")
     {
 		Weapon("Weapons_pool_T1_2h_d7");
+        use AI_Throwable_Stone();
     }
     WeaponSetPreset("Summoner_RGD_7")
     {
@@ -524,68 +492,67 @@ sub main()
     }
     WeaponSetPreset("Molotov_RGD_7")
     {
-		Weapon("Throwable_Molotov");								
+        Weapon("Throwable_Molotov");
         use AI_Throwables();
     }
 	
 	WeaponSetPreset("PK_OneHanded_RGD_7")
     {
-		Weapon("Crossbow");
 		Weapon("PK_Weapons_pool_d7");
-		Weapon("AI_Throwable_Knife");
-        
-	}
+        use AI_Throwables();
+    }
 	WeaponSetPreset("PK_TwoHanded_RGD_7")
     {
 		Weapon("PK_Weapons_pool_2h_d7");
-		Weapon("AI_Throwable_Knife");
-	}
+        use AI_Throwable_Stone();
+    }
 	
 	WeaponSetPreset("Dukes_OneHanded_RGD_7")
     {
 		Weapon("Dukes_Weapons_pool_d7");
-		Weapon("Bow_T7");
+        use AI_Throwables();
     }
 	WeaponSetPreset("Dukes_TwoHanded_RGD_7")
     {
 		Weapon("Dukes_Weapons_pool_2h_d7");
-		use AI_Throwable_Stone();						 
+        use AI_Throwable_Stone();
     }
 	
 	WeaponSetPreset("Renegades_OneHanded_RGD_7")
     {
 		Weapon("Renegades_Weapons_pool_d7");
-		use AI_Throwables();					
+        use AI_Throwables();
     }
 	WeaponSetPreset("Renegades_TwoHanded_RGD_7")
     {
 		Weapon("Renegades_Weapons_pool_2h_d7");
-		use AI_Throwable_Stone();						 
+        use AI_Throwable_Stone();
     }
 	
 	///////////////////// RGD_8 //////////////////////////////
 	WeaponSetPreset("Weapon_pool_RGD_8")
     {
         Weapon("Weapons_pool_d8");
-		Weapon("Bow_T8");
+        use AI_Throwables();
     }
 	WeaponSetPreset("Spear_RGD_8")
     {
 		Weapon("Tackle_Spear_t8");
-	}
+    }
 	WeaponSetPreset("Bow_RGD_8")
     {
 		Weapon("Bow_T8");
-	}
+    }
 	
 	WeaponSetPreset("Shoddy_Weapon_pool_RGD_8")
     {
         Weapon("Weapons_pool_d8");
-		Weapon("Bow_T8");
+        use AI_Throwables();
     }
 	WeaponSetPreset("Bandit_TwoHanded_RGD_8")
     {
 		Weapon("Weapons_pool_T1_2h_d8");
+        use AI_Throwable_Stone();
     }
     WeaponSetPreset("Summoner_RGD_8")
     {
@@ -595,67 +562,67 @@ sub main()
     }
     WeaponSetPreset("Molotov_RGD_8")
     {
-		Weapon("Throwable_Molotov");							
+        Weapon("Throwable_Molotov");
         use AI_Throwables();
     }
 	
 	WeaponSetPreset("PK_OneHanded_RGD_8")
     {
-		Weapon("Crossbow");
 		Weapon("PK_Weapons_pool_d8");
-        
-	}
+        use AI_Throwables();
+    }
 	WeaponSetPreset("PK_TwoHanded_RGD_8")
     {
 		Weapon("PK_Weapons_pool_2h_d8");
-        
-	}
+        use AI_Throwable_Stone();
+    }
 	
 	WeaponSetPreset("Dukes_OneHanded_RGD_8")
     {
 		Weapon("Dukes_Weapons_pool_d8");
-		Weapon("Bow_T8");
+        use AI_Throwables();
     }
 	WeaponSetPreset("Dukes_TwoHanded_RGD_8")
     {
 		Weapon("Dukes_Weapons_pool_2h_d8");
-		use AI_Throwables();						 
+        use AI_Throwable_Stone();
     }
 	
 	WeaponSetPreset("Renegades_OneHanded_RGD_8")
     {
 		Weapon("Renegades_Weapons_pool_d8");
-		use AI_Throwables();					
+        use AI_Throwables();
     }
 	WeaponSetPreset("Renegades_TwoHanded_RGD_8")
     {
 		Weapon("Renegades_Weapons_pool_2h_d8");
-		use AI_Throwables();						 
+        use AI_Throwable_Stone();
     }
 	
 	///////////////////// RGD_9 //////////////////////////////
 	WeaponSetPreset("Weapon_pool_RGD_9")
     {
         Weapon("Weapons_pool_d9");
-		Weapon("Bow_T9");
+        use AI_Throwables();
     }
 	WeaponSetPreset("Spear_RGD_9")
     {
 		Weapon("Tackle_Spear_t9");
-	}
+    }
 	WeaponSetPreset("Bow_RGD_9")
     {
 		Weapon("Bow_T9");
-	}
+    }
 	
 	WeaponSetPreset("Shoddy_Weapon_pool_RGD_9")
     {
         Weapon("Weapons_pool_d9");
-		Weapon("Bow_T9");
+        use AI_Throwables();
     }
 	WeaponSetPreset("Bandit_TwoHanded_RGD_9")
     {
 		Weapon("Weapons_pool_T1_2h_d9");
+        use AI_Throwable_Stone();
     }
     WeaponSetPreset("Summoner_RGD_9")
     {
@@ -665,42 +632,41 @@ sub main()
     }
     WeaponSetPreset("Molotov_RGD_9")
     {
-		Weapon("Throwable_Molotov");							
+        Weapon("Throwable_Molotov");
         use AI_Throwables();
     }
 	
 	WeaponSetPreset("PK_OneHanded_RGD_9")
     {
-		Weapon("Crossbow");
 		Weapon("PK_Weapons_pool_d9");
-        
-	}
+        use AI_Throwables();
+    }
 	WeaponSetPreset("PK_TwoHanded_RGD_9")
     {
 		Weapon("PK_Weapons_pool_2h_d9");
-        
-	}
+        use AI_Throwable_Stone();
+    }
 	
 	WeaponSetPreset("Dukes_OneHanded_RGD_9")
     {
 		Weapon("Dukes_Weapons_pool_d9");
-		Weapon("Bow_T9");
+        use AI_Throwables();
     }
 	WeaponSetPreset("Dukes_TwoHanded_RGD_9")
     {
 		Weapon("Dukes_Weapons_pool_2h_d9");
-		use AI_Throwables();						 
+        use AI_Throwable_Stone();
     }
 	
 	WeaponSetPreset("Renegades_OneHanded_RGD_9")
     {
 		Weapon("Renegades_Weapons_pool_d9");
-		use AI_Throwables();					
+        use AI_Throwables();
     }
 	WeaponSetPreset("Renegades_TwoHanded_RGD_9")
     {
 		Weapon("Renegades_Weapons_pool_2h_d9");
-		use AI_Throwables();						 
+        use AI_Throwable_Stone();
     }
 	
 	
@@ -902,7 +868,6 @@ sub main()
         Weapon("Goon_Weapon_RGD_9"); // NOT SET YET
         Weapon("Goon_Fists_RGD_9"); // NOT SET YET
     }
-     
     WeaponSetPreset("Zombie_Demolisher_RGD_1")
     {
         Weapon("Demolisher_Fists_RGD_1");

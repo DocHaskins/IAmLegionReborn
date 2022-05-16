@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../MetaData/schema_ai.xsd" m_ContextType="ai">
-    <CooldownTimeDelta m_CooldownTime="$grenade_throw_cooldown" m_CooldownOnAbort="true" m_CooldownBeforeFirstTick="true">
+    <CooldownTimeDelta m_CooldownTime="$molotov_fast_throw_cooldown" m_CooldownOnAbort="true" m_CooldownBeforeFirstTick="true">
         <SequenceMem>
             <Cnd_CanStartTask m_StartPolicy="INTERRUPT"/>
             <Cnd_IsActivityModuleRunning_Throw m_Invert="true"/>
             <Cnd_IsCombatTargetInLOS/>
-            <Cnd_IsCombatTargetInAngle m_Angle="$grenade_throw_max_angle"/>
-            <Cnd_HasWeaponInInventorySpecific m_Type="Grenade"/>
+            <Cnd_IsCombatTargetInAngle m_Angle="$molotov_fast_throw_max_angle"/>
+            <Cnd_HasWeaponInInventorySpecific m_Type="Molotov"/>
             <Cnd_IsCombatTargetInRadius m_Radius="$throw_max_range"/>
-            <Cnd_IsTargetLower m_Target="#target" m_BaseHeight="$grenade_throw_min_height_diff" m_Invert="true"/>
+            <Cnd_IsTargetLower m_Target="#target" m_BaseHeight="$molotov_fast_throw_min_height_diff" m_Invert="true"/>
             <Cnd_IsTargetApproaching m_Target="#target" m_MinVel="1" m_MaxAngle="45" m_Invert="true"/>
             <Selector>
                 <Cnd_HasPathToCombatTarget m_Invert="true"/>
@@ -17,15 +17,15 @@
                     <Cnd_TargetInRestrictedArea m_Invert="true"/>
                 </Sequence>
                 <Sequence>
-                    <Cnd_IsCombatTargetInRadius m_Radius="$grenade_throw_min_range" m_Invert="true"/>
-                    <Cnd_IsOtherGroupMemberCloseToPosition m_Position="#target_pos" m_MaxDistance="$grenade_throw_min_enemy_dist_from_group" m_Invert="true"/>
+                    <Cnd_IsCombatTargetInRadius m_Radius="$molotov_fast_throw_min_range" m_Invert="true"/>
+                    <Cnd_IsOtherGroupMemberCloseToPosition m_Position="#target_pos" m_MaxDistance="$molotov_fast_throw_min_enemy_dist_from_group" m_Invert="true"/>
                 </Sequence>
             </Selector>
-            <Cnd_AllyInLineOfFire m_Target="#target" m_SpaceNeeded="8" m_CheckMelee="false" m_Invert="true"/>
+            <Cnd_AllyInLineOfFire m_Target="#target" m_SpaceNeeded="6" m_CheckMelee="false" m_Invert="true"/>
             <CombatSlot m_Name="$attack_range_special_token" m_Limit="$attack_range_special_limit" m_MinDelay="$attack_range_special_min_delay" m_Cost="#attack_range_cost">
                 <SequenceMem>
                     <Opr_RequestBarkTarget m_Player="combat_range_warning" m_Priority="Instant"/>
-                    <Act_Throw m_Type="grenade" m_WeaponType="HeavyThrowObj" m_UseBullet="true" m_Target="#target" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
+                    <Act_Throw m_Type="molotov_fast" m_WeaponType="HeavyThrowObj" m_UseBullet="true" m_Target="#target" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
                 </SequenceMem>
             </CombatSlot>
         </SequenceMem>

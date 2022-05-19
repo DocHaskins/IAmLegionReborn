@@ -5,6 +5,7 @@
     <!-- float input_attack_approach_angle -->
     <!-- float input_attack_approach_cancel_range -->
     <Sequence>
+		<Cnd_CanInterruptActivityModule_Movement/>
         <Cnd_HasBBValue m_Key="#target"/>
         <Cnd_IsPoseEqual m_Pose="Standing"/>
         <Cnd_IsCombatTargetInRadius m_Radius="#input_attack_approach_cancel_range"/>

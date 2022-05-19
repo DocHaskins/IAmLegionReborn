@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
     <Selector>
+		<Cnd_CanInterruptActivityModule_Movement/>
         <SequenceMem>
             <Cnd_IsBBValueEqual_string m_Key="#tactic" m_Value="rush" m_Invert="true"/>
             <Cnd_IsCombatTargetInRadius m_Radius="6.0"/>

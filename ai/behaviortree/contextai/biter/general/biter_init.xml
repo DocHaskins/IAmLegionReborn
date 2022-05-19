@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <Sequence>
+	        <!-- other -->
+        <Opr_SetBBValue_bool m_Key="#searching" m_Value="true"/>
+        <Opr_SetBBValue_bool m_Key="#should_check_last_target_pos" m_Value="true"/>
+        <Opr_SetBBValue_bool m_Key="#flag_combat_rest" m_Value="false"/>
+        <Opr_EnableSense m_Sense="target"/>
+        <Opr_EnableSense m_Sense="uv"/>
+        <Opr_EnableSense m_Sense="objects"/>
+        <Opr_SetBBValue_float m_Key="#degenerated_speed" m_Value="5.0"/>
+        <Opr_GetModifiedTime m_TimeDelta="-99" m_TimePoint="#last_time_in_uv_light"/>
+        <Opr_SetBBValue_bool m_Key="#any_stimulus_received" m_Value="false"/>
+        <Opr_SetWeapon m_WeaponType="FISTS" m_Hand="LEFT"/>
+        <Selector>
+            <Cnd_HasBBValue m_Key="#start_burning" m_Invert="true"/>
+            <Opr_StartBodyState m_State="BURNING" m_Duration="99999999"/>
+        </Selector>
+        <Selector>
+            <Cnd_IsBBValueEqual_bool m_Key="#start_resting_state" m_Value="false"/>
+            <Opr_SetBBValue_bool m_Key="#is_awake" m_Value="false"/>
+        </Selector>
+	</Sequence>
+</BehaviorTree>

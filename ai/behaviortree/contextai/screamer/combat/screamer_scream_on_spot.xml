@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem>
+        <Cnd_IsInUVLight m_Invert="true"/>
+        <Cnd_IsActivityModuleRunning_HitReaction m_Invert="true"/>
+        <SelectorMem>
+            <SequenceMem>
+                <Cnd_HasBBValue m_Key="#target"/>
+                <Cnd_IsPlayer m_Target="#target"/>
+            </SequenceMem>
+            <SequenceMem>
+                <Cnd_HasBBValue m_Key="#target" m_Invert="true"/>
+                <Opr_GetLastAssassin m_Assasin="#last_attacker"/>
+                <Cnd_IsPlayer m_Target="#last_attacker"/>
+            </SequenceMem>
+        </SelectorMem>
+        <Cnd_IsBBValueEqual_bool m_Key="#summon_on_player_spot_used" m_Value="false"/>
+        <Opr_GetSelfPosition m_Position="#self_pos"/>
+        <Opr_EnableAnimatedTexture m_FadeTime="4.0"/>
+        <Opr_SetDirCorrectionSpeed m_MaxSpeed="300"/>
+        <Opr_SetBBValue_bool m_Key="#summon_on_player_spot_used" m_Value="true"/>
+        <ExposeLogicState m_ExposedState="Summoning">
+            <ParallelRepeat m_PolicyFailure="REQUIRE_ONE" m_PolicySuccess="REQUIRE_ALL">
+                <SelectorMem>
+                    <SequenceMem>
+                        <Cnd_HasBBValue m_Key="#target"/>
+                        <TimeDeltaLimit m_TimeMax="3.5" m_StatusReturned="SUCCESS">
+                            <Act_Attack m_Target="#target" m_Phase="$use_fx_for_scream" m_AttackPresetName="$summon_attack_preset" m_StartPolicy="DISCARD" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END" />
+                        </TimeDeltaLimit>
+                    </SequenceMem>
+                    <SequenceMem>
+                        <Cnd_HasBBValue m_Key="#last_attacker"/>
+                        <TimeDeltaLimit m_TimeMax="3.5" m_StatusReturned="SUCCESS">
+                            <Act_Attack m_Target="#last_attacker" m_Phase="$use_fx_for_scream" m_AttackPresetName="$summon_attack_preset" m_StartPolicy="DISCARD" m_AbandonPolicy="BLENDOUT" m_DecisionPolicy="ON_END" />
+                        </TimeDeltaLimit>
+                    </SequenceMem>
+                </SelectorMem>
+                <CooldownTimeDelta m_CooldownTime="1.0" m_StatusReturned="SUCCESS">
+					<Opr_GetLocalPlayer m_Player="#player"/>
+					<Opr_GetObjectPosition m_Object="#player" m_Position="#player_pos"/>
+                    <Opr_MakeNoise m_NoiseUid="screamer_alarm_scream" m_Position="#player_pos"/>
+                </CooldownTimeDelta>
+            </ParallelRepeat>
+        </ExposeLogicState>
+    </SequenceMem>
+</BehaviorTree>

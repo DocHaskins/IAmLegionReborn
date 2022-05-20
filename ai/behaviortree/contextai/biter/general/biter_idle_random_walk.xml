@@ -4,9 +4,9 @@
 		<SequenceMem>
 			<Opr_GetSelfDirection m_Direction="#self_dir"/>
 			<Opr_GetSelfPosition m_Position="#self_pos"/>
-			<Opr_RandomFloat m_Result="#dist" m_RangeMin="12" m_RangeMax="30"/>
+			<Opr_RandomFloat m_Result="#dist" m_RangeMin="6" m_RangeMax="30"/>
 			<Opr_GetPositionInDirection m_Distance="#dist" m_Position="#random_pos" m_Direction="#self_dir" m_Origin="#self_pos"/>
-			<Act_Move m_EndDir="#self_dir" m_MoveStyle="Degenerated_Walk" m_SkipStart="#skip_start" m_EndRadius="#dist" m_StopAtDest="true" m_Destination="#random_pos" m_TryToFindDestinationOnNavmesh="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+			<Act_Move m_EndDir="#self_dir" m_MoveStyle="Walk" m_SkipStart="#skip_start" m_EndRadius="#dist" m_StopAtDest="true" m_Destination="#random_pos" m_TryToFindDestinationOnNavmesh="true" m_IsAvoidanceActive="$use_avoidance" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
 		</SequenceMem>
 		<!-- translate move style -->
 		<!--<SequenceMem>

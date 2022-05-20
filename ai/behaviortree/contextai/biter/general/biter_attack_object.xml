@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <SequenceMem m_CustomName="Object">
+		<Cnd_CanInterruptActivityModule_Movement/>
+        <Cnd_IsPoseEqual m_Pose="Standing"/>
+        <Opr_GetNearestAttackableObject m_Object="#attackable_object"/>
+        <Opr_GetEntityPosition m_Object="#attackable_object" m_Position="#object_pos"/>
+        <Sequence>
+            <Selector>
+                <Cnd_HasBBValue m_Key="#target" m_Invert="true"/>
+                <Sequence>
+                    <Cnd_IsCombatTargetInRadius m_Radius="3.0" m_Invert="true"/>
+                    <Opr_GetDistanceToTarget m_Target="#target" m_Distance="#dist_to_target"/>
+                    <Opr_GetSelfPosition m_Position="#self_pos"/>
+                    <Cnd_DistanceBetweenPositionsLower m_Distance="#dist_to_target" m_FirstPosition="#self_pos" m_SecondPosition="#object_pos"/>
+                </Sequence>
+            </Selector>
+            <SelectorMem>
+                <SequenceMem>
+                    <Cnd_PositionInRadius m_Position="#object_pos" m_Radius="2.25"/>
+                    <Cnd_PositionInAngle m_Position="#object_pos" m_Angle="45.0" m_Invert="true"/>
+                    <Act_TurnToPos m_Position="#object_pos" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT"/>
+                </SequenceMem>
+                <SequenceMem>
+                    <Cnd_PositionInRadius m_Position="#object_pos" m_Radius="2.25"/>
+                    <Cnd_IsAttackableObjectValid m_Object="#attackable_object"/>
+                    <Act_AttackObject m_TargetEntity="#attackable_object" m_AttackPresetName="viral_biter_attack_object" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT"/>
+                </SequenceMem>
+                <Sequence>
+                    <Cnd_PositionInRadius m_Radius="2.0" m_Position="#object_pos" m_Invert="true"/>
+                    <Act_Move m_Destination="#object_pos" m_LocomotionSpeed="#degenerated_speed" m_FailIfDestUnreachable="true" m_MaxDistOutsideNavmeshXZ="2" m_MaxDistOutsideNavmeshY="2" m_MoveStyle="#move_style" m_StopAtDest="true" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                </Sequence>
+            </SelectorMem>
+        </Sequence>
+    </SequenceMem>
+</BehaviorTree>

@@ -10,7 +10,7 @@
             <Selector>
                 <ExternalTree m_UID="BITER_ATTACK_GRAB" m_CustomName="Grab" m_Hide="true"/>
                 <SelectorMem>
-					<Optional m_Enabled="$enable_charge_with_grab">
+                    <Optional m_Enabled="$enable_charge_with_grab">
                         <ExternalTree m_UID="BITER_CHARGE_WITH_GRAB" m_CustomName="Berserker_Charge" m_Hide="true"/>
                     </Optional>
                     <ExternalTree m_UID="BITER_BERSERKER_CHARGE" m_CustomName="Berserker_Charge" m_Hide="true"/>
@@ -39,20 +39,20 @@
                             <Selector>
                                 <Sequence>
                                     <Cnd_IsDbgBiterAggressionEqual m_AggressionLevel="0"/>
-                                    <CooldownTimeDelta m_CooldownTime="10" m_StatusReturned="SUCCESS">
-                                        <Opr_RandomFloat m_Result="#taunt_distance" m_RangeMin="3" m_RangeMax="15"/>
+                                    <CooldownTimeDelta m_CooldownTime="20" m_StatusReturned="SUCCESS">
+                                        <Opr_RandomFloat m_Result="#taunt_distance" m_RangeMin="8" m_RangeMax="15"/>
                                     </CooldownTimeDelta>
                                 </Sequence>
                                 <Sequence>
                                     <Cnd_IsDbgBiterAggressionEqual m_AggressionLevel="1"/>
-                                    <CooldownTimeDelta m_CooldownTime="10" m_StatusReturned="SUCCESS">
-                                        <Opr_RandomFloat m_Result="#taunt_distance" m_RangeMin="8" m_RangeMax="20"/>
+                                    <CooldownTimeDelta m_CooldownTime="20" m_StatusReturned="SUCCESS">
+                                        <Opr_RandomFloat m_Result="#taunt_distance" m_RangeMin="12" m_RangeMax="18"/>
                                     </CooldownTimeDelta>
                                 </Sequence>
                                 <Sequence>
                                     <Cnd_IsDbgBiterAggressionEqual m_AggressionLevel="2"/>
-                                    <CooldownTimeDelta m_CooldownTime="10" m_StatusReturned="SUCCESS">
-                                        <Opr_RandomFloat m_Result="#taunt_distance" m_RangeMin="20" m_RangeMax="30"/>
+                                    <CooldownTimeDelta m_CooldownTime="20" m_StatusReturned="SUCCESS">
+                                        <Opr_RandomFloat m_Result="#taunt_distance" m_RangeMin="15" m_RangeMax="24"/>
                                     </CooldownTimeDelta>
                                 </Sequence>
                             </Selector>
@@ -69,7 +69,7 @@
                                 <Cnd_IsCombatTargetInAngle m_Angle="$combat_max_angle"/>
                                 <Opr_SetDirCorrectionSpeed m_MaxSpeed="50"/>
                                 <SelectorMem>
-                                    <CooldownTimeDeltaRandom m_MinCooldownTime="1.0" m_MaxCooldownTime="4.0" m_CooldownOnAbort="true">
+                                    <CooldownTimeDeltaRandom m_MinCooldownTime="8.0" m_MaxCooldownTime="25.0" m_CooldownOnAbort="true">
                                         <Act_Taunt m_Type="Normal" m_Target="#target" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT"/>
                                     </CooldownTimeDeltaRandom>
                                     <Act_Step m_Type="COMBAT" m_Direction="LEFT" m_Target="#target" m_StartPolicy="WAIT" m_AbandonPolicy="INTERRUPT"/>
@@ -94,11 +94,12 @@
                     <Selector>
                         <Sequence>
                             <Cnd_IsTargetClimbing m_Target="#target" m_Invert="true"/>
-                            <Cnd_IsCombatTargetInRadius m_Radius="4.0" m_Invert="true"/>
+                            <Cnd_IsCombatTargetInRadius m_Radius="1.0" m_Invert="true"/>
                             <Cnd_HasPathToCombatTarget/>
-                            <Act_Move m_Destination="#target_pos" m_LocomotionSpeed="#degenerated_speed" m_MoveStyle="#move_style" m_StopAtDest="false" m_FailIfDestUnreachable="false" m_MaxDistOutsideNavmeshXZ="2" m_MaxDistOutsideNavmeshY="2" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                            <Act_Move m_Destination="#target_pos" m_LocomotionSpeed="#degenerated_speed" m_MoveStyle="#move_style" m_StopAtDest="false" m_FailIfDestUnreachable="true" m_MaxDistOutsideNavmeshXZ="2" m_MaxDistOutsideNavmeshY="2" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
                         </Sequence>
                     </Selector>
+                    <Act_Idle m_Type="Stand" m_StartPolicy="WAIT" m_AbandonPolicy="BLENDOUT"/>
                 </Selector>
             </Selector>
         </SequenceMem>

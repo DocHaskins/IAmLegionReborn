@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
+    <ExposeLogicState m_ExposedState="RESTING">
+	<Cnd_CanInterruptActivityModule_Movement/>
+        <SetFlagOnRunning m_Key="#flag_combat_rest">
+            <SequenceMem>
+                <Cnd_CanStartTask m_StartPolicy="DISCARD"/>
+                <Cnd_IsBBValueEqual_bool m_Key="#start_resting_state" m_Value="true"/>
+                <Cnd_IsBBValueEqual_bool m_Key="#is_awake" m_Value="false"/>
+                <SequenceMem>
+                    <Opr_SetBBValue_string m_Key="#resting_sound_state" m_Value=" "/>
+                    <Sequence>
+                        <Opr_GetAwakeningProgress m_AwakeningProgress="#awakening_progress"/>
+                        <Selector>
+                            <SequenceMem>
+                                <Cnd_IsBBValueEqual_float m_Value="1.00" m_Key="#awakening_progress"/>
+                                <Opr_EnableSense m_Sense="actors"/>
+                                <Opr_SetBBValue_bool m_Key="#is_awake" m_Value="true"/>
+                                <Opr_SetBBValue_string m_Key="#resting_sound_state" m_Value="resting_phase_final" />
+                                <Opr_SetBBValue_ERestingState m_Key="#rest_state" m_Value="WakingUp"/>
+                            </SequenceMem>
+                            <Sequence>
+                                <Cnd_IsBBValueGreater_float m_Value="0.5" m_Key="#awakening_progress"/>
+                                <Opr_SetBBValue_string m_Key="#resting_sound_state" m_Value="resting_phase_medium" />
+                                <Opr_SetBBValue_ERestingState m_Key="#rest_state" m_Value="Nervous"/>
+                                <Opr_SetBBValue_TimeDelta m_Key="#tick_time" m_Value="1.0"/>
+                            </Sequence>
+                            <Sequence>
+                                <Cnd_IsBBValueGreater_float m_Value="0.05" m_Key="#awakening_progress"/>
+                                <Opr_SetBBValue_string m_Key="#resting_sound_state" m_Value="resting_phase_low" />
+                                <Opr_SetBBValue_ERestingState m_Key="#rest_state" m_Value="SlightlyNervous"/>
+                                <Opr_SetBBValue_TimeDelta m_Key="#tick_time" m_Value="2.0"/>
+                            </Sequence>
+                            <Sequence>
+                                <Cnd_IsBBValueGreater_float m_Value="0.0" m_Key="#awakening_progress"/>
+                                <Opr_SetBBValue_string m_Key="#resting_sound_state" m_Value="resting_phase_low" />
+                            </Sequence>
+                            <Sequence>
+                                <Opr_SetBBValue_string m_Key="#resting_sound_state" m_Value="resting_phase_idle" />
+                                <Opr_SetBBValue_ERestingState m_Key="#rest_state" m_Value="Idle"/>
+                            </Sequence>
+                        </Selector>
+                        <SequenceMem>
+                            <Act_Rest m_State="#rest_state" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
+                            <Opr_SetBBValue_bool m_Key="#is_awake" m_Value="true"/>
+                            <Cnd_HasBBValue m_Key="#target"/>
+                            <Act_Taunt m_Target="#target" m_Type="Normal" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT"/>
+                            <Opr_GetSelfPosition m_Position="#self_pos"/>
+                            <Opr_MakeNoise m_NoiseUid="biter_groan" m_Position="#self_pos"/>
+                        </SequenceMem>
+                    </Sequence>
+                </SequenceMem>
+            </SequenceMem>
+        </SetFlagOnRunning>
+    </ExposeLogicState>
+</BehaviorTree>

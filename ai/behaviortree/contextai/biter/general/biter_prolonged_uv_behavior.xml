@@ -2,6 +2,7 @@
 <BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
     <SequenceMem>
         <Cnd_CanStartTask m_StartPolicy="INTERRUPT"/>
+		<Cnd_CanInterruptActivityModule_Movement/>
         <Cnd_UVReactionDisabled m_Invert="true"/>
         <Selector>
             <!-- On edge behavior -->
@@ -12,7 +13,7 @@
                         <Sequence>
                             <Cnd_IsPoseEqual m_Pose="Standing"/>
                             <Cnd_IsInUVLight m_Invert="true"/>
-                            <Cnd_HasTimePassed m_TimePoint="#last_time_in_uv_light" m_TimeDelta="1.0" m_Invert="true"/>
+                            <Cnd_HasTimePassed m_TimePoint="#last_time_in_uv_light" m_TimeDelta="16.0" m_Invert="true"/>
                             <Cnd_IsPlayerTargetInUVLight m_Target="#target"/>
                             <Opr_SetDirCorrectionSpeed m_MaxSpeed="300"/>
                             <SelectorMem>

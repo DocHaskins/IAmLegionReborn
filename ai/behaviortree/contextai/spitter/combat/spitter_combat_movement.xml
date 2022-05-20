@@ -2,6 +2,7 @@
 <BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
     <RepeatOnceOnSuccess>
         <Sequence>
+			<Cnd_CanInterruptActivityModule_Movement/>
             <Cnd_HasBBValue m_Key="#target"/>
             <Selector>
                 <!-- Strafe to keep distance from target -->

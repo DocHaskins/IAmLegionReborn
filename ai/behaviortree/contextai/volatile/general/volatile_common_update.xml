@@ -45,18 +45,6 @@
                     </Sequence>
                 </Selector>
             </Succeeder>
-            <CooldownTimeDelta m_CooldownTime="1.0" m_StatusReturned="SUCCESS">
-                <Selector>
-                    <Cnd_IsAlertLevelEqual m_AlertLevel="High" m_Invert="true"/>
-                    <Cnd_IsBBValueEqual_bool m_Key="#flag_combat_rest" m_Value="true"/>
-					<Cnd_IsActivityModuleRunning_SyncAction/>
-					<Cnd_IsNight/>					
-                    <Sequence>
-                        <Opr_GetSelfPosition m_Position="#my_pos"/>
-                        <Opr_MakeNoise m_NoiseUid="volatile_groan" m_Position="#my_pos"/>
-                    </Sequence>
-                </Selector>
-            </CooldownTimeDelta>
             <Selector>
                 <Sequence>
                     <Cnd_HasBBValue m_Key="#target"/>

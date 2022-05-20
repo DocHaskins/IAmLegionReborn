@@ -49,25 +49,13 @@
                 <Selector>
                     <Cnd_IsAlertLevelEqual m_AlertLevel="High" m_Invert="true"/>
                     <Cnd_IsBBValueEqual_bool m_Key="#flag_combat_rest" m_Value="true"/>
-                    <Cnd_IsActivityModuleRunning_SyncAction/>
-					<Cnd_IsInSunlight m_Invert="false"/>
-					<Cnd_IsInDarkzone m_Invert="false"/>
+					<Cnd_IsActivityModuleRunning_SyncAction/>
+					<Cnd_IsNight/>					
                     <Sequence>
                         <Opr_GetSelfPosition m_Position="#my_pos"/>
                         <Opr_MakeNoise m_NoiseUid="volatile_groan" m_Position="#my_pos"/>
                     </Sequence>
                 </Selector>
-				<!--<Selector>
-                    <Cnd_IsAlertLevelEqual m_AlertLevel="High" m_Invert="true"/>
-                    <Cnd_IsBBValueEqual_bool m_Key="#flag_combat_rest" m_Value="true"/>
-                    <Cnd_IsActivityModuleRunning_SyncAction/>
-					<Cnd_IsInSunlight m_Invert="false"/>
-					<Cnd_IsInDarkzone m_Invert="true"/>
-                    <Sequence>
-                        <Opr_GetSelfPosition m_Position="#my_pos"/>
-                        <Opr_MakeNoise m_NoiseUid="viral_groan" m_Position="#my_pos"/>
-                    </Sequence>
-                </Selector>-->
             </CooldownTimeDelta>
             <Selector>
                 <Sequence>

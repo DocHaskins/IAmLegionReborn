@@ -900,6 +900,7 @@ sub presets()
         interest_default(0.7, "notice"); // #TODO continuous noises support
         interest("human", 1.0, "repel");
 		interest("biter", 1.0, "attract");
+		interest("volatile", 1.0, "force_attract");
 		reinforcement_id("VolatileHunt");
         awakening_default(0.5);
 		awakening("biter", 1.0);

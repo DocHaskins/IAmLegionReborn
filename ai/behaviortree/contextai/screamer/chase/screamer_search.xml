@@ -2,6 +2,7 @@
 <BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
     <SetFlagOnRunning m_Key="#searching">
         <SequenceMem>
+			<Cnd_CanInterruptActivityModule_Movement/>
             <Selector>
                 <Cnd_IsAlertLevelEqual m_AlertLevel="Low" m_Invert="true"/>
                 <Sequence>

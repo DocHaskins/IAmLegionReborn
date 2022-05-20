@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
     <SequenceMem>
+		<Cnd_CanInterruptActivityModule_Movement/>
         <Cnd_HasBBValue m_Key="#target"/>
         <Opr_GetSelfPosition m_Position="#preferred_pos"/>
         <Cnd_IsHeightDiffToTargetGreater m_Target="#target" m_HeightDiff="3.5" m_Invert="true"/>

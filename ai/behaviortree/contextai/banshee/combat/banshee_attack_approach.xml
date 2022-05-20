@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BehaviorTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../MetaData/schema_ai.xsd" m_ContextType="ai">
     <Sequence>
+		<Cnd_CanInterruptActivityModule_Movement/>
         <Cnd_HasBBValue m_Key="#target"/>
 		<Cnd_IsCombatTargetInRadius m_Radius="#input_attack_approach_cancel_range"/>
         <Cnd_HasPathToCombatTarget/>

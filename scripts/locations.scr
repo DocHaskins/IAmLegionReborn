@@ -47,32 +47,32 @@ sub Preset_UseGreenColor()
 
 // sub Color_NightGreen()
 // {
-//     IconColor(235, 127, 12, 220);
+//     IconColor(12, 235, 67, 255);
 // }
 
 // sub Color_DayGreen()
 // {
-//     IconColor(215, 132, 24, 220);
+//     IconColor(54, 206, 92, 255);
 // }
 
 // sub Color_ActivityTooHardGreen()
 // {
-//     IconColorActivityTooHard(235, 64, 12, 220);
+//     IconColorActivityTooHard(12, 235, 67, 255);
 // }
 
 sub Color_Grey()
 {
-    IconColor(114,114,114,192);
+    IconColor(194,194,194,192);
 }
 
 sub Color_Red()
 {
-    IconColor(235, 127, 12, 220);
+    IconColor(229,30,8,255);
 }
 
 sub Color_ActivityTooHardRed()
 {
-    IconColorActivityTooHard(235, 64, 12, 220);
+    IconColorActivityTooHard(204,57,57,255);
 }
 
 sub Preset_MiscIcons()
@@ -161,7 +161,8 @@ sub StoryNeutral()
     Icon("map_loc_main");
     UseMultipleIcons(true);
     
-	use Color_IAL_WhiteWBorder();
+    IconColor(255, 255, 255, 255);
+    AreaColor(255, 255, 255, 128);
             
     RadarVisibilityRange(0, 0, 0); //never on radar
     use Preset_In3DWhenClose();
@@ -183,7 +184,7 @@ sub StoryObjective()
     CanShowIn3dWhenOverridenByPortals(true);
 
     PriorityModifier(150);
-	use Color_IAL_Objective();
+	use ObjectiveColor();
     IgnoreFogOfWar(true);
 }
 
@@ -278,7 +279,8 @@ sub Preset_Story()
 sub Preset_OWA()
 {
     MapZoomLevelVisibility(1,1,1,0); 
-	use Color_IAL_WhiteWBorder();
+    IconColor(255, 255, 255, 255);
+    AreaColor(255, 255, 255, 255);
     
     Category("Neutral")
     {
@@ -286,7 +288,8 @@ sub Preset_OWA()
         ShowOnMap(false);
         Icon("activity_icon");
         UseMultipleIcons(true);
-        use Color_IAL_WhiteWBorder();
+        IconColor(255, 255, 255, 255);
+        AreaColor(255, 255, 255, 255);
     }
 	Category("Objective")
 	{
@@ -294,7 +297,8 @@ sub Preset_OWA()
         PriorityModifier(100);
         Icon("activity_icon");
         UseMultipleIcons(true);
-        use Color_IAL_WhiteWBorder();
+        IconColor(255, 255, 255, 255);
+        AreaColor(255, 255, 255, 255);
 	}
        
     CategoryMarked("Neutral")
@@ -303,14 +307,16 @@ sub Preset_OWA()
         ShowOnMap(false);
         Icon("activity_icon");
         UseMultipleIcons(true);
-        use Color_IAL_WhiteWBorder();
+        IconColor(255, 255, 255, 255);
+        AreaColor(255, 255, 255, 255);
 	}
 	CategoryMarked("Objective")
 	{
         use StoryObjectiveMarked();        
         Icon("activity_icon");
         UseMultipleIcons(true);
-        use Color_IAL_WhiteWBorder();
+        IconColor(255, 255, 255, 255);
+        AreaColor(255, 255, 255, 255);
 	}
 }
 
@@ -329,7 +335,7 @@ sub Preset_EnemyAI()
     }
     Category("Neutral")
     {            
-        use Color_IAL_Grey();
+        IconColor(169,169,169, 255);
         ShowOnRadarEdge(true);	
     }
         
@@ -355,7 +361,7 @@ sub Preset_Facility()
     ShowOnMapEdge(false);    
     MapZoomLevelVisibility(1,1,1,1);
     ShowAsGroupingLocation(false);
-    use Color_IAL_ActivityTooHardRed();
+    IconColorActivityTooHard(178,32,32,255);
     
     CategoryMarked("Neutral")
 	{		
@@ -370,7 +376,7 @@ sub Preset_Facility()
 sub Preset_Facility_Finished()
 {
     use Preset_Facility();   
-    use Preset_UseIALColors();
+    use Preset_UseGreenColor();
     MapZoomLevelVisibility(1,1,1,1);
 }
 
@@ -381,7 +387,7 @@ sub Preset_Activity()
     ShowOnMapEdge(false);
     MapZoomLevelVisibility(1,1,1,0);
     Can3dLocationClampToScreen(true);
-    use Color_IAL_ActivityTooHardRed();
+    IconColorActivityTooHard(178,32,32,255);
     
     CategoryMarked("Neutral")
     {		
@@ -399,8 +405,8 @@ sub Preset_NightActivity()
     
     ShowOnMapEdge(false);
     MapZoomLevelVisibility(1,1,1,0);
-    use Color_IAL_Landmark();
-    use Color_IAL_ActivityTooHardRed();
+    IconColor(194,194,194,192);
+    IconColorActivityTooHard(178,32,32,255);
     IconAddonTopRight("map_icon_addon_night");
     Can3dLocationClampToScreen(false);
     IconScale(0.8);
@@ -408,8 +414,8 @@ sub Preset_NightActivity()
     CategoryMarked("Neutral")
     {		
         use MarkedPreset();
-        use Color_IAL_White();
-        use Color_IAL_ActivityTooHardRed();
+        IconColor(255, 255, 255, 255);
+        IconColorActivityTooHard(178,32,32,255);
         Can3dLocationClampToScreen(true);
         IconScale(1.0);
 
@@ -417,8 +423,8 @@ sub Preset_NightActivity()
     CategoryMarked("Objective")
     {
         use MarkedPreset();
-        use Color_IAL_White();
-        use Color_IAL_ActivityTooHardRed();
+        IconColor(255, 255, 255, 255);
+        IconColorActivityTooHard(178,32,32,255);
         Can3dLocationClampToScreen(true);
         IconScale(1.0);
 
@@ -426,16 +432,16 @@ sub Preset_NightActivity()
 
     CategoryNight("Neutral")
     {
-        use Color_IAL_White();
-        use Color_IAL_ActivityTooHardRed();
+        IconColor(255, 255, 255, 255);
+        IconColorActivityTooHard(178,32,32,255);
         Can3dLocationClampToScreen(true);
         IconScale(1.0);
 
     }
     CategoryNight("Objective")
     {
-        use Color_IAL_White();
-        use Color_IAL_ActivityTooHardRed();
+        IconColor(255, 255, 255, 255);
+        IconColorActivityTooHard(178,32,32,255);
         Can3dLocationClampToScreen(true);
         IconScale(1.0);
 
@@ -452,33 +458,33 @@ sub Preset_LootCave() //Preset for DarkPlaces and Lootable Shops
 	RadarVisibilityRange(25, 55, 55);
 	Location3dDistanceTreshold(25);
 
-    use Color_IAL_Loot();
+    IconColor(145, 162, 255, 255);
     IconScale(0.8);
 
     CategoryMarked("Neutral")
     {		
         use MarkedPreset();
-        use Color_IAL_Loot();
+        IconColor(145, 162, 255, 255);
         IconScale(1);
         Can3dLocationClampToScreen(true);
     }
     CategoryMarked("Objective")
     {
         use MarkedPreset();
-        use Color_IAL_Loot();
+        IconColor(145, 162, 255, 255);
         IconScale(1);
         Can3dLocationClampToScreen(true);
     }
 
     CategoryNight("Neutral")
     {
-        use Color_IAL_Loot();
+        IconColor(145, 162, 255, 255);
         IconScale(1);
         Can3dLocationClampToScreen(true);
     }
     CategoryNight("Objective")
     {
-		use Color_IAL_Loot();
+		IconColor(145, 162, 255, 255);
         IconScale(1);
         Can3dLocationClampToScreen(true);
     }
@@ -664,7 +670,7 @@ sub main()
 		CategoryMarked("Objective")
 		{
 			use MarkedPreset();
-            use Color_IAL_Objective();
+            use ObjectiveColor();
 		}
     }
     
@@ -693,7 +699,7 @@ sub main()
         Can3dLocationClampToScreen(false);
         Location3dDistanceTreshold(25);
         RadarVisibilityRange(25, 60, 61);
-        use Color_IAL_Noise();
+        IconColor(204, 81, 84, 255);
 		Can3dLocationShowDistance(false);
     
         CategoryMarked("Neutral")
@@ -704,7 +710,7 @@ sub main()
 		CategoryMarked("Objective")
 		{
 			use MarkedPreset();
-            use Color_IAL_Objective();
+            use ObjectiveColor();
 		}
     }
 
@@ -742,7 +748,8 @@ sub main()
 		
 		use Preset_OWA();
         
-        use Color_IAL_WhiteWBorder();
+        IconColor(255, 255, 255, 255);
+        AreaColor(255, 255, 255, 255);
 	}
 	
     Location("GetAwayEnemy")
@@ -753,34 +760,35 @@ sub main()
         Category("Neutral")
         {
             use StoryNeutral();
-            use Color_IAL_Red();
+            IconColor(191, 89, 89, 255);
             Icon("map_loc_get_away");
         }
         Category("Objective")
         {
             use StoryObjective();
-            use Color_IAL_Red();
+            IconColor(191, 89, 89, 255);
             Icon("map_loc_get_away");
         }
         
         CategoryMarked("Neutral")
         {		
             use StoryNeutralMarked();
-            use Color_IAL_Red();
+            IconColor(191, 89, 89, 255);
             Icon("map_loc_get_away");
         }
         CategoryMarked("Objective")
         {
             use StoryObjectiveMarked();
-            use Color_IAL_Red();
+            IconColor(191, 89, 89, 255);
             Icon("map_loc_get_away");
         }
 	}
     
+    
 	Location("Enemy")
 	{
 		Icon("enemy_circle");
-		use Color_IAL_Red();
+		IconColor(205, 81, 85, 255);
         use Preset_EnemyAI();
 	}   
     
@@ -795,7 +803,7 @@ sub main()
 	{
 		Icon("activity_icon");
         UseMultipleIcons(true);
-		use Color_IAL_Red();
+		IconColor(205, 81, 85, 255);
         use Preset_EnemyAI_OWA();
 	}
     
@@ -826,11 +834,11 @@ sub main()
         Icon("enemy_circle");
         use Preset_BinocularAI();
         
-        use Color_IAL_Red();       
+        IconColor(205, 81, 85, 255);        
         
         Category("Friendly")
         {
-            use Color_IAL_Friendly();
+            IconColor(67, 168, 93, 255);
         }
     }
     
@@ -839,7 +847,7 @@ sub main()
         Icon("enemy_circle");
         use Preset_BinocularAI();        
         
-        use Color_IAL_PK();    
+        IconColor(97, 161, 194, 255);        
     }
     
     Location("BinocularAI_Scav")
@@ -847,7 +855,7 @@ sub main()
         Icon("enemy_circle");
         use Preset_BinocularAI();
         
-        use Color_IAL_Scav();
+        IconColor(190, 0, 255, 255);        
     }
     
     Location("BinocularAI_Survivor")
@@ -855,7 +863,7 @@ sub main()
         Icon("enemy_circle");
         use Preset_BinocularAI();
         
-        use Color_IAL_Survivor();        
+        IconColor(194, 160, 97, 255);        
     }
     
     Location("BinocularAI_Bandit")
@@ -863,7 +871,7 @@ sub main()
         Icon("enemy_circle");
         use Preset_BinocularAI();
         
-        use Color_IAL_Bandit();        
+        IconColor(205, 81, 85, 255);        
     }
 	
 	CustomLocation("BinocularAI_Enemy")
@@ -871,7 +879,7 @@ sub main()
         Icon("enemy_circle");
         use Preset_BinocularAI();
         
-        use Color_IAL_Red();        
+        IconColor(205, 81, 85, 255);        
     }
     
         
@@ -884,7 +892,7 @@ sub main()
         Can3dLocationClampToScreen(true);
         Can3dLocationShowDistance(true);        
 		AlwaysShowDistanceTextOnRadar(true);
-		use Color_IAL_Challenge();
+		IconColor(49, 232, 254, 255);   
         CanBeMarked(false);
         Location3dDistanceTreshold(20000); // always
         RadarVisibilityRange(10, 20000); // always
@@ -905,7 +913,7 @@ sub main()
         Can3dLocationClampToScreen(true);
         Can3dLocationShowDistance(false);        
         CanBeMarked(false);
-		use Color_IAL_Red();
+		IconColor(250, 35, 40, 255);
         Location3dDistanceTreshold(20000); // always
         RadarVisibilityRange(10, 20000); // always
         MapDescription(" ");
@@ -1187,7 +1195,7 @@ sub main()
         ShowOnMap(true);
         MapZoomLevelVisibility(1,0,0,0);
         
-        use Color_IAL_White();//this icon already has red color on texture
+        IconColor(255, 255, 255, 255); //this icon already has red color on texture
     }
     
     CustomLocation("BinocularAI_Bandit_Leader") //location for binoculars
@@ -1196,7 +1204,7 @@ sub main()
         MapDescription("&BinocularAI_Bandit_Leader&");
         use Preset_BinocularAI();    
         
-        use Color_IAL_Bandit();
+        IconColor(205, 81, 85, 255);
     }
 
     CustomLocation("Enemy_Bandit_Lieutenant") //location for radar
@@ -1208,7 +1216,7 @@ sub main()
         ShowOnMap(true);
         MapZoomLevelVisibility(1,0,0,0);
         
-        use Color_IAL_Bandit(); //this icon already has red color on texture
+        IconColor(255, 255, 255, 255); //this icon already has red color on texture
     }
     
     CustomLocation("BinocularAI_Bandit_Lieutenant") //location for binoculars
@@ -1217,7 +1225,7 @@ sub main()
         MapDescription("&BinocularAI_Bandit_Lieutenant&");
         use Preset_BinocularAI();    
         
-        use Color_IAL_Bandit();
+        IconColor(205, 81, 85, 255);
     } 
  
     CustomLocation("Enemy_Bandit_Summoner") //location for radar
@@ -1226,7 +1234,7 @@ sub main()
         MapDescription("&Enemy_Bandit_Summoner&");		
         use Preset_EnemyAI();
         
-        use Color_IAL_Bandit(); //this icon already has red color on texture
+        IconColor(255, 255, 255, 255); //this icon already has red color on texture
     }
     
     CustomLocation("BinocularAI_Bandit_Summoner") //location for binoculars
@@ -1235,7 +1243,7 @@ sub main()
         MapDescription("&BinocularAI_Bandit_Summoner&");
         use Preset_BinocularAI();    
         
-        use Color_IAL_Bandit();
+        IconColor(205, 81, 85, 255);
     }
 
     CustomLocation("BinocularAI_Renegade") //location for binoculars
@@ -1244,7 +1252,7 @@ sub main()
         MapDescription("&BinocularAI_Renegade&");
         use Preset_BinocularAI();    
         
-		use Color_IAL_Renegade(); 
+		IconColor(205, 81, 85, 255); 
     }
 
     CustomLocation("BinocularAI_Duke") //location for binoculars
@@ -1253,7 +1261,7 @@ sub main()
         MapDescription("&BinocularAI_Duke&");
         use Preset_BinocularAI();    
         
-		use Color_IAL_Renegade();
+		IconColor(205, 81, 85, 255); 
     }	
 
     CustomLocation("BinocularAI_Duke_Summoner") //location for binoculars
@@ -1262,7 +1270,7 @@ sub main()
         MapDescription("&BinocularAI_Duke_Summoner&");
         use Preset_BinocularAI();    
         
-		use Color_IAL_Renegade();
+		IconColor(205, 81, 85, 255); 
     }
 
     CustomLocation("BinocularAI_Duke_Leader") //location for binoculars
@@ -1271,7 +1279,7 @@ sub main()
         MapDescription("&BinocularAI_Duke_Leader&");
         use Preset_BinocularAI();    
         
-		use Color_IAL_Renegade();
+		IconColor(205, 81, 85, 255); 
     }		
 
 	CustomLocation("Enemy_Renegade_Lieutenant") //location for radar
@@ -1280,7 +1288,7 @@ sub main()
         MapDescription("&BinocularAI_Renegade_Lieutenant&");		
         use Preset_EnemyAI();
         
-        use Color_IAL_Renegade();
+        IconColor(205, 81, 85, 255); 
     }
     
     CustomLocation("BinocularAI_Renegade_Lieutenant") //location for binoculars
@@ -1289,7 +1297,7 @@ sub main()
         MapDescription("&BinocularAI_Renegade_Lieutenant&");
         use Preset_BinocularAI();    
         
-        use Color_IAL_Renegade();
+        IconColor(205, 81, 85, 255); 
     }
     
     CustomLocation("Enemy_Renegade_Leader") //location for radar
@@ -1298,7 +1306,7 @@ sub main()
         MapDescription("&Enemy_Renegade_Leader&");		
         use Preset_EnemyAI();
         
-        use Color_IAL_Renegade();
+        IconColor(205, 81, 85, 255); 
     }
     
     CustomLocation("BinocularAI_Renegade_Leader") //location for binoculars
@@ -1307,7 +1315,7 @@ sub main()
         MapDescription("&BinocularAI_Renegade_Leader&");
         use Preset_BinocularAI();    
         
-        use Color_IAL_Renegade();
+        IconColor(205, 81, 85, 255); 
     }
     
     CustomLocation("Enemy_Renegade_Summoner") //location for radar
@@ -1316,7 +1324,7 @@ sub main()
         MapDescription("&Enemy_Bandit_Summoner&");		
         use Preset_EnemyAI();
         
-        use Color_IAL_Renegade();
+        IconColor(205, 81, 85, 255); 
     }
     
     CustomLocation("BinocularAI_Renegade_Summoner") //location for binoculars
@@ -1325,7 +1333,7 @@ sub main()
         MapDescription("&BinocularAI_Renegade_Summoner&");
         use Preset_BinocularAI();    
         
-        use Color_IAL_Renegade();
+        IconColor(205, 81, 85, 255);
     }
 
 	Location("Screamer")
@@ -1378,7 +1386,8 @@ sub main()
 		
         use Preset_OWA();
         
-        use Color_IAL_WhiteWBorder();
+        IconColor(255, 255, 255, 255);
+        AreaColor(255, 255, 255, 255);
     }
 	
 	Location("TakeItem")
@@ -1396,7 +1405,8 @@ sub main()
 		
         use Preset_OWA();
         
-        use Color_IAL_WhiteWBorder();
+        IconColor(255, 255, 255, 255);
+        AreaColor(255, 255, 255, 255);
 	}
 	
 	Location("Zone")
@@ -1447,7 +1457,8 @@ sub main()
         Category("Neutral")
         {
             use StoryNeutral();
-            use Color_IAL_WhiteWBorder();
+            IconColor(255, 255, 255, 255);
+        AreaColor(255, 255, 255, 255);
             ShowOnMap(false);
             Icon("activity_icon");            
             UseMultipleIcons(true);
@@ -1455,7 +1466,8 @@ sub main()
 		Category("Objective")
 		{
 			use StoryObjective();
-            use Color_IAL_WhiteWBorder();
+            IconColor(255, 255, 255, 255);
+        AreaColor(255, 255, 255, 255);
             Icon("activity_icon");            
             UseMultipleIcons(true);
 		}
@@ -1463,7 +1475,8 @@ sub main()
         CategoryMarked("Neutral")
 		{		
 			use StoryNeutralMarked();
-            use Color_IAL_WhiteWBorder();
+            IconColor(255, 255, 255, 255);
+        AreaColor(255, 255, 255, 255);
             ShowOnMap(false);
             Icon("activity_icon"); //neutral "tracked" should should have a default look            
             UseMultipleIcons(true);
@@ -1471,7 +1484,8 @@ sub main()
 		CategoryMarked("Objective")
 		{
 			use StoryObjectiveMarked();
-            use Color_IAL_WhiteWBorder();
+            IconColor(255, 255, 255, 255);
+        AreaColor(255, 255, 255, 255);
             Icon("activity_icon");
             UseMultipleIcons(true);
 		}
@@ -1490,7 +1504,7 @@ sub main()
 		
         use Preset_QuestGiver();
 
-        use Color_IAL_Quest();
+        IconColor(255,185,11,255);
 	}
     
     Location("QuestGiverStoryteller")
@@ -1511,7 +1525,7 @@ sub main()
     Location("QuestGiverMainQNight")
 	{
         Icon("map_questgiver_main");
-        use Color_IAL_Quest();
+        IconColor(255,185,11,255);
         MapDescription("&hud_NightQuest_desc&");
 
         use Preset_QuestGiver();
@@ -1615,7 +1629,7 @@ sub main()
             use MarkedPreset();
         }
 
-        use Preset_UseIALColors();
+        use Preset_UseGreenColor();
         IconScale(0.8);
 
 	}
@@ -1648,7 +1662,7 @@ sub main()
             use MarkedPreset();
         }
 
-        use Preset_UseIALColors();
+        use Preset_UseGreenColor();
 
 	}
 	
@@ -1672,7 +1686,7 @@ sub main()
             use MarkedPreset();
         }
 
-        use Preset_UseIALColors();
+        use Preset_UseGreenColor();
 
 	}
 	
@@ -1695,7 +1709,7 @@ sub main()
         {
             use MarkedPreset();
         }
-        use Preset_UseIALColors();
+        use Preset_UseGreenColor();
 
 	}
 	
@@ -1766,7 +1780,7 @@ sub main()
 	Location("Encounter")
 	{
         Icon("map_encounter");
-        use Color_IAL_Encounter();
+        IconColor(127, 191, 255, 255);
         ShowOnRadarEdge(IAL_Interface_HUD_ShowEncounterEdge);  
         ShowOnMapEdge(false);
         CanShow3dLocation(IAL_Interface_HUD_ShowEncounterIcon);
@@ -1793,7 +1807,7 @@ sub main()
 	Location("EncounterInfected")
 	{
         Icon("map_encounter_infected");
-        use Color_IAL_EncounterInfected();
+        IconColor(127, 191, 255, 255);
 
         ShowOnMapEdge(false);
         ShowOnRadarEdge(IAL_Interface_HUD_ShowEncounterInfectedEdge);        
@@ -1858,7 +1872,7 @@ sub main()
 	Location("Encounter_Endgame")
 	{
         Icon("map_encounter_bandit_endgame");
-        use Color_IAL_Encounter_Endgame();
+        IconColor(236, 178, 123, 255);
         ShowOnRadarEdge(IAL_Interface_HUD_ShowEncounterEdge_Endgame);  
         ShowOnMapEdge(false);
         CanShow3dLocation(IAL_Interface_HUD_ShowEncounterIcon_Endgame);
@@ -1885,7 +1899,7 @@ sub main()
 	Location("EncounterInfected_Endgame")
 	{
         Icon("map_encounter_special_endgame");
-        use Color_IAL_Encounter_Endgame();
+        IconColor(236, 178, 123, 255);
 
         ShowOnMapEdge(false);
         ShowOnRadarEdge(IAL_Interface_HUD_ShowEncounter_InfectedEdge_Endgame);        
@@ -1927,13 +1941,13 @@ sub main()
         
         CategoryNight("Neutral")
         {
-            use Color_IAL_White();
-            use Color_IAL_ActivityTooHardRed();
+            IconColor(255, 255, 255, 255);
+            use Color_ActivityTooHardRed();
         }
         CategoryNight("Objective")
         {
-            use Color_IAL_White();
-            use Color_IAL_ActivityTooHardRed();
+            IconColor(255, 255, 255, 255);
+            use Color_ActivityTooHardRed();
         }
 	}
     
@@ -1954,13 +1968,13 @@ sub main()
         
         CategoryNight("Neutral")
         {
-            use Color_IAL_White();
-            use Color_IAL_ActivityTooHardRed();
+            IconColor(255, 255, 255, 255);
+            use Color_ActivityTooHardRed();
         }
         CategoryNight("Objective")
         {
-            use Color_IAL_White();
-            use Color_IAL_ActivityTooHardRed();
+            IconColor(255, 255, 255, 255);
+            use Color_ActivityTooHardRed();
         }
 	}
 
@@ -2046,7 +2060,7 @@ sub main()
 		Icon("map_nondiscovered");
         MapDescription("&MMap_NonDiscovered&");
         ShowOnMapEdge(false);
-        use Color_IAL_Undiscovered();
+        IconColor(194,194,194,255);
         
         use Preset_Other();
         IgnoreFogOfWar(true);
@@ -2205,7 +2219,7 @@ sub main()
             use MarkedPreset();
         }
 
-        use Preset_UseIALColors();
+        use Preset_UseGreenColor();
 
     }
 	CustomLocation("Canteen_HUB")
@@ -2229,7 +2243,7 @@ sub main()
             use MarkedPreset();
         }
 
-        use Preset_UseIALColors();
+        use Preset_UseGreenColor();
 
     }	
 	
@@ -2256,31 +2270,31 @@ sub main()
         RadarVisibilityRange(25, 55, 55);
         Location3dDistanceTreshold(25);
 
-        use Color_IAL_LootIsland();
+        IconColor(215, 139, 84, 255);
         IconScale(1);
 
         CategoryMarked("Neutral")
         {		
             use MarkedPreset();
-            use Color_IAL_LootIsland();
+            IconColor(215, 139, 84, 255);
             IconScale(1);
         }
         CategoryMarked("Objective")
         {
             use MarkedPreset();
-            use Color_IAL_LootIsland();
+            IconColor(215, 139, 84, 255);
             IconScale(1);
         }
 
         CategoryNight("Neutral")
         {
-            use Color_IAL_LootIsland();
+            IconColor(215, 139, 84, 154);
             IconScale(0.8);
             Can3dLocationClampToScreen(false);
         }
         CategoryNight("Objective")
         {
-            use Color_IAL_LootIsland();
+            IconColor(215, 139, 84, 154);
             IconScale(0.8);
             Can3dLocationClampToScreen(false);
         }
@@ -2288,13 +2302,13 @@ sub main()
         CategoryMarkedNight("Neutral")
         {		
             use MarkedPreset();
-            use Color_IAL_LootIsland();
+            IconColor(215, 139, 84, 255);
             IconScale(1);
         }
         CategoryMarkedNight("Objective")
         {
             use MarkedPreset();
-            use Color_IAL_LootIsland();
+            IconColor(215, 139, 84, 255);
             IconScale(1);
         }
     }
@@ -2312,31 +2326,31 @@ sub main()
         RadarVisibilityRange(25, 55, 55);
         Location3dDistanceTreshold(25);
 
-        use Color_IAL_LootIsland();
+        IconColor(215, 139, 84, 255);
         IconScale(1);
 
         CategoryMarked("Neutral")
         {		
             use MarkedPreset();
-            use Color_IAL_LootIsland();
+            IconColor(215, 139, 84, 255);
             IconScale(1);
         }
         CategoryMarked("Objective")
         {
             use MarkedPreset();
-            use Color_IAL_LootIsland();
+            IconColor(215, 139, 84, 255);
             IconScale(1);
         }
 
         CategoryNight("Neutral")
         {
-            use Color_IAL_LootIsland();
+            IconColor(215, 139, 84, 154);
             IconScale(0.8);
             Can3dLocationClampToScreen(false);
         }
         CategoryNight("Objective")
         {
-            use Color_IAL_LootIsland();
+            IconColor(215, 139, 84, 154);
             IconScale(0.8);
             Can3dLocationClampToScreen(false);
         }
@@ -2344,13 +2358,13 @@ sub main()
         CategoryMarkedNight("Neutral")
         {		
             use MarkedPreset();
-            use Color_IAL_LootIsland();
+            IconColor(215, 139, 84, 255);
             IconScale(1);
         }
         CategoryMarkedNight("Objective")
         {
             use MarkedPreset();
-            use Color_IAL_LootIsland();
+            IconColor(215, 139, 84, 255);
             IconScale(1);
         }
     }
@@ -2369,7 +2383,7 @@ sub main()
         RadarVisibilityRange(0, 99, 99);
         //Location3dDistanceTreshold(35);
 
-        use Color_IAL_AbandonedStructurePK();
+        IconColor(171, 218, 245, 255);
 
         CategoryMarked("Neutral")
         {		
@@ -2383,12 +2397,12 @@ sub main()
 
         CategoryNight("Neutral")
         {
-            use Color_IAL_AbandonedStructurePK();
+            IconColor(171, 218, 245, 255);
         }
 
         CategoryNight("Objective")
         {
-            use Color_IAL_AbandonedStructurePK();
+            IconColor(171, 218, 245, 255);
         }
 
         PlayMapAnimationAfterDiscovered(true);
@@ -2409,7 +2423,7 @@ sub main()
         RadarVisibilityRange(0, 99, 99);
         //Location3dDistanceTreshold(35);
 
-        use Color_IAL_AbandonedStructureSurvivor();
+        IconColor(242, 199, 111, 255);
 
         CategoryMarked("Neutral")
         {		
@@ -2421,11 +2435,11 @@ sub main()
         }
         CategoryNight("Neutral")
         {
-            use Color_IAL_AbandonedStructureSurvivor();
+            IconColor(242, 199, 111, 255);
         }
         CategoryNight("Objective")
         {
-            use Color_IAL_AbandonedStructureSurvivor();
+            IconColor(242, 199, 111, 255);
         }
 
         PlayMapAnimationAfterDiscovered(true);
@@ -2531,7 +2545,7 @@ sub main()
         
         use Preset_Activity();
         IconScale(0.8);
-        use Color_IAL_Grey();
+        use Color_Grey();
         IconColorActivityTooHard(160, 160, 160, 255);
         IconAddonTopRight("map_icon_addon_finished");
         Can3dLocationClampToScreen(false);
@@ -2592,7 +2606,7 @@ sub main()
         
         use Preset_Activity_no3rdZoom();
 		CanShow3dLocation(false);
-        use Color_IAL_Landmark();
+        IconColor(162,162,162,255);
 
     }
     
@@ -2638,7 +2652,7 @@ sub main()
         Icon("poi_undiscovered");
 
         use Preset_Activity();
-        use Preset_UseIALColors();
+        use Preset_UseGreenColor();
     }
 
     CustomLocation("SmallSafeZone_Active")
@@ -2661,7 +2675,7 @@ sub main()
             use MarkedPreset();
         }
 
-        use Preset_UseIALColors();
+        use Preset_UseGreenColor();
         IconScale(0.8);
 
 
@@ -2693,9 +2707,8 @@ sub main()
         
         use Preset_Facility();
         IconScale(0.8);
-        use Color_IAL_Landmark();
+        IconColor(194,194,194,192);
         IconColorActivityTooHard(178,32,32,153);
-
         Can3dLocationClampToScreen(false);
     }
 	
@@ -2729,7 +2742,7 @@ sub main()
             use MarkedPreset();
         }
 
-        use Preset_UseIALColors();
+        use Preset_UseGreenColor();
         IconScale(1.0);
 
     }
@@ -2742,7 +2755,7 @@ sub main()
         
         use Preset_Facility();
         IconScale(0.8);
-        use Color_IAL_Landmark();
+        IconColor(194,194,194,192);
         IconColorActivityTooHard(178,32,32,153);
         Can3dLocationClampToScreen(false);
     }	
@@ -2777,7 +2790,7 @@ sub main()
             use MarkedPreset();
         }
 
-        use Preset_UseIALColors();
+        use Preset_UseGreenColor();
         IconScale(1.0);
 
     }
@@ -2797,7 +2810,7 @@ sub main()
         MapDescription("&UVStation_Active&");
 
         use Preset_Activity();
-        use Preset_UseIALColors();
+        use Preset_UseGreenColor();
     }
 
 	CustomLocation("facility_radiotower_inactive_locked")
@@ -2808,8 +2821,8 @@ sub main()
 
         use Preset_Activity_no3rdZoom();
         IconScale(0.8);
-        use Color_IAL_Landmark();
-        IconColorActivityTooHard(178,32,32,153);
+        IconColor(194,194,194,192);
+        IconColorActivityTooHard(178,32,32,255);
         Can3dLocationClampToScreen(false);
     }
 
@@ -2827,7 +2840,7 @@ sub main()
 
         use Preset_Activity_no3rdZoom();
 
-        use Color_IAL_Grey();
+        use Color_Grey();
         IconColorActivityTooHard(160, 160, 160, 255);
 
         IconScale(0.8);
@@ -2842,8 +2855,8 @@ sub main()
 		IconAddonTopRight("map_icon_addon_padlock");    
         use Preset_Activity();
         IconScale(0.8);
-        use Color_IAL_Landmark();
-        IconColorActivityTooHard(178,32,32,153);
+        IconColor(194,194,194,192);
+        IconColorActivityTooHard(178,32,32,255);
         Can3dLocationClampToScreen(false);
     
 	}		
@@ -2859,7 +2872,7 @@ sub main()
     {
         Icon("map_gre_facility");
         MapDescription("&GREQuarantine_Active&");	
-		use Color_IAL_Grey();
+		use Color_Grey();
         IconScale(0.8);
         IconAddonTopRight("map_icon_addon_finished");
         
@@ -2878,7 +2891,7 @@ sub main()
         
         use Preset_Activity();
         IconScale(0.8);
-        use Color_IAL_Landmark();
+        IconColor(194,194,194,192);
         Can3dLocationClampToScreen(false);
     }
 
@@ -2925,7 +2938,7 @@ sub main()
             use MarkedPreset();
         }
 
-        use Preset_UseIALColors();
+        use Preset_UseGreenColor();
 
     }
     
@@ -2937,8 +2950,8 @@ sub main()
         
         use Preset_Activity();
         IconScale(0.8);
-        use Color_IAL_Landmark();
-        IconColorActivityTooHard(178,32,32,153);
+        IconColor(194,194,194,192);
+        IconColorActivityTooHard(178,32,32,255);
         Can3dLocationClampToScreen(false);
     }
 	
@@ -2969,7 +2982,7 @@ sub main()
             use MarkedPreset();
         }
 
-        use Preset_UseIALColors();
+        use Preset_UseGreenColor();
         IconScale(0.8);
 
 
@@ -2993,8 +3006,8 @@ sub main()
         
         use Preset_Activity();
         IconScale(0.8);
-        use Color_IAL_Landmark();
-        IconColorActivityTooHard(178,32,32,153);
+        IconColor(194,194,194,192);
+        IconColorActivityTooHard(178,32,32,255);
         Can3dLocationClampToScreen(false);
     }
 	
@@ -3019,7 +3032,7 @@ sub main()
             use MarkedPreset();
         }
 
-        use Preset_UseIALColors();
+        use Preset_UseGreenColor();
         IconScale(0.8);
 
 	}
@@ -3035,7 +3048,7 @@ sub main()
     {
         Icon("map_airdrop");
         MapDescription("&Airdrop_Active&");
-		use Color_IAL_Grey();
+		use Color_Grey();
         IconScale(0.8);
         IconAddonTopRight("map_icon_addon_finished");
         

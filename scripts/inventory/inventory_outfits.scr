@@ -28682,4 +28682,31 @@ sub main()
         GameVersion(4);
         UID("7053411787698367486");
     }
+	Item("Outfitset_MeleeDPS_Head_IAL", CategoryType_OutfitPart)
+    {
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        Price(0);
+        HudIcon("icon_token");
+        CoopRoleIcon("Tank");
+        MaxStackCount(3);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Blue);
+        OutfitPartSlot(OutfitPartSlot_Head);
+        use outfit_headwear_military_02();
+        OutfitPartForcedAffixGroup("Outfits_Military_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomTank_Affixes");
+        MenuEquipSound("hud_inventory_equip_item_head");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("head_orange");
+        Visibility(true);
+        OutfitArmor(5);
+        Name("&Outfitset_Renegade5_Head_Pimp_N&");
+        Description("&Outfitset_Military_Head_D&");
+        use PickupSounds_Rugs();
+        CanDrop(false);
+        AllowedInShop(false);
+        GameVersion(6);
+        UID("7053411787034582276");
+    }
 }

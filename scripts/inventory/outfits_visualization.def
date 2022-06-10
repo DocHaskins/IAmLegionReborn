@@ -12339,6 +12339,28 @@ sub outfit_headwear_military_01()
 	}
 }
 
+sub outfit_headwear_military_02()
+{
+	OutfitPartMeshesFpp()
+	{
+		Mesh("", "")
+		{
+		}
+	}
+
+	OutfitPartMeshesTpp()
+	{
+		Mesh("man_ren_mask_b_nomouth_a.msh")
+		{
+		ReplaceMaterial("man_ren_mask_b.mat", "zmb_suicider_a_bubbles_front.mat");				
+		}
+		Mesh("npc_aiden_hair.msh")
+		{
+			
+		}
+	}
+}
+
 sub outfit_torso_military_01()
 {
 	OutfitPartMeshesFpp()

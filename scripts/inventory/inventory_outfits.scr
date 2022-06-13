@@ -28709,4 +28709,210 @@ sub main()
         GameVersion(6);
         UID("7053411787034582276");
     }
+	
+	Item("Outfitset_IAL_Torso_Hazard", CategoryType_OutfitPart)
+    {
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        Price(170);
+        HudIcon("equipment_inhaler_a_immunity_regen");
+        CoopRoleIcon("MeleeDPS");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_White);
+        OutfitPartSlot(OutfitPartSlot_Torso);
+        use outfit_ial_torso_hazard_01();
+        OutfitPartForcedAffixGroup("Outfits_BaseMeleeDPS_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomMeleeDPS_Affixes");
+        OutfitPartRank(1);
+        MenuEquipSound("hud_inventory_equip_item_torso");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("torso_white");
+        Visibility(true);
+        OutfitArmor(2);
+		CanDrop(true);
+        use PickupSounds_Rugs();
+        UID("6833784595690225828");
+    }
+	
+	Item("Outfitset_IAL_Hazard_Head", CategoryType_OutfitPart)
+    {
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        Price(0);
+        HudIcon("equipment_inhaler_a_immunity_regen");
+        CoopRoleIcon("Tank");
+        MaxStackCount(3);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Blue);
+        OutfitPartSlot(OutfitPartSlot_Head);
+        use outfit_ial_head_hazard_01();
+        OutfitPartForcedAffixGroup("Outfits_Nightrunner_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomGeneral_Affixes");
+        MenuEquipSound("hud_inventory_equip_item_head");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("head_orange");
+        Visibility(true);
+        OutfitArmor(5);
+        Name("&Outfitset_Renegade5_Head_N&");
+        Description("&Outfitset_Hazard_Head_D&");
+        use PickupSounds_Rugs();
+        CanDrop(true);
+        AllowedInShop(false);
+        UID("7053412787034582276");
+    }
+	
+	Item("Outfitset_IAL_Hazard_Gloves", CategoryType_OutfitPart)
+    {
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        Price(170);
+        HudIcon("equipment_inhaler_a_immunity_regen");
+        CoopRoleIcon("MeleeDPS");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_White);
+        OutfitPartSlot(OutfitPartSlot_Gloves);
+        use outfit_ial_hazard_gloves_01();
+        OutfitPartForcedAffixGroup("Outfits_Nightrunner_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomGeneral_Affixes");
+        OutfitPartRank(1);
+        MenuEquipSound("hud_inventory_equip_item_gloves");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("gloves_white");
+        Visibility(true);
+        OutfitArmor(0);
+		CanDrop(true);
+        use PickupSounds_Rugs();
+        UID("6833784596028666115");
+    }
+	
+	Item("Outfitset_IAL_Hazard_Pants", CategoryType_OutfitPart)
+    {
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        Price(170);
+        HudIcon("equipment_inhaler_a_immunity_regen");
+        CoopRoleIcon("MeleeDPS");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_White);
+        OutfitPartSlot(OutfitPartSlot_Legs);
+        use outfit_ial_hazard_pants_01();
+        OutfitPartForcedAffixGroup("Outfits_Nightrunner_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomGeneral_Affixes");
+        OutfitPartRank(1);
+        MenuEquipSound("hud_inventory_equip_item_legs");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("legs_white");
+        Visibility(true);
+        OutfitArmor(1);
+		CanDrop(true);
+        use PickupSounds_Rugs();
+        UID("6833784595805581106");
+    }
+	
+	Item("Outfitset_IAL_Hazard_Shoes", CategoryType_OutfitPart)
+    {
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        Price(170);
+        HudIcon("equipment_inhaler_a_immunity_regen");
+        CoopRoleIcon("MeleeDPS");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_White);
+        OutfitPartSlot(OutfitPartSlot_Shoes);
+        use outfit_ial_hazard_shoes_01();
+        OutfitPartForcedAffixGroup("Outfits_Nightrunner_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomGeneral_Affixes");
+        OutfitPartRank(1);
+        MenuEquipSound("hud_inventory_equip_item_shoes");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("shoes_white");
+        Visibility(true);
+        OutfitArmor(1);
+		CanDrop(true);
+        use PickupSounds_Rugs();
+        UID("6833784595873358395");
+    }
+	
+	Item("Outfitset_IAL_Hazard_Bracers", CategoryType_OutfitPart)
+    {
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        Price(170);
+        HudIcon("equipment_inhaler_a_immunity_regen");
+        CoopRoleIcon("MeleeDPS");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_White);
+        OutfitPartSlot(OutfitPartSlot_TorsoAddon);
+        use outfit_ial_hazard_bracers_01();
+        OutfitPartForcedAffixGroup("Outfits_Nightrunner_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomGeneral_Affixes");
+        OutfitPartRank(1);
+        MenuEquipSound("hud_inventory_equip_item_torso_addon");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("bracers_white");
+        Visibility(true);
+        OutfitArmor(2);
+		CanDrop(true);
+        use PickupSounds_Rugs();
+        UID("6833784596093703254");
+    }
+	
+	Item("Outfitset_IAL_Hazard_Head02", CategoryType_OutfitPart)
+    {
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        Price(0);
+        HudIcon("equipment_inhaler_a_immunity_regen");
+        CoopRoleIcon("Tank");
+        MaxStackCount(3);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_White);
+        OutfitPartSlot(OutfitPartSlot_Head);
+        use outfit_ial_head_hazard_01();
+        OutfitPartForcedAffixGroup("Outfits_Nightrunner_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomGeneral_Affixes");
+        MenuEquipSound("hud_inventory_equip_item_head");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("head_orange");
+        Visibility(true);
+        OutfitArmor(5);
+        Name("&Outfitset_Renegade5_Head_Pimp_N&");
+        Description("&Outfitset_Hazard_Head_D&");
+        use PickupSounds_Rugs();
+        CanDrop(true);
+        AllowedInShop(false);
+        UID("7053451787034582276");
+    }
+	
+	Item("Outfitset_IAL_Hazard_Head03", CategoryType_OutfitPart)
+    {
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        Price(0);
+        HudIcon("equipment_inhaler_a_immunity_regen");
+        CoopRoleIcon("Tank");
+        MaxStackCount(3);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Orange);
+        OutfitPartSlot(OutfitPartSlot_Head);
+        use outfit_ial_head_hazard_03();
+        OutfitPartForcedAffixGroup("Outfits_Nightrunner_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomGeneral_Affixes");
+        MenuEquipSound("hud_inventory_equip_item_head");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("head_orange");
+        Visibility(true);
+        OutfitArmor(5);
+        Name("&Outfitset_Renegade5_Head_Pimp_N&");
+        Description("&Outfitset_Hazard_Head_D&");
+        use PickupSounds_Rugs();
+        CanDrop(true);
+        AllowedInShop(false);
+        UID("7053451787034592276");
+    }
 }

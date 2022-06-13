@@ -7,6 +7,20 @@ import "inventory_weapondefintions.scr"
 sub main() 
 {
 
+    Item("wpn_1hs_mach_dl1_a_fpp_r0", CategoryType_Melee)
+    {
+        use wpn_1hs_dl1_mach_v();
+        Condition(40);
+        CriticalCondition(15);
+        StaminaDamage(0);
+        StaminaUsage(0.11);
+        Price(380);
+        TierSpread(0, 0);
+        Rank(1);
+        GameVersion(6);
+        UID("6849290623012650061");
+    }
+
     Item("wpn_1hs_mach_a_fpp_r0", CategoryType_Melee)
     {
         use wpn_1hs_mach_a();

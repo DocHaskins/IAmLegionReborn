@@ -28682,6 +28682,8 @@ sub main()
         GameVersion(4);
         UID("7053411787698367486");
     }
+	
+	///////////////////////////////////////////////////////IAL\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 	Item("Outfitset_MeleeDPS_Head_IAL", CategoryType_OutfitPart)
     {
         ItemType(ItemType_OutfitPart);
@@ -28708,6 +28710,31 @@ sub main()
         AllowedInShop(false);
         GameVersion(6);
         UID("7053411787034582276");
+    }
+	
+	Item("Outfitset_IAL_Torso_Militia", CategoryType_OutfitPart)
+    {
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        Price(170);
+        HudIcon("icon_token");
+        CoopRoleIcon("MeleeDPS");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_White);
+        OutfitPartSlot(OutfitPartSlot_Torso);
+        use outfit_ial_torso_militia_01();
+        OutfitPartForcedAffixGroup("Outfits_BaseMeleeDPS_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomMeleeDPS_Affixes");
+        OutfitPartRank(1);
+        MenuEquipSound("hud_inventory_equip_item_torso");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("torso_white");
+        Visibility(true);
+        OutfitArmor(2);
+		CanDrop(true);
+        use PickupSounds_Rugs();
+        UID("6833784595690225828");
     }
 	
 	Item("Outfitset_IAL_Torso_Hazard", CategoryType_OutfitPart)

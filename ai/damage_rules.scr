@@ -5,6 +5,13 @@ import "hit_reaction.def"
 export string EHumanBodyPart_Head = "Head";
 export string EMetadataFlag_ArmorHit = "ArmorHit";
 
+export string EDamageDefenceFlag_DamageBlocked = "DamageBlocked";
+export string EDamageDefenceFlag_IgnoreDamage = "IgnoreDamage";
+export string EDamageDefenceFlag_IgnoreEffects = "IgnoreEffects";
+export string EDamageDefenceFlag_MitigateDamage = "MitigateDamage";
+export string EDamageDefenceFlag_MitigateReaction = "MitigateReaction";
+export string EDamageDefenceFlag_ArmorHit = "ArmorHit";
+
 sub Rules()
 {
     // Allowed body states: see body_states.def
@@ -21,6 +28,7 @@ sub Rules()
     // IsReactionHitSeverity(<reaction_hit_severity); - rule applied if incoming damage reaction hit severity has a given value
     // IsBodyPart(<body_part>); - rule applied if damage hits specific body part
     // MinStateTime(<body_state>, <float>); - rule applied if specific body state is active long enough
+    // IsStaminaDepleted(<bool>); - rule applied if stamina is / is not depleted
     //
     // Rule actions:
     // SetDamageReactionFlag(<flag>); - a given damage reaction flag is added to taken damage
@@ -39,6 +47,7 @@ sub Rules()
     // DamageRadius(<float>); - defines radius of applied damage
     // PropagateDamageEffect(<effect_type>, <effect_value>); - defines propagated effect with value (duration)
     // StaminaAutoRegenerationSpeedMul(<float>); - adding stamina regeneration speed multiplier
+    // DamageDefenceFlag(<flag>); - adding damage defence flag
     //
     // Supported rule types with allowed requirements and actions:
     //
@@ -47,6 +56,13 @@ sub Rules()
     //     HasDamageEffect(<effect>);
     //
     //     StartState(<state>);
+    // }
+    //
+    // DamageDefenceRule(<rule_name>)
+    // {
+    //     IsStaminaDepleted(<bool>);
+    //
+    //     DamageDefenceFlag(<flag>);
     // }
     //
     // ModifyDamageRule(<rule_name>)
@@ -206,6 +222,18 @@ sub Rules()
     }
 
     //////////////////////////////////////////////////////////////////////////
+    // DAMAGE DEFENCE RULES
+    //////////////////////////////////////////////////////////////////////////
+
+    DamageDefenceRule("damage_and_effects_immunity_when_stamina_not_depleted")
+    {
+        IsStaminaDepleted(false);
+
+        DamageDefenceFlag(EDamageDefenceFlag_IgnoreDamage);
+        DamageDefenceFlag(EDamageDefenceFlag_IgnoreEffects);
+    }
+
+    //////////////////////////////////////////////////////////////////////////
     // DAMAGE MODIFICATION RULES
     //////////////////////////////////////////////////////////////////////////
 
@@ -352,6 +380,11 @@ sub Rules()
 
         SetDamageMetadataFlag(EMetadataFlag_ArmorHit);
         DamageModifier("AIArmoredDamageResistance");
+    }
+
+    ModifyDamageRule("ignore_stamina_decrease")
+    {
+        RemoveDamageEffect(EDamageEffect_StaminaDecrease);
     }
 
     //////////////////////////////////////////////////////////////////////////
@@ -699,5 +732,145 @@ sub Presets()
         Rule("electrocuted_spread");
         
         Rule("whole_body_no_head_damage_reduction");
+    }
+
+    Preset("fire_resistant")
+    {
+        Rule("electrocuted_state");
+        Rule("intoxicated_state");
+        Rule("frozen_state");
+        Rule("bleeding_state");
+        Rule("wet_state");
+        Rule("stunned_state");
+        Rule("chemical_state");
+        Rule("infected_state");
+
+        Rule("intoxicated_during_electrocuted_inflicts_ragdoll");
+        Rule("intoxicated_changes_stamina_decrease_value");
+        Rule("electrocuted_during_intoxicated_inflicts_ragdoll");
+        Rule("frozen_during_wet_doubles_frozen_time");
+        Rule("ragdoll_during_bleeding_increases_limb_cut_prob");
+        Rule("melee_weapon_during_unstable_inflicts_ragdoll");
+
+        Rule("melee_weapon_hit_stops_unstable");
+        Rule("melee_hit_stops_unstable");
+        Rule("melee_weapon_hit_stops_stunned");
+        Rule("melee_hit_stops_stunned");
+
+        Rule("wet_during_frozen_doubles_frozen_time");
+
+        Rule("stamina_depleted_melee_weapon_blunt_light_inflicts_unstable");
+        Rule("stamina_depleted_melee_weapon_blunt_medium_inflicts_unstable");
+        Rule("stamina_depleted_melee_weapon_blunt_heavy_inflicts_ragdoll");
+        Rule("stamina_depleted_melee_weapon_cut_inflicts_stunned");
+
+        Rule("bleeding_changes_stamina_auto_regeneration_speed");
+
+        Rule("electrocuted_damage");
+        Rule("intoxicated_damage");
+        Rule("bleeding_damage");
+        Rule("wet_damage");
+        Rule("frozen_damage");
+
+        Rule("electrocuted_spread");
+    }
+
+    Preset("electricity_immunity")
+    {
+        Rule("burning_state");
+        //Rule("electrocuted_state");
+        Rule("intoxicated_state");
+        Rule("frozen_state");
+        Rule("bleeding_state");
+        Rule("wet_state");
+        Rule("stunned_state");
+        Rule("chemical_state");
+        Rule("infected_state");
+
+        Rule("intoxicated_during_electrocuted_inflicts_ragdoll");
+        Rule("intoxicated_changes_stamina_decrease_value");
+        //Rule("electrocuted_during_intoxicated_inflicts_ragdoll");
+        Rule("wet_prevents_burning");
+        Rule("frozen_during_wet_doubles_frozen_time");
+        Rule("ragdoll_during_bleeding_increases_limb_cut_prob");
+        Rule("melee_weapon_during_unstable_inflicts_ragdoll");
+
+        Rule("melee_weapon_hit_stops_unstable");
+        Rule("melee_hit_stops_unstable");
+        Rule("melee_weapon_hit_stops_stunned");
+        Rule("melee_hit_stops_stunned");
+
+        Rule("burning_stops_frozen");
+        Rule("frozen_stops_burning");
+        Rule("wet_stops_burning");
+        Rule("wet_during_frozen_doubles_frozen_time");
+
+        Rule("stamina_depleted_melee_weapon_blunt_light_inflicts_unstable");
+        Rule("stamina_depleted_melee_weapon_blunt_medium_inflicts_unstable");
+        Rule("stamina_depleted_melee_weapon_blunt_heavy_inflicts_ragdoll");
+        Rule("stamina_depleted_melee_weapon_cut_inflicts_stunned");
+
+        Rule("bleeding_changes_stamina_auto_regeneration_speed");
+
+        Rule("burning_damage");
+        //Rule("electrocuted_damage");
+        Rule("intoxicated_damage");
+        Rule("bleeding_damage");
+        Rule("wet_damage");
+        Rule("frozen_damage");
+
+        Rule("burning_propagation");
+        //Rule("electrocuted_spread");
+    }
+
+    Preset("dev_generic_shielder")
+    {
+        Rule("damage_and_effects_immunity_when_stamina_not_depleted");
+        Rule("ignore_stamina_decrease");
+
+        Rule("burning_state");
+        Rule("electrocuted_state");
+        Rule("intoxicated_state");
+        Rule("frozen_state");
+        Rule("bleeding_state");
+        Rule("wet_state");
+        Rule("stunned_state");
+        Rule("chemical_state");
+        Rule("infected_state");
+
+        //Rule("intoxicated_during_electrocuted_inflicts_ragdoll");
+        Rule("intoxicated_changes_stamina_decrease_value");
+        //Rule("electrocuted_during_intoxicated_inflicts_ragdoll");
+        Rule("wet_prevents_burning");
+        Rule("frozen_during_wet_doubles_frozen_time");
+        Rule("ragdoll_during_bleeding_increases_limb_cut_prob");
+        //Rule("melee_weapon_during_unstable_inflicts_ragdoll");
+
+        Rule("melee_weapon_hit_stops_unstable");
+        Rule("melee_hit_stops_unstable");
+        Rule("melee_weapon_hit_stops_stunned");
+        Rule("melee_hit_stops_stunned");
+
+        Rule("burning_stops_frozen");
+        Rule("frozen_stops_burning");
+        Rule("wet_stops_burning");
+        Rule("wet_during_frozen_doubles_frozen_time");
+
+        //Rule("stamina_depleted_melee_weapon_blunt_light_inflicts_unstable");
+        //Rule("stamina_depleted_melee_weapon_blunt_medium_inflicts_unstable");
+        //Rule("stamina_depleted_melee_weapon_blunt_heavy_inflicts_ragdoll");
+        //Rule("stamina_depleted_melee_weapon_cut_inflicts_stunned");
+
+        //Rule("bleeding_changes_stamina_auto_regeneration_speed");
+
+        Rule("burning_damage");
+        Rule("electrocuted_damage");
+        Rule("intoxicated_damage");
+        Rule("bleeding_damage");
+        Rule("wet_damage");
+        Rule("frozen_damage");
+
+        Rule("burning_propagation");
+        Rule("electrocuted_spread");
     }
 }

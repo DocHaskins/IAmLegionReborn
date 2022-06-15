@@ -2,23 +2,23 @@ sub main()
 {
 	PresetDef("Auto Aim")
 	{
-		AddField("m_ThrowAutoHitAssist", "0");
-		AddField("m_ThrowMultiAssist", "0");
+		AddField("m_ThrowAutoHitAssist", "1");
+		AddField("m_ThrowMultiAssist", "1");
 
 		AddField("m_CalculatePointsFromCollidable", "1");
 		
 		AddField("m_InnerZone", "0.15");
-		AddField("m_OuterZone", "1.25");
+		AddField("m_OuterZone", "2.0");
 		
 		Preset("Default")
         {
-			SetField("m_ThrowAutoHitAssist", "0");
-			SetField("m_ThrowMultiAssist", "0");
+			SetField("m_ThrowAutoHitAssist", "1");
+			SetField("m_ThrowMultiAssist", "1");
 
 			SetField("m_CalculatePointsFromCollidable", "1");
 			
 			SetField("m_InnerZone", "0.15");
-			SetField("m_OuterZone", "1.25");
+			SetField("m_OuterZone", "2.0");
 		}
 	}
 }

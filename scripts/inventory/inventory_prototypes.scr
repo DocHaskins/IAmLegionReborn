@@ -6,9 +6,927 @@ import "inventorystuff.scr"
 import "faction_exports.scr"
 import "inventory_weapondefintions.scr"
 
+sub bundle_stuff()
+{
+		ItemType(ItemType_ItemBundle);
+        Visibility(true);
+        MaxStackCount(1);
+        Mesh("loot_ok_ammo_short.msh");
+        HudIcon("weapon_throw_knives");
+        Skin("default");
+        use PickupSounds_Default();
+        Color(Color_White);
+        Price(20);
+        GameVersion(1);
+}
+
 sub main()
 {	
+	/////////////////Chapter1 Stuff
+	/////////////////////////////////////////////////////
+	
     
+    Item("ToolSkin_Paraglider_Cobra", CategoryType_Collectable)
+    {
+        ItemType(ItemType_ToolSkin);
+        ToolSkinType(PlayerModifiableTool_Paraglider);
+        ToolSkinDescName("Parachute_Cobra");
+        ToolSkinAddonVariantName("Parachute_Backpack_Cobra");
+        HudIcon("ToolSkin_Paraglider_Cobra");
+        Name("&ToolSkin_Paraglider_Cobra_N&");
+        Color(Color_Violet);
+        Description("&ToolSkin_Paraglider_Cobra_D&");
+        GameVersion(8);
+    }
+
+    Item("ToolSkin_Paraglider_NightCreatures_Bat", CategoryType_Collectable)
+    {
+        ItemType(ItemType_ToolSkin);
+        ToolSkinType(PlayerModifiableTool_Paraglider);
+        ToolSkinDescName("Parachute_NightCreatures_Bat");
+        ToolSkinAddonVariantName("Parachute_Backpack_NightCreatures_Bat");
+        HudIcon("ToolSkin_Paraglider_Nightcreatures_Bat");
+        Color(Color_Platinum);
+        Name("&ToolSkin_Paraglider_NightCreatures_Bat_N&");
+        Description("&ToolSkin_Paraglider_NightCreatures_Bat_D&");
+        GameVersion(8);
+    }
+	
+	Item("wpn_2hs_g_dragon_boat", CategoryType_Melee)
+    {
+        WpnSubtype(EWpnSubtype_Sword);
+        Visibility(true);
+        ItemType(ItemType_TwoHandedHeavyStick);
+        PhysicsScript("simple.phx");
+        DamageTiers("scaling_2h_slashing_tier_damages");
+        ArmourDamageName("Player_Armour_Damage");
+        CriticalProb(0.0);
+        CriticalDamage(2.0);
+        DamageRange(2.0);
+        DamageToPhysicsObjects(70.0);
+        PhysicsDamageMul(2.0);
+        ConfusionProb(0.0);
+        WeaponBuildType(WeaponBuildType_Universal);
+        DamageType(DamageType_Cut);
+        Flags(1);
+        InventoryMeshHQ("WPN_2HS_G_FPP.msh");
+        InventoryMesh("WPN_2HS_G_FPP.msh");
+        Mesh("WPN_2HS_G_TPP.msh");
+        Skin("dragon_b");
+        SkinTag("Weapon_Craft0");
+        AnimPrefix("Stick2Heavy");
+        HudIcon("wpn_2hs_g_dragon_b");
+        HitReactionType(EReactionType_Cut);
+        HitReactionHitSeverity(EHitSeverity_Heavy);
+        HitReactionMoveSeverity(EMoveSeverity_Medium);
+        HitReactionStrongHitSeverity(EHitSeverity_Heavy);
+        HitReactionStrongMoveSeverity(EMoveSeverity_Heavy);
+        HorizontalAttackDamageMul(3.0);
+        TwoHanded(true);
+        DestroySound("damaged_heavy_weapon_XX.wav");
+        AiHitSound("machete_2h");
+        Material("metal");
+        use HitEffects_Machete_2h();
+        use PickupSounds_Machete_2h();
+        SoundInjuryDamageType("sharp");
+        DamageSize(5.0);
+        StatsType(StatsType_Cut);
+        FF_EffectName("Hit_Stick2HeavyBlunt");
+        FF_Left(0.6);
+        FF_Right(0.6);
+        FF_Duration(0.2);
+        FF_FadeOut(0.0);
+        Reparable(true);
+        RepairTags("Weapon_Craft4");
+        RepairPart("Craft_MetalScrap", 1);
+        AllowedRepairs(3);
+        Color(Color_Platinum);
+        AchType(AchType_Machete);
+        DismantleResultItem("Valuable_V0");
+        DismantleResultItemCnt(2);
+        CraftingSlots(false, false, false, false);
+        UniqueFxNameBase("machete");
+        RagdollBehaviorPrefix("Stick2HeavyBlunt");
+        HandInertiaFactor(1.8);
+        GenType(GenType_MeleeWeapon);
+        InWorldScale(0.9);
+        OpportunityWeapon(false);
+        LimbsCutProb(0.9);
+        FullBodyCutProb(0.7);
+        StunnedEffectDuration(1.0);
+        StaminaUsage(0.11);
+        Condition(40);
+        CriticalCondition(15);
+        StaminaDamage(0);
+        Price(0);
+        GameVersion(8);
+        IsAutomaticTierScaling(true);
+        RelativeStaminaUsage(0.16);
+    }
+	
+	Item("Craftplan_ITEM_dragon_boat", CategoryType_Collectable)
+    {
+        Name("&wpn_2hs_g_dragon_boat_n&");
+        Description('&wpn_2hs_g_dragon_boat_d&');
+        ItemType(ItemType_CraftPlan);
+        CraftplanType("Skill");
+        Price(0);
+        Mesh("blueprint.msh");
+        Skin("default");
+        Color(Color_Platinum);
+        use PickupSounds_Default();
+        HudIcon("wpn_2hs_g_dragon_b");
+        GameVersion(8);
+    }
+	
+    Item("wpn_2hs_g_ancestral_dragon_boat", CategoryType_Melee)
+    {
+        WpnSubtype(EWpnSubtype_Sword);
+        Visibility(true);
+        ItemType(ItemType_TwoHandedHeavyStick);
+        PhysicsScript("simple.phx");
+        DamageTiers("scaling_2h_slashing_tier_damages");
+        ArmourDamageName("Player_Armour_Damage");
+        CriticalProb(0.0);
+        CriticalDamage(2.0);
+        DamageRange(2.0);
+        DamageToPhysicsObjects(70.0);
+        PhysicsDamageMul(2.0);
+        ConfusionProb(0.0);
+        WeaponBuildType(WeaponBuildType_Universal);
+        DamageType(DamageType_Cut);
+        Flags(1);
+        InventoryMeshHQ("WPN_2HS_G_FPP.msh");
+        InventoryMesh("WPN_2HS_G_FPP.msh");
+        Mesh("WPN_2HS_G_TPP.msh");
+        Skin("dragon_a");
+        SkinTag("Weapon_Craft0");
+        AnimPrefix("Stick2Heavy");
+        HudIcon("wpn_2hs_g_dragon_a");
+        HitReactionType(EReactionType_Cut);
+        HitReactionHitSeverity(EHitSeverity_Heavy);
+        HitReactionMoveSeverity(EHitSeverity_Heavy);
+        HitReactionStrongHitSeverity(EHitSeverity_Heavy);
+        HitReactionStrongMoveSeverity(EMoveSeverity_Heavy);
+        HorizontalAttackDamageMul(3.0);
+        TwoHanded(true);
+        DestroySound("damaged_heavy_weapon_XX.wav");
+        AiHitSound("machete_2h");
+        Material("metal");
+        use HitEffects_Machete_2h();
+        use PickupSounds_Machete_2h();
+        SoundInjuryDamageType("sharp");
+        DamageSize(5.0);
+        StatsType(StatsType_Cut);
+        FF_EffectName("Hit_Stick2HeavyBlunt");
+        FF_Left(0.6);
+        FF_Right(0.6);
+        FF_Duration(0.2);
+        FF_FadeOut(0.0);
+        Reparable(true);
+        RepairTags("Weapon_Craft4");
+        RepairPart("Craft_MetalScrap", 1);
+        AllowedRepairs(3);
+        Color(Color_Platinum);
+        AchType(AchType_Machete);
+        DismantleResultItem("Valuable_V0");
+        DismantleResultItemCnt(2);
+        CraftingSlots(false, false, false, false);
+        UniqueFxNameBase("machete");
+        RagdollBehaviorPrefix("Stick2HeavyBlunt");
+        HandInertiaFactor(1.8);
+        GenType(GenType_MeleeWeapon);
+        InWorldScale(0.9);
+        OpportunityWeapon(false);
+        LimbsCutProb(0.95);
+        FullBodyCutProb(0.8);
+        StunnedEffectDuration(1.0);
+        StaminaUsage(0.09);
+        Condition(40);
+        CriticalCondition(15);
+        StaminaDamage(0);
+        Price(0);
+		StartupMod("FreezeMod_PowerAttack_AncestralDragonBoat");
+        GameVersion(8);
+        IsAutomaticTierScaling(true);
+        RelativeStaminaUsage(0.16);
+    }
+	
+	Item("Craftplan_ITEM_ancestral_dragon_boat", CategoryType_Collectable)
+    {
+        Name("&wpn_2hs_g_ancestral_dragon_boat_n&");
+        Description('&wpn_2hs_g_ancestral_dragon_boat_d&');
+        ItemType(ItemType_CraftPlan);
+        CraftplanType("Skill");
+        Price(0);
+        Mesh("blueprint.msh");
+        Skin("default");
+        Color(Color_Platinum);
+        use PickupSounds_Default();
+        HudIcon("wpn_2hs_g_dragon_a");
+        GameVersion(8);
+    }
+	
+    Item("Zongzi_Bundle", CategoryType_ItemBundle)
+    {
+        use bundle_stuff();		
+        BundleItems()
+        {
+            Item("Valuable_Zongzi", 3);
+        }
+        HudIcon("valuables_zongzi");
+        use PickupSounds_Food_Supply();
+        Color(Color_Orange);
+        GameVersion(8);
+        Name("&Valuable_Zongzi_n&");
+        Description('&Valuable_Zongzi_d&');
+    }
+
+    Item("Valuable_Zongzi", CategoryType_Valuable)
+    {
+        ItemType(ItemType_Valuables);
+        Visibility(true);
+        Price(600);
+        HudIcon("valuables_zongzi");
+        Mesh("drugs.msh");
+        Skin("default");
+        MaxStackCount(9999);
+        PhysicsScript("simple.phx");
+        use PickupSounds_Food_Supply();
+        Color(Color_Orange);
+        GenType(GenType_None);
+        GameVersion(8);
+    }
+
+    Item("wpn_1hs_knuckle_duster_d_fpp_nightrunnersclaws", CategoryType_Melee)
+    {
+        Visibility(true);
+        ItemType(ItemType_Knuckles);
+        PhysicsScript("simple.phx");
+        CriticalCondition(15);
+        ArmourDamageName("Player_Armour_Damage");
+        CriticalProb(0.1);
+        CriticalDamage(2.0);
+        DamageRange(1.15);
+        DamageToPhysicsObjects(35.0);
+        PhysicsDamageMul(1.0);
+        ConfusionProb(0.0);
+        WeaponBuildType(WeaponBuildType_Universal);
+        DamageType(DamageType_Cut);
+        Flags(33);
+        InventoryMeshHQ("wpn_1hs_knuckle_duster_d_fpp.msh");
+        InventoryMesh("wpn_1hs_knuckle_duster_d_fpp.msh");
+        Mesh("wpn_1hs_knuckle_duster_d_fpp.msh");
+        SkinTag("Weapon_Craft0");
+        Skin("high");
+        AnimPrefix("fist");
+        HitReactionType(EReactionType_Cut);
+        HitReactionHitSeverity(EHitSeverity_Light);
+        HitReactionMoveSeverity(EMoveSeverity_Light);
+        HitReactionStrongHitSeverity(EHitSeverity_Light);
+        HitReactionStrongMoveSeverity(EMoveSeverity_Light);
+        HorizontalAttackDamageMul(1.0);
+        TwoHanded(true);
+        HolderElement("r_thigh");
+        HolderOffset([0.0,0.1,0.1] *[0.01, 0.01, 0.01]);
+        HolderAngle([0.0,0.0,-90.0]);
+        DestroySound("damaged_sharp_weapon_XX.wav");
+        AiHitSound("knuckle_sharp");
+        Material("machete");
+        use HitEffects_Knuckle();
+        use PickupSounds_Machete();
+        DamageSize(5.0);
+        StatsType(StatsType_Cut);
+        FF_EffectName("Hit_Sharp");
+        FF_Left(0.6);
+        FF_Right(0.6);
+        FF_Duration(0.2);
+        FF_FadeOut(0.0);
+        Reparable(true);
+        RepairTags("Weapon_Craft4");
+        RepairPart("Craft_MetalScrap", 1);
+        AllowedRepairs(3);
+        Color(Color_Platinum);
+        AchType(AchType_Machete);
+        DismantleResultItem("Valuable_V0");
+        DismantleResultItemCnt(2);
+        CraftingSlots(true, false, false, true);
+        UniqueFxNameBase("machete");
+        RagdollBehaviorPrefix("NightRunner");
+        HandInertiaFactor(1.8);
+        GenType(GenType_MeleeWeapon);
+        InWorldScale(0.85);
+        OpportunityWeapon(false);
+        LimbsDestroyProb(0.7);
+        StunnedEffectDuration(1.0);
+        IsMovementLimited(false);
+        MoveSpeedFactor(1.2);
+        StaminaUsage(0.11);
+        Condition(40);
+        CriticalCondition(15);
+        StaminaDamage(0);
+        HudIcon("wpn_1hs_knuckle_duster_d");
+        Color(Color_Platinum);
+        GameVersion(8);
+        IsAutomaticTierScaling(true);
+        DamageTiers("scaling_slashing_knuckles_tier_damages");
+		StartupMod("BleedingMod_PowerAttack_NightrunnersClaws");
+        RelativeStaminaUsage(0.12);
+    }
+	
+	Item("BleedingMod_PowerAttack_NightrunnersClaws", CategoryType_CraftPart)
+    {
+        ItemType(ItemType_CraftPart);
+        CraftWeaponDamageType(DamageType_All);
+        CraftWeaponBuildType(WeaponBuildType_Universal);
+        GenType(GenType_None);
+        Crafting()
+        {
+        Elemental(DamageFlags_MELEE_ATTACK, Elemental_Bleeding, 4);
+        }
+        Visualization()
+        {
+        use ModVisualization_PowerAttack_Bleeding();
+        }
+        Visibility(true);
+        Price(100);
+        HudIcon("mod_bleeding");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("hnd");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Orange);
+        CriticalActivateActions("PowerUpMod");
+        CriticalReleaseActions("PreChargeAttack");
+        CriticalReleaseDamageFlags(DamageFlags_BLEED);
+        ModPoweredUpSound("weapon_mod_powered_up");
+        ModBeforeHitSound("weapon_mod_bleeding_before_hit");
+        ModHitSound("weapon_mod_bleeding_hit");
+        ModActiveTime(30.0);
+        ModCooldown(5);
+        ModPowerUpThreshold(16);
+        ModPowerUpDrainSpeed(0.025);
+        ModPowerUpValue("ChargeAttack", 2.0);
+         ModPowerUpValue("FastAttack", 1.0);
+        ModPowerUpValue("Parry", 0.25);
+        ModInstallDurabilityBonus(50.0);
+        OccupiedModSlots(MOD_SLOT_TIP);
+        Description("&BleedingMod_PowerAttack_Upgrade8_d&");
+        ItemLevel(9, 9);
+        ModAttackFX("mod_bleeding_attack_special_a.gpufx");
+         UIStats(){
+         UIStat("&StatsUI_ModBaseDamage&", 16, "SignedPercent");
+         UIStat("&StatsUI_ModElementalDamage&", 16, "Normal");
+         UIStat("&StatsUI_ModElementalDuration&", 25, "Seconds");
+         UIStat("&StatsUI_HitsToCharge&", 8, "Normal");
+         }
+        GameVersion(8);
+    }
+	
+	Item("FreezeMod_PowerAttack_AncestralDragonBoat", CategoryType_CraftPart)
+    {
+        ItemType(ItemType_CraftPart);
+        CraftWeaponDamageType(DamageType_All);
+        CraftWeaponBuildType(WeaponBuildType_Universal);
+        GenType(GenType_None);
+        Crafting()
+        {
+        Elemental(DamageFlags_MELEE_ATTACK, Elemental_Freezing, 4);
+        }
+        Visualization()
+        {
+        use ModVisualization_PowerAttack_Freeze();
+        }
+        Visibility(true);
+        Price(100);
+        HudIcon("mod_freeze");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("hnd");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Orange);
+        CriticalActivateActions("PowerUpMod");
+        CriticalReleaseActions("PreChargeAttack");
+        CriticalReleaseDamageFlags(DamageFlags_FREEZE);
+        ModPoweredUpSound("weapon_mod_powered_up");
+        ModBeforeHitSound("weapon_mod_freeze_before_hit");
+        ModHitSound("weapon_mod_freeze_hit");
+        ModActiveTime(30.0);
+        ModCooldown(5);
+        ModPowerUpThreshold(16);
+        ModPowerUpDrainSpeed(0.025);
+        ModPowerUpValue("ChargeAttack", 2.0);
+         ModPowerUpValue("FastAttack", 1.0);
+        ModPowerUpValue("Parry", 0.25);
+        ModInstallDurabilityBonus(50.0);
+        OccupiedModSlots(MOD_SLOT_TIP);
+        Description("&FreezeMod_PowerAttack_Upgrade8_d&");
+        ItemLevel(9, 9);
+        ModAttackFX("mod_freeze_attack_special_a.gpufx");
+         UIStats(){
+         UIStat("&StatsUI_ModElementalDamage&", 24, "Normal");
+         UIStat("&StatsUI_ModElementalDuration&", 8, "Seconds");
+         UIStat("&StatsUI_HitsToCharge&", 16, "Normal");
+         }
+        GameVersion(8);
+    }
+	
+	
+    Item("wpn_2hs_e_AxeCutter", CategoryType_Melee)
+    {
+        WpnSubtype(EWpnSubtype_Sword);
+        Visibility(true);
+        ItemType(ItemType_TwoHandedHeavyStick);
+        PhysicsScript("simple.phx");
+        DamageTiers("scaling_2h_slashing_tier_damages");
+        ArmourDamageName("Player_Armour_Damage");
+        CriticalProb(0.0);
+        CriticalDamage(2.0);
+        DamageRange(2.0);
+        DamageToPhysicsObjects(70.0);
+        PhysicsDamageMul(2.0);
+        ConfusionProb(0.0);
+        WeaponBuildType(WeaponBuildType_Universal);
+        DamageType(DamageType_Cut);
+        Flags(1);
+        InventoryMeshHQ("WPN_2HS_E_FPP.msh");
+        InventoryMesh("WPN_2HS_E_FPP.msh");
+        Mesh("WPN_2HS_E_TPP.msh");
+        SkinTag("Weapon_Craft0");
+        AnimPrefix("Stick2Heavy");
+        HudIcon("wpn_2hs_e");
+        HitReactionType(EReactionType_Cut);
+        HitReactionHitSeverity(EHitSeverity_Heavy);
+        HitReactionMoveSeverity(EHitSeverity_Heavy);
+        HitReactionStrongHitSeverity(EHitSeverity_Heavy);
+        HitReactionStrongMoveSeverity(EMoveSeverity_Heavy);
+        HorizontalAttackDamageMul(3.0);
+        TwoHanded(true);
+        DestroySound("damaged_heavy_weapon_XX.wav");
+        AiHitSound("machete_2h");
+        Material("metal");
+        use HitEffects_Machete_2h();
+        use PickupSounds_Machete_2h();
+        SoundInjuryDamageType("sharp");
+        DamageSize(5.0);
+        StatsType(StatsType_Cut);
+        FF_EffectName("Hit_Stick2HeavyBlunt");
+        FF_Left(0.6);
+        FF_Right(0.6);
+        FF_Duration(0.2);
+        FF_FadeOut(0.0);
+        Reparable(true);
+        RepairTags("Weapon_Craft4");
+        RepairPart("Craft_MetalScrap", 1);
+        AllowedRepairs(3);
+        Color(Color_Platinum);
+        AchType(AchType_Machete);
+        DismantleResultItem("Valuable_V0");
+        DismantleResultItemCnt(2);
+        CraftingSlots(false, false, false, false);
+        UniqueFxNameBase("machete");
+        RagdollBehaviorPrefix("Stick2HeavyBlunt");
+        HandInertiaFactor(1.8);
+        GenType(GenType_MeleeWeapon);
+        InWorldScale(0.9);
+        OpportunityWeapon(false);
+        LimbsCutProb(1.00);
+        FullBodyCutProb(1.00);
+        StunnedEffectDuration(1.0);
+        StaminaUsage(0.16);
+        Condition(40);
+        CriticalCondition(15);
+        StaminaDamage(0);
+        Price(0);
+		StartupMod("BleedingMod_PowerAttack_AxeCutter");
+        GameVersion(8);
+        IsAutomaticTierScaling(true);
+        RelativeStaminaUsage(0.16);
+    }
+	
+	Item("Craftplan_ITEM_AxeCutter", CategoryType_Collectable)
+    {
+        Name("&wpn_2hs_e_AxeCutter_n&");
+        Description('&wpn_2hs_e_AxeCutter_d&');
+        ItemType(ItemType_CraftPlan);
+        CraftplanType("Skill");
+        Price(0);
+        Mesh("blueprint.msh");
+        Skin("default");
+        Color(Color_Platinum);
+        use PickupSounds_Default();
+        HudIcon("wpn_2hs_e");
+        GameVersion(8);
+    }
+	
+	Item("BleedingMod_PowerAttack_AxeCutter", CategoryType_CraftPart)
+    {
+        ItemType(ItemType_CraftPart);
+        CraftWeaponDamageType(DamageType_All);
+        CraftWeaponBuildType(WeaponBuildType_Universal);
+        GenType(GenType_None);
+        Crafting()
+        {
+        Elemental(DamageFlags_MELEE_ATTACK, Elemental_Bleeding, 2);
+        }
+        Visualization()
+        {
+        use ModVisualization_PowerAttack_Bleeding();
+        }
+        Visibility(true);
+        Price(100);
+        HudIcon("mod_bleeding");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("hnd");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Orange);
+        CriticalActivateActions("PowerUpMod");
+        CriticalReleaseActions("PreChargeAttack");
+        CriticalReleaseDamageFlags(DamageFlags_BLEED);
+        ModPoweredUpSound("weapon_mod_powered_up");
+        ModBeforeHitSound("weapon_mod_bleeding_before_hit");
+        ModHitSound("weapon_mod_bleeding_hit");
+        ModActiveTime(10.0);
+        ModCooldown(5);
+        ModPowerUpThreshold(2);
+        ModPowerUpDrainSpeed(0.025);
+        ModPowerUpValue("ChargeAttack", 2.0);
+         ModPowerUpValue("FastAttack", 1.0);
+        ModPowerUpValue("Parry", 0.25);
+        ModInstallDurabilityBonus(50.0);
+        OccupiedModSlots(MOD_SLOT_TIP);
+        Description("&BleedingMod_PowerAttack_Upgrade8_d&");
+        ItemLevel(9, 9);
+        ModAttackFX("mod_bleeding_attack_special_a.gpufx");
+         UIStats(){
+         UIStat("&StatsUI_ModElementalDamage&", 16, "Normal");
+         UIStat("&StatsUI_ModElementalDuration&", 25, "Seconds");
+         UIStat("&StatsUI_HitsToCharge&", 8, "Normal");
+         }
+        GameVersion(8);
+    }
+	
+	Item("Chapter1_Mission_wpn_1hs_knuckle_duster_d_fpp_nightrunnersclaws", CategoryType_Melee)
+    {
+		Name("&wpn_1hs_knuckle_duster_d_fpp_nightrunnersclaws_n&");
+		Description("&wpn_1hs_knuckle_duster_d_fpp_nightrunnersclaws_d&");
+        Visibility(true);
+        ItemType(ItemType_Knuckles);
+        PhysicsScript("simple.phx");
+        CriticalCondition(-100);
+        ArmourDamageName("Player_Armour_Damage");
+        CriticalProb(0.1);
+        CriticalDamage(2.0);
+        DamageRange(1.15);
+        DamageToPhysicsObjects(35.0);
+        PhysicsDamageMul(1.0);
+        ConfusionProb(0.0);
+        WeaponBuildType(WeaponBuildType_Universal);
+        DamageType(DamageType_Cut);
+        Flags(33);
+        InventoryMeshHQ("wpn_1hs_knuckle_duster_d_fpp.msh");
+        InventoryMesh("wpn_1hs_knuckle_duster_d_fpp.msh");
+        Mesh("wpn_1hs_knuckle_duster_d_fpp.msh");
+        SkinTag("Weapon_Craft0");
+        Skin("high");
+        AnimPrefix("fist");
+        HitReactionType(EReactionType_Cut);
+        HitReactionHitSeverity(EHitSeverity_Light);
+        HitReactionMoveSeverity(EMoveSeverity_Light);
+        HitReactionStrongHitSeverity(EHitSeverity_Light);
+        HitReactionStrongMoveSeverity(EMoveSeverity_Light);
+        HorizontalAttackDamageMul(1.0);
+        TwoHanded(true);
+        HolderElement("r_thigh");
+        HolderOffset([0.0,0.1,0.1] *[0.01, 0.01, 0.01]);
+        HolderAngle([0.0,0.0,-90.0]);
+        DestroySound("damaged_sharp_weapon_XX.wav");
+        AiHitSound("knuckle_sharp");
+        Material("machete");
+        use HitEffects_Knuckle();
+        use PickupSounds_Machete();
+        DamageSize(5.0);
+        StatsType(StatsType_Cut);
+        FF_EffectName("Hit_Sharp");
+        FF_Left(0.6);
+        FF_Right(0.6);
+        FF_Duration(0.2);
+        FF_FadeOut(0.0);
+        Reparable(true);
+        RepairTags("Weapon_Craft4");
+        RepairPart("Craft_MetalScrap", 1);
+        AllowedRepairs(3);
+        AchType(AchType_Machete);
+        DismantleResultItem("Valuable_V0");
+        DismantleResultItemCnt(2);
+        CraftingSlots(true, false, false, true);
+        UniqueFxNameBase("machete");
+        RagdollBehaviorPrefix("NightRunner");
+        HandInertiaFactor(1.8);
+        GenType(GenType_MeleeWeapon);
+        InWorldScale(0.85);
+        OpportunityWeapon(false);
+        LimbsDestroyProb(0.7);
+        StunnedEffectDuration(1.0);
+        IsMovementLimited(false);
+        MoveSpeedFactor(1.2);
+        StaminaUsage(0);
+        Condition(-1);
+        StaminaDamage(0);
+        HudIcon("wpn_1hs_knuckle_duster_d");
+        Color(Color_Platinum);
+        GameVersion(8);
+        TierSpread(27, 27);
+        Rank(9);
+        DamageTiers("2h_slashing_tier_damages");
+		StartupMod("BleedingMod_PowerAttack_NightrunnersClaws");
+		ChallengeItem(true);
+        RelativeStaminaUsage(0);
+    }
+
+    Item("Chapter1_Mission_Torso", CategoryType_OutfitPart)
+    {
+		Name("&Outfitset_MeleeDPS_Torso_Tier8_Violet_N&");
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        HudIcon("player_melee_torso_c_tpp");
+        CoopRoleIcon("MeleeDPS");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Violet);
+        OutfitPartSlot(OutfitPartSlot_Torso);
+        use outfit_melee_torso_tier8();
+        OutfitPartForcedAffixGroup("Outfits_BaseMeleeDPS_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomMeleeDPS_Affixes");
+        OutfitPartRank(8);
+        MenuEquipSound("hud_inventory_equip_item_torso");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("torso_violet");
+        Visibility(true);
+        OutfitArmor(9);
+        use PickupSounds_Rugs();
+		PlayerTool();
+        GameVersion(8);
+    }
+
+    Item("Chapter1_Mission_Legs", CategoryType_OutfitPart)
+    {
+		Name("&Outfitset_MeleeDPS_Legs_Tier8_Violet_N&");
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        HudIcon("player_melee_pants_c_tpp");
+        CoopRoleIcon("MeleeDPS");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Violet);
+        OutfitPartSlot(OutfitPartSlot_Legs);
+        use outfit_melee_legs_tier8();
+        OutfitPartForcedAffixGroup("Outfits_BaseMeleeDPS_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomMeleeDPS_Affixes");
+        OutfitPartRank(8);
+        MenuEquipSound("hud_inventory_equip_item_legs");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("legs_violet");
+        Visibility(true);
+        OutfitArmor(8);
+        use PickupSounds_Rugs();
+		PlayerTool();
+        GameVersion(8);
+    }
+
+    Item("Chapter1_Mission_Shoes", CategoryType_OutfitPart)
+    {
+		Name("&Outfitset_MeleeDPS_Shoes_Tier8_Violet_N&");
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        HudIcon("player_melee_shoes_c_tpp");
+        CoopRoleIcon("MeleeDPS");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Violet);
+        OutfitPartSlot(OutfitPartSlot_Shoes);
+        use outfit_melee_shoes_tier8();
+        OutfitPartForcedAffixGroup("Outfits_BaseMeleeDPS_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomMeleeDPS_Affixes");
+        OutfitPartRank(8);
+        MenuEquipSound("hud_inventory_equip_item_shoes");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("shoes_violet");
+        Visibility(true);
+        OutfitArmor(8);
+        use PickupSounds_Rugs();
+		PlayerTool();
+        GameVersion(8);
+    }
+
+    Item("Chapter1_Mission_Head", CategoryType_OutfitPart)
+    {
+		Name("&Outfitset_MeleeDPS_Head_Tier8_Violet_N&");
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        HudIcon("player_melee_headwear_c_tpp");
+        CoopRoleIcon("MeleeDPS");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Violet);
+        OutfitPartSlot(OutfitPartSlot_Head);
+        use outfit_melee_headwear_tier8();
+        OutfitPartForcedAffixGroup("Outfits_BaseMeleeDPS_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomMeleeDPS_Affixes");
+        OutfitPartRank(8);
+        MenuEquipSound("hud_inventory_equip_item_head");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("head_violet");
+        Visibility(true);
+        OutfitArmor(9);
+        use PickupSounds_Rugs();
+		PlayerTool();
+        GameVersion(8);
+    }
+
+    Item("Chapter1_Mission_Gloves", CategoryType_OutfitPart)
+    {
+		Name("&Outfitset_MeleeDPS_Gloves_Tier8_Violet_N&");
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        HudIcon("player_melee_gloves_c_fpp");
+        CoopRoleIcon("MeleeDPS");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Violet);
+        OutfitPartSlot(OutfitPartSlot_Gloves);
+        use outfit_melee_gloves_tier8();
+        OutfitPartForcedAffixGroup("Outfits_BaseMeleeDPS_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomMeleeDPS_Affixes");
+        OutfitPartRank(8);
+        MenuEquipSound("hud_inventory_equip_item_gloves");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("gloves_violet");
+        Visibility(true);
+        OutfitArmor(0);
+        use PickupSounds_Rugs();
+		PlayerTool();
+        GameVersion(8);
+    }
+
+    Item("Chapter1_Mission_TorsoAddon", CategoryType_OutfitPart)
+    {
+		Name("&Outfitset_MeleeDPS_TorsoAddon_Tier8_Violet_N&");
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        HudIcon("player_melee_bracers_c_fpp");
+        CoopRoleIcon("MeleeDPS");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Violet);
+        OutfitPartSlot(OutfitPartSlot_TorsoAddon);
+        use outfit_melee_bracers_tier8();
+        OutfitPartForcedAffixGroup("Outfits_BaseMeleeDPS_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomMeleeDPS_Affixes");
+        OutfitPartRank(8);
+        MenuEquipSound("hud_inventory_equip_item_torso_addon");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("bracers_violet");
+        Visibility(true);
+        OutfitArmor(9);
+        use PickupSounds_Rugs();
+		PlayerTool();
+        GameVersion(8);
+    }
+	
+	Item("Chapter1_Mission_wpn_2hr_crossbow_b", CategoryType_Firearm)
+    {
+        use wpn_2hr_crossbow_b();
+        AmmoCount(5);
+        BulletSpeed(150.0);
+        BulletGravityFactor(0.1);
+        Condition(-1.0);
+        FirePointRange(0, 10);
+        FirePointDamage(0, "Chapter1_crossbow_firepoint0");
+        FirePointForce(0, 100);
+        FirePointFlags(0, "LIGHT_ATTACK");
+        FirePointHitSeverity(0, EHitSeverity_Medium);
+        FirePointMoveSeverity(0, EMoveSeverity_Light);
+        FirePointReactionType(0, EReactionType_Stab);
+        FirePointRange(1, 40);
+        FirePointDamage(1, "Chapter1_crossbow_firepoint1");
+        FirePointForce(1, 100);
+        FirePointFlags(1, "LIGHT_ATTACK");
+        FirePointHitSeverity(1, EHitSeverity_Medium);
+        FirePointMoveSeverity(1, EMoveSeverity_Light);
+        FirePointReactionType(1, EReactionType_Stab);
+        StaminaUsage(0.1);
+        UsageType(UsageType_Normal);
+        EnablePenetration(false);
+        StaminaDamage(0);
+        GameVersion(8);
+        DamageHeadMult(3.0);
+        CanDrop(false);
+        AllowedInShop(false);
+    }
+	
+	Item("Chapter1_Mission_ToolBundle", CategoryType_ItemBundle)
+    {
+        ItemType(ItemType_ItemBundle);
+        BundleItems()
+        {
+            Item("LockpickItem", 1);
+            Item("UV_Flare_Upgrade8", 1);
+            Item("Throwable_ExplosiveGrenade_Upgrade8", 2);
+            Item("Mine_Electric_Upgrade8", 2);
+            Item("Potion_DamageDealtIncrease_Upgrade8", 2);
+            Item("Potion_HealthRegeneration_Upgrade8", 2);
+            Item("Medkit_Large", 3);
+            Item("Ammo_Bolt", 40);
+            Item("Ammo_Bolt_Toxic", 10);
+            Item("Ammo_Bolt_Freeze", 10);
+        }
+        Visibility(true);
+        MaxStackCount(1);
+        HudIcon("reward_bundle_craftpart");
+        use PickupSounds_Scrap();
+        Color(Color_Blue);
+        GameVersion(8);
+    }
+
+    Item("Chapter1_Mission_RegularReward", CategoryType_ItemBundle)
+    {
+		Name("&Nightrunners_Crystal_Bundle_N&");
+        ItemType(ItemType_ItemBundle);
+        BundleItems()
+        {
+            Item("Token_MutationSamples", 500);
+            Item("Valuable_Crystal_Violet", 1);
+            Item("Valuable_Crystal_Orange", 1);
+        }
+        Visibility(true);
+        MaxStackCount(1);
+        HudIcon("reward_bundle_crystals");
+        use PickupSounds_Default();
+        Color(Color_Orange);
+        GameVersion(8);
+    }
+	
+    Item("Chapter1_Mission_EliteReward", CategoryType_ItemBundle)
+    {
+		Name("&Token_NightrunnerToken_N&");
+        ItemType(ItemType_ItemBundle);
+        BundleItems()
+        {
+            Item("Token_NightrunnerToken", 1);
+        }
+        Visibility(true);
+        MaxStackCount(1);
+        HudIcon("icon_nightrunner_token");
+        use PickupSounds_Default();
+        Color(Color_Orange);
+        GameVersion(8);
+    }
+	
+	/////////////////Chapter1 Stuff END
+	/////////////////////////////////////////////////////
+	
+	Item("wpn_opera_bolter_weapon", CategoryType_Melee)
+    {
+        use wpn_1hs_mach_a();
+        CriticalCondition(15);
+        StaminaDamage(0);
+        StaminaUsage(0.15);
+		Condition(20);
+		DamageName("opera_bolter_weapon");
+        GameVersion(8);
+    }
+	Item("wpn_freak00", CategoryType_Melee)
+    {
+        use wpn_2hb_f();
+        Condition(40);
+        CriticalCondition(15);
+        StaminaDamage(50);
+        StaminaUsage(0.39);
+        Skin("renegades");
+        Price(1250);
+        TierSpread(14, 14);
+        Rank(5);
+        GameVersion(8);
+		InWorldScale(50.0);
+		StartupMod("HeatMod_Random_TIP");
+		StartupMod("HeatMod_Random_SHAFT");
+    }
+	Item("wpn_freak01", CategoryType_Melee)
+    {
+        use wpn_2hb_f();
+        Condition(40);
+        CriticalCondition(15);
+        StaminaDamage(50);
+        StaminaUsage(0.39);
+        Skin("renegades");
+        Price(1250);
+        TierSpread(14, 14);
+        Rank(5);
+		DamageName("opera_bolter_weapon");
+        GameVersion(8);
+    }
 	Item("wpn_2hb_f_colonelschampion", CategoryType_Melee)
     {
         use wpn_2hb_f();
@@ -23,7 +941,8 @@ sub main()
         GameVersion(4);
 		StartupMod("ShockMod_Random_TIP");
 		StartupMod("ShockMod_Random_SHAFT");
-    }
+    }	
+	
 	Item("Throwable_Husk", CategoryType_Throwable)
     {
         ItemType(ItemType_ThrowablePrefab);
@@ -3685,7 +4604,7 @@ sub main()
         {
             Item("LockpickItem", 2);
         }
-        Mesh("loot_ok_ammo_short.msh");
+        Mesh("drugs.msh");
         HudIcon("lockpick");
         Color(Color_White);
         Price(32);
@@ -8302,6 +9221,76 @@ sub main()
 		GameVersion(1);
 		ChallengeItem(true);
     }
+	Item("wpn_15hb_b_challenge_ringout_dlc1", CategoryType_Melee)
+    {
+        Visibility(true);
+        ItemType(ItemType_TwoHandedCloseStick);
+        PhysicsScript("simple.phx");
+        Condition(-1);
+        CriticalCondition(15);
+        DamageName("challenge_ringout_dlc1");
+        ArmourDamageName("Player_Armour_Damage");
+        StaminaDamage(1000);
+        CriticalProb(0.0);
+        CriticalDamage(2.0);
+        DamageRange(1.35);
+        DamageToPhysicsObjects(35.0);
+        PhysicsDamageMul(2.9);
+        StaminaUsage(0.11);
+        ConfusionProb(0.0);
+        WeaponBuildType(WeaponBuildType_Universal);
+        DamageType(DamageType_Blunt);
+        Flags(33);
+        InventoryMeshHQ("wpn_15hb_b_fpp.msh");
+        InventoryMesh("wpn_15hb_b_fpp.msh");
+        Mesh("wpn_15hb_b_tpp.msh");
+        SkinTag("Weapon_Craft0");
+        AnimPrefix("Stick2Close");
+        HudIcon("wpn_15hb_b");
+        HitReactionType(EReactionType_Blunt);
+		HitReactionMoveSeverity(EMoveSeverity_Light);
+        HitReactionHitSeverity(EHitSeverity_Medium);
+        HitReactionStrongMoveSeverity(EMoveSeverity_Light);
+        HitReactionStrongHitSeverity(EHitSeverity_Heavy);
+		HitReactionFlags(EReactionFlag_Ragdoll);
+        HorizontalAttackDamageMul(1.0);
+        TwoHanded(true);
+        HolderElement("spine2");
+        HolderOffset([-25.0,-10.0,15.0] *[0.01, 0.01, 0.01]);
+        HolderAngle([90.0,200.0,90.0]);
+        DestroySound("damaged_sharp_weapon_XX.wav");
+        AiHitSound("stick_metal_15h");
+        Material("wood");
+        use HitEffects_StickMetal();
+        use PickupSounds_Stick_Wood();
+        DamageSize(2.0);
+        StatsType(StatsType_Blunt);
+        FF_EffectName("Hit_Blunt");
+        FF_Left(0.6);
+        FF_Right(0.6);
+        FF_Duration(0.2);
+        FF_FadeOut(0.0);
+        Reparable(true);
+        RepairTags("Weapon_Craft4");
+        RepairPart("Craft_MetalScrap", 1);
+        AllowedRepairs(3);
+        Color(Color_Orange);
+        AchType(AchType_Machete);
+        DismantleResultItem("Valuable_V0");
+        DismantleResultItemCnt(1);
+        CraftingSlots(true, true, true, true);
+        UniqueFxNameBase("machete");
+        RagdollBehaviorPrefix("StickBlunt");
+        HandInertiaFactor(1.8);
+        Price(150);
+        GenType(GenType_MeleeWeapon);
+        TierSpread(0, 0);
+        InWorldScale(0.9);
+        OpportunityWeapon(false);
+        StunnedEffectDuration(1.0);
+        Rank(0);
+		GameVersion(8);
+    }
 	
 	Item("wpn_2hp_bow_a_fpp_t3_playtest", CategoryType_Firearm)
     {
@@ -8844,6 +9833,328 @@ sub main()
         StartupMod("ShockMod_Random_TIP");
 		GameVersion(1);
     }	
+    Item("Player_Shield", CategoryType_Throwable)
+    {
+        ItemType(ItemType_PlayerShield);
+        Visibility(true);
+        HandToUse("LEFT", false);
+        MaxStackCount(1);
+        Price(15);
+        HudIcon("weapon_throw_knives");
+        Mesh("wpn_throwing_knife_a_tpp.msh");
+        AnimPrefix("PlayerShield");
+        PhysicsScript("dropped_inventory.phx");
+        DamageName("Throwable_ThrowingKnifeDamage");
+        DamageHeadMult(2.0);
+        DamageToPhysicsObjects(69.0);
+        InitialRotation(180, 90, 0);
+        RotationVel(720, 0, 0);
+        ThrowSpeed(40.0);
+        MotionTrailFx("throwing_knife_trail.gpufx");
+        ThrowImpulseUp(0.0);
+        GravityFactor(0.5);
+        DamageRange(0.01);
+        PhysicsDamageMul(0.1);
+        DamageType(DamageType_Cut);
+        HitReactionHitSeverity(EHitSeverity_Light);
+        HitReactionType(EReactionType_Cut);
+        HitReactionMoveSeverity(EMoveSeverity_Light);
+        HorizontalAttackDamageMul(1.0);
+        TwoHanded(false);
+        HolderElement("bip01 r thigh");
+        HolderOffset([0.0, 0.1, 0.1] * [0.01, 0.01, 0.01]);
+        HolderAngle([0.0, 0.0, -90.0]);
+        AiHitSound("knife");
+        use HitEffects_Knife();
+        use PickupSounds_Knife();
+        DamageSize(1.0);
+        FF_EffectName("Throw_Knife");
+        FF_Left(1.0);
+        FF_Right(1.0);
+        FF_Duration(0.5);
+        FF_FadeOut(1.0);
+        NoiseType("NONE");
+        EquipmentSlot();
+        Color(Color_Green);
+        GenType(GenType_None);
+        EnabledAutoAim(true);
+        EnabledAutoAimTarget(true);
+        RicochetEnable(true);
+        ItemLevel(1, 9);
+        UIStats() {
+            UIStat("&StatsUI_EnemyReaction&", "&Light&");
+            UIStat("&StatsUI_Damage&", 10, "Normal");
+        }
+        InventoryMesh("wpn_throwing_knife_a_fpp.msh");
+        StaminaDamage(6);
+        HideFlightParaboll(true);
+        ThrowAggroValue(10.0);
+        FlyBySound("flyby_knife");
+        CraftingSlots(true, true, true, false);
+        GameVersion(8);
+        UID("6809220711662878832");
+    }
+
+    Item("PlayerShield_HeatMod_Random", CategoryType_CraftPart)
+    {
+        ItemType(ItemType_CraftPart);
+        CraftWeaponDamageType(DamageType_All);
+        CraftWeaponBuildType(WeaponBuildType_Universal);
+        GenType(GenType_None);
+        Crafting()
+        {
+            Elemental(DamageFlags_BLOCK_PERFORMED, Elemental_Burning, 5);
+        }
+        ActivationProbability(0.5);
+        Visibility(true);
+        Price(100);
+        HudIcon("mod_heat");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("hnd");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_White);
+        CriticalActivateActions("Random");
+        CriticalReleaseDamageFlags(DamageFlags_IGNITE);
+        ModBeforeHitSound("weapon_mod_fire_before_hit");
+        ModHitSound("weapon_mod_fire_hit");
+        ModInstallDurabilityBonus(50.0);
+        OccupiedModSlots(MOD_SLOT_TIP);
+        Description("&HeatMod_Random_TIP_d&");
+        ItemLevel(1, 9);
+        ModAttackFX("mod_fire_attack_random_a.gpufx");
+        UIStats() {
+            UIStat("&StatsUI_ModElementalDamage&", 10, "Normal");
+            UIStat("&StatsUI_ModElementalDuration&", 4, "Seconds");
+            UIStat("&StatsUI_TriggerChance&", 8, "Percent");
+        }
+        GameVersion(8);
+        UID("6804839586541712719");
+    }
+
+    Item("Craftplan_PlayerShield_Mod_Heat_Random", CategoryType_Collectable)
+    {
+        Name("&HeatMod_Random_N&");
+        Description('&HeatMod_Random_Desc&');
+        ItemType(ItemType_CraftPlan);
+        CraftplanType("Modification");
+        Price(250);
+        Mesh("blueprint.msh");
+        Skin("default");
+        RequiredItem("Craft_Scrap", 1);
+        Color(Color_Green);
+        CraftedItem("PlayerShield_HeatMod_Random", 1, 1);
+        HudIcon("blueprint_b");
+        TokenPrice(EFaction_Exploration, 1);
+        ItemLevel(1, 9);
+        GameVersion(8);
+        UID("6804845785367100148");
+    }
+
+    Item("PlayerShield_ToxicMod_Throw", CategoryType_CraftPart)
+    {
+        ItemType(ItemType_CraftPart);
+        CraftWeaponDamageType(DamageType_All);
+        CraftWeaponBuildType(WeaponBuildType_Universal);
+        GenType(GenType_None);
+        Crafting()
+        {
+            Elemental(DamageFlags_MELEE_ATTACK, Elemental_Acid, 1);
+        }
+        Visibility(true);
+        Price(100);
+        HudIcon("mod_toxic");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("hnd");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_White);
+        CriticalActivateActions("PowerUpMod");
+        CriticalReleaseActions("ShieldThrow");
+        CriticalReleaseDamageFlags(DamageFlags_POISON);
+        ModPoweredUpSound("weapon_mod_powered_up");
+        ModBeforeHitSound("weapon_mod_toxic_before_hit");
+        ModHitSound("weapon_mod_toxic_hit");
+        ModActiveTime(20.0);
+        ModCooldown(5);
+        ModPowerUpThreshold(2);
+        ModPowerUpDrainSpeed(0.025);
+        ModPowerUpValue("Parry", 2.0);
+        ModPowerUpValue("Block", 1.0);
+        ModInstallDurabilityBonus(50.0);
+        OccupiedModSlots(MOD_SLOT_SHAFT);
+        Description("&ToxicMod_PowerAttack_d&");
+        ItemLevel(1, 9);
+        ModAttackFX("mod_toxic_attack_special_a.gpufx");
+        UIStats() {
+            UIStat("&StatsUI_ModElementalDamage&", 6, "Normal");
+            UIStat("&StatsUI_ModElementalDuration&", 10, "Seconds");
+            UIStat("&StatsUI_HitsToCharge&", 24, "Normal");
+        }
+        GameVersion(8);
+        UID("6804805233997923007");
+    }
+
+    Item("Craftplan_PlayerShield_Mod_Toxic_Throw", CategoryType_Collectable)
+    {
+        Name("&ToxicMod_Random_N&");
+        Description('&ToxicMod_Random_Desc&');
+        ItemType(ItemType_CraftPlan);
+        CraftplanType("Modification");
+        Price(250);
+        Mesh("blueprint.msh");
+        Skin("default");
+        RequiredItem("Craft_Scrap", 1);
+        Color(Color_Green);
+        CraftedItem("PlayerShield_ToxicMod_Throw", 1, 1);
+        HudIcon("blueprint_b");
+        TokenPrice(EFaction_Exploration, 1);
+        ItemLevel(1, 9);
+        GameVersion(8);
+        UID("6804845785357100148");
+    }
+
+    Item("PlayerShield_HeatMod_SpecialAttack", CategoryType_CraftPart)
+    {
+        ItemType(ItemType_CraftPart);
+        CraftWeaponDamageType(DamageType_All);
+        CraftWeaponBuildType(WeaponBuildType_Universal);
+        GenType(GenType_None);
+        Crafting()
+        {
+            Elemental(DamageFlags_MELEE_ATTACK, Elemental_Burning, 1);
+        }
+        Visibility(true);
+        Price(100);
+        HudIcon("mod_heat");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("fire");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_White);
+        CriticalActivateActions("PowerUpMod");
+        CriticalReleaseActions("ShieldBlast");
+        CriticalReleaseDamageFlags(DamageFlags_IGNITE);
+        ModPoweredUpSound("weapon_mod_powered_up");
+        ModBeforeHitSound("weapon_mod_fire_before_hit");
+        ModHitSound("weapon_mod_fire_hit");
+        ModActiveTime(0.0);
+        ModCooldown(5);
+        ModPowerUpThreshold(180);
+        ModPowerUpDrainSpeed(-30.0);
+        ModInstallDurabilityBonus(50.0);
+        OccupiedModSlots(MOD_SLOT_GRIP);
+        Description("&HeatMod_SpecialAttack_d&");
+        ItemLevel(1, 9);
+        ModAttackFX("mod_fire_attack_blast_a.gpufx");
+        UIStats() {
+            UIStat("&StatsUI_ModElementalDamage&", 10, "Normal");
+            UIStat("&StatsUI_ModElementalDuration&", 4, "Seconds");
+            UIStat("&StatsUI_TimeToCharge&", 180, "Seconds");
+        }
+        GameVersion(8);
+        UID("6804737362397644202");
+    }
+
+    Item("Craftplan_PlayerShield_HeatMod_SpecialAttack", CategoryType_Collectable)
+    {
+        Name("&HeatMod_SpecialAttack_N&");
+        Description('&HeatMod_SpecialAttack_Desc&');
+        ItemType(ItemType_CraftPlan);
+        CraftplanType("Modification");
+        Price(250);
+        Mesh("blueprint.msh");
+        Skin("default");
+        RequiredItem("Craft_Scrap", 1);
+        Color(Color_Green);
+        CraftedItem("PlayerShield_HeatMod_SpecialAttack", 1, 1);
+        HudIcon("blueprint_b");
+        TokenPrice(EFaction_Exploration, 1);
+        ItemLevel(1, 9);
+        GameVersion(8);
+        UID("6804845785364100148");
+    }
+
+    Item("PlayerShield_Shockwave", CategoryType_Melee)
+    {
+        Name("&PlayerShield_Shockwave_N&");
+        Visibility(false);
+        DamageRange(4.5);
+        DamageTiers("Player_GroundPoundLvl2_Tier");
+        IsAutomaticTierScaling(true);
+        DamageToPhysicsObjects(250.0);
+        PhysicsDamageMul(1.1);
+        PhysicsDamageMulAtMaxRange(0.5);
+        PhysicsDamageMulStartScalingRange(3.0);
+        DamageType(DamageType_Blunt);
+        StaminaUsage(0.3);
+        MaxDamageAngle(-1.0);
+        ItemType(ItemType_Stick);
+        HitReactionType(EReactionType_Blast);
+        HitReactionHitSeverity(EHitSeverity_Heavy);
+        HitReactionMoveSeverity(EMoveSeverity_Medium);
+        HitReactionFlags(EReactionFlag_Ragdoll);
+        ConfusionProb(1.0);
+        StunnedEffectDuration(3.0);
+        GameVersion(8);
+    }
+	Item("Bundle_Grenades_Single", CategoryType_ItemBundle)
+    {
+        ItemType(ItemType_ItemBundle);
+        BundleItems()
+        {
+            Item("Throwable_ExplosiveGrenade", 1);
+        }
+        Visibility(true);
+        MaxStackCount(1);
+        Mesh("loot_bundle_explosives_a.msh");
+        HudIcon("wpn_grenade_a");
+        Skin("default");
+        use PickupSounds_Medkit_Large();
+        Color(Color_Blue);
+        Price(100);
+        Name("&Explosives_N&");
+        GameVersion(8);
+    }
+	Item("wpn_1hb_stk_i_fpp_destroyed", CategoryType_Melee)
+    {
+        use wpn_1hb_stk_i();
+        Condition(3);
+        CriticalCondition(1);
+        StaminaDamage(10);
+        StaminaUsage(0.11);
+        Price(380);
+        TierSpread(0, 0);
+        Rank(1);
+        GameVersion(8);
+    }
+	Item("wpn_1hb_mace_a_fpp_stamina", CategoryType_Melee)
+    {
+        use wpn_1hb_mace_a();
+        Condition(1000);
+        CriticalCondition(15);
+        DamageName("Damage_0");
+        StaminaDamage(400);
+        StaminaUsage(0.11);
+        Price(380);
+        TierSpread(0, 0);
+        Rank(1);
+        GameVersion(8);
+    }
+	Item("wpn_1hb_mace_a_fpp_brawl_at_the_pool", CategoryType_Melee)
+    {
+        use wpn_1hb_mace_a();
+        Condition(-1);
+        CriticalCondition(15);
+        DamageName("Damage_Blunt_10prct");
+        StaminaDamage(400);
+        StaminaUsage(0.11);
+        Price(380);
+        TierSpread(0, 0);
+        Rank(1);
+        GameVersion(8);
+    }
+	
 	Item("wpn_2hb_d_goon_event", CategoryType_Melee)
     {
         WpnSubtype(EWpnSubtype_Mace);
@@ -8927,9 +10238,22 @@ sub main()
         Skin("default");
         Color(Color_Platinum);
         use PickupSounds_Default();
-        Color(Color_Platinum);
         HudIcon("wpn_2hb_d");
         GameVersion(7);
     }
-}
 	
+	Item("skullface_weapon", CategoryType_Melee)
+    {
+        use wpn_15hs_i();
+        ItemType(ItemType_Stick);
+        DamageTiers("slashing_tier_damages");
+        Condition(40);
+        CriticalCondition(15);
+        StaminaDamage(0);
+        StaminaUsage(0.16);
+        Price(380);
+        TierSpread(9, 9);
+        Rank(1);
+        GameVersion(8);
+    }
+}

@@ -3737,6 +3737,348 @@ sub main()
         UID("6880164665190463803");
     }
 
+    Item("Mine_Electric", CategoryType_Throwable)
+    {
+        ItemType(ItemType_ThrowablePrefab);
+        Visibility(true);
+        HandToUse("LEFT",false);
+        MaxStackCount(99);
+        Price(1);
+        HudIcon("wpn_mine_d");
+        Mesh("wpn_mine_d_tpp.msh");
+        InventoryMesh("wpn_mine_d_fpp.msh");
+        InventoryMeshTPP("wpn_mine_d_tpp.msh");
+        Skin("default");
+        PhysicsScript("dropped_inventory.phx");
+        PhysicsSimsetName("mine_explosive");
+        AnimPrefix("Mine");
+        ThrowImpulseLook(7.0);
+        ThrowImpulseUp(0.0);
+        use PickupSounds_Explosives();
+        EquipmentSlot();
+        Color(Color_Violet);
+        SpawnPrefabPresetName("Mesh Type;Electric_Mine;Type;Electric;Sensor Type;AI;Upgrade;Base_Electric");
+        ExplodeDelay(1.0);
+        NoiseType("None");
+        SpawnPrefabName("mine_explosive.prefab");
+        ItemLevel(1, 9);
+         UIStats(){
+         UIStat("&StatsUI_EffectDuration&", 3, "Normal");
+         UIStat("&StatsUI_ExplosionRadious&", 1, "Meters");
+         UIStat("&StatsUI_Damage&", 75, "Normal");
+         }
+        AiHitSound("grenade");
+        ThrowAggroValue(10.0);
+        ScheduleExplodeAfterContact(true);
+        SpeedTresholdToExplode(0.1);
+        GameVersion(8);
+        UID("7099061644563310110");
+    }
+
+    Item("Mine_Electric_Upgrade1", CategoryType_Throwable)
+    {
+        ItemType(ItemType_ThrowablePrefab);
+        Visibility(true);
+        HandToUse("LEFT",false);
+        MaxStackCount(99);
+        Price(1);
+        HudIcon("wpn_mine_d");
+        Mesh("wpn_mine_d_tpp.msh");
+        InventoryMesh("wpn_mine_d_fpp.msh");
+        InventoryMeshTPP("wpn_mine_d_tpp.msh");
+        Skin("default");
+        PhysicsScript("dropped_inventory.phx");
+        PhysicsSimsetName("mine_explosive");
+        AnimPrefix("Mine");
+        ThrowImpulseLook(7.0);
+        ThrowImpulseUp(0.0);
+        use PickupSounds_Explosives();
+        EquipmentSlot();
+        Color(Color_Violet);
+        SpawnPrefabPresetName("Mesh Type;Electric_Mine;Type;Electric;Sensor Type;AI;Upgrade;LVL1_Electric");
+        ExplodeDelay(1.0);
+        NoiseType("None");
+        SpawnPrefabName("mine_explosive.prefab");
+        ItemLevel(2, 9);
+         UIStats(){
+         UIStat("&StatsUI_EffectDuration&", 3, "Normal");
+         UIStat("&StatsUI_ExplosionRadious&", 2, "Meters");
+         UIStat("&StatsUI_Damage&", 120, "Normal");
+         }
+        AiHitSound("grenade");
+        ThrowAggroValue(20.0);
+        ScheduleExplodeAfterContact(true);
+        SpeedTresholdToExplode(0.1);
+        GameVersion(8);
+        UID("7099061644712048314");
+    }
+
+    Item("Mine_Electric_Upgrade2", CategoryType_Throwable)
+    {
+        ItemType(ItemType_ThrowablePrefab);
+        Visibility(true);
+        HandToUse("LEFT",false);
+        MaxStackCount(99);
+        Price(1);
+        HudIcon("wpn_mine_d");
+        Mesh("wpn_mine_d_tpp.msh");
+        InventoryMesh("wpn_mine_d_fpp.msh");
+        InventoryMeshTPP("wpn_mine_d_tpp.msh");
+        Skin("default");
+        PhysicsScript("dropped_inventory.phx");
+        PhysicsSimsetName("mine_explosive");
+        AnimPrefix("Mine");
+        ThrowImpulseLook(7.0);
+        ThrowImpulseUp(0.0);
+        use PickupSounds_Explosives();
+        EquipmentSlot();
+        Color(Color_Violet);
+        SpawnPrefabPresetName("Mesh Type;Electric_Mine;Type;Electric;Sensor Type;AI;Upgrade;LVL2_Electric");
+        ExplodeDelay(1.0);
+        NoiseType("None");
+        SpawnPrefabName("mine_explosive.prefab");
+        ItemLevel(3, 9);
+         UIStats(){
+         UIStat("&StatsUI_EffectDuration&", 4, "Normal");
+         UIStat("&StatsUI_ExplosionRadious&", 2, "Meters");
+         UIStat("&StatsUI_Damage&", 165, "Normal");
+         }
+        AiHitSound("grenade");
+        ThrowAggroValue(30.0);
+        ScheduleExplodeAfterContact(true);
+        SpeedTresholdToExplode(0.1);
+        GameVersion(8);
+        UID("7099061645389875985");
+    }
+
+    Item("Mine_Electric_Upgrade3", CategoryType_Throwable)
+    {
+        ItemType(ItemType_ThrowablePrefab);
+        Visibility(true);
+        HandToUse("LEFT",false);
+        MaxStackCount(99);
+        Price(1);
+        HudIcon("wpn_mine_d");
+        Mesh("wpn_mine_d_tpp.msh");
+        InventoryMesh("wpn_mine_d_fpp.msh");
+        InventoryMeshTPP("wpn_mine_d_tpp.msh");
+        Skin("default");
+        PhysicsScript("dropped_inventory.phx");
+        PhysicsSimsetName("mine_explosive");
+        AnimPrefix("Mine");
+        ThrowImpulseLook(7.0);
+        ThrowImpulseUp(0.0);
+        use PickupSounds_Explosives();
+        EquipmentSlot();
+        Color(Color_Violet);
+        SpawnPrefabPresetName("Mesh Type;Electric_Mine;Type;Electric;Sensor Type;AI;Upgrade;LVL3_Electric");
+        ExplodeDelay(1.0);
+        NoiseType("None");
+        SpawnPrefabName("mine_explosive.prefab");
+        ItemLevel(4, 9);
+         UIStats(){
+         UIStat("&StatsUI_EffectDuration&", 4, "Normal");
+         UIStat("&StatsUI_ExplosionRadious&", 3, "Meters");
+         UIStat("&StatsUI_Damage&", 270, "Normal");
+         }
+        AiHitSound("grenade");
+        ThrowAggroValue(40.0);
+        ScheduleExplodeAfterContact(true);
+        SpeedTresholdToExplode(0.1);
+        GameVersion(8);
+        UID("7099061645420556408");
+    }
+
+    Item("Mine_Electric_Upgrade4", CategoryType_Throwable)
+    {
+        ItemType(ItemType_ThrowablePrefab);
+        Visibility(true);
+        HandToUse("LEFT",false);
+        MaxStackCount(99);
+        Price(1);
+        HudIcon("wpn_mine_d");
+        Mesh("wpn_mine_d_tpp.msh");
+        InventoryMesh("wpn_mine_d_fpp.msh");
+        InventoryMeshTPP("wpn_mine_d_tpp.msh");
+        Skin("default");
+        PhysicsScript("dropped_inventory.phx");
+        PhysicsSimsetName("mine_explosive");
+        AnimPrefix("Mine");
+        ThrowImpulseLook(7.0);
+        ThrowImpulseUp(0.0);
+        use PickupSounds_Explosives();
+        EquipmentSlot();
+        Color(Color_Orange);
+        SpawnPrefabPresetName("Mesh Type;Electric_Mine;Type;Electric;Sensor Type;AI;Upgrade;LVL4_Electric");
+        ExplodeDelay(1.0);
+        NoiseType("None");
+        SpawnPrefabName("mine_explosive.prefab");
+        ItemLevel(5, 9);
+         UIStats(){
+         UIStat("&StatsUI_EffectDuration&", 5, "Normal");
+         UIStat("&StatsUI_ExplosionRadious&", 3, "Meters");
+         UIStat("&StatsUI_Damage&", 405, "Normal");
+         }
+        AiHitSound("grenade");
+        ThrowAggroValue(50.0);
+        ScheduleExplodeAfterContact(true);
+        SpeedTresholdToExplode(0.1);
+        GameVersion(8);
+        UID("7099061645772073770");
+    }
+
+    Item("Mine_Electric_Upgrade5", CategoryType_Throwable)
+    {
+        ItemType(ItemType_ThrowablePrefab);
+        Visibility(true);
+        HandToUse("LEFT",false);
+        MaxStackCount(99);
+        Price(1);
+        HudIcon("wpn_mine_d");
+        Mesh("wpn_mine_d_tpp.msh");
+        InventoryMesh("wpn_mine_d_fpp.msh");
+        InventoryMeshTPP("wpn_mine_d_tpp.msh");
+        Skin("default");
+        PhysicsScript("dropped_inventory.phx");
+        PhysicsSimsetName("mine_explosive");
+        AnimPrefix("Mine");
+        ThrowImpulseLook(7.0);
+        ThrowImpulseUp(0.0);
+        use PickupSounds_Explosives();
+        EquipmentSlot();
+        Color(Color_Orange);
+        SpawnPrefabPresetName("Mesh Type;Electric_Mine;Type;Electric;Sensor Type;AI;Upgrade;LVL5_Electric");
+        ExplodeDelay(1.0);
+        NoiseType("None");
+        SpawnPrefabName("mine_explosive.prefab");
+        ItemLevel(6, 9);
+         UIStats(){
+         UIStat("&StatsUI_EffectDuration&", 5, "Normal");
+         UIStat("&StatsUI_ExplosionRadious&", 4, "Meters");
+         UIStat("&StatsUI_Damage&", 606, "Normal");
+         }
+        AiHitSound("grenade");
+        ThrowAggroValue(60.0);
+        ScheduleExplodeAfterContact(true);
+        SpeedTresholdToExplode(0.1);
+        GameVersion(8);
+        UID("7099061645910463767");
+    }
+
+    Item("Mine_Electric_Upgrade6", CategoryType_Throwable)
+    {
+        ItemType(ItemType_ThrowablePrefab);
+        Visibility(true);
+        HandToUse("LEFT",false);
+        MaxStackCount(99);
+        Price(1);
+        HudIcon("wpn_mine_d");
+        Mesh("wpn_mine_d_tpp.msh");
+        InventoryMesh("wpn_mine_d_fpp.msh");
+        InventoryMeshTPP("wpn_mine_d_tpp.msh");
+        Skin("default");
+        PhysicsScript("dropped_inventory.phx");
+        PhysicsSimsetName("mine_explosive");
+        AnimPrefix("Mine");
+        ThrowImpulseLook(7.0);
+        ThrowImpulseUp(0.0);
+        use PickupSounds_Explosives();
+        EquipmentSlot();
+        Color(Color_Orange);
+        SpawnPrefabPresetName("Mesh Type;Electric_Mine;Type;Electric;Sensor Type;AI;Upgrade;LVL6_Electric");
+        ExplodeDelay(1.0);
+        NoiseType("None");
+        SpawnPrefabName("mine_explosive.prefab");
+        ItemLevel(7, 9);
+         UIStats(){
+         UIStat("&StatsUI_EffectDuration&", 6, "Normal");
+         UIStat("&StatsUI_ExplosionRadious&", 4, "Meters");
+         UIStat("&StatsUI_Damage&", 945, "Normal");
+         }
+        AiHitSound("grenade");
+        ThrowAggroValue(70.0);
+        ScheduleExplodeAfterContact(true);
+        SpeedTresholdToExplode(0.1);
+        GameVersion(8);
+        UID("7099061645978482831");
+    }
+
+    Item("Mine_Electric_Upgrade7", CategoryType_Throwable)
+    {
+        ItemType(ItemType_ThrowablePrefab);
+        Visibility(true);
+        HandToUse("LEFT",false);
+        MaxStackCount(99);
+        Price(1);
+        HudIcon("wpn_mine_d");
+        Mesh("wpn_mine_d_tpp.msh");
+        InventoryMesh("wpn_mine_d_fpp.msh");
+        InventoryMeshTPP("wpn_mine_d_tpp.msh");
+        Skin("default");
+        PhysicsScript("dropped_inventory.phx");
+        PhysicsSimsetName("mine_explosive");
+        AnimPrefix("Mine");
+        ThrowImpulseLook(7.0);
+        ThrowImpulseUp(0.0);
+        use PickupSounds_Explosives();
+        EquipmentSlot();
+        Color(Color_Orange);
+        SpawnPrefabPresetName("Mesh Type;Electric_Mine;Type;Electric;Sensor Type;AI;Upgrade;LVL7_Electric");
+        ExplodeDelay(1.0);
+        NoiseType("None");
+        SpawnPrefabName("mine_explosive.prefab");
+        ItemLevel(8, 9);
+         UIStats(){
+         UIStat("&StatsUI_EffectDuration&", 6, "Normal");
+         UIStat("&StatsUI_ExplosionRadious&", 5, "Meters");
+         UIStat("&StatsUI_Damage&", 1512, "Normal");
+         }
+        AiHitSound("grenade");
+        ThrowAggroValue(80.0);
+        ScheduleExplodeAfterContact(true);
+        SpeedTresholdToExplode(0.1);
+        GameVersion(8);
+        UID("7099061646057792213");
+    }
+
+    Item("Mine_Electric_Upgrade8", CategoryType_Throwable)
+    {
+        ItemType(ItemType_ThrowablePrefab);
+        Visibility(true);
+        HandToUse("LEFT",false);
+        MaxStackCount(99);
+        Price(1);
+        HudIcon("wpn_mine_d");
+        Mesh("wpn_mine_d_tpp.msh");
+        InventoryMesh("wpn_mine_d_fpp.msh");
+        InventoryMeshTPP("wpn_mine_d_tpp.msh");
+        Skin("default");
+        PhysicsScript("dropped_inventory.phx");
+        PhysicsSimsetName("mine_explosive");
+        AnimPrefix("Mine");
+        ThrowImpulseLook(7.0);
+        ThrowImpulseUp(0.0);
+        use PickupSounds_Explosives();
+        EquipmentSlot();
+        Color(Color_Orange);
+        SpawnPrefabPresetName("Mesh Type;Electric_Mine;Type;Electric;Sensor Type;AI;Upgrade;LVL8_Electric");
+        ExplodeDelay(1.0);
+        NoiseType("None");
+        SpawnPrefabName("mine_explosive.prefab");
+        ItemLevel(9, 9);
+         UIStats(){
+         UIStat("&StatsUI_EffectDuration&", 7, "Normal");
+         UIStat("&StatsUI_ExplosionRadious&", 5, "Meters");
+         UIStat("&StatsUI_Damage&", 2400, "Normal");
+         }
+        AiHitSound("grenade");
+        ThrowAggroValue(90.0);
+        ScheduleExplodeAfterContact(true);
+        SpeedTresholdToExplode(0.1);
+        GameVersion(8);
+        UID("7099061646197750635");
+    }
+
     Item("StaminaPermUpgrade", CategoryType_Powerup)
     {
         ItemType(ItemType_Injector);
@@ -3792,7 +4134,7 @@ sub main()
         MaxStackCount(99);
         Price(4);
         HudIcon("lockpick");
-        Mesh("loot_ok_ammo_short.msh");
+        Mesh("drugs.msh");
         Skin("default");
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
@@ -3813,7 +4155,7 @@ sub main()
         MaxStackCount(99);
         Price(4);
         HudIcon("lockpick");
-        Mesh("loot_ok_ammo_short.msh");
+        Mesh("drugs.msh");
         Skin("default");
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
@@ -3834,7 +4176,7 @@ sub main()
         MaxStackCount(99);
         Price(4);
         HudIcon("lockpick");
-        Mesh("loot_ok_ammo_short.msh");
+        Mesh("drugs.msh");
         Skin("default");
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
@@ -3856,7 +4198,7 @@ sub main()
         MaxStackCount(99);
         Price(4);
         HudIcon("lockpick");
-        Mesh("loot_ok_ammo_short.msh");
+        Mesh("drugs.msh");
         Skin("default");
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
@@ -3878,7 +4220,7 @@ sub main()
         MaxStackCount(99);
         Price(4);
         HudIcon("lockpick");
-        Mesh("loot_ok_ammo_short.msh");
+        Mesh("drugs.msh");
         Skin("default");
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
@@ -3900,7 +4242,7 @@ sub main()
         MaxStackCount(99);
         Price(4);
         HudIcon("lockpick");
-        Mesh("loot_ok_ammo_short.msh");
+        Mesh("drugs.msh");
         Skin("default");
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
@@ -3922,7 +4264,7 @@ sub main()
         MaxStackCount(99);
         Price(4);
         HudIcon("lockpick");
-        Mesh("loot_ok_ammo_short.msh");
+        Mesh("drugs.msh");
         Skin("default");
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
@@ -3944,7 +4286,7 @@ sub main()
         MaxStackCount(99);
         Price(4);
         HudIcon("lockpick");
-        Mesh("loot_ok_ammo_short.msh");
+        Mesh("drugs.msh");
         Skin("default");
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
@@ -3966,7 +4308,7 @@ sub main()
         MaxStackCount(99);
         Price(4);
         HudIcon("lockpick");
-        Mesh("loot_ok_ammo_short.msh");
+        Mesh("drugs.msh");
         Skin("default");
         PhysicsScript("simple.phx");
         use PickupSounds_Default();
@@ -7017,7 +7359,7 @@ sub main()
         Skin("Push");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleasePhysicsDamage(3.0);
@@ -7064,7 +7406,7 @@ sub main()
         Skin("Push");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleasePhysicsDamage(3.0);
@@ -7112,7 +7454,7 @@ sub main()
         Skin("Push");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleasePhysicsDamage(3.0);
@@ -7160,7 +7502,7 @@ sub main()
         Skin("Push");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleasePhysicsDamage(3.0);
@@ -7208,7 +7550,7 @@ sub main()
         Skin("Push");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleasePhysicsDamage(3.0);
@@ -7256,7 +7598,7 @@ sub main()
         Skin("Push");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleasePhysicsDamage(3.0);
@@ -7304,7 +7646,7 @@ sub main()
         Skin("Push");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleasePhysicsDamage(3.0);
@@ -7352,7 +7694,7 @@ sub main()
         Skin("Push");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleasePhysicsDamage(3.0);
@@ -7448,7 +7790,7 @@ sub main()
         Skin("Shock");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
@@ -7495,7 +7837,7 @@ sub main()
         Skin("Shock");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
@@ -7543,7 +7885,7 @@ sub main()
         Skin("Shock");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
@@ -7591,7 +7933,7 @@ sub main()
         Skin("Shock");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
@@ -7639,7 +7981,7 @@ sub main()
         Skin("Shock");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
@@ -7687,7 +8029,7 @@ sub main()
         Skin("Shock");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
@@ -7735,7 +8077,7 @@ sub main()
         Skin("Shock");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
@@ -7783,7 +8125,7 @@ sub main()
         Skin("Shock");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
@@ -7879,7 +8221,7 @@ sub main()
         Skin("fire");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
@@ -7926,7 +8268,7 @@ sub main()
         Skin("fire");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
@@ -7974,7 +8316,7 @@ sub main()
         Skin("fire");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
@@ -8022,7 +8364,7 @@ sub main()
         Skin("fire");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
@@ -8070,7 +8412,7 @@ sub main()
         Skin("fire");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
@@ -8118,7 +8460,7 @@ sub main()
         Skin("fire");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
@@ -8166,7 +8508,7 @@ sub main()
         Skin("fire");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
@@ -8214,7 +8556,7 @@ sub main()
         Skin("fire");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
@@ -8310,7 +8652,7 @@ sub main()
         Skin("toxic");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
@@ -8357,7 +8699,7 @@ sub main()
         Skin("toxic");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
@@ -8405,7 +8747,7 @@ sub main()
         Skin("toxic");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
@@ -8453,7 +8795,7 @@ sub main()
         Skin("toxic");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
@@ -8501,7 +8843,7 @@ sub main()
         Skin("toxic");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
@@ -8549,7 +8891,7 @@ sub main()
         Skin("toxic");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
@@ -8597,7 +8939,7 @@ sub main()
         Skin("toxic");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
@@ -8645,7 +8987,7 @@ sub main()
         Skin("toxic");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
@@ -8741,7 +9083,7 @@ sub main()
         Skin("bleed");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
@@ -8788,7 +9130,7 @@ sub main()
         Skin("bleed");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
@@ -8836,7 +9178,7 @@ sub main()
         Skin("bleed");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
@@ -8884,7 +9226,7 @@ sub main()
         Skin("bleed");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
@@ -8932,7 +9274,7 @@ sub main()
         Skin("bleed");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
@@ -8980,7 +9322,7 @@ sub main()
         Skin("bleed");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
@@ -9028,7 +9370,7 @@ sub main()
         Skin("bleed");
         MaxStackCount(2);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
@@ -9076,7 +9418,7 @@ sub main()
         Skin("bleed");
         MaxStackCount(3);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
@@ -9172,7 +9514,7 @@ sub main()
         Skin("freeze");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
@@ -9219,7 +9561,7 @@ sub main()
         Skin("freeze");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
@@ -9267,7 +9609,7 @@ sub main()
         Skin("freeze");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
@@ -9315,7 +9657,7 @@ sub main()
         Skin("freeze");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
@@ -9363,7 +9705,7 @@ sub main()
         Skin("freeze");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
@@ -9411,7 +9753,7 @@ sub main()
         Skin("freeze");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
@@ -9459,7 +9801,7 @@ sub main()
         Skin("freeze");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
@@ -9507,7 +9849,7 @@ sub main()
         Skin("freeze");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("SpecialAttack");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
@@ -9603,7 +9945,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleasePhysicsDamage(3.0);
@@ -9653,7 +9995,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleasePhysicsDamage(3.0);
@@ -9704,7 +10046,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleasePhysicsDamage(3.0);
@@ -9755,7 +10097,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleasePhysicsDamage(3.0);
@@ -9806,7 +10148,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleasePhysicsDamage(3.0);
@@ -9857,7 +10199,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleasePhysicsDamage(3.0);
@@ -9908,7 +10250,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleasePhysicsDamage(3.0);
@@ -9959,7 +10301,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleasePhysicsDamage(3.0);
@@ -10061,7 +10403,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
@@ -10111,7 +10453,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
@@ -10162,7 +10504,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
@@ -10213,7 +10555,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
@@ -10264,7 +10606,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
@@ -10315,7 +10657,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
@@ -10366,7 +10708,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
@@ -10417,7 +10759,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
@@ -10773,7 +11115,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
@@ -10977,7 +11319,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
@@ -11027,7 +11369,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
@@ -11078,7 +11420,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
@@ -11129,7 +11471,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
@@ -11180,7 +11522,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
@@ -11231,7 +11573,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
@@ -11282,7 +11624,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
@@ -11333,7 +11675,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
@@ -11435,7 +11777,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
@@ -11485,7 +11827,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
@@ -11536,7 +11878,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
@@ -11587,7 +11929,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
@@ -11638,7 +11980,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
@@ -11689,7 +12031,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
@@ -11740,7 +12082,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
@@ -11791,7 +12133,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
@@ -11893,7 +12235,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
@@ -11943,7 +12285,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
@@ -11994,7 +12336,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
@@ -12045,7 +12387,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
@@ -12096,7 +12438,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
@@ -12147,7 +12489,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
@@ -12198,7 +12540,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
@@ -12249,7 +12591,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("PowerUpMod");
         CriticalReleaseActions("PreChargeAttack");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
@@ -12351,7 +12693,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         CriticalActivateActions("Random");
         CriticalReleasePhysicsDamage(3.0);
         CriticalReleaseReactionFlags("Ragdoll");
@@ -12392,7 +12734,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("Random");
         CriticalReleasePhysicsDamage(3.0);
         CriticalReleaseReactionFlags("Ragdoll");
@@ -12434,7 +12776,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("Random");
         CriticalReleasePhysicsDamage(3.0);
         CriticalReleaseReactionFlags("Ragdoll");
@@ -12476,7 +12818,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         CriticalActivateActions("Random");
         CriticalReleasePhysicsDamage(3.0);
         CriticalReleaseReactionFlags("Ragdoll");
@@ -12518,7 +12860,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         CriticalActivateActions("Random");
         CriticalReleasePhysicsDamage(3.0);
         CriticalReleaseReactionFlags("Ragdoll");
@@ -12560,7 +12902,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleasePhysicsDamage(3.0);
         CriticalReleaseReactionFlags("Ragdoll");
@@ -12602,7 +12944,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleasePhysicsDamage(3.0);
         CriticalReleaseReactionFlags("Ragdoll");
@@ -12644,7 +12986,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleasePhysicsDamage(3.0);
         CriticalReleaseReactionFlags("Ragdoll");
@@ -12728,7 +13070,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
         ModBeforeHitSound("weapon_mod_electric_before_hit");
@@ -12769,7 +13111,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
         ModBeforeHitSound("weapon_mod_electric_before_hit");
@@ -12811,7 +13153,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
         ModBeforeHitSound("weapon_mod_electric_before_hit");
@@ -12853,7 +13195,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
         ModBeforeHitSound("weapon_mod_electric_before_hit");
@@ -12895,7 +13237,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
         ModBeforeHitSound("weapon_mod_electric_before_hit");
@@ -12937,7 +13279,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
         ModBeforeHitSound("weapon_mod_electric_before_hit");
@@ -12979,7 +13321,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
         ModBeforeHitSound("weapon_mod_electric_before_hit");
@@ -13021,7 +13363,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
         ModBeforeHitSound("weapon_mod_electric_before_hit");
@@ -13105,7 +13447,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
         ModBeforeHitSound("weapon_mod_fire_before_hit");
@@ -13146,7 +13488,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
         ModBeforeHitSound("weapon_mod_fire_before_hit");
@@ -13188,7 +13530,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
         ModBeforeHitSound("weapon_mod_fire_before_hit");
@@ -13230,7 +13572,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
         ModBeforeHitSound("weapon_mod_fire_before_hit");
@@ -13272,7 +13614,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
         ModBeforeHitSound("weapon_mod_fire_before_hit");
@@ -13314,7 +13656,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
         ModBeforeHitSound("weapon_mod_fire_before_hit");
@@ -13356,7 +13698,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
         ModBeforeHitSound("weapon_mod_fire_before_hit");
@@ -13398,7 +13740,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
         ModBeforeHitSound("weapon_mod_fire_before_hit");
@@ -13482,7 +13824,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
         ModBeforeHitSound("weapon_mod_toxic_before_hit");
@@ -13523,7 +13865,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
         ModBeforeHitSound("weapon_mod_toxic_before_hit");
@@ -13565,7 +13907,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
         ModBeforeHitSound("weapon_mod_toxic_before_hit");
@@ -13607,7 +13949,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
         ModBeforeHitSound("weapon_mod_toxic_before_hit");
@@ -13649,7 +13991,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
         ModBeforeHitSound("weapon_mod_toxic_before_hit");
@@ -13691,7 +14033,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
         ModBeforeHitSound("weapon_mod_toxic_before_hit");
@@ -13733,7 +14075,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
         ModBeforeHitSound("weapon_mod_toxic_before_hit");
@@ -13775,7 +14117,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
         ModBeforeHitSound("weapon_mod_toxic_before_hit");
@@ -13859,7 +14201,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
         ModBeforeHitSound("weapon_mod_bleeding_before_hit");
@@ -13900,7 +14242,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
         ModBeforeHitSound("weapon_mod_bleeding_before_hit");
@@ -13942,7 +14284,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
         ModBeforeHitSound("weapon_mod_bleeding_before_hit");
@@ -13984,7 +14326,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
         ModBeforeHitSound("weapon_mod_bleeding_before_hit");
@@ -14026,7 +14368,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
         ModBeforeHitSound("weapon_mod_bleeding_before_hit");
@@ -14068,7 +14410,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
         ModBeforeHitSound("weapon_mod_bleeding_before_hit");
@@ -14110,7 +14452,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
         ModBeforeHitSound("weapon_mod_bleeding_before_hit");
@@ -14152,7 +14494,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
         ModBeforeHitSound("weapon_mod_bleeding_before_hit");
@@ -14236,7 +14578,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
         ModBeforeHitSound("weapon_mod_freeze_before_hit");
@@ -14277,7 +14619,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
         ModBeforeHitSound("weapon_mod_freeze_before_hit");
@@ -14319,7 +14661,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
         ModBeforeHitSound("weapon_mod_freeze_before_hit");
@@ -14361,7 +14703,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
         ModBeforeHitSound("weapon_mod_freeze_before_hit");
@@ -14403,7 +14745,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
         ModBeforeHitSound("weapon_mod_freeze_before_hit");
@@ -14445,7 +14787,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
         ModBeforeHitSound("weapon_mod_freeze_before_hit");
@@ -14487,7 +14829,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
         ModBeforeHitSound("weapon_mod_freeze_before_hit");
@@ -14529,7 +14871,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
         ModBeforeHitSound("weapon_mod_freeze_before_hit");
@@ -14613,7 +14955,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         CriticalActivateActions("Random");
         CriticalReleasePhysicsDamage(3.0);
         CriticalReleaseReactionFlags("Ragdoll");
@@ -14654,7 +14996,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("Random");
         CriticalReleasePhysicsDamage(3.0);
         CriticalReleaseReactionFlags("Ragdoll");
@@ -14696,7 +15038,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("Random");
         CriticalReleasePhysicsDamage(3.0);
         CriticalReleaseReactionFlags("Ragdoll");
@@ -14738,7 +15080,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         CriticalActivateActions("Random");
         CriticalReleasePhysicsDamage(3.0);
         CriticalReleaseReactionFlags("Ragdoll");
@@ -14780,7 +15122,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         CriticalActivateActions("Random");
         CriticalReleasePhysicsDamage(3.0);
         CriticalReleaseReactionFlags("Ragdoll");
@@ -14822,7 +15164,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleasePhysicsDamage(3.0);
         CriticalReleaseReactionFlags("Ragdoll");
@@ -14864,7 +15206,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleasePhysicsDamage(3.0);
         CriticalReleaseReactionFlags("Ragdoll");
@@ -14906,7 +15248,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleasePhysicsDamage(3.0);
         CriticalReleaseReactionFlags("Ragdoll");
@@ -14990,7 +15332,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
         ModBeforeHitSound("weapon_mod_electric_before_hit");
@@ -15031,7 +15373,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
         ModBeforeHitSound("weapon_mod_electric_before_hit");
@@ -15073,7 +15415,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
         ModBeforeHitSound("weapon_mod_electric_before_hit");
@@ -15115,7 +15457,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
         ModBeforeHitSound("weapon_mod_electric_before_hit");
@@ -15157,7 +15499,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
         ModBeforeHitSound("weapon_mod_electric_before_hit");
@@ -15199,7 +15541,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
         ModBeforeHitSound("weapon_mod_electric_before_hit");
@@ -15241,7 +15583,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
         ModBeforeHitSound("weapon_mod_electric_before_hit");
@@ -15283,7 +15625,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_ELECTROCUTE);
         ModBeforeHitSound("weapon_mod_electric_before_hit");
@@ -15367,7 +15709,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
         ModBeforeHitSound("weapon_mod_fire_before_hit");
@@ -15408,7 +15750,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
         ModBeforeHitSound("weapon_mod_fire_before_hit");
@@ -15450,7 +15792,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
         ModBeforeHitSound("weapon_mod_fire_before_hit");
@@ -15492,7 +15834,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
         ModBeforeHitSound("weapon_mod_fire_before_hit");
@@ -15534,7 +15876,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
         ModBeforeHitSound("weapon_mod_fire_before_hit");
@@ -15576,7 +15918,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
         ModBeforeHitSound("weapon_mod_fire_before_hit");
@@ -15618,7 +15960,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
         ModBeforeHitSound("weapon_mod_fire_before_hit");
@@ -15660,7 +16002,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_IGNITE);
         ModBeforeHitSound("weapon_mod_fire_before_hit");
@@ -15744,7 +16086,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
         ModBeforeHitSound("weapon_mod_toxic_before_hit");
@@ -15785,7 +16127,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
         ModBeforeHitSound("weapon_mod_toxic_before_hit");
@@ -15827,7 +16169,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
         ModBeforeHitSound("weapon_mod_toxic_before_hit");
@@ -15869,7 +16211,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
         ModBeforeHitSound("weapon_mod_toxic_before_hit");
@@ -15911,7 +16253,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
         ModBeforeHitSound("weapon_mod_toxic_before_hit");
@@ -15953,7 +16295,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
         ModBeforeHitSound("weapon_mod_toxic_before_hit");
@@ -15995,7 +16337,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
         ModBeforeHitSound("weapon_mod_toxic_before_hit");
@@ -16037,7 +16379,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_POISON);
         ModBeforeHitSound("weapon_mod_toxic_before_hit");
@@ -16121,7 +16463,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
         ModBeforeHitSound("weapon_mod_bleeding_before_hit");
@@ -16162,7 +16504,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
         ModBeforeHitSound("weapon_mod_bleeding_before_hit");
@@ -16204,7 +16546,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
         ModBeforeHitSound("weapon_mod_bleeding_before_hit");
@@ -16246,7 +16588,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
         ModBeforeHitSound("weapon_mod_bleeding_before_hit");
@@ -16288,7 +16630,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
         ModBeforeHitSound("weapon_mod_bleeding_before_hit");
@@ -16330,7 +16672,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
         ModBeforeHitSound("weapon_mod_bleeding_before_hit");
@@ -16372,7 +16714,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
         ModBeforeHitSound("weapon_mod_bleeding_before_hit");
@@ -16414,7 +16756,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_BLEED);
         ModBeforeHitSound("weapon_mod_bleeding_before_hit");
@@ -16498,7 +16840,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
         ModBeforeHitSound("weapon_mod_freeze_before_hit");
@@ -16539,7 +16881,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
         ModBeforeHitSound("weapon_mod_freeze_before_hit");
@@ -16581,7 +16923,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
         ModBeforeHitSound("weapon_mod_freeze_before_hit");
@@ -16623,7 +16965,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
         ModBeforeHitSound("weapon_mod_freeze_before_hit");
@@ -16665,7 +17007,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
         ModBeforeHitSound("weapon_mod_freeze_before_hit");
@@ -16707,7 +17049,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
         ModBeforeHitSound("weapon_mod_freeze_before_hit");
@@ -16749,7 +17091,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
         ModBeforeHitSound("weapon_mod_freeze_before_hit");
@@ -16791,7 +17133,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalActivateActions("Random");
         CriticalReleaseDamageFlags(DamageFlags_FREEZE);
         ModBeforeHitSound("weapon_mod_freeze_before_hit");
@@ -16874,7 +17216,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         CriticalReleaseDamageFlags(DamageFlags_HEAVY_ATTACK);
         ModInstallDurabilityBonus(50.0);
         OccupiedModSlots(MOD_SLOT_GRIP);
@@ -16908,7 +17250,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalReleaseDamageFlags(DamageFlags_HEAVY_ATTACK);
         ModInstallDurabilityBonus(50.0);
         OccupiedModSlots(MOD_SLOT_GRIP);
@@ -16942,7 +17284,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         CriticalReleaseDamageFlags(DamageFlags_HEAVY_ATTACK);
         ModInstallDurabilityBonus(50.0);
         OccupiedModSlots(MOD_SLOT_GRIP);
@@ -16976,7 +17318,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         CriticalReleaseDamageFlags(DamageFlags_HEAVY_ATTACK);
         ModInstallDurabilityBonus(50.0);
         OccupiedModSlots(MOD_SLOT_GRIP);
@@ -17010,7 +17352,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         CriticalReleaseDamageFlags(DamageFlags_HEAVY_ATTACK);
         ModInstallDurabilityBonus(50.0);
         OccupiedModSlots(MOD_SLOT_GRIP);
@@ -17044,7 +17386,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         CriticalReleaseDamageFlags(DamageFlags_HEAVY_ATTACK);
         ModInstallDurabilityBonus(50.0);
         OccupiedModSlots(MOD_SLOT_GRIP);
@@ -17078,7 +17420,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalReleaseDamageFlags(DamageFlags_HEAVY_ATTACK);
         ModInstallDurabilityBonus(50.0);
         OccupiedModSlots(MOD_SLOT_GRIP);
@@ -17112,7 +17454,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         CriticalReleaseDamageFlags(DamageFlags_HEAVY_ATTACK);
         ModInstallDurabilityBonus(50.0);
         OccupiedModSlots(MOD_SLOT_GRIP);
@@ -17180,7 +17522,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_White);
+        Color(Color_Green);
         ModInstallDurabilityBonus(50.0);
         OccupiedModSlots(MOD_SLOT_GRIP);
         Description("&ReinforceMod_d&");
@@ -17213,7 +17555,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         ModInstallDurabilityBonus(50.0);
         OccupiedModSlots(MOD_SLOT_GRIP);
         Description("&ReinforceMod_Upgrade1_d&");
@@ -17246,7 +17588,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Blue);
         ModInstallDurabilityBonus(50.0);
         OccupiedModSlots(MOD_SLOT_GRIP);
         Description("&ReinforceMod_Upgrade2_d&");
@@ -17279,7 +17621,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Green);
+        Color(Color_Violet);
         ModInstallDurabilityBonus(50.0);
         OccupiedModSlots(MOD_SLOT_GRIP);
         Description("&ReinforceMod_Upgrade3_d&");
@@ -17312,7 +17654,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Violet);
         ModInstallDurabilityBonus(50.0);
         OccupiedModSlots(MOD_SLOT_GRIP);
         Description("&ReinforceMod_Upgrade4_d&");
@@ -17345,7 +17687,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_Orange);
         ModInstallDurabilityBonus(50.0);
         OccupiedModSlots(MOD_SLOT_GRIP);
         Description("&ReinforceMod_Upgrade5_d&");
@@ -17378,7 +17720,7 @@ sub main()
         Skin("hnd");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Violet);
+        Color(Color_Orange);
         ModInstallDurabilityBonus(50.0);
         OccupiedModSlots(MOD_SLOT_GRIP);
         Description("&ReinforceMod_Upgrade6_d&");
@@ -19847,6 +20189,286 @@ sub main()
         UID("7030719774588611826");
     }
 
+    Item("InfectedTokens_Uncommon_Bundle", CategoryType_ItemBundle)
+    {
+        ItemType(ItemType_ItemBundle);
+        BundleItems()
+        {
+            Item("KeyCraft_SpecialInfected_Token_T1", 8);
+        }
+        Visibility(true);
+        MaxStackCount(1);
+        HudIcon("Item_Small_Gland");
+        use PickupSounds_Default();
+        Color(Color_Green);
+        GameVersion(8);
+        UID("7099913675786606930");
+    }
+
+    Item("InfectedTokens_Rare_Bundle", CategoryType_ItemBundle)
+    {
+        ItemType(ItemType_ItemBundle);
+        BundleItems()
+        {
+            Item("KeyCraft_SpecialInfected_Token_T2", 5);
+        }
+        Visibility(true);
+        MaxStackCount(1);
+        HudIcon("Item_Medium_Gland");
+        use PickupSounds_Default();
+        Color(Color_Blue);
+        GameVersion(8);
+        UID("7099913675965572135");
+    }
+
+    Item("InfectedTokens_Unique_Bundle", CategoryType_ItemBundle)
+    {
+        ItemType(ItemType_ItemBundle);
+        BundleItems()
+        {
+            Item("KeyCraft_SpecialInfected_Token_T3", 3);
+        }
+        Visibility(true);
+        MaxStackCount(1);
+        HudIcon("Item_Big_Gland");
+        use PickupSounds_Default();
+        Color(Color_Violet);
+        GameVersion(8);
+        UID("7099913675968668307");
+    }
+
+    Item("Nightrunners_Craft_Bundle", CategoryType_ItemBundle)
+    {
+        ItemType(ItemType_ItemBundle);
+        BundleItems()
+        {
+            Item("Craft_Scrap", 30);
+            Item("Craft_Wiring", 20);
+            Item("Craft_Resin", 20);
+            Item("Craft_Pigments", 10);
+            Item("Craft_Electrical_Parts", 10);
+            Item("Craft_Oxidizer", 3);
+            Item("Craft_Battery", 3);
+        }
+        Visibility(true);
+        MaxStackCount(1);
+        HudIcon("reward_bundle_craftpart");
+        use PickupSounds_Scrap();
+        Color(Color_Blue);
+        GameVersion(8);
+        UID("7099913676135461217");
+    }
+
+    Item("Nightrunners_Infection_Bundle", CategoryType_ItemBundle)
+    {
+        ItemType(ItemType_ItemBundle);
+        BundleItems()
+        {
+            Item("Immunity_Mixture_GRE", 3);
+        }
+        Visibility(true);
+        MaxStackCount(1);
+        HudIcon("reward_bundle_immunity");
+        use PickupSounds_Default();
+        Color(Color_Violet);
+        GameVersion(8);
+        UID("7099913676154563369");
+    }
+
+    Item("Nightrunners_Safety_Bundle", CategoryType_ItemBundle)
+    {
+        ItemType(ItemType_ItemBundle);
+        BundleItems()
+        {
+            Item("UV_Flare_Upgrade8", 3);
+        }
+        Visibility(true);
+        MaxStackCount(1);
+        HudIcon("reward_bundle_uv");
+        use PickupSounds_Default();
+        Color(Color_Violet);
+        GameVersion(8);
+        UID("7099913676407674269");
+    }
+
+    Item("Nightrunners_Healing_Bundle", CategoryType_ItemBundle)
+    {
+        ItemType(ItemType_ItemBundle);
+        BundleItems()
+        {
+            Item("Medkit_Large", 3);
+        }
+        Visibility(true);
+        MaxStackCount(1);
+        HudIcon("reward_bundle_healing");
+        use PickupSounds_Default();
+        Color(Color_Violet);
+        GameVersion(8);
+        UID("7099913676475561565");
+    }
+
+    Item("Nightrunners_Crystal_Bundle", CategoryType_ItemBundle)
+    {
+        ItemType(ItemType_ItemBundle);
+        BundleItems()
+        {
+            Item("Valuable_Crystal_Orange", 1);
+            Item("Valuable_Crystal_Violet", 2);
+            Item("Valuable_Crystal_Blue", 3);
+        }
+        Visibility(true);
+        MaxStackCount(1);
+        HudIcon("reward_bundle_crystals");
+        use PickupSounds_Default();
+        Color(Color_Orange);
+        GameVersion(8);
+        UID("7099913676510517302");
+    }
+
+    Item("Nightrunner_Token_Bundle_2", CategoryType_ItemBundle)
+    {
+        ItemType(ItemType_ItemBundle);
+        BundleItems()
+        {
+            Item("Token_NightrunnerToken", 2);
+        }
+        Visibility(true);
+        MaxStackCount(1);
+        HudIcon("icon_nightrunner_token");
+        use PickupSounds_Default();
+        Color(Color_Orange);
+        GameVersion(8);
+        UID("7099913676702607977");
+    }
+
+    Item("Nightrunner_Token_Bundle_3", CategoryType_ItemBundle)
+    {
+        ItemType(ItemType_ItemBundle);
+        BundleItems()
+        {
+            Item("Token_NightrunnerToken", 3);
+        }
+        Visibility(true);
+        MaxStackCount(1);
+        HudIcon("icon_nightrunner_token");
+        use PickupSounds_Default();
+        Color(Color_Orange);
+        GameVersion(8);
+        UID("7099913677032838088");
+    }
+
+    Item("Nightrunner_Token_Bundle_4", CategoryType_ItemBundle)
+    {
+        ItemType(ItemType_ItemBundle);
+        BundleItems()
+        {
+            Item("Token_NightrunnerToken", 4);
+        }
+        Visibility(true);
+        MaxStackCount(1);
+        HudIcon("icon_nightrunner_token");
+        use PickupSounds_Default();
+        Color(Color_Orange);
+        GameVersion(8);
+        UID("7099913677101213464");
+    }
+
+    Item("Nightrunner_Token_Bundle_5", CategoryType_ItemBundle)
+    {
+        ItemType(ItemType_ItemBundle);
+        BundleItems()
+        {
+            Item("Token_NightrunnerToken", 5);
+        }
+        Visibility(true);
+        MaxStackCount(1);
+        HudIcon("icon_nightrunner_token");
+        use PickupSounds_Default();
+        Color(Color_Orange);
+        GameVersion(8);
+        UID("7099913677188148224");
+    }
+
+    Item("Epic_Weapon_1hBladed", CategoryType_ItemBundle)
+    {
+        ItemType(ItemType_ItemBundle);
+        BundleItems()
+        {
+            Item("wpn_1hs_axe_s_fpp_r1", 1);
+        }
+        Visibility(true);
+        MaxStackCount(1);
+        HudIcon("reward_Weapons");
+        use PickupSounds_Default();
+        Color(Color_Violet);
+        GameVersion(8);
+        UID("7099913677350498615");
+    }
+
+    Item("Artifact_Weapon_1hBladed", CategoryType_ItemBundle)
+    {
+        ItemType(ItemType_ItemBundle);
+        BundleItems()
+        {
+            Item("wpn_1hs_axe_s_fpp_r1", 1);
+        }
+        Visibility(true);
+        MaxStackCount(1);
+        HudIcon("reward_Weapons");
+        use PickupSounds_Default();
+        Color(Color_Orange);
+        GameVersion(8);
+        UID("7099913677406976939");
+    }
+
+    Item("Platinum_Weapon_1hBladed", CategoryType_ItemBundle)
+    {
+        ItemType(ItemType_ItemBundle);
+        BundleItems()
+        {
+            Item("wpn_1hs_axe_s_fpp_r1", 1);
+        }
+        Visibility(true);
+        MaxStackCount(1);
+        HudIcon("reward_Weapons");
+        use PickupSounds_Default();
+        Color(Color_Platinum);
+        GameVersion(8);
+        UID("7099913677432717797");
+    }
+
+    Item("Epic_Bruiser_Gear", CategoryType_ItemBundle)
+    {
+        ItemType(ItemType_ItemBundle);
+        BundleItems()
+        {
+            Item("Outfitset_MeleeDPS_Torso_Tier1_Violet", 1);
+        }
+        Visibility(true);
+        MaxStackCount(1);
+        HudIcon("reward_Outfits");
+        use PickupSounds_Default();
+        Color(Color_Violet);
+        GameVersion(8);
+        UID("7099913677552350935");
+    }
+
+    Item("Artifact_Bruiser_Gear", CategoryType_ItemBundle)
+    {
+        ItemType(ItemType_ItemBundle);
+        BundleItems()
+        {
+            Item("Outfitset_MeleeDPS_Torso_Tier1_Orange", 1);
+        }
+        Visibility(true);
+        MaxStackCount(1);
+        HudIcon("reward_Outfits");
+        use PickupSounds_Default();
+        Color(Color_Orange);
+        GameVersion(8);
+        UID("7099913677685503499");
+    }
+
     Item("Charm_Test", CategoryType_CraftPart)
     {
         ItemType(ItemType_CraftPart);
@@ -20525,16 +21147,146 @@ sub main()
         UID("7049266614623495960");
     }
 
+    Item("charm_rubberduck", CategoryType_CraftPart)
+    {
+        ItemType(ItemType_CraftPart);
+        CraftWeaponDamageType(DamageType_All);
+        CraftWeaponBuildType(WeaponBuildType_Universal);
+        //PrefabName(mod_charm_duck_a);
+        GenType(GenType_None);
+        Visualization()
+        {
+        use ModVisualization_CharmsHolder();
+        AttachmentInfo("wpn", "mod_charm_duck_a_fpp.prefab");
+        }
+        Visibility(true);
+        Price(0);
+        HudIcon("mod_charm_duck");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("hnd");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Blue);
+        OccupiedModSlots(MOD_SLOT_CHARM);
+        Description("&Craftplan_charm_general_D&");
+        GameVersion(8);
+        UID("7099897436509126111");
+    }
+
+    Item("charm_nightrunnerhook", CategoryType_CraftPart)
+    {
+        ItemType(ItemType_CraftPart);
+        CraftWeaponDamageType(DamageType_All);
+        CraftWeaponBuildType(WeaponBuildType_Universal);
+        //PrefabName(mod_charm_hook_a);
+        GenType(GenType_None);
+        Visualization()
+        {
+        use ModVisualization_CharmsHolder();
+        AttachmentInfo("wpn", "mod_charm_hook_a_fpp.prefab");
+        }
+        Visibility(true);
+        Price(0);
+        HudIcon("mod_charm_hook");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("best_dad");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Blue);
+        OccupiedModSlots(MOD_SLOT_CHARM);
+        Description("&Craftplan_charm_general_D&");
+        GameVersion(8);
+        UID("7099897437215975572");
+    }
+
+    Item("charm_squid_a", CategoryType_CraftPart)
+    {
+        ItemType(ItemType_CraftPart);
+        CraftWeaponDamageType(DamageType_All);
+        CraftWeaponBuildType(WeaponBuildType_Universal);
+        //PrefabName(mod_charm_squid_a);
+        GenType(GenType_None);
+        Visualization()
+        {
+        use ModVisualization_CharmsHolder();
+        AttachmentInfo("wpn", "mod_charm_squid_a_fpp.prefab");
+        }
+        Visibility(true);
+        Price(0);
+        HudIcon("mod_charm_squid_a");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("best_dad");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Blue);
+        OccupiedModSlots(MOD_SLOT_CHARM);
+        Description("&Craftplan_charm_general_D&");
+        GameVersion(8);
+        UID("7099897437399245499");
+    }
+
+    Item("charm_squid_b", CategoryType_CraftPart)
+    {
+        ItemType(ItemType_CraftPart);
+        CraftWeaponDamageType(DamageType_All);
+        CraftWeaponBuildType(WeaponBuildType_Universal);
+        //PrefabName(mod_charm_squid_b);
+        GenType(GenType_None);
+        Visualization()
+        {
+        use ModVisualization_CharmsHolder();
+        AttachmentInfo("wpn", "mod_charm_squid_b_fpp.prefab");
+        }
+        Visibility(true);
+        Price(0);
+        HudIcon("mod_charm_squid_b");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("best_dad");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Blue);
+        OccupiedModSlots(MOD_SLOT_CHARM);
+        Description("&Craftplan_charm_general_D&");
+        GameVersion(8);
+        UID("7099897437451403968");
+    }
+
+    Item("charm_avocado", CategoryType_CraftPart)
+    {
+        ItemType(ItemType_CraftPart);
+        CraftWeaponDamageType(DamageType_All);
+        CraftWeaponBuildType(WeaponBuildType_Universal);
+        //PrefabName(mod_charm_avocado_a);
+        GenType(GenType_None);
+        Visualization()
+        {
+        use ModVisualization_CharmsHolder();
+        AttachmentInfo("wpn", "mod_charm_avocado_a_fpp.prefab");
+        }
+        Visibility(true);
+        Price(0);
+        HudIcon("mod_charm_avocado");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("best_dad");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Blue);
+        OccupiedModSlots(MOD_SLOT_CHARM);
+        Description("&Craftplan_charm_general_D&");
+        GameVersion(8);
+        UID("7099897438165158404");
+    }
+
     Item("Bullet_Arrow", CategoryType_Ammo)
     {
         Name("&Ammo_Arrow_N&");
         Description("&Ammo_Arrow_D&");
         ItemType(ItemType_Bullet);
         MaxAmmoCount(60);
-		Mesh("wpn_arrow_a_tpp.msh");
+        Mesh("wpn_arrow_a_tpp.msh");
         InventoryMesh("wpn_arrow_a_fpp.msh");
         InventoryMeshTPP("wpn_arrow_a_tpp.msh");
-		Skin("default");
+        Skin("default");
         HudIcon("ammo_arrow");
         Color(Color_White);
         AmmoType(AmmoType_Arrow);
@@ -20554,7 +21306,7 @@ sub main()
         Description("&Bullet_Arrow_Shock_D&");
         ItemType(ItemType_Bullet);
         MaxAmmoCount(60);
-		Mesh("wpn_arrow_a_tpp.msh");
+        Mesh("wpn_arrow_a_tpp.msh");
         InventoryMesh("wpn_arrow_a_fpp.msh");
         InventoryMeshTPP("wpn_arrow_a_tpp.msh");
         Skin("shock");
@@ -20582,10 +21334,10 @@ sub main()
         Description("&Bullet_Arrow_Fire_D&");
         ItemType(ItemType_Bullet);
         MaxAmmoCount(60);
-		Mesh("wpn_arrow_a_tpp.msh");
+        Mesh("wpn_arrow_a_tpp.msh");
         InventoryMesh("wpn_arrow_a_fpp.msh");
         InventoryMeshTPP("wpn_arrow_a_tpp.msh");
-		Skin("fire");
+        Skin("fire");
         HudIcon("ammo_arrow_fire");
         Color(Color_Green);
         AmmoType(AmmoType_Arrow);
@@ -20610,7 +21362,7 @@ sub main()
         Description("&Bullet_Arrow_Toxic_D&");
         ItemType(ItemType_Bullet);
         MaxAmmoCount(60);
-		Mesh("wpn_arrow_a_tpp.msh");
+        Mesh("wpn_arrow_a_tpp.msh");
         InventoryMesh("wpn_arrow_a_fpp.msh");
         InventoryMeshTPP("wpn_arrow_a_tpp.msh");
         Skin("toxic");
@@ -20638,7 +21390,7 @@ sub main()
         Description("&Bullet_Arrow_Explosive_D&");
         ItemType(ItemType_Bullet);
         MaxAmmoCount(60);
-		Mesh("wpn_arrow_a_tpp.msh");
+        Mesh("wpn_arrow_a_tpp.msh");
         InventoryMesh("wpn_arrow_a_fpp.msh");
         InventoryMeshTPP("wpn_arrow_a_tpp.msh");
         Skin("explosive");
@@ -20665,7 +21417,7 @@ sub main()
         Description("&Bullet_Arrow_Bleeding_D&");
         ItemType(ItemType_Bullet);
         MaxAmmoCount(60);
-		Mesh("wpn_arrow_a_tpp.msh");
+        Mesh("wpn_arrow_a_tpp.msh");
         InventoryMesh("wpn_arrow_a_fpp.msh");
         InventoryMeshTPP("wpn_arrow_a_tpp.msh");
         Skin("bleeding");
@@ -20693,7 +21445,7 @@ sub main()
         Description("&Bullet_Arrow_Infecting_D&");
         ItemType(ItemType_Bullet);
         MaxAmmoCount(60);
-		Mesh("wpn_arrow_a_tpp.msh");
+        Mesh("wpn_arrow_a_tpp.msh");
         InventoryMesh("wpn_arrow_a_fpp.msh");
         InventoryMeshTPP("wpn_arrow_a_tpp.msh");
         Skin("infecting");
@@ -20720,7 +21472,7 @@ sub main()
         Description("&Bullet_Bolt_D&");
         ItemType(ItemType_Bullet);
         MaxAmmoCount(60);
-		Mesh("wpn_crossbow_bolt_a_tpp.msh");
+        Mesh("wpn_crossbow_bolt_a_tpp.msh");
         InventoryMesh("wpn_crossbow_bolt_a_fpp.msh");
         InventoryMeshTPP("wpn_crossbow_bolt_a_tpp.msh");
         Skin("default");
@@ -20743,7 +21495,7 @@ sub main()
         Description("&Bullet_Bolt_Toxic_D&");
         ItemType(ItemType_Bullet);
         MaxAmmoCount(60);
-		Mesh("wpn_crossbow_bolt_a_tpp.msh");
+        Mesh("wpn_crossbow_bolt_a_tpp.msh");
         InventoryMesh("wpn_crossbow_bolt_a_fpp.msh");
         InventoryMeshTPP("wpn_crossbow_bolt_a_tpp.msh");
         Skin("toxic");
@@ -20879,10 +21631,10 @@ sub main()
         Name("&Ammo_Arrow_N&");
         Description("&Ammo_Arrow_D&");
         ItemType(ItemType_Ammo);
-		Mesh("wpn_arrow_a_tpp.msh");
+        Mesh("wpn_arrow_a_tpp.msh");
         InventoryMesh("wpn_arrow_a_fpp.msh");
         InventoryMeshTPP("wpn_arrow_a_tpp.msh");
-		Skin("default");
+        Skin("default");
         HudIcon("ammo_arrow");
         Color(Color_White);
         Visibility(true);
@@ -20903,7 +21655,7 @@ sub main()
         Mesh("wpn_arrow_a_tpp.msh");
         InventoryMesh("wpn_arrow_a_fpp.msh");
         InventoryMeshTPP("wpn_arrow_a_tpp.msh");
-		Skin("shock");
+        Skin("shock");
         HudIcon("ammo_arrow_electricity");
         Color(Color_Green);
         Visibility(true);
@@ -20924,7 +21676,7 @@ sub main()
         Mesh("wpn_arrow_a_tpp.msh");
         InventoryMesh("wpn_arrow_a_fpp.msh");
         InventoryMeshTPP("wpn_arrow_a_tpp.msh");
-		Skin("fire");
+        Skin("fire");
         HudIcon("ammo_arrow_fire");
         Color(Color_Green);
         Visibility(true);
@@ -20945,7 +21697,7 @@ sub main()
         Mesh("wpn_arrow_a_tpp.msh");
         InventoryMesh("wpn_arrow_a_fpp.msh");
         InventoryMeshTPP("wpn_arrow_a_tpp.msh");
-		Skin("toxic");
+        Skin("toxic");
         HudIcon("ammo_arrow_poison");
         Color(Color_Violet);
         Visibility(true);
@@ -20966,7 +21718,7 @@ sub main()
         Mesh("wpn_arrow_a_tpp.msh");
         InventoryMesh("wpn_arrow_a_fpp.msh");
         InventoryMeshTPP("wpn_arrow_a_tpp.msh");
-		Skin("explosive");
+        Skin("explosive");
         HudIcon("ammo_arrow_explosive");
         Color(Color_Blue);
         Visibility(true);
@@ -20987,7 +21739,7 @@ sub main()
         Mesh("wpn_arrow_a_tpp.msh");
         InventoryMesh("wpn_arrow_a_fpp.msh");
         InventoryMeshTPP("wpn_arrow_a_tpp.msh");
-		Skin("bleeding");
+        Skin("bleeding");
         HudIcon("ammo_arrow_bleeding");
         Color(Color_Blue);
         Visibility(true);
@@ -21008,7 +21760,7 @@ sub main()
         Mesh("wpn_arrow_a_tpp.msh");
         InventoryMesh("wpn_arrow_a_fpp.msh");
         InventoryMeshTPP("wpn_arrow_a_tpp.msh");
-		Skin("infecting");
+        Skin("infecting");
         HudIcon("ammo_arrow_infecting");
         Color(Color_Orange);
         Visibility(true);
@@ -21029,7 +21781,7 @@ sub main()
         Mesh("wpn_arrow_a_tpp.msh");
         InventoryMesh("wpn_arrow_a_fpp.msh");
         InventoryMeshTPP("wpn_arrow_a_tpp.msh");
-		Skin("default");
+        Skin("default");
         HudIcon("ammo_arrow");
         Color(Color_White);
         Visibility(true);

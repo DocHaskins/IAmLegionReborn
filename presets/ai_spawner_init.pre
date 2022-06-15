@@ -30,6 +30,13 @@ sub main()
             SetField("Spawner_Wave_SelfActive", "0");
             SetField("Spawner_Number_SelfActive", "0");
 		}
+		Preset("Challenge - Noise - Distance - 15m")
+		{
+			SetField("m_NoiseTag", "arena");
+			SetField("m_NoisePriority", "");
+			SetField("m_ActivateRadius", "15.000000");
+			SetField("Spawner_Number_SelfActive", "1");
+		}
 		Preset("Init - Distance - 10m")
 		{
 			SetField("m_NoiseTag", "");

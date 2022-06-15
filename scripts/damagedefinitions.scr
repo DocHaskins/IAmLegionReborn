@@ -87,6 +87,10 @@ sub main()
     {
         Physical("1% of MaxHealth");
     }
+	Damage("opera_bolter_weapon")
+    {
+        Cut("51% of MaxHealth");
+    }
     
     Damage("TEST_SimpleDamage")
     {
@@ -1113,8 +1117,24 @@ sub main()
     {
         Blunt("0");
     }
+	Damage("challenge_ringout_dlc1")
+    {
+        Blunt("26%-51% of MaxHealth");
+    }
 
 
+	Damage("Chapter1_crossbow_firepoint0")    //25%-33% One Handed Human Rank 9
+    {
+        Ranged("795-1049");
+    }
+	Damage("Chapter1_crossbow_firepoint1")   //10%-25% One Handed Human Rank 9
+    {
+        Ranged("318-795");
+    }
+	Damage("Chapter1_Claws")    //25%-33% One Handed Human Rank 9
+    {
+        Cut("450");
+    }
 
     //////////////////////////////////////////////////////////////
     // TIERS BEGIN ///////////////////////////////////////////////
@@ -3214,9 +3234,12 @@ sub main()
 	
     Damage("Banshee_Fists")
 	{
-		Physical("45");
+		Physical("10");
 	}
-	
+	Damage("Banshee_Smoke_Bomb")
+    {
+        Poison("1");
+    }
 	Damage("Banshee_Fists_RGD_1")
 	{
 		Physical("45");
@@ -3260,11 +3283,11 @@ sub main()
 	}
     Damage("Volatile_PowerAttack")
 	{
-		Physical("24% of MaxHealth");
+		Physical("34% of MaxHealth");
 	}
     Damage("Volatile_Spit")
     {
-        Poison("20");
+        Poison("20% of MaxHealth");
     }
     Damage("Viral_Fists")
     {
@@ -6702,6 +6725,14 @@ sub main()
 		//Physical("245");
     }
 
+    Damage("Spear_Power_Combo")
+    {
+        Physical("30% of MaxHealth");
+    }
+    Damage("Spear_Quick_Combo")
+    {
+        Physical("10% of MaxHealth");
+    }
 
     Damage("Melee_Fists_a")
     {
@@ -7010,6 +7041,42 @@ sub main()
 	Damage("Mine_Explosive_Upgrade8")
     {
         Blast("1590-3180");
+    }
+	Damage("Mine_Electric")    // 25%-50% One handed human
+    {
+        Electricity("25-51");
+    }
+    Damage("Mine_Electric_Upgrade1")
+    {
+        Electricity("40-75");
+    }
+    Damage("Mine_Electric_Upgrade2")
+    {
+        Electricity("55-115");
+    }
+    Damage("Mine_Electric_Upgrade3")
+    {
+        Electricity("90-180");
+    }
+    Damage("Mine_Electric_Upgrade4")
+    {
+        Electricity("135-273");
+    }
+    Damage("Mine_Electric_Upgrade5")
+    {
+        Electricity("202-405");
+    }
+    Damage("Mine_Electric_Upgrade6")
+    {
+        Electricity("315-615");
+    }
+    Damage("Mine_Electric_Upgrade7")
+    {
+        Electricity("504-1008");
+    }
+	Damage("Mine_Electric_Upgrade8")
+    {
+        Electricity("800-1600");
     }
 	Damage("Mine_Explosive_Custom1")
     {
@@ -8085,6 +8152,31 @@ sub main()
     {
         Physical("50%");
     }
+	DamageResistance("Volatile_Guard")
+    {
+        Physical("5%");
+    }
+	DamageResistance("Volatile_Tyrant")
+    {
+        Physical("50%");
+		Blunt("10%");
+		Cut("10%");
+    }
+	DamageResistance("Volatile_Tyrant_Boss")
+    {
+        Physical("50%");
+		Blunt("15%");
+		Cut("15%");
+		Ram("50%");
+		Blast("50%");
+		Bleeding("50%");
+		Fire("50%");
+		Poison("50%");
+		Electricity("50%");
+		Chemical("50%");
+		Drowning("50%");
+		Ranged("75%");
+    }
 	
 	DamageResistance("Damage_Immunity")
     {
@@ -8112,6 +8204,16 @@ sub main()
 		Physical("-0.8"); // Damage is 80% smaller
 		Blunt("-0.8"); // Damage is 80% smaller
 		Cut("-0.8"); // Damage is 80% smaller
+	}
+	DamageMul("Brawl_Mul_vs_AI")
+	{
+		Physical("-0.75"); // Damage is 50% smaller
+		Blunt("-0.75"); // Damage is 50% smaller
+		Cut("-0.75"); // Damage is 50% smaller
+	}
+	DamageMul("Opera_Mul_vs_AI")
+	{
+		All("-0.9"); // Damage is 75% smaller
 	}
 	
 	DamageMul("Screwed_Survivor_Dmg_Mul") // Exclusive for Screwed quest
@@ -8247,5 +8349,61 @@ sub main()
     Damage("Player_NoDamage")
     {
         Physical("0");
+    }
+	Damage("Damage_Blunt_5prct")
+    {
+        Blunt("5% of MaxHealth");
+    }
+	Damage("Damage_Blunt_10prct")
+    {
+        Blunt("10% of MaxHealth");
+    }
+	Damage("Damage_Blunt_25prct")
+    {
+        Blunt("25% of MaxHealth");
+    }
+	Damage("Damage_Blunt_50prct")
+    {
+        Blunt("50% of MaxHealth");
+    }
+	Damage("Damage_Blunt_75prct")
+    {
+        Blunt("75% of MaxHealth");
+    }
+	Damage("Damage_Cut_5prct")
+    {
+        Cut("5% of MaxHealth");
+    }
+	Damage("Damage_Cut_10prct")
+    {
+        Cut("10% of MaxHealth");
+    }
+	Damage("Damage_Cut_25prct")
+    {
+        Cut("25% of MaxHealth");
+    }
+	Damage("Damage_Cut_50prct")
+    {
+        Cut("50% of MaxHealth");
+    }
+	Damage("Damage_Cut_75prct")
+    {
+        Cut("75% of MaxHealth");
+    }
+	DamageResistance("Freak_Grenadier")
+    {
+        Blunt("75%");
+		Cut("75%");
+		Ram("75%");
+		Fire("100%");
+    }
+	Damage("Spikes_20Percent_Damage")
+    {
+        Physical("20% of MaxHealth");
+    }
+	DamageResistance("Blast_Susceptibility")
+    { 
+		All("100%");
+		Blast("0%");
     }
 }

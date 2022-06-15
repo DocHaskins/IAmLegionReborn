@@ -9,6 +9,17 @@ sub Preset_AlwaysIn3D()
     PriorityModifier(100);
 }
 
+sub Preset_ChallengeIcon()
+{
+	ShowOnRadar(true);
+    CanShow3dLocation(true);
+    ShowOnMap(false);
+    PriorityModifier(100);
+    Can3dLocationClampToScreen(true);
+    Can3dLocationShowDistance(false);
+    CanBeMarked(false);
+}
+
 sub Preset_UseGreenColor()
 {
     //Day
@@ -366,10 +377,12 @@ sub Preset_Facility()
     CategoryMarked("Neutral")
 	{		
 		use MarkedPreset();
+		MapZoomLevelVisibility(1,1,1,1);
 	}
 	CategoryMarked("Objective")
 	{
 		use MarkedPreset();
+		MapZoomLevelVisibility(1,1,1,1);
 	}
 }
 
@@ -387,7 +400,7 @@ sub Preset_Activity()
     ShowOnMapEdge(false);
     MapZoomLevelVisibility(1,1,1,0);
     Can3dLocationClampToScreen(true);
-    IconColorActivityTooHard(178,32,32,255);
+    use Color_ActivityTooHardRed();
     
     CategoryMarked("Neutral")
     {		
@@ -1185,6 +1198,54 @@ sub main()
         Icon("map_fast_travel");
         CanBeInteriorCulled(false);
     }
+	
+	CustomLocation("MiscIcon_ChallengeGaasCh1Normal")
+    {
+        Icon("map_mission_chapter1_regular");
+        use Preset_QuestGiver();
+        CanBeGroupedByGroupingLocationsOnMap(false);
+        ShowAs3dLocationInBinoculars(false);
+    }
+    CustomLocation("MiscIcon_ChallengeGaasCh1Elite")
+    {
+        Icon("map_mission_chapter1_elite");
+        use Preset_QuestGiver();
+        CanBeGroupedByGroupingLocationsOnMap(false);
+        ShowAs3dLocationInBinoculars(false);
+        IconScale(1.1);
+    }
+	
+	CustomLocation("MiscIcon_ChallengeGaasCh2Normal")
+    {
+        Icon("map_mission_chapter1_regular");
+        use Preset_QuestGiver();
+        CanBeGroupedByGroupingLocationsOnMap(false);
+        ShowAs3dLocationInBinoculars(false);
+    }
+	
+	CustomLocation("MiscIcon_ChallengeGaasCh2Elite")
+    {
+        Icon("map_mission_chapter1_elite");
+        use Preset_QuestGiver();
+        CanBeGroupedByGroupingLocationsOnMap(false);
+        ShowAs3dLocationInBinoculars(false);
+    }
+	
+	CustomLocation("MiscIcon_ChallengeGaasCh3Normal")
+    {
+        Icon("map_mission_chapter1_regular");
+        use Preset_QuestGiver();
+        CanBeGroupedByGroupingLocationsOnMap(false);
+        ShowAs3dLocationInBinoculars(false);
+    }
+	
+	CustomLocation("MiscIcon_ChallengeGaasCh3Elite")
+    {
+        Icon("map_mission_chapter1_elite");
+        use Preset_QuestGiver();
+        CanBeGroupedByGroupingLocationsOnMap(false);
+        ShowAs3dLocationInBinoculars(false);
+    }
 
     CustomLocation("Enemy_Bandit_Leader") //location for radar
     {
@@ -1557,6 +1618,18 @@ sub main()
         use Preset_Other();
 	}
 	
+	Location("StoryAgentShop") //Gaas agent
+	{
+        MapDescription("&MMap_StoryAgent&");        
+		Icon("map_agent_chapter1");
+        ShowAs3dLocationInBinoculars(true);        
+        
+        use Preset_QuestGiver();
+        MapZoomLevelVisibility(1,1,1,1);	
+        CanBeGroupedByGroupingLocationsOnMap(false);
+        IconScale(1.1);	
+	}
+	
 	Location("Craftmaster")
 	{
         MapDescription("&MMap_LegendCraftmaster&");
@@ -1656,10 +1729,12 @@ sub main()
         CategoryMarked("Neutral")
         {		
             use MarkedPreset();
+			MapZoomLevelVisibility(1,1,1,1);
         }
         CategoryMarked("Objective")
         {
             use MarkedPreset();
+			MapZoomLevelVisibility(1,1,1,1);
         }
 
         use Preset_UseGreenColor();
@@ -1831,7 +1906,34 @@ sub main()
         ShowPointOnMap(true);
         MapZoomLevelVisibility(1,0,0,0);
 	}
+	
+    Location("EncounterInfectedVolatile")
+    {
+        Icon("map_encounter_volatile");
+        IconColor(127, 191, 255, 255);
 
+        ShowOnMapEdge(false);
+        ShowOnRadarEdge(true);
+        CanShow3dLocation(true);
+        RadarVisibilityRange(25, 99, 100);
+        Location3dDistanceTreshold(25);
+
+        CanBeMarked(false);
+
+        use Preset_3dWhenClose_RadarWhenFurther();
+
+        CategoryMarked("Neutral")
+        {
+            use MarkedPreset();
+        }
+        CategoryMarked("Objective")
+        {
+            use MarkedPreset();
+        }
+
+        ShowPointOnMap(true);
+        MapZoomLevelVisibility(1,0,0,0);
+    }
     Location("EncounterReward")
 	{
         Icon("map_encounter_reward");
@@ -2784,10 +2886,12 @@ sub main()
         CategoryMarked("Neutral")
         {		
             use MarkedPreset();
+			MapZoomLevelVisibility(1,1,1,1);
         }
         CategoryMarked("Objective")
         {
             use MarkedPreset();
+			MapZoomLevelVisibility(1,1,1,1);
         }
 
         use Preset_UseGreenColor();
@@ -2932,10 +3036,12 @@ sub main()
         CategoryMarked("Neutral")
         {		
             use MarkedPreset();
+			MapZoomLevelVisibility(1,1,1,1);
         }
         CategoryMarked("Objective")
         {
             use MarkedPreset();
+			MapZoomLevelVisibility(1,1,1,1);
         }
 
         use Preset_UseGreenColor();
@@ -2951,7 +3057,7 @@ sub main()
         use Preset_Activity();
         IconScale(0.8);
         IconColor(194,194,194,192);
-        IconColorActivityTooHard(178,32,32,255);
+        IconColorActivityTooHard(178,32,32,153);
         Can3dLocationClampToScreen(false);
     }
 	

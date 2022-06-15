@@ -154,7 +154,13 @@ sub main()
 	// DL2 Dockets
 	// 
 	// Available (already defined in the code) identifiers:
-	// - Charm01..Charm30	
+    // - TGGReg
+    // - Charm01..Charm30
+    // - Weapon01..Weapon20
+    // - Skin01..Skin10
+    // - Outfit01..Outfit50
+    // - Resource01..Resource20
+
 	
 	Docket("Charm01")
     {
@@ -408,22 +414,30 @@ sub main()
 		{
 		}
     }
-	/*
+	
 	Docket("Weapon11")
     {
-        use TestDockets();
+        Set("Docket_Weapon_DragonBoat_Regular", "equal",   1, 1)
+		{
+		}
     }
 	
 	Docket("Weapon12")
     {
-        use TestDockets();
+        Set("Docket_Weapon_DragonBoat_Ancestral", "equal",   1, 1)
+		{
+		}
     }
 	
 	Docket("Weapon13")
     {
-        use TestDockets();
+        Set("Docket_Weapon_AxeCutter", "equal",   1, 1)
+		{
+		}
     }
+	// Docket_Weapon_DragonBoat_Regular  Docket_Weapon_DragonBoat_Ancestral  Docket_Weapon_AxeCutter
 	
+	/*
 	Docket("Weapon14")
     {
         use TestDockets();
@@ -853,6 +867,119 @@ sub main()
     {
         use TestDockets();
     }*/
+	
+	Docket("Resource01")
+    {
+		Set("Docket_Resources_Chapter1_Token", "equal",   1, 1)
+		{
+		}
+    }
+	
+	Docket("Resource02")
+    {
+		Set("Docket_Resources_Chapter1_Tokenx2", "equal",   1, 1)
+		{
+		}
+    }
+	
+	Docket("Resource03")
+    {
+		Set("Docket_Resources_Chapter1_Tokenx3", "equal",   1, 1)
+		{
+		}
+    }
+	
+	Docket("Resource04")
+    {
+		Set("Docket_Resources_Chapter1_Tokenx4", "equal",   1, 1)
+		{
+		}
+    }
+	
+	Docket("Resource05")
+    {
+		Set("Docket_Resources_Chapter1_Tokenx5", "equal",   1, 1)
+		{
+		}
+    }
+	
+	Docket("Resource06")
+    {
+		Set("Docket_Resources_Zongzi", "equal",   1, 1)
+		{
+		}
+    }
+	/*
+	Docket("Resource07")
+    {
+		use TestDockets();
+    }
+	
+	Docket("Resource08")
+    {
+		use TestDockets();
+    }
+	
+	Docket("Resource09")
+    {
+		use TestDockets();
+    }
+	
+	Docket("Resource10")
+    {
+		use TestDockets();
+    }
+	
+	Docket("Resource11")
+    {
+		use TestDockets();
+    }
+	
+	Docket("Resource12")
+    {
+		use TestDockets();
+    }
+	
+	Docket("Resource13")
+    {
+		use TestDockets();
+    }
+	
+	Docket("Resource14")
+    {
+		use TestDockets();
+    }
+	
+	Docket("Resource15")
+    {
+		use TestDockets();
+    }
+	
+	Docket("Resource16")
+    {
+		use TestDockets();
+    }
+	
+	Docket("Resource17")
+    {
+		use TestDockets();
+    }
+	
+	Docket("Resource18")
+    {
+		use TestDockets();
+    }
+	
+	Docket("Resource19")
+    {
+		use TestDockets();
+    }
+	
+	Docket("Resource20")
+    {
+		use TestDockets();
+    }*/
+	
 }
 
 

@@ -1,15 +1,171 @@
 sub BarkLogicExported() 
-{   
-
-    Group("Shop")
+{
+    Group("interact_player_shop")
     {
         Cnd_CooldownTime(20.00);
         Cnd_CooldownTime(40.00, 2);
         Cnd_ExpireTime(2.0);
         Cnd_GlobalDelayBetweenBarks(5.0);
         //
-        Bark("shop_exit");
         Bark("shop_welcome");
+    }
+
+    Group("ShopMenu")
+    {
+        Cnd_CooldownTime(1.0);
+        Cnd_ExpireTime(1.0);
+        Cnd_GlobalDelayBetweenBarks(0.5);
+        //
+        Bark("shop_trade")
+        {
+            Cnd_DelayTime(0.5);
+            Cnd_CooldownTime(4.0);
+        }
+        Bark("shop_buy")
+        {
+            Cnd_CooldownTime(8.0);
+        }
+        Bark("shop_buy_resources")
+        {
+            Cnd_CooldownTime(8.0);
+        }
+        Bark("shop_buy_blueprint")
+        {
+            Cnd_CooldownTime(8.0);
+        }
+        Bark("shop_buyback")
+        {
+            Cnd_CooldownTime(8.0);
+        }
+        Bark("shop_sell")
+        {
+            Cnd_CooldownTime(8.0);
+        }
+        Bark("shop_exit")
+        {
+            Cnd_CooldownTime(4.0);
+        }
+    }
+
+    Group("interact_player_agent")
+    {
+        Cnd_CooldownTime(20.00);
+        Cnd_CooldownTime(40.00, 2);
+        Cnd_ExpireTime(2.0);
+        Cnd_GlobalDelayBetweenBarks(2.0);
+        //
+        //Bark("interact_player_agent_generic");
+
+        Bark("interact_player_agent_rank_1")
+        {
+            Cnd_PlayerStoryAgentLevel("Nightrunner", 1);
+            // Cnd_GameEventHasRecentlyOccured("LocalPlayerStoryAgentRankUp", 3600.00);
+            // Cnd_CooldownTime(4000.00);
+        }
+        Bark("interact_player_agent_rank_2")
+        {
+            Cnd_PlayerStoryAgentLevel("Nightrunner", 2);
+            // Cnd_GameEventHasRecentlyOccured("LocalPlayerStoryAgentRankUp", 3600.00);
+            // Cnd_CooldownTime(4000.00);
+        }
+        Bark("interact_player_agent_rank_3")
+        {
+            Cnd_PlayerStoryAgentLevel("Nightrunner", 3);
+            // Cnd_GameEventHasRecentlyOccured("LocalPlayerStoryAgentRankUp", 3600.00);
+            // Cnd_CooldownTime(4000.00);
+        }
+        Bark("interact_player_agent_rank_4")
+        {
+            Cnd_PlayerStoryAgentLevel("Nightrunner", 4);
+            // Cnd_GameEventHasRecentlyOccured("LocalPlayerStoryAgentRankUp", 3600.00);
+            // Cnd_CooldownTime(4000.00);
+        }
+        Bark("interact_player_agent_rank_5")
+        {
+            Cnd_PlayerStoryAgentLevel("Nightrunner", 5);
+            // Cnd_GameEventHasRecentlyOccured("LocalPlayerStoryAgentRankUp", 3600.00);
+            // Cnd_CooldownTime(4000.00);
+        }
+        Bark("interact_player_agent_rank_6")
+        {
+            Cnd_PlayerStoryAgentLevel("Nightrunner", 6);
+            // Cnd_GameEventHasRecentlyOccured("LocalPlayerStoryAgentRankUp", 3600.00);
+            // Cnd_CooldownTime(4000.00);
+        }
+        Bark("interact_player_agent_rank_7")
+        {
+            Cnd_PlayerStoryAgentLevel("Nightrunner", 7);
+            // Cnd_GameEventHasRecentlyOccured("LocalPlayerStoryAgentRankUp", 3600.00);
+            // Cnd_CooldownTime(4000.00);
+        }
+        Bark("interact_player_agent_rank_8")
+        {
+            Cnd_PlayerStoryAgentLevel("Nightrunner", 8);
+            // Cnd_GameEventHasRecentlyOccured("LocalPlayerStoryAgentRankUp", 3600.00);
+            // Cnd_CooldownTime(4000.00);
+        }
+        Bark("interact_player_agent_rank_9")
+        {
+            Cnd_PlayerStoryAgentLevel("Nightrunner", 9);
+            // Cnd_GameEventHasRecentlyOccured("LocalPlayerStoryAgentRankUp", 3600.00);
+            // Cnd_CooldownTime(4000.00);
+        }
+        Bark("interact_player_agent_rank_10")
+        {
+            Cnd_PlayerStoryAgentLevel("Nightrunner", 10);
+            // Cnd_GameEventHasRecentlyOccured("LocalPlayerStoryAgentRankUp", 3600.00);
+            // Cnd_CooldownTime(4000.00);
+        }
+
+        Bark("interact_player_agent_rank_max")
+        {
+            Cnd_PlayerStoryAgentMinLevel("Nightrunner", 11);
+        }
+    }
+
+    Group("AgentMenu")
+    {
+        Cnd_CooldownTime(1.0);
+        Cnd_ExpireTime(1.0);
+        Cnd_GlobalDelayBetweenBarks(0.5);
+        //
+        Bark("menu_agent_enter")
+        {
+            Cnd_DelayTime(0.5);
+            Cnd_CooldownTime(4.0);
+        }
+        Bark("menu_agent_enter_rewards")
+        {
+            Cnd_CooldownTime(8.0);
+        }
+        Bark("menu_agent_exit")
+        {
+            Cnd_CooldownTime(4.0);
+        }
+        Bark("menu_agent_buy_reward")
+        {
+            Cnd_CooldownTime(8.0);
+        }
+        Bark("menu_agent_activate_daily_bounty")
+        {
+            Cnd_CooldownTime(4.0);
+        }
+        Bark("menu_agent_activate_weekly_bounty")
+        {
+            Cnd_CooldownTime(4.0);
+        }
+        Bark("menu_agent_activate_weekly_bounty_samples")
+        {
+            Cnd_CooldownTime(4.0);
+        }
+        Bark("menu_agent_activate_weekly_bounty_hive")
+        {
+            Cnd_CooldownTime(4.0);
+        }
+        Bark("menu_agent_activate_weekly_bounty_tyrant")
+        {
+            Cnd_CooldownTime(4.0);
+        }
     }
 
     Group("Combat")

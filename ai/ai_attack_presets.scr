@@ -119,6 +119,20 @@ sub main()
         DamagePreset("banshee_light@ai_damage_presets.scr");
 		MoveLimit("false");
     }
+    AttackPreset("banshee_smoke_bomb")
+    {
+        Type("SCARE_AWAY");
+		Hand("RIGHT");
+        Severity("LIGHT");
+        MoveLimit("false");
+        UseWeapon("true");
+        DamageReactionFlagInterrupt("false");
+        CanDamageAllies("true");
+        DamagePreset("banshee_smoke_bomb@ai_damage_presets.scr");
+        ImpactDirCalculation("TOWARDS_TARGET");
+        ConeAngle("179");
+        AdditionalRange("2.0");
+    }
     AttackPreset("banshee_attack_jump_low")
     {
         Type("JUMP_ATTACK_FROM_MOVE");
@@ -705,6 +719,37 @@ sub main()
 		MoveLimit("false");
 		BlockMoveLimitOnNavi("true");
     }
+    AttackPreset("demolisher_pounce")
+    {
+        Type("JUMP_STRIKE_FROM_STAND");
+        Severity("HEAVY");
+        DamageReactionFlagInterrupt("true");
+        CanDamageAllies("true");
+        ForceForwardDir("true");
+        UseWeapon("true");
+        ConeAngle("179");
+        AdditionalRange("1.5");
+        ImpactDirCalculation("TOWARDS_TARGET");
+        DamageCooldown("666");
+		MoveLimit("false");
+		BlockMoveLimitOnNavi("true");
+    }
+    AttackPreset("demolisher_pounce_from_move")
+    {
+        Type("JUMP_ATTACK_FROM_MOVE");
+        Severity("HEAVY");
+        DamageReactionFlagInterrupt("true");
+        CanDamageAllies("true");
+        ForceForwardDir("true");
+        UseWeapon("true");
+        ConeAngle("179");
+        AdditionalRange("1.5");
+        ImpactDirCalculation("TOWARDS_TARGET");
+
+        DamageCooldown("666");
+		MoveLimit("false");
+		BlockMoveLimitOnNavi("true");
+    }
     AttackPreset("demolisher_recover_from_stun")
     {
         Type("MELEE_RECOVERY");
@@ -783,7 +828,8 @@ sub main()
         DamageBoxWidth("1.5");
         RangeOffsetEachSecond("20");
         AdditionalRange("1.0");
-    }    AttackPreset("goon_vertical_attack_fire")
+    }
+    AttackPreset("goon_vertical_attack_fire")
     {
         Type("USE_WEAPON");
 		Hand("RIGHT");
@@ -1270,6 +1316,31 @@ sub main()
         DamagePreset("heavy_push@ai_damage_presets.scr");
         DamageReactionFlagInterrupt("true");
     }
+    //HUMAN_SPEAR BLEEDING
+    AttackPreset("human_spear_power_combo_bleeding")
+    {
+        Type("MELEE_WEAPON");
+        Severity("HEAVY");
+        Pattern("COMBO");
+        DamageReactionFlagInterrupt("true");
+        ForceForwardDir("true");
+        UseWeapon("true");
+        ImpactDirCalculation("TOWARDS_TARGET");
+        AdditionalRange("1.5");
+        DamagePreset("spear_power_combo_bleeding@ai_damage_presets.scr");
+    }
+    AttackPreset("human_spear_quick_combo_bleeding")
+    {
+        Type("MELEE_WEAPON");
+        Severity("LIGHT");
+        Pattern("COMBO");
+        ForceForwardDir("true");
+        UseWeapon("true");
+        ImpactDirCalculation("TOWARDS_TARGET");
+        AdditionalRange("1.5");
+        DamageReactionFlagInterrupt("true");
+        DamagePreset("spear_quick_combo_bleeding@ai_damage_presets.scr");
+    }
     //HUMAN_GRENADIER
     AttackPreset("human_molotov_spit") // drink and flush
     {
@@ -1308,7 +1379,44 @@ sub main()
         AdditionalRange("5");
         DamagePreset("molotov_spit@ai_damage_presets.scr");
     }
-    
+    //HUMAN_SHIELD
+    AttackPreset("human_shield_power_charge")
+    {
+        Type("MELEE_WEAPON");
+        Severity("HEAVY");
+        Pattern("COMBO");
+        DamageReactionFlagInterrupt("true");
+        ForceForwardDir("true");
+        UseWeapon("true");
+        ImpactDirCalculation("TOWARDS_TARGET");
+        AdditionalRange("1.5");
+    }
+    AttackPreset("human_shield_360")
+    {
+        Type("AOE");
+        Severity("HEAVY");
+        Pattern("SINGLE");
+        Direction("HORIZONTAL");
+        DamageReactionFlagInterrupt("true");
+        UseWeapon("true");
+        ImpactDirCalculation("TOWARDS_TARGET");
+        ConeAngle("20");
+        AdditionalRange("2");
+    }
+    AttackPreset("human_shield_push")
+    {
+        Type("PUSH");
+        Severity("LIGHT");
+        Pattern("SINGLE");
+        MoveLimit("false");
+        UseWeapon("true");
+        ForceForwardDir("true");
+        ImpactDirCalculation("TOWARDS_TARGET");
+        AdditionalRange("1.5");
+        DamagePreset("heavy_push@ai_damage_presets.scr");
+        DamageReactionFlagInterrupt("true");
+    }
+
     //SCREAMER
     AttackPreset("screamer_push")
     {
@@ -1441,6 +1549,29 @@ sub main()
         UseWeapon("true");
         ImpactDirCalculation("SNAPPED");
 		DamageReactionFlagInterrupt("true");
+        DamagePreset("volatile_combo@ai_damage_presets.scr");
+    }
+    AttackPreset("volatile_break_attack")
+    {
+        Type("CHARGE");
+        Severity("HEAVY");
+        MoveLimit("false");
+        DamageReactionFlagInterrupt("true");
+        UseWeapon("true");
+		ConeAngle("30");
+		ForceForwardDir("true");
+		AdditionalRange("1");
+        DamagePreset("volatile_break_attack@ai_damage_presets.scr");
+    }
+    AttackPreset("volatile_spin_jump")
+    {
+        Type("ATTACK_ROUND");
+        Severity("HEAVY");
+        MoveLimit("false");
+        DamageReactionFlagInterrupt("true");
+        UseWeapon("true");
+		ConeAngle("30");
+		AdditionalRange("1");
     }
 	AttackPreset("volatile_pursuit")
     {
@@ -1463,7 +1594,6 @@ sub main()
     {
         Type("JUMP_STRIKE_FROM_STAND");
         Severity("HEAVY");
-        MoveLimit("false");
         DamageReactionFlagInterrupt("true");
         UseWeapon("true");
 		ConeAngle("30");
@@ -1474,7 +1604,6 @@ sub main()
     {
         Type("MELEE_RECOVERY");
         Severity("HEAVY");
-        MoveLimit("false");
         DamageReactionFlagInterrupt("true");
         UseWeapon("true");
 		ConeAngle("30");
@@ -1494,7 +1623,6 @@ sub main()
     {
         Type("GRAB");
         Severity("HEAVY");
-        MoveLimit("false");
         DamageReactionFlagInterrupt("true");
         SyncActionGroupName("VolatileGrab");
         UseWeapon("true");
@@ -1532,7 +1660,7 @@ sub main()
         DamageReactionFlagInterrupt("true");
         CanDamageAllies("true");
         UseWeapon("false");
-        DamagePreset("waltz_combo@ai_damage_presets.scr");
+        DamagePreset("waltz_heavy_combo@ai_damage_presets.scr");
         ImpactDirCalculation("TOWARDS_TARGET");
         AdditionalRange("1.5");
     }
@@ -1545,7 +1673,7 @@ sub main()
         DamageReactionFlagInterrupt("true");
         CanDamageAllies("true");
         UseWeapon("true");
-		ConeAngle("180");
+        ConeAngle("180");
         ImpactDirCalculation("TOWARDS_TARGET");
         VerticalRange("0.75");
         AdditionalRange("3.0");

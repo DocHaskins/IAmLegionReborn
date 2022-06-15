@@ -1,14 +1,25 @@
 //WeaponSetPreset(name)
 //  Weapon(weapon/pool_name)
 
-sub AI_Throwable_Knife_Boss() { Weapon("AI_Throwable_KnifeBoss"); }
-sub AI_Throwable_Knife() { Weapon("AI_Throwable_Knife"); }
-sub AI_Throwable_Stone() { Weapon("AI_Throwable_Stone"); }
+sub AI_Throwable_Knife_Boss()
+{
+    Weapon("AI_Throwable_KnifeBoss");
+}
+
+sub AI_Throwable_Knife()
+{
+    Weapon("AI_Throwable_Knife");
+}
+
+sub AI_Throwable_Stone()
+{
+    Weapon("AI_Throwable_Stone");
+}
 
 sub AI_Throwables()
 {
-    use AI_Throwable_Knife();
-    use AI_Throwable_Stone();
+    Weapon("AI_Throwable_Knife");
+    Weapon("AI_Throwable_Stone");
 }
 
 sub main()
@@ -31,7 +42,39 @@ sub main()
     {
         Weapon("Tackle_Spear_t1");
     }
+
+    ///////////////////// Prototype presets //////////////////////////////
+    WeaponSetPreset("dev_generic_shielder")
+    {
+        Weapon("AI_Shield");
+        Weapon("AI_Throwable_Knife");
+    }
+    WeaponSetPreset("dev_generic_two_handed_strong_mod_fire")
+    {
+        Weapon("wpn_freak00");
+        use AI_Throwable_Stone();
+    }
+    WeaponSetPreset("dev_generic_two_handed_thrower_molotov")
+    {
+        Weapon("wpn_freak00");
+        Weapon("Throwable_Molotov");
+    }
+    WeaponSetPreset("dev_generic_two_handed_thrower_explosive")
+    {
+        Weapon("Renegades_Weapons_pool_2h_d9");
+        Weapon("Throwable_ExplosiveGrenade");
+    }
+    WeaponSetPreset("dev_generic_two_handed_thrower_mine")
+    {
+        Weapon("Renegades_Weapons_pool_2h_d9");
+        Weapon("AI_Throwable_Mine");
+    }
+    WeaponSetPreset("skullface_weapon")
+    {
+        Weapon("skullface_weapon");
+    }	
 	
+
 	///////////////////// Difficulty Sets //////////////////////////////
 	///////////////////// RGD_1 //////////////////////////////
 	WeaponSetPreset("Weapon_pool_RGD_1")

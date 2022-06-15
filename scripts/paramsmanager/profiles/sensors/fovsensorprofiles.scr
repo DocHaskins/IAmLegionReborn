@@ -59,6 +59,15 @@ sub main()
         range_vertical_down("20.0");
         angle("150.0");
     }
+    SensorParamsFOV("banshee_sun_immune")
+    {
+        range("40.0");
+        range_effective("5.0");
+        range_vertical_up("5.0");
+        min_horz_range_for_full_up_range("1.0");
+        range_vertical_down("20.0");
+        angle("150.0");
+    }
     SensorParamsFOV("biter_night_low_alert")
     {
         range("15.0");
@@ -326,6 +335,24 @@ sub main()
         range_vertical_up("10.0");
         min_horz_range_for_full_up_range("8.0");
         range_vertical_down("8.0");
+        angle("150.0");
+    }
+    SensorParamsFOV("demolisher_thrower_low_alert")
+    {
+        range("20.0");
+        range_effective("15.0");
+        range_vertical_up("3.0");
+        min_horz_range_for_full_up_range("4.0");
+        range_vertical_down("10.0");
+        angle("150.0");
+    }
+    SensorParamsFOV("demolisher_thrower_high_alert")
+    {
+        range("45.0");
+        range_effective("45.0");
+        range_vertical_up("10.0");
+        min_horz_range_for_full_up_range("4.0");
+        range_vertical_down("10.0");
         angle("150.0");
     }
     SensorParamsFOV("gazelle_default")
@@ -683,6 +710,15 @@ sub main()
         range_vertical_down("15.0");
         angle("130.0");
     }
+    SensorParamsFOV("viral_sun_immune")
+    {
+        range("25.0");
+        range_effective("8.0");
+        range_vertical_up("25.0");
+        min_horz_range_for_full_up_range("0.1");
+        range_vertical_down("15.0");
+        angle("130.0");
+    }
     SensorParamsFOV("viral_chase_low_alert")
     {
         range("15.0");
@@ -883,30 +919,94 @@ sub main()
     }
     SensorParamsFOV("volatile_low_alert")
     {
-        range("20.0");
-        range_effective("5.0");
-        range_vertical_up("6.0");
-        min_horz_range_for_full_up_range("4.5");
-        range_vertical_down("20.0");
-        angle("120.0");
+        range("10.0");
+        range_effective("2.0");
+        range_vertical_up("5.0");
+        min_horz_range_for_full_up_range("5.0");
+        range_vertical_down("10.0");
+        angle("90.0");
+        darkness_modifier("0.75");
     }
     SensorParamsFOV("volatile_medium_alert")
     {
-        range("25.0");
-        range_effective("5.5");
+        range("20.0");
+        range_effective("5.0");
         range_vertical_up("10.0");
-        min_horz_range_for_full_up_range("4.5");
-        range_vertical_down("20.0");
+        min_horz_range_for_full_up_range("5.0");
+        range_vertical_down("10.0");
         angle("135.0");
     }
     SensorParamsFOV("volatile_high_alert")
     {
-        range("40.0");
-        range_effective("9.0");
+        range("35.0");
+        range_effective("8.0");
         range_vertical_up("25.0");
         min_horz_range_for_full_up_range("0.1");
         range_vertical_down("10.0");
         angle("160.0");
+    }
+    SensorParamsFOV("volatile_hive_low_alert")
+    {
+        range("20.0");
+        range_effective("5.0");
+        range_vertical_up("3.0");
+        min_horz_range_for_full_up_range("5.0");
+        range_vertical_down("10.0");
+        angle("120.0");
+    }
+    SensorParamsFOV("volatile_hive_medium_alert")
+    {
+        range("20.0");
+        range_effective("5.0");
+        range_vertical_up("10.0");
+        min_horz_range_for_full_up_range("5.0");
+        range_vertical_down("10.0");
+        angle("135.0");
+    }
+    SensorParamsFOV("volatile_hive_high_alert")
+    {
+        range("35.0");
+        range_effective("8.0");
+        range_vertical_up("25.0");
+        min_horz_range_for_full_up_range("0.1");
+        range_vertical_down("10.0");
+        angle("360.0");
+    }
+    SensorParamsFOV("volatile_summoner_low_alert")
+    {
+        range("20.0");
+        range_effective("5.0");
+        range_vertical_up("3.0");
+        min_horz_range_for_full_up_range("5.0");
+        range_vertical_down("10.0");
+        angle("120.0");
+    }
+    SensorParamsFOV("volatile_summoner_medium_alert")
+    {
+        range("20.0");
+        range_effective("5.0");
+        range_vertical_up("10.0");
+        min_horz_range_for_full_up_range("5.0");
+        range_vertical_down("10.0");
+        angle("135.0");
+    }
+    SensorParamsFOV("volatile_summoner_high_alert")
+    {
+        range("35.0");
+        range_effective("8.0");
+        range_vertical_up("25.0");
+        min_horz_range_for_full_up_range("0.1");
+        range_vertical_down("10.0");
+        angle("360.0");
+    }
+    SensorParamsFOV("volatile_sun_immune")
+    {
+        range("35.0");
+        range_effective("8.0");
+        range_vertical_up("25.0");
+        min_horz_range_for_full_up_range("0.1");
+        range_vertical_down("10.0");
+        angle("360.0");
     }
     SensorParamsFOV("alpha_zombie_default")
     {

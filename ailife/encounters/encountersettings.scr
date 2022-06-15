@@ -9649,4 +9649,91 @@ Difficulty("NewGamePlus")
         MaxActiveInstances(1);
         //ZoneLevelEncounterCondition(-3,1);
     } 	
+	
+        Encounter("GAAS_Volatile_Hive")
+    {
+        EncounterGroup("GAAS_Special");
+        GeneralDifficulty()
+        {
+            Pool("GAAS_GRE_VolHive_2VHiveG");
+            //Pool("Infected_Patrol_Volatile_Double");
+        }
+        Difficulty("Difficulty_R01") 
+        {
+            Pool("GAAS_GRE_VolHive_2VHiveG");
+        }
+
+        Difficulty("Difficulty_01") 
+        {
+            Pool("GAAS_GRE_VolHive_2VHiveG");
+        }
+
+        Difficulty("Difficulty_02") 
+        {
+            Pool("GAAS_GRE_VolHive_2VHiveG");
+        }       
+
+        Difficulty("Difficulty_03") 
+        {
+            Pool("GAAS_GRE_VolHive_2VHiveG");
+        }       
+
+        Difficulty("Difficulty_04") 
+        {
+            Pool("GAAS_GRE_VolHive_2VHiveG");
+        }
+        
+        Difficulty("Difficulty_R04") 
+        {
+            Pool("GAAS_GRE_VolHive_2VHiveG");
+        }       
+
+        Difficulty("Difficulty_05")
+        {
+            Pool("GAAS_GRE_VolHive_2VHiveG");
+        }   
+
+        Difficulty("Difficulty_06")
+        {
+            Pool("GAAS_GRE_VolHive_2VHiveG");
+        }               
+
+        Difficulty("Difficulty_07")
+        {
+            Pool("GAAS_GRE_VolHive_3VHiveG");
+        }
+        
+        Difficulty("Difficulty_08")
+        {
+            Pool("GAAS_GRE_VolHive_3VHiveG");
+        }
+        
+        Difficulty("Difficulty_09")
+        {
+            Pool("GAAS_GRE_VolHive_3VHiveG");
+        }
+
+        Difficulty("NewGamePlus")
+        {
+            Pool("GAAS_GRE_VolHive_3VHiveG");
+        }
+        MaxActiveInstances(1);
+        CooldownTime(300.0);
+        TimeOfDay(19.5, 7.5);
+		SaveCooldownTime(true);
+    }
+	
+        Encounter("GAAS_Volatile_Tyrant")
+    {
+        EncounterGroup("GAAS_Special");
+        GeneralDifficulty()
+        {
+            Pool("GAAS_Tyrant");
+        }
+        MaxActiveInstances(1);
+        CooldownTime(1800.0);
+        TimeOfDay(19.5, 7.5);
+		SaveCooldownTime(true);
+    }
+	
 }

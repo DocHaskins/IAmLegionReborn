@@ -2,13 +2,18 @@ import "ial_settings.mth"
 
 sub DefaultParams()
 {
-    FallHeightImmediateKill("20.0");
+    FallHeightImmediateKill("15.0");
 
     WallHitMinRelativeHeight("0.9");
     WallHitMinCollisionDepth("0.2");
     WallHitMinSelfSpeed("2.0");
 
-    AIDominoHitMinSpeed("1.0");
+    AIDominoHitMinSpeed("2.0");
+
+    FallDamageTag("fall");
+    WallHitDamageTag("wall_hit");
+    SpikesStaticDamageTag("spikes");
+    SpikesDynamicDamageTag("spikes_dynamic");
 }
 
 sub main()
@@ -59,7 +64,7 @@ sub main()
 
         AIMovePushReactionPreset("gentle_push@damage_reaction_presets.scr");
         AIMovePushStrength("1.0");
-        AIMovePushMinSelfSpeedToPushOthers("0.1");
+        AIMovePushMinSelfSpeedToPushOthers("2.1");
 		FallHeightMinDamage("IAL_AI_FallHeight_Infected_MinDmg");
         FallHeightMaxDamage("IAL_AI_FallHeight_Infected_MaxDmg");
         FallHeightImmediateKill("IAL_AI_FallHeight_Infected_ImmediateKill");
@@ -108,7 +113,7 @@ sub main()
 
         AIMovePushReactionPreset("gentle_push@damage_reaction_presets.scr");
         AIMovePushStrength("4.0");
-        AIMovePushMinSelfSpeedToPushOthers("0.1");
+        AIMovePushMinSelfSpeedToPushOthers("0.5");
 
         FallHeightMinDamage("8.0");
         FallHeightMaxDamage("19.0");

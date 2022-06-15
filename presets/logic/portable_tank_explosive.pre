@@ -20,6 +20,7 @@ sub main()
 		AddField("m_DamageRange", "3.0", false, true, false);
 		AddField("m_SecondaryDamageRange", "5.0", false, true, false);
 		AddField("m_DamagePreset", "tank_explosive", false, true, false);
+		AddField("m_DamageTag", "gas_tank_explosive");
 		AddField("m_SecondaryDamageDefinition", "Portable_Tank_Blast_tier_1", false, true, false);
 		AddField("m_CountdownTimeToExplode", "6.0", false, true, false);
 		AddField("m_BaseImpulsForce", "0.0", false, true, false);
@@ -41,7 +42,7 @@ sub main()
 		AddField("m_EntityOriginOffset", "0.0 0.0 0.0", false, true, false);
 		AddField("m_ExplosionNoiseUid", "explosion", false, true, false);
 		AddField("m_GasLeakNoiseUid", "gas_leak", false, true, false);
-		
+		AddField("m_StartLeakWhenTaken", "0", false, true, false);
 		IgnoreField("UserData");
 		IgnoreField("SkinName");
 		
@@ -77,6 +78,7 @@ sub main()
 			SetField("m_CalculatePointsFromCollidable", "1");
 			SetField("m_InnerZone", "0.15");
 			SetField("m_OuterZone", "2.0");
+			SetField("m_DamageTag", "gas_tank_explosive");
 		}
 		Preset("flying_tank_wall")
 		{
@@ -154,12 +156,48 @@ sub main()
 			SetField("m_PrefabToSpawnOnExplode", "damageable_toxic_gas_area");
 			SetField("m_DamageRange", "0.0");
 			SetField("m_SecondaryDamageRange", "0.0");
-			SetField("m_ThrowAutoHitAssist", "0");
-			SetField("m_ThrowMultiAssist", "0");
+			SetField("m_ThrowAutoHitAssist", "1");
+			SetField("m_ThrowMultiAssist", "1");
 			SetField("m_CalculatePointsFromCollidable", "1");
 			SetField("m_InnerZone", "0.15");
 			SetField("m_OuterZone", "2.0");
 			SetField("m_ExplodeFxSequence", "");
+			SetField("m_DamageTag", "");
+		}
+		
+		Preset("flying_tank_leak_on_take")
+		{
+			SetField("m_EntityVariant", "24;189;229;230;250;");
+			SetField("m_MeshName", "gas_cylinder_b.msh");
+			SetField("m_SkinName", "Default");
+			SetField("m_CountdownTimeToExplode", "30.0");
+			SetField("m_DisableWholeObjectAfterExplode", "1");
+			SetField("m_ExplodeFxSequence", "portable_tank_explosion.gpufx");
+			SetField("m_PrefabToSpawnOnExplode", "");
+			SetField("m_DamageRange", "3.0");
+			SetField("m_SecondaryDamageRange", "5.0");
+			SetField("m_BaseImpulsForce", "0.0");
+			SetField("m_AddedImpuseForce", "0.0");
+			SetField("m_RotationFrequency", "4.0");
+			SetField("m_ShouldAddForceOnFrame", "1");
+			SetField("m_GenerateAxisX", "1");
+			SetField("m_GenerateAxisY", "1");
+			SetField("m_GenerateAxisZ", "1");
+			SetField("m_Distance", "2.0");
+			SetField("m_LerpWithLastDirection", "1");
+			SetField("m_LerpToLastDirFactor", "0.8");
+			SetField("m_LerpToTheStartPosition", "1");
+			SetField("m_ThrowVelocity", "250.0");
+			SetField("m_ThrowTorque", "15.0");
+			SetField("m_ChargedThrowVelocity", "250.0");
+			SetField("m_ChargedThrowTorque", "15.0");
+			SetField("m_ThrowAutoHitAssist", "1");
+			SetField("m_ThrowMultiAssist", "1");
+			SetField("m_CalculatePointsFromCollidable", "1");
+			SetField("m_InnerZone", "0.15");
+			SetField("m_OuterZone", "2.0");
+			SetField("m_StartLeakWhenTaken", "1");
+			SetField("m_DamageTag", "gas_tank_explosive");
 		}
 	}
 }

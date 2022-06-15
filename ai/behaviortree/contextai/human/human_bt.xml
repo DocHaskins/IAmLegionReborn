@@ -11,7 +11,9 @@
                         <!-- reactions -->
                         <ExternalTree m_UID="HUMAN_BASE_REACTION" m_CustomName="Reactions" m_Hide="true"/>
                         <!-- avoid danger -->
-                        <ExternalTree m_UID="HUMAN_AVOID_DANGER" m_CustomName="AvoidDanger" m_Hide="true"/>
+                        <Optional m_Enabled="$enable_avoid_danger" m_CustomName="AvoidDanger" m_Hide="true">
+                            <ExternalTree m_UID="HUMAN_AVOID_DANGER"/>
+                        </Optional>
                         <!-- snapped -->
                         <Optional m_Enabled="false">
                             <ExternalTree m_UID="HUMAN_SNAPPED" m_CustomName="Snapped" m_Hide="true"/>
@@ -51,7 +53,6 @@
                 <Optional m_Enabled="$enable_additive_hit_reaction" m_CustomName="HitAdditive" m_Hide="true">
                     <ExternalTree m_UID="HUMAN_REACTION_HIT_ADDITIVE"/>
                 </Optional>
-				<ExternalTree m_UID="AI_TRACK" m_CustomName="TrackEnemy" m_Hide="true"/>
                 <ExternalTree m_UID="HUMAN_UPDATE_POST" m_CustomName="PostUpdate" m_Hide="true"/>
             </ParallelRepeat>
         </Selector>

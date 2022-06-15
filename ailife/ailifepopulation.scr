@@ -7,7 +7,6 @@ PresetOccurrences(s, s, i)		- preset_name, plan_name, preset_amount - agenda wit
 PresetPercentage(s, s, i)		- preset_name, plan_name, preset_percentage - agenda with preset_name will be spawned x-times to reach prefab_percentage of whole scenario population in area and use plan_name plan
 PresetToSpawnAmount(i)		    - preset_amount - spawn preset_amount agendas in area (should be used with population based on percents)
 TimeOfDayCondition(f, f)        - begin [0.0 - 24.0], end [0.0 - 24.0] - agenda will be spawned only between those hours
-BopStatCondition(s, s, i, i)    - fraction_name, stat_name, min_faction_power_tier, max_faction_power_tier - agenda will be spawned only if a given fraction has suitable stat tier
 RequiresPlayerInside()			- agendas will be spawned only when player is inside area (and will be ending when player leave area)
 BlockOtherAttributeAreas()		- spawn agendas from other attributes will be blocked when player is inside this area (agendas spawned for other attributes will end)
 SpawnOnlyOnAreaActivation()     - system will try to spawn agendas only for 5 seconds after attribute area activation
@@ -24,7 +23,6 @@ sub main()
 		PercentageBased()
 		{
 			TimeOfDayCondition(6.0, 24.0);
-			BopStatCondition(BANDITS, "Power", 0, 0);
 			PresetPercentage(SCAVs_AGENDA_POWER_1, "Plan_Scavengers", 100);
 			PresetToSpawnAmount(1);
 		}
@@ -56,7 +54,6 @@ sub main()
 		PercentageBased()
 		{
 			TimeOfDayCondition(6.0, 24.0);
-			BopStatCondition(BANDITS, "Power", 0, 0);
 			PresetPercentage(BANDITS_AGENDA_3, "Plan_Bandits", 100);
 			PresetToSpawnAmount(30);
 		}
@@ -70,7 +67,6 @@ sub main()
         PercentageBased()
 		{
 			TimeOfDayCondition(8.1, 19.0);
-			BopStatCondition(SCAVENGERS, "Power", 0, 0);
 			PresetPercentage(SCAVs_AGENDA_POWER_1, "Plan_Scavengers", 100);
 			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 40);
 			PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 20);
@@ -84,7 +80,6 @@ sub main()
         PercentageBased()
 		{
 			TimeOfDayCondition(8.1, 19.0);
-			BopStatCondition(SCAVENGERS, "Power", 0, 0);
 			PresetPercentage(SCAVs_AGENDA_POWER_1, "Plan_Scavengers", 100);
 			PresetToSpawnAmount(12);
 		}
@@ -95,7 +90,6 @@ sub main()
 		PercentageBased()
 		{
 			TimeOfDayCondition(8.1, 19.0);
-			BopStatCondition(PEACEKEEPERS, "Power", 0, 0);
 			PresetPercentage(PKs_AGENDA_POWER_1, "Plan_PK", 100);
 			PresetPercentage(SURVIVOR_AGENDA_1, "Plan_Survivors", 40);
 			PresetPercentage(SURVIVOR_AGENDA_2, "Plan_Survivors", 20);
@@ -109,7 +103,6 @@ sub main()
 		//PercentageBased()
 		//{
 		//	TimeOfDayCondition(8.1, 19.0);
-		//	BopStatCondition(PEACEKEEPERS, "Power", 0, 0);
 		//	PresetPercentage(PKs_AGENDA_POWER_1, "Plan_PK", 100);
 		//	PresetToSpawnAmount(5);
 		//}
@@ -126,7 +119,6 @@ sub main()
 		PercentageBased()
 		{
 			TimeOfDayCondition(8.1, 19.0);
-			BopStatCondition(BANDITS, "Power", 0, 0);
 			PresetPercentage(BANDIT_ELECTRIC, "Plan_Bandits", 60);
 			PresetToSpawnAmount(1);
 		}
@@ -2315,7 +2307,7 @@ sub main()
             TimeOfDayCondition(0.0, 24.0);
 			BlockOtherAttributeAreas();
             PresetOccurrences(POSTMAN_HQ_MAN_AGENDA, "Plan_Hub_Base_Man", 4);
-			PresetOccurrences(POSTMAN_HQ_WOMAN_AGENDA, "Plan_Hub_Base_Woman", 2);
+			PresetOccurrences(POSTMAN_HQ_WOMAN_AGENDA, "Plan_Hub_Base_Woman", 1);
         }
     }
 		
@@ -2757,6 +2749,58 @@ sub main()
 			PresetOccurrences(ABANDONEDSTRUCTURE_BASE_AGENDA_WOMAN, "Plan_Abandoned_Structure_Common_Female", 2);
 			PresetOccurrences(ABANDONEDSTRUCTURE_GUARD_AGENDA_MAN, "Plan_Abandoned_Structure_Guard_Male", 2);
         }
+    }
+	
+	
+	
+////////////// DLC OPERA //////////////////////	
+	
+	Attribute("Opera_main_hall")
+    {
+		OccurrencesBased()
+        {	
+            RequiresPlayerInside();			
+            PresetOccurrences(OPERA_COMMON_AGENDA_MAN, "Plan_opera_hall_walker_male_1", 5);
+			PresetOccurrences(OPERA_COMMON_AGENDA_WOMAN, "Plan_opera_hall_walker_female_1", 5);
+			PresetOccurrences(OPERA_COMMON_AGENDA_MAN, "Plan_opera_hall_background_male_1", 5);
+			PresetOccurrences(OPERA_COMMON_AGENDA_WOMAN, "Plan_opera_hall_background_female_1", 5);
+		}
+    }
+	Attribute("Opera_backstage")
+    {
+		OccurrencesBased()
+        {	
+            RequiresPlayerInside();			
+            PresetOccurrences(OPERA_WRESTLERS_AGENDA_MAN, "Plan_opera_hall_walker_male_1", 1);
+			PresetOccurrences(OPERA_WRESTLERS_AGENDA_MAN, "Plan_opera_hall_background_male_1", 3);
+		}
+    }
+	Attribute("Opera_Prison")
+    {
+		OccurrencesBased()
+        {	
+            RequiresPlayerInside();			
+            PresetOccurrences(OPERA_COMMON_AGENDA_MAN, "Plan_opera_hall_walker_male_1", 3);
+			PresetOccurrences(OPERA_COMMON_AGENDA_MAN, "Plan_opera_hall_background_male_1", 3);
+		}
+    }
+	Attribute("Pool_Preparations")
+    {
+		OccurrencesBased()
+        {	
+            RequiresPlayerInside();			
+			PresetOccurrences(CANTEEN_HUB_SINGLE_MAN_AGENDA, "Plan_opera_hall_background_male_1", 4);
+			PresetOccurrences(CANTEEN_HUB_SINGLE_WMN_AGENDA, "Plan_opera_hall_background_female_1", 4);
+		}
+    }
+	Attribute("Pool_Fight")
+    {
+		OccurrencesBased()
+        {	
+            RequiresPlayerInside();			
+			PresetOccurrences(CANTEEN_HUB_SINGLE_MAN_AGENDA, "Plan_opera_hall_background_male_1", 5);
+			PresetOccurrences(CANTEEN_HUB_SINGLE_WMN_AGENDA, "Plan_opera_hall_background_female_1", 7);
+		}
     }
 	
 // ANIMALS

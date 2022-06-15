@@ -11,6 +11,16 @@ export int Lockpick = 7;
 export int Mods = 8;
 export int Other = 9;
 
+
+	sub Opera_Bolter_Weapon(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Valuables, weight, min_amount, max_amount, prob)
+        {
+            Item("wpn_opera_bolter_weapon", 1.0);
+        }
+    }
+	
+
 	//Cash Test 
 	
 	sub CashSmall(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
@@ -1218,6 +1228,14 @@ export int Other = 9;
         }
     }
 	
+	sub SuiciderSamples(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Valuables, weight, min_amount, max_amount, prob)
+        {
+            ItemCount("Token_MutationSamples", 40, 60, 1.0);
+        }
+    }
+	
 	sub BansheeGland(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
     {
         Set(Other, weight, min_amount, max_amount, prob)
@@ -1225,6 +1243,14 @@ export int Other = 9;
 			ItemCount("KeyCraft_SpecialInfected_Token_T1", 1, 1, 2.0);
 			ItemCount("KeyCraft_SpecialInfected_Token_T2", 1, 1, 7.0);
 			ItemCount("KeyCraft_SpecialInfected_Token_T3", 1, 1, 1.0);
+        }
+    }
+	
+	sub BansheeSamples(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Valuables, weight, min_amount, max_amount, prob)
+        {
+            ItemCount("Token_MutationSamples", 40, 60, 1.0);
         }
     }
 	
@@ -2779,368 +2805,877 @@ export int Other = 9;
 			
 			//EXLUSIVE
 			StatusRestriction(1, 39);
+			Item("wpn_1hs_axdb_a_fpp_r19", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r19", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r19", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r19", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r19", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r19", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r19", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r19", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r19", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r19", 1.0);
 			Item("wpn_15hs_e_fpp_r19", 1.0);
+			Item("wpn_15hs_l_fpp_r19", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r19", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r19", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r19", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r19", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r19", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r19", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r19", 1.0);
+			Item("wpn_15hb_f_fpp_r19", 1.0);
 			Item("wpn_15hb_k_fpp_r19", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r19", 1.0);
+			
 			StatusRestriction(40, 41);
+			Item("wpn_1hs_axdb_a_fpp_r20", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r20", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r20", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r20", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r20", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r20", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r20", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r20", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r20", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r20", 1.0);
 			Item("wpn_15hs_e_fpp_r20", 1.0);
+			Item("wpn_15hs_l_fpp_r20", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r20", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r20", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r20", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r20", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r20", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r20", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r20", 1.0);
+			Item("wpn_15hb_f_fpp_r20", 1.0);
 			Item("wpn_15hb_k_fpp_r20", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r20", 1.0);
+			
 			StatusRestriction(42, 43);
+			Item("wpn_1hs_axdb_a_fpp_r21", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r21", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r21", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r21", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r21", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r21", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r21", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r21", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r21", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r21", 1.0);
 			Item("wpn_15hs_e_fpp_r21", 1.0);
+			Item("wpn_15hs_l_fpp_r21", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r21", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r21", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r21", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r21", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r21", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r21", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r21", 1.0);
+			Item("wpn_15hb_f_fpp_r21", 1.0);
 			Item("wpn_15hb_k_fpp_r21", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r21", 1.0);
+			
 			StatusRestriction(44, 46);
+			Item("wpn_1hs_axdb_a_fpp_r22", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r22", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r22", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r22", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r22", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r22", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r22", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r22", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r22", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r22", 1.0);
 			Item("wpn_15hs_e_fpp_r22", 1.0);
+			Item("wpn_15hs_l_fpp_r22", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r22", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r22", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r22", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r22", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r22", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r22", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r22", 1.0);
+			Item("wpn_15hb_f_fpp_r22", 1.0);
 			Item("wpn_15hb_k_fpp_r22", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r22", 1.0);
+			
 			StatusRestriction(47, 49);
+			Item("wpn_1hs_axdb_a_fpp_r23", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r23", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r23", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r23", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r23", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r23", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r23", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r23", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r23", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r23", 1.0);
 			Item("wpn_15hs_e_fpp_r23", 1.0);
+			Item("wpn_15hs_l_fpp_r23", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r23", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r23", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r23", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r23", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r23", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r23", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r23", 1.0);
+			Item("wpn_15hb_f_fpp_r23", 1.0);
 			Item("wpn_15hb_k_fpp_r23", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r23", 1.0);
+			
 			StatusRestriction(50, 50);
+			Item("wpn_1hs_axdb_a_fpp_r24", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r24", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r24", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r24", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r24", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r24", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r24", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r24", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r24", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r24", 1.0);
 			Item("wpn_15hs_e_fpp_r24", 1.0);
+			Item("wpn_15hs_l_fpp_r24", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r24", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r24", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r24", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r24", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r24", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r24", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r24", 1.0);
+			Item("wpn_15hb_f_fpp_r24", 1.0);
 			Item("wpn_15hb_k_fpp_r24", 1.0);
 			
-			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r24", 1.0);
 			
 			NewGamePlus();
 			
 			StatusRestriction(1, 3);
+			Item("wpn_1hs_axdb_a_fpp_r1", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r1", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r1", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r1", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r1", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r1", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r1", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r1", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r1", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r1", 1.0);
 			Item("wpn_15hs_e_fpp_r1", 1.0);
+			Item("wpn_15hs_l_fpp_r1", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r1", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r1", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r1", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r1", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r1", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r1", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r1", 1.0);
+			Item("wpn_15hb_f_fpp_r1", 1.0);
 			Item("wpn_15hb_k_fpp_r1", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r1", 1.0);
+			
 			StatusRestriction(4, 5);
+			Item("wpn_1hs_axdb_a_fpp_r2", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r2", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r2", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r2", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r2", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r2", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r2", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r2", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r2", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r2", 1.0);
 			Item("wpn_15hs_e_fpp_r2", 1.0);
+			Item("wpn_15hs_l_fpp_r2", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r2", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r2", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r2", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r2", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r2", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r2", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r2", 1.0);
+			Item("wpn_15hb_f_fpp_r2", 1.0);
 			Item("wpn_15hb_k_fpp_r2", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r2", 1.0);
+			
 			StatusRestriction(6, 7);
+			Item("wpn_1hs_axdb_a_fpp_r3", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r3", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r3", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r3", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r3", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r3", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r3", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r3", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r3", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r3", 1.0);
 			Item("wpn_15hs_e_fpp_r3", 1.0);
+			Item("wpn_15hs_l_fpp_r3", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r3", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r3", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r3", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r3", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r3", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r3", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r3", 1.0);
+			Item("wpn_15hb_f_fpp_r3", 1.0);
 			Item("wpn_15hb_k_fpp_r3", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r3", 1.0);
+			
 			StatusRestriction(8, 9);
+			Item("wpn_1hs_axdb_a_fpp_r4", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r4", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r4", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r4", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r4", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r4", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r4", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r4", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r4", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r4", 1.0);
 			Item("wpn_15hs_e_fpp_r4", 1.0);
+			Item("wpn_15hs_l_fpp_r4", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r4", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r4", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r4", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r4", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r4", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r4", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r4", 1.0);
+			Item("wpn_15hb_f_fpp_r4", 1.0);
 			Item("wpn_15hb_k_fpp_r4", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r4", 1.0);
+			
 			StatusRestriction(10, 11);
+			Item("wpn_1hs_axdb_a_fpp_r5", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r5", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r5", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r5", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r5", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r5", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r5", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r5", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r5", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r5", 1.0);
 			Item("wpn_15hs_e_fpp_r5", 1.0);
+			Item("wpn_15hs_l_fpp_r5", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r5", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r5", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r5", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r5", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r5", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r5", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r5", 1.0);
+			Item("wpn_15hb_f_fpp_r5", 1.0);
 			Item("wpn_15hb_k_fpp_r5", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r5", 1.0);
+			
 			StatusRestriction(12, 13);
+			Item("wpn_1hs_axdb_a_fpp_r6", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r6", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r6", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r6", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r6", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r6", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r6", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r6", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r6", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r6", 1.0);
 			Item("wpn_15hs_e_fpp_r6", 1.0);
+			Item("wpn_15hs_l_fpp_r6", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r6", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r6", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r6", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r6", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r6", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r6", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r6", 1.0);
+			Item("wpn_15hb_f_fpp_r6", 1.0);
 			Item("wpn_15hb_k_fpp_r6", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r6", 1.0);
+			
 			StatusRestriction(14, 15);
+			Item("wpn_1hs_axdb_a_fpp_r7", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r7", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r7", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r7", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r7", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r7", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r7", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r7", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r7", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r7", 1.0);
 			Item("wpn_15hs_e_fpp_r7", 1.0);
+			Item("wpn_15hs_l_fpp_r7", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r7", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r7", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r7", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r7", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r7", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r7", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r7", 1.0);
+			Item("wpn_15hb_f_fpp_r7", 1.0);
 			Item("wpn_15hb_k_fpp_r7", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r7", 1.0);
+			
 			StatusRestriction(16, 17);
+			Item("wpn_1hs_axdb_a_fpp_r8", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r8", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r8", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r8", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r8", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r8", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r8", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r8", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r8", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r8", 1.0);
 			Item("wpn_15hs_e_fpp_r8", 1.0);
+			Item("wpn_15hs_l_fpp_r8", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r8", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r8", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r8", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r8", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r8", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r8", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r8", 1.0);
+			Item("wpn_15hb_f_fpp_r8", 1.0);
 			Item("wpn_15hb_k_fpp_r8", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r8", 1.0);
+			
 			StatusRestriction(18, 19);
+			Item("wpn_1hs_axdb_a_fpp_r9", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r9", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r9", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r9", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r9", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r9", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r9", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r9", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r9", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r9", 1.0);
 			Item("wpn_15hs_e_fpp_r9", 1.0);
+			Item("wpn_15hs_l_fpp_r9", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r9", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r9", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r9", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r9", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r9", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r9", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r9", 1.0);
+			Item("wpn_15hb_f_fpp_r9", 1.0);
 			Item("wpn_15hb_k_fpp_r9", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r9", 1.0);
+			
 			StatusRestriction(20, 21);
+			Item("wpn_1hs_axdb_a_fpp_r10", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r10", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r10", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r10", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r10", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r10", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r10", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r10", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r10", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r10", 1.0);
 			Item("wpn_15hs_e_fpp_r10", 1.0);
+			Item("wpn_15hs_l_fpp_r10", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r10", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r10", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r10", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r10", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r10", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r10", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r10", 1.0);
+			Item("wpn_15hb_f_fpp_r10", 1.0);
 			Item("wpn_15hb_k_fpp_r10", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r10", 1.0);
+			
 			StatusRestriction(22, 23);
+			Item("wpn_1hs_axdb_a_fpp_r11", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r11", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r11", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r11", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r11", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r11", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r11", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r11", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r11", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r11", 1.0);
 			Item("wpn_15hs_e_fpp_r11", 1.0);
+			Item("wpn_15hs_l_fpp_r11", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r11", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r11", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r11", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r11", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r11", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r11", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r11", 1.0);
+			Item("wpn_15hb_f_fpp_r11", 1.0);
 			Item("wpn_15hb_k_fpp_r11", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r11", 1.0);
+			
 			StatusRestriction(24, 25);
+			Item("wpn_1hs_axdb_a_fpp_r12", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r12", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r12", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r12", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r12", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r12", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r12", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r12", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r12", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r12", 1.0);
 			Item("wpn_15hs_e_fpp_r12", 1.0);
+			Item("wpn_15hs_l_fpp_r12", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r12", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r12", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r12", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r12", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r12", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r12", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r12", 1.0);
+			Item("wpn_15hb_f_fpp_r12", 1.0);
 			Item("wpn_15hb_k_fpp_r12", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r12", 1.0);
+			
 			StatusRestriction(26, 27);
+			Item("wpn_1hs_axdb_a_fpp_r13", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r13", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r13", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r13", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r13", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r13", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r13", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r13", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r13", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r13", 1.0);
 			Item("wpn_15hs_e_fpp_r13", 1.0);
+			Item("wpn_15hs_l_fpp_r13", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r13", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r13", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r13", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r13", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r13", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r13", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r13", 1.0);
+			Item("wpn_15hb_f_fpp_r13", 1.0);
 			Item("wpn_15hb_k_fpp_r13", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r13", 1.0);
+			
 			StatusRestriction(28, 29);
+			Item("wpn_1hs_axdb_a_fpp_r14", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r14", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r14", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r14", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r14", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r14", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r14", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r14", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r14", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r14", 1.0);
 			Item("wpn_15hs_e_fpp_r14", 1.0);
+			Item("wpn_15hs_l_fpp_r14", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r14", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r14", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r14", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r14", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r14", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r14", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r14", 1.0);
+			Item("wpn_15hb_f_fpp_r14", 1.0);
 			Item("wpn_15hb_k_fpp_r14", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r14", 1.0);
+			
 			StatusRestriction(30, 31);
+			Item("wpn_1hs_axdb_a_fpp_r15", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r15", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r15", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r15", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r15", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r15", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r15", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r15", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r15", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r15", 1.0);
 			Item("wpn_15hs_e_fpp_r15", 1.0);
+			Item("wpn_15hs_l_fpp_r15", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r15", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r15", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r15", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r15", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r15", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r15", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r15", 1.0);
+			Item("wpn_15hb_f_fpp_r15", 1.0);
 			Item("wpn_15hb_k_fpp_r15", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r15", 1.0);
+			
 			StatusRestriction(32, 33);
+			Item("wpn_1hs_axdb_a_fpp_r16", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r16", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r16", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r16", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r16", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r16", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r16", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r16", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r16", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r16", 1.0);
 			Item("wpn_15hs_e_fpp_r16", 1.0);
+			Item("wpn_15hs_l_fpp_r16", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r16", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r16", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r16", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r16", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r16", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r16", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r16", 1.0);
+			Item("wpn_15hb_f_fpp_r16", 1.0);
 			Item("wpn_15hb_k_fpp_r16", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r16", 1.0);
+			
 			StatusRestriction(34, 35);
+			Item("wpn_1hs_axdb_a_fpp_r17", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r17", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r17", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r17", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r17", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r17", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r17", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r17", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r17", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r17", 1.0);
 			Item("wpn_15hs_e_fpp_r17", 1.0);
+			Item("wpn_15hs_l_fpp_r17", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r17", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r17", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r17", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r17", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r17", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r17", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r17", 1.0);
+			Item("wpn_15hb_f_fpp_r17", 1.0);
 			Item("wpn_15hb_k_fpp_r17", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r17", 1.0);
+			
 			StatusRestriction(36, 37);
+			Item("wpn_1hs_axdb_a_fpp_r18", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r18", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r18", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r18", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r18", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r18", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r18", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r18", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r18", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r18", 1.0);
 			Item("wpn_15hs_e_fpp_r18", 1.0);
+			Item("wpn_15hs_l_fpp_r18", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r18", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r18", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r18", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r18", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r18", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r18", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r18", 1.0);
+			Item("wpn_15hb_f_fpp_r18", 1.0);
 			Item("wpn_15hb_k_fpp_r18", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r18", 1.0);
+			
 			StatusRestriction(38, 39);
+			Item("wpn_1hs_axdb_a_fpp_r19", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r19", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r19", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r19", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r19", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r19", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r19", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r19", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r19", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r19", 1.0);
 			Item("wpn_15hs_e_fpp_r19", 1.0);
+			Item("wpn_15hs_l_fpp_r19", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r19", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r19", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r19", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r19", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r19", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r19", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r19", 1.0);
+			Item("wpn_15hb_f_fpp_r19", 1.0);
 			Item("wpn_15hb_k_fpp_r19", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r19", 1.0);
+			
 			StatusRestriction(40, 41);
+			Item("wpn_1hs_axdb_a_fpp_r20", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r20", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r20", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r20", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r20", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r20", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r20", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r20", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r20", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r20", 1.0);
 			Item("wpn_15hs_e_fpp_r20", 1.0);
+			Item("wpn_15hs_l_fpp_r20", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r20", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r20", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r20", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r20", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r20", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r20", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r20", 1.0);
+			Item("wpn_15hb_f_fpp_r20", 1.0);
 			Item("wpn_15hb_k_fpp_r20", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r20", 1.0);
+			
 			StatusRestriction(42, 43);
+			Item("wpn_1hs_axdb_a_fpp_r21", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r21", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r21", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r21", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r21", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r21", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r21", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r21", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r21", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r21", 1.0);
 			Item("wpn_15hs_e_fpp_r21", 1.0);
+			Item("wpn_15hs_l_fpp_r21", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r21", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r21", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r21", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r21", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r21", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r21", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r21", 1.0);
+			Item("wpn_15hb_f_fpp_r21", 1.0);
 			Item("wpn_15hb_k_fpp_r21", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r21", 1.0);
+			
 			StatusRestriction(44, 46);
+			Item("wpn_1hs_axdb_a_fpp_r22", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r22", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r22", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r22", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r22", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r22", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r22", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r22", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r22", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r22", 1.0);
 			Item("wpn_15hs_e_fpp_r22", 1.0);
+			Item("wpn_15hs_l_fpp_r22", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r22", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r22", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r22", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r22", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r22", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r22", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r22", 1.0);
+			Item("wpn_15hb_f_fpp_r22", 1.0);
 			Item("wpn_15hb_k_fpp_r22", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r22", 1.0);
+			
 			StatusRestriction(47, 49);
+			Item("wpn_1hs_axdb_a_fpp_r23", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r23", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r23", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r23", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r23", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r23", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r23", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r23", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r23", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r23", 1.0);
 			Item("wpn_15hs_e_fpp_r23", 1.0);
+			Item("wpn_15hs_l_fpp_r23", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r23", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r23", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r23", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r23", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r23", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r23", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r23", 1.0);
+			Item("wpn_15hb_f_fpp_r23", 1.0);
 			Item("wpn_15hb_k_fpp_r23", 1.0);
 			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r23", 1.0);
+			
 			StatusRestriction(50, 50);
+			Item("wpn_1hs_axdb_a_fpp_r24", 1.0);
 			Item("wpn_1hs_axe_a_fpp_r24", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r24", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r24", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r24", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r24", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r24", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r24", 1.0);
 			Item("wpn_1hs_mach_w_fpp_r24", 1.0);
 			
 			Item("wpn_15hs_b_fpp_r24", 1.0);
 			Item("wpn_15hs_e_fpp_r24", 1.0);
+			Item("wpn_15hs_l_fpp_r24", 1.0);
+			
+			Item("wpn_1hs_knuckle_duster_c_fpp_r24", 1.0);
 			
 			Item("wpn_1hb_ham_g_fpp_r24", 1.0);
+			Item("wpn_1hb_ham_h_fpp_r24", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r24", 1.0);
 			Item("wpn_1hb_stk_h_fpp_r24", 1.0);
+			Item("wpn_1hb_mace_d_fpp_r24", 1.0);
 			
+			Item("wpn_15hb_b_fpp_r24", 1.0);
+			Item("wpn_15hb_f_fpp_r24", 1.0);
 			Item("wpn_15hb_k_fpp_r24", 1.0);
+			
+			Item("wpn_1hb_knuckle_duster_c_fpp_r24", 1.0);
+			
      	}
     }
 	
@@ -17811,95 +18346,95 @@ export int Other = 9;
         Set(Other, weight, min_amount, max_amount, prob)
         {
 			StatusRestriction(0, 3);
-			Item("wpn_1hs_axdb_a_fpp_r0_Peacekeepers", 1.0);
-			Item("wpn_1hs_axdb_a_fpp_r1_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r0_PK", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r1_PK", 1.0);
 			StatusRestriction(4, 5);
-			Item("wpn_1hs_axdb_a_fpp_r2_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r2_PK", 1.0);
 			StatusRestriction(6, 7);
-			Item("wpn_1hs_axdb_a_fpp_r3_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r3_PK", 1.0);
 			StatusRestriction(8, 9);
-			Item("wpn_1hs_axdb_a_fpp_r4_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r4_PK", 1.0);
 			StatusRestriction(10, 11);
-			Item("wpn_1hs_axdb_a_fpp_r5_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r5_PK", 1.0);
 			StatusRestriction(12, 13);
-			Item("wpn_1hs_axdb_a_fpp_r6_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r6_PK", 1.0);
 			StatusRestriction(14, 15);
-			Item("wpn_1hs_axdb_a_fpp_r7_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r7_PK", 1.0);
 			StatusRestriction(16, 17);
-			Item("wpn_1hs_axdb_a_fpp_r8_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r8_PK", 1.0);
 			StatusRestriction(18, 19);
-			Item("wpn_1hs_axdb_a_fpp_r9_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r9_PK", 1.0);
 			StatusRestriction(20, 21);
-			Item("wpn_1hs_axdb_a_fpp_r10_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r10_PK", 1.0);
 			StatusRestriction(22, 23);
-			Item("wpn_1hs_axdb_a_fpp_r11_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r11_PK", 1.0);
 			StatusRestriction(24, 25);
-			Item("wpn_1hs_axdb_a_fpp_r12_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r12_PK", 1.0);
 			StatusRestriction(26, 27);
-			Item("wpn_1hs_axdb_a_fpp_r13_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r13_PK", 1.0);
 			StatusRestriction(28, 29);
-			Item("wpn_1hs_axdb_a_fpp_r14_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r14_PK", 1.0);
 			StatusRestriction(30, 31);
-			Item("wpn_1hs_axdb_a_fpp_r15_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r15_PK", 1.0);
 			StatusRestriction(32, 33);
-			Item("wpn_1hs_axdb_a_fpp_r16_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r16_PK", 1.0);
 			StatusRestriction(34, 35);
-			Item("wpn_1hs_axdb_a_fpp_r17_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r17_PK", 1.0);
 			StatusRestriction(36, 50);
-			Item("wpn_1hs_axdb_a_fpp_r18_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r18_PK", 1.0);
 			
 			
 			
 			NewGamePlus();
 			StatusRestriction(0, 3);
-			Item("wpn_1hs_axdb_a_fpp_r0_Peacekeepers", 1.0);
-			Item("wpn_1hs_axdb_a_fpp_r1_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r0_PK", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r1_PK", 1.0);
 			StatusRestriction(4, 5);
-			Item("wpn_1hs_axdb_a_fpp_r2_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r2_PK", 1.0);
 			StatusRestriction(6, 7);
-			Item("wpn_1hs_axdb_a_fpp_r3_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r3_PK", 1.0);
 			StatusRestriction(8, 9);
-			Item("wpn_1hs_axdb_a_fpp_r4_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r4_PK", 1.0);
 			StatusRestriction(10, 11);
-			Item("wpn_1hs_axdb_a_fpp_r5_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r5_PK", 1.0);
 			StatusRestriction(12, 13);
-			Item("wpn_1hs_axdb_a_fpp_r6_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r6_PK", 1.0);
 			StatusRestriction(14, 15);
-			Item("wpn_1hs_axdb_a_fpp_r7_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r7_PK", 1.0);
 			StatusRestriction(16, 17);
-			Item("wpn_1hs_axdb_a_fpp_r8_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r8_PK", 1.0);
 			StatusRestriction(18, 19);
-			Item("wpn_1hs_axdb_a_fpp_r9_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r9_PK", 1.0);
 			StatusRestriction(20, 21);
-			Item("wpn_1hs_axdb_a_fpp_r10_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r10_PK", 1.0);
 			StatusRestriction(22, 23);
-			Item("wpn_1hs_axdb_a_fpp_r11_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r11_PK", 1.0);
 			StatusRestriction(24, 25);
-			Item("wpn_1hs_axdb_a_fpp_r12_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r12_PK", 1.0);
 			StatusRestriction(26, 27);
-			Item("wpn_1hs_axdb_a_fpp_r13_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r13_PK", 1.0);
 			StatusRestriction(28, 29);
-			Item("wpn_1hs_axdb_a_fpp_r14_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r14_PK", 1.0);
 			StatusRestriction(30, 31);
-			Item("wpn_1hs_axdb_a_fpp_r15_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r15_PK", 1.0);
 			StatusRestriction(32, 33);
-			Item("wpn_1hs_axdb_a_fpp_r16_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r16_PK", 1.0);
 			StatusRestriction(34, 35);
-			Item("wpn_1hs_axdb_a_fpp_r17_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r17_PK", 1.0);
 			StatusRestriction(36, 37);
-			Item("wpn_1hs_axdb_a_fpp_r18_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r18_PK", 1.0);
 			StatusRestriction(38, 39);
-			Item("wpn_1hs_axdb_a_fpp_r19_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r19_PK", 1.0);
 			StatusRestriction(40, 41);
-			Item("wpn_1hs_axdb_a_fpp_r20_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r20_PK", 1.0);
 			StatusRestriction(42, 43);
-			Item("wpn_1hs_axdb_a_fpp_r21_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r21_PK", 1.0);
 			StatusRestriction(44, 46);
-			Item("wpn_1hs_axdb_a_fpp_r22_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r22_PK", 1.0);
 			StatusRestriction(47, 49);
-			Item("wpn_1hs_axdb_a_fpp_r23_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r23_PK", 1.0);
 			StatusRestriction(50, 50);
-			Item("wpn_1hs_axdb_a_fpp_r24_Peacekeepers", 1.0);
+			Item("wpn_1hs_axdb_a_fpp_r24_PK", 1.0);
         }
     }
 	
@@ -17909,95 +18444,95 @@ export int Other = 9;
         Set(Other, weight, min_amount, max_amount, prob)
         {
 			StatusRestriction(0, 3);
-			Item("wpn_1hs_axe_e_fpp_r0_Peacekeepers", 1.0);
-			Item("wpn_1hs_axe_e_fpp_r1_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r0_PK", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r1_PK", 1.0);
 			StatusRestriction(4, 5);
-			Item("wpn_1hs_axe_e_fpp_r2_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r2_PK", 1.0);
 			StatusRestriction(6, 7);
-			Item("wpn_1hs_axe_e_fpp_r3_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r3_PK", 1.0);
 			StatusRestriction(8, 9);
-			Item("wpn_1hs_axe_e_fpp_r4_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r4_PK", 1.0);
 			StatusRestriction(10, 11);
-			Item("wpn_1hs_axe_e_fpp_r5_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r5_PK", 1.0);
 			StatusRestriction(12, 13);
-			Item("wpn_1hs_axe_e_fpp_r6_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r6_PK", 1.0);
 			StatusRestriction(14, 15);
-			Item("wpn_1hs_axe_e_fpp_r7_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r7_PK", 1.0);
 			StatusRestriction(16, 17);
-			Item("wpn_1hs_axe_e_fpp_r8_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r8_PK", 1.0);
 			StatusRestriction(18, 19);
-			Item("wpn_1hs_axe_e_fpp_r9_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r9_PK", 1.0);
 			StatusRestriction(20, 21);
-			Item("wpn_1hs_axe_e_fpp_r10_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r10_PK", 1.0);
 			StatusRestriction(22, 23);
-			Item("wpn_1hs_axe_e_fpp_r11_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r11_PK", 1.0);
 			StatusRestriction(24, 25);
-			Item("wpn_1hs_axe_e_fpp_r12_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r12_PK", 1.0);
 			StatusRestriction(26, 27);
-			Item("wpn_1hs_axe_e_fpp_r13_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r13_PK", 1.0);
 			StatusRestriction(28, 29);
-			Item("wpn_1hs_axe_e_fpp_r14_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r14_PK", 1.0);
 			StatusRestriction(30, 31);
-			Item("wpn_1hs_axe_e_fpp_r15_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r15_PK", 1.0);
 			StatusRestriction(32, 33);
-			Item("wpn_1hs_axe_e_fpp_r16_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r16_PK", 1.0);
 			StatusRestriction(34, 35);
-			Item("wpn_1hs_axe_e_fpp_r17_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r17_PK", 1.0);
 			StatusRestriction(36, 50);
-			Item("wpn_1hs_axe_e_fpp_r18_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r18_PK", 1.0);
 			
 			
 			
 			NewGamePlus();
 			StatusRestriction(0, 3);
-			Item("wpn_1hs_axe_e_fpp_r0_Peacekeepers", 1.0);
-			Item("wpn_1hs_axe_e_fpp_r1_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r0_PK", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r1_PK", 1.0);
 			StatusRestriction(4, 5);
-			Item("wpn_1hs_axe_e_fpp_r2_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r2_PK", 1.0);
 			StatusRestriction(6, 7);
-			Item("wpn_1hs_axe_e_fpp_r3_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r3_PK", 1.0);
 			StatusRestriction(8, 9);
-			Item("wpn_1hs_axe_e_fpp_r4_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r4_PK", 1.0);
 			StatusRestriction(10, 11);
-			Item("wpn_1hs_axe_e_fpp_r5_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r5_PK", 1.0);
 			StatusRestriction(12, 13);
-			Item("wpn_1hs_axe_e_fpp_r6_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r6_PK", 1.0);
 			StatusRestriction(14, 15);
-			Item("wpn_1hs_axe_e_fpp_r7_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r7_PK", 1.0);
 			StatusRestriction(16, 17);
-			Item("wpn_1hs_axe_e_fpp_r8_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r8_PK", 1.0);
 			StatusRestriction(18, 19);
-			Item("wpn_1hs_axe_e_fpp_r9_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r9_PK", 1.0);
 			StatusRestriction(20, 21);
-			Item("wpn_1hs_axe_e_fpp_r10_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r10_PK", 1.0);
 			StatusRestriction(22, 23);
-			Item("wpn_1hs_axe_e_fpp_r11_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r11_PK", 1.0);
 			StatusRestriction(24, 25);
-			Item("wpn_1hs_axe_e_fpp_r12_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r12_PK", 1.0);
 			StatusRestriction(26, 27);
-			Item("wpn_1hs_axe_e_fpp_r13_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r13_PK", 1.0);
 			StatusRestriction(28, 29);
-			Item("wpn_1hs_axe_e_fpp_r14_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r14_PK", 1.0);
 			StatusRestriction(30, 31);
-			Item("wpn_1hs_axe_e_fpp_r15_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r15_PK", 1.0);
 			StatusRestriction(32, 33);
-			Item("wpn_1hs_axe_e_fpp_r16_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r16_PK", 1.0);
 			StatusRestriction(34, 35);
-			Item("wpn_1hs_axe_e_fpp_r17_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r17_PK", 1.0);
 			StatusRestriction(36, 37);
-			Item("wpn_1hs_axe_e_fpp_r18_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r18_PK", 1.0);
 			StatusRestriction(38, 39);
-			Item("wpn_1hs_axe_e_fpp_r19_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r19_PK", 1.0);
 			StatusRestriction(40, 41);
-			Item("wpn_1hs_axe_e_fpp_r20_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r20_PK", 1.0);
 			StatusRestriction(42, 43);
-			Item("wpn_1hs_axe_e_fpp_r21_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r21_PK", 1.0);
 			StatusRestriction(44, 46);
-			Item("wpn_1hs_axe_e_fpp_r22_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r22_PK", 1.0);
 			StatusRestriction(47, 49);
-			Item("wpn_1hs_axe_e_fpp_r23_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r23_PK", 1.0);
 			StatusRestriction(50, 50);
-			Item("wpn_1hs_axe_e_fpp_r24_Peacekeepers", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r24_PK", 1.0);
         }
     }
 	
@@ -18007,95 +18542,95 @@ export int Other = 9;
         Set(Other, weight, min_amount, max_amount, prob)
         {
 			StatusRestriction(0, 3);
-			Item("wpn_1hs_mach_k_fpp_r0_Peacekeepers", 1.0);
-			Item("wpn_1hs_mach_k_fpp_r1_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r0_PK", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r1_PK", 1.0);
 			StatusRestriction(4, 5);
-			Item("wpn_1hs_mach_k_fpp_r2_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r2_PK", 1.0);
 			StatusRestriction(6, 7);
-			Item("wpn_1hs_mach_k_fpp_r3_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r3_PK", 1.0);
 			StatusRestriction(8, 9);
-			Item("wpn_1hs_mach_k_fpp_r4_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r4_PK", 1.0);
 			StatusRestriction(10, 11);
-			Item("wpn_1hs_mach_k_fpp_r5_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r5_PK", 1.0);
 			StatusRestriction(12, 13);
-			Item("wpn_1hs_mach_k_fpp_r6_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r6_PK", 1.0);
 			StatusRestriction(14, 15);
-			Item("wpn_1hs_mach_k_fpp_r7_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r7_PK", 1.0);
 			StatusRestriction(16, 17);
-			Item("wpn_1hs_mach_k_fpp_r8_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r8_PK", 1.0);
 			StatusRestriction(18, 19);
-			Item("wpn_1hs_mach_k_fpp_r9_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r9_PK", 1.0);
 			StatusRestriction(20, 21);
-			Item("wpn_1hs_mach_k_fpp_r10_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r10_PK", 1.0);
 			StatusRestriction(22, 23);
-			Item("wpn_1hs_mach_k_fpp_r11_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r11_PK", 1.0);
 			StatusRestriction(24, 25);
-			Item("wpn_1hs_mach_k_fpp_r12_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r12_PK", 1.0);
 			StatusRestriction(26, 27);
-			Item("wpn_1hs_mach_k_fpp_r13_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r13_PK", 1.0);
 			StatusRestriction(28, 29);
-			Item("wpn_1hs_mach_k_fpp_r14_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r14_PK", 1.0);
 			StatusRestriction(30, 31);
-			Item("wpn_1hs_mach_k_fpp_r15_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r15_PK", 1.0);
 			StatusRestriction(32, 33);
-			Item("wpn_1hs_mach_k_fpp_r16_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r16_PK", 1.0);
 			StatusRestriction(34, 35);
-			Item("wpn_1hs_mach_k_fpp_r17_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r17_PK", 1.0);
 			StatusRestriction(36, 50);
-			Item("wpn_1hs_mach_k_fpp_r18_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r18_PK", 1.0);
 			
 			
 			
 			NewGamePlus();
 			StatusRestriction(0, 3);
-			Item("wpn_1hs_mach_k_fpp_r0_Peacekeepers", 1.0);
-			Item("wpn_1hs_mach_k_fpp_r1_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r0_PK", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r1_PK", 1.0);
 			StatusRestriction(4, 5);
-			Item("wpn_1hs_mach_k_fpp_r2_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r2_PK", 1.0);
 			StatusRestriction(6, 7);
-			Item("wpn_1hs_mach_k_fpp_r3_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r3_PK", 1.0);
 			StatusRestriction(8, 9);
-			Item("wpn_1hs_mach_k_fpp_r4_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r4_PK", 1.0);
 			StatusRestriction(10, 11);
-			Item("wpn_1hs_mach_k_fpp_r5_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r5_PK", 1.0);
 			StatusRestriction(12, 13);
-			Item("wpn_1hs_mach_k_fpp_r6_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r6_PK", 1.0);
 			StatusRestriction(14, 15);
-			Item("wpn_1hs_mach_k_fpp_r7_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r7_PK", 1.0);
 			StatusRestriction(16, 17);
-			Item("wpn_1hs_mach_k_fpp_r8_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r8_PK", 1.0);
 			StatusRestriction(18, 19);
-			Item("wpn_1hs_mach_k_fpp_r9_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r9_PK", 1.0);
 			StatusRestriction(20, 21);
-			Item("wpn_1hs_mach_k_fpp_r10_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r10_PK", 1.0);
 			StatusRestriction(22, 23);
-			Item("wpn_1hs_mach_k_fpp_r11_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r11_PK", 1.0);
 			StatusRestriction(24, 25);
-			Item("wpn_1hs_mach_k_fpp_r12_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r12_PK", 1.0);
 			StatusRestriction(26, 27);
-			Item("wpn_1hs_mach_k_fpp_r13_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r13_PK", 1.0);
 			StatusRestriction(28, 29);
-			Item("wpn_1hs_mach_k_fpp_r14_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r14_PK", 1.0);
 			StatusRestriction(30, 31);
-			Item("wpn_1hs_mach_k_fpp_r15_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r15_PK", 1.0);
 			StatusRestriction(32, 33);
-			Item("wpn_1hs_mach_k_fpp_r16_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r16_PK", 1.0);
 			StatusRestriction(34, 35);
-			Item("wpn_1hs_mach_k_fpp_r17_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r17_PK", 1.0);
 			StatusRestriction(36, 37);
-			Item("wpn_1hs_mach_k_fpp_r18_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r18_PK", 1.0);
 			StatusRestriction(38, 39);
-			Item("wpn_1hs_mach_k_fpp_r19_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r19_PK", 1.0);
 			StatusRestriction(40, 41);
-			Item("wpn_1hs_mach_k_fpp_r20_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r20_PK", 1.0);
 			StatusRestriction(42, 43);
-			Item("wpn_1hs_mach_k_fpp_r21_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r21_PK", 1.0);
 			StatusRestriction(44, 46);
-			Item("wpn_1hs_mach_k_fpp_r22_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r22_PK", 1.0);
 			StatusRestriction(47, 49);
-			Item("wpn_1hs_mach_k_fpp_r23_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r23_PK", 1.0);
 			StatusRestriction(50, 50);
-			Item("wpn_1hs_mach_k_fpp_r24_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_k_fpp_r24_PK", 1.0);
         }
     }
 	
@@ -18105,95 +18640,95 @@ export int Other = 9;
         Set(Other, weight, min_amount, max_amount, prob)
         {
 			StatusRestriction(0, 3);
-			Item("wpn_1hs_mach_u_fpp_r0_Peacekeepers", 1.0);
-			Item("wpn_1hs_mach_u_fpp_r1_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r0_PK", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r1_PK", 1.0);
 			StatusRestriction(4, 5);
-			Item("wpn_1hs_mach_u_fpp_r2_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r2_PK", 1.0);
 			StatusRestriction(6, 7);
-			Item("wpn_1hs_mach_u_fpp_r3_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r3_PK", 1.0);
 			StatusRestriction(8, 9);
-			Item("wpn_1hs_mach_u_fpp_r4_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r4_PK", 1.0);
 			StatusRestriction(10, 11);
-			Item("wpn_1hs_mach_u_fpp_r5_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r5_PK", 1.0);
 			StatusRestriction(12, 13);
-			Item("wpn_1hs_mach_u_fpp_r6_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r6_PK", 1.0);
 			StatusRestriction(14, 15);
-			Item("wpn_1hs_mach_u_fpp_r7_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r7_PK", 1.0);
 			StatusRestriction(16, 17);
-			Item("wpn_1hs_mach_u_fpp_r8_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r8_PK", 1.0);
 			StatusRestriction(18, 19);
-			Item("wpn_1hs_mach_u_fpp_r9_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r9_PK", 1.0);
 			StatusRestriction(20, 21);
-			Item("wpn_1hs_mach_u_fpp_r10_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r10_PK", 1.0);
 			StatusRestriction(22, 23);
-			Item("wpn_1hs_mach_u_fpp_r11_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r11_PK", 1.0);
 			StatusRestriction(24, 25);
-			Item("wpn_1hs_mach_u_fpp_r12_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r12_PK", 1.0);
 			StatusRestriction(26, 27);
-			Item("wpn_1hs_mach_u_fpp_r13_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r13_PK", 1.0);
 			StatusRestriction(28, 29);
-			Item("wpn_1hs_mach_u_fpp_r14_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r14_PK", 1.0);
 			StatusRestriction(30, 31);
-			Item("wpn_1hs_mach_u_fpp_r15_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r15_PK", 1.0);
 			StatusRestriction(32, 33);
-			Item("wpn_1hs_mach_u_fpp_r16_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r16_PK", 1.0);
 			StatusRestriction(34, 35);
-			Item("wpn_1hs_mach_u_fpp_r17_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r17_PK", 1.0);
 			StatusRestriction(36, 50);
-			Item("wpn_1hs_mach_u_fpp_r18_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r18_PK", 1.0);
 			
 			
 			
 			NewGamePlus();
 			StatusRestriction(0, 3);
-			Item("wpn_1hs_mach_u_fpp_r0_Peacekeepers", 1.0);
-			Item("wpn_1hs_mach_u_fpp_r1_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r0_PK", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r1_PK", 1.0);
 			StatusRestriction(4, 5);
-			Item("wpn_1hs_mach_u_fpp_r2_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r2_PK", 1.0);
 			StatusRestriction(6, 7);
-			Item("wpn_1hs_mach_u_fpp_r3_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r3_PK", 1.0);
 			StatusRestriction(8, 9);
-			Item("wpn_1hs_mach_u_fpp_r4_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r4_PK", 1.0);
 			StatusRestriction(10, 11);
-			Item("wpn_1hs_mach_u_fpp_r5_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r5_PK", 1.0);
 			StatusRestriction(12, 13);
-			Item("wpn_1hs_mach_u_fpp_r6_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r6_PK", 1.0);
 			StatusRestriction(14, 15);
-			Item("wpn_1hs_mach_u_fpp_r7_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r7_PK", 1.0);
 			StatusRestriction(16, 17);
-			Item("wpn_1hs_mach_u_fpp_r8_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r8_PK", 1.0);
 			StatusRestriction(18, 19);
-			Item("wpn_1hs_mach_u_fpp_r9_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r9_PK", 1.0);
 			StatusRestriction(20, 21);
-			Item("wpn_1hs_mach_u_fpp_r10_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r10_PK", 1.0);
 			StatusRestriction(22, 23);
-			Item("wpn_1hs_mach_u_fpp_r11_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r11_PK", 1.0);
 			StatusRestriction(24, 25);
-			Item("wpn_1hs_mach_u_fpp_r12_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r12_PK", 1.0);
 			StatusRestriction(26, 27);
-			Item("wpn_1hs_mach_u_fpp_r13_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r13_PK", 1.0);
 			StatusRestriction(28, 29);
-			Item("wpn_1hs_mach_u_fpp_r14_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r14_PK", 1.0);
 			StatusRestriction(30, 31);
-			Item("wpn_1hs_mach_u_fpp_r15_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r15_PK", 1.0);
 			StatusRestriction(32, 33);
-			Item("wpn_1hs_mach_u_fpp_r16_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r16_PK", 1.0);
 			StatusRestriction(34, 35);
-			Item("wpn_1hs_mach_u_fpp_r17_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r17_PK", 1.0);
 			StatusRestriction(36, 37);
-			Item("wpn_1hs_mach_u_fpp_r18_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r18_PK", 1.0);
 			StatusRestriction(38, 39);
-			Item("wpn_1hs_mach_u_fpp_r19_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r19_PK", 1.0);
 			StatusRestriction(40, 41);
-			Item("wpn_1hs_mach_u_fpp_r20_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r20_PK", 1.0);
 			StatusRestriction(42, 43);
-			Item("wpn_1hs_mach_u_fpp_r21_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r21_PK", 1.0);
 			StatusRestriction(44, 46);
-			Item("wpn_1hs_mach_u_fpp_r22_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r22_PK", 1.0);
 			StatusRestriction(47, 49);
-			Item("wpn_1hs_mach_u_fpp_r23_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r23_PK", 1.0);
 			StatusRestriction(50, 50);
-			Item("wpn_1hs_mach_u_fpp_r24_Peacekeepers", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r24_PK", 1.0);
         }
     }
 	
@@ -18203,95 +18738,95 @@ export int Other = 9;
         Set(Other, weight, min_amount, max_amount, prob)
         {
 			StatusRestriction(0, 3);
-			Item("wpn_1hb_ham_d_fpp_r0_Peacekeepers", 1.0);
-			Item("wpn_1hb_ham_d_fpp_r1_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r0_PK", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r1_PK", 1.0);
 			StatusRestriction(4, 5);
-			Item("wpn_1hb_ham_d_fpp_r2_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r2_PK", 1.0);
 			StatusRestriction(6, 7);
-			Item("wpn_1hb_ham_d_fpp_r3_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r3_PK", 1.0);
 			StatusRestriction(8, 9);
-			Item("wpn_1hb_ham_d_fpp_r4_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r4_PK", 1.0);
 			StatusRestriction(10, 11);
-			Item("wpn_1hb_ham_d_fpp_r5_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r5_PK", 1.0);
 			StatusRestriction(12, 13);
-			Item("wpn_1hb_ham_d_fpp_r6_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r6_PK", 1.0);
 			StatusRestriction(14, 15);
-			Item("wpn_1hb_ham_d_fpp_r7_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r7_PK", 1.0);
 			StatusRestriction(16, 17);
-			Item("wpn_1hb_ham_d_fpp_r8_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r8_PK", 1.0);
 			StatusRestriction(18, 19);
-			Item("wpn_1hb_ham_d_fpp_r9_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r9_PK", 1.0);
 			StatusRestriction(20, 21);
-			Item("wpn_1hb_ham_d_fpp_r10_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r10_PK", 1.0);
 			StatusRestriction(22, 23);
-			Item("wpn_1hb_ham_d_fpp_r11_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r11_PK", 1.0);
 			StatusRestriction(24, 25);
-			Item("wpn_1hb_ham_d_fpp_r12_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r12_PK", 1.0);
 			StatusRestriction(26, 27);
-			Item("wpn_1hb_ham_d_fpp_r13_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r13_PK", 1.0);
 			StatusRestriction(28, 29);
-			Item("wpn_1hb_ham_d_fpp_r14_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r14_PK", 1.0);
 			StatusRestriction(30, 31);
-			Item("wpn_1hb_ham_d_fpp_r15_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r15_PK", 1.0);
 			StatusRestriction(32, 33);
-			Item("wpn_1hb_ham_d_fpp_r16_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r16_PK", 1.0);
 			StatusRestriction(34, 35);
-			Item("wpn_1hb_ham_d_fpp_r17_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r17_PK", 1.0);
 			StatusRestriction(36, 50);
-			Item("wpn_1hb_ham_d_fpp_r18_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r18_PK", 1.0);
 			
 			
 			
 			NewGamePlus();
 			StatusRestriction(0, 3);
-			Item("wpn_1hb_ham_d_fpp_r0_Peacekeepers", 1.0);
-			Item("wpn_1hb_ham_d_fpp_r1_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r0_PK", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r1_PK", 1.0);
 			StatusRestriction(4, 5);
-			Item("wpn_1hb_ham_d_fpp_r2_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r2_PK", 1.0);
 			StatusRestriction(6, 7);
-			Item("wpn_1hb_ham_d_fpp_r3_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r3_PK", 1.0);
 			StatusRestriction(8, 9);
-			Item("wpn_1hb_ham_d_fpp_r4_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r4_PK", 1.0);
 			StatusRestriction(10, 11);
-			Item("wpn_1hb_ham_d_fpp_r5_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r5_PK", 1.0);
 			StatusRestriction(12, 13);
-			Item("wpn_1hb_ham_d_fpp_r6_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r6_PK", 1.0);
 			StatusRestriction(14, 15);
-			Item("wpn_1hb_ham_d_fpp_r7_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r7_PK", 1.0);
 			StatusRestriction(16, 17);
-			Item("wpn_1hb_ham_d_fpp_r8_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r8_PK", 1.0);
 			StatusRestriction(18, 19);
-			Item("wpn_1hb_ham_d_fpp_r9_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r9_PK", 1.0);
 			StatusRestriction(20, 21);
-			Item("wpn_1hb_ham_d_fpp_r10_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r10_PK", 1.0);
 			StatusRestriction(22, 23);
-			Item("wpn_1hb_ham_d_fpp_r11_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r11_PK", 1.0);
 			StatusRestriction(24, 25);
-			Item("wpn_1hb_ham_d_fpp_r12_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r12_PK", 1.0);
 			StatusRestriction(26, 27);
-			Item("wpn_1hb_ham_d_fpp_r13_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r13_PK", 1.0);
 			StatusRestriction(28, 29);
-			Item("wpn_1hb_ham_d_fpp_r14_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r14_PK", 1.0);
 			StatusRestriction(30, 31);
-			Item("wpn_1hb_ham_d_fpp_r15_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r15_PK", 1.0);
 			StatusRestriction(32, 33);
-			Item("wpn_1hb_ham_d_fpp_r16_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r16_PK", 1.0);
 			StatusRestriction(34, 35);
-			Item("wpn_1hb_ham_d_fpp_r17_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r17_PK", 1.0);
 			StatusRestriction(36, 37);
-			Item("wpn_1hb_ham_d_fpp_r18_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r18_PK", 1.0);
 			StatusRestriction(38, 39);
-			Item("wpn_1hb_ham_d_fpp_r19_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r19_PK", 1.0);
 			StatusRestriction(40, 41);
-			Item("wpn_1hb_ham_d_fpp_r20_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r20_PK", 1.0);
 			StatusRestriction(42, 43);
-			Item("wpn_1hb_ham_d_fpp_r21_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r21_PK", 1.0);
 			StatusRestriction(44, 46);
-			Item("wpn_1hb_ham_d_fpp_r22_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r22_PK", 1.0);
 			StatusRestriction(47, 49);
-			Item("wpn_1hb_ham_d_fpp_r23_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r23_PK", 1.0);
 			StatusRestriction(50, 50);
-			Item("wpn_1hb_ham_d_fpp_r24_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_d_fpp_r24_PK", 1.0);
         }
     }
 	
@@ -18301,95 +18836,95 @@ export int Other = 9;
         Set(Other, weight, min_amount, max_amount, prob)
         {
 			StatusRestriction(0, 3);
-			Item("wpn_1hb_ham_k_fpp_r0_Peacekeepers", 1.0);
-			Item("wpn_1hb_ham_k_fpp_r1_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r0_PK", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r1_PK", 1.0);
 			StatusRestriction(4, 5);
-			Item("wpn_1hb_ham_k_fpp_r2_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r2_PK", 1.0);
 			StatusRestriction(6, 7);
-			Item("wpn_1hb_ham_k_fpp_r3_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r3_PK", 1.0);
 			StatusRestriction(8, 9);
-			Item("wpn_1hb_ham_k_fpp_r4_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r4_PK", 1.0);
 			StatusRestriction(10, 11);
-			Item("wpn_1hb_ham_k_fpp_r5_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r5_PK", 1.0);
 			StatusRestriction(12, 13);
-			Item("wpn_1hb_ham_k_fpp_r6_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r6_PK", 1.0);
 			StatusRestriction(14, 15);
-			Item("wpn_1hb_ham_k_fpp_r7_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r7_PK", 1.0);
 			StatusRestriction(16, 17);
-			Item("wpn_1hb_ham_k_fpp_r8_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r8_PK", 1.0);
 			StatusRestriction(18, 19);
-			Item("wpn_1hb_ham_k_fpp_r9_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r9_PK", 1.0);
 			StatusRestriction(20, 21);
-			Item("wpn_1hb_ham_k_fpp_r10_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r10_PK", 1.0);
 			StatusRestriction(22, 23);
-			Item("wpn_1hb_ham_k_fpp_r11_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r11_PK", 1.0);
 			StatusRestriction(24, 25);
-			Item("wpn_1hb_ham_k_fpp_r12_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r12_PK", 1.0);
 			StatusRestriction(26, 27);
-			Item("wpn_1hb_ham_k_fpp_r13_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r13_PK", 1.0);
 			StatusRestriction(28, 29);
-			Item("wpn_1hb_ham_k_fpp_r14_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r14_PK", 1.0);
 			StatusRestriction(30, 31);
-			Item("wpn_1hb_ham_k_fpp_r15_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r15_PK", 1.0);
 			StatusRestriction(32, 33);
-			Item("wpn_1hb_ham_k_fpp_r16_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r16_PK", 1.0);
 			StatusRestriction(34, 35);
-			Item("wpn_1hb_ham_k_fpp_r17_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r17_PK", 1.0);
 			StatusRestriction(36, 50);
-			Item("wpn_1hb_ham_k_fpp_r18_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r18_PK", 1.0);
 			
 			
 			
 			NewGamePlus();
 			StatusRestriction(0, 3);
-			Item("wpn_1hb_ham_k_fpp_r0_Peacekeepers", 1.0);
-			Item("wpn_1hb_ham_k_fpp_r1_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r0_PK", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r1_PK", 1.0);
 			StatusRestriction(4, 5);
-			Item("wpn_1hb_ham_k_fpp_r2_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r2_PK", 1.0);
 			StatusRestriction(6, 7);
-			Item("wpn_1hb_ham_k_fpp_r3_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r3_PK", 1.0);
 			StatusRestriction(8, 9);
-			Item("wpn_1hb_ham_k_fpp_r4_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r4_PK", 1.0);
 			StatusRestriction(10, 11);
-			Item("wpn_1hb_ham_k_fpp_r5_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r5_PK", 1.0);
 			StatusRestriction(12, 13);
-			Item("wpn_1hb_ham_k_fpp_r6_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r6_PK", 1.0);
 			StatusRestriction(14, 15);
-			Item("wpn_1hb_ham_k_fpp_r7_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r7_PK", 1.0);
 			StatusRestriction(16, 17);
-			Item("wpn_1hb_ham_k_fpp_r8_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r8_PK", 1.0);
 			StatusRestriction(18, 19);
-			Item("wpn_1hb_ham_k_fpp_r9_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r9_PK", 1.0);
 			StatusRestriction(20, 21);
-			Item("wpn_1hb_ham_k_fpp_r10_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r10_PK", 1.0);
 			StatusRestriction(22, 23);
-			Item("wpn_1hb_ham_k_fpp_r11_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r11_PK", 1.0);
 			StatusRestriction(24, 25);
-			Item("wpn_1hb_ham_k_fpp_r12_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r12_PK", 1.0);
 			StatusRestriction(26, 27);
-			Item("wpn_1hb_ham_k_fpp_r13_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r13_PK", 1.0);
 			StatusRestriction(28, 29);
-			Item("wpn_1hb_ham_k_fpp_r14_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r14_PK", 1.0);
 			StatusRestriction(30, 31);
-			Item("wpn_1hb_ham_k_fpp_r15_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r15_PK", 1.0);
 			StatusRestriction(32, 33);
-			Item("wpn_1hb_ham_k_fpp_r16_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r16_PK", 1.0);
 			StatusRestriction(34, 35);
-			Item("wpn_1hb_ham_k_fpp_r17_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r17_PK", 1.0);
 			StatusRestriction(36, 37);
-			Item("wpn_1hb_ham_k_fpp_r18_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r18_PK", 1.0);
 			StatusRestriction(38, 39);
-			Item("wpn_1hb_ham_k_fpp_r19_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r19_PK", 1.0);
 			StatusRestriction(40, 41);
-			Item("wpn_1hb_ham_k_fpp_r20_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r20_PK", 1.0);
 			StatusRestriction(42, 43);
-			Item("wpn_1hb_ham_k_fpp_r21_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r21_PK", 1.0);
 			StatusRestriction(44, 46);
-			Item("wpn_1hb_ham_k_fpp_r22_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r22_PK", 1.0);
 			StatusRestriction(47, 49);
-			Item("wpn_1hb_ham_k_fpp_r23_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r23_PK", 1.0);
 			StatusRestriction(50, 50);
-			Item("wpn_1hb_ham_k_fpp_r24_Peacekeepers", 1.0);
+			Item("wpn_1hb_ham_k_fpp_r24_PK", 1.0);
         }
     }
 	
@@ -18399,95 +18934,95 @@ export int Other = 9;
         Set(Other, weight, min_amount, max_amount, prob)
         {
 			StatusRestriction(0, 3);
-			Item("wpn_1hb_stk_e_fpp_r0_Peacekeepers", 1.0);
-			Item("wpn_1hb_stk_e_fpp_r1_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r0_PK", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r1_PK", 1.0);
 			StatusRestriction(4, 5);
-			Item("wpn_1hb_stk_e_fpp_r2_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r2_PK", 1.0);
 			StatusRestriction(6, 7);
-			Item("wpn_1hb_stk_e_fpp_r3_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r3_PK", 1.0);
 			StatusRestriction(8, 9);
-			Item("wpn_1hb_stk_e_fpp_r4_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r4_PK", 1.0);
 			StatusRestriction(10, 11);
-			Item("wpn_1hb_stk_e_fpp_r5_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r5_PK", 1.0);
 			StatusRestriction(12, 13);
-			Item("wpn_1hb_stk_e_fpp_r6_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r6_PK", 1.0);
 			StatusRestriction(14, 15);
-			Item("wpn_1hb_stk_e_fpp_r7_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r7_PK", 1.0);
 			StatusRestriction(16, 17);
-			Item("wpn_1hb_stk_e_fpp_r8_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r8_PK", 1.0);
 			StatusRestriction(18, 19);
-			Item("wpn_1hb_stk_e_fpp_r9_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r9_PK", 1.0);
 			StatusRestriction(20, 21);
-			Item("wpn_1hb_stk_e_fpp_r10_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r10_PK", 1.0);
 			StatusRestriction(22, 23);
-			Item("wpn_1hb_stk_e_fpp_r11_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r11_PK", 1.0);
 			StatusRestriction(24, 25);
-			Item("wpn_1hb_stk_e_fpp_r12_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r12_PK", 1.0);
 			StatusRestriction(26, 27);
-			Item("wpn_1hb_stk_e_fpp_r13_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r13_PK", 1.0);
 			StatusRestriction(28, 29);
-			Item("wpn_1hb_stk_e_fpp_r14_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r14_PK", 1.0);
 			StatusRestriction(30, 31);
-			Item("wpn_1hb_stk_e_fpp_r15_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r15_PK", 1.0);
 			StatusRestriction(32, 33);
-			Item("wpn_1hb_stk_e_fpp_r16_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r16_PK", 1.0);
 			StatusRestriction(34, 35);
-			Item("wpn_1hb_stk_e_fpp_r17_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r17_PK", 1.0);
 			StatusRestriction(36, 50);
-			Item("wpn_1hb_stk_e_fpp_r18_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r18_PK", 1.0);
 			
 			
 			
 			NewGamePlus();
 			StatusRestriction(0, 3);
-			Item("wpn_1hb_stk_e_fpp_r0_Peacekeepers", 1.0);
-			Item("wpn_1hb_stk_e_fpp_r1_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r0_PK", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r1_PK", 1.0);
 			StatusRestriction(4, 5);
-			Item("wpn_1hb_stk_e_fpp_r2_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r2_PK", 1.0);
 			StatusRestriction(6, 7);
-			Item("wpn_1hb_stk_e_fpp_r3_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r3_PK", 1.0);
 			StatusRestriction(8, 9);
-			Item("wpn_1hb_stk_e_fpp_r4_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r4_PK", 1.0);
 			StatusRestriction(10, 11);
-			Item("wpn_1hb_stk_e_fpp_r5_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r5_PK", 1.0);
 			StatusRestriction(12, 13);
-			Item("wpn_1hb_stk_e_fpp_r6_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r6_PK", 1.0);
 			StatusRestriction(14, 15);
-			Item("wpn_1hb_stk_e_fpp_r7_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r7_PK", 1.0);
 			StatusRestriction(16, 17);
-			Item("wpn_1hb_stk_e_fpp_r8_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r8_PK", 1.0);
 			StatusRestriction(18, 19);
-			Item("wpn_1hb_stk_e_fpp_r9_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r9_PK", 1.0);
 			StatusRestriction(20, 21);
-			Item("wpn_1hb_stk_e_fpp_r10_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r10_PK", 1.0);
 			StatusRestriction(22, 23);
-			Item("wpn_1hb_stk_e_fpp_r11_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r11_PK", 1.0);
 			StatusRestriction(24, 25);
-			Item("wpn_1hb_stk_e_fpp_r12_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r12_PK", 1.0);
 			StatusRestriction(26, 27);
-			Item("wpn_1hb_stk_e_fpp_r13_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r13_PK", 1.0);
 			StatusRestriction(28, 29);
-			Item("wpn_1hb_stk_e_fpp_r14_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r14_PK", 1.0);
 			StatusRestriction(30, 31);
-			Item("wpn_1hb_stk_e_fpp_r15_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r15_PK", 1.0);
 			StatusRestriction(32, 33);
-			Item("wpn_1hb_stk_e_fpp_r16_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r16_PK", 1.0);
 			StatusRestriction(34, 35);
-			Item("wpn_1hb_stk_e_fpp_r17_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r17_PK", 1.0);
 			StatusRestriction(36, 37);
-			Item("wpn_1hb_stk_e_fpp_r18_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r18_PK", 1.0);
 			StatusRestriction(38, 39);
-			Item("wpn_1hb_stk_e_fpp_r19_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r19_PK", 1.0);
 			StatusRestriction(40, 41);
-			Item("wpn_1hb_stk_e_fpp_r20_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r20_PK", 1.0);
 			StatusRestriction(42, 43);
-			Item("wpn_1hb_stk_e_fpp_r21_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r21_PK", 1.0);
 			StatusRestriction(44, 46);
-			Item("wpn_1hb_stk_e_fpp_r22_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r22_PK", 1.0);
 			StatusRestriction(47, 49);
-			Item("wpn_1hb_stk_e_fpp_r23_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r23_PK", 1.0);
 			StatusRestriction(50, 50);
-			Item("wpn_1hb_stk_e_fpp_r24_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_e_fpp_r24_PK", 1.0);
         }
     }
 	
@@ -18497,95 +19032,95 @@ export int Other = 9;
         Set(Other, weight, min_amount, max_amount, prob)
         {
 			StatusRestriction(0, 3);
-			Item("wpn_1hb_stk_d_fpp_r0_Peacekeepers", 1.0);
-			Item("wpn_1hb_stk_d_fpp_r1_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r0_PK", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r1_PK", 1.0);
 			StatusRestriction(4, 5);
-			Item("wpn_1hb_stk_d_fpp_r2_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r2_PK", 1.0);
 			StatusRestriction(6, 7);
-			Item("wpn_1hb_stk_d_fpp_r3_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r3_PK", 1.0);
 			StatusRestriction(8, 9);
-			Item("wpn_1hb_stk_d_fpp_r4_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r4_PK", 1.0);
 			StatusRestriction(10, 11);
-			Item("wpn_1hb_stk_d_fpp_r5_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r5_PK", 1.0);
 			StatusRestriction(12, 13);
-			Item("wpn_1hb_stk_d_fpp_r6_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r6_PK", 1.0);
 			StatusRestriction(14, 15);
-			Item("wpn_1hb_stk_d_fpp_r7_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r7_PK", 1.0);
 			StatusRestriction(16, 17);
-			Item("wpn_1hb_stk_d_fpp_r8_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r8_PK", 1.0);
 			StatusRestriction(18, 19);
-			Item("wpn_1hb_stk_d_fpp_r9_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r9_PK", 1.0);
 			StatusRestriction(20, 21);
-			Item("wpn_1hb_stk_d_fpp_r10_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r10_PK", 1.0);
 			StatusRestriction(22, 23);
-			Item("wpn_1hb_stk_d_fpp_r11_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r11_PK", 1.0);
 			StatusRestriction(24, 25);
-			Item("wpn_1hb_stk_d_fpp_r12_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r12_PK", 1.0);
 			StatusRestriction(26, 27);
-			Item("wpn_1hb_stk_d_fpp_r13_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r13_PK", 1.0);
 			StatusRestriction(28, 29);
-			Item("wpn_1hb_stk_d_fpp_r14_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r14_PK", 1.0);
 			StatusRestriction(30, 31);
-			Item("wpn_1hb_stk_d_fpp_r15_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r15_PK", 1.0);
 			StatusRestriction(32, 33);
-			Item("wpn_1hb_stk_d_fpp_r16_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r16_PK", 1.0);
 			StatusRestriction(34, 35);
-			Item("wpn_1hb_stk_d_fpp_r17_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r17_PK", 1.0);
 			StatusRestriction(36, 50);
-			Item("wpn_1hb_stk_d_fpp_r18_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r18_PK", 1.0);
 			
 			
 			
 			NewGamePlus();
 			StatusRestriction(0, 3);
-			Item("wpn_1hb_stk_d_fpp_r0_Peacekeepers", 1.0);
-			Item("wpn_1hb_stk_d_fpp_r1_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r0_PK", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r1_PK", 1.0);
 			StatusRestriction(4, 5);
-			Item("wpn_1hb_stk_d_fpp_r2_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r2_PK", 1.0);
 			StatusRestriction(6, 7);
-			Item("wpn_1hb_stk_d_fpp_r3_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r3_PK", 1.0);
 			StatusRestriction(8, 9);
-			Item("wpn_1hb_stk_d_fpp_r4_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r4_PK", 1.0);
 			StatusRestriction(10, 11);
-			Item("wpn_1hb_stk_d_fpp_r5_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r5_PK", 1.0);
 			StatusRestriction(12, 13);
-			Item("wpn_1hb_stk_d_fpp_r6_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r6_PK", 1.0);
 			StatusRestriction(14, 15);
-			Item("wpn_1hb_stk_d_fpp_r7_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r7_PK", 1.0);
 			StatusRestriction(16, 17);
-			Item("wpn_1hb_stk_d_fpp_r8_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r8_PK", 1.0);
 			StatusRestriction(18, 19);
-			Item("wpn_1hb_stk_d_fpp_r9_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r9_PK", 1.0);
 			StatusRestriction(20, 21);
-			Item("wpn_1hb_stk_d_fpp_r10_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r10_PK", 1.0);
 			StatusRestriction(22, 23);
-			Item("wpn_1hb_stk_d_fpp_r11_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r11_PK", 1.0);
 			StatusRestriction(24, 25);
-			Item("wpn_1hb_stk_d_fpp_r12_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r12_PK", 1.0);
 			StatusRestriction(26, 27);
-			Item("wpn_1hb_stk_d_fpp_r13_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r13_PK", 1.0);
 			StatusRestriction(28, 29);
-			Item("wpn_1hb_stk_d_fpp_r14_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r14_PK", 1.0);
 			StatusRestriction(30, 31);
-			Item("wpn_1hb_stk_d_fpp_r15_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r15_PK", 1.0);
 			StatusRestriction(32, 33);
-			Item("wpn_1hb_stk_d_fpp_r16_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r16_PK", 1.0);
 			StatusRestriction(34, 35);
-			Item("wpn_1hb_stk_d_fpp_r17_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r17_PK", 1.0);
 			StatusRestriction(36, 37);
-			Item("wpn_1hb_stk_d_fpp_r18_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r18_PK", 1.0);
 			StatusRestriction(38, 39);
-			Item("wpn_1hb_stk_d_fpp_r19_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r19_PK", 1.0);
 			StatusRestriction(40, 41);
-			Item("wpn_1hb_stk_d_fpp_r20_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r20_PK", 1.0);
 			StatusRestriction(42, 43);
-			Item("wpn_1hb_stk_d_fpp_r21_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r21_PK", 1.0);
 			StatusRestriction(44, 46);
-			Item("wpn_1hb_stk_d_fpp_r22_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r22_PK", 1.0);
 			StatusRestriction(47, 49);
-			Item("wpn_1hb_stk_d_fpp_r23_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r23_PK", 1.0);
 			StatusRestriction(50, 50);
-			Item("wpn_1hb_stk_d_fpp_r24_Peacekeepers", 1.0);
+			Item("wpn_1hb_stk_d_fpp_r24_PK", 1.0);
         }
     }
 	
@@ -18597,95 +19132,95 @@ export int Other = 9;
         Set(Other, weight, min_amount, max_amount, prob)
         {
 			StatusRestriction(0, 3);
-			Item("wpn_2hs_e_fpp_r0_Peacekeepers", 1.0);
-			Item("wpn_2hs_e_fpp_r1_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r0_PK", 1.0);
+			Item("wpn_2hs_e_fpp_r1_PK", 1.0);
 			StatusRestriction(4, 5);
-			Item("wpn_2hs_e_fpp_r2_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r2_PK", 1.0);
 			StatusRestriction(6, 7);
-			Item("wpn_2hs_e_fpp_r3_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r3_PK", 1.0);
 			StatusRestriction(8, 9);
-			Item("wpn_2hs_e_fpp_r4_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r4_PK", 1.0);
 			StatusRestriction(10, 11);
-			Item("wpn_2hs_e_fpp_r5_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r5_PK", 1.0);
 			StatusRestriction(12, 13);
-			Item("wpn_2hs_e_fpp_r6_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r6_PK", 1.0);
 			StatusRestriction(14, 15);
-			Item("wpn_2hs_e_fpp_r7_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r7_PK", 1.0);
 			StatusRestriction(16, 17);
-			Item("wpn_2hs_e_fpp_r8_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r8_PK", 1.0);
 			StatusRestriction(18, 19);
-			Item("wpn_2hs_e_fpp_r9_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r9_PK", 1.0);
 			StatusRestriction(20, 21);
-			Item("wpn_2hs_e_fpp_r10_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r10_PK", 1.0);
 			StatusRestriction(22, 23);
-			Item("wpn_2hs_e_fpp_r11_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r11_PK", 1.0);
 			StatusRestriction(24, 25);
-			Item("wpn_2hs_e_fpp_r12_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r12_PK", 1.0);
 			StatusRestriction(26, 27);
-			Item("wpn_2hs_e_fpp_r13_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r13_PK", 1.0);
 			StatusRestriction(28, 29);
-			Item("wpn_2hs_e_fpp_r14_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r14_PK", 1.0);
 			StatusRestriction(30, 31);
-			Item("wpn_2hs_e_fpp_r15_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r15_PK", 1.0);
 			StatusRestriction(32, 33);
-			Item("wpn_2hs_e_fpp_r16_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r16_PK", 1.0);
 			StatusRestriction(34, 35);
-			Item("wpn_2hs_e_fpp_r17_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r17_PK", 1.0);
 			StatusRestriction(36, 50);
-			Item("wpn_2hs_e_fpp_r18_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r18_PK", 1.0);
 			
 			
 			
 			NewGamePlus();
 			StatusRestriction(0, 3);
-			Item("wpn_2hs_e_fpp_r0_Peacekeepers", 1.0);
-			Item("wpn_2hs_e_fpp_r1_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r0_PK", 1.0);
+			Item("wpn_2hs_e_fpp_r1_PK", 1.0);
 			StatusRestriction(4, 5);
-			Item("wpn_2hs_e_fpp_r2_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r2_PK", 1.0);
 			StatusRestriction(6, 7);
-			Item("wpn_2hs_e_fpp_r3_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r3_PK", 1.0);
 			StatusRestriction(8, 9);
-			Item("wpn_2hs_e_fpp_r4_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r4_PK", 1.0);
 			StatusRestriction(10, 11);
-			Item("wpn_2hs_e_fpp_r5_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r5_PK", 1.0);
 			StatusRestriction(12, 13);
-			Item("wpn_2hs_e_fpp_r6_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r6_PK", 1.0);
 			StatusRestriction(14, 15);
-			Item("wpn_2hs_e_fpp_r7_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r7_PK", 1.0);
 			StatusRestriction(16, 17);
-			Item("wpn_2hs_e_fpp_r8_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r8_PK", 1.0);
 			StatusRestriction(18, 19);
-			Item("wpn_2hs_e_fpp_r9_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r9_PK", 1.0);
 			StatusRestriction(20, 21);
-			Item("wpn_2hs_e_fpp_r10_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r10_PK", 1.0);
 			StatusRestriction(22, 23);
-			Item("wpn_2hs_e_fpp_r11_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r11_PK", 1.0);
 			StatusRestriction(24, 25);
-			Item("wpn_2hs_e_fpp_r12_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r12_PK", 1.0);
 			StatusRestriction(26, 27);
-			Item("wpn_2hs_e_fpp_r13_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r13_PK", 1.0);
 			StatusRestriction(28, 29);
-			Item("wpn_2hs_e_fpp_r14_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r14_PK", 1.0);
 			StatusRestriction(30, 31);
-			Item("wpn_2hs_e_fpp_r15_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r15_PK", 1.0);
 			StatusRestriction(32, 33);
-			Item("wpn_2hs_e_fpp_r16_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r16_PK", 1.0);
 			StatusRestriction(34, 35);
-			Item("wpn_2hs_e_fpp_r17_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r17_PK", 1.0);
 			StatusRestriction(36, 37);
-			Item("wpn_2hs_e_fpp_r18_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r18_PK", 1.0);
 			StatusRestriction(38, 39);
-			Item("wpn_2hs_e_fpp_r19_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r19_PK", 1.0);
 			StatusRestriction(40, 41);
-			Item("wpn_2hs_e_fpp_r20_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r20_PK", 1.0);
 			StatusRestriction(42, 43);
-			Item("wpn_2hs_e_fpp_r21_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r21_PK", 1.0);
 			StatusRestriction(44, 46);
-			Item("wpn_2hs_e_fpp_r22_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r22_PK", 1.0);
 			StatusRestriction(47, 49);
-			Item("wpn_2hs_e_fpp_r23_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r23_PK", 1.0);
 			StatusRestriction(50, 50);
-			Item("wpn_2hs_e_fpp_r24_Peacekeepers", 1.0);
+			Item("wpn_2hs_e_fpp_r24_PK", 1.0);
         }
     }
 	
@@ -18695,95 +19230,95 @@ export int Other = 9;
         Set(Other, weight, min_amount, max_amount, prob)
         {
 			StatusRestriction(0, 3);
-			Item("wpn_2hs_c_fpp_r0_Peacekeepers", 1.0);
-			Item("wpn_2hs_c_fpp_r1_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r0_PK", 1.0);
+			Item("wpn_2hs_c_fpp_r1_PK", 1.0);
 			StatusRestriction(4, 5);
-			Item("wpn_2hs_c_fpp_r2_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r2_PK", 1.0);
 			StatusRestriction(6, 7);
-			Item("wpn_2hs_c_fpp_r3_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r3_PK", 1.0);
 			StatusRestriction(8, 9);
-			Item("wpn_2hs_c_fpp_r4_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r4_PK", 1.0);
 			StatusRestriction(10, 11);
-			Item("wpn_2hs_c_fpp_r5_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r5_PK", 1.0);
 			StatusRestriction(12, 13);
-			Item("wpn_2hs_c_fpp_r6_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r6_PK", 1.0);
 			StatusRestriction(14, 15);
-			Item("wpn_2hs_c_fpp_r7_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r7_PK", 1.0);
 			StatusRestriction(16, 17);
-			Item("wpn_2hs_c_fpp_r8_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r8_PK", 1.0);
 			StatusRestriction(18, 19);
-			Item("wpn_2hs_c_fpp_r9_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r9_PK", 1.0);
 			StatusRestriction(20, 21);
-			Item("wpn_2hs_c_fpp_r10_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r10_PK", 1.0);
 			StatusRestriction(22, 23);
-			Item("wpn_2hs_c_fpp_r11_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r11_PK", 1.0);
 			StatusRestriction(24, 25);
-			Item("wpn_2hs_c_fpp_r12_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r12_PK", 1.0);
 			StatusRestriction(26, 27);
-			Item("wpn_2hs_c_fpp_r13_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r13_PK", 1.0);
 			StatusRestriction(28, 29);
-			Item("wpn_2hs_c_fpp_r14_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r14_PK", 1.0);
 			StatusRestriction(30, 31);
-			Item("wpn_2hs_c_fpp_r15_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r15_PK", 1.0);
 			StatusRestriction(32, 33);
-			Item("wpn_2hs_c_fpp_r16_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r16_PK", 1.0);
 			StatusRestriction(34, 35);
-			Item("wpn_2hs_c_fpp_r17_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r17_PK", 1.0);
 			StatusRestriction(36, 50);
-			Item("wpn_2hs_c_fpp_r18_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r18_PK", 1.0);
 			
 			
 			
 			NewGamePlus();
 			StatusRestriction(0, 3);
-			Item("wpn_2hs_c_fpp_r0_Peacekeepers", 1.0);
-			Item("wpn_2hs_c_fpp_r1_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r0_PK", 1.0);
+			Item("wpn_2hs_c_fpp_r1_PK", 1.0);
 			StatusRestriction(4, 5);
-			Item("wpn_2hs_c_fpp_r2_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r2_PK", 1.0);
 			StatusRestriction(6, 7);
-			Item("wpn_2hs_c_fpp_r3_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r3_PK", 1.0);
 			StatusRestriction(8, 9);
-			Item("wpn_2hs_c_fpp_r4_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r4_PK", 1.0);
 			StatusRestriction(10, 11);
-			Item("wpn_2hs_c_fpp_r5_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r5_PK", 1.0);
 			StatusRestriction(12, 13);
-			Item("wpn_2hs_c_fpp_r6_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r6_PK", 1.0);
 			StatusRestriction(14, 15);
-			Item("wpn_2hs_c_fpp_r7_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r7_PK", 1.0);
 			StatusRestriction(16, 17);
-			Item("wpn_2hs_c_fpp_r8_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r8_PK", 1.0);
 			StatusRestriction(18, 19);
-			Item("wpn_2hs_c_fpp_r9_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r9_PK", 1.0);
 			StatusRestriction(20, 21);
-			Item("wpn_2hs_c_fpp_r10_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r10_PK", 1.0);
 			StatusRestriction(22, 23);
-			Item("wpn_2hs_c_fpp_r11_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r11_PK", 1.0);
 			StatusRestriction(24, 25);
-			Item("wpn_2hs_c_fpp_r12_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r12_PK", 1.0);
 			StatusRestriction(26, 27);
-			Item("wpn_2hs_c_fpp_r13_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r13_PK", 1.0);
 			StatusRestriction(28, 29);
-			Item("wpn_2hs_c_fpp_r14_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r14_PK", 1.0);
 			StatusRestriction(30, 31);
-			Item("wpn_2hs_c_fpp_r15_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r15_PK", 1.0);
 			StatusRestriction(32, 33);
-			Item("wpn_2hs_c_fpp_r16_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r16_PK", 1.0);
 			StatusRestriction(34, 35);
-			Item("wpn_2hs_c_fpp_r17_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r17_PK", 1.0);
 			StatusRestriction(36, 37);
-			Item("wpn_2hs_c_fpp_r18_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r18_PK", 1.0);
 			StatusRestriction(38, 39);
-			Item("wpn_2hs_c_fpp_r19_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r19_PK", 1.0);
 			StatusRestriction(40, 41);
-			Item("wpn_2hs_c_fpp_r20_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r20_PK", 1.0);
 			StatusRestriction(42, 43);
-			Item("wpn_2hs_c_fpp_r21_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r21_PK", 1.0);
 			StatusRestriction(44, 46);
-			Item("wpn_2hs_c_fpp_r22_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r22_PK", 1.0);
 			StatusRestriction(47, 49);
-			Item("wpn_2hs_c_fpp_r23_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r23_PK", 1.0);
 			StatusRestriction(50, 50);
-			Item("wpn_2hs_c_fpp_r24_Peacekeepers", 1.0);
+			Item("wpn_2hs_c_fpp_r24_PK", 1.0);
         }
     }
 	
@@ -18793,95 +19328,95 @@ export int Other = 9;
         Set(Other, weight, min_amount, max_amount, prob)
         {
 			StatusRestriction(0, 3);
-			Item("wpn_2hb_a_fpp_r0_Peacekeepers", 1.0);
-			Item("wpn_2hb_a_fpp_r1_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r0_PK", 1.0);
+			Item("wpn_2hb_a_fpp_r1_PK", 1.0);
 			StatusRestriction(4, 5);
-			Item("wpn_2hb_a_fpp_r2_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r2_PK", 1.0);
 			StatusRestriction(6, 7);
-			Item("wpn_2hb_a_fpp_r3_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r3_PK", 1.0);
 			StatusRestriction(8, 9);
-			Item("wpn_2hb_a_fpp_r4_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r4_PK", 1.0);
 			StatusRestriction(10, 11);
-			Item("wpn_2hb_a_fpp_r5_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r5_PK", 1.0);
 			StatusRestriction(12, 13);
-			Item("wpn_2hb_a_fpp_r6_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r6_PK", 1.0);
 			StatusRestriction(14, 15);
-			Item("wpn_2hb_a_fpp_r7_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r7_PK", 1.0);
 			StatusRestriction(16, 17);
-			Item("wpn_2hb_a_fpp_r8_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r8_PK", 1.0);
 			StatusRestriction(18, 19);
-			Item("wpn_2hb_a_fpp_r9_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r9_PK", 1.0);
 			StatusRestriction(20, 21);
-			Item("wpn_2hb_a_fpp_r10_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r10_PK", 1.0);
 			StatusRestriction(22, 23);
-			Item("wpn_2hb_a_fpp_r11_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r11_PK", 1.0);
 			StatusRestriction(24, 25);
-			Item("wpn_2hb_a_fpp_r12_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r12_PK", 1.0);
 			StatusRestriction(26, 27);
-			Item("wpn_2hb_a_fpp_r13_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r13_PK", 1.0);
 			StatusRestriction(28, 29);
-			Item("wpn_2hb_a_fpp_r14_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r14_PK", 1.0);
 			StatusRestriction(30, 31);
-			Item("wpn_2hb_a_fpp_r15_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r15_PK", 1.0);
 			StatusRestriction(32, 33);
-			Item("wpn_2hb_a_fpp_r16_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r16_PK", 1.0);
 			StatusRestriction(34, 35);
-			Item("wpn_2hb_a_fpp_r17_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r17_PK", 1.0);
 			StatusRestriction(36, 50);
-			Item("wpn_2hb_a_fpp_r18_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r18_PK", 1.0);
 			
 			
 			
 			NewGamePlus();
 			StatusRestriction(0, 3);
-			Item("wpn_2hb_a_fpp_r0_Peacekeepers", 1.0);
-			Item("wpn_2hb_a_fpp_r1_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r0_PK", 1.0);
+			Item("wpn_2hb_a_fpp_r1_PK", 1.0);
 			StatusRestriction(4, 5);
-			Item("wpn_2hb_a_fpp_r2_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r2_PK", 1.0);
 			StatusRestriction(6, 7);
-			Item("wpn_2hb_a_fpp_r3_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r3_PK", 1.0);
 			StatusRestriction(8, 9);
-			Item("wpn_2hb_a_fpp_r4_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r4_PK", 1.0);
 			StatusRestriction(10, 11);
-			Item("wpn_2hb_a_fpp_r5_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r5_PK", 1.0);
 			StatusRestriction(12, 13);
-			Item("wpn_2hb_a_fpp_r6_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r6_PK", 1.0);
 			StatusRestriction(14, 15);
-			Item("wpn_2hb_a_fpp_r7_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r7_PK", 1.0);
 			StatusRestriction(16, 17);
-			Item("wpn_2hb_a_fpp_r8_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r8_PK", 1.0);
 			StatusRestriction(18, 19);
-			Item("wpn_2hb_a_fpp_r9_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r9_PK", 1.0);
 			StatusRestriction(20, 21);
-			Item("wpn_2hb_a_fpp_r10_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r10_PK", 1.0);
 			StatusRestriction(22, 23);
-			Item("wpn_2hb_a_fpp_r11_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r11_PK", 1.0);
 			StatusRestriction(24, 25);
-			Item("wpn_2hb_a_fpp_r12_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r12_PK", 1.0);
 			StatusRestriction(26, 27);
-			Item("wpn_2hb_a_fpp_r13_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r13_PK", 1.0);
 			StatusRestriction(28, 29);
-			Item("wpn_2hb_a_fpp_r14_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r14_PK", 1.0);
 			StatusRestriction(30, 31);
-			Item("wpn_2hb_a_fpp_r15_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r15_PK", 1.0);
 			StatusRestriction(32, 33);
-			Item("wpn_2hb_a_fpp_r16_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r16_PK", 1.0);
 			StatusRestriction(34, 35);
-			Item("wpn_2hb_a_fpp_r17_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r17_PK", 1.0);
 			StatusRestriction(36, 37);
-			Item("wpn_2hb_a_fpp_r18_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r18_PK", 1.0);
 			StatusRestriction(38, 39);
-			Item("wpn_2hb_a_fpp_r19_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r19_PK", 1.0);
 			StatusRestriction(40, 41);
-			Item("wpn_2hb_a_fpp_r20_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r20_PK", 1.0);
 			StatusRestriction(42, 43);
-			Item("wpn_2hb_a_fpp_r21_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r21_PK", 1.0);
 			StatusRestriction(44, 46);
-			Item("wpn_2hb_a_fpp_r22_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r22_PK", 1.0);
 			StatusRestriction(47, 49);
-			Item("wpn_2hb_a_fpp_r23_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r23_PK", 1.0);
 			StatusRestriction(50, 50);
-			Item("wpn_2hb_a_fpp_r24_Peacekeepers", 1.0);
+			Item("wpn_2hb_a_fpp_r24_PK", 1.0);
         }
 	}
 	//Spear
@@ -36790,6 +37325,76 @@ export int Other = 9;
         }
     }
 	
+	sub OutfitsViolet_Bruiser_Chapter1(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Other, weight, min_amount, max_amount, prob)
+        {
+			StatusRestriction(1, 7);
+			Item("Outfitset_MeleeDPS_Torso_Tier1_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Legs_Tier1_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Shoes_Tier1_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Head_Tier1_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Gloves_Tier1_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_TorsoAddon_Tier1_Violet", 1.0);
+			StatusRestriction(8, 13);
+			Item("Outfitset_MeleeDPS_Torso_Tier2_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Legs_Tier2_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Shoes_Tier2_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Head_Tier2_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Gloves_Tier2_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_TorsoAddon_Tier2_Violet", 1.0);
+			StatusRestriction(14, 19);
+			Item("Outfitset_MeleeDPS_Torso_Tier3_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Legs_Tier3_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Shoes_Tier3_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Head_Tier3_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Gloves_Tier3_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_TorsoAddon_Tier3_Violet", 1.0);
+			StatusRestriction(20, 25);
+			Item("Outfitset_MeleeDPS_Torso_Tier4_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Legs_Tier4_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Shoes_Tier4_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Head_Tier4_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Gloves_Tier4_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_TorsoAddon_Tier4_Violet", 1.0);
+			StatusRestriction(26, 31);
+			Item("Outfitset_MeleeDPS_Torso_Tier5_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Legs_Tier5_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Shoes_Tier5_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Head_Tier5_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Gloves_Tier5_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_TorsoAddon_Tier5_Violet", 1.0);
+			StatusRestriction(32, 37);
+			Item("Outfitset_MeleeDPS_Torso_Tier6_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Legs_Tier6_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Shoes_Tier6_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Head_Tier6_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Gloves_Tier6_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_TorsoAddon_Tier6_Violet", 1.0);
+			StatusRestriction(38, 43);
+			Item("Outfitset_MeleeDPS_Torso_Tier7_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Legs_Tier7_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Shoes_Tier7_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Head_Tier7_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Gloves_Tier7_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_TorsoAddon_Tier7_Violet", 1.0);
+			StatusRestriction(44, 49);
+			Item("Outfitset_MeleeDPS_Torso_Tier8_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Legs_Tier8_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Shoes_Tier8_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Head_Tier8_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Gloves_Tier8_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_TorsoAddon_Tier8_Violet", 1.0);
+			StatusRestriction(50, 50);
+			Item("Outfitset_MeleeDPS_Torso_Tier9_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Legs_Tier9_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Shoes_Tier9_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Head_Tier9_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_Gloves_Tier9_Violet", 1.0);
+			Item("Outfitset_MeleeDPS_TorsoAddon_Tier9_Violet", 1.0);
+        }
+    }
+	
 	sub OutfitsViolet_Bruiser_T7(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
     {
         Set(Other, weight, min_amount, max_amount, prob)
@@ -39687,6 +40292,76 @@ export int Other = 9;
         }
     }
 	
+	sub OutfitsOrange_Bruiser_Chapter1(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Other, weight, min_amount, max_amount, prob)
+        {
+			StatusRestriction(1, 7);
+			Item("Outfitset_MeleeDPS_Torso_Tier1_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Legs_Tier1_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Shoes_Tier1_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Head_Tier1_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Gloves_Tier1_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_TorsoAddon_Tier1_Orange", 1.0);
+			StatusRestriction(8, 13);
+			Item("Outfitset_MeleeDPS_Torso_Tier2_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Legs_Tier2_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Shoes_Tier2_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Head_Tier2_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Gloves_Tier2_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_TorsoAddon_Tier2_Orange", 1.0);
+			StatusRestriction(14, 19);
+			Item("Outfitset_MeleeDPS_Torso_Tier3_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Legs_Tier3_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Shoes_Tier3_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Head_Tier3_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Gloves_Tier3_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_TorsoAddon_Tier3_Orange", 1.0);
+			StatusRestriction(20, 25);
+			Item("Outfitset_MeleeDPS_Torso_Tier4_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Legs_Tier4_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Shoes_Tier4_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Head_Tier4_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Gloves_Tier4_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_TorsoAddon_Tier4_Orange", 1.0);
+			StatusRestriction(26, 31);
+			Item("Outfitset_MeleeDPS_Torso_Tier5_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Legs_Tier5_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Shoes_Tier5_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Head_Tier5_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Gloves_Tier5_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_TorsoAddon_Tier5_Orange", 1.0);
+			StatusRestriction(32, 37);
+			Item("Outfitset_MeleeDPS_Torso_Tier6_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Legs_Tier6_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Shoes_Tier6_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Head_Tier6_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Gloves_Tier6_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_TorsoAddon_Tier6_Orange", 1.0);
+			StatusRestriction(38, 43);
+			Item("Outfitset_MeleeDPS_Torso_Tier7_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Legs_Tier7_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Shoes_Tier7_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Head_Tier7_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Gloves_Tier7_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_TorsoAddon_Tier7_Orange", 1.0);
+			StatusRestriction(44, 49);
+			Item("Outfitset_MeleeDPS_Torso_Tier8_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Legs_Tier8_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Shoes_Tier8_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Head_Tier8_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Gloves_Tier8_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_TorsoAddon_Tier8_Orange", 1.0);
+			StatusRestriction(50, 50);
+			Item("Outfitset_MeleeDPS_Torso_Tier9_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Legs_Tier9_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Shoes_Tier9_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Head_Tier9_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_Gloves_Tier9_Orange", 1.0);
+			Item("Outfitset_MeleeDPS_TorsoAddon_Tier9_Orange", 1.0);
+        }
+    }
+	
 	sub OutfitsOrange_Bruiser_T7(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
     {
         Set(Other, weight, min_amount, max_amount, prob)
@@ -41259,6 +41934,916 @@ export int Other = 9;
         }
     }
 	
+	sub Quest_Broadcast_Rowe(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+		Set(Other, weight, min_amount, max_amount, prob)
+        {
+			StatusRestriction(0, 21);
+			Item("wpn_1hs_mach_k_fpp_r10_PK", 1.0);
+			StatusRestriction(22, 23);
+			Item("wpn_1hs_mach_k_fpp_r11_PK", 1.0);
+			StatusRestriction(24, 25);
+			Item("wpn_1hs_mach_k_fpp_r12_PK", 1.0);
+			StatusRestriction(26, 27);
+			Item("wpn_1hs_mach_k_fpp_r13_PK", 1.0);
+			StatusRestriction(28, 29);
+			Item("wpn_1hs_mach_k_fpp_r14_PK", 1.0);
+			StatusRestriction(30, 31);
+			Item("wpn_1hs_mach_k_fpp_r15_PK", 1.0);
+			StatusRestriction(32, 33);
+			Item("wpn_1hs_mach_k_fpp_r16_PK", 1.0);
+			StatusRestriction(34, 35);
+			Item("wpn_1hs_mach_k_fpp_r17_PK", 1.0);
+			StatusRestriction(36, 50);
+			Item("wpn_1hs_mach_k_fpp_r18_PK", 1.0);
+			
+			
+			
+			NewGamePlus();
+			StatusRestriction(0, 21);
+			Item("wpn_1hs_mach_k_fpp_r10_PK", 1.0);
+			StatusRestriction(22, 23);
+			Item("wpn_1hs_mach_k_fpp_r11_PK", 1.0);
+			StatusRestriction(24, 25);
+			Item("wpn_1hs_mach_k_fpp_r12_PK", 1.0);
+			StatusRestriction(26, 27);
+			Item("wpn_1hs_mach_k_fpp_r13_PK", 1.0);
+			StatusRestriction(28, 29);
+			Item("wpn_1hs_mach_k_fpp_r14_PK", 1.0);
+			StatusRestriction(30, 31);
+			Item("wpn_1hs_mach_k_fpp_r15_PK", 1.0);
+			StatusRestriction(32, 33);
+			Item("wpn_1hs_mach_k_fpp_r16_PK", 1.0);
+			StatusRestriction(34, 35);
+			Item("wpn_1hs_mach_k_fpp_r17_PK", 1.0);
+			StatusRestriction(36, 37);
+			Item("wpn_1hs_mach_k_fpp_r18_PK", 1.0);
+			StatusRestriction(38, 39);
+			Item("wpn_1hs_mach_k_fpp_r19_PK", 1.0);
+			StatusRestriction(40, 41);
+			Item("wpn_1hs_mach_k_fpp_r20_PK", 1.0);
+			StatusRestriction(42, 43);
+			Item("wpn_1hs_mach_k_fpp_r21_PK", 1.0);
+			StatusRestriction(44, 46);
+			Item("wpn_1hs_mach_k_fpp_r22_PK", 1.0);
+			StatusRestriction(47, 49);
+			Item("wpn_1hs_mach_k_fpp_r23_PK", 1.0);
+			StatusRestriction(50, 50);
+			Item("wpn_1hs_mach_k_fpp_r24_PK", 1.0);
+        }
+    }
+	
+	sub Chapter1_1hBladed_T2(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+		Set(Other, weight, min_amount, max_amount, prob)
+        {
+			StatusRestriction(0, 3);
+			Item("wpn_1hs_axe_b_fpp_r1", 1.0);
+			Item("wpn_1hs_axe_d_fpp_r1", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r1", 1.0);
+			Item("wpn_1hs_axe_i_fpp_r1", 1.0);
+			Item("wpn_1hs_axe_l_fpp_r1", 1.0);
+			Item("wpn_1hs_axe_n_fpp_r1", 1.0);
+			Item("wpn_1hs_axe_p_fpp_r1", 1.0);
+			Item("wpn_1hs_mach_e_fpp_r1", 1.0);
+			Item("wpn_1hs_mach_f_fpp_r1", 1.0);
+			Item("wpn_1hs_mach_l_fpp_r1", 1.0);
+			Item("wpn_1hs_mach_m_fpp_r1", 1.0);
+			Item("wpn_1hs_mach_n_fpp_r1", 1.0);
+			Item("wpn_1hs_mach_o_fpp_r1", 1.0);
+			Item("wpn_1hs_mach_p_fpp_r1", 1.0);
+			Item("wpn_1hs_mach_r_fpp_r1", 1.0);
+			Item("wpn_1hs_mach_s_fpp_r1", 1.0);
+			Item("wpn_1hs_mach_t_fpp_r1", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r1", 1.0);
+			Item("wpn_1hs_mach_v_fpp_r1", 1.0);
+			StatusRestriction(4, 5);
+			Item("wpn_1hs_axe_b_fpp_r2", 1.0);
+			Item("wpn_1hs_axe_d_fpp_r2", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r2", 1.0);
+			Item("wpn_1hs_axe_i_fpp_r2", 1.0);
+			Item("wpn_1hs_axe_l_fpp_r2", 1.0);
+			Item("wpn_1hs_axe_n_fpp_r2", 1.0);
+			Item("wpn_1hs_axe_p_fpp_r2", 1.0);
+			Item("wpn_1hs_mach_e_fpp_r2", 1.0);
+			Item("wpn_1hs_mach_f_fpp_r2", 1.0);
+			Item("wpn_1hs_mach_l_fpp_r2", 1.0);
+			Item("wpn_1hs_mach_m_fpp_r2", 1.0);
+			Item("wpn_1hs_mach_n_fpp_r2", 1.0);
+			Item("wpn_1hs_mach_o_fpp_r2", 1.0);
+			Item("wpn_1hs_mach_p_fpp_r2", 1.0);
+			Item("wpn_1hs_mach_r_fpp_r2", 1.0);
+			Item("wpn_1hs_mach_s_fpp_r2", 1.0);
+			Item("wpn_1hs_mach_t_fpp_r2", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r2", 1.0);
+			Item("wpn_1hs_mach_v_fpp_r2", 1.0);
+			StatusRestriction(6, 7);
+			Item("wpn_1hs_axe_b_fpp_r3", 1.0);
+			Item("wpn_1hs_axe_d_fpp_r3", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r3", 1.0);
+			Item("wpn_1hs_axe_i_fpp_r3", 1.0);
+			Item("wpn_1hs_axe_l_fpp_r3", 1.0);
+			Item("wpn_1hs_axe_n_fpp_r3", 1.0);
+			Item("wpn_1hs_axe_p_fpp_r3", 1.0);
+			Item("wpn_1hs_mach_e_fpp_r3", 1.0);
+			Item("wpn_1hs_mach_f_fpp_r3", 1.0);
+			Item("wpn_1hs_mach_l_fpp_r3", 1.0);
+			Item("wpn_1hs_mach_m_fpp_r3", 1.0);
+			Item("wpn_1hs_mach_n_fpp_r3", 1.0);
+			Item("wpn_1hs_mach_o_fpp_r3", 1.0);
+			Item("wpn_1hs_mach_p_fpp_r3", 1.0);
+			Item("wpn_1hs_mach_r_fpp_r3", 1.0);
+			Item("wpn_1hs_mach_s_fpp_r3", 1.0);
+			Item("wpn_1hs_mach_t_fpp_r3", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r3", 1.0);
+			Item("wpn_1hs_mach_v_fpp_r3", 1.0);
+			
+			StatusRestriction(8, 9);
+			Item("wpn_1hs_axe_b_fpp_r4", 1.0);
+			Item("wpn_1hs_axe_d_fpp_r4", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r4", 1.0);
+			Item("wpn_1hs_axe_i_fpp_r4", 1.0);
+			Item("wpn_1hs_axe_l_fpp_r4", 1.0);
+			Item("wpn_1hs_axe_n_fpp_r4", 1.0);
+			Item("wpn_1hs_axe_p_fpp_r4", 1.0);
+			Item("wpn_1hs_mach_e_fpp_r4", 1.0);
+			Item("wpn_1hs_mach_f_fpp_r4", 1.0);
+			Item("wpn_1hs_mach_l_fpp_r4", 1.0);
+			Item("wpn_1hs_mach_m_fpp_r4", 1.0);
+			Item("wpn_1hs_mach_n_fpp_r4", 1.0);
+			Item("wpn_1hs_mach_o_fpp_r4", 1.0);
+			Item("wpn_1hs_mach_p_fpp_r4", 1.0);
+			Item("wpn_1hs_mach_r_fpp_r4", 1.0);
+			Item("wpn_1hs_mach_s_fpp_r4", 1.0);
+			Item("wpn_1hs_mach_t_fpp_r4", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r4", 1.0);
+			Item("wpn_1hs_mach_v_fpp_r4", 1.0);
+			
+			StatusRestriction(10, 11);
+			Item("wpn_1hs_axe_b_fpp_r5", 1.0);
+			Item("wpn_1hs_axe_d_fpp_r5", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r5", 1.0);
+			Item("wpn_1hs_axe_i_fpp_r5", 1.0);
+			Item("wpn_1hs_axe_l_fpp_r5", 1.0);
+			Item("wpn_1hs_axe_n_fpp_r5", 1.0);
+			Item("wpn_1hs_axe_p_fpp_r5", 1.0);
+			Item("wpn_1hs_mach_e_fpp_r5", 1.0);
+			Item("wpn_1hs_mach_f_fpp_r5", 1.0);
+			Item("wpn_1hs_mach_l_fpp_r5", 1.0);
+			Item("wpn_1hs_mach_m_fpp_r5", 1.0);
+			Item("wpn_1hs_mach_n_fpp_r5", 1.0);
+			Item("wpn_1hs_mach_o_fpp_r5", 1.0);
+			Item("wpn_1hs_mach_p_fpp_r5", 1.0);
+			Item("wpn_1hs_mach_r_fpp_r5", 1.0);
+			Item("wpn_1hs_mach_s_fpp_r5", 1.0);
+			Item("wpn_1hs_mach_t_fpp_r5", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r5", 1.0);
+			Item("wpn_1hs_mach_v_fpp_r5", 1.0);
+			
+			StatusRestriction(12, 13);
+			Item("wpn_1hs_axe_b_fpp_r6", 1.0);
+			Item("wpn_1hs_axe_d_fpp_r6", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r6", 1.0);
+			Item("wpn_1hs_axe_i_fpp_r6", 1.0);
+			Item("wpn_1hs_axe_l_fpp_r6", 1.0);
+			Item("wpn_1hs_axe_n_fpp_r6", 1.0);
+			Item("wpn_1hs_axe_p_fpp_r6", 1.0);
+			Item("wpn_1hs_mach_e_fpp_r6", 1.0);
+			Item("wpn_1hs_mach_f_fpp_r6", 1.0);
+			Item("wpn_1hs_mach_l_fpp_r6", 1.0);
+			Item("wpn_1hs_mach_m_fpp_r6", 1.0);
+			Item("wpn_1hs_mach_n_fpp_r6", 1.0);
+			Item("wpn_1hs_mach_o_fpp_r6", 1.0);
+			Item("wpn_1hs_mach_p_fpp_r6", 1.0);
+			Item("wpn_1hs_mach_r_fpp_r6", 1.0);
+			Item("wpn_1hs_mach_s_fpp_r6", 1.0);
+			Item("wpn_1hs_mach_t_fpp_r6", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r6", 1.0);
+			Item("wpn_1hs_mach_v_fpp_r6", 1.0);
+			
+			StatusRestriction(14, 15);
+			Item("wpn_1hs_axe_b_fpp_r7", 1.0);
+			Item("wpn_1hs_axe_d_fpp_r7", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r7", 1.0);
+			Item("wpn_1hs_axe_i_fpp_r7", 1.0);
+			Item("wpn_1hs_axe_l_fpp_r7", 1.0);
+			Item("wpn_1hs_axe_n_fpp_r7", 1.0);
+			Item("wpn_1hs_axe_p_fpp_r7", 1.0);
+			Item("wpn_1hs_mach_e_fpp_r7", 1.0);
+			Item("wpn_1hs_mach_f_fpp_r7", 1.0);
+			Item("wpn_1hs_mach_l_fpp_r7", 1.0);
+			Item("wpn_1hs_mach_m_fpp_r7", 1.0);
+			Item("wpn_1hs_mach_n_fpp_r7", 1.0);
+			Item("wpn_1hs_mach_o_fpp_r7", 1.0);
+			Item("wpn_1hs_mach_p_fpp_r7", 1.0);
+			Item("wpn_1hs_mach_r_fpp_r7", 1.0);
+			Item("wpn_1hs_mach_s_fpp_r7", 1.0);
+			Item("wpn_1hs_mach_t_fpp_r7", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r7", 1.0);
+			Item("wpn_1hs_mach_v_fpp_r7", 1.0);
+			
+			StatusRestriction(16, 17);
+			Item("wpn_1hs_axe_b_fpp_r8", 1.0);
+			Item("wpn_1hs_axe_d_fpp_r8", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r8", 1.0);
+			Item("wpn_1hs_axe_i_fpp_r8", 1.0);
+			Item("wpn_1hs_axe_l_fpp_r8", 1.0);
+			Item("wpn_1hs_axe_n_fpp_r8", 1.0);
+			Item("wpn_1hs_axe_p_fpp_r8", 1.0);
+			Item("wpn_1hs_mach_e_fpp_r8", 1.0);
+			Item("wpn_1hs_mach_f_fpp_r8", 1.0);
+			Item("wpn_1hs_mach_l_fpp_r8", 1.0);
+			Item("wpn_1hs_mach_m_fpp_r8", 1.0);
+			Item("wpn_1hs_mach_n_fpp_r8", 1.0);
+			Item("wpn_1hs_mach_o_fpp_r8", 1.0);
+			Item("wpn_1hs_mach_p_fpp_r8", 1.0);
+			Item("wpn_1hs_mach_r_fpp_r8", 1.0);
+			Item("wpn_1hs_mach_s_fpp_r8", 1.0);
+			Item("wpn_1hs_mach_t_fpp_r8", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r8", 1.0);
+			Item("wpn_1hs_mach_v_fpp_r8", 1.0);
+			
+			StatusRestriction(18, 19);
+			Item("wpn_1hs_axe_b_fpp_r9", 1.0);
+			Item("wpn_1hs_axe_d_fpp_r9", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r9", 1.0);
+			Item("wpn_1hs_axe_i_fpp_r9", 1.0);
+			Item("wpn_1hs_axe_l_fpp_r9", 1.0);
+			Item("wpn_1hs_axe_n_fpp_r9", 1.0);
+			Item("wpn_1hs_axe_p_fpp_r9", 1.0);
+			Item("wpn_1hs_mach_e_fpp_r9", 1.0);
+			Item("wpn_1hs_mach_f_fpp_r9", 1.0);
+			Item("wpn_1hs_mach_l_fpp_r9", 1.0);
+			Item("wpn_1hs_mach_m_fpp_r9", 1.0);
+			Item("wpn_1hs_mach_n_fpp_r9", 1.0);
+			Item("wpn_1hs_mach_o_fpp_r9", 1.0);
+			Item("wpn_1hs_mach_p_fpp_r9", 1.0);
+			Item("wpn_1hs_mach_r_fpp_r9", 1.0);
+			Item("wpn_1hs_mach_s_fpp_r9", 1.0);
+			Item("wpn_1hs_mach_t_fpp_r9", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r9", 1.0);
+			Item("wpn_1hs_mach_v_fpp_r9", 1.0);
+			
+			StatusRestriction(20, 21);
+			Item("wpn_1hs_axe_b_fpp_r10", 1.0);
+			Item("wpn_1hs_axe_d_fpp_r10", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r10", 1.0);
+			Item("wpn_1hs_axe_i_fpp_r10", 1.0);
+			Item("wpn_1hs_axe_l_fpp_r10", 1.0);
+			Item("wpn_1hs_axe_n_fpp_r10", 1.0);
+			Item("wpn_1hs_axe_p_fpp_r10", 1.0);
+			Item("wpn_1hs_mach_e_fpp_r10", 1.0);
+			Item("wpn_1hs_mach_f_fpp_r10", 1.0);
+			Item("wpn_1hs_mach_l_fpp_r10", 1.0);
+			Item("wpn_1hs_mach_m_fpp_r10", 1.0);
+			Item("wpn_1hs_mach_n_fpp_r10", 1.0);
+			Item("wpn_1hs_mach_o_fpp_r10", 1.0);
+			Item("wpn_1hs_mach_p_fpp_r10", 1.0);
+			Item("wpn_1hs_mach_r_fpp_r10", 1.0);
+			Item("wpn_1hs_mach_s_fpp_r10", 1.0);
+			Item("wpn_1hs_mach_t_fpp_r10", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r10", 1.0);
+			Item("wpn_1hs_mach_v_fpp_r10", 1.0);
+			
+			StatusRestriction(22, 23);
+			Item("wpn_1hs_axe_b_fpp_r11", 1.0);
+			Item("wpn_1hs_axe_d_fpp_r11", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r11", 1.0);
+			Item("wpn_1hs_axe_i_fpp_r11", 1.0);
+			Item("wpn_1hs_axe_l_fpp_r11", 1.0);
+			Item("wpn_1hs_axe_n_fpp_r11", 1.0);
+			Item("wpn_1hs_axe_p_fpp_r11", 1.0);
+			Item("wpn_1hs_mach_e_fpp_r11", 1.0);
+			Item("wpn_1hs_mach_f_fpp_r11", 1.0);
+			Item("wpn_1hs_mach_l_fpp_r11", 1.0);
+			Item("wpn_1hs_mach_m_fpp_r11", 1.0);
+			Item("wpn_1hs_mach_n_fpp_r11", 1.0);
+			Item("wpn_1hs_mach_o_fpp_r11", 1.0);
+			Item("wpn_1hs_mach_p_fpp_r11", 1.0);
+			Item("wpn_1hs_mach_r_fpp_r11", 1.0);
+			Item("wpn_1hs_mach_s_fpp_r11", 1.0);
+			Item("wpn_1hs_mach_t_fpp_r11", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r11", 1.0);
+			Item("wpn_1hs_mach_v_fpp_r11", 1.0);
+			
+			StatusRestriction(24, 25);
+			Item("wpn_1hs_axe_b_fpp_r12", 1.0);
+			Item("wpn_1hs_axe_d_fpp_r12", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r12", 1.0);
+			Item("wpn_1hs_axe_i_fpp_r12", 1.0);
+			Item("wpn_1hs_axe_l_fpp_r12", 1.0);
+			Item("wpn_1hs_axe_n_fpp_r12", 1.0);
+			Item("wpn_1hs_axe_p_fpp_r12", 1.0);
+			Item("wpn_1hs_mach_e_fpp_r12", 1.0);
+			Item("wpn_1hs_mach_f_fpp_r12", 1.0);
+			Item("wpn_1hs_mach_l_fpp_r12", 1.0);
+			Item("wpn_1hs_mach_m_fpp_r12", 1.0);
+			Item("wpn_1hs_mach_n_fpp_r12", 1.0);
+			Item("wpn_1hs_mach_o_fpp_r12", 1.0);
+			Item("wpn_1hs_mach_p_fpp_r12", 1.0);
+			Item("wpn_1hs_mach_r_fpp_r12", 1.0);
+			Item("wpn_1hs_mach_s_fpp_r12", 1.0);
+			Item("wpn_1hs_mach_t_fpp_r12", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r12", 1.0);
+			Item("wpn_1hs_mach_v_fpp_r12", 1.0);
+			
+			StatusRestriction(26, 27);
+			Item("wpn_1hs_axe_b_fpp_r13", 1.0);
+			Item("wpn_1hs_axe_d_fpp_r13", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r13", 1.0);
+			Item("wpn_1hs_axe_i_fpp_r13", 1.0);
+			Item("wpn_1hs_axe_l_fpp_r13", 1.0);
+			Item("wpn_1hs_axe_n_fpp_r13", 1.0);
+			Item("wpn_1hs_axe_p_fpp_r13", 1.0);
+			Item("wpn_1hs_mach_e_fpp_r13", 1.0);
+			Item("wpn_1hs_mach_f_fpp_r13", 1.0);
+			Item("wpn_1hs_mach_l_fpp_r13", 1.0);
+			Item("wpn_1hs_mach_m_fpp_r13", 1.0);
+			Item("wpn_1hs_mach_n_fpp_r13", 1.0);
+			Item("wpn_1hs_mach_o_fpp_r13", 1.0);
+			Item("wpn_1hs_mach_p_fpp_r13", 1.0);
+			Item("wpn_1hs_mach_r_fpp_r13", 1.0);
+			Item("wpn_1hs_mach_s_fpp_r13", 1.0);
+			Item("wpn_1hs_mach_t_fpp_r13", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r13", 1.0);
+			Item("wpn_1hs_mach_v_fpp_r13", 1.0);
+			
+			StatusRestriction(28, 29);
+			Item("wpn_1hs_axe_b_fpp_r14", 1.0);
+			Item("wpn_1hs_axe_d_fpp_r14", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r14", 1.0);
+			Item("wpn_1hs_axe_i_fpp_r14", 1.0);
+			Item("wpn_1hs_axe_l_fpp_r14", 1.0);
+			Item("wpn_1hs_axe_n_fpp_r14", 1.0);
+			Item("wpn_1hs_axe_p_fpp_r14", 1.0);
+			Item("wpn_1hs_mach_e_fpp_r14", 1.0);
+			Item("wpn_1hs_mach_f_fpp_r14", 1.0);
+			Item("wpn_1hs_mach_l_fpp_r14", 1.0);
+			Item("wpn_1hs_mach_m_fpp_r14", 1.0);
+			Item("wpn_1hs_mach_n_fpp_r14", 1.0);
+			Item("wpn_1hs_mach_o_fpp_r14", 1.0);
+			Item("wpn_1hs_mach_p_fpp_r14", 1.0);
+			Item("wpn_1hs_mach_r_fpp_r14", 1.0);
+			Item("wpn_1hs_mach_s_fpp_r14", 1.0);
+			Item("wpn_1hs_mach_t_fpp_r14", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r14", 1.0);
+			Item("wpn_1hs_mach_v_fpp_r14", 1.0);
+			
+			StatusRestriction(30, 31);
+			Item("wpn_1hs_axe_b_fpp_r15", 1.0);
+			Item("wpn_1hs_axe_d_fpp_r15", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r15", 1.0);
+			Item("wpn_1hs_axe_i_fpp_r15", 1.0);
+			Item("wpn_1hs_axe_l_fpp_r15", 1.0);
+			Item("wpn_1hs_axe_n_fpp_r15", 1.0);
+			Item("wpn_1hs_axe_p_fpp_r15", 1.0);
+			Item("wpn_1hs_mach_e_fpp_r15", 1.0);
+			Item("wpn_1hs_mach_f_fpp_r15", 1.0);
+			Item("wpn_1hs_mach_l_fpp_r15", 1.0);
+			Item("wpn_1hs_mach_m_fpp_r15", 1.0);
+			Item("wpn_1hs_mach_n_fpp_r15", 1.0);
+			Item("wpn_1hs_mach_o_fpp_r15", 1.0);
+			Item("wpn_1hs_mach_p_fpp_r15", 1.0);
+			Item("wpn_1hs_mach_r_fpp_r15", 1.0);
+			Item("wpn_1hs_mach_s_fpp_r15", 1.0);
+			Item("wpn_1hs_mach_t_fpp_r15", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r15", 1.0);
+			Item("wpn_1hs_mach_v_fpp_r15", 1.0);
+			
+			StatusRestriction(32, 33);
+			Item("wpn_1hs_axe_b_fpp_r16", 1.0);
+			Item("wpn_1hs_axe_d_fpp_r16", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r16", 1.0);
+			Item("wpn_1hs_axe_i_fpp_r16", 1.0);
+			Item("wpn_1hs_axe_l_fpp_r16", 1.0);
+			Item("wpn_1hs_axe_n_fpp_r16", 1.0);
+			Item("wpn_1hs_axe_p_fpp_r16", 1.0);
+			Item("wpn_1hs_mach_e_fpp_r16", 1.0);
+			Item("wpn_1hs_mach_f_fpp_r16", 1.0);
+			Item("wpn_1hs_mach_l_fpp_r16", 1.0);
+			Item("wpn_1hs_mach_m_fpp_r16", 1.0);
+			Item("wpn_1hs_mach_n_fpp_r16", 1.0);
+			Item("wpn_1hs_mach_o_fpp_r16", 1.0);
+			Item("wpn_1hs_mach_p_fpp_r16", 1.0);
+			Item("wpn_1hs_mach_r_fpp_r16", 1.0);
+			Item("wpn_1hs_mach_s_fpp_r16", 1.0);
+			Item("wpn_1hs_mach_t_fpp_r16", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r16", 1.0);
+			Item("wpn_1hs_mach_v_fpp_r16", 1.0);
+			
+			StatusRestriction(34, 35);
+			Item("wpn_1hs_axe_b_fpp_r17", 1.0);
+			Item("wpn_1hs_axe_d_fpp_r17", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r17", 1.0);
+			Item("wpn_1hs_axe_i_fpp_r17", 1.0);
+			Item("wpn_1hs_axe_l_fpp_r17", 1.0);
+			Item("wpn_1hs_axe_n_fpp_r17", 1.0);
+			Item("wpn_1hs_axe_p_fpp_r17", 1.0);
+			Item("wpn_1hs_mach_e_fpp_r17", 1.0);
+			Item("wpn_1hs_mach_f_fpp_r17", 1.0);
+			Item("wpn_1hs_mach_l_fpp_r17", 1.0);
+			Item("wpn_1hs_mach_m_fpp_r17", 1.0);
+			Item("wpn_1hs_mach_n_fpp_r17", 1.0);
+			Item("wpn_1hs_mach_o_fpp_r17", 1.0);
+			Item("wpn_1hs_mach_p_fpp_r17", 1.0);
+			Item("wpn_1hs_mach_r_fpp_r17", 1.0);
+			Item("wpn_1hs_mach_s_fpp_r17", 1.0);
+			Item("wpn_1hs_mach_t_fpp_r17", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r17", 1.0);
+			Item("wpn_1hs_mach_v_fpp_r17", 1.0);
+			
+			StatusRestriction(36, 37);
+			Item("wpn_1hs_axe_b_fpp_r18", 1.0);
+			Item("wpn_1hs_axe_d_fpp_r18", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r18", 1.0);
+			Item("wpn_1hs_axe_i_fpp_r18", 1.0);
+			Item("wpn_1hs_axe_l_fpp_r18", 1.0);
+			Item("wpn_1hs_axe_n_fpp_r18", 1.0);
+			Item("wpn_1hs_axe_p_fpp_r18", 1.0);
+			Item("wpn_1hs_mach_e_fpp_r18", 1.0);
+			Item("wpn_1hs_mach_f_fpp_r18", 1.0);
+			Item("wpn_1hs_mach_l_fpp_r18", 1.0);
+			Item("wpn_1hs_mach_m_fpp_r18", 1.0);
+			Item("wpn_1hs_mach_n_fpp_r18", 1.0);
+			Item("wpn_1hs_mach_o_fpp_r18", 1.0);
+			Item("wpn_1hs_mach_p_fpp_r18", 1.0);
+			Item("wpn_1hs_mach_r_fpp_r18", 1.0);
+			Item("wpn_1hs_mach_s_fpp_r18", 1.0);
+			Item("wpn_1hs_mach_t_fpp_r18", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r18", 1.0);
+			Item("wpn_1hs_mach_v_fpp_r18", 1.0);
+			
+			StatusRestriction(38, 39);
+			Item("wpn_1hs_axe_b_fpp_r19", 1.0);
+			Item("wpn_1hs_axe_d_fpp_r19", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r19", 1.0);
+			Item("wpn_1hs_axe_i_fpp_r19", 1.0);
+			Item("wpn_1hs_axe_l_fpp_r19", 1.0);
+			Item("wpn_1hs_axe_n_fpp_r19", 1.0);
+			Item("wpn_1hs_axe_p_fpp_r19", 1.0);
+			Item("wpn_1hs_mach_e_fpp_r19", 1.0);
+			Item("wpn_1hs_mach_f_fpp_r19", 1.0);
+			Item("wpn_1hs_mach_l_fpp_r19", 1.0);
+			Item("wpn_1hs_mach_m_fpp_r19", 1.0);
+			Item("wpn_1hs_mach_n_fpp_r19", 1.0);
+			Item("wpn_1hs_mach_o_fpp_r19", 1.0);
+			Item("wpn_1hs_mach_p_fpp_r19", 1.0);
+			Item("wpn_1hs_mach_r_fpp_r19", 1.0);
+			Item("wpn_1hs_mach_s_fpp_r19", 1.0);
+			Item("wpn_1hs_mach_t_fpp_r19", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r19", 1.0);
+			Item("wpn_1hs_mach_v_fpp_r19", 1.0);
+			
+			StatusRestriction(40, 41);
+			Item("wpn_1hs_axe_b_fpp_r20", 1.0);
+			Item("wpn_1hs_axe_d_fpp_r20", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r20", 1.0);
+			Item("wpn_1hs_axe_i_fpp_r20", 1.0);
+			Item("wpn_1hs_axe_l_fpp_r20", 1.0);
+			Item("wpn_1hs_axe_n_fpp_r20", 1.0);
+			Item("wpn_1hs_axe_p_fpp_r20", 1.0);
+			Item("wpn_1hs_mach_e_fpp_r20", 1.0);
+			Item("wpn_1hs_mach_f_fpp_r20", 1.0);
+			Item("wpn_1hs_mach_l_fpp_r20", 1.0);
+			Item("wpn_1hs_mach_m_fpp_r20", 1.0);
+			Item("wpn_1hs_mach_n_fpp_r20", 1.0);
+			Item("wpn_1hs_mach_o_fpp_r20", 1.0);
+			Item("wpn_1hs_mach_p_fpp_r20", 1.0);
+			Item("wpn_1hs_mach_r_fpp_r20", 1.0);
+			Item("wpn_1hs_mach_s_fpp_r20", 1.0);
+			Item("wpn_1hs_mach_t_fpp_r20", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r20", 1.0);
+			Item("wpn_1hs_mach_v_fpp_r20", 1.0);
+			
+			StatusRestriction(42, 43);
+			Item("wpn_1hs_axe_b_fpp_r21", 1.0);
+			Item("wpn_1hs_axe_d_fpp_r21", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r21", 1.0);
+			Item("wpn_1hs_axe_i_fpp_r21", 1.0);
+			Item("wpn_1hs_axe_l_fpp_r21", 1.0);
+			Item("wpn_1hs_axe_n_fpp_r21", 1.0);
+			Item("wpn_1hs_axe_p_fpp_r21", 1.0);
+			Item("wpn_1hs_mach_e_fpp_r21", 1.0);
+			Item("wpn_1hs_mach_f_fpp_r21", 1.0);
+			Item("wpn_1hs_mach_l_fpp_r21", 1.0);
+			Item("wpn_1hs_mach_m_fpp_r21", 1.0);
+			Item("wpn_1hs_mach_n_fpp_r21", 1.0);
+			Item("wpn_1hs_mach_o_fpp_r21", 1.0);
+			Item("wpn_1hs_mach_p_fpp_r21", 1.0);
+			Item("wpn_1hs_mach_r_fpp_r21", 1.0);
+			Item("wpn_1hs_mach_s_fpp_r21", 1.0);
+			Item("wpn_1hs_mach_t_fpp_r21", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r21", 1.0);
+			Item("wpn_1hs_mach_v_fpp_r21", 1.0);
+			
+			StatusRestriction(44, 46);
+			Item("wpn_1hs_axe_b_fpp_r22", 1.0);
+			Item("wpn_1hs_axe_d_fpp_r22", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r22", 1.0);
+			Item("wpn_1hs_axe_i_fpp_r22", 1.0);
+			Item("wpn_1hs_axe_l_fpp_r22", 1.0);
+			Item("wpn_1hs_axe_n_fpp_r22", 1.0);
+			Item("wpn_1hs_axe_p_fpp_r22", 1.0);
+			Item("wpn_1hs_mach_e_fpp_r22", 1.0);
+			Item("wpn_1hs_mach_f_fpp_r22", 1.0);
+			Item("wpn_1hs_mach_l_fpp_r22", 1.0);
+			Item("wpn_1hs_mach_m_fpp_r22", 1.0);
+			Item("wpn_1hs_mach_n_fpp_r22", 1.0);
+			Item("wpn_1hs_mach_o_fpp_r22", 1.0);
+			Item("wpn_1hs_mach_p_fpp_r22", 1.0);
+			Item("wpn_1hs_mach_r_fpp_r22", 1.0);
+			Item("wpn_1hs_mach_s_fpp_r22", 1.0);
+			Item("wpn_1hs_mach_t_fpp_r22", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r22", 1.0);
+			Item("wpn_1hs_mach_v_fpp_r22", 1.0);
+			
+			StatusRestriction(47, 49);
+			Item("wpn_1hs_axe_b_fpp_r23", 1.0);
+			Item("wpn_1hs_axe_d_fpp_r23", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r23", 1.0);
+			Item("wpn_1hs_axe_i_fpp_r23", 1.0);
+			Item("wpn_1hs_axe_l_fpp_r23", 1.0);
+			Item("wpn_1hs_axe_n_fpp_r23", 1.0);
+			Item("wpn_1hs_axe_p_fpp_r23", 1.0);
+			Item("wpn_1hs_mach_e_fpp_r23", 1.0);
+			Item("wpn_1hs_mach_f_fpp_r23", 1.0);
+			Item("wpn_1hs_mach_l_fpp_r23", 1.0);
+			Item("wpn_1hs_mach_m_fpp_r23", 1.0);
+			Item("wpn_1hs_mach_n_fpp_r23", 1.0);
+			Item("wpn_1hs_mach_o_fpp_r23", 1.0);
+			Item("wpn_1hs_mach_p_fpp_r23", 1.0);
+			Item("wpn_1hs_mach_r_fpp_r23", 1.0);
+			Item("wpn_1hs_mach_s_fpp_r23", 1.0);
+			Item("wpn_1hs_mach_t_fpp_r23", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r23", 1.0);
+			Item("wpn_1hs_mach_v_fpp_r23", 1.0);
+			
+			StatusRestriction(50, 50);
+			Item("wpn_1hs_axe_b_fpp_r24", 1.0);
+			Item("wpn_1hs_axe_d_fpp_r24", 1.0);
+			Item("wpn_1hs_axe_e_fpp_r24", 1.0);
+			Item("wpn_1hs_axe_i_fpp_r24", 1.0);
+			Item("wpn_1hs_axe_l_fpp_r24", 1.0);
+			Item("wpn_1hs_axe_n_fpp_r24", 1.0);
+			Item("wpn_1hs_axe_p_fpp_r24", 1.0);
+			Item("wpn_1hs_mach_e_fpp_r24", 1.0);
+			Item("wpn_1hs_mach_f_fpp_r24", 1.0);
+			Item("wpn_1hs_mach_l_fpp_r24", 1.0);
+			Item("wpn_1hs_mach_m_fpp_r24", 1.0);
+			Item("wpn_1hs_mach_n_fpp_r24", 1.0);
+			Item("wpn_1hs_mach_o_fpp_r24", 1.0);
+			Item("wpn_1hs_mach_p_fpp_r24", 1.0);
+			Item("wpn_1hs_mach_r_fpp_r24", 1.0);
+			Item("wpn_1hs_mach_s_fpp_r24", 1.0);
+			Item("wpn_1hs_mach_t_fpp_r24", 1.0);
+			Item("wpn_1hs_mach_u_fpp_r24", 1.0);
+			Item("wpn_1hs_mach_v_fpp_r24", 1.0);
+			
+        }
+    }
+	
+	sub Chapter1_1hBladed_T3(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+		Set(Other, weight, min_amount, max_amount, prob)
+        {
+			StatusRestriction(0, 3);
+			Item("wpn_1hs_axdb_a_fpp_r1", 1.0);
+			Item("wpn_1hs_axe_a_fpp_r1", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r1", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r1", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r1", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r1", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r1", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r1", 1.0);
+			Item("wpn_1hs_mach_w_fpp_r1", 1.0);
+			StatusRestriction(4, 5);
+			Item("wpn_1hs_axdb_a_fpp_r2", 1.0);
+			Item("wpn_1hs_axe_a_fpp_r2", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r2", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r2", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r2", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r2", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r2", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r2", 1.0);
+			Item("wpn_1hs_mach_w_fpp_r2", 1.0);
+			StatusRestriction(6, 7);
+			Item("wpn_1hs_axdb_a_fpp_r3", 1.0);
+			Item("wpn_1hs_axe_a_fpp_r3", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r3", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r3", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r3", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r3", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r3", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r3", 1.0);
+			Item("wpn_1hs_mach_w_fpp_r3", 1.0);
+			StatusRestriction(8, 9);
+			Item("wpn_1hs_axdb_a_fpp_r4", 1.0);
+			Item("wpn_1hs_axe_a_fpp_r4", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r4", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r4", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r4", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r4", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r4", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r4", 1.0);
+			Item("wpn_1hs_mach_w_fpp_r4", 1.0);
+			StatusRestriction(10, 11);
+			Item("wpn_1hs_axdb_a_fpp_r5", 1.0);
+			Item("wpn_1hs_axe_a_fpp_r5", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r5", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r5", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r5", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r5", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r5", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r5", 1.0);
+			Item("wpn_1hs_mach_w_fpp_r5", 1.0);
+			StatusRestriction(12, 13);
+			Item("wpn_1hs_axdb_a_fpp_r6", 1.0);
+			Item("wpn_1hs_axe_a_fpp_r6", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r6", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r6", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r6", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r6", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r6", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r6", 1.0);
+			Item("wpn_1hs_mach_w_fpp_r6", 1.0);
+			StatusRestriction(14, 15);
+			Item("wpn_1hs_axdb_a_fpp_r7", 1.0);
+			Item("wpn_1hs_axe_a_fpp_r7", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r7", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r7", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r7", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r7", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r7", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r7", 1.0);
+			Item("wpn_1hs_mach_w_fpp_r7", 1.0);
+			StatusRestriction(16, 17);
+			Item("wpn_1hs_axdb_a_fpp_r8", 1.0);
+			Item("wpn_1hs_axe_a_fpp_r8", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r8", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r8", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r8", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r8", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r8", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r8", 1.0);
+			Item("wpn_1hs_mach_w_fpp_r8", 1.0);
+			StatusRestriction(18, 19);
+			Item("wpn_1hs_axdb_a_fpp_r9", 1.0);
+			Item("wpn_1hs_axe_a_fpp_r9", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r9", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r9", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r9", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r9", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r9", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r9", 1.0);
+			Item("wpn_1hs_mach_w_fpp_r9", 1.0);
+			StatusRestriction(20, 21);
+			Item("wpn_1hs_axdb_a_fpp_r10", 1.0);
+			Item("wpn_1hs_axe_a_fpp_r10", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r10", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r10", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r10", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r10", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r10", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r10", 1.0);
+			Item("wpn_1hs_mach_w_fpp_r10", 1.0);
+			StatusRestriction(22, 23);
+			Item("wpn_1hs_axdb_a_fpp_r11", 1.0);
+			Item("wpn_1hs_axe_a_fpp_r11", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r11", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r11", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r11", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r11", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r11", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r11", 1.0);
+			Item("wpn_1hs_mach_w_fpp_r11", 1.0);
+			StatusRestriction(24, 25);
+			Item("wpn_1hs_axdb_a_fpp_r12", 1.0);
+			Item("wpn_1hs_axe_a_fpp_r12", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r12", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r12", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r12", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r12", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r12", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r12", 1.0);
+			Item("wpn_1hs_mach_w_fpp_r12", 1.0);
+			StatusRestriction(26, 27);
+			Item("wpn_1hs_axdb_a_fpp_r13", 1.0);
+			Item("wpn_1hs_axe_a_fpp_r13", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r13", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r13", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r13", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r13", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r13", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r13", 1.0);
+			Item("wpn_1hs_mach_w_fpp_r13", 1.0);
+			StatusRestriction(28, 29);
+			Item("wpn_1hs_axdb_a_fpp_r14", 1.0);
+			Item("wpn_1hs_axe_a_fpp_r14", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r14", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r14", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r14", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r14", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r14", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r14", 1.0);
+			Item("wpn_1hs_mach_w_fpp_r14", 1.0);
+			StatusRestriction(30, 31);
+			Item("wpn_1hs_axdb_a_fpp_r15", 1.0);
+			Item("wpn_1hs_axe_a_fpp_r15", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r15", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r15", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r15", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r15", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r15", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r15", 1.0);
+			Item("wpn_1hs_mach_w_fpp_r15", 1.0);
+			StatusRestriction(32, 33);
+			Item("wpn_1hs_axdb_a_fpp_r16", 1.0);
+			Item("wpn_1hs_axe_a_fpp_r16", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r16", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r16", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r16", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r16", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r16", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r16", 1.0);
+			Item("wpn_1hs_mach_w_fpp_r16", 1.0);
+			StatusRestriction(34, 35);
+			Item("wpn_1hs_axdb_a_fpp_r17", 1.0);
+			Item("wpn_1hs_axe_a_fpp_r17", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r17", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r17", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r17", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r17", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r17", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r17", 1.0);
+			Item("wpn_1hs_mach_w_fpp_r17", 1.0);
+			StatusRestriction(36, 37);
+			Item("wpn_1hs_axdb_a_fpp_r18", 1.0);
+			Item("wpn_1hs_axe_a_fpp_r18", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r18", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r18", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r18", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r18", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r18", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r18", 1.0);
+			Item("wpn_1hs_mach_w_fpp_r18", 1.0);
+			StatusRestriction(38, 39);
+			Item("wpn_1hs_axdb_a_fpp_r19", 1.0);
+			Item("wpn_1hs_axe_a_fpp_r19", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r19", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r19", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r19", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r19", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r19", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r19", 1.0);
+			Item("wpn_1hs_mach_w_fpp_r19", 1.0);
+			StatusRestriction(40, 41);
+			Item("wpn_1hs_axdb_a_fpp_r20", 1.0);
+			Item("wpn_1hs_axe_a_fpp_r20", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r20", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r20", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r20", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r20", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r20", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r20", 1.0);
+			Item("wpn_1hs_mach_w_fpp_r20", 1.0);
+			StatusRestriction(42, 43);
+			Item("wpn_1hs_axdb_a_fpp_r21", 1.0);
+			Item("wpn_1hs_axe_a_fpp_r21", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r21", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r21", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r21", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r21", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r21", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r21", 1.0);
+			Item("wpn_1hs_mach_w_fpp_r21", 1.0);
+			StatusRestriction(44, 46);
+			Item("wpn_1hs_axdb_a_fpp_r22", 1.0);
+			Item("wpn_1hs_axe_a_fpp_r22", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r22", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r22", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r22", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r22", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r22", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r22", 1.0);
+			Item("wpn_1hs_mach_w_fpp_r22", 1.0);
+			StatusRestriction(47, 49);
+			Item("wpn_1hs_axdb_a_fpp_r23", 1.0);
+			Item("wpn_1hs_axe_a_fpp_r23", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r23", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r23", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r23", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r23", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r23", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r23", 1.0);
+			Item("wpn_1hs_mach_w_fpp_r23", 1.0);
+			StatusRestriction(50, 50);
+			Item("wpn_1hs_axdb_a_fpp_r24", 1.0);
+			Item("wpn_1hs_axe_a_fpp_r24", 1.0);
+			Item("wpn_1hs_axe_c_fpp_r24", 1.0);
+			Item("wpn_1hs_axe_k_fpp_r24", 1.0);
+			Item("wpn_1hs_axe_r_fpp_r24", 1.0);
+			Item("wpn_1hs_mach_a_fpp_r24", 1.0);
+			Item("wpn_1hs_mach_b_fpp_r24", 1.0);
+			Item("wpn_1hs_mach_j_fpp_r24", 1.0);
+			Item("wpn_1hs_mach_w_fpp_r24", 1.0);
+        }
+    }
+	sub Chapter1_1hBladed_Platinum(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+		Set(Other, weight, min_amount, max_amount, prob)
+        {
+			StatusRestriction(0, 7);
+			Item("wpn_1hs_axdb_a_platinum_t1", 1.0);
+			Item("wpn_1hs_axe_a_platinum_t1", 1.0);
+			Item("wpn_1hs_axe_c_platinum_t1", 1.0);
+			Item("wpn_1hs_axe_k_platinum_t1", 1.0);
+			Item("wpn_1hs_axe_r_platinum_t1", 1.0);
+			Item("wpn_1hs_mach_a_platinum_t1", 1.0);
+			Item("wpn_1hs_mach_b_platinum_t1", 1.0);
+			Item("wpn_1hs_mach_j_platinum_t1", 1.0);
+			Item("wpn_1hs_mach_w_platinum_t1", 1.0);
+			StatusRestriction(8, 13);
+			Item("wpn_1hs_axdb_a_platinum_t2", 1.0);
+			Item("wpn_1hs_axe_a_platinum_t2", 1.0);
+			Item("wpn_1hs_axe_c_platinum_t2", 1.0);
+			Item("wpn_1hs_axe_k_platinum_t2", 1.0);
+			Item("wpn_1hs_axe_r_platinum_t2", 1.0);
+			Item("wpn_1hs_mach_a_platinum_t2", 1.0);
+			Item("wpn_1hs_mach_b_platinum_t2", 1.0);
+			Item("wpn_1hs_mach_j_platinum_t2", 1.0);
+			Item("wpn_1hs_mach_w_platinum_t2", 1.0);
+			StatusRestriction(14, 19);
+			Item("wpn_1hs_axdb_a_platinum_t3", 1.0);
+			Item("wpn_1hs_axe_a_platinum_t3", 1.0);
+			Item("wpn_1hs_axe_c_platinum_t3", 1.0);
+			Item("wpn_1hs_axe_k_platinum_t3", 1.0);
+			Item("wpn_1hs_axe_r_platinum_t3", 1.0);
+			Item("wpn_1hs_mach_a_platinum_t3", 1.0);
+			Item("wpn_1hs_mach_b_platinum_t3", 1.0);
+			Item("wpn_1hs_mach_j_platinum_t3", 1.0);
+			Item("wpn_1hs_mach_w_platinum_t3", 1.0);
+			StatusRestriction(20, 25);
+			Item("wpn_1hs_axdb_a_platinum_t4", 1.0);
+			Item("wpn_1hs_axe_a_platinum_t4", 1.0);
+			Item("wpn_1hs_axe_c_platinum_t4", 1.0);
+			Item("wpn_1hs_axe_k_platinum_t4", 1.0);
+			Item("wpn_1hs_axe_r_platinum_t4", 1.0);
+			Item("wpn_1hs_mach_a_platinum_t4", 1.0);
+			Item("wpn_1hs_mach_b_platinum_t4", 1.0);
+			Item("wpn_1hs_mach_j_platinum_t4", 1.0);
+			Item("wpn_1hs_mach_w_platinum_t4", 1.0);
+			StatusRestriction(26, 31);
+			Item("wpn_1hs_axdb_a_platinum_t5", 1.0);
+			Item("wpn_1hs_axe_a_platinum_t5", 1.0);
+			Item("wpn_1hs_axe_c_platinum_t5", 1.0);
+			Item("wpn_1hs_axe_k_platinum_t5", 1.0);
+			Item("wpn_1hs_axe_r_platinum_t5", 1.0);
+			Item("wpn_1hs_mach_a_platinum_t5", 1.0);
+			Item("wpn_1hs_mach_b_platinum_t5", 1.0);
+			Item("wpn_1hs_mach_j_platinum_t5", 1.0);
+			Item("wpn_1hs_mach_w_platinum_t5", 1.0);
+			StatusRestriction(32, 37);
+			Item("wpn_1hs_axdb_a_platinum_t6", 1.0);
+			Item("wpn_1hs_axe_a_platinum_t6", 1.0);
+			Item("wpn_1hs_axe_c_platinum_t6", 1.0);
+			Item("wpn_1hs_axe_k_platinum_t6", 1.0);
+			Item("wpn_1hs_axe_r_platinum_t6", 1.0);
+			Item("wpn_1hs_mach_a_platinum_t6", 1.0);
+			Item("wpn_1hs_mach_b_platinum_t6", 1.0);
+			Item("wpn_1hs_mach_j_platinum_t6", 1.0);
+			Item("wpn_1hs_mach_w_platinum_t6", 1.0);
+			StatusRestriction(38, 43);
+			Item("wpn_1hs_axdb_a_platinum_t7", 1.0);
+			Item("wpn_1hs_axe_a_platinum_t7", 1.0);
+			Item("wpn_1hs_axe_c_platinum_t7", 1.0);
+			Item("wpn_1hs_axe_k_platinum_t7", 1.0);
+			Item("wpn_1hs_axe_r_platinum_t7", 1.0);
+			Item("wpn_1hs_mach_a_platinum_t7", 1.0);
+			Item("wpn_1hs_mach_b_platinum_t7", 1.0);
+			Item("wpn_1hs_mach_j_platinum_t7", 1.0);
+			Item("wpn_1hs_mach_w_platinum_t7", 1.0);
+			StatusRestriction(44, 49);
+			Item("wpn_1hs_axdb_a_platinum_t8", 1.0);
+			Item("wpn_1hs_axe_a_platinum_t8", 1.0);
+			Item("wpn_1hs_axe_c_platinum_t8", 1.0);
+			Item("wpn_1hs_axe_k_platinum_t8", 1.0);
+			Item("wpn_1hs_axe_r_platinum_t8", 1.0);
+			Item("wpn_1hs_mach_a_platinum_t8", 1.0);
+			Item("wpn_1hs_mach_b_platinum_t8", 1.0);
+			Item("wpn_1hs_mach_j_platinum_t8", 1.0);
+			Item("wpn_1hs_mach_w_platinum_t8", 1.0);
+			StatusRestriction(50, 50);
+			Item("wpn_1hs_axdb_a_platinum_t9", 1.0);
+			Item("wpn_1hs_axe_a_platinum_t9", 1.0);
+			Item("wpn_1hs_axe_c_platinum_t9", 1.0);
+			Item("wpn_1hs_axe_k_platinum_t9", 1.0);
+			Item("wpn_1hs_axe_r_platinum_t9", 1.0);
+			Item("wpn_1hs_mach_a_platinum_t9", 1.0);
+			Item("wpn_1hs_mach_b_platinum_t9", 1.0);
+			Item("wpn_1hs_mach_j_platinum_t9", 1.0);
+			Item("wpn_1hs_mach_w_platinum_t9", 1.0);
+        }
+    }
 	//Playtests
 		sub Biter_Bag(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
     {

@@ -8,8 +8,7 @@ SeqTrack("Biter_a_Idle_01", "biter_a_idle_01.anm2", 0, 643, 30, 1, 0.0)
 
 SeqTrack("Biter_a_walk_start_N", "biter_a_walk_start_n.anm2", 10, 91, 30, 1, 0.0)
 {
-    Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
-	Event(27, USER_LEFT_STEP, -1)
+    Event(27, USER_LEFT_STEP, -1)
     Event(27, AUDIO_STEP_LEFT, -1)
     {
         _Attributes(0,0,1)
@@ -40,14 +39,12 @@ SeqTrack("Biter_a_walk_start_N", "biter_a_walk_start_n.anm2", 10, 91, 30, 1, 0.0
     }
     Event(69, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
     Event(80, VIS_EVENT_RIGHT_FOOT_LAND, -1)
-	Event(80, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 
 SeqTrack("Biter_a_walk_loop_01", "biter_a_walk_loop_01.anm2", 0, 208, 30, 1, 0.0)
 {
     Event(0, VIS_EVENT_IK_ENABLE, -1)
     Event(0, EVENT_DODGE_ENABLED, -1)
-	Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
     Event(25, 0, 1)
     Event(3, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(3, VIS_EVENT_STEP_LEFT, -1)
@@ -139,13 +136,11 @@ SeqTrack("Biter_a_walk_loop_01", "biter_a_walk_loop_01.anm2", 0, 208, 30, 1, 0.0
     }
     Event(189, VIS_EVENT_RIGHT_FOOT_LAND, -1)
     Event(196, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
-	Event(196, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 
 SeqTrack("Biter_a_walk_start_NE", "biter_a_walk_start_e.anm2", 8, 90, 30, 1, 0.0)
 {
-    Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
-	Event(22, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+    Event(22, VIS_EVENT_LEFT_FOOT_LIFT, -1)
     Event(37, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(40, USER_LEFT_STEP, -1)
     Event(40, AUDIO_STEP_LEFT, -1)
@@ -173,13 +168,11 @@ SeqTrack("Biter_a_walk_start_NE", "biter_a_walk_start_e.anm2", 8, 90, 30, 1, 0.0
         _Attributes(0,0,1)
         PlayStepSFx("step_left", "l_foot")
     }
-	Event(82, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 
 SeqTrack("Biter_a_walk_start_NW", "biter_a_walk_start_w.anm2", 17, 72, 30, 1, 0.0)
 {
-    Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
-	Event(11, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
+    Event(11, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
     Event(27, VIS_EVENT_RIGHT_FOOT_LAND, -1)
     Event(30, USER_RIGHT_STEP, -1)
     Event(30, AUDIO_STEP_RIGHT, -1)
@@ -199,7 +192,6 @@ SeqTrack("Biter_a_walk_start_NW", "biter_a_walk_start_w.anm2", 17, 72, 30, 1, 0.
         _Attributes(0,0,1)
         PlayStepSFx("step_left", "l_foot")
     }
-	Event(49, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 
 SeqTrack("hitreaction_light_chest_forward", "biter_a_hitreaction_light_chest_forward.anm2", 5, 28, 30, 1, 0.0)
@@ -487,6 +479,11 @@ SeqTrack("death_chest_backward", "m_bit_death_s.anm2", 0, 59, 30, 1, 0.0)
         PlayScream("death",0,5,0,0)
         _Attributes(0,0,0,"Human")
     }
+    Event(29, USER_PLAY_SOUND, -1)
+    {
+        PlayAudioEvent("biter_body_falling", 0, 0)
+        SurfaceInteraction("collision_body_surface_layer","pelvis","",4.0)
+    }
     Event(30, VIS_EVENT_LEFT_FOOT_LIFT, -1)
     Event(30, VIS_EVENT_LEFT_FOOT_LIFT, 0)
     Event(31, PLAY_FACIAL_ANIM, -1)
@@ -505,11 +502,6 @@ SeqTrack("death_chest_backward", "m_bit_death_s.anm2", 0, 59, 30, 1, 0.0)
     }
     Event(35, USER_CAN_BLEND_OUT, -1)
     Event(35, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
-    Event(35, USER_PLAY_SOUND, -1)
-    {
-        PlayAudioEvent("biter_body_falling", 0, 0)
-        SurfaceInteraction("collision_body_surface_layer","pelvis","",4.0)
-    }
     Event(35, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
 }
 
@@ -522,6 +514,11 @@ SeqTrack("death_chest_right", "m_bit_death_e.anm2", 0, 62, 30, 1, 0.0)
     }
     Event(2, VIS_EVENT_LEFT_FOOT_LIFT, -1)
     Event(28, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(28, USER_PLAY_SOUND, -1)
+    {
+        PlayAudioEvent("biter_body_falling", 0, 0)
+        SurfaceInteraction("collision_body_surface_layer","pelvis","",4.0)
+    }
     Event(29, PLAY_FACIAL_ANIM, -1)
     {
         PlayFacialAnim("dead",-99.0,1.0,1.0,0.10000000149011612,0.10000000149011612,0.0,0.0,1,0,0)
@@ -533,11 +530,6 @@ SeqTrack("death_chest_right", "m_bit_death_e.anm2", 0, 62, 30, 1, 0.0)
     }
     Event(34, USER_CAN_BLEND_OUT, -1)
     Event(34, VIS_EVENT_LEFT_FOOT_LIFT, -1)
-    Event(36, USER_PLAY_SOUND, -1)
-    {
-        PlayAudioEvent("biter_body_falling", 0, 0)
-        SurfaceInteraction("collision_body_surface_layer","pelvis","",4.0)
-    }
     Event(45, VIS_EVENT_RIGHT_FOOT_LAND, -1)
     Event(46, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(47, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
@@ -594,14 +586,14 @@ SeqTrack("death_chest_forward", "m_bit_death_n.anm2", 0, 50, 30, 1, 0.0)
     {
         PlayFacialAnim("dead",-99.0,1.0,1.0,0.10000000149011612,0.10000000149011612,0.0,0.0,1,0,0)
     }
-    Event(32, PLAY_FACIAL_ANIM, -1)
-    {
-        EyesBlink(4, 1, 1)
-    }
-    Event(32, USER_PLAY_SOUND, 1)
+    Event(29, USER_PLAY_SOUND, 1)
     {
         PlayAudioEvent("biter_body_falling", 0, 0)
         SurfaceInteraction("collision_body_surface_layer","pelvis","",4.0)
+    }
+    Event(32, PLAY_FACIAL_ANIM, -1)
+    {
+        EyesBlink(4, 1, 1)
     }
     Event(33, USER_CAN_BLEND_OUT, -1)
 }
@@ -629,13 +621,13 @@ SeqTrack("death_chest", "m_bit_death_s.anm2", 1, 50, 30, 1, 0.0)
         PlayStepSFx("step_left", "l_foot")
     }
     Event(11, USER_CAN_BLEND_OUT, -1)
-    Event(16, USER_PLAY_SOUND, -1)
+    Event(29, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+    Event(29, VIS_EVENT_LEFT_FOOT_LIFT, 0)
+    Event(30, USER_PLAY_SOUND, -1)
     {
         PlayAudioEvent("biter_body_falling", 0, 0)
         SurfaceInteraction("collision_body_surface_layer","pelvis","",4.0)
     }
-    Event(29, VIS_EVENT_LEFT_FOOT_LIFT, -1)
-    Event(29, VIS_EVENT_LEFT_FOOT_LIFT, 0)
     Event(34, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
 }
 
@@ -644,7 +636,6 @@ SeqTrack("Turn_E", "biter_a_turn_e.anm2", 20, 69, 30, 1, 0.0)
     Event(-20, VIS_EVENT_IK_ENABLE, -1)
     Event(-20, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(-20, VIS_EVENT_RIGHT_FOOT_LAND, -1)
-	Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
     Event(4, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
     Event(15, VIS_EVENT_RIGHT_FOOT_LAND, -1)
     Event(15, VIS_EVENT_STEP_RIGHT, -1)
@@ -664,14 +655,12 @@ SeqTrack("Turn_E", "biter_a_turn_e.anm2", 20, 69, 30, 1, 0.0)
         PlayStepSFx("step_left", "l_foot")
     }
     Event(47, USER_CAN_BLEND_OUT, -1)
-	Event(47, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 SeqTrack("Turn_SW", "biter_a_turn_sw.anm2", 15, 94, 30, 1, 0.0)
 {
     Event(-15, VIS_EVENT_IK_ENABLE, -1)
     Event(-15, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(-15, VIS_EVENT_RIGHT_FOOT_LAND, -1)
-	Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
     Event(1, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
     Event(7, VIS_EVENT_RIGHT_FOOT_LAND, -1)
     Event(7, VIS_EVENT_STEP_RIGHT, -1)
@@ -700,14 +689,12 @@ SeqTrack("Turn_SW", "biter_a_turn_sw.anm2", 15, 94, 30, 1, 0.0)
         PlayStepSFx("step_right", "r_foot")
     }
     Event(48, USER_CAN_BLEND_OUT, -1)
-	Event(48, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 SeqTrack("Turn_SE", "biter_a_turn_se.anm2", 22, 91, 30, 1, 0.0)
 {
     Event(-22, VIS_EVENT_IK_ENABLE, -1)
     Event(-22, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(-22, VIS_EVENT_RIGHT_FOOT_LAND, -1)
-	Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
     Event(0, VIS_EVENT_LEFT_FOOT_LIFT, -1)
     Event(6, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(6, VIS_EVENT_STEP_LEFT, -1)
@@ -738,14 +725,12 @@ SeqTrack("Turn_SE", "biter_a_turn_se.anm2", 22, 91, 30, 1, 0.0)
     Event(50, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
     Event(58, VIS_EVENT_RIGHT_FOOT_LAND, -1)
     Event(58, USER_CAN_BLEND_OUT, -1)
-	Event(58, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 SeqTrack("Turn_W", "biter_a_turn_w.anm2", 12, 75, 30, 1, 0.0)
 {
     Event(-12, VIS_EVENT_IK_ENABLE, -1)
     Event(-12, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(-12, VIS_EVENT_RIGHT_FOOT_LAND, -1)
-	Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
     Event(0, VIS_EVENT_LEFT_FOOT_LIFT, -1)
     Event(16, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(16, VIS_EVENT_STEP_LEFT, -1)
@@ -784,12 +769,10 @@ SeqTrack("Turn_W", "biter_a_turn_w.anm2", 12, 75, 30, 1, 0.0)
         PlayStepSFx("step_left", "l_foot")
     }
     Event(121, USER_CAN_BLEND_OUT, -1)
-	Event(122, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 SeqTrack("biter_a_idle", "biter_a_idle.anm2", 0, 208, 30, 1, 0.0)
 {
-    Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
-	Event(17, VIS_EVENT_RIGHT_FOOT_LAND, -1)
+    Event(17, VIS_EVENT_RIGHT_FOOT_LAND, -1)
     Event(22, VIS_EVENT_LEFT_FOOT_LIFT, -1)
     Event(37, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(42, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
@@ -809,13 +792,11 @@ SeqTrack("biter_a_idle", "biter_a_idle.anm2", 0, 208, 30, 1, 0.0)
     Event(188, VIS_EVENT_LEFT_FOOT_LIFT, -1)
     Event(203, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(207, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
-	Event(207, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 
 SeqTrack("start_n", "biter_a_walk_start_n.anm2", 0, 91, 30, 1, 0.0)
 {
-    Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
-	Event(0, EVENT_DODGE_ENABLED, -1)
+    Event(0, EVENT_DODGE_ENABLED, -1)
     Event(0, VIS_EVENT_IK_ENABLE, -1)
     Event(0, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(0, VIS_EVENT_RIGHT_FOOT_LAND, -1)
@@ -852,13 +833,11 @@ SeqTrack("start_n", "biter_a_walk_start_n.anm2", 0, 91, 30, 1, 0.0)
         PlayStepSFx("step_left", "l_foot")
     }
     Event(84, VIS_EVENT_LEFT_FOOT_LIFT, -1)
-	Event(84, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 
 SeqTrack("start_w", "biter_a_walk_start_w.anm2", 0, 106, 30, 1, 0.0)
 {
-    Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
-	Event(0, EVENT_DODGE_ENABLED, -1)
+    Event(0, EVENT_DODGE_ENABLED, -1)
     Event(0, VIS_EVENT_IK_ENABLE, -1)
     Event(0, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(0, VIS_EVENT_RIGHT_FOOT_LAND, -1)
@@ -903,13 +882,11 @@ SeqTrack("start_w", "biter_a_walk_start_w.anm2", 0, 106, 30, 1, 0.0)
         _Attributes(0,0,1)
         PlayStepSFx("step_left", "l_foot")
     }
-	Event(103, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 
 SeqTrack("start_e", "biter_a_walk_start_e.anm2", 0, 106, 30, 1, 0.0)
 {
-    Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
-	Event(0, EVENT_DODGE_ENABLED, -1)
+    Event(0, EVENT_DODGE_ENABLED, -1)
     Event(0, VIS_EVENT_IK_ENABLE, -1)
     Event(0, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(0, VIS_EVENT_RIGHT_FOOT_LAND, -1)
@@ -946,13 +923,11 @@ SeqTrack("start_e", "biter_a_walk_start_e.anm2", 0, 106, 30, 1, 0.0)
         PlayStepSFx("step_left", "l_foot")
     }
     Event(96, VIS_EVENT_LEFT_FOOT_LIFT, -1)
-	Event(96, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 
 SeqTrack("start_sw", "biter_a_walk_start_sw.anm2", 0, 106, 30, 1, 0.0)
 {
-    Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
-	Event(0, EVENT_DODGE_ENABLED, -1)
+    Event(0, EVENT_DODGE_ENABLED, -1)
     Event(0, VIS_EVENT_IK_ENABLE, -1)
     Event(0, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(0, VIS_EVENT_RIGHT_FOOT_LAND, -1)
@@ -991,13 +966,11 @@ SeqTrack("start_sw", "biter_a_walk_start_sw.anm2", 0, 106, 30, 1, 0.0)
         PlayStepSFx("step_left", "l_foot")
     }
     Event(99, VIS_EVENT_LEFT_FOOT_LIFT, -1)
-	Event(99, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 
 SeqTrack("start_se", "biter_a_walk_start_se.anm2", 0, 106, 30, 1, 0.0)
 {
-    Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
-	Event(0, EVENT_DODGE_ENABLED, -1)
+    Event(0, EVENT_DODGE_ENABLED, -1)
     Event(0, VIS_EVENT_IK_ENABLE, -1)
     Event(0, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(0, VIS_EVENT_RIGHT_FOOT_LAND, -1)
@@ -1043,13 +1016,11 @@ SeqTrack("start_se", "biter_a_walk_start_se.anm2", 0, 106, 30, 1, 0.0)
         PlayStepSFx("step_left", "l_foot")
     }
     Event(105, VIS_EVENT_LEFT_FOOT_LIFT, -1)
-	Event(105, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 
 SeqTrack("stop_n_lf", "biter_a_walk_stop_n_lf.anm2", 17, 129, 30, 1, 0.0)
 {
-    Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
-	Event(0, AUDIO_STEP_LEFT, -1)
+    Event(0, AUDIO_STEP_LEFT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
@@ -1100,13 +1071,11 @@ SeqTrack("stop_n_lf", "biter_a_walk_stop_n_lf.anm2", 17, 129, 30, 1, 0.0)
         _Attributes(0,0,1)
         PlayStepSFx("step_left", "l_foot")
     }
-	Event(83, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 
 SeqTrack("stop_n_rf", "biter_a_walk_stop_n_rf.anm2", 16, 129, 30, 1, 0.0)
 {
-    Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
-	Event(0, VIS_EVENT_STEP_RIGHT, -1)
+    Event(0, VIS_EVENT_STEP_RIGHT, -1)
     Event(0, AUDIO_STEP_RIGHT, -1)
     {
         _Attributes(0,0,1)
@@ -1157,7 +1126,6 @@ SeqTrack("stop_n_rf", "biter_a_walk_stop_n_rf.anm2", 16, 129, 30, 1, 0.0)
         _Attributes(0,0,1)
         PlayStepSFx("step_right", "r_foot")
     }
-	Event(76, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 
 
@@ -1181,8 +1149,7 @@ SeqTrack("Biter_A_grab_punch", "biter_a_grab_punch.anm2", 0, 63, 30, 1, 0.0)
 
 SeqTrack("Biter_C_walk_loop_01", "biter_c_walk_loop_01.anm2", 0, 108, 30, 1, 0.0)
 {
-    Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
-	Event(2, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
+    Event(2, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
     Event(7, VIS_EVENT_STEP_LEFT, -1)
     Event(7, AUDIO_STEP_LEFT, -1)
     {
@@ -1254,13 +1221,11 @@ SeqTrack("Biter_C_walk_loop_01", "biter_c_walk_loop_01.anm2", 0, 108, 30, 1, 0.0
         PlayStepSFx("step_right", "r_foot")
     }
     Event(104, VIS_EVENT_RIGHT_FOOT_LAND, -1)
-	Event(104, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 
 SeqTrack("Biter_C_walk_start_N", "biter_c_walk_start_n.anm2", 14, 67, 30, 1, 0.0)
 {
-    Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
-	Event(4, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(4, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(6, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
     Event(15, MID_ROTATION_MARKER, -1)
     Event(15, VIS_EVENT_LEFT_FOOT_LIFT, -1)
@@ -1298,13 +1263,11 @@ SeqTrack("Biter_C_walk_start_N", "biter_c_walk_start_n.anm2", 14, 67, 30, 1, 0.0
             TimeShift(-0.033300)
         }
     }
-	Event(50, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 
 SeqTrack("Biter_C_walk_start_W", "biter_c_walk_start_w.anm2", 8, 81, 30, 1, 0.0)
 {
-    Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
-	Event(30, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
+    Event(30, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
     Event(33, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(42, MID_ROTATION_MARKER, -1)
     Event(43, VIS_EVENT_LEFT_FOOT_LIFT, -1)
@@ -1342,13 +1305,11 @@ SeqTrack("Biter_C_walk_start_W", "biter_c_walk_start_w.anm2", 8, 81, 30, 1, 0.0)
         }
     }
     Event(71, VIS_EVENT_RIGHT_FOOT_LAND, -1)
-	Event(71, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 
 SeqTrack("Biter_C_walk_start_E", "biter_c_walk_start_e.anm2", 10, 109, 30, 1, 0.0)
 {
-    Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
-	Event(32, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
+    Event(32, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
     Event(39, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(39, VIS_EVENT_STEP_RIGHT, -1)
     {
@@ -1408,13 +1369,11 @@ SeqTrack("Biter_C_walk_start_E", "biter_c_walk_start_e.anm2", 10, 109, 30, 1, 0.
         }
     }
     Event(97, VIS_EVENT_RIGHT_FOOT_LAND, -1)
-	Event(97, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 
 SeqTrack("Biter_C_walk_start_SW", "biter_c_walk_start_sw.anm2", 8, 72, 30, 1, 0.0)
 {
-    Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
-	Event(14, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+    Event(14, VIS_EVENT_LEFT_FOOT_LIFT, -1)
     Event(15, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(19, VIS_EVENT_STEP_LEFT, -1)
     {
@@ -1463,13 +1422,11 @@ SeqTrack("Biter_C_walk_start_SW", "biter_c_walk_start_sw.anm2", 8, 72, 30, 1, 0.
         }
     }
     Event(62, VIS_EVENT_RIGHT_FOOT_LAND, -1)
-	Event(62, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 
 SeqTrack("Biter_C_walk_start_SE", "biter_c_walk_start_se.anm2", 5, 97, 30, 1, 0.0)
 {
-    Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
-	Event(23, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
+    Event(23, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
     Event(31, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(32, VIS_EVENT_STEP_RIGHT, -1)
     {
@@ -1529,13 +1486,11 @@ SeqTrack("Biter_C_walk_start_SE", "biter_c_walk_start_se.anm2", 5, 97, 30, 1, 0.
         }
     }
     Event(90, VIS_EVENT_RIGHT_FOOT_LAND, -1)
-	Event(90, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 
 SeqTrack("Biter_C_walk_stop_N_LF", "biter_c_walk_stop_n_lf.anm2", 25, 128, 30, 1, 0.0)
 {
-    Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
-	Event(0, VIS_EVENT_STEP_RIGHT, -1)
+    Event(0, VIS_EVENT_STEP_RIGHT, -1)
     Event(0, VIS_EVENT_RIGHT_FOOT_LAND, -1)
     Event(15, VIS_EVENT_STEP_LEFT, -1)
     {
@@ -1578,13 +1533,11 @@ SeqTrack("Biter_C_walk_stop_N_LF", "biter_c_walk_stop_n_lf.anm2", 25, 128, 30, 1
     Event(52, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(53, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(56, VIS_EVENT_STOPANIM, -1)
-	Event(56, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 
 SeqTrack("Biter_C_walk_stop_N_RF", "biter_c_walk_stop_n_rf.anm2", 23, 90, 30, 1, 0.0)
 {
-    Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
-	Event(0, VIS_EVENT_STEP_LEFT, -1)
+    Event(0, VIS_EVENT_STEP_LEFT, -1)
     Event(0, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(15, VIS_EVENT_STEP_RIGHT, -1)
     {
@@ -1627,7 +1580,6 @@ SeqTrack("Biter_C_walk_stop_N_RF", "biter_c_walk_stop_n_rf.anm2", 23, 90, 30, 1,
     }
     Event(42, VIS_EVENT_RIGHT_FOOT_LAND, -1)
     Event(45, VIS_EVENT_STOPANIM, -1)
-	Event(45, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 
 
@@ -1672,8 +1624,7 @@ SeqTrack("Biter_A_Grab_Finisher_01_with_oh", "Biter_A_Grab_Finisher_01_with_oh.a
 
 SeqTrack("Turn_NW", "biter_a_turn_nw.anm2", 11, 72, 30, 1, 0.0)
 {
-    Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
-	Event(-11, VIS_EVENT_IK_ENABLE, -1)
+    Event(-11, VIS_EVENT_IK_ENABLE, -1)
     Event(-11, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(-11, VIS_EVENT_RIGHT_FOOT_LAND, -1)
     Event(0, VIS_EVENT_LEFT_FOOT_LIFT, -1)
@@ -1695,12 +1646,10 @@ SeqTrack("Turn_NW", "biter_a_turn_nw.anm2", 11, 72, 30, 1, 0.0)
         PlayStepSFx("step_right", "r_foot")
     }
     Event(41, USER_CAN_BLEND_OUT, -1)
-	Event(41, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 SeqTrack("Turn_NE", "biter_a_turn_ne.anm2", 11, 71, 30, 1, 0.0)
 {
-    Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
-	Event(-11, VIS_EVENT_IK_ENABLE, -1)
+    Event(-11, VIS_EVENT_IK_ENABLE, -1)
     Event(-11, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(-11, VIS_EVENT_RIGHT_FOOT_LAND, -1)
     Event(0, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
@@ -1722,12 +1671,10 @@ SeqTrack("Turn_NE", "biter_a_turn_ne.anm2", 11, 71, 30, 1, 0.0)
         PlayStepSFx("step_left", "l_foot")
     }
     Event(44, USER_CAN_BLEND_OUT, -1)
-	Event(44, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 SeqTrack("Turn_S_E", "biter_a_turn_s_e.anm2", 18, 74, 30, 1, 0.0)
 {
-    Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
-	Event(-18, VIS_EVENT_IK_ENABLE, -1)
+    Event(-18, VIS_EVENT_IK_ENABLE, -1)
     Event(-18, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(-18, VIS_EVENT_RIGHT_FOOT_LAND, -1)
     Event(3, VIS_EVENT_LEFT_FOOT_LIFT, -1)
@@ -1760,14 +1707,12 @@ SeqTrack("Turn_S_E", "biter_a_turn_s_e.anm2", 18, 74, 30, 1, 0.0)
     }
     Event(48, USER_CAN_BLEND_OUT, -1)
     Event(54, VIS_EVENT_RIGHT_FOOT_LAND, -1)
-	Event(54, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 SeqTrack("Turn_S_W", "biter_a_turn_s_w.anm2", 21, 85, 30, 1, 0.0)
 {
     Event(-21, VIS_EVENT_IK_ENABLE, -1)
     Event(-21, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(-21, VIS_EVENT_RIGHT_FOOT_LAND, -1)
-	Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
     Event(0, VIS_EVENT_LEFT_FOOT_LIFT, -1)
     Event(16, VIS_EVENT_STEP_LEFT, -1)
     Event(16, AUDIO_STEP_LEFT, -1)
@@ -1796,13 +1741,11 @@ SeqTrack("Turn_S_W", "biter_a_turn_s_w.anm2", 21, 85, 30, 1, 0.0)
         _Attributes(0,0,1)
         PlayStepSFx("step_left", "l_foot")
     }
-	Event(44, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 
 SeqTrack("Turn_NW_fast", "biter_a_turn_nw_fast.anm2", 0, 38, 42, 1, 0.0)
 {
-    Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
-	Event(8, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+    Event(8, VIS_EVENT_LEFT_FOOT_LIFT, -1)
     Event(11, AUDIO_STEP_LEFT, -1)
     {
         _Attributes(0,0,1)
@@ -1817,12 +1760,10 @@ SeqTrack("Turn_NW_fast", "biter_a_turn_nw_fast.anm2", 0, 38, 42, 1, 0.0)
     }
     Event(31, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(32, USER_CAN_BLEND_OUT, -1)
-	Event(32, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 SeqTrack("Turn_NE_fast", "biter_a_turn_ne_fast.anm2", 0, 33, 42, 1, 0.0)
 {
-    Event(0, EVENT_FALL_FROM_EDGE_ENABLED, -1)
-	Event(4, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+    Event(4, VIS_EVENT_LEFT_FOOT_LIFT, -1)
     Event(8, AUDIO_STEP_RIGHT, -1)
     {
         _Attributes(0,0,1)
@@ -1837,7 +1778,6 @@ SeqTrack("Turn_NE_fast", "biter_a_turn_ne_fast.anm2", 0, 33, 42, 1, 0.0)
         PlayStepSFx("step_left", "l_foot")
     }
     Event(27, USER_CAN_BLEND_OUT, -1)
-	Event(27, EVENT_FALL_FROM_EDGE_DISABLED, -1)
 }
 SeqTrack("Turn_E_fast", "biter_a_turn_e_fast.anm2", 0, 41, 44, 1, 0.0)
 {
@@ -3093,7 +3033,7 @@ SeqTrack("idle_crouch_01_sniffing_to_idle_crouch", "m_bit_idle_crouch_01_sniffin
 
 SeqTrack("idle_crouch_01_sniffing_to_idle_stand", "m_bit_idle_crouch_01_sniffing_to_idle_stand.anm2", 0, 107, 30, 1, 0.0)
 {
-    Event(31, AUDIO_STEP_RIGHT, -1)
+    Event(29, AUDIO_STEP_RIGHT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
@@ -3104,7 +3044,7 @@ SeqTrack("idle_crouch_01_sniffing_to_idle_stand", "m_bit_idle_crouch_01_sniffing
     Event(60, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
     Event(61, USER_CAN_BLEND_OUT, -1)
     Event(61, VIS_EVENT_RIGHT_FOOT_LAND, -1)
-    Event(64, AUDIO_STEP_RIGHT, -1)
+    Event(62, AUDIO_STEP_RIGHT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
@@ -6486,14 +6426,14 @@ SeqTrack("night_hitreaction_heavy_w", "m_bit_night_hitreaction_heavy_w.anm2", 3,
     Event(9, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
     Event(21, VIS_EVENT_LEFT_FOOT_LIFT, -1)
     Event(22, USER_CAN_INTERRUPT, -1)
-    Event(23, AUDIO_STEP_SPRINT_RIGHT, -1)
+    Event(22, AUDIO_STEP_SPRINT_RIGHT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
         PlayStepSFx("step_sprint_right", "r_foot")
     }
     Event(24, VIS_EVENT_RIGHT_FOOT_LAND, -1)
-    Event(35, AUDIO_STEP_SPRINT_LEFT, -1)
+    Event(34, AUDIO_STEP_SPRINT_LEFT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
@@ -6504,7 +6444,7 @@ SeqTrack("night_hitreaction_heavy_w", "m_bit_night_hitreaction_heavy_w.anm2", 3,
     Event(36, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
     Event(36, VIS_EVENT_RIGHT_FOOT_LAND, -1)
     Event(38, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
-    Event(46, AUDIO_STEP_RIGHT, -1)
+    Event(45, AUDIO_STEP_RIGHT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
@@ -6514,7 +6454,7 @@ SeqTrack("night_hitreaction_heavy_w", "m_bit_night_hitreaction_heavy_w.anm2", 3,
     Event(49, VIS_EVENT_LEFT_FOOT_LIFT, -1)
     Event(53, USER_CAN_BLEND_OUT, -1)
     Event(54, VIS_EVENT_LEFT_FOOT_LAND, -1)
-    Event(59, AUDIO_STEP_LEFT, -1)
+    Event(58, AUDIO_STEP_LEFT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
@@ -6577,25 +6517,20 @@ SeqTrack("day_fmv_to_hitreaction_light_e", "m_bit_day_fmv_to_hitreaction_light_e
 
 SeqTrack("night_laying_to_stand", "m_bit_night_laying_to_stand.anm2", 0, 110, 30, 1, 0.0)
 {
-    Event(5, AUDIO_STEP_SHUFFLE_LEFT, -1)
-    {
-        PlayStepSFx("step_shuffle_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(36, VIS_EVENT_LEFT_FOOT_LAND, -1)
-    Event(37, AUDIO_STEP_LEFT, -1)
+    Event(35, AUDIO_STEP_LEFT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
         PlayStepSFx("step_left", "l_foot")
     }
+    Event(36, VIS_EVENT_LEFT_FOOT_LAND, -1)
 /*Event(1, 0, 1)
     {
         PlayAudioEvent("biter_male_night_to_nervous", 0)
     }*/
     Event(38, USER_POSE_CROUCHING, -1)
     Event(53, USER_POSE_STANDING, -1)
-    Event(56, AUDIO_STEP_RIGHT, -1)
+    Event(55, AUDIO_STEP_RIGHT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
@@ -8653,22 +8588,22 @@ SeqTrack("m_bit_charge_attack_01", "m_bit_charge_attack_01.anm2", 0, 97, 30, 1, 
     {
         PlayScream("attack_long",0,5,0,0)
     }
-    Event(4, AUDIO_STEP_SPRINT_LEFT, 0)
+    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, 0)
+    Event(1, AUDIO_STEP_SPRINT_LEFT, 0)
     {
         PlayStepSFx("step_sprint_left", "l_foot")
         _Attributes(0,0,1,"Human")
     }
     Event(4, VIS_EVENT_LEFT_FOOT_LAND, 0)
-    Event(4, USER_HIT_REACTION_DISABLED, 0)
     Event(7, VIS_EVENT_LEFT_FOOT_LIFT, 0)
-    Event(13, AUDIO_STEP_SPRINT_RIGHT, 0)
+    Event(10, AUDIO_STEP_SPRINT_RIGHT, 0)
     {
         PlayStepSFx("step_sprint_right", "r_foot")
         _Attributes(0,0,1,"Human")
     }
     Event(13, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(14, VIS_EVENT_RIGHT_FOOT_LAND, 0)
-    Event(21, AUDIO_STEP_SPRINT_LEFT, 0)
+    Event(19, AUDIO_STEP_SPRINT_LEFT, 0)
     {
         PlayStepSFx("step_sprint_left", "l_foot")
         _Attributes(0,0,1,"Human")
@@ -8684,26 +8619,25 @@ SeqTrack("m_bit_charge_attack_01", "m_bit_charge_attack_01.anm2", 0, 97, 30, 1, 
     Event(26, EVENT_GRAB_CHECK_START, -1)
     Event(30, EVENT_GRAB_CHECK_END, -1)
     Event(31, END_GIVE_DAMAGE, 0)
-    Event(33, USER_HIT_REACTION_ENABLED, 0)
-    Event(35, AUDIO_STEP_SPRINT_RIGHT, 0)
+    Event(33, AUDIO_STEP_SPRINT_RIGHT, 0)
     {
         PlayStepSFx("step_sprint_right", "r_foot")
         _Attributes(0,0,1,"Human")
     }
     Event(35, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(41, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
-    Event(46, VIS_EVENT_LEFT_FOOT_LAND, 0)
-    Event(47, AUDIO_STEP_SPRINT_LEFT, 0)
+    Event(44, AUDIO_STEP_SPRINT_LEFT, 0)
     {
         PlayStepSFx("step_sprint_left", "l_foot")
         _Attributes(0,0,1,"Human")
     }
-    Event(54, VIS_EVENT_RIGHT_FOOT_LAND, 0)
-    Event(55, AUDIO_STEP_SPRINT_RIGHT, 0)
+    Event(46, VIS_EVENT_LEFT_FOOT_LAND, 0)
+    Event(52, AUDIO_STEP_SPRINT_RIGHT, 0)
     {
         PlayStepSFx("step_sprint_right", "r_foot")
         _Attributes(0,0,1,"Human")
     }
+    Event(56, USER_DAMAGE_ON_COLLISION_DISABLED, 0)
     Event(71, USER_CAN_INTERRUPT, -1)
     Event(76, USER_CAN_BLEND_OUT, -1)
 }
@@ -8809,15 +8743,19 @@ SeqTrack("m_bit_charge", "m_bit_charge.anm2", 12, 182, 35, 1, 0.0)
 
 SeqTrack("m_bit_charge_attack_01_finish", "m_bit_charge_attack_01.anm2", 10, 95, 35, 1, 0.0)
 {
+    Event(1, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(8, USER_PLAY_SOUND, 1)
     {
         PlayScream("grab_attempt",0,5,0)
     }
-    Event(14, AUDIO_STEP_SPRINT_RIGHT, -1)
+    Event(9, AUDIO_STEP_SPRINT_LEFT, 0)
     {
-        _Attributes(0,0,1)
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
     }
     Event(14, VIS_EVENT_RIGHT_FOOT_LAND, -1)
     Event(18, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
@@ -8842,11 +8780,10 @@ SeqTrack("m_bit_charge_attack_01_finish", "m_bit_charge_attack_01.anm2", 10, 95,
     Event(28, VIS_EVENT_LEFT_FOOT_LIFT, -1)
     Event(38, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        _Attributes(0,0,1)
+        _Attributes(0,0,1,"Human")
         PlayStepSFx("step_sprint_right","r_foot")
         {
-            FrameOffset(-3.000000)
+            FrameOffset(-4.0)
         }
     }
     Event(38, VIS_EVENT_RIGHT_FOOT_LAND, -1)
@@ -8865,31 +8802,18 @@ SeqTrack("m_bit_charge_attack_01_finish", "m_bit_charge_attack_01.anm2", 10, 95,
     Event(57, VIS_EVENT_LEFT_FOOT_LIFT, -1)
     Event(58, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-3.000000)
+            FrameOffset(-3.0)
         }
     }
     Event(58, VIS_EVENT_RIGHT_FOOT_LAND, -1)
     Event(69, USER_CAN_INTERRUPT, -1)
-    Event(72, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
     Event(72, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(78, START_GIVE_DAMAGE, -1)
     Event(78, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
     Event(82, END_GIVE_DAMAGE, -1)
-    Event(86, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
     Event(86, VIS_EVENT_RIGHT_FOOT_LAND, -1)
     Event(97, USER_CAN_BLEND_OUT, -1)
 }
@@ -9504,6 +9428,10 @@ SeqTrack("m_bit_fmv_uvlightreaction_walk_to_knees", "m_bit_fmv_uvlightreaction_w
     {
         PlayFx("uv_burning_limb_small.gpufx",[1.0,0.0,0.0],"l_forearm",1,[0.0,0.0,0.0],1)
     }
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain_loop",1,5,0,0)
+    }
     Event(1, ACTIVATE_FLY_MODE, -1)
     {
         PlayFx("uv_burning_limb.gpufx",[1.0,0.0,0.0],"r_thigh",1,[0.0,0.0,0.0],0)
@@ -9514,10 +9442,6 @@ SeqTrack("m_bit_fmv_uvlightreaction_walk_to_knees", "m_bit_fmv_uvlightreaction_w
     }
     Event(10, VIS_EVENT_LEFT_FOOT_LIFT, -1)
     Event(10, VIS_EVENT_LEFT_FOOT_LIFT, 0)
-    Event(15, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("pain",1,5,0,0)
-    }
     Event(24, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
     Event(24, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
     Event(70, USER_POSE_CROUCHING, -1)
@@ -9557,6 +9481,10 @@ SeqTrack("m_bit_uvlightreaction_knees", "m_bit_uvlightreaction_knees.anm2", 0, 3
 }
 SeqTrack("m_bit_uvlightreaction_knees_to_stand", "m_bit_uvlightreaction_knees_to_stand.anm2", 0, 130, 30, 1, 0.0)
 {
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("taunt",0,5,0)
+    }
     Event(1, ACTIVATE_FLY_MODE, -1)
     {
         PlayFx("uv_burning_head.gpufx",[1.0,0.0,0.0],"head",1,[0.0,0.0,0.0],0)
@@ -9572,10 +9500,6 @@ SeqTrack("m_bit_uvlightreaction_knees_to_stand", "m_bit_uvlightreaction_knees_to
     Event(1, ACTIVATE_FLY_MODE, -1)
     {
         PlayFx("uv_burning_limb_small.gpufx",[1.0,0.0,0.0],"l_forearm",1,[0.0,0.0,0.0],1)
-    }
-    Event(1, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("taunt",0,5,0)
     }
     Event(2, ACTIVATE_FLY_MODE, -1)
     {
@@ -9846,14 +9770,14 @@ SeqTrack("m_bit_hitreaction_4m_s", "m_bit_hitreaction_4m_s.anm2", 0, 97, 30, 1, 
     Event(2, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
     Event(7, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(9, VIS_EVENT_LEFT_FOOT_LIFT, -1)
-    Event(16, VIS_EVENT_RIGHT_FOOT_LAND, -1)
-    Event(18, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
-    Event(19, AUDIO_STEP_SPRINT_LEFT, -1)
+    Event(15, AUDIO_STEP_SPRINT_LEFT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
         PlayStepSFx("step_sprint_left", "l_foot")
     }
+    Event(16, VIS_EVENT_RIGHT_FOOT_LAND, -1)
+    Event(18, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
     Event(19, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(23, AUDIO_STEP_SPRINT_RIGHT, -1)
     {
@@ -22986,13 +22910,13 @@ SeqTrack("m_bit_hitreaction_stand_1ph_cut_light_sw_right_legs_02", "m_bit_hitrea
 }
 SeqTrack("m_bit_uv_reaction_e_01", "m_bit_uv_reaction_e_01.anm2", 11, 434, 30, 1, 0.0)
 {
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("pain_uv", 0, 5, 0)
-    }
     Event(0, 0, -1)
     {
         PlayFacialAnim("m_bit_deg_run_fe",-99.000000,1.000000,1.000000,0.100000,0.100000,0.000000,3.070000,0,0,0)
+    }
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain_loop",1,5,0,0)
     }
     Event(1, ACTIVATE_FLY_MODE, -1)
     {
@@ -23118,13 +23042,13 @@ SeqTrack("m_bit_uv_reaction_e_01", "m_bit_uv_reaction_e_01.anm2", 11, 434, 30, 1
 
 SeqTrack("m_bit_uv_reaction_w_01", "m_bit_uv_reaction_w_01.anm2", 8, 423, 30, 1, 0.0)
 {
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("pain_uv", 0, 5, 0)
-    }
     Event(0, 0, -1)
     {
         PlayFacialAnim("m_bit_deg_run_fe",-99.000000,1.000000,1.000000,0.100000,0.100000,0.000000,3.070000,0,0,0)
+    }
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain_loop",1,5,0,0)
     }
     Event(2, ACTIVATE_FLY_MODE, -1)
     {
@@ -23262,14 +23186,14 @@ SeqTrack("m_bit_uv_reaction_w_01", "m_bit_uv_reaction_w_01.anm2", 8, 423, 30, 1,
 
 SeqTrack("m_bit_uv_reaction_s_01", "m_bit_uv_reaction_s_01.anm2", 2, 434, 30, 1, 0.0)
 {
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain_loop",1,5,0,0)
+    }
     Event(1, USER_LATEST_START, 0)
     Event(2, 0, -1)
     {
         PlayFacialAnim("m_bit_deg_run_fe",-99.000000,1.000000,1.000000,0.100000,0.100000,0.000000,3.070000,0,0,0)
-    }
-    Event(3, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("pain_uv", 0, 5, 0)
     }
     Event(5, ACTIVATE_FLY_MODE, -1)
     {
@@ -23416,11 +23340,11 @@ SeqTrack("m_bit_uv_reaction_s_01", "m_bit_uv_reaction_s_01.anm2", 2, 434, 30, 1,
 
 SeqTrack("m_bit_uv_reaction_s_02", "m_bit_uv_reaction_s_02.anm2", 3, 284, 30, 1, 0.0)
 {
-    Event(1, USER_LATEST_START, 0)
-    Event(7, USER_PLAY_SOUND, -1)
+    Event(0, USER_PLAY_SOUND, -1)
     {
-        PlayScream("pain_uv", 0, 5, 0)
+        PlayScream("pain_loop",1,5,0,0)
     }
+    Event(1, USER_LATEST_START, 0)
     Event(7, 0, -1)
     {
         PlayFacialAnim("m_bit_deg_run_fe",-99.000000,1.000000,1.000000,0.100000,0.100000,0.000000,3.070000,0,0,0)
@@ -23526,11 +23450,11 @@ SeqTrack("m_bit_uv_reaction_s_02", "m_bit_uv_reaction_s_02.anm2", 3, 284, 30, 1,
 
 SeqTrack("m_bit_uv_reaction_sl_01", "m_bit_uv_reaction_sl_01.anm2", 1, 398, 30, 1, 0.0)
 {
-    Event(1, USER_LATEST_START, 0)
-    Event(3, USER_PLAY_SOUND, -1)
+    Event(0, USER_PLAY_SOUND, -1)
     {
-        PlayScream("pain_uv", 0, 5, 0)
+        PlayScream("pain_loop",1,5,0,0)
     }
+    Event(1, USER_LATEST_START, 0)
     Event(3, 0, -1)
     {
         PlayFacialAnim("m_bit_deg_run_fe",-99.000000,1.000000,1.000000,0.100000,0.100000,0.000000,3.070000,0,0,0)
@@ -23688,13 +23612,13 @@ SeqTrack("m_bit_uv_reaction_sl_01", "m_bit_uv_reaction_sl_01.anm2", 1, 398, 30, 
 
 SeqTrack("m_bit_uv_reaction_nr_01", "m_bit_uv_reaction_nr_01.anm2", 4, 365, 30, 1, 0.0)
 {
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("pain_uv", 0, 5, 0)
-    }
     Event(0, 0, -1)
     {
         PlayFacialAnim("m_bit_deg_run_fe",-99.000000,1.000000,1.000000,0.100000,0.100000,0.000000,3.070000,0,0,0)
+    }
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain_loop",1,5,0,0)
     }
     Event(1, ACTIVATE_FLY_MODE, -1)
     {
@@ -23814,13 +23738,13 @@ SeqTrack("m_bit_uv_reaction_nr_01", "m_bit_uv_reaction_nr_01.anm2", 4, 365, 30, 
 
 SeqTrack("m_bit_uv_reaction_nl_01", "m_bit_uv_reaction_nl_01.anm2", 10, 405, 30, 1, 0.0)
 {
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("pain_uv", 0, 5, 0)
-    }
     Event(0, 0, -1)
     {
         PlayFacialAnim("m_bit_deg_run_fe",-99.000000,1.000000,1.000000,0.100000,0.100000,0.000000,3.070000,0,0,0)
+    }
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain_loop",1,5,0,0)
     }
     Event(2, ACTIVATE_FLY_MODE, -1)
     {
@@ -25359,7 +25283,7 @@ SeqTrack("m_bit_c_idle_n_to_n", "m_bit_c_idle_01.anm2", 305, 461, 60, 1, 0.0)
 }
 SeqTrack("m_bit_d_idle_01", "m_bit_d_idle_01.anm2", 0, 2045, 60, 1, 0.0)
 {
-    Event(0, USER_PLAY_SOUND, -1)
+    Event(1, USER_PLAY_SOUND, -1)
     {
         PlayScream("idle",1,5,1,1)
         _Attributes(1,0,0,"Human")
@@ -33771,14 +33695,31 @@ SeqTrack("m_bit_hitreaction_critical_sr_01", "m_bit_hitreaction_critical_sr_01.a
     Event(0, USER_HIT_REACTION_DISABLED, 0)
     Event(1, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(3, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+    Event(28, USER_PLAY_SOUND, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayAudioEvent("biter_body_falling",0,0,0,"",[0.0,0.0,0.0],0)
+        SurfaceInteraction("collision_body_surface_layer","pelvis","",4.0)
+    }
     Event(31, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
     Event(33, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(35, VIS_EVENT_LEFT_FOOT_LIFT, -1)
     Event(44, USER_POSE_LAYING, 0)
     Event(44, USER_HIT_REACTION_ENABLED, 0)
     Event(84, USER_POSE_CROUCHING, 0)
+    Event(120, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(123, VIS_EVENT_RIGHT_FOOT_LAND, -1)
     Event(140, USER_POSE_STANDING, 0)
+    Event(147, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(150, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(150, USER_CAN_INTERRUPT, -1)
     Event(161, USER_CAN_BLEND_OUT, -1)
@@ -33793,18 +33734,45 @@ SeqTrack("m_bit_hitreaction_critical_sl_01", "m_bit_hitreaction_critical_sl_01.a
     Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
     Event(0, USER_HIT_REACTION_DISABLED, 0)
     Event(3, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+    Event(24, USER_PLAY_SOUND, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayAudioEvent("biter_body_falling",0,0,0,"",[0.0,0.0,0.0],0)
+        SurfaceInteraction("collision_body_surface_layer","pelvis","",4.0)
+    }
     Event(32, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
     Event(43, USER_POSE_LAYING, 0)
     Event(43, USER_HIT_REACTION_ENABLED, 0)
     Event(72, USER_POSE_CROUCHING, 0)
     Event(92, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(93, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(112, USER_POSE_STANDING, 0)
     Event(125, USER_CAN_INTERRUPT, -1)
     Event(134, USER_CAN_BLEND_OUT, -1)
+    Event(135, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(137, VIS_EVENT_RIGHT_FOOT_LAND, -1)
     Event(147, VIS_EVENT_LEFT_FOOT_LIFT, -1)
     Event(158, VIS_EVENT_LEFT_FOOT_LAND, -1)
+    Event(163, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(173, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
+    Event(188, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(190, VIS_EVENT_RIGHT_FOOT_LAND, -1)
 }
 SeqTrack("m_bit_taunt_01", "m_bit_taunt_01.anm2", 0, 100, 30, 1, 0.0)
@@ -35437,6 +35405,11 @@ SeqTrack("m_bit_hitreaction_light_medium_sl_01", "m_bit_hitreaction_light_medium
     {
         PlayScream("pain_critical",1,5,0,0)
     }
+    Event(9, AUDIO_STEP_SPRINT_LEFT, -1)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1)
+    }
     Event(11, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
     Event(19, AUDIO_STEP_SPRINT_RIGHT, -1)
     {
@@ -35446,7 +35419,7 @@ SeqTrack("m_bit_hitreaction_light_medium_sl_01", "m_bit_hitreaction_light_medium
     Event(20, VIS_EVENT_LEFT_FOOT_LIFT, -1)
     Event(21, VIS_EVENT_RIGHT_FOOT_LAND, -1)
     Event(31, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
-    Event(33, AUDIO_STEP_SPRINT_LEFT, -1)
+    Event(32, AUDIO_STEP_SPRINT_LEFT, -1)
     {
         PlayStepSFx("step_sprint_left", "l_foot")
         _Attributes(0,0,1)
@@ -37356,21 +37329,21 @@ SeqTrack("m_bit_hitreaction_light_medium_sr_02", "m_bit_hitreaction_light_medium
     Event(24, VIS_EVENT_LEFT_FOOT_LIFT, 0)
     Event(25, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(33, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
-    Event(36, AUDIO_STEP_SPRINT_LEFT, -1)
+    Event(37, AUDIO_STEP_SPRINT_LEFT, -1)
     {
         PlayStepSFx("step_sprint_left", "l_foot")
         _Attributes(0,0,1,"Human")
     }
     Event(40, VIS_EVENT_LEFT_FOOT_LAND, 0)
-    Event(51, AUDIO_STEP_SPRINT_RIGHT, -1)
+    Event(53, VIS_EVENT_LEFT_FOOT_LIFT, 0)
+    Event(54, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(54, AUDIO_STEP_SPRINT_RIGHT, -1)
     {
         PlayStepSFx("step_sprint_right", "r_foot")
         _Attributes(0,0,1)
     }
-    Event(53, VIS_EVENT_LEFT_FOOT_LIFT, 0)
-    Event(54, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
     Event(56, VIS_EVENT_RIGHT_FOOT_LAND, 0)
-    Event(62, AUDIO_STEP_SPRINT_LEFT, -1)
+    Event(64, AUDIO_STEP_SPRINT_LEFT, -1)
     {
         PlayStepSFx("step_sprint_left", "l_foot")
         _Attributes(0,0,1)
@@ -37378,27 +37351,27 @@ SeqTrack("m_bit_hitreaction_light_medium_sr_02", "m_bit_hitreaction_light_medium
     Event(65, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
     Event(67, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(71, USER_CAN_INTERRUPT, -1)
-    Event(79, AUDIO_STEP_SPRINT_RIGHT, -1)
+    Event(79, VIS_EVENT_LEFT_FOOT_LIFT, 0)
+    Event(81, AUDIO_STEP_SPRINT_RIGHT, -1)
     {
         PlayStepSFx("step_sprint_right", "r_foot")
         _Attributes(0,0,1,"Human")
     }
-    Event(79, VIS_EVENT_LEFT_FOOT_LIFT, 0)
     Event(83, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(87, EVENT_VIS_AIM_LOOK_ENABLE, -1)
     Event(92, USER_CAN_BLEND_OUT, -1)
-    Event(106, AUDIO_STEP_LEFT, -1)
+    Event(108, AUDIO_STEP_LEFT, -1)
     {
         PlayStepSFx("step_left", "l_foot")
         _Attributes(0,0,1,"Human")
     }
     Event(111, VIS_EVENT_LEFT_FOOT_LAND, 0)
-    Event(115, AUDIO_STEP_RIGHT, -1)
+    Event(117, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
+    Event(117, AUDIO_STEP_RIGHT, -1)
     {
         PlayStepSFx("step_right", "r_foot")
         _Attributes(0,0,1,"Human")
     }
-    Event(117, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
     Event(121, VIS_EVENT_RIGHT_FOOT_LAND, 0)
 }
 SeqTrack("m_bit_hitreaction_light_medium_sl_02", "m_bit_hitreaction_light_medium_sl_02.anm2", 3, 153, 30, 1, 0.0)
@@ -37408,32 +37381,57 @@ SeqTrack("m_bit_hitreaction_light_medium_sl_02", "m_bit_hitreaction_light_medium
     {
         PlayScream("pain_critical",1,5,0,0)
     }
+    Event(13, AUDIO_STEP_SPRINT_LEFT, -1)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1)
+    }
     Event(25, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
-    Event(42, AUDIO_STEP_SPRINT_RIGHT, -1)
+    Event(25, AUDIO_STEP_SPRINT_RIGHT, -1)
     {
         PlayStepSFx("step_sprint_right", "r_foot")
         _Attributes(0,0,1)
     }
-    Event(45, VIS_EVENT_LEFT_FOOT_LIFT, -1)
-    Event(47, VIS_EVENT_RIGHT_FOOT_LAND, -1)
-    Event(62, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
-    Event(74, AUDIO_STEP_SPRINT_LEFT, -1)
+    Event(34, AUDIO_STEP_SPRINT_LEFT, -1)
     {
         PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1)
+    }
+    Event(45, VIS_EVENT_LEFT_FOOT_LIFT, -1)
+    Event(47, VIS_EVENT_RIGHT_FOOT_LAND, -1)
+    Event(48, AUDIO_STEP_SPRINT_RIGHT, -1)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1)
+    }
+    Event(60, AUDIO_STEP_SPRINT_LEFT, -1)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1)
+    }
+    Event(62, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(74, AUDIO_STEP_SPRINT_RIGHT, -1)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
         _Attributes(0,0,1)
     }
     Event(76, VIS_EVENT_RIGHT_FOOT_LIFT, -1)
     Event(78, VIS_EVENT_LEFT_FOOT_LAND, -1)
     Event(85, USER_CAN_INTERRUPT, -1)
-    Event(101, EVENT_VIS_AIM_LOOK_ENABLE, -1)
-    Event(105, USER_CAN_BLEND_OUT, -1)
-    Event(116, AUDIO_STEP_SPRINT_RIGHT, -1)
+    Event(89, AUDIO_STEP_SPRINT_LEFT, -1)
     {
-        PlayStepSFx("step_sprint_right", "r_foot")
+        PlayStepSFx("step_sprint_left", "l_foot")
         _Attributes(0,0,1)
     }
+    Event(101, EVENT_VIS_AIM_LOOK_ENABLE, -1)
+    Event(105, USER_CAN_BLEND_OUT, -1)
     Event(120, VIS_EVENT_LEFT_FOOT_LIFT, -1)
     Event(120, VIS_EVENT_RIGHT_FOOT_LAND, -1)
+    Event(127, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
 }
 SeqTrack("m_bit_hitreaction_light_medium_sl_03", "m_bit_hitreaction_light_medium_sl_03.anm2", 1, 153, 30, 1, 0.0)
 {
@@ -37485,7 +37483,7 @@ SeqTrack("m_bit_rest_stand_01", "m_bit_rest_stand_01.anm2", 0, 272, 30, 1, 0.0)
         PlayScream("resting_phase_idle",1,5,1,1)
         _Attributes(1,0,0,"Human")
     }
-	Event(0, USER_POSE_STANDING, 0)
+    Event(0, USER_POSE_STANDING, 0)
     {
         _Attributes(0,0,0,"Human")
     }
@@ -37622,9 +37620,15 @@ SeqTrack("m_bit_hitreaction_heavy_to_stun_sl_03", "m_bit_hitreaction_heavy_to_st
     {
         PlayScream("pain",1,5,0,0)
     }
+    Event(1, AUDIO_STEP_SPRINT_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        _Attributes(0,0,1)
+        PlayStepSFx("step_sprint_right", "r_foot")
+    }
     Event(2, VIS_EVENT_LEFT_FOOT_LIFT, 0)
     Event(3, VIS_EVENT_RIGHT_FOOT_LAND, 0)
-    Event(9, AUDIO_STEP_SPRINT_LEFT, -1)
+    Event(8, AUDIO_STEP_SPRINT_LEFT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
@@ -37632,7 +37636,7 @@ SeqTrack("m_bit_hitreaction_heavy_to_stun_sl_03", "m_bit_hitreaction_heavy_to_st
     }
     Event(10, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
     Event(11, VIS_EVENT_LEFT_FOOT_LAND, 0)
-    Event(17, AUDIO_STEP_SPRINT_RIGHT, -1)
+    Event(15, AUDIO_STEP_SPRINT_RIGHT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
@@ -37640,30 +37644,41 @@ SeqTrack("m_bit_hitreaction_heavy_to_stun_sl_03", "m_bit_hitreaction_heavy_to_st
     }
     Event(18, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(19, VIS_EVENT_LEFT_FOOT_LIFT, 0)
-    Event(26, VIS_EVENT_LEFT_FOOT_LAND, 0)
-    Event(28, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
-    Event(28, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
-    Event(33, AUDIO_STEP_SPRINT_LEFT, -1)
+    Event(24, AUDIO_STEP_SPRINT_LEFT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
         PlayStepSFx("step_sprint_left", "l_foot")
     }
-    Event(41, VIS_EVENT_LEFT_FOOT_LIFT, 0)
-    Event(41, VIS_EVENT_RIGHT_FOOT_LAND, 0)
-    Event(56, AUDIO_STEP_LEFT, -1)
+    Event(26, VIS_EVENT_LEFT_FOOT_LAND, 0)
+    Event(28, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(28, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
+    Event(38, AUDIO_STEP_SPRINT_RIGHT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
+        PlayStepSFx("step_sprint_right", "r_foot")
     }
+    Event(41, VIS_EVENT_LEFT_FOOT_LIFT, 0)
+    Event(41, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(59, USER_POSE_CROUCHING, 0)
     Event(60, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
+    Event(69, AUDIO_STEP_LEFT, -1)
+    {
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
+    }
     Event(72, VIS_EVENT_LEFT_FOOT_LAND, 0)
+    Event(81, AUDIO_STEP_SPRINT_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        _Attributes(0,0,1)
+        PlayStepSFx("step_sprint_right", "r_foot")
+    }
     Event(82, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(91, VIS_EVENT_LEFT_FOOT_LIFT, 0)
     Event(91, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
-    Event(96, AUDIO_STEP_RIGHT, -1)
+    Event(100, AUDIO_STEP_RIGHT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
@@ -37672,6 +37687,11 @@ SeqTrack("m_bit_hitreaction_heavy_to_stun_sl_03", "m_bit_hitreaction_heavy_to_st
     Event(102, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(109, USER_POSE_STANDING, 0)
     Event(112, USER_CAN_INTERRUPT, -1)
+    Event(116, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(119, VIS_EVENT_RIGHT_FOOT_LAND, 0)
 /*Event(1, 0, 1)
     {
@@ -37686,13 +37706,13 @@ SeqTrack("m_bit_hitreaction_heavy_to_stun_nr_01", "m_bit_hitreaction_heavy_to_st
     {
         PlayScream("pain",1,5,0,0)
     }
-    Event(7, VIS_EVENT_RIGHT_FOOT_LAND, 0)
-    Event(9, AUDIO_STEP_SPRINT_LEFT, -1)
+    Event(5, AUDIO_STEP_SPRINT_LEFT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
         PlayStepSFx("step_sprint_left", "l_foot")
     }
+    Event(7, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(17, AUDIO_STEP_SPRINT_RIGHT, -1)
     {
         _Attributes(0,0,1)
@@ -37703,17 +37723,17 @@ SeqTrack("m_bit_hitreaction_heavy_to_stun_nr_01", "m_bit_hitreaction_heavy_to_st
     Event(19, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
     Event(22, USER_POSE_CROUCHING, 0)
     Event(22, VIS_EVENT_LEFT_FOOT_LIFT, 0)
-    Event(30, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
-    Event(33, AUDIO_STEP_SPRINT_LEFT, -1)
+    Event(29, AUDIO_STEP_SPRINT_LEFT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
         PlayStepSFx("step_sprint_left", "l_foot")
     }
+    Event(30, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
     Event(33, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(45, VIS_EVENT_LEFT_FOOT_LIFT, 0)
     Event(47, VIS_EVENT_RIGHT_FOOT_LAND, 0)
-    Event(56, AUDIO_STEP_LEFT, -1)
+    Event(54, AUDIO_STEP_LEFT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
@@ -37721,16 +37741,21 @@ SeqTrack("m_bit_hitreaction_heavy_to_stun_nr_01", "m_bit_hitreaction_heavy_to_st
     }
     Event(62, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
     Event(68, USER_POSE_STANDING, 0)
+    Event(68, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(69, USER_CAN_INTERRUPT, -1)
     Event(71, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(94, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
-    Event(96, AUDIO_STEP_RIGHT, -1)
+    Event(102, VIS_EVENT_LEFT_FOOT_LAND, 0)
+    Event(104, AUDIO_STEP_RIGHT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
         PlayStepSFx("step_right", "r_foot")
     }
-    Event(102, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(107, VIS_EVENT_RIGHT_FOOT_LAND, 0)
 /*Event(1, 0, 1)
     {
@@ -37738,9 +37763,19 @@ SeqTrack("m_bit_hitreaction_heavy_to_stun_nr_01", "m_bit_hitreaction_heavy_to_st
     }*/
     Event(111, USER_CAN_BLEND_OUT, -1)
     Event(139, VIS_EVENT_LEFT_FOOT_LIFT, 0)
+    Event(145, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(148, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(166, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
     Event(167, VIS_EVENT_LEFT_FOOT_LIFT, 0)
+    Event(171, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(173, VIS_EVENT_RIGHT_FOOT_LAND, 0)
 }
 SeqTrack("m_bit_rest_sit_01", "m_bit_rest_sit_01.anm2", 0, 219, 30, 1, 0.0)
@@ -37814,14 +37849,14 @@ SeqTrack("m_bit_hitreaction_heavy_to_stun_e_01", "m_bit_hitreaction_heavy_to_stu
     {
         PlayScream("pain",1,5,0,0)
     }
-    Event(8, VIS_EVENT_RIGHT_FOOT_LAND, 0)
-    Event(9, AUDIO_STEP_SPRINT_LEFT, -1)
+    Event(5, AUDIO_STEP_SPRINT_LEFT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
         PlayStepSFx("step_sprint_left", "l_foot")
     }
-    Event(17, AUDIO_STEP_SPRINT_RIGHT, -1)
+    Event(8, VIS_EVENT_RIGHT_FOOT_LAND, 0)
+    Event(16, AUDIO_STEP_SPRINT_RIGHT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
@@ -37832,7 +37867,7 @@ SeqTrack("m_bit_hitreaction_heavy_to_stun_e_01", "m_bit_hitreaction_heavy_to_stu
     Event(21, USER_POSE_CROUCHING, 0)
     Event(22, VIS_EVENT_LEFT_FOOT_LIFT, 0)
     Event(23, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
-    Event(33, AUDIO_STEP_SPRINT_LEFT, -1)
+    Event(29, AUDIO_STEP_SPRINT_LEFT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
@@ -37841,22 +37876,28 @@ SeqTrack("m_bit_hitreaction_heavy_to_stun_e_01", "m_bit_hitreaction_heavy_to_stu
     Event(33, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(45, VIS_EVENT_LEFT_FOOT_LIFT, 0)
     Event(47, VIS_EVENT_RIGHT_FOOT_LAND, 0)
-    Event(56, AUDIO_STEP_LEFT, -1)
+    Event(53, AUDIO_STEP_LEFT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
         PlayStepSFx("step_left", "l_foot")
     }
     Event(62, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
+    Event(69, AUDIO_STEP_SPRINT_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        _Attributes(0,0,1)
+        PlayStepSFx("step_sprint_right", "r_foot")
+    }
     Event(71, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(94, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
-    Event(96, AUDIO_STEP_RIGHT, -1)
+    Event(102, VIS_EVENT_LEFT_FOOT_LAND, 0)
+    Event(103, AUDIO_STEP_RIGHT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
         PlayStepSFx("step_right", "r_foot")
     }
-    Event(102, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(106, USER_POSE_STANDING, 0)
     Event(107, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(108, USER_CAN_INTERRUPT, -1)
@@ -37866,9 +37907,19 @@ SeqTrack("m_bit_hitreaction_heavy_to_stun_e_01", "m_bit_hitreaction_heavy_to_stu
     }*/
     Event(123, USER_CAN_BLEND_OUT, -1)
     Event(139, VIS_EVENT_LEFT_FOOT_LIFT, 0)
+    Event(145, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(149, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(166, VIS_EVENT_LEFT_FOOT_LIFT, 0)
     Event(166, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
+    Event(170, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(173, VIS_EVENT_RIGHT_FOOT_LAND, 0)
 }
 SeqTrack("m_bit_hitreaction_heavy_to_stun_w_01", "m_bit_hitreaction_heavy_to_stun_w_01.anm2", 4, 206, 30, 1, 0.0)
@@ -37877,6 +37928,12 @@ SeqTrack("m_bit_hitreaction_heavy_to_stun_w_01", "m_bit_hitreaction_heavy_to_stu
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("pain",1,5,0,0)
+    }
+    Event(1, AUDIO_STEP_SPRINT_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        _Attributes(0,0,1)
+        PlayStepSFx("step_sprint_right", "r_foot")
     }
     Event(4, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(9, AUDIO_STEP_SPRINT_LEFT, -1)
@@ -37887,7 +37944,7 @@ SeqTrack("m_bit_hitreaction_heavy_to_stun_w_01", "m_bit_hitreaction_heavy_to_stu
     }
     Event(10, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
     Event(11, VIS_EVENT_LEFT_FOOT_LAND, 0)
-    Event(17, AUDIO_STEP_SPRINT_RIGHT, -1)
+    Event(15, AUDIO_STEP_SPRINT_RIGHT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
@@ -37895,32 +37952,43 @@ SeqTrack("m_bit_hitreaction_heavy_to_stun_w_01", "m_bit_hitreaction_heavy_to_stu
     }
     Event(18, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(19, VIS_EVENT_LEFT_FOOT_LIFT, 0)
-    Event(26, VIS_EVENT_LEFT_FOOT_LAND, 0)
-    Event(28, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
-    Event(33, AUDIO_STEP_SPRINT_LEFT, -1)
+    Event(24, AUDIO_STEP_SPRINT_LEFT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
         PlayStepSFx("step_sprint_left", "l_foot")
+    }
+    Event(26, VIS_EVENT_LEFT_FOOT_LAND, 0)
+    Event(28, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
+    Event(37, AUDIO_STEP_SPRINT_RIGHT, -1)
+    {
+        _Attributes(0,0,1)
+        _Attributes(0,0,1)
+        PlayStepSFx("step_sprint_right", "r_foot")
     }
     Event(41, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(43, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
     Event(44, VIS_EVENT_LEFT_FOOT_LIFT, 0)
     Event(45, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(52, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
-    Event(56, AUDIO_STEP_LEFT, -1)
+    Event(60, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
+    Event(64, USER_POSE_CROUCHING, 0)
+    Event(72, VIS_EVENT_LEFT_FOOT_LAND, 0)
+    Event(72, AUDIO_STEP_LEFT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
         PlayStepSFx("step_left", "l_foot")
     }
-    Event(60, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
-    Event(64, USER_POSE_CROUCHING, 0)
-    Event(72, VIS_EVENT_LEFT_FOOT_LAND, 0)
+    Event(81, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(82, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(91, VIS_EVENT_LEFT_FOOT_LIFT, 0)
     Event(92, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
-    Event(96, AUDIO_STEP_RIGHT, -1)
+    Event(99, AUDIO_STEP_RIGHT, -1)
     {
         _Attributes(0,0,1)
         _Attributes(0,0,1)
@@ -37929,6 +37997,11 @@ SeqTrack("m_bit_hitreaction_heavy_to_stun_w_01", "m_bit_hitreaction_heavy_to_stu
     Event(102, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(103, USER_POSE_STANDING, 0)
     Event(104, USER_CAN_INTERRUPT, -1)
+    Event(117, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(119, VIS_EVENT_RIGHT_FOOT_LAND, 0)
 /*Event(1, 0, 1)
     {
@@ -38384,7 +38457,7 @@ SeqTrack("m_bit_charge_end_01", "m_bit_charge_end_01.anm2", 0, 218, 30, 1, 0.0)
     }
     Event(13, USER_POSE_LAYING, 0)
     Event(87, USER_POSE_CROUCHING, 0)
-    Event(90, AUDIO_STEP_RIGHT, 0)
+    Event(89, AUDIO_STEP_RIGHT, 0)
     {
         PlayStepSFx("step_right", "r_foot")
         _Attributes(0,0,1,"Human")
@@ -38394,7 +38467,7 @@ SeqTrack("m_bit_charge_end_01", "m_bit_charge_end_01.anm2", 0, 218, 30, 1, 0.0)
     {
         PlayScream("resting_phase_final",0,5,0,0)
     }
-    Event(127, AUDIO_STEP_LEFT, 0)
+    Event(124, AUDIO_STEP_LEFT, 0)
     {
         PlayStepSFx("step_left", "l_foot")
         _Attributes(0,0,1,"Human")
@@ -38403,9 +38476,19 @@ SeqTrack("m_bit_charge_end_01", "m_bit_charge_end_01.anm2", 0, 218, 30, 1, 0.0)
     Event(135, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(144, USER_CAN_INTERRUPT, 0)
     Event(150, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
+    Event(156, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(160, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(166, USER_CAN_BLEND_OUT, 0)
     Event(171, VIS_EVENT_LEFT_FOOT_LIFT, 0)
+    Event(177, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(178, VIS_EVENT_LEFT_FOOT_LAND, 0)
 }
 
@@ -38418,7 +38501,7 @@ SeqTrack("m_bit_charge_begin_01", "m_bit_charge_begin_01.anm2", 0, 72, 30, 1, 0.
     Event(8, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(27, VIS_EVENT_LEFT_FOOT_LIFT, 0)
     Event(32, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
-    Event(38, AUDIO_STEP_SPRINT_LEFT, 0)
+    Event(36, AUDIO_STEP_SPRINT_LEFT, 0)
     {
         PlayStepSFx("step_sprint_left", "l_foot")
         _Attributes(0,0,1,"Human")
@@ -38426,22 +38509,22 @@ SeqTrack("m_bit_charge_begin_01", "m_bit_charge_begin_01.anm2", 0, 72, 30, 1, 0.
     Event(38, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(42, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(45, VIS_EVENT_LEFT_FOOT_LIFT, 0)
-    Event(48, CAN_ATTACK, 0)
-    Event(49, AUDIO_STEP_SPRINT_RIGHT, 0)
+    Event(47, AUDIO_STEP_SPRINT_RIGHT, 0)
     {
         PlayStepSFx("step_sprint_right", "r_foot")
         _Attributes(0,0,1,"Human")
     }
+    Event(48, CAN_ATTACK, 0)
     Event(49, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(53, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
-    Event(58, VIS_EVENT_LEFT_FOOT_LAND, 0)
-    Event(59, AUDIO_STEP_SPRINT_LEFT, 0)
+    Event(56, AUDIO_STEP_SPRINT_LEFT, 0)
     {
         PlayStepSFx("step_sprint_left", "l_foot")
         _Attributes(0,0,1,"Human")
     }
+    Event(58, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(63, VIS_EVENT_LEFT_FOOT_LIFT, 0)
-    Event(68, AUDIO_STEP_SPRINT_RIGHT, 0)
+    Event(66, AUDIO_STEP_SPRINT_RIGHT, 0)
     {
         PlayStepSFx("step_sprint_right", "r_foot")
         _Attributes(0,0,1,"Human")
@@ -38504,6 +38587,11 @@ SeqTrack("m_bit_2h_hitreaction_critical_sl_01", "m_bit_2h_hitreaction_critical_s
     }
     Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, 0)
     Event(0, USER_HIT_REACTION_DISABLED, 0)
+    Event(9, USER_PLAY_SOUND, -1)
+    {
+        PlayAudioEvent("biter_body_falling",0,0,0,"",[0.0,0.0,0.0],0)
+        SurfaceInteraction("collision_body_surface_layer","pelvis","",4.0)
+    }
     Event(25, USER_DAMAGE_ON_COLLISION_DISABLED, 0)
     Event(25, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(28, VIS_EVENT_LEFT_FOOT_LIFT, 0)
@@ -38512,13 +38600,38 @@ SeqTrack("m_bit_2h_hitreaction_critical_sl_01", "m_bit_2h_hitreaction_critical_s
     Event(31, USER_HIT_REACTION_ENABLED, 0)
     Event(32, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
     Event(81, USER_POSE_CROUCHING, 0)
+    Event(102, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(103, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(126, USER_POSE_STANDING, 0)
+    Event(130, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(133, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(143, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
     Event(144, USER_CAN_INTERRUPT, 0)
+    Event(150, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(152, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(164, USER_CAN_BLEND_OUT, 0)
+    Event(169, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(190, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
 }
 SeqTrack("m_bit_2h_hitreaction_critical_sr_01", "m_bit_2h_hitreaction_critical_sr_01.anm2", 4, 229, 30, 1, 0.0)
 {
@@ -38528,6 +38641,13 @@ SeqTrack("m_bit_2h_hitreaction_critical_sr_01", "m_bit_2h_hitreaction_critical_s
     }
     Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, 0)
     Event(0, USER_HIT_REACTION_DISABLED, 0)
+    Event(13, USER_PLAY_SOUND, -1)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayAudioEvent("biter_body_falling",0,0,0,"",[0.0,0.0,0.0],0)
+        SurfaceInteraction("collision_body_surface_layer","pelvis","",4.0)
+    }
     Event(22, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(27, VIS_EVENT_LEFT_FOOT_LIFT, 0)
     Event(28, VIS_EVENT_RIGHT_FOOT_LAND, 0)
@@ -38536,12 +38656,32 @@ SeqTrack("m_bit_2h_hitreaction_critical_sr_01", "m_bit_2h_hitreaction_critical_s
     Event(43, USER_HIT_REACTION_ENABLED, 0)
     Event(52, USER_DAMAGE_ON_COLLISION_DISABLED, 0)
     Event(103, USER_POSE_CROUCHING, 0)
+    Event(105, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(108, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(115, USER_POSE_STANDING, 0)
+    Event(131, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(134, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(136, USER_CAN_INTERRUPT, 0)
     Event(149, USER_CAN_BLEND_OUT, 0)
+    Event(150, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(165, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
+    Event(168, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(169, VIS_EVENT_RIGHT_FOOT_LAND, 0)
 }
 SeqTrack("m_bit_medium_hitreaction_critical_sr_01", "m_bit_medium_hitreaction_critical_sr_01.anm2", 4, 243, 30, 1, 0.0)
@@ -38552,15 +38692,37 @@ SeqTrack("m_bit_medium_hitreaction_critical_sr_01", "m_bit_medium_hitreaction_cr
     }
     Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, 0)
     Event(0, USER_HIT_REACTION_DISABLED, 0)
+    Event(10, USER_PLAY_SOUND, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayAudioEvent("biter_body_falling",0,0,0,"",[0.0,0.0,0.0],0)
+        SurfaceInteraction("collision_body_surface_layer","pelvis","",4.0)
+    }
     Event(20, USER_POSE_LAYING, 0)
     Event(20, USER_HIT_REACTION_ENABLED, 0)
     Event(22, USER_DAMAGE_ON_COLLISION_DISABLED, 0)
+    Event(54, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(71, USER_POSE_CROUCHING, 0)
     Event(80, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(97, USER_POSE_STANDING, 0)
+    Event(97, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(109, USER_CAN_INTERRUPT, -1)
     Event(109, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(126, USER_CAN_BLEND_OUT, -1)
+    Event(151, AUDIO_STEP_SHUFFLE_RIGHT, 0)
+    {
+        PlayStepSFx("step_shuffle_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
 }
 SeqTrack("m_bit_medium_hitreaction_critical_sl_01", "m_bit_medium_hitreaction_critical_sl_01.anm2", 4, 190, 30, 1, 0.0)
 {
@@ -38572,18 +38734,43 @@ SeqTrack("m_bit_medium_hitreaction_critical_sl_01", "m_bit_medium_hitreaction_cr
     Event(0, USER_HIT_REACTION_DISABLED, 0)
     Event(1, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(4, VIS_EVENT_LEFT_FOOT_LIFT, 0)
+    Event(16, USER_PLAY_SOUND, -1)
+    {
+        PlayAudioEvent("biter_body_falling",0,0,0,"",[0.0,0.0,0.0],0)
+        SurfaceInteraction("collision_body_surface_layer","pelvis","",4.0)
+    }
     Event(28, USER_POSE_LAYING, 0)
     Event(28, USER_HIT_REACTION_ENABLED, 0)
     Event(41, USER_DAMAGE_ON_COLLISION_DISABLED, 0)
+    Event(41, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(42, USER_POSE_CROUCHING, 0)
     Event(42, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(55, USER_POSE_STANDING, 0)
+    Event(64, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(69, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(72, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
     Event(73, USER_CAN_INTERRUPT, -1)
+    Event(77, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(81, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(86, VIS_EVENT_LEFT_FOOT_LIFT, 0)
     Event(92, USER_CAN_BLEND_OUT, -1)
+    Event(92, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(96, VIS_EVENT_LEFT_FOOT_LAND, 0)
 }
 
@@ -38681,16 +38868,41 @@ SeqTrack("m_bit_hitreaction_heavy_powerattack_w_01", "m_bit_hitreaction_heavy_po
         PlayScream("pain_critical",1,5,0,0)
     }
     Event(3, VIS_EVENT_LEFT_FOOT_LIFT, 0)
+    Event(18, USER_PLAY_SOUND, -1)
+    {
+        PlayAudioEvent("biter_body_falling",0,0,0,"",[0.0,0.0,0.0],0)
+        SurfaceInteraction("collision_body_surface_layer","pelvis","",4.0)
+    }
     Event(28, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
     Event(32, USER_POSE_LAYING, 0)
     Event(32, USER_HIT_REACTION_ENABLED, 0)
     Event(68, USER_POSE_CROUCHING, 0)
+    Event(92, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(103, VIS_EVENT_RIGHT_FOOT_LAND, 0)
+    Event(108, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(110, USER_POSE_STANDING, 0)
     Event(111, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(115, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
+    Event(127, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(130, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(134, VIS_EVENT_LEFT_FOOT_LIFT, 0)
+    Event(143, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(144, USER_CAN_INTERRUPT, -1)
     Event(148, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(165, USER_CAN_BLEND_OUT, -1)
@@ -38706,6 +38918,11 @@ SeqTrack("m_bit_hitreaction_heavy_powerattack_e_01", "m_bit_hitreaction_heavy_po
         PlayScream("pain_critical",1,5,0,0)
     }
     Event(3, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
+    Event(18, USER_PLAY_SOUND, -1)
+    {
+        PlayAudioEvent("biter_body_falling",0,0,0,"",[0.0,0.0,0.0],0)
+        SurfaceInteraction("collision_body_surface_layer","pelvis","",4.0)
+    }
     Event(25, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
     Event(32, USER_POSE_LAYING, 0)
     Event(32, USER_HIT_REACTION_ENABLED, 0)
@@ -38714,7 +38931,17 @@ SeqTrack("m_bit_hitreaction_heavy_powerattack_e_01", "m_bit_hitreaction_heavy_po
     Event(37, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
     Event(38, VIS_EVENT_LEFT_FOOT_LIFT, 0)
     Event(55, USER_POSE_CROUCHING, 0)
+    Event(92, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(107, VIS_EVENT_RIGHT_FOOT_LAND, 0)
+    Event(112, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(129, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(147, USER_POSE_STANDING, 0)
     Event(174, USER_CAN_INTERRUPT, -1)
@@ -38730,17 +38957,39 @@ SeqTrack("m_bit_hitreaction_heavy_powerattack_n_01", "m_bit_hitreaction_heavy_po
         _Attributes(0,0,1,"Human")
         PlayScream("pain_critical",1,5,0,0)
     }
+    Event(20, USER_PLAY_SOUND, -1)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayAudioEvent("biter_body_falling",0,0,0,"",[0.0,0.0,0.0],0)
+        SurfaceInteraction("collision_body_surface_layer","pelvis","",4.0)
+    }
     Event(27, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
     Event(36, USER_HIT_REACTION_ENABLED, 0)
     Event(36, USER_POSE_LAYING, 0)
     Event(51, USER_POSE_CROUCHING, 0)
+    Event(73, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(74, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(94, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(98, USER_POSE_STANDING, 0)
     Event(106, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
+    Event(111, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(115, VIS_EVENT_RIGHT_FOOT_LAND, 0)
     Event(124, VIS_EVENT_LEFT_FOOT_LIFT, 0)
     Event(127, USER_CAN_INTERRUPT, -1)
+    Event(132, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(137, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(151, USER_CAN_BLEND_OUT, -1)
 }
@@ -38766,16 +39015,41 @@ SeqTrack("m_bit_hitreaction_heavy_powerattack_s_01", "m_bit_hitreaction_heavy_po
     }
     Event(5, VIS_EVENT_LEFT_FOOT_LIFT, 0)
     Event(5, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
+    Event(36, USER_PLAY_SOUND, -1)
+    {
+        PlayAudioEvent("biter_body_falling",0,0,0,"",[0.0,0.0,0.0],0)
+        SurfaceInteraction("collision_body_surface_layer","pelvis","",4.0)
+    }
     Event(49, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
     Event(67, USER_HIT_REACTION_ENABLED, 0)
     Event(67, USER_POSE_LAYING, 0)
+    Event(161, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(164, USER_POSE_CROUCHING, 0)
     Event(191, VIS_EVENT_RIGHT_FOOT_LAND, 0)
+    Event(192, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(201, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(201, VIS_EVENT_RIGHT_FOOT_LIFT, 0)
     Event(208, USER_POSE_STANDING, 0)
+    Event(220, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(227, VIS_EVENT_LEFT_FOOT_LIFT, 0)
     Event(228, VIS_EVENT_RIGHT_FOOT_LAND, 0)
+    Event(242, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(249, VIS_EVENT_LEFT_FOOT_LAND, 0)
     Event(256, USER_CAN_INTERRUPT, -1)
     Event(296, USER_CAN_BLEND_OUT, -1)
@@ -41163,6 +41437,16 @@ SeqTrack("m_bit_hitreaction_punch_light_s_left_head_01", "m_bit_hitreaction_punc
     {
         PlayScream("pain",1,5,0,0)
     }
+    Event(8, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(16, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(26, USER_CAN_INTERRUPT, -1)
     Event(30, USER_CAN_BLEND_OUT, -1)
 }
@@ -41173,8 +41457,23 @@ SeqTrack("m_bit_hitreaction_punch_light_s_right_head_01", "m_bit_hitreaction_pun
     {
         PlayScream("pain",1,5,0,0)
     }
+    Event(8, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(18, USER_CAN_INTERRUPT, -1)
+    Event(22, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(25, USER_CAN_BLEND_OUT, -1)
+    Event(35, AUDIO_STEP_SHUFFLE_RIGHT, 0)
+    {
+        PlayStepSFx("step_shuffle_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
 }
 
 SeqTrack("m_bit_hitreaction_punch_light_s_up_head_01", "m_bit_hitreaction_punch_light_s_up_head_01.anm2", 2, 81, 30, 1, 0.0)
@@ -41183,8 +41482,23 @@ SeqTrack("m_bit_hitreaction_punch_light_s_up_head_01", "m_bit_hitreaction_punch_
     {
         PlayScream("pain",1,5,0,0)
     }
+    Event(13, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(23, USER_CAN_INTERRUPT, -1)
     Event(30, USER_CAN_BLEND_OUT, -1)
+    Event(32, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(54, AUDIO_STEP_SHUFFLE_RIGHT, 0)
+    {
+        PlayStepSFx("step_shuffle_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
 }
 
 SeqTrack("m_bit_hitreaction_punch_light_s_down_head_01", "m_bit_hitreaction_punch_light_s_down_head_01.anm2", 1, 57, 30, 1, 0.0)
@@ -41193,8 +41507,23 @@ SeqTrack("m_bit_hitreaction_punch_light_s_down_head_01", "m_bit_hitreaction_punc
     {
         PlayScream("pain",1,5,0,0)
     }
+    Event(11, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(21, USER_CAN_INTERRUPT, -1)
+    Event(23, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(29, USER_CAN_BLEND_OUT, -1)
+    Event(36, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
 }
 SeqTrack("m_bit_hitreaction_punch_light_s_left_torso_01", "m_bit_hitreaction_punch_light_s_left_torso_01.anm2", 4, 98, 30, 1, 0.0)
 {
@@ -41202,8 +41531,28 @@ SeqTrack("m_bit_hitreaction_punch_light_s_left_torso_01", "m_bit_hitreaction_pun
     {
         PlayScream("pain",1,5,0,0)
     }
+    Event(3, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(14, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(32, USER_CAN_INTERRUPT, -1)
+    Event(37, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(48, USER_CAN_BLEND_OUT, -1)
+    Event(58, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
 }
 
 SeqTrack("m_bit_hitreaction_punch_light_s_right_torso_01", "m_bit_hitreaction_punch_light_s_right_torso_01.anm2", 0, 59, 30, 1, 0.0)
@@ -41212,8 +41561,23 @@ SeqTrack("m_bit_hitreaction_punch_light_s_right_torso_01", "m_bit_hitreaction_pu
     {
         PlayScream("pain",1,5,0,0)
     }
+    Event(5, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(16, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(19, USER_CAN_INTERRUPT, -1)
     Event(27, USER_CAN_BLEND_OUT, -1)
+    Event(32, AUDIO_STEP_SHUFFLE_RIGHT, 0)
+    {
+        PlayStepSFx("step_shuffle_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
 }
 SeqTrack("m_bit_hitreaction_punch_light_e_right_head_01", "m_bit_hitreaction_punch_light_e_right_head_01.anm2", 1, 74, 30, 1, 0.0)
 {
@@ -41221,8 +41585,23 @@ SeqTrack("m_bit_hitreaction_punch_light_e_right_head_01", "m_bit_hitreaction_pun
     {
         PlayScream("pain",1,5,0,0)
     }
+    Event(3, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(13, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(21, USER_CAN_INTERRUPT, -1)
     Event(29, USER_CAN_BLEND_OUT, -1)
+    Event(29, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
 }
 
 SeqTrack("m_bit_hitreaction_punch_light_e_left_head_01", "m_bit_hitreaction_punch_light_e_left_head_01.anm2", 1, 64, 30, 1, 0.0)
@@ -41231,7 +41610,17 @@ SeqTrack("m_bit_hitreaction_punch_light_e_left_head_01", "m_bit_hitreaction_punc
     {
         PlayScream("pain",1,5,0,0)
     }
+    Event(9, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(19, USER_CAN_INTERRUPT, -1)
+    Event(24, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(26, USER_CAN_BLEND_OUT, -1)
 }
 
@@ -41241,8 +41630,38 @@ SeqTrack("m_bit_hitreaction_punch_light_e_down_head_01", "m_bit_hitreaction_punc
     {
         PlayScream("pain",1,5,0,0)
     }
+    Event(10, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(20, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(34, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(49, USER_CAN_INTERRUPT, -1)
+    Event(55, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(59, USER_CAN_BLEND_OUT, -1)
+    Event(67, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(75, AUDIO_STEP_SHUFFLE_RIGHT, 0)
+    {
+        PlayStepSFx("step_shuffle_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
 }
 SeqTrack("m_bit_hitreaction_punch_light_w_left_head_01", "m_bit_hitreaction_punch_light_w_left_head_01.anm2", 1, 63, 30, 1, 0.0)
 {
@@ -41250,7 +41669,22 @@ SeqTrack("m_bit_hitreaction_punch_light_w_left_head_01", "m_bit_hitreaction_punc
     {
         PlayScream("pain",1,5,0,0)
     }
+    Event(3, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(11, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(24, USER_CAN_INTERRUPT, -1)
+    Event(24, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(29, USER_CAN_BLEND_OUT, -1)
 }
 
@@ -41260,8 +41694,23 @@ SeqTrack("m_bit_hitreaction_punch_light_w_right_head_01", "m_bit_hitreaction_pun
     {
         PlayScream("pain",1,5,0,0)
     }
+    Event(10, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(22, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(23, USER_CAN_INTERRUPT, -1)
     Event(36, USER_CAN_BLEND_OUT, -1)
+    Event(38, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
 }
 
 SeqTrack("m_bit_hitreaction_punch_light_w_down_head_01", "m_bit_hitreaction_punch_light_w_down_head_01.anm2", 1, 61, 30, 1, 0.0)
@@ -41270,8 +41719,23 @@ SeqTrack("m_bit_hitreaction_punch_light_w_down_head_01", "m_bit_hitreaction_punc
     {
         PlayScream("pain",1,5,0,0)
     }
+    Event(9, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(18, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(27, USER_CAN_INTERRUPT, -1)
     Event(31, USER_CAN_BLEND_OUT, -1)
+    Event(34, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
 }
 
 SeqTrack("m_bit_hitreaction_punch_light_n_left_torso_01", "m_bit_hitreaction_punch_light_n_left_torso_01.anm2", 3, 59, 30, 1, 0.0)
@@ -41280,7 +41744,22 @@ SeqTrack("m_bit_hitreaction_punch_light_n_left_torso_01", "m_bit_hitreaction_pun
     {
         PlayScream("pain",1,5,0,0)
     }
+    Event(1, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(10, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(20, USER_CAN_INTERRUPT, -1)
+    Event(23, AUDIO_STEP_SHUFFLE_LEFT, 0)
+    {
+        PlayStepSFx("step_shuffle_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(26, USER_CAN_BLEND_OUT, -1)
 }
 
@@ -41290,7 +41769,22 @@ SeqTrack("m_bit_hitreaction_punch_light_n_right_torso_01", "m_bit_hitreaction_pu
     {
         PlayScream("pain",1,5,0,0)
     }
+    Event(1, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(11, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(21, USER_CAN_INTERRUPT, -1)
+    Event(23, AUDIO_STEP_SHUFFLE_RIGHT, 0)
+    {
+        PlayStepSFx("step_shuffle_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(24, USER_CAN_BLEND_OUT, -1)
 }
 
@@ -41300,8 +41794,23 @@ SeqTrack("m_bit_hitreaction_punch_light_n_down_torso_01", "m_bit_hitreaction_pun
     {
         PlayScream("pain",1,5,0,0)
     }
+    Event(4, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(21, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(22, USER_CAN_INTERRUPT, -1)
     Event(31, USER_CAN_BLEND_OUT, -1)
+    Event(35, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
 }
 SeqTrack("m_bit_hitreaction_light_fists_n_02_x2d_1_Torso", "m_bit_hitreaction_light_fists_n_02_x2d_1_Torso.anm2", 0, 54, 30, 1, 0.0)
 SeqTrack("m_bit_hitreaction_punch_light_s_up_head_02", "m_bit_hitreaction_punch_light_s_up_head_02.anm2", 0, 75, 30, 1, 0.0)
@@ -41309,6 +41818,16 @@ SeqTrack("m_bit_hitreaction_punch_light_s_up_head_02", "m_bit_hitreaction_punch_
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("pain",1,5,0,0)
+    }
+    Event(12, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(24, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
     }
     Event(25, USER_CAN_INTERRUPT, -1)
     Event(32, USER_CAN_BLEND_OUT, -1)
@@ -41320,8 +41839,23 @@ SeqTrack("m_bit_hitreaction_punch_light_s_down_head_02", "m_bit_hitreaction_punc
     {
         PlayScream("pain",1,5,0,0)
     }
+    Event(13, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(27, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
     Event(33, USER_CAN_INTERRUPT, -1)
     Event(41, USER_CAN_BLEND_OUT, -1)
+    Event(42, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
 }
 SeqTrack("m_bit_charge_begin_02", "m_bit_charge_begin_02.anm2", 5, 45, 30, 1, 0.0)
 {
@@ -41352,10 +41886,15 @@ SeqTrack("m_bit_charge_begin_02", "m_bit_charge_begin_02.anm2", 5, 45, 30, 1, 0.
 SeqTrack("m_bit_charge_attack_02", "m_bit_charge_attack_02.anm2", 0, 135, 30, 1, 0.0)
 {
     Event(0, VIS_EVENT_ROTATION_MOD_START, -1)
-    Event(0, USER_HIT_REACTION_DISABLED, 0)
     Event(0, USER_PLAY_SOUND, 0)
     {
         PlayScream("attack_long",0,5,0,0)
+    }
+    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, 0)
+    Event(1, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
     }
     Event(7, AUDIO_STEP_SPRINT_LEFT, 0)
     {
@@ -41379,7 +41918,6 @@ SeqTrack("m_bit_charge_attack_02", "m_bit_charge_attack_02.anm2", 0, 135, 30, 1,
         _Attributes(0,0,1,"Human")
     }
     Event(30, END_GIVE_DAMAGE, 0)
-    Event(32, USER_HIT_REACTION_ENABLED, 0)
     Event(38, AUDIO_STEP_SPRINT_RIGHT, 0)
     {
         PlayStepSFx("step_sprint_right", "r_foot")
@@ -41390,6 +41928,7 @@ SeqTrack("m_bit_charge_attack_02", "m_bit_charge_attack_02.anm2", 0, 135, 30, 1,
         PlayStepSFx("step_sprint_left", "l_foot")
         _Attributes(0,0,1,"Human")
     }
+    Event(57, USER_DAMAGE_ON_COLLISION_DISABLED, 0)
     Event(62, AUDIO_STEP_SPRINT_RIGHT, 0)
     {
         PlayStepSFx("step_sprint_right", "r_foot")
@@ -41473,6 +42012,665 @@ SeqTrack("m_bit_death_s_02", "m_bit_death_s_02.anm2", 0, 82, 30, 1, 0.0)
 }
 SeqTrack("m_bit_crouched_hitreaction_light_s_01", "m_bit_crouched_hitreaction_light_s_01.anm2", 0, 161, 30, 1, 0.0)
 {
+    Event(0, USER_POSE_CROUCHING, 0)
+    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
+    Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain",0,5,0,0)
+    }
+    Event(7, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(9, USER_POSE_STANDING, 0)
+    Event(14, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(22, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(28, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(30, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("resting_phase_medium",1,5,0,0)
+    }
+    Event(34, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(42, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(47, USER_CAN_INTERRUPT, -1)
+    Event(48, EVENT_VIS_AIM_LOOK_ENABLE, -1)
+    Event(53, USER_CAN_BLEND_OUT, -1)
+    Event(53, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+}
+
+SeqTrack("m_bit_crouched_hitreaction_light_s_02", "m_bit_crouched_hitreaction_light_s_02.anm2", 0, 187, 30, 1, 0.0)
+{
+    Event(0, USER_POSE_CROUCHING, 0)
+    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
+    Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain",0,5,0,0)
+    }
+    Event(11, USER_POSE_LAYING, 0)
+    Event(15, USER_PLAY_SOUND, 0)
+    {
+        PlayAudioEvent("biter_body_fall_ground_light",0,0,0,"",[0.0,0.0,0.0],0)
+    }
+    Event(40, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("resting_phase_medium",1,5,0,0)
+    }
+    Event(69, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(77, USER_POSE_CROUCHING, 0)
+    Event(88, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(91, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(97, USER_POSE_STANDING, 0)
+    Event(106, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(116, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(122, USER_CAN_INTERRUPT, -1)
+    Event(125, EVENT_VIS_AIM_LOOK_ENABLE, -1)
+    Event(129, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(136, USER_CAN_BLEND_OUT, -1)
+    Event(146, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+}
+
+SeqTrack("m_bit_crouched_hitreaction_light_sl_01", "m_bit_crouched_hitreaction_light_sl_01.anm2", 0, 104, 30, 1, 0.0)
+{
+    Event(0, USER_POSE_CROUCHING, 0)
+    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
+    Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain",0,5,0,0)
+    }
+    Event(5, USER_POSE_STANDING, 0)
+    Event(17, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(26, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(28, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(30, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("resting_phase_medium",1,5,0,0)
+    }
+    Event(42, USER_CAN_INTERRUPT, -1)
+    Event(44, EVENT_VIS_AIM_LOOK_ENABLE, -1)
+    Event(49, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_bit_crouched_hitreaction_light_sr_01", "m_bit_crouched_hitreaction_light_sr_01.anm2", 0, 88, 30, 1, 0.0)
+{
+    Event(0, USER_POSE_CROUCHING, 0)
+    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
+    Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain",0,5,0,0)
+    }
+    Event(5, USER_POSE_STANDING, 0)
+    Event(25, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(30, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(30, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("resting_phase_medium",1,5,0,0)
+    }
+    Event(33, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(45, USER_CAN_INTERRUPT, -1)
+    Event(46, EVENT_VIS_AIM_LOOK_ENABLE, -1)
+    Event(53, USER_CAN_BLEND_OUT, -1)
+    Event(57, AUDIO_STEP_SHUFFLE_LEFT, 0)
+    {
+        PlayStepSFx("step_shuffle_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+}
+SeqTrack("m_bit_crouched_hitreaction_light_wl_01", "m_bit_crouched_hitreaction_light_wl_01.anm2", 0, 152, 30, 1, 0.0)
+{
+    Event(0, USER_POSE_CROUCHING, 0)
+    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
+    Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain",0,5,0,0)
+    }
+    Event(5, USER_POSE_STANDING, 0)
+    Event(19, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(25, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(28, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(43, USER_CAN_INTERRUPT, -1)
+    Event(47, EVENT_VIS_AIM_LOOK_ENABLE, -1)
+    Event(51, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(71, USER_CAN_BLEND_OUT, -1)
+    Event(73, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+}
+
+SeqTrack("m_bit_crouched_hitreaction_light_wr_01", "m_bit_crouched_hitreaction_light_wr_01.anm2", 0, 165, 30, 1, 0.0)
+{
+    Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
+    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
+    Event(0, USER_POSE_CROUCHING, 0)
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain",0,5,0,0)
+    }
+    Event(5, USER_POSE_STANDING, 0)
+    Event(13, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(23, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(32, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(36, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(36, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("resting_phase_medium",1,5,0,0)
+    }
+    Event(47, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(57, USER_CAN_INTERRUPT, -1)
+    Event(59, EVENT_VIS_AIM_LOOK_ENABLE, -1)
+    Event(59, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(71, USER_CAN_BLEND_OUT, -1)
+    Event(91, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(117, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+}
+SeqTrack("m_bit_crouched_hitreaction_light_el_01", "m_bit_crouched_hitreaction_light_el_01.anm2", 0, 105, 30, 1, 0.0)
+{
+    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
+    Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
+    Event(0, USER_POSE_CROUCHING, 0)
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain",0,5,0,0)
+    }
+    Event(5, USER_POSE_STANDING, 0)
+    Event(8, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(16, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(26, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(32, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(37, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(47, USER_CAN_INTERRUPT, -1)
+    Event(48, EVENT_VIS_AIM_LOOK_ENABLE, -1)
+    Event(52, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(67, USER_CAN_BLEND_OUT, -1)
+    Event(68, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+}
+
+SeqTrack("m_bit_crouched_hitreaction_light_er_01", "m_bit_crouched_hitreaction_light_er_01.anm2", 0, 110, 30, 1, 0.0)
+{
+    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
+    Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
+    Event(0, USER_POSE_CROUCHING, 0)
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain",0,5,0,0)
+    }
+    Event(7, USER_POSE_STANDING, 0)
+    Event(9, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(21, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(25, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("resting_phase_medium",1,5,0,0)
+    }
+    Event(30, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(31, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(48, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(62, USER_CAN_INTERRUPT, -1)
+    Event(63, EVENT_VIS_AIM_LOOK_ENABLE, -1)
+    Event(63, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(71, USER_CAN_BLEND_OUT, -1)
+    Event(84, AUDIO_STEP_SHUFFLE_LEFT, 0)
+    {
+        PlayStepSFx("step_shuffle_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+}
+
+SeqTrack("m_bit_crouched_hitreaction_light_nl_01", "m_bit_crouched_hitreaction_light_nl_01.anm2", 0, 108, 30, 1, 0.0)
+{
+    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
+    Event(0, USER_POSE_CROUCHING, 0)
+    Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain",0,5,0,0)
+    }
+    Event(5, USER_POSE_STANDING, 0)
+    Event(16, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(27, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(35, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(36, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("resting_phase_medium",1,5,0,0)
+    }
+    Event(38, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(46, USER_CAN_INTERRUPT, -1)
+    Event(48, EVENT_VIS_AIM_LOOK_ENABLE, -1)
+    Event(54, USER_CAN_BLEND_OUT, -1)
+    Event(58, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+}
+
+SeqTrack("m_bit_crouched_hitreaction_light_nr_01", "m_bit_crouched_hitreaction_light_nr_01.anm2", 0, 111, 30, 1, 0.0)
+{
+    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
+    Event(0, USER_POSE_CROUCHING, 0)
+    Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain",0,5,0,0)
+    }
+    Event(4, USER_POSE_STANDING, 0)
+    Event(12, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(23, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(32, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(36, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(36, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("resting_phase_medium",1,5,0,0)
+    }
+    Event(52, USER_CAN_INTERRUPT, -1)
+    Event(58, EVENT_VIS_AIM_LOOK_ENABLE, -1)
+    Event(63, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(68, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_bit_crouched_hitreaction_light_n_01", "m_bit_crouched_hitreaction_light_n_01.anm2", 0, 136, 30, 1, 0.0)
+{
+    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
+    Event(0, USER_POSE_CROUCHING, 0)
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain",0,5,0,0)
+    }
+    Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
+    Event(7, USER_PLAY_SOUND, 0)
+    {
+        PlayAudioEvent("biter_body_fall_ground_light",0,0,0,"",[0.0,0.0,0.0],0)
+    }
+    Event(23, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(35, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("resting_phase_medium",1,5,0,0)
+    }
+    Event(36, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(43, USER_POSE_STANDING, 0)
+    Event(49, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(61, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(62, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(82, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(85, USER_CAN_INTERRUPT, -1)
+    Event(86, EVENT_VIS_AIM_LOOK_ENABLE, -1)
+    Event(93, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(94, USER_CAN_BLEND_OUT, -1)
+    Event(118, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+}
+SeqTrack("m_bit_crouched_hitreaction_light_e_01", "m_bit_crouched_hitreaction_light_e_01.anm2", 0, 120, 30, 1, 0.0)
+{
+    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
+    Event(0, USER_POSE_CROUCHING, 0)
+    Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain",0,5,0,0)
+    }
+    Event(7, USER_POSE_STANDING, 0)
+    Event(8, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(17, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(25, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(31, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(35, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("resting_phase_medium",1,5,0,0)
+    }
+    Event(45, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(55, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(62, USER_CAN_INTERRUPT, -1)
+    Event(63, EVENT_VIS_AIM_LOOK_ENABLE, -1)
+    Event(71, USER_CAN_BLEND_OUT, -1)
+    Event(76, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+}
+SeqTrack("m_bit_crouched_hitreaction_light_w_01", "m_bit_crouched_hitreaction_light_w_01.anm2", 0, 129, 30, 1, 0.0)
+{
+    Event(0, USER_POSE_CROUCHING, 0)
+    Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
+    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain",0,5,0,0)
+    }
+    Event(9, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(10, USER_POSE_STANDING, 0)
+    Event(17, AUDIO_STEP_SPRINT_RIGHT, 0)
+    {
+        PlayStepSFx("step_sprint_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(25, AUDIO_STEP_SPRINT_LEFT, 0)
+    {
+        PlayStepSFx("step_sprint_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(32, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(36, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("resting_phase_medium",1,5,0,0)
+    }
+    Event(45, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(55, USER_CAN_INTERRUPT, -1)
+    Event(55, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(58, EVENT_VIS_AIM_LOOK_ENABLE, -1)
+    Event(66, USER_CAN_BLEND_OUT, -1)
+    Event(77, AUDIO_STEP_RIGHT, 0)
+    {
+        PlayStepSFx("step_right", "r_foot")
+        _Attributes(0,0,1,"Human")
+    }
+    Event(91, AUDIO_STEP_LEFT, 0)
+    {
+        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+    }
+}
+SeqTrack("m_bit_crouched_hitreaction_heavy_wl_01", "m_bit_crouched_hitreaction_light_wl_01.anm2", 0, 152, 30, 1, 0.0)
+{
+    Event(0, USER_POSE_CROUCHING, 0)
+    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain_critical",1,5,0,0)
+    }
+    Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
+    Event(5, USER_POSE_STANDING, 0)
+    Event(25, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(43, USER_CAN_INTERRUPT, -1)
+    Event(47, EVENT_VIS_AIM_LOOK_ENABLE, -1)
+    Event(71, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_bit_crouched_hitreaction_heavy_wr_01", "m_bit_crouched_hitreaction_light_wr_01.anm2", 0, 165, 30, 1, 0.0)
+{
+    Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
+    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
+    Event(0, USER_POSE_CROUCHING, 0)
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain_critical",1,5,0,0)
+    }
+    Event(5, USER_POSE_STANDING, 0)
+    Event(36, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(57, USER_CAN_INTERRUPT, -1)
+    Event(59, EVENT_VIS_AIM_LOOK_ENABLE, -1)
+    Event(71, USER_CAN_BLEND_OUT, -1)
+}
+SeqTrack("m_bit_crouched_hitreaction_heavy_w_01", "m_bit_crouched_hitreaction_light_w_01.anm2", 0, 129, 30, 1, 0.0)
+{
+    Event(0, USER_POSE_CROUCHING, 0)
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain_critical",1,5,0,0)
+    }
+    Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
+    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
+    Event(10, USER_POSE_STANDING, 0)
+    Event(32, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(55, USER_CAN_INTERRUPT, -1)
+    Event(58, EVENT_VIS_AIM_LOOK_ENABLE, -1)
+    Event(66, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_bit_crouched_hitreaction_heavy_sl_01", "m_bit_crouched_hitreaction_light_sl_01.anm2", 0, 104, 30, 1, 0.0)
+{
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain_critical",1,5,0,0)
+    }
+    Event(0, USER_POSE_CROUCHING, 0)
+    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
+    Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
+    Event(5, USER_POSE_STANDING, 0)
+    Event(28, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(42, USER_CAN_INTERRUPT, -1)
+    Event(44, EVENT_VIS_AIM_LOOK_ENABLE, -1)
+    Event(49, USER_CAN_BLEND_OUT, -1)
+}
+SeqTrack("m_bit_crouched_hitreaction_heavy_s_01", "m_bit_crouched_hitreaction_light_s_01.anm2", 0, 161, 30, 1, 0.0)
+{
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("pain_critical",1,5,0,0)
@@ -41487,7 +42685,7 @@ SeqTrack("m_bit_crouched_hitreaction_light_s_01", "m_bit_crouched_hitreaction_li
     Event(53, USER_CAN_BLEND_OUT, -1)
 }
 
-SeqTrack("m_bit_crouched_hitreaction_light_s_02", "m_bit_crouched_hitreaction_light_s_02.anm2", 0, 187, 30, 1, 0.0)
+SeqTrack("m_bit_crouched_hitreaction_heavy_s_02", "m_bit_crouched_hitreaction_light_s_02.anm2", 0, 187, 30, 1, 0.0)
 {
     Event(0, USER_PLAY_SOUND, -1)
     {
@@ -41505,23 +42703,7 @@ SeqTrack("m_bit_crouched_hitreaction_light_s_02", "m_bit_crouched_hitreaction_li
     Event(136, USER_CAN_BLEND_OUT, -1)
 }
 
-SeqTrack("m_bit_crouched_hitreaction_light_sl_01", "m_bit_crouched_hitreaction_light_sl_01.anm2", 0, 104, 30, 1, 0.0)
-{
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("pain_critical",1,5,0,0)
-    }
-    Event(0, USER_POSE_CROUCHING, 0)
-    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
-    Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
-    Event(5, USER_POSE_STANDING, 0)
-    Event(28, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
-    Event(42, USER_CAN_INTERRUPT, -1)
-    Event(44, EVENT_VIS_AIM_LOOK_ENABLE, -1)
-    Event(49, USER_CAN_BLEND_OUT, -1)
-}
-
-SeqTrack("m_bit_crouched_hitreaction_light_sr_01", "m_bit_crouched_hitreaction_light_sr_01.anm2", 0, 88, 30, 1, 0.0)
+SeqTrack("m_bit_crouched_hitreaction_heavy_sr_01", "m_bit_crouched_hitreaction_light_sr_01.anm2", 0, 88, 30, 1, 0.0)
 {
     Event(0, USER_PLAY_SOUND, -1)
     {
@@ -41536,38 +42718,38 @@ SeqTrack("m_bit_crouched_hitreaction_light_sr_01", "m_bit_crouched_hitreaction_l
     Event(46, EVENT_VIS_AIM_LOOK_ENABLE, -1)
     Event(53, USER_CAN_BLEND_OUT, -1)
 }
-SeqTrack("m_bit_crouched_hitreaction_light_wl_01", "m_bit_crouched_hitreaction_light_wl_01.anm2", 0, 152, 30, 1, 0.0)
+SeqTrack("m_bit_crouched_hitreaction_heavy_e_01", "m_bit_crouched_hitreaction_light_e_01.anm2", 0, 120, 30, 1, 0.0)
 {
-    Event(0, USER_POSE_CROUCHING, 0)
-    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("pain_critical",1,5,0,0)
     }
+    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
+    Event(0, USER_POSE_CROUCHING, 0)
     Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
-    Event(5, USER_POSE_STANDING, 0)
-    Event(25, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
-    Event(43, USER_CAN_INTERRUPT, -1)
-    Event(47, EVENT_VIS_AIM_LOOK_ENABLE, -1)
+    Event(7, USER_POSE_STANDING, 0)
+    Event(31, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(62, USER_CAN_INTERRUPT, -1)
+    Event(63, EVENT_VIS_AIM_LOOK_ENABLE, -1)
     Event(71, USER_CAN_BLEND_OUT, -1)
 }
 
-SeqTrack("m_bit_crouched_hitreaction_light_wr_01", "m_bit_crouched_hitreaction_light_wr_01.anm2", 0, 165, 30, 1, 0.0)
+SeqTrack("m_bit_crouched_hitreaction_heavy_er_01", "m_bit_crouched_hitreaction_light_er_01.anm2", 0, 110, 30, 1, 0.0)
 {
-    Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
     Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
+    Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
     Event(0, USER_POSE_CROUCHING, 0)
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("pain_critical",1,5,0,0)
     }
-    Event(5, USER_POSE_STANDING, 0)
-    Event(36, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
-    Event(57, USER_CAN_INTERRUPT, -1)
-    Event(59, EVENT_VIS_AIM_LOOK_ENABLE, -1)
+    Event(7, USER_POSE_STANDING, 0)
+    Event(31, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(62, USER_CAN_INTERRUPT, -1)
+    Event(63, EVENT_VIS_AIM_LOOK_ENABLE, -1)
     Event(71, USER_CAN_BLEND_OUT, -1)
 }
-SeqTrack("m_bit_crouched_hitreaction_light_el_01", "m_bit_crouched_hitreaction_light_el_01.anm2", 0, 105, 30, 1, 0.0)
+SeqTrack("m_bit_crouched_hitreaction_heavy_el_01", "m_bit_crouched_hitreaction_light_el_01.anm2", 0, 105, 30, 1, 0.0)
 {
     Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
     Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
@@ -41583,39 +42765,7 @@ SeqTrack("m_bit_crouched_hitreaction_light_el_01", "m_bit_crouched_hitreaction_l
     Event(67, USER_CAN_BLEND_OUT, -1)
 }
 
-SeqTrack("m_bit_crouched_hitreaction_light_er_01", "m_bit_crouched_hitreaction_light_er_01.anm2", 0, 110, 30, 1, 0.0)
-{
-    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
-    Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
-    Event(0, USER_POSE_CROUCHING, 0)
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("pain_critical",1,5,0,0)
-    }
-    Event(7, USER_POSE_STANDING, 0)
-    Event(31, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
-    Event(62, USER_CAN_INTERRUPT, -1)
-    Event(63, EVENT_VIS_AIM_LOOK_ENABLE, -1)
-    Event(71, USER_CAN_BLEND_OUT, -1)
-}
-
-SeqTrack("m_bit_crouched_hitreaction_light_nl_01", "m_bit_crouched_hitreaction_light_nl_01.anm2", 0, 108, 30, 1, 0.0)
-{
-    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
-    Event(0, USER_POSE_CROUCHING, 0)
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("pain_critical",1,5,0,0)
-    }
-    Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
-    Event(5, USER_POSE_STANDING, 0)
-    Event(35, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
-    Event(46, USER_CAN_INTERRUPT, -1)
-    Event(48, EVENT_VIS_AIM_LOOK_ENABLE, -1)
-    Event(54, USER_CAN_BLEND_OUT, -1)
-}
-
-SeqTrack("m_bit_crouched_hitreaction_light_nr_01", "m_bit_crouched_hitreaction_light_nr_01.anm2", 0, 111, 30, 1, 0.0)
+SeqTrack("m_bit_crouched_hitreaction_heavy_nr_01", "m_bit_crouched_hitreaction_light_nr_01.anm2", 0, 111, 30, 1, 0.0)
 {
     Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
     Event(0, USER_POSE_CROUCHING, 0)
@@ -41631,7 +42781,7 @@ SeqTrack("m_bit_crouched_hitreaction_light_nr_01", "m_bit_crouched_hitreaction_l
     Event(68, USER_CAN_BLEND_OUT, -1)
 }
 
-SeqTrack("m_bit_crouched_hitreaction_light_n_01", "m_bit_crouched_hitreaction_light_n_01.anm2", 0, 136, 30, 1, 0.0)
+SeqTrack("m_bit_crouched_hitreaction_heavy_n_01", "m_bit_crouched_hitreaction_light_n_01.anm2", 0, 136, 30, 1, 0.0)
 {
     Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
     Event(0, USER_POSE_CROUCHING, 0)
@@ -41646,33 +42796,246 @@ SeqTrack("m_bit_crouched_hitreaction_light_n_01", "m_bit_crouched_hitreaction_li
     Event(86, EVENT_VIS_AIM_LOOK_ENABLE, -1)
     Event(94, USER_CAN_BLEND_OUT, -1)
 }
-SeqTrack("m_bit_crouched_hitreaction_light_e_01", "m_bit_crouched_hitreaction_light_e_01.anm2", 0, 120, 30, 1, 0.0)
+
+SeqTrack("m_bit_crouched_hitreaction_heavy_nl_01", "m_bit_crouched_hitreaction_light_nl_01.anm2", 0, 108, 30, 1, 0.0)
 {
+    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
+    Event(0, USER_POSE_CROUCHING, 0)
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("pain_critical",1,5,0,0)
     }
-    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
-    Event(0, USER_POSE_CROUCHING, 0)
     Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
-    Event(7, USER_POSE_STANDING, 0)
-    Event(31, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
-    Event(62, USER_CAN_INTERRUPT, -1)
-    Event(63, EVENT_VIS_AIM_LOOK_ENABLE, -1)
-    Event(71, USER_CAN_BLEND_OUT, -1)
+    Event(5, USER_POSE_STANDING, 0)
+    Event(35, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
+    Event(46, USER_CAN_INTERRUPT, -1)
+    Event(48, EVENT_VIS_AIM_LOOK_ENABLE, -1)
+    Event(54, USER_CAN_BLEND_OUT, -1)
 }
-SeqTrack("m_bit_crouched_hitreaction_light_w_01", "m_bit_crouched_hitreaction_light_w_01.anm2", 0, 129, 30, 1, 0.0)
+SeqTrack("m_bit_crouched_uv_reaction_s_01", "m_bit_crouched_uv_reaction_s_01.anm2", 3, 317, 30, 1, 0.0)
 {
-    Event(0, USER_POSE_CROUCHING, 0)
+    Event(0, USER_LATEST_START, 0)
     Event(0, USER_PLAY_SOUND, -1)
     {
-        PlayScream("pain_critical",1,5,0,0)
+        PlayScream("pain_loop",1,5,0,0)
     }
-    Event(0, EVENT_VIS_AIM_LOOK_DISABLE, 0)
-    Event(0, USER_DAMAGE_ON_COLLISION_ENABLED, -1)
-    Event(10, USER_POSE_STANDING, 0)
-    Event(32, USER_DAMAGE_ON_COLLISION_DISABLED, -1)
-    Event(55, USER_CAN_INTERRUPT, -1)
-    Event(58, EVENT_VIS_AIM_LOOK_ENABLE, -1)
-    Event(66, USER_CAN_BLEND_OUT, -1)
+    Event(1, 0, -1)
+    {
+        PlayFacialAnim("m_bit_deg_run_fe",-99.000000,1.000000,1.000000,0.100000,0.100000,0.000000,3.070000,0,0,0)
+    }
+    Event(4, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_limb_small.gpufx",[1.0,0.0,0.0],"r_forearm",1,[0.0,0.0,0.0],1)
+    }
+    Event(4, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_torso.gpufx",[1.0,0.0,0.0],"spine",1,[0.0,0.0,0.0],0)
+    }
+    Event(4, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_head.gpufx",[1.0,0.0,0.0],"head",1,[0.0,0.0,0.0],0)
+    }
+    Event(4, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_limb_small.gpufx",[1.0,0.0,0.0],"l_forearm",1,[0.0,0.0,0.0],1)
+    }
+    Event(5, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_limb.gpufx",[1.0,0.0,0.0],"r_thigh",1,[0.0,0.0,0.0],0)
+    }
+    Event(5, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_limb.gpufx",[1.0,0.0,0.0],"l_thigh",1,[0.0,0.0,0.0],0)
+    }
+    Event(35, 0, -1)
+    {
+        PlayFacialAnim("m_vir_scream_long_01",-99.0,1.0,1.0,0.10000000149011612,0.10000000149011612,56.20000076293945,2.5,0,0,0)
+    }
+    Event(43, USER_LATEST_START, 0)
+    Event(96, USER_POSE_STANDING, 0)
+    Event(118, USER_CAN_INTERRUPT, -1)
+    Event(226, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_bit_crouched_uv_reaction_s_02", "m_bit_crouched_uv_reaction_s_02.anm2", 4, 207, 30, 1, 0.0)
+{
+    Event(-1, USER_LATEST_START, 0)
+    Event(0, 0, -1)
+    {
+        PlayFacialAnim("m_bit_deg_run_fe",-99.000000,1.000000,1.000000,0.100000,0.100000,0.000000,3.070000,0,0,0)
+    }
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain_loop",1,5,0,0)
+    }
+    Event(3, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_head.gpufx",[1.0,0.0,0.0],"head",1,[0.0,0.0,0.0],0)
+    }
+    Event(3, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_torso.gpufx",[1.0,0.0,0.0],"spine",1,[0.0,0.0,0.0],0)
+    }
+    Event(3, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_limb_small.gpufx",[1.0,0.0,0.0],"l_forearm",1,[0.0,0.0,0.0],1)
+    }
+    Event(3, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_limb_small.gpufx",[1.0,0.0,0.0],"r_forearm",1,[0.0,0.0,0.0],1)
+    }
+    Event(4, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_limb.gpufx",[1.0,0.0,0.0],"l_thigh",1,[0.0,0.0,0.0],0)
+    }
+    Event(4, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_limb.gpufx",[1.0,0.0,0.0],"r_thigh",1,[0.0,0.0,0.0],0)
+    }
+    Event(19, USER_LATEST_START, 0)
+    Event(28, USER_POSE_STANDING, 0)
+    Event(35, 0, -1)
+    {
+        PlayFacialAnim("m_vir_scream_long_01",-99.0,1.0,1.0,0.10000000149011612,0.10000000149011612,56.20000076293945,4.5,0,0,0)
+    }
+    Event(63, USER_CAN_INTERRUPT, -1)
+    Event(169, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_bit_crouched_uv_reaction_e_01", "m_bit_crouched_uv_reaction_e_01.anm2", 3, 271, 30, 1, 0.0)
+{
+    Event(0, USER_LATEST_START, 0)
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain_loop",1,5,0,0)
+    }
+    Event(1, 0, -1)
+    {
+        PlayFacialAnim("m_bit_deg_run_fe",-99.000000,1.000000,1.000000,0.100000,0.100000,0.000000,3.070000,0,0,0)
+    }
+    Event(4, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_limb_small.gpufx",[1.0,0.0,0.0],"l_forearm",1,[0.0,0.0,0.0],1)
+    }
+    Event(4, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_head.gpufx",[1.0,0.0,0.0],"head",1,[0.0,0.0,0.0],0)
+    }
+    Event(4, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_torso.gpufx",[1.0,0.0,0.0],"spine",1,[0.0,0.0,0.0],0)
+    }
+    Event(4, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_limb_small.gpufx",[1.0,0.0,0.0],"r_forearm",1,[0.0,0.0,0.0],1)
+    }
+    Event(5, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_limb.gpufx",[1.0,0.0,0.0],"r_thigh",1,[0.0,0.0,0.0],0)
+    }
+    Event(5, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_limb.gpufx",[1.0,0.0,0.0],"l_thigh",1,[0.0,0.0,0.0],0)
+    }
+    Event(17, USER_LATEST_START, 0)
+    Event(35, 0, -1)
+    {
+        PlayFacialAnim("m_vir_scream_long_01",-99.0,1.0,1.0,0.10000000149011612,0.10000000149011612,56.20000076293945,3.5,0,0,0)
+    }
+    Event(85, USER_POSE_STANDING, 0)
+    Event(138, USER_CAN_INTERRUPT, -1)
+    Event(200, USER_CAN_BLEND_OUT, -1)
+}
+SeqTrack("m_bit_crouched_uv_reaction_w_01", "m_bit_crouched_uv_reaction_w_01.anm2", 3, 241, 30, 1, 0.0)
+{
+    Event(0, USER_LATEST_START, 0)
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain_loop",1,5,0,0)
+    }
+    Event(1, 0, -1)
+    {
+        PlayFacialAnim("m_bit_deg_run_fe",-99.000000,1.000000,1.000000,0.100000,0.100000,0.000000,3.070000,0,0,0)
+    }
+    Event(4, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_head.gpufx",[1.0,0.0,0.0],"head",1,[0.0,0.0,0.0],0)
+    }
+    Event(4, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_torso.gpufx",[1.0,0.0,0.0],"spine",1,[0.0,0.0,0.0],0)
+    }
+    Event(4, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_limb_small.gpufx",[1.0,0.0,0.0],"r_forearm",1,[0.0,0.0,0.0],1)
+    }
+    Event(4, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_limb_small.gpufx",[1.0,0.0,0.0],"l_forearm",1,[0.0,0.0,0.0],1)
+    }
+    Event(5, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_limb.gpufx",[1.0,0.0,0.0],"r_thigh",1,[0.0,0.0,0.0],0)
+    }
+    Event(5, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_limb.gpufx",[1.0,0.0,0.0],"l_thigh",1,[0.0,0.0,0.0],0)
+    }
+    Event(12, USER_LATEST_START, 0)
+    Event(35, USER_POSE_STANDING, 0)
+    Event(35, 0, -1)
+    {
+        PlayFacialAnim("m_vir_scream_long_01",-99.0,1.0,1.0,0.10000000149011612,0.10000000149011612,56.20000076293945,3.5,0,0,0)
+    }
+    Event(85, USER_CAN_INTERRUPT, -1)
+    Event(202, USER_CAN_BLEND_OUT, -1)
+}
+
+SeqTrack("m_bit_crouched_uv_reaction_n_01", "m_bit_crouched_uv_reaction_n_01.anm2", 3, 267, 30, 1, 0.0)
+{
+    Event(0, USER_LATEST_START, 0)
+    Event(0, USER_PLAY_SOUND, -1)
+    {
+        PlayScream("pain_loop",1,5,0,0)
+    }
+    Event(1, 0, -1)
+    {
+        PlayFacialAnim("m_bit_deg_run_fe",-99.000000,1.000000,1.000000,0.100000,0.100000,0.000000,3.070000,0,0,0)
+    }
+    Event(4, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_torso.gpufx",[1.0,0.0,0.0],"spine",1,[0.0,0.0,0.0],0)
+    }
+    Event(4, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_head.gpufx",[1.0,0.0,0.0],"head",1,[0.0,0.0,0.0],0)
+    }
+    Event(4, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_limb_small.gpufx",[1.0,0.0,0.0],"l_forearm",1,[0.0,0.0,0.0],1)
+    }
+    Event(4, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_limb_small.gpufx",[1.0,0.0,0.0],"r_forearm",1,[0.0,0.0,0.0],1)
+    }
+    Event(5, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_limb.gpufx",[1.0,0.0,0.0],"l_thigh",1,[0.0,0.0,0.0],0)
+    }
+    Event(5, ACTIVATE_FLY_MODE, -1)
+    {
+        PlayFx("uv_burning_limb.gpufx",[1.0,0.0,0.0],"r_thigh",1,[0.0,0.0,0.0],0)
+    }
+    Event(13, USER_PLAY_SOUND, 0)
+    {
+        PlayAudioEvent("biter_body_fall_ground_light",0,0,0,"",[0.0,0.0,0.0],0)
+    }
+    Event(15, USER_LATEST_START, 0)
+    Event(37, 0, -1)
+    {
+        PlayFacialAnim("m_vir_scream_long_01",-99.0,1.0,1.0,0.10000000149011612,0.10000000149011612,56.20000076293945,3.5,0,0,0)
+    }
+    Event(58, USER_POSE_STANDING, 0)
+    Event(75, USER_CAN_INTERRUPT, -1)
+    Event(79, USER_CAN_BLEND_OUT, -1)
 }

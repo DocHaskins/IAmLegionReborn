@@ -32,6 +32,7 @@
             </Selector>
         </SequenceMem>
         <!-- Taunt while waiting for attack to come off cooldown -->
+        <Optional m_Enabled="$enable_taunt">
         <CooldownTimeDelta m_CooldownTime="7" m_CooldownOnAbort="true">
             <SequenceMem>
                 <Cnd_IsBBValueEqual_string m_Key="#tactic" m_Value="rush" m_Invert="true"/>
@@ -45,7 +46,9 @@
                 <Act_Taunt m_Type="Normal" m_Target="#target" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
             </SequenceMem>
         </CooldownTimeDelta>
+		</Optional>
         <!-- Taunt while waiting for attack to come off cooldown -->
+        <Optional m_Enabled="$enable_taunt">
         <CooldownTimeDelta m_CooldownTime="4" m_CooldownOnAbort="true">
             <SequenceMem>
                 <Cnd_IsBBValueEqual_string m_Key="#tactic" m_Value="rush" m_Invert="true"/>
@@ -59,6 +62,7 @@
                 <Act_Taunt m_Type="Short" m_Target="#target" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
             </SequenceMem>
         </CooldownTimeDelta>
+		</Optional>
         <!-- Melee keep distance -->
         <SequenceMem>
             <Cnd_PositionInRadius m_Position="#target_pos" m_Radius="10" m_Invert="true"/>

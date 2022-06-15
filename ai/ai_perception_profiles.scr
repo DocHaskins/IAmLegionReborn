@@ -22,6 +22,13 @@ sub main()
         MediumAlertProfile("banshee_medium_alert");
         HighAlertProfile("banshee_high_alert");
     }
+    PerceptionProfile("banshee_sun_immune")
+    {
+        DefaultProfile("banshee_default");
+        LowAlertProfile("banshee_sun_immune");
+        MediumAlertProfile("banshee_sun_immune");
+        HighAlertProfile("banshee_sun_immune");
+    }
     PerceptionProfile("biter_default")
     {
         DefaultProfile("viral_default");
@@ -66,6 +73,13 @@ sub main()
         MediumAlertProfile("demolisher_medium_alert");
         HighAlertProfile("demolisher_high_alert");
     }
+    PerceptionProfile("demolisher_thrower")
+    {
+        DefaultProfile("demolisher_default");
+        LowAlertProfile("demolisher_thrower_low_alert");
+        MediumAlertProfile("demolisher_thrower_low_alert");
+        HighAlertProfile("demolisher_thrower_high_alert");
+    }
     PerceptionProfile("goon_default")
     {
         DefaultProfile("goon_default");
@@ -108,6 +122,13 @@ sub main()
         MediumAlertProfile("suicider_medium_alert");
         HighAlertProfile("suicider_high_alert");
     }
+    PerceptionProfile("suicider_sun_immune")
+    {
+        DefaultProfile("suicider_default");
+        LowAlertProfile("suicider_sun_immune");
+        MediumAlertProfile("suicider_sun_immune");
+        HighAlertProfile("suicider_sun_immune");
+    }
     PerceptionProfile("volatile_default")
     {
         DefaultProfile("volatile_default");
@@ -115,6 +136,28 @@ sub main()
         MediumAlertProfile("volatile_medium_alert");
         HighAlertProfile("volatile_high_alert");
     }
+    PerceptionProfile("volatile_sun_immune")
+    {
+        DefaultProfile("volatile_default");
+        LowAlertProfile("volatile_sun_immune");
+        MediumAlertProfile("volatile_sun_immune");
+        HighAlertProfile("volatile_sun_immune");
+    }
+    PerceptionProfile("volatile_hive_default")
+    {
+        DefaultProfile("volatile_default");
+        LowAlertProfile("volatile_hive_low_alert");
+        MediumAlertProfile("volatile_hive_medium_alert");
+        HighAlertProfile("volatile_hive_high_alert");
+    }
+    PerceptionProfile("volatile_summoner_default")
+    {
+        DefaultProfile("volatile_default");
+        LowAlertProfile("volatile_summoner_low_alert");
+        MediumAlertProfile("volatile_summoner_medium_alert");
+        HighAlertProfile("volatile_summoner_high_alert");
+    }
+    
     PerceptionProfile("alpha_zombie_default")
     {
         DefaultProfile("alpha_zombie_default");
@@ -344,7 +387,15 @@ sub main()
         MediumAlertProfile("viral_level_9_RGD_medium");
         HighAlertProfile("viral_high_alert");
         RestingProfile("viral_resting");
-    }   
+    } 
+    PerceptionProfile("viral_sun_immune")
+    {
+        DefaultProfile("viral_default");
+        LowAlertProfile("viral_sun_immune");
+        MediumAlertProfile("viral_sun_immune");
+        HighAlertProfile("viral_sun_immune");
+        RestingProfile("viral_resting");
+    }    
 //// GRE FOG TEST
     PerceptionProfile("biter_fog")
     {

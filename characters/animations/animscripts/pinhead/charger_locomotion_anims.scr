@@ -3,9 +3,9 @@ SeqTrack("chr_fmv_walk_n_01_ret", "m_dmr_fmv_walk_n_01_ret.anm2", 0, 166, 30, 1,
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(16, AUDIO_STEP_RIGHT, -1)
+    Event(16, AUDIO_STEP_RIGHT, -1)
     {
         _Attributes(0,0,1)
         PlayStepSFx("step_right", "r_foot")
@@ -72,9 +72,9 @@ SeqTrack("chr_fmv_walk_to_idle_n_ret", "m_dmr_fmv_walk_to_idle_n_ret.anm2", 24, 
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(0, VIS_EVENT_STEP_LEFT, -1)
+    Event(0, VIS_EVENT_STEP_LEFT, -1)
     Event(0, AUDIO_STEP_LEFT, -1)
     {
         _Attributes(0,0,1)
@@ -108,9 +108,9 @@ SeqTrack("chr_idle_to_fmv_walk_e_ret", "m_dmr_idle_to_fmv_walk_e_ret.anm2", 6, 7
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(15, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(15, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(22, AUDIO_STEP_RIGHT, -1)
     {
         _Attributes(0,0,1)
@@ -145,9 +145,9 @@ SeqTrack("chr_idle_to_fmv_walk_sr_ret", "m_dmr_idle_to_fmv_walk_sr_ret.anm2", 6,
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(7, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(7, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(19, AUDIO_STEP_RIGHT, -1)
     {
         _Attributes(0,0,1)
@@ -182,9 +182,9 @@ SeqTrack("chr_idle_to_fmv_walk_w_ret", "m_dmr_idle_to_fmv_walk_w_ret.anm2", 0, 6
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(17, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(17, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(25, MID_ROTATION_MARKER, -1)
     Event(25, AUDIO_STEP_LEFT, -1)
     {
@@ -213,9 +213,9 @@ SeqTrack("chr_idle_to_fmv_walk_sl_ret", "m_dmr_idle_to_fmv_walk_sl_ret.anm2", 1,
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(17, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(17, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(26, MID_ROTATION_MARKER, -1)
     Event(30, AUDIO_STEP_LEFT, -1)
     {
@@ -250,9 +250,9 @@ SeqTrack("chr_idle_to_fmv_walk_n_ret", "m_dmr_idle_to_fmv_walk_n_ret.anm2", 0, 7
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(21, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(21, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(33, MID_ROTATION_MARKER, -1)
     Event(37, AUDIO_STEP_RIGHT, -1)
     {
@@ -281,9 +281,9 @@ SeqTrack("chr_fmv_run_n", "chr_fmv_run_n.anm2", 0, 88, 68, 1, 0.0)
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("run",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(13, VIS_EVENT_STEP_LEFT, -1)
+    Event(13, VIS_EVENT_STEP_LEFT, -1)
     {
         _Attributes(0,0,1)
         PlayStepSFx("step_sprint_left","l_foot")
@@ -322,25 +322,21 @@ SeqTrack("chr_idle_to_fmv_run_n", "chr_idle_to_fmv_run_n.anm2", 9, 116, 66, 1, 0
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("run",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(8, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(8, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(18, MID_ROTATION_MARKER, -1)
     Event(21, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-3.000000)
+            FrameOffset(-3.0)
         }
     }
     Event(26, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-2.000000)
-        }
+        _Attributes(0,0,1,"Human")
     }
     Event(29, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(63, VIS_EVENT_STEP_RIGHT, -1)
@@ -375,24 +371,24 @@ SeqTrack("chr_idle_to_fmv_run_e", "chr_idle_to_fmv_run_e.anm2", 5, 121, 66, 1, 0
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("run",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(26, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(26, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(35, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(46, MID_ROTATION_MARKER, -1)
     Event(52, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-3.000000)
+            FrameOffset(-3.0)
         }
     }
     Event(61, VIS_EVENT_ROTATION_MOD_END, -1)
@@ -420,9 +416,9 @@ SeqTrack("chr_idle_to_fmv_run_w", "chr_idle_to_fmv_run_w.anm2", 10, 106, 66, 1, 
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("run",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(10, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(10, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(21, VIS_EVENT_STEP_RIGHT, -1)
     {
         _Attributes(0,0,1)
@@ -433,10 +429,10 @@ SeqTrack("chr_idle_to_fmv_run_w", "chr_idle_to_fmv_run_w.anm2", 10, 106, 66, 1, 
     }
     Event(39, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(39, MID_ROTATION_MARKER, -1)
@@ -465,32 +461,28 @@ SeqTrack("chr_idle_to_fmv_run_sr", "chr_idle_to_fmv_run_sr.anm2", 5, 100, 66, 1,
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("run",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(4, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(4, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(9, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-3.000000)
-        }
+        _Attributes(0,0,1,"Human")
     }
     Event(19, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-4.0)
         }
     }
     Event(30, MID_ROTATION_MARKER, -1)
     Event(38, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-3.000000)
+            FrameOffset(-3.0)
         }
     }
     Event(51, VIS_EVENT_ROTATION_MOD_END, -1)
@@ -518,33 +510,33 @@ SeqTrack("chr_idle_to_fmv_run_sl", "chr_idle_to_fmv_run_sl.anm2", 8, 135, 66, 1,
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("run",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(5, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(5, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(14, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(32, MID_ROTATION_MARKER, -1)
     Event(36, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-3.000000)
+            FrameOffset(-3.0)
         }
     }
     Event(51, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(77, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(109, VIS_EVENT_STEP_RIGHT, -1)
@@ -571,14 +563,14 @@ SeqTrack("chr_fmv_run_to_idle_n_lleg", "chr_fmv_run_to_idle_n_lleg.anm2", 0, 140
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("run",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(10, VIS_EVENT_STEP_LEFT, -1)
+    Event(10, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_sprint_left","l_foot")
         {
-            TimeShift(-0.033300)
+            FrameOffset(-2.0)
         }
     }
     Event(31, VIS_EVENT_STEP_RIGHT, -1)
@@ -645,9 +637,9 @@ SeqTrack("chr_fmv_run_to_idle_n_rleg", "chr_fmv_run_to_idle_n_rleg.anm2", 0, 140
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("run",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(12, VIS_EVENT_STEP_RIGHT, -1)
+    Event(12, VIS_EVENT_STEP_RIGHT, -1)
     {
         _Attributes(0,0,1)
         PlayStepSFx("step_sprint_right","r_foot")
@@ -727,54 +719,54 @@ SeqTrack("chr_fmv_walk_n", "chr_fmv_walk_n.anm2", 0, 150, 60, 1, 0.0)
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(10, VIS_EVENT_STEP_LEFT, -1)
+    Event(10, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(38, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(59, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(83, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(108, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(137, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
 }
@@ -784,42 +776,42 @@ SeqTrack("chr_idle_to_fmv_walk_n", "chr_idle_to_fmv_walk_n.anm2", 4, 157, 60, 1,
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(17, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(17, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(32, MID_ROTATION_MARKER, -1)
     Event(51, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(54, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-3.000000)
+            FrameOffset(-3.0)
         }
     }
     Event(67, VIS_EVENT_STOPANIM, -1)
     Event(79, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(105, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-3.000000)
+            FrameOffset(-3.0)
         }
     }
     Event(128, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
 }
@@ -829,58 +821,58 @@ SeqTrack("chr_idle_to_fmv_walk_e", "chr_idle_to_fmv_walk_e.anm2", 0, 177, 60, 1,
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(24, VIS_EVENT_STEP_LEFT, -1)
+    Event(24, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(34, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(48, MID_ROTATION_MARKER, -1)
     Event(48, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-3.000000)
+            FrameOffset(-3.0)
         }
     }
     Event(76, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(90, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(104, VIS_EVENT_STOPANIM, -1)
     Event(112, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-3.000000)
+            FrameOffset(-3.0)
         }
     }
     Event(136, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(162, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-3.000000)
+            FrameOffset(-3.0)
         }
     }
 }
@@ -890,58 +882,58 @@ SeqTrack("chr_idle_to_fmv_walk_w", "chr_idle_to_fmv_walk_w.anm2", 0, 198, 60, 1,
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(30, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(30, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(43, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-3.000000)
+            FrameOffset(-3.0)
         }
     }
     Event(62, MID_ROTATION_MARKER, -1)
     Event(73, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(96, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(106, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-3.000000)
+            FrameOffset(-3.0)
         }
     }
     Event(119, VIS_EVENT_STOPANIM, -1)
     Event(128, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(153, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-3.000000)
+            FrameOffset(-3.0)
         }
     }
     Event(175, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
 }
@@ -951,58 +943,58 @@ SeqTrack("chr_idle_to_fmv_walk_sl", "chr_idle_to_fmv_walk_sl.anm2", 11, 210, 60,
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(24, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(24, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(50, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-3.000000)
+            FrameOffset(-3.0)
         }
     }
     Event(69, MID_ROTATION_MARKER, -1)
     Event(79, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(102, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(109, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-3.000000)
+            FrameOffset(-3.0)
         }
     }
     Event(119, VIS_EVENT_STOPANIM, -1)
     Event(130, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(157, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-3.000000)
+            FrameOffset(-3.0)
         }
     }
     Event(180, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
 }
@@ -1012,58 +1004,58 @@ SeqTrack("chr_idle_to_fmv_walk_sr", "chr_idle_to_fmv_walk_sr.anm2", 10, 182, 60,
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(10, VIS_EVENT_ROTATION_MOD_START, -1)
+    Event(10, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(21, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(41, MID_ROTATION_MARKER, -1)
     Event(47, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-3.000000)
+            FrameOffset(-3.0)
         }
     }
     Event(77, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(88, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(103, VIS_EVENT_STOPANIM, -1)
     Event(110, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-3.000000)
+            FrameOffset(-3.0)
         }
     }
     Event(136, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(163, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-3.000000)
+            FrameOffset(-3.0)
         }
     }
 }
@@ -1073,9 +1065,9 @@ SeqTrack("chr_fmv_walk_to_idle_n_lleg", "chr_fmv_walk_to_idle_n_lleg.anm2", 27, 
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(16, VIS_EVENT_STEP_LEFT, -1)
+    Event(16, VIS_EVENT_STEP_LEFT, -1)
     {
         _Attributes(0,0,1)
         PlayStepSFx("step_left", "l_foot")
@@ -1085,10 +1077,10 @@ SeqTrack("chr_fmv_walk_to_idle_n_lleg", "chr_fmv_walk_to_idle_n_lleg.anm2", 27, 
     }
     Event(38, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(64, VIS_EVENT_MOVEMENT_MOD_START, -1)
@@ -1098,30 +1090,30 @@ SeqTrack("chr_fmv_walk_to_idle_n_lleg", "chr_fmv_walk_to_idle_n_lleg.anm2", 27, 
     Event(64, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
     Event(64, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(66, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(84, MID_ROTATION_MARKER, -1)
     Event(90, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(104, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(108, VIS_EVENT_STOPANIM, -1)
     Event(113, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(132, VIS_EVENT_STEP_RIGHT, -1)
@@ -1139,9 +1131,9 @@ SeqTrack("chr_fmv_walk_to_idle_n_rleg", "chr_fmv_walk_to_idle_n_rleg.anm2", 11, 
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(11, VIS_EVENT_STEP_RIGHT, -1)
+    Event(11, VIS_EVENT_STEP_RIGHT, -1)
     {
         _Attributes(0,0,1)
         PlayStepSFx("step_right","r_foot")
@@ -1159,10 +1151,10 @@ SeqTrack("chr_fmv_walk_to_idle_n_rleg", "chr_fmv_walk_to_idle_n_rleg.anm2", 11, 
     }
     Event(58, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(58, VIS_EVENT_MOVEMENT_MOD_START, -1)
@@ -1172,30 +1164,30 @@ SeqTrack("chr_fmv_walk_to_idle_n_rleg", "chr_fmv_walk_to_idle_n_rleg.anm2", 11, 
     Event(58, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
     Event(81, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(84, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(99, MID_ROTATION_MARKER, -1)
     Event(104, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(120, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(122, VIS_EVENT_STOPANIM, -1)
     Event(129, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
 }
@@ -1205,9 +1197,9 @@ SeqTrack("chr_fmv_run_n_to_nw_rleg_01", "chr_fmv_run_n_to_nw_rleg_01.anm2", 17, 
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("run",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(13, VIS_EVENT_STEP_RIGHT, -1)
+    Event(13, VIS_EVENT_STEP_RIGHT, -1)
     {
         _Attributes(0,0,1)
         PlayStepSFx("step_sprint_right","r_foot")
@@ -1247,9 +1239,9 @@ SeqTrack("chr_fmv_run_n_to_nw_rleg_01", "chr_fmv_run_n_to_nw_rleg_01.anm2", 17, 
     Event(84, VIS_EVENT_STOPANIM, -1)
     Event(97, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_sprint_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(116, VIS_EVENT_STEP_LEFT, -1)
@@ -1267,14 +1259,14 @@ SeqTrack("chr_fmv_run_n_to_nw_lleg_01", "chr_fmv_run_n_to_nw_lleg_01.anm2", 0, 1
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("run",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(14, VIS_EVENT_STEP_LEFT, -1)
+    Event(14, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
+        _Attributes(0,0,1,"Human")
         PlayStepSFx("step_sprint_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-3.0)
         }
     }
     Event(33, VIS_EVENT_STEP_RIGHT, -1)
@@ -1299,9 +1291,9 @@ SeqTrack("chr_fmv_run_n_to_nw_lleg_01", "chr_fmv_run_n_to_nw_lleg_01.anm2", 0, 1
     Event(67, MID_ROTATION_MARKER, -1)
     Event(74, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_sprint_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(81, VIS_EVENT_ROTATION_MOD_END, -1)
@@ -1316,9 +1308,9 @@ SeqTrack("chr_fmv_run_n_to_nw_lleg_01", "chr_fmv_run_n_to_nw_lleg_01.anm2", 0, 1
     }
     Event(115, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_sprint_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
 }
@@ -1328,9 +1320,9 @@ SeqTrack("chr_fmv_run_n_to_w_rleg_01", "chr_fmv_run_n_to_w_rleg_01.anm2", 0, 132
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("run",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(20, VIS_EVENT_STEP_RIGHT, -1)
+    Event(20, VIS_EVENT_STEP_RIGHT, -1)
     {
         _Attributes(0,0,1)
         PlayStepSFx("step_sprint_right","r_foot")
@@ -1370,9 +1362,9 @@ SeqTrack("chr_fmv_run_n_to_w_rleg_01", "chr_fmv_run_n_to_w_rleg_01.anm2", 0, 132
     Event(94, VIS_EVENT_STOPANIM, -1)
     Event(104, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_sprint_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(127, VIS_EVENT_STEP_LEFT, -1)
@@ -1390,9 +1382,9 @@ SeqTrack("chr_fmv_run_n_to_w_lleg_01", "chr_fmv_run_n_to_w_lleg_01.anm2", 22, 13
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("run",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(10, VIS_EVENT_STEP_LEFT, -1)
+    Event(10, VIS_EVENT_STEP_LEFT, -1)
     {
         _Attributes(0,0,1)
         PlayStepSFx("step_sprint_left","l_foot")
@@ -1422,9 +1414,9 @@ SeqTrack("chr_fmv_run_n_to_w_lleg_01", "chr_fmv_run_n_to_w_lleg_01.anm2", 22, 13
     Event(63, MID_ROTATION_MARKER, -1)
     Event(69, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_sprint_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(77, VIS_EVENT_ROTATION_MOD_END, -1)
@@ -1439,9 +1431,9 @@ SeqTrack("chr_fmv_run_n_to_w_lleg_01", "chr_fmv_run_n_to_w_lleg_01.anm2", 22, 13
     }
     Event(108, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_sprint_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
 }
@@ -1451,9 +1443,9 @@ SeqTrack("chr_fmv_run_n_to_sl_rleg_01", "chr_fmv_run_n_to_sl_rleg_01.anm2", 46, 
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("run",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(14, VIS_EVENT_STEP_RIGHT, -1)
+    Event(14, VIS_EVENT_STEP_RIGHT, -1)
     {
         _Attributes(0,0,1)
         PlayStepSFx("step_sprint_right","r_foot")
@@ -1482,34 +1474,30 @@ SeqTrack("chr_fmv_run_n_to_sl_rleg_01", "chr_fmv_run_n_to_sl_rleg_01.anm2", 46, 
     Event(60, EVENT_FINAL_POSITION, -1)
     Event(76, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(78, MID_ROTATION_MARKER, -1)
     Event(80, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-2.000000)
-        }
+        _Attributes(0,0,1,"Human")
     }
     Event(95, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(121, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(123, VIS_EVENT_ROTATION_MOD_END, -1)
@@ -1524,9 +1512,9 @@ SeqTrack("chr_fmv_run_n_to_sl_rleg_01", "chr_fmv_run_n_to_sl_rleg_01.anm2", 46, 
     }
     Event(160, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_sprint_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(178, VIS_EVENT_STEP_LEFT, -1)
@@ -1539,9 +1527,9 @@ SeqTrack("chr_fmv_run_n_to_sl_rleg_01", "chr_fmv_run_n_to_sl_rleg_01.anm2", 46, 
     }
     Event(196, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_sprint_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
 }
@@ -1551,9 +1539,9 @@ SeqTrack("chr_fmv_run_n_to_sl_lleg_01", "chr_fmv_run_n_to_sl_lleg_01.anm2", 16, 
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("run",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(15, VIS_EVENT_STEP_LEFT, -1)
+    Event(15, VIS_EVENT_STEP_LEFT, -1)
     {
         _Attributes(0,0,1)
         PlayStepSFx("step_sprint_left","l_foot")
@@ -1582,26 +1570,26 @@ SeqTrack("chr_fmv_run_n_to_sl_lleg_01", "chr_fmv_run_n_to_sl_lleg_01.anm2", 16, 
     Event(64, EVENT_FINAL_POSITION, -1)
     Event(71, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_sprint_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(76, MID_ROTATION_MARKER, -1)
     Event(112, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(127, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(134, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(139, VIS_EVENT_STOPANIM, -1)
@@ -1615,9 +1603,9 @@ SeqTrack("chr_fmv_run_n_to_sl_lleg_01", "chr_fmv_run_n_to_sl_lleg_01.anm2", 16, 
     }
     Event(170, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_sprint_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(190, VIS_EVENT_STEP_LEFT, -1)
@@ -1635,9 +1623,9 @@ SeqTrack("chr_fmv_run_n_to_ne_lleg_01", "chr_fmv_run_n_to_ne_lleg_01.anm2", 20, 
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("run",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(9, VIS_EVENT_STEP_LEFT, -1)
+    Event(9, VIS_EVENT_STEP_LEFT, -1)
     {
         _Attributes(0,0,1)
         PlayStepSFx("step_sprint_left","l_foot")
@@ -1666,9 +1654,9 @@ SeqTrack("chr_fmv_run_n_to_ne_lleg_01", "chr_fmv_run_n_to_ne_lleg_01.anm2", 20, 
     Event(59, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(66, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_sprint_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(66, MID_ROTATION_MARKER, -1)
@@ -1684,9 +1672,9 @@ SeqTrack("chr_fmv_run_n_to_ne_lleg_01", "chr_fmv_run_n_to_ne_lleg_01.anm2", 20, 
     }
     Event(104, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_sprint_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
 }
@@ -1696,9 +1684,9 @@ SeqTrack("chr_fmv_run_n_to_ne_rleg_01", "chr_fmv_run_n_to_ne_rleg_01.anm2", 0, 1
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("run",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(15, VIS_EVENT_STEP_RIGHT, -1)
+    Event(15, VIS_EVENT_STEP_RIGHT, -1)
     {
         _Attributes(0,0,1)
         PlayStepSFx("step_sprint_right","r_foot")
@@ -1738,9 +1726,9 @@ SeqTrack("chr_fmv_run_n_to_ne_rleg_01", "chr_fmv_run_n_to_ne_rleg_01.anm2", 0, 1
     Event(75, VIS_EVENT_STOPANIM, -1)
     Event(85, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_sprint_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(103, VIS_EVENT_STEP_LEFT, -1)
@@ -1758,9 +1746,9 @@ SeqTrack("chr_fmv_run_n_to_e_lleg_01", "chr_fmv_run_n_to_e_lleg_01.anm2", 0, 113
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("run",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(6, VIS_EVENT_STEP_LEFT, -1)
+    Event(6, VIS_EVENT_STEP_LEFT, -1)
     {
         _Attributes(0,0,1)
         PlayStepSFx("step_sprint_left","l_foot")
@@ -1790,9 +1778,9 @@ SeqTrack("chr_fmv_run_n_to_e_lleg_01", "chr_fmv_run_n_to_e_lleg_01.anm2", 0, 113
     Event(58, MID_ROTATION_MARKER, -1)
     Event(63, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_sprint_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(69, VIS_EVENT_ROTATION_MOD_END, -1)
@@ -1807,9 +1795,9 @@ SeqTrack("chr_fmv_run_n_to_e_lleg_01", "chr_fmv_run_n_to_e_lleg_01.anm2", 0, 113
     }
     Event(99, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_sprint_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
 }
@@ -1819,9 +1807,9 @@ SeqTrack("chr_fmv_run_n_to_e_rleg_01", "chr_fmv_run_n_to_e_rleg_01.anm2", 0, 116
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("run",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(16, VIS_EVENT_STEP_RIGHT, -1)
+    Event(16, VIS_EVENT_STEP_RIGHT, -1)
     {
         _Attributes(0,0,1)
         PlayStepSFx("step_sprint_right","r_foot")
@@ -1839,10 +1827,10 @@ SeqTrack("chr_fmv_run_n_to_e_rleg_01", "chr_fmv_run_n_to_e_rleg_01.anm2", 0, 116
     }
     Event(47, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
+        _Attributes(0,0,1,"Human")
         PlayStepSFx("step_sprint_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-3.0)
         }
     }
     Event(47, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
@@ -1861,17 +1849,17 @@ SeqTrack("chr_fmv_run_n_to_e_rleg_01", "chr_fmv_run_n_to_e_rleg_01.anm2", 0, 116
     Event(77, VIS_EVENT_STOPANIM, -1)
     Event(92, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_sprint_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-3.0)
         }
     }
     Event(113, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
+        _Attributes(0,0,1,"Human")
         PlayStepSFx("step_sprint_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-4.0)
         }
     }
 }
@@ -1881,9 +1869,9 @@ SeqTrack("chr_fmv_run_n_to_sr_rleg_01", "chr_fmv_run_n_to_sr_rleg_01.anm2", 14, 
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("run",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(14, VIS_EVENT_STEP_RIGHT, -1)
+    Event(14, VIS_EVENT_STEP_RIGHT, -1)
     {
         _Attributes(0,0,1)
         PlayStepSFx("step_sprint_right","r_foot")
@@ -1918,11 +1906,7 @@ SeqTrack("chr_fmv_run_n_to_sr_rleg_01", "chr_fmv_run_n_to_sr_rleg_01.anm2", 14, 
     }
     Event(80, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-2.000000)
-        }
+        _Attributes(0,0,1,"Human")
     }
     Event(83, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(83, EVENT_FINAL_POSITION, -1)
@@ -1937,9 +1921,9 @@ SeqTrack("chr_fmv_run_n_to_sr_rleg_01", "chr_fmv_run_n_to_sr_rleg_01.anm2", 14, 
     Event(104, MID_ROTATION_MARKER, -1)
     Event(114, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(153, VIS_EVENT_STEP_LEFT, -1)
@@ -1954,9 +1938,9 @@ SeqTrack("chr_fmv_run_n_to_sr_rleg_01", "chr_fmv_run_n_to_sr_rleg_01.anm2", 14, 
     Event(166, VIS_EVENT_STOPANIM, -1)
     Event(175, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_sprint_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(194, VIS_EVENT_STEP_LEFT, -1)
@@ -1969,9 +1953,9 @@ SeqTrack("chr_fmv_run_n_to_sr_rleg_01", "chr_fmv_run_n_to_sr_rleg_01.anm2", 14, 
     }
     Event(212, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_sprint_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
 }
@@ -1981,9 +1965,9 @@ SeqTrack("chr_fmv_run_n_to_sr_lleg_01", "chr_fmv_run_n_to_sr_lleg_01.anm2", 0, 2
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("run",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(10, VIS_EVENT_STEP_LEFT, -1)
+    Event(10, VIS_EVENT_STEP_LEFT, -1)
     {
         _Attributes(0,0,1)
         PlayStepSFx("step_sprint_left","l_foot")
@@ -2010,9 +1994,9 @@ SeqTrack("chr_fmv_run_n_to_sr_lleg_01", "chr_fmv_run_n_to_sr_lleg_01.anm2", 0, 2
     Event(46, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
     Event(64, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_sprint_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(84, VIS_EVENT_STEP_LEFT, -1)
@@ -2027,26 +2011,26 @@ SeqTrack("chr_fmv_run_n_to_sr_lleg_01", "chr_fmv_run_n_to_sr_lleg_01.anm2", 0, 2
     Event(86, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(111, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(123, MID_ROTATION_MARKER, -1)
     Event(144, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(150, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(165, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_sprint_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(173, VIS_EVENT_STOPANIM, -1)
@@ -2060,9 +2044,9 @@ SeqTrack("chr_fmv_run_n_to_sr_lleg_01", "chr_fmv_run_n_to_sr_lleg_01.anm2", 0, 2
     }
     Event(202, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_sprint_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
 }
@@ -2071,9 +2055,9 @@ SeqTrack("chr_fmv_run_shortstep", "chr_fmv_run_shortstep.anm2", 0, 36, 66, 1, 0.
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("run",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(5, VIS_EVENT_STEP_LEFT, -1)
+    Event(5, VIS_EVENT_STEP_LEFT, -1)
     {
         _Attributes(0,0,1)
         PlayStepSFx("step_sprint_left","l_foot")
@@ -2095,30 +2079,30 @@ SeqTrack("chr_fmv_walk_n_to_ne_lleg_01", "chr_fmv_walk_n_to_ne_lleg_01.anm2", 73
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("run",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(8, VIS_EVENT_STEP_LEFT, -1)
+    Event(8, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(31, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(55, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(55, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
@@ -2126,35 +2110,35 @@ SeqTrack("chr_fmv_walk_n_to_ne_lleg_01", "chr_fmv_walk_n_to_ne_lleg_01.anm2", 73
     Event(78, EVENT_FINAL_POSITION, -1)
     Event(83, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(84, MID_ROTATION_MARKER, -1)
     Event(98, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(107, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(122, VIS_EVENT_STOPANIM, -1)
     Event(134, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(158, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
 }
@@ -2164,31 +2148,31 @@ SeqTrack("chr_fmv_walk_n_to_ne_rleg_01", "chr_fmv_walk_n_to_ne_rleg_01.anm2", 52
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(8, VIS_EVENT_STEP_RIGHT, -1)
+    Event(8, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(32, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(58, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
     Event(58, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(81, VIS_EVENT_ROTATION_MOD_START, -1)
@@ -2196,34 +2180,34 @@ SeqTrack("chr_fmv_walk_n_to_ne_rleg_01", "chr_fmv_walk_n_to_ne_rleg_01.anm2", 52
     Event(88, MID_ROTATION_MARKER, -1)
     Event(95, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(106, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(109, VIS_EVENT_STOPANIM, -1)
     Event(119, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(141, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(166, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
 }
@@ -2233,31 +2217,31 @@ SeqTrack("chr_fmv_walk_n_to_e_lleg_01", "chr_fmv_walk_n_to_e_lleg_01.anm2", 23, 
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(9, VIS_EVENT_STEP_LEFT, -1)
+    Event(9, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(36, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(62, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
     Event(62, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(78, VIS_EVENT_ROTATION_MOD_START, -1)
@@ -2265,34 +2249,34 @@ SeqTrack("chr_fmv_walk_n_to_e_lleg_01", "chr_fmv_walk_n_to_e_lleg_01.anm2", 23, 
     Event(85, MID_ROTATION_MARKER, -1)
     Event(89, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(103, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(104, VIS_EVENT_STOPANIM, -1)
     Event(115, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(143, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(170, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
 }
@@ -2302,30 +2286,30 @@ SeqTrack("chr_fmv_walk_n_to_e_rleg_01", "chr_fmv_walk_n_to_e_rleg_01.anm2", 44, 
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(12, VIS_EVENT_STEP_RIGHT, -1)
+    Event(12, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(37, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(60, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(60, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
@@ -2334,34 +2318,34 @@ SeqTrack("chr_fmv_walk_n_to_e_rleg_01", "chr_fmv_walk_n_to_e_rleg_01.anm2", 44, 
     Event(88, MID_ROTATION_MARKER, -1)
     Event(91, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(104, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(105, VIS_EVENT_STOPANIM, -1)
     Event(115, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(137, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(162, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
 }
@@ -2371,73 +2355,73 @@ SeqTrack("chr_fmv_walk_n_to_sr_lleg_01", "chr_fmv_walk_n_to_sr_lleg_01.anm2", 75
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(9, VIS_EVENT_STEP_LEFT, -1)
+    Event(9, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(32, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(57, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
     Event(57, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(72, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(72, EVENT_FINAL_POSITION, -1)
     Event(84, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(110, MID_ROTATION_MARKER, -1)
     Event(133, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(145, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(146, VIS_EVENT_STOPANIM, -1)
     Event(156, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(177, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(203, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
 }
@@ -2447,30 +2431,30 @@ SeqTrack("chr_fmv_walk_n_to_sr_rleg_01", "chr_fmv_walk_n_to_sr_rleg_01.anm2", 47
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(10, VIS_EVENT_STEP_RIGHT, -1)
+    Event(10, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(32, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(56, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(56, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
@@ -2478,50 +2462,50 @@ SeqTrack("chr_fmv_walk_n_to_sr_rleg_01", "chr_fmv_walk_n_to_sr_rleg_01.anm2", 47
     Event(83, EVENT_FINAL_POSITION, -1)
     Event(87, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(117, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(129, MID_ROTATION_MARKER, -1)
     Event(143, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(153, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(156, VIS_EVENT_STOPANIM, -1)
     Event(167, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(191, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(214, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
 }
@@ -2531,30 +2515,30 @@ SeqTrack("chr_fmv_walk_n_to_nw_rleg_01", "chr_fmv_walk_n_to_nw_rleg_01.anm2", 48
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(9, VIS_EVENT_STEP_RIGHT, -1)
+    Event(9, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(34, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(59, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(59, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
@@ -2563,27 +2547,27 @@ SeqTrack("chr_fmv_walk_n_to_nw_rleg_01", "chr_fmv_walk_n_to_nw_rleg_01.anm2", 48
     Event(82, MID_ROTATION_MARKER, -1)
     Event(86, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(99, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(100, VIS_EVENT_STOPANIM, -1)
     Event(110, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(136, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
 }
@@ -2593,31 +2577,31 @@ SeqTrack("chr_fmv_walk_n_to_nw_lleg_01", "chr_fmv_walk_n_to_nw_lleg_01.anm2", 22
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(12, VIS_EVENT_STEP_LEFT, -1)
+    Event(12, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(38, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(60, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
     Event(60, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(79, VIS_EVENT_ROTATION_MOD_START, -1)
@@ -2625,26 +2609,26 @@ SeqTrack("chr_fmv_walk_n_to_nw_lleg_01", "chr_fmv_walk_n_to_nw_lleg_01.anm2", 22
     Event(86, MID_ROTATION_MARKER, -1)
     Event(89, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(99, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(100, VIS_EVENT_STOPANIM, -1)
     Event(109, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(135, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
 }
@@ -2654,31 +2638,31 @@ SeqTrack("chr_fmv_walk_n_to_w_lleg_01", "chr_fmv_walk_n_to_w_lleg_01.anm2", 21, 
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(10, VIS_EVENT_STEP_LEFT, -1)
+    Event(10, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(35, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(56, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
     Event(56, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(76, VIS_EVENT_ROTATION_MOD_START, -1)
@@ -2686,34 +2670,34 @@ SeqTrack("chr_fmv_walk_n_to_w_lleg_01", "chr_fmv_walk_n_to_w_lleg_01.anm2", 21, 
     Event(85, MID_ROTATION_MARKER, -1)
     Event(91, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(104, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(106, VIS_EVENT_STOPANIM, -1)
     Event(116, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(142, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(166, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
 }
@@ -2723,30 +2707,30 @@ SeqTrack("chr_fmv_walk_n_to_w_rleg_01", "chr_fmv_walk_n_to_w_rleg_01.anm2", 44, 
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(11, VIS_EVENT_STEP_RIGHT, -1)
+    Event(11, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(32, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(55, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(55, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
@@ -2755,34 +2739,34 @@ SeqTrack("chr_fmv_walk_n_to_w_rleg_01", "chr_fmv_walk_n_to_w_rleg_01.anm2", 44, 
     Event(69, MID_ROTATION_MARKER, -1)
     Event(81, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(95, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(96, VIS_EVENT_STOPANIM, -1)
     Event(106, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(131, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(155, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
 }
@@ -2792,73 +2776,73 @@ SeqTrack("chr_fmv_walk_n_to_sl_lleg_01", "chr_fmv_walk_n_to_sl_lleg_01.anm2", 23
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(10, VIS_EVENT_STEP_LEFT, -1)
+    Event(10, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(35, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(55, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
     Event(55, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(72, EVENT_FINAL_POSITION, -1)
     Event(72, VIS_EVENT_ROTATION_MOD_START, -1)
     Event(92, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(94, MID_ROTATION_MARKER, -1)
     Event(116, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(130, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(133, VIS_EVENT_STOPANIM, -1)
     Event(140, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(162, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(190, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
 }
@@ -2868,30 +2852,30 @@ SeqTrack("chr_fmv_walk_n_to_sl_rleg_01", "chr_fmv_walk_n_to_sl_rleg_01.anm2", 48
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
+        _Attributes(1,0,1)
     }
-	Event(8, VIS_EVENT_STEP_RIGHT, -1)
+    Event(8, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(31, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(53, VIS_EVENT_STEP_RIGHT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(53, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
@@ -2900,49 +2884,49 @@ SeqTrack("chr_fmv_walk_n_to_sl_rleg_01", "chr_fmv_walk_n_to_sl_rleg_01.anm2", 48
     Event(93, MID_ROTATION_MARKER, -1)
     Event(97, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(138, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(138, VIS_EVENT_ROTATION_MOD_END, -1)
     Event(152, VIS_EVENT_STOPANIM, -1)
     Event(164, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(190, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(212, VIS_EVENT_STEP_LEFT, -1)
     {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
+        _Attributes(0,0,1,"Human")
+        PlayStepSFx("step_left","l_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
     Event(240, VIS_EVENT_STEP_RIGHT, -1)
     {
-        PlayStepSFx("step_slide_right","r_foot")
+        PlayStepSFx("step_right","r_foot")
         {
-            FrameOffset(-2.000000)
+            FrameOffset(-2.0)
         }
     }
 }
@@ -2952,4369 +2936,22 @@ SeqTrack("chr_fmv_walk_shortstep", "chr_fmv_walk_shortstep.anm2", 0, 49, 60, 1, 
     Event(0, USER_PLAY_SOUND, -1)
     {
         PlayScream("walk",1,5,1,1)
-		_Attributes(1,0,1)
-    }
-	Event(11, VIS_EVENT_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-2.000000)
-        }
-    }
-    Event(38, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-2.000000)
-        }
-    }
-}
-
-SeqTrack("viral_climbing_down_3m_01", "viral_climbing_down_3m_01.anm2", 0, 75, 30, 1, 0.0)
-{
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
         _Attributes(1,0,1)
-    }
-    Event(4, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    {
-        _Attributes(0,0,1)
-    }
-    Event(4, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0,1,1)
-    }
-    Event(11, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right","r_foot")
-        {
-            FrameOffset(-5.0)
-        }
-    }
-    Event(14, EVENT_FINAL_POSITION, -1)
-    Event(14, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(29, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(35, USER_PLAY_SOUND, -1)
-    {
-        PlayAudioEvent("landing_default_tpp",0,0)
-    }
-    Event(38, EVENT_FINAL_POSITION, -1)
-    Event(38, EVENT_TURN_ON_PHYSICS, -1)
-    Event(38, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(38, VIS_EVENT_STEP_RIGHT, -1)
-    Event(47, BLEND_OUT_TO_START, -1)
-    Event(47, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(47, VIS_EVENT_STEP_LEFT, -1)
-    Event(58, VIS_EVENT_STOPANIM, -1)
-    Event(65, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-3.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(75, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-3.0)
-        }
-        _Attributes(0,0,1)
-    }
-}
-
-SeqTrack("viral_climbing_up_3m_01", "viral_climbing_up_3m_01.anm2", 0, 95, 30, 1, 0.0)
-{
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(6, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(6, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(14, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(15, EVENT_FINAL_POSITION, -1)
-    Event(15, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(18, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(24, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(28, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(35, EVENT_FINAL_POSITION, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(35, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(41, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(65, EVENT_TURN_ON_PHYSICS, -1)
-    Event(65, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(68, VIS_EVENT_STEP_LEFT, -1)
-    Event(72, VIS_EVENT_STEP_RIGHT, -1)
-    Event(72, BLEND_OUT_TO_START, -1)
-    Event(72, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(78, VIS_EVENT_STOPANIM, -1)
-    Event(85, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-3.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(94, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-3.0)
-        }
-        _Attributes(0,0,1)
-    }
-}
-
-SeqTrack("viral_climbing_up_3m_overbarrier_01", "viral_climbing_up_3m_overbarrier_01.anm2", 0, 94, 30, 1, 0.0)
-{
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(4, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(4, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(15, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(16, EVENT_FINAL_POSITION, -1)
-    Event(16, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(20, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(25, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(30, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(37, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(43, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(49, EVENT_FINAL_POSITION, -1)
-    Event(62, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(67, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(70, VIS_EVENT_STEP_LEFT, -1)
-    Event(72, EVENT_TURN_ON_PHYSICS, -1)
-    Event(73, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(73, EVENT_FINAL_POSITION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(76, BLEND_OUT_TO_START, -1)
-    Event(76, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(76, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-3.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(82, VIS_EVENT_STOPANIM, -1)
-    Event(89, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-3.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(96, VIS_EVENT_STEP_RIGHT, -1)
-}
-
-SeqTrack("viral_jump_overbarrierdown_01", "viral_jump_overbarrierdown_01.anm2", 0, 74, 30, 1, 0.0)
-{
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(9, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(9, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(15, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(15, EVENT_FINAL_POSITION, -1)
-    Event(19, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(19, EVENT_FINAL_POSITION, -1)
-    Event(29, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(36, USER_PLAY_SOUND, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-        PlayAudioEvent("landing_default_tpp",0,0)
-    }
-    Event(40, VIS_EVENT_STEP_LEFT, -1)
-    Event(41, EVENT_TURN_ON_PHYSICS, -1)
-    Event(41, EVENT_FINAL_POSITION, -1)
-    Event(41, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(48, BLEND_OUT_TO_START, -1)
-    Event(48, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(48, VIS_EVENT_STEP_RIGHT, -1)
-    Event(57, VIS_EVENT_STOPANIM, -1)
-    Event(64, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-3.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(74, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-3.0)
-        }
-        _Attributes(0,0,1)
-    }
-}
-
-SeqTrack("m_vir_fmv_run_jump_off_1m_lleg_01", "m_vir_fmv_run_jump_off_1m_lleg_01.anm2", 14, 65, 35, 1, 0.0)
-{
-    Event(0, VIS_EVENT_STEP_LEFT, -1)
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(7, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-1.0)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(15, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(15, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(15, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-1.0)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(16, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(17, EVENT_FINAL_POSITION, -1)
-    Event(21, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(26, AUDIO_STEP_HEAVY_LEFT, -1)
-    {
-        PlayStepSFx("step_heavy_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(27, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(27, EVENT_FINAL_POSITION, -1)
-    Event(27, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-    }
-    Event(29, BLEND_OUT_TO_START, -1)
-    Event(29, VIS_EVENT_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-    }
-    Event(29, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(36, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(37, VIS_EVENT_STOPANIM, -1)
-    Event(43, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(51, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-}
-SeqTrack("m_vir_fmv_run_jump_off_1m_rleg_01", "m_vir_fmv_run_jump_off_1m_rleg_01.anm2", 13, 65, 35, 1, 0.0)
-{
-    Event(0, VIS_EVENT_STEP_RIGHT, -1)
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(8, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(16, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(16, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(16, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(17, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(18, EVENT_FINAL_POSITION, -1)
-    Event(21, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(27, AUDIO_STEP_HEAVY_LEFT, -1)
-    {
-        PlayStepSFx("step_heavy_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(28, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(28, EVENT_FINAL_POSITION, -1)
-    Event(28, VIS_EVENT_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-    }
-    Event(31, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(31, BLEND_OUT_TO_START, -1)
-    Event(31, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-    }
-    Event(37, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(39, VIS_EVENT_STOPANIM, -1)
-    Event(44, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(52, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-}
-
-SeqTrack("viral_climbing_up_6m_01", "viral_climbing_up_6m_01.anm2", 0, 133, 30, 1, 0.0)
-{
-    Event(-2, VIS_EVENT_STEP_LEFT, -1)
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(11, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(11, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(13, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(14, EVENT_FINAL_POSITION, -1)
-    Event(14, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(19, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(28, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(36, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(49, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(54, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(66, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(75, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(75, EVENT_FINAL_POSITION, -1)
-    Event(76, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(88, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(91, VIS_EVENT_STEP_LEFT, -1)
-    Event(104, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(104, BLEND_OUT_TO_START, -1)
-    Event(104, EVENT_TURN_ON_PHYSICS, -1)
-    Event(104, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_right","r_foot")
-        {
-            FrameOffset(-3.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(110, VIS_EVENT_STOPANIM, -1)
-    Event(114, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(121, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(130, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-}
-
-SeqTrack("viral_climbing_up_9m_01", "viral_climbing_up_9m_01.anm2", 0, 181, 30, 1, 0.0)
-{
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(12, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(12, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(15, EVENT_FINAL_POSITION, -1)
-    Event(15, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(16, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(18, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(27, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(35, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(48, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(53, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(65, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(86, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(96, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(102, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(112, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(116, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(121, EVENT_FINAL_POSITION, -1)
-    Event(124, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(137, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(140, VIS_EVENT_STEP_LEFT, -1)
-    Event(153, EVENT_TURN_ON_PHYSICS, -1)
-    Event(155, BLEND_OUT_TO_START, -1)
-    Event(155, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(155, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-4.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(160, VIS_EVENT_STOPANIM, -1)
-    Event(165, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-4.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(171, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-4.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(180, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-4.0)
-        }
-        _Attributes(0,0,1)
-    }
-}
-SeqTrack("Viral_Climbing_Up_ledge_9m_LF_01", "Viral_Climbing_Up_ledge_9m_LF_01.anm2", 0, 210, 30, 1, 0.0)
-{
-    Event(0, VIS_EVENT_STEP_RIGHT, -1)
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(5, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(13, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(13, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(13, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(14, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(16, EVENT_FINAL_POSITION, -1)
-    Event(18, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(25, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-5.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(26, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(29, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(35, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(48, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(55, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(65, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(83, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(96, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(102, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(109, VIS_EVENT_MOVEMENT_MOD_INFLECTION, -1)
-    Event(111, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(121, EVENT_FINAL_POSITION, -1)
-    Event(137, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(148, AUDIO_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(157, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_right","r_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(161, EVENT_TURN_ON_PHYSICS, -1)
-    Event(166, BLEND_OUT_TO_START, -1)
-    Event(166, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_left","l_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(166, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(172, VIS_EVENT_STOPANIM, -1)
-    Event(174, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_right","r_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(181, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(190, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-}
-
-SeqTrack("Viral_Climbing_Up_ledge_9m_RF_01", "Viral_Climbing_Up_ledge_9m_RF_01.anm2", 0, 182, 30, 1, 0.0)
-{
-    Event(0, VIS_EVENT_STEP_LEFT, -1)
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(5, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(13, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(13, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(13, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(14, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(16, EVENT_FINAL_POSITION, -1)
-    Event(18, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(25, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-5.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(25, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(31, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(38, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(48, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(55, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(65, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(84, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(95, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(101, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(108, VIS_EVENT_MOVEMENT_MOD_INFLECTION, -1)
-    Event(111, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(122, EVENT_FINAL_POSITION, -1)
-    Event(132, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(145, AUDIO_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(147, EVENT_TURN_ON_PHYSICS, -1)
-    Event(157, VIS_EVENT_STEP_RIGHT, -1)
-    Event(157, BLEND_OUT_TO_START, -1)
-    Event(157, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(162, VIS_EVENT_STOPANIM, -1)
-    Event(166, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(174, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(181, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(190, VIS_EVENT_STEP_RIGHT, -1)
-}
-SeqTrack("Viral_Climbing_Down_ledge_7m_LF_01", "Viral_Climbing_Down_ledge_7m_LF_01.anm2", 9, 166, 30, 1, 0.0)
-{
-    Event(0, VIS_EVENT_STEP_LEFT, -1)
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(7, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
     }
     Event(11, VIS_EVENT_STEP_LEFT, -1)
     {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(16, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(20, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(20, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(20, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(24, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(47, EVENT_FINAL_POSITION, -1)
-    Event(51, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(58, VIS_EVENT_MOVEMENT_MOD_INFLECTION, -1)
-    Event(77, AUDIO_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(82, AUDIO_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(91, AUDIO_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(101, AUDIO_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(107, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(117, USER_PLAY_SOUND, -1)
-    {
-        PlayAudioEvent("landing_default_tpp",0,0)
-    }
-    Event(119, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(120, EVENT_FINAL_POSITION, -1)
-    Event(120, EVENT_TURN_ON_PHYSICS, -1)
-    Event(120, VIS_EVENT_STEP_LEFT, -1)
-    Event(132, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(132, BLEND_OUT_TO_START, -1)
-    Event(132, VIS_EVENT_STEP_RIGHT, -1)
-    Event(142, VIS_EVENT_STOPANIM, -1)
-    Event(148, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(157, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-}
-
-SeqTrack("Viral_Climbing_Down_ledge_7m_RF_01", "Viral_Climbing_Down_ledge_7m_RF_01.anm2", 9, 165, 30, 1, 0.0)
-{
-    Event(0, VIS_EVENT_STEP_RIGHT, -1)
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(7, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(11, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(16, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(20, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(20, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(20, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(22, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(48, EVENT_FINAL_POSITION, -1)
-    Event(53, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(60, VIS_EVENT_MOVEMENT_MOD_INFLECTION, -1)
-    Event(75, AUDIO_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(81, AUDIO_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(91, AUDIO_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(107, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(116, USER_PLAY_SOUND, -1)
-    {
-        PlayAudioEvent("landing_default_tpp",0,0)
-    }
-    Event(118, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(119, EVENT_TURN_ON_PHYSICS, -1)
-    Event(119, EVENT_FINAL_POSITION, -1)
-    Event(119, VIS_EVENT_STEP_RIGHT, -1)
-    Event(130, BLEND_OUT_TO_START, -1)
-    Event(130, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(130, VIS_EVENT_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-    }
-    Event(140, VIS_EVENT_STOPANIM, -1)
-    Event(147, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-3.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(156, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-3.0)
-        }
-        _Attributes(0,0,1)
-    }
-}
-SeqTrack("m_vir_fmv_run_04", "m_vir_fmv_run_04.anm2", 0, 87, 60, 1, 0.0)
-{
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(12, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(23, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(39, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(53, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(68, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(84, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-}
-SeqTrack("m_vir_fmv_run_05", "m_vir_fmv_run_05.anm2", 0, 86, 60, 1, 0.0)
-{
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(5, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(17, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(33, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(47, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(63, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(78, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-}
-SeqTrack("m_vir_fmv_jump_on_05m_01", "m_vir_fmv_jump_on_05m_01.anm2", 1, 46, 40, 1, 0.0)
-{
-    Event(0, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(0, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(4, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(6, EVENT_FINAL_POSITION, -1)
-    Event(9, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(14, VIS_EVENT_MOVEMENT_MOD_INFLECTION, 0)
-    Event(16, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(16, EVENT_FINAL_POSITION, -1)
-    Event(17, EVENT_TURN_ON_PHYSICS, -1)
-    Event(18, VIS_EVENT_STEP_RIGHT, 0)
-    {
-        PlayStepSFx("step_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
         _Attributes(0,0,1,"Human")
-    }
-    Event(18, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(18, BLEND_OUT_TO_START, -1)
-    Event(21, VIS_EVENT_STEP_LEFT, 0)
-    {
-        PlayStepSFx("step_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(26, VIS_EVENT_STOPANIM, -1)
-    Event(34, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-1.0)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(43, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-1.0)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-}
-
-SeqTrack("m_vir_fmv_jump_on_1m_01", "m_vir_fmv_jump_on_1m_01.anm2", 0, 33, 30, 1, 0.0)
-{
-    Event(2, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(2, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(2, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(4, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(6, EVENT_FINAL_POSITION, -1)
-    Event(9, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(14, EVENT_FINAL_POSITION, -1)
-    Event(14, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(17, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(17, BLEND_OUT_TO_START, -1)
-    Event(17, VIS_EVENT_STEP_RIGHT, 0)
-    {
-        PlayStepSFx("step_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(21, VIS_EVENT_STEP_LEFT, 0)
-    {
-        PlayStepSFx("step_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(30, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-1.0)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(31, VIS_EVENT_STOPANIM, -1)
-    Event(33, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-1.0)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-}
-SeqTrack("m_vir_fmv_climb_off_9m_01", "m_vir_fmv_climb_off_9m_01.anm2", 0, 165, 30, 1, 0.0)
-{
-    Event(5, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,3,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(5, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(5, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(10, VIS_EVENT_STEP_RIGHT, -1)
-    Event(10, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
-    Event(15, VIS_EVENT_STEP_LEFT, -1)
-    Event(15, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(15, EVENT_FINAL_POSITION, -1)
-    Event(15, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(117, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(127, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(127, EVENT_FINAL_POSITION, -1)
-    Event(128, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
-    Event(128, VIS_EVENT_STEP_RIGHT, -1)
-    Event(129, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(138, VIS_EVENT_STEP_LEFT, -1)
-    Event(138, BLEND_OUT_TO_START, -1)
-    Event(138, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(146, VIS_EVENT_STOPANIM, -1)
-    Event(155, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
-    Event(155, VIS_EVENT_STEP_RIGHT, -1)
-    Event(165, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(165, VIS_EVENT_STEP_LEFT, -1)
-}
-
-SeqTrack("m_vir_fmv_climb_off_6m_01", "m_vir_fmv_climb_off_6m_01.anm2", 0, 120, 30, 1, 0.0)
-{
-    Event(5, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,3,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(5, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(5, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(11, VIS_EVENT_STEP_RIGHT, -1)
-    Event(11, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
-    Event(14, EVENT_FINAL_POSITION, -1)
-    Event(14, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(15, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(15, VIS_EVENT_STEP_LEFT, -1)
-    Event(69, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(82, EVENT_FINAL_POSITION, -1)
-    Event(82, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(87, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
-    Event(87, VIS_EVENT_STEP_RIGHT, -1)
-    Event(88, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(94, VIS_EVENT_STEP_LEFT, -1)
-    Event(94, BLEND_OUT_TO_START, -1)
-    Event(94, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(105, VIS_EVENT_STOPANIM, -1)
-    Event(110, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
-    Event(110, VIS_EVENT_STEP_RIGHT, -1)
-    Event(119, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(119, VIS_EVENT_STEP_LEFT, -1)
-}
-
-SeqTrack("m_vir_fmv_climb_off_3m_01", "m_vir_fmv_climb_off_3m_01.anm2", 0, 74, 30, 1, 0.0)
-{
-    Event(5, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(5, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(5, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,3,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(15, EVENT_FINAL_POSITION, -1)
-    Event(15, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(29, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(36, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(36, EVENT_FINAL_POSITION, -1)
-    Event(39, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
-    Event(39, VIS_EVENT_STEP_RIGHT, -1)
-    Event(40, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(48, BLEND_OUT_TO_START, -1)
-    Event(48, VIS_EVENT_STEP_LEFT, -1)
-    Event(48, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(55, VIS_EVENT_STOPANIM, -1)
-    Event(64, VIS_EVENT_STEP_RIGHT, -1)
-    Event(64, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
-    Event(74, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(74, VIS_EVENT_STEP_LEFT, -1)
-}
-
-SeqTrack("m_vir_fmv_climb_on_9m_01", "m_vir_fmv_climb_on_9m_01.anm2", 0, 172, 30, 1, 0.0)
-{
-    Event(2, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,3,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(2, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(2, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(4, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(6, EVENT_FINAL_POSITION, -1)
-    Event(10, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(14, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(18, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(18, VIS_EVENT_STEP_RIGHT, -1)
-    Event(19, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(27, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(31, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(43, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(50, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left", "l_foot")
-    }
-    Event(59, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(76, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left", "l_foot")
-    }
-    Event(89, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
-    Event(94, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(104, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(110, EVENT_FINAL_POSITION, -1)
-    Event(115, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left", "l_foot")
-    }
-    Event(129, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(131, EVENT_TURN_ON_PHYSICS, -1)
-    Event(131, VIS_EVENT_STEP_LEFT, -1)
-    Event(143, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
-    Event(147, VIS_EVENT_STEP_RIGHT, -1)
-    Event(147, BLEND_OUT_TO_START, -1)
-    Event(147, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(152, VIS_EVENT_STOPANIM, -1)
-    Event(153, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(156, VIS_EVENT_STEP_LEFT, -1)
-    Event(160, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(162, VIS_EVENT_STEP_RIGHT, -1)
-    Event(169, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left", "l_foot")
-    }
-    Event(171, VIS_EVENT_STEP_LEFT, -1)
-}
-
-SeqTrack("m_vir_fmv_climb_on_6m_01", "m_vir_fmv_climb_on_6m_01.anm2", 0, 124, 30, 1, 0.0)
-{
-    Event(2, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,3,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(2, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(2, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(4, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(6, EVENT_FINAL_POSITION, -1)
-    Event(10, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(13, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(18, VIS_EVENT_STEP_RIGHT, -1)
-    Event(18, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(18, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(26, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(30, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(42, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(49, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left", "l_foot")
-    }
-    Event(58, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(66, EVENT_FINAL_POSITION, -1)
-    Event(68, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left", "l_foot")
-    }
-    Event(81, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left", "l_foot")
-    }
-    Event(84, VIS_EVENT_STEP_LEFT, -1)
-    Event(84, EVENT_TURN_ON_PHYSICS, -1)
-    Event(94, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
-    Event(99, VIS_EVENT_STEP_RIGHT, -1)
-    Event(99, BLEND_OUT_TO_START, -1)
-    Event(99, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(104, VIS_EVENT_STOPANIM, -1)
-    Event(105, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(107, VIS_EVENT_STEP_LEFT, -1)
-    Event(113, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(115, VIS_EVENT_STEP_RIGHT, -1)
-    Event(121, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left", "l_foot")
-    }
-    Event(123, VIS_EVENT_STEP_LEFT, -1)
-}
-
-SeqTrack("m_vir_fmv_climb_on_3m_01", "m_vir_fmv_climb_on_3m_01.anm2", 1, 86, 30, 1, 0.0)
-{
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,3,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(0, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(0, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(7, EVENT_FINAL_POSITION, -1)
-    Event(7, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(9, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(15, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(17, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(21, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left", "l_foot")
-    }
-    Event(25, EVENT_FINAL_POSITION, -1)
-    Event(29, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(52, EVENT_TURN_ON_PHYSICS, -1)
-    Event(59, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left", "l_foot")
-    }
-    Event(60, VIS_EVENT_STEP_LEFT, -1)
-    Event(60, BLEND_OUT_TO_START, -1)
-    Event(60, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(63, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
-    Event(64, VIS_EVENT_STEP_RIGHT, -1)
-    Event(69, VIS_EVENT_STOPANIM, -1)
-    Event(73, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left", "l_foot")
-    }
-    Event(75, VIS_EVENT_STEP_LEFT, -1)
-    Event(82, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(84, VIS_EVENT_STEP_RIGHT, -1)
-}
-
-//////////////////////////////////////////////////////
-/////////////////////////JUMPS////////////////////////
-//////////////////////////////////////////////////////
-
-
-
-SeqTrack("m_vir_fmv_run_jumpon_05m_lleg_01", "m_vir_fmv_run_jumpon_05m_lleg_01.anm2", 1, 58, 40, 1, 0.0)
-{
-    Event(0, VIS_EVENT_STEP_LEFT, -1)
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(9, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(16, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(16, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(16, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(17, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(18, EVENT_FINAL_POSITION, -1)
-    Event(21, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(26, VIS_EVENT_MOVEMENT_MOD_INFLECTION, -1)
-    Event(28, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(28, AUDIO_STEP_HEAVY_RIGHT, -1)
-    {
-        PlayStepSFx("step_heavy_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(29, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-    }
-    Event(30, EVENT_FINAL_POSITION, -1)
-    Event(31, EVENT_TURN_ON_PHYSICS, -1)
-    Event(33, BLEND_OUT_TO_START, -1)
-    Event(33, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(33, VIS_EVENT_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-    }
-    Event(38, VIS_EVENT_STOPANIM, -1)
-    Event(46, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(54, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-}
-
-SeqTrack("m_vir_fmv_run_jumpon_05m_rleg_01", "m_vir_fmv_run_jumpon_05m_rleg_01.anm2", 1, 58, 40, 1, 0.0)
-{
-    Event(0, VIS_EVENT_STEP_RIGHT, -1)
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(9, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(16, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(16, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(16, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(17, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(18, EVENT_FINAL_POSITION, -1)
-    Event(21, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(26, VIS_EVENT_MOVEMENT_MOD_INFLECTION, -1)
-    Event(28, AUDIO_STEP_HEAVY_LEFT, -1)
-    {
-        PlayStepSFx("step_heavy_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(29, VIS_EVENT_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-    }
-    Event(29, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(30, EVENT_FINAL_POSITION, -1)
-    Event(31, EVENT_TURN_ON_PHYSICS, -1)
-    Event(33, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-    }
-    Event(33, BLEND_OUT_TO_START, -1)
-    Event(33, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(38, VIS_EVENT_STOPANIM, -1)
-    Event(46, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(54, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-}
-SeqTrack("viral_jump_down_2m_01", "viral_jump_down_2m_01.anm2", 0, 64, 30, 1, 0.0)
-{
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(4, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(6, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(6, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(14, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(20, EVENT_FINAL_POSITION, -1)
-    Event(25, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(32, USER_PLAY_SOUND, -1)
-    {
-        PlayAudioEvent("landing_default_tpp",0,0)
-    }
-    Event(35, VIS_EVENT_STEP_RIGHT, -1)
-    Event(35, EVENT_FINAL_POSITION, -1)
-    Event(35, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(36, EVENT_TURN_ON_PHYSICS, -1)
-    Event(41, BLEND_OUT_TO_START, -1)
-    Event(41, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(41, VIS_EVENT_STEP_LEFT, -1)
-    Event(48, VIS_EVENT_STOPANIM, -1)
-    Event(54, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-3.0)
-        }
-    }
-    Event(63, VIS_EVENT_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-4.0)
-        }
-    }
-}
-
-SeqTrack("viral_jump_up_3m_01", "viral_jump_up_3m_01.anm2", 0, 100, 30, 1, 0.0)
-{
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(3, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(3, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(8, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(12, EVENT_FINAL_POSITION, -1)
-    Event(17, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(28, AUDIO_STEP_HEAVY_LEFT, -1)
-    {
-        PlayStepSFx("step_heavy_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(32, EVENT_FINAL_POSITION, -1)
-    Event(32, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(70, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(71, VIS_EVENT_STEP_RIGHT, -1)
-    Event(71, EVENT_TURN_ON_PHYSICS, -1)
-    Event(85, BLEND_OUT_TO_START, -1)
-    Event(85, VIS_EVENT_STEP_LEFT, -1)
-    Event(91, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-    }
-}
-
-SeqTrack("viral_jump_3m_01", "viral_jump_3m_01.anm2", 0, 60, 30, 1, 0.0)
-{
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(3, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(5, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(5, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(12, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(15, AUDIO_STEP_SLIDE_LEFT, -1)
-    {
-        PlayStepSFx("step_slide_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(16, EVENT_FINAL_POSITION, -1)
-    Event(23, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(35, AUDIO_STEP_HEAVY_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_heavy_right", "r_foot")
-    }
-    Event(38, EVENT_FINAL_POSITION, -1)
-    Event(38, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(38, VIS_EVENT_STEP_RIGHT, -1)
-    Event(39, EVENT_TURN_ON_PHYSICS, -1)
-    Event(40, BLEND_OUT_TO_START, -1)
-    Event(40, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(40, VIS_EVENT_STEP_LEFT, -1)
-    Event(44, VIS_EVENT_STOPANIM, -1)
-    Event(50, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1,"Human")
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-1.0)
-        }
-    }
-    Event(59, VIS_EVENT_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1,"Human")
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-1.0)
-        }
-    }
-}
-
-SeqTrack("viral_climbing_down_3m_01", "viral_climbing_down_3m_01.anm2", 0, 75, 30, 1, 0.0)
-{
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(4, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    {
-        _Attributes(0,0,1)
-    }
-    Event(4, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0,1,1)
-    }
-    Event(11, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right","r_foot")
-        {
-            FrameOffset(-5.0)
-        }
-    }
-    Event(14, EVENT_FINAL_POSITION, -1)
-    Event(14, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(29, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(35, USER_PLAY_SOUND, -1)
-    {
-        PlayAudioEvent("landing_default_tpp",0,0)
-    }
-    Event(38, EVENT_FINAL_POSITION, -1)
-    Event(38, EVENT_TURN_ON_PHYSICS, -1)
-    Event(38, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(38, VIS_EVENT_STEP_RIGHT, -1)
-    Event(47, BLEND_OUT_TO_START, -1)
-    Event(47, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(47, VIS_EVENT_STEP_LEFT, -1)
-    Event(58, VIS_EVENT_STOPANIM, -1)
-    Event(65, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-3.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(75, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-3.0)
-        }
-        _Attributes(0,0,1)
-    }
-}
-
-SeqTrack("viral_climbing_up_3m_01", "viral_climbing_up_3m_01.anm2", 0, 95, 30, 1, 0.0)
-{
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(6, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(6, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(14, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(15, EVENT_FINAL_POSITION, -1)
-    Event(15, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(18, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(24, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(28, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(35, EVENT_FINAL_POSITION, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(35, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(41, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(65, EVENT_TURN_ON_PHYSICS, -1)
-    Event(65, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(68, VIS_EVENT_STEP_LEFT, -1)
-    Event(72, VIS_EVENT_STEP_RIGHT, -1)
-    Event(72, BLEND_OUT_TO_START, -1)
-    Event(72, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(78, VIS_EVENT_STOPANIM, -1)
-    Event(85, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-3.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(94, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-3.0)
-        }
-        _Attributes(0,0,1)
-    }
-}
-
-SeqTrack("viral_climbing_up_3m_overbarrier_01", "viral_climbing_up_3m_overbarrier_01.anm2", 0, 94, 30, 1, 0.0)
-{
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(4, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(4, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(15, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(16, EVENT_FINAL_POSITION, -1)
-    Event(16, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(20, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(25, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(30, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(37, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(43, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(49, EVENT_FINAL_POSITION, -1)
-    Event(62, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(67, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(70, VIS_EVENT_STEP_LEFT, -1)
-    Event(72, EVENT_TURN_ON_PHYSICS, -1)
-    Event(73, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(73, EVENT_FINAL_POSITION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(76, BLEND_OUT_TO_START, -1)
-    Event(76, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(76, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-3.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(82, VIS_EVENT_STOPANIM, -1)
-    Event(89, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-3.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(96, VIS_EVENT_STEP_RIGHT, -1)
-}
-
-SeqTrack("viral_jump_overbarrierdown_01", "viral_jump_overbarrierdown_01.anm2", 0, 74, 30, 1, 0.0)
-{
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(9, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(9, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(15, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(15, EVENT_FINAL_POSITION, -1)
-    Event(19, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(19, EVENT_FINAL_POSITION, -1)
-    Event(29, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(36, USER_PLAY_SOUND, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-        PlayAudioEvent("landing_default_tpp",0,0)
-    }
-    Event(40, VIS_EVENT_STEP_LEFT, -1)
-    Event(41, EVENT_TURN_ON_PHYSICS, -1)
-    Event(41, EVENT_FINAL_POSITION, -1)
-    Event(41, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(48, BLEND_OUT_TO_START, -1)
-    Event(48, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(48, VIS_EVENT_STEP_RIGHT, -1)
-    Event(57, VIS_EVENT_STOPANIM, -1)
-    Event(64, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-3.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(74, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-3.0)
-        }
-        _Attributes(0,0,1)
-    }
-}
-
-SeqTrack("m_vir_fmv_run_jump_off_1m_lleg_01", "m_vir_fmv_run_jump_off_1m_lleg_01.anm2", 14, 65, 35, 1, 0.0)
-{
-    Event(0, VIS_EVENT_STEP_LEFT, -1)
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(7, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-1.0)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(15, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(15, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(15, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-1.0)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(16, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(17, EVENT_FINAL_POSITION, -1)
-    Event(21, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(26, AUDIO_STEP_HEAVY_LEFT, -1)
-    {
-        PlayStepSFx("step_heavy_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(27, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(27, EVENT_FINAL_POSITION, -1)
-    Event(27, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-    }
-    Event(29, BLEND_OUT_TO_START, -1)
-    Event(29, VIS_EVENT_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-    }
-    Event(29, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(36, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(37, VIS_EVENT_STOPANIM, -1)
-    Event(43, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(51, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-}
-SeqTrack("m_vir_fmv_run_jump_off_1m_rleg_01", "m_vir_fmv_run_jump_off_1m_rleg_01.anm2", 13, 65, 35, 1, 0.0)
-{
-    Event(0, VIS_EVENT_STEP_RIGHT, -1)
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(8, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(16, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(16, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(16, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(17, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(18, EVENT_FINAL_POSITION, -1)
-    Event(21, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(27, AUDIO_STEP_HEAVY_LEFT, -1)
-    {
-        PlayStepSFx("step_heavy_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(28, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(28, EVENT_FINAL_POSITION, -1)
-    Event(28, VIS_EVENT_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-    }
-    Event(31, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(31, BLEND_OUT_TO_START, -1)
-    Event(31, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-    }
-    Event(37, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(39, VIS_EVENT_STOPANIM, -1)
-    Event(44, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(52, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-}
-
-SeqTrack("viral_climbing_up_6m_01", "viral_climbing_up_6m_01.anm2", 0, 133, 30, 1, 0.0)
-{
-    Event(-2, VIS_EVENT_STEP_LEFT, -1)
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(11, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(11, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(13, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(14, EVENT_FINAL_POSITION, -1)
-    Event(14, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(19, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(28, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(36, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(49, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(54, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(66, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(75, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(75, EVENT_FINAL_POSITION, -1)
-    Event(76, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(88, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(91, VIS_EVENT_STEP_LEFT, -1)
-    Event(104, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(104, BLEND_OUT_TO_START, -1)
-    Event(104, EVENT_TURN_ON_PHYSICS, -1)
-    Event(104, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_right","r_foot")
-        {
-            FrameOffset(-3.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(110, VIS_EVENT_STOPANIM, -1)
-    Event(114, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(121, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(130, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-}
-
-SeqTrack("viral_climbing_up_9m_01", "viral_climbing_up_9m_01.anm2", 0, 181, 30, 1, 0.0)
-{
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(12, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(12, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(15, EVENT_FINAL_POSITION, -1)
-    Event(15, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(16, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(18, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(27, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(35, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(48, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(53, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(65, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(86, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(96, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(102, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(112, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(116, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(121, EVENT_FINAL_POSITION, -1)
-    Event(124, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(137, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(140, VIS_EVENT_STEP_LEFT, -1)
-    Event(153, EVENT_TURN_ON_PHYSICS, -1)
-    Event(155, BLEND_OUT_TO_START, -1)
-    Event(155, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(155, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-4.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(160, VIS_EVENT_STOPANIM, -1)
-    Event(165, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-4.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(171, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-4.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(180, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-4.0)
-        }
-        _Attributes(0,0,1)
-    }
-}
-SeqTrack("Viral_Climbing_Up_ledge_9m_LF_01", "Viral_Climbing_Up_ledge_9m_LF_01.anm2", 0, 210, 30, 1, 0.0)
-{
-    Event(0, VIS_EVENT_STEP_RIGHT, -1)
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(5, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(13, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(13, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(13, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(14, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(16, EVENT_FINAL_POSITION, -1)
-    Event(18, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(25, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-5.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(26, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(29, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(35, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(48, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(55, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(65, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(83, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(96, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(102, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(109, VIS_EVENT_MOVEMENT_MOD_INFLECTION, -1)
-    Event(111, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(121, EVENT_FINAL_POSITION, -1)
-    Event(137, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(148, AUDIO_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(157, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_right","r_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(161, EVENT_TURN_ON_PHYSICS, -1)
-    Event(166, BLEND_OUT_TO_START, -1)
-    Event(166, VIS_EVENT_STEP_LEFT, -1)
-    {
         PlayStepSFx("step_left","l_foot")
         {
             FrameOffset(-2.0)
         }
-        _Attributes(0,0,1)
     }
-    Event(166, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(172, VIS_EVENT_STOPANIM, -1)
-    Event(174, VIS_EVENT_STEP_RIGHT, -1)
+    Event(38, VIS_EVENT_STEP_RIGHT, -1)
     {
+        _Attributes(0,0,1,"Human")
         PlayStepSFx("step_right","r_foot")
         {
             FrameOffset(-2.0)
         }
-        _Attributes(0,0,1)
     }
-    Event(181, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(190, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-}
-
-SeqTrack("Viral_Climbing_Up_ledge_9m_RF_01", "Viral_Climbing_Up_ledge_9m_RF_01.anm2", 0, 182, 30, 1, 0.0)
-{
-    Event(0, VIS_EVENT_STEP_LEFT, -1)
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(5, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(13, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(13, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(13, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(14, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(16, EVENT_FINAL_POSITION, -1)
-    Event(18, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(25, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-5.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(25, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(31, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(38, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(48, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(55, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(65, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(84, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(95, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(101, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(108, VIS_EVENT_MOVEMENT_MOD_INFLECTION, -1)
-    Event(111, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(122, EVENT_FINAL_POSITION, -1)
-    Event(132, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(145, AUDIO_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(147, EVENT_TURN_ON_PHYSICS, -1)
-    Event(157, VIS_EVENT_STEP_RIGHT, -1)
-    Event(157, BLEND_OUT_TO_START, -1)
-    Event(157, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(162, VIS_EVENT_STOPANIM, -1)
-    Event(166, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(174, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(181, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(190, VIS_EVENT_STEP_RIGHT, -1)
-}
-SeqTrack("Viral_Climbing_Down_ledge_7m_LF_01", "Viral_Climbing_Down_ledge_7m_LF_01.anm2", 9, 166, 30, 1, 0.0)
-{
-    Event(0, VIS_EVENT_STEP_LEFT, -1)
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(7, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(11, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(16, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(20, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(20, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(20, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(24, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(47, EVENT_FINAL_POSITION, -1)
-    Event(51, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(58, VIS_EVENT_MOVEMENT_MOD_INFLECTION, -1)
-    Event(77, AUDIO_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(82, AUDIO_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(91, AUDIO_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(101, AUDIO_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(107, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(117, USER_PLAY_SOUND, -1)
-    {
-        PlayAudioEvent("landing_default_tpp",0,0)
-    }
-    Event(119, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(120, EVENT_FINAL_POSITION, -1)
-    Event(120, EVENT_TURN_ON_PHYSICS, -1)
-    Event(120, VIS_EVENT_STEP_LEFT, -1)
-    Event(132, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(132, BLEND_OUT_TO_START, -1)
-    Event(132, VIS_EVENT_STEP_RIGHT, -1)
-    Event(142, VIS_EVENT_STOPANIM, -1)
-    Event(148, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(157, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-}
-
-SeqTrack("Viral_Climbing_Down_ledge_7m_RF_01", "Viral_Climbing_Down_ledge_7m_RF_01.anm2", 9, 165, 30, 1, 0.0)
-{
-    Event(0, VIS_EVENT_STEP_RIGHT, -1)
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(7, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(11, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(16, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(20, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(20, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(20, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-2.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(22, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(48, EVENT_FINAL_POSITION, -1)
-    Event(53, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(60, VIS_EVENT_MOVEMENT_MOD_INFLECTION, -1)
-    Event(75, AUDIO_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(81, AUDIO_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_right", "r_foot")
-        _Attributes(0,0,1)
-    }
-    Event(91, AUDIO_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_left", "l_foot")
-        _Attributes(0,0,1)
-    }
-    Event(107, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(116, USER_PLAY_SOUND, -1)
-    {
-        PlayAudioEvent("landing_default_tpp",0,0)
-    }
-    Event(118, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(119, EVENT_TURN_ON_PHYSICS, -1)
-    Event(119, EVENT_FINAL_POSITION, -1)
-    Event(119, VIS_EVENT_STEP_RIGHT, -1)
-    Event(130, BLEND_OUT_TO_START, -1)
-    Event(130, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(130, VIS_EVENT_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-    }
-    Event(140, VIS_EVENT_STOPANIM, -1)
-    Event(147, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-3.0)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(156, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-3.0)
-        }
-        _Attributes(0,0,1)
-    }
-}
-SeqTrack("m_vir_fmv_run_04", "m_vir_fmv_run_04.anm2", 0, 87, 60, 1, 0.0)
-{
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(12, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(23, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(39, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(53, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(68, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(84, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-}
-SeqTrack("m_vir_fmv_run_05", "m_vir_fmv_run_05.anm2", 0, 86, 60, 1, 0.0)
-{
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(5, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(17, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(33, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(47, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(63, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(78, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-}
-SeqTrack("m_vir_fmv_jump_on_05m_01", "m_vir_fmv_jump_on_05m_01.anm2", 1, 46, 40, 1, 0.0)
-{
-    Event(0, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(0, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(4, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(6, EVENT_FINAL_POSITION, -1)
-    Event(9, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(14, VIS_EVENT_MOVEMENT_MOD_INFLECTION, 0)
-    Event(16, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(16, EVENT_FINAL_POSITION, -1)
-    Event(17, EVENT_TURN_ON_PHYSICS, -1)
-    Event(18, VIS_EVENT_STEP_RIGHT, 0)
-    {
-        PlayStepSFx("step_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(18, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(18, BLEND_OUT_TO_START, -1)
-    Event(21, VIS_EVENT_STEP_LEFT, 0)
-    {
-        PlayStepSFx("step_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(26, VIS_EVENT_STOPANIM, -1)
-    Event(34, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-1.0)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(43, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-1.0)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-}
-
-SeqTrack("m_vir_fmv_jump_on_1m_01", "m_vir_fmv_jump_on_1m_01.anm2", 0, 33, 30, 1, 0.0)
-{
-    Event(2, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(2, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(2, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(4, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(6, EVENT_FINAL_POSITION, -1)
-    Event(9, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(14, EVENT_FINAL_POSITION, -1)
-    Event(14, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(17, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(17, BLEND_OUT_TO_START, -1)
-    Event(17, VIS_EVENT_STEP_RIGHT, 0)
-    {
-        PlayStepSFx("step_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(21, VIS_EVENT_STEP_LEFT, 0)
-    {
-        PlayStepSFx("step_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(30, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-1.0)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(31, VIS_EVENT_STOPANIM, -1)
-    Event(33, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-1.0)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-}
-SeqTrack("m_vir_fmv_run_jump_off_05m_rleg_01", "m_vir_fmv_run_jump_off_05m_rleg_01.anm2", 5, 60, 30, 1, 0.0)
-{
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(0, VIS_EVENT_STEP_LEFT, -1)
-    Event(5, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(12, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(12, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(12, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(13, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(14, EVENT_FINAL_POSITION, -1)
-    Event(16, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(19, VIS_EVENT_MOVEMENT_MOD_INFLECTION, -1)
-    Event(26, EVENT_FINAL_POSITION, -1)
-    Event(26, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(28, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(28, BLEND_OUT_TO_START, -1)
-    Event(28, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-    }
-    Event(32, VIS_EVENT_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-    }
-    Event(35, VIS_EVENT_STOPANIM, -1)
-    Event(40, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(48, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(55, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-}
-
-SeqTrack("m_vir_fmv_run_jump_off_05m_lleg_01", "m_vir_fmv_run_jump_off_05m_lleg_01.anm2", 5, 60, 30, 1, 0.0)
-{
-    Event(0, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-    }
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(5, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(12, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(12, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(12, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(13, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(14, EVENT_FINAL_POSITION, -1)
-    Event(16, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(20, VIS_EVENT_MOVEMENT_MOD_INFLECTION, 0)
-    Event(26, EVENT_FINAL_POSITION, -1)
-    Event(26, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(28, VIS_EVENT_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-    }
-    Event(28, BLEND_OUT_TO_START, -1)
-    Event(28, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(31, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-1.0)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(36, VIS_EVENT_STOPANIM, -1)
-    Event(40, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-    Event(48, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-1.0)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(55, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1)
-    }
-}
-
-SeqTrack("m_vir_fmv_run_jump_off_05m_01", "m_vir_fmv_run_jump_off_05m_01.anm2", 2, 46, 30, 1, 0.0)
-{
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(0, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(0, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(2, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(4, EVENT_FINAL_POSITION, -1)
-    Event(7, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(10, VIS_EVENT_MOVEMENT_MOD_INFLECTION, 0)
-    Event(16, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(16, EVENT_FINAL_POSITION, -1)
-    Event(18, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(18, VIS_EVENT_STEP_RIGHT, 0)
-    {
-        PlayStepSFx("step_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(18, BLEND_OUT_TO_START, -1)
-    Event(21, VIS_EVENT_STEP_LEFT, 0)
-    {
-        PlayStepSFx("step_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(25, VIS_EVENT_STOPANIM, -1)
-    Event(29, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-1.0)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(37, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-1.0)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(44, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-1.0)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-}
-
-SeqTrack("m_vir_fmv_run_jump_off_1m_01", "m_vir_fmv_run_jump_off_1m_01.anm2", 7, 63, 30, 1, 0.0)
-{
-    Event(0, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(0, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(6, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(8, EVENT_FINAL_POSITION, -1)
-    Event(16, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(18, VIS_EVENT_MOVEMENT_MOD_INFLECTION, 0)
-    Event(27, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(27, EVENT_FINAL_POSITION, -1)
-    Event(30, BLEND_OUT_TO_START, -1)
-    Event(30, VIS_EVENT_STEP_RIGHT, 0)
-    {
-        PlayStepSFx("step_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(30, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(32, VIS_EVENT_STEP_LEFT, 0)
-    {
-        PlayStepSFx("step_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(40, VIS_EVENT_STOPANIM, -1)
-    Event(43, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-1.0)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(50, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-1.0)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(56, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-1.0)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-}
-SeqTrack("m_vir_fmv_run_jump_off_2m_01", "m_vir_fmv_run_jump_off_2m_01.anm2", 0, 50, 30, 1, 0.0)
-{
-    Event(0, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(0, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(1, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(3, EVENT_FINAL_POSITION, -1)
-    Event(6, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(8, VIS_EVENT_MOVEMENT_MOD_INFLECTION, 0)
-    Event(17, EVENT_FINAL_POSITION, -1)
-    Event(17, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(19, VIS_EVENT_STEP_RIGHT, 0)
-    {
-        PlayStepSFx("step_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(22, VIS_EVENT_STEP_LEFT, 0)
-    {
-        PlayStepSFx("step_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(22, BLEND_OUT_TO_START, -1)
-    Event(22, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(30, VIS_EVENT_STOPANIM, -1)
-    Event(34, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-1.0)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(43, VIS_EVENT_STEP_LEFT, -1)
-    {
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-1.0)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(49, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-1.0)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-}
-
-SeqTrack("m_vir_fmv_run_jump_off_3m_01", "m_vir_fmv_run_jump_off_3m_01.anm2", 2, 67, 30, 1, 0.0)
-{
-    Event(0, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(0, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,5,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(1, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(3, EVENT_FINAL_POSITION, -1)
-    Event(7, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(9, VIS_EVENT_MOVEMENT_MOD_INFLECTION, 0)
-    Event(21, EVENT_FINAL_POSITION, -1)
-    Event(21, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(23, VIS_EVENT_STEP_RIGHT, 0)
-    {
-        PlayStepSFx("step_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-    Event(31, BLEND_OUT_TO_START, -1)
-    Event(31, VIS_EVENT_STEP_LEFT, 0)
-    {
-        PlayStepSFx("step_left","l_foot")
-        {
-            FrameOffset(-6.0)
-        }
-        _Attributes(0,0,1,"Human")
-    }
-}
-SeqTrack("viral_jump_1m_01", "viral_jump_1m_01.anm2", 0, 40, 30, 1, 0.0)
-{
-    Event(0, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(0, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(4, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(6, EVENT_FINAL_POSITION, -1)
-    Event(9, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(11, VIS_EVENT_MOVEMENT_MOD_INFLECTION, 0)
-    Event(14, EVENT_FINAL_POSITION, -1)
-    Event(14, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(14, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1,"Human")
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-1.0)
-        }
-    }
-    Event(15, EVENT_TURN_ON_PHYSICS, -1)
-    Event(17, VIS_EVENT_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1,"Human")
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-1.0)
-        }
-    }
-    Event(17, BLEND_OUT_TO_START, -1)
-    Event(17, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(21, VIS_EVENT_STOPANIM, -1)
-    Event(29, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1,"Human")
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-1.0)
-        }
-    }
-    Event(38, VIS_EVENT_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1,"Human")
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-1.0)
-        }
-    }
-}
-
-SeqTrack("viral_jump_2m_01", "viral_jump_2m_01.anm2", 0, 43, 30, 1, 0.0)
-{
-    Event(2, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(2, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(5, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(7, EVENT_FINAL_POSITION, -1)
-    Event(10, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(14, VIS_EVENT_MOVEMENT_MOD_INFLECTION, 0)
-    Event(18, AUDIO_STEP_HEAVY_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_heavy_right", "r_foot")
-    }
-    Event(20, EVENT_FINAL_POSITION, -1)
-    Event(20, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(20, VIS_EVENT_STEP_RIGHT, -1)
-    Event(21, EVENT_TURN_ON_PHYSICS, -1)
-    Event(24, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(24, VIS_EVENT_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-    }
-    Event(24, BLEND_OUT_TO_START, -1)
-    Event(27, VIS_EVENT_STOPANIM, -1)
-    Event(33, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-        {
-            TimeShift(-0.033300)
-        }
-    }
-    Event(43, VIS_EVENT_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left", "l_foot")
-        {
-            TimeShift(-0.033300)
-        }
-    }
-}
-
-SeqTrack("viral_jump_5m_01", "viral_jump_5m_01.anm2", 0, 61, 30, 1, 0.0)
-{
-    Event(4, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(4, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(16, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(19, EVENT_FINAL_POSITION, -1)
-    Event(23, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(29, VIS_EVENT_MOVEMENT_MOD_INFLECTION, 0)
-    Event(35, AUDIO_STEP_HEAVY_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_heavy_right", "r_foot")
-    }
-    Event(37, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(37, EVENT_FINAL_POSITION, -1)
-    Event(38, VIS_EVENT_STEP_RIGHT, -1)
-    Event(38, EVENT_TURN_ON_PHYSICS, -1)
-    Event(40, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(40, BLEND_OUT_TO_START, -1)
-    Event(40, VIS_EVENT_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1,"Human")
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-1.0)
-        }
-    }
-    Event(44, VIS_EVENT_STOPANIM, -1)
-    Event(50, VIS_EVENT_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1,"Human")
-        PlayStepSFx("step_sprint_right","r_foot")
-        {
-            FrameOffset(-1.0)
-        }
-    }
-    Event(59, VIS_EVENT_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1,"Human")
-        PlayStepSFx("step_sprint_left","l_foot")
-        {
-            FrameOffset(-1.0)
-        }
-    }
-}
-SeqTrack("viral_jump_7m_01", "viral_jump_7m_01.anm2", 0, 114, 30, 1, 0.0)
-{
-    Event(6, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(6, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(6, VIS_EVENT_STEP_LEFT, -1)
-    Event(11, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(17, EVENT_FINAL_POSITION, -1)
-    Event(23, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(29, VIS_EVENT_MOVEMENT_MOD_INFLECTION, 0)
-    Event(46, AUDIO_STEP_HEAVY_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_heavy_left", "l_foot")
-    }
-    Event(47, EVENT_FINAL_POSITION, -1)
-    Event(47, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(60, AUDIO_STEP_SLIDE_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_slide_left", "l_foot")
-    }
-    Event(84, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(84, EVENT_TURN_ON_PHYSICS, -1)
-    Event(85, VIS_EVENT_STEP_RIGHT, -1)
-    Event(97, BLEND_OUT_TO_START, -1)
-    Event(97, VIS_EVENT_STEP_LEFT, -1)
-    Event(102, AUDIO_STEP_SHUFFLE_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_shuffle_right", "r_foot")
-    }
-    Event(105, VIS_EVENT_STEP_RIGHT, -1)
-}
-SeqTrack("m_vir_fmv_climb_off_9m_01", "m_vir_fmv_climb_off_9m_01.anm2", 0, 165, 30, 1, 0.0)
-{
-    Event(5, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,3,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(5, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(5, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(10, VIS_EVENT_STEP_RIGHT, -1)
-    Event(10, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
-    Event(15, VIS_EVENT_STEP_LEFT, -1)
-    Event(15, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(15, EVENT_FINAL_POSITION, -1)
-    Event(15, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(117, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(127, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(127, EVENT_FINAL_POSITION, -1)
-    Event(128, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
-    Event(128, VIS_EVENT_STEP_RIGHT, -1)
-    Event(129, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(138, VIS_EVENT_STEP_LEFT, -1)
-    Event(138, BLEND_OUT_TO_START, -1)
-    Event(138, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(146, VIS_EVENT_STOPANIM, -1)
-    Event(155, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
-    Event(155, VIS_EVENT_STEP_RIGHT, -1)
-    Event(165, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(165, VIS_EVENT_STEP_LEFT, -1)
-}
-
-SeqTrack("m_vir_fmv_climb_off_6m_01", "m_vir_fmv_climb_off_6m_01.anm2", 0, 120, 30, 1, 0.0)
-{
-    Event(5, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,3,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(5, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(5, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(11, VIS_EVENT_STEP_RIGHT, -1)
-    Event(11, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
-    Event(14, EVENT_FINAL_POSITION, -1)
-    Event(14, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(15, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(15, VIS_EVENT_STEP_LEFT, -1)
-    Event(69, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(82, EVENT_FINAL_POSITION, -1)
-    Event(82, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(87, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
-    Event(87, VIS_EVENT_STEP_RIGHT, -1)
-    Event(88, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(94, VIS_EVENT_STEP_LEFT, -1)
-    Event(94, BLEND_OUT_TO_START, -1)
-    Event(94, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(105, VIS_EVENT_STOPANIM, -1)
-    Event(110, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
-    Event(110, VIS_EVENT_STEP_RIGHT, -1)
-    Event(119, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(119, VIS_EVENT_STEP_LEFT, -1)
-}
-
-SeqTrack("m_vir_fmv_climb_off_3m_01", "m_vir_fmv_climb_off_3m_01.anm2", 0, 74, 30, 1, 0.0)
-{
-    Event(5, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(5, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(5, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,3,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(15, EVENT_FINAL_POSITION, -1)
-    Event(15, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(29, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(36, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(36, EVENT_FINAL_POSITION, -1)
-    Event(39, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
-    Event(39, VIS_EVENT_STEP_RIGHT, -1)
-    Event(40, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(48, BLEND_OUT_TO_START, -1)
-    Event(48, VIS_EVENT_STEP_LEFT, -1)
-    Event(48, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(55, VIS_EVENT_STOPANIM, -1)
-    Event(64, VIS_EVENT_STEP_RIGHT, -1)
-    Event(64, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
-    Event(74, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(74, VIS_EVENT_STEP_LEFT, -1)
-}
-
-SeqTrack("m_vir_fmv_climb_on_9m_01", "m_vir_fmv_climb_on_9m_01.anm2", 0, 172, 30, 1, 0.0)
-{
-    Event(2, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,3,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(2, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(2, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(4, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(6, EVENT_FINAL_POSITION, -1)
-    Event(10, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(14, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(18, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(18, VIS_EVENT_STEP_RIGHT, -1)
-    Event(19, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(27, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(31, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(43, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(50, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left", "l_foot")
-    }
-    Event(59, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(76, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left", "l_foot")
-    }
-    Event(89, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
-    Event(94, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(104, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(110, EVENT_FINAL_POSITION, -1)
-    Event(115, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left", "l_foot")
-    }
-    Event(129, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(131, EVENT_TURN_ON_PHYSICS, -1)
-    Event(131, VIS_EVENT_STEP_LEFT, -1)
-    Event(143, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
-    Event(147, VIS_EVENT_STEP_RIGHT, -1)
-    Event(147, BLEND_OUT_TO_START, -1)
-    Event(147, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(152, VIS_EVENT_STOPANIM, -1)
-    Event(153, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(156, VIS_EVENT_STEP_LEFT, -1)
-    Event(160, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(162, VIS_EVENT_STEP_RIGHT, -1)
-    Event(169, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left", "l_foot")
-    }
-    Event(171, VIS_EVENT_STEP_LEFT, -1)
-}
-
-SeqTrack("m_vir_fmv_climb_on_6m_01", "m_vir_fmv_climb_on_6m_01.anm2", 0, 124, 30, 1, 0.0)
-{
-    Event(2, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,3,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(2, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(2, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(4, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(6, EVENT_FINAL_POSITION, -1)
-    Event(10, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(13, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(18, VIS_EVENT_STEP_RIGHT, -1)
-    Event(18, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(18, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(26, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(30, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(42, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(49, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left", "l_foot")
-    }
-    Event(58, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(66, EVENT_FINAL_POSITION, -1)
-    Event(68, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left", "l_foot")
-    }
-    Event(81, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left", "l_foot")
-    }
-    Event(84, VIS_EVENT_STEP_LEFT, -1)
-    Event(84, EVENT_TURN_ON_PHYSICS, -1)
-    Event(94, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
-    Event(99, VIS_EVENT_STEP_RIGHT, -1)
-    Event(99, BLEND_OUT_TO_START, -1)
-    Event(99, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(104, VIS_EVENT_STOPANIM, -1)
-    Event(105, AUDIO_STEP_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_left", "l_foot")
-    }
-    Event(107, VIS_EVENT_STEP_LEFT, -1)
-    Event(113, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(115, VIS_EVENT_STEP_RIGHT, -1)
-    Event(121, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left", "l_foot")
-    }
-    Event(123, VIS_EVENT_STEP_LEFT, -1)
-}
-
-SeqTrack("m_vir_fmv_climb_on_3m_01", "m_vir_fmv_climb_on_3m_01.anm2", 1, 86, 30, 1, 0.0)
-{
-    Event(0, USER_PLAY_SOUND, -1)
-    {
-        PlayScream("run",1,3,1,1)
-        _Attributes(1,0,1)
-    }
-    Event(0, VIS_EVENT_MAX_ANIM_CUT_TIME, -1)
-    Event(0, STOP_CLIP_SYNCHRONIZATION, -1)
-    {
-        _Attributes(0, 1)
-    }
-    Event(7, EVENT_FINAL_POSITION, -1)
-    Event(7, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(9, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(15, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(17, VIS_EVENT_MOVEMENT_MOD_END, -1)
-    Event(21, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left", "l_foot")
-    }
-    Event(25, EVENT_FINAL_POSITION, -1)
-    Event(29, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(52, EVENT_TURN_ON_PHYSICS, -1)
-    Event(59, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left", "l_foot")
-    }
-    Event(60, VIS_EVENT_STEP_LEFT, -1)
-    Event(60, BLEND_OUT_TO_START, -1)
-    Event(60, VIS_EVENT_MOVEMENT_MOD_START, -1)
-    Event(63, AUDIO_STEP_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_right", "r_foot")
-    }
-    Event(64, VIS_EVENT_STEP_RIGHT, -1)
-    Event(69, VIS_EVENT_STOPANIM, -1)
-    Event(73, AUDIO_STEP_SPRINT_LEFT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_left", "l_foot")
-    }
-    Event(75, VIS_EVENT_STEP_LEFT, -1)
-    Event(82, AUDIO_STEP_SPRINT_RIGHT, -1)
-    {
-        _Attributes(0,0,1)
-        PlayStepSFx("step_sprint_right", "r_foot")
-    }
-    Event(84, VIS_EVENT_STEP_RIGHT, -1)
 }

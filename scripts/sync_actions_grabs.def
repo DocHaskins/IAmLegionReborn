@@ -23,6 +23,8 @@ sub sync_actions_grabs()
             {
                 InAir(0, false);
                 IsBusy(0,false);
+				MaxDistance(0, 1, 3.0);
+				HorzPositionOffset(1, 0, 90);
             }
 
             Events()
@@ -56,11 +58,11 @@ sub sync_actions_grabs()
                     Animation(0, "m_fpp_syncaction_grab_headbutt_victim_01_begin");
                     Animation(1, "m_hmf_syncaction_grab_headbutt_attacker_01_begin", 0.2);
 
-                    BlendPosition(0, 0, 0.75, 0.75);
-                    BlendDirection(0, 0, 0.75, 0.75);
+                    BlendPosition(0, 0, 0.4, 0.75);
+                    BlendDirection(0, 0, 0.4, 0.75);
 
-                    BlendPosition(1, 0, 0.75, 0.75);
-                    BlendDirection(1, 0, 0.75, 0.75);
+                    BlendPosition(1, 0, 0.4, 0.75);
+                    BlendDirection(1, 0, 0.4, 0.75);
 
                     ActionCenter(0);
                     ActionCenterDirection(0, 1);
@@ -545,7 +547,7 @@ sub sync_actions_grabs()
                 InAir(0, false);
                 IsBusy(0,false);
                 InClimb(0,false);
-                HorzPositionOffset(0, 1, 40); 
+                HorzPositionOffset(0, 1, 40);
             }
 			
 			SoundEvents()
@@ -767,6 +769,240 @@ sub sync_actions_grabs()
                 }
             }
         }
+		
+		
+		SyncAction("BiterGrabB")
+        {
+            Conditions()
+            {
+                Tags("vs_player");
+                MaxDistance(0, 1, 2.0);
+                InAir(0, false);
+                IsBusy(0,false);
+                InClimb(0,false);
+                HorzPositionOffset(0, 1, 40);
+            }
+			
+			SoundEvents()
+			{
+				ExitSoundEvent("set_biter_grab_out");
+			}
+
+            Events()
+            {
+                Event(ANIM_EVENT, 1, ANIM_EVENT_GIVE_GRAB_DAMAGE)
+                {
+                    DealDamage(1, 0, "biter_grab@sync_action_damage_presets.scr");
+                }
+                Event(ANIM_EVENT, 0, SYNCACTION_TRIGGER_DEATH)
+                {
+                    DealDamage(0, 1, "biter_grab_kill_ragdoll@sync_action_damage_presets.scr");
+                }
+                Event(ANIM_EVENT, 0, SYNCACTION_SHOW_ITEM  )
+                {
+                    ShowInventoryItem(0, "RIGHT")
+                    {
+                        use ItemGroup_UVFlare();
+                    }
+                }
+                Event(ANIM_EVENT, 0, SYNCACTION_ACTIVATE_ITEM)
+                {
+                    ActivateInventoryItem(0, "flare_uv");
+                }
+                Event(ANIM_EVENT, 0, SYNCACTION_DROP_ITEM)
+                {
+                    DropInventoryItem(0, "flare_uv");
+                    RemoveInventoryItem(0)
+                    {
+                        use ItemGroup_UVFlare();
+                    }
+                }
+                Event(ANIM_EVENT, 1, SYNCACTION_MAKE_NOISE)
+                {
+                    MakeNoise(1, "biter_grab");
+                }
+            }
+
+            States()
+            {
+                StartState("BiterGrabBegin");
+
+                State("BiterGrabBegin")
+                {
+                    RequiredActors(0, 1);
+
+                    Animation(0, "m_fpp_syncaction_grab_victim_02_start");
+                    Animation(1, "m_bit_syncaction_grab_attacker1_02_start", 0.2);
+
+                    BlendLookDirection(0.2);
+
+                    BlendPosition(0, 0, 0.3, 0.75);
+                    BlendDirection(0, 0, 0.3, 0.75);
+
+                    BlendPosition(1, 0, 0.2, 0.75);
+                    BlendDirection(1, 0, 0.2, 0.75);
+
+                    ActionCenter(0);
+                    ActionCenterDirection(0, 1);
+                    DisableGravity(1);
+
+                    BreakCrouch(0);
+                    BlockBreakWhenDamaged(0);
+
+                    Transition("BiterGrabLoop")
+                    {
+                        AnimationFinished();
+                    }
+                }
+
+                State("BiterGrabLoop")
+                {
+                    RequiredActors(0, 1);
+
+                    Animation(0, "m_fpp_syncaction_grab_victim_02_loop", 0.0, true);
+                    Animation(1, "m_bit_syncaction_grab_attacker1_02_loop", 0.05, true);
+
+                    ActionCenter(0);
+                    DisableGravity(1);
+
+                    Mergeable(true);
+
+                    StartTappingGame(0, 0.2, 0.5, 2.5, 6, false);
+
+                    AllowLook(60.0, 30.0);
+
+                    BreakCrouch(0);
+                    BlockBreakWhenDamaged(0);
+
+                    Transition("BiterGrabSuccessEndFlare")
+                    {
+                        InventoryItemRequired(0)
+                        {
+                            use ItemGroup_UVFlare();
+                        }
+
+                        Input(0, "_ACTION_USE_EQUIPEMENT", 0.9);
+                    }
+
+                    Transition("BiterGrabSuccessBegin")
+                    {
+                        TappingGameValue(0.25);
+                    }
+                }
+
+                State("BiterGrabSuccessBegin")
+                {
+                    RequiredActors(0, 1);
+
+                    Animation(0, "m_fpp_syncaction_grab_victim_02_push");
+                    Animation(1, "m_bit_syncaction_grab_attacker1_02_push", 0.2);
+
+                    ActionCenter(0);
+                    DisableGravity(1);
+                    Mergeable(true);
+
+                    StartTappingGame(0, 0.2, 0.5, 2.5, 6, false);
+
+                    BreakCrouch(0);
+                    BlockBreakWhenDamaged(0);
+
+                    Transition("BiterGrabSuccessEndFlare")
+                    {
+                        InventoryItemRequired(0)
+                        {
+                            use ItemGroup_UVFlare();
+                        }
+
+                        Input(0, "_ACTION_USE_EQUIPEMENT", 0.9);
+                    }
+
+                    Transition("BiterGrabSuccessEnd")
+                    {
+                        TappingGameValue(1.0);
+                    }
+
+                    Transition("BiterGrabLoop")
+                    {
+                        AnimationFinished();
+                    }
+                }
+
+                State("BiterGrabSuccessEnd")
+                {
+                    RequiredActors(0, 1);
+
+                    Animation(0, "m_fpp_syncaction_grab_victim_02_break");
+                    Animation(1, "m_bit_syncaction_grab_attacker1_02_break", 0.2);
+
+                    ActionCenter(0);
+                    DisableGravity(1);
+
+                    BreakCrouch(0);
+                    BlockBreakWhenDamaged(0);
+
+                    Transition("BiterGrabSuccessEndReaction")
+                    {
+                        AnimationFinished(0);
+                    }
+                }
+
+                State("BiterGrabSuccessEndReaction")
+                {
+                    RequiredActors(1);
+
+                    Animation(1, "m_bit_syncaction_grab_attacker1_02_break");
+
+                    ActionCenter(0);
+                    RemoveActor(0);
+
+                    BreakCrouch(0);
+                    BlockBreakWhenDamaged(0);
+
+                    EndTransition()
+                    {
+                        AnimationFinished();
+                    }
+                }
+
+                State("BiterGrabSuccessEndFlare")
+                {
+                    RequiredActors(0, 1);
+
+                    Animation(0, "m_fpp_syncaction_grab_victim_02_break_flare");
+                    Animation(1, "m_bit_syncaction_grab_attacker1_02_break_flare", 0.2);
+
+                    ActionCenter(0);
+                    DisableGravity(1);
+
+                    BreakCrouch(0);
+                    BlockBreakWhenDamaged(0);
+					ShowWeapons(0);
+                    Transition("BiterGrabSuccessEndFlareReaction")
+                    {
+                        AnimationFinished(0);
+                    }
+                }
+
+                State("BiterGrabSuccessEndFlareReaction")
+                {
+                    RequiredActors(1);
+
+                    Animation(1, "m_bit_syncaction_grab_attacker1_02_break_flare", 0.2);
+
+                    ActionCenter(0);
+                    RemoveActor(0);
+					
+                    BreakCrouch(0);
+                    BlockBreakWhenDamaged(0);
+
+                    EndTransition()
+                    {
+                        AnimationFinished();
+                    }
+                }
+            }
+        }
+		
 
         SyncAction("BiterGrabA_Multi", "BiterGrabA")
         {
@@ -1182,8 +1418,11 @@ sub sync_actions_grabs()
 		
 		SyncAction("BiterGrabFallAbsorbA")
         {
+            BlockPhotomode(true);
+
             Conditions()
             {
+                ActorType(1, "Human", "Biter", "Viral", "Screamer", "Spitter", "Banshee", "Bolter", "Charger", "Suicider");
                 InAir(0, false);
                 //IsBusy(0, false);
                 DirectionOffset(0, 1, 180, 90);
@@ -1416,9 +1655,12 @@ sub sync_actions_grabs()
 
         SyncAction("BiterGrabFallAbsorbA_Close", "BiterGrabFallAbsorbA")
         {
+            BlockPhotomode(true);
+
             Conditions()
             {
                 InAir(0, false);
+                ActorType(1, "Human", "Biter", "Viral", "Screamer", "Spitter", "Banshee", "Bolter", "Charger", "Suicider");
                 //IsBusy(0, false);
                 DirectionOffset(0, 1, 180, 90);
                 MaxDistance(0, 1, 4.0);
@@ -1445,9 +1687,12 @@ sub sync_actions_grabs()
 
         SyncAction("BiterGrabFallAbsorbA_Back", "BiterGrabFallAbsorbA")
         {
+            BlockPhotomode(true);
+
             Conditions()
             {
                 InAir(0, false);
+                ActorType(1, "Human", "Biter", "Viral", "Screamer", "Spitter", "Banshee", "Bolter", "Charger", "Suicider");
                 //IsBusy(0, false);
                 DirectionOffset(0, 1, 0, 90);
             }
@@ -1500,6 +1745,7 @@ sub sync_actions_grabs()
             }
         }
     }
+	
 
     // Biter grab jump fall absorb when there is no space behind the actors to perform the grab
     // Slot 0 - Attacker
@@ -1510,11 +1756,14 @@ sub sync_actions_grabs()
 
         SyncAction("BiterGrabFallAbsorbNoSpaceA")
         {
+            BlockPhotomode(true);
+
             Conditions()
             {
-                //InAir(0, false);
+                InAir(0, false);
+                ActorType(1, "Human", "Biter", "Viral", "Screamer", "Spitter", "Banshee", "Bolter", "Charger", "Suicider");
                 //IsBusy(0, false);
-                //DirectionOffset(0, 1, 180, 80);
+                DirectionOffset(0, 1, 180, 90);
             }
 
             SoundEvents()
@@ -1733,7 +1982,71 @@ sub sync_actions_grabs()
 
             }
         }
+    
+	
+
+        SyncAction("BiterGrabFallAbsorbNoSpaceA_back", "BiterGrabFallAbsorbNoSpaceA")
+        {
+            BlockPhotomode(true);
+
+            Conditions()
+            {
+                InAir(0, false);
+                ActorType(1, "Human", "Biter", "Viral", "Screamer", "Spitter", "Banshee", "Bolter", "Charger", "Suicider");
+                //IsBusy(0, false);
+                DirectionOffset(0, 1, 0, 90);
+            }
+
+            SoundEvents()
+			{
+				ExitSoundEvent("set_biter_grab_out");
+			}
+
+            States()
+            {
+                StartState("GrabBegin");
+
+                ExtendState("GrabBegin")
+                {
+                    Animation(0, "m_fpp_syncaction_grab_fall_back_absorb_attacker_01_begin_nospace");
+                    Animation(1, "m_bit_syncaction_grab_fall_back_absorb_victim_01_begin_nospace", 0.2);
+                }
+
+                ExtendState("GrabFall")
+                {
+                    Animation(0, "m_fpp_syncaction_grab_fall_back_absorb_attacker_01_fall", 0.2);
+                    Animation(1, "m_bit_syncaction_grab_fall_back_absorb_victim_01_fall_loop",0.2);
+                }
+
+                ExtendState("GrabFallLoop")
+                {
+                    Animation(0, "m_fpp_syncaction_grab_fall_back_absorb_attacker_01_fall_loop", 0.2, true);
+                    Animation(1, "m_bit_syncaction_grab_fall_back_absorb_victim_01_fall_loop", 0.2, true);
+                }
+
+                ExtendState("GrabFallBreak")
+                {
+                    Animation(0, "m_fpp_syncaction_grab_fall_back_absorb_attacker_01_fall_break");
+                    Animation(1, "m_bit_syncaction_grab_fall_back_absorb_victim_01_fall_break", 0.2);
+                }
+
+                ExtendState("GrabFallKill")
+                {
+                    Animation(0, "m_fpp_syncaction_grab_fall_back_absorb_attacker_01_fall_kill");
+                    Animation(1, "m_bit_syncaction_grab_fall_back_absorb_victim_01_fall_break", 0.2);
+                }
+
+                ExtendState("GrabFallEnd") //on victim's death
+                {
+                    Animation(0, "m_fpp_syncaction_grab_fall_back_absorb_attacker_01_fall_end");
+					Animation(1, "m_bit_syncaction_grab_fall_back_absorb_victim_01_fall_end", 0.0);
+                }
+
+            }
+        }
     }
+	
+	
 
 
     // Biter grab and realase running by victim
@@ -2066,7 +2379,7 @@ sub sync_actions_grabs()
             Conditions()
             {
                 MaxDistance(0, 1, 2.2);
-                //DirectionOffset(0, 1, 180, 45);
+				HorzPositionOffset(1, 0, 70);
                 InAir(0, false);
                 IsBusy(0,false);
             }
@@ -2116,6 +2429,7 @@ sub sync_actions_grabs()
                     BlockBreakWhenDamaged(0);
 
                     DisableGravity(1);
+					DisablePhysics(1);
 
                     ApplyDof(0, 0.2, 0.4, 0.3, 5, 0.2);
 
@@ -2137,6 +2451,8 @@ sub sync_actions_grabs()
                     StartTappingGame(0, 0.15, 0.5, 2.5, 7, false);
                     //StaminaCost(0, 0.2, true);
                     BlockBreakWhenDamaged(0);
+					
+					DisablePhysics(1);
 
                     Transition("VolatileGrabBreak")
                     {
@@ -2176,6 +2492,7 @@ sub sync_actions_grabs()
                     ActionCenter(0);
 
                     BlockBreakWhenDamaged(0);
+					DisablePhysics(1);
 
                     EndTransition()
                     {
@@ -2199,9 +2516,12 @@ sub sync_actions_grabs()
 
         SyncAction("NageWazaRight")
         {
+            BlockPhotomode(true);
+
             Conditions()
             {
                 Input(0, "_ACTION_STRAFE_RIGHT", 0.8);
+				ActorType(1, "Human");
             }
 
             Events()
@@ -2278,9 +2598,12 @@ sub sync_actions_grabs()
 
         SyncAction("NageWazaLeft")
         {
+            BlockPhotomode(true);
+
             Conditions()
             {
                 Input(0, "_ACTION_STRAFE_LEFT", 0.8);
+				ActorType(1, "Human");
             }
 
             Events()
@@ -2357,9 +2680,12 @@ sub sync_actions_grabs()
 
         SyncAction("NageWazaBack")
         {
+            //BlockPhotomode(true);
+
             Conditions()
             {
                 Input(0, "_ACTION_BACKWARD", 0.8);
+				ActorType(1, "Human");
             }
 
             Events()
@@ -2413,6 +2739,252 @@ sub sync_actions_grabs()
                 State("NageWazaBackEnd")
                 {
                     Animation(1, "m_hmf_syncaction_grab_nagewaza_b_victim_01", 0.2);
+
+                    RemoveActor(0);
+                    RequiredActors(1);
+
+
+                    BlendPosition(0, 0, 0.15, 0.15);
+                    BlendDirection(0, 0, 0.15, 0.15);
+
+                    BlendPosition(1, 0, 0.15, 0.15);
+                    BlendDirection(1, 0, 0.15, 0.15);
+
+                    ActionCenter(0);
+
+                    EndTransition()
+                    {
+                        AnimationFinished();
+                    }
+                }
+            }
+        }
+		
+		SyncAction("NageWazaRight_Biter")
+        {
+            BlockPhotomode(true);
+
+            Conditions()
+            {
+                Input(0, "_ACTION_STRAFE_RIGHT", 0.8);
+				ActorType(1, "!Human");
+            }
+
+            Events()
+            {
+                Event(ANIM_EVENT, 0, ANIM_EVENT_GIVE_GRAB_DAMAGE)
+                {
+                    Tags("!Throw")
+                    {
+                        DealDamage(0, 1, "nagewaza@sync_action_damage_presets.scr");
+                    }
+
+                    Tags("Throw")
+                    {
+                        DealDamage(0, 1, "nagewaza_ragdoll@sync_action_damage_presets.scr");
+                        RemoveActor(1);
+                    }
+                }
+            }
+
+            States()
+            {
+                StartState("NageWazaRightBegin");
+
+                State("NageWazaRightBegin")
+                {
+                    StaminaCost(0, 0.2);
+                    Animation(0, "m_fpp_syncaction_grab_nagewaza_r_attacker_01");
+                    Animation(1, "m_bit_syncaction_grab_nagewaza_r_victim_01", 0.2);
+
+                    RequiredActors(0, 1);
+
+
+                    BlendPosition(0, 0, 0.15, 0.15);
+                    BlendDirection(0, 0, 0.15, 0.15);
+
+                    BlendPosition(1, 0, 0.15, 0.15);
+                    BlendDirection(1, 0, 0.15, 0.15);
+
+                    ActionCenter(0);
+                    ActionCenterDirection(0, 1);
+                    ActionCenterAdjustment(0, ACTION_CENTER_ADJUSTMENT_NAGE_WAZA_AUTO_AIM, -90.0, 1);
+
+                    BlockBreakWhenDamaged(0);
+
+                    Transition("NageWazaRightEnd")
+                    {
+                        AnimationFinished(0);
+                    }
+                }
+
+                State("NageWazaRightEnd")
+                {
+                    Animation(1, "m_bit_syncaction_grab_nagewaza_r_victim_01", 0.2);
+
+                    RemoveActor(0);
+                    RequiredActors(1);
+
+
+                    BlendPosition(0, 0, 0.15, 0.15);
+                    BlendDirection(0, 0, 0.15, 0.15);
+
+                    BlendPosition(1, 0, 0.15, 0.15);
+                    BlendDirection(1, 0, 0.15, 0.15);
+
+                    ActionCenter(0);
+
+                    EndTransition()
+                    {
+                        AnimationFinished();
+                    }
+                }
+            }
+        }
+
+        SyncAction("NageWazaLeft_Biter")
+        {
+            BlockPhotomode(true);
+
+            Conditions()
+            {
+                Input(0, "_ACTION_STRAFE_LEFT", 0.8);
+				ActorType(1, "!Human");
+            }
+
+            Events()
+            {
+                Event(ANIM_EVENT, 0, ANIM_EVENT_GIVE_GRAB_DAMAGE)
+                {
+                    Tags("!Throw")
+                    {
+                        DealDamage(0, 1, "nagewaza@sync_action_damage_presets.scr");
+                    }
+
+                    Tags("Throw")
+                    {
+                        DealDamage(0, 1, "nagewaza_ragdoll@sync_action_damage_presets.scr");
+                        RemoveActor(1);
+                    }
+                }
+            }
+
+            States()
+            {
+                StartState("NageWazaLeftStart");
+
+                State("NageWazaLeftStart")
+                {
+                    StaminaCost(0, 0.2);
+                    Animation(0, "m_fpp_syncaction_grab_nagewaza_l_attacker_01");
+                    Animation(1, "m_bit_syncaction_grab_nagewaza_l_victim_01", 0.2);
+
+                    RequiredActors(0, 1);
+
+
+                    BlendPosition(0, 0, 0.15, 0.15);
+                    BlendDirection(0, 0, 0.15, 0.15);
+
+                    BlendPosition(1, 0, 0.15, 0.15);
+                    BlendDirection(1, 0, 0.15, 0.15);
+
+                    ActionCenter(0);
+                    ActionCenterDirection(0, 1);
+                    ActionCenterAdjustment(0, ACTION_CENTER_ADJUSTMENT_NAGE_WAZA_AUTO_AIM, 90.0, 1);
+
+                    BlockBreakWhenDamaged(0);
+
+                    Transition("NageWazaLeftEnd")
+                    {
+                        AnimationFinished(0);
+                    }
+                }
+
+                State("NageWazaLeftEnd")
+                {
+                    Animation(1, "m_bit_syncaction_grab_nagewaza_l_victim_01", 0.2);
+
+                    RemoveActor(0);
+                    RequiredActors(1);
+
+
+                    BlendPosition(0, 0, 0.15, 0.15);
+                    BlendDirection(0, 0, 0.15, 0.15);
+
+                    BlendPosition(1, 0, 0.15, 0.15);
+                    BlendDirection(1, 0, 0.15, 0.15);
+
+                    ActionCenter(0);
+
+                    EndTransition()
+                    {
+                        AnimationFinished();
+                    }
+                }
+            }
+        }
+
+        SyncAction("NageWazaBack_Biter")
+        {
+            //BlockPhotomode(true);
+
+            Conditions()
+            {
+                Input(0, "_ACTION_BACKWARD", 0.8);
+				ActorType(1, "!Human");
+            }
+
+            Events()
+            {
+                Event(ANIM_EVENT, 0, ANIM_EVENT_GIVE_GRAB_DAMAGE)
+                {
+                    Tags("!Throw")
+                    {
+                        DealDamage(0, 1, "nagewaza@sync_action_damage_presets.scr");
+                    }
+
+                    Tags("Throw")
+                    {
+                        DealDamage(0, 1, "nagewaza_ragdoll@sync_action_damage_presets.scr");
+                        RemoveActor(1);
+                    }
+                }
+            }
+
+            States()
+            {
+                StartState("NageWazaBackBegin");
+
+                State("NageWazaBackBegin")
+                {
+                    StaminaCost(0, 0.2);
+                    Animation(0, "m_fpp_syncaction_grab_nagewaza_b_attacker_01");
+                    Animation(1, "m_bit_syncaction_grab_nagewaza_b_victim_01", 0.2);
+
+                    RequiredActors(0, 1);
+
+
+                    BlendPosition(0, 0, 0.15, 0.15);
+                    BlendDirection(0, 0, 0.15, 0.15);
+
+                    BlendPosition(1, 0, 0.15, 0.15);
+                    BlendDirection(1, 0, 0.15, 0.15);
+
+                    ActionCenter(0);
+                    ActionCenterDirection(0, 1);
+                    ActionCenterAdjustment(0, ACTION_CENTER_ADJUSTMENT_NAGE_WAZA_AUTO_AIM, 180.0, 1);
+
+                    BlockBreakWhenDamaged(0);
+
+                    Transition("NageWazaBackEnd")
+                    {
+                        AnimationFinished(0);
+                    }
+                }
+
+                State("NageWazaBackEnd")
+                {
+                    Animation(1, "m_bit_syncaction_grab_nagewaza_b_victim_01", 0.2);
 
                     RemoveActor(0);
                     RequiredActors(1);

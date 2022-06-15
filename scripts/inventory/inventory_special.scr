@@ -542,7 +542,7 @@ sub main()
     {
         ItemType(ItemType_Token);
         MaxStackCount(10000);
-        TokenType(EFaction_Exploration);
+        TokenType(-1);
 		HudIcon("icon_token");
 		GameVersion(1);
     }
@@ -552,7 +552,7 @@ sub main()
     {
         ItemType(ItemType_Token);
         MaxStackCount(10000);
-        TokenType(EFaction_Scavengers);
+        TokenType(-1);
 		HudIcon("icon_token");
 		GameVersion(1);
     }
@@ -561,9 +561,28 @@ sub main()
     {
         ItemType(ItemType_Token);
         MaxStackCount(10000);
-        TokenType(EFaction_Peacekeepers);
+        TokenType(-1);
 		HudIcon("icon_token");
 		GameVersion(1);
+    }
+
+    Item("Token_MutationSamples", CategoryType_Token)
+    {
+        ItemType(ItemType_Token);
+        MaxStackCount(100000);
+        TokenType(PlayerToken_MutationSamples);
+        HudIcon("icon_resource_mutation_samples");
+        Price(2);
+        GameVersion(8);
+    }
+
+    Item("Token_NightrunnerToken", CategoryType_Token)
+    {
+        ItemType(ItemType_Token);
+        MaxStackCount(100000);
+        TokenType(PlayerToken_NightrunnerToken);
+        HudIcon("icon_nightrunner_token");
+        GameVersion(8);
     }
 
     Item("Thrown_Spear", CategoryType_Throwable)
@@ -1616,6 +1635,26 @@ sub main()
         CraftingSlots(0);
 		GameVersion(1);
     }
+    
+    Item("Chapter1_Regular_Mission_Ticket", CategoryType_Token)
+    {
+        ItemType(ItemType_Token);
+        MaxStackCount(100000);
+        TokenType(PlayerToken_ChapterChallengeTicket);
+        HudIcon("icon_darkzone_ticket");
+        Color(Color_Violet);
+        GameVersion(8);
+    }
+    
+    Item("Chapter1_Elite_Mission_Ticket", CategoryType_Token)
+    {
+        ItemType(ItemType_Token);
+        MaxStackCount(100000);
+        TokenType(PlayerToken_ChapterChallengeTicket);
+        HudIcon("icon_darkzone_ticket_elite");
+        Color(Color_Orange);
+        GameVersion(8);
+    }
 
     //this keyword is no longer being used in game code!
     //DamageAndForceSpreadCurve(Color_White, "wpn_melee_damage_spread_white");
@@ -1631,24 +1670,24 @@ sub main()
     CraftSlotsBonus(Color_Orange, 2, 0);
     CraftSlotsBonus(Color_Platinum, 2, 0);
 
-    RepairSlotsBonus(Color_Green,  0);
-    RepairSlotsBonus(Color_Blue,   0);
-    RepairSlotsBonus(Color_Violet, 1);
-    RepairSlotsBonus(Color_Orange, 2);
-    RepairSlotsBonus(Color_Platinum, 3);
+    RepairSlotsBonus(Color_Green,  2);
+    RepairSlotsBonus(Color_Blue,   2);
+    RepairSlotsBonus(Color_Violet, 2);
+    RepairSlotsBonus(Color_Orange, 3);
+    RepairSlotsBonus(Color_Platinum, 4);
 
-    DurabilityBonus(Color_White,  14);
-	DurabilityBonus(Color_Green,  72);
-    DurabilityBonus(Color_Blue,   98);
-    DurabilityBonus(Color_Violet, 134);
-    DurabilityBonus(Color_Orange, 170);
-    DurabilityBonus(Color_Platinum, 206);
+    DurabilityBonus(Color_White,  10);
+	DurabilityBonus(Color_Green,  50);
+    DurabilityBonus(Color_Blue,   70);
+    DurabilityBonus(Color_Violet, 100);
+    DurabilityBonus(Color_Orange, 250);
+    DurabilityBonus(Color_Platinum, 300);
 
     AffixBonus(Color_Green, 0);
 	AffixBonus(Color_Blue, 1);
     AffixBonus(Color_Violet, 2);
     AffixBonus(Color_Orange, 3);
-    AffixBonus(Color_Platinum, 3);
+    AffixBonus(Color_Platinum, 4);
 
     //DismantleResult is currently not supported
     DismantleResult(Color_White, "Craft_MetalScrap", 1);

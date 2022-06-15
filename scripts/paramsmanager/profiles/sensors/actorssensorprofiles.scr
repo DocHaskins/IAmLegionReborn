@@ -51,6 +51,20 @@ sub main()
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
     }
+    SensorParamsActors("banshee_sun_immune")
+    {
+        recognize_time_sight_min("0.0");
+        recognize_time_sight_max("0.0");
+        crouched_recognition_multiplier("1.0");
+        partial_cover_recognition_multiplier("1.0");
+        min_recognition_vs_player("0.5");
+        remember_actor_time("20.0");
+        recognition_reset_time("40.0");
+        recognition_decay_delay("0.5");
+        recognition_decay_per_sec("0.05");
+        check_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles("true");
+    }
     SensorParamsActors("corruptor_default")
     {
         recognize_time_sight_min("2.5");
@@ -351,6 +365,32 @@ sub main()
         check_for_non_hostiles("true");
 		perform_los_checks_for_non_hostiles("true");
 		check_for_hostiles_outside_of_limiting_area("true");
+    }
+    SensorParamsActors("demolisher_thrower_low_alert")
+    {
+        recognize_time_sight_min("0.5");
+        recognize_time_sight_max("1.0");
+        crouched_recognition_multiplier("2.0");
+        partial_cover_recognition_multiplier("2.0");
+        remember_actor_time("3.0");
+        recognition_reset_time("3.0");
+        recognition_decay_delay("0.5");
+        recognition_decay_per_sec("0.05");
+        check_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles("true");
+    }
+    SensorParamsActors("demolisher_thrower_high_alert")
+    {
+        recognize_time_sight_min("0.0");
+        recognize_time_sight_max("0.0");
+        crouched_recognition_multiplier("2.0");
+        partial_cover_recognition_multiplier("2.0");
+        remember_actor_time("3.0");
+        recognition_reset_time("3.0");
+        recognition_decay_delay("0.5");
+        recognition_decay_per_sec("0.05");
+        check_for_non_hostiles("true");
+		perform_los_checks_for_non_hostiles("true");
     }
     SensorParamsActors("goon_default")
     {
@@ -814,6 +854,18 @@ sub main()
         min_recognition_vs_player("0.5");
 		check_for_hostiles_outside_of_limiting_area("true");
     }
+    SensorParamsActors("suicider_sun_immune")
+    {
+        recognize_time_sight_min("1.0");
+        recognize_time_sight_max("2.5");
+        crouched_recognition_multiplier("2.0");
+        partial_cover_recognition_multiplier("2.0");
+        remember_actor_time("20.0");
+        recognition_reset_time("40.0");
+        recognition_decay_delay("0.5");
+        recognition_decay_per_sec("0.05");
+        min_recognition_vs_player("0.5");
+    }
     SensorParamsActors("spitter_low_alert")
     {
         recognize_time_sight_min("1.0");
@@ -881,6 +933,19 @@ sub main()
         recognition_decay_per_sec("0.05");
         min_recognition_vs_player("0.5");
 		check_for_hostiles_outside_of_limiting_area("true");
+    }
+    SensorParamsActors("viral_sun_immune")
+    {
+        recognize_time_sight_min("1.0");
+        recognize_time_sight_max("3.5");
+        crouched_recognition_multiplier("2.0");
+        partial_cover_recognition_multiplier("2.0");
+        remember_actor_time("20.0");
+        recognition_reset_time("40.0");
+        recognition_decay_delay("0.5");
+        recognition_decay_per_sec("0.05");
+        min_recognition_vs_player("0.5");
+        check_for_hostiles_outside_of_limiting_area("true");
     }
     SensorParamsActors("viral_chase_low_alert")
     {
@@ -1172,7 +1237,7 @@ sub main()
     {
         recognize_time_sight_min("1.0");
         recognize_time_sight_max("2.0");
-        crouched_recognition_multiplier("1.0");
+        crouched_recognition_multiplier("2.0");
         partial_cover_recognition_multiplier("2.0");
         remember_actor_time("15.0");
         recognition_reset_time("15.0");
@@ -1183,7 +1248,7 @@ sub main()
     {
         recognize_time_sight_min("0.5");
         recognize_time_sight_max("1.0");
-        crouched_recognition_multiplier("1.0");
+        crouched_recognition_multiplier("2.0");
         partial_cover_recognition_multiplier("2.0");
         remember_actor_time("20.0");
         recognition_reset_time("15.0");
@@ -1191,6 +1256,83 @@ sub main()
         recognition_decay_per_sec("0.10");
     }
     SensorParamsActors("volatile_high_alert")
+    {
+        recognize_time_sight_min("0.0");
+        recognize_time_sight_max("0.0");
+        crouched_recognition_multiplier("1.0");
+        partial_cover_recognition_multiplier("1.0");
+        remember_actor_time("20.0");
+        recognition_reset_time("15.0");
+        recognition_decay_delay("5.0");
+        recognition_decay_per_sec("0.10");
+    }
+    SensorParamsActors("volatile_hive_low_alert")
+    {
+        recognize_time_sight_min("0.5");
+        recognize_time_sight_max("1.0");
+        crouched_recognition_multiplier("2.0");
+        partial_cover_recognition_multiplier("2.0");
+        remember_actor_time("15.0");
+        recognition_reset_time("15.0");
+        recognition_decay_delay("5.0");
+        recognition_decay_per_sec("0.10");
+    }
+    SensorParamsActors("volatile_hive_medium_alert")
+    {
+        recognize_time_sight_min("0.5");
+        recognize_time_sight_max("1.0");
+        crouched_recognition_multiplier("2.0");
+        partial_cover_recognition_multiplier("2.0");
+        remember_actor_time("20.0");
+        recognition_reset_time("15.0");
+        recognition_decay_delay("5.0");
+        recognition_decay_per_sec("0.10");
+    }
+    SensorParamsActors("volatile_hive_high_alert")
+    {
+        recognize_time_sight_min("0.0");
+        recognize_time_sight_max("0.0");
+        crouched_recognition_multiplier("1.0");
+        partial_cover_recognition_multiplier("1.0");
+        remember_actor_time("20.0");
+        recognition_reset_time("15.0");
+        recognition_decay_delay("5.0");
+        recognition_decay_per_sec("0.10");
+    }
+    SensorParamsActors("volatile_summoner_low_alert")
+    {
+        recognize_time_sight_min("0.5");
+        recognize_time_sight_max("1.0");
+        crouched_recognition_multiplier("2.0");
+        partial_cover_recognition_multiplier("2.0");
+        remember_actor_time("15.0");
+        recognition_reset_time("15.0");
+        recognition_decay_delay("5.0");
+        recognition_decay_per_sec("0.10");
+    }
+    SensorParamsActors("volatile_summoner_medium_alert")
+    {
+        recognize_time_sight_min("0.5");
+        recognize_time_sight_max("1.0");
+        crouched_recognition_multiplier("2.0");
+        partial_cover_recognition_multiplier("2.0");
+        remember_actor_time("20.0");
+        recognition_reset_time("15.0");
+        recognition_decay_delay("5.0");
+        recognition_decay_per_sec("0.10");
+    }
+    SensorParamsActors("volatile_summoner_high_alert")
+    {
+        recognize_time_sight_min("0.0");
+        recognize_time_sight_max("0.0");
+        crouched_recognition_multiplier("1.0");
+        partial_cover_recognition_multiplier("1.0");
+        remember_actor_time("20.0");
+        recognition_reset_time("15.0");
+        recognition_decay_delay("5.0");
+        recognition_decay_per_sec("0.10");
+    }
+    SensorParamsActors("volatile_sun_immune")
     {
         recognize_time_sight_min("0.0");
         recognize_time_sight_max("0.0");

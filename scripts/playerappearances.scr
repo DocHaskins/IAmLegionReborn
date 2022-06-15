@@ -127,30 +127,19 @@ sub appearances()
 			Category(0);
             ID(10);
         }		
-		Appearance("Vest01")
+    }
+	Appearance("E3_2019_Elite")
         { 
-            ModelFpp("player_outfit_vest_fpp.model");
-            ModelTpp("player_outfit_vest_tpp.model");
+            ModelFpp("player_outfit_e3_elite_fpp.model");
+            ModelTpp("player_outfit_e3_elite_tpp.model");
             OverridesOutfit(true);
+			HasCustomUnlockRequirements();
             DLC("");
-			Color("White");
-            Image("coll_mural_unique_012_a_jar_icon");
+			Color("Platinum");
+            Image("Outfit_E3_Elite");
 			Category(0);
             ID(11);
         }
-		Appearance("Vest02")
-        { 
-            ModelFpp("player_outfit_vest02_fpp.model");
-            ModelTpp("player_outfit_vest02_tpp.model");
-            OverridesOutfit(true);
-            DLC("");
-			Color("White");
-            Image("coll_mural_unique_009_a_bunny_icon");
-			Category(0);
-            ID(12);
-        }
-    }
-	
 	
 
     DialogOutfitOverride()
@@ -381,6 +370,51 @@ sub appearances()
 			{
 				ReplaceMaterial("player_backpack.mat", "player_backpack_goodnight_b.mat");
 				ReplaceMaterial("player_backpack_add_a.mat", "player_backpack_goodnight_b_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+        }
+		
+		Variant("Parachute_Backpack_Cobra")
+        {
+            Mesh(1, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_cobra_backpack.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "npc_lavan_backpack_a_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+	        Mesh(2, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_cobra_backpack.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "npc_lavan_backpack_a_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+	        Mesh(3, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_cobra_backpack.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "npc_lavan_backpack_a_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+        }
+
+		
+		Variant("Parachute_Backpack_NightCreatures_Bat")
+        {
+            Mesh(1, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_backpack_nightcreatures_c.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "null.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+	        Mesh(2, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_backpack_nightcreatures_c.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "null.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+	        Mesh(3, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_backpack_nightcreatures_c.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "null.mat");
 				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
 			}
         }

@@ -138,6 +138,57 @@ sub Inventory_Special_DL()
         SweepSize(0.81, 0.41, 0);
         GameVersion(1);
     }
+
+    Item("AI_Throwable_Mine", CategoryType_Throwable)
+    {
+        OwnerType(OwnerType_AI);
+        Name("&AI_Throwable_Mine_N&");
+        Description("&AI_Throwable_Mine_D&");
+        ItemType(ItemType_ThrowablePrefab);
+        Visibility(true);
+        MaxStackCount(1);
+        Price(5);
+        HudIcon("jar");
+        Mesh("wpn_mine_a_tpp.msh");
+        Skin("default");
+        PhysicsScript("dropped_inventory.phx");
+        PhysicsSimsetName("mine_explosive");
+        AnimPrefix("Mine");
+        ThrowImpulseLook(7.0);
+        ThrowImpulseUp(0.0);
+        ThrowSpeed(10.0);
+        StatsType(StatsType_None);
+        NoiseType("NONE");
+        Color(Color_White);
+        SpawnPrefabPresetName("Mesh Type;Inventory Mine;Type;Explosive;Sensor Type;Player;Upgrade;LVL8;Auto Explosion;Enabled");
+        ExplodeDelay(2.0);
+        SpawnPrefabName("mine_explosive.prefab");
+        AiHitSound("grenade");
+        MotionTrailFx("throwing_knife_trail.gpufx");
+        ScheduleExplodeAfterContact(true);
+        SpeedTresholdToExplode(0.1);
+        GameVersion(8);
+    }
+
+    Item("AI_Shield", CategoryType_Melee)
+    {
+        OwnerType(OwnerType_AI);
+        Name("&AI_Shield_N&");
+        Description("&AI_Shield_D&");
+        ItemType(ItemType_Shield);
+        Visibility(false);
+        DamageName("BrassKnuckles_Playtest");
+        DamageType(DamageType_Blunt);
+        Price(-1);
+        Mesh("wpn_shield_b_tpp.msh");
+        HudIcon("jar");
+        SoundInjuryDamageType("unarmed");
+        StatsType(StatsType_None);
+        LootType(LootType_None);
+        Color(Color_White);
+        GameVersion(8);
+    }
+
 	Item("AI_Throwable_KnifeBoss", CategoryType_Throwable)
     {
         Name("&AI_Throwable_Knife_N&");
@@ -658,8 +709,7 @@ sub Inventory_Special_DL()
         HitReactionContext(EReactionContext_Melee);
 		HitReactionHitSeverity(EHitSeverity_Light);
 		HitReactionMoveSeverity(EMoveSeverity_Heavy);			
-		HitReactionFlags(EReactionFlag_Interrupt);
-		ConfusionProb(0.5);
+		ConfusionProb(0.0);
 	    FF_EffectName("KickLight");
         GameVersion(1);
     }
@@ -886,7 +936,7 @@ sub Inventory_Special_DL()
         EquipmentSlot(2);
         GameVersion(2);
     }
-		Item("Parachute_Authority", CategoryType_Throwable)
+	Item("Parachute_Authority", CategoryType_Throwable)
     {
         Visibility(true);
         ItemType(ItemType_Special);
@@ -977,6 +1027,52 @@ sub Inventory_Special_DL()
         CraftingSlots(0);
         EquipmentSlot(2);
         GameVersion(7);
+    }
+	Item("Parachute_Cobra", CategoryType_Throwable)
+    {
+        Visibility(true);
+        ItemType(ItemType_Special);
+        PhysicsScript("simple.phx");
+        Condition(25.0);
+		AnimPrefix("Unarmed");
+        InventoryMeshHq("parachute_a.msh");
+        InventoryMesh("parachute_a.msh");
+        Mesh("parachute_a_tpp.msh");
+		Skin("player_cobra");
+        HudIcon("weapon_scanner");
+        HolderElement("r_thigh");
+        HolderOffset([0.0,10.0,10.0]);
+        HolderAngle([0.0,0.0,-90.0]);
+        AiHitSound("weapon_rope_hit_body");
+        use PickupSounds_Default();
+        Reparable(false);
+        Color(Color_White);
+        CraftingSlots(0);
+        EquipmentSlot(2);
+        GameVersion(8);
+    }
+	Item("Parachute_NightCreatures_Bat", CategoryType_Throwable)
+    {
+        Visibility(true);
+        ItemType(ItemType_Special);
+        PhysicsScript("simple.phx");
+        Condition(25.0);
+		AnimPrefix("Unarmed");
+        InventoryMeshHq("parachute_a.msh");
+        InventoryMesh("parachute_a.msh");
+        Mesh("parachute_a_tpp.msh");
+		Skin("player_nightcreatures_bat");
+        HudIcon("weapon_scanner");
+        HolderElement("r_thigh");
+        HolderOffset([0.0,10.0,10.0]);
+        HolderAngle([0.0,0.0,-90.0]);
+        AiHitSound("weapon_rope_hit_body");
+        use PickupSounds_Default();
+        Reparable(false);
+        Color(Color_White);
+        CraftingSlots(0);
+        EquipmentSlot(2);
+        GameVersion(8);
     }
 	// used in freeclimb controlelr / attach tool
 	Item("ClimbPickaxe", CategoryType_Other)

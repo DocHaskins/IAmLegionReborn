@@ -267,4 +267,21 @@ sub main()
 		CanBeBlocked(true);
 	}
 	
+	// GAAS
+	
+	EncounterGroup("GAAS_Special") 
+	{
+		IgnoreGeneralMinDistBtwEncounters(true);
+		MaxNumOfActiveEncounters(1);
+        MaxNumOfActiveEncountersInCoop(1);
+		EncounterMinSearchRadius(35.0);
+		EncounterMaxSearchRadius(80.0);
+		EncounterMaxHeightDifference(80.0);
+		DefaultDifficulty("Easy");
+		MinDistBtwEncounters(20.0);
+		SpawnCooldownTimePendingActive(60.0);
+		SpawnCooldownTime(300.0);
+		CanBeBlocked(false);
+	}
+	
 }

@@ -20,6 +20,31 @@ sub Loot()
 {
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////DLC Opera ////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	LootedObject("DLC_Opera_Bolter_Weapon")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Opera_Bolter_Weapon(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("DLC_Opera_Bolter_Items")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Molotov(weight = 1.0, min_amount = 1, max_amount = 1);
+		use Grenade(weight = 1.0, min_amount = 1, max_amount = 1);
+		use Mine(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("DLC_Opera_Bolter_Medkit")
+    {
+        ColorSet(ColorSet_Equal);
+		LootAmount(1);
+		use Medkit(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////General Pools ////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -949,6 +974,25 @@ sub Loot()
 		//use Cash_High (weight = 1.0, min_amount = 1, max_amount = 1);
 		use Valuable (weight = 1.0, min_amount = 1, max_amount = 1);
 		use VolatileGland (weight = 1.0, min_amount = 1, max_amount = 1);
+		use VolatileSamples (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("DefaultHiveLoot")
+    {
+        ColorSet(ColorSet_Volatile);
+		LootAmount(3);
+		//use Cash_High (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Valuable (weight = 1.0, min_amount = 1, max_amount = 1);
+		use HiveGland (weight = 1.0, min_amount = 1, max_amount = 1);
+		use HiveSamples (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	LootedObject("DefaultTyrantLoot")
+    {
+        ColorSet(ColorSet_Volatile);
+		LootAmount(3);
+		//use Cash_High (weight = 1.0, min_amount = 1, max_amount = 1);
+		use Valuable (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TyrantGland (weight = 1.0, min_amount = 1, max_amount = 1);
+		use TyrantSamples (weight = 1.0, min_amount = 1, max_amount = 1);
     }
 	
 	// Human AI
@@ -1323,7 +1367,6 @@ sub Loot()
     {
         ColorSet(ColorSet_WeaponT3_Endgame_LowChance);
 		LootAmount(1);
-		use Airdrop_Loot (weight = 60.0, min_amount = 1, max_amount = 1);
 		use Weapons_Endgame_Scaling_T3 (weight = 20.0, min_amount = 1, max_amount = 1);
 		use OutfitsOrange_Endgame_Scaling (weight = 20.0, min_amount = 1, max_amount = 1);
     }
@@ -1342,7 +1385,6 @@ sub Loot()
         ColorSet(ColorSet_WeaponT3_Endgame_LowChance);
 		LootAmount(1);
 		use Weapons_Endgame_Scaling_T3 (weight = 1.0, min_amount = 1, max_amount = 1);
-		use OutfitsOrange_Endgame_Scaling (weight = 1.0, min_amount = 1, max_amount = 1);
     }
 	
 	LootedObject("Endgame_Elite")
@@ -1351,7 +1393,7 @@ sub Loot()
 		LootAmount(1);
 		use Weapons_Endgame_Scaling_T2 (weight = 50.0, min_amount = 0, max_amount = 1);
 		use OutfitsBlue_Endgame_Scaling (weight = 30.0, min_amount = 0, max_amount = 1);
-		use OutfitsViolet_Endgame_Scaling (weight = 20.0, min_amount = 0, max_amount = 1);
+		use Weapons_Endgame_Scaling_T3 (weight = 20.0, min_amount = 0, max_amount = 1);
     }
 	
 	LootedObject("Endgame_Enemy")
@@ -1360,7 +1402,7 @@ sub Loot()
 		LootAmount(1);
 		use Weapons_Endgame_Scaling_T2 (weight = 4.0, min_amount = 0, max_amount = 1);
 		use OutfitsBlue_Endgame_Scaling (weight = 3.0, min_amount = 0, max_amount = 1);
-		use OutfitsViolet_Endgame_Scaling (weight = 1.0, min_amount = 0, max_amount = 1);
+		use Weapons_Endgame_Scaling_T3 (weight = 1.0, min_amount = 0, max_amount = 1);
     }
 	
 	LootedObject("Endgame_Platinum")
@@ -3622,6 +3664,13 @@ sub Loot()
 		use Chamomile (weight = 1.0, min_amount = 2, max_amount = 2);
     }
 	
+	LootedObject("Quest_Broadcast_Rowe")
+    {
+        ColorSet(ColorSet_BlueOnly);
+		LootAmount(1);
+		use Quest_Broadcast_Rowe(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
 	LootedObject("Quest_Hakon")
     {
         ColorSet(ColorSet_Equal);
@@ -5186,6 +5235,41 @@ sub Loot()
 		LootAmount(1);
 		use Empty(weight = 1.0, min_amount = 1, max_amount = 1);
 	}
+	
+	LootedObject("Chapter1_1hBladed_Epic")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(1);
+		use Chapter1_1hBladed_T2(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Chapter1_1hBladed_Artifact")
+    {
+        ColorSet(ColorSet_OrangeOnly);
+		LootAmount(1);
+		use Chapter1_1hBladed_T3(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Chapter1_1hBladed_Platinum")
+    {
+        ColorSet(ColorSet_PlatinumOnly);
+		LootAmount(1);
+		use Chapter1_1hBladed_Platinum(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Chapter1_OutfitsViolet_Bruiser")
+    {
+        ColorSet(ColorSet_VioletOnly);
+		LootAmount(1);
+		use OutfitsViolet_Bruiser_Chapter1(weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Chapter1_OutfitsOrange_Bruiser")
+    {
+        ColorSet(ColorSet_OrangeOnly);
+		LootAmount(1);
+		use OutfitsOrange_Bruiser_Chapter1(weight = 1.0, min_amount = 0, max_amount = 1);
+    }
 }
 
 sub default()

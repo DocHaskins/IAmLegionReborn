@@ -27,7 +27,12 @@ sub main()
         DamageDefinition("Banshee_Jump_Off_Biter");
         ReactionPreset("banshee_jump_off_biter@damage_reaction_presets.scr");
     }
-
+    
+    DamagePreset("banshee_smoke_bomb")
+    {   
+        DamageDefinition("Banshee_Smoke_Bomb");
+        Effects("Intoxicated:1.0");
+    }
     DamagePreset("charger_heavy")
     {
         DamageDefinition("Charger_Fists");
@@ -69,7 +74,7 @@ sub main()
 
     DamagePreset("object_hit")
     {
-        ReactionPreset("light_collision@damage_reaction_presets.scr");
+        ReactionPreset("heavy_collision@damage_reaction_presets.scr");
         DamageDefinition("AI_ObjectHit");
     }
 
@@ -98,21 +103,6 @@ sub main()
     {
         ReactionPreset("spear_swipe_heavy@damage_reaction_presets.scr");
     }
-    DamagePreset("waltz_combo")
-    {
-        DamageDefinition("Waltz_Combo_Hit");
-        ReactionPreset("waltz_combo@damage_reaction_presets.scr");
-    }
-    DamagePreset("waltz_light_combo")
-    {
-        DamageDefinition("Waltz_Combo_Hit");
-        ReactionPreset("waltz_light_combo@damage_reaction_presets.scr");
-    }
-    DamagePreset("waltz_ground_pound")
-    {
-        DamageDefinition("Waltz_Heavy_Ground_Pound");
-        ReactionPreset("melee_heavy_hit@damage_reaction_presets.scr");
-    }
     DamagePreset("waltz_light_combo")
     {
         DamageDefinition("Waltz_Light_Hit");
@@ -132,5 +122,25 @@ sub main()
     {
         DamageDefinition("Waltz_Heavy_Ground_Pound");
         ReactionPreset("melee_heavy_hit@damage_reaction_presets.scr");
-    }  
+    }
+    DamagePreset("spear_power_combo_bleeding")
+    {
+        DamageDefinition("Spear_Power_Combo");
+        ReactionPreset("spear_power_combo@damage_reaction_presets.scr");
+        Effects("Bleeding:5.0");
+    }
+    DamagePreset("spear_quick_combo_bleeding")
+    {
+        DamageDefinition("Spear_Quick_Combo");
+        ReactionPreset("spear_quick_combo@damage_reaction_presets.scr");
+        Effects("Bleeding:2.0");
+    }
+    DamagePreset("volatile_combo")
+    {
+        ReactionPreset("volatile_combo@damage_reaction_presets.scr");
+    }
+    DamagePreset("volatile_break_attack")
+    {
+        ReactionPreset("volatile_break_attack@damage_reaction_presets.scr");
+    }
 }

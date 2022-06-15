@@ -5,7 +5,7 @@
 //    Layer(layer) - sets display list layer (higher values are on top)
 //    Symbol("symbol_name") - spawns given symbol on given display list
 //    AlwaysVisible() - display list will not be hidden when hud should be hidden
-//    Parallel(bool) - if true then the screen DisplaList::Update will be run in prarllalel to other screens, use with caution!
+//    Parallel(bool) - if true then the screen DisplayList::Update will be run in prarllalel to other screens, use with caution!
 // }
 // Group("group_name") - creates hud group. Group can be enabled/disabled from code or from action graph. All huds belonging to the group will become enabled/disabled.
 // {  
@@ -135,7 +135,7 @@ sub main()
 		AlwaysVisible();
 		Symbol("hud_tcr_screen");
 	}
-    
+	
     ////////////// hud groups /////////////
 	
 	/// group is disabled when dialog shows up
@@ -144,6 +144,7 @@ sub main()
 		Element("dialog_widget");
         Element("hud_objectives");
         Element("big_messages_widget");
+		Element("hud_voicechat_info_symbol");
         //Element("crosshair");
 	}
 	
@@ -179,7 +180,7 @@ sub main()
     /// Survivor sense group
 	Group("HudSurvivorSense")
 	{
-		Element("radar");
+	///	Element("radar");
 	}
 	
 	/// Used in Getting Stronger quest to hide compass
@@ -211,6 +212,11 @@ sub main()
 		Element("inhibitor_symbol");
     }
     
+    InvertedGroup("PhotoModeGroup")
+    {
+        Element("photo_mode_widget");
+    }
+    
     InvertedGroup("DeathScreen") //element to be visible on death screen
     {
     }
@@ -236,6 +242,11 @@ sub main()
     {
         Element("hud_timer_widget");
     }
+	
+	Group("XpWidget")
+	{
+		Element("xp_indicator");
+	}
     
     Group("HideOnFury")
     {
@@ -267,6 +278,7 @@ sub main()
     {
         Element("crosshair");
         Element("gameplay_hint_widget");
+        Element("keyfinder");
     }
 
     Group("ChallengeGroup")

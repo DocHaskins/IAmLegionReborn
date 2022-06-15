@@ -5,7 +5,9 @@
         <ExternalTree m_UID="VOLATILE_INIT" m_CustomName="Params_Init" m_Hide="true"/>
         <ExternalTree m_UID="AI_COMMON_INIT" m_CustomName="Params" m_Hide="true"/>
         <Selector>
-            <ExternalTree m_UID="VOLATILE_DEATH_UV" m_CustomName="Death_UV" m_Hide="true"/>
+            <Optional m_Enabled="$uv_death_enabled">
+                <ExternalTree m_UID="VOLATILE_DEATH_UV" m_CustomName="Death_UV" m_Hide="true"/>
+            </Optional>
             <ExternalTree m_UID="AI_DEATH" m_CustomName="Death" m_Hide="true"/>
             <ParallelRepeat m_PolicySuccess="REQUIRE_NONE" m_PolicyFailure="REQUIRE_NONE">
                 <Sequence>

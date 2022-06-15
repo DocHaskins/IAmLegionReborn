@@ -38,6 +38,7 @@ sub metadata()
     Flag("biter_hole");
     Flag("biter_hole_roof");
     Flag("dz_hole");
+    Flag("arena");
     Flag("bandit_init");
     Flag("screamer_dz_activation");
     Flag("explosion_spawner_activation");
@@ -644,6 +645,7 @@ sub presets()
         duration(5.0);
 
         interest_default(0.99, "attract");
+        spawner_activation_flag("arena");
 
         awakening_default(1.0);
 		spawner_activation_flag("summon_infected_reinforcements");
@@ -1081,5 +1083,16 @@ sub presets()
         interest_default(1.0, "attract");
 
         awakening_default(1.00);
+    NoisePreset("volatile_summoning_taunt")
+    {
+        range(25.0);
+        range_effective(25.0);
+        duration(5.5);
+        interest_default(1.0, "attract");
+        interest("human", 1.0, "repel");
+        spawner_activation_flag("dz_hole");
+        spawner_activation_flag("biter_hole");
+        spawner_activation_flag("screamer_dz_activation");
+        awakening_default(1.0);
     }
 }

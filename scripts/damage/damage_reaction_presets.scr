@@ -17,7 +17,7 @@ sub main()
         context(EReactionContext_Collision);
         hit_severity(EHitSeverity_Heavy);
         move_severity(EHitSeverity_Heavy);
-        flags(EReactionFlag_Ragdoll);
+        flags(EReactionFlag_Interrupt);
     }
 
     SReactionData("wall_collision")
@@ -90,6 +90,7 @@ sub main()
         hit_severity(EHitSeverity_Light);
         move_severity(EMoveSeverity_Medium);
         flags(EReactionFlag_Ragdoll);
+        flags(EReactionFlag_Interrupt);
     }
 
     SReactionData("fall_ragdoll")
@@ -99,11 +100,13 @@ sub main()
         hit_severity(EHitSeverity_Light);
         move_severity(EMoveSeverity_Medium);
         flags(EReactionFlag_Ragdoll);
+        flags(EReactionFlag_Interrupt);
     }
 
     SReactionData("just_ragdoll")
     {
         flags(EReactionFlag_Ragdoll);
+        flags(EReactionFlag_Interrupt);
     }
 
     SReactionData("portable_tank_explosive_default")
@@ -166,7 +169,7 @@ sub main()
         context(EReactionContext_Throwable);
         hit_severity(EHitSeverity_Light);
         move_severity(EMoveSeverity_Light);
-        flags(EReactionFlag_Ragdoll);
+        flags(EReactionFlag_Knockdown);
     }
     
     SReactionData("environmental_small_cut")
@@ -218,5 +221,42 @@ sub main()
         move_severity(EHitSeverity_Light);
         flags(EReactionFlag_Interrupt);
     }
-
+    SReactionData("spear_power_combo")
+    {
+        type(EReactionType_Stab);
+        context(EReactionContext_MeleeWeapon);
+        hit_severity(EHitSeverity_Medium);
+        move_severity(EMoveSeverity_Medium);
+    }
+    SReactionData("spear_quick_combo")
+    {
+        type(EReactionType_Stab);
+        context(EReactionContext_MeleeWeapon);
+        hit_severity(EHitSeverity_Light);
+        move_severity(EMoveSeverity_Light);
+    }
+	
+    SReactionData("Spikes_20Percent_Reaction")
+    {
+        type(EReactionType_Cut);
+		context(EReactionContext_Environment);
+        hit_severity(EHitSeverity_Light);
+        move_severity(EMoveSeverity_Light);        
+    }	
+    SReactionData("volatile_combo")
+    {
+        type(EReactionType_Cut);
+        context(EReactionContext_Melee);
+        hit_severity(EHitSeverity_Light);
+        move_severity(EHitSeverity_Light);
+        flags(EReactionFlag_Interrupt);
+    }
+    SReactionData("volatile_break_attack")
+    {
+        type(EReactionType_Blunt);
+        context(EReactionContext_Melee);
+        hit_severity(EHitSeverity_Heavy);
+        move_severity(EHitSeverity_Heavy);
+        flags(EReactionFlag_Interrupt);
+    }
 }

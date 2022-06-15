@@ -1190,6 +1190,14 @@ export int Other = 9;
         }
     }
 	
+	sub ViralSamples(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Valuables, weight, min_amount, max_amount, prob)
+        {
+            ItemCount("Token_MutationSamples", 1, 5, 1.0);
+        }
+    }
+	
 	sub SpitterGland(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
     {
         Set(Other, weight, min_amount, max_amount, prob)
@@ -1197,6 +1205,14 @@ export int Other = 9;
 			ItemCount("KeyCraft_SpecialInfected_Token_T1", 1, 1, 2.0);
 			ItemCount("KeyCraft_SpecialInfected_Token_T2", 1, 1, 7.0);
 			ItemCount("KeyCraft_SpecialInfected_Token_T3", 1, 1, 1.0);
+        }
+    }
+	
+	sub SpitterSamples(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Valuables, weight, min_amount, max_amount, prob)
+        {
+            ItemCount("Token_MutationSamples", 40, 60, 1.0);
         }
     }
 	
@@ -1210,11 +1226,27 @@ export int Other = 9;
         }
     }
 	
+	sub ScreamerSamples(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Valuables, weight, min_amount, max_amount, prob)
+        {
+            ItemCount("Token_MutationSamples", 2, 8, 1.0);
+        }
+    }
+	
 	sub CorruptorGland(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
     {
         Set(Other, weight, min_amount, max_amount, prob)
         {
 			ItemCount("KeyCraft_SpecialInfected_Token_T3", 1, 1, 1.0);
+        }
+    }
+	
+	sub CorruptorSamples(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Valuables, weight, min_amount, max_amount, prob)
+        {
+            ItemCount("Token_MutationSamples", 100, 100, 1.0);
         }
     }
 	
@@ -1264,6 +1296,14 @@ export int Other = 9;
         }
     }
 	
+	sub BolterSamples(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Valuables, weight, min_amount, max_amount, prob)
+        {
+            ItemCount("Token_MutationSamples", 50, 70, 1.0);
+        }
+    }
+	
 	sub GoonGland(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
     {
         Set(Other, weight, min_amount, max_amount, prob)
@@ -1271,6 +1311,14 @@ export int Other = 9;
 			ItemCount("KeyCraft_SpecialInfected_Token_T1", 1, 1, 1.0);
 			ItemCount("KeyCraft_SpecialInfected_Token_T2", 1, 1, 7.0);
 			ItemCount("KeyCraft_SpecialInfected_Token_T3", 1, 1, 2.0);
+        }
+    }
+	
+	sub GoonSamples(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Valuables, weight, min_amount, max_amount, prob)
+        {
+            ItemCount("Token_MutationSamples", 80, 120, 1.0);
         }
     }
 	
@@ -1284,6 +1332,14 @@ export int Other = 9;
         }
     }
 	
+	sub ChargerSamples(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Valuables, weight, min_amount, max_amount, prob)
+        {
+            ItemCount("Token_MutationSamples", 70, 90, 1.0);
+        }
+    }
+	
 	sub DemolisherGland(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
     {
         Set(Other, weight, min_amount, max_amount, prob)
@@ -1291,6 +1347,14 @@ export int Other = 9;
 			ItemCount("KeyCraft_SpecialInfected_Token_T1", 1, 1, 1.0);
 			ItemCount("KeyCraft_SpecialInfected_Token_T2", 1, 1, 2.0);
 			ItemCount("KeyCraft_SpecialInfected_Token_T3", 1, 1, 7.0);
+        }
+    }
+	
+	sub DemolisherSamples(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Valuables, weight, min_amount, max_amount, prob)
+        {
+            ItemCount("Token_MutationSamples", 120, 200, 1.0);
         }
     }
 	
@@ -1304,6 +1368,14 @@ export int Other = 9;
         }
     }
 	
+	sub ObstructorSamples(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Valuables, weight, min_amount, max_amount, prob)
+        {
+            ItemCount("Token_MutationSamples", 100, 200, 1.0);
+        }
+    }
+	
 	sub VolatileGland(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
     {
         Set(Other, weight, min_amount, max_amount, prob)
@@ -1311,6 +1383,46 @@ export int Other = 9;
 			//ItemCount("KeyCraft_SpecialInfected_Token_T1", 1, 1, 1.0);
 			ItemCount("KeyCraft_SpecialInfected_Token_T2", 1, 1, 3.0);
 			ItemCount("KeyCraft_SpecialInfected_Token_T3", 1, 1, 7.0);
+        }
+    }
+	
+	sub VolatileSamples(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Valuables, weight, min_amount, max_amount, prob)
+        {
+            ItemCount("Token_MutationSamples", 120, 150, 1.0);
+        }
+    }
+	
+	sub HiveGland(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Other, weight, min_amount, max_amount, prob)
+        {
+			ItemCount("KeyCraft_SpecialInfected_Token_T2", 2, 3, 1.0);
+        }
+    }
+	
+	sub HiveSamples(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Valuables, weight, min_amount, max_amount, prob)
+        {
+            ItemCount("Token_MutationSamples", 400, 500, 1.0);
+        }
+    }
+	
+	sub TyrantGland(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Other, weight, min_amount, max_amount, prob)
+        {
+			ItemCount("KeyCraft_SpecialInfected_Token_T3", 1, 2, 1.0);
+        }
+    }
+	
+	sub TyrantSamples(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Valuables, weight, min_amount, max_amount, prob)
+        {
+            ItemCount("Token_MutationSamples", 500, 600, 1.0);
         }
     }
 	
@@ -1322,11 +1434,27 @@ export int Other = 9;
         }
     }
 	
+	sub Normal_ElementalGoonSamples(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Valuables, weight, min_amount, max_amount, prob)
+        {
+            ItemCount("Token_MutationSamples", 80, 20, 1.0);
+        }
+    }
+	
 	sub Elite_ElementalGoonGland(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
     {
         Set(Other, weight, min_amount, max_amount, prob)
         {
 			ItemCount("KeyCraft_SpecialInfected_Token_T3", 3, 3, 1.0);
+        }
+    }
+	
+	sub Elite_ElementalGoonSamples(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Valuables, weight, min_amount, max_amount, prob)
+        {
+            ItemCount("Token_MutationSamples", 100, 160, 1.0);
         }
     }
 	

@@ -9,65 +9,56 @@
                 <ExternalTree m_UID="VOLATILE_DEATH_UV" m_CustomName="Death_UV" m_Hide="true"/>
             </Optional>
             <ExternalTree m_UID="AI_DEATH" m_CustomName="Death" m_Hide="true"/>
-            <ParallelRepeat m_PolicySuccess="REQUIRE_NONE" m_PolicyFailure="REQUIRE_NONE">
-                <Sequence>
-                    <!-- Gather data from senses -->
-                    <ExternalTree m_UID="AI_UPDATE_ENEMY_PROTO" m_CustomName="Find_Enemy" m_Hide="true"/>
-                    <!-- Update state -->
-                    <ExternalTree m_UID="VOLATILE_COMMON_UPDATE" m_CustomName="Update" m_Hide="true"/>
-                    <!-- Select behavior -->
-                    <UseCombatSlots m_Target="#target">
-                        <RepeatOnceOnSuccess>
-                            <Selector>
-                                <ExternalTree m_UID="VOLATILE_REACTION" m_CustomName="Reactions" m_Hide="true"/>
-                                <ExternalTree m_UID="VOLATILE_ESCAPE_FROM_SUNLIGHT" m_CustomName="Sunlight_Escape" m_Hide="true"/>
-                                <ExternalTree m_UID="VOLATILE_PROLONGED_UV_BEHAVIOR" m_CustomName="UV" m_Hide="true"/>
-                                <ExternalTree m_UID="VIRAL_RETREAT" m_CustomName="Retreat" m_Hide="true"/>
-                                <ExternalTree m_UID="VIRAL_GO_TO_FORCED" m_CustomName="GoToForced" m_Hide="true"/>
-                                <ExternalTree m_UID="VOLATILE_COMBAT" m_CustomName="Combat" m_Hide="true"/>
-                                <ExternalTree m_UID="BP_SIMULATE" m_CustomName="BP_Simulate" m_Hide="true"/>
-                                <ExternalTree m_UID="VOLATILE_INVESTIGATE_POI" m_CustomName="Investigate" m_Hide="true"/>
-                                <ExternalTree m_UID="VIRAL_GO_TO_LAST_POS" m_CustomName="LastPos" m_Hide="true"/>
-                                <ExternalTree m_UID="VIRAL_CHASE" m_CustomName="Chase" m_Hide="true"/>
-                                <ExternalTree m_UID="VIRAL_SEARCH" m_CustomName="Search" m_Hide="true"/>
-								<SequenceMem>
-									<Cnd_TargetInAngle m_Target="#target" m_Angle="45" m_Invert="true"/>
-									<Cnd_IsCombatTargetInRadius m_Radius="4"/>
-									<Cnd_IsCombatTargetInLOS/>
-									<Opr_SetDirCorrectionSpeed m_MaxSpeed="120"/>
-									<Act_TurnToPos m_Type="Combat" m_Position="#target_pos" m_StartPolicy="INTERRUPT" m_AbandonPolicy="INTERRUPT" m_DecisionPolicy="WHEN_POSSIBLE"/>
-								</SequenceMem>
-								<Sequence>
-									<Cnd_TargetInRadius m_Target="#target" m_Radius="2" m_Invert="true"/>
-									<Opr_GetEntityFromAIObservable m_AIObservable="#target" m_Entity="#target_entity"/>
-									<Act_MoveFollow m_MoveStyle="Run" m_TargetEntity="#target_entity" m_StopAtDest="false" m_StartPolicy="INTERRUPT" m_AbandonPolicy="BLENDOUT"/>
-								</Sequence>
-								<TimeDeltaLimitRandom m_TimeMin="3" m_TimeMax="7" m_StatusReturned="SUCCESS">
-								<Sequence>
-									<Cnd_IsNight/>
-									<ExternalTree m_UID="VOLATILE_IDLE_RANDOM_WALK" m_CustomName="Idle_Random_Walk"/>
-								</Sequence>
-								</TimeDeltaLimitRandom>
-                                <ExternalTree m_UID="AI_REQUESTS" m_CustomName="Scripted" m_Hide="true"/>
-                                <Act_Status m_StatusRequired="RUNNING"/>
-                            </Selector>
-                        </RepeatOnceOnSuccess>
-                    </UseCombatSlots>
-                </Sequence>
-                <ExposeTarget m_Target="#target">
-                    <Act_Status m_StatusRequired="RUNNING"/>
-                </ExposeTarget>
-                <ExternalTree m_UID="AI_TRACK" m_CustomName="TrackEnemy" m_Hide="true"/>
-                <Sequence>
-                    <Cnd_IsInSunlight/>
-                    <ExternalTree m_UID="VOLATILE_ESCAPE_FROM_SUNLIGHT" m_CustomName="Sunlight_Escape" m_Hide="true"/>
-                </Sequence>
-				<Sequence>
-                    <Cnd_IsInUVLight/>
-                    <Act_Status m_StatusRequired="RUNNING"/>
-                </Sequence>
-                <ExternalTree m_UID="VOLATILE_REACTION_LIGHT_HIT" m_CustomName="LayeredHit" m_Hide="true"/>
-            </ParallelRepeat>
+            <ExposeLogicState m_ExposedState="CANT_BE_ROPE_PULLED">
+                <ParallelRepeat m_PolicySuccess="REQUIRE_NONE" m_PolicyFailure="REQUIRE_NONE">
+                    <Sequence>
+                        <!-- Gather data from senses -->
+                        <ExternalTree m_UID="AI_UPDATE_ENEMY_PROTO" m_CustomName="Find_Enemy" m_Hide="true"/>
+                        <!-- Update state -->
+                        <ExternalTree m_UID="VOLATILE_COMMON_UPDATE" m_CustomName="Update" m_Hide="true"/>
+                        <!-- Select behavior -->
+                        <UseCombatSlots m_Target="#target">
+                            <RepeatOnceOnSuccess>
+                                <Selector>
+                                    <ExternalTree m_UID="VOLATILE_REACTION" m_CustomName="Reactions" m_Hide="true"/>
+                                    <ExternalTree m_UID="VOLATILE_ESCAPE_FROM_SUNLIGHT" m_CustomName="Sunlight_Escape" m_Hide="true"/>
+                                    <ExternalTree m_UID="VOLATILE_PROLONGED_UV_BEHAVIOR" m_CustomName="UV" m_Hide="true"/>
+                                    <ExternalTree m_UID="VIRAL_RETREAT" m_CustomName="Retreat" m_Hide="true"/>
+                                    <ExternalTree m_UID="VIRAL_GO_TO_FORCED" m_CustomName="GoToForced" m_Hide="true"/>
+                                    <Optional m_Enabled="$summoning_taunt_enabled">
+                                        <CooldownUntil m_CooldownTime="$summoning_taunt_cooldown" m_TimePoint="#summoning_taunt_cooldown">
+                                            <ExternalTree m_UID="VOLATILE_SUMMONING_TAUNT" m_CustomName="Summon" m_Hide="true"/>
+                                        </CooldownUntil>
+                                    </Optional>
+                                    <ExternalTree m_UID="VOLATILE_COMBAT" m_CustomName="Combat" m_Hide="true"/>
+                                    <ExternalTree m_UID="BP_SIMULATE" m_CustomName="BP_Simulate" m_Hide="true"/>
+                                    <ExternalTree m_UID="VOLATILE_INVESTIGATE_POI" m_CustomName="Investigate" m_Hide="true"/>
+                                    <ExternalTree m_UID="VIRAL_GO_TO_LAST_POS" m_CustomName="LastPos" m_Hide="true"/>
+                                    <ExternalTree m_UID="VIRAL_CHASE" m_CustomName="Chase" m_Hide="true"/>
+                                    <ExternalTree m_UID="VIRAL_SEARCH" m_CustomName="Search" m_Hide="true"/>
+									<TimeDeltaLimitRandom m_TimeMin="3" m_TimeMax="7" m_StatusReturned="SUCCESS">
+										<Sequence>
+											<Cnd_IsNight/>
+											<ExternalTree m_UID="VOLATILE_IDLE_RANDOM_WALK" m_CustomName="Idle_Random_Walk"/>
+										</Sequence>
+									</TimeDeltaLimitRandom>
+                                    <ExternalTree m_UID="AI_REQUESTS" m_CustomName="Scripted" m_Hide="true"/>
+                                    <Act_Status m_StatusRequired="RUNNING"/>
+                                </Selector>
+                            </RepeatOnceOnSuccess>
+                        </UseCombatSlots>
+                    </Sequence>
+                    <ExposeTarget m_Target="#target">
+                        <Act_Status m_StatusRequired="RUNNING"/>
+                    </ExposeTarget>
+                    <ExternalTree m_UID="AI_TRACK" m_CustomName="TrackEnemy" m_Hide="true"/>
+                    <Sequence>
+                        <Cnd_IsInUVLight/>
+                        <Act_Status m_StatusRequired="RUNNING"/>
+                    </Sequence>
+                    <ExternalTree m_UID="VOLATILE_REACTION_LIGHT_HIT" m_CustomName="LayeredHit" m_Hide="true"/>
+                </ParallelRepeat>
+            </ExposeLogicState>
         </Selector>
     </SequenceMem>
 </BehaviorTree>

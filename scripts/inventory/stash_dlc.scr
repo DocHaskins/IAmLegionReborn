@@ -1,0 +1,244 @@
+//DLC_Set("DLC1", 120) - dlc_id ,  cooldown_time
+//Item(0, "Throwable_ThrowingKnifeAGen") - tier ,  item_name
+
+sub main()
+{	
+	DLC_Set("DLC1")
+    {
+        Item(1, "Potion_NightXPBoost");
+        ID(0);
+    }
+
+	DLC_Set("DLC1")
+    {
+        Item(1, "Bundle_Scraps20");
+        ID(1);
+    }
+
+    DLC_Set_With_Cooldown("DLC2", 5400.0)
+    {
+        Item(1, "wpn_1hs_axe_c_reload");
+        ID(2);
+    }
+
+    DLC_Set_With_Cooldown("DLC2", 5400.0)
+    {
+        Item(1, "wpn_1hs_mach_j_reload");
+        ID(3);
+    }
+
+    DLC_Set_With_Cooldown("DLC3", 5400.0)
+    {
+        Item(1, "wpn_1hs_axe_k_legendarynightrunner");
+        ID(4);
+    }
+
+    DLC_Set_With_Cooldown("DLC3", 5400.0)
+    {
+        Item(1, "wpn_1hs_mach_b_legendarynightrunner");
+        ID(5);
+    }
+
+    DLC_Set("DLC1")
+    {
+        Item(1, "DLC_Bundle_CraftParts");
+        ID(6);
+    }
+    
+    DLC_Set("DLC3")
+    {
+        Item(1, "Craftplan_charm_flare");
+        ID(7);
+    }    
+    
+    DLC_Set("DLC3")
+    {
+        Item(1, "Craftplan_charm_best_mom_bucket");
+        ID(8);
+    } 
+	
+
+    Docket_Set_With_Cooldown("Weapon01", 18000.0)
+    {
+        Item(1, "wpn_1hs_mach_c_hussar");
+        ID(9);
+    }
+    Docket_Set_With_Cooldown("Weapon02", 18000.0)
+    {
+        Item(1, "wpn_1hs_axe_t_fpp_extinguisher");
+        ID(10);
+    }
+    Docket_Set_With_Cooldown("Weapon03", 18000.0)
+    {
+        Item(1, "wpn_1hs_mach_w_fpp_timeout");
+        ID(11);
+    }
+    Docket_Set_With_Cooldown("Weapon04", 18000.0)
+    {
+        Item(1, "wpn_2hs_c_fpp_starving_infected");
+        ID(12);
+    }
+    Docket_Set_With_Cooldown("Weapon05", 18000.0)
+    {
+        Item(1, "wpn_1hs_axe_u_fpp_scrapslicer");
+        ID(13);
+    }
+    Docket_Set_With_Cooldown("Weapon06", 18000.0)
+    {
+        Item(1, "wpn_lbow_a_fpp_funkadelic");
+        ID(14);
+    }
+    Docket_Set_With_Cooldown("Weapon07", 18000.0)
+    {
+        Item(1, "wpn_15hb_k_fpp_mechaslugger");
+        ID(15);
+    }
+    Docket_Set_With_Cooldown("Weapon08", 18000.0)
+    {
+        Item(1, "wpn_1hs_axe_r_fpp_tactical_cleaver");
+        ID(16);
+    }
+    Docket_Set_With_Cooldown("Weapon09", 18000.0)
+    {
+        Item(1, "wpn_1hs_knuckle_duster_d_fpp_doubledaggers");
+        ID(17);
+    }
+	
+    DLC_Set("DLC6")
+    {
+        Item(1, "Outfitset_Tank_Torso_Authority");
+        ID(18);
+    }
+	DLC_Set("DLC6")
+    {
+        Item(1, "Outfitset_Tank_Legs_Authority");
+        ID(19);
+    }
+	DLC_Set("DLC6")
+    {
+        Item(1, "Outfitset_Tank_Shoes_Authority");
+        ID(20);
+    }
+	DLC_Set("DLC7")
+    {
+        Item(1, "Outfitset_Tank_Head_Authority");
+        ID(21);
+    }
+	DLC_Set("DLC7")
+    {
+        Item(1, "Outfitset_Tank_Gloves_Authority");
+        ID(22);
+    }
+	DLC_Set("DLC7")
+    {
+        Item(1, "Outfitset_Tank_TorsoAddon_Authority");
+        ID(23);
+    }
+    DLC_Set_With_Cooldown("DLC8", 18000.0)
+    {
+        Item(1, "wpn_2hb_j_fpp_authority");
+        ID(24);
+    }
+	
+	DLC_Set("DLC9")
+    {
+        Item(1, "Outfitset_RangedDPS_Torso_SamuraiSurvivor");
+        ID(25);
+    }
+	DLC_Set("DLC9")
+    {
+        Item(1, "Outfitset_RangedDPS_Legs_SamuraiSurvivor");
+        ID(26);
+    }
+	DLC_Set("DLC9")
+    {
+        Item(1, "Outfitset_RangedDPS_Shoes_SamuraiSurvivor");
+        ID(27);
+    }
+	DLC_Set("DLC10")
+    {
+        Item(1, "Outfitset_RangedDPS_Head_SamuraiSurvivor");
+        ID(28);
+    }
+	DLC_Set("DLC10")
+    {
+        Item(1, "Outfitset_RangedDPS_Gloves_SamuraiSurvivor");
+        ID(29);
+    }
+	DLC_Set("DLC10")
+    {
+        Item(1, "Outfitset_RangedDPS_TorsoAddon_SamuraiSurvivor");
+        ID(30);
+    }
+    DLC_Set_With_Cooldown("DLC11", 18000.0)
+    {
+        Item(1, "wpn_15hs_m_fpp_wisekatana");
+        ID(31);
+    }
+    Collectable_Set_With_Cooldown("Craftplan_PKCrossbow", 1.0)
+    {
+        Item(1, "wpn_2hr_crossbow_b_fpp");
+        BlockedByItem("wpn_2hr_crossbow_b_fpp");
+        ID(32);
+    }
+	Collectable_Set_With_Cooldown("Craftplan_ITEM_goon_event", 36000.0)
+    {
+        Item(1, "wpn_2hb_d_goon_event");
+        ID(33);
+    }
+	DLC_Set_With_Cooldown("", 1.0)
+    {
+        Item(1, "Outfitset_MeleeDPS_Head_IAL");
+        ID(34);
+    }
+	DLC_Set_With_Cooldown("", 1.0)
+    {
+        Item(1, "wpn_1hs_mach_dl1_a_fpp_r0");
+        ID(35);
+    }
+	DLC_Set_With_Cooldown("", 1.0)
+    {
+        Item(1, "Outfitset_IAL_Torso_Hazard");
+        ID(36);
+    }
+	DLC_Set_With_Cooldown("", 1.0)
+    {
+        Item(1, "Outfitset_IAL_Hazard_Head");
+        ID(37);
+    }
+	DLC_Set_With_Cooldown("", 1.0)
+    {
+        Item(1, "Outfitset_IAL_Hazard_Head02");
+        ID(38);
+    }
+	DLC_Set_With_Cooldown("", 1.0)
+    {
+        Item(1, "Outfitset_IAL_Hazard_Head03");
+        ID(39);
+    }
+	DLC_Set_With_Cooldown("", 1.0)
+    {
+        Item(1, "Outfitset_IAL_Hazard_Gloves");
+        ID(40);
+    }
+	DLC_Set_With_Cooldown("", 1.0)
+    {
+        Item(1, "Outfitset_IAL_Hazard_Pants");
+        ID(41);
+    }
+	DLC_Set_With_Cooldown("", 1.0)
+    {
+        Item(1, "Outfitset_IAL_Hazard_Shoes");
+        ID(42);
+    }
+	DLC_Set_With_Cooldown("", 1.0)
+    {
+        Item(1, "Outfitset_IAL_Hazard_Bracers");
+        ID(43);
+    }
+	DLC_Set_With_Cooldown("", 1.0)
+    {
+        Item(1, "Outfitset_IAL_Torso_Militia");
+        ID(44);
+    }
+}

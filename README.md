@@ -1,6 +1,158 @@
 # IAmLegionReborn
 For Dying Light 2
 
+I Am Legion - Reborn 1.0
+- Redesigned Nexus page coming soon!
+- Improved Human AI climbing and fighting
+- Fixed weapon glitching with Human AI
+- Fix for missing weapons on Human AI
+- Better balanced Bowmen and Melee fighters
+- New zombie visuals including custom Virals, Armored, Renegade Zombies
+- New PK visuals, better loadout and armor
+- Fix for Banshee logic, no more infinite running
+- Added some hidden content for the encounters and events, helps set a much darker tone
+- Screamers now more likely to follow and chase player after a chase has started
+- Improved Volatile logic, should no longer hang out in the sunlight- Improved biters for Ultimate, fix for the taunt loop where the zombies keep stopping and screaming, improved detection and world exploration
+- Improved detection for screamers, the target is now at the players location, not the vanilla screamers feet (fixes so much for intensity)
+- Mini-chase system added back to the volatiles, if a volatile spots you in Survivor and Ultimate versions they have a chance to call for more volatiles (RUN).
+- Fix for Spitters not being able to target the player
+- Fix for Banshees getting stuck in patrol, not attacking humans and player
+- Fix for "Blue" viral glitch
+- Fix for volatiles more likely to investigate firecrackers, players reported them always detecting the player, this is due to a higher alert from the noise of the firecracker and they will spot you if you are within their FOV.
+- Fix for Remnant waves including a spawning volatile
+- Removal of custom GUI color
+- Added back the ability to toggle enemy health bars
+
+HOTFIXES (1.0d)
+- Updated to work with 1.4.0c
+- Found various issues while updating so the AI should now have more fixes, including physics glitching, spawn issues, and more.
+- Decreased the amount of health for volatiles after lvl 6, this will present a challenge at higher levels but not be impossible to kill.
+- Rebalanced the screamers and volatiles for the 3 difficulties.
+- Fixes for Syntax errors with collectables
+- Fixes for missing loot from update
+- Updated the Hive spawns modified back in Feb, 2022 to better reflect the current status of the game. This will probably need more balancing.
+- Fix for Humans reacting to kicks, vaults, grapple
+- Fix for dodge on humans happening too often
+- Fix for volatile logic and attack patterns
+- Fix for values error happening due to changed value types, causing the configuration to feed in the wrong type of values. Removed the values for now, configuration update is coming soon.
+
+__**- Casual Survivor:**__
+- Removed minichases for Casual version
+
+__**- Survivor:**__
+- Removed additional GUI elements to support more immersive gameplay
+
+__**- Ultimate Survivor:**__
+- Removed even more additional GUI elements to support more immersive gameplay
+- Better balancing for zombies, improved detection and chasing
+
+
+
+Updates to I Am Legion - Reborn 0.99pre Update 16a
+- Updated to work with 1.3.0
+- Added NG+ logic to the mod!
+- Improved interior night time spawns, early areas will spawn survivors and bandits, high level can spawn all human groups.
+- Fix for Climbing zombies in Casual
+- Fix for Volatile fall damage
+- This also includes better weapon physics reactions with blunt weapons mainly
+ The 3 difficulties have been added! This is for feedback and early phase for the overhaul to the config and difficulties for 1.0.
+
+__**- Casual Survivor:**__
+- All the AI enhancements without as much intensity, Less Volatiles, Screamers, and Banshees.
+- Less density throughout the world.
+__**- Survivor:**__
+- This is largely where the previous "Casual survivor" was in difficulty, the cities are intense and the spawns are higher than Casual. This version is for Lore players with the added intensity and realism.
+__**- Ultimate Survivor:**__
+- This version contains the running biters, more spawns, and more intensity!
+
+- Volatiles now creep through the city looking for the player and other humans
+    - This is sight based and should allow stealth to work again for Volatiles
+- Screamers now crawl through the city seeking out the player as well, they can climb low objects and mid level city objects.
+- Banshees now patrol the city and are frantically searching for targets
+- Improved loot systems with better loot based on location.
+- Improved Bowmen to help prevent falling down when climbing and attacking (Still falling but working on it).
+- Added additional bug fixes for AI detection and UV reactions
+
+Updates to I Am Legion - Reborn 0.99pre Update 1 - 15
+
+    Fix for stamina- Fix for all runners
+    Fix for Banshee glitch
+    Fix for Biter glitch
+    Fixed the spawn code! Actually found why people are sometimes seeing different special zombies scattered throughout the city and now howlers should be fixed for all areas.
+    !!Removed!! the glitched howler? Please let me know if this killed him dead.
+    Added back demolishers to night spawn exterior lists
+    Added a Romero edition of the mod which features "Walking Dead"styled zombies that slowly shuffle around the map towards you and then attack when close enough to strike.
+    Fixed Goons running around the map randomly
+    Fixed Banshee's running away, disabled hunting mod for now to continue to develop code.Update 4:- Weather system
+    New weather events unique to IAL
+    Dynamic lighting and sun rays
+    Darker nights and interiors
+    Reduced saturation of color in the world without effecting GUIs
+    Improved bowmen
+    Removed Spitter footprints
+    Fixes for Volatile code to improve stalking and hunting at night
+    Fixes for a glitch with the Banshee
+    Fixes for zombies not spawning with explosions
+    Fixes for special zombies not spawning with Chase start
+    Added bowmen dodge, step back, fire while moving
+    Continued work on weather system to decrease fog brightness at night.
+    Fix for crash, audio glitching
+    Fix for spawn pools in metro and a few other locations
+    Improved AI Pool for Lore based Bandits and Renegades at day
+    Added Mini Chases to Volatiles, if spotted at night they will call other volatiles towards your location (NOT A FULL CHASE EVENT)
+    Fixed Arrow swap
+    Fixed day spawn glitches with Specials
+    Fixed daytime running Volatiles
+    Responsive AI, AI will now attack zombies and don't have to wait to be attacked
+    Restore Immunity Timer
+    Bowmen now added to Survivors and Bandit class
+    Bowmen dodge and are more aggressive
+    Fix for patrolling Volatiles, they now actually explore again at night
+    Better balanced FOV for humans, hearing system
+    Removed a large amount of chatter from AI, they will no longer constantly speak (as much).
+    Fix for a crash reported by discord community.
+    Fix for throw always for NPCs
+    Fix for detection for volatiles and virals reduced unless they scream, then they hunt
+    Fix for npc stutter glitch on movement
+    More banshees and specials during the day
+    Increase day densities in "ial_settings.mth" for more zombies during day on the streets
+    Removed HumanAI stutter bug from update 10
+    Improved spawn balance for daytime
+
+    Removed HD and Color settings from main mod, they are now optionals
+    Added logic for more interactions on rooftops, let me know how this goes
+    Reduced sighting possibilities for Volatile and virals
+    Fix for Hydrant explosions blasting NPC's into space randomly
+    Fix added for config crash (Arrow penetration)
+    Rebalanced loot system, less loot overall with higher chance at empty
+    Lowered $ loot amounts and most valuable loot amounts
+    Lowered Tokens received by Biters and special infected
+    You're more likely to get glands with different types of special infected: Screamers and Demolishers have the highest chance.
+    Early stage - Unique Medkits, Lockpicks, Molotovs, Remote Explosives, Shotgun, Grenades
+    - Improved Human combat, more dangerous interactions and knowledge base for HumanAI.
+    - AI will now switch between bows and melee weapons based on distance to the enemy (sometimes glitches)
+    - Weapon offset can sometimes be seen when a bowmen also uses a melee weapon, I'm currently investigating.
+    - Humans now group together and explore together, they investigate nearby threats and will stack up to take on enemies.
+    - Sometimes zombies are still not detected right away
+    - Bowmen now climb on objects and buildings to get a better line of sight on enemies
+    - this can sometimes cause them to fall off ledges, still working on edge detection
+    - Improved UV detection for special infected, should help with new chase system
+    - larger special infected not affected by UV but I've tried to make them walk off after a period of time.
+    - Fix for chrome effect on Fog, Rain, and storm weathers.
+
+- Improved Human combat, more dangerous interactions and knowledge base for
+- Rebalanced Human AI to support retreat and climbing system
+- Human AI now run around the city and climb
+- Better human reactions to zombies, dodging, and survival, gives them a fighting chance vs. Zombies.
+- HumanAI will now scale multiple floors of buildings to fire down on enemies.
+- Reduced rainy and stormy weather probability.
+- Continued weapon balancing
+- Reduced NPC chatter more than previous reduction
+- Improved AI damages versus zombies
+- Biters now move around the city when they don't detect a target
+
+
+
 _____________________________________Change log:_____________________________________
 Updates to I Am Legion - Reborn 0.99pre
 Update 1 - 11

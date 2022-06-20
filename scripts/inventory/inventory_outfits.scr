@@ -28770,13 +28770,65 @@ sub main()
         ItemType(ItemType_OutfitPart);
         GenType(GenType_OutfitPart);
         Price(170);
-        HudIcon("bottle_b");
+        HudIcon("weapon_fist");
         CoopRoleIcon("MeleeDPS");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
         Color(Color_White);
         OutfitPartSlot(OutfitPartSlot_Legs);
         use outfit_ial_pants_melee_01();
+        OutfitPartForcedAffixGroup("Outfits_Nightrunner_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomGeneral_Affixes");
+        OutfitPartRank(1);
+        MenuEquipSound("hud_inventory_equip_item_legs");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("legs_white");
+        Visibility(true);
+        OutfitArmor(1);
+		CanDrop(true);
+        use PickupSounds_Rugs();
+        UID("6833784595805581106");
+    }
+
+////////////LEISURE\\\\\\\\\\\\\
+
+	Item("Outfitset_IAL_Torso_Leisure_01", CategoryType_OutfitPart)
+    {
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        Price(170);
+        HudIcon("valuables_wristwatch");
+        CoopRoleIcon("MeleeDPS");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_White);
+        OutfitPartSlot(OutfitPartSlot_Torso);
+        use outfit_ial_torso_leisure_01();
+        OutfitPartForcedAffixGroup("Outfits_BaseMeleeDPS_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomMeleeDPS_Affixes");
+        OutfitPartRank(1);
+        MenuEquipSound("hud_inventory_equip_item_torso");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("torso_white");
+        Visibility(true);
+        OutfitArmor(2);
+		CanDrop(true);
+        use PickupSounds_Rugs();
+        UID("6833784595690225828");
+    }
+
+	Item("Outfitset_IAL_Pants_Leisure_01", CategoryType_OutfitPart)
+    {
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        Price(170);
+        HudIcon("valuables_wristwatch");
+        CoopRoleIcon("MeleeDPS");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_White);
+        OutfitPartSlot(OutfitPartSlot_Legs);
+        use outfit_ial_pants_leisure_01();
         OutfitPartForcedAffixGroup("Outfits_Nightrunner_Affixes");
         OutfitPartRandomAffixGroup("Outfits_RandomGeneral_Affixes");
         OutfitPartRank(1);
@@ -28797,7 +28849,7 @@ sub main()
         ItemType(ItemType_OutfitPart);
         GenType(GenType_OutfitPart);
         Price(170);
-        HudIcon("bottle_b");
+        HudIcon("coll_item_pk_dogtag_icon");
         CoopRoleIcon("MeleeDPS");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
@@ -28822,13 +28874,63 @@ sub main()
         ItemType(ItemType_OutfitPart);
         GenType(GenType_OutfitPart);
         Price(170);
-        HudIcon("bottle_b");
+        HudIcon("coll_item_pk_dogtag_icon");
+        CoopRoleIcon("MeleeDPS");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Blue);
+        OutfitPartSlot(OutfitPartSlot_Torso);
+        use outfit_ial_torso_pk_02();
+        OutfitPartForcedAffixGroup("Outfits_BaseMeleeDPS_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomMeleeDPS_Affixes");
+        OutfitPartRank(1);
+        MenuEquipSound("hud_inventory_equip_item_torso");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("torso_white");
+        Visibility(true);
+        OutfitArmor(2);
+		CanDrop(true);
+        use PickupSounds_Rugs();
+        UID("6833784595690225828");
+    }
+	
+	Item("Outfitset_IAL_Torso_PK_03", CategoryType_OutfitPart)
+    {
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        Price(170);
+        HudIcon("coll_item_pk_dogtag_icon");
         CoopRoleIcon("MeleeDPS");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
         Color(Color_Orange);
         OutfitPartSlot(OutfitPartSlot_Torso);
-        use outfit_ial_torso_pk_02();
+        use outfit_ial_torso_pk_03();
+        OutfitPartForcedAffixGroup("Outfits_BaseMeleeDPS_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomMeleeDPS_Affixes");
+        OutfitPartRank(1);
+        MenuEquipSound("hud_inventory_equip_item_torso");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("torso_white");
+        Visibility(true);
+        OutfitArmor(2);
+		CanDrop(true);
+        use PickupSounds_Rugs();
+        UID("6833784595690225828");
+    }
+	
+	Item("Outfitset_IAL_Torso_PK_04", CategoryType_OutfitPart)
+    {
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        Price(170);
+        HudIcon("coll_item_pk_dogtag_icon");
+        CoopRoleIcon("MeleeDPS");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Platinum);
+        OutfitPartSlot(OutfitPartSlot_Torso);
+        use outfit_ial_torso_pk_04();
         OutfitPartForcedAffixGroup("Outfits_BaseMeleeDPS_Affixes");
         OutfitPartRandomAffixGroup("Outfits_RandomMeleeDPS_Affixes");
         OutfitPartRank(1);
@@ -28847,7 +28949,7 @@ sub main()
         ItemType(ItemType_OutfitPart);
         GenType(GenType_OutfitPart);
         Price(170);
-        HudIcon("bottle_b");
+        HudIcon("coll_item_pk_dogtag_icon");
         CoopRoleIcon("MeleeDPS");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
@@ -28872,7 +28974,7 @@ sub main()
         ItemType(ItemType_OutfitPart);
         GenType(GenType_OutfitPart);
         Price(170);
-        HudIcon("bottle_b");
+        HudIcon("coll_item_pk_dogtag_icon");
         CoopRoleIcon("MeleeDPS");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
@@ -28897,7 +28999,7 @@ sub main()
         ItemType(ItemType_OutfitPart);
         GenType(GenType_OutfitPart);
         Price(170);
-        HudIcon("bottle_b");
+        HudIcon("coll_item_pk_dogtag_icon");
         CoopRoleIcon("MeleeDPS");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
@@ -28922,13 +29024,63 @@ sub main()
         ItemType(ItemType_OutfitPart);
         GenType(GenType_OutfitPart);
         Price(170);
-        HudIcon("bottle_b");
+        HudIcon("coll_item_pk_dogtag_icon");
         CoopRoleIcon("MeleeDPS");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
         Color(Color_Orange);
         OutfitPartSlot(OutfitPartSlot_Legs);
         use outfit_ial_pants_pk_03();
+        OutfitPartForcedAffixGroup("Outfits_Nightrunner_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomGeneral_Affixes");
+        OutfitPartRank(1);
+        MenuEquipSound("hud_inventory_equip_item_legs");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("legs_white");
+        Visibility(true);
+        OutfitArmor(1);
+		CanDrop(true);
+        use PickupSounds_Rugs();
+        UID("6833784595805581106");
+    }
+	
+	Item("Outfitset_IAL_Pants_PK_04", CategoryType_OutfitPart)
+    {
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        Price(170);
+        HudIcon("coll_item_pk_dogtag_icon");
+        CoopRoleIcon("MeleeDPS");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Platinum);
+        OutfitPartSlot(OutfitPartSlot_Legs);
+        use outfit_ial_pants_pk_04();
+        OutfitPartForcedAffixGroup("Outfits_Nightrunner_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomGeneral_Affixes");
+        OutfitPartRank(1);
+        MenuEquipSound("hud_inventory_equip_item_legs");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("legs_white");
+        Visibility(true);
+        OutfitArmor(1);
+		CanDrop(true);
+        use PickupSounds_Rugs();
+        UID("6833784595805581106");
+    }
+	
+	Item("Outfitset_IAL_Pants_PK_05", CategoryType_OutfitPart)
+    {
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        Price(170);
+        HudIcon("coll_item_pk_dogtag_icon");
+        CoopRoleIcon("MeleeDPS");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Platinum);
+        OutfitPartSlot(OutfitPartSlot_Legs);
+        use outfit_ial_pants_pk_05();
         OutfitPartForcedAffixGroup("Outfits_Nightrunner_Affixes");
         OutfitPartRandomAffixGroup("Outfits_RandomGeneral_Affixes");
         OutfitPartRank(1);
@@ -28950,7 +29102,7 @@ sub main()
         ItemType(ItemType_OutfitPart);
         GenType(GenType_OutfitPart);
         Price(170);
-        HudIcon("icon_darkzone_ticket_elite");
+        HudIcon("Item_Military_Tech");
         CoopRoleIcon("MeleeDPS");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
@@ -28975,7 +29127,7 @@ sub main()
         ItemType(ItemType_OutfitPart);
         GenType(GenType_OutfitPart);
         Price(170);
-        HudIcon("icon_darkzone_ticket_elite");
+        HudIcon("Item_Military_Tech");
         CoopRoleIcon("MeleeDPS");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
@@ -29002,11 +29154,11 @@ sub main()
         ItemType(ItemType_OutfitPart);
         GenType(GenType_OutfitPart);
         Price(170);
-        HudIcon("brick_a_throwable");
+        HudIcon("valuables_tools");
         CoopRoleIcon("MeleeDPS");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
-        Color(Color_Blue);
+        Color(Color_White);
         OutfitPartSlot(OutfitPartSlot_Torso);
         use outfit_ial_torso_worker_01();
         OutfitPartForcedAffixGroup("Outfits_BaseMeleeDPS_Affixes");
@@ -29022,18 +29174,118 @@ sub main()
         UID("6833784595690225828");
     }
 	
+	Item("Outfitset_IAL_Torso_Worker_02", CategoryType_OutfitPart)
+    {
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        Price(170);
+        HudIcon("valuables_tools");
+        CoopRoleIcon("MeleeDPS");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Blue);
+        OutfitPartSlot(OutfitPartSlot_Torso);
+        use outfit_ial_torso_worker_02();
+        OutfitPartForcedAffixGroup("Outfits_BaseMeleeDPS_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomMeleeDPS_Affixes");
+        OutfitPartRank(1);
+        MenuEquipSound("hud_inventory_equip_item_torso");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("torso_white");
+        Visibility(true);
+        OutfitArmor(2);
+		CanDrop(true);
+        use PickupSounds_Rugs();
+        UID("6833784595690225828");
+    }
+	
+	Item("Outfitset_IAL_Torso_Worker_03", CategoryType_OutfitPart)
+    {
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        Price(170);
+        HudIcon("valuables_tools");
+        CoopRoleIcon("MeleeDPS");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Green);
+        OutfitPartSlot(OutfitPartSlot_Torso);
+        use outfit_ial_torso_worker_03();
+        OutfitPartForcedAffixGroup("Outfits_BaseMeleeDPS_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomMeleeDPS_Affixes");
+        OutfitPartRank(1);
+        MenuEquipSound("hud_inventory_equip_item_torso");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("torso_white");
+        Visibility(true);
+        OutfitArmor(2);
+		CanDrop(true);
+        use PickupSounds_Rugs();
+        UID("6833784595690225828");
+    }
+	
+	Item("Outfitset_IAL_Gloves_Worker_01", CategoryType_OutfitPart)
+    {
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        Price(170);
+        HudIcon("valuables_tools");
+        CoopRoleIcon("MeleeDPS");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_White);
+        OutfitPartSlot(OutfitPartSlot_Gloves);
+        use outfit_ial_gloves_worker_01();
+        OutfitPartForcedAffixGroup("Outfits_Nightrunner_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomGeneral_Affixes");
+        OutfitPartRank(1);
+        MenuEquipSound("hud_inventory_equip_item_gloves");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("gloves_white");
+        Visibility(true);
+        OutfitArmor(0);
+		CanDrop(true);
+        use PickupSounds_Rugs();
+        UID("6833784596028666115");
+    }
+	
 	Item("Outfitset_IAL_Pants_Worker_01", CategoryType_OutfitPart)
     {
         ItemType(ItemType_OutfitPart);
         GenType(GenType_OutfitPart);
         Price(170);
-        HudIcon("brick_a_throwable");
+        HudIcon("valuables_tools");
         CoopRoleIcon("MeleeDPS");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
         Color(Color_White);
         OutfitPartSlot(OutfitPartSlot_Legs);
         use outfit_ial_pants_worker_01();
+        OutfitPartForcedAffixGroup("Outfits_Nightrunner_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomGeneral_Affixes");
+        OutfitPartRank(1);
+        MenuEquipSound("hud_inventory_equip_item_legs");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("legs_white");
+        Visibility(true);
+        OutfitArmor(1);
+		CanDrop(true);
+        use PickupSounds_Rugs();
+        UID("6833784595805581106");
+    }
+	
+	Item("Outfitset_IAL_Pants_Worker_02", CategoryType_OutfitPart)
+    {
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        Price(170);
+        HudIcon("valuables_tools");
+        CoopRoleIcon("MeleeDPS");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Blue);
+        OutfitPartSlot(OutfitPartSlot_Legs);
+        use outfit_ial_pants_worker_02();
         OutfitPartForcedAffixGroup("Outfits_Nightrunner_Affixes");
         OutfitPartRandomAffixGroup("Outfits_RandomGeneral_Affixes");
         OutfitPartRank(1);
@@ -29054,7 +29306,7 @@ sub main()
         ItemType(ItemType_OutfitPart);
         GenType(GenType_OutfitPart);
         Price(170);
-        HudIcon("equipment_medkit_b");
+        HudIcon("craft_leather");
         CoopRoleIcon("MeleeDPS");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
@@ -29079,7 +29331,7 @@ sub main()
         ItemType(ItemType_OutfitPart);
         GenType(GenType_OutfitPart);
         Price(170);
-        HudIcon("equipment_medkit_b");
+        HudIcon("craft_leather");
         CoopRoleIcon("MeleeDPS");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
@@ -29098,13 +29350,38 @@ sub main()
         use PickupSounds_Rugs();
         UID("6833784595690225828");
     }
+	
+	Item("Outfitset_IAL_Gloves_Leather_01", CategoryType_OutfitPart)
+    {
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        Price(170);
+        HudIcon("craft_leather");
+        CoopRoleIcon("MeleeDPS");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_White);
+        OutfitPartSlot(OutfitPartSlot_Gloves);
+        use outfit_ial_gloves_leather_01();
+        OutfitPartForcedAffixGroup("Outfits_Nightrunner_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomGeneral_Affixes");
+        OutfitPartRank(1);
+        MenuEquipSound("hud_inventory_equip_item_gloves");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("gloves_white");
+        Visibility(true);
+        OutfitArmor(0);
+		CanDrop(true);
+        use PickupSounds_Rugs();
+        UID("6833784596028666115");
+    }
 
 	Item("Outfitset_IAL_Pants_Leather_01", CategoryType_OutfitPart)
     {
         ItemType(ItemType_OutfitPart);
         GenType(GenType_OutfitPart);
         Price(170);
-        HudIcon("equipment_medkit_b");
+        HudIcon("craft_leather");
         CoopRoleIcon("MeleeDPS");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
@@ -29126,18 +29403,43 @@ sub main()
 
 ////////////MILITARY\\\\\\\\\\\\\
 	
-	Item("Outfitset_IAL_Torso_Militia", CategoryType_OutfitPart)
+	Item("Outfitset_IAL_Torso_Militia_01", CategoryType_OutfitPart)
     {
         ItemType(ItemType_OutfitPart);
         GenType(GenType_OutfitPart);
         Price(170);
-        HudIcon("icon_token");
+        HudIcon("Item_Military_Tech");
         CoopRoleIcon("MeleeDPS");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
         Color(Color_White);
         OutfitPartSlot(OutfitPartSlot_Torso);
         use outfit_ial_torso_militia_01();
+        OutfitPartForcedAffixGroup("Outfits_BaseMeleeDPS_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomMeleeDPS_Affixes");
+        OutfitPartRank(1);
+        MenuEquipSound("hud_inventory_equip_item_torso");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("torso_white");
+        Visibility(true);
+        OutfitArmor(2);
+		CanDrop(true);
+        use PickupSounds_Rugs();
+        UID("6833784595690225828");
+    }
+	
+	Item("Outfitset_IAL_Torso_Militia_02", CategoryType_OutfitPart)
+    {
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        Price(170);
+        HudIcon("Item_Military_Tech");
+        CoopRoleIcon("MeleeDPS");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_White);
+        OutfitPartSlot(OutfitPartSlot_Torso);
+        use outfit_ial_torso_militia_02();
         OutfitPartForcedAffixGroup("Outfits_BaseMeleeDPS_Affixes");
         OutfitPartRandomAffixGroup("Outfits_RandomMeleeDPS_Affixes");
         OutfitPartRank(1);
@@ -29158,7 +29460,7 @@ sub main()
         ItemType(ItemType_OutfitPart);
         GenType(GenType_OutfitPart);
         Price(170);
-        HudIcon("equipment_inhaler_a_immunity_regen");
+        HudIcon("coll_mural_unique_023_a_hazmat_icon");
         CoopRoleIcon("MeleeDPS");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
@@ -29183,7 +29485,7 @@ sub main()
         ItemType(ItemType_OutfitPart);
         GenType(GenType_OutfitPart);
         Price(0);
-        HudIcon("equipment_inhaler_a_immunity_regen");
+        HudIcon("coll_mural_unique_023_a_hazmat_icon");
         CoopRoleIcon("Tank");
         MaxStackCount(3);
         PhysicsScript("dropped_inventory.phx");
@@ -29210,7 +29512,7 @@ sub main()
         ItemType(ItemType_OutfitPart);
         GenType(GenType_OutfitPart);
         Price(170);
-        HudIcon("equipment_inhaler_a_immunity_regen");
+        HudIcon("coll_mural_unique_023_a_hazmat_icon");
         CoopRoleIcon("MeleeDPS");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
@@ -29235,7 +29537,7 @@ sub main()
         ItemType(ItemType_OutfitPart);
         GenType(GenType_OutfitPart);
         Price(170);
-        HudIcon("equipment_inhaler_a_immunity_regen");
+        HudIcon("coll_mural_unique_023_a_hazmat_icon");
         CoopRoleIcon("MeleeDPS");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
@@ -29260,7 +29562,7 @@ sub main()
         ItemType(ItemType_OutfitPart);
         GenType(GenType_OutfitPart);
         Price(170);
-        HudIcon("equipment_inhaler_a_immunity_regen");
+        HudIcon("coll_mural_unique_023_a_hazmat_icon");
         CoopRoleIcon("MeleeDPS");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
@@ -29285,7 +29587,7 @@ sub main()
         ItemType(ItemType_OutfitPart);
         GenType(GenType_OutfitPart);
         Price(170);
-        HudIcon("equipment_inhaler_a_immunity_regen");
+        HudIcon("coll_mural_unique_023_a_hazmat_icon");
         CoopRoleIcon("MeleeDPS");
         MaxStackCount(1);
         PhysicsScript("dropped_inventory.phx");
@@ -29310,7 +29612,7 @@ sub main()
         ItemType(ItemType_OutfitPart);
         GenType(GenType_OutfitPart);
         Price(0);
-        HudIcon("equipment_inhaler_a_immunity_regen");
+        HudIcon("coll_mural_unique_023_a_hazmat_icon");
         CoopRoleIcon("Tank");
         MaxStackCount(3);
         PhysicsScript("dropped_inventory.phx");
@@ -29337,7 +29639,7 @@ sub main()
         ItemType(ItemType_OutfitPart);
         GenType(GenType_OutfitPart);
         Price(0);
-        HudIcon("equipment_inhaler_a_immunity_regen");
+        HudIcon("coll_mural_unique_023_a_hazmat_icon");
         CoopRoleIcon("Tank");
         MaxStackCount(3);
         PhysicsScript("dropped_inventory.phx");

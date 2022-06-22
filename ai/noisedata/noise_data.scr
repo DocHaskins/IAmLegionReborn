@@ -206,8 +206,8 @@ sub presets()
         range_effective(3.0);
         duration(2.0);
 
-        interest_default(1.0, "force_attract");
-        awakening_default(1.0);
+        interest_default(0.1, "attract");
+        awakening_default(0.1);
     }
     NoisePreset("takedown_with_knife")
     {
@@ -218,19 +218,19 @@ sub presets()
         range_effective(2.0);
         duration(1.0);
 
-        interest_default(1.0, "attract");
+        interest_default(0.1, "attract");
 
-        awakening_default(1.0);
+        awakening_default(0.1);
     }
     NoisePreset("death_human")
     {
-        range(50.0);
-        range_effective(20.0);
+        range(30.0);
+        range_effective(10.0);
         duration(2.0);
 
-        interest_default(0.75, "attract");
-        interest("human", 0.6, "notice");
-		interest("biter", 0.8, "attract");
+        interest_default(0.55, "attract");
+        interest("human", 0.4, "notice");
+		interest("biter", 0.4, "attract");
 
         awakening_default(0.4);
     }
@@ -240,11 +240,11 @@ sub presets()
         range_effective(12.0);
         duration(2.0);
 
-        interest_default(0.75, "attract");
+        interest_default(0.45, "attract");
         interest("human", 0.2, "notice");
-		interest("biter", 0.8, "attract");
+		interest("biter", 0.5, "attract");
 
-        awakening_default(0.8);
+        awakening_default(0.5);
     }
     NoisePreset("switch_toggle")
     {
@@ -308,8 +308,8 @@ sub presets()
         range_effective(15.0);
         duration(30.0);
 
-        interest_default(0.1, "attract");
-        interest("human", 0.0, "attract");      
+        interest_default(0.3, "attract");
+        interest("human", 0.2, "repel");      
 		awakening_default(0.25);
         awakening("human", 0.0);
         

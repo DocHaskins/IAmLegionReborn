@@ -31035,6 +31035,34 @@ Item("Outfitset_IAL_Torso_Dirty_01", CategoryType_OutfitPart)
 
 ////////////MILITARY\\\\\\\\\\\\\
 	
+	Item("Outfitset_IAL_Helmet_Military_01", CategoryType_OutfitPart)
+    {
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        Price(0);
+        HudIcon("Item_Military_Tech");
+        CoopRoleIcon("Tank");
+        MaxStackCount(1);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_White);
+        OutfitPartSlot(OutfitPartSlot_Head);
+        use outfit_ial_helmet_militia_01();
+        OutfitPartForcedAffixGroup("Outfits_BaseMeleeDPS_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomMeleeDPS_Affixes");
+        MenuEquipSound("hud_inventory_equip_item_head");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("head_blue");
+        Visibility(true);
+        OutfitArmor(1);
+        Name("&Outfitset_MeleeDPS_RenegadeHelmet_01_N&");
+        Description("&Outfitset_RenegadeHelmet_D&");
+        use PickupSounds_Rugs();
+        CanDrop(true);
+        AllowedInShop(false);
+        GameVersion(3);
+        UID("7049268960678467491");
+    }
+	
 	Item("Outfitset_IAL_Torso_Militia_01", CategoryType_OutfitPart)
     {
         ItemType(ItemType_OutfitPart);

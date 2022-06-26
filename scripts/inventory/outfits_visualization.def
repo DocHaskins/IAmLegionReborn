@@ -13520,7 +13520,7 @@ sub outfit_ial_helmet_bandit_02()
 	{
 		Mesh("man_pk_headcover_a.msh")
 		{
-
+			ReplaceMaterial("man_pk_headcover_a_decal.mat", "null.mat");
 		}
 	}
 }
@@ -13706,19 +13706,11 @@ sub outfit_ial_torsoaddon_bandit_02()
 		{
 
 		}
-		Mesh("man_bdt_arms_armor_b_upperleft.msh")
-		{
-
-		}
 		Mesh("man_bdt_torso_c_bottom_a.msh")
 		{
 
 		}
 		Mesh("man_bdt_torso_c_armor_b.msh")
-		{
-
-		}
-		Mesh("man_bdt_arms_armor_a_upperright.msh")
 		{
 
 		}
@@ -13738,19 +13730,11 @@ sub outfit_ial_torsoaddon_bandit_02()
 		{
 
 		}
-		Mesh("man_bdt_arms_armor_b_upperleft.msh")
-		{
-
-		}
 		Mesh("man_bdt_torso_c_bottom_a.msh")
 		{
 
 		}
 		Mesh("man_bdt_torso_c_armor_b.msh")
-		{
-
-		}
-		Mesh("man_bdt_arms_armor_a_upperright.msh")
 		{
 
 		}
@@ -15923,6 +15907,26 @@ sub outfit_ial_pants_urban_06()
 }
 
 ////////////MILITARY\\\\\\\\\\\\\
+
+sub outfit_ial_helmet_militia_01()
+{
+	OutfitPartMeshesFpp()
+	{
+		Mesh("")
+		{
+
+		}
+	}
+
+	OutfitPartMeshesTpp()
+	{
+		Mesh("man_pk_headcover_a.msh")
+		{
+			ReplaceMaterial("man_pk_headcover_a.mat", "man_bdt_torso_e_camo.mat");
+			ReplaceMaterial("man_pk_headcover_a_decal.mat", "null.mat");
+		}
+	}
+}
 
 sub outfit_ial_torso_militia_01()
 {

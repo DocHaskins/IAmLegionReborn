@@ -16709,8 +16709,79 @@ sub outfit_ial_helmet_militia_01()
 	{
 		Mesh("man_pk_headcover_a.msh")
 		{
-			ReplaceMaterial("man_pk_headcover_a.mat", "man_bdt_torso_e_camo.mat");
+			ReplaceMaterial("man_pk_headcover_a.mat", "man_pk_headcover_a_colonel.mat");
 			ReplaceMaterial("man_pk_headcover_a_decal.mat", "null.mat");
+		}
+	}
+}
+
+sub outfit_ial_helmet_militia_02()
+{
+	OutfitPartMeshesFpp()
+	{
+		Mesh("")
+		{
+
+		}
+	}
+
+	OutfitPartMeshesTpp()
+	{
+		Mesh("man_ren_scarf_a_part_c.msh")
+		{
+
+		}
+		Mesh("man_ren_scarf_a_part_b.msh")
+		{
+			ReplaceMaterial("man_ren_scarf_a.mat", "man_pk_headcover_a_colonel.mat");
+		}
+		Mesh("man_ren_scarf_a_part_a_b.msh")
+		{
+			ReplaceMaterial("man_ren_scarf_a.mat", "man_pk_headcover_a_colonel.mat");
+			ReplaceMaterial("man_ren_scarf_a_feathers.mat", "null.mat");
+		}
+	}
+}
+
+sub outfit_ial_helmet_militia_03()
+{
+	OutfitPartMeshesFpp()
+	{
+		Mesh("")
+		{
+
+		}
+	}
+
+	OutfitPartMeshesTpp()
+	{
+		Mesh("man_pk_headcover_a.msh")
+		{
+			ReplaceMaterial("man_pk_headcover_a.mat", "man_pk_headcover_a_colonel.mat");
+			ReplaceMaterial("man_pk_headcover_a_decal.mat", "null.mat");
+		}
+		Mesh("man_ren_scarf_a_part_c.msh")
+		{
+			
+		}
+	}
+}
+
+sub outfit_ial_helmet_militia_05()
+{
+	OutfitPartMeshesFpp()
+	{
+		Mesh("")
+		{
+
+		}
+	}
+
+	OutfitPartMeshesTpp()
+	{
+		Mesh("sh_man_pk_headcover_c.msh")
+		{
+			ReplaceMaterial("sh_man_pk_headcover_c.mat", "man_ren_scarf_a_pattern_a.mat");
 		}
 	}
 }
@@ -16721,7 +16792,7 @@ sub outfit_ial_torso_militia_01()
 	{
 		Mesh("man_ren_torso_b.msh")
 		{
-			ReplaceMaterial("man_ren_torso_b.mat", "man_bdt_torso_e_camo.mat");
+			ReplaceMaterial("man_ren_torso_b.mat", "man_ren_scarf_a_pattern_a.mat");
 		}
 		Mesh("man_hands_full_nohand.msh")
 		{
@@ -16754,6 +16825,11 @@ sub outfit_ial_torso_militia_02()
 		{
 
 		}
+		Mesh("man_ren_scarf_a_part_a_b.msh")
+		{
+			ReplaceMaterial("man_ren_scarf_a.mat", "man_bdt_torso_e_camo.mat");
+			ReplaceMaterial("man_ren_scarf_a_feathers.mat", "null.mat");
+		}
 	}
 
 	OutfitPartMeshesTpp()
@@ -16765,6 +16841,11 @@ sub outfit_ial_torso_militia_02()
 		Mesh("npc_man_torso_o_sleeves_a.msh")
 		{
 
+		}
+		Mesh("man_ren_scarf_a_part_a_b.msh")
+		{
+			ReplaceMaterial("man_ren_scarf_a.mat", "man_bdt_torso_e_camo.mat");
+			ReplaceMaterial("man_ren_scarf_a_feathers.mat", "null.mat");
 		}
 	}
 }
@@ -16937,6 +17018,25 @@ sub outfit_ial_torsoaddon_militia_03()
 		Mesh("man_pk_torso_a_armor_d.msh")
 		{
 			ReplaceMaterial("man_pk_torso_c_armor_f.mat", "man_bdt_torso_e_camo.mat");
+		}
+	}
+}
+
+sub outfit_ial_torsoaddon_militia_04()
+{
+	OutfitPartMeshesFpp()
+	{
+		Mesh("man_pk_torso_b_armor_a.msh")
+		{
+			
+		}
+	}
+
+	OutfitPartMeshesTpp()
+	{
+		Mesh("man_pk_torso_b_armor_a.msh")
+		{
+			
 		}
 	}
 }

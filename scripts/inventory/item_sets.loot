@@ -621,11 +621,10 @@ export int Other = 9;
 			ItemCount("Craft_Rags", 1, 3, 2.0);
 			ItemCount("Craft_Wiring", 1, 2, 1.0);
 			
-			Item("Craft_Leather", 0.4);				//Green
+			Item("Craft_Leather", 0.0);				//Green
 			Item("Craft_Electrical_Parts", 0.5);	//Green
-			Item("Valuable_Cigarettes", 1.0);		//Green
-			Item("Valuable_Shoes", 1.0);			//Blue
-			Item("Valuable_Tools", 0.3);			//Blue
+			Item("Valuable_Cigarettes", 0.7);		//Green
+			Item("Valuable_Tools", 0.2);			//Blue
 			Item("Valuable_Vodka", 0.1);			//Blue
 			Item("Valuable_Manual", 0.1);			//Violet
 			Item("Valuable_Whiskey", 0.1);			//Violet
@@ -633,27 +632,29 @@ export int Other = 9;
         }
     }
 	
-	sub StreetsPolice(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+	sub StreetsPolice(float weight = 1.0, int min_amount = 1, int max_amount = 2, float prob = 1.0)
     {
         Set(Other, weight, min_amount, max_amount, prob)
         {	
 			ItemCount("Cash_Cash", 1, 30, 1.0);
-			ItemCount("Craft_Rags", 1, 3, 2.0);
+			ItemCount("Craft_Rags", 1, 1, 0.1);
 			ItemCount("Craft_Wiring", 1, 4, 1.0);
 			
-			Item("Craft_Leather", 2.0);				//Green
+			Item("Craft_Leather", 0.2);				//Green
 			Item("Craft_Electrical_Parts", 0.6);	//Green
-			Item("Valuable_Aspirin", 0.1);			//Green
-			Item("Valuable_Toilet_Paper", 1.0);		//Green
-			Item("Valuable_Cigarettes", 1.0);
-			Item("Valuable_Wristwatch", 1.0);
-			Item("Valuable_Shoes", 1.0);			//Blue
+			Item("Valuable_Aspirin", 0.2);			//Green
+			Item("Valuable_Toilet_Paper", 0.1);		//Green
+			Item("Valuable_Cigarettes", 0.0);
+			Item("Valuable_Wristwatch", 0.2);
+			Item("Valuable_Shoes", 0.3);			//Blue
 			Item("Valuable_Tools", 0.3);			//Blue
-			Item("Valuable_Vodka", 0.3);			//Blue
+			Item("Valuable_Vodka", 0.1);			//Blue
 			Item("Valuable_Jewelry", 3.0);
 			Item("Valuable_Manual", 0.3);			//Violet
-			Item("Valuable_Whiskey", 0.3);			//Violet
-			Item("Valuable_Wine", 0.3);				//Orange
+			Item("Valuable_Whiskey", 0.1);			//Violet
+			Item("Valuable_Wine", 0.1);				//Orange
+			Item("Valuable_MRE_Rations", 1.0);		//Violet
+			Item("Valuable_Walkie_Talkie", 1.0);	//Violet
         }
     }
 	
@@ -718,6 +719,50 @@ export int Other = 9;
 			Item("Bundle_Rations", 1.0);
 			Item("Bundle_Equipment", 1.0);
 			Item("Bundle_Grenades", 1.0);
+			///IAL
+			StatusRestriction(1, 10);
+			Item("Bundle_Explosives_R1", 0.9);
+			StatusRestriction(10, 25);
+			Item("Bundle_Explosives_R2", 0.8);
+			Item("Bundle_Explosives_R3", 0.7);
+			Item("Bundle_Explosives_R4", 0.6);
+			StatusRestriction(25, 50);
+			Item("Bundle_Explosives_R5", 0.5);
+			Item("Bundle_Explosives_R6", 0.4);
+			Item("Bundle_Explosives_R7", 0.3);
+			Item("Bundle_Explosives_R8", 0.2);
+			Item("Bundle_Explosives_R9", 0.1);
+			///IAL Outfits
+			Item("Outfitset_IAL_Helmet_Military_01", 1.0);
+			Item("Outfitset_IAL_Helmet_Military_02", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_01", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_02", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Military_01", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Military_02", 1.0);
+			Item("Outfitset_IAL_Pants_Militia_01", 1.0);
+			Item("Outfitset_IAL_Pants_Militia_02", 1.0);
+			StatusRestriction(10, 20);
+			Item("Outfitset_IAL_Helmet_Military_03", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_03", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_04", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Military_01", 0.4);
+			Item("Outfitset_IAL_TorsoAddon_Military_02", 0.5);
+			Item("Outfitset_IAL_TorsoAddon_Military_03", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Military_04", 1.0);
+			Item("Outfitset_IAL_Pants_Militia_03", 1.0);
+			StatusRestriction(20, 50);
+			Item("Outfitset_IAL_Helmet_Military_02", 0.4);
+			Item("Outfitset_IAL_Helmet_Military_03", 0.5);
+			Item("Outfitset_IAL_Helmet_Military_05", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_03", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_04", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_05", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Military_03", 0.4);
+			Item("Outfitset_IAL_TorsoAddon_Military_04", 0.5);
+			Item("Outfitset_IAL_TorsoAddon_Military_05", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Military_06", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Military_07", 1.0);
+			Item("Outfitset_IAL_Pants_Militia_05", 1.0);
         }
     }
 	
@@ -1993,6 +2038,47 @@ export int Other = 9;
         Set(Other, weight, min_amount, max_amount, prob)
         {
             Item("Item_MilitaryMaterial", 1.0);					//green
+			///IAL
+			Item("Bundle_Explosives_R1", 0.9);
+			Item("Bundle_Explosives_R2", 0.8);
+			Item("Bundle_Explosives_R3", 0.7);
+			Item("Bundle_Explosives_R4", 0.6);
+			Item("Bundle_Explosives_R5", 0.5);
+			Item("Bundle_Explosives_R6", 0.4);
+			Item("Bundle_Explosives_R7", 0.3);
+			Item("Bundle_Explosives_R8", 0.2);
+			Item("Bundle_Explosives_R9", 0.1);
+			///IAL Outfits
+			StatusRestriction(1, 10);
+			Item("Outfitset_IAL_Helmet_Military_01", 1.0);
+			Item("Outfitset_IAL_Helmet_Military_02", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_01", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_02", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Military_01", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Military_02", 1.0);
+			Item("Outfitset_IAL_Pants_Militia_01", 1.0);
+			Item("Outfitset_IAL_Pants_Militia_02", 1.0);
+			StatusRestriction(10, 50);
+			Item("Outfitset_IAL_Helmet_Military_03", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_03", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_04", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Military_01", 0.4);
+			Item("Outfitset_IAL_TorsoAddon_Military_02", 0.5);
+			Item("Outfitset_IAL_TorsoAddon_Military_03", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Military_04", 1.0);
+			Item("Outfitset_IAL_Pants_Militia_03", 1.0);
+			Item("Outfitset_IAL_Helmet_Military_02", 0.4);
+			Item("Outfitset_IAL_Helmet_Military_03", 0.5);
+			Item("Outfitset_IAL_Helmet_Military_05", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_03", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_04", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_05", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Military_03", 0.4);
+			Item("Outfitset_IAL_TorsoAddon_Military_04", 0.5);
+			Item("Outfitset_IAL_TorsoAddon_Military_05", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Military_06", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Military_07", 1.0);
+			Item("Outfitset_IAL_Pants_Militia_05", 1.0);
         }
     }
 	
@@ -2008,6 +2094,37 @@ export int Other = 9;
 			Item("Bundle_Rations", 2.0);
 			Item("Bundle_Equipment", 2.0);
 			Item("Bundle_Grenades", 3.0);
+			///IAL Outfits
+			StatusRestriction(1, 10);
+			Item("Outfitset_IAL_Helmet_Military_01", 1.0);
+			Item("Outfitset_IAL_Helmet_Military_02", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_01", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_02", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Military_01", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Military_02", 1.0);
+			Item("Outfitset_IAL_Pants_Militia_01", 1.0);
+			Item("Outfitset_IAL_Pants_Militia_02", 1.0);
+			StatusRestriction(10, 50);
+			Item("Outfitset_IAL_Helmet_Military_03", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_03", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_04", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Military_01", 0.4);
+			Item("Outfitset_IAL_TorsoAddon_Military_02", 0.5);
+			Item("Outfitset_IAL_TorsoAddon_Military_03", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Military_04", 1.0);
+			Item("Outfitset_IAL_Pants_Militia_03", 1.0);
+			Item("Outfitset_IAL_Helmet_Military_02", 0.4);
+			Item("Outfitset_IAL_Helmet_Military_03", 0.5);
+			Item("Outfitset_IAL_Helmet_Military_05", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_03", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_04", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_05", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Military_03", 0.4);
+			Item("Outfitset_IAL_TorsoAddon_Military_04", 0.5);
+			Item("Outfitset_IAL_TorsoAddon_Military_05", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Military_06", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Military_07", 1.0);
+			Item("Outfitset_IAL_Pants_Militia_05", 1.0);
         }
     }
 	
@@ -2362,22 +2479,7 @@ export int Other = 9;
 			Item("wpn_1hb_mace_g_fpp_r24", 1.0);
 			
 			Item("wpn_15hb_g_fpp_r24", 1.0);
-     	}
-    }
-	sub Weapons_Endgame_Scaling_T2(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
-    {
-        Set(Other, weight, min_amount, max_amount, prob)
-        {
-			//SHARED
-			
-			//EXLUSIVE
-			StatusRestriction(1, 39);
-			Item("wpn_1hs_axe_b_fpp_r19", 1.0);
-			Item("wpn_1hs_mach_v_fpp_r19", 1.0);
-			
-			Item("wpn_1hb_ham_l_fpp_r19", 1.0);
-			Item("wpn_1hb_stk_a_fpp_r19", 1.0);
-			
+
 			NewGamePlus();
 			StatusRestriction(1, 3);
 			Item("wpn_1hs_axe_s_fpp_r01", 1.0);
@@ -42029,12 +42131,26 @@ export int Other = 9;
     {
         Set(Other, weight, min_amount, max_amount, prob)
         {
-			Item("Valuable_Toilet_Paper", 5.0);
+			Item("Valuable_Toilet_Paper", 0.5);
 			Item("Valuable_Wristwatch", 5.0);
 			Item("Valuable_Jewelry", 5.0);
 			Item("Valuable_Shoes", 5.0);
 			Item("Valuable_Perfume", 5.0);
 			Item("Valuable_Cigarettes", 5.0);
+			///IAL Outfits
+			Item("Outfitset_IAL_Helmet_Bandit_01", 0.2);
+			Item("Outfitset_IAL_Helmet_Bandit_02", 0.2);
+			Item("Outfitset_IAL_Helmet_Bandit_03", 0.1);
+			Item("Outfitset_IAL_Torso_Bandit_01", 0.2);
+			Item("Outfitset_IAL_Torso_Bandit_02", 0.2);
+			Item("Outfitset_IAL_Torso_Bandit_03", 0.1);
+			Item("Outfitset_IAL_Bracers_Bandit_01", 0.2);
+			Item("Outfitset_IAL_TorsoAddon_Bandit_02", 0.2);
+			Item("Outfitset_IAL_TorsoAddon_Bandit_03", 0.1);
+			Item("Outfitset_IAL_Gloves_Bandit_01", 0.2);
+			Item("Outfitset_IAL_Pants_Bandit_01", 0.2);
+			Item("Outfitset_IAL_Pants_Bandit_02", 0.2);
+			Item("Outfitset_IAL_Pants_Bandit_03", 0.1);
 		}
     }
 	

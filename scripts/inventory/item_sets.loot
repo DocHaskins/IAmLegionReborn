@@ -1779,7 +1779,7 @@ export int Other = 9;
 						//Violet
 			Item("Valuable_MRE_Rations", 1.0);		//Violet
 			Item("Valuable_Manual", 1.0);			//Violet
-			Item("Valuable_Walkie_Talkie", 0.1);    //Violet
+			Item("Valuable_Walkie_Talkie", 0.5);    //Violet
 			
 			Item("Throwable_Molotov", 1.0);			//Green
 			ItemCount("Potion_Antizine", 1, 4, 1.0);
@@ -43122,4 +43122,189 @@ export int Other = 9;
         }
     }
 	
+//////////////////////////IAL\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+sub OutfitsIALLeather(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Other, weight, min_amount, max_amount, prob)
+        {
+			StatusRestriction(1, 10);
+			Item("Outfitset_IAL_Torso_Leather_01", 1.0);
+			Item("Outfitset_IAL_Torso_Leather_02", 1.0);
+			Item("Outfitset_IAL_Torso_Leather_03", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_01", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_02", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_03", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_04", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_05", 1.0);
+			Item("Outfitset_IAL_Gloves_Leather_01", 1.0);
+			Item("Outfitset_IAL_Pants_Leather_01", 1.0);
+			StatusRestriction(10, 20);
+			Item("Outfitset_IAL_Torso_Leather_02", 1.0);
+			Item("Outfitset_IAL_Torso_Leather_03", 1.0);
+			Item("Outfitset_IAL_Torso_Leather_04", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_02", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_03", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_04", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_05", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_06", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_07", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_08", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_09", 1.0);
+			Item("Outfitset_IAL_Gloves_Leather_01", 1.0);
+			Item("Outfitset_IAL_Pants_Leather_01", 1.0);
+			StatusRestriction(20, 40);
+			Item("Outfitset_IAL_Torso_Leather_02", 1.0);
+			Item("Outfitset_IAL_Torso_Leather_03", 1.0);
+			Item("Outfitset_IAL_Torso_Leather_04", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_03", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_04", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_05", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_06", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_07", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_08", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_09", 1.0);
+			Item("Outfitset_IAL_Gloves_Leather_01", 1.0);
+			Item("Outfitset_IAL_Pants_Leather_01", 1.0);
+			StatusRestriction(40, 50);
+			Item("Outfitset_IAL_Torso_Leather_03", 1.0);
+			Item("Outfitset_IAL_Torso_Leather_04", 1.0);
+			Item("Outfitset_IAL_Torso_Leather_05", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_05", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_06", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_07", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_08", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_09", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_10", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Leather_11", 1.0);
+			Item("Outfitset_IAL_Gloves_Leather_01", 1.0);
+			Item("Outfitset_IAL_Pants_Leather_01", 1.0);
+        }
+    }	
 	
+sub OutfitsIALDirty(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Other, weight, min_amount, max_amount, prob)
+        {
+			StatusRestriction(1, 10);
+			Item("Outfitset_IAL_Torso_Dirty_01", 1.0);
+			StatusRestriction(10, 20);
+			Item("Outfitset_IAL_Torso_Dirty_01", 1.0);
+			StatusRestriction(20, 40);
+			Item("Outfitset_IAL_Torso_Dirty_01", 1.0);
+			StatusRestriction(40, 50);
+        }
+    }	
+	
+sub OutfitsIALUrban(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Other, weight, min_amount, max_amount, prob)
+        {
+			StatusRestriction(1, 10);
+			Item("Outfitset_IAL_Helmet_Urban_01", 1.0);
+			Item("Outfitset_IAL_Helmet_Urban_02", 1.0);
+			Item("Outfitset_IAL_Torso_Urban_01", 1.0);
+			Item("Outfitset_IAL_Torso_Urban_02", 1.0);
+			Item("Outfitset_IAL_Torso_Urban_03", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Urban_01", 1.0);
+			Item("Outfitset_IAL_Pants_Urban_01", 1.0);
+			Item("Outfitset_IAL_Pants_Urban_02", 1.0);
+			StatusRestriction(10, 20);
+			Item("Outfitset_IAL_Helmet_Urban_01", 1.0);
+			Item("Outfitset_IAL_Helmet_Urban_02", 1.0);
+			Item("Outfitset_IAL_Torso_Urban_01", 1.0);
+			Item("Outfitset_IAL_Torso_Urban_02", 1.0);
+			Item("Outfitset_IAL_Torso_Urban_03", 1.0);
+			Item("Outfitset_IAL_Torso_Urban_04", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Urban_01", 1.0);
+			Item("Outfitset_IAL_Pants_Urban_01", 1.0);
+			Item("Outfitset_IAL_Pants_Urban_02", 1.0);
+			Item("Outfitset_IAL_Pants_Urban_03", 1.0);
+			StatusRestriction(20, 40);
+			Item("Outfitset_IAL_Helmet_Urban_01", 1.0);
+			Item("Outfitset_IAL_Helmet_Urban_02", 1.0);
+			Item("Outfitset_IAL_Torso_Urban_01", 1.0);
+			Item("Outfitset_IAL_Torso_Urban_02", 1.0);
+			Item("Outfitset_IAL_Torso_Urban_03", 1.0);
+			Item("Outfitset_IAL_Torso_Urban_04", 1.0);
+			Item("Outfitset_IAL_Torso_Urban_05", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Urban_01", 1.0);
+			Item("Outfitset_IAL_Pants_Urban_03", 1.0);
+			Item("Outfitset_IAL_Pants_Urban_04", 1.0);
+			Item("Outfitset_IAL_Pants_Urban_05", 1.0);
+			StatusRestriction(40, 50);
+			Item("Outfitset_IAL_Helmet_Urban_01", 1.0);
+			Item("Outfitset_IAL_Helmet_Urban_02", 1.0);
+			Item("Outfitset_IAL_Helmet_Urban_05", 1.0);
+			Item("Outfitset_IAL_Torso_Urban_04", 1.0);
+			Item("Outfitset_IAL_Torso_Urban_05", 1.0);
+			Item("Outfitset_IAL_Torso_Urban_06", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Urban_01", 1.0);
+			Item("Outfitset_IAL_Pants_Urban_04", 1.0);
+			Item("Outfitset_IAL_Pants_Urban_05", 1.0);
+			Item("Outfitset_IAL_Pants_Urban_06", 1.0);
+			Item("Outfitset_IAL_Pants_Urban_07", 1.0);
+        }
+    }	
+	
+sub OutfitsIALMedical(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Other, weight, min_amount, max_amount, prob)
+        {
+			StatusRestriction(40, 50);
+			Item("Outfitset_IAL_Torso_Medical_01", 1.0);
+        }
+    }	
+	
+	sub OutfitsIALMilitary(float weight = 1.0, int min_amount = 1, int max_amount = 1, float prob = 1.0)
+    {
+        Set(Other, weight, min_amount, max_amount, prob)
+        {
+			StatusRestriction(1, 10);
+			Item("Outfitset_IAL_Helmet_Military_01", 1.0);
+			Item("Outfitset_IAL_Helmet_Military_02", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_01", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_02", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_03", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Urban_01", 1.0);
+			Item("Outfitset_IAL_Pants_Urban_01", 1.0);
+			Item("Outfitset_IAL_Pants_Urban_02", 1.0);
+			StatusRestriction(10, 20);
+			Item("Outfitset_IAL_Helmet_Military_01", 1.0);
+			Item("Outfitset_IAL_Helmet_Military_02", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_01", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_02", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_03", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_04", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Urban_01", 1.0);
+			Item("Outfitset_IAL_Pants_Urban_01", 1.0);
+			Item("Outfitset_IAL_Pants_Urban_02", 1.0);
+			Item("Outfitset_IAL_Pants_Urban_03", 1.0);
+			StatusRestriction(20, 40);
+			Item("Outfitset_IAL_Helmet_Military_01", 1.0);
+			Item("Outfitset_IAL_Helmet_Military_02", 1.0);
+			Item("Outfitset_IAL_Helmet_Military_03", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_01", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_02", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_03", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_04", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_05", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Urban_01", 1.0);
+			Item("Outfitset_IAL_Pants_Urban_03", 1.0);
+			Item("Outfitset_IAL_Pants_Urban_04", 1.0);
+			Item("Outfitset_IAL_Pants_Urban_05", 1.0);
+			StatusRestriction(40, 50);
+			Item("Outfitset_IAL_Helmet_Military_01", 1.0);
+			Item("Outfitset_IAL_Helmet_Military_02", 1.0);
+			Item("Outfitset_IAL_Helmet_Military_03", 1.0);
+			Item("Outfitset_IAL_Helmet_Military_05", 1.0);
+			Item("Outfitset_IAL_Helmet_Urban_05", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_04", 1.0);
+			Item("Outfitset_IAL_Torso_Militia_05", 1.0);
+			Item("Outfitset_IAL_TorsoAddon_Urban_01", 1.0);
+			Item("Outfitset_IAL_Pants_Urban_04", 1.0);
+			Item("Outfitset_IAL_Pants_Urban_05", 1.0);
+			Item("Outfitset_IAL_Pants_Urban_06", 1.0);
+			Item("Outfitset_IAL_Pants_Urban_07", 1.0);
+        }
+    }	

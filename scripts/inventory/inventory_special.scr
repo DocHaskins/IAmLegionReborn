@@ -369,8 +369,8 @@ sub main()
         UVLight(true);
         PlayerTool();
 		UIStats(){
-		 UIStat("&StatsUI_MaxEnergy&", 7, "Seconds");
-         UIStat("&StatsUI_Rechargetime&", 21, "Seconds");
+		 UIStat("&StatsUI_MaxEnergy&", 6, "Seconds");
+         UIStat("&StatsUI_Rechargetime&", 18, "Seconds");
 		 UIStat("&StatsUI_ConeSize&", "&Small&");
 		 UIStat("&StatsUI_FlashEffect&", "&MenuNo&");
         }
@@ -378,13 +378,13 @@ sub main()
         FlashlightPreset("Player Flashlight UV LVL 1");
 
         EnergyDrainPerSecond(1);                /// Amount of energy used up every second when flashlight is turned on
-        MaxEnergy(7.0);                         /// Amount of energy the flashlight has
+        MaxEnergy(6.0);                         /// Amount of energy the flashlight has
         //BatteryRechargeEnabled();     		/// Uncomment to enable reloading flashlight with batteries
         GeneratorRechargeEnabled();           	/// Uncomment to enable recharging battery using a generator
         GeneratorRechargePerSecond(0.33);     	/// Amount of energy generated every second when using generator
         EnergyConsumeOnStart(0.2);              /// Initial cost of turning on the light
         RequiredEnergyLevel(0.2);               /// Recharged ratio (0.0-1.0) needed to switch flashlight on
-        RegenerationDelay(0.5);                 /// Turn off - recharge span
+        RegenerationDelay(1.0);                 /// Turn off - recharge span
         CanWorkWhenFullyDrained(false);         /// not parsed, may be usefull
         LowBatteryLevel(0.25);                  /// not parsed, may be usefull
 		ItemLevel(1, 3);
@@ -409,8 +409,8 @@ sub main()
         PlayerTool();
 		
 		UIStats(){
-		 UIStat("&StatsUI_MaxEnergy&", 14, "Seconds");
-         UIStat("&StatsUI_Rechargetime&", 14, "Seconds");
+		 UIStat("&StatsUI_MaxEnergy&", 8, "Seconds");
+         UIStat("&StatsUI_Rechargetime&", 12, "Seconds");
 		 UIStat("&StatsUI_ConeSize&", "&Medium&");
 		 UIStat("&StatsUI_FlashEffect&", "&MenuNo&");
         }
@@ -418,10 +418,10 @@ sub main()
         FlashlightPreset("Player Flashlight UV LVL 2");
 
         EnergyDrainPerSecond(1.0);             	/// Amount of energy used up every second when flashlight is turned on
-        MaxEnergy(7.0);                        /// Amount of energy the flashlight has
+        MaxEnergy(8.0);                        /// Amount of energy the flashlight has
 		//BatteryRechargeEnabled();     		/// Uncomment to enable reloading flashlight with batteries
         GeneratorRechargeEnabled();           	/// Uncomment to enable recharging battery using a generator
-        GeneratorRechargePerSecond(1.0);      	/// Amount of energy generated every second when using generator
+        GeneratorRechargePerSecond(0.66);      	/// Amount of energy generated every second when using generator
         EnergyConsumeOnStart(0.2);              /// Initial cost of turning on the light
         RequiredEnergyLevel(0.2);               /// Recharged ratio (0.0-1.0) needed to switch flashlight on
         RegenerationDelay(1.0);                 /// Turn off - recharge span
@@ -449,8 +449,8 @@ sub main()
         PlayerTool();
 		
 		UIStats(){
-		 UIStat("&StatsUI_MaxEnergy&", 14, "Seconds");
-         UIStat("&StatsUI_Rechargetime&", 14, "Seconds");
+		 UIStat("&StatsUI_MaxEnergy&", 10, "Seconds");
+         UIStat("&StatsUI_Rechargetime&", 8, "Seconds");
 		 UIStat("&StatsUI_ConeSize&", "&Big&");
 		 UIStat("&StatsUI_FlashEffect&", "&MenuYes&");
         }
@@ -458,10 +458,10 @@ sub main()
         FlashlightPreset("Player Flashlight UV LVL 3");
 
         EnergyDrainPerSecond(1.0);              /// Amount of energy used up every second when flashlight is turned on
-        MaxEnergy(14.0);                        /// Amount of energy the flashlight has
+        MaxEnergy(10.0);                         /// Amount of energy the flashlight has
 		//BatteryRechargeEnabled();     		/// Uncomment to enable reloading flashlight with batteries
         GeneratorRechargeEnabled();           	/// Uncomment to enable recharging battery using a generator
-        GeneratorRechargePerSecond(1.0);      	/// Amount of energy generated every second when using generator
+        GeneratorRechargePerSecond(1.25);      	/// Amount of energy generated every second when using generator
         EnergyConsumeOnStart(0.2);              /// Initial cost of turning on the light
         RequiredEnergyLevel(0.2);               /// Recharged ratio (0.0-1.0) needed to switch flashlight on
         RegenerationDelay(1.0);                 /// Turn off - recharge span

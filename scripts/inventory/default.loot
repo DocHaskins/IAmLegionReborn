@@ -1494,6 +1494,35 @@ sub Loot()
 		use Weapons_Endgame_Scaling_T3 (weight = 1.0, min_amount = 1, max_amount = 1);
     }
 	
+	LootedObject("Endgame_Boss_Infected")
+    {
+        ColorSet(ColorSet_WeaponT3_Endgame_LowChance);
+		LootAmount(3);
+		use Weapons_Endgame_Scaling_T3 (weight = 1.0, min_amount = 1, max_amount = 1);
+		use DemolisherGland (weight = 1.0, min_amount = 1, max_amount = 1);
+		use DemolisherSamples (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Endgame_Elite_Infected")
+    {
+        ColorSet(ColorSet_ContainerLv4);
+		LootAmount(3);
+		use Weapons_Endgame_Scaling_T2 (weight = 50.0, min_amount = 0, max_amount = 1);
+		use OutfitsBlue_Endgame_Scaling (weight = 30.0, min_amount = 0, max_amount = 1);
+		use Weapons_Endgame_Scaling_T3 (weight = 20.0, min_amount = 0, max_amount = 1);
+		use GoonGland (weight = 1.0, min_amount = 1, max_amount = 1);
+		use GoonSamples (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
+	LootedObject("Endgame_Platinum_Infected")
+    {
+        ColorSet(ColorSet_WeaponT3_Endgame);
+		LootAmount(3);
+		use Weapons_Endgame_Scaling_T3 (weight = 1.0, min_amount = 1, max_amount = 1);
+		use VolatileGland (weight = 1.0, min_amount = 1, max_amount = 1);
+		use VolatileSamples (weight = 1.0, min_amount = 1, max_amount = 1);
+    }
+	
 	//Difficulty 7
 	
 	

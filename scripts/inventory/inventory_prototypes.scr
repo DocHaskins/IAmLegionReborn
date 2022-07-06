@@ -434,8 +434,8 @@ sub main()
 	
     Item("wpn_2hs_e_AxeCutter", CategoryType_Melee)
     {
-        WpnSubtype(EWpnSubtype_Sword);
-        Visibility(true);
+        WpnSubtype(EWpnSubtype_Axe);
+		Visibility(true);
         ItemType(ItemType_TwoHandedHeavyStick);
         PhysicsScript("simple.phx");
         DamageTiers("scaling_2h_slashing_tier_damages");
@@ -642,6 +642,8 @@ sub main()
         DamageTiers("2h_slashing_tier_damages");
 		StartupMod("BleedingMod_PowerAttack_NightrunnersClaws");
 		ChallengeItem(true);
+        CanDrop(false);
+        AllowedInShop(false);
         RelativeStaminaUsage(0);
     }
 
@@ -822,6 +824,7 @@ sub main()
         StaminaDamage(0);
         GameVersion(8);
         DamageHeadMult(3.0);
+		ChallengeItem(true);
         CanDrop(false);
         AllowedInShop(false);
     }

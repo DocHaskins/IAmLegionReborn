@@ -1,0 +1,483 @@
+sub appearances()
+{
+    /* Syntax overview
+        Character(string id) - start section with appearances for a give character
+            Appearance(string head_name, string body_name, string appearance_id) - defines appearance
+                ModelFpp(string) - model used for fpp
+                ModelTpp(string) - model used for tpp
+                AvailableOnStart() - this appearance can be selected as a starting look when creating character
+                Hint() - name of hint that will be displayed during changing apppearance
+                Image() - image that will be displayed in the storage ("wardrobe") menu
+                Category() - category diplayed in menu_
+				SkillToAdd(string) - name of skill to apply when appearance is equiped, can be used multiple times (adds several skills)
+    */
+    Character("PlayerMan1")
+    {
+		Appearance("Default")
+        { 
+            ModelFpp("player_fpp_skeleton.model");
+            ModelTpp("player_tpp_skeleton.model");
+            Default();
+            AvailableOnStart();
+            Image("OutfitIconDefault");
+			AvailableOnStart();
+            Category(0);
+            ID(0);
+        }
+		
+		Appearance("Legendary_Nightrunner")
+        { 
+            ModelFpp("player_nightrunner_a_fpp.model");
+            ModelTpp("player_nightrunner_a_tpp.model");
+            OverridesOutfit(true);
+            Image("Outfit_LegendaryNightrunner");
+            Color("Orange");
+			DLC("DLC3");
+			Category(0);
+            ID(1);
+        }	
+
+		Appearance("Reload")
+        { 
+            ModelFpp("player_reload_a_fpp.model");
+            ModelTpp("player_reload_a_tpp.model");
+            OverridesOutfit(true);
+            Color("Orange");
+            Image("Outfit_Reload");
+            DLC("");
+			Category(0);
+            ID(2);
+        }				
+		Appearance("Authority")
+        { 
+            ModelFpp("player_outfit_authority_fpp.model");
+            ModelTpp("player_outfit_authority_tpp.model");
+            OverridesOutfit(true);
+            DLC("");
+            RequiredDLCs("");
+			Color("Orange");
+            Image("Outfit_Authority");
+			Category(0);
+            ID(3);
+        }			
+		Appearance("Ronin")
+        { 
+            ModelFpp("player_outfit_ronin_fpp.model");
+            ModelTpp("player_outfit_ronin_tpp.model");
+            OverridesOutfit(true);
+            DLC("");
+            RequiredDLCs("");
+			Color("Orange");
+            Image("Outfit_Ronin");
+			Category(0);
+            ID(5);
+        }
+		Appearance("E3_2019")
+        { 
+            ModelFpp("player_outfit_e3_fpp.model");
+            ModelTpp("player_outfit_e3_tpp.model");
+            OverridesOutfit(true);
+            DLC("");
+			Color("Orange");
+            Image("Outfit_E3");
+			Category(0);
+            ID(6);
+        }	
+		Appearance("E3_2019_Elite")
+        { 
+            ModelFpp("player_outfit_e3_elite_fpp.model");
+            ModelTpp("player_outfit_e3_elite_tpp.model");
+            OverridesOutfit(true);
+			HasCustomUnlockRequirements();
+            DLC("");
+			Color("Platinum");
+            Image("Outfit_E3_Elite");
+			Category(0);
+            ID(7);
+        }	
+		Appearance("Lady")
+        { 
+            ModelFpp("player_outfit_female_exotic_fpp.model");
+            ModelTpp("player_outfit_female_exotic_tpp.model");
+            OverridesOutfit(true);
+            DLC("");
+			Color("Green");
+            Image("Outfit_E3");
+			Category(0);
+            ID(8);
+        }	
+		Appearance("Witch")
+        { 
+            ModelFpp("player_outfit_witch_fpp.model");
+            ModelTpp("player_outfit_witch_tpp.model");
+            OverridesOutfit(true);
+            DLC("");
+			Color("Orange");
+            Image("coll_item_OLX_icon");
+			Category(0);
+            ID(9);
+        }
+		Appearance("Hazmat")
+        { 
+            ModelFpp("player_outfit_hazmat_fpp.model");
+            ModelTpp("player_outfit_hazmat_tpp.model");
+            OverridesOutfit(true);
+            DLC("");
+			Color("White");
+            Image("coll_mural_unique_013_a_cat_icon");
+			Category(0);
+            ID(10);
+        }
+		Appearance("Zombie")
+        { 
+            ModelFpp("player_outfit_zombie_fpp.model");
+            ModelTpp("player_outfit_zombie_tpp.model");
+            OverridesOutfit(true);
+            DLC("");
+			Color("Blue");
+            Image("Outfit_E3");
+			Category(0);
+            ID(11);
+        }	
+		Appearance("Test")
+        { 
+            ModelFpp("player_outfit_test_fpp.model");
+            ModelTpp("player_outfit_test_tpp.model");
+            OverridesOutfit(true);
+            DLC("");
+			Color("Blue");
+            Image("coll_mural_unique_013_a_cat_icon");
+			Category(0);
+            ID(12);
+        }			
+    }
+	
+	
+
+    DialogOutfitOverride()
+    {
+        Gloves("");
+    }
+	
+	OutfitAddon("Parachute")
+	{
+        Slot("TORSO_PART_2");
+        ShowInFPP(false);
+        ShowInTPP(true);
+	
+        Variant()
+        {
+            Mesh(1, "player_backpack.msh");
+	        Mesh(2, "player_backpack.msh");
+	        Mesh(3, "player_backpack.msh");
+
+        }
+		
+		Variant("Parachute_Backpack_Reload")
+        {
+            Mesh(1, "player_backpack.msh")
+			{
+			    ReplaceMaterial("player_backpack.mat", "player_reload_backpack.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "player_reload_backpack_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+	        Mesh(2, "player_backpack.msh")
+			{
+			    ReplaceMaterial("player_backpack.mat", "player_reload_backpack.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "player_reload_backpack_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+	        Mesh(3, "player_backpack.msh")
+			{
+			    ReplaceMaterial("player_backpack.mat", "player_reload_backpack.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "player_reload_backpack_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+        }
+		
+		Variant("Parachute_Backpack_Legendary_Nightrunner")
+        {
+            Mesh(1, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_nightrunner_backpack.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "player_nightrunner_backpack_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+	        Mesh(2, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_nightrunner_backpack.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "player_nightrunner_backpack_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+	        Mesh(3, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_nightrunner_backpack.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "player_nightrunner_backpack_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+        }
+		Variant("Parachute_Backpack_Black_Copper")
+        {
+            Mesh(1, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "npc_lavan_backpack_black_copper.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "npc_lavan_backpack_a_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+	        Mesh(2, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "npc_lavan_backpack_black_copper.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "npc_lavan_backpack_a_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+	        Mesh(3, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "npc_lavan_backpack_black_copper.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "npc_lavan_backpack_a_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+        }
+		Variant("Parachute_Backpack_Tgg_Harpy")
+        {
+            Mesh(1, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_tgg_harpy_backpack.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "npc_lavan_backpack_a_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+	        Mesh(2, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_tgg_harpy_backpack.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "npc_lavan_backpack_a_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+	        Mesh(3, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_tgg_harpy_backpack.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "npc_lavan_backpack_a_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+        }
+		Variant("Parachute_Backpack_Tgg_Manticore")
+        {
+            Mesh(1, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_tgg_manticore_backpack.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "npc_lavan_backpack_a_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+	        Mesh(2, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_tgg_manticore_backpack.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "npc_lavan_backpack_a_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+	        Mesh(3, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_tgg_manticore_backpack.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "npc_lavan_backpack_a_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+        }
+		Variant("Parachute_Backpack_Tgg_Wyvern")
+        {
+            Mesh(1, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_tgg_wyvern_backpack.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "npc_lavan_backpack_a_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+	        Mesh(2, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_tgg_wyvern_backpack.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "npc_lavan_backpack_a_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+	        Mesh(3, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_tgg_wyvern_backpack.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "npc_lavan_backpack_a_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+        }
+		Variant("Parachute_Backpack_Ronin")
+        {
+            Mesh(1, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_backpack_ronin.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "null");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+	        Mesh(2, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_backpack_ronin.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "null");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+	        Mesh(3, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_backpack_ronin.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "null");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+        }
+		Variant("Parachute_Backpack_Authority")
+        {
+            Mesh(1, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_backpack_pk_a.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "null");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+	        Mesh(2, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_backpack_pk_a.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "null");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+	        Mesh(3, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_backpack_pk_a.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "null");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+        }
+		
+		Variant("Parachute_Backpack_GoodNight_orange")
+        {
+            Mesh(1, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_backpack_goodnight_a.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "npc_lavan_backpack_a_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+	        Mesh(2, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_backpack_goodnight_a.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "npc_lavan_backpack_a_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+	        Mesh(3, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_backpack_goodnight_a.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "npc_lavan_backpack_a_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+        }
+		Variant("Parachute_Backpack_GoodNight_red")
+        {
+            Mesh(1, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_backpack_goodnight_b.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "player_backpack_goodnight_b_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+	        Mesh(2, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_backpack_goodnight_b.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "player_backpack_goodnight_b_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+	        Mesh(3, "player_backpack.msh")
+			{
+				ReplaceMaterial("player_backpack.mat", "player_backpack_goodnight_b.mat");
+				ReplaceMaterial("player_backpack_add_a.mat", "player_backpack_goodnight_b_add_a.mat");
+				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
+			}
+        }
+
+	}
+
+    
+	OutfitSet("TestSet")
+	{
+		Torso("Test_OutfitSet_TestSet_Torso");
+		Legs("Test_OutfitSet_TestSet_Legs");
+		Shoes("Test_OutfitSet_TestSet_Shoes");
+		Head("Test_OutfitSet_TestSet_Head");
+		Gloves("Test_OutfitSet_TestSet_Gloves");
+		TorsoAddon("Test_OutfitSet_TestSet_TorsoAddon");
+		AffixGroupBoost("Outfits_Test_Base");
+		AffixBoost(10.0);
+	}
+	OutfitSet("Authority")
+	{
+		Torso("Outfitset_Tank_Torso_Authority");
+		Legs("Outfitset_Tank_Legs_Authority");
+		Shoes("Outfitset_Tank_Shoes_Authority");
+		Head("Outfitset_Tank_Head_Authority");
+		Gloves("Outfitset_Tank_Gloves_Authority");
+		TorsoAddon("Outfitset_Tank_TorsoAddon_Authority");
+		AffixGroupBoost("Outfits_Authority_Affixes");
+		AffixBoost(60.0);
+	}
+	OutfitSet("Ronin")
+	{
+		Torso("Outfitset_RangedDPS_TorsoAddon_SamuraiSurvivor");
+		Legs("Outfitset_RangedDPS_Legs_SamuraiSurvivor");
+		Shoes("Outfitset_RangedDPS_Shoes_SamuraiSurvivor");
+		Head("Outfitset_RangedDPS_Head_SamuraiSurvivor");
+		Gloves("Outfitset_RangedDPS_Gloves_SamuraiSurvivor");
+		TorsoAddon("Outfitset_RangedDPS_Torso_SamuraiSurvivor");
+		AffixGroupBoost("Outfits_Ronin_Affixes");
+		AffixBoost(60.0);
+	}
+	OutfitSet("Nightrunner")
+	{
+		Torso("outfit_nightrunner_torso");
+		Legs("outfit_nightrunner_legs");
+		Shoes("outfit_nightrunner_shoes");
+		Head("outfit_nightrunner_headwear");
+		Gloves("outfit_nightrunner_gloves");
+		TorsoAddon("outfit_nightrunner_bracers");
+		AffixGroupBoost("Outfits_Nightrunner_Affixes");
+		AffixBoost(60.0);
+	}
+	OutfitSet("PostApo")
+	{
+		Torso("Outfitset_MeleeDPS_Torso_PostApo");
+		Legs("Outfitset_MeleeDPS_Legs_PostApo");
+		Shoes("Outfitset_MeleeDPS_Shoes_PostApo");
+		Head("Outfitset_MeleeDPS_Head_PostApo");
+		Gloves("Outfitset_MeleeDPS_Gloves_PostApo");
+		TorsoAddon("Outfitset_MeleeDPS_TorsoAddon_PostApo");
+		AffixGroupBoost("Outfits_PostApo_Affixes");
+		AffixBoost(60.0);
+	}
+	OutfitSet("Military")
+	{
+		Torso("Outfitset_MeleeDPS_Torso_Military");
+		Legs("Outfitset_MeleeDPS_Legs_Military");
+		Shoes("Outfitset_MeleeDPS_Shoes_Military");
+		Head("Outfitset_MeleeDPS_Head_Military");
+		Gloves("Outfitset_MeleeDPS_Gloves_Military");
+		TorsoAddon("Outfitset_MeleeDPS_TorsoAddon_Military");
+		AffixGroupBoost("Outfits_Military_Affixes");
+		AffixBoost(60.0);
+	}
+	OutfitSet("StayHuman")
+	{
+		Torso("outfit_stayhuman_torso");
+		Legs("outfit_stayhuman_legs");
+		Shoes("outfit_stayhuman_shoes");
+		Head("outfit_stayhuman_headwear");
+		Gloves("outfit_stayhuman_gloves");
+		TorsoAddon("outfit_stayhuman_bracers");
+		AffixGroupBoost("Outfits_StayHuman_Affixes");
+		AffixBoost(60.0);
+	}
+	
+	LoadoutUnlockCost(1, 10); //index, cost
+	LoadoutUnlockCost(2, 20);
+	LoadoutUnlockCost(3, 30);
+}
+
+/*
+    StatusLevel(int, CharacterId, AppearanceId) - Appearance is unlocked after reching given status level
+    Chapter(int, CharacterId, AppearanceId) - Appearance is unlocked after reaching certain point in storyline
+    Item(ItemId, CharacterId, AppearanceId) - Appearance is unlocked after player finds given item in the game world
+*/
+sub unlock()
+{
+	PlayerLevel("Traversal", 0, "PlayerMan1", "Default");
+}

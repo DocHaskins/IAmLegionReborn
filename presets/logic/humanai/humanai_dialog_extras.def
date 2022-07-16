@@ -1,0 +1,499 @@
+import "HumanAI_sound.def"
+sub DialogExtras()
+{ 
+// Survivor Presets
+    Preset("Bckg_Survivor_man", "NPC_Man")
+    {
+        SetField("m_AIModelName", "srv_man_08_a.model;srv_man_08_b.model;srv_man_08_c.model;srv_man_08_d.model;srv_man_04_b.model;srv_man_09_a.model;srv_man_10_a.model;srv_man_11_a.model;srv_man_12_a.model");
+    }
+    Preset("Bckg_Survivor_woman", "NPC_Woman")
+    {
+        SetField("m_AIModelName", "srv_wmn_10_b.model;srv_wmn_06_a.model;srv_wmn_07_a.model;srv_wmn_08_a.model;srv_wmn_09_a.model");
+    }
+    Preset("Bckg_Survivor_kid", "NPC_Man")
+    {
+        SetField("m_AIModelName", "child_boy_01_a.model;child_boy_02_a.model;child_boy_03_a.model;child_boy_04_a.model;child_boy_05_a.model;child_girl_01_a.model;child_girl_02_a.model");
+    }
+    Preset("Bckg_Survivor_man01","Bckg_Survivor_man") // A survivor man: just a random dude that's survivin'
+    {
+        SetField("m_DialogActorID", "Bckg_Survivor_man01");
+    }
+    Preset("Bckg_Survivor_man02","Bckg_Survivor_man") // A survivor man: just a random dude that's survivin'
+    {
+        SetField("m_DialogActorID", "Bckg_Survivor_man02");
+    }
+    Preset("Bckg_Survivor_man03","Bckg_Survivor_man") // A survivor man: just a random dude that's survivin'
+    {
+        SetField("m_DialogActorID", "Bckg_Survivor_man03");
+    }
+    Preset("Bckg_Survivor_woman01", "Bckg_Survivor_woman") // A survivor woman: just a random dude that's survivin'
+    {
+        SetField("m_DialogActorID", "Bckg_Survivor_woman01");
+    }
+    Preset("Bckg_Survivor_woman02", "Bckg_Survivor_woman") // A survivor woman: just a random dude that's survivin'
+    {
+        SetField("m_DialogActorID", "Bckg_Survivor_woman02");
+    }
+    Preset("Bckg_Survivor_woman03", "Bckg_Survivor_woman") // A survivor woman: just a random dude that's survivin'
+    {
+        SetField("m_DialogActorID", "Bckg_Survivor_woman03");
+    }
+    Preset("Bckg_Survivor_kid01", "Bckg_Survivor_kid") // A survivor kid: just a random dude that's survivin'
+    {
+        SetField("m_DialogActorID", "Bckg_Survivor_kid01");
+		SetField("m_AIModelName", "child_boy_01_a.model");
+    }
+    Preset("Bckg_Survivor_kid02", "Bckg_Survivor_kid") // A survivor kid: just a random dude that's survivin'
+    {
+        SetField("m_DialogActorID", "Bckg_Survivor_kid02");
+		SetField("m_AIModelName", "child_boy_04_a.model");
+    }
+    Preset("Bckg_Survivor_kid03", "Bckg_Survivor_kid") // A survivor kid: just a random dude that's survivin'
+    {
+        SetField("m_DialogActorID", "Bckg_Survivor_kid03");
+    }
+	Preset("Bckg_Survivor_dead_man01","Bckg_Survivor_man") // A survivor man: just a random dude that's survivin'
+    {
+		SetField("m_AIModelName", "srv_wmn_injured_heavily_01_a.model");
+        SetField("m_DialogActorID", "Bckg_Survivor_dead_man01");
+    }
+// End of Survivors Presets
+/////////////////////////////////////////////////////////////////////////
+// Scavengers Presets
+    Preset("Bckg_scav_man", "NPC_Man")
+    {
+        SetField("m_AIModelName", "sc_runner_man_01_a.model;sc_runner_man_01_b.model;sc_runner_man_02_a.model;sc_runner_man_03_a.model;sc_runner_man_04_a.model;sc_runner_man_04_b.model");
+    }
+    Preset("Bckg_scav_woman", "NPC_Woman")
+    {
+        SetField("m_AIModelName", "sc_runner_wmn_06_c.model;sc_runner_wmn_02_b.model;sc_runner_wmn_05_a.model;sc_runner_wmn_01_a.model;sc_runner_wmn_04_a.model;sc_runner_wmn_02_a.model");
+    }
+    Preset("Bckg_scav_man01", "Bckg_scav_man") // random Scavenger man
+    {
+        SetField("m_DialogActorID", "Bckg_scav_man01");
+    }
+    Preset("Bckg_scav_man02", "Bckg_scav_man") // random Scavenger man
+    {
+        SetField("m_DialogActorID", "Bckg_scav_man02");
+    }
+    Preset("Bckg_scav_man03", "Bckg_scav_man") // random Scavenger man
+    {
+        SetField("m_DialogActorID", "Bckg_scav_man03");
+    }
+    Preset("Bckg_scav_woman01", "Bckg_scav_woman") // random SCV woman
+    {
+        SetField("m_DialogActorID", "Bckg_scav_woman01");
+    }
+    Preset("Bckg_scav_woman02", "Bckg_scav_woman") // random SCV woman
+    {
+        SetField("m_DialogActorID", "Bckg_scav_woman02");
+    }
+    Preset("Bckg_scav_woman03", "Bckg_scav_woman") // random SCV woman
+    {
+        SetField("m_DialogActorID", "Bckg_scav_woman03");
+    }
+// End of Scavegers Presets
+/////////////////////////////////////////////////////////////////////////
+// Renegades Presets
+    Preset("Bckg_renegade_man", "NPC_Man")
+    {
+        SetField("m_AIModelName", "ren_man_light_01_a.model;ren_man_light_01_b.model;ren_man_light_02_a.model;ren_man_light_02_b.model;ren_man_light_03_a.model;ren_man_light_04_a.model");
+    }
+	Preset("Bckg_renegade_man01","Bckg_renegade_man")
+    {
+        SetField("m_DialogActorID", "Bckg_renegade_man01");
+    }
+	Preset("Bckg_renegade_man02","Bckg_renegade_man")
+    {
+        SetField("m_DialogActorID", "Bckg_renegade_man02");
+    }
+	Preset("Bckg_renegade_man03","Bckg_renegade_man")
+    {
+        SetField("m_DialogActorID", "Bckg_renegade_man03");
+    }
+// End of Renegades Presets
+/////////////////////////////////////////////////////////////////////////
+// Peacekeeper Presets
+    Preset("Bckg_pk_man", "NPC_Man")
+    {
+        SetField("m_AIModelName", "pk_light_man_02_a.model;pk_light_man_03_a.model;pk_light_man_04_a.model;pk_light_man_05_a.model");
+    }
+    Preset("Bckg_pk_woman", "NPC_Woman")
+    {
+        SetField("m_AIModelName", "pk_hub_wmn_03.model;pk_hub_wmn_01.model;pk_hub_wmn_04.model;pk_hub_wmn_02.model;pk_wmn_01_a.model;pk_light_wmn_01_a.model;pk_heavy_wmn_01_a.model;pk_heavy_wmn_01_b.model;pk_heavy_wmn_01_c.model");
+    }
+    Preset("Bckg_pk_man01", "Bckg_pk_man") // random PK man
+    {
+        SetField("m_DialogActorID", "pk_man01");
+    }
+    Preset("Bckg_pk_man02", "Bckg_pk_man") // random PK man
+    {
+        SetField("m_DialogActorID", "pk_man02");
+    }
+    Preset("Bckg_pk_man03", "Bckg_pk_man") // random PK man
+    {
+        SetField("m_DialogActorID", "pk_man03");
+    }
+    Preset("Bckg_pk_woman01", "Bckg_pk_woman") // random PK woman
+    {
+        SetField("m_DialogActorID", "Bckg_pk_woman01");
+    }
+    Preset("Bckg_pk_woman02", "Bckg_pk_woman") // random PK woman
+    {
+        SetField("m_DialogActorID", "Bckg_pk_woman02");
+    }
+    Preset("Bckg_pk_woman03", "Bckg_pk_woman") // random PK woman
+    {
+        SetField("m_DialogActorID", "Bckg_pk_woman03");
+    }
+    Preset("Bckg_pk_woman04", "NPC_Woman") // random PK woman
+    {
+        SetField("m_AIModelName", "npc_anderson.model");
+        SetField("m_DialogActorID", "Bckg_pk_woman04");
+    }
+	Preset("Bckg_pk_dead_man01_mission", "Bckg_pk_man") // random PK man for missions
+    {
+        SetField("m_DialogActorID", "Bckg_pk_dead_man01_mission");
+    }
+//End of Peacekeeper Presets
+/////////////////////////////////////////////////////////////////////////
+// Dialogue Zombie Presets
+	Preset("Anderson_Infected_Dialogue", "NPC_Woman")
+    {
+        SetField("m_AIModelName", "npc_anderson_viral.model");
+        SetField("m_DialogActorID", "Anderson_Infected_Dialogue");
+    }
+    Preset("Viral_01", "NPC_Man")
+    {
+        SetField("m_AIModelName", "viral_man_lvl02_01_a.model");
+        SetField("m_DialogActorID", "Viral_01");
+        use Viral_Sound();
+    }
+	Preset("Viral_01_Prologue", "NPC_Man") /// PROLOGUE VER - NO BIOMARKER
+    {
+		SetField("m_ForceDisableBiomarker", "1");
+        SetField("m_AIModelName", "viral_man_lvl02_01_a.model");
+        SetField("m_DialogActorID", "Viral_01_Prologue");
+        use Viral_Sound();
+    }
+    Preset("Viral_02", "NPC_Man")
+    {
+        SetField("m_AIModelName", "viral_man_lvl02_04_a.model");
+        SetField("m_DialogActorID", "Viral_02");
+        use Viral_Sound();
+    }
+	Preset("Viral_02_Prologue", "NPC_Man") /// PROLOGUE VER - NO BIOMARKER
+    {
+		SetField("m_ForceDisableBiomarker", "1");
+        SetField("m_AIModelName", "viral_man_lvl02_04_a.model");
+        SetField("m_DialogActorID", "Viral_02_Prologue");
+        use Viral_Sound();
+    }
+    Preset("Viral_03", "NPC_Man")
+    {
+        SetField("m_AIModelName", "viral_man_lvl03_01_a.model");
+        SetField("m_DialogActorID", "Viral_03");
+        use Viral_Sound();
+    }
+	Preset("Viral_03_Prologue", "NPC_Man") /// PROLOGUE VER - NO BIOMARKER
+    {
+		SetField("m_ForceDisableBiomarker", "1");
+        SetField("m_AIModelName", "viral_man_lvl03_01_a.model");
+        SetField("m_DialogActorID", "Viral_03_Prologue");
+        use Viral_Sound();
+    }
+    Preset("Viral_04", "NPC_Man")
+    {
+	
+        SetField("m_AIModelName", "viral_man_lvl02_02_a.model");
+        SetField("m_DialogActorID", "Viral_04");
+        use Viral_Sound();
+    }
+	Preset("Viral_04_Prologue", "NPC_Man") /// PROLOGUE VER - NO BIOMARKER
+    {
+		SetField("m_ForceDisableBiomarker", "1");
+        SetField("m_AIModelName", "viral_man_lvl02_02_a.model");
+        SetField("m_DialogActorID", "Viral_04_Prologue");
+        use Viral_Sound();
+    }
+    Preset("Viral_05", "NPC_Man")
+    {
+        SetField("m_AIModelName", "viral_man_lvl02_03_a.model");
+        SetField("m_DialogActorID", "Viral_05");
+        use Viral_Sound();
+    }
+	Preset("Viral_05_Prologue", "NPC_Man") /// PROLOGUE VER - NO BIOMARKER
+    {
+		SetField("m_ForceDisableBiomarker", "1");
+        SetField("m_AIModelName", "viral_man_lvl02_03_a.model");
+        SetField("m_DialogActorID", "Viral_05_Prologue");
+        use Viral_Sound();
+    }
+    Preset("Viral_06", "NPC_Woman")
+    {
+        SetField("m_AIModelName", "viral_wmn_lvl01_02_a.model");
+        SetField("m_DialogActorID", "Viral_06");
+        use Viral_Sound();
+    }
+    Preset("Viral_07", "NPC_Woman")
+    {
+        SetField("m_AIModelName", "viral_wmn_lvl01_03_a.model");
+        SetField("m_DialogActorID", "Viral_07");
+        use Viral_Sound();
+    }
+    Preset("Viral_08", "NPC_Man")
+    {
+        SetField("m_AIModelName", "viral_man_lvl02_01_a.model");
+        SetField("m_DialogActorID", "Viral_08");
+        use Viral_Sound();
+    }
+    Preset("Viral_09", "NPC_Man")
+    {
+        SetField("m_AIModelName", "viral_man_lvl02_04_a.model");
+        SetField("m_DialogActorID", "Viral_09");
+        use Viral_Sound();
+    }
+	Preset("Viral_01_Mission", "NPC_Man")
+    {
+        SetField("m_AIModelName", "viral_man_lvl02_03_a.model");
+        SetField("m_DialogActorID", "Viral_01_Mission");
+        use Viral_Sound();
+    }
+	Preset("Viral_02_Mission", "NPC_Man")
+    {
+        SetField("m_AIModelName", "viral_man_lvl02_04_a.model");
+        SetField("m_DialogActorID", "Viral_02_Mission");
+        use Viral_Sound();
+    }
+	Preset("Viral_03_Mission", "NPC_Man")
+    {
+        SetField("m_AIModelName", "viral_man_lvl03_01_a.model");
+        SetField("m_DialogActorID", "Viral_03_Mission");
+        use Viral_Sound();
+    }
+    Preset("Viral_04_Mission", "NPC_Man")
+    {
+        SetField("m_AIModelName", "viral_man_lvl02_02_a.model");
+        SetField("m_DialogActorID", "Viral_04_Mission");
+        use Viral_Sound();
+    }
+	Preset("Zombie_man_01_Mission", "Biter")
+    {
+        SetField("m_AIModelName", "zmb_man_06_a.model");
+        SetField("m_DialogActorID", "Zombie_man_01_Mission");
+        use Biter_Sound();
+    }
+	Preset("Zombie_man_02_Mission", "NPC_Man")
+    {
+        SetField("m_AIModelName", "zmb_man_10_b.model");
+        SetField("m_DialogActorID", "Zombie_man_02_Mission");
+        use Biter_Sound();
+    }
+	Preset("Zombie_woman_01_Mission", "NPC_Woman")
+    {
+		SetField("m_ForceDisableBiomarker", "1");
+        SetField("m_AIModelName", "zmb_wmn_01_a.model");
+        SetField("m_DialogActorID", "Zombie_woman_01_Mission");
+        use Biter_Woman_Sound();
+    }
+	Preset("Zombie_woman_02_Mission", "NPC_Woman")
+    {
+        SetField("m_AIModelName", "zmb_wmn_01_a.model");
+        SetField("m_DialogActorID", "Zombie_woman_02_Mission");
+        use Biter_Woman_Sound();
+    }
+    Preset("Zombie_woman_01", "NPC_Woman")
+    {
+		SetField("m_ForceDisableBiomarker", "1");
+        SetField("m_AIModelName", "zmb_wmn_01_a.model");
+        SetField("m_DialogActorID", "Zombie_woman_01");
+        use Biter_Woman_Sound();
+    }
+    Preset("Zombie_woman_02", "NPC_Woman")
+    {
+        SetField("m_AIModelName", "zmb_wmn_02_a.model");
+        SetField("m_DialogActorID", "Zombie_woman_02");
+        use Biter_Woman_Sound();
+    }
+    Preset("Zombie_woman_03", "NPC_Woman")
+    {
+        SetField("m_AIModelName", "zmb_wmn_02_b.model");
+        SetField("m_DialogActorID", "Zombie_woman_03");
+        use Biter_Woman_Sound();
+    }
+    Preset("Zombie_woman_04", "NPC_Woman")
+    {
+        SetField("m_AIModelName", "zmb_wmn_05_a.model");
+        SetField("m_DialogActorID", "Zombie_woman_04");
+        use Biter_Woman_Sound();
+    }
+    Preset("Zombie_woman_05", "NPC_Woman")
+    {
+        SetField("m_AIModelName", "zmb_wmn_08_a.model");
+        SetField("m_DialogActorID", "Zombie_woman_05");
+        use Biter_Woman_Sound();
+    }
+    Preset("Zombie_man_01", "Biter")
+    {
+        SetField("m_AIModelName", "zmb_man_01_a.model");
+        SetField("m_DialogActorID", "Zombie_man_01");
+        SetField("m_ScriptedBehaviorTree", "NPC_BT"); 
+        use Biter_Sound();
+    }
+    Preset("Zombie_man_02", "Biter")
+    {
+        SetField("m_AIModelName", "zmb_man_03_a.model");
+        SetField("m_DialogActorID", "Zombie_man_02");
+        SetField("m_ScriptedBehaviorTree", "NPC_BT"); 
+        use Biter_Sound();
+    }
+	Preset("Zombie_man_Cheers_01", "Biter")
+    {
+        SetField("m_AIModelName", "zmb_man_03_a.model");
+        SetField("m_DialogActorID", "Zombie_man_Cheers_01");
+        SetField("m_ScriptedBehaviorTree", "NPC_BT"); 
+		SetField("m_EnemyIndicators", "NoSurvivorSenseWidget");
+        use Biter_Sound();
+    }
+    Preset("Zombie_man_03", "Biter")
+    {
+        SetField("m_AIModelName", "zmb_man_06_a.model");
+        SetField("m_DialogActorID", "Zombie_man_03");
+        use Biter_Sound();
+    }
+    Preset("Zombie_man_04", "NPC_Man")
+    {
+        SetField("m_AIModelName", "zmb_man_10_b.model");
+        SetField("m_DialogActorID", "Zombie_man_04");
+        use Biter_Sound();
+    }
+    Preset("Zombie_man_05", "NPC_Man")
+    {
+        SetField("m_AIModelName", "zmb_man_12_a.model");
+        SetField("m_DialogActorID", "Zombie_man_05");
+        use Biter_Sound();
+    }
+    Preset("Zombie_man_01_prologue", "NPC_Man")
+    {
+		SetField("m_ForceDisableBiomarker", "1");
+        SetField("m_AIModelName", "zmb_man_01_a.model");
+        SetField("m_DialogActorID", "Zombie_man_01_prologue");
+        use Biter_Sound();
+    }
+    Preset("Zombie_man_02_prologue", "NPC_Man")
+    {
+		SetField("m_ForceDisableBiomarker", "1");
+        SetField("m_AIModelName", "zmb_man_03_a.model");
+        SetField("m_DialogActorID", "Zombie_man_02_prologue");
+        use Biter_Sound();
+    }
+    Preset("Zombie_man_03_prologue", "NPC_Man")
+    {
+		SetField("m_ForceDisableBiomarker", "1");
+        SetField("m_AIModelName", "zmb_man_06_a.model");
+        SetField("m_DialogActorID", "Zombie_man_03_prologue");
+        use Biter_Sound();
+    }
+    Preset("Zombie_man_04_prologue", "NPC_Man")
+    {
+		SetField("m_ForceDisableBiomarker", "1");
+        SetField("m_AIModelName", "zmb_man_10_b.model");
+        SetField("m_DialogActorID", "Zombie_man_04_prologue");
+        use Biter_Sound();
+    }
+    Preset("Zombie_man_05_prologue", "NPC_Man")
+    {
+		SetField("m_ForceDisableBiomarker", "1");
+        SetField("m_AIModelName", "zmb_man_12_a.model");
+        SetField("m_DialogActorID", "Zombie_man_05_prologue");
+        use Biter_Sound();
+    }
+	Preset("Suicider_01", "NPC_Man")
+    {
+        SetField("m_AIModelName", "zmb_suicider_a.model");
+        SetField("m_DialogActorID", "Suicider_01");
+        use Suicider_Sound();
+    }
+    Preset("Suicider_02", "NPC_Man")
+    {
+        SetField("m_AIModelName", "zmb_suicider_b.model");
+        SetField("m_DialogActorID", "Suicider_02");
+        use Suicider_Sound();
+    }
+    Preset("Suicider_03", "NPC_Man")
+    {
+        SetField("m_AIModelName", "zmb_suicider_a.model");
+        SetField("m_DialogActorID", "Suicider_03");
+        use Suicider_Sound();
+    }
+	Preset("Prologue_Banshee_01", "NPC_Man")
+    {
+        SetField("m_AIModelName", "zmb_banshee_a.model");
+        SetField("m_DialogActorID", "Prologue_Banshee_01");
+    }
+    Preset("Prologue_Banshee_02", "NPC_Man")
+    {
+        SetField("m_AIModelName", "zmb_banshee_b.model");
+        SetField("m_DialogActorID", "Prologue_Banshee_02");
+    }
+    Preset("Screamer_01", "NPC_Man")
+    {
+        SetField("m_AIModelName", "zmb_screamer.model");
+        SetField("m_DialogActorID", "Screamer_01");
+        use Screamer_Sound();
+    }
+    Preset("Demolisher_01", "NPC_Man")
+    {
+        SetField("m_AIModelName", "zmb_demolisher_b.model");
+        SetField("m_DialogActorID", "Demolisher_01");
+        use Demolisher_Sound();
+    }
+    Preset("Goon_01", "NPC_Man")
+    {
+        SetField("m_AIModelName", "zmb_goon.model");
+        SetField("m_DialogActorID", "Goon_01");
+        use Goon_Sound();
+    }
+	Preset("Charger_01", "NPC_Man")
+    {
+        SetField("m_AIModelName", "zmb_charger_a.model");
+        SetField("m_DialogActorID", "Charger_01");
+		SetField("m_ForcedBodyScaleMin", "1.2");
+        SetField("m_ForcedBodyScaleMax", "1.2");
+    }
+	Preset("Spitter_01", "NPC_Man")
+    {
+        SetField("m_AIModelName", "zmb_spitter_a.model");
+        SetField("m_DialogActorID", "Spitter_01");
+    }
+	Preset("Bolter_01", "NPC_Man")
+    {
+        SetField("m_AIModelName", "zmb_bolter_a.model");
+        SetField("m_DialogActorID", "Bolter_01");
+    }
+    Preset("Alpha_Zombie_01", "NPC_Man")
+    {
+        SetField("m_AIModelName", "zmb_voleteile_alpha_zombie.model");
+        SetField("m_DialogActorID", "Alpha_Zombie_01");
+    }
+    Preset("Volatile_01", "NPC_Man")
+    {
+        SetField("m_AIModelName", "zmb_volatile_a.model");
+        SetField("m_DialogActorID", "Volatile_01");
+    }
+	Preset("X13_Volatile_01", "NPC_Man")
+    {
+		SetField("m_AIModelName", "zmb_volatile_a.model");
+		SetField("m_DialogActorID", "X13_Volatile_01");
+		SetField("m_ForcedBodyScaleMin", "1.20");
+        SetField("m_ForcedBodyScaleMax", "1.20");
+    }
+	Preset("X13_Volatile_02", "NPC_Man")
+    {
+		SetField("m_AIModelName", "zmb_volatile_a.model");
+		SetField("m_DialogActorID", "X13_Volatile_02");
+		SetField("m_ForcedBodyScaleMin", "1.20");
+        SetField("m_ForcedBodyScaleMax", "1.20");
+    }
+// End of Dialogue Zombie Presets
+}

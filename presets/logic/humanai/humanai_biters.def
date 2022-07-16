@@ -1,0 +1,391 @@
+sub BitersPresets()
+{
+    Preset("Biter")
+    {
+        //Logic
+        SetField("m_ConflictSide", "zombie");
+        SetField("m_FallRecoveryBank", "fall_recovery_biter_man");
+        SetField("m_ModulesPreset", "modules_biter");
+        SetField("m_MainBehaviorTree", "BITER_BT");
+        SetField("m_EnemyIndicators", "NoHPGauge");
+        SetField("m_NavigationPreset", "biter");
+        SetField("m_AnimationPreset", "biter@ai_animation_presets.scr");
+        SetField("m_PerceptionPreset", "infected");
+        SetField("m_DamageResistance", "PoisonImmunity");
+        SetField("m_SyncActionPreset", "Biter");
+        SetField("m_MusicPreset", "Biter");
+        SetField("m_CustomDataPreset", "biter_level_1");
+        SetField("m_InitBehaviorTree", "biter_init_tree_base");
+        SetField("m_SurvivorSensePreset", "Preset_red");
+		SetField("m_DeathHintType", "Biter");
+        SetField("m_BodyDamagePreset", "Biter");
+        SetField("m_AutoAimItemPolicy", "AllowAll");
+        SetField("m_DamageActorTagName", "biter");
+        // Model
+        SetField("m_AIModelName", "zmb_man_01_a.model;zmb_man_01_b.model;zmb_man_01_c.model;zmb_man_01_d.model;zmb_man_01_e.model;zmb_man_03_a.model;zmb_man_03_c.model;zmb_man_05_a.model;zmb_man_05_b.model;zmb_man_06_a.model;zmb_man_06_b.model;zmb_man_06_c.model;zmb_man_06_d.model;zmb_man_07_a.model;zmb_man_08_a.model;zmb_man_08_b.model;zmb_man_08_c.model;zmb_man_10_a.model;zmb_man_10_b.model;zmb_man_10_c.model;zmb_man_10_d.model;zmb_man_11_a.model;zmb_man_12_a.model;zmb_man_12_b.model;zmb_man_12_c.model;zmb_man_12_d.model;zmb_man_12_e.model");
+        SetField("m_AIAnimationVariant", "_m_a;_m_b;_m_c;_m_d");
+        // Sound
+        SetField("m_AudioEventsScript", "biter_audio_events.scr");
+        SetField("m_ScreamPresetNames", "biter_m_a;biter_m_b");
+		SetField("m_BarkPresetNames", "");
+        SetField("m_StepPreset", "Biter");
+        SetField("m_CrowdAmbientPresetId", "1");
+        SetField("m_CombatMusicRelevanceValue", "0");
+        // BodyScale
+        SetField("m_ForcedBodyScaleMin", "1.00");
+        SetField("m_ForcedBodyScaleMax", "1.05");
+        // Loot and weapon
+        SetField("m_CustomLootTypeString", "DefaultBiterLoot");
+        //Replication
+        SetField("m_ReplInitDataId", "1");
+    }
+    Preset("Biter_Resting", "Biter")
+    {
+        // Logic override
+        SetField("m_InitBehaviorTree", "biter_init_tree_resting");
+    }
+	Preset("Biter_Dying_From_Sun", "Biter")
+    {
+        // Logic override
+        SetField("m_InitBehaviorTree", "biter_init_tree_dying_from_sun");
+    }
+    Preset("Biter_Woman", "Biter") // OPEN WORLD
+    {
+        SetField("m_FallRecoveryBank", "fall_recovery_biter_woman");
+        // Model override
+        SetField("m_AIModelName", "zmb_wmn_01_a.model;zmb_wmn_02_a.model;zmb_wmn_02_b.model;zmb_wmn_02_c.model;zmb_wmn_03_a.model;zmb_wmn_03_b.model;zmb_wmn_03_c.model;zmb_wmn_04_a.model;zmb_wmn_04_b.model;zmb_wmn_05_a.model;zmb_wmn_06_a.model;zmb_wmn_07_a.model;zmb_wmn_08_a.model;zmb_wmn_09_a.model;zmb_wmn_09_b.model;zmb_wmn_09_c.model;zmb_wmn_10_a.model;zmb_wmn_10_b.model;zmb_wmn_10_c.model;zmb_wmn_10_d.model");
+        SetField("m_AIAnimationVariant", "_w_a;_w_b");
+        // Sound override
+        SetField("m_AudioEventsScript", "biter_woman_audio_events.scr");
+        SetField("m_ScreamPresetNames", "biter_w_a;biter_w_b");
+		SetField("m_BarkPresetNames", "");
+        // BodyScale override
+        SetField("m_ForcedBodyScaleMin", "0.9");
+        SetField("m_ForcedBodyScaleMax", "1.0");
+    }
+    Preset("Biter_Woman_Resting", "Biter_Woman") // OPEN WORLD
+    {
+        // Logic override
+        SetField("m_InitBehaviorTree", "biter_init_tree_resting");
+    }
+    Preset("Biter_Static_Grabber", "Biter_Woman")
+    {
+        // Logic override
+        SetField("m_ConstFilename", "biter_profile_static_grabber");
+    }
+    Preset("Biter_Toxic_Tank", "Biter") // OPEN WORLD
+    {
+        // Model override
+        SetField("m_AIModelName", "zmb_gastank_a.model;zmb_gastank_b.model;zmb_gastank_c.model");
+        SetField("m_AIAnimationVariant", "_m_b");
+    }
+    Preset("Biter_Armored", "Biter") // AI
+    {
+        // Logic override
+        SetField("m_CustomDataPreset", "biter_armored");
+        SetField("m_InitBehaviorTree", "biter_init_tree_tough");
+        // BodyScale override
+        SetField("m_ForcedBodyScaleMin", "1.1");
+        SetField("m_ForcedBodyScaleMax", "1.1");
+        // Model override
+        SetField("m_AIModelName", "bdt_heavy_01_a_zmb.model;man_zmb_heavy_armored_bdt_01_a.model");
+        SetField("m_AIAnimationVariant", "_m_b");
+        // Sound override
+        SetField("m_AudioEventsScript", "biter_audio_events.scr");
+        SetField("m_ScreamPresetNames", "biter_m_a");
+		SetField("m_BarkPresetNames", "");
+        SetField("m_StepPreset", "biter_armored");
+        SetField("m_AttackUnarmedDamageMul", "AI_BiterArmored");
+        SetField("m_DamageRulesPreset", "whole_body_protection");
+    }
+    Preset("Biter_Armored_KeyCard", "Biter_Armored") // OPEN WORLD
+    {
+        // Loot and weapon override
+        SetField("m_CustomLootTypeString", "Quarantine_Keycard");
+    }
+    Preset("Biter_Prologue", "Biter") /// PROLOGUE VER - NO BIOMARKER
+    {
+        SetField("m_ForceDisableBiomarker", "1");
+        // Logic override
+    }
+	Preset("Biter_Prologue_Resting", "Biter_Resting") /// PROLOGUE VER - NO BIOMARKER
+    {
+	    SetField("m_ForceDisableBiomarker", "1");
+        // Logic override
+    }
+    Preset("Biter_Woman_Prologue", "Biter_Woman") /// PROLOGUE VER - NO BIOMARKER
+    {
+        SetField("m_ForceDisableBiomarker", "1");
+        // Logic override
+    }	
+	Preset("Biter_Woman_Prologue_Resting", "Biter_Woman_Resting") // PROLOGUE VER - NO BIOMARKER
+    {
+		SetField("m_ForceDisableBiomarker", "1");
+        // Logic override
+    }
+
+///// BITER VARIATIONS /////
+    Preset("Biter_Weak", "Biter")
+    {
+		// Model override
+        SetField("m_AIModelName", "zmb_deg_man_01_a.model;zmb_deg_man_01_b.model;zmb_deg_man_01_c.model;zmb_deg_man_01_d.model;zmb_deg_man_02_a.model;zmb_deg_man_02_b.model;zmb_deg_man_02_c.model;zmb_deg_man_02_d.model;zmb_deg_man_03_a.model;zmb_deg_man_03_b.model;zmb_deg_man_03_c.model;zmb_deg_man_03_d.model;zmb_deg_man_04_a.model;zmb_deg_man_04_b.model;zmb_deg_man_05_a.model");
+        SetField("m_AIAnimationVariant", "_m_a;_m_b");
+    }
+    Preset("Biter_Weak_Prologue", "Biter_Weak") /// PROLOGUE VER - NO BIOMARKER
+    {
+        SetField("m_ForceDisableBiomarker", "1");
+        // Logic override
+    }	
+    Preset("Biter_Weak_Woman", "Biter_Weak")
+    {
+        SetField("m_FallRecoveryBank", "fall_recovery_biter_woman");
+	   // Model override
+        SetField("m_AIModelName", "zmb_deg_wmn_01_a.model;zmb_deg_wmn_01_b.model;zmb_deg_wmn_01_c.model;zmb_deg_wmn_02_a.model;zmb_deg_wmn_02_b.model;zmb_deg_wmn_02_c.model;zmb_deg_wmn_02_d.model;zmb_deg_wmn_03_a.model;zmb_deg_wmn_03_b.model;zmb_deg_wmn_03_c.model;zmb_deg_wmn_04_a.model;zmb_deg_wmn_04_b.model;zmb_deg_wmn_04_c.model;zmb_deg_wmn_04_d.model;zmb_deg_wmn_04_e.model;zmb_deg_wmn_04_f.model;zmb_deg_wmn_05_a.model;zmb_deg_wmn_05_b.model;zmb_deg_wmn_05_c.model;zmb_deg_wmn_06_a.model;zmb_deg_wmn_06_b.model");
+        SetField("m_AIAnimationVariant", "_m_a;_m_b");
+        // Sound override
+        SetField("m_AudioEventsScript", "biter_woman_audio_events.scr");
+        SetField("m_ScreamPresetNames", "biter_w_a;biter_w_b");
+		SetField("m_BarkPresetNames", "");
+        // BodyScale override
+        SetField("m_ForcedBodyScaleMin", "0.9");
+        SetField("m_ForcedBodyScaleMax", "1.0");
+    }
+    Preset("Biter_Weak_Woman_Prologue", "Biter_Weak_Woman") /// PROLOGUE VER - NO BIOMARKER
+    {
+        SetField("m_ForceDisableBiomarker", "1");
+        // Logic override
+    }		
+    Preset("Biter_XL", "Biter")
+    {
+        // Logic override
+        SetField("m_InitBehaviorTree", "biter_init_tree_tough");
+        // Model override
+        SetField("m_AIModelName", "zmb_man_09_a.model;zmb_man_09_b.model");
+        SetField("m_AIAnimationVariant", "_m_b");
+        // BodyScale override
+        SetField("m_ForcedBodyScaleMin", "1.1");
+        SetField("m_ForcedBodyScaleMax", "1.1");
+    }
+	Preset("Biter_Berserker", "Biter")
+    {
+        // Logic override
+        SetField("m_InitBehaviorTree", "biter_init_tree_berserker");
+        // Model override
+        //SetField("m_AIModelName", "zmb_man_09_a.model;zmb_man_09_b.model");
+        //SetField("m_AIAnimationVariant", "_m_b");
+        // BodyScale override
+        SetField("m_ForcedBodyScaleMin", "1.1");
+        SetField("m_ForcedBodyScaleMax", "1.1");
+    }
+    Preset("Biter_Gas_Tank", "Biter") //AI
+    {
+        // Model override
+        SetField("m_AIModelName", "zmb_gastank_a.model;zmb_gastank_b.model;zmb_gastank_c.model");
+        SetField("m_AIAnimationVariant", "_m_b");
+        // Sound override
+        SetField("m_AudioEventsScript", "biter_audio_events.scr");
+        SetField("m_ScreamPresetNames", "biter_gas_tank");
+		SetField("m_BarkPresetNames", "");
+        SetField("m_StepPreset", "gas_tank");
+        SetField("m_AutoAimItemPolicy", "ExcludeThrowables");
+    }
+    Preset("Biter_Toxic", "Biter")
+    {
+        // Model override
+        SetField("m_AIModelName", "zmb_man_01_a.model;zmb_man_01_b.model;zmb_man_01_c.model;zmb_man_01_d.model;zmb_man_01_e.model;zmb_man_02_a.model;zmb_man_03_a.model;zmb_man_03_c.model;zmb_man_05_a.model;zmb_man_05_b.model;zmb_man_06_a.model;zmb_man_06_b.model;zmb_man_06_c.model;zmb_man_06_d.model;zmb_man_07_a.model;zmb_man_08_a.model;zmb_man_08_b.model;zmb_man_08_c.model;zmb_man_10_a.model;zmb_man_10_b.model;zmb_man_10_c.model;zmb_man_11_a.model;zmb_man_12_a.model;zmb_man_12_b.model;zmb_man_12_c.model;zmb_man_12_d.model;zmb_man_12_e.model");
+        SetField("m_AIAnimationVariant", "_m_a;_m_b;_m_c;_m_d");
+    }
+    Preset("Biter_Chem", "Biter")
+    {
+        // Model override
+        SetField("m_AIModelName", "zmb_chemical_gastank_a.model;zmb_chemical_gastank_b.model;zmb_chemical_gastank_c.model");
+        SetField("m_AIAnimationVariant", "_m_b");
+    }
+    Preset("Biter_Burning", "Biter")
+    {
+        // Logic override
+        SetField("m_InitBehaviorTree", "biter_init_tree_burning");
+        SetField("m_DamageResistance", "PoisonAndFireImmunity");
+        // Model override
+        SetField("m_AIModelName", "zmb_gre_gastank_b.model");
+        SetField("m_AIAnimationVariant", "_m_b");
+    }
+	Preset("Biter_Bag", "Biter") //AI
+    {
+        // Model override
+        SetField("m_AIModelName", "zmb_man_02_a.model");
+        // Loot and weapon override
+        SetField("m_CustomLootTypeString", "Biter_Backpack");
+    }
+    Preset("Biter_Backpack", "Biter") //AI
+    {
+        // Logic override
+        SetField("m_InitBehaviorTree", "biter_init_tree_tough");
+        // Model override
+        SetField("m_AIModelName", "srv_man_backpack_01_a_zmb.model;zmb_man_02_a.model");
+        SetField("m_AIAnimationVariant", "_m_c");
+        // Sound override
+        SetField("m_StepPreset", "Biter_backpack");
+        // Loot and weapon override
+        SetField("m_CustomLootTypeString", "Biter_Backpack");
+    }
+    Preset("Biter_Weapon", "Biter") //AI
+    {
+        // Loot and weapon override
+        //SetField("m_WeaponSetName", "R0_Default"); // tsmektala: to verify!
+    }
+    Preset("Biter_Helmet", "Biter")
+    {
+        // Model override
+        SetField("m_AIModelName", "zmb_helmet_man_01_a.model;zmb_helmet_man_02_a.model;zmb_helmet_man_03_a.model;zmb_helmet_man_04_a.model");
+        SetField("m_AIAnimationVariant", "_m_a;_m_b;_m_c;_m_d");
+        SetField("m_BodyDamagePreset", "Biter_Helmet");
+        SetField("m_DamageRulesPreset", "head_protection");
+    }
+    Preset("Biter_GRE", "Biter") // GRE
+    {
+        // Model override
+        SetField("m_AIModelName", "zmb_gre_man_01_a.model;zmb_gre_man_01_b.model;zmb_gre_man_02_a.model;zmb_gre_man_02_b.model;zmb_gre_man_02_c.model;zmb_gre_man_03_a.model;zmb_gre_man_03_c.model");
+        SetField("m_AIAnimationVariant", "_m_a;_m_b;_m_c;_m_d");
+    }
+    Preset("Biter_GRE_Resting", "Biter_GRE")
+    {
+        // Logic override
+        SetField("m_InitBehaviorTree", "biter_init_tree_resting");
+    }
+    Preset("Biter_GRE_Woman", "Biter_Woman") // GRE
+    {
+        // Model override
+        SetField("m_AIModelName", "zmb_gre_wmn_01_a.model;zmb_gre_wmn_01_b.model;zmb_gre_wmn_02_a.model;zmb_gre_wmn_02_b.model");
+    }
+    Preset("Biter_GRE_Woman_Resting", "Biter_GRE_Woman") // GRE
+    {
+        // Logic override
+        SetField("m_InitBehaviorTree", "biter_init_tree_resting");
+    }
+    Preset("Biter_GRE_Weak", "Biter_Weak") // GRE
+    {
+        // Model override
+        SetField("m_AIModelName", "man_zmb_skinny_bitter_a.model;man_zmb_skinny_bitter_b.model;man_zmb_skinny_bitter_c.model");
+    }
+    Preset("Biter_GRE_Weak_Resting", "Biter_GRE_Weak") // GRE
+    {
+        // Logic override
+        SetField("m_InitBehaviorTree", "biter_init_tree_resting");
+    }
+    Preset("Biter_GRE_Weak_Woman", "Biter_Weak_Woman") // GRE
+    {
+        // Model override
+        SetField("m_AIModelName", "zmb_deg_wmn_skinny_01_a.model;zmb_deg_wmn_skinny_01_b.model");
+    }
+    Preset("Biter_GRE_Weak_Woman_Resting", "Biter_GRE_Weak_Woman") // GRE
+    {
+        // Logic override
+        SetField("m_InitBehaviorTree", "biter_init_tree_resting");
+    }
+    Preset("Biter_GRE_Gas_Tank", "Biter_Gas_Tank") // GRE
+    {
+        // Model override
+        SetField("m_AIModelName", "zmb_gre_gastank_b.model");
+        // Sound override
+        SetField("m_AudioEventsScript", "biter_audio_events.scr");
+        SetField("m_ScreamPresetNames", "biter_gas_tank");
+		SetField("m_BarkPresetNames", "");
+        SetField("m_StepPreset", "gas_tank");
+    }
+    Preset("Biter_Sniping_Challenge", "Biter")
+    {
+        // Logic override
+        SetField("m_ConstFilename", "biter_profile_sniping_challenge");
+        //SetField("m_PerceptionProfile", "biter_night_lvl_1_RGD"); // mpacuszko: to verify!
+    }
+    Preset("Biter_Simple_One_Hit", "Biter")
+    {  
+        SetField("m_ModulesPreset", "modules_simple_npc_biter");
+        SetField("m_MainBehaviorTree", "BITER_SIMPLE_NPC_BT");
+        SetField("m_PerceptionPreset", "biter_simple");
+        SetField("m_EnemyIndicators", "");
+        SetField("m_InitBehaviorTree", ""); 
+        SetField("m_HealthPreset", "Body_001");
+    }
+    Preset("Biter_Crawler", "Biter")
+    {
+        SetField("m_MainBehaviorTree", "BITER_CRAWLER_BT");
+        SetField("m_InitBehaviorTree", "biter_init_tree_crawler"); 
+        SetField("m_HealthPreset", "Body_001");
+    }
+    Preset("Biter_Crawler_Peacekeeper", "Biter")
+    {
+        // Model override
+        SetField("m_AIModelName", "man_zmb_heavy_armored_pk_01_a.model;pk_heavy_man_07_a_zmb.model;pk_heavy_man_06_a_zmb.model;pk_heavy_man_09_a_zmb.model");
+		SetField("m_MainBehaviorTree", "BITER_CRAWLER_BT");
+        SetField("m_InitBehaviorTree", "biter_init_tree_crawler"); 
+        SetField("m_HealthPreset", "Body_001");
+        SetField("m_DamageRulesPreset", "whole_body_protection");
+    }	
+/// FACTIONS VERSIONS////
+    Preset("Infected_Peacekeeper", "Biter_Armored") //OPEN WORLD
+    {
+        // Model override
+        SetField("m_AIModelName", "man_zmb_heavy_armored_pk_01_a.model;pk_heavy_man_07_a_zmb.model;pk_heavy_man_06_a_zmb.model;pk_heavy_man_09_a_zmb.model");
+        // BodyScale override
+        SetField("m_ForcedBodyScaleMin", "1.05");
+        SetField("m_ForcedBodyScaleMax", "1.05");
+        // Loot and weapon override
+        SetField("m_CustomLootTypeString", "Infected_PK");
+        SetField("m_AttackUnarmedDamageMul", "AI_BiterArmored");
+        SetField("m_DamageRulesPreset", "whole_body_protection");
+    }
+    
+    Preset("Infected_Peacekeeper_No_Helmet", "Biter_Armored")
+    {
+        // Model override
+        SetField("m_AIModelName", "man_zmb_heavy_pk_01_a.model");
+        // BodyScale override
+        SetField("m_ForcedBodyScaleMin", "1.05");
+        SetField("m_ForcedBodyScaleMax", "1.05");
+        // Loot and weapon override
+        SetField("m_CustomLootTypeString", "Infected_PK");
+        SetField("m_AttackUnarmedDamageMul", "AI_BiterArmored");
+        SetField("m_DamageRulesPreset", "whole_body_no_head_protection");
+    }
+    
+    Preset("Infected_Scavenger", "Biter") //OPEN WORLD
+    {
+        // Model override
+        SetField("m_AIModelName", "sc_runner_man_01_b_zmb.model;sc_runner_man_03_a_zmb.model;sc_ov_man_01_a_zmb.model");
+    }
+    Preset("Infected_Scavenger_Woman", "Biter_Woman") //OPEN WORLD
+    {
+        // Model override
+        SetField("m_AIModelName", "sc_ov_wmn_03_a_zmb.model;sc_runner_wmn_01_a_zmb.model;");
+    }
+    Preset("Infected_Survivor", "Biter") //OPEN WORLD
+    {
+        // Model override
+        SetField("m_AIModelName", "srv_man_12_a_zmb.model");
+    }
+    Preset("Infected_Survivor_Woman", "Biter_Woman") //OPEN WORLD
+    {
+        // Model override
+        SetField("m_AIModelName", "srv_wmn_03_a_zmb.model");
+    }
+    Preset("Infected_Renegade", "Biter") //OPEN WORLD
+    {
+        // Model override
+        SetField("m_AIModelName", "man_zmb_heavy_ren_01_a.model;man_zmb_heavy_ren_02_a.model");
+        SetField("m_DamageRulesPreset", "whole_body_no_head_protection");
+    }
+    Preset("Infected_Renegade_Woman", "Biter_Woman") //OPEN WORLD
+    {
+        // Model override
+        SetField("m_AIModelName", "srv_worker_wmn_03_a_zmb.model");
+    }
+//// GRE FOG TEST ////
+    Preset("Biter_Resting_Fog", "Biter")
+    {
+        // Logic override
+        SetField("m_InitBehaviorTree", "biter_init_tree_resting");
+		SetField("m_PerceptionProfile", "biter_fog");
+    }		
+}

@@ -1,6 +1,6 @@
 sub AISpawnSystemGlobalParams()
 {
-    Param("MaxSpawnedAI", "130");
+    Param("MaxSpawnedAI", "80");
     Param("MaxSpawnedAIImpassableLimit", "140");
     Param("MaxSpawnedAIPerFrame", "1");
     Param("MaxSpawnedAINotFromCasheWithinMaxSpawnedAIPerFrameLimit", "1");
@@ -67,8 +67,6 @@ sub SpawnSourceParamsElements()
     {
         Limit("200");
         AllowSpawnOverLocalLimit("true");
-        AllowSpawnOverGlobalLimit("true");
-        AllowSpawnOverCustomLimit("true");
         MaxSpawnDelaySec("2");
     }
 
@@ -76,8 +74,6 @@ sub SpawnSourceParamsElements()
     {
         Limit("200");
         AllowSpawnOverLocalLimit("true");
-        AllowSpawnOverGlobalLimit("true");
-        AllowSpawnOverCustomLimit("true");
         MaxSpawnDelaySec("1");
     }
 
@@ -85,8 +81,6 @@ sub SpawnSourceParamsElements()
     {
         Limit("220");
         AllowSpawnOverLocalLimit("true");
-        AllowSpawnOverGlobalLimit("true");
-        AllowSpawnOverCustomLimit("true");
         MaxSpawnDelaySec("2");
     }
     SpawnSourceParams("Challenge")

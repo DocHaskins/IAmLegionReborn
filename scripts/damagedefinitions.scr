@@ -113,7 +113,8 @@ sub main()
         Poison("100%");
 		Chemical("100%");
         Physical("75%");
-        Blast("95%");
+        Ram("75%");
+		Blast("95%");
 		Bleeding("75%");
 		Fire("95%");
 		Poison("75%");
@@ -589,12 +590,15 @@ sub main()
     {
         Poison("100%");
         Physical("75%");
+		Ram("75%");
+		
     }
     DamageResistance("DemolisherResistance")
     {
         Poison("100%");
 		Fire("90%");
         Physical("66%");
+		Ram("66%");
 		Ranged("50%");
     }
     DamageResistance("ScreamerResistance")
@@ -3446,6 +3450,7 @@ sub main()
     DamageResistance("Goon_Fire_Resistance")
     { 
 		Physical("50%");
+		Ram("50%");
 		Fire("100%");
 		Poison("25%");
 		Electricity("25%");
@@ -3454,6 +3459,7 @@ sub main()
     DamageResistance("Goon_Toxic_Resistance")
     {
         Physical("50%");
+		Ram("50%");
 		Ranged("75%");
 		Poison("100%");
 		Electricity("25%");
@@ -3462,6 +3468,7 @@ sub main()
     DamageResistance("Goon_Electric_Resistance")
     {
         Physical("50%");
+		Ram("50%");
 		Ranged("75%");
 		Poison("75%");
 		Fire("75%");
@@ -3470,6 +3477,7 @@ sub main()
 	DamageResistance("Goon_Fire_Resistance_Trio")
     { 
 		Physical("50%");
+		Ram("50%");
 		Fire("100%");
 		Poison("75%");
 		Electricity("75%");
@@ -3478,6 +3486,7 @@ sub main()
     DamageResistance("Goon_Toxic_Resistance_Trio")
     {
         Physical("50%");
+		Ram("50%");
 		Ranged("75%");
 		Poison("100%");
 		Electricity("75%");
@@ -3486,6 +3495,7 @@ sub main()
     DamageResistance("Goon_Electric_Resistance_Trio")
     {
         Physical("50%");
+		Ram("50%");
 		Ranged("75%");
 		Poison("25%");
 		Fire("25%");
@@ -8146,27 +8156,39 @@ sub main()
 	DamageResistance("25_percent_physical_damage")
     {
         Physical("25%");
+		Ram("25%");
     }
 	
 	DamageResistance("50_percent_physical_damage")
     {
         Physical("50%");
+		Ram("50%");
     }
 	DamageResistance("Volatile_Guard")
     {
         Physical("5%");
+		Ram("5%");
     }
 	DamageResistance("Volatile_Tyrant")
     {
-        Physical("50%");
-		Blunt("10%");
-		Cut("10%");
+        Physical("60%");
+		Ram("60%");
+		Blunt("60%");
+		Cut("60%");
+		Blast("50%");
+		Bleeding("50%");
+		Fire("50%");
+		Poison("50%");
+		Electricity("50%");
+		Chemical("50%");
+		Drowning("50%");
+		Ranged("75%");
     }
 	DamageResistance("Volatile_Tyrant_Boss")
     {
         Physical("50%");
-		Blunt("15%");
-		Cut("15%");
+		Blunt("50%");
+		Cut("50%");
 		Ram("50%");
 		Blast("50%");
 		Bleeding("50%");

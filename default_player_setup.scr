@@ -1,0 +1,3052 @@
+///Defines order of awarding Skills to the Player with the rising levels of Power, Agility, Survival
+
+/// Item(item_name, count, level_constrain, [optional] color)
+
+///Item sets that can be given to the Player
+
+sub Stamina_Lvl_1() // 100/100
+{
+	Skill("AntizinCapacityUpgradeStamina");//1
+}
+
+sub Stamina_Lvl_2() // 160/600
+{
+	Skill("AntizinCapacityUpgradeStamina");//1
+	Skill("AntizinCapacityUpgradeStamina");//2
+}
+
+sub Stamina_Lvl_3() // 200/600
+{
+	Skill("AntizinCapacityUpgradeStamina");//1
+	Skill("AntizinCapacityUpgradeStamina");//2
+	Skill("AntizinCapacityUpgradeStamina");//3
+}
+
+sub Stamina_Lvl_4() // 300/600
+{
+	Skill("AntizinCapacityUpgradeStamina");//1
+	Skill("AntizinCapacityUpgradeStamina");//2
+	Skill("AntizinCapacityUpgradeStamina");//3
+	Skill("AntizinCapacityUpgradeStamina");//4
+}
+
+sub Stamina_Lvl_5() // 400/600
+{
+	Skill("AntizinCapacityUpgradeStamina");//1
+	Skill("AntizinCapacityUpgradeStamina");//2
+	Skill("AntizinCapacityUpgradeStamina");//3
+	Skill("AntizinCapacityUpgradeStamina");//4
+	Skill("AntizinCapacityUpgradeStamina");//5
+}
+
+sub Stamina_Lvl_6() // 500/600
+{
+	Skill("AntizinCapacityUpgradeStamina");//1
+	Skill("AntizinCapacityUpgradeStamina");//2
+	Skill("AntizinCapacityUpgradeStamina");//3
+	Skill("AntizinCapacityUpgradeStamina");//4
+	Skill("AntizinCapacityUpgradeStamina");//5
+	Skill("AntizinCapacityUpgradeStamina");//6
+}
+
+sub Stamina_Lvl_7() // 600/600
+{
+	Skill("AntizinCapacityUpgradeStamina");//1
+	Skill("AntizinCapacityUpgradeStamina");//2
+	Skill("AntizinCapacityUpgradeStamina");//3
+	Skill("AntizinCapacityUpgradeStamina");//4
+	Skill("AntizinCapacityUpgradeStamina");//5
+	Skill("AntizinCapacityUpgradeStamina");//6
+	Skill("AntizinCapacityUpgradeStamina");//7
+	Skill("AntizinCapacityUpgradeStamina");//8
+	Skill("AntizinCapacityUpgradeStamina");//9
+	Skill("AntizinCapacityUpgradeStamina");//10
+	Skill("AntizinCapacityUpgradeStamina");//11
+	Skill("AntizinCapacityUpgradeStamina");//12
+}
+
+sub Health_Lvl_1() // 100/600
+{
+	Skill("AntizinCapacityUpgradeHealth");//1
+}
+
+sub Health_Lvl_2() // 160/600
+{
+	Skill("AntizinCapacityUpgradeHealth");//1
+	Skill("AntizinCapacityUpgradeHealth");//2
+}
+
+sub Health_Lvl_3() // 200/600
+{
+	Skill("AntizinCapacityUpgradeHealth");//1
+	Skill("AntizinCapacityUpgradeHealth");//2
+	Skill("AntizinCapacityUpgradeHealth");//3
+}
+
+sub Health_Lvl_4() // 300/600
+{
+	Skill("AntizinCapacityUpgradeHealth");//1
+	Skill("AntizinCapacityUpgradeHealth");//2
+	Skill("AntizinCapacityUpgradeHealth");//3
+	Skill("AntizinCapacityUpgradeHealth");//4
+}
+
+sub Health_Lvl_5() // 400/600
+{
+	Skill("AntizinCapacityUpgradeHealth");//1
+	Skill("AntizinCapacityUpgradeHealth");//2
+	Skill("AntizinCapacityUpgradeHealth");//3
+	Skill("AntizinCapacityUpgradeHealth");//4
+	Skill("AntizinCapacityUpgradeHealth");//5
+}
+
+sub Health_Lvl_6() // 500/600
+{
+	Skill("AntizinCapacityUpgradeHealth");//1
+	Skill("AntizinCapacityUpgradeHealth");//2
+	Skill("AntizinCapacityUpgradeHealth");//3
+	Skill("AntizinCapacityUpgradeHealth");//4
+	Skill("AntizinCapacityUpgradeHealth");//5
+	Skill("AntizinCapacityUpgradeHealth");//6
+}
+
+sub Health_Lvl_7() // 600/600
+{
+	Skill("AntizinCapacityUpgradeHealth");//1
+	Skill("AntizinCapacityUpgradeHealth");//2
+	Skill("AntizinCapacityUpgradeHealth");//3
+	Skill("AntizinCapacityUpgradeHealth");//4
+	Skill("AntizinCapacityUpgradeHealth");//5
+	Skill("AntizinCapacityUpgradeHealth");//6
+	Skill("AntizinCapacityUpgradeHealth");//7
+	Skill("AntizinCapacityUpgradeHealth");//8
+	Skill("AntizinCapacityUpgradeHealth");//9
+	Skill("AntizinCapacityUpgradeHealth");//10
+	Skill("AntizinCapacityUpgradeHealth");//11
+	Skill("AntizinCapacityUpgradeHealth");//12
+}
+
+/// Correct Player Rank/Game Difficulty Subs
+
+sub Difficulty_2_Skills()
+{
+	Skill("run_faster");//0
+	Skill("height_jump");//1
+	Skill("firm_grip");//3
+	Skill("sleek_runner");//4
+	Skill("active_land");//5
+	
+	Skill("parkour_combat");//1
+	Skill("perfect_dodge");//2
+	Skill("jump_attack");//3
+	Skill("power_attack");//5
+
+	Skill("CubeKey"); 
+	Skill("Binoculars"); // Tool
+	Skill("Backpack"); // Tool
+	Skill("GreInhibitorDetector"); // Tool
+	
+}
+
+sub Difficulty_3_Skills()
+{
+	Skill("run_faster");//0
+	Skill("height_jump");//1
+	Skill("firm_grip");//3
+	Skill("sleek_runner");//4
+	Skill("active_land");//5
+	
+	Skill("parkour_combat");//1
+	Skill("perfect_dodge");//2
+	Skill("jump_attack");//3
+	Skill("power_attack");//5
+
+	Skill("CubeKey"); 
+	Skill("Binoculars"); // Tool
+	Skill("Backpack"); // Tool
+	Skill("Paraglider"); // Tool
+	Skill("UVFlashLight"); // Tool	
+	Skill("GreInhibitorDetector"); // Tool
+
+	Skill("slide");//6
+	Skill("dart");//7
+	Skill("far_jump");//8
+ 
+	Skill("silent_takedown");//6
+	Skill("ranged_mastery");//7
+	Skill("perfect_block");//4
+}
+
+sub Difficulty_4_Skills()
+{
+	Skill("run_faster");//0	
+	Skill("height_jump");//1
+	Skill("firm_grip");//3
+	Skill("sleek_runner");//4
+	Skill("active_land");//5
+	
+	Skill("parkour_combat");//1
+	Skill("perfect_dodge");//2
+	Skill("jump_attack");//3
+	Skill("power_attack");//5
+
+	Skill("CubeKey"); 
+	Skill("Binoculars"); // Tool
+	Skill("Backpack"); // Tool
+	Skill("Paraglider"); // Tool
+	Skill("UVFlashLight"); // Tool	
+	Skill("GrappleHook"); // Tool	
+	Skill("GREDetector"); // Tool	
+	Skill("GreInhibitorDetector"); // Tool
+
+	Skill("slide");//6
+	Skill("dart");//7
+	Skill("far_jump");//8
+ 
+	Skill("silent_takedown");//6
+	Skill("ranged_mastery");//7
+	Skill("perfect_block");//4
+
+	Skill("double_jump");//9
+	Skill("vertical_wall_run");//10
+	Skill("active_land2");//11
+	
+	Skill("ground_pound");//9
+	Skill("silent_takedown");//10
+	Skill("wrestle_kick");//12
+}
+
+sub Difficulty_5_Skills()
+{
+	Skill("run_faster");//0
+	Skill("height_jump");//1
+	Skill("firm_grip");//3
+	Skill("sleek_runner");//4
+	Skill("active_land");//5
+	
+	Skill("parkour_combat");//1
+	Skill("perfect_dodge");//2
+	Skill("jump_attack");//3
+	Skill("power_attack");//5
+
+	Skill("CubeKey"); 
+	Skill("Binoculars"); // Tool
+	Skill("Backpack"); // Tool
+	Skill("Paraglider"); // Tool
+	Skill("GrappleHook"); // Tool	
+	Skill("UVFlashLight"); // Tool
+	Skill("GREDetector"); // Tool
+	Skill("GreInhibitorDetector"); // Tool	
+
+	Skill("slide");//6
+	Skill("dart");//7
+	Skill("far_jump");//8
+ 
+	Skill("silent_takedown");//6
+	Skill("ranged_mastery");//7
+	Skill("perfect_block");//4
+
+	Skill("double_jump");//9
+	Skill("vertical_wall_run");//10
+	Skill("active_land2");//11
+	
+	Skill("ground_pound");//9
+	Skill("silent_takedown");//10
+	Skill("wrestle_kick");//12
+
+	Skill("horizontal_wall_run");//12
+	Skill("charge_tackle");//13
+	Skill("wall_run_jump");//14
+
+	Skill("windmill");//13
+	Skill("nagewaza");//14
+	Skill("air_takedown");//15
+}
+
+sub Difficulty_6_Skills() 
+{
+	Skill("run_faster");//0
+	Skill("height_jump");//1
+	Skill("firm_grip");//3
+	Skill("sleek_runner");//4
+	Skill("active_land");//5
+	
+	Skill("parkour_combat");//1
+	Skill("perfect_dodge");//2
+	Skill("jump_attack");//3
+	Skill("power_attack");//5
+
+	Skill("CubeKey"); 
+	Skill("Binoculars"); // Tool
+	Skill("Backpack"); // Tool
+	Skill("Paraglider"); // Tool
+	Skill("GrappleHook"); // Tool	
+	Skill("UVFlashLight"); // Tool
+	Skill("GREDetector"); // Tool
+	Skill("GreInhibitorDetector"); // Tool
+
+	Skill("slide");//6
+	Skill("dart");//7
+	Skill("far_jump");//8
+ 
+	Skill("silent_takedown");//6
+	Skill("ranged_mastery");//7
+	Skill("perfect_block");//4
+
+	Skill("double_jump");//9
+	Skill("vertical_wall_run");//10
+	Skill("active_land2");//11
+	
+	Skill("ground_pound");//9
+	Skill("silent_takedown");//10
+	Skill("wrestle_kick");//12
+
+	Skill("horizontal_wall_run");//12
+	Skill("charge_tackle");//13
+	Skill("wall_run_jump");//14
+
+	Skill("windmill");//13
+	Skill("nagewaza");//14
+	Skill("air_takedown");//15
+}
+
+sub Difficulty_7_Skills() 
+{
+	Skill("run_faster");//0
+	Skill("height_jump");//1
+	Skill("firm_grip");//3
+	Skill("sleek_runner");//4
+	Skill("active_land");//5
+	
+	Skill("parkour_combat");//1
+	Skill("perfect_dodge");//2
+	Skill("jump_attack");//3
+	Skill("power_attack");//5
+
+	Skill("CubeKey"); 
+	Skill("Binoculars"); // Tool
+	Skill("Backpack"); // Tool
+	Skill("Paraglider"); // Tool
+	Skill("GrappleHook"); // Tool	
+	Skill("UVFlashLight"); // Tool
+	Skill("GREDetector"); // Tool
+	Skill("GreInhibitorDetector"); // Tool
+
+	Skill("slide");//6
+	Skill("dart");//7
+	Skill("far_jump");//8
+ 
+	Skill("silent_takedown");//6
+	Skill("ranged_mastery");//7
+	Skill("perfect_block");//4
+
+	Skill("double_jump");//9
+	Skill("vertical_wall_run");//10
+	Skill("active_land2");//11
+	
+	Skill("ground_pound");//9
+	Skill("silent_takedown");//10
+	Skill("wrestle_kick");//12
+
+	Skill("horizontal_wall_run");//12
+	Skill("charge_tackle");//13
+	Skill("wall_run_jump");//14
+
+	Skill("windmill");//13
+	Skill("nagewaza");//14
+	Skill("air_takedown");//15
+}
+
+sub main()
+{
+	 Preset("AA_Useitems_Review")
+	{		
+		use Stamina_Lvl_3();
+		use Health_Lvl_3();
+
+		use Difficulty_3_Skills();
+		Skill("vault_kick");//13
+		Skill("Finisher");//13
+
+		Item("wpn_1hb_ham_a_fpp_r7", 1, "", "Blue");
+		Item("wpn_1hb_ham_b_fpp_r7", 1, "", "Blue");
+		Item("wpn_1hb_stk_a_fpp_r7", 1, "", "Blue");
+		Item("wpn_1hb_stk_c_fpp_r7", 1, "", "Blue");
+
+
+		Item("Potion_HealthRegeneration_Upgrade3", 3, "");
+		Item("Throwable_Molotov_Upgrade4", 3, "");
+		Item("Potion_DamageReduction_Upgrade3", 3, "");
+		Item("Potion_StaminaUpgrade_Upgrade3", 3, "");      
+		Item("Medkit_Small_Upgrade4", 3, "");
+		Item("Firearm_Shotgun_Upgrade6", 1, "");
+		Item("Throwable_ExplosiveGrenade_Upgrade6", 3, "");
+		Item("Mine_Explosive_Upgrade3", 3, "");
+		Item("Potion_Rage_Upgrade3", 3, "");
+		Item("Potion_SwimmingStamina_Upgrade3", 3, "");
+		Item("LockpickItem_Upgrade3", 3, "");
+
+		Level(6, "Traversal", 1.0);
+       	Level(6, "Combat", 1.0);
+		Level(12, "Experience", 1.0);
+	}
+
+	
+	Preset("Player_Difficulty_1")		// Difficulty
+    {
+		use Stamina_Lvl_1();
+		use Health_Lvl_1();
+
+		Skill("run_faster");//0
+		Skill("height_jump");
+		Skill("parkour_combat");
+		
+        Skill("CubeKey"); // Tool
+		Skill("Binoculars"); // Tool
+		
+		Item("wpn_1hb_stk_g_fpp_r1", 1, "", "Green");
+		Item("wpn_1hs_axe_i_fpp_r1", 1, "", "Blue");
+		
+		Item("Throwable_ThrowingKnifeAGen", 5, "");
+		Item("Throwable_Coin", 3, "");
+		Item("Craft_Scrap", 25, "");
+		Item("Cash_Cash", 250, "");
+		Item("LockpickItem", 15, "");
+		Item("Medkit_Small", 5, "");
+		Item("Throwable_Decoy", 5, "");
+		
+		Item("Outfitset_MeleeDPS_Torso_Tier1_White", 1, "");
+		Item("Outfitset_Healer_Head_Tier1_Green", 1, "");
+		Item("Outfitset_Healer_Shoes_Tier1_Blue", 1, "");
+		Item("Outfitset_RangedDPS_Legs_Tier1_Green", 1, "");
+		Item("Outfitset_RangedDPS_TorsoAddon_Tier1_Blue", 1, "");
+		Item("Outfitset_Tank_Gloves_Tier1_White", 1, "");
+		
+		Item("Potion_Antizine", 3, "");
+		Item("Potion_DamageReduction", 1, "");
+		
+        Level(2, "Traversal", 1.0);
+        Level(2, "Combat", 1.0);
+		Level(5, "Experience", 1.0);
+    }	
+	
+	Preset("Q_Player_Difficulty_1_no_inventory")		// Quests
+    {
+		use Stamina_Lvl_1();
+		use Health_Lvl_1();
+
+		Skill("height_jump");
+		Skill("parkour_combat");
+		
+        //Skill("CubeKey"); // Tool
+		//Skill("Binoculars"); // Tool
+		
+        Level(2, "Traversal", 1.0);
+        Level(2, "Combat", 1.0);
+		Level(5, "Experience", 1.0);
+    }	
+	
+	Preset("Player_Difficulty_2")		// Difficulty
+    {
+		use Stamina_Lvl_2();
+		use Health_Lvl_2();
+
+		use Difficulty_2_Skills();
+
+		Item("wpn_1hs_axe_i_fpp_r4", 1, "", "Blue");
+		Item("wpn_1hb_ham_m_fpp_r4", 1, "", "Green");
+		Item("wpn_2hs_a_fpp_r4", 1, "", "Green");
+		Item("wpn_2hp_bow_t2", 1, "", "Blue");
+
+		Item("Medkit_Small_Upgrade1", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen", 10, "");
+		Item("Throwable_Molotov", 5, "");
+		Item("Mine_Explosive", 2, "");
+		Item("Throwable_Decoy_Upgrade3", 5, "");
+		Item("UV_Flare", 1, "");
+		
+		Item("Bundle_Arrows", 1, "");
+				
+		Item("Craft_Scrap", 30, "");
+		Item("Cash_Cash", 300, "");
+		Item("LockpickItem", 15, "");
+		
+		Item("Outfitset_Healer_Torso_Tier2_White", 1, "");
+		Item("Outfitset_MeleeDPS_Head_Tier2_Green", 1, "");
+		Item("Outfitset_Healer_Shoes_Tier1_Blue", 1, "");
+		Item("Outfitset_Tank_Legs_Tier1_Green", 1, "");
+		Item("Outfitset_RangedDPS_TorsoAddon_Tier2_Blue", 1, "");
+		Item("Outfitset_RangedDPS_Gloves_Tier2_White", 1, "");
+		
+		Item("Potion_Antizine", 5, "");
+		Item("Potion_DamageReduction", 3, "");
+		Item("Potion_HealthRegeneration", 3, "");
+		
+		Item("Craftplan_Medkit_Small", 1, "");
+		Item("Craftplan_Lockpick", 1, "");
+		Item("Craftplan_ThrowingKnives", 1, "");
+		Item("Craftplan_Firecrackers", 1, "");
+		Item("Craftplan_Molotov", 1, "");
+		Item("Craftplan_Potion_DamageReduction", 1, "");
+		Item("Craftplan_Potion_StaminaUpgrade", 1, "");
+		Item("Craftplan_Mod_Shock_SpecialAttack", 1, "");
+		Item("Craftplan_Mod_Freeze_Random_TIP", 1, "");
+		
+		Level(6, "Traversal", 1.0);
+        Level(6, "Combat", 1.0);
+		Level(8, "Experience", 1.0);
+    }
+	
+	Preset("Player_Difficulty_3")		// Difficulty
+    {
+		use Stamina_Lvl_3();
+		use Health_Lvl_3();
+
+		use Difficulty_3_Skills();
+
+		Item("wpn_1hs_axe_p_fpp_r7", 1, "", "Blue");
+		Item("wpn_1hb_ham_i_fpp_r7", 1, "", "Green");
+		Item("wpn_1hs_knuckle_duster_amed_fpp_r7", 1, "", "Blue");
+		Item("wpn_2hb_f_fpp_r7_dukes", 1, "", "Orange");
+		Item("wpn_2hp_bow_t3", 1, "", "Blue");
+
+		Item("Medkit_Small_Upgrade3", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen_Upgrade2", 10, "");
+		Item("Throwable_Molotov_Upgrade1", 5, "");
+		Item("Mine_Explosive_Upgrade2", 2, "");
+		Item("Throwable_ExplosiveGrenade_Upgrade2", 2, "");
+		Item("Throwable_Decoy_Upgrade3", 5, "");
+		Item("UV_Flare", 3, "");
+
+		Item("Bundle_Arrows", 1, "");
+		
+		Item("Cash_Cash", 400, "");
+		Item("Craft_Scrap", 40, "");
+		Item("LockpickItem", 20, "");
+		
+		Item("Outfitset_RangedDPS_Torso_Tier3_White", 1, "");
+		Item("Outfitset_RangedDPS_Head_Tier3_Green", 1, "");
+		Item("Outfitset_Healer_Shoes_Tier1_Blue", 1, "");
+		Item("Outfitset_Tank_Legs_Tier2_Green", 1, "");
+		Item("Outfitset_MeleeDPS_TorsoAddon_Tier2_Blue", 1, "");
+		Item("Outfitset_Healer_Gloves_Tier3_White", 1, "");
+		
+		Item("Potion_Antizine_Upgrade1", 5, "");
+		Item("Potion_DamageReduction_Upgrade2", 3, "");
+		Item("Potion_HealthRegeneration_Upgrade1", 3, "");
+		
+		Item("Craftplan_Medkit_Small_Upgrade1", 1, "");
+		Item("Craftplan_Lockpick_Upgrade2", 1, "");
+		Item("Craftplan_ThrowingKnives_Upgrade1", 1, "");
+		Item("Craftplan_Firecrackers_Upgrade2", 1, "");
+		Item("Craftplan_Molotov_Upgrade2", 1, "");
+		Item("Craftplan_Firearm_Shotgun_Upgrade1", 1, "");
+		Item("Craftplan_Grenade_Upgrade1", 1, "");
+		Item("Craftplan_Mine_Explosive_Upgrade1", 1, "");
+		Item("Craftplan_Potion_DamageReduction_Upgrade1", 1, "");
+		Item("Craftplan_Potion_StaminaUpgrade_Upgrade2", 1, "");
+		Item("Craftplan_Mod_Shock_SpecialAttack_Upgrade1", 1, "");
+		Item("Craftplan_Mod_Freeze_Random_Upgrade1_TIP", 1, "");
+		Item("Craftplan_Mod_Shock_Random_Upgrade1_TIP", 1, "");
+		Item("Craftplan_Mod_Heat_Random_Upgrade2_SHAFT", 1, "");
+		Item("Craftplan_Mod_Bleeding_Random_Upgrade3_SHAFT", 1, "");
+		Item("Craftplan_Mod_Heat_PowerAttack_Upgrade2", 1, "");
+		Item("Craftplan_Mod_Toxic_PowerAttack_Upgrade3", 1, "");
+		Item("Craftplan_Mod_Impact_Random_Upgrade2_TIP", 1, "");
+				
+		Level(9, "Traversal", 1.0);
+        Level(9, "Combat", 1.0);
+		Level(14, "Experience", 1.0);
+    }
+	
+	Preset("Player_Difficulty_4")		// Difficulty
+    {
+		use Stamina_Lvl_4();
+		use Health_Lvl_4();
+
+		use Difficulty_4_Skills();
+
+		Item("wpn_1hs_axe_e_fpp_r10", 1, "", "Blue");
+		Item("wpn_1hb_ham_b_fpp_r10", 1, "", "Blue");
+		Item("wpn_1hb_knuckle_duster_chigh_fpp_r10", 1, "", "Orange");
+		Item("wpn_2hp_bow_t4", 1, "", "Blue");
+
+		Item("Medkit_Small_Upgrade3", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen_Upgrade4", 10, "");
+		Item("Throwable_Molotov_Upgrade3", 5, "");
+		Item("Mine_Explosive_Upgrade4", 2, "");
+		Item("Throwable_ExplosiveGrenade_Upgrade2", 2, "");
+		Item("Throwable_Decoy_Upgrade4", 5, "");
+		Item("Remote_Explosive_Upgrade2", 2, "");
+		Item("UV_Flare_Upgrade2", 5, "");
+		
+		Item("Bundle_Arrows", 1, "");
+		
+		Item("Cash_Cash", 400, "");
+		Item("Craft_Scrap", 40, "");
+		Item("LockpickItem", 20, "");
+		
+		Item("Potion_Antizine_Upgrade4", 5, "");
+		Item("Potion_DamageReduction_Upgrade3", 3, "");
+		Item("Potion_HealthRegeneration_Upgrade2", 3, "");
+		Item("Potion_DamageDealtIncrease_Upgrade1", 3, "");
+		
+		Item("Outfitset_RangedDPS_Torso_Tier4_Blue", 1, "");
+		Item("Outfitset_RangedDPS_Head_Tier3_Blue", 1, "");
+		Item("Outfitset_Healer_Shoes_Tier2_White", 1, "");
+		Item("Outfitset_Tank_Legs_Tier2_Green", 1, "");
+		Item("Outfitset_MeleeDPS_TorsoAddon_Tier4_Green", 1, "");
+		Item("Outfitset_Healer_Gloves_Tier3_White", 1, "");
+		
+		Item("Craftplan_Medkit_Small_Upgrade2", 1, "");
+		Item("Craftplan_Lockpick_Upgrade3", 1, "");
+		Item("Craftplan_ThrowingKnives_Upgrade2", 1, "");
+		Item("Craftplan_Firecrackers_Upgrade4", 1, "");
+		Item("Craftplan_Molotov_Upgrade2", 1, "");
+		Item("Craftplan_Firearm_Shotgun_Upgrade3", 1, "");
+		Item("Craftplan_Grenade_Upgrade2", 1, "");
+		Item("Craftplan_Mine_Explosive_Upgrade4", 1, "");
+		Item("Craftplan_Potion_DamageReduction_Upgrade2", 1, "");
+		Item("Craftplan_Potion_StaminaUpgrade_Upgrade3", 1, "");
+		Item("Craftplan_Mod_Shock_SpecialAttack_Upgrade2", 1, "");
+		Item("Craftplan_Mod_Freeze_Random_Upgrade3_TIP", 1, "");
+		Item("Craftplan_Mod_Shock_Random_Upgrade3_TIP", 1, "");
+		Item("Craftplan_Mod_Heat_Random_Upgrade4_SHAFT", 1, "");
+		Item("Craftplan_Mod_Bleeding_Random_Upgrade5_SHAFT", 1, "");
+		Item("Craftplan_Mod_Heat_PowerAttack_Upgrade4", 1, "");
+		Item("Craftplan_Mod_Toxic_PowerAttack_Upgrade3", 1, "");
+		Item("Craftplan_Mod_Impact_Random_Upgrade3_TIP", 1, "");
+
+		Level(12, "Traversal", 1.0);
+        Level(13, "Combat", 1.0);
+		Level(20, "Experience", 1.0);
+    }
+	
+	Preset("Player_Difficulty_5")		// Difficulty
+    {
+		use Stamina_Lvl_5();
+		use Health_Lvl_5();
+
+		use Difficulty_5_Skills();
+
+		Item("wpn_1hb_knuckle_duster_amed_fpp_r13", 1, "", "Blue");
+		Item("wpn_1hb_mace_e_fpp_r13", 1, "", "Orange");
+		Item("wpn_2hb_f_fpp_r13_renegades", 1, "", "Blue");
+		Item("wpn_2hp_bow_t5", 1, "", "Blue");
+
+		Item("Medkit_Small_Upgrade4", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen_Upgrade5", 10, "");
+		Item("Throwable_Molotov_Upgrade6", 5, "");
+		Item("Mine_Explosive_Upgrade4", 2, "");
+		Item("Throwable_ExplosiveGrenade_Upgrade3", 2, "");
+		Item("Throwable_Decoy_Upgrade6", 5, "");
+		Item("Remote_Explosive_Upgrade4", 2, "");
+		Item("UV_Flare_Upgrade4", 5, "");
+		
+		Item("Bundle_Arrows", 2, "");
+		
+		Item("Cash_Cash", 600, "");
+		Item("Craft_Scrap", 40, "");
+		Item("LockpickItem", 20, "");
+		
+		Item("Potion_Antizine_Upgrade4", 5, "");
+		Item("Potion_DamageReduction_Upgrade3", 3, "");
+		Item("Potion_HealthRegeneration_Upgrade2", 3, "");
+		Item("Potion_DamageDealtIncrease_Upgrade1", 3, "");
+		Item("Potion_Rage_Upgrade2", 3, "");
+		
+		Item("Outfitset_MeleeDPS_Torso_Tier5_White", 1, "");
+		Item("Outfitset_Healer_Head_Tier2_Green", 1, "");
+		Item("Outfitset_Healer_Shoes_Tier4_Blue", 1, "");
+		Item("Outfitset_RangedDPS_Legs_Tier5_Green", 1, "");
+		Item("Outfitset_RangedDPS_TorsoAddon_Tier5_Blue", 1, "");
+		Item("Outfitset_Tank_Gloves_Tier3_White", 1, "");
+		
+		Item("Craftplan_Medkit_Small_Upgrade3", 1, "");
+		Item("Craftplan_Lockpick_Upgrade4", 1, "");
+		Item("Craftplan_ThrowingKnives_Upgrade3", 1, "");
+		Item("Craftplan_Firecrackers_Upgrade4", 1, "");
+		Item("Craftplan_Molotov_Upgrade3", 1, "");
+		Item("Craftplan_Firearm_Shotgun_Upgrade4", 1, "");
+		Item("Craftplan_Grenade_Upgrade3", 1, "");
+		Item("Craftplan_Mine_Explosive_Upgrade4", 1, "");
+		Item("Craftplan_Potion_DamageReduction_Upgrade3", 1, "");
+		Item("Craftplan_Potion_StaminaUpgrade_Upgrade3", 1, "");
+		Item("Craftplan_Mod_Shock_SpecialAttack_Upgrade3", 1, "");
+		Item("Craftplan_Mod_Freeze_Random_Upgrade4_TIP", 1, "");
+		Item("Craftplan_Mod_Shock_Random_Upgrade3_TIP", 1, "");
+		Item("Craftplan_Mod_Heat_Random_Upgrade5_SHAFT", 1, "");
+		Item("Craftplan_Mod_Bleeding_Random_Upgrade5_SHAFT", 1, "");
+		Item("Craftplan_Mod_Heat_PowerAttack_Upgrade4", 1, "");
+		Item("Craftplan_Mod_Toxic_PowerAttack_Upgrade3", 1, "");
+		Item("Craftplan_Mod_Impact_Random_Upgrade4_TIP", 1, "");
+		
+		Level(15, "Traversal", 1.0);
+        Level(16, "Combat", 1.0);
+		Level(26, "Experience", 1.0);
+    }
+	
+	Preset("Player_Difficulty_6")		// Difficulty
+    {
+		use Stamina_Lvl_6();
+		use Health_Lvl_6();
+
+		use Difficulty_6_Skills();
+
+		Item("wpn_1hs_mach_u_fpp_r16", 1, "", "Orange");
+		Item("wpn_1hb_ham_n_fpp_r16", 1, "", "Blue");
+		Item("wpn_15hb_c_fpp_r16", 1, "", "Blue");
+		Item("wpn_15hs_a_fpp_r16", 1, "", "Blue");
+
+		Item("Medkit_Small_Upgrade5", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen_Upgrade6", 10, "");
+		Item("Throwable_Molotov_Upgrade6", 5, "");
+		Item("Mine_Explosive_Upgrade4", 2, "");
+		Item("Throwable_ExplosiveGrenade_Upgrade5", 2, "");
+		Item("Throwable_Decoy_Upgrade6", 5, "");
+		Item("Remote_Explosive_Upgrade4", 2, "");
+		Item("UV_Flare_Upgrade6", 5, "");
+		
+		Item("Bundle_Arrows", 2, "");
+		
+		Item("Cash_Cash", 800, "");
+		Item("Craft_Scrap", 40, "");
+		Item("LockpickItem", 20, "");
+		
+		Item("Potion_Antizine_Upgrade4", 5, "");
+		Item("Potion_DamageReduction_Upgrade3", 3, "");
+		Item("Potion_HealthRegeneration_Upgrade2", 3, "");
+		Item("Potion_DamageDealtIncrease_Upgrade1", 3, "");
+		Item("Potion_Rage_Upgrade2", 3, "");
+		
+		Item("Outfitset_Healer_Torso_Tier4_White", 1, "");
+		Item("Outfitset_MeleeDPS_Head_Tier5_Green", 1, "");
+		Item("Outfitset_Healer_Shoes_Tier6_Blue", 1, "");
+		Item("Outfitset_Tank_Legs_Tier6_Green", 1, "");
+		Item("Outfitset_RangedDPS_TorsoAddon_Tier5_Blue", 1, "");
+		Item("Outfitset_RangedDPS_Gloves_Tier4_White", 1, "");
+		
+		Item("Craftplan_Medkit_Small_Upgrade3", 1, "");
+		Item("Craftplan_Lockpick_Upgrade4", 1, "");
+		Item("Craftplan_ThrowingKnives_Upgrade3", 1, "");
+		Item("Craftplan_Firecrackers_Upgrade4", 1, "");
+		Item("Craftplan_Molotov_Upgrade3", 1, "");
+		Item("Craftplan_Firearm_Shotgun_Upgrade4", 1, "");
+		Item("Craftplan_Grenade_Upgrade3", 1, "");
+		Item("Craftplan_Mine_Explosive_Upgrade4", 1, "");
+		Item("Craftplan_Potion_DamageReduction_Upgrade3", 1, "");
+		Item("Craftplan_Potion_StaminaUpgrade_Upgrade3", 1, "");
+		Item("Craftplan_Mod_Shock_SpecialAttack_Upgrade3", 1, "");
+		Item("Craftplan_Mod_Freeze_Random_Upgrade4_TIP", 1, "");
+		Item("Craftplan_Mod_Shock_Random_Upgrade3_TIP", 1, "");
+		Item("Craftplan_Mod_Heat_Random_Upgrade5_SHAFT", 1, "");
+		Item("Craftplan_Mod_Bleeding_Random_Upgrade5_SHAFT", 1, "");
+		Item("Craftplan_Mod_Heat_PowerAttack_Upgrade4", 1, "");
+		Item("Craftplan_Mod_Toxic_PowerAttack_Upgrade3", 1, "");
+		Item("Craftplan_Mod_Impact_Random_Upgrade4_TIP", 1, "");
+		Item("Craftplan_Mod_Freeze_PowerAttack_Upgrade2", 1, "");
+		Item("Craftplan_Mod_Freeze_SpecialAttack_Upgrade5", 1, "");
+		Item("Craftplan_Mod_Bleeding_SpecialAttack_Upgrade2", 1, "");
+
+		Level(18, "Traversal", 1.0);
+        Level(19, "Combat", 1.0);
+		Level(32, "Experience", 1.0);
+    }
+
+	Preset("Player_Difficulty_7")		// Difficulty
+    {
+		use Stamina_Lvl_7();
+		use Health_Lvl_7();
+
+		use Difficulty_7_Skills();
+
+		Item("wpn_1hs_mach_k_fpp_r18", 1, "", "Orange");
+		Item("wpn_1hb_stk_d_fpp_r19", 1, "", "Blue");
+		Item("wpn_1hb_mace_h_fpp_r18", 1, "", "Blue");
+		Item("wpn_1hs_axe_i_fpp_r19", 1, "", "Green");
+
+		Item("Medkit_Small_Upgrade5", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen_Upgrade6", 10, "");
+		Item("Throwable_Molotov_Upgrade6", 5, "");
+		Item("Mine_Explosive_Upgrade4", 2, "");
+		Item("Throwable_ExplosiveGrenade_Upgrade5", 2, "");
+		Item("Throwable_Decoy_Upgrade6", 5, "");
+		Item("Remote_Explosive_Upgrade4", 2, "");
+		Item("UV_Flare_Upgrade6", 5, "");
+		
+		Item("Outfitset_Healer_Torso_Tier6_White", 1, "");
+		Item("Outfitset_MeleeDPS_Head_Tier6_Green", 1, "");
+		Item("Outfitset_Healer_Shoes_Tier6_Blue", 1, "");
+		Item("Outfitset_Tank_Legs_Tier6_Green", 1, "");
+		Item("Outfitset_RangedDPS_TorsoAddon_Tier6_Blue", 1, "");
+		Item("Outfitset_RangedDPS_Gloves_Tier6_White", 1, "");
+		
+		Item("Bundle_Arrows", 2, "");
+		
+		Item("Cash_Cash", 800, "");
+		Item("Craft_Scrap", 40, "");
+		Item("LockpickItem", 20, "");
+		
+		Item("Potion_Antizine_Upgrade4", 5, "");
+		Item("Potion_DamageReduction_Upgrade3", 3, "");
+		Item("Potion_HealthRegeneration_Upgrade2", 3, "");
+		Item("Potion_DamageDealtIncrease_Upgrade1", 3, "");
+		Item("Potion_Rage_Upgrade2", 3, "");
+		
+		Item("Craftplan_Medkit_Small_Upgrade3", 1, "");
+		Item("Craftplan_Lockpick_Upgrade4", 1, "");
+		Item("Craftplan_ThrowingKnives_Upgrade3", 1, "");
+		Item("Craftplan_Firecrackers_Upgrade4", 1, "");
+		Item("Craftplan_Molotov_Upgrade3", 1, "");
+		Item("Craftplan_Firearm_Shotgun_Upgrade4", 1, "");
+		Item("Craftplan_Grenade_Upgrade3", 1, "");
+		Item("Craftplan_Mine_Explosive_Upgrade4", 1, "");
+		Item("Craftplan_Potion_DamageReduction_Upgrade3", 1, "");
+		Item("Craftplan_Potion_StaminaUpgrade_Upgrade3", 1, "");
+		Item("Craftplan_Mod_Shock_SpecialAttack_Upgrade3", 1, "");
+		Item("Craftplan_Mod_Freeze_Random_Upgrade4_TIP", 1, "");
+		Item("Craftplan_Mod_Shock_Random_Upgrade3_TIP", 1, "");
+		Item("Craftplan_Mod_Heat_Random_Upgrade5_SHAFT", 1, "");
+		Item("Craftplan_Mod_Bleeding_Random_Upgrade5_SHAFT", 1, "");
+		Item("Craftplan_Mod_Heat_PowerAttack_Upgrade4", 1, "");
+		Item("Craftplan_Mod_Toxic_PowerAttack_Upgrade3", 1, "");
+		Item("Craftplan_Mod_Impact_Random_Upgrade4_TIP", 1, "");
+		Item("Craftplan_Mod_Freeze_PowerAttack_Upgrade2", 1, "");
+		Item("Craftplan_Mod_Freeze_SpecialAttack_Upgrade5", 1, "");
+		Item("Craftplan_Mod_Bleeding_SpecialAttack_Upgrade2", 1, "");
+
+
+		Level(21, "Traversal", 1.0);
+        Level(21, "Combat", 1.0);
+		Level(38, "Experience", 1.0);
+    }
+	
+	Preset("Player_Difficulty_8")		// Difficulty
+    {
+		use Stamina_Lvl_7();
+		use Health_Lvl_7();
+
+		use Difficulty_7_Skills();
+
+		Item("wpn_1hs_mach_p_fpp_r19", 1, "", "Orange");
+		Item("wpn_1hb_mace_h_fpp_r19", 1, "", "Blue");
+		Item("wpn_1hs_axe_i_fpp_r18", 1, "", "Green");
+		Item("wpn_1hb_mace_j_fpp_r19", 1, "", "Blue");
+
+		Item("Medkit_Small_Upgrade5", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen_Upgrade6", 10, "");
+		Item("Throwable_Molotov_Upgrade6", 5, "");
+		Item("Mine_Explosive_Upgrade4", 2, "");
+		Item("Throwable_ExplosiveGrenade_Upgrade5", 2, "");
+		Item("Throwable_Decoy_Upgrade6", 5, "");
+		Item("Remote_Explosive_Upgrade4", 2, "");
+		Item("UV_Flare_Upgrade6", 5, "");
+		
+		Item("Bundle_Arrows", 2, "");
+		
+		Item("Cash_Cash", 800, "");
+		Item("Craft_Scrap", 40, "");
+		Item("LockpickItem", 20, "");
+		
+		Item("Potion_Antizine_Upgrade4", 5, "");
+		Item("Potion_DamageReduction_Upgrade3", 3, "");
+		Item("Potion_HealthRegeneration_Upgrade2", 3, "");
+		Item("Potion_DamageDealtIncrease_Upgrade1", 3, "");
+		Item("Potion_Rage_Upgrade2", 3, "");
+		
+		Item("Outfitset_Healer_Torso_Tier6_White", 1, "");
+		Item("Outfitset_MeleeDPS_Head_Tier6_Green", 1, "");
+		Item("Outfitset_Healer_Shoes_Tier6_Blue", 1, "");
+		Item("Outfitset_Tank_Legs_Tier6_Green", 1, "");
+		Item("Outfitset_RangedDPS_TorsoAddon_Tier6_Blue", 1, "");
+		Item("Outfitset_RangedDPS_Gloves_Tier6_White", 1, "");
+		
+		Item("Craftplan_Medkit_Small_Upgrade3", 1, "");
+		Item("Craftplan_Lockpick_Upgrade4", 1, "");
+		Item("Craftplan_ThrowingKnives_Upgrade3", 1, "");
+		Item("Craftplan_Firecrackers_Upgrade4", 1, "");
+		Item("Craftplan_Molotov_Upgrade3", 1, "");
+		Item("Craftplan_Firearm_Shotgun_Upgrade4", 1, "");
+		Item("Craftplan_Grenade_Upgrade3", 1, "");
+		Item("Craftplan_Mine_Explosive_Upgrade4", 1, "");
+		Item("Craftplan_Potion_DamageReduction_Upgrade3", 1, "");
+		Item("Craftplan_Potion_StaminaUpgrade_Upgrade3", 1, "");
+		Item("Craftplan_Mod_Shock_SpecialAttack_Upgrade3", 1, "");
+		Item("Craftplan_Mod_Freeze_Random_Upgrade4_TIP", 1, "");
+		Item("Craftplan_Mod_Shock_Random_Upgrade3_TIP", 1, "");
+		Item("Craftplan_Mod_Heat_Random_Upgrade5_SHAFT", 1, "");
+		Item("Craftplan_Mod_Bleeding_Random_Upgrade5_SHAFT", 1, "");
+		Item("Craftplan_Mod_Heat_PowerAttack_Upgrade4", 1, "");
+		Item("Craftplan_Mod_Toxic_PowerAttack_Upgrade3", 1, "");
+		Item("Craftplan_Mod_Impact_Random_Upgrade4_TIP", 1, "");
+		Item("Craftplan_Mod_Freeze_PowerAttack_Upgrade2", 1, "");
+		Item("Craftplan_Mod_Freeze_SpecialAttack_Upgrade5", 1, "");
+		Item("Craftplan_Mod_Bleeding_SpecialAttack_Upgrade2", 1, "");
+
+
+		Level(23, "Traversal", 1.0);
+        Level(23, "Combat", 1.0);
+		Level(44, "Experience", 1.0);
+    }
+	
+	Preset("Player_Difficulty_9")		// Difficulty
+    {
+		use Stamina_Lvl_7();
+		use Health_Lvl_7();
+
+		use Difficulty_7_Skills();
+
+		Item("wpn_1hs_axe_k_fpp_r19", 1, "", "Orange");
+		Item("wpn_1hb_stk_a_fpp_r19", 1, "", "Blue");
+
+		Item("Medkit_Small_Upgrade5", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen_Upgrade6", 10, "");
+		Item("Throwable_Molotov_Upgrade6", 5, "");
+		Item("Mine_Explosive_Upgrade4", 2, "");
+		Item("Throwable_ExplosiveGrenade_Upgrade5", 2, "");
+		Item("Throwable_Decoy_Upgrade6", 5, "");
+		Item("Remote_Explosive_Upgrade4", 2, "");
+		Item("UV_Flare_Upgrade6", 5, "");
+		
+		Item("Bundle_Arrows", 2, "");
+		
+		Item("Cash_Cash", 800, "");
+		Item("Craft_Scrap", 40, "");
+		Item("LockpickItem", 20, "");
+		
+		Item("Potion_Antizine_Upgrade4", 5, "");
+		Item("Potion_DamageReduction_Upgrade3", 3, "");
+		Item("Potion_HealthRegeneration_Upgrade2", 3, "");
+		Item("Potion_DamageDealtIncrease_Upgrade1", 3, "");
+		Item("Potion_Rage_Upgrade2", 3, "");
+		
+		Item("Outfitset_Healer_Torso_Tier6_White", 1, "");
+		Item("Outfitset_MeleeDPS_Head_Tier6_Green", 1, "");
+		Item("Outfitset_Healer_Shoes_Tier6_Blue", 1, "");
+		Item("Outfitset_Tank_Legs_Tier6_Green", 1, "");
+		Item("Outfitset_RangedDPS_TorsoAddon_Tier6_Blue", 1, "");
+		Item("Outfitset_RangedDPS_Gloves_Tier6_White", 1, "");
+		
+		Item("Craftplan_Medkit_Small_Upgrade3", 1, "");
+		Item("Craftplan_Lockpick_Upgrade4", 1, "");
+		Item("Craftplan_ThrowingKnives_Upgrade3", 1, "");
+		Item("Craftplan_Firecrackers_Upgrade4", 1, "");
+		Item("Craftplan_Molotov_Upgrade3", 1, "");
+		Item("Craftplan_Firearm_Shotgun_Upgrade4", 1, "");
+		Item("Craftplan_Grenade_Upgrade3", 1, "");
+		Item("Craftplan_Mine_Explosive_Upgrade4", 1, "");
+		Item("Craftplan_Potion_DamageReduction_Upgrade3", 1, "");
+		Item("Craftplan_Potion_StaminaUpgrade_Upgrade3", 1, "");
+		Item("Craftplan_Mod_Shock_SpecialAttack_Upgrade3", 1, "");
+		Item("Craftplan_Mod_Freeze_Random_Upgrade4_TIP", 1, "");
+		Item("Craftplan_Mod_Shock_Random_Upgrade3_TIP", 1, "");
+		Item("Craftplan_Mod_Heat_Random_Upgrade5_SHAFT", 1, "");
+		Item("Craftplan_Mod_Bleeding_Random_Upgrade5_SHAFT", 1, "");
+		Item("Craftplan_Mod_Heat_PowerAttack_Upgrade4", 1, "");
+		Item("Craftplan_Mod_Toxic_PowerAttack_Upgrade3", 1, "");
+		Item("Craftplan_Mod_Impact_Random_Upgrade4_TIP", 1, "");
+		Item("Craftplan_Mod_Freeze_PowerAttack_Upgrade2", 1, "");
+		Item("Craftplan_Mod_Freeze_SpecialAttack_Upgrade5", 1, "");
+		Item("Craftplan_Mod_Bleeding_SpecialAttack_Upgrade2", 1, "");
+
+		Level(25, "Traversal", 1.0);
+        Level(25, "Combat", 1.0);
+		Level(50, "Experience", 1.0);
+    }
+	
+	Preset("Player_Difficulty_2_Influencers")		// Difficulty
+    {
+		use Stamina_Lvl_3();
+		use Health_Lvl_3();
+
+		use Difficulty_2_Skills();
+
+		Item("wpn_1hs_axe_i_fpp_r4", 1, "", "Blue");
+		Item("wpn_1hb_ham_b_fpp_r4", 1, "", "Blue");
+		Item("wpn_2hs_a_fpp_r4", 1, "", "Green");
+		Item("wpn_2hp_bow_t2", 1, "", "Blue");
+
+		Item("Medkit_Small_Upgrade1", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen", 30, "");
+		Item("Throwable_Molotov", 5, "");
+		Item("Mine_Explosive", 3, "");
+		Item("Remote_Explosive", 3, "");
+		Item("Throwable_ExplosiveGrenade_Upgrade1", 3, "");
+		Item("Throwable_Decoy_Upgrade3", 5, "");
+		Item("UV_Flare", 1, "");
+		
+		Item("Bundle_Arrows", 1, "");
+				
+		Item("Craft_Scrap", 30, "");
+		Item("Craft_Feathers", 30, "");
+		Item("Plant_Honey", 5, "");
+		Item("Plant_Chamomile", 10, "");
+		Item("Cash_Cash", 1000, "");
+		Item("LockpickItem", 15, "");
+		
+		Item("Outfitset_Healer_Torso_Tier2_White", 1, "");
+		Item("Outfitset_MeleeDPS_Head_Tier2_Green", 1, "");
+		Item("Outfitset_Healer_Shoes_Tier1_Blue", 1, "");
+		Item("Outfitset_Tank_Legs_Tier1_Green", 1, "");
+		Item("Outfitset_RangedDPS_TorsoAddon_Tier2_Blue", 1, "");
+		Item("Outfitset_RangedDPS_Gloves_Tier2_White", 1, "");
+		
+		Item("Potion_Antizine", 5, "");
+		Item("Potion_DamageReduction", 3, "");
+		Item("Potion_HealthRegeneration", 3, "");
+		
+		Item("Craftplan_Medkit_Small", 1, "");
+		Item("Craftplan_Lockpick", 1, "");
+		Item("Craftplan_ThrowingKnives", 1, "");
+		Item("Craftplan_Firecrackers", 1, "");
+		Item("Craftplan_Molotov", 1, "");
+		Item("Craftplan_Arrows", 1, "");
+		Item("Craftplan_Potion_DamageReduction", 1, "");
+		Item("Craftplan_Potion_StaminaUpgrade", 1, "");
+		Item("Craftplan_Mod_Shock_SpecialAttack", 1, "");
+		Item("Craftplan_Mod_Heat_SpecialAttack", 1, "");
+		Item("Craftplan_Mod_Freeze_Random_TIP", 1, "");
+		Item("Craftplan_Mod_Impact_Random_Upgrade2_SHAFT", 1, "");
+		Item("Craftplan_Mod_Heat_Random_Upgrade3_TIP", 1, "");
+		Item("Craftplan_Mod_Toxic_Random_Upgrade2_TIP", 1, "");
+		Item("Craftplan_charm_grenade", 1, "");
+		Item("Craftplan_charm_renegade_mask", 1, "");
+		Item("Craftplan_charm_dumplings", 1, "");
+				
+		Level(7, "Traversal", 1.0);
+        Level(7, "Combat", 1.0);
+		Level(12, "Experience", 1.0);
+    }
+
+	/// OWA Presets
+	
+	Preset("OWA_Player_Difficulty_1")		// Difficulty
+    {
+		use Stamina_Lvl_1();
+		use Health_Lvl_1();
+
+		Skill("height_jump");
+		Skill("spartan_kick");
+        
+		Skill("Binoculars"); // Tool
+		Skill("Backpack"); // Tool
+		Skill("CubeKey"); // Tool
+
+		Item("wpn_1hb_stk_g_fpp_r1", 1, "", "Green");
+		
+		Item("Throwable_ThrowingKnifeAGen", 5, "");
+		Item("Throwable_Coin", 3, "");
+		Item("Craft_Scrap", 25, "");
+		Item("LockpickItem", 60, "");
+		Item("Medkit_Small", 5, "");
+		
+        Level(3, "Traversal", 1.0);
+        Level(2, "Combat", 1.0);
+		Level(5, "Experience", 1.0);
+    }	
+	
+	Preset("OWA_Player_Difficulty_2")		// Difficulty
+    {
+		use Stamina_Lvl_2();
+		use Health_Lvl_2();
+
+		use Difficulty_2_Skills();
+		
+		Skill("Binoculars"); // Tool
+		Skill("Backpack"); // Tool
+		Skill("Paraglider"); // Tool
+		Skill("CubeKey"); // Tool
+
+		Item("wpn_1hs_axe_i_fpp_r4", 1, "", "Blue");
+		Item("wpn_1hb_ham_m_fpp_r4", 1, "", "Green");
+
+		Item("Medkit_Small", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen", 5, "");
+		Item("Craft_Scrap", 30, "");
+		Item("LockpickItem", 60, "");
+		Item("Throwable_Molotov", 3, "");
+		
+		Level(4, "Traversal", 1.0);
+        Level(4, "Combat", 1.0);
+		Level(8, "Experience", 1.0);
+		
+
+    }
+	
+	Preset("OWA_Player_Difficulty_3")		// Difficulty
+    {
+		use Stamina_Lvl_3();
+		use Health_Lvl_3();
+
+		use Difficulty_3_Skills();
+
+		Skill("Binoculars"); // Tool
+		Skill("Backpack"); // Tool
+		Skill("Paraglider"); // Tool
+		Skill("CubeKey"); // Tool
+		Skill("Paraglider"); // Tool
+		Skill("GrappleHook"); // Tool	
+		Skill("AttachTool_1"); // Tool	
+		
+		Item("wpn_1hs_axe_p_fpp_r7", 1, "", "Blue");
+		Item("wpn_1hb_ham_i_fpp_r7", 1, "", "Green");
+
+		Item("Medkit_Medium", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen", 5, "");
+		Item("Craft_Scrap", 40, "");
+		Item("LockpickItem", 60, "");
+		Item("Throwable_Molotov", 3, "");
+		
+		Level(7, "Traversal", 1.0);
+        Level(7, "Combat", 1.0);
+		Level(14, "Experience", 1.0);
+    }
+	
+	Preset("OWA_Player_Difficulty_4")		// Difficulty
+    {
+		use Stamina_Lvl_4();
+		use Health_Lvl_4();
+
+		use Difficulty_4_Skills();
+		
+		Skill("Binoculars"); // Tool
+		Skill("Backpack"); // Tool
+		Skill("Paraglider"); // Tool
+		Skill("CubeKey"); // Tool
+		Skill("Paraglider"); // Tool
+		Skill("GrappleHook"); // Tool	
+		Skill("AttachTool_1"); // Tool	
+		Skill("CubeKey"); // Tool
+		Skill("Paraglider_2"); // Tool
+		Skill("AttachTool_2"); // Tool	
+		Skill("Paraglider_3"); // Tool
+		Skill("Paraglider_4"); // Tool		
+		
+		Item("wpn_1hs_axe_e_fpp_r10", 1, "", "Blue");
+		Item("wpn_1hb_ham_b_fpp_r10", 1, "", "Blue");
+
+		Item("Medkit_Medium", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen", 5, "");
+		Item("Craft_Scrap", 55, "");
+		Item("LockpickItem", 60, "");
+		Item("Throwable_Molotov", 3, "");
+
+		Level(10, "Traversal", 1.0);
+        Level(10, "Combat", 1.0);
+		Level(20, "Experience", 1.0);
+		
+
+    }
+	
+	Preset("OWA_Player_Difficulty_5")		// Difficulty
+    {
+		use Stamina_Lvl_5();
+		use Health_Lvl_5();
+
+		use Difficulty_5_Skills();
+		
+		Skill("Binoculars"); // Tool
+		Skill("Backpack"); // Tool
+		Skill("Paraglider"); // Tool
+		Skill("CubeKey"); // Tool
+		Skill("Paraglider"); // Tool
+		Skill("GrappleHook"); // Tool	
+		Skill("AttachTool_1"); // Tool	
+		Skill("CubeKey"); // Tool
+		Skill("Paraglider_2"); // Tool
+		Skill("AttachTool_2"); // Tool	
+		Skill("CubeKey"); // Tool
+		Skill("GREDetector"); // Tool
+		Skill("UVFlashLight"); // Tool
+		Skill("GrappleHook_2"); // Tool
+		Skill("Paraglider_3"); // Tool
+		Skill("Paraglider_4"); // Tool
+	
+		Item("wpn_1hs_axe_d_fpp_r13", 1, "", "Blue");
+		Item("wpn_1hb_mace_e_fpp_r13", 1, "", "Orange");
+
+		Item("Medkit_Large", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen", 5, "");
+		Item("Craft_Scrap", 75, "");
+		Item("LockpickItem", 60, "");
+		Item("Throwable_Molotov", 3, "");
+
+		Level(13, "Traversal", 1.0);
+        Level(13, "Combat", 1.0);
+		Level(26, "Experience", 1.0);
+		
+
+    }
+	
+	Preset("OWA_Player_Difficulty_6")		// Difficulty
+    {
+		use Stamina_Lvl_6();
+		use Health_Lvl_6();
+
+		use Difficulty_6_Skills();
+
+		Item("wpn_1hs_mach_u_fpp_r16", 1, "", "Orange");
+		Item("wpn_1hb_ham_n_fpp_r16", 1, "", "Blue");
+
+		Skill("Binoculars"); // Tool
+		Skill("Backpack"); // Tool
+		Skill("Paraglider"); // Tool
+		Skill("CubeKey"); // Tool
+		Skill("Paraglider"); // Tool
+		Skill("GrappleHook"); // Tool	
+		Skill("AttachTool_1"); // Tool	
+		Skill("CubeKey"); // Tool
+		Skill("Paraglider_2"); // Tool
+		Skill("AttachTool_2"); // Tool	
+		Skill("CubeKey"); // Tool
+		Skill("GREDetector"); // Tool
+		Skill("UVFlashLight"); // Tool
+		Skill("GrappleHook_2"); // Tool
+		Skill("Paraglider_3"); // Tool		
+		Skill("CubeKey"); // Tool
+		Skill("GrappleHook_3"); // Tool
+		Skill("Paraglider_4"); // Tool
+
+		Item("Medkit_Large", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen", 5, "");
+		Item("Craft_Scrap", 100, "");
+		Item("LockpickItem", 60, "");
+		Item("Throwable_Molotov", 3, "");
+
+		Level(16, "Traversal", 1.0);
+        Level(16, "Combat", 1.0);
+		Level(32, "Experience", 1.0);
+		
+
+    }
+	
+	/// QUESTS Presets
+
+	Preset("Chapter_0")		//--- PH: default
+    { 
+        Level(1, "Traversal", 1.0);
+        Level(1, "Combat", 1.0);
+		Level(1, "Experience", 1.0);
+		
+		Item("outfit_pilgrim_bracers", 1, "");
+		Item("outfit_pilgrim_gloves", 1, "");
+		
+    }
+	
+	Preset("Player_Catacombs_Start")		// Quests
+    {
+		Skill("height_jump");
+        Level(2, "Traversal", 1.0);
+        Level(1, "Combat", 1.0);
+		Level(1, "Experience", 1.0);
+    }
+	
+	Preset("Player_Prologue")
+    {	
+        //Skill("SurvivalSenseSkillDisable");
+		Level(1, "Traversal", 1.0);
+        Level(1, "Combat", 1.0);
+		Item("outfit_pilgrim_bracers", 1, "");
+		Item("outfit_pilgrim_gloves", 1, "");
+    }	
+	
+	Preset("Player_Prologue_Start")		// Quests Prologue 
+    {
+        //Skill("SurvivalSenseSkillDisable");
+		use Health_Lvl_2();
+		//use Stamina_Lvl_2(); // - player max stamina is set from story, to make sure that initial stamina on City is 0.0
+		Level(1, "Traversal", 1.0);
+        Level(1, "Combat", 1.0);
+		Item("outfit_pilgrim_bracers", 1, "");
+		Item("outfit_pilgrim_gloves", 1, "");
+    }
+	Preset("Player_Prologue_Mid")		// Quests Prologue 
+    {
+        //Skill("SurvivalSenseSkillDisable");
+		use Health_Lvl_1();
+		use Stamina_Lvl_1();
+		Level(1, "Traversal", 1.0);
+        Level(1, "Combat", 1.0);
+		Item("outfit_pilgrim_bracers", 1, "");
+		Item("outfit_pilgrim_gloves", 1, "");
+    }
+	Preset("Player_Prologue_End")		// Quests Prologue 
+    {
+        //Skill("SurvivalSenseSkillDisable");
+		Level(1, "Traversal", 1.0);
+        Level(1, "Combat", 1.0);
+		Item("outfit_pilgrim_bracers", 1, "");
+		Item("outfit_pilgrim_gloves", 1, "");
+		Skill("GreInhibitorDetector"); // Tool
+    }
+
+	Preset("Player_Getting_Stronger")		// Quests
+    {
+		Skill("height_jump");
+		Skill("parkour_combat");
+		Skill("CubeKey"); // Tool
+		//Skill("GreInhibitorDetector"); // Tool
+		
+        Level(2, "Traversal", 1.0);
+        Level(2, "Combat", 1.0);
+		Level(4, "Experience", 1.0);
+		
+		Item("outfit_pilgrim_bracers", 1, "");
+		Item("outfit_pilgrim_gloves", 1, "");
+		
+		Item("Craftplan_Medkit_Small", 1, "");
+		Item("Medkit_Small", 1, "");
+		
+		
+		
+		Item("wpn_1hb_stk_a_fpp_r2_prologue", 1, "", "Blue");
+		Item("wpn_1hs_mach_l_fpp_r0", 1, "", "Blue");
+    }	
+
+//////EVERYTHING BELOW TO REMOVE
+
+	Preset("Player_150")		// Quests Prologue 
+    {
+        Level(1, "Traversal", 1.0);
+        Level(1, "Combat", 1.0);
+		Level(1, "Experience", 1.0);
+		
+		Skill("AntizinCapacityUpgradeHealth");//1
+		Skill("AntizinCapacityUpgradeHealth");//2
+		Skill("AntizinCapacityUpgradeHealth");//3
+		Skill("AntizinCapacityUpgradeStamina");//1
+		Skill("AntizinCapacityUpgradeStamina");//2
+		Skill("AntizinCapacityUpgradeStamina");//3
+    }
+
+	Preset("Player_100")		// Quests Prologue 
+    {
+        Level(1, "Traversal", 1.0);
+        Level(1, "Combat", 1.0);
+		Level(1, "Experience", 1.0);
+
+		Skill("AntizinCapacityUpgradeHealth");//1
+		Skill("AntizinCapacityUpgradeStamina");//1
+
+        Skill("Binoculars");
+
+    }
+
+
+	
+	Preset("Progress_00%")		// Quests
+    {
+		Skill("AntizinCapacityUpgradeHealth");//1
+		Skill("AntizinCapacityUpgradeHealth");//2
+		Skill("AntizinCapacityUpgradeHealth");//3
+		Skill("AntizinCapacityUpgradeStamina");//1
+		Skill("AntizinCapacityUpgradeStamina");//2
+		Skill("AntizinCapacityUpgradeStamina");//3
+		
+        Level(1, "Traversal", 1.0);
+        Level(1, "Combat", 1.0);
+		Level(1, "Experience", 1.0);
+    }
+
+	Preset("Progress_5%")		// Quests
+    {	
+		Skill("height_jump");
+		Skill("parkour_combat");
+		Skill("CubeKey"); // Tool
+		//Skill("SurvivalSenseSkillDisable");
+		//use Health_Lvl_1();  - player gets inhibitors from a Story now so it's not needed anymore.
+		
+        Level(2, "Traversal", 1.0);
+        Level(2, "Combat", 1.0);
+		Level(4, "Experience", 1.0);
+    }
+
+	Preset("Progress_10%")		// Quests
+    {	
+		use Stamina_Lvl_1();
+		use Health_Lvl_1();
+
+		Skill("height_jump");
+		Skill("parkour_combat");
+		
+        Skill("CubeKey"); // Tool
+		Skill("Binoculars"); // Tool
+		
+		Item("wpn_1hb_stk_g_fpp_r1", 1, "", "Green");
+		Item("wpn_1hs_axe_i_fpp_r1", 1, "", "Blue");
+		
+		Item("Throwable_ThrowingKnifeAGen", 5, "");
+		Item("Throwable_Coin", 3, "");
+		Item("Craft_Scrap", 25, "");
+		Item("Cash_Cash", 250, "");
+		Item("LockpickItem", 15, "");
+		Item("Medkit_Small", 5, "");
+		
+        Level(2, "Traversal", 1.0);
+        Level(2, "Combat", 1.0);
+		Level(5, "Experience", 1.0);
+    }
+	
+	Preset("Progress_15%")		// Quests
+    {
+		use Stamina_Lvl_1();
+		use Health_Lvl_1();
+
+		Skill("height_jump");
+		Skill("spartan_kick");
+        
+		//Skill("Binoculars"); // Tool
+		//Skill("Backpack"); // Tool
+
+		Item("wpn_1hb_stk_g_fpp_r1", 1, "", "Green");
+		
+		Item("Throwable_ThrowingKnifeAGen", 5, "");
+		Item("Throwable_Coin", 3, "");
+		Item("Craft_Scrap", 25, "");
+		Item("LockpickItem", 15, "");
+		Item("Medkit_Small", 5, "");
+		
+        Level(3, "Traversal", 1.0);
+        Level(2, "Combat", 1.0);
+		Level(5, "Experience", 1.0);
+
+    }
+	
+	Preset("Progress_20%")		// Quests
+    {
+		use Stamina_Lvl_2();
+		use Health_Lvl_2();
+
+		use Difficulty_2_Skills();
+
+		Item("wpn_1hs_axe_i_fpp_r4", 1, "", "Blue");
+		Item("wpn_1hb_ham_m_fpp_r4", 1, "", "Green");
+
+		Item("Medkit_Small", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen", 5, "");
+		Item("Craft_Scrap", 30, "");
+		Item("LockpickItem", 15, "");
+		Item("Throwable_Molotov", 3, "");
+		
+		Level(4, "Traversal", 1.0);
+        Level(4, "Combat", 1.0);
+		Level(8, "Experience", 1.0);
+
+    }
+	
+	Preset("Progress_25%")		// Quests
+    {
+		use Stamina_Lvl_3();
+		use Health_Lvl_3();
+
+		use Difficulty_3_Skills();
+
+		Item("wpn_1hs_axe_p_fpp_r7", 1, "", "Blue");
+		Item("wpn_1hb_ham_i_fpp_r7", 1, "", "Green");
+		Item("wpn_1hb_ham_b_fpp_r7", 1, "", "Blue");
+		Item("wpn_1hb_mace_e_fpp_r7", 1, "", "Orange");
+
+		Item("Medkit_Medium", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen", 5, "");
+		Item("Cash_Cash", 400, "");
+		Item("Craft_Scrap", 40, "");
+		Item("LockpickItem", 20, "");
+		Item("Throwable_Molotov", 3, "");
+		
+		Level(9, "Traversal", 1.0);
+        Level(9, "Combat", 1.0);
+		Level(14, "Experience", 1.0);
+    }
+
+	Preset("Progress_40%")		// Quests
+    {
+		use Stamina_Lvl_3();
+		use Health_Lvl_3();
+
+		use Difficulty_3_Skills();
+
+		Item("wpn_1hs_axe_p_fpp_r7", 1, "", "Blue");
+		Item("wpn_1hb_ham_i_fpp_r7", 1, "", "Green");
+
+		Item("Medkit_Medium", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen", 5, "");
+		Item("Craft_Scrap", 40, "");
+		Item("LockpickItem", 20, "");
+		Item("Throwable_Molotov", 3, "");
+		
+		Level(7, "Traversal", 1.0);
+        Level(7, "Combat", 1.0);
+		Level(14, "Experience", 1.0);
+		
+
+    }
+	
+	Preset("Progress_50%")		// Quests
+    {
+		use Stamina_Lvl_4();
+		use Health_Lvl_4();
+
+		use Difficulty_4_Skills();
+
+		Item("wpn_1hs_axe_e_fpp_r10", 1, "", "Blue");
+		Item("wpn_1hb_ham_b_fpp_r10", 1, "", "Blue");
+		Item("wpn_1hb_mace_e_fpp_r10", 1, "", "Orange");
+		Item("wpn_1hb_ham_n_fpp_r10", 1, "", "Blue");
+
+		Item("Medkit_Medium", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen", 5, "");
+		Item("Craft_Scrap", 55, "");
+		Item("Cash_Cash", 500, "");
+		Item("LockpickItem", 20, "");
+		Item("Throwable_Molotov", 3, "");
+
+		Level(12, "Traversal", 1.0);
+        Level(13, "Combat", 1.0);
+		Level(20, "Experience", 1.0);
+    }
+	
+	Preset("Progress_75%")		// Quests
+    {
+		use Stamina_Lvl_5();
+		use Health_Lvl_5();
+
+		use Difficulty_5_Skills();
+
+		Item("wpn_1hs_axe_d_fpp_r13", 1, "", "Blue");
+		Item("wpn_1hb_mace_e_fpp_r13", 1, "", "Orange");
+		Item("wpn_1hb_ham_n_fpp_r13", 1, "", "Blue");
+		Item("wpn_1hb_stk_d_fpp_r13", 1, "", "Blue");
+
+		Item("Medkit_Large", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen", 5, "");
+		Item("Craft_Scrap", 75, "");
+		Item("Cash_Cash", 600, "");
+		Item("LockpickItem", 20, "");
+		Item("Throwable_Molotov", 3, "");
+
+		Level(15, "Traversal", 1.0);
+        Level(16, "Combat", 1.0);
+		Level(26, "Experience", 1.0);	
+    }
+	
+	Preset("Progress_80%")		// Quests
+    {
+		use Stamina_Lvl_5();
+		use Health_Lvl_5();
+
+		use Difficulty_5_Skills();
+
+		Item("wpn_1hs_axe_d_fpp_r13", 1, "", "Blue");
+		Item("wpn_1hb_mace_e_fpp_r13", 1, "", "Orange");
+
+		Item("Medkit_Large", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen", 5, "");
+		Item("Craft_Scrap", 75, "");
+		Item("LockpickItem", 20, "");
+		Item("Throwable_Molotov", 3, "");
+
+		Level(13, "Traversal", 1.0);
+        Level(13, "Combat", 1.0);
+		Level(26, "Experience", 1.0);
+		
+    }
+	
+	Preset("Progress_85%")		// Quests
+    {
+		use Stamina_Lvl_5();
+		use Health_Lvl_5();
+
+		use Difficulty_5_Skills();
+
+		Item("wpn_1hs_axe_d_fpp_r13", 1, "", "Blue");
+		Item("wpn_1hb_mace_e_fpp_r13", 1, "", "Orange");
+
+		Item("Medkit_Large", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen", 5, "");
+		Item("Craft_Scrap", 75, "");
+		Item("LockpickItem", 20, "");
+		Item("Throwable_Molotov", 3, "");
+
+		Level(13, "Traversal", 1.0);
+        Level(13, "Combat", 1.0);
+		Level(26, "Experience", 1.0);
+
+    }		
+	
+	Preset("Progress_90%")		// Quests
+    {
+		use Stamina_Lvl_6();
+		use Health_Lvl_6();
+
+		use Difficulty_6_Skills();
+
+		Item("wpn_1hs_mach_u_fpp_r16", 1, "", "Orange");
+		Item("wpn_1hb_ham_n_fpp_r16", 1, "", "Blue");
+
+		Item("Medkit_Large", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen", 5, "");
+		Item("Craft_Scrap", 100, "");
+		Item("LockpickItem", 20, "");
+		Item("Throwable_Molotov", 3, "");
+
+		Level(16, "Traversal", 1.0);
+        Level(16, "Combat", 1.0);
+		Level(32, "Experience", 1.0);
+		
+	}
+	
+	Preset("Progress_95%")		// Quests
+    {
+		use Stamina_Lvl_6();
+		use Health_Lvl_6();
+
+		use Difficulty_6_Skills();
+
+		Item("wpn_1hs_mach_u_fpp_r16", 1, "", "Orange");
+		Item("wpn_1hb_ham_n_fpp_r16", 1, "", "Blue");
+
+		Item("Medkit_Large", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen", 5, "");
+		Item("Craft_Scrap", 100, "");
+		Item("LockpickItem", 20, "");
+		Item("Throwable_Molotov", 3, "");
+
+		Level(16, "Traversal", 1.0);
+        Level(16, "Combat", 1.0);
+		Level(32, "Experience", 1.0);
+		
+		Skill("charge_grab");
+		Skill("ledge_takedown");
+		Skill("air_takedown");
+		
+    }
+
+	Preset("E3_2019")		//--- E3_2019
+    {
+        Level(50, "Traversal", 1.0);
+        Level(50, "Combat", 1.0);
+		Level(50, "Experience", 1.0);
+		Level(50, "Inhibitors", 1.0);
+
+		use Difficulty_6_Skills();
+
+        Skill("Binoculars");
+		Skill("perfect_block");
+        Skill("UVFlashLight");
+		Skill("Backpack_2");
+		Skill("perfect_block");
+		Skill("vault_kick");
+
+		Item("RopeHook", 1, "");
+		Item("Parachute", 1, "");
+
+		Item("prototype_NewElectricWeapon", 1, "");
+		Item("Ammo_Harpoon", 10, "");
+
+		Item("Craftplan_Medkit_Medium", 1, "");
+    }
+
+    Preset("AI_Combat_Difficulty") // owner: amichalowski
+    {
+        Skill("AntizinCapacityUpgradeStamina");//1
+        Skill("AntizinCapacityUpgradeStamina");//2
+    	Skill("AntizinCapacityUpgradeStamina");//3
+		Skill("AntizinCapacityUpgradeHealth");//1
+		Skill("AntizinCapacityUpgradeHealth");//2
+
+        Skill("dodge");
+        Skill("power_attack");
+        Skill("block");
+        Skill("perfect_block");
+		Skill("vault_kick");
+        Skill("drop_attack");
+		Skill("double_jump");
+        Skill("height_jump");
+        Skill("wrestle_kick");
+
+        Item("AI_Combat_Playtest", 1, "");
+    }
+
+	Preset("UI playtest")		//--- Pod playtesty UI 09-2019
+    {
+  		Skill("AntizinCapacityUpgradeStamina");//1
+		Skill("AntizinCapacityUpgradeHealth");//1
+
+		Skill("Binoculars");
+    	Skill("UVFlashLight");
+        Skill("RopeHook");
+
+
+		Item("Throwable_ThrowingKnifeAGen", 10, "");
+		Item("Throwable_Molotov", 2, "");
+		Item("Throwable_Decoy", 3, "");
+		Item("Throwable_Coin", 3, "");
+
+
+		Item("Medkit_Small", 3, "");
+		Item("Medkit_Medium", 3, "");
+		Item("Potion_StaminaUsageReduction", 3, "");
+
+		Item("wpn_1hs_axe_i_fpp_r3", 1, "");
+
+		Item("Craftplan_ThrowingKnives", 1, "");
+		Item("Craftplan_Molotov", 1, "");
+		Item("Craftplan_Firecrackers", 1, "");
+		Item("Craftplan_Medkit_Small", 1, "");
+		Item("Craft_Scrap", 200, "");
+		Item("Craft_Rags", 200, "");
+		Item("Craft_Blades", 50, "");
+		Item("Craft_Container", 50, "");
+		Item("Plant_Honey", 30, "");
+    }
+	
+	Preset("GRE Finder - Pikachu")		// Giving Player Pikachu
+    {
+		Item("GRE_Keyfinder", 1, "");
+		Item("LockpickItem", 30, "");
+    }
+	Preset("Parkour Playtest Grappling Hook")		//--- Pod playtesty parkour 01-2020
+    {
+		use Stamina_Lvl_5();
+		
+		Skill("height_jump");
+		Skill("double_jump");
+		Skill("far_jump");
+		Skill("GrappleHook");
+		Skill("GrappleHook_2");
+		Skill("GrappleHook_3");
+		Skill("RopeHook");
+		
+		Item("RopeHook", 1, "");
+		
+    }
+	
+	Preset("AA_Useitems_Review")
+	{
+		use Stamina_Lvl_3();
+		use Health_Lvl_3();
+
+		use Difficulty_3_Skills();
+		Skill("vault_kick");//13
+		Skill("Finisher");//13
+
+		Item("wpn_1hb_ham_a_fpp_r7", 1, "", "Blue");
+		Item("wpn_1hb_ham_b_fpp_r7", 1, "", "Blue");
+		Item("wpn_1hb_stk_a_fpp_r7", 1, "", "Blue");
+		Item("wpn_1hb_stk_c_fpp_r7", 1, "", "Blue");
+
+
+		Item("Potion_HealthRegeneration_Upgrade3", 3, "");
+		Item("Throwable_Molotov_Upgrade4", 3, "");
+		Item("Potion_DamageReduction_Upgrade3", 3, "");
+		Item("Potion_StaminaUpgrade_Upgrade3", 3, "");      
+		Item("Medkit_Small_Upgrade4", 3, "");
+		Item("Firearm_Shotgun_Upgrade6", 1, "");
+		Item("Throwable_ExplosiveGrenade_Upgrade6", 3, "");
+		Item("Mine_Explosive_Upgrade3", 3, "");
+		Item("Potion_Rage_Upgrade3", 3, "");
+		Item("Potion_SwimmingStamina_Upgrade3", 3, "");
+		Item("LockpickItem_Upgrade3", 3, "");
+
+		Level(6, "Traversal", 1.0);
+        Level(6, "Combat", 1.0);
+		Level(12, "Experience", 1.0);
+	}
+	
+	Preset("Mods_Review")		// Difficulty
+    {
+		use Stamina_Lvl_3();
+		use Health_Lvl_3();
+
+		Skill("far_jump");//9
+		Skill("double_jump");//8
+		Skill("vault_enemies");//13
+		Skill("vault_kick");//13
+		Skill("height_jump");//3
+		Skill("power_attack");//5
+		Skill("perfect_block");//4
+		Skill("perfect_dodge");
+		Skill("vault_kick");//13
+		Skill("Finisher");//13
+		Skill("ground_pound");//17
+		Skill("dodge_mastery");//33
+		Skill("rotate_jump");//33
+		
+		Item("Medkit_Small_Upgrade6", 10, "");
+		Item("Bundle_BlueprintsDev", 1, "");
+						
+		Level(6, "Traversal", 1.0);
+        Level(6, "Combat", 1.0);
+		Level(12, "Experience", 1.0);
+    }
+
+	Preset("Reg_01_windmills_01")		//--- Pod playtesty reg 05
+    {
+		use Stamina_Lvl_1();
+		use Health_Lvl_7();
+		
+		Skill("height_jump");
+
+    }
+	
+	Preset("Reg_01_windmills_02")		//--- Pod playtesty reg 05
+    {
+		use Stamina_Lvl_4();
+		use Health_Lvl_7();
+		
+		Skill("height_jump");
+
+    }
+	Preset("Natural_Movement_Tutorial")		//--- Pod playtesty Tutorial
+    {
+		use Stamina_Lvl_7();
+		use Health_Lvl_7();
+		
+		Skill("height_jump");
+    }
+	
+	Preset("Dying2Know_Presentation")		// Dying 2 Know Presentation ALL SKILLS
+    {
+		use Stamina_Lvl_7();
+		use Health_Lvl_7();
+
+		use Difficulty_7_Skills();
+		Skill("far_jump");//
+		Skill("double_jump");//
+		Skill("vault_enemies");//1
+		Skill("vault_kick");//1
+		Skill("height_jump");//
+		Skill("power_attack");//
+		Skill("perfect_block");//
+		Skill("perfect_dodge");
+		Skill("vault_kick");//
+		Skill("Finisher");//
+		Skill("ground_pound");//
+		Skill("dodge_mastery");//
+		Skill("rotate_jump");//	
+		Skill("vault_kick_ragdoll");//
+		Skill("stomp");//	
+		Skill("power_shot");//			
+		Skill("block_projectiles");//			
+		Skill("deflect_projectiles");//	
+		Skill("charge_grab");//			
+		Skill("silent_takedown_throw");//				
+		Skill("nagewaza_throw");//		
+		Skill("air_takedown_shockwave");//	
+		Skill("power_shot");//	
+		Skill("multiple_shots");//	
+		Skill("parkour_ranged");//	
+		Skill("active_land_jump");//	
+		Skill("fast_climb");//	
+		Skill("ledge_master");//	
+		Skill("rotate_jump");//			
+		Skill("slide_advanced");//			
+		Skill("slide_jump");//			
+		Skill("after_boost");//			
+		Skill("dash_advanced");//			
+		Skill("dash");//			
+		Skill("advanced_crouch");//			
+		Skill("ram");//			
+		Skill("enemy_jump");//			
+		Skill("wall_jump_sequence");//		
+		Skill("ledge_takedown");//			
+
+		Item("wpn_2hb_g_fpp_r24", 1, "", "Orange");
+		Item("wpn_15hb_m_fpp_r24", 1, "", "Orange");
+
+		Item("Medkit_Small_Upgrade5", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen_Upgrade6", 10, "");
+		Item("Throwable_Molotov_Upgrade6", 5, "");
+		Item("Mine_Explosive_Upgrade4", 2, "");
+		Item("Throwable_ExplosiveGrenade_Upgrade5", 2, "");
+		Item("Throwable_Decoy_Upgrade6", 5, "");
+		Item("Remote_Explosive_Upgrade4", 2, "");
+		Item("UV_Flare_Upgrade6", 5, "");
+		
+		Item("Bundle_Arrows", 2, "");
+		
+		Item("Cash_Cash", 800, "");
+		Item("Craft_Scrap", 40, "");
+		Item("LockpickItem", 20, "");
+		
+		Item("Potion_Antizine_Upgrade4", 5, "");
+		Item("Potion_DamageReduction_Upgrade3", 3, "");
+		Item("Potion_HealthRegeneration_Upgrade2", 3, "");
+		Item("Potion_DamageDealtIncrease_Upgrade1", 3, "");
+		Item("Potion_Rage_Upgrade2", 3, "");
+		
+		Item("Outfitset_Tank_Torso_Tier9_Blue", 1, "");
+		Item("Outfitset_Tank_Legs_Tier9_Blue", 1, "");
+		Item("Outfitset_Tank_Shoes_Tier9_Blue", 1, "");
+		Item("Outfitset_Tank_Head_Tier9_Blue", 1, "");
+		Item("Outfitset_Tank_Gloves_Tier9_Blue", 1, "");
+		Item("Outfitset_Tank_TorsoAddon_Tier9_Blue", 1, "");
+		
+		Item("Craftplan_Medkit_Small_Upgrade3", 1, "");
+		Item("Craftplan_Lockpick_Upgrade4", 1, "");
+		Item("Craftplan_ThrowingKnives_Upgrade3", 1, "");
+		Item("Craftplan_Firecrackers_Upgrade4", 1, "");
+		Item("Craftplan_Molotov_Upgrade3", 1, "");
+		Item("Craftplan_Firearm_Shotgun_Upgrade4", 1, "");
+		Item("Craftplan_Grenade_Upgrade3", 1, "");
+		Item("Craftplan_Mine_Explosive_Upgrade4", 1, "");
+		Item("Craftplan_Potion_DamageReduction_Upgrade3", 1, "");
+		Item("Craftplan_Potion_StaminaUpgrade_Upgrade3", 1, "");
+		Item("Craftplan_Mod_Shock_SpecialAttack_Upgrade3", 1, "");
+		Item("Craftplan_Mod_Freeze_Random_Upgrade4_TIP", 1, "");
+		Item("Craftplan_Mod_Shock_Random_Upgrade3_TIP", 1, "");
+		Item("Craftplan_Mod_Heat_Random_Upgrade5_SHAFT", 1, "");
+		Item("Craftplan_Mod_Bleeding_Random_Upgrade5_SHAFT", 1, "");
+		Item("Craftplan_Mod_Heat_PowerAttack_Upgrade4", 1, "");
+		Item("Craftplan_Mod_Toxic_PowerAttack_Upgrade3", 1, "");
+		Item("Craftplan_Mod_Impact_Random_Upgrade4_TIP", 1, "");
+		Item("Craftplan_Mod_Freeze_PowerAttack_Upgrade2", 1, "");
+		Item("Craftplan_Mod_Freeze_SpecialAttack_Upgrade5", 1, "");
+		Item("Craftplan_Mod_Bleeding_SpecialAttack_Upgrade2", 1, "");
+
+		Level(25, "Traversal", 1.0);
+        Level(25, "Combat", 1.0);
+		Level(50, "Experience", 1.0);
+    }
+	Preset("Preview_October_UnrulyBrother")		//--- Preview - Unruly Brother
+    {
+		use Stamina_Lvl_1();
+		use Health_Lvl_1();
+
+		Skill("AntizinCapacityUpgradeStamina");//1
+		Skill("AntizinCapacityUpgradeStamina");//2
+		Skill("AntizinCapacityUpgradeStamina");//3
+		Skill("AntizinCapacityUpgradeStamina");//4
+		Skill("AntizinCapacityUpgradeHealth");//1
+		Skill("AntizinCapacityUpgradeHealth");//2
+		Skill("AntizinCapacityUpgradeHealth");//3
+		Skill("AntizinCapacityUpgradeHealth");//4
+	
+		Skill("run_faster");//0
+		Skill("height_jump");
+		Skill("parkour_combat");
+		Skill("power_attack");//5
+		Skill("perfect_dodge");//2
+		Skill("firm_grip");//3
+		Skill("active_land");//5
+		
+        Skill("CubeKey"); // Tool
+		Skill("Binoculars"); // Tool
+		
+		Item("wpn_1hb_stk_e_fpp_r3", 1, "", "Green");
+		Item("wpn_1hs_axe_i_fpp_r2", 1, "", "Violet");
+		Item("wpn_1hs_mach_e_fpp_r2", 1, "", "Blue");
+		
+		Item("Throwable_ThrowingKnifeAGen", 10, "");
+		Item("Throwable_Coin", 15, "");
+		Item("Craft_Scrap", 25, "");
+		Item("Craft_Rags", 10, "");
+		Item("Plant_Honey", 5, "");
+		Item("Plant_Chamomile", 10, "");
+		Item("Craft_Container", 3, "");
+		Item("Craft_Wiring", 8, "");
+		
+		Item("Cash_Cash", 250, "");
+		Item("LockpickItem", 20, "");
+		Item("Medkit_Small", 5, "");
+		Item("Throwable_Decoy", 5, "");
+		
+		Item("Outfitset_MeleeDPS_Torso_Tier1_White", 1, "");
+		Item("Outfitset_Tank_Head_Tier1_Green", 1, "");
+		Item("Outfitset_Healer_Shoes_Tier1_Blue", 1, "");
+		Item("Outfitset_MeleeDPS_Legs_Tier1_Green", 1, "");
+		Item("Outfitset_MeleeDPS_TorsoAddon_Tier1_Blue", 1, "");
+		Item("Outfitset_Tank_Gloves_Tier1_White", 1, "");
+		
+		Item("Potion_Antizine", 3, "");
+		Item("Potion_DamageReduction", 2, "");
+		Item("Throwable_Molotov", 3, "");
+		
+		
+		Item("Craftplan_Medkit_Small", 1, "");
+		Item("Craftplan_Lockpick", 1, "");
+		Item("Craftplan_ThrowingKnives", 1, "");
+		Item("Craftplan_Firecrackers", 1, "");
+		Item("Craftplan_Molotov", 1, "");
+		Item("Craftplan_Mod_Shock_Random_TIP", 1, "");
+		
+		
+        Level(4, "Traversal", 1.0);
+        Level(4, "Combat", 1.0);
+		Level(9, "Experience", 1.0);
+    
+    }
+	Preset("Preview_October_PlaceToCallHome")		//--- Preview - Unruly Brother
+    {
+		use Stamina_Lvl_3();
+		use Health_Lvl_3();
+		Skill("AntizinCapacityUpgradeStamina");//4
+		Skill("AntizinCapacityUpgradeHealth");//1
+
+		use Difficulty_2_Skills();
+		Skill("perfect_block");//4
+		Skill("active_land2");//11
+
+		Item("wpn_1hs_axe_a_fpp_r6_preview", 1, "", "Blue");
+		Item("wpn_1hb_ham_b_fpp_r5", 1, "", "Green");
+		Item("wpn_2hs_e_fpp_r5", 1, "", "Green");
+		Item("wpn_2hp_bow_t2", 1, "", "Blue");
+
+		Item("Medkit_Small_Upgrade1", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen", 10, "");
+		Item("Throwable_Molotov", 5, "");
+		Item("Mine_Explosive", 2, "");
+		Item("Throwable_Decoy_Upgrade3", 5, "");
+		Item("UV_Flare", 1, "");
+		Item("Throwable_ExplosiveGrenade", 1, "");
+		
+		Item("Bundle_Arrows", 2, "");
+				
+		Item("Craft_Scrap", 50, "");
+		Item("Craft_Rags", 10, "");
+		Item("Plant_Honey", 5, "");
+		Item("Plant_Chamomile", 10, "");
+		Item("Craft_Container", 3, "");
+		Item("Craft_Wiring", 8, "");
+		Item("Craft_Electrical_Parts", 2, "");
+		Item("KeyCraft_SpecialInfected_Token_T1", 6, "");
+		Item("KeyCraft_SpecialInfected_Token_T2", 1, "");
+		
+		Item("Cash_Cash", 500, "");
+		Item("LockpickItem", 30, "");
+		
+		Item("Outfitset_Healer_Torso_Tier2_White", 1, "");
+		Item("Outfitset_MeleeDPS_Head_Tier2_Green", 1, "");
+		Item("Outfitset_Healer_Shoes_Tier1_Blue", 1, "");
+		Item("Outfitset_Tank_Legs_Tier2_Green", 1, "");
+		Item("Outfitset_RangedDPS_TorsoAddon_Tier2_Blue", 1, "");
+		Item("Outfitset_RangedDPS_Gloves_Tier2_White", 1, "");
+		
+		Item("Potion_Antizine", 5, "");
+		Item("Potion_DamageReduction", 3, "");
+		Item("Potion_HealthRegeneration", 3, "");
+		
+		Item("Craftplan_Medkit_Small", 1, "");
+		Item("Craftplan_Lockpick", 1, "");
+		Item("Craftplan_ThrowingKnives", 1, "");
+		Item("Craftplan_Firecrackers", 1, "");
+		Item("Craftplan_Molotov", 1, "");
+		Item("Craftplan_Potion_DamageReduction", 1, "");
+		Item("Craftplan_Potion_StaminaUpgrade", 1, "");
+		Item("Craftplan_Mod_Shock_SpecialAttack", 1, "");
+		Item("Craftplan_Mod_Freeze_Random_TIP", 1, "");
+		Item("Craftplan_Mod_Heat_Random_TIP", 1, "");
+		Item("Craftplan_Mod_Shock_Random_TIP", 1, "");
+		
+		
+		Level(7, "Traversal", 1.0);
+        Level(7, "Combat", 1.0);
+		Level(9, "Experience", 1.0);
+    }
+
+	Preset("AA_NightPlaytest_Player_Difficulty_1")		// Difficulty
+    {
+		use Stamina_Lvl_1();
+		use Health_Lvl_1();
+		
+		Skill("AntizinCapacityUpgradeStamina");//1
+		Skill("AntizinCapacityUpgradeStamina");//1
+		Skill("AntizinCapacityUpgradeStamina");//1
+		Skill("AntizinCapacityUpgradeHealth");//1
+		Skill("AntizinCapacityUpgradeHealth");//1
+
+		use Difficulty_2_Skills();
+		
+		Skill("Binoculars"); // Tool
+		Skill("Backpack"); // Tool
+		//Skill("Paraglider"); // Tool
+		Skill("CubeKey"); // Tool
+
+		Item("wpn_1hs_axe_i_fpp_r5", 1, "", "Violet");
+		Item("wpn_1hb_ham_m_fpp_r4", 1, "", "Blue");
+		Item("wpn_1hs_axe_a_fpp_r6", 1, "", "Green");
+		Item("wpn_1hb_ham_b_fpp_r5", 1, "", "Green");
+		Item("wpn_1hb_stk_a_fpp_r4", 1, "", "Green");		
+		Item("wpn_2hs_e_fpp_r5", 1, "", "Green");	
+		Item("wpn_2hb_i_fpp_r5", 1, "", "Green");			
+
+		Item("Medkit_Small", 5, "");
+		Item("Plant_UVShroom", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen", 5, "");
+		Item("Craft_Scrap", 30, "");
+		Item("LockpickItem", 60, "");
+		Item("Throwable_Molotov", 3, "");
+		
+		Level(7, "Traversal", 1.0);
+        Level(6, "Combat", 1.0);
+		Level(13, "Experience", 1.0);
+		
+
+    }
+
+	Preset("AA_X13_Playtest_Player_Difficulty_6")		// Difficulty
+    {
+		use Stamina_Lvl_1();
+		use Health_Lvl_1();
+		
+		Skill("AntizinCapacityUpgradeStamina");//1
+		Skill("AntizinCapacityUpgradeStamina");//2
+		Skill("AntizinCapacityUpgradeStamina");//3
+		Skill("AntizinCapacityUpgradeStamina");//4
+		Skill("AntizinCapacityUpgradeStamina");//5
+		Skill("AntizinCapacityUpgradeStamina");//6
+		Skill("AntizinCapacityUpgradeStamina");//7
+		Skill("AntizinCapacityUpgradeStamina");//8
+
+		
+		Skill("AntizinCapacityUpgradeHealth");//1
+		Skill("AntizinCapacityUpgradeHealth");//2
+		Skill("AntizinCapacityUpgradeHealth");//3
+		Skill("AntizinCapacityUpgradeHealth");//4
+		Skill("AntizinCapacityUpgradeHealth");//5
+		Skill("AntizinCapacityUpgradeHealth");//6		
+
+		use Difficulty_6_Skills();
+
+		Item("wpn_1hs_mach_u_fpp_r15", 1, "", "Orange");
+		Item("wpn_1hb_ham_n_fpp_r14", 1, "", "Violet");
+		Item("wpn_1hs_axe_g_fpp_r12", 1, "", "Violet");		
+		Item("wpn_2hs_a_fpp_r11", 1, "", "Blue");	
+		Item("wpn_2hp_bow_t5", 1, "", "Green");			
+
+		Skill("Binoculars"); // Tool
+		Skill("Backpack"); // Tool
+		Skill("Paraglider"); // Tool
+		Skill("CubeKey"); // Tool
+		Skill("Paraglider"); // Tool
+		Skill("GrappleHook"); // Tool	
+		Skill("AttachTool_1"); // Tool	
+		Skill("CubeKey"); // Tool
+		Skill("Paraglider_2"); // Tool
+		Skill("AttachTool_2"); // Tool	
+		Skill("CubeKey"); // Tool
+		Skill("GREDetector"); // Tool
+		Skill("UVFlashLight"); // Tool
+		Skill("GrappleHook_2"); // Tool
+		Skill("Paraglider_3"); // Tool		
+		Skill("CubeKey"); // Tool
+		Skill("GrappleHook_3"); // Tool
+		Skill("Paraglider_4"); // Tool
+
+		Item("Medkit_Large", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Throwable_ThrowingKnifeAGen", 5, "");
+		Item("Craft_Scrap", 100, "");
+		Item("LockpickItem", 60, "");
+		Item("Throwable_Molotov", 3, "");
+
+		Level(17, "Traversal", 1.0);
+        Level(14, "Combat", 1.0);
+		Level(31, "Experience", 1.0);
+    }
+	Preset("MyGame_Difficulty_0")		// Difficulty
+    {
+		use Health_Lvl_1();
+		
+		Skill("height_jump");//1
+		Skill("parkour_combat");//1
+	
+		Skill("CubeKey"); // Tool
+		
+		Item("wpn_1hb_stk_a_fpp_r2_prologue", 1, "", "Blue");
+		Item("wpn_1hs_mach_l_fpp_r0", 1, "", "Blue");
+		
+		Item("Medkit_Small", 3, "");
+		Item("Cash_Cash", 250, "");
+		Item("Throwable_Coin", 5, "");
+		
+		Item("Craft_Scrap", 25, "");
+		Item("Plant_Honey", 5, "");
+		Item("Plant_Chamomile", 10, "");
+				
+		Item("outfit_pilgrim_bracers", 1, "");
+		Item("outfit_pilgrim_gloves", 1, "");
+		
+		Item("Craftplan_Medkit_Small", 1, "");
+		
+        Level(2, "Traversal", 1.0);
+        Level(2, "Combat", 1.0);
+		Level(5, "Experience", 1.0);
+    }
+	Preset("MyGame_Difficulty_1")		// Difficulty
+    {
+		use Stamina_Lvl_1();
+		use Health_Lvl_1();
+
+		Skill("CubeKey"); // Tool
+		Skill("Binoculars"); // Tool
+		Skill("run_faster");//0
+		Skill("height_jump");//1
+		Skill("parkour_combat");//1
+	
+		
+		Item("wpn_1hs_mach_l_fpp_r0", 1, "", "Blue");
+		Item("wpn_1hb_stk_g_fpp_r1", 1, "", "Green");
+		Item("wpn_1hs_axe_i_fpp_r1", 1, "", "Blue");
+				
+		Item("Medkit_Small", 3, "");
+		Item("Cash_Cash", 250, "");
+		Item("Throwable_Coin", 5, "");
+		
+		Item("Throwable_ThrowingKnifeAGen", 5, "");
+		Item("Throwable_Decoy", 3, "");
+		Item("LockpickItem", 5, "");
+		
+		Item("Craft_Scrap", 25, "");
+		Item("Plant_Honey", 5, "");
+		Item("Plant_Chamomile", 10, "");
+		
+		Item("Craftplan_Medkit_Small", 1, "");
+		Item("Craftplan_Lockpick", 1, "");
+		
+		Item("Outfitset_MeleeDPS_Torso_Tier1_White", 1, "");
+		Item("Outfitset_MeleeDPS_Head_Tier1_White", 1, "");
+		Item("Outfitset_MeleeDPS_Shoes_Tier1_White", 1, "");
+		Item("Outfitset_MeleeDPS_Legs_Tier1_White", 1, "");
+		Item("Outfitset_MeleeDPS_TorsoAddon_Tier1_White", 1, "");
+		Item("Outfitset_MeleeDPS_Gloves_Tier1_White", 1, "");
+		
+		Item("outfit_pilgrim_bracers", 1, "");
+		Item("outfit_pilgrim_gloves", 1, "");
+		
+		Item("Collectable_Inhibitor_Q_001", 1, "");
+		Item("Collectable_Inhibitor_Q_002", 1, "");
+		Item("Collectable_Inhibitor_Q_003", 1, "");
+		Item("Collectable_Inhibitor_Q_004", 1, "");
+		Item("Collectable_Inhibitor_Q_005", 1, "");
+		Item("Collectable_Inhibitor_Q_006", 1, "");
+        
+		Level(3, "Traversal", 1.0);
+        Level(3, "Combat", 1.0);
+		Level(7, "Experience", 1.0);
+		Level(7, "Inhibitors", 1.0);
+    }	
+	Preset("MyGame_Difficulty_2")		// Difficulty
+    {
+		use Stamina_Lvl_1();
+		use Health_Lvl_1();
+
+		Skill("CubeKey"); // Tool
+		Skill("Binoculars"); // Tool
+		Skill("run_faster");//0	
+		Skill("height_jump");//1
+		Skill("parkour_combat");//1
+	
+		
+		Item("wpn_1hs_axe_i_fpp_r4", 1, "", "Blue");
+		Item("wpn_1hb_ham_m_fpp_r4", 1, "", "Green");
+		Item("wpn_2hs_a_fpp_r4", 1, "", "Green");
+		Item("wpn_2hp_bow_t2", 1, "", "Blue");
+		Item("Bundle_Arrows", 1, "");
+
+		Item("Medkit_Small_Upgrade1", 5, "");
+		Item("LockpickItem", 10, "");
+		Item("Throwable_Molotov", 3, "");
+		Item("Throwable_ThrowingKnifeAGen", 10, "");
+		Item("Throwable_Decoy_Upgrade1", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Mine_Explosive", 1, "");
+		Item("UV_Flare", 1, "");
+		
+		Item("Craft_Scrap", 50, "");
+		Item("Plant_Honey", 5, "");
+		Item("Plant_Chamomile", 10, "");
+		Item("Craft_Feathers", 10, "");
+		Item("Craft_Rags", 10, "");
+		Item("Craft_Blades", 10, "");
+		Item("Craft_Container", 10, "");
+		Item("Cash_Cash", 500, "");
+		
+		Item("Collectable_Inhibitor_Q_001", 1, "");
+		Item("Collectable_Inhibitor_Q_002", 1, "");
+		Item("Collectable_Inhibitor_Q_003", 1, "");
+		Item("Collectable_Inhibitor_Q_004", 1, "");
+		Item("Collectable_Inhibitor_Q_005", 1, "");
+		Item("Collectable_Inhibitor_Q_006", 1, "");
+		
+		Item("Collectable_Inhibitor_Q_007", 1, "");
+		Item("Collectable_Inhibitor_Q_008", 1, "");
+		Item("Collectable_Inhibitor_Q_009", 1, "");
+		Item("Collectable_Inhibitor_Q_010", 1, "");
+		Item("Collectable_Inhibitor_Q_011", 1, "");
+		Item("Collectable_Inhibitor_Q_012", 1, "");
+		
+		Item("Outfitset_MeleeDPS_Torso_Tier2_White", 1, "");
+		Item("Outfitset_MeleeDPS_Head_Tier2_White", 1, "");
+		Item("Outfitset_MeleeDPS_Shoes_Tier2_White", 1, "");
+		Item("Outfitset_MeleeDPS_Legs_Tier2_White", 1, "");
+		Item("Outfitset_MeleeDPS_TorsoAddon_Tier2_White", 1, "");
+		Item("Outfitset_MeleeDPS_Gloves_Tier2_White", 1, "");
+		
+		Item("Plant_UVShroom", 10, "");
+		Item("Potion_Antizine", 3, "");
+		
+		Item("Craftplan_Medkit_Small", 1, "");
+		Item("Craftplan_Lockpick", 1, "");
+		Item("Craftplan_ThrowingKnives", 1, "");
+		Item("Craftplan_Firecrackers", 1, "");
+		Item("Craftplan_Molotov", 1, "");
+		Item("Craftplan_Mod_Shock_Random_TIP", 1, "");
+		Item("Craftplan_Arrows", 1, "");
+		Item("Craftplan_Potion_Antizine", 1, "");
+		
+		Level(4, "Traversal", 1.0);
+        Level(4, "Combat", 1.0);
+		Level(9, "Experience", 1.0);
+		Level(13, "Inhibitors", 1.0);
+    }
+	Preset("MyGame_Difficulty_2_LetsWaltz")		// Difficulty
+    {
+		use Stamina_Lvl_1();
+		use Health_Lvl_1();
+
+		Skill("CubeKey"); // Tool
+		Skill("Binoculars"); // Tool
+		Skill("run_faster");//0	
+		Skill("height_jump");//1
+		Skill("parkour_combat");//1
+	
+		
+		Item("wpn_1hs_axe_i_fpp_r4", 1, "", "Blue");
+		Item("wpn_1hb_ham_m_fpp_r4", 1, "", "Green");
+		Item("wpn_2hs_a_fpp_r4", 1, "", "Green");
+		Item("wpn_2hp_bow_t2", 1, "", "Blue");
+		Item("Bundle_Arrows", 1, "");
+
+		Item("Medkit_Small_Upgrade1", 5, "");
+		Item("LockpickItem", 10, "");
+		Item("Throwable_Molotov", 3, "");
+		Item("Throwable_ThrowingKnifeAGen", 10, "");
+		Item("Throwable_Decoy_Upgrade1", 5, "");
+		Item("Throwable_Coin", 10, "");
+		Item("Mine_Explosive", 1, "");
+		Item("UV_Flare", 1, "");
+		
+		Item("Craft_Scrap", 50, "");
+		Item("Plant_Honey", 5, "");
+		Item("Plant_Chamomile", 10, "");
+		Item("Craft_Feathers", 10, "");
+		Item("Craft_Rags", 10, "");
+		Item("Craft_Blades", 10, "");
+		Item("Craft_Container", 10, "");
+		Item("Cash_Cash", 500, "");
+		
+		Item("Collectable_Inhibitor_Q_001", 1, "");
+		Item("Collectable_Inhibitor_Q_002", 1, "");
+		Item("Collectable_Inhibitor_Q_003", 1, "");
+		Item("Collectable_Inhibitor_Q_004", 1, "");
+		Item("Collectable_Inhibitor_Q_005", 1, "");
+		Item("Collectable_Inhibitor_Q_006", 1, "");
+		
+		Item("Collectable_Inhibitor_Q_007", 1, "");
+		Item("Collectable_Inhibitor_Q_008", 1, "");
+		Item("Collectable_Inhibitor_Q_009", 1, "");
+		Item("Collectable_Inhibitor_Q_010", 1, "");
+		Item("Collectable_Inhibitor_Q_011", 1, "");
+		Item("Collectable_Inhibitor_Q_012", 1, "");
+		Item("Collectable_Inhibitor_Q_013", 1, "");
+		Item("Collectable_Inhibitor_Q_014", 1, "");
+		Item("Collectable_Inhibitor_Q_015", 1, "");
+		Item("Collectable_Inhibitor_Q_016", 1, "");
+		Item("Collectable_Inhibitor_Q_017", 1, "");
+		Item("Collectable_Inhibitor_Q_018", 1, "");
+		Item("Collectable_Inhibitor_Q_019", 1, "");
+		Item("Collectable_Inhibitor_Q_020", 1, "");
+		
+		Item("Outfitset_MeleeDPS_Torso_Tier2_White", 1, "");
+		Item("Outfitset_MeleeDPS_Head_Tier2_White", 1, "");
+		Item("Outfitset_MeleeDPS_Shoes_Tier2_White", 1, "");
+		Item("Outfitset_MeleeDPS_Legs_Tier2_White", 1, "");
+		Item("Outfitset_MeleeDPS_TorsoAddon_Tier2_White", 1, "");
+		Item("Outfitset_MeleeDPS_Gloves_Tier2_White", 1, "");
+		
+		Item("Plant_UVShroom", 10, "");
+		Item("Potion_Antizine", 3, "");
+		
+		Item("Craftplan_Medkit_Small", 1, "");
+		Item("Craftplan_Lockpick", 1, "");
+		Item("Craftplan_ThrowingKnives", 1, "");
+		Item("Craftplan_Firecrackers", 1, "");
+		Item("Craftplan_Molotov", 1, "");
+		Item("Craftplan_Mod_Shock_Random_TIP", 1, "");
+		Item("Craftplan_Arrows", 1, "");
+		Item("Craftplan_Potion_Antizine", 1, "");
+		
+		Level(5, "Traversal", 1.0);
+        Level(5, "Combat", 1.0);
+		Level(11, "Experience", 1.0);
+		Level(21, "Inhibitors", 1.0);
+    }
+	Preset("MyGame_Difficulty_3")		// Difficulty
+    {
+		use Stamina_Lvl_1();
+		use Health_Lvl_1();
+
+		Skill("run_faster");//0
+		Skill("CubeKey"); // Tool
+		Skill("Binoculars"); // Tool
+		Skill("Paraglider"); // Tool	
+		Skill("height_jump");//1
+		Skill("parkour_combat");//1
+	
+
+		Item("wpn_1hs_axe_p_fpp_r7", 1, "", "Blue");
+		Item("wpn_1hs_knuckle_duster_amed_fpp_r7", 1, "", "Blue");
+		Item("wpn_2hb_f_fpp_r7_dukes", 1, "", "Blue");
+		Item("wpn_2hp_bow_t3", 1, "", "Blue");
+
+		Item("Medkit_Small_Upgrade2", 5, "");
+		Item("Throwable_ThrowingKnifeAGen_Upgrade2", 10, "");
+		Item("LockpickItem", 10, "");
+		Item("Throwable_Molotov_Upgrade2", 3, "");
+		Item("Throwable_Decoy_Upgrade2", 5, "");
+		Item("Throwable_ExplosiveGrenade_Upgrade2", 3, "");
+		Item("Mine_Explosive_Upgrade2", 3, "");
+		Item("UV_Flare_Upgrade2", 3, "");
+
+		Item("Throwable_Coin", 10, "");
+		Item("Bundle_Arrows", 1, "");
+		
+		Item("Craft_Scrap", 50, "");
+		Item("Plant_Honey", 5, "");
+		Item("Plant_Chamomile", 10, "");
+		Item("Craft_Feathers", 10, "");
+		Item("Craft_Rags", 10, "");
+		Item("Craft_Blades", 10, "");
+		Item("Craft_Container", 10, "");
+		Item("Cash_Cash", 1000, "");
+		
+		Item("Collectable_Inhibitor_Q_001", 1, "");
+		Item("Collectable_Inhibitor_Q_002", 1, "");
+		Item("Collectable_Inhibitor_Q_003", 1, "");
+		Item("Collectable_Inhibitor_Q_004", 1, "");
+		Item("Collectable_Inhibitor_Q_005", 1, "");
+		Item("Collectable_Inhibitor_Q_006", 1, "");
+		
+		Item("Collectable_Inhibitor_Q_007", 1, "");
+		Item("Collectable_Inhibitor_Q_008", 1, "");
+		Item("Collectable_Inhibitor_Q_009", 1, "");
+		Item("Collectable_Inhibitor_Q_010", 1, "");
+		Item("Collectable_Inhibitor_Q_011", 1, "");
+		Item("Collectable_Inhibitor_Q_012", 1, "");
+		Item("Collectable_Inhibitor_Q_013", 1, "");
+		Item("Collectable_Inhibitor_Q_014", 1, "");
+		Item("Collectable_Inhibitor_Q_015", 1, "");
+		Item("Collectable_Inhibitor_Q_016", 1, "");
+		Item("Collectable_Inhibitor_Q_017", 1, "");
+		Item("Collectable_Inhibitor_Q_018", 1, "");
+		Item("Collectable_Inhibitor_Q_019", 1, "");
+		Item("Collectable_Inhibitor_Q_020", 1, "");
+		Item("Collectable_Inhibitor_Q_021", 1, "");
+		Item("Collectable_Inhibitor_Q_022", 1, "");
+		Item("Collectable_Inhibitor_Q_023", 1, "");
+		Item("Collectable_Inhibitor_Q_024", 1, "");
+		
+		Item("Outfitset_MeleeDPS_Torso_Tier3_White", 1, "");
+		Item("Outfitset_MeleeDPS_Head_Tier3_White", 1, "");
+		Item("Outfitset_MeleeDPS_Shoes_Tier3_White", 1, "");
+		Item("Outfitset_MeleeDPS_Legs_Tier3_White", 1, "");
+		Item("Outfitset_MeleeDPS_TorsoAddon_Tier3_White", 1, "");
+		Item("Outfitset_MeleeDPS_Gloves_Tier3_White", 1, "");
+		
+		Item("Plant_UVShroom", 15, "");
+		Item("Potion_Antizine_Upgrade1", 5, "");
+		
+		Item("Craftplan_Medkit_Small", 1, "");
+		Item("Craftplan_Lockpick", 1, "");
+		Item("Craftplan_ThrowingKnives", 1, "");
+		Item("Craftplan_Firecrackers", 1, "");
+		Item("Craftplan_Molotov", 1, "");
+		Item("Craftplan_Mod_Shock_Random_TIP", 1, "");
+		Item("Craftplan_Arrows", 1, "");
+		Item("Craftplan_Potion_Antizine", 1, "");
+		
+		Item("Craftplan_Mod_Freeze_Random_TIP", 1, "");
+		Item("Craftplan_Mod_Heat_Random_SHAFT", 1, "");
+		Item("Craftplan_Mod_Bleeding_Random_SHAFT", 1, "");
+		Item("Craftplan_Mod_Impact_Random_TIP", 1, "");
+		
+		Level(7, "Traversal", 1.0);
+        Level(7, "Combat", 1.0);
+		Level(15, "Experience", 1.0);
+		Level(25, "Inhibitors", 1.0);
+    }
+	Preset("MyGame_Difficulty_4")		// Difficulty
+    {
+		use Stamina_Lvl_1();
+		use Health_Lvl_1();
+
+		Skill("run_faster");//0
+		Skill("CubeKey"); // Tool
+		Skill("Binoculars"); // Tool
+		Skill("Paraglider"); // Tool
+		Skill("GrappleHook"); // Tool
+		Skill("UV_FlashLight"); // Tool	
+		Skill("height_jump");//1
+		Skill("parkour_combat");//1
+	
+		
+
+		Item("wpn_1hs_axe_e_fpp_r10", 1, "", "Blue");
+		Item("wpn_1hb_ham_b_fpp_r10", 1, "", "Blue");
+		Item("wpn_1hb_knuckle_duster_chigh_fpp_r10", 1, "", "Blue");
+		Item("wpn_2hp_bow_t4", 1, "", "Blue");
+		Item("Medkit_Small_Upgrade3", 5, "");
+		Item("Throwable_ThrowingKnifeAGen_Upgrade3", 10, "");
+		Item("LockpickItem", 10, "");
+		Item("Throwable_Molotov_Upgrade3", 5, "");
+		Item("Throwable_Decoy_Upgrade3", 5, "");
+		Item("Throwable_ExplosiveGrenade_Upgrade3", 5, "");
+		Item("Mine_Explosive_Upgrade3", 3, "");
+		Item("UV_Flare_Upgrade3", 3, "");
+
+		Item("Throwable_Coin", 10, "");
+		Item("Bundle_Arrows", 1, "");
+		
+		Item("Craft_Scrap", 50, "");
+		Item("Plant_Honey", 5, "");
+		Item("Plant_Chamomile", 10, "");
+		Item("Craft_Feathers", 10, "");
+		Item("Craft_Rags", 10, "");
+		Item("Craft_Blades", 10, "");
+		Item("Craft_Container", 10, "");
+		Item("Cash_Cash", 1000, "");
+		
+		Item("Collectable_Inhibitor_Q_001", 1, "");
+		Item("Collectable_Inhibitor_Q_002", 1, "");
+		Item("Collectable_Inhibitor_Q_003", 1, "");
+		Item("Collectable_Inhibitor_Q_004", 1, "");
+		Item("Collectable_Inhibitor_Q_005", 1, "");
+		Item("Collectable_Inhibitor_Q_006", 1, "");
+		
+		Item("Collectable_Inhibitor_Q_007", 1, "");
+		Item("Collectable_Inhibitor_Q_008", 1, "");
+		Item("Collectable_Inhibitor_Q_009", 1, "");
+		Item("Collectable_Inhibitor_Q_010", 1, "");
+		Item("Collectable_Inhibitor_Q_011", 1, "");
+		Item("Collectable_Inhibitor_Q_012", 1, "");
+		Item("Collectable_Inhibitor_Q_013", 1, "");
+		Item("Collectable_Inhibitor_Q_014", 1, "");
+		Item("Collectable_Inhibitor_Q_015", 1, "");
+		Item("Collectable_Inhibitor_Q_016", 1, "");
+		Item("Collectable_Inhibitor_Q_017", 1, "");
+		Item("Collectable_Inhibitor_Q_018", 1, "");
+		Item("Collectable_Inhibitor_Q_019", 1, "");
+		Item("Collectable_Inhibitor_Q_020", 1, "");
+		Item("Collectable_Inhibitor_Q_021", 1, "");
+		Item("Collectable_Inhibitor_Q_022", 1, "");
+		Item("Collectable_Inhibitor_Q_023", 1, "");
+		Item("Collectable_Inhibitor_Q_024", 1, "");
+		Item("Collectable_Inhibitor_Q_025", 1, "");
+		Item("Collectable_Inhibitor_Q_026", 1, "");
+		Item("Collectable_Inhibitor_Q_027", 1, "");
+		Item("Collectable_Inhibitor_Q_028", 1, "");
+		Item("Collectable_Inhibitor_Q_029", 1, "");
+		Item("Collectable_Inhibitor_Q_030", 1, "");
+		
+		Item("Outfitset_MeleeDPS_Torso_Tier4_White", 1, "");
+		Item("Outfitset_MeleeDPS_Head_Tier4_White", 1, "");
+		Item("Outfitset_MeleeDPS_Shoes_Tier4_White", 1, "");
+		Item("Outfitset_MeleeDPS_Legs_Tier4_White", 1, "");
+		Item("Outfitset_MeleeDPS_TorsoAddon_Tier4_White", 1, "");
+		Item("Outfitset_MeleeDPS_Gloves_Tier4_White", 1, "");
+		
+		Item("Plant_UVShroom", 15, "");
+		Item("Potion_Antizine_Upgrade1", 5, "");
+		
+		Item("Craftplan_Medkit_Small", 1, "");
+		Item("Craftplan_Lockpick", 1, "");
+		Item("Craftplan_ThrowingKnives", 1, "");
+		Item("Craftplan_Firecrackers", 1, "");
+		Item("Craftplan_Molotov", 1, "");
+		Item("Craftplan_Mod_Shock_Random_TIP", 1, "");
+		Item("Craftplan_Arrows", 1, "");
+		Item("Craftplan_Potion_Antizine", 1, "");
+		
+		Item("Craftplan_Mod_Freeze_Random_TIP", 1, "");
+		Item("Craftplan_Mod_Heat_Random_SHAFT", 1, "");
+		Item("Craftplan_Mod_Bleeding_Random_SHAFT", 1, "");
+		Item("Craftplan_Mod_Impact_Random_TIP", 1, "");
+		
+		Level(10, "Traversal", 1.0);
+        Level(10, "Combat", 1.0);
+		Level(21, "Experience", 1.0);
+		Level(31, "Inhibitors", 1.0);
+	}
+	Preset("MyGame_Difficulty_4_Broadcast")		// Difficulty
+    {
+		use Stamina_Lvl_1();
+		use Health_Lvl_1();
+
+		Skill("run_faster");//0
+		Skill("CubeKey"); // Tool
+		Skill("Binoculars"); // Tool
+		Skill("Paraglider"); // Tool
+		Skill("GrappleHook"); // Tool
+		Skill("UV_FlashLight"); // Tool		
+		Skill("height_jump");//1
+		Skill("parkour_combat");//1
+	
+		
+		Item("wpn_1hs_axe_e_fpp_r10", 1, "", "Blue");
+		Item("wpn_1hb_ham_b_fpp_r10", 1, "", "Blue");
+		Item("wpn_1hb_knuckle_duster_chigh_fpp_r10", 1, "", "Blue");
+		Item("wpn_2hp_bow_t4", 1, "", "Blue");
+
+		Item("Medkit_Small_Upgrade3", 5, "");
+		Item("Throwable_ThrowingKnifeAGen_Upgrade3", 10, "");
+		Item("LockpickItem", 10, "");
+		Item("Throwable_Molotov_Upgrade3", 5, "");
+		Item("Throwable_Decoy_Upgrade3", 5, "");
+		Item("Throwable_ExplosiveGrenade_Upgrade3", 5, "");
+		Item("Mine_Explosive_Upgrade3", 3, "");
+		Item("UV_Flare_Upgrade3", 3, "");
+
+		Item("Throwable_Coin", 10, "");
+		Item("Bundle_Arrows", 1, "");
+		
+		Item("Craft_Scrap", 50, "");
+		Item("Plant_Honey", 5, "");
+		Item("Plant_Chamomile", 10, "");
+		Item("Craft_Feathers", 10, "");
+		Item("Craft_Rags", 10, "");
+		Item("Craft_Blades", 10, "");
+		Item("Craft_Container", 10, "");
+		Item("Cash_Cash", 1000, "");
+		
+		Item("Collectable_Inhibitor_Q_001", 1, "");
+		Item("Collectable_Inhibitor_Q_002", 1, "");
+		Item("Collectable_Inhibitor_Q_003", 1, "");
+		Item("Collectable_Inhibitor_Q_004", 1, "");
+		Item("Collectable_Inhibitor_Q_005", 1, "");
+		Item("Collectable_Inhibitor_Q_006", 1, "");
+		
+		Item("Collectable_Inhibitor_Q_007", 1, "");
+		Item("Collectable_Inhibitor_Q_008", 1, "");
+		Item("Collectable_Inhibitor_Q_009", 1, "");
+		Item("Collectable_Inhibitor_Q_010", 1, "");
+		Item("Collectable_Inhibitor_Q_011", 1, "");
+		Item("Collectable_Inhibitor_Q_012", 1, "");
+		Item("Collectable_Inhibitor_Q_013", 1, "");
+		Item("Collectable_Inhibitor_Q_014", 1, "");
+		Item("Collectable_Inhibitor_Q_015", 1, "");
+		Item("Collectable_Inhibitor_Q_016", 1, "");
+		Item("Collectable_Inhibitor_Q_017", 1, "");
+		Item("Collectable_Inhibitor_Q_018", 1, "");
+		Item("Collectable_Inhibitor_Q_019", 1, "");
+		Item("Collectable_Inhibitor_Q_020", 1, "");
+		Item("Collectable_Inhibitor_Q_021", 1, "");
+		Item("Collectable_Inhibitor_Q_022", 1, "");
+		Item("Collectable_Inhibitor_Q_023", 1, "");
+		Item("Collectable_Inhibitor_Q_024", 1, "");
+		Item("Collectable_Inhibitor_Q_025", 1, "");
+		Item("Collectable_Inhibitor_Q_026", 1, "");
+		Item("Collectable_Inhibitor_Q_027", 1, "");
+		Item("Collectable_Inhibitor_Q_028", 1, "");
+		Item("Collectable_Inhibitor_Q_029", 1, "");
+		Item("Collectable_Inhibitor_Q_030", 1, "");
+		
+		Item("Outfitset_MeleeDPS_Torso_Tier4_White", 1, "");
+		Item("Outfitset_MeleeDPS_Head_Tier4_White", 1, "");
+		Item("Outfitset_MeleeDPS_Shoes_Tier4_White", 1, "");
+		Item("Outfitset_MeleeDPS_Legs_Tier4_White", 1, "");
+		Item("Outfitset_MeleeDPS_TorsoAddon_Tier4_White", 1, "");
+		Item("Outfitset_MeleeDPS_Gloves_Tier4_White", 1, "");
+		
+		Item("Plant_UVShroom", 15, "");
+		Item("Potion_Antizine_Upgrade1", 5, "");
+		
+		Item("Craftplan_Medkit_Small", 1, "");
+		Item("Craftplan_Lockpick", 1, "");
+		Item("Craftplan_ThrowingKnives", 1, "");
+		Item("Craftplan_Firecrackers", 1, "");
+		Item("Craftplan_Molotov", 1, "");
+		Item("Craftplan_Mod_Shock_Random_TIP", 1, "");
+		Item("Craftplan_Arrows", 1, "");
+		Item("Craftplan_Potion_Antizine", 1, "");
+		
+		Item("Craftplan_Mod_Freeze_Random_TIP", 1, "");
+		Item("Craftplan_Mod_Heat_Random_SHAFT", 1, "");
+		Item("Craftplan_Mod_Bleeding_Random_SHAFT", 1, "");
+		Item("Craftplan_Mod_Impact_Random_TIP", 1, "");
+		
+		Level(12, "Traversal", 1.0);
+        Level(12, "Combat", 1.0);
+		Level(25, "Experience", 1.0);
+		Level(31, "Inhibitors", 1.0);
+	}
+	Preset("MyGame_Difficulty_5")		// Difficulty
+    {
+		use Stamina_Lvl_1();
+		use Health_Lvl_1();
+
+		Skill("CubeKey"); // Tool
+		Skill("Binoculars"); // Tool
+		Skill("Paraglider"); // Tool
+		Skill("GrappleHook"); // Tool
+		Skill("run_faster");//0
+		Skill("UV_FlashLight"); // Tool		
+		Skill("height_jump");//1
+		Skill("parkour_combat");//1
+	
+
+		Item("wpn_1hb_knuckle_duster_amed_fpp_r13", 1, "", "Blue");
+		Item("wpn_1hb_mace_e_fpp_r13", 1, "", "Blue");
+		Item("wpn_2hb_f_fpp_r13_renegades", 1, "", "Blue");
+		Item("wpn_2hp_bow_t5", 1, "", "Blue");
+
+		Item("Medkit_Small_Upgrade4", 5, "");
+		Item("Throwable_ThrowingKnifeAGen_Upgrade4", 10, "");
+		Item("LockpickItem", 10, "");
+		Item("Throwable_Molotov_Upgrade4", 5, "");
+		Item("Throwable_Decoy_Upgrade4", 5, "");
+		Item("Throwable_ExplosiveGrenade_Upgrade4", 5, "");
+		Item("Mine_Explosive_Upgrade4", 3, "");
+		Item("UV_Flare_Upgrade4", 3, "");
+
+		Item("Throwable_Coin", 10, "");
+		Item("Bundle_Arrows", 1, "");
+		
+		Item("Craft_Scrap", 50, "");
+		Item("Plant_Honey", 5, "");
+		Item("Plant_Chamomile", 10, "");
+		Item("Craft_Feathers", 10, "");
+		Item("Craft_Rags", 10, "");
+		Item("Craft_Blades", 10, "");
+		Item("Craft_Container", 10, "");
+		Item("Cash_Cash", 1500, "");
+		
+		Item("Collectable_Inhibitor_Q_001", 1, "");
+		Item("Collectable_Inhibitor_Q_002", 1, "");
+		Item("Collectable_Inhibitor_Q_003", 1, "");
+		Item("Collectable_Inhibitor_Q_004", 1, "");
+		Item("Collectable_Inhibitor_Q_005", 1, "");
+		Item("Collectable_Inhibitor_Q_006", 1, "");
+		
+		Item("Collectable_Inhibitor_Q_007", 1, "");
+		Item("Collectable_Inhibitor_Q_008", 1, "");
+		Item("Collectable_Inhibitor_Q_009", 1, "");
+		Item("Collectable_Inhibitor_Q_010", 1, "");
+		Item("Collectable_Inhibitor_Q_011", 1, "");
+		Item("Collectable_Inhibitor_Q_012", 1, "");
+		Item("Collectable_Inhibitor_Q_013", 1, "");
+		Item("Collectable_Inhibitor_Q_014", 1, "");
+		Item("Collectable_Inhibitor_Q_015", 1, "");
+		Item("Collectable_Inhibitor_Q_016", 1, "");
+		Item("Collectable_Inhibitor_Q_017", 1, "");
+		Item("Collectable_Inhibitor_Q_018", 1, "");
+		Item("Collectable_Inhibitor_Q_019", 1, "");
+		Item("Collectable_Inhibitor_Q_020", 1, "");
+		Item("Collectable_Inhibitor_Q_021", 1, "");
+		Item("Collectable_Inhibitor_Q_022", 1, "");
+		Item("Collectable_Inhibitor_Q_023", 1, "");
+		Item("Collectable_Inhibitor_Q_024", 1, "");
+		Item("Collectable_Inhibitor_Q_025", 1, "");
+		Item("Collectable_Inhibitor_Q_026", 1, "");
+		Item("Collectable_Inhibitor_Q_027", 1, "");
+		Item("Collectable_Inhibitor_Q_028", 1, "");
+		Item("Collectable_Inhibitor_Q_029", 1, "");
+		Item("Collectable_Inhibitor_Q_030", 1, "");
+		Item("Collectable_Inhibitor_Q_031", 1, "");
+		Item("Collectable_Inhibitor_Q_032", 1, "");
+		Item("Collectable_Inhibitor_Q_033", 1, "");
+		Item("Collectable_Inhibitor_Q_034", 1, "");
+		Item("Collectable_Inhibitor_Q_035", 1, "");
+		Item("Collectable_Inhibitor_Q_036", 1, "");
+		
+		Item("Outfitset_MeleeDPS_Torso_Tier5_White", 1, "");
+		Item("Outfitset_MeleeDPS_Head_Tier5_White", 1, "");
+		Item("Outfitset_MeleeDPS_Shoes_Tier5_White", 1, "");
+		Item("Outfitset_MeleeDPS_Legs_Tier5_White", 1, "");
+		Item("Outfitset_MeleeDPS_TorsoAddon_Tier5_White", 1, "");
+		Item("Outfitset_MeleeDPS_Gloves_Tier5_White", 1, "");
+		
+		Item("Plant_UVShroom", 15, "");
+		Item("Potion_Antizine_Upgrade1", 5, "");
+		
+		Item("Craftplan_Medkit_Small", 1, "");
+		Item("Craftplan_Lockpick", 1, "");
+		Item("Craftplan_ThrowingKnives", 1, "");
+		Item("Craftplan_Firecrackers", 1, "");
+		Item("Craftplan_Molotov", 1, "");
+		Item("Craftplan_Mod_Shock_Random_TIP", 1, "");
+		Item("Craftplan_Arrows", 1, "");
+		Item("Craftplan_Potion_Antizine", 1, "");
+		
+		Item("Craftplan_Mod_Freeze_Random_TIP", 1, "");
+		Item("Craftplan_Mod_Heat_Random_SHAFT", 1, "");
+		Item("Craftplan_Mod_Bleeding_Random_SHAFT", 1, "");
+		Item("Craftplan_Mod_Impact_Random_TIP", 1, "");
+		
+		Level(13, "Traversal", 1.0);
+        Level(13, "Combat", 1.0);
+		Level(27, "Experience", 1.0);
+		Level(37, "Inhibitors", 1.0);
+	}
+	Preset("MyGame_Difficulty_6")		// Difficulty
+    {
+		use Stamina_Lvl_1();
+		use Health_Lvl_1();
+
+		Skill("CubeKey"); // Tool
+		Skill("Binoculars"); // Tool
+		Skill("Paraglider"); // Tool
+		Skill("GrappleHook"); // Tool	
+		Skill("run_faster");//0
+		Skill("UV_FlashLight"); // Tool		
+		Skill("height_jump");//1
+		Skill("parkour_combat");//1
+	
+
+		Item("wpn_1hs_mach_u_fpp_r16", 1, "", "Blue");
+		Item("wpn_1hb_ham_n_fpp_r16", 1, "", "Blue");
+		Item("wpn_15hb_c_fpp_r16", 1, "", "Blue");
+		Item("wpn_15hs_a_fpp_r16", 1, "", "Blue");
+
+		Item("Medkit_Small_Upgrade5", 5, "");
+		Item("Throwable_ThrowingKnifeAGen_Upgrade5", 10, "");
+		Item("LockpickItem", 10, "");
+		Item("Throwable_Molotov_Upgrade5", 5, "");
+		Item("Throwable_Decoy_Upgrade5", 5, "");
+		Item("Throwable_ExplosiveGrenade_Upgrade5", 5, "");
+		Item("Mine_Explosive_Upgrade5", 3, "");
+		Item("UV_Flare_Upgrade5", 3, "");
+
+		Item("Throwable_Coin", 10, "");
+		Item("Bundle_Arrows", 1, "");
+		
+		Item("Craft_Scrap", 50, "");
+		Item("Plant_Honey", 5, "");
+		Item("Plant_Chamomile", 10, "");
+		Item("Craft_Feathers", 10, "");
+		Item("Craft_Rags", 10, "");
+		Item("Craft_Blades", 10, "");
+		Item("Craft_Container", 10, "");
+		Item("Cash_Cash", 2000, "");
+		
+		Item("Collectable_Inhibitor_Q_001", 1, "");
+		Item("Collectable_Inhibitor_Q_002", 1, "");
+		Item("Collectable_Inhibitor_Q_003", 1, "");
+		Item("Collectable_Inhibitor_Q_004", 1, "");
+		Item("Collectable_Inhibitor_Q_005", 1, "");
+		Item("Collectable_Inhibitor_Q_006", 1, "");
+		
+		
+		Item("Collectable_Inhibitor_Q_007", 1, "");
+		Item("Collectable_Inhibitor_Q_008", 1, "");
+		Item("Collectable_Inhibitor_Q_009", 1, "");
+		Item("Collectable_Inhibitor_Q_010", 1, "");
+		Item("Collectable_Inhibitor_Q_011", 1, "");
+		Item("Collectable_Inhibitor_Q_012", 1, "");
+		Item("Collectable_Inhibitor_Q_013", 1, "");
+		Item("Collectable_Inhibitor_Q_014", 1, "");
+		Item("Collectable_Inhibitor_Q_015", 1, "");
+		Item("Collectable_Inhibitor_Q_016", 1, "");
+		Item("Collectable_Inhibitor_Q_017", 1, "");
+		Item("Collectable_Inhibitor_Q_018", 1, "");
+		Item("Collectable_Inhibitor_Q_019", 1, "");
+		Item("Collectable_Inhibitor_Q_020", 1, "");
+		Item("Collectable_Inhibitor_Q_021", 1, "");
+		Item("Collectable_Inhibitor_Q_022", 1, "");
+		Item("Collectable_Inhibitor_Q_023", 1, "");
+		Item("Collectable_Inhibitor_Q_024", 1, "");
+		Item("Collectable_Inhibitor_Q_025", 1, "");
+		Item("Collectable_Inhibitor_Q_026", 1, "");
+		Item("Collectable_Inhibitor_Q_027", 1, "");
+		Item("Collectable_Inhibitor_Q_028", 1, "");
+		Item("Collectable_Inhibitor_Q_029", 1, "");
+		Item("Collectable_Inhibitor_Q_030", 1, "");
+		Item("Collectable_Inhibitor_Q_031", 1, "");
+		Item("Collectable_Inhibitor_Q_032", 1, "");
+		Item("Collectable_Inhibitor_Q_033", 1, "");
+		Item("Collectable_Inhibitor_Q_034", 1, "");
+		Item("Collectable_Inhibitor_Q_035", 1, "");
+		Item("Collectable_Inhibitor_Q_036", 1, "");
+		
+		Item("Outfitset_MeleeDPS_Torso_Tier6_White", 1, "");
+		Item("Outfitset_MeleeDPS_Head_Tier6_White", 1, "");
+		Item("Outfitset_MeleeDPS_Shoes_Tier6_White", 1, "");
+		Item("Outfitset_MeleeDPS_Legs_Tier6_White", 1, "");
+		Item("Outfitset_MeleeDPS_TorsoAddon_Tier6_White", 1, "");
+		Item("Outfitset_MeleeDPS_Gloves_Tier6_White", 1, "");
+		
+		Item("Plant_UVShroom", 15, "");
+		Item("Potion_Antizine_Upgrade1", 5, "");
+		
+		Item("Craftplan_Medkit_Small", 1, "");
+		Item("Craftplan_Lockpick", 1, "");
+		Item("Craftplan_ThrowingKnives", 1, "");
+		Item("Craftplan_Firecrackers", 1, "");
+		Item("Craftplan_Molotov", 1, "");
+		Item("Craftplan_Mod_Shock_Random_TIP", 1, "");
+		Item("Craftplan_Arrows", 1, "");
+		Item("Craftplan_Potion_Antizine", 1, "");
+		
+		Item("Craftplan_Mod_Freeze_Random_TIP", 1, "");
+		Item("Craftplan_Mod_Heat_Random_SHAFT", 1, "");
+		Item("Craftplan_Mod_Bleeding_Random_SHAFT", 1, "");
+		Item("Craftplan_Mod_Impact_Random_TIP", 1, "");
+		
+		Level(16, "Traversal", 1.0);
+        Level(16, "Combat", 1.0);
+		Level(33, "Experience", 1.0);
+		Level(37, "Inhibitors", 1.0);
+    }
+	
+	Preset("Parkour_Example_DLC2")		// Difficulty
+    {
+		use Stamina_Lvl_7();
+		use Health_Lvl_7();
+
+		Skill("run_faster");//0
+		Skill("height_jump");//1
+		Skill("firm_grip");//3
+		Skill("sleek_runner");//4
+		Skill("active_land");//5
+		
+		Skill("parkour_combat");//1
+		Skill("perfect_dodge");//2
+		Skill("jump_attack");//3
+		Skill("power_attack");//5
+
+		Skill("CubeKey"); 
+		Skill("Binoculars"); // Tool
+		Skill("Backpack"); // Tool
+		Skill("Paraglider"); // Tool
+		Skill("GrappleHook"); // Tool	
+		Skill("UVFlashLight"); // Tool
+		Skill("GREDetector"); // Tool
+		Skill("GreInhibitorDetector"); // Tool
+
+		Skill("slide");//6
+		Skill("dart");//7
+		Skill("far_jump");//8
+	 
+		Skill("silent_takedown");//6
+		Skill("ranged_mastery");//7
+		Skill("perfect_block");//4
+
+		Skill("double_jump");//9
+		Skill("vertical_wall_run");//10
+		Skill("active_land2");//11
+		
+		Skill("ground_pound");//9
+		Skill("silent_takedown");//10
+		Skill("wrestle_kick");//12
+
+		Skill("horizontal_wall_run");//12
+		Skill("charge_tackle");//13
+		Skill("wall_run_jump");//14
+		Skill("wall_jump_sequence");//
+
+		Skill("windmill");//13
+		Skill("nagewaza");//14
+		Skill("air_takedown");//15
+
+		Item("LockpickItem", 20, "");
+		
+		Item("Craftplan_Medkit_Small_Upgrade3", 1, "");
+		Item("Craftplan_Lockpick_Upgrade4", 1, "");
+		Item("Craftplan_ThrowingKnives_Upgrade3", 1, "");
+		Item("Craftplan_Firecrackers_Upgrade4", 1, "");
+		Item("Craftplan_Molotov_Upgrade3", 1, "");
+		Item("Craftplan_Firearm_Shotgun_Upgrade4", 1, "");
+		Item("Craftplan_Grenade_Upgrade3", 1, "");
+		Item("Craftplan_Mine_Explosive_Upgrade4", 1, "");
+		Item("Craftplan_Potion_DamageReduction_Upgrade3", 1, "");
+		Item("Craftplan_Potion_StaminaUpgrade_Upgrade3", 1, "");
+		Item("Craftplan_Mod_Shock_SpecialAttack_Upgrade3", 1, "");
+		Item("Craftplan_Mod_Freeze_Random_Upgrade4_TIP", 1, "");
+		Item("Craftplan_Mod_Shock_Random_Upgrade3_TIP", 1, "");
+		Item("Craftplan_Mod_Heat_Random_Upgrade5_SHAFT", 1, "");
+		Item("Craftplan_Mod_Bleeding_Random_Upgrade5_SHAFT", 1, "");
+		Item("Craftplan_Mod_Heat_PowerAttack_Upgrade4", 1, "");
+		Item("Craftplan_Mod_Toxic_PowerAttack_Upgrade3", 1, "");
+		Item("Craftplan_Mod_Impact_Random_Upgrade4_TIP", 1, "");
+		Item("Craftplan_Mod_Freeze_PowerAttack_Upgrade2", 1, "");
+		Item("Craftplan_Mod_Freeze_SpecialAttack_Upgrade5", 1, "");
+		Item("Craftplan_Mod_Bleeding_SpecialAttack_Upgrade2", 1, "");
+
+
+		Level(21, "Traversal", 1.0);
+        Level(21, "Combat", 1.0);
+		Level(38, "Experience", 1.0);
+    }
+	Preset("Player_Difficulty_3_Ringout")		// Difficulty
+    {
+		use Stamina_Lvl_3();
+		use Health_Lvl_3();
+
+		use Difficulty_3_Skills();
+
+		Item("wpn_15hb_b_challenge_ringout_dlc1", 1, "", "Blue");
+		
+		Item("Medkit_Small_Upgrade3", 5, "");
+		
+		Item("Outfitset_RangedDPS_Torso_Tier3_White", 1, "");
+		Item("Outfitset_RangedDPS_Head_Tier3_Green", 1, "");
+		Item("Outfitset_Healer_Shoes_Tier1_Blue", 1, "");
+		Item("Outfitset_Tank_Legs_Tier2_Green", 1, "");
+		Item("Outfitset_MeleeDPS_TorsoAddon_Tier2_Blue", 1, "");
+		Item("Outfitset_Healer_Gloves_Tier3_White", 1, "");
+		
+		Level(9, "Traversal", 1.0);
+        Level(9, "Combat", 1.0);
+		Level(14, "Experience", 1.0);
+    }
+	Preset("Player_Difficulty_4_Arena03")		// Difficulty
+    {
+		use Stamina_Lvl_4();
+		use Health_Lvl_4();
+
+		use Difficulty_4_Skills();
+
+		Item("wpn_1hb_stk_g_fpp_r1", 1, "", "Green");
+		
+		Item("Medkit_Small_Upgrade3", 1, "");
+		Item("Throwable_ThrowingKnifeAGen_Upgrade4", 5, "");
+		Item("Throwable_Molotov_Upgrade3", 1, "");
+		
+		Item("Outfitset_RangedDPS_Torso_Tier4_Blue", 1, "");
+		Item("Outfitset_RangedDPS_Head_Tier3_Blue", 1, "");
+		Item("Outfitset_Healer_Shoes_Tier2_White", 1, "");
+		Item("Outfitset_Tank_Legs_Tier2_Green", 1, "");
+		Item("Outfitset_MeleeDPS_TorsoAddon_Tier4_Green", 1, "");
+		Item("Outfitset_Healer_Gloves_Tier3_White", 1, "");
+	
+		Level(12, "Traversal", 1.0);
+        Level(13, "Combat", 1.0);
+		Level(20, "Experience", 1.0);
+    }
+}

@@ -1,0 +1,17 @@
+
+// mapping of outfit part slots to model slots. Done per game.
+// Do not change the name of outfit part slots! They are hordcoded as an enum in code.
+// The model slot names should match actual slots in the player model.
+// An outfit slot can contain multiple model slots. But a single model slot should only belong to one outfit slot
+
+
+sub main()	
+{
+	Torso( "TORSO", "ARMS", "TORSO_PART_1", "ARMS_PART_1" );
+	Legs( "LEGS", "LEGS_PART_2" );
+	Shoes( "LEGS_PART_1" );
+	Head( "HEADCOVER", "HEAD_PART_1" );
+	Gloves( "HANDS_PART_2" );
+	TorsoAddon( "HANDS_PART_3", "OTHER_PART_1", "OTHER_PART_2", "OTHER_PART_3", "OTHER_PART_4", "OTHER_PART_5" );
+	Head2( "HEAD" );
+}

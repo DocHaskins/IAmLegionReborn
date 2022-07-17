@@ -1,0 +1,162 @@
+sub WeaponsMenu()
+{
+    HelperName("menu_pos_weapon");
+
+    AnimIdle("m_tpp_inventory_menu_weapon_stick_01",        0, 1, 1, "stick");
+    AnimIdle("m_tpp_inventory_menu_weapon_stick2close_01",  0, 1, 1, "stick2close");
+    AnimIdle("m_tpp_inventory_menu_weapon_stick2heavy_01",  0, 1, 1, "stick2heavy");
+	AnimIdle("m_tpp_inventory_menu_weapon_crossbow_01",  0, 1, 1, "crossbow");
+	AnimIdle("m_tpp_inventory_menu_weapon_bow_01",  0, 1, 1, "bow");
+	AnimIdle("m_tpp_inventory_menu_weapon_fist_01",  0, 1, 1, "fist");
+}
+
+sub InventoryMenu()
+{
+    HelperName("menu_pos_main");   
+
+    AnimIdle("m_tpp_inventory_menu_main_01",              2, 5, 10);
+
+    AnimIdle("m_tpp_inventory_menu_main_stick_01",        0, 1, 1, "stick");
+    AnimIdle("m_tpp_inventory_menu_main_stick2close_01",  0, 1, 1, "stick2close");
+    AnimIdle("m_tpp_inventory_menu_main_stick2heavy_01",  0, 1, 1, "stick2heavy");
+	AnimIdle("m_tpp_inventory_menu_main_crossbow_01",  0, 1, 1, "crossbow");
+	AnimIdle("m_tpp_inventory_menu_main_bow_01",  0, 1, 1, "bow");
+	AnimIdle("m_tpp_inventory_menu_main_fist_01",  0, 1, 1, "fist");
+}
+
+sub main()
+{
+    //Menu(EMenuModelState::TYPE)
+    //AnimIdle("name", min_repeats_counts, max_repeats_counts, probability);         
+        // repeats count - the animation ca nonly be repeated (min-max) amount of times in a row. after that a different anim is chosen if possible
+        //min_repeats_counts (int) - optional, default 1
+        //max_repeats_counts (int) - optional, default 3
+        //probability (int) - optional, default 1 (how it works: the higher the value in relations to other anims the more chance for it to be chosen each time)
+    
+    //LogExampleAnims(100); //this enable debug logging of randomization
+    
+    
+    
+    Menu("Inventory")
+    {
+        InfectionPhase(0)
+        {
+            use InventoryMenu();
+        }
+        
+        InfectionPhase(1)
+        {
+            use InventoryMenu();
+        }
+        
+        //default
+        
+        use InventoryMenu();
+    }
+    
+    Menu("Weapons")
+    {
+        use WeaponsMenu();
+    }
+    
+    Menu("CoopRoles")
+    {
+        HelperName("menu_pos_coop_roles"); 
+        AnimIdle("m_tpp_coop_roles_main_01");
+    }
+    
+    Menu("OnlineMenu")
+    {
+        //AnimIdle("m_tpp_matchmaking_main_01");
+        use InventoryMenu();
+        HelperName("menu_pos_matchmaking");
+    }
+    
+    Menu("Consumables")
+    {
+        use WeaponsMenu();
+    }
+    
+    Menu("Equipment")
+    {
+        use WeaponsMenu();
+    }
+    
+	Menu("Outfit_Head2")
+    {
+        // HelperName("menu_pos_head");
+        HelperName("menu_pos_outfit_head");
+        AnimIdle("m_tpp_inventory_menu_main_01");
+    }
+	
+    Menu("Outfit_Head")
+    {
+        // HelperName("menu_pos_head");
+        HelperName("menu_pos_outfit_head");
+        AnimIdle("m_tpp_inventory_menu_main_01");
+    }
+    
+    Menu("Outfit_Torso")
+    {
+        // HelperName("menu_pos_torso");
+        HelperName("menu_pos_outfit_torso");
+        AnimIdle("m_tpp_inventory_menu_main_01");
+    }
+    
+    Menu("Outfit_TorsoAddon")
+    {
+        // HelperName("menu_pos_torso");
+        HelperName("menu_pos_outfit_torso");
+        AnimIdle("m_tpp_inventory_menu_main_01");
+    }
+    
+    Menu("Outfit_Hands")
+    {
+        // HelperName("menu_pos_torso");
+        HelperName("menu_pos_outfit_torso");
+        AnimIdle("m_tpp_inventory_menu_main_01");
+    }
+    
+    Menu("Outfit_Legs")
+    {
+        // HelperName("menu_pos_legs");
+        HelperName("menu_pos_outfit_legs");
+        AnimIdle("m_tpp_inventory_menu_main_01", 2, 5, 10);
+        AnimIdle("m_tpp_inventory_menu_legs_breaker_01", 0, 1, 1);
+        AnimIdle("m_tpp_inventory_menu_legs_breaker_02", 0, 1, 1);
+    }
+    
+    Menu("Outfit_Shoes")
+    {
+        // HelperName("menu_pos_legs");
+        HelperName("menu_pos_outfit_shoes");
+        AnimIdle("m_tpp_inventory_menu_main_01", 2, 5, 10);
+        AnimIdle("m_tpp_inventory_menu_legs_breaker_01", 0, 1, 1);
+        AnimIdle("m_tpp_inventory_menu_legs_breaker_02", 0, 1, 1);
+    }
+	
+	Menu("Outfit_Other")
+    {
+        // HelperName("menu_pos_other");
+        HelperName("menu_pos_outfit_other");
+        AnimIdle("m_tpp_inventory_menu_main_01");
+    }
+    
+    Menu("Skills")
+    {
+        HelperName("menu_pos_main");
+        AnimIdle("m_tpp_inventory_menu_main_01");
+    }    
+    
+    Menu("Shop")
+    {
+        HelperName("menu_pos_closeup");
+        AnimIdle("m_npc_vendor_menu_closeup_01");
+    }
+    
+    Menu_Female("Shop")
+    {
+        HelperName("menu_pos_closeup");
+        AnimIdle("w_npc_vendor_menu_closeup_01");
+    }
+}

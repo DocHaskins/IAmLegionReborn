@@ -20,7 +20,6 @@ sub appearances()
             Default();
             AvailableOnStart();
             Image("OutfitIconDefault");
-			AvailableOnStart();
             Category(0);
             ID(0);
         }
@@ -31,6 +30,7 @@ sub appearances()
             ModelTpp("player_nightrunner_a_tpp.model");
             OverridesOutfit(true);
             Image("Outfit_LegendaryNightrunner");
+			AvailableOnStart();
             Color("Orange");
 			DLC("DLC3");
 			Category(0);
@@ -41,9 +41,9 @@ sub appearances()
         { 
             ModelFpp("player_reload_a_fpp.model");
             ModelTpp("player_reload_a_tpp.model");
-            OverridesOutfit(true);
             Color("Orange");
             Image("Outfit_Reload");
+			AvailableOnStart();
             DLC("");
 			Category(0);
             ID(2);
@@ -52,11 +52,11 @@ sub appearances()
         { 
             ModelFpp("player_outfit_authority_fpp.model");
             ModelTpp("player_outfit_authority_tpp.model");
-            OverridesOutfit(true);
             DLC("");
             RequiredDLCs("");
 			Color("Orange");
             Image("Outfit_Authority");
+			AvailableOnStart();
 			Category(0);
             ID(3);
         }			
@@ -64,11 +64,11 @@ sub appearances()
         { 
             ModelFpp("player_outfit_ronin_fpp.model");
             ModelTpp("player_outfit_ronin_tpp.model");
-            OverridesOutfit(true);
             DLC("");
             RequiredDLCs("");
 			Color("Orange");
             Image("Outfit_Ronin");
+			AvailableOnStart();
 			Category(0);
             ID(5);
         }
@@ -76,10 +76,10 @@ sub appearances()
         { 
             ModelFpp("player_outfit_e3_fpp.model");
             ModelTpp("player_outfit_e3_tpp.model");
-            OverridesOutfit(true);
             DLC("");
 			Color("Orange");
             Image("Outfit_E3");
+			AvailableOnStart();
 			Category(0);
             ID(6);
         }	
@@ -87,11 +87,10 @@ sub appearances()
         { 
             ModelFpp("player_outfit_e3_elite_fpp.model");
             ModelTpp("player_outfit_e3_elite_tpp.model");
-            OverridesOutfit(true);
-			HasCustomUnlockRequirements();
             DLC("");
 			Color("Platinum");
             Image("Outfit_E3_Elite");
+			AvailableOnStart();
 			Category(0);
             ID(7);
         }	
@@ -99,7 +98,6 @@ sub appearances()
         { 
             ModelFpp("player_outfit_female_exotic_fpp.model");
             ModelTpp("player_outfit_female_exotic_tpp.model");
-            OverridesOutfit(true);
             DLC("");
 			Color("Green");
             Image("Outfit_E3");
@@ -110,7 +108,6 @@ sub appearances()
         { 
             ModelFpp("player_outfit_witch_fpp.model");
             ModelTpp("player_outfit_witch_tpp.model");
-            OverridesOutfit(true);
             DLC("");
 			Color("Orange");
             Image("coll_item_OLX_icon");
@@ -121,7 +118,6 @@ sub appearances()
         { 
             ModelFpp("player_outfit_hazmat_fpp.model");
             ModelTpp("player_outfit_hazmat_tpp.model");
-            OverridesOutfit(true);
             DLC("");
 			Color("White");
             Image("coll_mural_unique_013_a_cat_icon");
@@ -132,7 +128,6 @@ sub appearances()
         { 
             ModelFpp("player_outfit_zombie_fpp.model");
             ModelTpp("player_outfit_zombie_tpp.model");
-            OverridesOutfit(true);
             DLC("");
 			Color("Blue");
             Image("Outfit_E3");
@@ -143,7 +138,6 @@ sub appearances()
         { 
             ModelFpp("player_outfit_test_fpp.model");
             ModelTpp("player_outfit_test_tpp.model");
-            OverridesOutfit(true);
             DLC("");
 			Color("Blue");
             Image("coll_mural_unique_013_a_cat_icon");
@@ -385,7 +379,118 @@ sub appearances()
 				ReplaceMaterial("zipper_a.mat", "zipper_a.mat");
 			}
         }
+		
+		Variant("Parachute_Backpack_IAL_01")
+        {
+            Mesh(1, "man_srv_backpack_a.msh")
+			{
 
+			}
+	        Mesh(2, "man_srv_backpack_a.msh")
+			{
+
+			}
+	        Mesh(3, "man_srv_backpack_a.msh")
+			{
+
+			}
+        }
+		
+		Variant("Parachute_Backpack_IAL_02")
+        {
+            Mesh(1, "npc_man_torso_i_backpack_a.msh")
+			{
+
+			}
+	        Mesh(2, "npc_man_torso_i_backpack_a.msh")
+			{
+
+			}
+	        Mesh(3, "npc_man_torso_i_backpack_a.msh")
+			{
+
+			}
+        }
+		
+		Variant("Parachute_Backpack_IAL_03")
+        {
+            Mesh(1, "man_mc_backpack_a.msh")
+			{
+
+			}
+	        Mesh(2, "man_mc_backpack_a.msh")
+			{
+
+			}
+	        Mesh(3, "man_mc_backpack_a.msh")
+			{
+
+			}
+        }
+		
+		Variant("Parachute_Backpack_IAL_04")
+        {
+            Mesh(1, "npc_man_torso_o_belts_bags_a.msh")
+			{
+
+			}
+	        Mesh(2, "npc_man_torso_o_belts_bags_a.msh")
+			{
+
+			}
+	        Mesh(3, "npc_man_torso_o_belts_bags_a.msh")
+			{
+
+			}
+        }
+
+	}
+
+	OutfitAddon("PlayerFace")
+	{
+        Slot("HEAD");
+        ShowInFPP(false);
+        ShowInTPP(true);
+	
+        Variant()
+        {
+            Mesh(1, "man_pk_torso_c_armor_a.msh");
+	        Mesh(2, "man_pk_torso_c_armor_a.msh");
+	        Mesh(3, "man_pk_torso_c_armor_a.msh");
+
+        }
+		
+		Variant("Aiden_Default")
+        {
+            Mesh(1, "man_pk_torso_c_armor_a.msh")
+			{
+			    //ReplaceMaterial("sh_npc_aiden.mat", "sh_npc_aiden.mat");
+			}
+	        Mesh(2, "man_pk_torso_c_armor_a.msh")
+			{
+			    //ReplaceMaterial("sh_npc_aiden.mat", "sh_npc_aiden.mat");
+			}
+	        Mesh(3, "man_pk_torso_c_armor_a.msh")
+			{
+			    //ReplaceMaterial("sh_npc_aiden.mat", "sh_npc_aiden.mat");
+			}
+        }
+		
+		Variant("Aiden_New")
+        {
+            Mesh(1, "sh_man_bdt_e.msh")
+			{
+			    ReplaceMaterial("sh_man_bdt_e.mat", "sh_man_bdt_b.mat");
+			}
+	        Mesh(2, "sh_npc_aiden.msh")
+			{
+			    ReplaceMaterial("sh_man_bdt_e.mat", "sh_man_bdt_e.mat");
+			}
+	        Mesh(3, "sh_npc_aiden.msh")
+			{
+			    ReplaceMaterial("sh_man_bdt_e.mat", "sh_man_bdt_b.mat");
+			}
+        }
 	}
 
     

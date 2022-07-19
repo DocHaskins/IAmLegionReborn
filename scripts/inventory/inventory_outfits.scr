@@ -32047,6 +32047,33 @@ Item("Outfitset_IAL_Torso_Dirty_01", CategoryType_OutfitPart)
 	
 ////////////MEDICAL\\\\\\\\\\\\\
 
+Item("Outfitset_IAL_Head_Medical_01", CategoryType_OutfitPart)
+    {
+        ItemType(ItemType_OutfitPart);
+        GenType(GenType_OutfitPart);
+        Price(0);
+        HudIcon("equipment_inhaler_a_health_regen");
+        CoopRoleIcon("Tank");
+        MaxStackCount(3);
+        PhysicsScript("dropped_inventory.phx");
+        Color(Color_Platinum);
+        OutfitPartSlot(OutfitPartSlot_Head);
+        use outfit_ial_head_medical_01();
+        OutfitPartForcedAffixGroup("Outfits_Nightrunner_Affixes");
+        OutfitPartRandomAffixGroup("Outfits_RandomGeneral_Affixes");
+        MenuEquipSound("hud_inventory_equip_item_head");
+        Mesh("upgrade_mode_box_a.msh");
+        Skin("head_orange");
+        Visibility(true);
+        OutfitArmor(5);
+        Name("&Outfitset_Renegade5_Head_N&");
+        Description("&Outfitset_Hazard_Head_D&");
+        use PickupSounds_Rugs();
+        CanDrop(true);
+        AllowedInShop(false);
+        UID("7053412787034582276");
+    }
+
 Item("Outfitset_IAL_Torso_Medical_01", CategoryType_OutfitPart)
     {
         ItemType(ItemType_OutfitPart);
@@ -33114,33 +33141,6 @@ Item("Outfitset_IAL_Torso_Medical_01", CategoryType_OutfitPart)
         Color(Color_Orange);
         OutfitPartSlot(OutfitPartSlot_Head);
         use outfit_ial_head_hazard_05();
-        OutfitPartForcedAffixGroup("Outfits_Nightrunner_Affixes");
-        OutfitPartRandomAffixGroup("Outfits_RandomGeneral_Affixes");
-        MenuEquipSound("hud_inventory_equip_item_head");
-        Mesh("upgrade_mode_box_a.msh");
-        Skin("head_orange");
-        Visibility(true);
-        OutfitArmor(5);
-        Name("&Outfitset_Renegade5_Head_N&");
-        Description("&Outfitset_Hazard_Head_D&");
-        use PickupSounds_Rugs();
-        CanDrop(true);
-        AllowedInShop(false);
-        UID("7053412787034582276");
-    }
-	
-	Item("Outfitset_IAL_Head_Hazmat_06", CategoryType_OutfitPart)
-    {
-        ItemType(ItemType_OutfitPart);
-        GenType(GenType_OutfitPart);
-        Price(0);
-        HudIcon("coll_mural_unique_023_a_hazmat_icon");
-        CoopRoleIcon("Tank");
-        MaxStackCount(3);
-        PhysicsScript("dropped_inventory.phx");
-        Color(Color_Platinum);
-        OutfitPartSlot(OutfitPartSlot_Head);
-        use outfit_ial_head_hazard_06();
         OutfitPartForcedAffixGroup("Outfits_Nightrunner_Affixes");
         OutfitPartRandomAffixGroup("Outfits_RandomGeneral_Affixes");
         MenuEquipSound("hud_inventory_equip_item_head");

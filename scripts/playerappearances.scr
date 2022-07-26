@@ -334,6 +334,106 @@ sub appearances()
 			Category(0);
             ID(31);
         }
+		Appearance("Male_Legendary_01")
+        { 
+            ModelFpp("player_fpp_skeleton.model");
+            ModelTpp("player_outfit_male_legendary_01_tpp.model");
+            DLC("");
+			Color("Green");
+            Image("coll_item_pk_dogtag_icon");
+			Category(0);
+            ID(32);
+        }
+		Appearance("Male_Legendary_02")
+        { 
+            ModelFpp("player_fpp_skeleton.model");
+            ModelTpp("player_outfit_male_legendary_02_tpp.model");
+            DLC("");
+			Color("Blue");
+            Image("coll_item_pk_dogtag_icon");
+			Category(0);
+            ID(33);
+        }
+		Appearance("Male_Legendary_03")
+        { 
+            ModelFpp("player_fpp_skeleton.model");
+            ModelTpp("player_outfit_male_legendary_03_tpp.model");
+            DLC("");
+			Color("Violet");
+            Image("coll_item_pk_dogtag_icon");
+			Category(0);
+            ID(34);
+        }
+		Appearance("Male_Legendary_04")
+        { 
+            ModelFpp("player_fpp_skeleton.model");
+            ModelTpp("player_outfit_male_legendary_04_tpp.model");
+            DLC("");
+			Color("Orange");
+            Image("coll_item_pk_dogtag_icon");
+			Category(0);
+            ID(35);
+        }
+		Appearance("Male_Legendary_05")
+        { 
+            ModelFpp("player_fpp_skeleton.model");
+            ModelTpp("player_outfit_male_legendary_05_tpp.model");
+            DLC("");
+			Color("Platinum");
+            Image("coll_item_pk_dogtag_icon");
+			Category(0);
+            ID(36);
+        }
+		Appearance("Female_Legendary_01")
+        { 
+            ModelFpp("player_outfit_female_01_fpp.model");
+            ModelTpp("player_outfit_female_legendary_01_tpp.model");
+            DLC("");
+			Color("Green");
+            Image("coll_item_letter_yelow_icon");
+			Category(0);
+            ID(37);
+        }
+		Appearance("Female_Legendary_02")
+        { 
+            ModelFpp("player_outfit_female_01_fpp.model");
+            ModelTpp("player_outfit_female_legendary_02_tpp.model");
+            DLC("");
+			Color("Blue");
+            Image("coll_item_letter_yelow_icon");
+			Category(0);
+            ID(38);
+        }
+		Appearance("Female_Legendary_03")
+        { 
+            ModelFpp("player_outfit_female_01_fpp.model");
+            ModelTpp("player_outfit_female_legendary_03_tpp.model");
+            DLC("");
+			Color("Violet");
+            Image("coll_item_letter_yelow_icon");
+			Category(0);
+            ID(39);
+        }
+		Appearance("Female_Legendary_04")
+        { 
+            ModelFpp("player_outfit_female_01_fpp.model");
+            ModelTpp("player_outfit_female_legendary_04_tpp.model");
+            DLC("");
+			Color("Orange");
+            Image("coll_item_letter_yelow_icon");
+			Category(0);
+            ID(40);
+        }
+		Appearance("Female_Legendary_05")
+        { 
+            ModelFpp("player_outfit_female_01_fpp.model");
+            ModelTpp("player_outfit_female_legendary_05_tpp.model");
+            DLC("");
+			Color("Platinum");
+            Image("coll_item_letter_yelow_icon");
+			Category(0);
+            ID(41);
+        }
     }
 	
 	
@@ -636,54 +736,7 @@ sub appearances()
 
 	}
 
-	OutfitAddon("PlayerFace")
-	{
-        Slot("HEAD");
-        ShowInFPP(false);
-        ShowInTPP(true);
-	
-        Variant()
-        {
-            Mesh(1, "man_pk_torso_c_armor_a.msh");
-	        Mesh(2, "man_pk_torso_c_armor_a.msh");
-	        Mesh(3, "man_pk_torso_c_armor_a.msh");
-
-        }
-		
-		Variant("Aiden_Default")
-        {
-            Mesh(1, "man_pk_torso_c_armor_a.msh")
-			{
-			    //ReplaceMaterial("sh_npc_aiden.mat", "sh_npc_aiden.mat");
-			}
-	        Mesh(2, "man_pk_torso_c_armor_a.msh")
-			{
-			    //ReplaceMaterial("sh_npc_aiden.mat", "sh_npc_aiden.mat");
-			}
-	        Mesh(3, "man_pk_torso_c_armor_a.msh")
-			{
-			    //ReplaceMaterial("sh_npc_aiden.mat", "sh_npc_aiden.mat");
-			}
-        }
-		
-		Variant("Aiden_New")
-        {
-            Mesh(1, "sh_man_bdt_e.msh")
-			{
-			    ReplaceMaterial("sh_man_bdt_e.mat", "sh_man_bdt_b.mat");
-			}
-	        Mesh(2, "sh_npc_aiden.msh")
-			{
-			    ReplaceMaterial("sh_man_bdt_e.mat", "sh_man_bdt_e.mat");
-			}
-	        Mesh(3, "sh_npc_aiden.msh")
-			{
-			    ReplaceMaterial("sh_man_bdt_e.mat", "sh_man_bdt_b.mat");
-			}
-        }
-	}
-
-    
+  
 	OutfitSet("TestSet")
 	{
 		Torso("Test_OutfitSet_TestSet_Torso");
